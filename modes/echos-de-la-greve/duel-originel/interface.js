@@ -10,14 +10,29 @@
     KeyJ: "light", KeyK: "heavy", KeyL: "special", KeyI: "throw", KeyO: "super", Space: "guard"
   };
   const keyLabels = {left:"←", right:"→", up:"↑", down:"↓", guard:"Garde", light:"Léger", heavy:"Lourd", special:"Spécial", throw:"Prise", super:"Super"};
+  const stories = {
+    sam: {
+      intro: ["Le destinataire", "Sam coupe le scanner. Dans la poignée de la mallette, un récepteur grésille. « Je t’entends. Reste en ligne. »", "sam-intro-shore"],
+      rival: ["Quelqu’un attend", "Higgs appuie sur le couvercle du bout de sa botte. « Tu sais seulement ce que tu transportes ? » Sam resserre sa sangle. « Je sais que quelqu’un attend. »", "sam-higgs-rival"],
+      end: ["Dernière livraison", "Une main tire la mallette par la porte entrouverte. « Reçu. » Le voyant s’éteint. Sam reste un instant près du guichet, à écouter le vent.", "sam-ending"]
+    },
+    higgs: {
+      intro: ["Un seul spectateur", "Higgs pose son masque sur un morceau de bois flotté. « On reprend depuis le début. » Les pas d’un porteur s’éloignent le long de la laisse de mer.", "shore-prologue"],
+      rival: ["Regarde-moi", "Sam tourne le dos au ressac pour protéger la mallette. « Regarde-moi quand tout s’arrête », dit Higgs. La seule réponse est le claquement du fermoir.", "sam-higgs-rival"],
+      end: ["Le salut", "Higgs salue le rivage vide, puis efface son reflet d’un coup de talon. Il attend. Au loin, un volet de métal bat au vent. Deux fois.", "higgs-ending"]
+    }
+  };
   const keystate = new Set();
   const pointers = new Map();
+  const taps = new Set();
+  let storyMode = false;
   let fighter = "sam", difficulty = 0.55, match = null, animation = 0;
   let sound = false, audio = null, last = null, debt = 0, finishFrames = 0, nodes = null;
 
   function clearInput() {
     keystate.clear();
     pointers.clear();
+    taps.clear();
     document.querySelectorAll("[data-held=true]").forEach(el => delete el.dataset.held);
   }
 
@@ -32,6 +47,7 @@
 
   function selection() {
     stop();
+    storyMode = false;
     $("#pause").hidden = true;
     app.innerHTML = '<section class="wrap"><header class="section-head"><div><span class="eyebrow">Les Duels de la Grève</span><h1>Duel originel</h1></div></header>' +
       '<div class="select-grid">' + Object.entries(Duels.ID).map(([id, info]) =>
@@ -40,7 +56,8 @@
         info.short + '</strong></span></button>').join("") +
       '</div><div class="selection-foot"><a class="back" href="../index.html">Retour à Échos de la Grève</a><label>Difficulté <select id="difficulty">' +
       '<option value="0.25">Accessible</option><option value="0.55">Normale</option><option value="0.85">Difficile</option></select></label>' +
-      '<button class="primary" id="start">Commencer le duel</button></div></section>';
+      '<div class="btn-row"><button class="primary" id="story">Jouer le récit</button>' +
+      '<button class="ghost" id="start">Duel direct</button></div></div></section>';
     $("#difficulty").value = String(difficulty);
     function markChoice() {
       app.querySelectorAll("[data-choose]").forEach(button => {
@@ -54,7 +71,29 @@
     });
     markChoice();
     $("#start").onclick = () => { difficulty = Number($("#difficulty").value); start(); };
+    $("#story").onclick = () => {
+      difficulty = Number($("#difficulty").value);
+      storyMode = true;
+      storyScene("intro");
+    };
     app.focus({preventScroll:true});
+  }
+
+  function storyScene(part) {
+    stop();
+    $("#pause").hidden = true;
+    const [title, copy, image] = stories[fighter][part];
+    const label = {intro:"Introduction", rival:"Rival", end:"Épilogue"}[part];
+    const next = {intro:"Rencontrer le rival", rival:"Combattre", end:"Retour à la sélection"}[part];
+    app.innerHTML = '<section class="scene"><img alt="" src="../assets/story/' + image + '.webp">' +
+      '<div class="scene-content"><div class="eyebrow">' + Duels.ID[fighter].name + ' · ' + label + '</div>' +
+      '<h1 tabindex="-1">' + title + '</h1><p class="scene-copy">' + copy + '</p>' +
+      '<div class="btn-row"><button class="primary" id="next-scene">' + next + '</button>' +
+      (part === "intro" ? '<button class="ghost" id="skip-story">Passer au duel</button>' : '') +
+      '</div></div></section>';
+    $("#next-scene").onclick = part === "intro" ? () => storyScene("rival") : part === "rival" ? start : selection;
+    if (part === "intro") $("#skip-story").onclick = start;
+    app.querySelector("h1").focus({preventScroll:true});
   }
 
   function vital(id, i) {
@@ -89,7 +128,8 @@
     app.querySelectorAll("[data-action]").forEach(button => {
       button.addEventListener("pointerdown", event => {
         if (!match || dialog.open) return;
-        event.preventDefault(); button.setPointerCapture(event.pointerId); pointers.set(event.pointerId, button.dataset.action); button.dataset.held = "true";
+        event.preventDefault(); button.setPointerCapture(event.pointerId); pointers.set(event.pointerId, button.dataset.action);
+        taps.add(button.dataset.action); button.dataset.held = "true";
       });
       function release(event) {
         pointers.delete(event.pointerId);
@@ -113,7 +153,7 @@
 
   function draw() {
     const s = match;
-    GrèveScene.draw(nodes.canvas, s, {finishFrame: finishFrames > 0 ? finishFrames : null});
+    GrèveScene.draw(nodes.canvas, s, {finishFrame: s.ghost && finishFrames > 0 ? finishFrames : null});
     nodes.timer.textContent = Math.ceil(s.clock / 60);
     s.fighters.forEach((f, i) => {
       const bars = nodes.bars[i];
@@ -154,6 +194,8 @@
       const input = {};
       for (const code of keystate) input[commands[code]] = true;
       for (const action of pointers.values()) input[action] = true;
+      for (const action of taps) input[action] = true;
+      taps.clear();
       Duels.tick(match, [input, Duels.cpu(match, 1, difficulty)]);
       match.events.forEach(tone);
     }
@@ -162,10 +204,13 @@
       const panel = $(".result-actions");
       panel.hidden = false;
       panel.innerHTML = '<h2>' + Duels.ID[match.fighters[match.winner].id].short + ' remporte le duel · ' + match.wins.join(" – ") +
-        '</h2><div class="btn-row"><button class="primary" id="again">Revanche</button><button class="ghost" id="choose">Changer de combattant</button><a class="back" href="../index.html">Retour à Échos de la Grève</a></div>';
+        '</h2><div class="btn-row">' +
+        (storyMode && match.winner === 0 ? '<button class="primary" id="ending">Voir l’épilogue</button>' : '') +
+        '<button class="ghost" id="again">Revanche</button><button class="ghost" id="choose">Changer de combattant</button><a class="back" href="../index.html">Retour à Échos de la Grève</a></div>';
+      if ($("#ending")) $("#ending").onclick = () => storyScene("end");
       $("#again").onclick = start; $("#choose").onclick = selection;
       $("#pause").hidden = true; $(".touch").hidden = true; $(".arena-foot").hidden = true;
-      $("#again").focus({preventScroll:true});
+      ($("#ending") || $("#again")).focus({preventScroll:true});
       return;
     }
     animation = requestAnimationFrame(frame);
@@ -207,7 +252,11 @@
   window.addEventListener("keydown", event => {
     if (dialog.open || !match || !$(".result-actions").hidden || event.metaKey || event.ctrlKey || event.altKey) return;
     if (event.code === "Escape") {event.preventDefault(); openDialog(false); return;}
-    if (commands[event.code]) {event.preventDefault(); keystate.add(event.code);}
+    if (commands[event.code]) {
+      event.preventDefault();
+      if (!keystate.has(event.code)) taps.add(commands[event.code]);
+      keystate.add(event.code);
+    }
   });
   window.addEventListener("keyup", event => keystate.delete(event.code));
   function backgroundPause() {
