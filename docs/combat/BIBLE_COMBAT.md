@@ -424,6 +424,10 @@ Préparer chaque pose sur fond transparent, personnage entier, initialement tour
 
 **Lecture des personnages.** Sam amortit la charge par les hanches. Fragile économise ses gestes, la ligne du parapluie prolonge la main. Higgs ouvre le cadre autour du masque avec son poids porté en arrière. Chez Cliff, le regard reste fixe pendant que la main donne l’ordre. Un miroir horizontal de la silhouette inverse aussi le côté du matériel. Une future vue gauche dessinée devra reprendre les asymétries corporelles de la référence, en particulier l’équipement de Sam.
 
+### La laisse de mer sur la Grève
+
+Derrière les combattants, les côtes d’un cétacé et le basalte forment un plan indépendant. Lors d’un déplacement de caméra de 100 pixels, le panorama glisse de 14 pixels, la laisse de mer de 43 et les galets du premier plan de 80. La zone centrale reste dégagée pour lire le lien de Sam et l’empreinte de Higgs. Le test des arènes contrôle l’ordre de ces vitesses dans les deux sens.
+
 ### Écouter une action sans regarder le HUD
 
 Chaque technique acceptée déclenche le son du combattant. La sangle de Sam frotte avant le clic du fermoir. Les baleines du parapluie de Fragile claquent puis leur souffle s’efface. Chez Higgs, une masse grave se soulève avant la retombée d’une goutte. Le déclic de Cliff ouvre un souffle de radio. Le scanner du MULE monte en fréquence puis reçoit un bip. Au relais grave de Die-Hardman répond un signal de terminal. Le treuil de Mama monte dans l’aigu puis fait résonner le métal. Heartman associe une pulsation sourde à une note de moniteur. Le navigateur synthétise ces sons. L’impact, la garde et la rupture d’équilibre ont leurs propres signaux au moment du contact. Le bouton Son coupe aussi la traîne en cours. Les poses, les effets et les jauges restent lisibles pendant le silence.

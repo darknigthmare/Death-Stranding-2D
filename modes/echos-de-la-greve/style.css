@@ -19,3 +19,5 @@ a{color:inherit;text-underline-offset:.2em}.hero a,.archives a{text-decoration:n
 @media (max-width: 760px) {
   .tile:last-child:nth-child(odd) { grid-column: 1 / -1; border-top: 1px solid var(--rule); }
 }
+
+.stagePreview img.stageMiddle { bottom: 35%; height: 36%; opacity: .82; }

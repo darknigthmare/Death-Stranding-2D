@@ -24,6 +24,7 @@
     portraits: illustrations('fighters', roster, '-portrait'),
     finishers: illustrations('finishers', roster),
     stages: illustrations('stages', arenas),
+    midgrounds: {shore:'assets/stages/shore-midground.png'},
     foregrounds: illustrations('stages', arenas, '-foreground')
   };
 })();

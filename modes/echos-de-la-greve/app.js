@@ -118,6 +118,7 @@
       '</div><h1>Choix du combattant</h1></div></div><div class="chars">' + cards + '</div><div class="options">' + fields +
       '</div>' + (['versus','training'].includes(mode) && asset.stages?.[config.stage] ?
         '<figure class="stagePreview">' + image(asset.stages[config.stage],stages[config.stage]) +
+        (asset.midgrounds?.[config.stage] ? '<img class="stageMiddle" src="' + esc(asset.midgrounds[config.stage]) + '" alt="">' : '') +
         image(asset.foregrounds?.[config.stage]) + '</figure>' : '') +
       '<div class="brief"><strong>' + character.special + '</strong> · ' + character.tip + '</div>' +
       (['story','arcade'].includes(mode) ? '<p class="montage">' + (mode === 'story' ? '<b>' + character.story + '</b><br>' : '') + route + '</p>' : '') +

@@ -260,6 +260,7 @@
       if (m.mode !== 'training') m.images[id + 'Finale'] = load(art.finishers?.[id]);
     }
     m.scene.back = load(art.stages?.[stage]);
+    m.scene.middle = load(art.midgrounds?.[stage]);
     m.scene.front = load(art.foregrounds?.[stage]);
     if (ids.includes('mule') || m.parcel) m.images.cargo = load(art.props?.cargo);
     if (typeof o.sound==='boolean') setSound(o.sound);
@@ -868,6 +869,13 @@
     c.fillRect(0, 0, WIDTH, HEIGHT);
     if (ready(s.back)) {
       c.drawImage(s.back, -28 - m.camera * .14, -12, WIDTH + 56, HEIGHT + 24);
+    }
+    if (ready(s.middle)) {
+      // Between the distant surf and the fighting lane. Keep the rocks below the horizon.
+      c.save();
+      c.globalAlpha = .82;
+      c.drawImage(s.middle, -48 - m.camera * .43, 205, WIDTH + 96, 260);
+      c.restore();
     }
     const shade = c.createLinearGradient(0, HEIGHT * .45, 0, HEIGHT);
     shade.addColorStop(0, 'rgba(2,12,17,0)');

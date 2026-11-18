@@ -12,6 +12,16 @@ Versus et Entraînement proposent dix arènes avec aperçu. Les nouveaux tournoi
 
 En **Tournoi**, **Revoir le duel** relance un match joué depuis le tableau sauvegardé. Au dojo, sélectionnez **Enregistrer J2**, puis **Lire en boucle** pour travailler une réponse. Dans **Défis**, enchaînez sept adversaires en Survie ou gagnez **Livraison sous pression** en gardant le scellé intact.
 
+### Jouer à deux dans un salon privé
+
+L’hôte lance le relais depuis la racine du projet avec Node.js 18 ou ultérieur.
+
+```sh
+node modes/echos-de-la-greve/netplay-server.cjs
+```
+
+Sur ce poste, ouvrir `http://127.0.0.1:8080/netplay.html`, créer le salon et copier son invitation. Pour jouer depuis deux machines, la page **Salon privé en réseau** explique comment rendre le relais accessible sur le réseau local et utiliser l’adresse de l’hôte. Chaque joueur choisit son combattant et se déclare prêt. L’hôte choisit l’arène et lance le duel.
+
 Le [Duel originel](modes/echos-de-la-greve/duel-originel/index.html) conserve le prototype Sam/Higgs, son duel direct et ses deux récits. Ses commandes sont affichées sur l’écran de combat.
 
 - [Bible du mode de combat et fonctions jouables](docs/combat/BIBLE_COMBAT.md)
