@@ -1,0 +1,18 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#101517">
+<title>Duel originel · Death Stranding 2D</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="bar">
+  <button class="brand" id="brand" aria-label="Retour à Échos de la Grève"><span class="mark" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></span><span>DEATH STRANDING <b>2D</b></span></button>
+  <div class="bar-right"><button id="sound" aria-pressed="false">Son coupé</button><button id="help">Commandes</button><button id="pause" hidden>Pause</button></div>
+</header>
+<main id="app" tabindex="-1"></main>
+<dialog id="dialog" aria-labelledby="dialog-title"><div id="dialog-body"></div><button class="primary" id="close-dialog">Reprendre</button></dialog>
+<script src="moteur.js"></script><script src="scene.js"></script><script src="interface.js"></script>
+</body>
+</html>
