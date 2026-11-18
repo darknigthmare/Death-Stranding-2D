@@ -12,10 +12,7 @@
   window.StrandAssets = {
     hero: story['sam-higgs-rival'],
     story,
-    fighters: {
-      ...illustrations('fighters', ['sam', 'fragile', 'cliff'], '-stance'),
-      higgs: 'assets/fighters/higgs-action.webp'
-    },
+    fighters: illustrations('fighters', ['sam', 'fragile', 'higgs', 'cliff'], '-stance'),
     actions: illustrations('fighters', ['sam', 'fragile', 'higgs', 'cliff'], '-action'),
     portraits: illustrations('fighters', ['sam', 'fragile', 'higgs', 'cliff'], '-portrait'),
     finishers: illustrations('finishers', ['sam', 'fragile', 'higgs', 'cliff']),

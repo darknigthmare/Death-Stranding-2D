@@ -17,7 +17,7 @@
   const spriteGeometry = {
     sam: {stanceAnchor:.50, actionAnchor:.40, actionScale:.87},
     fragile: {stanceAnchor:.53, actionAnchor:.43, actionScale:.80},
-    higgs: {stanceAnchor:.57, actionAnchor:.57, actionScale:1},
+    higgs: {stanceAnchor:.69, actionAnchor:.57, actionScale:1},
     cliff: {stanceAnchor:.50, actionAnchor:.35, actionScale:.78}
   };
   const stages = {
