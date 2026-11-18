@@ -17,6 +17,36 @@ Deux silhouettes se font face sur la laisse de mer. Sam se baisse pour poser une
 
 Les mentions **source** renvoient au jeu officiel. Les rencontres, dialogues, noms de techniques, effets de jauge et plans de mise en scène ci-dessous sont **des créations du mode annexe**. L’entrée dans la simulation isole ses résultats du récit de la campagne principale. Les boutons, règles et minutages qui suivent décrivent la cible de conception. Le menu Commandes de la version jouée fait foi pour les fonctions disponibles.
 
+### Version jouable du premier noyau
+
+Depuis la campagne v0.58, le bouton **Échos de la Grève** ouvre les quatre histoires. Chaque combattant dispose de trois adversaires, d’une introduction, d’une rencontre avec son rival et d’un épilogue. Une victoire valide le chapitre dans le navigateur. Une défaite permet de rejouer immédiatement la même rencontre. Les scènes vues se retrouvent dans la galerie. Le menu donne aussi accès au **Duel originel**, avec ses deux récits et son propre système de commandes.
+
+Le tournoi tire un tableau de quatre, six ou huit **participants**, choisis parmi les quatre combattants jouables. À six, deux participants distincts passent directement en demi-finale. Un ou deux joueurs peuvent s’inscrire. Les duels entre deux IA produisent un score simulé. Un duel comprenant un humain se joue au clavier ou avec les commandes tactiles. Une victoire exige deux manches. Le tableau sauvegardé restitue les emplacements, les scores et le prochain duel.
+
+La sélection des quatre personnages possède un portrait par combattant. Chaque histoire appelle trois illustrations de scène. Le duel Sam/Higgs au terminal montre Higgs de son propre point de vue dans son parcours. Les trois arènes disposent d’un fond panoramique et d’un premier plan transparent qui se déplace plus vite lorsque la caméra suit les combattants. La pluie passe entre le fond et la piste.
+
+En combat, les poses de garde et d’action de Sam, Fragile et Cliff ont des points d’appui distincts. Le moteur aligne les pieds sur la même ligne au passage d’une image à l’autre. Pour les deux fentes, la hauteur de rendu descend à 80 % de la garde de Fragile et à 78 % de celle de Cliff. Higgs utilise provisoirement son geste au masque d’or pour les deux états. Les poses intermédiaires dessinées et la vérification visuelle 1:1 de chaque tenue restent à produire.
+
+Le moteur fonctionne à 60 pas de simulation par seconde. Une manche dure 75 secondes. Un K.-O. décisif ouvre la finalité pendant 2,25 secondes. Au temps, la vitalité départage les combattants. Une égalité réinitialise leurs positions et réduit leur vitalité à un point pour un échange décisif.
+
+Pendant l’invite **Rupture**, J1 appuie sur **Y** ou J2 sur **O**. Le geste démarre dans l’arène. Une illustration propre au vainqueur prend ensuite l’écran avant le résultat du match. Les commandes tactiles proposent le bouton **Fin**. Si le joueur laisse passer l’invite, le résultat s’affiche directement.
+
+| Vainqueur | Finalité illustrée | Dernier plan |
+|---|---|---|
+| Sam | Cargaison sécurisée | Sous la pluie, Sam serre la sangle de la caisse tandis que BB reste visible contre sa poitrine. |
+| Fragile | Dernier saut | Sous son parapluie ouvert, Fragile traverse un voile chiral où son reflet se dédouble. |
+| Higgs | Rideau de goudron | Un gant écarte un pli de goudron qui renvoie le reflet du masque d’or. |
+| Cliff | Rappel de section | Cliff porte la radio à son oreille. Quatre silhouettes reprennent forme dans la brume. |
+
+| Combattant | Signature neutre · 28 points chiraux | Avant + signature | Arrière + signature |
+|---|---|---|---|
+| Sam | Bola de liaison | **Reprise d’appui**, 14 points. Absorbe un coup léger pendant 6 pas. | **Parade au lien**, 18 points. Échange les positions sur une frappe de mêlée interceptée. |
+| Fragile | Pas de Grève | **Éventail de pluie**, 18 points. Intercepte une cible haute ou aérienne. | **Point de retour**, 16 points par activation. Pose un repère pour 180 pas et permet d’y revenir. |
+| Higgs | Marée noire | **Empreinte d’or**, 21 points. Le piège s’arme au bout de 20 pas et frappe près du sol. | **Faux départ**, 14 points. Recule pendant 10 pas en laissant un leurre visuel. |
+| Cliff | Écho de section | **Poste avancé**, 18 points. Place une balise pendant 160 pas devant Cliff. | **Rappel de section**, 16 points. Un écho monte depuis le poste et le dissipe. |
+
+Les directions suivent la position adverse. La touche de signature est **H pour J1** et **L pour J2**. Le dojo permet de vérifier ces interactions contre un mannequin immobile, en garde ou piloté par l’IA. La case **Zones de touche** montre le volume vulnérable de chaque combattant et la portée de ses coups de mêlée actifs. La fiche **Commandes** donne les gestes communs et les techniques du combattant.
+
 ### Sommaire
 
 1. [Entrer dans le mode](#1-entrer-dans-le-mode)

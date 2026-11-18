@@ -13,6 +13,13 @@
     fragile: {name:'Fragile', short:'FRAGILE', suit:'#283946', cloth:'#3f5362', trim:'#a9e6ee', metal:'#b2cbd0', skin:'#d0a28e', h:166, speed:4.95, power:0.94, move:'Pas de Grève', end:'Dernier saut'},
     cliff:   {name:'Cliff Unger', short:'CLIFF', suit:'#3c493d', cloth:'#59614c', trim:'#f09c66', metal:'#a5aa89', skin:'#bf9783', h:179, speed:4.2, power:1.03, move:'Écho de section', end:'Rappel de section'}
   };
+  // An anchor is the horizontal midpoint between supporting feet in the source crop.
+  const spriteGeometry = {
+    sam: {stanceAnchor:.50, actionAnchor:.40, actionScale:.87},
+    fragile: {stanceAnchor:.53, actionAnchor:.43, actionScale:.80},
+    higgs: {stanceAnchor:.57, actionAnchor:.57, actionScale:1},
+    cliff: {stanceAnchor:.50, actionAnchor:.35, actionScale:.78}
+  };
   const stages = {
     shore:{title:'LA GRÈVE', code:'BEACH / 01', sky:['#122c39','#668184','#a9a78d'], mountains:['#7c9091','#526d71','#324e54'], ground:['#435c5d','#162a32','#061219'], light:'#d3d0aa'},
     terminal:{title:'CENTRE DE DISTRIBUTION', code:'BRIDGES / 02', sky:['#112d3a','#4e727e','#92a8a7'], mountains:['#79949b','#4e717e','#334f5a'], ground:['#4b6068','#1c323a','#09181f'], light:'#a6d2d8'},
@@ -103,6 +110,7 @@
     for (const id of new Set(ids)) {
       m.images[id] = load((o.visuals || {})[id] || art.fighters?.[id]);
       m.images[id + 'Action'] = load(art.actions?.[id]);
+      if (m.mode !== 'training') m.images[id + 'Finale'] = load(art.finishers?.[id]);
     }
     m.scene.back = load(art.stages?.[stage]);
     m.scene.front = load(art.foregrounds?.[stage]);
@@ -496,7 +504,9 @@
   function foreground(m) {
     const c = m.ctx;
     if (ready(m.scene.front)) {
-      c.drawImage(m.scene.front, -80 - m.camera * .8, HEIGHT - 190, WIDTH + 160, 197);
+      const width = WIDTH + 160;
+      const height = width * m.scene.front.naturalHeight / m.scene.front.naturalWidth;
+      c.drawImage(m.scene.front, -80 - m.camera * .8, HEIGHT - height, width, height);
     } else {
       // Near silhouettes stay below the fighting lane and move faster than the backdrop.
       const x = -m.camera * .76;
@@ -542,9 +552,11 @@
     if (immune(f)) c.globalAlpha = .63;
     if (ready(image)) {
       const action = performing && image === actionArt;
-      const h = height * (action && f.id === 'sam' ? .87 : 1);
+      // Lowered attack poses occupy less height on the same character scale.
+      const geometry = spriteGeometry[f.id];
+      const h = height * (action ? geometry.actionScale : 1);
       const w = h * image.naturalWidth / image.naturalHeight;
-      const anchor = action ? ({sam:.40, higgs:.43, cliff:.44, fragile:.43})[f.id] : .5;
+      const anchor = action ? geometry.actionAnchor : geometry.stanceAnchor;
       if (f.flash > 1 && (f.flash % 4 < 2)) c.filter = 'brightness(1.5)';
       c.drawImage(image, -w * anchor + 9 * reach, -h, w, h);
     } else {
@@ -709,6 +721,30 @@
     c.restore();
   }
 
+  function finisherArtwork(m) {
+    const winner = m.f[m.winner - 1];
+    const image = m.images[winner.id + 'Finale'];
+    const elapsed = 108 - m.phaseTicks;
+    if (!ready(image) || elapsed <= 22) return;
+
+    const c = m.ctx;
+    const fade = clamp((elapsed - 22) / 16, 0, 1);
+    const scale = Math.max(WIDTH / image.naturalWidth, HEIGHT / image.naturalHeight);
+    const w = image.naturalWidth * scale;
+    const h = image.naturalHeight * scale;
+    c.save();
+    c.globalAlpha = fade;
+    c.drawImage(image, (WIDTH - w) / 2, (HEIGHT - h) / 2, w, h);
+    const shade = c.createLinearGradient(0, HEIGHT * .64, 0, HEIGHT);
+    shade.addColorStop(0, 'rgba(3,10,13,0)');
+    shade.addColorStop(1, 'rgba(3,10,13,.94)');
+    c.fillStyle = shade;
+    c.fillRect(0, HEIGHT * .64, WIDTH, HEIGHT * .36);
+    label(c, winner.spec.name.toUpperCase(), 52, HEIGHT - 86, 18, '#eed39b');
+    label(c, winner.spec.end, 50, HEIGHT - 34, 45, '#f4f2e9');
+    c.restore();
+  }
+
   function draw(m) {
     const c=m.ctx;
     c.save();
@@ -729,6 +765,7 @@
     c.restore();
     foreground(m);
     hud(m);
+    if (m.phase === 'cinema' && !m.paused) finisherArtwork(m);
     c.restore();
   }
 

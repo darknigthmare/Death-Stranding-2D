@@ -289,14 +289,18 @@
     const table = '<table><thead><tr><th>Action</th><th>Joueur 1</th><th>Joueur 2</th></tr></thead><tbody>' +
       keys.map(([,title,,,first,second]) => '<tr><td>' + title + '</td><td>' + first + '</td><td>' + second + '</td></tr>').join('') +
       '</tbody></table>';
-    const fighterId = activeFight?.p1 || config.p1;
-    const current = fighters[fighterId];
-    const techniques = current.techniques.map(([direction, name, cost, effect]) =>
-      '<tr><td>' + direction + '</td><td><strong>' + name + '</strong><br>' + effect + '</td><td>' + cost + '</td></tr>').join('');
+    const fighterIds = [activeFight?.p1 || config.p1];
+    if (activeFight?.kind === 'local' && !fighterIds.includes(activeFight.p2)) fighterIds.push(activeFight.p2);
+    const moveLists = fighterIds.map(id => {
+      const current = fighters[id];
+      const rows = current.techniques.map(([direction, name, cost, effect]) =>
+        '<tr><td>' + direction + '</td><td><strong>' + name + '</strong><br>' + effect + '</td><td>' + cost + '</td></tr>').join('');
+      return '<h3>Techniques de ' + current.call + '</h3>' +
+        '<table><thead><tr><th>Direction</th><th>Technique</th><th>Coût chiral</th></tr></thead><tbody>' + rows + '</tbody></table>';
+    }).join('');
     document.getElementById('keys').innerHTML = table +
       '<p class="hint">Appuie deux fois dans une direction pour une ruée. Combine bas et léger pour balayer, bas et lourd pour soulever. Sur impact, enchaîne léger, lourd et signature. La finalité s’ouvre au dernier K.-O. Échap met le duel en pause.</p>' +
-      '<h3>Techniques de ' + current.call + '</h3><p class="hint">Maintiens la direction au moment de la signature (H pour J1, L pour J2). « Avant » pointe toujours vers l’adversaire.</p>' +
-      '<table><thead><tr><th>Direction</th><th>Technique</th><th>Coût chiral</th></tr></thead><tbody>' + techniques + '</tbody></table>';
+      '<p class="hint">Maintiens la direction au moment de la signature (H pour J1, L pour J2). « Avant » pointe toujours vers l’adversaire.</p>' + moveLists;
     manual.showModal();
   }
   manual.addEventListener('close',() => { if (resumeAfterManual && activeFight) setPause(false); resumeAfterManual = false; });
