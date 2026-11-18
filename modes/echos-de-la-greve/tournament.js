@@ -44,6 +44,8 @@
       match.players = [draw.shift(), byes.includes(i) ? null : draw.shift()];
     }
     const cup = {version:1, seed:config.seed, difficulty:config.difficulty, entrants, rounds};
+    const arenas = Object.keys(window.StrandContent.stages);
+    for (const match of rounds.flat()) match.stage = arenas[match.seed % arenas.length];
     advance(cup);
     return cup;
   }

@@ -62,7 +62,35 @@
       }
     }
   };
-  const stages = {shore:'La Grève', terminal:'Centre de distribution', battlefield:'Champ de bataille'};
+  fighters.mule = {
+    name:'Porteur MULE', call:'MULE', role:'Opérateur du camp',
+    special:'Balayage de capteur', finisher:'Hors inventaire',
+    tip:'Pose une caisse devant toi. Pousse-la avec un coup fort ou rappelle-la quand ton adversaire enjambe le colis.',
+    techniques:[
+      ['Neutre','Balayage de capteur',28,'Une impulsion de scanner repère la dernière position touchée.'],
+      ['Avant','Consigne mobile',18,'Dépose une caisse sur la piste. Un coup fort à proximité l’envoie vers l’avant.'],
+      ['Arrière','Saisie de lot',16,'Rappelle la caisse au ras du sol. Une garde basse ou un saut permet de passer son trajet.']
+    ],
+    story:'L’inventaire du matin', route:[['fragile','mule-camp'],['higgs','terminal'],['sam','mule-camp']],
+    scenes:{
+      intro:['Dernière ligne','Une caisse vide vaut plus que tout le stock. Fragile attend sa livraison devant la tente. L’opérateur soulève la caisse et colle l’oreille au couvercle. Une voix lui demande de lui rendre son nom.'],
+      rival:['Le numéro de manche','Sam vient chercher le carton. Par réflexe, l’opérateur passe le lecteur sur sa propre manche. Le numéro correspond à celui du colis. Il pose le lecteur sur le couvercle. Pour une fois, il sait à qui cette caisse appartient.'],
+      ending:['Registre des départs','Au matin, chaque caisse est à sa place. La case du propriétaire reste vide. Hors de la clôture, l’opérateur retire l’étiquette de sa manche. Sa main hésite, puis il écrit son nom au bas du registre des départs.']
+    }
+  };
+  const arenas = {
+    shore:{title:'La Grève', sky:'#668184', light:'#d3d0aa', weather:'rain'},
+    terminal:{title:'Centre de distribution', sky:'#4e727e', light:'#a6d2d8', weather:'rain'},
+    battlefield:{title:'Champ de bataille', sky:'#816e69', light:'#e2b58a', weather:'embers'},
+    'mule-camp':{title:'Camp des MULEs', sky:'#777961', light:'#d8c38b', weather:'dust'},
+    'heartman-lab':{title:'Laboratoire de Heartman', sky:'#505c66', light:'#a7cad7'},
+    'mama-workshop':{title:'Atelier de Mama', sky:'#5c6865', light:'#acc9be'},
+    'ruined-factory':{title:'Usine en ruines', sky:'#53595d', light:'#bcafb0', weather:'dust'},
+    'timefall-shelter':{title:'Abri sous la pluie temporelle', sky:'#526366', light:'#b5d7d7', weather:'shelter'},
+    'tar-basin':{title:'Bassin de goudron', sky:'#555859', light:'#d4bc9d'},
+    'mountain-pass':{title:'Col de Mountain Knot', sky:'#758995', light:'#e0edf0', weather:'snow'}
+  };
+  const stages = Object.fromEntries(Object.entries(arenas).map(([id,arena]) => [id,arena.title]));
   const modes = {story:'Histoire', arcade:'Arcade', versus:'Versus', tournament:'Tournoi', training:'Entraînement'};
-  window.StrandContent = {fighters, stages, modes};
+  window.StrandContent = {fighters, stages, arenas, modes};
 })();

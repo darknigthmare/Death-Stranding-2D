@@ -4,7 +4,11 @@ Téléchargez le dépôt et extrayez-le, puis ouvrez [JOUER.html](JOUER.html) da
 
 ## Échos de la Grève
 
-On peut aussi lancer [le menu de combat](modes/echos-de-la-greve/index.html) directement. Sam, Fragile, Higgs et Cliff sont jouables en Histoire, Arcade, Versus, Tournoi et Entraînement. Le menu **Commandes** présente les touches des deux joueurs et le coût chiral des techniques. En solo, utilisez Q/D ou A/D pour marcher, Z ou W pour sauter et H pour la signature. Le bouton **Retour à la campagne** ramène à l’écran titre.
+Sam, Fragile, Higgs, Cliff et le porteur MULE sont jouables en Histoire, Arcade, Versus, Tournoi et Entraînement. Le mode fonctionne aussi directement depuis [le menu de combat](modes/echos-de-la-greve/index.html).
+
+Pour essayer le MULE et sa caisse, ouvrez **Entraînement**, choisissez **MULE**, puis **Camp des MULEs**. **H** balaie la piste avec le capteur. Vers l’adversaire + **H** dépose la caisse. Un coup fort à proximité la pousse. En direction opposée + **H**, le MULE rappelle la caisse le long du sol. Le menu **Commandes** donne les touches de chaque joueur. **Retour à la campagne** ramène à l’écran titre.
+
+Versus et Entraînement proposent dix arènes avec aperçu. Les nouveaux tournois utilisent aussi ces décors. Les tableaux sauvegardés dans la première version retrouvent leurs arènes d’origine. [Voir les dix arènes en jeu](docs/combat/apercus/dix-arenes.webp)
 
 Le [Duel originel](modes/echos-de-la-greve/duel-originel/index.html) conserve le prototype Sam/Higgs, son duel direct et ses deux récits. Ses commandes sont affichées sur l’écran de combat.
 

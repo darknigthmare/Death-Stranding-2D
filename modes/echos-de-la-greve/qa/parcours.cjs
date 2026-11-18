@@ -23,7 +23,7 @@ const mock = `window.StrandFight = {start(options){this.options=options;this.inp
   const mode = value => page.locator('[data-act="mode"][data-mode="'+value+'"]').click();
   const pick = id => page.locator('[data-act="pick"][data-id="'+id+'"]').click();
   const end = winner => page.evaluate(win => StrandFight.end(win),winner);
-  for (const id of ['sam','higgs','cliff','fragile']) {
+  for (const id of ['sam','higgs','cliff','fragile','mule']) {
     await mode('story'); await pick(id); await act('start');
     assert.match(await page.locator('.speaker').textContent(),/Introduction/);
     await act('routeFight'); let p1 = await page.evaluate(() => StrandFight.options.p1); assert.equal(p1,id);
@@ -41,7 +41,7 @@ const mock = `window.StrandFight = {start(options){this.options=options;this.inp
     await end(1); await act('routeFight'); await end(1); await act('rival'); assert.match(await page.locator('.speaker').textContent(),/Rivalité/);
     await act('routeFight'); await end(1); await act('ending'); assert.match(await page.locator('.speaker').textContent(),/Épilogue/); await act('home');
   }
-  await act('gallery'); assert.equal(await page.locator('[data-act=replay]').count(),12); await act('replay'); await act('gallery'); await act('home');
+  await act('gallery'); assert.equal(await page.locator('[data-act=replay]').count(),15); await act('replay'); await act('gallery'); await act('home');
   await mode('arcade'); await act('start'); await end(1); await act('routeFight'); await end(1); await act('routeFight'); await end(1);
   assert.match(await page.locator('.result').textContent(),/trois adversaires/); await act('home');
   await mode('versus'); await page.locator('[data-option=opponent]').selectOption('local'); await act('start');
@@ -53,12 +53,27 @@ const mock = `window.StrandFight = {start(options){this.options=options;this.inp
   await act('pause'); await act('leave'); await act('home');
   for (const count of ['4','6','8']) {
     await mode('tournament'); await page.locator('[data-option=count]').selectOption(count); await page.locator('[data-option=humans]').selectOption('2'); await act('start');
+    const expectedStage = await page.evaluate(legacy => {
+      const cup = JSON.parse(localStorage.getItem('echos.v1.cup'));
+      const arenas = Object.keys(StrandContent.stages);
+      if (!cup.rounds.flat().every(match => match.stage === arenas[match.seed % arenas.length]))
+        throw new Error('Arène du tableau non enregistrée');
+      if (legacy) {
+        for (const match of cup.rounds.flat()) delete match.stage;
+        localStorage.setItem('echos.v1.cup',JSON.stringify(cup));
+      }
+      const next = StrandTournament.next(cup);
+      return next.stage || ['shore','terminal','battlefield'][next.seed % 3];
+    }, count === '4');
+    await page.reload(); await mode('tournament'); await act('bracket');
     for (let i=0;i<10;i++) {
       if (!await page.locator('[data-act=cupFight]').count()) break;
       if (count === '6' && i === 0) {
         await page.reload(); await mode('tournament'); await act('bracket'); assert.match(await page.locator('.pair').allTextContents().then(a=>a.join(' ')),/Qualification directe/);
       }
-      await act('cupFight'); await end(i%2===0?2:1); await act('bracket');
+      await act('cupFight');
+      if (i === 0) assert.equal(await page.evaluate(()=>StrandFight.options.stage),expectedStage);
+      await end(i%2===0?2:1); await act('bracket');
     }
     assert.match(await page.locator('main h1').textContent(),/Champion/);
     let saved = await page.evaluate(()=>JSON.parse(localStorage.getItem('echos.v1.cup')));
@@ -73,5 +88,5 @@ const mock = `window.StrandFight = {start(options){this.options=options;this.inp
   assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth<=window.innerWidth),true);
   assert.deepEqual(errors,[]);
   await browser.close();
-  console.log('OK — 4 campagnes, 12 scènes, arcade, revanche et J2, dojo, pause, commandes tactiles/clavier, tournois 4/6/8 avec reprise.');
+  console.log('OK — 5 campagnes, 15 scènes, arcade, revanche et J2, dojo, pause, commandes tactiles/clavier, tournois 4/6/8 avec reprise.');
 })().catch(error=>{console.error(error);process.exit(1)});

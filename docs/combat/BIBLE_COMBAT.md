@@ -12,20 +12,22 @@ Deux silhouettes se font face sur la laisse de mer. Sam se baisse pour poser une
 |---|---|---|
 | Premier noyau | Sam, Fragile, Higgs, Cliff. La Grève, le terminal Bridges et le champ de bataille de Cliff. | Distribution et lieux retenus pour la première réalisation. |
 | Jeu de combat cible | Règles chiffrées, commandes techniques, 8 fiches de combat, 8 campagnes, 8 arènes et réalisation des fatalités. | Spécifications de production. Les valeurs proposées demandent des essais en jeu. |
-| Extensions | MULE, Die-Hardman, Mama, Heartman. Épreuves, variantes de décor, replays, fonctions avancées du dojo et jeu en ligne. | Travail prévu au-delà du premier noyau. |
+| Extensions | Le porteur MULE est jouable. Die-Hardman, Mama et Heartman disposent de fiches de conception. | Les trois autres combattants, les épreuves, les replays, les fonctions avancées du dojo et le jeu en ligne restent à réaliser. |
 | Fidélité | Le chapitre 11 associe les décisions visuelles à des images publiées par les créateurs et l’éditeur. | Chaque costume, accessoire et côté du corps demande une comparaison visuelle avant validation 1:1. |
 
 Les mentions **source** renvoient au jeu officiel. Les rencontres, dialogues, noms de techniques, effets de jauge et plans de mise en scène ci-dessous sont **des créations du mode annexe**. L’entrée dans la simulation isole ses résultats du récit de la campagne principale. Les boutons, règles et minutages qui suivent décrivent la cible de conception. Le menu Commandes de la version jouée fait foi pour les fonctions disponibles.
 
-### Version jouable du premier noyau
+### Version jouable · cinq combattants et dix arènes
 
-Depuis la campagne v0.58, le bouton **Échos de la Grève** ouvre les quatre histoires. Chaque combattant dispose de trois adversaires, d’une introduction, d’une rencontre avec son rival et d’un épilogue. Une victoire valide le chapitre dans le navigateur. Une défaite permet de rejouer immédiatement la même rencontre. Les scènes vues se retrouvent dans la galerie. Le menu donne aussi accès au **Duel originel**, avec ses deux récits et son propre système de commandes.
+Depuis la campagne v0.58, le bouton **Échos de la Grève** ouvre les cinq histoires de Sam, Fragile, Higgs, Cliff et du porteur MULE. Chaque combattant dispose de trois adversaires, d’une introduction, d’une rencontre avec son rival et d’un épilogue. Une victoire valide le chapitre dans le navigateur. Une défaite permet de rejouer immédiatement la même rencontre. Les scènes vues se retrouvent dans la galerie. Le menu donne aussi accès au **Duel originel**, avec ses deux récits et son propre système de commandes.
 
-Le tournoi tire un tableau de quatre, six ou huit **participants**, choisis parmi les quatre combattants jouables. À six, deux participants distincts passent directement en demi-finale. Un ou deux joueurs peuvent s’inscrire. Les duels entre deux IA produisent un score simulé. Un duel comprenant un humain se joue au clavier ou avec les commandes tactiles. Une victoire exige deux manches. Le tableau sauvegardé restitue les emplacements, les scores et le prochain duel.
+Le tournoi tire un tableau de quatre, six ou huit **participants**, choisis parmi les cinq combattants jouables. À six, deux participants distincts passent directement en demi-finale. Un ou deux joueurs peuvent s’inscrire. Les duels entre deux IA produisent un score simulé. Un duel comprenant un humain se joue au clavier ou avec les commandes tactiles. Une victoire exige deux manches. Le tableau sauvegardé restitue les emplacements, les scores et le prochain duel. Un nouveau tirage enregistre aussi l’arène de chaque rencontre. Les anciens tableaux conservent leur choix parmi les trois premiers terrains.
 
-La sélection des quatre personnages possède un portrait par combattant. Chaque histoire appelle trois illustrations de scène. Le duel Sam/Higgs au terminal montre Higgs de son propre point de vue dans son parcours. Les trois arènes disposent d’un fond panoramique et d’un premier plan transparent qui se déplace plus vite lorsque la caméra suit les combattants. La pluie passe entre le fond et la piste.
+La sélection compte cinq combattants. Les cinq parcours totalisent quinze scènes distinctes d’introduction, de rivalité et d’épilogue. Higgs rencontre Sam au terminal dans sa propre illustration de rivalité. La version jouable de **L’inventaire du matin** fait affronter au MULE Fragile dans son camp, Higgs au centre de distribution, puis Sam de retour au camp. Le parcours de conception au chapitre 5 réserve les deux premières rencontres à Mama et à Die-Hardman, encore en production.
 
-En combat, les poses de garde et d’action de Sam, Fragile et Cliff ont des points d’appui distincts. Le moteur aligne les pieds sur la même ligne au passage d’une image à l’autre. Pour les deux fentes, la hauteur de rendu descend à 80 % de la garde de Fragile et à 78 % de celle de Cliff. Higgs utilise provisoirement son geste au masque d’or pour les deux états. Les poses intermédiaires dessinées et la vérification visuelle 1:1 de chaque tenue restent à produire.
+Les dix arènes du chapitre 7 sont sélectionnables en Versus et au dojo. Chacune possède un panorama et un premier plan transparent qui se déplace plus vite que le fond. Le camp, les ateliers couverts, le col enneigé et le bassin ont leurs ambiances propres. Les quatre premières histoires gardent leurs lieux scénarisés. [Les dix arènes capturées en jeu](apercus/dix-arenes.webp)
+
+En combat, les poses de garde et d’action de Sam, Fragile et Cliff ont des points d’appui distincts. Le moteur aligne les pieds sur la même ligne au passage d’une image à l’autre. Pour les deux fentes, la hauteur de rendu descend à 80 % de la garde de Fragile et à 78 % de celle de Cliff. Higgs dispose de sa propre garde, avec la main ramenée vers le torse. La mesure du pied d’appui permet de passer de cette garde à la main tendue de son attaque. Fragile, Higgs et le MULE disposent chacun d’un dessin de pas et d’un dessin de réaction au coup. Sam et Cliff alternent leurs deux poses dessinées et les déplacements interpolés du moteur. Le chapitre 11 précise les détails à comparer avec les tenues officielles.
 
 Le moteur fonctionne à 60 pas de simulation par seconde. Une manche dure 75 secondes. Un K.-O. décisif ouvre la finalité pendant 2,25 secondes. Au temps, la vitalité départage les combattants. Une égalité réinitialise leurs positions et réduit leur vitalité à un point pour un échange décisif.
 
@@ -38,14 +40,17 @@ Pendant l’invite **Rupture**, J1 appuie sur **Y** ou J2 sur **O**. Le geste d�
 | Higgs | Rideau de goudron | Un gant écarte un pli de goudron qui renvoie le reflet du masque d’or. |
 | Cliff | Rappel de section | Cliff porte la radio à son oreille. Quatre silhouettes reprennent forme dans la brume. |
 
+La finalité du MULE déclenche deux balayages de son capteur sur l’écho adverse. Le signal et l’encadrement du code de fret se distinguent des manifestations de Cliff.
+
 | Combattant | Signature neutre · 28 points chiraux | Avant + signature | Arrière + signature |
 |---|---|---|---|
 | Sam | Bola de liaison | **Reprise d’appui**, 14 points. Absorbe un coup léger pendant 6 pas. | **Parade au lien**, 18 points. Échange les positions sur une frappe de mêlée interceptée. |
 | Fragile | Pas de Grève | **Éventail de pluie**, 18 points. Intercepte une cible haute ou aérienne. | **Point de retour**, 16 points par activation. Pose un repère pour 180 pas et permet d’y revenir. |
 | Higgs | Marée noire | **Empreinte d’or**, 21 points. Le piège s’arme au bout de 20 pas et frappe près du sol. | **Faux départ**, 14 points. Recule pendant 10 pas en laissant un leurre visuel. |
 | Cliff | Écho de section | **Poste avancé**, 18 points. Place une balise pendant 160 pas devant Cliff. | **Rappel de section**, 16 points. Un écho monte depuis le poste et le dissipe. |
+| MULE | Balayage de capteur. Le scan mémorise pendant 120 pas la position touchée. Une garde l’arrête. | **Consigne mobile**, 18 points. Pose une caisse pour 180 pas. Un fort à portée la pousse de 112 pixels. Son contact inflige 6 points de dégâts. | **Saisie de lot**, 16 points. Rappelle la caisse aux pieds de l’opérateur. Son trajet inflige 7 points et se défend par un saut ou une garde accroupie. Le rappel à vide conserve la jauge. |
 
-Les directions suivent la position adverse. La touche de signature est **H pour J1** et **L pour J2**. Le dojo permet de vérifier ces interactions contre un mannequin immobile, en garde ou piloté par l’IA. La case **Zones de touche** montre le volume vulnérable de chaque combattant et la portée de ses coups de mêlée actifs. La fiche **Commandes** donne les gestes communs et les techniques du combattant.
+Les directions suivent la position adverse. La touche de signature est **H pour J1** et **L pour J2**. Le dojo permet de vérifier ces interactions contre un mannequin immobile, en garde ou piloté par l’IA. La case **Zones de touche** montre le volume vulnérable de chaque combattant et la portée de ses coups de mêlée actifs. La fiche **Commandes** donne les gestes communs et les techniques du combattant. La caisse MULE est un prop détouré indépendant. Le même fichier sert pour la pose au sol, la poussée et le rappel. [La caisse entre le MULE et Sam dans leur duel au camp](apercus/consigne-mobile.webp)
 
 ### Sommaire
 
@@ -63,7 +68,7 @@ Les directions suivent la position adverse. La touche de signature est **H pour 
 
 ## 1. Entrer dans le mode
 
-Au terminal, **Échos de la Grève** ouvre une reconstitution d’empreintes chirales. Le stand de tir du Director’s Cut fournit un précédent diégétique pour les exercices accessibles à un terminal [2, 3]. La rencontre de personnages d’époques différentes et l’existence de cette machine relèvent de notre fiction. Un personnage battu quitte la reconstitution. Le jeu principal conserve inventaire, livraisons, BB et progression.
+Au terminal, **Échos de la Grève** ouvre une reconstitution d’empreintes chirales. Le stand de tir du Director’s Cut fournit un précédent diégétique pour les exercices accessibles à un terminal [3]. La rencontre de personnages d’époques différentes et l’existence de cette machine relèvent de notre fiction. Un personnage battu quitte la reconstitution. Le jeu principal conserve inventaire, livraisons, BB et progression.
 
 | Écran cible | Choix du joueur | Réponse attendue |
 |---|---|---|
@@ -148,7 +153,7 @@ Les quatre premières fiches approfondissent le noyau du prototype. Les quatre s
 
 ### Fragile · déplacement, punition des coups manqués
 
-**Source.** Dirige Fragile Express et peut se téléporter. Son parapluie sert de repère visuel au saut dans les chambres privées [3, 4]. **Geste à conserver.** Torse droit, pas mesuré, toile segmentée identifiable avant que l’image se dissipe.
+**Source.** Dirige Fragile Express et peut se téléporter. Son parapluie sert de repère visuel au saut dans les chambres privées [4, 8]. **Geste à conserver.** Torse droit, pas mesuré, toile segmentée identifiable avant que l’image se dissipe.
 
 | Coup cible | Entrée | Mise en jeu |
 |---|---|---|
@@ -246,7 +251,7 @@ Les quatre premières fiches approfondissent le noyau du prototype. Les quatre s
 
 ## 5. Huit campagnes
 
-Les quatre histoires du noyau conduisent chacune au rival final indiqué. Les ordres intermédiaires ci-dessous constituent la proposition pour la campagne complète. Les dialogues et les récits sont originaux. Chaque parcours tient dans trois duels scénarisés et se rejoue en arcade sans les images. Une défaite reprend le duel en cours. Un ending débloqué devient consultable d’un seul geste.
+Les quatre histoires du noyau conduisent chacune au rival final indiqué. Le parcours jouable du MULE et son adaptation provisoire figurent dans la section « Version jouable ». Les ordres intermédiaires ci-dessous constituent la proposition pour la campagne complète. Les dialogues et les récits sont originaux. Chaque parcours tient dans trois duels scénarisés et se rejoue en arcade sans les images. Une défaite reprend le duel en cours. Un ending débloqué devient consultable d’un seul geste.
 
 ### Sam — Livraison sans adresse
 
@@ -348,3 +353,94 @@ Une intro emploie deux illustrations originales et une insertion de l’accessoi
 | Heartman | **Intervalle** | La courbe du moniteur entoure les deux avatars. L’écho tient sur un point lumineux. La caméra retrouve la chaise vide et un tracé régulier. | Un battement clair suivi de l’ambiance du laboratoire. |
 
 Limiter chaque séquence à environ quatre secondes. La caméra conserve la position des deux corps jusqu’au premier changement de plan, y compris près d’un mur. En tournoi, une validation commune passe directement au résultat. En cas de perte de focus, le vainqueur enregistré avant la scène reste acquis.
+
+## 7. Arènes et parallaxe
+
+Le terminal ouvre sur une ligne de pieds commune. Dans une arène extérieure, une pente dessinée derrière les combattants peut conduire le regard vers l’horizon. La bande sur laquelle ils se tiennent reste horizontale. Dans un intérieur, les joints du dallage et le bas des portes donnent l’échelle. Un joueur qui passe du camp au laboratoire doit pouvoir juger la portée de sa projection avec le même pas.
+
+Les quatre routes d’extension du chapitre 5 nomment un camp, une usine, un atelier et un laboratoire. L’abri de Fragile complète les huit arènes en reprenant le lieu décrit dans l’étude du Duel originel. Deux compositions complètent cette sélection. Le bassin de goudron vient de l’étude du Duel originel. Le col de Mountain Knot est une vue originale imaginée pour ce mode. Les indications ci-dessous décrivent le cadrage latéral et la mise en scène du fan-game.
+
+| Arène | Motif derrière les silhouettes | Premier plan et repère pour le duel |
+|---|---|---|
+| La Grève | Le ressac trace une ligne longue sous le ciel pâle. Les roches éloignées encadrent les joueurs. | Laisse de mer et galets bas aux bords. L’empreinte d’or de Higgs doit se lire avant que le regard ne rencontre l’écume. |
+| Centre de distribution | Une baie de livraison chaude s’ouvre dans une façade froide. Sa largeur donne l’échelle du site Bridges. | Butée, grille de drainage et câble à terre. Lire la position des pieds de Sam malgré le reflet sur le quai. |
+| Champ de bataille | Un second parapet et des troncs coupés étagent la brume derrière Cliff. | Bois détrempé et câble de campagne. Réserver un espace visuel aux soldats spectraux appelés par Cliff. |
+| Camp MULE | Tentes, mâts et caisses stockées dans un fond de vallée. Les colis constituent le point d’intérêt de la faction. | Maintenir les éléments de camp et les longueurs de sangle sous les chevilles ou sur les côtés. Une vraie détection de fret doit rester identifiable devant ces objets. |
+| Laboratoire de Heartman | Le mobilier habité, les rangements et la lumière froide du dehors racontent les intervalles passés à attendre. | Un fil ou un instrument en bord de cadre donne de la profondeur. Préserver l’espace devant le thorax, où se lit le défibrillateur de Heartman. |
+| Atelier de Mama | Un établi et la trame d’un plafond endommagé donnent deux profondeurs à un même volume. | Une pièce mécanique isolée et un câble bas suffisent à situer la piste. La ligne d’un futur ancrage doit pouvoir traverser le centre d’un seul regard. |
+| Usine en ruines | Les travées du complexe industriel reprennent le lieu ajouté par le Director’s Cut. Une ouverture découpe les silhouettes devant les conduites [8]. | Plancher en béton et rive de métal. Un joint transversal donne un repère de recul à proximité du mur. |
+| Abri sous la pluie temporelle | Le rideau de pluie au-delà de l’auvent fait sentir la profondeur et la limite entre sec et humide. | Les objets de l’abri encadrent le premier plan. La pointe et les baleines du parapluie de Fragile doivent rester lisibles en profil. |
+| Bassin de goudron · arène supplémentaire | Un bassin noir reflète les vestiges industriels et le ciel à l’extérieur de la piste. | Margelle continue aux pieds. Réserver les reflets dorés les plus francs aux techniques de Higgs. |
+| Col de Mountain Knot · arène supplémentaire | La succession des crêtes enneigées situe le duel en altitude. Un passage dégagé se dessine au milieu de la pente. | Les reliefs du premier plan restent bas. Les bords des bottes émergent sur la neige, même quand les deux joueurs se rapprochent. |
+
+**Découpage pour l’intégration.** Produire un panorama opaque et un WebP avec transparence pour les objets proches. Dans la vue de 1 280 × 720, le sol de simulation passe à 588. Le moteur déplace le paysage de 0,14 fois le décalage caméra et le premier plan de 0,8 fois ce décalage. Le décor proche doit déborder du cadre à ses deux extrêmes. Une paire de captures, joueurs serrés à gauche puis à droite, révèle immédiatement une bordure vide ou une rambarde qui empiète sur un combattant.
+
+## 8. Tournoi et modes complémentaires
+
+### Lire et reprendre un tableau
+
+À quatre participants, deux demi-finales déterminent la finale. À six, deux des quatre rencontres du premier tour comportent une exemption, et les deux autres se jouent ou se simulent. À huit, quatre quarts de finale ouvrent le tournoi. Une exemption qualifie une entrée sans lui attribuer de victoire en manches. Le tirage sauvegarde l’identité du participant, son combattant et sa place dans le tableau. J1 et J2 peuvent donc choisir Sam et rester reconnaissables jusque dans le résultat.
+
+**Exemple à six.** J2 rencontre une IA pendant que J1 attend sa demi-finale. L’écran de duel indique les commandes J1 pour cet humain seul. À la fin, le tableau attribue pourtant le résultat à l’entrée J2 qui s’était qualifiée. Si les deux humains se retrouvent en finale, chacun récupère son côté de commandes. Une fermeture du jeu entre ces deux rencontres doit restituer les deux qualifiés et le premier score. Une fermeture en cours de combat renvoie au duel restant à jouer.
+
+| Mode | Parcours du joueur | Vérification |
+|---|---|---|
+| Histoire | Choisir un combattant, lire son introduction, battre ses trois adversaires et revoir les scènes débloquées dans la galerie. | La revanche reprend au duel perdu. Une scène rejouée dans la galerie ne valide aucun chapitre supplémentaire. |
+| Arcade | Disputer les trois duels de la route du personnage à la suite. | Les adversaires et leur ordre correspondent à la route affichée avant le premier duel. |
+| Versus | Choisir les deux combattants et l’arène, puis affronter une IA ou un deuxième joueur local. | Les deux combattants peuvent être identiques. Un changement de côté inverse l’avant et l’arrière de chaque personnage. |
+| Entraînement | Choisir un mannequin immobile, en garde ou piloté par l’IA. Activer l’affichage des volumes et éprouver une technique. | Lire le début de la portée et la hauteur du contact, puis recommencer côté opposé. Le mannequin récupère sa vitalité après un K.-O. |
+| Tournoi | Inscrire un ou deux humains, tirer le tableau et aller jusqu’au champion. | Une rencontre entre deux IA fournit son score. Le joueur peut reprendre le prochain duel ou revoir le tableau terminé. |
+
+**Extensions de jeu prévues.** Un enregistrement d’entraînement devra mémoriser les entrées du mannequin pour répéter exactement la même pression. Un futur replay de tournoi devra retrouver le tirage et les entrées de chaque match joué. La lecture et l’enregistrement des commandes comptent comme deux travaux distincts des sauvegardes de scores actuelles.
+
+## 9. Direction des sprites et du son
+
+### Un geste, un point d’appui
+
+Préparer chaque pose sur fond transparent, personnage entier, initialement tourné vers la droite. Repérer la semelle qui porte le poids ainsi que la position du bassin. Prenons une fente de Fragile. La position du buste descend, sa largeur augmente et la main arrive devant la ligne des épaules. Recadrer sur la boîte visible, conserver dans le moteur l’ancrage mesuré entre les semelles, puis visionner l’entrée et la sortie de la pose sur le même dallage. Un glissement du pied arrière se corrige dans le calage du dessin. Un adversaire touché trop tôt demande de revoir les volumes dans le dojo.
+
+| Mouvement à dessiner | Départ | Pose caractéristique | Retour et contrôle |
+|---|---|---|---|
+| Garde et déplacement | Genoux souples, regard à hauteur du rival. | Au pas avant, le pied qui se lève libère la cheville arrière. Le harnais, le pan de cape ou le parapluie suivent avec retard. | Reposer le pied puis ramener le centre de masse. Vérifier le même cycle face à gauche. |
+| Coup léger et fort | Un retrait bref donne sa direction au léger. Le fort engage plus tôt le bassin. | La main, la caisse ou le bras d’ordre se détache nettement du torse. | Récupération raccourcie sur le léger, rééquilibrage lisible sur le fort. Compter les pas du moteur, même si un dessin reste affiché plusieurs pas. |
+| Impact et garde | Déterminer si le coup touche, est bloqué ou passe à côté. | Sur un impact, décaler d’abord le buste. En garde, fermer les avant-bras au contact. | Reprendre le contrôle à la fin de l’étourdissement ou du blocage. La pose visible et la durée de perte de contrôle se vérifient séparément. |
+| Saut et réception | Plier les jambes avant la poussée. | Lire un point haut et le déplacement horizontal sans suivre le décor. | Premier contact des semelles, flexion, retour en garde. Comparer les hauteurs de la capsule et du masque avant et après. |
+| Victoire et finalité | L’invite conserve la position des corps obtenue au K.-O. | Le geste en arène se prolonge dans un plan illustré propre au gagnant. | Garder le vainqueur et le score lorsqu’on passe au résultat. Éprouver les deux côtés et chaque adversaire miroir. |
+
+**Lecture des personnages.** Sam amortit la charge par les hanches. Fragile économise ses gestes, la ligne du parapluie prolonge la main. Higgs ouvre le cadre autour du masque avec son poids porté en arrière. Chez Cliff, le regard reste fixe pendant que la main donne l’ordre. Un miroir horizontal de la silhouette inverse aussi le côté du matériel. Une future vue gauche dessinée devra reprendre les asymétries corporelles de la référence, en particulier l’équipement de Sam.
+
+### Écouter une action sans regarder le HUD
+
+Le moteur joue déjà de courts signaux synthétisés pour annoncer notamment la manche et la fin du duel. Pour la passe sonore dédiée, enregistrer ou créer séparément l’effort, le contact et la traîne du geste. Associer à Sam une traction de sangle puis le cliquet du fermoir, à Fragile l’ouverture sèche des baleines suivie d’une disparition d’ambiance, à Higgs le déplacement visqueux puis la retombée d’une goutte, à Cliff le déclic d’émission suivi d’un souffle de radio. Dans le montage final, la confirmation d’un contact doit rester audible après plusieurs coups rapprochés. Le joueur qui coupe le son doit pouvoir retrouver le départ et la fin de chaque action par la silhouette et le HUD.
+
+## 10. Production et recette
+
+Pour intégrer un personnage d’extension, commencer par un duel miroir complet. Résoudre le portrait et les pieds sur une arène neutre, relier les commandes, puis contrôler chaque technique dans les deux directions. Brancher ensuite les trois adversaires de la route, l’illustration du rival et la finalité. Un portrait ou une fiche de personnage isolés ne suffisent pas pour le compter dans la sélection jouable.
+
+| Essai reproductible | Observation attendue |
+|---|---|
+| Extraire une copie du dépôt, ouvrir `JOUER.html`, lancer Échos de la Grève, puis revenir à la campagne. | La campagne, ses cinq lots et le menu de combat s’ouvrent par leurs chemins relatifs. Le bouton de retour mène à l’écran titre. |
+| Entrer en Versus avec deux personnages identiques et permuter les côtés. | Chaque joueur conserve ses commandes. La technique « avant » et sa portée suivent l’orientation de l’avatar. |
+| Laisser les deux personnages aux extrémités de chaque arène, puis les rapprocher jusqu’au contact. | Sol continu, bords pleins, pied avant reconnaissable, tête et avertissements visibles pendant le changement de zoom. |
+| Jouer une campagne, perdre au rival, gagner la revanche et rouvrir la galerie. | Même duel après la défaite, un épilogue pour le gagnant du parcours et des images correspondant au point de vue choisi. |
+| Terminer un duel décisif de chaque côté, déclencher la finalité, puis recommencer en laissant l’invite expirer. | Dans le premier essai, l’image appartient au vainqueur. Dans le second, le résultat arrive directement. |
+| Reprendre un tableau à six après une qualification automatique et un match joué. | Les exemptions concernent deux entrées distinctes. Les qualifiés, les scores et les places du tour suivant sont conservés. |
+
+Les scénarios automatisés se trouvent dans `modes/echos-de-la-greve/qa/`. Le test `parcours.cjs` exerce les transitions des menus et la progression. Le test `techniques.cjs` pilote le moteur réel, décode le catalogue d’images et compare les commandes sur les deux côtés. Le test `mule.cjs` suit le marqueur et la caisse de chaque côté du terrain, y compris pendant une pause, un blocage ou un saut. Les captures de sélection, de duel et de finalité donnent les points de comparaison pour la revue artistique. [Captures en jeu](apercus/)
+
+## 11. Références officielles
+
+Les numéros ci-dessous renvoient aux fiches des chapitres 1 à 7. La présentation, le rôle et l’équipement du personnage viennent des sources indiquées. Les noms des techniques d’Échos de la Grève, leur coût, les dialogues de rivalité et les cadrages latéraux appartiennent au fan-game.
+
+| Réf. | Élément à comparer | Source primaire |
+|---|---|---|
+| 1 | Sam porteur, capsule de BB et apparence générale du premier épisode. Examiner l’attache de la capsule et l’encombrement du chargement. | [PlayStation France · Death Stranding](https://www.playstation.com/fr-fr/games/death-stranding/) |
+| 2 | Détection des MULEs, cargaison dans la main, parade au lien et vues du terrain. Comparer la relation entre l’outil, les hanches et le fret. | [Kojima Productions · Conseils pour la région orientale](https://www.kojimaproductions.jp/en/DSTips) |
+| 3 | Stand de tir du Director’s Cut et gestes ajoutés au répertoire de Sam, dont le coup de genou sauté. | [PlayStation France · Nouveautés du Director’s Cut](https://www.playstation.com/fr-fr/editorial/how-death-stranding-directors-cut-expands-kojimas-sci-fi-epic/) |
+| 4 | Portraits illustrés et fonctions de Die-Hardman, Higgs, Fragile, Heartman et Cliff. Vérifier les traits, le masque, la capuche et la découpe des tenues du premier épisode. | [PlayStation Blog · Personnages de Death Stranding](https://blog.de.playstation.com/2021/10/19/death-stranding-das-sind-die-charaktere/) |
+| 5 | Téléportation de Fragile, rapport de Higgs aux Échoués et rencontres de Sam avec Cliff sur les champs de bataille. | [PlayStation Blog · Récit du premier épisode](https://blog.de.playstation.com/2025/06/23/death-stranding-was-bisher-geschah/) |
+| 6 | Première rencontre entre Sam et Mama, environnement de travail et mise en scène de son lien avec un Échoué. Comparer l’espace autour de sa main avec le plan d’origine. | [PlayStation Blog · Présentations de la Gamescom 2019](https://blog.playstation.com/2019/08/20/death-stranding-new-footage-and-character-spotlight-videos/) |
+| 7 | Heartman, sa cadence de vie et son équipement dans son espace de recherche. Examiner ses gestes entre deux consultations du moniteur. | [PlayStation · Présentation filmée de Heartman](https://www.youtube.com/watch?v=jKFJrET-3EI) |
+| 8 | L’usine en ruines du Director’s Cut et le saut de Fragile depuis le parapluie de la chambre privée. | [Kojima Productions · Guide du Director’s Cut](https://www.kojimaproductions.jp/en/death-stranding-directors-cut-beginners-guide) |
+
+Pour valider une correspondance 1:1, relever la version du jeu et le plan officiel comparé, puis placer la capture et le sprite à même hauteur de tête. Examiner le profil, chaque accessoire visible, son côté, sa fixation et la palette sous une lumière comparable. Un élément caché sur toutes les vues consultées reste à documenter. Conserver séparément l’état de chaque pose et les mouvements restant à dessiner.

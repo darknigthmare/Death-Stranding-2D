@@ -5,25 +5,28 @@
   const WIDTH = 1280, HEIGHT = 720, FLOOR = 588, STEP = 1000 / 60;
   const INK = '#081318', ICE = '#b5eaf0', AMBER = '#efba60';
   const TAU = Math.PI * 2;
+  const cargoWidth = 42, cargoHeight = 21;
   const clamp = (x, lo, hi) => Math.max(lo, Math.min(hi, x));
   const mix = (a, b, t) => a + (b - a) * t;
   const roster = {
     sam:     {name:'Sam Porter Bridges', short:'SAM', suit:'#365570', cloth:'#506e85', trim:'#ffad57', metal:'#a8c5cd', skin:'#c0947e', h:176, speed:4.4, power:1, move:'Bola de liaison', end:'Cargaison sécurisée'},
     higgs:   {name:'Higgs Monaghan', short:'HIGGS', suit:'#292936', cloth:'#46414b', trim:'#d8a34a', metal:'#ecd08b', skin:'#bd9a56', h:184, speed:4.05, power:1.06, move:'Marée noire', end:'Rideau de goudron'},
     fragile: {name:'Fragile', short:'FRAGILE', suit:'#283946', cloth:'#3f5362', trim:'#a9e6ee', metal:'#b2cbd0', skin:'#d0a28e', h:166, speed:4.95, power:0.94, move:'Pas de Grève', end:'Dernier saut'},
-    cliff:   {name:'Cliff Unger', short:'CLIFF', suit:'#3c493d', cloth:'#59614c', trim:'#f09c66', metal:'#a5aa89', skin:'#bf9783', h:179, speed:4.2, power:1.03, move:'Écho de section', end:'Rappel de section'}
+    cliff:   {name:'Cliff Unger', short:'CLIFF', suit:'#3c493d', cloth:'#59614c', trim:'#f09c66', metal:'#a5aa89', skin:'#bf9783', h:179, speed:4.2, power:1.03, move:'Écho de section', end:'Rappel de section'},
+    mule:    {name:'Porteur MULE', short:'MULE', suit:'#9f7134', cloth:'#4f4536', trim:'#f5bd58', metal:'#a19c8a', skin:'#b59170', h:177, speed:4.25, power:1, move:'Balayage de capteur', end:'Hors inventaire'}
   };
   // An anchor is the horizontal midpoint between supporting feet in the source crop.
   const spriteGeometry = {
     sam: {stanceAnchor:.50, actionAnchor:.40, actionScale:.87},
-    fragile: {stanceAnchor:.53, actionAnchor:.43, actionScale:.80},
-    higgs: {stanceAnchor:.69, actionAnchor:.57, actionScale:1},
-    cliff: {stanceAnchor:.50, actionAnchor:.35, actionScale:.78}
+    fragile: {stanceAnchor:.53, actionAnchor:.43, actionScale:.80, hitAnchor:.49, stepAnchor:.51, hitScale:.96, stepScale:.98},
+    higgs: {stanceAnchor:.69, actionAnchor:.57, actionScale:1, hitAnchor:.63, stepAnchor:.58, hitScale:.96, stepScale:.98},
+    cliff: {stanceAnchor:.50, actionAnchor:.35, actionScale:.78},
+    mule: {stanceAnchor:.59, actionAnchor:.39, actionScale:.86, hitAnchor:.45, stepAnchor:.52, hitScale:.92, stepScale:.97}
   };
-  const stages = {
-    shore:{title:'LA GRÈVE', code:'BEACH / 01', sky:['#122c39','#668184','#a9a78d'], mountains:['#7c9091','#526d71','#324e54'], ground:['#435c5d','#162a32','#061219'], light:'#d3d0aa'},
-    terminal:{title:'CENTRE DE DISTRIBUTION', code:'BRIDGES / 02', sky:['#112d3a','#4e727e','#92a8a7'], mountains:['#79949b','#4e717e','#334f5a'], ground:['#4b6068','#1c323a','#09181f'], light:'#a6d2d8'},
-    battlefield:{title:'LE CHAMP DE BATAILLE', code:'LIMBO / 03', sky:['#382f35','#816e69','#c39e83'], mountains:['#8f7f77','#716965','#4c5252'], ground:['#5d5a54','#2d3433','#11191c'], light:'#e2b58a'}
+  const stages = host.StrandContent?.arenas || {
+    shore:{title:'La Grève', sky:'#668184', light:'#d3d0aa', weather:'rain'},
+    terminal:{title:'Centre de distribution', sky:'#4e727e', light:'#a6d2d8', weather:'rain'},
+    battlefield:{title:'Champ de bataille', sky:'#816e69', light:'#e2b58a', weather:'embers'}
   };
   // start, active and recover are counted separately. Reach extends from the fighter's center.
   const moves = {
@@ -44,18 +47,24 @@
     mine:    {name:"Empreinte d’or", start:18, active:1, recover:16, cost:21},
     feint:   {name:"Faux départ", start:9, active:10, recover:20, cost:14},
     post:    {name:"Poste avancé", start:19, active:1, recover:15, cost:18},
-    recall:  {name:"Rappel de section", start:12, active:1, recover:22, cost:16}
+    recall:  {name:"Rappel de section", start:12, active:1, recover:22, cost:16},
+    mule:    {name:'Balayage de capteur', start:18, active:12, recover:17, cost:28},
+    crate:   {name:'Consigne mobile', start:16, active:1, recover:18, cost:18},
+    retrieve:{name:'Saisie de lot', start:13, active:3, recover:24, cost:16}
   };
   const directional = {
     sam:{forward:'brace',back:'parry'}, fragile:{forward:'fan',back:'beacon'},
-    higgs:{forward:'mine',back:'feint'}, cliff:{forward:'post',back:'recall'}
+    higgs:{forward:'mine',back:'feint'}, cliff:{forward:'post',back:'recall'},
+    mule:{forward:'crate',back:'retrieve'}
   };
   const shotHit = {
     sam:{damage:10,balance:17,stun:26,push:3},
     higgs:{damage:14,balance:21,stun:23,push:6,launch:6},
     cliff:{damage:5,balance:9,stun:11,push:4},
     mine:{damage:6,balance:12,stun:15,push:5,level:'low'},
-    recall:{damage:8,balance:15,stun:16,push:4,launch:7}
+    recall:{damage:8,balance:15,stun:16,push:4,launch:7},
+    crate:{damage:6,balance:11,stun:12,push:4,level:'low'},
+    retrieve:{damage:7,balance:13,stun:14,push:4,level:'low'}
   };
   const keyActions = ['left','right','up','down','light','heavy','special','guard','throw','finish'];
   let match, raf = 0, serial = 0, audio, sound = true;
@@ -87,7 +96,7 @@
   function snapshot() {
     const m=match; if (!m) return null;
     return {phase:m.phase, paused:m.paused, round:m.round, wins:m.wins.slice(), maxRounds:m.toWin, time:Math.ceil(m.remaining/60),
-      stage:m.stage, mode:m.mode, winner:m.winner, finisher:m.finisher, fighters:m.f.map(f=>({id:f.id,hp:Math.ceil(f.hp),balance:Math.ceil(f.balance),chiral:Math.floor(f.chiral),combo:f.combo,x:f.x,y:f.y,guard:f.guard,action:f.act?.key || '',stun:f.stun,move:f.lastMove,marker:f.marker ? {...f.marker} : null})), training:{...m.training}};
+      stage:m.stage, mode:m.mode, winner:m.winner, finisher:m.finisher, fighters:m.f.map(f=>({id:f.id,hp:Math.ceil(f.hp),balance:Math.ceil(f.balance),chiral:Math.floor(f.chiral),combo:f.combo,x:f.x,y:f.y,guard:f.guard,action:f.act?.key || '',stun:f.stun,move:f.lastMove,marker:f.marker ? {...f.marker} : null,scan:f.scan ? {...f.scan} : null})), training:{...m.training}};
   }
   function start(o) {
     if (!o || !o.canvas || typeof o.canvas.getContext!=='function') throw new TypeError('StrandFight.start requires a canvas.');
@@ -110,10 +119,13 @@
     for (const id of new Set(ids)) {
       m.images[id] = load((o.visuals || {})[id] || art.fighters?.[id]);
       m.images[id + 'Action'] = load(art.actions?.[id]);
+      m.images[id + 'Step'] = load(art.steps?.[id]);
+      m.images[id + 'Hit'] = load(art.hits?.[id]);
       if (m.mode !== 'training') m.images[id + 'Finale'] = load(art.finishers?.[id]);
     }
     m.scene.back = load(art.stages?.[stage]);
     m.scene.front = load(art.foregrounds?.[stage]);
+    if (ids.includes('mule')) m.images.cargo = load(art.props?.cargo);
     if (typeof o.sound==='boolean') sound=o.sound;
     o.canvas.width=WIDTH; o.canvas.height=HEIGHT; wakeAudio(); draw(m); notify(m,true);
     function frame(t) {
@@ -162,8 +174,13 @@
     }
   }
   function beginAttack(m,f,foe,key) {
+    if (key === 'retrieve' && (f.marker?.kind !== 'crate' || f.marker.travel === 'retrieve')) {
+      f.notice = f.marker ? 'RAPPEL EN COURS' : 'AUCUNE CAISSE'; f.noticeTTL = 30;
+      return;
+    }
     const a=moves[key];if (a.cost && f.chiral<a.cost) {f.notice='CHIRAL INSUFFISANT';f.noticeTTL=42;return;}
     if (a.cost) {f.chiral-=a.cost;f.notice=(a.name || f.spec.move).toUpperCase();f.noticeTTL=50;tone(260,.12,'sine',.035,480);}
+    if (key === 'retrieve') f.marker.ttl = Math.max(f.marker.ttl, a.start + 1);
     f.face=foe.x>=f.x?1:-1; f.act={key,t:0,hit:false,target:clamp(foe.x,48,WIDTH-48),hitConfirmed:false};f.lastMove=key;
     if (key==='grab') tone(140,.07,'triangle',.025,85);
   }
@@ -192,12 +209,22 @@
     f.aiWait=5+Math.floor(r()*(16-d*4));f.keys={};
     if (f.stun || f.blockStun) return;
     const threat=foe.act && gap<156 || m.shots.some(s=>s.owner===0 && Math.abs(s.x-f.x)<175);
-    if (threat && r()<.38+d*.23) {f.keys.guard=true;f.keys.down=foe.act?.key==='sweep';return;}
+    const lowCrate = foe.marker?.kind === 'crate' && foe.marker.travel && Math.abs(foe.marker.x - f.x) < 95;
+    if ((threat || lowCrate) && r()<.38+d*.23) {f.keys.guard=true;f.keys.down=foe.act?.key==='sweep' || lowCrate;return;}
+    if (f.id === 'mule' && f.marker?.kind === 'crate' && !f.marker.travel) {
+      const crateAhead = (f.marker.x - f.x) * (foe.x >= f.x ? 1 : -1);
+      if (crateAhead > gap && f.chiral >= moves.retrieve.cost) {
+        f.keys[back] = true; pushInput(m,f,'special'); return;
+      }
+      if (crateAhead > 0 && crateAhead <= moves.heavy.reach && gap < crateAhead + 145) {
+        pushInput(m,f,'heavy'); return;
+      }
+    }
     if (gap>122) {
       f.keys[forward]=true;
       if (gap>158 && gap<600 && f.chiral>=28 && r()<.12+d*.04) {
         // Alternate deployment with a neutral projectile or approach.
-        f.keys[forward]=['cliff','higgs'].includes(f.id) && !f.marker && r()<.45;
+        f.keys[forward]=['cliff','higgs','mule'].includes(f.id) && !f.marker && r()<.45;
         if (f.id==='cliff' && f.marker && Math.abs(foe.x-f.marker.x)<72) f.keys[back]=true;
         pushInput(m,f,'special');
       }
@@ -211,7 +238,10 @@
       else if (roll<.22) {f.keys.guard=true;}
       else if (roll<.28) {f.keys[forward]=true;pushInput(m,f,'up');}
       else if (roll<.45 && f.chiral>=28) {
-        if (d && r()<.55) f.keys[r()<.5 ? forward : back]=true;
+        if (d && r()<.55) {
+          const deploy = (f.id === 'mule' && !f.marker) || r()<.5;
+          f.keys[deploy ? forward : back]=true;
+        }
         pushInput(m,f,'special');
       }
       else {f.keys[forward]=gap>76;f.keys.down=r()<.16;pushInput(m,f,roll>.72?'heavy':'light');}
@@ -221,7 +251,8 @@
     f.flash=Math.max(0,f.flash-1);f.postHit=Math.max(0,f.postHit-1);
     if (f.comboTTL>0 && --f.comboTTL===0) f.combo=0;
     if(f.noticeTTL>0) f.noticeTTL--;
-    if (f.marker && --f.marker.ttl <= 0) f.marker=null;
+    if (f.marker && f.marker.travel !== 'retrieve' && --f.marker.ttl <= 0) f.marker=null;
+    if (f.scan && --f.scan.ttl <= 0) f.scan = null;
     if (f.stun>0) f.stun--; if(f.blockStun>0) f.blockStun--;
     if (!f.act && !f.stun && !f.dash) f.face=o.x>=f.x?1:-1;
     actOnQueue(m,f,o);
@@ -240,6 +271,12 @@
       if (directional[f.id].forward === a.key || directional[f.id].back === a.key)
         stepDirectional(m, f, index, a, d);
       if (a.key==='heavy' && a.t===d.start-3) f.x+=f.face*12;
+      if (a.key === 'heavy' && a.t === d.start && f.marker?.kind === 'crate' && !f.marker.travel) {
+        const reach = (f.marker.x - f.x) * f.face;
+        if (reach >= -12 && reach <= d.reach) {
+          Object.assign(f.marker, {travel:'crate', endX:clamp(f.marker.x + 112 * f.face, 48, WIDTH-48), hit:false});
+        }
+      }
       if (a.key==='sam' && a.t===d.start) makeShot(m,index,'sam',f.x+f.face*37,FLOOR-f.y-87,f.face*12,76);
       if (a.key==='higgs' && a.t===d.start) makeShot(m,index,'higgs',a.target,FLOOR-49,0,6);
       if (a.key==='cliff' && [d.start,d.start+8].includes(a.t)) makeShot(m,index,'cliff',f.x+f.face*36,FLOOR-f.y-(a.t===d.start?97:53),f.face*13,62);
@@ -272,6 +309,13 @@
           break;
         case 'post':
           f.marker = {kind:'post', x:clamp(f.x + f.face * 165, 48, WIDTH - 48), ttl:160};
+          break;
+        case 'crate':
+          f.marker = {kind:'crate', x:clamp(f.x + f.face * 86, 48, WIDTH-48), ttl:180, travel:null, hit:false};
+          tone(225,.07,'triangle',.03,160);
+          break;
+        case 'retrieve':
+          if (f.marker?.kind === 'crate') Object.assign(f.marker, {travel:'retrieve', hit:false});
           break;
         case 'recall':
           if (f.marker) {
@@ -366,6 +410,38 @@
     }
     m.f.forEach((f,i) => {
       const mark = f.marker, opponent = m.f[1-i];
+      if (f.act?.key === 'mule') {
+        const action = f.act, waveFrame = action.t - moves.mule.start;
+        if (waveFrame >= 0 && waveFrame < moves.mule.active && !action.hit) {
+          const distance = Math.abs(opponent.x - f.x);
+          const radius = (waveFrame + 1) * 38;
+          if (distance >= radius - 61 && distance <= radius + 22 && !immune(opponent)) {
+            action.hit = true;
+            if (opponent.guard) {
+              tone(160,.10,'triangle',.024,135);
+              f.notice = 'SCAN BLOQUÉ'; f.noticeTTL = 36;
+            } else {
+              f.scan = {x:opponent.x, ttl:120};
+              tone(570,.085,'sine',.036,760);
+            }
+          }
+        }
+      }
+      if (mark?.kind === 'crate' && mark.travel) {
+        const from = mark.x, recalling = mark.travel === 'retrieve';
+        const to = recalling ? f.x : mark.endX;
+        const speed = recalling ? 14 : 10;
+        mark.x += clamp(to - from, -speed, speed);
+        const path = {l:Math.min(from,mark.x)-cargoWidth/2, r:Math.max(from,mark.x)+cargoWidth/2, t:FLOOR-cargoHeight, b:FLOOR};
+        if (!mark.hit && !immune(opponent) && intersects(path,bodies[1-i])) {
+          mark.hit = true;
+          events.push({i, d:shotHit[mark.travel], kind:mark.travel, face:Math.sign(to-from) || f.face});
+        }
+        if (mark.x === to) {
+          if (recalling) f.marker = null;
+          else mark.travel = null;
+        }
+      }
       if (mark?.kind !== 'mine' || mark.ttl > 130 || immune(opponent)) return;
       if (intersects({l:mark.x-22,r:mark.x+22,t:FLOOR-23,b:FLOOR+1}, bodies[1-i])) {
         events.push({i, d:shotHit.mine, kind:'mine', face:Math.sign(opponent.x-mark.x) || f.face});
@@ -389,7 +465,7 @@
   function winRound(m,index,reason) {
     m.winner=index+1;m.wins[index]++;m.reason=reason;
     m.phase=m.wins[index]>=m.toWin && reason==='ko'?'finish':'roundover';m.phaseTicks=m.phase==='finish'?135:96;
-    m.shots=[];clearControls(m);m.f.forEach(f=>{f.marker=null;f.act=null;f.stun=0;f.crouch=false;});tone(145,.35,'sine',.045,71);notify(m,true);
+    m.shots=[];clearControls(m);m.f.forEach(f=>{f.marker=null;f.scan=null;f.act=null;f.stun=0;f.crouch=false;});tone(145,.35,'sine',.045,71);notify(m,true);
   }
   function activateFinish(m) {
     if(m.phase!=='finish')return;
@@ -479,7 +555,7 @@
 
   function scenery(m) {
     const c = m.ctx, s = m.scene, theme = stages[m.stage];
-    c.fillStyle = theme.sky[1];
+    c.fillStyle = theme.sky;
     c.fillRect(0, 0, WIDTH, HEIGHT);
     if (ready(s.back)) {
       c.drawImage(s.back, -28 - m.camera * .14, -12, WIDTH + 56, HEIGHT + 24);
@@ -489,15 +565,22 @@
     shade.addColorStop(1, 'rgba(2,12,17,.42)');
     c.fillStyle = shade;
     c.fillRect(0, 0, WIDTH, HEIGHT);
+    if (!theme.weather) return;
+    const flakes = theme.weather === 'snow';
+    const dust = theme.weather === 'dust';
+    const embers = theme.weather === 'embers';
     c.beginPath();
     for (const drop of s.rain) {
-      const x = (drop.x - m.camera * .38 + 1536 - (m.tick * .38 % 1536)) % 1536 - 128;
-      const y = (drop.y + m.tick * drop.speed) % HEIGHT;
+      const drift = flakes ? Math.sin(m.tick * .025 + drop.x) * 14 : 0;
+      const x = ((drop.x - m.camera * .38 - m.tick * .38 + drift) % 1536 + 1536) % 1536 - 128;
+      const speed = dust || flakes ? drop.speed * .24 : drop.speed;
+      const y = (drop.y + m.tick * speed) % HEIGHT;
+      if (theme.weather === 'shelter' && x > WIDTH * .18 && x < WIDTH * .88) continue;
       c.moveTo(x, y);
-      c.lineTo(x - (m.stage === 'battlefield' ? 1 : 2), y + drop.speed);
+      c.lineTo(x - (dust ? 3 : 1), y + (dust ? 0 : flakes ? 1 : drop.speed));
     }
-    c.lineWidth = 1;
-    c.strokeStyle = m.stage === 'battlefield' ? 'rgba(251,210,151,.28)' : 'rgba(207,226,224,.24)';
+    c.lineWidth = flakes ? 2 : 1;
+    c.strokeStyle = embers || dust ? 'rgba(251,210,151,.28)' : 'rgba(207,226,224,.28)';
     c.stroke();
   }
 
@@ -534,11 +617,25 @@
   function drawFighter(m, f, index) {
     const c = m.ctx, feet = FLOOR - f.y;
     const act = f.act, actionArt = m.images[f.id + 'Action'];
-    const movement = !f.act && !f.guard && !f.stun && (f.keys.left || f.keys.right);
+    const movement = m.phase === 'fight' && f.grounded && !f.act && !f.guard && !f.stun &&
+      !f.blockStun && !f.crouch && (f.dash || !!f.keys.left !== !!f.keys.right);
     const phase = act ? act.t / (moves[act.key].start + moves[act.key].active + moves[act.key].recover) : 0;
     const reach = act ? Math.sin(Math.PI * Math.min(1, Math.max(0, phase))) : 0;
     const performing = act && act.t >= moves[act.key].start * .61 && phase < .85;
-    const image = performing && ready(actionArt) ? actionArt : m.images[f.id];
+    let pose = 'stance';
+    let image = m.images[f.id];
+    const hitArt = m.images[f.id + 'Hit'];
+    const stepArt = m.images[f.id + 'Step'];
+    if (f.stun > 0 && ready(hitArt)) {
+      pose = 'hit';
+      image = hitArt;
+    } else if (performing && ready(actionArt)) {
+      pose = 'action';
+      image = actionArt;
+    } else if (movement && (f.dash || Math.sin(f.walk) >= 0) && ready(stepArt)) {
+      pose = 'step';
+      image = stepArt;
+    }
     const lost = m.winner && m.winner !== index + 1 && ['finish','cinema','roundover','ended'].includes(m.phase);
     const compression = f.crouch ? .69 : f.guard ? .93 : lost ? .84 : 1;
     const breathing = movement ? 2.1 * Math.sin(f.walk) : 1.1 * Math.sin(m.tick * .055 + index);
@@ -551,12 +648,10 @@
     c.rotate(sway + (performing ? .025 : .12) * reach);
     if (immune(f)) c.globalAlpha = .63;
     if (ready(image)) {
-      const action = performing && image === actionArt;
-      // Lowered attack poses occupy less height on the same character scale.
       const geometry = spriteGeometry[f.id];
-      const h = height * (action ? geometry.actionScale : 1);
+      const h = height * (geometry[pose + 'Scale'] || 1);
       const w = h * image.naturalWidth / image.naturalHeight;
-      const anchor = action ? geometry.actionAnchor : geometry.stanceAnchor;
+      const anchor = geometry[pose + 'Anchor'] ?? geometry.stanceAnchor;
       if (f.flash > 1 && (f.flash % 4 < 2)) c.filter = 'brightness(1.5)';
       c.drawImage(image, -w * anchor + 9 * reach, -h, w, h);
     } else {
@@ -610,6 +705,21 @@
   function effects(m) {
     const c = m.ctx;
     for (const f of m.f) {
+      if (f.act?.key === 'mule') {
+        const wave = f.act.t - moves.mule.start;
+        if (wave >= 0 && wave < moves.mule.active) {
+          const radius = (wave+1) * 38;
+          c.strokeStyle = AMBER; c.lineWidth = 2;
+          c.beginPath(); c.ellipse(f.x,FLOOR-6,radius,5+radius*.06,0,0,TAU); c.stroke();
+        }
+      }
+      if (f.scan) {
+        const x = f.scan.x, y = FLOOR-8;
+        line(c,x-15,y-9,x-15,y,AMBER,2);
+        line(c,x-15,y,x-6,y,AMBER,2);
+        line(c,x+15,y-9,x+15,y,AMBER,2);
+        line(c,x+15,y,x+6,y,AMBER,2);
+      }
       const mark = f.marker;
       if (!mark) continue;
       const {x,kind,ttl} = mark;
@@ -619,6 +729,14 @@
       } else if (kind === 'mine') {
         oval(c,x,FLOOR-2,17,4,ttl>130?'#8b784c':'#edc46e');
         for (let toe=-1; toe<=1; toe++) oval(c,x+toe*8,FLOOR-7,3,2,AMBER);
+      } else if (kind === 'crate') {
+        if (ready(m.images.cargo)) {
+          c.drawImage(m.images.cargo,x-cargoWidth/2,FLOOR-cargoHeight,cargoWidth,cargoHeight);
+        } else {
+          c.fillStyle='#414549'; c.fillRect(x-cargoWidth/2,FLOOR-cargoHeight,cargoWidth,cargoHeight);
+          c.fillStyle=AMBER; c.fillRect(x-9,FLOOR-cargoHeight,3,cargoHeight); c.fillRect(x+6,FLOOR-cargoHeight,3,cargoHeight);
+        }
+        if (mark.travel === 'retrieve') line(c,x,FLOOR-13,f.x,FLOOR-69,'rgba(241,200,111,.69)',1.5);
       } else {
         oval(c,x,FLOOR-2,19,3,'rgba(160,198,162,.65)');
         oval(c,x,FLOOR-61,6,8,'#9aafa1');
@@ -708,6 +826,12 @@
         c.strokeStyle='#c9f2ed';c.lineWidth=1.5;c.beginPath();
         c.ellipse(x,y-82,(13+t*43)*i/2,94,0,0,TAU);c.stroke();
       }
+    } else if(actor.id==='mule') {
+      const scanY = y - 155 + 140 * ((t * 2) % 1);
+      c.strokeStyle = AMBER; c.lineWidth = 2;
+      c.strokeRect(x-47,y-158,94,158);
+      line(c,x-47,scanY,x+47,scanY,'#ffe8ac',3);
+      for (let n = 0; n < 5; n++) line(c,x-28+n*12,y-8,x-28+n*12,y-18,AMBER,2);
     } else if(actor.id==='sam') {
       for(let i=0;i<5;i++)line(c,actor.x, FLOOR-91,x+(i%2?16:-16),y-36-i*17,'#d9ad76',2);
     } else {

@@ -30,7 +30,7 @@ const {chromium} = require('playwright');
     await page.goto(pathToFileURL(path.resolve(__dirname,'../index.html')).href);
     const art = await page.evaluate(async () => {
       const files = new Set();
-      for (const category of ['story','fighters','actions','portraits','stages','foregrounds','finishers']) {
+      for (const category of ['story','fighters','actions','steps','hits','portraits','stages','foregrounds','finishers','props']) {
         Object.values(StrandAssets[category]).forEach(src => files.add(src));
       }
       await Promise.all([...files].map(async src => {
@@ -44,14 +44,16 @@ const {chromium} = require('playwright');
         finishers: Object.keys(StrandAssets.finishers).sort(),
         actions: Object.keys(StrandAssets.actions).sort(),
         fronts: Object.keys(StrandAssets.foregrounds).sort(),
+        stages: Object.keys(StrandContent.stages).sort(),
         rivals: ['sam', 'higgs'].map(id => StrandAssets.story[id + '-rival'])
       };
     });
-    const roster = ['cliff','fragile','higgs','sam'];
+    const roster = ['cliff','fragile','higgs','mule','sam'];
     assert.deepEqual(art.portraits, roster);
     assert.deepEqual(art.finishers, roster);
     assert.deepEqual(art.actions, roster);
-    assert.deepEqual(art.fronts, ['battlefield','shore','terminal']);
+    assert.equal(art.stages.length,10);
+    assert.deepEqual(art.fronts, art.stages);
     assert.notEqual(art.rivals[0], art.rivals[1]);
     const results = await page.evaluate(() => {
       const canvas = document.createElement('canvas');
@@ -147,7 +149,7 @@ const {chromium} = require('playwright');
       }, {id, player});
       assert.deepEqual(result, {invite:'finish', before:[], during:'cinema', shown:[id + '.webp'], winner:player, finished:true});
     }
-    console.log('OK — quatre finalités après K.-O., illustration du vainqueur et résultat du duel.');
+    console.log('OK — cinq finalités après K.-O., illustration du vainqueur et résultat du duel.');
   } finally {
     await browser.close();
   }

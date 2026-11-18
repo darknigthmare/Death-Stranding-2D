@@ -68,7 +68,7 @@
       '<button class="tile" data-act="mode" data-mode="' + key + '"><span class="symbol"><svg aria-hidden="true" viewBox="0 0 24 24">' + icon[key] + '</svg></span>' +
       '<strong>' + modes[key] + '</strong><small>' + copy[key] + '</small>' + arrow + '</button>').join('');
     setScreen('home','<section class="hero"' + backdrop(asset.hero || asset.story?.['shore-prologue'] || asset.stages?.shore) + '><div><div class="eyebrow">Simulation chirale</div>' +
-      '<h1>Échos de<br>la Grève</h1><p>Quatre combattants suivent les traces d’un colis, d’un parapluie, d’un masque ou d’une radio.</p>' +
+      '<h1>Échos de<br>la Grève</h1><p>Choisis un combattant et suis son histoire jusqu’au duel avec son rival.</p>' +
       '<div class="actions">' + button('mode','Jouer l’histoire ' + arrow,'darkbtn','data-mode="story"') + '</div></div></section>' +
       '<section class="shelf"><div class="shelfhead"><h2>Modes de combat</h2></div><div class="tiles">' + tiles + '</div><div class="archives">' +
       button('gallery','Galerie des scènes','mini') + '<a class="mini" href="duel-originel/index.html">Duel originel · Sam / Higgs</a>' +
@@ -110,7 +110,10 @@
       ({story:'Ouvrir l’histoire',arcade:'Lancer le parcours',tournament:cup ? 'Créer un nouveau tableau' : 'Tirer le tableau',versus:'Lancer le duel',training:'Entrer dans l’arène'})[mode];
     setScreen('select','<section class="shell">' + back() + '<div class="pagehead"><div><div class="eyebrow">' + modes[mode] +
       '</div><h1>Choix du combattant</h1></div></div><div class="chars">' + cards + '</div><div class="options">' + fields +
-      '</div><div class="brief"><strong>' + character.special + '</strong> · ' + character.tip + '</div>' +
+      '</div>' + (['versus','training'].includes(mode) && asset.stages?.[config.stage] ?
+        '<figure class="stagePreview">' + image(asset.stages[config.stage],stages[config.stage]) +
+        image(asset.foregrounds?.[config.stage]) + '</figure>' : '') +
+      '<div class="brief"><strong>' + character.special + '</strong> · ' + character.tip + '</div>' +
       (['story','arcade'].includes(mode) ? '<p class="montage">' + (mode === 'story' ? '<b>' + character.story + '</b><br>' : '') + route + '</p>' : '') +
       '<div class="actions">' + (mode === 'tournament' && cup ? button('bracket',cup.rounds.at(-1)[0].winner === null ? 'Reprendre le tableau' : 'Revoir le tableau') : '') +
       button('start',startLabel + ' ' + arrow,mode === 'tournament' && cup ? 'secondary' : 'primary') +
@@ -166,7 +169,9 @@
     const [a,b] = slots.map(id => cup.entrants[id]);
     const bothHuman = a.human && b.human;
     // Match-side controllers are reassigned on screen; an isolated human always uses J1.
-    fight({p1:a.fighter, p2:b.fighter, stage:Object.keys(stages)[match.seed % 3], difficulty:cup.difficulty,
+    // The original saved brackets use their three release arenas in this order.
+    const stage = match.stage || ['shore','terminal','battlefield'][match.seed % 3];
+    fight({p1:a.fighter, p2:b.fighter, stage, difficulty:cup.difficulty,
       kind:bothHuman ? 'local' : 'cpu', mode:'tournament', title:roundName(cup.rounds[Number(match.id.split('-')[0])]),
       labels:[bracketName(a),bracketName(b)], matchId:match.id, slots});
   }

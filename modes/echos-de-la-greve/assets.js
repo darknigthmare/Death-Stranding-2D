@@ -6,17 +6,23 @@
   const story = illustrations('story', [
     'shore-prologue', 'sam-intro-shore', 'sam-higgs-rival', 'sam-intro', 'sam-ending',
     'fragile-intro', 'fragile-rival', 'fragile-ending', 'higgs-intro', 'higgs-rival', 'higgs-ending',
-    'cliff-intro', 'cliff-rival', 'cliff-ending'
+    'cliff-intro', 'cliff-rival', 'cliff-ending', 'mule-intro', 'mule-rival', 'mule-ending'
   ]);
   story['sam-rival'] = story['sam-higgs-rival'];
+  const roster = Object.keys(window.StrandContent.fighters);
+  const motion = ['fragile', 'higgs', 'mule'];
+  const arenas = Object.keys(window.StrandContent.stages);
   window.StrandAssets = {
     hero: story['sam-higgs-rival'],
     story,
-    fighters: illustrations('fighters', ['sam', 'fragile', 'higgs', 'cliff'], '-stance'),
-    actions: illustrations('fighters', ['sam', 'fragile', 'higgs', 'cliff'], '-action'),
-    portraits: illustrations('fighters', ['sam', 'fragile', 'higgs', 'cliff'], '-portrait'),
-    finishers: illustrations('finishers', ['sam', 'fragile', 'higgs', 'cliff']),
-    stages: illustrations('stages', ['shore', 'terminal', 'battlefield']),
-    foregrounds: illustrations('stages', ['shore', 'terminal', 'battlefield'], '-foreground')
+    fighters: illustrations('fighters', roster, '-stance'),
+    actions: illustrations('fighters', roster, '-action'),
+    steps: illustrations('fighters', motion, '-step'),
+    hits: illustrations('fighters', motion, '-hit'),
+    props: {cargo:'assets/props/mule-cargo.webp'},
+    portraits: illustrations('fighters', roster, '-portrait'),
+    finishers: illustrations('finishers', roster),
+    stages: illustrations('stages', arenas),
+    foregrounds: illustrations('stages', arenas, '-foreground')
   };
 })();
