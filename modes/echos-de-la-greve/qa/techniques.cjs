@@ -48,7 +48,7 @@ const {chromium} = require('playwright');
         rivals: ['sam', 'higgs'].map(id => StrandAssets.story[id + '-rival'])
       };
     });
-    const roster = ['cliff','fragile','higgs','mule','sam'];
+    const roster = ['cliff','diehardman','fragile','heartman','higgs','mama','mule','sam'];
     assert.deepEqual(art.portraits, roster);
     assert.deepEqual(art.finishers, roster);
     assert.deepEqual(art.actions, roster);
@@ -149,7 +149,7 @@ const {chromium} = require('playwright');
       }, {id, player});
       assert.deepEqual(result, {invite:'finish', before:[], during:'cinema', shown:[id + '.webp'], winner:player, finished:true});
     }
-    console.log('OK — cinq finalités après K.-O., illustration du vainqueur et résultat du duel.');
+    console.log('OK — huit finalités après K.-O., illustration du vainqueur et résultat du duel.');
   } finally {
     await browser.close();
   }

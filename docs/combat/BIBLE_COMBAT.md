@@ -12,22 +12,22 @@ Deux silhouettes se font face sur la laisse de mer. Sam se baisse pour poser une
 |---|---|---|
 | Premier noyau | Sam, Fragile, Higgs, Cliff. La Grève, le terminal Bridges et le champ de bataille de Cliff. | Distribution et lieux retenus pour la première réalisation. |
 | Jeu de combat cible | Règles chiffrées, commandes techniques, 8 fiches de combat, 8 campagnes, 8 arènes et réalisation des fatalités. | Spécifications de production. Les valeurs proposées demandent des essais en jeu. |
-| Extensions | Le porteur MULE est jouable. Die-Hardman, Mama et Heartman disposent de fiches de conception. | Les trois autres combattants, les épreuves, les replays, les fonctions avancées du dojo et le jeu en ligne restent à réaliser. |
+| Version jouable | Huit combattants, huit campagnes, dix arènes, tournoi à élimination, dojo et deux défis. | Le tableau ci-dessous donne les règles chargées par le moteur. |
 | Fidélité | Le chapitre 11 associe les décisions visuelles à des images publiées par les créateurs et l’éditeur. | Chaque costume, accessoire et côté du corps demande une comparaison visuelle avant validation 1:1. |
 
 Les mentions **source** renvoient au jeu officiel. Les rencontres, dialogues, noms de techniques, effets de jauge et plans de mise en scène ci-dessous sont **des créations du mode annexe**. L’entrée dans la simulation isole ses résultats du récit de la campagne principale. Les boutons, règles et minutages qui suivent décrivent la cible de conception. Le menu Commandes de la version jouée fait foi pour les fonctions disponibles.
 
-### Version jouable · cinq combattants et dix arènes
+### Version jouable · huit combattants et dix arènes
 
-Depuis la campagne v0.58, le bouton **Échos de la Grève** ouvre les cinq histoires de Sam, Fragile, Higgs, Cliff et du porteur MULE. Chaque combattant dispose de trois adversaires, d’une introduction, d’une rencontre avec son rival et d’un épilogue. Une victoire valide le chapitre dans le navigateur. Une défaite permet de rejouer immédiatement la même rencontre. Les scènes vues se retrouvent dans la galerie. Le menu donne aussi accès au **Duel originel**, avec ses deux récits et son propre système de commandes.
+Depuis la campagne v0.58, le bouton **Échos de la Grève** ouvre les huit histoires de Sam, Fragile, Higgs, Cliff, du porteur MULE, de Die-Hardman, de Mama et de Heartman. Chaque combattant dispose de trois adversaires, d’une introduction, d’une rencontre avec son rival et d’un épilogue. Une victoire valide le chapitre dans le navigateur. Une défaite permet de rejouer immédiatement la même rencontre. Les scènes vues se retrouvent dans la galerie. Le menu donne aussi accès au **Duel originel**, avec ses deux récits et son propre système de commandes.
 
-Le tournoi tire un tableau de quatre, six ou huit **participants**, choisis parmi les cinq combattants jouables. À six, deux participants distincts passent directement en demi-finale. Un ou deux joueurs peuvent s’inscrire. Les duels entre deux IA produisent un score simulé. Un duel comprenant un humain se joue au clavier ou avec les commandes tactiles. Une victoire exige deux manches. Le tableau sauvegardé restitue les emplacements, les scores et le prochain duel. Un nouveau tirage enregistre aussi l’arène de chaque rencontre. Les anciens tableaux conservent leur choix parmi les trois premiers terrains.
+Le tournoi tire un tableau de quatre, six ou huit **participants**, choisis parmi les huit combattants jouables. À six, deux participants distincts passent directement en demi-finale. Un ou deux joueurs peuvent s’inscrire. Les duels entre deux IA produisent un score simulé. Un duel comprenant un humain se joue au clavier ou avec les commandes tactiles. Une victoire exige deux manches. Le tableau sauvegardé restitue les emplacements, les scores et le prochain duel. Un nouveau tirage enregistre aussi l’arène de chaque rencontre. Les anciens tableaux conservent leur choix parmi les trois premiers terrains.
 
-La sélection compte cinq combattants. Les cinq parcours totalisent quinze scènes distinctes d’introduction, de rivalité et d’épilogue. Higgs rencontre Sam au terminal dans sa propre illustration de rivalité. La version jouable de **L’inventaire du matin** fait affronter au MULE Fragile dans son camp, Higgs au centre de distribution, puis Sam de retour au camp. Le parcours de conception au chapitre 5 réserve les deux premières rencontres à Mama et à Die-Hardman, encore en production.
+Les huit parcours totalisent vingt-quatre scènes de galerie. Dans **L’inventaire du matin**, le MULE rencontre Mama au camp, Die-Hardman au terminal et Sam au camp. Die-Hardman termine sa campagne devant Cliff, Mama devant Die-Hardman et Heartman sur la Grève face à Higgs. [Sélection des huit combattants](apercus/selection.webp)
 
 Les dix arènes du chapitre 7 sont sélectionnables en Versus et au dojo. Chacune possède un panorama et un premier plan transparent qui se déplace plus vite que le fond. Le camp, les ateliers couverts, le col enneigé et le bassin ont leurs ambiances propres. Les quatre premières histoires gardent leurs lieux scénarisés. [Les dix arènes capturées en jeu](apercus/dix-arenes.webp)
 
-En combat, les poses de garde et d’action de Sam, Fragile et Cliff ont des points d’appui distincts. Le moteur aligne les pieds sur la même ligne au passage d’une image à l’autre. Pour les deux fentes, la hauteur de rendu descend à 80 % de la garde de Fragile et à 78 % de celle de Cliff. Higgs dispose de sa propre garde, avec la main ramenée vers le torse. La mesure du pied d’appui permet de passer de cette garde à la main tendue de son attaque. Fragile, Higgs et le MULE disposent chacun d’un dessin de pas et d’un dessin de réaction au coup. Sam et Cliff alternent leurs deux poses dessinées et les déplacements interpolés du moteur. Le chapitre 11 précise les détails à comparer avec les tenues officielles.
+En combat, les poses de garde et d’action de Sam, Fragile et Cliff ont des points d’appui distincts. Le moteur aligne les pieds sur la même ligne au passage d’une image à l’autre. Pour les deux fentes, la hauteur de rendu descend à 80 % de la garde de Fragile et à 78 % de celle de Cliff. Higgs dispose de sa propre garde, avec la main ramenée vers le torse. La mesure du pied d’appui permet de passer de cette garde à la main tendue de son attaque. Fragile, Higgs, le MULE et Heartman disposent chacun de quatre poses peintes. Mama et Die-Hardman emploient des figurines articulées originales, dessinées de profil. Pour Sam et Cliff, deux planches transparentes contiennent chacune quatre positions intermédiaires. Le pas lève le talon arrière et avance le genou opposé. Le recul garde les semelles au sol, fléchit les hanches et déplace le haut du corps. Les captures proviennent des duels lancés au dojo. [Die-Hardman contre Cliff](apercus/diehardman-duel.webp) · [L’ancrage de Mama](apercus/mama-duel.webp) · [Le signal de Heartman](apercus/heartman-duel.webp)
 
 Le moteur fonctionne à 60 pas de simulation par seconde. Une manche dure 75 secondes. Un K.-O. décisif ouvre la finalité pendant 2,25 secondes. Au temps, la vitalité départage les combattants. Une égalité réinitialise leurs positions et réduit leur vitalité à un point pour un échange décisif.
 
@@ -39,6 +39,10 @@ Pendant l’invite **Rupture**, J1 appuie sur **Y** ou J2 sur **O**. Le geste d�
 | Fragile | Dernier saut | Sous son parapluie ouvert, Fragile traverse un voile chiral où son reflet se dédouble. |
 | Higgs | Rideau de goudron | Un gant écarte un pli de goudron qui renvoie le reflet du masque d’or. |
 | Cliff | Rappel de section | Cliff porte la radio à son oreille. Quatre silhouettes reprennent forme dans la brume. |
+| MULE | Hors inventaire | Le scanner classe l’écho du rival comme un colis. |
+| Die-Hardman | Levée de consigne | Les trois portes virtuelles libèrent le passage. |
+| Mama | Travée de retour | Un point lumineux traverse les segments de pont suspendus. |
+| Heartman | Intervalle | La silhouette se dissipe le long d’une trace lumineuse. |
 
 La finalité du MULE déclenche deux balayages de son capteur sur l’écho adverse. Le signal et l’encadrement du code de fret se distinguent des manifestations de Cliff.
 
@@ -49,6 +53,9 @@ La finalité du MULE déclenche deux balayages de son capteur sur l’écho adve
 | Higgs | Marée noire | **Empreinte d’or**, 21 points. Le piège s’arme au bout de 20 pas et frappe près du sol. | **Faux départ**, 14 points. Recule pendant 10 pas en laissant un leurre visuel. |
 | Cliff | Écho de section | **Poste avancé**, 18 points. Place une balise pendant 160 pas devant Cliff. | **Rappel de section**, 16 points. Un écho monte depuis le poste et le dissipe. |
 | MULE | Balayage de capteur. Le scan mémorise pendant 120 pas la position touchée. Une garde l’arrête. | **Consigne mobile**, 18 points. Pose une caisse pour 180 pas. Un fort à portée la pousse de 112 pixels. Son contact inflige 6 points de dégâts. | **Saisie de lot**, 16 points. Rappelle la caisse aux pieds de l’opérateur. Son trajet inflige 7 points et se défend par un saut ou une garde accroupie. Le rappel à vide conserve la jauge. |
+| Die-Hardman | Ordre de maintien. Une interception à mi-hauteur donne un sceau pour 120 pas. | **Ligne d’arrêt**, 18 points. Le portique sous sceau reste actif deux pas de plus. | **Relève**, 16 points. Le sceau est consommé pour gagner 44 pixels de portée. |
+| Mama | Point d’ancrage. Le point est posé 130 pixels devant Mama et tient 200 pas. | **Tablier**, 18 points. La travée part de l’ancrage et va deux fois plus vite que sans ancrage. | **Treuil**, 16 points. Mama rejoint l’ancrage en huit pas. À vide, la jauge reste intacte. |
+| Heartman | Impulsion témoin. Près du battement, la vitesse de l’onde passe de 7,5 à 10 pixels par pas. | **Mémoire de phase**, 18 points. Pose une mémoire pour 120 pas. Une seconde activation y déclenche l’onde. | **Syncope du signal**, 16 points. Une esquive de six pas laisse une empreinte translucide. |
 
 Les directions suivent la position adverse. La touche de signature est **H pour J1** et **L pour J2**. Le dojo permet de vérifier ces interactions contre un mannequin immobile, en garde ou piloté par l’IA. La case **Zones de touche** montre le volume vulnérable de chaque combattant et la portée de ses coups de mêlée actifs. La fiche **Commandes** donne les gestes communs et les techniques du combattant. La caisse MULE est un prop détouré indépendant. Le même fichier sert pour la pose au sol, la poussée et le rappel. [La caisse entre le MULE et Sam dans leur duel au camp](apercus/consigne-mobile.webp)
 
@@ -251,7 +258,7 @@ Les quatre premières fiches approfondissent le noyau du prototype. Les quatre s
 
 ## 5. Huit campagnes
 
-Les quatre histoires du noyau conduisent chacune au rival final indiqué. Le parcours jouable du MULE et son adaptation provisoire figurent dans la section « Version jouable ». Les ordres intermédiaires ci-dessous constituent la proposition pour la campagne complète. Les dialogues et les récits sont originaux. Chaque parcours tient dans trois duels scénarisés et se rejoue en arcade sans les images. Une défaite reprend le duel en cours. Un ending débloqué devient consultable d’un seul geste.
+Les huit parcours jouables suivent les séquences ci-dessous. Les dialogues et les récits sont originaux. Chaque parcours tient dans trois duels scénarisés et se rejoue en arcade sans les images. Une défaite reprend le duel en cours. Un ending débloqué devient consultable d’un seul geste.
 
 ### Sam — Livraison sans adresse
 
@@ -391,7 +398,15 @@ Les quatre routes d’extension du chapitre 5 nomment un camp, une usine, un ate
 | Entraînement | Choisir un mannequin immobile, en garde ou piloté par l’IA. Activer l’affichage des volumes et éprouver une technique. | Lire le début de la portée et la hauteur du contact, puis recommencer côté opposé. Le mannequin récupère sa vitalité après un K.-O. |
 | Tournoi | Inscrire un ou deux humains, tirer le tableau et aller jusqu’au champion. | Une rencontre entre deux IA fournit son score. Le joueur peut reprendre le prochain duel ou revoir le tableau terminé. |
 
-**Extensions de jeu prévues.** Un enregistrement d’entraînement devra mémoriser les entrées du mannequin pour répéter exactement la même pression. Un futur replay de tournoi devra retrouver le tirage et les entrées de chaque match joué. La lecture et l’enregistrement des commandes comptent comme deux travaux distincts des sauvegardes de scores actuelles.
+**Données des coups.** La case du dojo affiche le démarrage, l’activité, la récupération et la phase en cours pour chaque combattant. La durée de vie d’un projectile ou d’un repère reste distincte de celle du geste qui l’a créé.
+
+**Enregistrer le mannequin.** Au dojo, sélectionner **Enregistrer J2**, saisir la séquence au clavier J2 ou sur la seconde rangée tactile, puis choisir **Lire en boucle**. Le compteur affiche la durée de la prise. Les événements sont datés au pas de simulation à 60 Hz, y compris les pressions brèves. La pause gèle la tête de lecture. **Replacer au centre** conserve la prise pour repartir à distance égale.
+
+**Revoir un tournoi.** Après une rencontre jouée, **Revoir le duel** restitue les choix de combattants, les commandes et la graine de l’IA. Le lecteur peut mettre en pause et revenir au tableau. Les matchs simulés entre IA et les anciens résultats gardent leur score.
+
+**Survie.** Sept duels d’une manche opposent le combattant choisi aux sept autres. Après une victoire, la vitalité restante augmente de 15 points, jusqu’à 100. La reprise d’un échec conserve la vitalité d’entrée de ce duel. Le registre distingue la difficulté, le combattant et les parcours avec ou sans reprise.
+
+**Livraison sous pression.** Le porteur entre au camp avec une caisse scellée. Une touche directe sur J1 rompt le scellé. La garde le protège. Une victoire en portant la caisse intacte ajoute le sceau du camp à la galerie, même après fermeture et réouverture du jeu.
 
 ## 9. Direction des sprites et du son
 
@@ -411,7 +426,7 @@ Préparer chaque pose sur fond transparent, personnage entier, initialement tour
 
 ### Écouter une action sans regarder le HUD
 
-Le moteur joue déjà de courts signaux synthétisés pour annoncer notamment la manche et la fin du duel. Pour la passe sonore dédiée, enregistrer ou créer séparément l’effort, le contact et la traîne du geste. Associer à Sam une traction de sangle puis le cliquet du fermoir, à Fragile l’ouverture sèche des baleines suivie d’une disparition d’ambiance, à Higgs le déplacement visqueux puis la retombée d’une goutte, à Cliff le déclic d’émission suivi d’un souffle de radio. Dans le montage final, la confirmation d’un contact doit rester audible après plusieurs coups rapprochés. Le joueur qui coupe le son doit pouvoir retrouver le départ et la fin de chaque action par la silhouette et le HUD.
+Chaque technique acceptée déclenche le son du combattant. La sangle de Sam frotte avant le clic du fermoir. Les baleines du parapluie de Fragile claquent puis leur souffle s’efface. Chez Higgs, une masse grave se soulève avant la retombée d’une goutte. Le déclic de Cliff ouvre un souffle de radio. Le scanner du MULE monte en fréquence puis reçoit un bip. Au relais grave de Die-Hardman répond un signal de terminal. Le treuil de Mama monte dans l’aigu puis fait résonner le métal. Heartman associe une pulsation sourde à une note de moniteur. Le navigateur synthétise ces sons. L’impact, la garde et la rupture d’équilibre ont leurs propres signaux au moment du contact. Le bouton Son coupe aussi la traîne en cours. Les poses, les effets et les jauges restent lisibles pendant le silence.
 
 ## 10. Production et recette
 
@@ -426,7 +441,7 @@ Pour intégrer un personnage d’extension, commencer par un duel miroir complet
 | Terminer un duel décisif de chaque côté, déclencher la finalité, puis recommencer en laissant l’invite expirer. | Dans le premier essai, l’image appartient au vainqueur. Dans le second, le résultat arrive directement. |
 | Reprendre un tableau à six après une qualification automatique et un match joué. | Les exemptions concernent deux entrées distinctes. Les qualifiés, les scores et les places du tour suivant sont conservés. |
 
-Les scénarios automatisés se trouvent dans `modes/echos-de-la-greve/qa/`. Le test `parcours.cjs` exerce les transitions des menus et la progression. Le test `techniques.cjs` pilote le moteur réel, décode le catalogue d’images et compare les commandes sur les deux côtés. Le test `mule.cjs` suit le marqueur et la caisse de chaque côté du terrain, y compris pendant une pause, un blocage ou un saut. Les captures de sélection, de duel et de finalité donnent les points de comparaison pour la revue artistique. [Captures en jeu](apercus/)
+Les scénarios automatisés se trouvent dans `modes/echos-de-la-greve/qa/`. Le test `parcours.cjs` exerce les transitions des menus et la progression. Le test `techniques.cjs` pilote le moteur réel, décode le catalogue d’images et compare les commandes sur les deux côtés. Le test `mule.cjs` suit le marqueur et la caisse de chaque côté du terrain, y compris pendant une pause, un blocage ou un saut. Les épreuves ont leur scénario dans `defis.cjs`. Les tests `extensions.cjs`, `poses.cjs`, `dojo.cjs` et `replays.cjs` couvrent les nouveaux combattants, la marche, les impacts, l’enregistrement du mannequin et la restitution des matchs du tournoi. [Captures en jeu](apercus/)
 
 ## 11. Références officielles
 

@@ -71,11 +71,59 @@
       ['Avant','Consigne mobile',18,'Dépose une caisse sur la piste. Un coup fort à proximité l’envoie vers l’avant.'],
       ['Arrière','Saisie de lot',16,'Rappelle la caisse au ras du sol. Une garde basse ou un saut permet de passer son trajet.']
     ],
-    story:'L’inventaire du matin', route:[['fragile','mule-camp'],['higgs','terminal'],['sam','mule-camp']],
+    story:'L’inventaire du matin', route:[['mama','mule-camp'],['diehardman','terminal'],['sam','mule-camp']],
     scenes:{
-      intro:['Dernière ligne','Une caisse vide vaut plus que tout le stock. Fragile attend sa livraison devant la tente. L’opérateur soulève la caisse et colle l’oreille au couvercle. Une voix lui demande de lui rendre son nom.'],
+      intro:['Dernière ligne','Une caisse vide vaut plus que tout le stock. L’opérateur soulève la caisse et colle l’oreille au couvercle. Une voix lui demande de lui rendre son nom.'],
       rival:['Le numéro de manche','Sam vient chercher le carton. Par réflexe, l’opérateur passe le lecteur sur sa propre manche. Le numéro correspond à celui du colis. Il pose le lecteur sur le couvercle. Pour une fois, il sait à qui cette caisse appartient.'],
       ending:['Registre des départs','Au matin, chaque caisse est à sa place. La case du propriétaire reste vide. Hors de la clôture, l’opérateur retire l’étiquette de sa manche. Sa main hésite, puis il écrit son nom au bas du registre des départs.']
+    }
+  };
+  fighters.diehardman = {
+    name:'Die-Hardman', call:'Die-Hardman', role:'Directeur de Bridges',
+    special:'Ordre de maintien', finisher:'Levée de consigne',
+    tip:'Intercepte une frappe à mi-hauteur. Tant que le sceau brille, ta prochaine relève ou ta ligne d’arrêt profite de cet avantage.',
+    techniques:[
+      ['Neutre','Ordre de maintien',28,'Ouvre une courte fenêtre de contre. Une interception médiane accorde un sceau pour deux secondes.'],
+      ['Avant','Ligne d’arrêt',18,'Établit une ligne devant toi. Le sceau prolonge sa durée.'],
+      ['Arrière','Relève',16,'Prends un bref recul puis frappe. Une relève sous sceau gagne en portée.']
+    ],
+    story:'Une porte ouverte', route:[['mule','terminal'],['mama','ruined-factory'],['cliff','battlefield']],
+    scenes:{
+      intro:['Accès consigné','La porte est condamnée depuis des années. Le compteur, lui, avance encore. Die-Hardman tire le registre vers la lumière. Sous l’ordre de fermeture, il reconnaît sa propre signature.'],
+      rival:['Le seuil','Cliff arrête ses hommes devant la porte. « Donne-moi l’ordre. » Die-Hardman garde la clé dans sa paume. Il enlève son gant. « Il y en a déjà eu assez. »'],
+      ending:['À portée de main','La porte donne sur un couloir vide. Die-Hardman corrige le registre sous son propre nom. Il suspend la clé au guichet, puis la descend d’un cran. La prochaine personne pourra l’atteindre.']
+    }
+  };
+  fighters.mama = {
+    name:'Mama', call:'Mama', role:'Ingénieure de Bridges',
+    special:'Point d’ancrage', finisher:'Travée de retour',
+    tip:'Pose ton point sur la piste. Déploie le tablier vers lui, ou utilise le treuil pour te rapprocher.',
+    techniques:[
+      ['Neutre','Point d’ancrage',28,'Fixe un point sur la piste devant Mama pour préparer sa prochaine manœuvre.'],
+      ['Avant','Tablier',18,'Projette la travée depuis ton ancrage. Sans point, une travée plus courte part de tes pieds.'],
+      ['Arrière','Treuil',16,'Ramène Mama vers son point. Une commande à vide ne consomme aucune énergie.']
+    ],
+    story:'La portée du fil', route:[['heartman','mama-workshop'],['mule','ruined-factory'],['diehardman','terminal']],
+    scenes:{
+      intro:['Deux attaches','Chaque nuit, la passerelle miniature s’affaisse au milieu. Mama vérifie les deux attaches, puis la charge inscrite sur son carnet. Au crayon, elle ajoute au centre la silhouette de quelqu’un qui attend.'],
+      rival:['L’essai de charge','Die-Hardman garde le faisceau d’inspection allumé. « Le prochain porteur ne devrait pas servir d’essai. » Mama y glisse sa maquette. « C’est pour ça que je viens la traverser moi-même. »'],
+      ending:['Une longueur de plus','Sur le tablier passent deux ombres, l’une après l’autre. À l’atelier, Mama range sa maquette et reprend la bobine. Elle déroule assez de fil pour une deuxième traversée.']
+    }
+  };
+  fighters.heartman = {
+    name:'Heartman', call:'Heartman', role:'Chercheur de Bridges',
+    special:'Impulsion témoin', finisher:'Intervalle',
+    tip:'Compte le battement visible. Pose une mémoire de phase puis déclenche son onde au moment où ton adversaire la rejoint.',
+    techniques:[
+      ['Neutre','Impulsion témoin',28,'Envoie une impulsion horizontale. Le battement du moniteur donne le tempo.'],
+      ['Avant','Mémoire de phase',18,'Pose un repère. Une deuxième activation libère une onde à cet endroit.'],
+      ['Arrière','Syncope du signal',16,'L’image du chercheur s’efface un instant pendant son esquive.']
+    ],
+    story:'La seconde de trop', route:[['fragile','heartman-lab'],['mama','mama-workshop'],['higgs','shore']],
+    scenes:{
+      intro:['La chaise','À la fin du relevé, une seconde entière est blanche. Heartman remet ses écouteurs et revient au début de la bande. Dans le silence, il entend le frottement d’une chaise qu’on recule.'],
+      rival:['Une place sur la Grève','Higgs est assis face à la mer. « Tu veux du temps ? » Heartman pose son carnet fermé sur le sable. « Je veux savoir qui attendait. » Une vague atteint les pieds de la chaise. Le moniteur bat une fois.'],
+      ending:['Les deux cercles','De retour au laboratoire, Heartman laisse le relevé tel quel. Il pose une deuxième tasse sur la table. Quand il les emporte, deux cercles de chaleur restent sur le bois. L’un commence déjà à s’effacer.']
     }
   };
   const arenas = {
@@ -91,6 +139,6 @@
     'mountain-pass':{title:'Col de Mountain Knot', sky:'#758995', light:'#e0edf0', weather:'snow'}
   };
   const stages = Object.fromEntries(Object.entries(arenas).map(([id,arena]) => [id,arena.title]));
-  const modes = {story:'Histoire', arcade:'Arcade', versus:'Versus', tournament:'Tournoi', training:'Entraînement'};
+  const modes = {story:'Histoire', arcade:'Arcade', versus:'Versus', tournament:'Tournoi', training:'Entraînement', challenges:'Défis'};
   window.StrandContent = {fighters, stages, arenas, modes};
 })();

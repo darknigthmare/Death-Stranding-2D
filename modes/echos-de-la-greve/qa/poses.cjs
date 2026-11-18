@@ -38,7 +38,7 @@ const {chromium} = require('playwright');
       const preload = [...Object.values(StrandAssets.fighters), ...Object.values(StrandAssets.steps), ...Object.values(StrandAssets.hits)];
       await Promise.all(preload.map(async src => { const image = new Image(); image.src = src; await image.decode(); }));
       const results = [];
-      for (const id of ['sam','cliff','fragile','higgs','mule']) {
+      for (const id of Object.keys(StrandContent.fighters)) {
         for (const side of [1,2]) {
           const other = 3 - side, opposite = id === 'sam' ? 'cliff' : 'sam';
           StrandFight.start({canvas, p1:side === 1 ? id : opposite, p2:side === 2 ? id : opposite, mode:'local', sound:false});
@@ -74,17 +74,16 @@ const {chromium} = require('playwright');
       return results;
     });
     for (const r of runs) {
-      const dedicated = ['fragile', 'higgs', 'mule'].includes(r.id);
       const label = r.id + ' J' + r.side;
       assert.equal(r.stance, true, label);
-      assert.equal(r.step, dedicated, label + ' marche');
+      assert.equal(r.step, true, label + ' marche');
       assert.ok(r.block.guard && r.block.hp === 100 && r.block.balance < 100, label + ' garde réussie');
       assert.ok(r.blockStance && !r.blockHit, label + ' dessin de garde');
       assert.ok(r.impact.hp < 100 && r.impact.stun > 0, label + ' coup reçu');
-      assert.equal(r.hit, dedicated, label + ' réaction au coup');
+      assert.equal(r.hit, true, label + ' réaction au coup');
     }
     assert.deepEqual(failures, []);
-    console.log('OK — cinq combattants dans les deux sens, pas, garde et réaction après impact, aucun fichier manquant.');
+    console.log('OK — huit combattants dans les deux sens, pas, garde et réaction après impact, aucun fichier manquant.');
   } finally {
     await browser.close();
   }

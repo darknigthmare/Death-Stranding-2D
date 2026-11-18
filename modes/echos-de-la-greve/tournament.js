@@ -77,10 +77,11 @@
   function next(cup) {
     return cup.rounds.flat().find(m => m.winner === null && m.players.every(id => id !== null)) || null;
   }
-  function record(cup, matchId, winner, score) {
+  function record(cup, matchId, winner, score, replay) {
     const target = next(cup);
-    if (!target || target.id !== matchId) return;
+    if (!target || target.id !== matchId || winner===null || !target.players.includes(winner)) return;
     completed(cup, target, winner, score);
+    if (replay) target.replay=replay;
     advance(cup);
   }
   window.StrandTournament = {create, next, record};

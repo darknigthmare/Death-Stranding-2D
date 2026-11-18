@@ -12,10 +12,13 @@
     arcade:'<path d="M4 17h16v4H4zM9 16l3-8"/><circle cx="13" cy="5" r="2.5"/>',
     versus:'<path d="M3 5l13 13m-2-1 4 3 2-2-3-4M21 5l-5 5m-8 4-4 4 2 2 4-4"/>',
     tournament:'<path d="M3 4h5v5H3m0 6h5v5H3M8 7h4v11H8m4-6h7"/>',
+    challenges:'<path d="M6 4h12v4a6 6 0 0 1-12 0zm6 10v5m-4 2h8M6 6H3v2a4 4 0 0 0 4 4m11-6h3v2a4 4 0 0 1-4 4"/>',
     training:'<circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="3"/><path d="M12 1v4m0 14v4M1 12h4m14 0h4"/>'
   };
-  const config = {mode:'story', p1:'sam', p2:'higgs', stage:'shore', difficulty:'normal', opponent:'cpu', count:'4', humans:'1'};
+  const config = {mode:'story', p1:'sam', p2:'higgs', stage:'shore', difficulty:'normal', opponent:'cpu', count:'4', humans:'1', challenge:'survival'};
   const held = new Map();
+  let trial;
+  const trialNames = {survival:'Survie', delivery:'Livraison sous pression'};
   let screen = '', activeFight = null, paused = false, resumeAfterManual = false, arcadeStep = 0;
   let training = {dummy:'idle',hitboxes:false};
   function read(key, fallback) {
@@ -23,7 +26,7 @@
     catch { return fallback; }
   }
   function save(key, value) {
-    try { localStorage.setItem('echos.v1.' + key, JSON.stringify(value)); } catch { /* Private browsing can disable storage. */ }
+    try { localStorage.setItem('echos.v1.' + key, JSON.stringify(value)); return true; } catch { return false; }
   }
   let sound = read('sound',true);
   let cup = read('cup',null);
@@ -59,11 +62,13 @@
   function stopFight() {
     releaseControls();
     if (activeFight) engine?.stop();
+    if (activeFight?.kind==='training' && ['record','loop'].includes(training.dummy)) training.dummy='idle';
     activeFight = null; paused = false;
   }
   function home() {
     stopFight();
     const copy = {arcade:'Trois adversaires jusqu’au rival.', versus:'Duel contre l’IA ou à deux en local.', tournament:'Tableau à élimination directe.', training:'Mannequin, garde et zones de touche.'};
+    copy.challenges='Survie ou livraison sous pression.';
     const tiles = Object.keys(copy).map(key =>
       '<button class="tile" data-act="mode" data-mode="' + key + '"><span class="symbol"><svg aria-hidden="true" viewBox="0 0 24 24">' + icon[key] + '</svg></span>' +
       '<strong>' + modes[key] + '</strong><small>' + copy[key] + '</small>' + arrow + '</button>').join('');
@@ -96,6 +101,7 @@
     }).join('');
     const isSolo = mode !== 'versus' || config.opponent !== 'local';
     let fields = '';
+    if (mode === 'challenges') fields += choose('challenge','Épreuve',trialNames);
     if (mode === 'versus') fields += choose('opponent','Adversaire',{cpu:'Intelligence artificielle',local:'Joueur 2 · local'});
     if (mode === 'tournament') {
       fields += choose('count','Participants',{'4':'4 entrants','6':'6 entrants · 2 exemptions','8':'8 entrants'});
@@ -107,7 +113,7 @@
     if (isSolo) fields += choose('difficulty','Difficulté',{easy:'Débutant',normal:'Porteur',hard:'Vétéran'});
     const route = character.route.map(([rival,place]) => fighters[rival].call + ' · ' + stages[place]).join('　→　');
     const startLabel = mode === 'story' && chapter() > 0 && chapter() < 3 ? 'Reprendre le duel ' + (chapter() + 1) :
-      ({story:'Ouvrir l’histoire',arcade:'Lancer le parcours',tournament:cup ? 'Créer un nouveau tableau' : 'Tirer le tableau',versus:'Lancer le duel',training:'Entrer dans l’arène'})[mode];
+      ({challenges:'Lancer l’épreuve',story:'Ouvrir l’histoire',arcade:'Lancer le parcours',tournament:cup ? 'Créer un nouveau tableau' : 'Tirer le tableau',versus:'Lancer le duel',training:'Entrer dans l’arène'})[mode];
     setScreen('select','<section class="shell">' + back() + '<div class="pagehead"><div><div class="eyebrow">' + modes[mode] +
       '</div><h1>Choix du combattant</h1></div></div><div class="chars">' + cards + '</div><div class="options">' + fields +
       '</div>' + (['versus','training'].includes(mode) && asset.stages?.[config.stage] ?
@@ -115,6 +121,7 @@
         image(asset.foregrounds?.[config.stage]) + '</figure>' : '') +
       '<div class="brief"><strong>' + character.special + '</strong> · ' + character.tip + '</div>' +
       (['story','arcade'].includes(mode) ? '<p class="montage">' + (mode === 'story' ? '<b>' + character.story + '</b><br>' : '') + route + '</p>' : '') +
+      (mode === 'challenges' ? trialBrief() : '') +
       '<div class="actions">' + (mode === 'tournament' && cup ? button('bracket',cup.rounds.at(-1)[0].winner === null ? 'Reprendre le tableau' : 'Revoir le tableau') : '') +
       button('start',startLabel + ' ' + arrow,mode === 'tournament' && cup ? 'secondary' : 'primary') +
       (mode === 'story' && chapter() > 0 && chapter() < 3 ? button('restartStory','Recommencer l’histoire','secondary') : '') + '</div></section>');
@@ -139,7 +146,8 @@
   function gallery() {
     const unlocked = ids.flatMap(id => Object.keys(scenes).filter(part => archive[id + '-' + part]).map(part =>
       '<button data-act="replay" data-id="' + id + '" data-part="' + part + '">' + image(art(id,part)) + '<strong>' + fighters[id].scenes[part][0] + '</strong><small>' + fighters[id].call + ' · ' + scenes[part] + '</small></button>'));
-    setScreen('gallery','<section class="shell">' + back() + '<h1>Galerie des scènes</h1>' + (unlocked.length ?
+    const seal=read('seal.delivery',false) ? '<div class="brief"><strong>Sceau du camp</strong> · Décerné pour une livraison sous pression arrivée intacte.</div>' : '';
+    setScreen('gallery','<section class="shell">' + back() + '<h1>Galerie des scènes</h1>' + seal + (unlocked.length ?
       '<div class="gallery">' + unlocked.join('') + '</div>' : '<p class="hint matchline">Ouvre un parcours en mode Histoire pour retrouver ici ses scènes au fil de ta progression.</p>') + '</section>');
   }
   function bracketName(entrant) { return entrant.label + ' · ' + fighters[entrant.fighter].call; }
@@ -152,7 +160,8 @@
         '"><span>' + (id === null ? (match.bye ? 'Exemption' : 'À qualifier') : bracketName(cup.entrants[id])) +
         '</span><span class="score">' + (match.score ? match.score[index] : '—') + '</span></div>');
       return '<div class="pair' + (match.winner !== null ? ' complete' : '') + '">' + sides.join('') +
-        (match.bye ? '<small>Qualification directe</small>' : '') + '</div>';
+        (match.bye ? '<small>Qualification directe</small>' : '') +
+        (match.winner!==null && engine?.validReplay?.(match.replay) ? button('cupReplay','Revoir le duel','mini','data-match="'+esc(match.id)+'"') : '') + '</div>';
     }).join('') + '</section>').join('');
     const match = tournament.next(cup);
     const nextLine = match ? '<p class="hint matchline">Prochaine rencontre · ' + match.players.map(id => bracketName(cup.entrants[id])).join(' / ') + '</p>' : '';
@@ -164,6 +173,13 @@
   function cupFight() {
     const match = cup && tournament.next(cup);
     if (!match) { bracket(); return; }
+    openCupMatch(match);
+  }
+  function cupReplay(el) {
+    const match=cup?.rounds.flat().find(item=>item.id===el.dataset.match);
+    if (match?.winner!=null && engine?.validReplay?.(match.replay)) openCupMatch(match,match.replay);
+  }
+  function openCupMatch(match,replay=null) {
     const slots = match.players.slice();
     if (!cup.entrants[slots[0]].human || (cup.entrants[slots[1]].human && slots[1] === 0)) slots.reverse();
     const [a,b] = slots.map(id => cup.entrants[id]);
@@ -173,7 +189,7 @@
     const stage = match.stage || ['shore','terminal','battlefield'][match.seed % 3];
     fight({p1:a.fighter, p2:b.fighter, stage, difficulty:cup.difficulty,
       kind:bothHuman ? 'local' : 'cpu', mode:'tournament', title:roundName(cup.rounds[Number(match.id.split('-')[0])]),
-      labels:[bracketName(a),bracketName(b)], matchId:match.id, slots});
+      labels:[bracketName(a),bracketName(b)], matchId:match.id, slots,seed:match.seed,replay});
   }
   function routeFight() {
     const index = config.mode === 'story' ? chapter() : arcadeStep;
@@ -183,6 +199,7 @@
   function start() {
     switch (config.mode) {
       case 'story': openStory(); return;
+      case 'challenges': startTrial(); return;
       case 'arcade': arcadeStep = 0; routeFight(); return;
       case 'tournament':
         if (cup && cup.rounds.at(-1)[0].winner === null) {
@@ -192,6 +209,60 @@
         newCup(); return;
       default: fight({...config, kind:config.mode === 'training' ? 'training' : config.opponent, title:modes[config.mode]});
     }
+  }
+  // Records are distinct for each fighter, difficulty, rule revision and retry policy.
+  function trialKey(retried) {
+    return ['trial',1,config.challenge,config.difficulty,config.p1,retried ? 'retry' : 'clean'].join('.');
+  }
+  function trialBrief() {
+    const delivery=config.challenge==='delivery';
+    const goal=delivery ? 'Gagne une manche au camp en protégeant le scellé de la caisse. Un coup bloqué préserve le colis. Une frappe directe rompt le scellé.' :
+      'Affronte les sept autres combattants, une manche chacun. Après chaque victoire, tu récupères 15 points de vitalité, jusqu’à 100.';
+    const records=[false,true].map(retried=>{
+      const best=read(trialKey(retried),null);
+      if (!best) return '';
+      return '<p class="montage">Record ' + (retried ? 'avec reprise' : 'sans reprise') + ' · ' +
+        (delivery ? 'Colis intact' : best.wins+' / '+(ids.length-1)+' victoires') + ' · Vitalité '+best.hp+' / 100</p>';
+    }).join('');
+    return '<p class="montage">'+goal+'</p>'+records;
+  }
+  function startTrial() {
+    const delivery=config.challenge==='delivery';
+    const start=ids.indexOf(config.p1);
+    const route=delivery ? [[config.p1==='mule' ? 'sam' : 'mule','mule-camp']] :
+      ids.slice(start+1).concat(ids.slice(0,start)).map(id=>[id,stageFor(id)]);
+    trial={route,wins:0,hp:100,retries:0};
+    trialFight();
+  }
+  function trialFight() {
+    const [p2,stage]=trial.route[trial.wins];
+    fight({...config,kind:'cpu',p2,stage,vitality:trial.hp,parcel:config.challenge==='delivery',
+      title:trialNames[config.challenge]+' · '+(trial.wins+1)+'/'+trial.route.length});
+  }
+  function retryTrial() { trial.retries++; trialFight(); }
+  function trialResult(result) {
+    const delivery=config.challenge==='delivery';
+    const won=result.winner===1 && (!delivery || result.parcel==='intact');
+    const hp=result.vitality;
+    if (won) trial.wins++;
+    const done=trial.wins===trial.route.length;
+    const key=trialKey(trial.retries>0), best=read(key,null);
+    if (won && (!best || trial.wins>best.wins || (trial.wins===best.wins && hp>best.hp)))
+      save(key,{wins:trial.wins,hp});
+    if (delivery && won) save('seal.delivery',true);
+    const title=delivery ? won ? 'Cargaison livrée' : result.parcel==='broken' ? 'Scellé rompu' : 'Livraison interrompue' :
+      done ? 'Survie terminée' : won ? 'Adversaire vaincu' : 'Série interrompue';
+    let detail=delivery ? won ? 'La caisse arrive intacte. Le sceau du camp est disponible dans la galerie.' :
+      result.parcel==='broken' ? 'Une frappe directe a atteint le porteur. La garde protège le scellé.' : 'Le porteur a perdu le duel.' :
+      trial.wins+' / '+trial.route.length+' adversaires vaincus.';
+    if (won && !done) {
+      trial.hp=Math.min(100,hp+15);
+      detail+=' Vitalité pour la prochaine manche : '+trial.hp+' / 100.';
+    }
+    const next=done ? button('startTrial','Nouvelle tentative') : won ? button('trialFight','Adversaire suivant') : button('retryTrial','Reprendre ce duel');
+    setScreen('result','<section class="shell"><div class="result"><div class="eyebrow">'+trialNames[config.challenge]+
+      '</div><h1>'+title+'</h1><p>'+detail+'</p><div class="actions">'+next+button('selection','Choix de l’épreuve','secondary')+
+      button('home','Accueil','secondary')+'</div></div></section>');
   }
   function newCup() {
     cup = tournament.create({...config, count:Number(config.count), humans:Number(config.humans), seed:Math.floor(Math.random() * 0x100000000)});
@@ -217,11 +288,42 @@
     return '<div class="touchRow"><small>J' + player + '</small><div class="touch"><div>' + keys.slice(0,4).map(control).join('') +
       '</div><div>' + keys.slice(4).map(control).join('') + '</div></div></div>';
   }
+  const dojoSeconds=new Intl.NumberFormat('fr-FR',{minimumFractionDigits:1,maximumFractionDigits:1});
   function trainingTools() {
-    const options = {idle:'Immobile',guard:'En garde',cpu:'IA active'};
+    const options = {idle:'Immobile',guard:'En garde',cpu:'IA active',record:'Enregistrer J2',loop:'Lire en boucle'};
     return '<label>Mannequin <select id="dummy">' + Object.entries(options).map(([value,label]) => '<option value="' + value + '"' +
       (value === training.dummy ? ' selected' : '') + '>' + label + '</option>').join('') +
-      '</select></label><label><input type="checkbox" id="boxes"' + (training.hitboxes ? ' checked' : '') + '>Zones de touche</label>' + button('resetTraining','Replacer au centre','mini');
+      '</select></label><span id="tapeStatus"></span><label><input type="checkbox" id="boxes"' + (training.hitboxes ? ' checked' : '') + '>Zones de touche</label>' + button('resetTraining','Replacer au centre','mini') +
+      '<label><input type="checkbox" id="dojoTiming"'+(training.timing ? ' checked' : '')+'>Données des coups</label>' +
+      '<div id="dojoData" hidden><table><caption>Durées en pas de simulation (60 par seconde)</caption><thead><tr>' +
+      ['Joueur','Dernier coup','Démarrage','Activité','Récupération','Phase en cours','Effet autonome'].map(label=>'<th scope="col">'+label+'</th>').join('') +
+      '</tr></thead><tbody>'+[1,2].map(side=>'<tr id="timingJ'+side+'"><th scope="row">J'+side+'</th>'+('<td>—</td>').repeat(6)+'</tr>').join('')+'</tbody></table></div>';
+  }
+  function updateTraining(status) {
+    const {dummy,frames,position}=status.training;
+    const select=document.getElementById('dummy');
+    select.value=dummy;
+    select.querySelector('[value="loop"]').disabled=!frames;
+    select.querySelector('[value="record"]').textContent=frames && dummy!=='record' ? 'Remplacer la séquence (J2)' : 'Enregistrer J2';
+    document.getElementById('dummyControls').hidden=dummy!=='record';
+    const seconds=ticks=>dojoSeconds.format(ticks/60);
+    document.getElementById('tapeStatus').textContent=dummy==='record' ? 'Commandes J2 · '+seconds(frames)+' s' :
+      dummy==='loop' ? 'Boucle · '+seconds(position)+' / '+seconds(frames)+' s' : frames ? 'Séquence de '+seconds(frames)+' s' : '';
+    training.dummy=dummy;
+    const table=document.getElementById('dojoData');
+    table.hidden=!status.training.timing;
+    if (!table.hidden) status.training.moves.forEach((move,index)=>{
+      const cells=document.getElementById('timingJ'+(index+1)).cells;
+      const effects=[];
+      if (move?.projectile) effects.push('Émission de '+move.projectile+' pas');
+      if (move?.marker!=null) effects.push('Marqueur · '+move.marker+' pas restants');
+      const values=move ? [move.name,move.start,move.active,move.recover,move.phase+(move.frame ? ' · '+move.frame : ''),effects.join(' / ') || '—'] :
+        ['—','—','—','—','Repos','—'];
+      values.forEach((value,i)=>{if (cells[i+1].textContent!==String(value)) cells[i+1].textContent=value;});
+    });
+  }
+  function acceptsSecondPlayer() {
+    return activeFight?.kind==='local' || (activeFight?.kind==='training' && training.dummy==='record');
   }
   function fight(match) {
     stopFight();
@@ -229,22 +331,23 @@
       setScreen('error','<section class="shell">' + back() + '<h1>Moteur indisponible</h1><p class="hint">Le fichier du duel n’a pas pu être chargé.</p></section>'); return;
     }
     activeFight = match;
-    const local = match.kind === 'local';
+    const local = match.kind === 'local', watching=!!match.replay;
     const labels = match.labels || [fighters[match.p1].name,fighters[match.p2].name];
-    setScreen('fight','<section class="fightShell"><div class="fightbar"><div><div class="kicker">' + match.title +
-      '</div><b>' + stages[match.stage] + '</b></div><div class="tools">' + button('controls','Commandes','mini') + button('pause','Pause','mini','id="pauseBtn"') +
+    setScreen('fight','<section class="fightShell"><div class="fightbar"><div><div class="kicker">' + (watching ? 'Relecture · ' : '') + match.title +
+      '</div><b>' + stages[match.stage] + '</b></div><div class="tools">' + (watching ? button('leave','Retour au tableau','mini') : button('controls','Commandes','mini')) + button('pause','Pause','mini','id="pauseBtn"') +
       '</div></div><div class="screen"><canvas id="arena" aria-label="Duel entre ' + esc(labels.join(' et ')) + '"></canvas>' +
-      '<div id="pauseBox" class="pausebox" hidden><h2>En pause</h2>' + button('pause','Reprendre') + button('leave','Quitter le duel','secondary') +
-      '</div></div><div class="combatNotes"><span>Commandes J1 · ' + labels[0] + '　 /　' + (local ? 'Commandes J2' : 'IA') + ' · ' + labels[1] + '</span>' +
+      '<div id="pauseBox" class="pausebox" hidden><h2>En pause</h2>' + button('pause','Reprendre') + button('leave',watching ? 'Retour au tableau' : 'Quitter le duel','secondary') +
+      '</div></div><div class="combatNotes"><span>' + (watching ? labels.join('　 /　') : 'Commandes J1 · ' + labels[0] + '　 /　' + (local ? 'Commandes J2' : match.kind==='training' ? 'Mannequin' : 'IA') + ' · ' + labels[1]) + '</span>' +
       (match.kind === 'training' ? trainingTools() : '<span id="signal" aria-live="polite"></span>') + '</div><div class="touchgroup">' +
-      touchControls(1) + (local ? touchControls(2) : '') + '</div></section>');
+      (watching ? '' : touchControls(1) + (local ? touchControls(2) : match.kind==='training' ? '<div id="dummyControls" hidden>'+touchControls(2)+'</div>' : '')) + '</div></section>');
     const canvas = document.getElementById('arena'), signal = document.getElementById('signal');
     let phase = null;
-    engine.start({canvas,p1:match.p1,p2:match.p2,stage:match.stage,mode:match.kind,difficulty:match.difficulty,roundsToWin:2,training,
+    engine.start({canvas,p1:match.p1,p2:match.p2,stage:match.stage,mode:match.kind,difficulty:match.difficulty,seed:match.seed,record:match.mode==='tournament' && !watching,replay:match.replay,roundsToWin:match.mode === 'challenges' ? 1 : 2,startingVitality:match.vitality,parcel:match.parcel,training,
       sound,visuals:asset.fighters || {},onStatus(status) {
+        if (match.kind==="training") updateTraining(status);
         if (!signal || status.phase === phase) return;
         phase = status.phase;
-        signal.textContent = phase === 'finish' ? 'Finalité disponible · ' + (status.winner === 1 ? 'J1 · Y' : local ? 'J2 · O' : 'IA') : '';
+        signal.textContent = phase === 'finish' && !watching ? 'Finalité disponible · ' + (status.winner === 1 ? 'J1 · Y' : local ? 'J2 · O' : 'IA') : '';
       },onEnd(result) { if (activeFight === match) outcome(match,result); }
     });
   }
@@ -257,6 +360,16 @@
   }
   function outcome(match, result) {
     stopFight();
+    if (match.replay) {
+      const recorded=cup.rounds.flat().find(item=>item.id===match.matchId);
+      const scores=recorded?.players.map(slot=>result.rounds?.[match.slots.indexOf(slot)]);
+      const consistent=!result.replayMismatch && recorded?.winner===match.slots[result.winner-1] && scores.every((v,i)=>v===recorded.score[i]);
+      setScreen('result','<section class="shell"><div class="result"><div class="eyebrow">'+match.title+
+        '</div><h1>'+(consistent ? 'Fin de la relecture' : 'Relecture incompatible')+'</h1><p>'+
+        (consistent ? esc(match.labels[result.winner-1])+' l’emporte · '+result.rounds.join(' – ')+' manches' : 'Les entrées enregistrées ne reproduisent plus ce résultat.')+
+        '</p><div class="actions">'+button('bracket','Retour au tableau')+'</div></div></section>');
+      return;
+    }
     const won = result.winner === 1;
     const winner = match.labels?.[result.winner - 1] || fighters[won ? match.p1 : match.p2].name;
     let buttons = '', extra = '';
@@ -264,9 +377,17 @@
       const bracketMatch = tournament.next(cup);
       if (bracketMatch && bracketMatch.id === match.matchId) {
         const score = match.slots[0] === bracketMatch.players[0] ? result.rounds.slice() : result.rounds.slice().reverse();
-        tournament.record(cup,match.matchId,match.slots[result.winner - 1],score); save('cup',cup);
+        tournament.record(cup,match.matchId,match.slots[result.winner - 1],score,result.replay);
+        if (!save('cup',cup)) {
+          delete bracketMatch.replay;
+          const scoreSaved=save('cup',cup);
+          if (result.replay) bracketMatch.replay=result.replay;
+          extra='<p>'+(scoreSaved ? 'Score sauvegardé. La relecture est disponible pour cette session.' :
+            'Ce navigateur conserve le tableau pour cette session uniquement.')+'</p>';
+        }
       }
       buttons = button('bracket','Voir le tableau ' + arrow);
+    } else if (match.mode === 'challenges') { trialResult(result); return;
     } else if (['arcade','story'].includes(match.mode)) {
       if (!won) {
         buttons = button('routeFight','Rejouer ce duel');
@@ -295,7 +416,7 @@
       keys.map(([,title,,,first,second]) => '<tr><td>' + title + '</td><td>' + first + '</td><td>' + second + '</td></tr>').join('') +
       '</tbody></table>';
     const fighterIds = [activeFight?.p1 || config.p1];
-    if (activeFight?.kind === 'local' && !fighterIds.includes(activeFight.p2)) fighterIds.push(activeFight.p2);
+    if (acceptsSecondPlayer() && !fighterIds.includes(activeFight.p2)) fighterIds.push(activeFight.p2);
     const moveLists = fighterIds.map(id => {
       const current = fighters[id];
       const rows = current.techniques.map(([direction, name, cost, effect]) =>
@@ -318,7 +439,7 @@
   document.getElementById('controlsLink').onclick = controls;
   document.getElementById('homeLink').onclick = () => { if (activeFight) setPause(true); else home(); };
   const actions = {
-    home, gallery, selection, bracket, cupFight, routeFight, start, newCup, controls,
+    startTrial, trialFight, retryTrial, home, gallery, selection, bracket, cupFight, cupReplay, routeFight, start, newCup, controls,
     mode:el => { config.mode = el.dataset.mode; selection(); },
     pick:el => { config.p1 = el.dataset.id; selection(); view.querySelector('[data-id="' + config.p1 + '"]')?.focus({preventScroll:true}); },
     replay:el => scene(el.dataset.id,el.dataset.part,true),
@@ -326,7 +447,9 @@
     ending:() => scene(config.p1,'ending'), rival:() => scene(config.p1,'rival'),
     pause:() => setPause(!paused),
     leave:() => { const mode = activeFight?.mode; stopFight(); if (mode === 'tournament') bracket(); else selection(); },
-    resetTraining:() => { if (activeFight?.kind === 'training') fight({...activeFight}); }
+    resetTraining:() => {
+      if (activeFight?.kind==='training') { releaseControls(); engine.setTraining({reset:true}); }
+    }
   };
   view.addEventListener('click',event => {
     const target = event.target.closest('[data-act]'); if (target) actions[target.dataset.act]?.(target);
@@ -336,9 +459,16 @@
     if (key && Object.hasOwn(config,key)) {
       config[key] = target.value; selection();
       view.querySelector('[data-option="' + key + '"]')?.focus({preventScroll:true});
-    } else if (target.id === 'dummy' || target.id === 'boxes') {
-      training = {dummy:document.getElementById('dummy').value,hitboxes:document.getElementById('boxes').checked};
-      engine?.setTraining(training);
+    } else if (['dummy','boxes','dojoTiming'].includes(target.id)) {
+      if (target.id==='dummy') {
+        for (const [token,binding] of held) if (binding.player===2) release(token);
+        view.querySelectorAll('[data-p="2"].held').forEach(button=>button.classList.remove('held'));
+        engine?.setTraining({dummy:target.value});
+      } else {
+        const field=target.id==='boxes' ? 'hitboxes' : 'timing';
+        training[field]=target.checked; engine?.setTraining({[field]:target.checked});
+      }
+      view.focus({preventScroll:true});
     }
   });
   function press(token, player, action) {
@@ -356,10 +486,10 @@
   window.addEventListener('keydown',event => {
     if (screen !== 'fight' || manual.open || !activeFight || event.ctrlKey || event.altKey || event.metaKey) return;
     if (event.key === 'Escape') { event.preventDefault(); if (!event.repeat) setPause(!paused); return; }
-    if (paused || editable(event.target)) return;
+    if (paused || activeFight.replay || editable(event.target)) return;
     const key = event.key.length === 1 ? event.key.toLowerCase() : event.key;
     const binding = keymap.get(key);
-    if (!binding || (binding.player === 2 && activeFight.kind !== 'local')) return;
+    if (!binding || (binding.player === 2 && !acceptsSecondPlayer())) return;
     event.preventDefault();
     if (!event.repeat) press('key:' + (event.code || key),binding.player,binding.action);
   });

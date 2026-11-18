@@ -13,14 +13,20 @@
     higgs:   {name:'Higgs Monaghan', short:'HIGGS', suit:'#292936', cloth:'#46414b', trim:'#d8a34a', metal:'#ecd08b', skin:'#bd9a56', h:184, speed:4.05, power:1.06, move:'Marée noire', end:'Rideau de goudron'},
     fragile: {name:'Fragile', short:'FRAGILE', suit:'#283946', cloth:'#3f5362', trim:'#a9e6ee', metal:'#b2cbd0', skin:'#d0a28e', h:166, speed:4.95, power:0.94, move:'Pas de Grève', end:'Dernier saut'},
     cliff:   {name:'Cliff Unger', short:'CLIFF', suit:'#3c493d', cloth:'#59614c', trim:'#f09c66', metal:'#a5aa89', skin:'#bf9783', h:179, speed:4.2, power:1.03, move:'Écho de section', end:'Rappel de section'},
-    mule:    {name:'Porteur MULE', short:'MULE', suit:'#9f7134', cloth:'#4f4536', trim:'#f5bd58', metal:'#a19c8a', skin:'#b59170', h:177, speed:4.25, power:1, move:'Balayage de capteur', end:'Hors inventaire'}
+    mule:    {name:'Porteur MULE', short:'MULE', suit:'#9f7134', cloth:'#4f4536', trim:'#f5bd58', metal:'#a19c8a', skin:'#b59170', h:177, speed:4.25, power:1, move:'Balayage de capteur', end:'Hors inventaire'},
+    diehardman:{name:'Die-Hardman', short:'DIE-HARDMAN', suit:'#282e32', cloth:'#485456', trim:'#b7c6b4', metal:'#a1a8a4', skin:'#7f5c4d', h:181, speed:4.1, power:1.02, move:'Ordre de maintien', end:'Levée de consigne'},
+    mama:{name:'Mama', short:'MAMA', suit:'#495c66', cloth:'#617788', trim:'#80d9d4', metal:'#b6c4cd', skin:'#bc9a81', h:170, speed:4.4, power:.96, move:'Point d’ancrage', end:'Travée de retour'},
+    heartman:{name:'Heartman', short:'HEARTMAN', suit:'#343f48', cloth:'#485869', trim:'#df9687', metal:'#a6b6bd', skin:'#c3a68e', h:176, speed:4.15, power:.96, move:'Impulsion témoin', end:'Intervalle'}
   };
   // An anchor is the horizontal midpoint between supporting feet in the source crop.
   const spriteGeometry = {
-    sam: {stanceAnchor:.50, actionAnchor:.40, actionScale:.87},
+    sam: {stanceAnchor:.50, actionAnchor:.40, actionScale:.87, motionFrames:4, stepScale:1.12, hitScale:1.12},
     fragile: {stanceAnchor:.53, actionAnchor:.43, actionScale:.80, hitAnchor:.49, stepAnchor:.51, hitScale:.96, stepScale:.98},
     higgs: {stanceAnchor:.69, actionAnchor:.57, actionScale:1, hitAnchor:.63, stepAnchor:.58, hitScale:.96, stepScale:.98},
-    cliff: {stanceAnchor:.50, actionAnchor:.35, actionScale:.78},
+    cliff: {stanceAnchor:.50, actionAnchor:.35, actionScale:.78, motionFrames:4, stepScale:1.12, hitScale:1.12},
+    heartman: {stanceAnchor:.50, actionAnchor:.29, actionScale:.99, hitAnchor:.53, stepAnchor:.50, hitScale:.92, stepScale:.97},
+    mama: {stanceAnchor:.425, actionAnchor:.395, actionScale:.928, hitAnchor:.487, stepAnchor:.471, hitScale:.965, stepScale:1.015},
+    diehardman: {stanceAnchor:.405, actionAnchor:.346, actionScale:.97, hitAnchor:.445, stepAnchor:.647, hitScale:.95, stepScale:.98},
     mule: {stanceAnchor:.59, actionAnchor:.39, actionScale:.86, hitAnchor:.45, stepAnchor:.52, hitScale:.92, stepScale:.97}
   };
   const stages = host.StrandContent?.arenas || {
@@ -50,12 +56,22 @@
     recall:  {name:"Rappel de section", start:12, active:1, recover:22, cost:16},
     mule:    {name:'Balayage de capteur', start:18, active:12, recover:17, cost:28},
     crate:   {name:'Consigne mobile', start:16, active:1, recover:18, cost:18},
-    retrieve:{name:'Saisie de lot', start:13, active:3, recover:24, cost:16}
+    retrieve:{name:'Saisie de lot', start:13, active:3, recover:24, cost:16},
+    diehardman:{name:'Ordre de maintien', start:11, active:5, recover:21, cost:28},
+    gate:{name:'Ligne d’arrêt', start:17, active:6, recover:22, cost:18},
+    relief:{name:'Relève', start:8, active:4, recover:16, cost:16, reach:77, low:48, high:109, damage:7, balance:14, stun:14, push:6},
+    mama:{name:'Point d’ancrage', start:18, active:1, recover:16, cost:28},
+    deck:{name:'Tablier', start:16, active:10, recover:21, cost:18},
+    winch:{name:'Treuil', start:12, active:8, recover:15, cost:16},
+    heartman:{name:'Impulsion témoin', start:15, active:16, recover:18, cost:28},
+    memory:{name:'Mémoire de phase', start:14, active:1, recover:17, cost:18},
+    syncope:{name:'Syncope du signal', start:10, active:6, recover:24, cost:16}
   };
   const directional = {
     sam:{forward:'brace',back:'parry'}, fragile:{forward:'fan',back:'beacon'},
     higgs:{forward:'mine',back:'feint'}, cliff:{forward:'post',back:'recall'},
-    mule:{forward:'crate',back:'retrieve'}
+    mule:{forward:'crate',back:'retrieve'}, diehardman:{forward:'gate',back:'relief'},
+    mama:{forward:'deck',back:'winch'}, heartman:{forward:'memory',back:'syncope'}
   };
   const shotHit = {
     sam:{damage:10,balance:17,stun:26,push:3},
@@ -64,18 +80,89 @@
     mine:{damage:6,balance:12,stun:15,push:5,level:'low'},
     recall:{damage:8,balance:15,stun:16,push:4,launch:7},
     crate:{damage:6,balance:11,stun:12,push:4,level:'low'},
-    retrieve:{damage:7,balance:13,stun:14,push:4,level:'low'}
+    retrieve:{damage:7,balance:13,stun:14,push:4,level:'low'},
+    gate:{damage:8,balance:16,stun:15,push:7}, deck:{damage:9,balance:16,stun:14,push:6},
+    heartman:{damage:7,balance:12,stun:12,push:5}, memory:{damage:8,balance:15,stun:14,push:6}
   };
   const keyActions = ['left','right','up','down','light','heavy','special','guard','throw','finish'];
-  let match, raf = 0, serial = 0, audio, sound = true;
-  function tone(hz, span, waveform='sine', gain=.035, end=hz) {
-    if (!sound || !audio || audio.state !== 'running') return;
+  let match, raf = 0, serial = 0, audio, noiseBuffer, sound = true;
+  const voices=new Set();
+  function playVoice(source,output,span,level,delay,attack) {
+    const t=audio.currentTime+delay, volume=audio.createGain();
+    volume.gain.setValueAtTime(.0001,t);
+    volume.gain.exponentialRampToValueAtTime(level,t+Math.min(span*.45,attack));
+    volume.gain.exponentialRampToValueAtTime(.0001,t+span);
+    output.connect(volume); volume.connect(audio.destination);
+    const voice={source,volume};
+    voices.add(voice);
+    source.onended=()=>{
+      voices.delete(voice); source.disconnect(); output.disconnect(); volume.disconnect();
+    };
+    source.start(t); source.stop(t+span+.002);
+  }
+  function tone(hz,span,waveform='sine',gain=.035,end=hz,delay=0,attack=.009) {
+    if (!sound || audio?.state!=='running') return;
     try {
-      const t=audio.currentTime, osc=audio.createOscillator(), volume=audio.createGain();
-      osc.type=waveform; osc.frequency.setValueAtTime(hz,t); osc.frequency.exponentialRampToValueAtTime(Math.max(18,end),t+span);
-      volume.gain.setValueAtTime(.001,t); volume.gain.exponentialRampToValueAtTime(gain,t+.009);
-      volume.gain.exponentialRampToValueAtTime(.001,t+span); osc.connect(volume); volume.connect(audio.destination); osc.start(); osc.stop(t+span+.015);
-    } catch (_) { /* A suspended audio device has no effect on the simulation. */ }
+      const t=audio.currentTime+delay, osc=audio.createOscillator();
+      osc.type=waveform; osc.frequency.setValueAtTime(hz,t);
+      osc.frequency.exponentialRampToValueAtTime(Math.max(18,end),t+span);
+      playVoice(osc,osc,span,gain,delay,attack);
+    } catch (_) { /* Sound is optional. */ }
+  }
+  function friction(type,hz,end,span,gain,delay=0) {
+    if (!sound || audio?.state!=='running') return;
+    try {
+      if (!noiseBuffer) {
+        noiseBuffer=audio.createBuffer(1,Math.ceil(audio.sampleRate*.4),audio.sampleRate);
+        const samples=noiseBuffer.getChannelData(0), roll=randomSeed(0x4c2abf);
+        for (let i=0;i<samples.length;i++) samples[i]=roll()*2-1;
+      }
+      const source=audio.createBufferSource(), filter=audio.createBiquadFilter(), t=audio.currentTime+delay;
+      source.buffer=noiseBuffer;
+      filter.type=type; filter.Q.value=.8;
+      filter.frequency.setValueAtTime(hz,t); filter.frequency.exponentialRampToValueAtTime(end,t+span);
+      source.connect(filter); playVoice(source,filter,span,gain,delay,.005);
+    } catch (_) { /* Sound is optional. */ }
+  }
+  // Material and device cues share a lower peak level than the impact confirmation.
+  function signatureSound(id) {
+    switch (id) {
+      case 'sam':
+        friction('bandpass',780,2350,.095,.036);
+        tone(1880,.026,'triangle',.029,480,.092,.002);
+        break;
+      case 'fragile':
+        tone(2200,.016,'square',.014,960,0,.001);
+        tone(2740,.023,'triangle',.021,1220,.021,.002);
+        friction('highpass',1400,6200,.077,.024,.03);
+        break;
+      case 'higgs':
+        friction('lowpass',520,125,.18,.046);
+        tone(77,.12,'sine',.032,142);
+        tone(460,.077,'sine',.035,89,.15,.003);
+        break;
+      case 'cliff':
+        tone(1190,.017,'square',.021,714,0,.001);
+        friction('bandpass',2050,1150,.17,.043,.018);
+        break;
+      case 'mule':
+        tone(360,.067,'sawtooth',.015,1280);
+        tone(940,.045,'sine',.027,1640,.091);
+        break;
+      case 'diehardman':
+        tone(114,.065,'triangle',.035,61,0,.002);
+        tone(690,.071,'square',.013,460,.055,.004);
+        break;
+      case 'mama':
+        friction('bandpass',480,1500,.088,.03);
+        tone(580,.093,'triangle',.027,1160,.028);
+        tone(1740,.073,'sine',.017,1680,.11,.003);
+        break;
+      case 'heartman':
+        tone(114,.066,'sine',.04,72,0,.004);
+        tone(940,.075,'sine',.027,910,.093,.003);
+        break;
+    }
   }
   function wakeAudio() {
     if (!sound) return;
@@ -85,29 +172,78 @@
     } catch (_) { /* Audio is optional. */ }
   }
   function randomSeed(seed) {
-    return () => { seed=(Math.imul(1664525,seed)+1013904223)>>>0; return seed/4294967296; };
+    const next = () => { seed=(Math.imul(1664525,seed)+1013904223)>>>0; return seed/4294967296; };
+    next.state = () => seed;
+    next.restore = value => { seed=value>>>0; };
+    return next;
   }
   function fighterId(input, fallback) { const id=typeof input==='string'?input:input?.id; return roster[id]?id:fallback; }
   function fighter(id,x,face) {
     return {id, spec:roster[id], x, y:0, vx:0, vy:0, face, hp:100, balance:100, chiral:42, keys:{}, taps:{}, queue:[], act:null, marker:null,
       stun:0, blockStun:0, dash:0, drift:0, crouch:false, guard:false, flash:0, postHit:0, walk:0, combo:0, comboTTL:0, aiWait:0, grounded:true, lastMove:'', notice:'', noticeTTL:0};
   }
-  function notify(m, force=false) { if (m.onStatus && (force || m.tick%12===0)) m.onStatus(snapshot()); }
+  function notify(m, force=false) {
+    if (m.onStatus && (force || m.tick%12===0 || m.dummyTape && (m.training.timing || m.training.dummy==='record' && m.training.frames===1))) m.onStatus(snapshot());
+  }
+  const commonAttackNames={light:'Coup léger',heavy:'Coup lourd',sweep:'Balayage',lift:'Coup montant',air:'Frappe aérienne',grab:'Projection'};
+  function trainingTiming(f) {
+    const data=moves[f.lastMove];
+    if (!data) return null;
+    const frame=f.act?.t || 0;
+    const phase=!frame ? 'Repos' : frame<data.start ? 'Démarrage' : frame<data.start+data.active ? 'Activité' : 'Récupération';
+    return {name:data.name || commonAttackNames[f.lastMove] || f.spec.move,start:data.start,active:data.active,recover:data.recover,
+      phase,frame,projectile:f.emission || 0,marker:f.marker?.ttl ?? null};
+  }
   function snapshot() {
     const m=match; if (!m) return null;
-    return {phase:m.phase, paused:m.paused, round:m.round, wins:m.wins.slice(), maxRounds:m.toWin, time:Math.ceil(m.remaining/60),
-      stage:m.stage, mode:m.mode, winner:m.winner, finisher:m.finisher, fighters:m.f.map(f=>({id:f.id,hp:Math.ceil(f.hp),balance:Math.ceil(f.balance),chiral:Math.floor(f.chiral),combo:f.combo,x:f.x,y:f.y,guard:f.guard,action:f.act?.key || '',stun:f.stun,move:f.lastMove,marker:f.marker ? {...f.marker} : null,scan:f.scan ? {...f.scan} : null})), training:{...m.training}};
+    return {phase:m.phase, tick:m.tick, paused:m.paused, round:m.round, wins:m.wins.slice(), maxRounds:m.toWin, time:Math.ceil(m.remaining/60),
+      stage:m.stage, mode:m.mode, parcel:m.parcel, beat:m.beat, winner:m.winner, finisher:m.finisher, fighters:m.f.map(f=>({id:f.id,hp:Math.ceil(f.hp),balance:Math.ceil(f.balance),chiral:Math.floor(f.chiral),combo:f.combo,x:f.x,y:f.y,guard:f.guard,action:f.act?.key || '',stun:f.stun,move:f.lastMove,marker:f.marker ? {...f.marker} : null,scan:f.scan ? {...f.scan} : null})), training:{...m.training,...(m.dummyTape && m.training.timing ? {moves:m.f.map(trainingTiming)} : {})}};
+  }
+  function validReplay(tape) {
+    if (!tape || tape.version !== 1 || !Object.hasOwn(roster,tape.p1) || !Object.hasOwn(roster,tape.p2) ||
+        !Object.hasOwn(stages,tape.stage) || !['cpu','local'].includes(tape.mode) ||
+        !Number.isInteger(tape.seed) || tape.seed<0 || tape.seed>0xffffffff ||
+        !Number.isInteger(tape.difficulty) || tape.difficulty<0 || tape.difficulty>2 ||
+        !Number.isInteger(tape.roundsToWin) || tape.roundsToWin<1 || tape.roundsToWin>5 ||
+        !Number.isSafeInteger(tape.ticks) || tape.ticks<1 || !Array.isArray(tape.events)) return false;
+    let previous=0;
+    return tape.events.every(event=>{
+      if (!Array.isArray(event) || event.length!==2) return false;
+      const [tick,code]=event;
+      if (!Number.isSafeInteger(tick) || tick<previous || tick>=tape.ticks || !Number.isInteger(code) ||
+          code < -1 || code >= keyActions.length*(tape.mode==='local' ? 4 : 2)) return false;
+      previous=tick; return true;
+    });
   }
   function start(o) {
     if (!o || !o.canvas || typeof o.canvas.getContext!=='function') throw new TypeError('StrandFight.start requires a canvas.');
+    if (o.replay) {
+      if (!validReplay(o.replay)) throw new Error('Enregistrement de duel incompatible.');
+      const {p1,p2,stage,mode,difficulty,roundsToWin,seed}=o.replay;
+      o={...o,p1,p2,stage,mode,difficulty,roundsToWin,seed};
+    }
     stop(); const ctx=o.canvas.getContext('2d'); if (!ctx) throw new Error('Canvas 2D indisponible.');
     const stage=stages[o.stage]?o.stage:'shore', ids=[fighterId(o.p1,'sam'),fighterId(o.p2,'higgs')];
     const difficulty=({easy:0,facile:0,normal:1,medium:1,hard:2,difficile:2})[o.difficulty] ?? (Number.isInteger(o.difficulty)?clamp(o.difficulty,0,2):1);
+    const seed=Number.isInteger(o.seed) ? o.seed>>>0 : 0x63cee17;
     const m={canvas:o.canvas,ctx,stage,ids,difficulty,mode:['cpu','local','training'].includes(o.mode)?o.mode:'cpu',toWin:clamp(Math.floor(Number(o.roundsToWin)||2),1,5),
       onEnd:typeof o.onEnd==='function'?o.onEnd:null,onStatus:typeof o.onStatus==='function'?o.onStatus:null,
-      wins:[0,0], round:1, tick:0, paused:false, phase:'intro', phaseTicks:72, remaining:75*60,
+      wins:[0,0], round:1, tick:0, beat:0, paused:false, phase:'intro', phaseTicks:72, remaining:75*60,
       f:ids.map((id,i)=>fighter(id,i?818:462,i?-1:1)), shots:[], sparks:[], hstop:0, shake:0, winner:0, finisher:false, reason:'',
-      camera:0, images:{}, training:{dummy:'idle',hitboxes:false,...o.training}, sudden:false, scene:makeScenery(stage), simRandom:randomSeed(0x63cee17), particlesRandom:randomSeed(782), now:null, lag:0};
+      camera:0, images:{}, training:{dummy:'idle',hitboxes:false,...o.training}, sudden:false, scene:makeScenery(stage), simRandom:randomSeed(seed), particlesRandom:randomSeed(782), now:null, lag:0};
+    if (m.mode==='training') {
+      m.dummyTape={events:[],next:0};
+      m.training.frames=0; m.training.position=0;
+      if (m.training.dummy==='loop') m.training.dummy='idle';
+    }
+    m.networkClock=o.clock==='network' && m.mode==='local' && !o.replay;
+    m.playback=o.replay || null;
+    m.eventIndex=0;
+    m.recording=o.record && !m.playback && m.mode!=='training' ? {
+      version:1,p1:ids[0],p2:ids[1],stage,mode:m.mode,difficulty,seed,roundsToWin:m.toWin,events:[]
+    } : null;
+    if (Number.isFinite(o.startingVitality)) m.f[0].hp=clamp(Math.round(o.startingVitality),1,100);
+    m.parcel = o.parcel ? 'intact' : null;
     match=m; const generation=++serial;
     const art = host.StrandAssets || {};
     const load = src => {
@@ -125,8 +261,8 @@
     }
     m.scene.back = load(art.stages?.[stage]);
     m.scene.front = load(art.foregrounds?.[stage]);
-    if (ids.includes('mule')) m.images.cargo = load(art.props?.cargo);
-    if (typeof o.sound==='boolean') sound=o.sound;
+    if (ids.includes('mule') || m.parcel) m.images.cargo = load(art.props?.cargo);
+    if (typeof o.sound==='boolean') setSound(o.sound);
     o.canvas.width=WIDTH; o.canvas.height=HEIGHT; wakeAudio(); draw(m); notify(m,true);
     function frame(t) {
       if (serial!==generation || match!==m) return;
@@ -138,20 +274,88 @@
       m.now=t; draw(m);
       if (m.phase!=='ended') raf=host.requestAnimationFrame(frame);
     }
-    raf=host.requestAnimationFrame(frame); return snapshot();
+    if (!m.networkClock) raf=host.requestAnimationFrame(frame);
+    return snapshot();
   }
   function stop() { if (raf) host.cancelAnimationFrame(raf); raf=0; serial++; match=null; }
-  function clearControls(m) { for (const f of m.f) {f.queue=[];f.keys={};f.taps={};f.guard=false;} }
-  function pause(on=true) { if (match) {match.paused=!!on;match.now=null;match.lag=0;clearControls(match);draw(match);notify(match,true);} }
-  function setTraining(options={}) { if (!match || match.mode!=='training') return;
-    if (['idle','guard','cpu'].includes(options.dummy)) match.training.dummy=options.dummy;
-    if ('hitboxes' in options) match.training.hitboxes=!!options.hitboxes;
-    match.f[1].keys={};notify(match,true);
+  function clearFighterControls(f) { f.queue=[]; f.keys={}; f.taps={}; f.guard=false; }
+  function clearControls(m) { m.f.forEach(clearFighterControls); }
+  function pause(on=true) {
+    const m=match;
+    if (!m) return;
+    m.paused=!!on; m.now=null; m.lag=0;
+    if (!m.playback) {
+      if (m.recording) m.recording.events.push([m.tick,-1]);
+      if (m.dummyTape && m.training.dummy==='record' && m.phase==='fight' && on)
+        m.dummyTape.events.push([m.training.frames,null,false]);
+      if (m.dummyTape && m.training.dummy==='loop') clearFighterControls(m.f[0]);
+      else clearControls(m);
+    }
+    draw(m); notify(m,true);
   }
-  function setSound(on) { sound=!!on;if(sound) wakeAudio(); }
+  function setTraining(options={}) {
+    const m=match;
+    if (!m?.dummyTape) return;
+    const state=m.training, tape=m.dummyTape;
+    if ('hitboxes' in options) state.hitboxes=!!options.hitboxes;
+    if ('timing' in options) state.timing=!!options.timing;
+    const nextMode=options.reset && state.dummy==='record' ? 'idle' : options.dummy;
+    if (['idle','guard','cpu','record','loop'].includes(nextMode) && nextMode!==state.dummy) {
+      // Events after the last simulated frame belong to neither end of the loop.
+      if (state.dummy==='record') while (tape.events.length && tape.events.at(-1)[0]>=state.frames) tape.events.pop();
+      if (nextMode!=='loop' || state.frames>0) {
+        if (nextMode==='record') { tape.events=[]; state.frames=0; }
+        state.dummy=nextMode; state.position=0; tape.next=0;
+        clearFighterControls(m.f[1]);
+      }
+    }
+    if (options.reset) {
+      state.position=0; tape.next=0; m.round=0; m.camera=0; m.shake=0;
+      resetRound(m);
+    }
+    notify(m,true);
+  }
+  function advanceDummyTape(m) {
+    const state=m.training, tape=m.dummyTape;
+    if (state.dummy==='record') { state.frames++; return; }
+    if (state.dummy!=='loop') return;
+    if (state.position===state.frames) {
+      state.position=0; tape.next=0;
+      clearFighterControls(m.f[1]);
+    }
+    while (tape.next<tape.events.length && tape.events[tape.next][0]===state.position) {
+      const [,action,down]=tape.events[tape.next++];
+      if (action===null) clearFighterControls(m.f[1]);
+      else applyControl(m,2,action,down);
+    }
+    state.position++;
+  }
+  function setSound(on) {
+    sound=!!on;
+    if (sound) {wakeAudio(); return;}
+    for (const {source,volume} of voices) {
+      volume.disconnect();
+      try {source.stop();} catch (_) { /* A source may already have ended. */ }
+    }
+    voices.clear();
+  }
   function input(player,action,down=true) {
-    const m=match; if (!m || m.paused || ![1,2].includes(player) || !keyActions.includes(action)) return;
+    const m=match;
+    if (!m || m.phase==='ended' || m.paused || m.playback || ![1,2].includes(player) || !keyActions.includes(action)) return;
+    if (player===2 && m.dummyTape) {
+      if (m.training.dummy!=='record' || m.phase!=='fight' || !!m.f[1].keys[action]===!!down) return;
+      m.dummyTape.events.push([m.training.frames,action,!!down]);
+      applyControl(m,2,action,down);
+      return;
+    }
     if (player===2 && m.mode!=='local') return;
+    if (m.recording && !!m.f[player-1].keys[action]!==!!down) {
+      const code=((player-1)*keyActions.length+keyActions.indexOf(action))*2+Number(!!down);
+      m.recording.events.push([m.tick,code]);
+    }
+    applyControl(m,player,action,down);
+  }
+  function applyControl(m,player,action,down) {
     const f=m.f[player-1]; if (down && !f.keys[action]) {
       wakeAudio();
       if (m.phase==='finish' && m.winner===player && action==='finish') activateFinish(m);
@@ -170,18 +374,30 @@
       const foe = m.f[f === m.f[0] ? 1 : 0];
       const facing = Math.sign(foe.x - f.x) || f.face;
       const special = axis ? directional[f.id][axis === facing ? 'forward' : 'back'] : f.id;
-      f.queue=f.queue.filter(q=>q.action!==action);f.queue.push({action,special,until:m.tick+9});
+      f.queue=f.queue.filter(q=>q.action!==action);f.queue.push({action,special,beat:m.beat,until:m.tick+9});
     }
   }
-  function beginAttack(m,f,foe,key) {
+  const onMonitorBeat = beat => beat <= 3 || beat >= 57;
+  function beginAttack(m,f,foe,key,beatAtInput) {
+    if (key === 'winch' && f.marker?.kind !== 'anchor') {
+      f.notice='AUCUN ANCRAGE'; f.noticeTTL=30; return;
+    }
     if (key === 'retrieve' && (f.marker?.kind !== 'crate' || f.marker.travel === 'retrieve')) {
       f.notice = f.marker ? 'RAPPEL EN COURS' : 'AUCUNE CAISSE'; f.noticeTTL = 30;
       return;
     }
     const a=moves[key];if (a.cost && f.chiral<a.cost) {f.notice='CHIRAL INSUFFISANT';f.noticeTTL=42;return;}
-    if (a.cost) {f.chiral-=a.cost;f.notice=(a.name || f.spec.move).toUpperCase();f.noticeTTL=50;tone(260,.12,'sine',.035,480);}
+    if (a.cost) {f.chiral-=a.cost;f.notice=(a.name || f.spec.move).toUpperCase();f.noticeTTL=50;signatureSound(f.id);}
     if (key === 'retrieve') f.marker.ttl = Math.max(f.marker.ttl, a.start + 1);
     f.face=foe.x>=f.x?1:-1; f.act={key,t:0,hit:false,target:clamp(foe.x,48,WIDTH-48),hitConfirmed:false};f.lastMove=key;
+    if (m.dummyTape) f.emission=0;
+    if (key === 'relief' && f.marker?.kind === 'seal') {
+      f.act.extended = true;
+      f.marker = null;
+    }
+    if (key === 'winch' || (key === 'memory' && f.marker?.kind === 'memory'))
+      f.marker.ttl = Math.max(f.marker.ttl, a.start + 1);
+    if (key === 'heartman') f.act.onBeat = onMonitorBeat(beatAtInput);
     if (key==='grab') tone(140,.07,'triangle',.025,85);
   }
   function actOnQueue(m,f,foe) {
@@ -200,15 +416,39 @@
     }
     if (!f.grounded && ['special','throw'].includes(q.action)) return;
     const key=q.action==='special'?q.special:q.action==='throw'?'grab':!f.grounded?'air':f.keys.down?(q.action==='heavy'?'lift':'sweep'):q.action;
-    beginAttack(m,f,foe,key);
+    beginAttack(m,f,foe,key,q.beat);
   }
   function cpu(m,f,foe) {
-    if (m.mode==='training' && m.training.dummy!=='cpu') {f.keys={guard:m.training.dummy==='guard'};return;}
+    if (m.mode==='training' && m.training.dummy!=='cpu') {
+      if (m.training.dummy==='idle' || m.training.dummy==='guard') f.keys={guard:m.training.dummy==='guard'};
+      return;
+    }
     if (--f.aiWait>0) return;
     const r=m.simRandom, d=m.difficulty, gap=Math.abs(f.x-foe.x), forward=foe.x>f.x?'right':'left', back=forward==='right'?'left':'right';
     f.aiWait=5+Math.floor(r()*(16-d*4));f.keys={};
     if (f.stun || f.blockStun) return;
     const threat=foe.act && gap<156 || m.shots.some(s=>s.owner===0 && Math.abs(s.x-f.x)<175);
+    if (f.id === 'diehardman' && gap < 143 && ['light','heavy','lift'].includes(foe.act?.key) &&
+        foe.act.t < moves[foe.act.key].start && f.chiral >= 28 && r() < .35 + .15*d) {
+      pushInput(m,f,'special'); return;
+    }
+    if (f.id === 'diehardman' && gap >= 92 && gap < 144 && f.chiral >= moves.gate.cost && r() < .32) {
+      f.keys[forward]=true; pushInput(m,f,'special'); return;
+    }
+    if (f.id === 'mama' && f.marker?.kind === 'anchor' && r() < .65) {
+      const near = Math.abs(foe.x - f.marker.x) < 82;
+      if (f.chiral >= (near ? moves.deck.cost : moves.winch.cost)) {
+        f.keys[near ? forward : back] = true;
+        pushInput(m,f,'special'); return;
+      }
+    }
+    if (f.id === 'heartman' && gap < (onMonitorBeat(m.beat) ? 188 : 149) && gap > 91 &&
+        f.chiral >= moves.heartman.cost && r() < .4) {
+      pushInput(m,f,'special'); return;
+    }
+    if (f.id === 'heartman' && f.marker?.kind === 'memory' && Math.abs(f.marker.x-foe.x)<77 && f.chiral>=18) {
+      f.keys[forward]=true; pushInput(m,f,'special'); return;
+    }
     const lowCrate = foe.marker?.kind === 'crate' && foe.marker.travel && Math.abs(foe.marker.x - f.x) < 95;
     if ((threat || lowCrate) && r()<.38+d*.23) {f.keys.guard=true;f.keys.down=foe.act?.key==='sweep' || lowCrate;return;}
     if (f.id === 'mule' && f.marker?.kind === 'crate' && !f.marker.travel) {
@@ -222,7 +462,7 @@
     }
     if (gap>122) {
       f.keys[forward]=true;
-      if (gap>158 && gap<600 && f.chiral>=28 && r()<.12+d*.04) {
+      if (gap>158 && gap<600 && f.chiral>=28 && f.id!=='diehardman' && f.id!=='heartman' && r()<.12+d*.04) {
         // Alternate deployment with a neutral projectile or approach.
         f.keys[forward]=['cliff','higgs','mule'].includes(f.id) && !f.marker && r()<.45;
         if (f.id==='cliff' && f.marker && Math.abs(foe.x-f.marker.x)<72) f.keys[back]=true;
@@ -270,7 +510,21 @@
       }
       if (directional[f.id].forward === a.key || directional[f.id].back === a.key)
         stepDirectional(m, f, index, a, d);
-      if (a.key==='heavy' && a.t===d.start-3) f.x+=f.face*12;
+      if (a.key==='heavy' && a.t===d.start-3) f.x+=f.face*(f.id === 'diehardman' ? 6 : 12);
+      if (a.key === 'mama' && a.t === d.start) {
+        f.marker = {kind:'anchor', x:clamp(f.x + f.face * 130, 48, WIDTH-48), ttl:200};
+        tone(530,.1,'sine',.025,720);
+      }
+      if (a.key === 'heartman' && a.t === d.start) {
+        const speed = a.onBeat ? 10 : 7.5;
+        makeShot(m,index,'heartman',f.x,FLOOR-83,f.face*speed,16);
+        tone(a.onBeat ? 660 : 390,.12,'sine',.032,260);
+      }
+      if (a.key === 'relief' && a.t < d.start) f.x -= f.face * 2.5;
+      if (a.key === 'winch' && a.destination !== undefined && a.t >= d.start && a.t < d.start + d.active) {
+        const remaining = d.start + d.active - a.t;
+        f.x += (a.destination - f.x) / remaining;
+      }
       if (a.key === 'heavy' && a.t === d.start && f.marker?.kind === 'crate' && !f.marker.travel) {
         const reach = (f.marker.x - f.x) * f.face;
         if (reach >= -12 && reach <= d.reach) {
@@ -293,6 +547,25 @@
   function stepDirectional(m, f, owner, action, move) {
     if (action.t === move.start) {
       switch (action.key) {
+        case 'gate':
+          makeShot(m, owner, 'gate', clamp(f.x + f.face*108, 48, WIDTH-48), FLOOR-72, 0,
+            move.active + (f.marker?.kind === 'seal' ? 2 : 0));
+          break;
+        case 'deck': {
+          const anchored = f.marker?.kind === 'anchor';
+          makeShot(m,owner,'deck',anchored ? f.marker.x : f.x,FLOOR-76,f.face*(anchored ? 7.2 : 3.6),move.active);
+          break;
+        }
+        case 'winch':
+          action.destination = f.marker.x;
+          f.marker = null;
+          break;
+        case 'memory':
+          if (f.marker?.kind === 'memory') {
+            makeShot(m,owner,'memory',f.marker.x,FLOOR-64,0,8);
+            f.marker = null;
+          } else f.marker = {kind:'memory',x:f.x,ttl:120};
+          break;
         case 'brace': case 'parry': case 'fan':
           burst(m, f.x + f.face * 25, FLOOR - (action.key === 'fan' ? 130 : 75), ICE, 8);
           break;
@@ -335,7 +608,10 @@
     if (action.key === 'feint' && action.t >= move.start && action.t < move.start + move.active)
       f.x -= f.face * 5.25;
   }
-  function makeShot(m,owner,kind,x,y,vx,ttl) {m.shots.push({owner,kind,x,y,vx,ttl,age:0});}
+  function makeShot(m,owner,kind,x,y,vx,ttl) {
+    m.shots.push({owner,kind,x,y,vx,ttl,age:0});
+    if (m.dummyTape) m.f[owner].emission=ttl;
+  }
   function hurt(f) {
     const h=f.spec.h*(f.crouch?.62:1), y=FLOOR-f.y;
     return {l:f.x-22,r:f.x+22,t:y-h,b:y};
@@ -343,17 +619,23 @@
   function strike(f) {
     const a=f.act; if (!a) return null;
     const d=moves[a.key]; if (!d.reach || a.t<d.start || a.t>=d.start+d.active || a.hit) return null;
-    const x=f.x+f.face*d.reach, y=FLOOR-f.y;
+    const x=f.x+f.face*(d.reach + (a.extended ? 44 : 0)), y=FLOOR-f.y;
     return {l:Math.min(f.x,x),r:Math.max(f.x,x),t:y-d.high,b:y-d.low};
   }
   const intersects=(a,b)=>a.l<b.r && a.r>b.l && a.t<b.b && a.b>b.t;
-  function immune(f) {return f.dash>=4 && f.dash<=8 || (f.act?.key==='fragile' && f.act.t>=6 && f.act.t<=10);}
+  function immune(f) {return f.dash>=4 && f.dash<=8 || (f.act?.key==='syncope' && f.act.t>=10 && f.act.t<16) || (f.act?.key==='fragile' && f.act.t>=6 && f.act.t<=10);}
   function intercept(m, defender, attacker, kind, melee) {
     const defense = defender.act;
-    if (!melee || !defense || defense.hit || (defense.key !== 'brace' && defense.key !== 'parry')) return false;
+    if (!melee || !defense || defense.hit || !['brace','parry','diehardman'].includes(defense.key)) return false;
     const move = moves[defense.key];
     if (defense.t < move.start || defense.t >= move.start + move.active || kind === 'grab') return false;
-    if (defense.key === 'brace') {
+    if (defense.key === 'diehardman') {
+      if (!['light','heavy','lift','relief','fragile'].includes(kind)) return false;
+      defender.marker = {kind:'seal',ttl:120};
+      defender.notice = 'SCEAU ACCORDÉ';
+      attacker.stun = Math.max(attacker.stun, 26);
+      attacker.act = null;
+    } else if (defense.key === 'brace') {
       if (kind !== 'light') return false;
       defender.notice = 'APPUI STABLE';
     } else {
@@ -374,6 +656,9 @@
   function hit(m,attacker,victim,kind,d,face) {
     const grab=!!d.grab, blocked=victim.guard && !grab && ((kind!=='sweep' && d.level!=='low') || victim.crouch) && (kind!=='air' || !victim.crouch);
     const damage=Math.round(d.damage*attacker.spec.power);
+    if (!blocked && m.parcel === 'intact' && victim === m.f[0]) {
+      m.parcel='broken'; victim.notice='SCELLÉ ROMPU'; victim.noticeTTL=75;
+    }
     victim.hp=clamp(victim.hp-(blocked?0:damage),0,100);
     victim.balance=clamp(victim.balance-d.balance*(blocked?1.25:.76),0,100);victim.postHit=58;
     attacker.chiral=clamp(attacker.chiral+(blocked?2:4),0,100);victim.chiral=clamp(victim.chiral+(blocked?2:3),0,100);
@@ -403,7 +688,8 @@
     for (const s of m.shots) {
       s.age++;s.x+=s.vx;s.ttl--;
       if (s.kind==='recall') s.y-=16;
-      const o=m.f[1-s.owner], rx=s.kind==='higgs'?43:s.kind==='recall'?46:13, ry=s.kind==='higgs'?51:9;
+      const o=m.f[1-s.owner], rx=s.kind==='higgs'?43:s.kind==='recall'?46:s.kind==='memory'?66:s.kind==='gate'?18:13,
+        ry=s.kind==='higgs'?51:s.kind==='gate'?72:s.kind==='memory'?45:9;
       if (!immune(o) && intersects({l:s.x-rx,r:s.x+rx,t:s.y-ry,b:s.y+ry},bodies[1-s.owner])) {
         events.push({i:s.owner,d:shotHit[s.kind],kind:s.kind,face:s.vx?Math.sign(s.vx):Math.sign(o.x-m.f[s.owner].x)||1});s.ttl=0;
       }
@@ -459,7 +745,7 @@
     }
   }
   function resetRound(m) {
-    m.round++;m.winner=0;m.phase='intro';m.phaseTicks=66;m.remaining=75*60;m.sudden=false;m.hstop=0;m.shots=[];m.sparks=[];
+    m.round++;m.beat=0;m.winner=0;m.phase='intro';m.phaseTicks=66;m.remaining=75*60;m.sudden=false;m.hstop=0;m.shots=[];m.sparks=[];
     m.f=m.ids.map((id,i)=>fighter(id,i?818:462,i?-1:1));notify(m,true);
   }
   function winRound(m,index,reason) {
@@ -475,10 +761,32 @@
   }
   function finishMatch(m) {
     m.phase='ended';notify(m,true);
-    if (m.onEnd) m.onEnd({winner:m.winner,loser:3-m.winner,rounds:m.wins.slice(),reason:m.reason,finisher:m.finisher,stage:m.stage,fighters:m.ids.slice()});
+    if (m.onEnd) {
+      const result={vitality:Math.ceil(m.f[0].hp),parcel:m.parcel,winner:m.winner,loser:3-m.winner,rounds:m.wins.slice(),reason:m.reason,finisher:m.finisher,stage:m.stage,fighters:m.ids.slice()};
+      if (m.recording) result.replay={...m.recording,events:m.recording.events.slice(),ticks:m.tick};
+      if (m.playback && m.tick!==m.playback.ticks) result.replayMismatch=true;
+      m.onEnd(result);
+    }
   }
   function step(m) {
     if (m.phase==='ended') return;
+    if (m.playback) {
+      const events=m.playback.events;
+      while (m.eventIndex<events.length && events[m.eventIndex][0]===m.tick) {
+        const code=events[m.eventIndex++][1];
+        if (code===-1) clearControls(m);
+        else {
+          const index=Math.floor(code/2);
+          applyControl(m,1+Math.floor(index/keyActions.length),keyActions[index%keyActions.length],!!(code%2));
+        }
+      }
+      if (m.tick>=m.playback.ticks) {
+        m.phase='ended';
+        m.onEnd?.({replayMismatch:true});
+        return;
+      }
+    }
+    if (m.dummyTape && m.phase==='fight') advanceDummyTape(m);
     m.tick++;m.shake*=.85;
     for (const p of m.sparks) {p.x+=p.vx;p.y+=p.vy;p.vy+=.14;p.ttl--;}
     m.sparks=m.sparks.filter(p=>p.ttl>0);
@@ -492,6 +800,7 @@
       return;
     }
     if (m.hstop>0) {m.hstop--;return;}
+    m.beat = (m.beat + 1) % 60;
     if (m.mode!=='local') cpu(m,m.f[1],m.f[0]);
     const [a,b]=m.f;updateFighter(m,a,b,0);updateFighter(m,b,a,1);
     const delta=b.x-a.x, overlap=44-Math.abs(delta);
@@ -646,14 +955,18 @@
     c.scale(f.face, 1);
     const sway = f.stun ? -.12 : lost ? -.09 : f.guard ? -.07 : f.dash ? .16 : movement ? .035 * Math.sin(f.walk) : 0;
     c.rotate(sway + (performing ? .025 : .12) * reach);
-    if (immune(f)) c.globalAlpha = .63;
+    if (immune(f)) c.globalAlpha = f.act?.key === 'syncope' ? .14 : .63;
     if (ready(image)) {
       const geometry = spriteGeometry[f.id];
       const h = height * (geometry[pose + 'Scale'] || 1);
-      const w = h * image.naturalWidth / image.naturalHeight;
+      const frames = (pose === 'step' || pose === 'hit') ? geometry.motionFrames || 1 : 1;
+      const srcWidth = image.naturalWidth / frames;
+      const w = h * srcWidth / image.naturalHeight;
       const anchor = geometry[pose + 'Anchor'] ?? geometry.stanceAnchor;
       if (f.flash > 1 && (f.flash % 4 < 2)) c.filter = 'brightness(1.5)';
-      c.drawImage(image, -w * anchor + 9 * reach, -h, w, h);
+      const weight = pose === 'hit' ? Math.min(1, f.stun / 8) : f.dash ? 1 : Math.sin(f.walk);
+      const frame = clamp(Math.ceil(weight * frames)-1,0,frames-1);
+      c.drawImage(image,frame * srcWidth,0,srcWidth,image.naturalHeight,-w * anchor + 9 * reach,-h,w,h);
     } else {
       // A temporary silhouette fills the same collision space during image decoding.
       c.fillStyle = f.spec.suit;
@@ -663,6 +976,10 @@
       line(c,7,-height*.36,18,-2,f.spec.suit,12);
     }
     c.restore();
+    if (m.parcel && index===0 && ready(m.images.cargo)) {
+      c.save(); c.translate(f.x-f.face*13,feet-height*.44); c.rotate(f.face * (m.parcel==='broken' ? .24 : -.06));
+      c.drawImage(m.images.cargo,-16,-14,32,16); c.restore();
+    }
     if (act?.key === 'feint' && act.origin !== undefined && act.t < moves.feint.start + moves.feint.active) {
       const elapsed = act.t - moves.feint.start;
       const echoX = act.origin + f.face * elapsed * 3;
@@ -702,9 +1019,38 @@
     if (f.combo > 1 && f.comboTTL) label(c, f.combo + ' COUPS', f.x, feet - height - 27, 13, 'white', 'center');
   }
 
+  function pulseTrace(c,x,y,w,h,color) {
+    c.beginPath(); c.moveTo(x-w,y); c.lineTo(x-w*.35,y); c.lineTo(x-w*.14,y+h*.32);
+    c.lineTo(x,y-h); c.lineTo(x+w*.18,y+h*.55); c.lineTo(x+w*.38,y);
+    c.lineTo(x+w,y); c.strokeStyle=color; c.lineWidth=2; c.stroke();
+  }
+
   function effects(m) {
     const c = m.ctx;
     for (const f of m.f) {
+      if (f.id === 'heartman') {
+        const lit = onMonitorBeat(m.beat);
+        const y = FLOOR-f.y+12;
+        pulseTrace(c,f.x,y,24,lit ? 10 : 3,lit ? '#ffe7b5' : '#dca696');
+        oval(c,f.x-24+m.beat*48/60,y,2,2,'#ffe4bd');
+        if (f.act?.key === 'syncope' && immune(f))
+          line(c,f.x-21,FLOOR-2,f.x+21,FLOOR-2,'#ffdec1',3);
+      }
+      if (f.act?.key === 'diehardman' && f.act.t <= moves.diehardman.start + moves.diehardman.active) {
+        const x = f.x+f.face*39, y = FLOOR-104;
+        c.strokeStyle=f.act.t < moves.diehardman.start ? '#80988b' : '#deffe8';
+        c.lineWidth=2; c.strokeRect(x-10,y-10,20,20);
+      }
+      if (f.act?.key === 'mama' && f.act.t === moves.mama.start-1) {
+        const x=clamp(f.x+f.face*130,48,WIDTH-48);
+        line(c,f.x+f.face*22,FLOOR-84,x,FLOOR-8,ICE,1);
+      }
+      if (f.act?.key === 'winch' && f.act.destination !== undefined && f.act.t < moves.winch.start+moves.winch.active)
+        line(c,f.x,FLOOR-64,f.act.destination,FLOOR-4,'#8ee9df',2);
+      if (f.act?.key === 'relief' && strike(f)) {
+        const reach=moves.relief.reach+(f.act.extended ? 44 : 0);
+        line(c,f.x+f.face*21,FLOOR-77,f.x+f.face*reach,FLOOR-77,'#d8e8cb',2);
+      }
       if (f.act?.key === 'mule') {
         const wave = f.act.t - moves.mule.start;
         if (wave >= 0 && wave < moves.mule.active) {
@@ -723,7 +1069,19 @@
       const mark = f.marker;
       if (!mark) continue;
       const {x,kind,ttl} = mark;
-      if (kind === 'beacon') {
+      if (kind === 'seal') {
+        const sx=f.x-f.face*30, sy=FLOOR-f.y-126;
+        c.strokeStyle='#d7f3d2'; c.lineWidth=2; c.strokeRect(sx-6,sy-6,12,12);
+        line(c,sx-6,sy+10,sx-6+12*ttl/120,sy+10,'#d7f3d2',2);
+      } else if (kind === 'anchor') {
+        oval(c,x,FLOOR-2,16,3,'#75cfc7');
+        line(c,x-9,FLOOR-2,x,FLOOR-30,'#91ede0',2);
+        line(c,x,FLOOR-30,x+9,FLOOR-2,'#91ede0',2);
+        line(c,x-6,FLOOR-11,x+6,FLOOR-11,ICE,2);
+      } else if (kind === 'memory') {
+        oval(c,x,FLOOR-2,17,3,'#a77e73');
+        pulseTrace(c,x,FLOOR-20,18,9,'#ffc9ad');
+      } else if (kind === 'beacon') {
         oval(c,x,FLOOR-2,22,4,'rgba(175,240,250,.65)');
         line(c,x,FLOOR-2,x,FLOOR-33,ICE,1.5);
       } else if (kind === 'mine') {
@@ -744,7 +1102,18 @@
       }
     }
     for (const s of m.shots) {
-      if (s.kind === 'recall') {
+      if (s.kind === 'gate') {
+        c.fillStyle='rgba(168,214,181,.18)'; c.fillRect(s.x-15,FLOOR-143,30,143);
+        c.strokeStyle='#cae6ca'; c.lineWidth=2; c.strokeRect(s.x-15,FLOOR-143,30,143);
+        line(c,s.x-15,FLOOR-128,s.x+15,FLOOR-110,ICE,2);
+      } else if (s.kind === 'deck') {
+        const tail=s.x-Math.sign(s.vx)*24;
+        line(c,tail,s.y-4,s.x,s.y-4,'#b1f3ec',3);
+        line(c,tail,s.y+5,s.x,s.y+5,'#79c0c0',2);
+        line(c,tail,s.y+5,s.x,s.y-4,'#b1f3ec',2);
+      } else if (s.kind === 'heartman' || s.kind === 'memory') {
+        pulseTrace(c,s.x,s.y,s.kind==='memory' ? 64 : 14,s.kind==='memory' ? 25 : 8,'#ffceae');
+      } else if (s.kind === 'recall') {
         line(c,s.x-24,s.y+18,s.x+25,s.y-10,'#cddbbb',3);
       } else if (s.kind === 'higgs') {
         for (let i=-2;i<=2;i++) {
@@ -793,6 +1162,7 @@
       meter(c,x,76,478,4,f.chiral,'#89c6cd',right);
       for (let r=0; r<m.toWin && m.mode!=='training'; r++) oval(c,edge+(right?-1:1)*(6+r*18),94,4,4,r<m.wins[i]?'#f8cd87':'#606f72');
     });
+    if (m.parcel) label(c,m.parcel==='intact'?'COLIS SCELLÉ':'SCELLÉ ROMPU',WIDTH/2,106,12,m.parcel==='intact'?ICE:AMBER,'center');
     const display = m.mode==='training'?'∞':String(Math.ceil(m.remaining/60)).padStart(2,'0');
     label(c,display,WIDTH/2,61,46,'#f7f6ed','center');
     label(c,m.mode==='training'?'DOJO':'MANCHE '+m.round,WIDTH/2,83,12,'#c5d6d3','center');
@@ -832,6 +1202,29 @@
       c.strokeRect(x-47,y-158,94,158);
       line(c,x-47,scanY,x+47,scanY,'#ffe8ac',3);
       for (let n = 0; n < 5; n++) line(c,x-28+n*12,y-8,x-28+n*12,y-18,AMBER,2);
+    } else if(actor.id==='diehardman') {
+      for (let i=0;i<3;i++) {
+        const offset=Math.max(0,1-t*3+i*.33)*54;
+        const gx=x+(i-1)*88;
+        c.strokeStyle='#c4dccb'; c.lineWidth=2; c.strokeRect(gx-37,y-157,74,157);
+        c.fillStyle='rgba(91,124,109,.72)';
+        c.fillRect(gx-36-offset,y-155,35,152); c.fillRect(gx+1+offset,y-155,35,152);
+      }
+    } else if(actor.id==='mama') {
+      for (let i=0;i<3;i++) {
+        const gx=x+(i-1.5)*54, gy=y-23-i*13, span=54*clamp(t*5-i,0,1);
+        line(c,gx,gy,gx+span,gy,'#a2e9e0',4);
+        line(c,gx,y,gx+span,gy,'#8abeb9',2);
+      }
+      const progress=clamp((t-.35)/.56,0,1);
+      oval(c,x-81+progress*162,y-34-progress*39,9,9,AMBER);
+    } else if(actor.id==='heartman') {
+      pulseTrace(c,x,y-81,98,53*p,'#ffd1ad');
+      for (const sign of [-1,1]) {
+        const gx=x+sign*(78-44*p);
+        oval(c,gx,y-81,6,6,'#fff1d6');
+        line(c,gx,y-147,gx,y-15,'rgba(249,185,143,.68)',1.5);
+      }
     } else if(actor.id==='sam') {
       for(let i=0;i<5;i++)line(c,actor.x, FLOOR-91,x+(i%2?16:-16),y-36-i*17,'#d9ad76',2);
     } else {
@@ -893,5 +1286,32 @@
     c.restore();
   }
 
-  host.StrandFight = {start, stop, pause, input, setTraining, setSound, snapshot};
+  // Checkpoints contain mutable simulation data only. Art, callbacks and the canvas
+  // stay attached to this match while the private room reconciles late inputs.
+  const networkFields = ['wins','round','tick','beat','phase','phaseTicks','remaining','f','shots','sparks',
+    'hstop','shake','winner','finisher','reason','camera','sudden','parcel'];
+  const network = {
+    checkpoint() {
+      if (!match?.networkClock) return null;
+      const state={};
+      for (const key of networkFields) state[key]=match[key];
+      return {state:structuredClone(state),particles:match.particlesRandom.state(),simulation:match.simRandom.state()};
+    },
+    restore(point) {
+      if (!match?.networkClock || !point) return;
+      Object.assign(match,structuredClone(point.state));
+      match.particlesRandom.restore(point.particles); match.simRandom.restore(point.simulation);
+    },
+    advance(inputs,silent=false) {
+      if (!match?.networkClock) return;
+      match.silentResimulation=silent;
+      try {
+        for (const [player,action,down] of inputs) input(player,action,down);
+        step(match);
+      } finally { match.silentResimulation=false; }
+    },
+    draw() {if (match?.networkClock) draw(match);}
+  };
+
+  host.StrandFight = {start, stop, pause, input, setTraining, setSound, snapshot, validReplay, network};
 })(window);

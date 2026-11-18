@@ -3,7 +3,7 @@ const fs = require('node:fs');
 const path = require('node:path');
 const { chromium } = require('playwright');
 const root = path.resolve(__dirname,'..');
-const mock = `window.StrandFight = {start(options){this.options=options;this.inputs=[];options.onStatus({phase:'intro'});},stop(){this.stops=(this.stops||0)+1},setSound(on){this.sound=on},pause(on){this.paused=on},input(player,action,down){this.inputs.push([player,action,down])},setTraining(settings){this.training=settings},end(winner){this.options.onEnd({winner,rounds:winner===1?[2,0]:[1,2],reason:'ko',finisher:false})}}`;
+const mock = `window.StrandFight = {start(options){this.options=options;this.inputs=[];options.onStatus({phase:'intro',training:{...options.training,frames:0,position:0}});},stop(){this.stops=(this.stops||0)+1},setSound(on){this.sound=on},pause(on){this.paused=on},input(player,action,down){this.inputs.push([player,action,down])},setTraining(settings){this.training={...this.training,...settings}},end(winner){this.options.onEnd({winner,rounds:winner===1?[2,0]:[1,2],reason:'ko',finisher:false})}}`;
 (async () => {
   const browser = await chromium.launch({executablePath:process.env.PLAYWRIGHT_CHROMIUM_EXECUTABLE || undefined, args:['--no-sandbox']});
   const page = await browser.newPage({viewport:{width:1280,height:800}});
@@ -23,7 +23,7 @@ const mock = `window.StrandFight = {start(options){this.options=options;this.inp
   const mode = value => page.locator('[data-act="mode"][data-mode="'+value+'"]').click();
   const pick = id => page.locator('[data-act="pick"][data-id="'+id+'"]').click();
   const end = winner => page.evaluate(win => StrandFight.end(win),winner);
-  for (const id of ['sam','higgs','cliff','fragile','mule']) {
+  for (const id of ['sam','higgs','cliff','fragile','mule','diehardman','mama','heartman']) {
     await mode('story'); await pick(id); await act('start');
     assert.match(await page.locator('.speaker').textContent(),/Introduction/);
     await act('routeFight'); let p1 = await page.evaluate(() => StrandFight.options.p1); assert.equal(p1,id);
@@ -41,7 +41,7 @@ const mock = `window.StrandFight = {start(options){this.options=options;this.inp
     await end(1); await act('routeFight'); await end(1); await act('rival'); assert.match(await page.locator('.speaker').textContent(),/Rivalité/);
     await act('routeFight'); await end(1); await act('ending'); assert.match(await page.locator('.speaker').textContent(),/Épilogue/); await act('home');
   }
-  await act('gallery'); assert.equal(await page.locator('[data-act=replay]').count(),15); await act('replay'); await act('gallery'); await act('home');
+  await act('gallery'); assert.equal(await page.locator('[data-act=replay]').count(),24); await act('replay'); await act('gallery'); await act('home');
   await mode('arcade'); await act('start'); await end(1); await act('routeFight'); await end(1); await act('routeFight'); await end(1);
   assert.match(await page.locator('.result').textContent(),/trois adversaires/); await act('home');
   await mode('versus'); await page.locator('[data-option=opponent]').selectOption('local'); await act('start');
@@ -88,5 +88,5 @@ const mock = `window.StrandFight = {start(options){this.options=options;this.inp
   assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth<=window.innerWidth),true);
   assert.deepEqual(errors,[]);
   await browser.close();
-  console.log('OK — 5 campagnes, 15 scènes, arcade, revanche et J2, dojo, pause, commandes tactiles/clavier, tournois 4/6/8 avec reprise.');
+  console.log('OK — 8 campagnes, 24 scènes, arcade, revanche et J2, dojo, pause, commandes tactiles/clavier, tournois 4/6/8 avec reprise.');
 })().catch(error=>{console.error(error);process.exit(1)});
