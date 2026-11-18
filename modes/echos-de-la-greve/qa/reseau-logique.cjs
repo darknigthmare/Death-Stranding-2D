@@ -1,0 +1,72 @@
+const assert = require('node:assert/strict');
+const fs = require('node:fs');
+const path = require('node:path');
+const vm = require('node:vm');
+const {roomService} = require('../netplay-server.cjs');
+
+function verifyProtocol() {
+  let now = 0;
+  const version = 'local-test';
+  const receive = roomService(version, () => now);
+  const tokens = ['a'.repeat(40),'b'.repeat(40)];
+  const created = receive({op:'create',version,token:tokens[0]});
+  assert.equal(created.player,1);
+  const room = created.room;
+  const call = (player,op,data={}) => receive({token:tokens[player-1],version,room,op,inputs:[],cursor:0,...data});
+  assert.equal(call(2,'join').player,2);
+  call(1,'ready',{fighter:'sam',ready:true});
+  assert.throws(() => call(1,'start',{stage:'shore'}));
+  call(2,'ready',{fighter:'higgs',ready:true});
+  assert.deepEqual(call(1,'start',{stage:'shore'}).seats.map(s=>s.ready),[true,true]);
+  now=1000;
+  const inputs=[[1,55,'right',true],[2,56,'right',false]];
+  const a=call(1,'sync',{inputs});
+  const retry=call(1,'sync',{inputs});
+  assert.equal(a.tick,60);
+  assert.deepEqual(a.events,retry.events);
+  assert.equal(call(2,'sync',{cursor:1}).events.length,1);
+  for (let t=1500;t<=5000;t+=500) {now=t;call(1,'sync');}
+  const pause=call(1,'sync');
+  assert.equal(pause.live,false);
+  now+=1000;
+  assert.equal(call(1,'sync').tick,pause.tick);
+  assert.equal(call(2,'join').player,2);
+  call(1,'sync');
+  now+=500;
+  const resumed=call(2,'sync');
+  assert.equal(resumed.tick,pause.tick+30);
+  const done={tick:90,winner:2,rounds:'1-2'};
+  call(2,'sync',{done,cursor:2});
+  assert.deepEqual(call(1,'sync',{done,cursor:2}).result,done);
+  assert.equal(call(1,'leave').closed,true);
+  assert.equal(call(2,'sync').closed,true);
+  console.log('Relais · création, deux places, choix, lancement, accusés, reprise, résultat et fermeture vérifiés.');
+}
+function verifyEngines() {
+  const source = name => fs.readFileSync(path.join(__dirname,'..',name),'utf8');
+  const context = {window:{},Image:class {},structuredClone};
+  vm.runInNewContext(source('content.js'),context);
+  vm.runInNewContext(source('fight.js'),context);
+  const engine=context.window.StrandFight;
+  const ctx=new Proxy({createLinearGradient:()=>({addColorStop(){}})}, {get:(o,k)=>o[k]||(()=>{})});
+  const canvas={getContext:()=>ctx};
+  const start=()=>engine.start({canvas,p1:'sam',p2:'mule',stage:'mule-camp',seed:42,mode:'local',clock:'network',roundsToWin:2,sound:false});
+  const inputs = new Map([[90,[[1,'right',true],[2,'left',true]]],[125,[[1,'right',false],[2,'left',false]]],[130,[[1,'light',true]]],[131,[[1,'light',false]]],[140,[[2,'special',true]]],[141,[[2,'special',false]]]]);
+  const advance=(from,to,late=false)=>{for(let tick=from;tick<to;tick++)engine.network.advance(late && tick===130 ? []:inputs.get(tick)||[],true);};
+  start();
+  advance(0,200);
+  const reference=JSON.stringify(engine.network.checkpoint());
+  start();
+  advance(0,128);
+  const saved=engine.network.checkpoint();
+  advance(128,150,true);
+  engine.network.restore(saved);
+  advance(128,200);
+  assert.equal(JSON.stringify(engine.network.checkpoint()),reference);
+  const snap=engine.snapshot();
+  assert(snap.fighters[0].x>462 && snap.fighters[1].x<818);
+  assert.equal(snap.tick,200);
+  console.log('Moteur · état complet identique après correction d’une commande tardive, au pas 200.');
+}
+verifyProtocol();
+verifyEngines();

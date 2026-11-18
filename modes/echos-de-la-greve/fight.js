@@ -101,7 +101,7 @@
     source.start(t); source.stop(t+span+.002);
   }
   function tone(hz,span,waveform='sine',gain=.035,end=hz,delay=0,attack=.009) {
-    if (!sound || audio?.state!=='running') return;
+    if (!sound || match?.silentResimulation || audio?.state!=='running') return;
     try {
       const t=audio.currentTime+delay, osc=audio.createOscillator();
       osc.type=waveform; osc.frequency.setValueAtTime(hz,t);
@@ -110,7 +110,7 @@
     } catch (_) { /* Sound is optional. */ }
   }
   function friction(type,hz,end,span,gain,delay=0) {
-    if (!sound || audio?.state!=='running') return;
+    if (!sound || match?.silentResimulation || audio?.state!=='running') return;
     try {
       if (!noiseBuffer) {
         noiseBuffer=audio.createBuffer(1,Math.ceil(audio.sampleRate*.4),audio.sampleRate);

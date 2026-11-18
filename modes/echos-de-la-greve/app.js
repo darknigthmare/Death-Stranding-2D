@@ -76,7 +76,7 @@
       '<h1>Échos de<br>la Grève</h1><p>Choisis un combattant et suis son histoire jusqu’au duel avec son rival.</p>' +
       '<div class="actions">' + button('mode','Jouer l’histoire ' + arrow,'darkbtn','data-mode="story"') + '</div></div></section>' +
       '<section class="shelf"><div class="shelfhead"><h2>Modes de combat</h2></div><div class="tiles">' + tiles + '</div><div class="archives">' +
-      button('gallery','Galerie des scènes','mini') + '<a class="mini" href="duel-originel/index.html">Duel originel · Sam / Higgs</a>' +
+      button('gallery','Galerie des scènes','mini') + '<a class="mini" href="duel-originel/index.html">Duel originel · Sam / Higgs</a><a class="mini" href="netplay.html">Salon privé en réseau</a>' +
       '<a class="mini campaignLink" href="../../JOUER.html">Retour à la campagne ↗</a></div></section>');
   }
   function stageFor(id) { return fighters[id].route[0][1]; }
