@@ -14,7 +14,7 @@
   const roster = Object.keys(window.StrandContent.fighters);
   const arenas = Object.keys(window.StrandContent.stages);
   const stageLayers = (suffix, ids=arenas) => Object.fromEntries(ids.map(id => [id, 'assets/stages/' + id + suffix + '.png']));
-  // All ten arenas have their five independent layers. Keep the panorama fallback
+  // Ten locations and the dry MULE variant have five independent layers. Keep the panorama fallback
   // for offline copies while the separate production files finish decoding.
   const movement = ['guard','crouch','rise','apex','fall'];
   const fixedFrame = poses => Object.fromEntries(poses.flatMap(pose => [
@@ -54,7 +54,7 @@
     },
     portraits: illustrations('fighters', roster, '-portrait'),
     finishers: illustrations('finishers', roster),
-    stages: illustrations('stages', arenas),
+    stages: {...illustrations('stages', arenas), 'mule-camp-dry':'assets/stages/mule-camp-dry.png'},
     skyplates: stageLayers('-sky'),
     distants: stageLayers('-distant'),
     midgrounds: stageLayers('-midground'),
@@ -62,17 +62,18 @@
     stageGeometry: {
       // All layers retain their source aspect ratio. base positions anchorY in
       // the source at this screen height; transparent padding is never stretched.
-      shore:{distant:{anchorY:.94,base:540},middle:{anchorY:.77,base:550,alpha:.9},floor:{anchorY:221/724}},
-      terminal:{distant:{anchorY:.94,base:564},middle:{anchorY:.97,base:580},floor:{anchorY:214/724}},
-      battlefield:{distant:{anchorY:.96,base:552},middle:{anchorY:.97,base:574},floor:{anchorY:229/724}},
+      shore:{distant:{anchorY:680/724,base:594},middle:{anchorY:557/724,base:596,alpha:.9},floor:{anchorY:221/724}},
+      terminal:{distant:{anchorY:680/724,base:594},middle:{anchorY:701/724,base:594},floor:{anchorY:214/724}},
+      battlefield:{distant:{anchorY:1,base:594},middle:{anchorY:696/724,base:594},floor:{anchorY:229/724}},
       'mule-camp':{distant:{anchorY:.96,base:609},middle:{anchorY:.97,base:576},floor:{anchorY:302/724}},
+      'mule-camp-dry':{distant:{anchorY:679/724,base:598},middle:{anchorY:686/724,base:592},floor:{anchorY:300/724}},
       'heartman-lab':{distant:{anchorY:.96,base:590},middle:{anchorY:.96,base:590},floor:{anchorY:225/724}},
       'mama-workshop':{distant:{anchorY:.96,base:564},middle:{anchorY:.93,base:578},floor:{anchorY:201/724}},
       'ruined-factory':{distant:{anchorY:.96,base:592},middle:{anchorY:.93,base:596},floor:{anchorY:202/724}},
       'timefall-shelter':{distant:{anchorY:.96,base:592},middle:{anchorY:.93,base:576},floor:{anchorY:235/724}},
       'tar-basin':{distant:{anchorY:.96,base:592},middle:{anchorY:.95,base:572},floor:{anchorY:213/724}},
-      'mountain-pass':{distant:{anchorY:.96,base:554},middle:{anchorY:.96,base:574},floor:{anchorY:194/724}}
+      'mountain-pass':{distant:{anchorY:707/724,base:594},middle:{anchorY:687/724,base:594},floor:{anchorY:194/724}}
     },
-    foregrounds: illustrations('stages', arenas, '-foreground')
+    foregrounds: {...illustrations('stages', arenas, '-foreground'), 'mule-camp-dry':'assets/stages/mule-camp-dry-foreground.png'}
   };
 })();

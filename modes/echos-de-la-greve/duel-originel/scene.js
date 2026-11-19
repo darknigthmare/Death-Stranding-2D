@@ -2,54 +2,94 @@
 (function(scope){
   "use strict";
   const W=1120,H=630,GROUND=528;
-  const img={};
+  const img={},scenes=new Map();
+  const stageIds=Object.freeze(['shore','terminal','mule-camp','timefall-shelter','battlefield','tar-basin']);
+  const catalog=scope.StrandContent,art=scope.StrandAssets;
   const assets = {
-    sam: "fighters/sam-stance", samAction: "fighters/sam-action", higgs: "fighters/higgs-action",
-    beach: "stages/shore-alt", foreground: "stages/shore-foreground"
+    sam: "fighters/sam-stance", samAction: "fighters/sam-action", higgs: "fighters/higgs-action"
   };
   for (const [key, path] of Object.entries(assets)) {
     const picture = new Image();
     picture.src = "../assets/" + path + ".webp";
     img[key] = picture;
   }
-  const ready=i=>i.complete && i.naturalWidth>0;
-  const smooth=typeof matchMedia!=="undefined" && !matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const ready=i=>i && i.complete && i.naturalWidth>0;
+  const preference=typeof matchMedia!=="undefined"?matchMedia("(prefers-reduced-motion: reduce)"):null;
+  let smooth=!preference?.matches;
+  preference?.addEventListener?.('change',event=>{smooth=!event.matches;});
+  const stageId=id=>stageIds.includes(id)?id:'shore';
+  function preload(id){
+    id=stageId(id);
+    if(!scenes.has(id)){
+      const load=path=>{if(!path)return null;const image=new Image();image.src='../'+path;return image;};
+      scenes.set(id,{
+        legacy:load(art.stages[id]),sky:load(art.skyplates[id]),distant:load(art.distants[id]),
+        middle:load(art.midgrounds[id]),floor:load(art.floors[id]),front:load(art.foregrounds[id]),
+        geometry:art.stageGeometry[id]||{}
+      });
+    }
+    return scenes.get(id);
+  }
   function cover(c,i,x,y,w,h){
     const ratio=Math.max(w/i.naturalWidth,h/i.naturalHeight),iw=i.naturalWidth*ratio,ih=i.naturalHeight*ratio;
     c.drawImage(i,x+(w-iw)/2,y+(h-ih)/2,iw,ih);
   }
-  function coast(c,cam,t){
-    const horizon=c.createLinearGradient(0,0,0,H);horizon.addColorStop(0,"#718387");horizon.addColorStop(.58,"#58696b");horizon.addColorStop(1,"#202b2b");
-    c.fillStyle=horizon;c.fillRect(0,0,W,H);
-    if(ready(img.beach))cover(c,img.beach,-30-cam*.07,-6,W+60,H+12);
-    // Échos très distants, distincts du paysage photographique.
-    c.save();c.translate(-cam*.14,0);
-    const echoes=[[98,184],[171,150],[632,174],[838,125],[982,198]];
-    echoes.forEach(([x,y],n)=>{
-      const drop=smooth?Math.sin(t/134+n)*3:0;
-      c.strokeStyle="rgba(30,42,42,.43)";c.lineWidth=.9;c.beginPath();c.moveTo(x-2,0);c.quadraticCurveTo(x+9,y*.6,x,y+drop);c.stroke();
-      c.fillStyle="rgba(26,36,36,.49)";c.beginPath();c.ellipse(x,y+drop,2.1,5.5,.13,0,7);c.fill();
-    });c.restore();
-    // Lignes de ressac entre le lointain et la ligne de jeu.
-    c.save();c.translate(-cam*.29,0);
-    for(let k=0;k<8;k++){
-      const y=435+k*4.5;
-      c.beginPath();for(let x=-100;x<=W+120;x+=13){const v=y+Math.sin(x*.009+(smooth?t*.006:0)+k*.8)*(1+k*.29);x===-100?c.moveTo(x,v):c.lineTo(x,v);}
-      c.strokeStyle="rgba(215,232,218,"+(.045+k*.005)+")";c.lineWidth=.9;c.stroke();
-    }c.restore();
-    const mask=c.createLinearGradient(0,H*.73,0,H);mask.addColorStop(0,"rgba(7,18,20,0)");mask.addColorStop(1,"rgba(5,15,17,.80)");c.fillStyle=mask;c.fillRect(0,H*.73,W,H*.27);
+  // The historical camera follows a much wider range than the newer engine.
+  // Keep scenery travel bounded by the same overscan at both arena limits.
+  const sceneryCamera=cam=>cam*.2*(smooth?1:.2);
+  function layer(c,scene,key,cam,speed,margin,defaultBase,defaultAnchor,defaultAlpha=1){
+    const image=scene[key];if(!ready(image))return;
+    const geometry=scene.geometry[key]||{},width=W+margin*2,height=width*image.naturalHeight/image.naturalWidth;
+    // Registry bases use 1280 × 720 / ground 588. Preserve their distance to
+    // the floor when rendering the original duel at 1120 × 630 / ground 528.
+    const base=key==='floor'?GROUND:Number.isFinite(geometry.base)?GROUND+(geometry.base-588)*W/1280:defaultBase;
+    const anchor=Number.isFinite(geometry.anchorY)?Math.max(0,Math.min(1,geometry.anchorY)):defaultAnchor;
+    c.save();c.globalAlpha=geometry.alpha??defaultAlpha;
+    c.drawImage(image,-margin-sceneryCamera(cam)*speed,base-height*anchor,width,height);c.restore();
   }
-  function near(c,cam){
-    if(ready(img.foreground)){
-      const iw=W+140,ih=iw*img.foreground.naturalHeight/img.foreground.naturalWidth;
-      c.drawImage(img.foreground,-70-cam*.36,H-ih,iw,ih);
+  function atmosphere(c,id,cam,t){
+    if(!smooth)return;
+    c.save();c.beginPath();c.rect(0,85,W,GROUND-150);c.clip();
+    if(id==='shore'){
+      c.translate(-sceneryCamera(cam)*.31,0);
+      [[98,184],[171,150],[632,174],[838,125],[982,198]].forEach(([x,y],n)=>{
+        const drop=Math.sin(t/134+n)*3;
+        c.strokeStyle="rgba(30,42,42,.35)";c.lineWidth=.9;c.beginPath();c.moveTo(x-2,0);c.quadraticCurveTo(x+9,y*.6,x,y+drop);c.stroke();
+        c.fillStyle="rgba(26,36,36,.4)";c.beginPath();c.ellipse(x,y+drop,2.1,5.5,.13,0,7);c.fill();
+      });
     }
-    c.save();c.translate(-cam*.73,0);
-    for(let i=0;i<41;i++){
-      const x=(i*83.1)%1400-110,y=558+((i*19)%68),r=2+(i*7%10);
-      c.fillStyle="rgba(6,15,15,"+(.35+(i%5)*.065)+")";c.beginPath();c.moveTo(x-r,y);c.lineTo(x-r*.55,y-r*.38);c.lineTo(x+r*.13,y-r*.65);c.lineTo(x+r,y-.6);c.closePath();c.fill();
-      c.strokeStyle="rgba(178,197,182,.22)";c.lineWidth=.7;c.beginPath();c.moveTo(x-r*.52,y-r*.38);c.lineTo(x+r*.09,y-r*.64);c.stroke();
-    }c.restore();
+    const weather=catalog.arenas[id]?.weather;
+    if(weather){
+      c.beginPath();
+      for(let i=0;i<40;i++){
+        const x=((i*83-t*.38-sceneryCamera(cam)*.38)%(W+80)+W+80)%(W+80)-40;
+        if(weather==='shelter'&&x>W*.18&&x<W*.88)continue;
+        const y=(i*57+t*((weather==='dust'||weather==='embers') ? .6 : 4.1))%H;
+        c.moveTo(x,y);c.lineTo(x-(weather==='dust'?3:1),y+(weather==='dust'?0:weather==='embers'?2:7));
+      }
+      c.strokeStyle=weather==='embers'||weather==='dust'?'rgba(232,197,147,.2)':'rgba(194,220,224,.18)';c.lineWidth=1;c.stroke();
+    }
+    c.restore();
+  }
+  function scenery(c,id,cam,t){
+    const scene=preload(id),layered=['sky','distant','middle','floor','front'].every(key=>ready(scene[key]));
+    c.fillStyle=catalog.arenas[id]?.sky||'#344448';c.fillRect(0,0,W,H);
+    const background=layered?scene.sky:scene.legacy;
+    if(ready(background))cover(c,background,-32-sceneryCamera(cam)*.14,-12,W+64,H+24);
+    if(layered){
+      layer(c,scene,'distant',cam,.27,48,GROUND-32,.96);
+      layer(c,scene,'middle',cam,.43,56,GROUND-12,.97,.92);
+    }
+    atmosphere(c,id,cam,t);
+    if(layered)layer(c,scene,'floor',cam,.62,80,GROUND,.3);
+    const shade=c.createLinearGradient(0,H*.45,0,H);shade.addColorStop(0,'rgba(2,12,17,0)');shade.addColorStop(1,'rgba(2,12,17,.42)');
+    c.fillStyle=shade;c.fillRect(0,0,W,H);
+    return layered?scene:null;
+  }
+  function near(c,scene,cam){
+    if(!scene)return;
+    const width=W+176,height=width*scene.front.naturalHeight/scene.front.naturalWidth;
+    c.drawImage(scene.front,-88-sceneryCamera(cam)*.8,H-height,width,height);
   }
   function player(c,s,i,cam,eco){
     const f=s.fighters[i],t=s.frame;
@@ -115,12 +155,12 @@
     const c=canvas.getContext("2d"),cam=((s.fighters[0].x+s.fighters[1].x)/2-W/2);
     c.save();c.clearRect(0,0,W,H);
     if(s.shake>0 && smooth)c.translate(Math.sin(s.frame*2)*s.shake*.43,Math.cos(s.frame)*s.shake*.18);
-    coast(c,cam,s.frame);
+    const scene=scenery(c,stageId(options.stage),cam,s.frame);
     const back=s.fighters[1].attack && !s.fighters[0].attack?0:1;
     player(c,s,back,cam,options.echo?.[back]);player(c,s,1-back,cam,options.echo?.[1-back]);
-    projectile(c,s,cam);near(c,cam);
+    projectile(c,s,cam);near(c,scene,cam);
     if(options.finishFrame!=null)finish(c,s,cam,options.finishFrame);
     const top=c.createLinearGradient(0,0,0,175);top.addColorStop(0,"#061115c7");top.addColorStop(1,"#06111500");c.fillStyle=top;c.fillRect(0,0,W,175);c.restore();
   }
-  scope.GrèveScene={draw};
+  scope.GrèveScene={draw,preload,stageIds};
 })(globalThis);

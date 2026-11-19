@@ -10,6 +10,8 @@ Le mode est un duel latéral à deux combattants, avec des manches courtes et un
 
 **Périmètre.** Le premier Death Stranding et sa Director’s Cut fixent les silhouettes, les accessoires et le vocabulaire. Six parcours, six arènes et leurs règles complètes forment la cible décrite ici. La première tranche porte sur Sam, Higgs et la Grève. Le bilan de réalisation joint au jeu précise ce qui fonctionne dans la version livrée. Les minutages, les commandes abstraites et les statistiques ci-dessous sont des valeurs de conception à tester.
 
+**Réalisation au 19 novembre 2026.** Le [Duel originel](../../modes/echos-de-la-greve/duel-originel/index.html) permet de choisir les six lieux du chapitre 10 en duel direct et en entraînement. Chacun utilise cinq plans du catalogue commun, adaptés au sol du prototype. Le choix est conservé pour la revanche, et les deux récits Sam/Higgs restent sur la Grève. L’entraînement expose une cible immobile, en garde ou pilotée par l’IA. Le [bilan de livraison](production/AMBIANCES_VARIANTE_MULE_20261119.md) distingue ces fonctions des règles de conception encore à produire.
+
 **Place dans le projet.** L’entrée « Les Duels de la Grève » appartient aux activités annexes. Un joueur doit pouvoir livrer un colis dans la campagne principale, ouvrir les duels, puis reprendre sa partie à son dernier point de sauvegarde. Le premier lancement propose Histoire ou Entraînement. Les suivants retrouvent le dernier mode utilisé. L’intégration finale doit maintenir les progressions des deux activités dans des espaces de sauvegarde distincts.
 
 ## 2. Références et fidélité visuelle

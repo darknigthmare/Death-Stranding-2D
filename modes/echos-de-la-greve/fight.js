@@ -86,22 +86,30 @@
   };
   const keyActions = ['left','right','up','down','light','heavy','special','guard','throw','finish'];
   let match, raf = 0, serial = 0, audio, noiseBuffer, sound = true;
+  let ambienceVolume=.35, ambience=null, ambienceBuffer, audioSuspended=false, resumePending=false;
   const voices=new Set();
+  function releaseVoice(voice, stopSource=true) {
+    if (voice.released) return;
+    voice.released=true;
+    voice.source.onended=null;
+    if (stopSource) try {voice.source.stop();} catch (_) { /* Already ended. */ }
+    for (const node of new Set([voice.source,voice.output,voice.volume])) node.disconnect();
+    voices.delete(voice);
+  }
+  function stopCombatAudio() { for (const voice of [...voices]) releaseVoice(voice); }
   function playVoice(source,output,span,level,delay,attack) {
     const t=audio.currentTime+delay, volume=audio.createGain();
     volume.gain.setValueAtTime(.0001,t);
     volume.gain.exponentialRampToValueAtTime(level,t+Math.min(span*.45,attack));
     volume.gain.exponentialRampToValueAtTime(.0001,t+span);
     output.connect(volume); volume.connect(audio.destination);
-    const voice={source,volume};
+    const voice={source,output,volume};
     voices.add(voice);
-    source.onended=()=>{
-      voices.delete(voice); source.disconnect(); output.disconnect(); volume.disconnect();
-    };
+    source.onended=()=>releaseVoice(voice,false);
     source.start(t); source.stop(t+span+.002);
   }
   function tone(hz,span,waveform='sine',gain=.035,end=hz,delay=0,attack=.009) {
-    if (!sound || match?.silentResimulation || audio?.state!=='running') return;
+    if (!sound || audioSuspended || match?.paused || match?.silentResimulation || audio?.state!=='running') return;
     try {
       const t=audio.currentTime+delay, osc=audio.createOscillator();
       osc.type=waveform; osc.frequency.setValueAtTime(hz,t);
@@ -110,7 +118,7 @@
     } catch (_) { /* Sound is optional. */ }
   }
   function friction(type,hz,end,span,gain,delay=0) {
-    if (!sound || match?.silentResimulation || audio?.state!=='running') return;
+    if (!sound || audioSuspended || match?.paused || match?.silentResimulation || audio?.state!=='running') return;
     try {
       if (!noiseBuffer) {
         noiseBuffer=audio.createBuffer(1,Math.ceil(audio.sampleRate*.4),audio.sampleRate);
@@ -165,11 +173,142 @@
     }
   }
   function wakeAudio() {
-    if (!sound) return;
+    if (!sound || audioSuspended || match?.paused || match?.silentResimulation) return;
     try {
-      if (!audio) { const Ctor=host.AudioContext || host.webkitAudioContext; if (Ctor) audio=new Ctor(); }
-      if (audio && audio.state==='suspended') audio.resume().catch(()=>{});
-    } catch (_) { /* Audio is optional. */ }
+      if (!audio) {
+        const Ctor=host.AudioContext || host.webkitAudioContext;
+        if (Ctor) {
+          audio=new Ctor();
+          audio.addEventListener?.('statechange',()=>{
+            if (audio.state==='running') syncAmbience(); else stopAudio();
+          });
+        }
+      }
+      if (audio?.state==='suspended' && !resumePending) {
+        resumePending=true;
+        Promise.resolve(audio.resume()).then(()=>{resumePending=false;syncAmbience();},()=>{resumePending=false;});
+      }
+      syncAmbience();
+    } catch (_) { resumePending=false; /* Audio is optional. */ }
+  }
+  // Original synthesized scenery. These clocks and sources never enter the
+  // simulation/checkpoints; drawing a corrected network frame cannot replay a cue.
+  const ambiencePresets={
+    shore:{filter:'lowpass',hz:540,level:.075,cue:'surf',interval:9,x:.18},
+    terminal:{filter:'lowpass',hz:680,level:.038,hum:58,cue:'door',interval:12,x:.86},
+    battlefield:{filter:'bandpass',hz:380,level:.055,cue:'radio',interval:13,x:.16},
+    'mule-camp':{filter:'highpass',hz:1250,level:.035,cue:'beacon',interval:11,x:.87},
+    'mule-camp-dry':{filter:'bandpass',hz:720,level:.06,cue:'beacon',interval:11,x:.87},
+    'heartman-lab':{filter:'lowpass',hz:170,level:.022,hum:72,cue:'ecg',interval:7,x:.12},
+    'mama-workshop':{filter:'bandpass',hz:340,level:.03,hum:92,cue:'winch',interval:12,x:.82},
+    'ruined-factory':{filter:'lowpass',hz:410,level:.045,hum:49,cue:'pipe',interval:10,x:.84},
+    'timefall-shelter':{filter:'lowpass',hz:1900,level:.06,cue:'drip',interval:6,x:.1},
+    'tar-basin':{filter:'lowpass',hz:260,level:.055,cue:'bubble',interval:9,x:.84},
+    'mountain-pass':{filter:'bandpass',hz:960,level:.07,cue:'gust',interval:11,x:.16}
+  };
+  function releaseAmbientVoice(group,voice,stopSource=true) {
+    if (voice.released) return;
+    voice.released=true;voice.source.onended=null;
+    if (stopSource) try {voice.source.stop();} catch (_) { /* Already ended. */ }
+    for (const node of voice.nodes) node.disconnect();
+    group.voices.delete(voice);
+  }
+  function stopAmbience() {
+    const group=ambience;ambience=null;
+    if (!group) return;
+    for (const voice of [...group.voices]) releaseAmbientVoice(group,voice);
+    group.bus.disconnect();
+  }
+  function stopAudio() { stopAmbience();stopCombatAudio(); }
+  function ambientNoise() {
+    if (!ambienceBuffer) {
+      ambienceBuffer=audio.createBuffer(1,Math.ceil(audio.sampleRate*4),audio.sampleRate);
+      const samples=ambienceBuffer.getChannelData(0),roll=randomSeed(0x61746d6f);
+      for (let i=0;i<samples.length;i++) samples[i]=roll()*2-1;
+    }
+    return ambienceBuffer;
+  }
+  function ambientVoice(group,{noise=false,filter='lowpass',hz=440,end=hz,wave='sine',level=.02,span=0,delay=0,pan=0}) {
+    const source=noise ? audio.createBufferSource() : audio.createOscillator();
+    const gain=audio.createGain(),nodes=[source,gain],t=audio.currentTime+delay;
+    const voice={source,nodes};group.voices.add(voice);
+    try {
+      let output=source;
+      if (noise) {
+        source.buffer=ambientNoise();source.loop=!span;
+        output=audio.createBiquadFilter();nodes.push(output);
+        output.type=filter;output.Q.value=.65;source.connect(output);
+      } else source.type=wave;
+      output.frequency.setValueAtTime(hz,t);
+      if (span) output.frequency.exponentialRampToValueAtTime(Math.max(18,end),t+span);
+      output.connect(gain);
+      gain.gain.setValueAtTime(.0001,t);
+      gain.gain.exponentialRampToValueAtTime(level,t+(span ? Math.min(.18,span*.3) : .4));
+      if (span) gain.gain.exponentialRampToValueAtTime(.0001,t+span);
+      if (span && audio.createStereoPanner) {
+        const panner=audio.createStereoPanner();nodes.push(panner);
+        panner.pan.setValueAtTime(pan,t);gain.connect(panner);panner.connect(group.bus);
+      } else gain.connect(group.bus);
+      source.onended=()=>releaseAmbientVoice(group,voice,false);
+      source.start(t);
+      if (span) source.stop(t+span+.002);
+    } catch (error) {releaseAmbientVoice(group,voice);throw error;}
+  }
+  function ambienceCue(group,m) {
+    const p=group.preset,pan=clamp((p.x*WIDTH-m.camera*.31-WIDTH/2)/(WIDTH/2),-.85,.85);
+    const note=(hz,end,span,level=.02,delay=0,wave='sine')=>ambientVoice(group,{hz,end,span,level,delay,wave,pan});
+    const noise=(filter,hz,end,span,level,delay=0)=>ambientVoice(group,{noise:true,filter,hz,end,span,level,delay,pan});
+    switch (p.cue) {
+      case 'surf': noise('lowpass',720,190,1.8,.11);break;
+      case 'door': noise('bandpass',190,320,.65,.045);note(95,66,.2,.022,.55,'triangle');break;
+      case 'radio': noise('bandpass',1550,1000,.48,.026);note(510,505,.08,.012,.2,'triangle');break;
+      case 'beacon': note(660,710,.11,.022);note(940,980,.09,.016,.18);break;
+      case 'ecg': note(1450,1430,.055,.014);break;
+      case 'winch': note(190,260,.5,.012,0,'sawtooth');noise('bandpass',900,530,.65,.018);break;
+      case 'pipe': noise('highpass',2100,650,.75,.04);break;
+      case 'drip': note(920,180,.09,.032);noise('bandpass',2900,1600,.08,.005,.04);break;
+      case 'bubble': note(130,60,.18,.035);noise('lowpass',240,110,.12,.02,.04);break;
+      case 'gust': noise('bandpass',900,260,1.7,.08);break;
+    }
+  }
+  function syncAmbience(cues=false) {
+    const m=match,preset=ambiencePresets[m?.stage];
+    if (!sound || !ambienceVolume || audioSuspended || !m || m.paused || m.phase==='ended' ||
+        m.silentResimulation || host.document?.hidden || audio?.state!=='running' || !preset) {
+      stopAmbience();return;
+    }
+    try {
+      if (ambience?.owner!==m) {
+        stopAmbience();
+        const bus=audio.createGain();bus.connect(audio.destination);
+        ambience={owner:m,preset,bus,voices:new Set(),nextAt:audio.currentTime+2};
+        bus.gain.setValueAtTime(ambienceVolume*(m.reducedEffects ? .65 : 1),audio.currentTime);
+        ambientVoice(ambience,{noise:true,filter:preset.filter,hz:preset.hz,level:preset.level});
+        if (preset.hum) ambientVoice(ambience,{hz:preset.hum,level:.0045});
+      }
+      // A long pause, redraw or rollback never queues missed scenery sounds.
+      if (cues && audio.currentTime>=ambience.nextAt) {
+        ambience.nextAt=audio.currentTime+preset.interval;
+        if (!m.reducedEffects && ambience.voices.size<3) ambienceCue(ambience,m);
+      }
+    } catch (_) {stopAmbience(); /* A browser without Web Audio still plays normally. */}
+  }
+  function setAmbienceVolume(value) {
+    if (typeof value!=='number' || !Number.isFinite(value)) return ambienceVolume;
+    ambienceVolume=clamp(value,0,1);
+    if (!ambienceVolume) stopAmbience();
+    else {
+      if (ambience) ambience.bus.gain.setTargetAtTime(ambienceVolume*(match?.reducedEffects ? .65 : 1),audio.currentTime,.04);
+      wakeAudio();
+    }
+    return ambienceVolume;
+  }
+  // Audio-only suspension, e.g. a private room waiting for a connection. It must
+  // not pause network ticks, clear inputs or alter deterministic checkpoints.
+  function setAudioSuspended(on) {
+    const next=!!on;if (audioSuspended===next) return;
+    audioSuspended=next;
+    if (next) stopAudio();else wakeAudio();
   }
   function randomSeed(seed) {
     const next = () => { seed=(Math.imul(1664525,seed)+1013904223)>>>0; return seed/4294967296; };
@@ -222,7 +361,9 @@
       const {p1,p2,stage,mode,difficulty,roundsToWin,seed}=o.replay;
       o={...o,p1,p2,stage,mode,difficulty,roundsToWin,seed};
     }
-    stop(); const ctx=o.canvas.getContext('2d'); if (!ctx) throw new Error('Canvas 2D indisponible.');
+    stop(); audioSuspended=!!o.audioSuspended;
+    if (Number.isFinite(o.ambienceVolume)) ambienceVolume=clamp(o.ambienceVolume,0,1);
+    const ctx=o.canvas.getContext('2d'); if (!ctx) throw new Error('Canvas 2D indisponible.');
     const stage=stages[o.stage]?o.stage:'shore', ids=[fighterId(o.p1,'sam'),fighterId(o.p2,'higgs')];
     const difficulty=({easy:0,facile:0,normal:1,medium:1,hard:2,difficile:2})[o.difficulty] ?? (Number.isInteger(o.difficulty)?clamp(o.difficulty,0,2):1);
     const seed=Number.isInteger(o.seed) ? o.seed>>>0 : 0x63cee17;
@@ -294,13 +435,13 @@
         while (m.lag>=STEP && serial===generation) { step(m); m.lag-=STEP; }
       }
       if (serial!==generation || match!==m) return;
-      m.now=t; draw(m);
+      m.now=t; syncAmbience(true);draw(m);
       if (m.phase!=='ended') raf=host.requestAnimationFrame(frame);
     }
     if (!m.networkClock) raf=host.requestAnimationFrame(frame);
     return snapshot();
   }
-  function stop() { if (raf) host.cancelAnimationFrame(raf); raf=0; serial++; match=null; }
+  function stop() { if (raf) host.cancelAnimationFrame(raf); raf=0; serial++; match=null;stopAudio(); }
   function clearFighterControls(f) { f.queue=[]; f.keys={}; f.taps={}; f.guard=false; }
   function clearControls(m) { m.f.forEach(clearFighterControls); }
   function pause(on=true) {
@@ -314,6 +455,7 @@
       if (m.dummyTape && m.training.dummy==='loop') clearFighterControls(m.f[0]);
       else clearControls(m);
     }
+    if (m.paused) stopAudio();else wakeAudio();
     draw(m); notify(m,true);
   }
   function setTraining(options={}) {
@@ -356,17 +498,15 @@
   function setSound(on) {
     sound=!!on;
     if (sound) {wakeAudio(); return;}
-    for (const {source,volume} of voices) {
-      volume.disconnect();
-      try {source.stop();} catch (_) { /* A source may already have ended. */ }
-    }
-    voices.clear();
+    stopAudio();
   }
   // This is a local viewing preference. It never enters replay tapes, rollback
   // checkpoints or the combat clock, so two players may choose it independently.
   function setReducedEffects(on) {
     if (!match) return;
     match.reducedEffects=!!on;
+    // Keep a quiet, steady bed; reduced effects removes intermittent scenery cues.
+    stopAmbience();syncAmbience();
     draw(match); notify(match,true);
   }
   function input(player,action,down=true) {
@@ -790,7 +930,7 @@
     f.face=v.x>=f.x?1:-1;burst(m,v.x,FLOOR-68,f.spec.trim,35);tone(220,.62,'sine',.06,55);notify(m,true);
   }
   function finishMatch(m) {
-    m.phase='ended';notify(m,true);
+    m.phase='ended';if (!m.silentResimulation) stopAudio();notify(m,true);
     if (m.onEnd) {
       const result={vitality:Math.ceil(m.f[0].hp),parcel:m.parcel,winner:m.winner,loser:3-m.winner,rounds:m.wins.slice(),reason:m.reason,finisher:m.finisher,stage:m.stage,fighters:m.ids.slice()};
       if (m.recording) result.replay={...m.recording,events:m.recording.events.slice(),ticks:m.tick};
@@ -812,6 +952,7 @@
       }
       if (m.tick>=m.playback.ticks) {
         m.phase='ended';
+        stopAudio();
         m.onEnd?.({replayMismatch:true});
         return;
       }
@@ -953,7 +1094,7 @@
       }
       c.globalAlpha=1;
       line(c,-40,402,WIDTH+40,402,'rgba(185,174,149,'+(.025+.035*pulse(340)).toFixed(3)+')',8);
-    } else if (m.stage==='mule-camp') {
+    } else if (m.stage==='mule-camp' || m.stage==='mule-camp-dry') {
       // Amber beacons have no expanding ring, unlike the fighter's cargo scan.
       for (const [index,x] of [124,244,1090].entries()) {
         const glow=Math.pow(pulse(240,index*62),10);
@@ -1497,8 +1638,14 @@
         step(match);
       } finally { match.silentResimulation=false; }
     },
-    draw() {if (match?.networkClock) draw(match);}
+    draw() {
+      if (!match?.networkClock) return;
+      // A corrected match may have ended during silent catch-up. Release even
+      // previously scheduled combat voices when that final state is presented.
+      if (match.phase==='ended') stopAudio();else syncAmbience(true);
+      draw(match);
+    }
   };
 
-  host.StrandFight = {start, stop, pause, input, setTraining, setSound, setReducedEffects, snapshot, validReplay, network};
+  host.StrandFight = {start, stop, pause, input, setTraining, setSound, setAmbienceVolume, setAudioSuspended, setReducedEffects, snapshot, validReplay, network};
 })(window);

@@ -7,7 +7,7 @@ const {chromium} = require('playwright');
 const menu = pathToFileURL(path.resolve(__dirname, '../index.html')).href;
 const shots = process.env.ARENA_SCREENSHOTS;
 const required = [
-  'shore', 'terminal', 'battlefield', 'mule-camp', 'heartman-lab',
+  'shore', 'terminal', 'battlefield', 'mule-camp', 'mule-camp-dry', 'heartman-lab',
   'mama-workshop', 'ruined-factory', 'timefall-shelter', 'tar-basin', 'mountain-pass'
 ];
 
@@ -67,7 +67,7 @@ const required = [
       await page.goto(menu);
       const inventories=await page.evaluate(()=>Object.fromEntries(
         ['skyplates','distants','midgrounds','floors','foregrounds'].map(key=>[key,Object.keys(StrandAssets[key] || {}).sort()])));
-      for (const [key,ids] of Object.entries(inventories)) assert.deepEqual(ids,required.slice().sort(),key+' : les dix arènes doivent être livrées');
+      for (const [key,ids] of Object.entries(inventories)) assert.deepEqual(ids,required.slice().sort(),key+' : les dix lieux et la variante sèche doivent être livrés');
       await page.locator('[data-mode="' + mode + '"]').click();
       const options = await page.locator('[data-option=stage] option').evaluateAll(items =>
         items.map(item => item.value));
@@ -173,6 +173,6 @@ const required = [
     }
     if (shots) fs.writeFileSync(path.join(shots, 'titres.json'), JSON.stringify(captions));
     assert.deepEqual(errors, []);
-    console.log('OK — 10 arènes × 2 modes × 2 directions × 2 réglages : cinq plans chargés dans l’ordre, proportions conservées, vitesses distinctes, sol à 588, bords pleins et mouvement réduit à 20 %.');
+    console.log('OK — 11 configurations d’arène × 2 modes × 2 directions × 2 réglages : cinq plans chargés dans l’ordre, proportions conservées, vitesses distinctes, sol à 588, bords pleins et mouvement réduit à 20 %.');
   } finally { await browser.close(); }
 })().catch(error => {console.error(error); process.exitCode = 1;});

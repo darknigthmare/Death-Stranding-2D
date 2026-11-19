@@ -18,7 +18,9 @@ function verifyProtocol() {
   call(1,'ready',{fighter:'sam',ready:true});
   assert.throws(() => call(1,'start',{stage:'shore'}));
   call(2,'ready',{fighter:'higgs',ready:true});
-  assert.deepEqual(call(1,'start',{stage:'shore'}).seats.map(s=>s.ready),[true,true]);
+  const started=call(1,'start',{stage:'mule-camp-dry'});
+  assert.deepEqual(started.seats.map(s=>s.ready),[true,true]);
+  assert.equal(started.match.stage,'mule-camp-dry','La variante météo est disponible dans le salon privé');
   now=1000;
   const inputs=[[1,55,'right',true],[2,56,'right',false]];
   const a=call(1,'sync',{inputs});
@@ -99,10 +101,11 @@ async function verifyNestedAssets() {
     await new Promise((resolve,reject) => {server.once('error',reject);server.listen(0,'127.0.0.1',resolve);});
     const origin = 'http://127.0.0.1:' + server.address().port;
     const root = path.resolve(__dirname,'..');
-    for (const file of ['assets/fighters/mama/atelier/guard.webp','assets/fighters/mama/viaduc/stance.webp','assets/fighters/mama/parts/helmet.webp']) {
+    for (const file of ['assets/fighters/mama/atelier/guard.webp','assets/fighters/mama/viaduc/stance.webp','assets/fighters/mama/parts/helmet.webp',
+      'assets/stages/mule-camp-dry.png','assets/stages/mule-camp-dry-floor.png']) {
       const response = await fetch(origin + '/' + file);
       assert.equal(response.status,200,file + ' servi par le salon');
-      assert.equal(response.headers.get('content-type'),'image/webp');
+      assert.equal(response.headers.get('content-type'),file.endsWith('.png')?'image/png':'image/webp');
       assert.deepEqual(Buffer.from(await response.arrayBuffer()),fs.readFileSync(path.join(root,file)),file + ' contenu exact');
     }
     const prefixed = await fetch(origin + '/modes/echos-de-la-greve/assets/fighters/mama/atelier/guard.webp');

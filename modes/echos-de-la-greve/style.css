@@ -28,6 +28,11 @@ a{color:inherit;text-underline-offset:.2em}.hero a,.archives a{text-decoration:n
 .stageCardFoot { display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap; margin-top: 20px; }
 .stageCardFoot > span { color: var(--mute); font: 11px var(--mono); }
 #effects[aria-pressed=true] { color: var(--acid); text-decoration: underline; text-underline-offset: 4px; }
+.ambienceControl { display: grid; gap: 7px; max-width: 100%; color: var(--mute); font: 11px var(--mono); }
+.ambienceControl > span { display: flex; align-items: center; gap: 10px; min-height: 39px; }
+.ambienceControl input { width: 150px; max-width: 55vw; margin: 0; accent-color: var(--acid); }
+.ambienceControl input:focus-visible { outline: 3px solid #98d9ef; outline-offset: 4px; }
+.ambienceControl output { min-width: 4ch; font-variant-numeric: tabular-nums; }
 @media(max-width:760px) { .stageGallery { grid-template-columns: 1fr; } .top { height: auto; min-height: 64px; flex-wrap: wrap; padding-top: 9px; padding-bottom: 9px; } .top nav { flex-wrap: wrap; } }
 
 #dojoData{flex-basis:100%;min-width:0;overflow-x:auto}#dojoData caption{text-align:left}#dojoData table{margin:5px 0 0}#dojoData td{font-variant-numeric:tabular-nums}

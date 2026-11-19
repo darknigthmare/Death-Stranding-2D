@@ -12,12 +12,12 @@ Deux silhouettes se font face sur la laisse de mer. Sam se baisse pour poser une
 |---|---|---|
 | Premier noyau | Sam, Fragile, Higgs, Cliff. La Grève, le terminal Bridges et le champ de bataille de Cliff. | Distribution et lieux retenus pour la première réalisation. |
 | Jeu de combat cible | Règles chiffrées, commandes techniques, 8 fiches de combat, 8 campagnes, 8 arènes et réalisation des fatalités. | Spécifications de production. Les valeurs proposées demandent des essais en jeu. |
-| Version jouable | Huit combattants, huit campagnes, dix arènes, tournoi à élimination, dojo et deux défis. | Le tableau ci-dessous donne les règles chargées par le moteur. |
+| Version jouable | Huit combattants, huit campagnes, dix lieux et une variante sèche du camp MULE, tournoi à élimination, dojo et deux défis. | Le tableau ci-dessous donne les règles chargées par le moteur. |
 | Fidélité | Le chapitre 11 associe les décisions visuelles à des images publiées par les créateurs et l’éditeur. | Chaque costume, accessoire et côté du corps demande une comparaison visuelle avant validation 1:1. |
 
 Les mentions **source** renvoient au jeu officiel. Les rencontres, dialogues, noms de techniques, effets de jauge et plans de mise en scène ci-dessous sont **des créations du mode annexe**. L’entrée dans la simulation isole ses résultats du récit de la campagne principale. Les boutons, règles et minutages qui suivent décrivent la cible de conception. Le menu Commandes de la version jouée fait foi pour les fonctions disponibles.
 
-### Version jouable · huit combattants et dix arènes
+### Version jouable · huit combattants, dix lieux et une variante météo
 
 Depuis la campagne v0.58, le bouton **Échos de la Grève** ouvre les huit histoires de Sam, Fragile, Higgs, Cliff, du porteur MULE, de Die-Hardman, de Mama et de Heartman. Chaque combattant dispose de trois adversaires, d’une introduction, d’une rencontre avec son rival et d’un épilogue. Une victoire valide le chapitre dans le navigateur. Une défaite permet de rejouer immédiatement la même rencontre. Les scènes vues se retrouvent dans la galerie. Le menu donne aussi accès au **Duel originel**, avec ses deux récits et son propre système de commandes.
 
@@ -25,7 +25,7 @@ Le tournoi tire un tableau de quatre, six ou huit **participants**, choisis parm
 
 Les huit parcours totalisent vingt-quatre scènes de galerie. Dans **L’inventaire du matin**, le MULE rencontre Mama au camp, Die-Hardman au terminal et Sam au camp. Die-Hardman termine sa campagne devant Cliff, Mama devant Die-Hardman et Heartman sur la Grève face à Higgs. [Sélection des huit combattants](apercus/selection.webp)
 
-Les dix arènes du chapitre 7 sont sélectionnables en Versus et au dojo. Chacune possède un panorama et un premier plan transparent qui se déplace plus vite que le fond. Le camp, les ateliers couverts, le col enneigé et le bassin ont leurs ambiances propres. Les quatre premières histoires gardent leurs lieux scénarisés. [Les dix arènes capturées en jeu](apercus/dix-arenes.webp)
+Les dix lieux du chapitre 7 et la variante **Camp des MULEs · temps sec** sont sélectionnables en Versus et au dojo. Chaque configuration possède un panorama et cinq images indépendantes : ciel ou fond intérieur, lointain, plan intermédiaire, sol et premier plan. Les plans se déplacent à des vitesses distinctes. Le camp d’origine garde son gravier humide sous la pluie ; sa variante conserve le même lieu sous un ciel plus clair, avec un sol sec et une poussière légère. Les histoires gardent leurs lieux scénarisés. [Rendus actuels des arènes](apercus/stage-extension-20261119/) · [Lot de la variante sèche et des ambiances](production/AMBIANCES_VARIANTE_MULE_20261119.md).
 
 En combat, les poses de garde et d’action de Sam, Fragile et Cliff ont des points d’appui distincts. Le moteur aligne les pieds sur la même ligne au passage d’une image à l’autre. Pour les deux fentes, la hauteur de rendu descend à 80 % de la garde de Fragile et à 78 % de celle de Cliff. Higgs dispose de sa propre garde, avec la main ramenée vers le torse. La mesure du pied d’appui permet de passer de cette garde à la main tendue de son attaque. Fragile, Higgs, le MULE et Heartman disposent chacun de quatre poses peintes. Mama et Die-Hardman emploient des figurines articulées originales, dessinées de profil. Pour Sam et Cliff, deux planches transparentes contiennent chacune quatre positions intermédiaires. Le pas lève le talon arrière et avance le genou opposé. Le recul garde les semelles au sol, fléchit les hanches et déplace le haut du corps. Les captures proviennent des duels lancés au dojo. [Die-Hardman contre Cliff](apercus/diehardman-duel.webp) · [L’ancrage de Mama](apercus/mama-duel.webp) · [Le signal de Heartman](apercus/heartman-duel.webp)
 
@@ -382,9 +382,15 @@ Les quatre routes d’extension du chapitre 5 nomment un camp, une usine, un ate
 
 **Découpage intégré au 19 novembre 2026.** Les dix arènes disposent chacune de cinq images indépendantes : ciel ou fond intérieur, lointain, plan intermédiaire, sol et premier plan, soit **50 couches livrées sur 50**. Les onze dernières images complètent le camp MULE, Heartman, l’usine, l’abri Timefall et le bassin de goudron. Le panorama opaque reste disponible pendant le chargement ou dans une ancienne copie privée de certaines images. Les PNG sont conservés dans leurs dimensions natives et les pixels générés n’ont pas été retouchés.
 
+**Extension du même jour.** Le camp MULE dispose aussi d’une variante sèche, décrite dans l’étude du Duel originel : tentes et balises aux mêmes emplacements, vallée basaltique, gravier mat et piste tassée. Cette variante ajoute un panorama et cinq plans PNG, portant le catalogue à **55 couches pour 11 configurations de 10 lieux**. L’identifiant `mule-camp-dry` reste rattaché au lieu `mule-camp` ; les anciens tableaux, récits et replays conservent leur identifiant d’origine. [Provenance, réglages et recette du lot](production/AMBIANCES_VARIANTE_MULE_20261119.md).
+
+La même revue a corrigé le bas visible des plans de la Grève, du terminal, du champ de bataille et du col : leurs bandes de fond rejoignent maintenant la ligne de sol sans laisser apparaître un ruban de ciel. Un contrôle raster protège ces quatre raccords et celui du camp sec, dans les deux directions et avec les effets réduits.
+
 Dans la vue de 1 280 × 720, le sol de simulation passe à 588. Le moteur déplace les cinq plans de **0,14 / 0,27 / 0,43 / 0,62 / 0,8** fois le décalage caméra. L’option d’effets réduits conserve cet ordre avec une amplitude de 20 %. Chaque ancre de sol est mesurée dans son image réelle ; les bases des structures et accessoires sont calées pour rejoindre la surface sans laisser voir une bande du ciel. Les proportions sont préservées et les couches débordent du cadre des deux côtés. [Bilan du lot, provenance et rendus](production/STAGES_COMPLETS_20261119.md).
 
 ## 8. Tournoi et modes complémentaires
+
+Le **Duel originel** propose six décors en duel direct et entraînement : Grève, terminal, camp MULE, abri Timefall, champ de bataille et bassin de goudron. Son sélecteur illustré et sa sauvegarde propre conservent le choix du lieu ; la revanche reprend ce lieu. L’entraînement propose un adversaire immobile, en garde ou piloté par l’IA, un changement de lieu et une remise en place des combattants. Les récits de Sam et Higgs restent sur la Grève. Les cinq plans sont adaptés à sa vue de 1120 × 630 et à son sol à 528 sans modifier le moteur historique.
 
 ### Lire et reprendre un tableau
 
@@ -434,6 +440,8 @@ Derrière les combattants, les côtes d’un cétacé et le basalte forment un p
 
 Chaque technique acceptée déclenche le son du combattant. La sangle de Sam frotte avant le clic du fermoir. Les baleines du parapluie de Fragile claquent puis leur souffle s’efface. Chez Higgs, une masse grave se soulève avant la retombée d’une goutte. Le déclic de Cliff ouvre un souffle de radio. Le scanner du MULE monte en fréquence puis reçoit un bip. Au relais grave de Die-Hardman répond un signal de terminal. Le treuil de Mama monte dans l’aigu puis fait résonner le métal. Heartman associe une pulsation sourde à une note de moniteur. Le navigateur synthétise ces sons. L’impact, la garde et la rupture d’équilibre ont leurs propres signaux au moment du contact. Le bouton Son coupe aussi la traîne en cours. Les poses, les effets et les jauges restent lisibles pendant le silence.
 
+Les onze configurations d’arène ont aussi un fond sonore synthétisé et un événement localisé : ressac, porte, radio, balise, moniteur, treuil, conduite, goutte, bulle ou rafale. **Ambiance du décor** règle leur volume séparément des techniques ; le réglage initial est de 35 % et la préférence est partagée avec le salon privé. Pause, sortie, fin et coupure du son libèrent toutes les voix. Les effets réduits conservent un fond plus discret et suppriment les événements intermittents. Les horloges audio restent hors des checkpoints ; le rattrapage réseau est silencieux, y compris lorsqu’il reconstruit le duel sans checkpoint. [Détail des profils et de la recette](production/AMBIANCES_VARIANTE_MULE_20261119.md).
+
 ## 10. Production et recette
 
 Pour intégrer un personnage d’extension, commencer par un duel miroir complet. Résoudre le portrait et les pieds sur une arène neutre, relier les commandes, puis contrôler chaque technique dans les deux directions. Brancher ensuite les trois adversaires de la route, l’illustration du rival et la finalité. Un portrait ou une fiche de personnage isolés ne suffisent pas pour le compter dans la sélection jouable.
@@ -449,7 +457,7 @@ Pour intégrer un personnage d’extension, commencer par un duel miroir complet
 
 Les scénarios automatisés se trouvent dans `modes/echos-de-la-greve/qa/`. Le test `parcours.cjs` exerce les transitions des menus et la progression. Le test `techniques.cjs` pilote le moteur réel, décode le catalogue d’images et compare les commandes sur les deux côtés. Le test `mule.cjs` suit le marqueur et la caisse de chaque côté du terrain, y compris pendant une pause, un blocage ou un saut. Les épreuves ont leur scénario dans `defis.cjs`. Les tests `extensions.cjs`, `poses.cjs`, `dojo.cjs` et `replays.cjs` couvrent les nouveaux combattants, la marche, les impacts, l’enregistrement du mannequin et la restitution des matchs du tournoi. [Captures en jeu](apercus/)
 
-Le contrôle `arenes.cjs` conserve son parcours navigateur complet. Le complément `arenes-canvas.cjs` permet de tester directement le même `fight.js` avec Canvas natif quand Chromium n’est pas disponible : dix arènes, duel local et entraînement, deux directions, effets normaux et réduits, soit 80 cas de rendu. Il vérifie les cinq fichiers réellement dessinés, les proportions, les vitesses relatives, le débord horizontal et l’ancre de sol ; il ne valide pas les menus du navigateur ni la fidélité canonique des décors.
+Le contrôle `arenes.cjs` conserve son parcours navigateur complet. Le complément `arenes-canvas.cjs` permet de tester directement le même `fight.js` avec Canvas natif quand Chromium n’est pas disponible : onze configurations d’arène, duel local et entraînement, deux directions, effets normaux et réduits, soit 88 cas de rendu. Il vérifie les cinq fichiers réellement dessinés, les proportions, les vitesses relatives, le débord horizontal et l’ancre de sol ; il ne valide pas les menus du navigateur ni la fidélité canonique des décors.
 
 ## 11. Références officielles
 

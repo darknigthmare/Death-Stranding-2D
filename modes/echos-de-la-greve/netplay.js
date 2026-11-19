@@ -15,6 +15,36 @@
   }
   function remember(storage,key,value) {try {window[storage].setItem(key,JSON.stringify(value));} catch {}}
   function recall(storage,key) {try {return JSON.parse(window[storage].getItem(key));} catch {return null;}}
+  const storedAmbience=recall('localStorage','echos.v1.ambienceVolume');
+  const audioOptions={sound:recall('localStorage','echos.v1.sound')!==false,
+    ambienceVolume:typeof storedAmbience==='number' && Number.isFinite(storedAmbience) ? Math.max(0,Math.min(1,storedAmbience)) : .35,
+    reducedEffects:recall('localStorage','echos.v1.reducedEffects') ?? !!window.matchMedia?.('(prefers-reduced-motion: reduce)').matches};
+  let audioBlurred=false,audioDisconnected=false;
+  const audioBlocked=()=>audioBlurred || document.hidden || !!run && (audioDisconnected || !state?.live || !!state.result);
+  function updateAudioState() {engine.setAudioSuspended(audioBlocked());}
+  const audioControls=document.createElement('div');audioControls.className='row';
+  audioControls.innerHTML='<button id="roomSound" type="button"></button><label>Ambiance du décor <input id="roomAmbience" type="range" min="0" max="100" step="5" aria-label="Volume de l’ambiance"><output id="roomAmbienceValue"></output></label>';
+  document.querySelector('header').append(audioControls);
+  function updateAudioControls() {
+    $('roomSound').textContent=audioOptions.sound?'Son activé':'Son coupé';
+    $('roomSound').setAttribute('aria-pressed',String(audioOptions.sound));
+    const percent=Math.round(audioOptions.ambienceVolume*100);
+    $('roomAmbience').value=String(percent);$('roomAmbienceValue').textContent=percent+' %';
+  }
+  $('roomSound').onclick=()=>{
+    audioOptions.sound=!audioOptions.sound;remember('localStorage','echos.v1.sound',audioOptions.sound);
+    engine.setSound(audioOptions.sound);updateAudioControls();
+  };
+  $('roomAmbience').oninput=()=>{
+    audioOptions.ambienceVolume=Number($('roomAmbience').value)/100;
+    remember('localStorage','echos.v1.ambienceVolume',audioOptions.ambienceVolume);
+    engine.setAmbienceVolume(audioOptions.ambienceVolume);updateAudioControls();
+  };
+  // Opening a room involves asynchronous requests. Unlock audio from the local
+  // gesture, never from a remote player's input or a silent rollback step.
+  document.addEventListener('pointerdown',()=>{if(audioOptions.sound)engine.setSound(true);});
+  document.addEventListener('keydown',()=>{if(audioOptions.sound)engine.setSound(true);});
+  updateAudioControls();
   async function call(op,data={},token=identity?.token) {
     const controller=new AbortController(), timeout=setTimeout(()=>controller.abort(),2500);
     try {
@@ -62,17 +92,17 @@
     const dirty=Math.min(tick,old?.[2]??tick);
     if (dirty<run.tick) run.dirty=Math.min(run.dirty,dirty);
   }
-  function startEngine() {
+  function startEngine(silent=false) {
     const cfg=run.config;
     engine.start({canvas:$('canvas'),p1:cfg.p1,p2:cfg.p2,stage:cfg.stage,mode:'local',clock:'network',seed:cfg.seed,
-      difficulty:'normal',roundsToWin:2,sound:true,onEnd:r=>{run.done={tick:run.tick+1,winner:r.winner,rounds:r.rounds.join('-')};}});
+      difficulty:'normal',roundsToWin:2,...audioOptions,audioSuspended:silent || audioBlocked(),onEnd:r=>{run.done={tick:run.tick+1,winner:r.winner,rounds:r.rounds.join('-')};}});
     run.tick=0;run.done=null;run.points.clear();run.points.set(0,engine.network.checkpoint());
   }
   function rewind() {
     if (run.dirty===Infinity) return;
     const candidates=[...run.points.keys()].filter(t=>t<=run.dirty);
     const priorTick=run.tick;
-    if (!candidates.length) startEngine();
+    if (!candidates.length) startEngine(true);
     else {
       const tick=Math.max(...candidates);
       run.tick=tick;run.done=null;
@@ -99,7 +129,8 @@
       engine.network.advance(inputs,run.tick<run.silentUntil || goal-run.tick>15);
       run.tick++;
     }
-    engine.network.draw();
+    // A full rebuild also stays silent until its corrected frame is ready.
+    updateAudioState();engine.network.draw();
     if (state.result && cursor===state.total && (run.done || state.result.mismatch)) networkResult(state.result);
     else run.frame=requestAnimationFrame(frame);
   }
@@ -116,6 +147,7 @@
   }
   function release() {for (const action of [...held]) submit(action,false);}
   function networkResult(result) {
+    engine.setAudioSuspended(true);
     if (result.mismatch) {status('Les deux simulations ont donné des résultats différents.');return;}
     if (!run?.done) return;
     const cfg=run.config;
@@ -138,7 +170,7 @@
       receivedAt=performance.now();pingSamples.push(receivedAt-before);if(pingSamples.length>9) pingSamples.shift();
       const median=[...pingSamples].sort((a,b)=>a-b)[Math.floor(pingSamples.length/2)];
       $('ping').textContent='Aller-retour médian · '+Math.round(median)+' ms';
-      state=reply;
+      state=reply;audioDisconnected=false;
       sequence=Math.max(sequence,reply.ack);pending=pending.filter(e=>e[0]>reply.ack);
       if (!run && reply.match) launch(reply.match);
       if (run) {
@@ -154,12 +186,13 @@
           held.clear();
         }
       }
-      updateLobby();
+      updateAudioState();updateLobby();
       status(run ? reply.live?'Duel en cours.':'Connexion interrompue · en attente de l’adversaire.':
         reply.seats.every(s=>s?.ready)?'Les deux joueurs sont prêts. Le joueur 1 choisit l’arène.':'Salon ouvert.');
       if (reply.result && cursor===reply.total && (run.done || reply.result.mismatch)) networkResult(reply.result);
     } catch(error) {
       if (identity!==who) return;
+      audioDisconnected=true;updateAudioState();
       if ([400,403,404,409,415].includes(error.status)) {
         if (cmd && error.status===409) status(error.message);else {resetLobby(error.message);return;}
       } else {
@@ -204,7 +237,7 @@
   $('watch').onclick=()=>{
     if (identity) {call('leave').catch(()=>{});resetLobby('Lecture de la rediffusion.');}
     $('game').hidden=false;$('controls').hidden=true;$('ping').textContent='';$('fightTitle').textContent='Rediffusion';
-    engine.start({canvas:$('canvas'),replay:record.tape,sound:true,onEnd:r=>{
+    engine.start({canvas:$('canvas'),replay:record.tape,...audioOptions,audioSuspended:audioBlocked(),onEnd:r=>{
       status(!r.replayMismatch && r.winner===record.result.winner && r.rounds?.join('-')===record.result.rounds?'Résultat de la rediffusion vérifié.':'Résultat de la rediffusion différent.');
     }});
   };
@@ -223,8 +256,10 @@
     const action=keyMap[event.key]||keyMap[event.key.toLowerCase()];
     if(action){event.preventDefault();if(!event.repeat)submit(action,type==='keydown');}
   });
-  window.addEventListener('blur',release);
-  document.addEventListener('visibilitychange',()=>{if(document.hidden)release();});
+  window.addEventListener('blur',()=>{audioBlurred=true;release();updateAudioState();});
+  window.addEventListener('focus',()=>{audioBlurred=false;updateAudioState();});
+  document.addEventListener('visibilitychange',()=>{if(document.hidden)release();updateAudioState();});
+  window.addEventListener('pagehide',clearRun);
   async function boot() {
     const wanted=new URLSearchParams(location.hash.slice(1)).get('room');
     if(wanted) $('roomCode').value=wanted;

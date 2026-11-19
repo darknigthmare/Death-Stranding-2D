@@ -1,0 +1,57 @@
+{
+  "command": "node modes/echos-de-la-greve/qa/ambiances.cjs",
+  "exitCode": 0,
+  "stdout": "Ambiances · 11 profils, localisation, volume, sources bornées, pause/reprise, arrêt, fin silencieuse, replay, effets réduits, rollback complet et autoplay vérifiés.\nInterface · curseurs sélection/pause/commandes, volume transmis au duel, mise à jour et persistance après rechargement vérifiés.\nRéseau · préférences son/volume/effets, reconstruction sans checkpoint, connexion interrompue, erreur, onglet, résultat divergent, replay et sortie vérifiés sans pause de simulation.\n",
+  "stderr": "",
+  "stageProfiles": [
+    "shore",
+    "terminal",
+    "battlefield",
+    "mule-camp",
+    "mule-camp-dry",
+    "heartman-lab",
+    "mama-workshop",
+    "ruined-factory",
+    "timefall-shelter",
+    "tar-basin",
+    "mountain-pass"
+  ],
+  "coverage": [
+    "stage beds and localized cues",
+    "bounded sources and disconnected nodes",
+    "scheduled combat voice cleanup",
+    "pause/resume/mute/volume zero/stop",
+    "late AudioContext resume after stop",
+    "missing AudioContext and rejected or throwing resume",
+    "silent rollback and full rebuild without checkpoint",
+    "silent end cleanup at presentation",
+    "audio-neutral simulation and visual RNG",
+    "reduced-effects steady bed without cues",
+    "selection/pause/commands volume and storage reload",
+    "network preferences, disconnect, focus/visibility, mismatch result, replay and pagehide"
+  ],
+  "defaultAmbienceVolume": 0.35,
+  "storageKey": "echos.v1.ambienceVolume",
+  "range": [
+    0,
+    1
+  ],
+  "api": [
+    "setAmbienceVolume(value) -> effective volume",
+    "setAudioSuspended(boolean) -> audio-only suspension",
+    "start options: ambienceVolume, audioSuspended"
+  ],
+  "limitations": [
+    "Node VM with controlled WebAudio graph and minimal DOM adapter; no sound-device listening or real browser layout validation.",
+    "Chromium launch is blocked by runtime socket permission; no escalation attempted.",
+    "Existing browser qa/son.cjs was isolated with ambienceVolume:0; its original exact combat oracle is unchanged and not run in this environment."
+  ],
+  "sourceSha256": {
+    "modes/echos-de-la-greve/fight.js": "4218267264988b5374685191702c20fca1ab3119c874911b293fb2ba8418e05f",
+    "modes/echos-de-la-greve/app.js": "a9292c41d59799111d713871f8af6e015e6ad22cd912832a13d188e9b013ec1c",
+    "modes/echos-de-la-greve/netplay.js": "d0dbdd7d76c91fd7a47578cb76c04c4f9021bc58e371318753fc930449f43911",
+    "modes/echos-de-la-greve/style.css": "c2865a13f24b1a075365edec0ae53c02506d8ed1af034dea9dad34ee67ea18be",
+    "modes/echos-de-la-greve/qa/son.cjs": "d8b4d0e68978fbc397907ace3c15a9049f35cba62314d1ec048539110764e2b0",
+    "modes/echos-de-la-greve/qa/ambiances.cjs": "347417966873e5555c5c12206ac2bbc7df754c89894ece093c866f759b994d6b"
+  }
+}

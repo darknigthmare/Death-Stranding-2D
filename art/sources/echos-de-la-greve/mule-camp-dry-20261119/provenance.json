@@ -1,0 +1,159 @@
+{
+  "variant": "mule-camp-dry",
+  "generator": "built-in image_gen.imagegen",
+  "created_utc": "2026-11-19T12:55:42.762245+00:00",
+  "plan": "generation-plan.json",
+  "sources": [
+    {
+      "path": "/home/agent/death-stranding-next-baf372eadbb3/Death-Stranding-2D/modes/echos-de-la-greve/assets/stages/mule-camp-distant.png",
+      "sha256": "770ac508008aca3b1c4691b9a7e63300fa8c5358239750d67af7035168e3eba4",
+      "size": [
+        2172,
+        724
+      ],
+      "mode": "RGBA",
+      "repository_file": "modes/echos-de-la-greve/assets/stages/mule-camp-distant.png"
+    },
+    {
+      "path": "/home/agent/death-stranding-next-baf372eadbb3/Death-Stranding-2D/modes/echos-de-la-greve/assets/stages/mule-camp-floor.png",
+      "sha256": "77fc1a7e0fef92200e66a9a464ea46b90dab00f03a23c1d647bc2711d045c809",
+      "size": [
+        2172,
+        724
+      ],
+      "mode": "RGBA",
+      "repository_file": "modes/echos-de-la-greve/assets/stages/mule-camp-floor.png"
+    },
+    {
+      "path": "/home/agent/death-stranding-next-baf372eadbb3/Death-Stranding-2D/modes/echos-de-la-greve/assets/stages/mule-camp-foreground.webp",
+      "sha256": "733bfea13ebb6373a3efdac1f366ad2231fe498c9455bad21f39186f06712552",
+      "size": [
+        2172,
+        272
+      ],
+      "mode": "RGBA",
+      "repository_file": "modes/echos-de-la-greve/assets/stages/mule-camp-foreground.webp"
+    },
+    {
+      "path": "/home/agent/death-stranding-next-baf372eadbb3/Death-Stranding-2D/modes/echos-de-la-greve/assets/stages/mule-camp-midground.png",
+      "sha256": "163ce8713a1bdf28a67dc4c8443acf621e1f5175273289ae99ce1693d36c1f61",
+      "size": [
+        2172,
+        724
+      ],
+      "mode": "RGBA",
+      "repository_file": "modes/echos-de-la-greve/assets/stages/mule-camp-midground.png"
+    },
+    {
+      "path": "/home/agent/death-stranding-next-baf372eadbb3/Death-Stranding-2D/modes/echos-de-la-greve/assets/stages/mule-camp-sky.png",
+      "sha256": "5839a3e01a2803f08157f802f97af4ed7cbc1a890715f1fdaa176b0b21655c48",
+      "size": [
+        1672,
+        941
+      ],
+      "mode": "RGB",
+      "repository_file": "modes/echos-de-la-greve/assets/stages/mule-camp-sky.png"
+    },
+    {
+      "path": "/home/agent/death-stranding-next-baf372eadbb3/Death-Stranding-2D/modes/echos-de-la-greve/assets/stages/mule-camp.webp",
+      "sha256": "7dd8b42e158b4b9e01c062ab508c14e994e2053345ed33840f807d481984b632",
+      "size": [
+        1672,
+        941
+      ],
+      "mode": "RGB",
+      "repository_file": "modes/echos-de-la-greve/assets/stages/mule-camp.webp"
+    }
+  ],
+  "outputs": [
+    {
+      "key": "panorama",
+      "file": "mule-camp-dry.png",
+      "original_path": "/workspace/scratch/baf372eadbb3/generated_images/exec-edb39cf2-3737-4742-8a9c-0d893e4ca62e.png",
+      "sha256": "e1b9d305519c3107962a9a4a982077bf904a3237ad0fb76e87e8d6dd3c68ac22",
+      "original_bytes_preserved": true,
+      "size": [
+        1672,
+        941
+      ],
+      "mode": "RGB",
+      "visual_review": "Preserves original left cliff/tents, open valley/waterfall, crate and right beacon placement. Brighter pale overcast sky; compacted matte grey ground without puddles; vegetation remains olive green. Clear level fighting lane.",
+      "integrated_file": "modes/echos-de-la-greve/assets/stages/mule-camp-dry.png"
+    },
+    {
+      "key": "sky",
+      "file": "mule-camp-dry-sky.png",
+      "original_path": "/workspace/scratch/baf372eadbb3/generated_images/exec-3f3b62e4-8853-4ad6-9522-6d1f7d73a632.png",
+      "sha256": "e1c7c9468014292f5d1d9c19d47ac0092194722ffdc262f0341b0e2dc8a8b046",
+      "original_bytes_preserved": true,
+      "size": [
+        1672,
+        941
+      ],
+      "mode": "RGB",
+      "visual_review": "Cloud-only opaque full canvas, pale silver-grey overcast with soft upper-left light. No terrain or unwanted horizons.",
+      "integrated_file": "modes/echos-de-la-greve/assets/stages/mule-camp-dry-sky.png"
+    },
+    {
+      "key": "distant",
+      "file": "mule-camp-dry-distant.png",
+      "original_path": "/workspace/scratch/baf372eadbb3/generated_images/exec-09b51fa4-f7c3-4aca-a775-15bb45e41c6f.png",
+      "sha256": "6272360b26efed08e097f23e4531ea946959efe20943313c1f95b3a25ee781de",
+      "original_bytes_preserved": true,
+      "size": [
+        2172,
+        724
+      ],
+      "mode": "RGBA",
+      "visual_review": "Original cliffs, tents, waterfall and right beacon retained with dry materials and brighter light. True transparent sky. Lower terrain strip retains transparent bottom padding, so use measured geometry rather than assuming bottom-flush pixels.",
+      "integrated_file": "modes/echos-de-la-greve/assets/stages/mule-camp-dry-distant.png"
+    },
+    {
+      "key": "midground",
+      "file": "mule-camp-dry-midground.png",
+      "original_path": "/workspace/scratch/baf372eadbb3/generated_images/exec-63eae241-1fcb-4f0b-9745-38c22ebef1e2.png",
+      "sha256": "8175fa2d5bdeb0bfb6d48a00e4da113be023919aa7d84a31f2c47548e554ead3",
+      "original_bytes_preserved": true,
+      "size": [
+        2172,
+        724
+      ],
+      "mode": "RGBA",
+      "visual_review": "Stacked grey/yellow cases remain on the far left, one yellow case and bundled tubes far right. Center remains clear above a thin low ground/cable strip. True alpha elsewhere.",
+      "integrated_file": "modes/echos-de-la-greve/assets/stages/mule-camp-dry-midground.png"
+    },
+    {
+      "key": "floor",
+      "file": "mule-camp-dry-floor.png",
+      "original_path": "/workspace/scratch/baf372eadbb3/generated_images/exec-7e61b782-3a2c-4cb4-a962-62c2304f1598.png",
+      "sha256": "9125dd2f91c7219cedcdcaaad13d5449845579b3a9547c3521fbd4b503e50063",
+      "original_bytes_preserved": true,
+      "size": [
+        2172,
+        724
+      ],
+      "mode": "RGBA",
+      "visual_review": "Dry compacted grey volcanic gravel, small matte stones and subtle dust/tire marks. Straight threshold128 edge at row300 in every column, solid through bottom with no alpha holes. Small olive grass at lower corners follows panorama border; no puddles or wet reflections.",
+      "integrated_file": "modes/echos-de-la-greve/assets/stages/mule-camp-dry-floor.png"
+    },
+    {
+      "key": "foreground",
+      "file": "mule-camp-dry-foreground.png",
+      "original_path": "/workspace/scratch/baf372eadbb3/generated_images/exec-13a10c97-2b9b-4a5f-97e1-595b7bfe6517.png",
+      "sha256": "13bdb3fa30e402f1d1c04653db7488e16dbcd0e47a3a8613cf1ca228f060194e",
+      "original_bytes_preserved": true,
+      "size": [
+        2172,
+        724
+      ],
+      "mode": "RGBA",
+      "visual_review": "Dry grey cargo case/strap on extreme left and folded yellow tarp/stakes on extreme right. True transparent upper field and central lane. Near-edge objects occupy lower30.5% rather than requested24%, but their projected physical size matches the former short strip at the same width.",
+      "integrated_file": "modes/echos-de-la-greve/assets/stages/mule-camp-dry-foreground.png"
+    }
+  ],
+  "completed_utc": "2026-11-19T12:59:21.527587+00:00",
+  "measurements": "measurements.json",
+  "visual_review": "visual-review.json",
+  "image_editing": "None. Byte-identical original generated PNGs copied to delivery folder.",
+  "integrated_review": "integrated-review.json"
+}

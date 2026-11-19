@@ -74,7 +74,7 @@ const {chromium}=require('playwright');
       await audioTest.ctx.resume();
       function reset(id,side=1,sound=true) {
         setSound(false);
-        start({canvas,mode:'local',p1:side===1?id:'sam',p2:side===2?id:'sam',stage:'shore',sound});
+        start({canvas,mode:'local',p1:side===1?id:'sam',p2:side===2?id:'sam',stage:'shore',sound,ambienceVolume:0});
         canvas.width=64;canvas.height=36;canvas.getContext('2d').scale(.05,.05);
         step(74); trace.length=0;
       }

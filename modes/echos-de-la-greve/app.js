@@ -29,6 +29,8 @@
     try { localStorage.setItem('echos.v1.' + key, JSON.stringify(value)); return true; } catch { return false; }
   }
   let sound = read('sound',true);
+  const savedAmbience=read('ambienceVolume',.35);
+  let ambienceVolume=typeof savedAmbience==='number' && Number.isFinite(savedAmbience) ? Math.max(0,Math.min(1,savedAmbience)) : .35;
   const motionPreference = window.matchMedia?.('(prefers-reduced-motion: reduce)');
   let reducedEffects = read('reducedEffects',!!motionPreference?.matches);
   let cup = read('cup',null);
@@ -46,6 +48,19 @@
   function choose(key, title, options) {
     return '<label>' + title + '<select data-option="' + key + '">' + Object.entries(options).map(([value,label]) =>
       '<option value="' + value + '"' + (String(config[key]) === value ? ' selected' : '') + '>' + esc(label) + '</option>').join('') + '</select></label>';
+  }
+  function ambienceControl() {
+    const percent=Math.round(ambienceVolume*100);
+    return '<label class="ambienceControl">Ambiance du décor<span><input type="range" min="0" max="100" step="5" value="'+percent+
+      '" data-ambience-volume aria-label="Volume de l’ambiance"><output data-ambience-value>'+percent+' %</output></span></label>';
+  }
+  function changeAmbience(event) {
+    if (!event.target.matches?.('[data-ambience-volume]')) return;
+    ambienceVolume=Math.max(0,Math.min(1,Number(event.target.value)/100));
+    save('ambienceVolume',ambienceVolume);engine?.setAmbienceVolume?.(ambienceVolume);
+    const percent=Math.round(ambienceVolume*100);
+    document.querySelectorAll('[data-ambience-volume]').forEach(control=>{control.value=String(percent);});
+    document.querySelectorAll('[data-ambience-value]').forEach(output=>{output.textContent=percent+' %';});
   }
   const arrow = '<span aria-hidden="true" class="arrow">↗</span>';
   const back = () => button('home','← Accueil','back');
@@ -126,7 +141,7 @@
         '</span>' + button('exploreStage','S’entraîner ici','mini','data-stage="' + id + '"') + '</div></div></article>';
     }).join('');
     setScreen('stages','<section class="shell">' + back() + '<div class="pagehead"><div><div class="eyebrow">Lieux de la simulation</div>' +
-      '<h1>Les arènes</h1></div><p>Dix lieux, de la Grève au col de Mountain Knot. Choisis une piste pour y entrer avec ton combattant.</p></div>' +
+      '<h1>Les arènes</h1></div><p>Dix lieux et une variante sèche du camp MULE, de la Grève au col de Mountain Knot. Choisis une piste pour y entrer avec ton combattant.</p></div>' +
       '<div class="stageGallery">' + cards + '</div></section>');
   }
   function art(id, part) {
@@ -170,6 +185,7 @@
       fields += outfitField(1, p1) + outfitField(2, config.p2) + choose('stage','Arène',stages);
     }
     if (isSolo) fields += choose('difficulty','Difficulté',{easy:'Débutant',normal:'Porteur',hard:'Vétéran'});
+    fields += ambienceControl();
     const route = character.route.map(([rival,place]) => fighters[rival].call + ' · ' + stages[place]).join('　→　');
     const startLabel = mode === 'story' && chapter() > 0 && chapter() < 3 ? 'Reprendre le duel ' + (chapter() + 1) :
       ({challenges:'Lancer l’épreuve',story:'Ouvrir l’histoire',arcade:'Lancer le parcours',tournament:cup ? 'Créer un nouveau tableau' : 'Tirer le tableau',versus:'Lancer le duel',training:'Entrer dans l’arène'})[mode];
@@ -393,7 +409,7 @@
     setScreen('fight','<section class="fightShell"><div class="fightbar"><div><div class="kicker">' + (watching ? 'Relecture · ' : '') + match.title +
       '</div><b>' + stages[match.stage] + '</b></div><div class="tools">' + (watching ? button('leave','Retour au tableau','mini') : button('controls','Commandes','mini')) + button('pause','Pause','mini','id="pauseBtn"') +
       '</div></div><div class="screen"><canvas id="arena" aria-label="Duel entre ' + esc(labels.join(' et ')) + '"></canvas>' +
-      '<div id="pauseBox" class="pausebox" hidden><h2>En pause</h2>' + button('pause','Reprendre') + button('leave',watching ? 'Retour au tableau' : 'Quitter le duel','secondary') +
+      '<div id="pauseBox" class="pausebox" hidden><h2>En pause</h2>' + ambienceControl() + button('pause','Reprendre') + button('leave',watching ? 'Retour au tableau' : 'Quitter le duel','secondary') +
       '</div></div><div class="combatNotes"><span>' + (watching ? labels.join('　 /　') : 'Commandes J1 · ' + labels[0] + '　 /　' + (local ? 'Commandes J2' : match.kind==='training' ? 'Mannequin' : 'IA') + ' · ' + labels[1]) + '</span>' +
       (match.kind === 'training' ? trainingTools() : '<span id="signal" aria-live="polite"></span>') + '</div><div class="touchgroup">' +
       (watching ? '' : touchControls(1) + (local ? touchControls(2) : match.kind==='training' ? '<div id="dummyControls" hidden>'+touchControls(2)+'</div>' : '')) + '</div></section>');
@@ -401,7 +417,7 @@
     let phase = null;
     engine.start({canvas,p1:match.p1,p2:match.p2,stage:match.stage,mode:match.kind,difficulty:match.difficulty,seed:match.seed,record:match.mode==='tournament' && !watching,replay:match.replay,roundsToWin:match.mode === 'challenges' ? 1 : 2,startingVitality:match.vitality,parcel:match.parcel,training,
       outfits:['versus','training'].includes(match.mode) ? [config.outfit1,config.outfit2] : undefined,
-      sound,reducedEffects,visuals:asset.fighters || {},onStatus(status) {
+      sound,ambienceVolume,reducedEffects,visuals:asset.fighters || {},onStatus(status) {
         if (match.kind==="training") updateTraining(status);
         if (!signal || status.phase === phase) return;
         phase = status.phase;
@@ -482,7 +498,7 @@
       return '<h3>Techniques de ' + current.call + '</h3>' +
         '<table><thead><tr><th>Direction</th><th>Technique</th><th>Coût chiral</th></tr></thead><tbody>' + rows + '</tbody></table>';
     }).join('');
-    document.getElementById('keys').innerHTML = table +
+    document.getElementById('keys').innerHTML = '<div class="options">'+ambienceControl()+'</div>'+table +
       '<p class="hint">Appuie deux fois dans une direction pour une ruée. Combine bas et léger pour balayer, bas et lourd pour soulever. Sur impact, enchaîne léger, lourd et signature. La finalité s’ouvre au dernier K.-O. Échap met le duel en pause.</p>' +
       '<p class="hint">Maintiens la direction au moment de la signature (H pour J1, L pour J2). « Avant » pointe toujours vers l’adversaire.</p>' + moveLists;
     manual.showModal();
@@ -504,6 +520,8 @@
     if (read('reducedEffects',null) === null) { reducedEffects = event.matches; updateEffects(); }
   });
   document.getElementById('audio').onclick = () => { sound = !sound; save('sound',sound); updateSound(); };
+  view.addEventListener('input',changeAmbience);
+  manual.addEventListener('input',changeAmbience);
   document.getElementById('controlsLink').onclick = controls;
   document.getElementById('homeLink').onclick = () => { if (activeFight) setPause(true); else home(); };
   const actions = {
@@ -581,5 +599,6 @@
   document.addEventListener('visibilitychange',() => { if (document.hidden) backgroundPause(); });
   window.addEventListener('pagehide',stopFight);
   window.addEventListener('pageshow',event => { if (event.persisted && screen === 'fight') home(); });
+  engine?.setAmbienceVolume?.(ambienceVolume);
   updateSound(); updateEffects(); home();
 })();

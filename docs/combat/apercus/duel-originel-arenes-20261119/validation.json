@@ -1,0 +1,104 @@
+{
+  "renderer": "@napi-rs/canvas; production scene.js and moteur.js",
+  "browser_verified": false,
+  "interface_fixture": "Minimal DOM contract fixture; real interface.js handlers, simulated match results",
+  "source_sha256": {
+    "content.js": "9f09411c33c30ae8f9147c1a7c8373ad11148f791fefa2d072b7b79dc7f91342",
+    "assets.js": "59cb4f4175b72bba0afeb8d3e1b1e658b605d6ebb640069ac4944536963c3637",
+    "duel-originel/moteur.js": "d6338297ef5a2795836d8846c663077f9334245eb6ac808440a00068138fb47a",
+    "duel-originel/scene.js": "9171f8fe9f66808b2c6e4f3ebbc079baf716476d839876cc110a627746f7a622",
+    "duel-originel/interface.js": "47938173dd52f0d0329c96551ccc63b69f97b8c8faa9b51f639faa2ba6881e87",
+    "duel-originel/index.html": "a0b893f5756442396ac25c3f777369b74c21d9adf35f3895b3fa716118aff3a3",
+    "duel-originel/style.css": "6d35c78317f62c8ace804839782a9242f841cfbe7f60b7d68087a6b6ac9c166d",
+    "qa/duel-originel-arenes.cjs": "55af817ab43f703e4dfddac913a3347d158128ebbf057e43c4da33d066664c2d"
+  },
+  "native_resolution": [
+    1120,
+    630
+  ],
+  "ground": 528,
+  "stages": 6,
+  "render_cases": 48,
+  "direct_duel_rematch_cases": 12,
+  "story_cases": 2,
+  "training_keyboard_touch_pause_reset_persistence": true,
+  "parent_saves_unchanged": true,
+  "results": [
+    {
+      "stage": "shore",
+      "cases": 8,
+      "layers": [
+        "assets/stages/shore-sky.png",
+        "assets/stages/shore-distant.png",
+        "assets/stages/shore-midground.png",
+        "assets/stages/shore-floor.png",
+        "assets/stages/shore-foreground.webp"
+      ],
+      "passed": true
+    },
+    {
+      "stage": "terminal",
+      "cases": 8,
+      "layers": [
+        "assets/stages/terminal-sky.png",
+        "assets/stages/terminal-distant.png",
+        "assets/stages/terminal-midground.png",
+        "assets/stages/terminal-floor.png",
+        "assets/stages/terminal-foreground.webp"
+      ],
+      "passed": true
+    },
+    {
+      "stage": "mule-camp",
+      "cases": 8,
+      "layers": [
+        "assets/stages/mule-camp-sky.png",
+        "assets/stages/mule-camp-distant.png",
+        "assets/stages/mule-camp-midground.png",
+        "assets/stages/mule-camp-floor.png",
+        "assets/stages/mule-camp-foreground.webp"
+      ],
+      "passed": true
+    },
+    {
+      "stage": "timefall-shelter",
+      "cases": 8,
+      "layers": [
+        "assets/stages/timefall-shelter-sky.png",
+        "assets/stages/timefall-shelter-distant.png",
+        "assets/stages/timefall-shelter-midground.png",
+        "assets/stages/timefall-shelter-floor.png",
+        "assets/stages/timefall-shelter-foreground.webp"
+      ],
+      "passed": true
+    },
+    {
+      "stage": "battlefield",
+      "cases": 8,
+      "layers": [
+        "assets/stages/battlefield-sky.png",
+        "assets/stages/battlefield-distant.png",
+        "assets/stages/battlefield-midground.png",
+        "assets/stages/battlefield-floor.png",
+        "assets/stages/battlefield-foreground.webp"
+      ],
+      "passed": true
+    },
+    {
+      "stage": "tar-basin",
+      "cases": 8,
+      "layers": [
+        "assets/stages/tar-basin-sky.png",
+        "assets/stages/tar-basin-distant.png",
+        "assets/stages/tar-basin-midground.png",
+        "assets/stages/tar-basin-floor.png",
+        "assets/stages/tar-basin-foreground.webp"
+      ],
+      "passed": true
+    }
+  ],
+  "limitations": [
+    "Browser layout, native focus, pointer capture, audio activation and accessibility tree are not exercised.",
+    "Result screens are reached by setting a winning simulation state; this suite does not replace combat balance tests."
+  ]
+}
