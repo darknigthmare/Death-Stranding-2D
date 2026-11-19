@@ -1,0 +1,140 @@
+{
+  "parent": "ec3d5fda28041b5672d023c89b74ea809cfd3c56",
+  "localCommit": "70335b3",
+  "baseTree": "0361f0960f2f750dcd74842cf80a436e4b4232aa",
+  "targetTree": "ec4d7c19896d1db88170d4b3dc8eecc404982429",
+  "entries": [
+    {
+      "path": "art/sources/echos-de-la-greve/props/bridge-deck.png",
+      "mode": "100644",
+      "sha": "fd0d16c95d952c56d03ec5b529549fc301de4cdb",
+      "size": 973921
+    },
+    {
+      "path": "art/sources/echos-de-la-greve/props/courier-parcel-closed.png",
+      "mode": "100644",
+      "sha": "b0dbc6aa369dd800cac5189e3352a1e34806d500",
+      "size": 2699841
+    },
+    {
+      "path": "art/sources/echos-de-la-greve/props/courier-parcel-open.png",
+      "mode": "100644",
+      "sha": "56d0ce50e09703cb3dfe9850dc636ede3fb63cba",
+      "size": 1738487
+    },
+    {
+      "path": "art/sources/echos-de-la-greve/props/gold-imprint.png",
+      "mode": "100644",
+      "sha": "600c058e900474197f5b8060639923d83a14df93",
+      "size": 1047100
+    },
+    {
+      "path": "art/sources/echos-de-la-greve/recovery/cliff-jump-original.png",
+      "mode": "100644",
+      "sha": "b21e6e4a4c780a25107359ecd71567cb9b6b88a8",
+      "size": 2130918
+    },
+    {
+      "path": "art/sources/echos-de-la-greve/recovery/heartman-monitor-original.png",
+      "mode": "100644",
+      "sha": "84aee97536d0730d2cebce8c764acc5efe645d22",
+      "size": 2272517
+    },
+    {
+      "path": "art/sources/echos-de-la-greve/recovery/mama-recovered-pivots.json",
+      "mode": "100644",
+      "sha": "6fd23215c37e2c24dafb29782389d780bb197ec6",
+      "size": 965
+    },
+    {
+      "path": "art/sources/echos-de-la-greve/recovery/mama-recovery-notes.md",
+      "mode": "100644",
+      "sha": "6bdab4385658f19c52d83b74e1e22a9659679965",
+      "size": 1099
+    },
+    {
+      "path": "art/sources/echos-de-la-greve/recovery/midground-prompts.json",
+      "mode": "100644",
+      "sha": "e5b13519d593f207bf39c045cad4dac9c9a0a39a",
+      "size": 16774
+    },
+    {
+      "path": "art/sources/echos-de-la-greve/recovery/props-generation.json",
+      "mode": "100644",
+      "sha": "cb53dad18040374e04d85a6298553667a34e029f",
+      "size": 6818
+    },
+    {
+      "path": "art/sources/echos-de-la-greve/recovery/recovery-audit.json",
+      "mode": "100644",
+      "sha": "2bfdc4371a9398583c60eba1e4feb3afeb95708c",
+      "size": 1438
+    },
+    {
+      "path": "art/sources/echos-de-la-greve/recovery/retrieved-20261119.json",
+      "mode": "100644",
+      "sha": "adbc8c2d424572d101f00b617c62352ef449f2cf",
+      "size": 1277
+    },
+    {
+      "path": "art/sources/echos-de-la-greve/stages/battlefield-midground.png",
+      "mode": "100644",
+      "sha": "da4bc93b95319af0e8f3de2fff55521bf4d22393",
+      "size": 785605
+    },
+    {
+      "path": "art/sources/echos-de-la-greve/stages/mama-workshop-midground.png",
+      "mode": "100644",
+      "sha": "d9bcd4f77db6ebeb7155d555b619ef4c6e809a4d",
+      "size": 665711
+    },
+    {
+      "path": "art/sources/echos-de-la-greve/stages/terminal-midground.png",
+      "mode": "100644",
+      "sha": "9f9c151a0c084eb52f3258bd5b0b852c13fd38f3",
+      "size": 729543
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/props/bridge-deck.png",
+      "mode": "100644",
+      "sha": "fd0d16c95d952c56d03ec5b529549fc301de4cdb",
+      "size": 973921
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/props/courier-parcel-closed.png",
+      "mode": "100644",
+      "sha": "b0dbc6aa369dd800cac5189e3352a1e34806d500",
+      "size": 2699841
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/props/courier-parcel-open.png",
+      "mode": "100644",
+      "sha": "56d0ce50e09703cb3dfe9850dc636ede3fb63cba",
+      "size": 1738487
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/props/gold-imprint.png",
+      "mode": "100644",
+      "sha": "600c058e900474197f5b8060639923d83a14df93",
+      "size": 1047100
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/stages/battlefield-midground.png",
+      "mode": "100644",
+      "sha": "da4bc93b95319af0e8f3de2fff55521bf4d22393",
+      "size": 785605
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/stages/mama-workshop-midground.png",
+      "mode": "100644",
+      "sha": "d9bcd4f77db6ebeb7155d555b619ef4c6e809a4d",
+      "size": 665711
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/stages/terminal-midground.png",
+      "mode": "100644",
+      "sha": "9f9c151a0c084eb52f3258bd5b0b852c13fd38f3",
+      "size": 729543
+    }
+  ]
+}

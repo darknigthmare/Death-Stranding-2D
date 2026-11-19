@@ -30,12 +30,12 @@ const {chromium} = require('playwright');
       const seen = new Set();
       ctx.drawImage = (image, ...args) => {
         if (image.src?.includes('/assets/fighters/')) {
-          const name = image.src.split('/').pop().replace('.webp','');
-          seen.add(name + '/' + Math.sign(ctx.getTransform().a));
+          seen.add(image.src + '/' + Math.sign(ctx.getTransform().a));
         }
         return draw(image, ...args);
       };
-      const preload = [...Object.values(StrandAssets.fighters), ...Object.values(StrandAssets.steps), ...Object.values(StrandAssets.hits)];
+      const preload = [...Object.values(StrandAssets.fighters), ...Object.values(StrandAssets.steps), ...Object.values(StrandAssets.hits),
+        ...Object.values(StrandAssets.wardrobe || {}).flatMap(kits => Object.values(kits.atelier?.poses || {}))];
       await Promise.all(preload.map(async src => { const image = new Image(); image.src = src; await image.decode(); }));
       const results = [];
       for (const id of Object.keys(StrandContent.fighters)) {
@@ -51,7 +51,11 @@ const {chromium} = require('playwright');
           StrandFight.input(1, 'right', false);
           StrandFight.input(2, 'left', false);
           const facing = side === 1 ? 1 : -1;
-          const pose = kind => seen.has(id + '-' + kind + '/' + facing);
+          const pose = kind => {
+            const category = {stance:'fighters',step:'steps',hit:'hits',guard:'fighters'}[kind];
+            const source = StrandAssets.wardrobe?.[id]?.atelier?.poses?.[kind] || StrandAssets[category]?.[id];
+            return seen.has(new URL(source, location.href).href + '/' + facing);
+          };
           const step = pose('step'), stance = pose('stance');
           seen.clear();
           StrandFight.input(side, 'guard', true);
@@ -59,7 +63,7 @@ const {chromium} = require('playwright');
           StrandFight.input(other, 'light', false);
           tick(16);
           const block = StrandFight.snapshot().fighters[side - 1];
-          const blockHit = pose('hit'), blockStance = pose('stance');
+          const blockHit = pose('hit'), blockStance = pose('guard');
           tick(14);
           seen.clear();
           StrandFight.input(side, 'guard', false);

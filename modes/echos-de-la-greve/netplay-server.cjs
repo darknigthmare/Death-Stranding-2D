@@ -17,18 +17,33 @@ const futureWindow = 10;
 const tokenPattern = /^[a-zA-Z0-9_-]{24,64}$/;
 const roomCode = () => randomBytes(9).toString('base64url');
 function reject(status, message) { throw Object.assign(new Error(message), {status}); }
-function gameVersion() {
+// The relay serves the same image inventory that participates in its version.
+// Nested outfits are allowed, while source files, dot paths and symlinks stay private.
+function assetFiles(baseRoot = root) {
+  const files = [];
+  const assetRoot = path.join(baseRoot,'assets');
+  if (!fs.lstatSync(assetRoot,{throwIfNoEntry:false})?.isDirectory()) return files;
+  function visit(relative) {
+    const directory = path.join(baseRoot,relative);
+    if (!fs.lstatSync(directory,{throwIfNoEntry:false})?.isDirectory()) return;
+    for (const entry of fs.readdirSync(directory,{withFileTypes:true})) {
+      const file = relative + '/' + entry.name;
+      if (entry.isDirectory() && /^[\w-]+$/.test(entry.name)) visit(file);
+      else if (entry.isFile() && /^[\w-]+\.(?:webp|png)$/.test(entry.name)) files.push(file);
+    }
+  }
+  for (const folder of ['fighters','finishers','props','stages','story']) visit('assets/' + folder);
+  return files.sort();
+}
+function gameVersion(baseRoot = root, assets = assetFiles(baseRoot)) {
   const hash = createHash('sha256');
   for (const file of ['fight.js','content.js','assets.js','netplay.js','netplay-server.cjs']) {
     hash.update(file);
-    hash.update(fs.readFileSync(path.join(root,file)));
+    hash.update(fs.readFileSync(path.join(baseRoot,file)));
   }
-  for (const folder of ['fighters','finishers','props','stages','story']) {
-    const directory = path.join(root,'assets',folder);
-    for (const name of fs.readdirSync(directory).filter(name => /\.(webp|png)$/.test(name)).sort()) {
-      hash.update(folder + '/' + name);
-      hash.update(fs.readFileSync(path.join(directory,name)));
-    }
+  for (const file of assets) {
+    hash.update(file);
+    hash.update(fs.readFileSync(path.join(baseRoot,file)));
   }
   return hash.digest('hex').slice(0,20);
 }
@@ -119,7 +134,8 @@ const statics = new Set(['index.html','style.css','app.js','fight.js','content.j
   'duel-originel/index.html','duel-originel/style.css','duel-originel/interface.js','duel-originel/moteur.js','duel-originel/scene.js']);
 const types = {'.html':'text/html; charset=utf-8','.css':'text/css','.js':'text/javascript','.webp':'image/webp','.png':'image/png'};
 function openRelay(clock) {
-  const version = gameVersion();
+  const assets = new Set(assetFiles());
+  const version = gameVersion(root,assets);
   const receive = roomService(version,clock);
   return http.createServer(async (req,res) => {
     function send(code,payload) {
@@ -151,12 +167,13 @@ function openRelay(clock) {
       }
       const requested = decodeURIComponent(url.pathname.slice(1));
       const file = requested.replace(/^modes\/echos-de-la-greve\//,'') || 'netplay.html';
-      const asset = /^assets\/(fighters|stages|finishers|props|story)\/[\w-]+\.(?:webp|png)$/.test(file);
+      const asset = assets.has(file);
       const campaign = file === 'JOUER.html' || /^campagne\/catalogue\/lot-0[1-5]\.js$/.test(file);
       if (req.method !== 'GET' || (!statics.has(file) && !asset && !campaign)) reject(404,'Page introuvable.');
       const location = path.join(campaign ? gameRoot : root,file);
-      const stat = fs.statSync(location,{throwIfNoEntry:false});
+      const stat = fs.lstatSync(location,{throwIfNoEntry:false});
       if (!stat?.isFile()) reject(404,'Fichier absent.');
+      if (asset && fs.realpathSync(location) !== location) reject(404,'Fichier absent.');
       res.writeHead(200,{'Content-Type':types[path.extname(file)],'Content-Length':stat.size,'Cache-Control':'no-cache'});
       fs.createReadStream(location).on('error',() => res.destroy()).pipe(res);
     } catch (err) {
@@ -170,4 +187,4 @@ if (require.main === module) {
   const host = process.env.HOST || '127.0.0.1';
   server.listen(Number(process.env.PORT || 8080),host,() => console.log('Salon privé · http://'+host+':'+server.address().port+'/netplay.html'));
 }
-module.exports = {openRelay,roomService};
+module.exports = {openRelay,roomService,gameVersion};

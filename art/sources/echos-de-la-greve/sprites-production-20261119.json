@@ -1,0 +1,108 @@
+{
+  "date": "2026-11-19",
+  "tool": "image_gen.imagegen",
+  "review": "One individual pose or prop per image. Canonical 1:1 fidelity still requires official frame-by-frame comparison.",
+  "recovered": [
+    {
+      "id": "sam-jump",
+      "provenance": "recovered-prior-session",
+      "originalGeneratedFile": "/workspace/scratch/88ceffc16adf/generated_images/exec-cbcd706b-bd35-4308-80ae-141c1158feb2.png",
+      "runtime": "modes/echos-de-la-greve/assets/fighters/sam-jump.png",
+      "source": "art/sources/echos-de-la-greve/fighters/sam-jump.png",
+      "width": 1024,
+      "height": 1536,
+      "alpha_bbox_gt_8": [
+        85,
+        15,
+        939,
+        1307
+      ],
+      "fully_transparent_pixels": 942131,
+      "partial_alpha_pixels": 630733,
+      "sha256": "b403e7aaa243239137f991b9e952ba98a7a7b8ea7e518e0c537c7afe683631c8",
+      "pose_count": 1,
+      "notes": "Native output preserved without resizing, crop or alpha edits; recovered, not newly generated this session."
+    },
+    {
+      "id": "fragile-jump",
+      "provenance": "recovered-prior-session",
+      "originalGeneratedFile": "/workspace/scratch/88ceffc16adf/generated_images/exec-e23636a9-510c-4727-ab2d-9e74afa5599e.png",
+      "runtime": "modes/echos-de-la-greve/assets/fighters/fragile-jump.png",
+      "source": "art/sources/echos-de-la-greve/fighters/fragile-jump.png",
+      "width": 1024,
+      "height": 1536,
+      "alpha_bbox_gt_8": [
+        55,
+        98,
+        927,
+        1227
+      ],
+      "fully_transparent_pixels": 1140789,
+      "partial_alpha_pixels": 432075,
+      "sha256": "eaa3f2f511729a55ce50f3bb2e07b9ada3cf51895e74b578947ee739d69d5819",
+      "pose_count": 1,
+      "notes": "Native output preserved without resizing, crop or alpha edits; recovered, not newly generated this session."
+    },
+    {
+      "id": "mule-jump",
+      "provenance": "recovered-prior-session",
+      "originalGeneratedFile": "/workspace/scratch/88ceffc16adf/generated_images/exec-c88e7447-316b-4ac9-8439-d47925633628.png",
+      "runtime": "modes/echos-de-la-greve/assets/fighters/mule-jump.png",
+      "source": "art/sources/echos-de-la-greve/fighters/mule-jump.png",
+      "width": 1024,
+      "height": 1536,
+      "alpha_bbox_gt_8": [
+        29,
+        97,
+        956,
+        1344
+      ],
+      "fully_transparent_pixels": 884106,
+      "partial_alpha_pixels": 688758,
+      "sha256": "b70f5847066cb9de3615e7bd138e1f4ef02da31f28a381ade3602e6a6f2ea7aa",
+      "pose_count": 1,
+      "notes": "Native output preserved without resizing, crop or alpha edits; recovered, not newly generated this session."
+    },
+    {
+      "id": "cliff-jump",
+      "provenance": "recovered-prior-session",
+      "originalGeneratedFile": "/workspace/scratch/88ceffc16adf/generated_images/exec-801f8cd5-0118-42e8-972d-f0760fe53387.png",
+      "runtime": "modes/echos-de-la-greve/assets/fighters/cliff-jump.png",
+      "source": "art/sources/echos-de-la-greve/fighters/cliff-jump.png",
+      "width": 1024,
+      "height": 1536,
+      "alpha_bbox_gt_8": [
+        137,
+        13,
+        916,
+        1484
+      ],
+      "fully_transparent_pixels": 948199,
+      "partial_alpha_pixels": 624665,
+      "sha256": "4fbde764023a97f6328769dfa2e95b049aabd587953e3623e7af67a4539ed464",
+      "pose_count": 1,
+      "notes": "Native output preserved without resizing, crop or alpha edits; recovered, not newly generated this session."
+    },
+    {
+      "id": "heartman-monitor",
+      "provenance": "recovered-prior-session",
+      "originalGeneratedFile": "/workspace/scratch/88ceffc16adf/generated_images/exec-599b27c5-05f5-46e2-9ca9-c6b3891a75e9.png",
+      "runtime": "modes/echos-de-la-greve/assets/props/heartman-monitor.png",
+      "source": "art/sources/echos-de-la-greve/props/heartman-monitor.png",
+      "width": 1536,
+      "height": 1024,
+      "alpha_bbox_gt_8": [
+        50,
+        15,
+        1492,
+        1000
+      ],
+      "fully_transparent_pixels": 499284,
+      "partial_alpha_pixels": 1073580,
+      "sha256": "4df7ede5282b73c5a83d9fc93bdfb51762a9881564aebe34f22a6c0d52cc696d",
+      "pose_count": 1,
+      "notes": "Native output preserved without resizing, crop or alpha edits; recovered, not newly generated this session."
+    }
+  ],
+  "new": []
+}

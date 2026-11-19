@@ -1,0 +1,130 @@
+{
+  "date": "2026-11-19",
+  "project": "Death Stranding 2D — Échos de la Grève",
+  "operation": "Récupération de huit PNG locaux préexistants, sans nouvelle génération ni modification des pixels.",
+  "assets": [
+    {
+      "file": "modes/echos-de-la-greve/assets/stages/battlefield-sky.png",
+      "source": "/workspace/scratch/9203aa9ebf25/generated_images/exec-6f528066-9681-4197-b2ee-df4ee1ff93a1.png",
+      "sha256": "1f9c3c2c8d4be97e6716bcf18f54dcf7164c38849b9b56185fa06a69dc09a628",
+      "role": "runtime",
+      "subject": "battlefield",
+      "kind": "sky",
+      "bytes": 1679252,
+      "dimensions": [
+        1672,
+        941
+      ],
+      "mode": "RGB"
+    },
+    {
+      "file": "modes/echos-de-la-greve/assets/stages/battlefield-floor.png",
+      "source": "/workspace/scratch/9203aa9ebf25/generated_images/exec-5d420464-cf15-462b-b7f9-79bf4bd9aef8.png",
+      "sha256": "e47805a49b59715d5f6be08f30c39e068e9517f39c75b03490927c82667b6461",
+      "role": "runtime",
+      "subject": "battlefield",
+      "kind": "floor",
+      "bytes": 1851095,
+      "dimensions": [
+        2172,
+        724
+      ],
+      "mode": "RGBA",
+      "measured_floor_anchor": {
+        "row": 229,
+        "height": 724,
+        "anchorY": 0.31629834254143646,
+        "criterion": "Première ligne dont plus de 95 % des pixels ont un alpha supérieur à 128; bord visuel principal vers y=228–229.",
+        "source_alpha_note": "Quelques pixels alpha=1 existent au-dessus; le sol est presque opaque, majoritairement alpha 251–254, sans retouche."
+      }
+    },
+    {
+      "file": "modes/echos-de-la-greve/assets/stages/battlefield-distant.png",
+      "source": "/workspace/scratch/9203aa9ebf25/generated_images/exec-9c678bf0-d36c-4bc8-91d4-3975d37c64f4.png",
+      "sha256": "d04da948c077670ca316a200111e5911ab0959bea298a2c8bed7f58b27f0d3a4",
+      "role": "runtime",
+      "subject": "battlefield",
+      "kind": "distant",
+      "bytes": 706636,
+      "dimensions": [
+        2172,
+        724
+      ],
+      "mode": "RGBA"
+    },
+    {
+      "file": "modes/echos-de-la-greve/assets/stages/ruined-factory-distant.png",
+      "source": "/workspace/scratch/9203aa9ebf25/generated_images/exec-df9fcc3c-6a6a-4b58-8131-9ec2ba721479.png",
+      "sha256": "cb9ae718e2de7904cd4e44f28caf8e3c0408db9a4410dd4747d5101f2e3401f2",
+      "role": "runtime",
+      "subject": "ruined-factory",
+      "kind": "distant",
+      "bytes": 1692111,
+      "dimensions": [
+        2172,
+        724
+      ],
+      "mode": "RGBA"
+    },
+    {
+      "file": "art/sources/echos-de-la-greve/recovery/mama-workshop-distant-variant.png",
+      "source": "/workspace/scratch/31790f353ef8/generated_images/exec-8f3bceee-4005-4e77-8d49-807578c868d9.png",
+      "sha256": "b45fb2d3702563595e5d7fa7ae55fcd3d72d58fc4c6eca97be12658075a3293a",
+      "role": "variante",
+      "subject": "mama-workshop",
+      "kind": "distant",
+      "bytes": 1445457,
+      "dimensions": [
+        2172,
+        724
+      ],
+      "mode": "RGBA",
+      "note": "Variante originale avec mobilier et longue grue; conservée comme source, non utilisée par le jeu."
+    },
+    {
+      "file": "art/sources/echos-de-la-greve/recovery/mountain-pass-sky-variant.png",
+      "source": "/workspace/scratch/31790f353ef8/generated_images/exec-68d57d64-8935-4184-a649-c3ba39011f62.png",
+      "sha256": "ea9df95f9ae24f45e48d0232db6fd5f5f688e30a4181b1f938e8cd8a363e1af7",
+      "role": "variante",
+      "subject": "mountain-pass",
+      "kind": "sky",
+      "bytes": 1596367,
+      "dimensions": [
+        1672,
+        941
+      ],
+      "mode": "RGB",
+      "note": "Attribution inférée depuis la palette et le prompt de ciel alpin dans stage-layers-b-20261119.json; non utilisée par le jeu."
+    },
+    {
+      "file": "art/sources/echos-de-la-greve/recovery/fragile-jump-original.png",
+      "source": "/workspace/scratch/a209cb821be1/generated_images/exec-815cdd94-c90c-4f95-a793-9c93bc153946.png",
+      "sha256": "c0ca8fa8b1a1b267e2706b43d17c34d38a76c9ce72f48879fe24a272c723f4ed",
+      "role": "variante",
+      "subject": "fragile",
+      "kind": "jump",
+      "bytes": 1826101,
+      "dimensions": [
+        1024,
+        1536
+      ],
+      "mode": "RGBA",
+      "note": "Original avec halo de fond; la version corrigée reste en place dans les assets de jeu."
+    },
+    {
+      "file": "art/sources/echos-de-la-greve/recovery/heartman-jump-original.png",
+      "source": "/workspace/scratch/88ceffc16adf/generated_images/exec-e5fbad98-f1db-4724-a980-3550247c7bae.png",
+      "sha256": "b59e054255178263d41f12b8797fef3453e99dd23ff01227ce3b20ede6da716b",
+      "role": "variante",
+      "subject": "heartman",
+      "kind": "jump",
+      "bytes": 1768596,
+      "dimensions": [
+        1024,
+        1536
+      ],
+      "mode": "RGBA",
+      "note": "Original avec halo de fond; la version corrigée reste en place dans les assets de jeu."
+    }
+  ]
+}

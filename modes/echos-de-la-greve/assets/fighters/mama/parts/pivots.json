@@ -1,0 +1,271 @@
+{
+  "units": "pixels",
+  "pixelsPerDesignUnit": 3,
+  "pivots": {
+    "thigh.webp": [
+      66,
+      14
+    ],
+    "shin.webp": [
+      50,
+      16
+    ],
+    "boot.webp": [
+      50,
+      32
+    ],
+    "upperArm.webp": [
+      35,
+      25
+    ],
+    "forearm.webp": [
+      28,
+      13
+    ],
+    "cuff.webp": [
+      31,
+      19
+    ],
+    "hand.webp": [
+      22,
+      10
+    ],
+    "remote.webp": [
+      22,
+      31
+    ],
+    "torso.webp": [
+      88,
+      319
+    ],
+    "reel.webp": [
+      58,
+      61
+    ],
+    "head.webp": [
+      115,
+      165
+    ],
+    "helmet.webp": [
+      76,
+      188
+    ],
+    "harness.webp": [
+      82,
+      271
+    ],
+    "pauldron.webp": [
+      37,
+      29
+    ],
+    "gauntlet.webp": [
+      31,
+      7
+    ],
+    "kneepad.webp": [
+      52,
+      19
+    ]
+  },
+  "overlays": {
+    "head": "helmet",
+    "torso": "harness",
+    "upperArm": "pauldron",
+    "forearm": "gauntlet",
+    "shin": "kneepad"
+  },
+  "parts": {
+    "thigh.webp": {
+      "width": 132,
+      "height": 249,
+      "bounds": {
+        "left": 2,
+        "top": 2,
+        "right": 128,
+        "bottom": 244,
+        "visiblePixels": 25406
+      },
+      "reconstructedOverlay": false
+    },
+    "shin.webp": {
+      "width": 100,
+      "height": 240,
+      "bounds": {
+        "left": 2,
+        "top": 2,
+        "right": 96,
+        "bottom": 233,
+        "visiblePixels": 18120
+      },
+      "reconstructedOverlay": false
+    },
+    "boot.webp": {
+      "width": 158,
+      "height": 84,
+      "bounds": {
+        "left": 2,
+        "top": 2,
+        "right": 154,
+        "bottom": 82,
+        "visiblePixels": 8785
+      },
+      "reconstructedOverlay": false
+    },
+    "upperArm.webp": {
+      "width": 72,
+      "height": 157,
+      "bounds": {
+        "left": 2,
+        "top": 2,
+        "right": 68,
+        "bottom": 152,
+        "visiblePixels": 7433
+      },
+      "reconstructedOverlay": false
+    },
+    "forearm.webp": {
+      "width": 57,
+      "height": 143,
+      "bounds": {
+        "left": 2,
+        "top": 2,
+        "right": 53,
+        "bottom": 140,
+        "visiblePixels": 5638
+      },
+      "reconstructedOverlay": false
+    },
+    "cuff.webp": {
+      "width": 65,
+      "height": 41,
+      "bounds": {
+        "left": 2,
+        "top": 2,
+        "right": 62,
+        "bottom": 38,
+        "visiblePixels": 1842
+      },
+      "reconstructedOverlay": false
+    },
+    "hand.webp": {
+      "width": 73,
+      "height": 62,
+      "bounds": {
+        "left": 2,
+        "top": 2,
+        "right": 71,
+        "bottom": 59,
+        "visiblePixels": 2475
+      },
+      "reconstructedOverlay": false
+    },
+    "remote.webp": {
+      "width": 125,
+      "height": 58,
+      "bounds": {
+        "left": 2,
+        "top": 2,
+        "right": 122,
+        "bottom": 56,
+        "visiblePixels": 4344
+      },
+      "reconstructedOverlay": false
+    },
+    "torso.webp": {
+      "width": 168,
+      "height": 422,
+      "bounds": {
+        "left": 2,
+        "top": 2,
+        "right": 161,
+        "bottom": 415,
+        "visiblePixels": 45130
+      },
+      "reconstructedOverlay": false
+    },
+    "reel.webp": {
+      "width": 108,
+      "height": 133,
+      "bounds": {
+        "left": 2,
+        "top": 2,
+        "right": 104,
+        "bottom": 131,
+        "visiblePixels": 9511
+      },
+      "reconstructedOverlay": false
+    },
+    "head.webp": {
+      "width": 206,
+      "height": 178,
+      "bounds": {
+        "left": 2,
+        "top": 2,
+        "right": 203,
+        "bottom": 175,
+        "visiblePixels": 23143
+      },
+      "reconstructedOverlay": false
+    },
+    "helmet.webp": {
+      "width": 177,
+      "height": 147,
+      "bounds": {
+        "left": 2,
+        "top": 3,
+        "right": 170,
+        "bottom": 138,
+        "visiblePixels": 12079
+      },
+      "reconstructedOverlay": true
+    },
+    "harness.webp": {
+      "width": 177,
+      "height": 320,
+      "bounds": {
+        "left": 1,
+        "top": 5,
+        "right": 160,
+        "bottom": 303,
+        "visiblePixels": 20738
+      },
+      "reconstructedOverlay": true
+    },
+    "pauldron.webp": {
+      "width": 80,
+      "height": 96,
+      "bounds": {
+        "left": 2,
+        "top": 2,
+        "right": 74,
+        "bottom": 90,
+        "visiblePixels": 5138
+      },
+      "reconstructedOverlay": true
+    },
+    "gauntlet.webp": {
+      "width": 66,
+      "height": 123,
+      "bounds": {
+        "left": 2,
+        "top": 2,
+        "right": 59,
+        "bottom": 119,
+        "visiblePixels": 5613
+      },
+      "reconstructedOverlay": true
+    },
+    "kneepad.webp": {
+      "width": 109,
+      "height": 85,
+      "bounds": {
+        "left": 2,
+        "top": 2,
+        "right": 101,
+        "bottom": 83,
+        "visiblePixels": 6256
+      },
+      "reconstructedOverlay": true
+    }
+  }
+}

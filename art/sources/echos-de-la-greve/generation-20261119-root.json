@@ -1,0 +1,36 @@
+{
+  "date": "2026-11-19",
+  "tool": "image_gen.imagegen",
+  "jobs": [
+    {
+      "id": "sam-jump",
+      "prompt": "Use case: stylized-concept. Edit the reference game sprite into ONE different full-body airborne jump pose for Sam Porter Bridges in our Death Stranding 2D fighting game. Identity, hood, face, navy courier suit, grey backpack cargo case, shoulder Odradek scanner, chest amber BB pod, straps and protective boots must stay consistent with the reference. Side view facing RIGHT, camera at torso height, no perspective foreshortening. Lift both feet completely off ground, forward knee raised to waist, rear lower leg folded backward, torso slightly leaning forward under the cargo weight, two gloved hands balanced in a compact guard. Clear natural silhouette with both boots visible, correct anatomy. Preserve the highly detailed hand painted 2D fighting sprite appearance and existing materials, with neutral lighting. The entire figure including scanner and backpack and boots inside canvas with at least 6% empty padding. Single character, single pose, no sheet, no duplicate. Output 1024x1536 portrait with a TRUE transparent background and clean alpha edges. Remove every background element: no backdrop, no gray halo, no smoke, no ground, no cast shadow, no vignette, no typography, no UI, no watermark. In particular all pixels outside the figure must be fully transparent.",
+      "input": "/workspace/scratch/88ceffc16adf/game/modes/echos-de-la-greve/assets/fighters/sam-stance.webp",
+      "transparent_background": true
+    },
+    {
+      "id": "fragile-jump",
+      "prompt": "Use case: stylized-concept. Using this reference game sprite as the exact visual design, create ONE full-body airborne jump pose for Fragile from Death Stranding in a 2D fighting game. Preserve face identity, short swept blonde hair, black glossy protective suit with small shoulder spines, black gloves and boots, folded black umbrella. Side profile facing RIGHT. At apex of a controlled forward jump: front knee bent and raised, back leg bent behind with both boots off the ground; free forward hand in a compact open guard, rear hand holds the folded umbrella behind and diagonally down, tip fully visible. Hair reacts subtly. Keep realistic anatomy and the same detailed painted 2D sprite style, neutral lighting. Entire figure, umbrella and boots fully inside canvas with 6% clear padding. One pose and one silhouette per image, no sheet or duplicate. 1024x1536 portrait on TRUE transparent background. No gray background or halo, no shadows, no smoke, no particles, no floor, no text, no watermark. Every pixel outside the character and umbrella fully transparent.",
+      "input": "/workspace/scratch/88ceffc16adf/game/modes/echos-de-la-greve/assets/fighters/fragile-stance.webp",
+      "transparent_background": true
+    },
+    {
+      "id": "mule-jump",
+      "prompt": "Use case: stylized-concept. Repose this exact MULE courier game sprite into ONE full-body airborne jump pose facing RIGHT for a side view 2D fighter. Keep the reference identity and every essential outfit feature: weathered mustard yellow hooded suit, gas respirator with dark goggles, reflective white strips, black gloves and cargo harness, grey rectangular pack with yellow straps, compact yellow scanner with blue screen, reinforced boots. The MULE vaults forward under weight: front knee flexed at waist, rear leg tucked, both boots airborne, torso braced forward. Front gloved hand holds scanner close to chest; rear arm balances without dropping gear. Detailed hand painted 2D UHD game sprite consistent with reference, realistic anatomy, no cinematic scene. Full figure including pack, scanner and both boots inside canvas with at least 6% clear padding. ONE silhouette ONE pose, no sprite sheet. Portrait 1024x1536. TRUE TRANSPARENT BACKGROUND, clean alpha: no grey halo, no backdrop, no smoke, no vignette, no ground or cast shadow, no text, no logos added, no watermark.",
+      "input": "/workspace/scratch/88ceffc16adf/game/modes/echos-de-la-greve/assets/fighters/mule-stance.webp",
+      "transparent_background": true
+    },
+    {
+      "id": "cliff-jump",
+      "prompt": "Use case: background-extraction. Edit target: this full-body airborne sprite of Cliff from Death Stranding. Remove the entire gray cloudy background and the broad soft halo around him, making all space outside the actual character completely transparent. Preserve the exact existing character identity, facial markings, pose, silhouette, hair, military camouflage, pouches, gloves, boots, texture, colors and lighting. Do not redesign or change the pose. Keep the entire original figure and both boots; add no objects. Clean precise alpha edge around all of him, including spaces between arms/torso and legs. NO gray glow, NO cast shadow, NO backdrop, NO floor, NO smoke. Exactly one character on real transparent background, same portrait framing.",
+      "input": "/workspace/scratch/c613b6c25cb0/generated_images/exec-626e6c7e-1855-48ab-a351-067e5e4f1032.png",
+      "transparent_background": true
+    },
+    {
+      "id": "heartman-monitor",
+      "prompt": "Use case: background-extraction. Edit target: this one portable ECG monitor game prop. Remove only the cloudy gray backdrop and broad blurry halo surrounding the object, including all backdrop visible through the carry handle. Preserve the device exactly: body proportions, handle, scratches, three buttons, red tiny indicator, red heartbeat trace confined inside the dark display, materials and perspective. True clean alpha outside device. Keep all device edges complete, add 5 percent transparent breathing space around it if necessary. No outer glow or cast shadow, no gray pixels outside the object, no ground, no text, no added objects. Exactly ONE portable monitor, isolated on genuinely transparent background.",
+      "input": "/workspace/scratch/c613b6c25cb0/generated_images/exec-42e5802b-e3bd-4d30-b60a-29b9d0bfe6be.png",
+      "transparent_background": true
+    }
+  ]
+}

@@ -139,6 +139,18 @@
     'mountain-pass':{title:'Col de Mountain Knot', sky:'#758995', light:'#e0edf0', weather:'snow'}
   };
   const stages = Object.fromEntries(Object.entries(arenas).map(([id,arena]) => [id,arena.title]));
+  const stageDetails = {
+    shore:{place:'Rivage de la Grève',material:'Sable noir',ambience:'Le ressac avance après la manche, puis se retire avant la reprise.'},
+    terminal:{place:'Réseau Bridges',material:'Quai de béton humide',ambience:'La porte lointaine et les témoins du quai ponctuent les intervalles.'},
+    battlefield:{place:'Mémoire de Cliff',material:'Boue et planches',ambience:'Les ombres s’effacent dans la brume lorsque la manche prend fin.'},
+    'mule-camp':{place:'Camp de récupération',material:'Gravier volcanique',ambience:'Une impulsion discrète passe d’une balise à l’autre.'},
+    'heartman-lab':{place:'Refuge de Heartman',material:'Parquet sombre',ambience:'Un moniteur de fond bat au rythme des intervalles du chercheur.'},
+    'mama-workshop':{place:'Atelier de Bridges',material:'Béton d’atelier',ambience:'Un câble suspendu et la lumière de travail animent les travées.'},
+    'ruined-factory':{place:'Complexe abandonné',material:'Béton ruisselant',ambience:'De fines poussières se détachent des conduites et du plafond.'},
+    'timefall-shelter':{place:'Halte des porteurs',material:'Roche détrempée',ambience:'Le ruissellement suit la rive de l’auvent, à la limite du sec.'},
+    'tar-basin':{place:'Vestiges industriels',material:'Quai sombre',ambience:'Des bulles éclatent à distance de la piste, dans le goudron.'},
+    'mountain-pass':{place:'Col de Mountain Knot',material:'Neige tassée',ambience:'Le vent soulève de la poudrerie le long des reliefs.'}
+  };
   const modes = {story:'Histoire', arcade:'Arcade', versus:'Versus', tournament:'Tournoi', training:'Entraînement', challenges:'Défis'};
-  window.StrandContent = {fighters, stages, arenas, modes};
+  window.StrandContent = {fighters, stages, arenas, stageDetails, modes};
 })();

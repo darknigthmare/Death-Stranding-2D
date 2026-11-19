@@ -1,0 +1,555 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-11-19",
+  "source": "source/mama.svg",
+  "sourceSha256": "b441ea5ba0ecc79d688a4168d6c0ea61a79259f20a48b5134669bef6ed75b1f0",
+  "generator": "outils/reconstruire_mama.cjs",
+  "status": "reconstructed-from-existing-vector-not-recovered-original-binaries",
+  "fidelity": "Original articulated adaptation; canonical 1:1 comparison not validated. Viaduc is an original fan-game costume.",
+  "frameContract": {
+    "width": 960,
+    "height": 1020,
+    "viewBox": [
+      0,
+      35,
+      320,
+      340
+    ],
+    "anchorX": 480,
+    "baselineY": 1017,
+    "scale": 1.108695652173913
+  },
+  "newArticulations": {
+    "guard": {
+      "hips": [
+        150,
+        230
+      ],
+      "lean": -5,
+      "head": 2,
+      "backKnee": [
+        112,
+        286
+      ],
+      "backFoot": [
+        90,
+        357
+      ],
+      "backFootAngle": 0,
+      "frontKnee": [
+        185,
+        284
+      ],
+      "frontFoot": [
+        205,
+        357
+      ],
+      "frontFootAngle": 0,
+      "backElbow": [
+        178,
+        165
+      ],
+      "backWrist": [
+        189,
+        129
+      ],
+      "backHandAngle": -60,
+      "frontElbow": [
+        161,
+        183
+      ],
+      "frontWrist": [
+        182,
+        146
+      ],
+      "frontHandAngle": -48,
+      "remote": true,
+      "note": "Deux avant-bras ferment la poitrine et le visage ; jambes fléchies et pieds plantés."
+    },
+    "crouch": {
+      "hips": [
+        147,
+        287
+      ],
+      "lean": 18,
+      "head": -12,
+      "backKnee": [
+        106,
+        319
+      ],
+      "backFoot": [
+        85,
+        357
+      ],
+      "backFootAngle": 0,
+      "frontKnee": [
+        211,
+        308
+      ],
+      "frontFoot": [
+        204,
+        357
+      ],
+      "frontFootAngle": 0,
+      "backElbow": [
+        212,
+        218
+      ],
+      "backWrist": [
+        221,
+        184
+      ],
+      "backHandAngle": -48,
+      "frontElbow": [
+        176,
+        244
+      ],
+      "frontWrist": [
+        204,
+        226
+      ],
+      "frontHandAngle": -30,
+      "remote": true,
+      "note": "Bassin abaissé, deux genoux réellement pliés, bras devant le torse ; le corps n’est pas écrasé."
+    },
+    "rise": {
+      "hips": [
+        151,
+        235
+      ],
+      "lean": 6,
+      "head": -4,
+      "backKnee": [
+        123,
+        291
+      ],
+      "backFoot": [
+        112,
+        349
+      ],
+      "backFootAngle": 12,
+      "frontKnee": [
+        204,
+        254
+      ],
+      "frontFoot": [
+        205,
+        315
+      ],
+      "frontFootAngle": -18,
+      "backElbow": [
+        190,
+        173
+      ],
+      "backWrist": [
+        205,
+        137
+      ],
+      "backHandAngle": -42,
+      "frontElbow": [
+        163,
+        190
+      ],
+      "frontWrist": [
+        192,
+        165
+      ],
+      "frontHandAngle": -35,
+      "remote": true,
+      "airborne": true,
+      "note": "Un genou monte tandis que la jambe arrière termine la poussée."
+    },
+    "apex": {
+      "hips": [
+        153,
+        239
+      ],
+      "lean": -6,
+      "head": 5,
+      "backKnee": [
+        106,
+        269
+      ],
+      "backFoot": [
+        133,
+        329
+      ],
+      "backFootAngle": -26,
+      "frontKnee": [
+        204,
+        253
+      ],
+      "frontFoot": [
+        201,
+        320
+      ],
+      "frontFootAngle": 21,
+      "backElbow": [
+        181,
+        177
+      ],
+      "backWrist": [
+        198,
+        141
+      ],
+      "backHandAngle": -48,
+      "frontElbow": [
+        157,
+        195
+      ],
+      "frontWrist": [
+        190,
+        176
+      ],
+      "frontHandAngle": -28,
+      "remote": true,
+      "airborne": true,
+      "note": "Les deux genoux se replient au sommet, les bottes restent séparées et le bassin se redresse."
+    },
+    "fall": {
+      "hips": [
+        150,
+        226
+      ],
+      "lean": 10,
+      "head": -7,
+      "backKnee": [
+        117,
+        286
+      ],
+      "backFoot": [
+        115,
+        352
+      ],
+      "backFootAngle": 8,
+      "frontKnee": [
+        182,
+        285
+      ],
+      "frontFoot": [
+        198,
+        351
+      ],
+      "frontFootAngle": -6,
+      "backElbow": [
+        196,
+        174
+      ],
+      "backWrist": [
+        220,
+        147
+      ],
+      "backHandAngle": -24,
+      "frontElbow": [
+        151,
+        190
+      ],
+      "frontWrist": [
+        183,
+        186
+      ],
+      "frontHandAngle": -12,
+      "remote": true,
+      "airborne": true,
+      "note": "Jambes dépliées pour la réception, bras ouverts pour rétablir l’équilibre."
+    }
+  },
+  "frames": {
+    "atelier": {
+      "guard": {
+        "file": "mama/atelier/guard.webp",
+        "source": "source/mama-reconstruction/atelier/guard.svg",
+        "width": 960,
+        "height": 1020,
+        "anchorX": 480,
+        "baselineY": 1017,
+        "stanceHeight": 920,
+        "anchor": 0.5,
+        "scale": 1.108695652173913,
+        "bounds": {
+          "left": 230,
+          "top": 131,
+          "right": 726,
+          "bottom": 1016,
+          "visiblePixels": 163416
+        },
+        "sha256": "0a6eb5fdfb2af89ffe0049d842fd0f68ea81379fc3309362903cef91d5e77a9f"
+      },
+      "crouch": {
+        "file": "mama/atelier/crouch.webp",
+        "source": "source/mama-reconstruction/atelier/crouch.svg",
+        "width": 960,
+        "height": 1020,
+        "anchorX": 480,
+        "baselineY": 1017,
+        "stanceHeight": 920,
+        "anchor": 0.5,
+        "scale": 1.108695652173913,
+        "bounds": {
+          "left": 224,
+          "top": 319,
+          "right": 747,
+          "bottom": 1016,
+          "visiblePixels": 147503
+        },
+        "sha256": "c4c39633c6824c22b7e756c1eec2b07e3fd227484582275fe988586967cfbfe6"
+      },
+      "rise": {
+        "file": "mama/atelier/rise.webp",
+        "source": "source/mama-reconstruction/atelier/rise.svg",
+        "width": 960,
+        "height": 1020,
+        "anchorX": 480,
+        "baselineY": 1017,
+        "stanceHeight": 920,
+        "anchor": 0.5,
+        "scale": 1.108695652173913,
+        "bounds": {
+          "left": 308,
+          "top": 148,
+          "right": 751,
+          "bottom": 1005,
+          "visiblePixels": 151417
+        },
+        "sha256": "b46e455a65ca6575bf0b3b8063acc6d0d744e5caca1ab09f2b4942dd341a7bcb"
+      },
+      "apex": {
+        "file": "mama/atelier/apex.webp",
+        "source": "source/mama-reconstruction/atelier/apex.svg",
+        "width": 960,
+        "height": 1020,
+        "anchorX": 480,
+        "baselineY": 1017,
+        "stanceHeight": 920,
+        "anchor": 0.5,
+        "scale": 1.108695652173913,
+        "bounds": {
+          "left": 296,
+          "top": 158,
+          "right": 710,
+          "bottom": 941,
+          "visiblePixels": 149791
+        },
+        "sha256": "c5221e3e21884df277032816d3eeb3d062fb98e6805cb9896922dc79ffa2396a"
+      },
+      "fall": {
+        "file": "mama/atelier/fall.webp",
+        "source": "source/mama-reconstruction/atelier/fall.svg",
+        "width": 960,
+        "height": 1020,
+        "anchorX": 480,
+        "baselineY": 1017,
+        "stanceHeight": 920,
+        "anchor": 0.5,
+        "scale": 1.108695652173913,
+        "bounds": {
+          "left": 322,
+          "top": 125,
+          "right": 747,
+          "bottom": 1008,
+          "visiblePixels": 163333
+        },
+        "sha256": "9f3cff8a398c4a7519895eebbbf920e564c78d98142d3440aa0abbc8dab92d67"
+      }
+    },
+    "viaduc": {
+      "guard": {
+        "file": "mama/viaduc/guard.webp",
+        "source": "source/mama-reconstruction/viaduc/guard.svg",
+        "width": 960,
+        "height": 1020,
+        "anchorX": 480,
+        "baselineY": 1017,
+        "stanceHeight": 920,
+        "anchor": 0.5,
+        "scale": 1.108695652173913,
+        "bounds": {
+          "left": 230,
+          "top": 110,
+          "right": 726,
+          "bottom": 1016,
+          "visiblePixels": 168614
+        },
+        "sha256": "ada66565240de1aef0c23f1062e1bf6fdc711339368fa7b1507c651e520a248b"
+      },
+      "crouch": {
+        "file": "mama/viaduc/crouch.webp",
+        "source": "source/mama-reconstruction/viaduc/crouch.svg",
+        "width": 960,
+        "height": 1020,
+        "anchorX": 480,
+        "baselineY": 1017,
+        "stanceHeight": 920,
+        "anchor": 0.5,
+        "scale": 1.108695652173913,
+        "bounds": {
+          "left": 224,
+          "top": 297,
+          "right": 747,
+          "bottom": 1016,
+          "visiblePixels": 152793
+        },
+        "sha256": "de82c70ae33ef3727772abafb7efbeb29207c074248aa0685f3dbabc973e16bd"
+      },
+      "rise": {
+        "file": "mama/viaduc/rise.webp",
+        "source": "source/mama-reconstruction/viaduc/rise.svg",
+        "width": 960,
+        "height": 1020,
+        "anchorX": 480,
+        "baselineY": 1017,
+        "stanceHeight": 920,
+        "anchor": 0.5,
+        "scale": 1.108695652173913,
+        "bounds": {
+          "left": 308,
+          "top": 127,
+          "right": 751,
+          "bottom": 1005,
+          "visiblePixels": 156595
+        },
+        "sha256": "7797566d17cc91ce50a21e7ae35cdb0acf78baca85566f22b06201f5f4859500"
+      },
+      "apex": {
+        "file": "mama/viaduc/apex.webp",
+        "source": "source/mama-reconstruction/viaduc/apex.svg",
+        "width": 960,
+        "height": 1020,
+        "anchorX": 480,
+        "baselineY": 1017,
+        "stanceHeight": 920,
+        "anchor": 0.5,
+        "scale": 1.108695652173913,
+        "bounds": {
+          "left": 293,
+          "top": 137,
+          "right": 710,
+          "bottom": 941,
+          "visiblePixels": 155413
+        },
+        "sha256": "c242c5b039e8f50035b4628e025b0a4204ff59a08fbc9338073b9323fde96a6e"
+      },
+      "fall": {
+        "file": "mama/viaduc/fall.webp",
+        "source": "source/mama-reconstruction/viaduc/fall.svg",
+        "width": 960,
+        "height": 1020,
+        "anchorX": 480,
+        "baselineY": 1017,
+        "stanceHeight": 920,
+        "anchor": 0.5,
+        "scale": 1.108695652173913,
+        "bounds": {
+          "left": 322,
+          "top": 103,
+          "right": 747,
+          "bottom": 1008,
+          "visiblePixels": 168637
+        },
+        "sha256": "593e2a39a149ffa3fc4fec752840a2f5d17481d4c3afa5e6cdb3914ea44d6d4e"
+      },
+      "stance": {
+        "file": "mama/viaduc/stance.webp",
+        "source": "source/mama-reconstruction/viaduc/stance.svg",
+        "width": 960,
+        "height": 1020,
+        "anchorX": 480,
+        "baselineY": 1017,
+        "stanceHeight": 920,
+        "anchor": 0.5,
+        "scale": 1.108695652173913,
+        "bounds": {
+          "left": 276,
+          "top": 83,
+          "right": 721,
+          "bottom": 1016,
+          "visiblePixels": 172528
+        },
+        "sha256": "8acbbd1eee15084a860c7d0ae8d71ab6b7f4b3c0b0bd939129b9d7b3f06fe676"
+      },
+      "action": {
+        "file": "mama/viaduc/action.webp",
+        "source": "source/mama-reconstruction/viaduc/action.svg",
+        "width": 960,
+        "height": 1020,
+        "anchorX": 480,
+        "baselineY": 1017,
+        "stanceHeight": 920,
+        "anchor": 0.5,
+        "scale": 1.108695652173913,
+        "bounds": {
+          "left": 156,
+          "top": 149,
+          "right": 939,
+          "bottom": 1016,
+          "visiblePixels": 181189
+        },
+        "sha256": "a16831311bbb64404c53df1ad6049c45f03a47659675c6ed489734ec05b3b1db"
+      },
+      "step": {
+        "file": "mama/viaduc/step.webp",
+        "source": "source/mama-reconstruction/viaduc/step.svg",
+        "width": 960,
+        "height": 1020,
+        "anchorX": 480,
+        "baselineY": 1017,
+        "stanceHeight": 920,
+        "anchor": 0.5,
+        "scale": 1.108695652173913,
+        "bounds": {
+          "left": 213,
+          "top": 69,
+          "right": 747,
+          "bottom": 1016,
+          "visiblePixels": 174006
+        },
+        "sha256": "2bc4542654d95375f3d06eebf6e68f981cc1e0888c4d91d2f6c118e9863a4594"
+      },
+      "hit": {
+        "file": "mama/viaduc/hit.webp",
+        "source": "source/mama-reconstruction/viaduc/hit.svg",
+        "width": 960,
+        "height": 1020,
+        "anchorX": 480,
+        "baselineY": 1017,
+        "stanceHeight": 920,
+        "anchor": 0.5,
+        "scale": 1.108695652173913,
+        "bounds": {
+          "left": 227,
+          "top": 118,
+          "right": 716,
+          "bottom": 1016,
+          "visiblePixels": 163448
+        },
+        "sha256": "2d452460c71b32223513feae9197cdda8d9bfc41e05e96ca1e40c6389603358e"
+      },
+      "portrait": {
+        "file": "mama/viaduc/portrait.webp",
+        "source": "source/mama-reconstruction/viaduc/portrait.svg",
+        "width": 710,
+        "height": 915,
+        "bounds": {
+          "left": 76,
+          "top": 68,
+          "right": 618,
+          "bottom": 914,
+          "visiblePixels": 227577
+        },
+        "sha256": "d88c7a1b6c6b4f91830bb7efcf678a02039cec48baf79babceede2a4d4aefc4d"
+      }
+    }
+  },
+  "counts": {
+    "individualRuntimeViews": 15,
+    "separateRuntimeParts": 16,
+    "newMovementPoses": 5,
+    "newEquipmentOverlays": 5
+  },
+  "notes": [
+    "Four Viaduc core poses retain the original articulated pose geometry, with added equipment and a fixed frame.",
+    "Airborne poses retain their in-frame vertical offsets; world jump height remains controlled by the simulation.",
+    "All sixteen local piece pivots preserve the recovered coordinate contract; five overlays were drawn anew.",
+    "Portrait is intentionally cropped at the torso. Gameplay views include the complete silhouette."
+  ]
+}

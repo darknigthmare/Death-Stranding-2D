@@ -10,14 +10,28 @@ a{color:inherit;text-underline-offset:.2em}.hero a,.archives a{text-decoration:n
   .chars { grid-template-columns: repeat(4, minmax(0, 1fr)); }
   .char { height: clamp(160px, 19vh, 225px); min-height: 160px; }
 }
-.stagePreview { position: relative; margin: 0 0 16px; height: clamp(110px, 16vw, 200px); overflow: hidden; border: 1px solid var(--rule); }
-.stagePreview img:first-child { width: 100%; height: 100%; object-fit: cover; object-position: center 64%; }
-.stagePreview img + img { position: absolute; left: 0; bottom: 0; width: 100%; max-height: 85%; object-fit: fill; pointer-events: none; }
+.stagePreview { position: relative; margin: 0 0 16px; width: min(100%,720px); height: auto; aspect-ratio: 16/9; overflow: hidden; border: 1px solid var(--rule); background: #253334; }
+.stagePreview .stageLayer { position: absolute; display: block; height: auto; max-width: none; pointer-events: none; }
+.stagePreview .stageBackdrop { left: -2.1875%; top: -1.666667%; width: 104.375%; height: 103.333334%; object-fit: cover; }
+.stagePreview .stageCandidate { visibility: hidden; }
+.stagePreview.stageReady .stageCandidate { visibility: visible; }
+.stagePreview.stageReady .stageLegacy { visibility: hidden; }
+.stagePreview .stageNear { position: absolute; left: -6.25%; bottom: 0; width: 112.5%; height: auto; pointer-events: none; }
+.stageShade { position: absolute; inset: 45% 0 0; background: linear-gradient(transparent,rgba(2,12,17,.42)); }
+.stageGallery { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 22px; }
+.stageCard { min-width: 0; border: 1px solid var(--rule); background: var(--panel); }
+.stageCard .stagePreview { width: 100%; margin: 0; border: 0; }
+.stageCardCopy { padding: 20px; }
+.stageCard h2 { font-size: clamp(23px,2.5vw,32px); font-weight: 550; letter-spacing: -.035em; margin: 9px 0 12px; }
+.stageCardCopy > p:not(.kicker) { font-size: 14px; line-height: 1.6; color: var(--mute); }
+.stageCard .kicker { color: var(--acid); }
+.stageCardFoot { display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap; margin-top: 20px; }
+.stageCardFoot > span { color: var(--mute); font: 11px var(--mono); }
+#effects[aria-pressed=true] { color: var(--acid); text-decoration: underline; text-underline-offset: 4px; }
+@media(max-width:760px) { .stageGallery { grid-template-columns: 1fr; } .top { height: auto; min-height: 64px; flex-wrap: wrap; padding-top: 9px; padding-bottom: 9px; } .top nav { flex-wrap: wrap; } }
 
 #dojoData{flex-basis:100%;min-width:0;overflow-x:auto}#dojoData caption{text-align:left}#dojoData table{margin:5px 0 0}#dojoData td{font-variant-numeric:tabular-nums}
 
 @media (max-width: 760px) {
   .tile:last-child:nth-child(odd) { grid-column: 1 / -1; border-top: 1px solid var(--rule); }
 }
-
-.stagePreview img.stageMiddle { bottom: 35%; height: 36%; opacity: .82; }

@@ -1,0 +1,72 @@
+{
+  "date": "2026-11-19",
+  "tool": "image_gen.imagegen",
+  "batch": "B",
+  "review": "Reference-conditioned fan-game assets; not a measured 1:1 canonical reconstruction.",
+  "assets": [
+    {
+      "id": "mama-workshop",
+      "kind": "sky",
+      "file": "modes/echos-de-la-greve/assets/stages/mama-workshop-sky.png",
+      "reference": "/workspace/scratch/31790f353ef8/game/modes/echos-de-la-greve/assets/stages/mama-workshop.webp",
+      "transparent": false,
+      "prompt": "Use case: precise-object-edit. Asset type: ONE opaque farthest background plate for a 2D side-view fighting game, stage mama-workshop, derived from Image 1 as reference. Primary request: The distant rear shell of Mama's workshop, only the empty grey concrete rear wall, damaged ceiling edges and the large broken opening on the left through which pale clouded daylight enters. Remove all benches, furniture, chests, shelving, hanging hoist, cables, machines and foreground floor. The concrete wall continues down to the bottom edge. Preserve the original cold grey green concrete, subtle beam of warm daylight from upper left and muted interior exposure. No mountains or rocks in the exterior opening. Style: preserve the reference's highly detailed realistic painted Death Stranding fan-game environment style and its exact mood, color temperature and direction of light. Composition: widescreen 16:9 full-bleed 2048 by 1152 requested. This is only the farthest backdrop of a five-layer parallax scene, not the finished scene. No foreground, no floor, no characters, no captions, no text, no logo, no border. Opaque image, no transparency.",
+      "generatedPath": "/workspace/scratch/31790f353ef8/generated_images/exec-b535bece-76b9-4e91-aed6-bd8e52d8d97a.png",
+      "status": "generated",
+      "dimensions": {
+        "width": 1672,
+        "height": 941
+      },
+      "sha256": "8bd008a14c31168a91ea8fdae1019f6b06715a10f2df154c568e2ca2ecef0f5b",
+      "mode": "RGB"
+    },
+    {
+      "id": "ruined-factory",
+      "kind": "sky",
+      "file": "modes/echos-de-la-greve/assets/stages/ruined-factory-sky.png",
+      "reference": "/workspace/scratch/31790f353ef8/game/modes/echos-de-la-greve/assets/stages/ruined-factory.webp",
+      "transparent": false,
+      "prompt": "Use case: precise-object-edit. Asset type: ONE opaque farthest background plate for a 2D side-view fighting game, stage ruined-factory, derived from Image 1 as reference. Primary request: The farthest empty interior of the ruined factory from the reference, dim stained concrete rear wall and extremely distant open hallway, soft blue daylight descending from a ceiling opening on the left, quiet amber glow at the extreme right. Remove foreground columns, main central doorway frame, walkway railing, furniture, cables, lamps and floor. Only the distant walls and atmospheric depth remain, continuing to the bottom edge. Preserve desaturated blue grey, mossy concrete and low contrast. Style: preserve the reference's highly detailed realistic painted Death Stranding fan-game environment style and its exact mood, color temperature and direction of light. Composition: widescreen 16:9 full-bleed 2048 by 1152 requested. This is only the farthest backdrop of a five-layer parallax scene, not the finished scene. No foreground, no floor, no characters, no captions, no text, no logo, no border. Opaque image, no transparency.",
+      "generatedPath": "/workspace/scratch/31790f353ef8/generated_images/exec-34b1b5bf-ef89-47bd-89a5-4233a14a0148.png",
+      "status": "generated",
+      "dimensions": {
+        "width": 1672,
+        "height": 941
+      },
+      "sha256": "15021b3630be79f0e1134f20565376dae6faa262ef592bd4c5c479ba205c5fce",
+      "mode": "RGB"
+    },
+    {
+      "id": "timefall-shelter",
+      "kind": "sky",
+      "file": "modes/echos-de-la-greve/assets/stages/timefall-shelter-sky.png",
+      "reference": "/workspace/scratch/31790f353ef8/game/modes/echos-de-la-greve/assets/stages/timefall-shelter.webp",
+      "transparent": false,
+      "prompt": "Use case: precise-object-edit. Asset type: ONE opaque farthest background plate for a 2D side-view fighting game, stage timefall-shelter, derived from Image 1 as reference. Primary request: Only the rainy sky of the reference. Remove the canopy, mountains, cliffs, rocks, bridges, terrain and all objects, extending the same storm clouds and wet grey atmospheric haze over the entire image. Keep the diffuse ivory opening in the clouds at upper right and steel grey low clouds elsewhere, subtly lighter hazy lower region. Do not draw individual falling raindrops because rain is rendered by the game. Style: preserve the reference's highly detailed realistic painted Death Stranding fan-game environment style and its exact mood, color temperature and direction of light. Composition: widescreen 16:9 full-bleed 2048 by 1152 requested. This is only the farthest backdrop of a five-layer parallax scene, not the finished scene. No foreground, no floor, no characters, no captions, no text, no logo, no border. Opaque image, no transparency.",
+      "generatedPath": "/workspace/scratch/31790f353ef8/generated_images/exec-f60cb123-e2e1-4dee-91d4-ff8044631849.png",
+      "status": "generated",
+      "dimensions": {
+        "width": 1672,
+        "height": 941
+      },
+      "sha256": "d9e52fcb9b319e6dd3b33aeb36721fd82a5cc1b90d7db955a684e5141191d5c0",
+      "mode": "RGB"
+    },
+    {
+      "id": "tar-basin",
+      "kind": "sky",
+      "file": "modes/echos-de-la-greve/assets/stages/tar-basin-sky.png",
+      "reference": "/workspace/scratch/31790f353ef8/game/modes/echos-de-la-greve/assets/stages/tar-basin.webp",
+      "transparent": false,
+      "prompt": "Use case: precise-object-edit. Asset type: ONE opaque farthest background plate for a 2D side-view fighting game, stage tar-basin, derived from Image 1 as reference. Primary request: Only the sunset storm sky of the reference. Remove every crane, cliff, mountain, industrial building, water, ground and object. Extend the same charcoal grey heavy clouds over the whole image, with a narrow muted warm amber peach horizon glow in the lower middle and lower right. The lower third is distant atmospheric haze, no landscape or waterline. Preserve restrained melancholic lighting. Style: preserve the reference's highly detailed realistic painted Death Stranding fan-game environment style and its exact mood, color temperature and direction of light. Composition: widescreen 16:9 full-bleed 2048 by 1152 requested. This is only the farthest backdrop of a five-layer parallax scene, not the finished scene. No foreground, no floor, no characters, no captions, no text, no logo, no border. Opaque image, no transparency."
+    },
+    {
+      "id": "mountain-pass",
+      "kind": "sky",
+      "file": "modes/echos-de-la-greve/assets/stages/mountain-pass-sky.png",
+      "reference": "/workspace/scratch/31790f353ef8/game/modes/echos-de-la-greve/assets/stages/mountain-pass.webp",
+      "transparent": false,
+      "prompt": "Use case: precise-object-edit. Asset type: ONE opaque farthest background plate for a 2D side-view fighting game, stage mountain-pass, derived from Image 1 as reference. Primary request: Only the alpine dusk sky of the reference. Remove all mountains, glaciers, snow fields, buildings, antennae and terrain. Extend the same desaturated lavender grey clouds and muted pink peach sunset light across the whole image, cooler on the left, warmer low on the right. Lower half gently hazy with no horizon silhouette, no land, no water. Style: preserve the reference's highly detailed realistic painted Death Stranding fan-game environment style and its exact mood, color temperature and direction of light. Composition: widescreen 16:9 full-bleed 2048 by 1152 requested. This is only the farthest backdrop of a five-layer parallax scene, not the finished scene. No foreground, no floor, no characters, no captions, no text, no logo, no border. Opaque image, no transparency."
+    }
+  ]
+}

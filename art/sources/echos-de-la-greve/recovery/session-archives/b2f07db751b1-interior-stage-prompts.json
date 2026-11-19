@@ -1,0 +1,32 @@
+{
+  "date": "2026-11-19",
+  "tool": "image_gen.imagegen",
+  "review": "Reference-conditioned fan-game layers. Canonical 1:1 validation remains pending.",
+  "status": "prepared-awaiting-publication",
+  "assets": [
+    {
+      "id": "heartman-lab",
+      "kind": "distant",
+      "file": "modes/echos-de-la-greve/assets/stages/heartman-lab-distant.png",
+      "reference": "modes/echos-de-la-greve/assets/stages/heartman-lab.webp",
+      "transparent": true,
+      "prompt": "Use case: background-extraction. Production art for the user's Death Stranding 2D Échos de la Grève side-view fighting arena. Image 1 is the existing panorama, reference and edit target. Preserve its detailed realistic painted materials, color temperature, exposure and light direction. Exactly ONE separate parallax layer per image; no characters, no collage, no spritesheet, no labels, no text, no logos, no watermark. Wide horizontal 3:1 output, requested 2172 by 724 pixels. Actual transparent alpha wherever the scene is removed; never an opaque checkerboard, black background, haze matte or vignette. Isolate and reconstruct the background furnishings of Heartman's room: the tall dark walnut bookcase at the far left with closely packed old books and records and a small trailing plant; the low walnut record-player console with paired small speakers further left of center; a narrow sheer neutral curtain at the right side; the low dark leather lounge chair and tiny side table at the far right. Retain the reference's understated warm amber lamp lighting on wood and cooler blue daylight on the right. Keep the central fighting sightline predominantly open. The left bookcase may rise to the top edge, while the other silhouettes remain low. Remove the rear concrete wall, all ceiling, window glass, mountains and lake, every inch of floor and the medical trolley/ECG monitor (supplied by other layers). Transparent gaps must remain between every piece of furniture and around all silhouettes. Objects share a level bottom baseline very near the bottom of the strip, with feet intact and small clear side margins. Preserve coherent human scale. This layer is furniture only, no solid room background or shadow rectangle."
+    },
+    {
+      "id": "heartman-lab",
+      "kind": "floor",
+      "file": "modes/echos-de-la-greve/assets/stages/heartman-lab-floor.png",
+      "reference": "modes/echos-de-la-greve/assets/stages/heartman-lab.webp",
+      "transparent": true,
+      "prompt": "Use case: background-extraction. Production art for the user's Death Stranding 2D Échos de la Grève side-view fighting arena. Image 1 is the existing panorama, reference and edit target. Preserve its detailed realistic painted materials, color temperature, exposure and light direction. Exactly ONE separate parallax layer per image; no characters, no collage, no spritesheet, no labels, no text, no logos, no watermark. Wide horizontal 3:1 output, requested 2172 by 724 pixels. Actual transparent alpha wherever the scene is removed; never an opaque checkerboard, black background, haze matte or vignette. Create ONLY the independent playable FLOOR layer. Its back/top edge is a perfectly level horizontal line at 24 percent of the canvas height. Every pixel above that line is fully transparent. Every pixel below that line is fully opaque, continuous floor surface through the bottom edge and both side edges. No holes, no edge fading or tapered ends. Side-view fighting-game ground with subtle receding texture, not a top-down plan. No vertical platform front face or floating island. No walls, ceiling, horizon, room, distant landscape, furniture, props, debris piles or upright objects. Match the reference's smooth dark charcoal-brown interior floor, very fine worn surface texture and restrained seams, with soft warm amber lamp reflections toward the left and cooler grey reflected window light toward the right. Keep the central lane quiet, level and readable. No strong checkerboard, no invented high-contrast parquet pattern, no floor tiles or stripes. The ground remains opaque even within dark shadows and reflections; transparency is only above the straight top edge."
+    },
+    {
+      "id": "ruined-factory",
+      "kind": "floor",
+      "file": "modes/echos-de-la-greve/assets/stages/ruined-factory-floor.png",
+      "reference": "modes/echos-de-la-greve/assets/stages/ruined-factory.webp",
+      "transparent": true,
+      "prompt": "Use case: background-extraction. Production art for the user's Death Stranding 2D Échos de la Grève side-view fighting arena. Image 1 is the existing panorama, reference and edit target. Preserve its detailed realistic painted materials, color temperature, exposure and light direction. Exactly ONE separate parallax layer per image; no characters, no collage, no spritesheet, no labels, no text, no logos, no watermark. Wide horizontal 3:1 output, requested 2172 by 724 pixels. Actual transparent alpha wherever the scene is removed; never an opaque checkerboard, black background, haze matte or vignette. Create ONLY the independent playable FLOOR layer. Its back/top edge is a perfectly level horizontal line at 24 percent of the canvas height. Every pixel above that line is fully transparent. Every pixel below that line is fully opaque, continuous floor surface through the bottom edge and both side edges. No holes, no edge fading or tapered ends. Side-view fighting-game ground with subtle receding texture, not a top-down plan. No vertical platform front face or floating island. No walls, ceiling, horizon, room, distant landscape, furniture, props, debris piles or upright objects. Match only the weathered wet industrial concrete floor visible in the reference: broad subtle slab seams, shallow damp scuffs, a few fine cracks, very sparse dark moss staining. Cool blue-grey reflected skylight comes from the left; narrow soft amber wet reflections remain on the far right. Use restrained low-contrast fine texture across the clear central combat lane. The surface is almost level with shallow glossy damp patches, no deep water, no large puddle boundaries, no rocks or objects. No splashes and no drawn rain particles; the game supplies weather. Maintain opaque concrete through both bottom corners and the entire bottom edge."
+    }
+  ]
+}

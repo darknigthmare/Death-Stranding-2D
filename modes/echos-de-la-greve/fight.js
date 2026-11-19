@@ -197,7 +197,7 @@
   function snapshot() {
     const m=match; if (!m) return null;
     return {phase:m.phase, tick:m.tick, paused:m.paused, round:m.round, wins:m.wins.slice(), maxRounds:m.toWin, time:Math.ceil(m.remaining/60),
-      stage:m.stage, mode:m.mode, parcel:m.parcel, beat:m.beat, winner:m.winner, finisher:m.finisher, fighters:m.f.map(f=>({id:f.id,hp:Math.ceil(f.hp),balance:Math.ceil(f.balance),chiral:Math.floor(f.chiral),combo:f.combo,x:f.x,y:f.y,guard:f.guard,action:f.act?.key || '',stun:f.stun,move:f.lastMove,marker:f.marker ? {...f.marker} : null,scan:f.scan ? {...f.scan} : null})), training:{...m.training,...(m.dummyTape && m.training.timing ? {moves:m.f.map(trainingTiming)} : {})}};
+      stage:m.stage, mode:m.mode, reducedEffects:m.reducedEffects, parcel:m.parcel, beat:m.beat, winner:m.winner, finisher:m.finisher, fighters:m.f.map(f=>({id:f.id,hp:Math.ceil(f.hp),balance:Math.ceil(f.balance),chiral:Math.floor(f.chiral),combo:f.combo,x:f.x,y:f.y,guard:f.guard,action:f.act?.key || '',stun:f.stun,move:f.lastMove,marker:f.marker ? {...f.marker} : null,scan:f.scan ? {...f.scan} : null})), training:{...m.training,...(m.dummyTape && m.training.timing ? {moves:m.f.map(trainingTiming)} : {})}};
   }
   function validReplay(tape) {
     if (!tape || tape.version !== 1 || !Object.hasOwn(roster,tape.p1) || !Object.hasOwn(roster,tape.p2) ||
@@ -230,7 +230,7 @@
       onEnd:typeof o.onEnd==='function'?o.onEnd:null,onStatus:typeof o.onStatus==='function'?o.onStatus:null,
       wins:[0,0], round:1, tick:0, beat:0, paused:false, phase:'intro', phaseTicks:72, remaining:75*60,
       f:ids.map((id,i)=>fighter(id,i?818:462,i?-1:1)), shots:[], sparks:[], hstop:0, shake:0, winner:0, finisher:false, reason:'',
-      camera:0, images:{}, training:{dummy:'idle',hitboxes:false,...o.training}, sudden:false, scene:makeScenery(stage), simRandom:randomSeed(seed), particlesRandom:randomSeed(782), now:null, lag:0};
+      camera:0, images:{}, reducedEffects:!!o.reducedEffects, training:{dummy:'idle',hitboxes:false,...o.training}, sudden:false, scene:makeScenery(stage), simRandom:randomSeed(seed), particlesRandom:randomSeed(782), now:null, lag:0};
     if (m.mode==='training') {
       m.dummyTape={events:[],next:0};
       m.training.frames=0; m.training.position=0;
@@ -252,17 +252,39 @@
       image.src = src;
       return image;
     };
-    for (const id of new Set(ids)) {
-      m.images[id] = load((o.visuals || {})[id] || art.fighters?.[id]);
-      m.images[id + 'Action'] = load(art.actions?.[id]);
-      m.images[id + 'Step'] = load(art.steps?.[id]);
-      m.images[id + 'Hit'] = load(art.hits?.[id]);
+    m.fighterFrames = ids.map((id, side) => {
+      const base = {};
+      base.stance = load((o.visuals || {})[id] || art.fighters?.[id]);
+      base.action = load(art.actions?.[id]);
+      base.step = load(art.steps?.[id]);
+      base.hit = load(art.hits?.[id]);
+      const jump = art.jumps?.[id];
+      if (typeof jump === 'string') base.jump = load(jump);
+      else for (const phase of ['rise','apex','fall']) base[phase] = load(jump?.[phase]);
+      const options = art.wardrobe?.[id];
+      const kit = options?.[o.outfits?.[side]] || options?.atelier;
+      const tailored = {};
+      for (const [pose, file] of Object.entries(kit?.poses || {})) tailored[pose] = load(file);
       if (m.mode !== 'training') m.images[id + 'Finale'] = load(art.finishers?.[id]);
-    }
-    m.scene.back = load(art.stages?.[stage]);
+      return {base, tailored, geometry:{...spriteGeometry[id], ...art.geometry?.[id], ...kit?.geometry}};
+    });
+    // Keep the complete panorama available while a layered stage decodes, or
+    // when a file is missing in an older/offline copy of the game.
+    m.scene.legacy = load(art.stages?.[stage]);
+    m.scene.back = load(art.skyplates?.[stage]);
+    m.scene.distant = load(art.distants?.[stage]);
     m.scene.middle = load(art.midgrounds?.[stage]);
+    m.scene.floor = load(art.floors?.[stage]);
     m.scene.front = load(art.foregrounds?.[stage]);
-    if (ids.includes('mule') || m.parcel) m.images.cargo = load(art.props?.cargo);
+    m.scene.geometry = art.stageGeometry?.[stage] || {};
+    if (ids.includes('mule')) m.images.cargo = load(art.props?.cargo);
+    if (m.parcel) {
+      m.images.closedParcel = load(art.props?.closedParcel || art.props?.cargo);
+      m.images.openParcel = load(art.props?.openParcel);
+    }
+    if (ids.includes('mama')) m.images.bridgeDeck = load(art.props?.bridgeDeck);
+    if (ids.includes('higgs')) m.images.goldImprint = load(art.props?.goldImprint);
+    if (ids.includes('heartman')) m.images.heartmanMonitor = load(art.props?.heartmanMonitor);
     if (typeof o.sound==='boolean') setSound(o.sound);
     o.canvas.width=WIDTH; o.canvas.height=HEIGHT; wakeAudio(); draw(m); notify(m,true);
     function frame(t) {
@@ -339,6 +361,13 @@
       try {source.stop();} catch (_) { /* A source may already have ended. */ }
     }
     voices.clear();
+  }
+  // This is a local viewing preference. It never enters replay tapes, rollback
+  // checkpoints or the combat clock, so two players may choose it independently.
+  function setReducedEffects(on) {
+    if (!match) return;
+    match.reducedEffects=!!on;
+    draw(match); notify(match,true);
   }
   function input(player,action,down=true) {
     const m=match;
@@ -825,7 +854,7 @@
   function makeScenery(stage) {
     const pick = randomSeed(stage.charCodeAt(0) * 79);
     const rain = Array.from({length: 60}, () => ({x: pick() * 1536, y: pick() * HEIGHT, speed: 2 + pick() * 4}));
-    return {rain, back: null, front: null};
+    return {rain, legacy:null, back:null, distant:null, middle:null, floor:null, front:null, geometry:{}};
   }
 
   function burst(m, x, y, color, count) {
@@ -863,26 +892,136 @@
     ctx.fillText(value, x, y);
   }
 
-  function scenery(m) {
-    const c = m.ctx, s = m.scene, theme = stages[m.stage];
-    c.fillStyle = theme.sky;
-    c.fillRect(0, 0, WIDTH, HEIGHT);
-    if (ready(s.back)) {
-      c.drawImage(s.back, -28 - m.camera * .14, -12, WIDTH + 56, HEIGHT + 24);
+  function sceneryCamera(m) { return m.camera * (m.reducedEffects ? .2 : 1); }
+
+  function sceneryLayer(m, key, speed, defaults) {
+    const image=m.scene[key];
+    if (!ready(image)) return;
+    const config=m.scene.geometry[key] || {};
+    const width=WIDTH+defaults.margin*2;
+    const height=width*image.naturalHeight/image.naturalWidth;
+    const base=Number.isFinite(config.base) ? config.base : defaults.base;
+    const anchorY=Number.isFinite(config.anchorY) ? clamp(config.anchorY,0,1) : defaults.anchorY;
+    const alpha=Number.isFinite(config.alpha) ? clamp(config.alpha,0,1) : defaults.alpha;
+    const c=m.ctx;
+    c.save(); c.globalAlpha=alpha;
+    c.drawImage(image,-defaults.margin-sceneryCamera(m)*speed,base-height*anchorY,width,height);
+    c.restore();
+  }
+
+  function ambientScenery(m) {
+    if (m.reducedEffects) return;
+    const c=m.ctx, tick=m.tick, camera=sceneryCamera(m);
+    const between=['roundover','finish','cinema','ended'].includes(m.phase);
+    const cycle=(ticks,offset=0)=>((tick+offset)%ticks)/ticks;
+    const pulse=(ticks,offset=0)=>(1-Math.cos(cycle(ticks,offset)*TAU))*.5;
+    c.save();
+    // Scenery cannot cover the floor, feet, or combat markers. All these events
+    // are computed from the recorded clock; drawing them consumes no RNG state.
+    c.beginPath(); c.rect(0,90,WIDTH,FLOOR-118); c.clip();
+    c.translate(-camera*.31,0);
+    if (m.stage==='shore') {
+      // A quiet tide during play; the shore advances further between rounds.
+      for (let i=0;i<3;i++) {
+        const tide=cycle(390,i*96), rise=Math.sin(tide*Math.PI);
+        const y=407+i*14+rise*(between ? 28 : 10);
+        c.beginPath();
+        for (let x=-70;x<=WIDTH+70;x+=24) {
+          const yy=y+Math.sin(x*.011+tide*TAU)*2.5;
+          if (x===-70) c.moveTo(x,yy); else c.lineTo(x,yy);
+        }
+        c.strokeStyle='rgba(183,211,210,'+((1-tide)*.18).toFixed(3)+')';
+        c.lineWidth=1.5; c.stroke();
+      }
+    } else if (m.stage==='terminal') {
+      // Small shutters and their warm work light stay in a remote side bay.
+      const closed=between ? pulse(192) : .14+.08*pulse(420);
+      c.fillStyle='rgba(179,199,195,.09)'; c.fillRect(1032,281,126,112);
+      c.fillStyle='rgba(29,52,60,.34)';
+      c.fillRect(1032,281,63*closed,112); c.fillRect(1158-63*closed,281,63*closed,112);
+      line(c,1035,279,1155,279,'rgba(223,193,130,'+(.18+.13*pulse(180)).toFixed(3)+')',3);
+      for (let i=0;i<3;i++) oval(c,1044+i*13,407,2.2,1.4,i===Math.floor(cycle(180)*3)?'#9bbac1':'#526b71');
+    } else if (m.stage==='battlefield') {
+      // Distant memories fade during the result; they are never combat summons.
+      const fade=between ? clamp(m.phaseTicks/96,0,1) : .65+.2*pulse(480);
+      for (const [x,y] of [[140,357],[213,364],[1070,344]]) {
+        c.globalAlpha=fade*.2;
+        oval(c,x,y,4,5,'#a1a5a0');
+        line(c,x,y+5,x-2,y+27,'#9aa49c',6);
+        line(c,x-2,y+27,x-8,y+37,'#9aa49c',3);
+        line(c,x-2,y+27,x+4,y+37,'#9aa49c',3);
+      }
+      c.globalAlpha=1;
+      line(c,-40,402,WIDTH+40,402,'rgba(185,174,149,'+(.025+.035*pulse(340)).toFixed(3)+')',8);
+    } else if (m.stage==='mule-camp') {
+      // Amber beacons have no expanding ring, unlike the fighter's cargo scan.
+      for (const [index,x] of [124,244,1090].entries()) {
+        const glow=Math.pow(pulse(240,index*62),10);
+        line(c,x,311,x,354,'rgba(155,143,101,.12)',1);
+        oval(c,x,309,3,2,'rgba(220,178,93,'+(.12+glow*.35).toFixed(3)+')');
+        if (glow>.45) line(c,x-6,309,x+6,309,'rgba(238,202,122,.15)',1);
+      }
+    } else if (m.stage==='heartman-lab') {
+      // A small background ECG trace is unrelated to Heartman's gameplay beat.
+      const x=113,y=347,w=74,h=30, sweep=cycle(159)*w;
+      c.fillStyle='rgba(8,28,34,.35)'; c.fillRect(x,y,w,h);
+      c.beginPath();
+      for (let i=0;i<=w;i+=2) {
+        const p=((i-sweep+w)%w)/w;
+        const spike=p>.33 && p<.42 ? Math.sin((p-.33)/.09*TAU)*10 : Math.sin(p*TAU)*1.5;
+        if (!i) c.moveTo(x+i,y+h*.55-spike); else c.lineTo(x+i,y+h*.55-spike);
+      }
+      c.strokeStyle='rgba(157,205,191,.42)'; c.lineWidth=1; c.stroke();
+      line(c,x+sweep,y+3,x+sweep,y+h-3,'rgba(152,214,202,.12)',1);
+    } else if (m.stage==='mama-workshop') {
+      // Slack cable and a workshop status lamp, kept above the fighting lane.
+      const sway=Math.sin(tick*.014)*3;
+      c.beginPath();c.moveTo(1040,124);c.quadraticCurveTo(1025+sway,183,1062+sway,215);
+      c.strokeStyle='rgba(128,153,149,.35)'; c.lineWidth=2; c.stroke();
+      oval(c,1062+sway,216,3,4,'rgba(171,209,193,'+(.2+.18*pulse(290)).toFixed(3)+')');
+      line(c,79,395,157,395,'rgba(120,187,177,'+(.04+.07*pulse(310)).toFixed(3)+')',1.5);
+    } else if (m.stage==='ruined-factory') {
+      // Air escaping a damaged side conduit carries dust slowly downward.
+      for (let i=0;i<13;i++) {
+        const drift=cycle(260+i*7,i*41);
+        const x=1080+Math.sin(i*2.7+drift*3)*26+drift*27;
+        const y=226+drift*142;
+        oval(c,x,y,1.1+i%3*.45,.8+i%2*.45,'rgba(172,155,133,'+((1-drift)*.16).toFixed(3)+')');
+      }
+      line(c,1059,222,1091,222,'rgba(149,117,83,'+(.03+.04*pulse(620)).toFixed(3)+')',1);
+    } else if (m.stage==='timefall-shelter') {
+      // Drops come only from the outer roof edges; the central dry lane stays clear.
+      for (let i=0;i<12;i++) {
+        const fall=cycle(68+i*3,i*29), x=i<6?70+i*12:1114+(i-6)*13;
+        const y=203+fall*252;
+        line(c,x,y,x-.7,y+4+fall*4,'rgba(167,203,207,'+(.08+fall*.11).toFixed(3)+')',1);
+        if (fall>.84) {
+          c.beginPath();c.ellipse(x-1,462,(fall-.84)*31,1.1,0,0,TAU);
+          c.strokeStyle='rgba(151,191,194,'+((1-fall)*.6).toFixed(3)+')';c.stroke();
+        }
+      }
+    } else if (m.stage==='tar-basin') {
+      // Small matte rings stay far from Higgs's bright combat marks.
+      for (const [index,x] of [171,1048,1151].entries()) {
+        const ring=cycle(310,index*103), y=426+(index%2)*21;
+        c.beginPath();
+        c.ellipse(x,y,3+ring*26,1+ring*4,0,0,TAU);
+        c.strokeStyle='rgba(146,143,128,'+((1-ring)*.17).toFixed(3)+')';c.lineWidth=1;c.stroke();
+        if (ring<.16) oval(c,x,y-2-Math.sin(ring/.16*Math.PI)*4,3,2,'rgba(102,108,108,.23)');
+      }
+    } else if (m.stage==='mountain-pass') {
+      // Spindrift follows the far ridge in sparse lateral strokes.
+      for (let i=0;i<18;i++) {
+        const gust=cycle(440,i*31), x=-80+gust*(WIDTH+160), y=385+Math.sin(i*2.4+gust*5)*25;
+        line(c,x,y,x+8+i%4*3,y-1,'rgba(211,226,232,'+(Math.sin(gust*Math.PI)*.18).toFixed(3)+')',1);
+      }
     }
-    if (ready(s.middle)) {
-      // Between the distant surf and the fighting lane. Keep the rocks below the horizon.
-      c.save();
-      c.globalAlpha = .82;
-      c.drawImage(s.middle, -48 - m.camera * .43, 205, WIDTH + 96, 260);
-      c.restore();
-    }
-    const shade = c.createLinearGradient(0, HEIGHT * .45, 0, HEIGHT);
-    shade.addColorStop(0, 'rgba(2,12,17,0)');
-    shade.addColorStop(1, 'rgba(2,12,17,.42)');
-    c.fillStyle = shade;
-    c.fillRect(0, 0, WIDTH, HEIGHT);
-    if (!theme.weather) return;
+    c.restore();
+  }
+
+  function weatherScenery(m) {
+    const c=m.ctx, s=m.scene, theme=stages[m.stage];
+    if (m.reducedEffects || !theme.weather) return;
     const flakes = theme.weather === 'snow';
     const dust = theme.weather === 'dust';
     const embers = theme.weather === 'embers';
@@ -901,15 +1040,36 @@
     c.stroke();
   }
 
+  function scenery(m) {
+    const c=m.ctx, s=m.scene, theme=stages[m.stage];
+    c.fillStyle=theme.sky; c.fillRect(0,0,WIDTH,HEIGHT);
+    const layered=ready(s.back) && ready(s.distant) && ready(s.floor);
+    const background=layered ? s.back : s.legacy;
+    if (ready(background)) {
+      // Cover the viewport plus camera overscan without distorting the panorama.
+      const ratio=background.naturalWidth/background.naturalHeight;
+      const width=Math.max(WIDTH+56,(HEIGHT+24)*ratio), height=width/ratio;
+      c.drawImage(background,(WIDTH-width)/2-sceneryCamera(m)*.14,(HEIGHT-height)/2,width,height);
+    }
+    if (layered) sceneryLayer(m,'distant',.27,{margin:48,base:552,anchorY:.96,alpha:1});
+    sceneryLayer(m,'middle',.43,{margin:48,base:FLOOR-12,anchorY:.97,alpha:.92});
+    ambientScenery(m);
+    weatherScenery(m);
+    if (layered) sceneryLayer(m,'floor',.62,{margin:80,base:FLOOR,anchorY:.3,alpha:1});
+    const shade=c.createLinearGradient(0,HEIGHT*.45,0,HEIGHT);
+    shade.addColorStop(0,'rgba(2,12,17,0)'); shade.addColorStop(1,'rgba(2,12,17,.42)');
+    c.fillStyle=shade; c.fillRect(0,0,WIDTH,HEIGHT);
+  }
+
   function foreground(m) {
     const c = m.ctx;
     if (ready(m.scene.front)) {
       const width = WIDTH + 160;
       const height = width * m.scene.front.naturalHeight / m.scene.front.naturalWidth;
-      c.drawImage(m.scene.front, -80 - m.camera * .8, HEIGHT - height, width, height);
+      c.drawImage(m.scene.front, -80 - sceneryCamera(m) * .8, HEIGHT - height, width, height);
     } else {
       // Near silhouettes stay below the fighting lane and move faster than the backdrop.
-      const x = -m.camera * .76;
+      const x = -sceneryCamera(m) * .76;
       c.save();
       c.translate(x, 0);
       if (m.stage === 'terminal') {
@@ -933,28 +1093,28 @@
 
   function drawFighter(m, f, index) {
     const c = m.ctx, feet = FLOOR - f.y;
-    const act = f.act, actionArt = m.images[f.id + 'Action'];
+    const act = f.act;
+    const {base, tailored, geometry} = m.fighterFrames[index];
+    const frameFor = pose => ready(tailored[pose]) ? tailored[pose] : base[pose];
     const movement = m.phase === 'fight' && f.grounded && !f.act && !f.guard && !f.stun &&
       !f.blockStun && !f.crouch && (f.dash || !!f.keys.left !== !!f.keys.right);
     const phase = act ? act.t / (moves[act.key].start + moves[act.key].active + moves[act.key].recover) : 0;
     const reach = act ? Math.sin(Math.PI * Math.min(1, Math.max(0, phase))) : 0;
     const performing = act && act.t >= moves[act.key].start * .61 && phase < .85;
     let pose = 'stance';
-    let image = m.images[f.id];
-    const hitArt = m.images[f.id + 'Hit'];
-    const stepArt = m.images[f.id + 'Step'];
-    if (f.stun > 0 && ready(hitArt)) {
-      pose = 'hit';
-      image = hitArt;
-    } else if (performing && ready(actionArt)) {
-      pose = 'action';
-      image = actionArt;
-    } else if (movement && (f.dash || Math.sin(f.walk) >= 0) && ready(stepArt)) {
-      pose = 'step';
-      image = stepArt;
-    }
+    if (f.stun > 0) pose = 'hit';
+    else if (performing) pose = 'action';
+    else if (!f.grounded) {
+      const phase = f.vy > 4 ? 'rise' : f.vy < -4 ? 'fall' : 'apex';
+      pose = ready(frameFor(phase)) ? phase : 'jump';
+    } else if (f.crouch && tailored.crouch) pose = 'crouch';
+    else if ((f.guard || f.blockStun) && tailored.guard) pose = 'guard';
+    else if (movement && (f.dash || Math.sin(f.walk) >= 0)) pose = 'step';
+    if (!ready(frameFor(pose))) pose = 'stance';
+    const image = frameFor(pose);
     const lost = m.winner && m.winner !== index + 1 && ['finish','cinema','roundover','ended'].includes(m.phase);
-    const compression = f.crouch ? .69 : f.guard ? .93 : lost ? .84 : 1;
+    const compression = pose === 'crouch' || pose === 'guard' ? 1 :
+      f.crouch ? .69 : f.guard ? .93 : lost ? .84 : 1;
     const breathing = movement ? 2.1 * Math.sin(f.walk) : 1.1 * Math.sin(m.tick * .055 + index);
     const height = f.spec.h * compression + breathing;
     oval(c, f.x, FLOOR + 1, Math.max(11, 29 - f.y * .08), 4.3, 'rgba(4,11,14,.54)');
@@ -965,16 +1125,16 @@
     c.rotate(sway + (performing ? .025 : .12) * reach);
     if (immune(f)) c.globalAlpha = f.act?.key === 'syncope' ? .14 : .63;
     if (ready(image)) {
-      const geometry = spriteGeometry[f.id];
       const h = height * (geometry[pose + 'Scale'] || 1);
       const frames = (pose === 'step' || pose === 'hit') ? geometry.motionFrames || 1 : 1;
       const srcWidth = image.naturalWidth / frames;
       const w = h * srcWidth / image.naturalHeight;
       const anchor = geometry[pose + 'Anchor'] ?? geometry.stanceAnchor;
+      const baseline = geometry[pose + 'Baseline'] ?? 1;
       if (f.flash > 1 && (f.flash % 4 < 2)) c.filter = 'brightness(1.5)';
       const weight = pose === 'hit' ? Math.min(1, f.stun / 8) : f.dash ? 1 : Math.sin(f.walk);
       const frame = clamp(Math.ceil(weight * frames)-1,0,frames-1);
-      c.drawImage(image,frame * srcWidth,0,srcWidth,image.naturalHeight,-w * anchor + 9 * reach,-h,w,h);
+      c.drawImage(image,frame * srcWidth,0,srcWidth,image.naturalHeight,-w * anchor + 9 * reach,-h * baseline,w,h);
     } else {
       // A temporary silhouette fills the same collision space during image decoding.
       c.fillStyle = f.spec.suit;
@@ -984,9 +1144,11 @@
       line(c,7,-height*.36,18,-2,f.spec.suit,12);
     }
     c.restore();
-    if (m.parcel && index===0 && ready(m.images.cargo)) {
+    const parcelImage = m.parcel === 'broken' && ready(m.images.openParcel) ? m.images.openParcel : m.images.closedParcel;
+    if (m.parcel && index===0 && ready(parcelImage)) {
       c.save(); c.translate(f.x-f.face*13,feet-height*.44); c.rotate(f.face * (m.parcel==='broken' ? .24 : -.06));
-      c.drawImage(m.images.cargo,-16,-14,32,16); c.restore();
+      const parcelHeight = 32 * parcelImage.naturalHeight / parcelImage.naturalWidth;
+      c.drawImage(parcelImage,-16,-parcelHeight,32,parcelHeight); c.restore();
     }
     if (act?.key === 'feint' && act.origin !== undefined && act.t < moves.feint.start + moves.feint.active) {
       const elapsed = act.t - moves.feint.start;
@@ -1088,13 +1250,25 @@
         line(c,x-6,FLOOR-11,x+6,FLOOR-11,ICE,2);
       } else if (kind === 'memory') {
         oval(c,x,FLOOR-2,17,3,'#a77e73');
-        pulseTrace(c,x,FLOOR-20,18,9,'#ffc9ad');
+        if (ready(m.images.heartmanMonitor)) {
+          const image=m.images.heartmanMonitor, width=30, height=width*image.naturalHeight/image.naturalWidth;
+          c.drawImage(image,x-width/2,FLOOR-height,width,height);
+          pulseTrace(c,x,FLOOR-height-8,18,7,'#ffc9ad');
+        } else pulseTrace(c,x,FLOOR-20,18,9,'#ffc9ad');
       } else if (kind === 'beacon') {
         oval(c,x,FLOOR-2,22,4,'rgba(175,240,250,.65)');
         line(c,x,FLOOR-2,x,FLOOR-33,ICE,1.5);
       } else if (kind === 'mine') {
-        oval(c,x,FLOOR-2,17,4,ttl>130?'#8b784c':'#edc46e');
-        for (let toe=-1; toe<=1; toe++) oval(c,x+toe*8,FLOOR-7,3,2,AMBER);
+        if (ready(m.images.goldImprint)) {
+          c.save();
+          c.globalAlpha = ttl > 130 ? .45 : 1;
+          c.drawImage(m.images.goldImprint,x-22,FLOOR-21,44,22);
+          c.restore();
+          if (ttl <= 130) oval(c,x,FLOOR-1,22,2,'rgba(239,186,96,.3)');
+        } else {
+          oval(c,x,FLOOR-2,17,4,ttl>130?'#8b784c':'#edc46e');
+          for (let toe=-1; toe<=1; toe++) oval(c,x+toe*8,FLOOR-7,3,2,AMBER);
+        }
       } else if (kind === 'crate') {
         if (ready(m.images.cargo)) {
           c.drawImage(m.images.cargo,x-cargoWidth/2,FLOOR-cargoHeight,cargoWidth,cargoHeight);
@@ -1115,10 +1289,15 @@
         c.strokeStyle='#cae6ca'; c.lineWidth=2; c.strokeRect(s.x-15,FLOOR-143,30,143);
         line(c,s.x-15,FLOOR-128,s.x+15,FLOOR-110,ICE,2);
       } else if (s.kind === 'deck') {
-        const tail=s.x-Math.sign(s.vx)*24;
-        line(c,tail,s.y-4,s.x,s.y-4,'#b1f3ec',3);
-        line(c,tail,s.y+5,s.x,s.y+5,'#79c0c0',2);
-        line(c,tail,s.y+5,s.x,s.y-4,'#b1f3ec',2);
+        if (ready(m.images.bridgeDeck)) {
+          c.save(); c.translate(s.x,s.y); c.scale(Math.sign(s.vx) || 1,1);
+          c.drawImage(m.images.bridgeDeck,-18,-6,36,12); c.restore();
+        } else {
+          const tail=s.x-Math.sign(s.vx)*24;
+          line(c,tail,s.y-4,s.x,s.y-4,'#b1f3ec',3);
+          line(c,tail,s.y+5,s.x,s.y+5,'#79c0c0',2);
+          line(c,tail,s.y+5,s.x,s.y-4,'#b1f3ec',2);
+        }
       } else if (s.kind === 'heartman' || s.kind === 'memory') {
         pulseTrace(c,s.x,s.y,s.kind==='memory' ? 64 : 14,s.kind==='memory' ? 25 : 8,'#ffceae');
       } else if (s.kind === 'recall') {
@@ -1278,7 +1457,7 @@
     const zoom=clamp(1.83-gap*.00082,1.02,1.64);
     const mid=(m.f[0].x+m.f[1].x)/2;
     const center=clamp(mid,WIDTH/(2*zoom),WIDTH-WIDTH/(2*zoom));
-    const shake=Math.sin(m.tick*2.1)*m.shake;
+    const shake=m.reducedEffects ? 0 : Math.sin(m.tick*2.1)*m.shake;
     c.save();
     c.translate(WIDTH/2+shake,FLOOR+10+shake*.45);
     c.scale(zoom,zoom);
@@ -1321,5 +1500,5 @@
     draw() {if (match?.networkClock) draw(match);}
   };
 
-  host.StrandFight = {start, stop, pause, input, setTraining, setSound, snapshot, validReplay, network};
+  host.StrandFight = {start, stop, pause, input, setTraining, setSound, setReducedEffects, snapshot, validReplay, network};
 })(window);

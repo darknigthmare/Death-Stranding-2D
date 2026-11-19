@@ -1,0 +1,68 @@
+{
+  "date": "2026-11-19",
+  "tool": "image_gen.imagegen",
+  "review": "Reference-conditioned fan-game art. Canonical 1:1 reconstruction has not been measured or certified.",
+  "assets": [
+    {
+      "stage": "mama-workshop",
+      "kind": "distant",
+      "transparent": true,
+      "prompt": "Use case: background-extraction. Production art for Death Stranding 2D Échos de la Grève side-view fighting arena. Image 1 is the existing panorama and visual reference; preserve its realistic painted rendering, lighting and material quality. Exactly ONE independent parallax game layer, no characters, no text, no logos, no watermark, no collage, no spritesheet. Extract and reconstruct only the distant structure of Mama's workshop: the leaning broken concrete structural supports and opening on the far left, distant misty mountains visible through this opening, and the overhead thin steel gantry and empty workshop shelving at the sides. The middle stays mostly empty. Remove the ceiling, rear wall and all sky (the opaque background plate supplies those), remove every tabletop prop, floor, cargo case, workbench and furniture. A genuine transparent alpha canvas surrounds the isolated architecture, including the openings between struts. Wide landscape approximately 3:1, 2172 by 724 requested. Preserve the worn cold grey concrete, mossy edges, blue grey steel and soft warm light entering from upper left. Structure sits near bottom of strip and spans width with open central space, no ground platform.",
+      "file": "modes/echos-de-la-greve/assets/stages/mama-workshop-distant.png",
+      "source": "/workspace/scratch/9203aa9ebf25/generated_images/exec-34a470fa-9481-4206-a3e6-b958809f8be9.png",
+      "width": 2172,
+      "height": 724,
+      "mode": "RGBA",
+      "alpha": {
+        "transparent_pixels": 925617,
+        "opaque_pixels": 857,
+        "partial_pixels": 646054,
+        "bbox": [
+          12,
+          0,
+          2162,
+          724
+        ]
+      },
+      "sha256": "89a70c3c3a1071a5891e577fe6f7d7b190ead0ca0cf247f0285b838264dc7e84",
+      "status": "generated"
+    },
+    {
+      "stage": "mama-workshop",
+      "kind": "floor",
+      "transparent": true,
+      "prompt": "Use case: background-extraction. Production art for Death Stranding 2D Échos de la Grève side-view fighting arena. Image 1 is the existing panorama and visual reference; preserve its realistic painted rendering, lighting and material quality. Exactly ONE independent parallax game layer, no characters, no text, no logos, no watermark, no collage, no spritesheet. Create ONLY the continuous playable floor from the reference: smooth worn grey workshop concrete with broad slab seams, subtle shallow scuffs and restrained warm lamp reflections near the sides. Very wide 3:1 canvas, 2172 by 724 requested. The top edge is a perfectly straight horizontal line exactly 24 percent down the canvas. ALL pixels ABOVE that line genuinely transparent alpha. ALL pixels BELOW that line are opaque continuous concrete surface from left edge to right edge down through bottom edge. Side-view fighting-game ground with subtle receding texture. No floating platform, no vertical front face, no taper or fading at sides, no rocks, furniture, walls, characters, props or debris. Keep the fighting area very clean.",
+      "file": "modes/echos-de-la-greve/assets/stages/mama-workshop-floor.png",
+      "source": "/workspace/scratch/9203aa9ebf25/generated_images/exec-15e268d1-b664-4a37-9204-c1f382af4e04.png",
+      "width": 2172,
+      "height": 724,
+      "mode": "RGBA",
+      "alpha": {
+        "transparent_pixels": 407950,
+        "opaque_pixels": 0,
+        "partial_pixels": 1164578,
+        "bbox": [
+          0,
+          0,
+          2172,
+          724
+        ]
+      },
+      "sha256": "425eb7e28baa632babf9e3e3d7975a1f9085598a33e51b34d6276cc21734873b",
+      "status": "generated"
+    },
+    {
+      "stage": "heartman-lab",
+      "kind": "sky",
+      "transparent": false,
+      "prompt": "Use case: background-extraction. Production art for Death Stranding 2D Échos de la Grève side-view fighting arena. Image 1 is the existing panorama and visual reference; preserve its realistic painted rendering, lighting and material quality. Exactly ONE independent parallax game layer, no characters, no text, no logos, no watermark, no collage, no spritesheet. Create only the opaque farthest background plate behind Heartman's room: keep the warm brown grey plain concrete wall at left and the large distant window VIEW at right showing the cold snowy mountain range and still lake. Remove all furniture, bookshelves, books, record player, speakers, plants, lamps, chair, bedside monitor, curtains and floor. Reconstruct empty rear wall where furniture stood, continue the wall down to bottom; preserve the opening at right with snowy lake landscape. No interior foreground geometry or floor, no frame lettering. Wide 16:9 full-bleed, 2048 by 1152 requested. Subtle warm amber room ambience at left and cool overcast mountain daylight at right, painterly realistic style and exposure exactly matching reference. Fully opaque.",
+      "file": "modes/echos-de-la-greve/assets/stages/heartman-lab-sky.png",
+      "source": "/workspace/scratch/9203aa9ebf25/generated_images/exec-dde7781d-e302-441d-bddd-aea6ca4ef59f.png",
+      "width": 1672,
+      "height": 941,
+      "mode": "RGB",
+      "sha256": "5bb383d1dcfaa8080e808fef6ab3e9d59b5e55d52e3b385841bf442042b4c0f6",
+      "status": "generated"
+    }
+  ]
+}

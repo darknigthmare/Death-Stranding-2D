@@ -1,8 +1,9 @@
 const assert = require('node:assert/strict');
 const fs = require('node:fs');
 const path = require('node:path');
+const os = require('node:os');
 const vm = require('node:vm');
-const {roomService} = require('../netplay-server.cjs');
+const {roomService,openRelay,gameVersion} = require('../netplay-server.cjs');
 
 function verifyProtocol() {
   let now = 0;
@@ -70,3 +71,50 @@ function verifyEngines() {
 }
 verifyProtocol();
 verifyEngines();
+async function verifyNestedAssets() {
+  const fixture = fs.mkdtempSync(path.join(os.tmpdir(),'echos-relay-assets-'));
+  try {
+    for (const name of ['fight.js','content.js','assets.js','netplay.js','netplay-server.cjs'])
+      fs.writeFileSync(path.join(fixture,name),'fixture');
+    const directory = path.join(fixture,'assets/fighters/mama/atelier');
+    fs.mkdirSync(directory,{recursive:true});
+    const guard = path.join(directory,'guard.webp'), jump = path.join(directory,'apex.png');
+    fs.writeFileSync(guard,'first guard'); fs.writeFileSync(jump,'first jump');
+    const initial = gameVersion(fixture);
+    fs.writeFileSync(guard,'revised guard');
+    assert.notEqual(gameVersion(fixture),initial,'Une pose imbriquée modifie la version du salon');
+    fs.unlinkSync(guard); fs.unlinkSync(jump);
+    fs.writeFileSync(jump,'first jump'); fs.writeFileSync(guard,'first guard');
+    assert.equal(gameVersion(fixture),initial,'L’ordre de création des images ne change pas la version');
+    const external = path.join(fixture,'private');
+    fs.mkdirSync(external); fs.writeFileSync(path.join(external,'secret.webp'),'private image');
+    fs.symlinkSync(path.join(external,'secret.webp'),path.join(directory,'linked.webp'));
+    fs.symlinkSync(external,path.join(directory,'linked-folder'));
+    fs.writeFileSync(path.join(directory,'source.svg'),'<svg/>');
+    assert.equal(gameVersion(fixture),initial,'Les liens symboliques et les sources sont exclus');
+  } finally {fs.rmSync(fixture,{recursive:true,force:true});}
+
+  const server = openRelay();
+  try {
+    await new Promise((resolve,reject) => {server.once('error',reject);server.listen(0,'127.0.0.1',resolve);});
+    const origin = 'http://127.0.0.1:' + server.address().port;
+    const root = path.resolve(__dirname,'..');
+    for (const file of ['assets/fighters/mama/atelier/guard.webp','assets/fighters/mama/viaduc/stance.webp','assets/fighters/mama/parts/helmet.webp']) {
+      const response = await fetch(origin + '/' + file);
+      assert.equal(response.status,200,file + ' servi par le salon');
+      assert.equal(response.headers.get('content-type'),'image/webp');
+      assert.deepEqual(Buffer.from(await response.arrayBuffer()),fs.readFileSync(path.join(root,file)),file + ' contenu exact');
+    }
+    const prefixed = await fetch(origin + '/modes/echos-de-la-greve/assets/fighters/mama/atelier/guard.webp');
+    assert.equal(prefixed.status,200,'Le préfixe de l’entrée campagne conserve les images imbriquées');
+    await prefixed.arrayBuffer();
+    for (const file of ['assets/fighters/mama/reconstruction.json','assets/fighters/source/mama.svg',
+      'assets/fighters/mama/__proto__/guard.webp','assets/fighters/mama/%2e%2e%2f%2e%2e%2f%2e%2e%2fAGENTS.md']) {
+      const response = await fetch(origin + '/' + file);
+      assert.equal(response.status,404,file + ' reste inaccessible');
+      await response.arrayBuffer();
+    }
+    console.log('Ressources réseau · tenues et pièces imbriquées servies, empreinte récursive stable, sources et traversées refusées.');
+  } finally {await new Promise(resolve => server.close(resolve));}
+}
+verifyNestedAssets().catch(error => {console.error(error);process.exitCode = 1;});

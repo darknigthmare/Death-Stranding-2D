@@ -1,0 +1,32 @@
+[
+  {
+    "source": "exec-13270dd5-f144-4107-ad15-b9fcfc7cb684.png",
+    "saved": "art/sources/echos-de-la-greve/stages/mama-workshop-midground.png",
+    "runtime": true,
+    "sha256": "4573d4b88baf9195cf24093fb35b5011fbe2ad840eaf812be928e08ca357f6ad"
+  },
+  {
+    "source": "exec-48c5b2ef-e309-4a85-badf-32209ed79796.png",
+    "saved": "art/sources/echos-de-la-greve/stages/battlefield-midground.png",
+    "runtime": true,
+    "sha256": "4514aba214923d9185b531ba8ba314d427a68ff63c5ca2ce6a6988d1bb6f0f8c"
+  },
+  {
+    "source": "exec-42e5802b-e3bd-4d30-b60a-29b9d0bfe6be.png",
+    "saved": "art/sources/echos-de-la-greve/recovery/heartman-monitor-original.png",
+    "runtime": false,
+    "sha256": "dab63924d37c4d6c44c0abaa4f777e5141f32239b3dfa5e3f543adda725e3ee2"
+  },
+  {
+    "source": "exec-626e6c7e-1855-48ab-a351-067e5e4f1032.png",
+    "saved": "art/sources/echos-de-la-greve/recovery/cliff-jump-original.png",
+    "runtime": false,
+    "sha256": "c83650d429dd1976f1dae33a2e5dbfd23781d03fc5e1b67ea23bf13675a2874f"
+  },
+  {
+    "source": "exec-9be6dbf4-f0ac-41bb-a526-3077684e0a56.png",
+    "saved": "art/sources/echos-de-la-greve/props/courier-parcel-closed.png",
+    "runtime": true,
+    "sha256": "93783293635068593a46358c50f3a50f10ec3c95692a6057f44faa19ce16c485"
+  }
+]

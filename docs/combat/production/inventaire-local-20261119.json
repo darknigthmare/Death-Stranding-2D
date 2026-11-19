@@ -1,0 +1,863 @@
+{
+  "project": "Death Stranding 2D / Échos de la Grève",
+  "date": "2026-11-19",
+  "recommended_base": "/workspace/scratch/9203aa9ebf25/Death-Stranding-2D",
+  "base_head": "ec3d5fda28041b5672d023c89b74ea809cfd3c56",
+  "read_only_sources": true,
+  "checkouts": [
+    "/workspace/scratch/c613b6c25cb0/game",
+    "/workspace/scratch/9203aa9ebf25/Death-Stranding-2D",
+    "/workspace/scratch/31790f353ef8/game",
+    "/workspace/scratch/88ceffc16adf/game",
+    "/workspace/scratch/a209cb821be1/game"
+  ],
+  "all_other_checkout_paths_present_in_recommended_base": true,
+  "tracked_modified_files": [
+    "modes/echos-de-la-greve/app.js",
+    "modes/echos-de-la-greve/assets.js",
+    "modes/echos-de-la-greve/content.js",
+    "modes/echos-de-la-greve/fight.js",
+    "modes/echos-de-la-greve/index.html",
+    "modes/echos-de-la-greve/netplay-server.cjs",
+    "modes/echos-de-la-greve/qa/arenes.cjs",
+    "modes/echos-de-la-greve/qa/poses.cjs",
+    "modes/echos-de-la-greve/qa/reseau-logique.cjs",
+    "modes/echos-de-la-greve/style.css"
+  ],
+  "untracked_file_count": 150,
+  "extra_files_to_preserve": [
+    {
+      "source": "/workspace/scratch/c613b6c25cb0/mama-recovery.patch",
+      "bytes": 14663,
+      "sha256": "e135ade043ca231c622a8be4357601aa59485448607000ee6b7c090cbd17af89",
+      "suggested_destination": "art/sources/echos-de-la-greve/recovery/session-archives/c613b6c25cb0-mama-recovery.patch",
+      "purpose": "historical checkpoint / source provenance / QA; not runtime"
+    },
+    {
+      "source": "/workspace/scratch/9203aa9ebf25/pending-image-upload.json",
+      "bytes": 10454,
+      "sha256": "5b520d6750594909209934be1beff4527336fab135787b46f95ac4b9a1c58ec3",
+      "suggested_destination": "art/sources/echos-de-la-greve/recovery/session-archives/9203aa9ebf25-pending-image-upload.json",
+      "purpose": "historical checkpoint / source provenance / QA; not runtime"
+    },
+    {
+      "source": "/workspace/scratch/31790f353ef8/stage-a-jobs.json",
+      "bytes": 8506,
+      "sha256": "3c97081522e0f6d63887c17bdb8177e6fee390377f64f4da8495bd2cd2928ab2",
+      "suggested_destination": "art/sources/echos-de-la-greve/recovery/session-archives/31790f353ef8-stage-a-jobs.json",
+      "purpose": "historical checkpoint / source provenance / QA; not runtime"
+    },
+    {
+      "source": "/workspace/scratch/31790f353ef8/pending-publish-inventory.json",
+      "bytes": 22602,
+      "sha256": "e0de2636a666a1dbff61fe85a1f6960233421b23c3cc2604c5f8bfa3241b9eac",
+      "suggested_destination": "art/sources/echos-de-la-greve/recovery/session-archives/31790f353ef8-pending-publish-inventory.json",
+      "purpose": "historical checkpoint / source provenance / QA; not runtime"
+    },
+    {
+      "source": "/workspace/scratch/88ceffc16adf/mama-reconstruction-contact.png",
+      "bytes": 232995,
+      "sha256": "9359787a5c4a6c08d497249732bcdd467f7555d8e965075b0c372a6d40c947ad",
+      "suggested_destination": "docs/combat/apercus/recuperation-20261119/88ceffc16adf-mama-reconstruction-contact.png",
+      "purpose": "historical checkpoint / source provenance / QA; not runtime"
+    },
+    {
+      "source": "/workspace/scratch/88ceffc16adf/mama-portrait-inspection.png",
+      "bytes": 185903,
+      "sha256": "cc002e7d21d27fcfb66a662adec614c3e7b86a66f287bb85d4d45173bc225c73",
+      "suggested_destination": "docs/combat/apercus/recuperation-20261119/88ceffc16adf-mama-portrait-inspection.png",
+      "purpose": "historical checkpoint / source provenance / QA; not runtime"
+    },
+    {
+      "source": "/workspace/scratch/88ceffc16adf/mama-guard-inspection.png",
+      "bytes": 205699,
+      "sha256": "144da24bb3fc04c2905387602da1e22b95c73dd3e395d08e3048c3033490f1a1",
+      "suggested_destination": "docs/combat/apercus/recuperation-20261119/88ceffc16adf-mama-guard-inspection.png",
+      "purpose": "historical checkpoint / source provenance / QA; not runtime"
+    },
+    {
+      "source": "/workspace/scratch/a209cb821be1/publish-recovery.json",
+      "bytes": 4465,
+      "sha256": "ec5de59fe3536b2f48dc46aa764a4c5c43f146c3cb7db72b5a580a47fd7d0b10",
+      "suggested_destination": "art/sources/echos-de-la-greve/recovery/session-archives/a209cb821be1-publish-recovery.json",
+      "purpose": "historical checkpoint / source provenance / QA; not runtime"
+    },
+    {
+      "source": "/workspace/scratch/a209cb821be1/recovered-image-contact.png",
+      "bytes": 565319,
+      "sha256": "17da53cf1eaf06150ef1c68d3d8c0ad5c31c475f2296e5d354ddd91f236f0581",
+      "suggested_destination": "docs/combat/apercus/recuperation-20261119/a209cb821be1-recovered-image-contact.png",
+      "purpose": "historical checkpoint / source provenance / QA; not runtime"
+    },
+    {
+      "source": "/workspace/scratch/a209cb821be1/stage-recovery-contact.png",
+      "bytes": 592694,
+      "sha256": "26397747666a921c944428922f9f4a932dac7a3c01b29ef7d928474c39aadcac",
+      "suggested_destination": "docs/combat/apercus/recuperation-20261119/a209cb821be1-stage-recovery-contact.png",
+      "purpose": "historical checkpoint / source provenance / QA; not runtime"
+    },
+    {
+      "source": "/workspace/scratch/a209cb821be1/stage-recovery-composition.png",
+      "bytes": 2647890,
+      "sha256": "d3ab2c67aaf9fc3ab888aa7c3e8b9fe41bfd0f07b0e6d8c0539084ceffcc5bac",
+      "suggested_destination": "docs/combat/apercus/recuperation-20261119/a209cb821be1-stage-recovery-composition.png",
+      "purpose": "historical checkpoint / source provenance / QA; not runtime"
+    },
+    {
+      "source": "/workspace/scratch/a209cb821be1/recovered-worktree.patch",
+      "bytes": 20953,
+      "sha256": "7cdd0ede5fb3d1cf540ab9a2b580526b708107e828edfdb6b1f7a5cf3d86f264",
+      "suggested_destination": "art/sources/echos-de-la-greve/recovery/session-archives/a209cb821be1-recovered-worktree.patch",
+      "purpose": "historical checkpoint / source provenance / QA; not runtime"
+    },
+    {
+      "source": "/workspace/scratch/94a9e2275bc0/upload-initial.json",
+      "bytes": 65803,
+      "sha256": "1aae7c9aefa20dc536217ce70fb91614853a25adadca5de66ab875811a74f2a0",
+      "suggested_destination": "art/sources/echos-de-la-greve/recovery/session-archives/94a9e2275bc0-upload-initial.json",
+      "purpose": "prior upload checkpoint; reported uploaded blobs still need remote verification"
+    },
+    {
+      "source": "/workspace/scratch/94a9e2275bc0/uploaded-shas.json",
+      "bytes": 819,
+      "sha256": "ea95c60e277aff4e2c33a8e17a98a30aa83a906c95751ac423a066d05ca66059",
+      "suggested_destination": "art/sources/echos-de-la-greve/recovery/session-archives/94a9e2275bc0-uploaded-shas.json",
+      "purpose": "prior upload checkpoint; reported uploaded blobs still need remote verification"
+    }
+  ],
+  "already_represented_external_files": [
+    {
+      "source": "/workspace/scratch/c613b6c25cb0/midground-prompts.json",
+      "bytes": 16774,
+      "sha256": "684e683b073325e003872cc1d1df434b767b9d9ed9693451d403bfde4839a317",
+      "represented_by": [
+        "art/sources/echos-de-la-greve/recovery/midground-prompts.json"
+      ]
+    },
+    {
+      "source": "/workspace/scratch/c613b6c25cb0/recovery-audit.json",
+      "bytes": 1438,
+      "sha256": "20130f4b71199b53ba9614537fd8dfd537d84d440b99c0033dac8046db32521c",
+      "represented_by": [
+        "art/sources/echos-de-la-greve/recovery/recovery-audit.json"
+      ]
+    },
+    {
+      "source": "/workspace/scratch/c613b6c25cb0/props-generation.json",
+      "bytes": 6818,
+      "sha256": "ec0b26b576a38110cde2bc09854257c4442763ef88ab8b6c0cfa849329d4babd",
+      "represented_by": [
+        "art/sources/echos-de-la-greve/recovery/props-generation.json"
+      ]
+    },
+    {
+      "source": "/workspace/scratch/c613b6c25cb0/mama-recovered-pivots.json",
+      "bytes": 965,
+      "sha256": "f746839bfaa84754f16da54f8de721cbeb663b348e42c40a15935ffbbaab1f9b",
+      "represented_by": [
+        "art/sources/echos-de-la-greve/recovery/mama-recovered-pivots.json"
+      ]
+    },
+    {
+      "source": "/workspace/scratch/c613b6c25cb0/mama-recovery-notes.md",
+      "bytes": 1099,
+      "sha256": "affa4a262dfce772e23de84be048519ddec0aca6f2b78ae20a53c19a571d8b68",
+      "represented_by": [
+        "art/sources/echos-de-la-greve/recovery/mama-recovery-notes.md"
+      ]
+    }
+  ],
+  "generated_images": [
+    {
+      "source": "/workspace/scratch/c613b6c25cb0/generated_images/exec-13270dd5-f144-4107-ad15-b9fcfc7cb684.png",
+      "bytes": 665711,
+      "sha256": "4573d4b88baf9195cf24093fb35b5011fbe2ad840eaf812be928e08ca357f6ad",
+      "represented_by": [
+        "art/sources/echos-de-la-greve/stages/mama-workshop-midground.png",
+        "modes/echos-de-la-greve/assets/stages/mama-workshop-midground.png"
+      ]
+    },
+    {
+      "source": "/workspace/scratch/c613b6c25cb0/generated_images/exec-626e6c7e-1855-48ab-a351-067e5e4f1032.png",
+      "bytes": 2130918,
+      "sha256": "c83650d429dd1976f1dae33a2e5dbfd23781d03fc5e1b67ea23bf13675a2874f",
+      "represented_by": [
+        "art/sources/echos-de-la-greve/recovery/cliff-jump-original.png"
+      ]
+    },
+    {
+      "source": "/workspace/scratch/c613b6c25cb0/generated_images/exec-9be6dbf4-f0ac-41bb-a526-3077684e0a56.png",
+      "bytes": 2699841,
+      "sha256": "93783293635068593a46358c50f3a50f10ec3c95692a6057f44faa19ce16c485",
+      "represented_by": [
+        "art/sources/echos-de-la-greve/props/courier-parcel-closed.png",
+        "modes/echos-de-la-greve/assets/props/courier-parcel-closed.png"
+      ]
+    },
+    {
+      "source": "/workspace/scratch/c613b6c25cb0/generated_images/exec-48c5b2ef-e309-4a85-badf-32209ed79796.png",
+      "bytes": 785605,
+      "sha256": "4514aba214923d9185b531ba8ba314d427a68ff63c5ca2ce6a6988d1bb6f0f8c",
+      "represented_by": [
+        "art/sources/echos-de-la-greve/stages/battlefield-midground.png",
+        "modes/echos-de-la-greve/assets/stages/battlefield-midground.png"
+      ]
+    },
+    {
+      "source": "/workspace/scratch/c613b6c25cb0/generated_images/exec-0f6212f6-3fb9-4477-a572-e17d63682c28.png",
+      "bytes": 729543,
+      "sha256": "d09eb84105d65f1af2eea0fcd24b9f00dfb5fd8faebd6d432672bfba5606ee21",
+      "represented_by": [
+        "art/sources/echos-de-la-greve/stages/terminal-midground.png",
+        "modes/echos-de-la-greve/assets/stages/terminal-midground.png"
+      ]
+    },
+    {
+      "source": "/workspace/scratch/c613b6c25cb0/generated_images/exec-84e17a0e-3de6-44eb-840b-99c97ee5de83.png",
+      "bytes": 1047100,
+      "sha256": "4972f5c23568ef4c408e6fb2015734e13089807af5fce6983641532c1fd73259",
+      "represented_by": [
+        "art/sources/echos-de-la-greve/props/gold-imprint.png",
+        "modes/echos-de-la-greve/assets/props/gold-imprint.png"
+      ]
+    },
+    {
+      "source": "/workspace/scratch/c613b6c25cb0/generated_images/exec-f76773b2-5229-4719-af5c-a1552c9c400a.png",
+      "bytes": 973921,
+      "sha256": "4b512c5cb087f246f6d4c4004570a06ce1683b769baff9098c455d1dc3fe65a5",
+      "represented_by": [
+        "art/sources/echos-de-la-greve/props/bridge-deck.png",
+        "modes/echos-de-la-greve/assets/props/bridge-deck.png"
+      ]
+    },
+    {
+      "source": "/workspace/scratch/c613b6c25cb0/generated_images/exec-42e5802b-e3bd-4d30-b60a-29b9d0bfe6be.png",
+      "bytes": 2272517,
+      "sha256": "dab63924d37c4d6c44c0abaa4f777e5141f32239b3dfa5e3f543adda725e3ee2",
+      "represented_by": [
+        "art/sources/echos-de-la-greve/recovery/heartman-monitor-original.png"
+      ]
+    },
+    {
+      "source": "/workspace/scratch/c613b6c25cb0/generated_images/exec-de85783a-afc4-477f-955b-90dd2ba8e0eb.png",
+      "bytes": 1738487,
+      "sha256": "001c564e387eee9ed5b99ec82d8496dba01c7ca9643e2be939c58564b2492da4",
+      "represented_by": [
+        "art/sources/echos-de-la-greve/props/courier-parcel-open.png",
+        "modes/echos-de-la-greve/assets/props/courier-parcel-open.png"
+      ]
+    },
+    {
+      "source": "/workspace/scratch/9203aa9ebf25/generated_images/exec-6f528066-9681-4197-b2ee-df4ee1ff93a1.png",
+      "bytes": 1679252,
+      "sha256": "1f9c3c2c8d4be97e6716bcf18f54dcf7164c38849b9b56185fa06a69dc09a628",
+      "represented_by": [
+        "modes/echos-de-la-greve/assets/stages/battlefield-sky.png"
+      ]
+    },
+    {
+      "source": "/workspace/scratch/9203aa9ebf25/generated_images/exec-34a470fa-9481-4206-a3e6-b958809f8be9.png",
+      "bytes": 1353534,
+      "sha256": "89a70c3c3a1071a5891e577fe6f7d7b190ead0ca0cf247f0285b838264dc7e84",
+      "represented_by": [
+        "modes/echos-de-la-greve/assets/stages/mama-workshop-distant.png"
+      ]
+    },
+    {
+      "source": "/workspace/scratch/9203aa9ebf25/generated_images/exec-15e268d1-b664-4a37-9204-c1f382af4e04.png",
+      "bytes": 2178307,
+      "sha256": "425eb7e28baa632babf9e3e3d7975a1f9085598a33e51b34d6276cc21734873b",
+      "represented_by": [
+        "modes/echos-de-la-greve/assets/stages/mama-workshop-floor.png"
+      ]
+    },
+    {
+      "source": "/workspace/scratch/9203aa9ebf25/generated_images/exec-8fe4c736-f562-4e42-af25-21ae6541fecc.png",
+      "bytes": 2070681,
+      "sha256": "69d7b282c976a5fed9ac25c336a96fcee443618d00519d28ec05482a022f77de",
+      "represented_by": [
+        "modes/echos-de-la-greve/assets/stages/mountain-pass-floor.png"
+      ]
+    },
+    {
+      "source": "/workspace/scratch/9203aa9ebf25/generated_images/exec-472fb20b-8a0b-4684-95d5-f820ff9501bc.png",
+      "bytes": 1726670,
+      "sha256": "ec7cbab1c1600642b64b4cab234310b1ce20e6346d354dbd785532c314bd3a1c",
+      "represented_by": [
+        "modes/echos-de-la-greve/assets/stages/mountain-pass-distant.png"
+      ]
+    },
+    {
+      "source": "/workspace/scratch/9203aa9ebf25/generated_images/exec-5d420464-cf15-462b-b7f9-79bf4bd9aef8.png",
+      "bytes": 1851095,
+      "sha256": "e47805a49b59715d5f6be08f30c39e068e9517f39c75b03490927c82667b6461",
+      "represented_by": [
+        "modes/echos-de-la-greve/assets/stages/battlefield-floor.png"
+      ]
+    },
+    {
+      "source": "/workspace/scratch/9203aa9ebf25/generated_images/exec-df9fcc3c-6a6a-4b58-8131-9ec2ba721479.png",
+      "bytes": 1692111,
+      "sha256": "cb9ae718e2de7904cd4e44f28caf8e3c0408db9a4410dd4747d5101f2e3401f2",
+      "represented_by": [
+        "modes/echos-de-la-greve/assets/stages/ruined-factory-distant.png"
+      ]
+    },
+    {
+      "source": "/workspace/scratch/9203aa9ebf25/generated_images/exec-9c678bf0-d36c-4bc8-91d4-3975d37c64f4.png",
+      "bytes": 706636,
+      "sha256": "d04da948c077670ca316a200111e5911ab0959bea298a2c8bed7f58b27f0d3a4",
+      "represented_by": [
+        "modes/echos-de-la-greve/assets/stages/battlefield-distant.png"
+      ]
+    },
+    {
+      "source": "/workspace/scratch/9203aa9ebf25/generated_images/exec-dde7781d-e302-441d-bddd-aea6ca4ef59f.png",
+      "bytes": 2481182,
+      "sha256": "5bb383d1dcfaa8080e808fef6ab3e9d59b5e55d52e3b385841bf442042b4c0f6",
+      "represented_by": [
+        "modes/echos-de-la-greve/assets/stages/heartman-lab-sky.png"
+      ]
+    },
+    {
+      "source": "/workspace/scratch/9203aa9ebf25/generated_images/exec-a3875a27-30a7-4757-965c-f582b646ca7a.png",
+      "bytes": 1572985,
+      "sha256": "a4937e5df5fc8fd0fc2e4d5d04aaa390898e978f7230a6fc2eec2470941da67c",
+      "represented_by": [
+        "modes/echos-de-la-greve/assets/stages/mountain-pass-sky.png"
+      ]
+    },
+    {
+      "source": "/workspace/scratch/31790f353ef8/generated_images/exec-b535bece-76b9-4e91-aed6-bd8e52d8d97a.png",
+      "bytes": 2527086,
+      "sha256": "8bd008a14c31168a91ea8fdae1019f6b06715a10f2df154c568e2ca2ecef0f5b",
+      "represented_by": [
+        "modes/echos-de-la-greve/assets/stages/mama-workshop-sky.png"
+      ]
+    },
+    {
+      "source": "/workspace/scratch/31790f353ef8/generated_images/exec-e9bab412-452a-4fdf-ac29-9e1806c1e92c.png",
+      "bytes": 1616706,
+      "sha256": "9e4f6d40f8fd3552fab8908ec010443b2e1244e40400b44c7398d92d92a7e61d",
+      "represented_by": [
+        "modes/echos-de-la-greve/assets/stages/shore-sky.png"
+      ]
+    },
+    {
+      "source": "/workspace/scratch/31790f353ef8/generated_images/exec-b5e2ac82-cd05-4b20-8df1-fc98b32c6a0f.png",
+      "bytes": 2018784,
+      "sha256": "ab99f670b5ee4f867b44169ca2c4189a0f0cea193e865a740cf3c61e749f5202",
+      "represented_by": [
+        "modes/echos-de-la-greve/assets/stages/shore-floor.png"
+      ]
+    },
+    {
+      "source": "/workspace/scratch/31790f353ef8/generated_images/exec-f60cb123-e2e1-4dee-91d4-ff8044631849.png",
+      "bytes": 1548764,
+      "sha256": "d9e52fcb9b319e6dd3b33aeb36721fd82a5cc1b90d7db955a684e5141191d5c0",
+      "represented_by": [
+        "modes/echos-de-la-greve/assets/stages/timefall-shelter-sky.png"
+      ]
+    },
+    {
+      "source": "/workspace/scratch/31790f353ef8/generated_images/exec-8f3bceee-4005-4e77-8d49-807578c868d9.png",
+      "bytes": 1445457,
+      "sha256": "b45fb2d3702563595e5d7fa7ae55fcd3d72d58fc4c6eca97be12658075a3293a",
+      "represented_by": [
+        "art/sources/echos-de-la-greve/recovery/mama-workshop-distant-variant.png"
+      ]
+    },
+    {
+      "source": "/workspace/scratch/31790f353ef8/generated_images/exec-df1c08e2-fd74-4e4c-b847-8dde933d56ee.png",
+      "bytes": 583598,
+      "sha256": "5d9ec451b8f353130582c342f45d00a05b012fc3bb7873876e803efc9320cf87",
+      "represented_by": [
+        "modes/echos-de-la-greve/assets/stages/shore-distant.png"
+      ]
+    },
+    {
+      "source": "/workspace/scratch/31790f353ef8/generated_images/exec-3e29b20d-1322-47f4-8796-e167c94ea088.png",
+      "bytes": 1976165,
+      "sha256": "46a9fb79825de9336c9742b630af0153deaf351a4b36732de77d062527d2beb2",
+      "represented_by": [
+        "modes/echos-de-la-greve/assets/stages/terminal-floor.png"
+      ]
+    },
+    {
+      "source": "/workspace/scratch/31790f353ef8/generated_images/exec-9f4d650f-ba91-4be0-a214-9d0e00f57482.png",
+      "bytes": 1630173,
+      "sha256": "f5fa6135390139add1e54e53fe170e87bdd9a0a222fed19d24eefffaf7576bf6",
+      "represented_by": [
+        "modes/echos-de-la-greve/assets/stages/terminal-sky.png"
+      ]
+    },
+    {
+      "source": "/workspace/scratch/31790f353ef8/generated_images/exec-ff97b0f7-ebb5-4c2f-9c54-f13f345ab5a6.png",
+      "bytes": 1878672,
+      "sha256": "c150e8f099d7a90f49073bfe7b69343dac85dad2f614db9efba8ee9a4aeffe39",
+      "represented_by": [
+        "modes/echos-de-la-greve/assets/stages/terminal-distant.png"
+      ]
+    },
+    {
+      "source": "/workspace/scratch/31790f353ef8/generated_images/exec-34b1b5bf-ef89-47bd-89a5-4233a14a0148.png",
+      "bytes": 1864951,
+      "sha256": "15021b3630be79f0e1134f20565376dae6faa262ef592bd4c5c479ba205c5fce",
+      "represented_by": [
+        "modes/echos-de-la-greve/assets/stages/ruined-factory-sky.png"
+      ]
+    },
+    {
+      "source": "/workspace/scratch/31790f353ef8/generated_images/exec-68d57d64-8935-4184-a649-c3ba39011f62.png",
+      "bytes": 1596367,
+      "sha256": "ea9df95f9ae24f45e48d0232db6fd5f5f688e30a4181b1f938e8cd8a363e1af7",
+      "represented_by": [
+        "art/sources/echos-de-la-greve/recovery/mountain-pass-sky-variant.png"
+      ]
+    },
+    {
+      "source": "/workspace/scratch/88ceffc16adf/generated_images/exec-e23636a9-510c-4727-ab2d-9e74afa5599e.png",
+      "bytes": 1762913,
+      "sha256": "eaa3f2f511729a55ce50f3bb2e07b9ada3cf51895e74b578947ee739d69d5819",
+      "represented_by": [
+        "art/sources/echos-de-la-greve/fighters/fragile-jump.png",
+        "modes/echos-de-la-greve/assets/fighters/fragile-jump.png"
+      ]
+    },
+    {
+      "source": "/workspace/scratch/88ceffc16adf/generated_images/exec-6a33c544-01ba-4fe9-9d82-ecdab73e93de.png",
+      "bytes": 1685385,
+      "sha256": "07c073a4ecf11451bb4f6c4b1ff6a11ee0575a77b8d070bfc0d9b415bbaa5336",
+      "represented_by": [
+        "art/sources/echos-de-la-greve/fighters/heartman-jump.png",
+        "modes/echos-de-la-greve/assets/fighters/heartman-jump.png"
+      ]
+    },
+    {
+      "source": "/workspace/scratch/88ceffc16adf/generated_images/exec-e5fbad98-f1db-4724-a980-3550247c7bae.png",
+      "bytes": 1768596,
+      "sha256": "b59e054255178263d41f12b8797fef3453e99dd23ff01227ce3b20ede6da716b",
+      "represented_by": [
+        "art/sources/echos-de-la-greve/recovery/heartman-jump-original.png"
+      ]
+    },
+    {
+      "source": "/workspace/scratch/88ceffc16adf/generated_images/exec-05ab102e-ba5f-467f-a968-abc2f07eabfe.png",
+      "bytes": 374117,
+      "sha256": "53d79f83953cfa4c8b6554619a3e1eaabde4d141986ef2396a6c72a1c232fef0",
+      "represented_by": [
+        "art/sources/echos-de-la-greve/stages/heartman-lab-midground.png",
+        "modes/echos-de-la-greve/assets/stages/heartman-lab-midground.png"
+      ]
+    },
+    {
+      "source": "/workspace/scratch/88ceffc16adf/generated_images/exec-7a3c4a99-09ff-4a91-99f9-f08593b0df7c.png",
+      "bytes": 330281,
+      "sha256": "9d5a0e2187477aaeef8a4d0822a3a362c9a25ac615c0b46f659100613e8e8112",
+      "represented_by": [
+        "art/sources/echos-de-la-greve/stages/mountain-pass-midground.png",
+        "modes/echos-de-la-greve/assets/stages/mountain-pass-midground.png"
+      ]
+    },
+    {
+      "source": "/workspace/scratch/88ceffc16adf/generated_images/exec-599b27c5-05f5-46e2-9ca9-c6b3891a75e9.png",
+      "bytes": 2292748,
+      "sha256": "4df7ede5282b73c5a83d9fc93bdfb51762a9881564aebe34f22a6c0d52cc696d",
+      "represented_by": [
+        "art/sources/echos-de-la-greve/props/heartman-monitor.png",
+        "modes/echos-de-la-greve/assets/props/heartman-monitor.png"
+      ]
+    },
+    {
+      "source": "/workspace/scratch/88ceffc16adf/generated_images/exec-6f0d443f-8da1-4d61-82b1-c713f28358b7.png",
+      "bytes": 541397,
+      "sha256": "163ce8713a1bdf28a67dc4c8443acf621e1f5175273289ae99ce1693d36c1f61",
+      "represented_by": [
+        "art/sources/echos-de-la-greve/stages/mule-camp-midground.png",
+        "modes/echos-de-la-greve/assets/stages/mule-camp-midground.png"
+      ]
+    },
+    {
+      "source": "/workspace/scratch/88ceffc16adf/generated_images/exec-cbfdc3c6-2c33-4275-a8f0-131242ea5db4.png",
+      "bytes": 587909,
+      "sha256": "0df6d0a1d19aed18cf04eb630840632cc169238317f55d2536e7e641af6bdf9e",
+      "represented_by": [
+        "art/sources/echos-de-la-greve/stages/timefall-shelter-midground.png",
+        "modes/echos-de-la-greve/assets/stages/timefall-shelter-midground.png"
+      ]
+    },
+    {
+      "source": "/workspace/scratch/88ceffc16adf/generated_images/exec-84207571-5eda-4ebe-9758-a2a1afa517dd.png",
+      "bytes": 620159,
+      "sha256": "124484fb5f62505140a49f0a8e80e565bf2aa313062068295d0f5925a7de4286",
+      "represented_by": [
+        "art/sources/echos-de-la-greve/stages/ruined-factory-midground.png",
+        "modes/echos-de-la-greve/assets/stages/ruined-factory-midground.png"
+      ]
+    },
+    {
+      "source": "/workspace/scratch/88ceffc16adf/generated_images/exec-cbcd706b-bd35-4308-80ae-141c1158feb2.png",
+      "bytes": 2178904,
+      "sha256": "b403e7aaa243239137f991b9e952ba98a7a7b8ea7e518e0c537c7afe683631c8",
+      "represented_by": [
+        "art/sources/echos-de-la-greve/fighters/sam-jump.png",
+        "modes/echos-de-la-greve/assets/fighters/sam-jump.png"
+      ]
+    },
+    {
+      "source": "/workspace/scratch/88ceffc16adf/generated_images/exec-c88e7447-316b-4ac9-8439-d47925633628.png",
+      "bytes": 2364305,
+      "sha256": "b70f5847066cb9de3615e7bd138e1f4ef02da31f28a381ade3602e6a6f2ea7aa",
+      "represented_by": [
+        "art/sources/echos-de-la-greve/fighters/mule-jump.png",
+        "modes/echos-de-la-greve/assets/fighters/mule-jump.png"
+      ]
+    },
+    {
+      "source": "/workspace/scratch/88ceffc16adf/generated_images/exec-a1c6fdd3-077e-4a52-b837-ea9b21ae7090.png",
+      "bytes": 1397219,
+      "sha256": "c3c0291cd6fd86d10c601ec3289bebc918f8d7837db89d99c99cc5ae91fcf673",
+      "represented_by": [
+        "art/sources/echos-de-la-greve/fighters/higgs-jump.png",
+        "modes/echos-de-la-greve/assets/fighters/higgs-jump.png"
+      ]
+    },
+    {
+      "source": "/workspace/scratch/88ceffc16adf/generated_images/exec-801f8cd5-0118-42e8-972d-f0760fe53387.png",
+      "bytes": 2159513,
+      "sha256": "4fbde764023a97f6328769dfa2e95b049aabd587953e3623e7af67a4539ed464",
+      "represented_by": [
+        "art/sources/echos-de-la-greve/fighters/cliff-jump.png",
+        "modes/echos-de-la-greve/assets/fighters/cliff-jump.png"
+      ]
+    },
+    {
+      "source": "/workspace/scratch/88ceffc16adf/generated_images/exec-23e75c77-7bd1-46a9-a255-dca650b4f088.png",
+      "bytes": 380441,
+      "sha256": "54340041e49c20cd5a3b85d456ae8aaf3dba836e984fb4627a33755ec473a2e9",
+      "represented_by": [
+        "art/sources/echos-de-la-greve/stages/tar-basin-midground.png",
+        "modes/echos-de-la-greve/assets/stages/tar-basin-midground.png"
+      ]
+    },
+    {
+      "source": "/workspace/scratch/88ceffc16adf/generated_images/exec-7ca9e5be-18cd-40e8-a852-a3ecef74c5bb.png",
+      "bytes": 774830,
+      "sha256": "db3002c367ac91da72870ac57becc3e77110b01f24b235699271ffc666438f37",
+      "represented_by": [
+        "art/sources/echos-de-la-greve/fighters/diehardman-jump.png",
+        "modes/echos-de-la-greve/assets/fighters/diehardman-jump.png"
+      ]
+    },
+    {
+      "source": "/workspace/scratch/a209cb821be1/generated_images/exec-815cdd94-c90c-4f95-a793-9c93bc153946.png",
+      "bytes": 1826101,
+      "sha256": "c0ca8fa8b1a1b267e2706b43d17c34d38a76c9ce72f48879fe24a272c723f4ed",
+      "represented_by": [
+        "art/sources/echos-de-la-greve/recovery/fragile-jump-original.png"
+      ]
+    }
+  ],
+  "content_variants": {
+    "modes/echos-de-la-greve/content.js": [
+      {
+        "source": "/workspace/scratch/c613b6c25cb0/game/modes/echos-de-la-greve/content.js",
+        "bytes": 12832,
+        "sha256": "834ec86b5e485d4f736a4871291572a260ff6c5d71ef4c1edd5288f799d39500"
+      },
+      {
+        "source": "/workspace/scratch/9203aa9ebf25/Death-Stranding-2D/modes/echos-de-la-greve/content.js",
+        "bytes": 14382,
+        "sha256": "dad5f578b3ab714bd8b0d6a86a8e49b7ebd16ebbeec5404f033fa2a43fda4b99"
+      },
+      {
+        "source": "/workspace/scratch/31790f353ef8/game/modes/echos-de-la-greve/content.js",
+        "bytes": 14382,
+        "sha256": "dad5f578b3ab714bd8b0d6a86a8e49b7ebd16ebbeec5404f033fa2a43fda4b99"
+      },
+      {
+        "source": "/workspace/scratch/88ceffc16adf/game/modes/echos-de-la-greve/content.js",
+        "bytes": 12832,
+        "sha256": "834ec86b5e485d4f736a4871291572a260ff6c5d71ef4c1edd5288f799d39500"
+      },
+      {
+        "source": "/workspace/scratch/a209cb821be1/game/modes/echos-de-la-greve/content.js",
+        "bytes": 12832,
+        "sha256": "834ec86b5e485d4f736a4871291572a260ff6c5d71ef4c1edd5288f799d39500"
+      }
+    ],
+    "modes/echos-de-la-greve/netplay-server.cjs": [
+      {
+        "source": "/workspace/scratch/c613b6c25cb0/game/modes/echos-de-la-greve/netplay-server.cjs",
+        "bytes": 9415,
+        "sha256": "88131309824e8a2b1257d70c0a87fbd07662e1a78f2fc2c2473e2aff5e54e565"
+      },
+      {
+        "source": "/workspace/scratch/9203aa9ebf25/Death-Stranding-2D/modes/echos-de-la-greve/netplay-server.cjs",
+        "bytes": 10271,
+        "sha256": "bfd9c6976c3c7b61963757c7156e9dbe07c329dc6a8dd4a7211978b30f6d68c0"
+      },
+      {
+        "source": "/workspace/scratch/31790f353ef8/game/modes/echos-de-la-greve/netplay-server.cjs",
+        "bytes": 10271,
+        "sha256": "bfd9c6976c3c7b61963757c7156e9dbe07c329dc6a8dd4a7211978b30f6d68c0"
+      },
+      {
+        "source": "/workspace/scratch/88ceffc16adf/game/modes/echos-de-la-greve/netplay-server.cjs",
+        "bytes": 9415,
+        "sha256": "88131309824e8a2b1257d70c0a87fbd07662e1a78f2fc2c2473e2aff5e54e565"
+      },
+      {
+        "source": "/workspace/scratch/a209cb821be1/game/modes/echos-de-la-greve/netplay-server.cjs",
+        "bytes": 10271,
+        "sha256": "bfd9c6976c3c7b61963757c7156e9dbe07c329dc6a8dd4a7211978b30f6d68c0"
+      }
+    ],
+    "modes/echos-de-la-greve/fight.js": [
+      {
+        "source": "/workspace/scratch/c613b6c25cb0/game/modes/echos-de-la-greve/fight.js",
+        "bytes": 67122,
+        "sha256": "eab2dba55ffb4db732171178457ffae3f8a868ac4c36104ee6c0947b07adba67"
+      },
+      {
+        "source": "/workspace/scratch/9203aa9ebf25/Death-Stranding-2D/modes/echos-de-la-greve/fight.js",
+        "bytes": 76521,
+        "sha256": "d2969a9e76d2eda94dcbb738bfd31c8dff622ed9add8afee7f14a7f4987561a3"
+      },
+      {
+        "source": "/workspace/scratch/31790f353ef8/game/modes/echos-de-la-greve/fight.js",
+        "bytes": 76275,
+        "sha256": "6fcf4fec313bcb05dcabbae878f078746876896934e5f3527ce7db51e2090941"
+      },
+      {
+        "source": "/workspace/scratch/88ceffc16adf/game/modes/echos-de-la-greve/fight.js",
+        "bytes": 68694,
+        "sha256": "f62fe2bc2b5cc4c80eaeb83c92d9a1d255f7c1489da55891609fc9223e2a8f78"
+      },
+      {
+        "source": "/workspace/scratch/a209cb821be1/game/modes/echos-de-la-greve/fight.js",
+        "bytes": 68694,
+        "sha256": "f62fe2bc2b5cc4c80eaeb83c92d9a1d255f7c1489da55891609fc9223e2a8f78"
+      }
+    ],
+    "modes/echos-de-la-greve/style.css": [
+      {
+        "source": "/workspace/scratch/c613b6c25cb0/game/modes/echos-de-la-greve/style.css",
+        "bytes": 13947,
+        "sha256": "2ed37d9944e51fde5327f672196b85fa75908898627bfef526a6d9e6fc186751"
+      },
+      {
+        "source": "/workspace/scratch/9203aa9ebf25/Death-Stranding-2D/modes/echos-de-la-greve/style.css",
+        "bytes": 15368,
+        "sha256": "de28f77e2d5918d3a986244c4a78fbab0763b97ebe81aaf5042b07a456c12153"
+      },
+      {
+        "source": "/workspace/scratch/31790f353ef8/game/modes/echos-de-la-greve/style.css",
+        "bytes": 15051,
+        "sha256": "dfac7e57f19d69224048770a7967287c1e15debb16b9c55e6d3c4ef17510861c"
+      },
+      {
+        "source": "/workspace/scratch/88ceffc16adf/game/modes/echos-de-la-greve/style.css",
+        "bytes": 13947,
+        "sha256": "2ed37d9944e51fde5327f672196b85fa75908898627bfef526a6d9e6fc186751"
+      },
+      {
+        "source": "/workspace/scratch/a209cb821be1/game/modes/echos-de-la-greve/style.css",
+        "bytes": 13947,
+        "sha256": "2ed37d9944e51fde5327f672196b85fa75908898627bfef526a6d9e6fc186751"
+      }
+    ],
+    "modes/echos-de-la-greve/assets.js": [
+      {
+        "source": "/workspace/scratch/c613b6c25cb0/game/modes/echos-de-la-greve/assets.js",
+        "bytes": 2030,
+        "sha256": "1a30ba2335da77d5de97cab0473a21f58b188778f39e34e1ac689243cf66744e"
+      },
+      {
+        "source": "/workspace/scratch/9203aa9ebf25/Death-Stranding-2D/modes/echos-de-la-greve/assets.js",
+        "bytes": 4837,
+        "sha256": "261ab8ba65d34e45d741f253c74b3c93663e551ade74c3d2e5541cd1321b9105"
+      },
+      {
+        "source": "/workspace/scratch/31790f353ef8/game/modes/echos-de-la-greve/assets.js",
+        "bytes": 3076,
+        "sha256": "0e3b3c744e3fe9f496ef53e90287247105589016158851de5f3c0ce683ce5a08"
+      },
+      {
+        "source": "/workspace/scratch/88ceffc16adf/game/modes/echos-de-la-greve/assets.js",
+        "bytes": 2392,
+        "sha256": "f94d825951541c943ead6e3c8e3618281938159efc4fc9765cc9ea2c221957a0"
+      },
+      {
+        "source": "/workspace/scratch/a209cb821be1/game/modes/echos-de-la-greve/assets.js",
+        "bytes": 2392,
+        "sha256": "f94d825951541c943ead6e3c8e3618281938159efc4fc9765cc9ea2c221957a0"
+      }
+    ],
+    "modes/echos-de-la-greve/index.html": [
+      {
+        "source": "/workspace/scratch/c613b6c25cb0/game/modes/echos-de-la-greve/index.html",
+        "bytes": 1269,
+        "sha256": "6e6ff50c6eb352079315a60e7ebb7cb1a84f5a72ca0e63f40e3b3d85c40dd7c0"
+      },
+      {
+        "source": "/workspace/scratch/9203aa9ebf25/Death-Stranding-2D/modes/echos-de-la-greve/index.html",
+        "bytes": 1335,
+        "sha256": "82d8aa59e2a89d1eb3debcb3e1832f2aaea31261dbc072aeabd7c613613788d5"
+      },
+      {
+        "source": "/workspace/scratch/31790f353ef8/game/modes/echos-de-la-greve/index.html",
+        "bytes": 1335,
+        "sha256": "82d8aa59e2a89d1eb3debcb3e1832f2aaea31261dbc072aeabd7c613613788d5"
+      },
+      {
+        "source": "/workspace/scratch/88ceffc16adf/game/modes/echos-de-la-greve/index.html",
+        "bytes": 1269,
+        "sha256": "6e6ff50c6eb352079315a60e7ebb7cb1a84f5a72ca0e63f40e3b3d85c40dd7c0"
+      },
+      {
+        "source": "/workspace/scratch/a209cb821be1/game/modes/echos-de-la-greve/index.html",
+        "bytes": 1269,
+        "sha256": "6e6ff50c6eb352079315a60e7ebb7cb1a84f5a72ca0e63f40e3b3d85c40dd7c0"
+      }
+    ],
+    "modes/echos-de-la-greve/app.js": [
+      {
+        "source": "/workspace/scratch/c613b6c25cb0/game/modes/echos-de-la-greve/app.js",
+        "bytes": 36641,
+        "sha256": "6716716aaa00eba0c3665c6293edf08a5d5693dc955c75661bf13c883110f9ed"
+      },
+      {
+        "source": "/workspace/scratch/9203aa9ebf25/Death-Stranding-2D/modes/echos-de-la-greve/app.js",
+        "bytes": 41037,
+        "sha256": "ffe1a9d4ccfeb19e839756d5d3c09aa688a563a0a9343cf20a238ecd34297146"
+      },
+      {
+        "source": "/workspace/scratch/31790f353ef8/game/modes/echos-de-la-greve/app.js",
+        "bytes": 39786,
+        "sha256": "2e37be0ecac6e16779d8047daf5edf994d60471522af5504c1bc1d5ed37125b9"
+      },
+      {
+        "source": "/workspace/scratch/88ceffc16adf/game/modes/echos-de-la-greve/app.js",
+        "bytes": 36785,
+        "sha256": "101bffd53bead1613444ff590997e6ee58effe5efe45559373d34e76e386e5ce"
+      },
+      {
+        "source": "/workspace/scratch/a209cb821be1/game/modes/echos-de-la-greve/app.js",
+        "bytes": 36785,
+        "sha256": "101bffd53bead1613444ff590997e6ee58effe5efe45559373d34e76e386e5ce"
+      }
+    ],
+    "modes/echos-de-la-greve/qa/reseau-logique.cjs": [
+      {
+        "source": "/workspace/scratch/c613b6c25cb0/game/modes/echos-de-la-greve/qa/reseau-logique.cjs",
+        "bytes": 3405,
+        "sha256": "73e4443fa2cc7fcaed4877be6fa1d466e732768c794dd11f5d15128c3cec8393"
+      },
+      {
+        "source": "/workspace/scratch/9203aa9ebf25/Death-Stranding-2D/modes/echos-de-la-greve/qa/reseau-logique.cjs",
+        "bytes": 6670,
+        "sha256": "e35e067be9c6daf87099b9596f8e6c10dcebc47816213e8f8d6f5561ebfc3a4a"
+      },
+      {
+        "source": "/workspace/scratch/31790f353ef8/game/modes/echos-de-la-greve/qa/reseau-logique.cjs",
+        "bytes": 6670,
+        "sha256": "e35e067be9c6daf87099b9596f8e6c10dcebc47816213e8f8d6f5561ebfc3a4a"
+      },
+      {
+        "source": "/workspace/scratch/88ceffc16adf/game/modes/echos-de-la-greve/qa/reseau-logique.cjs",
+        "bytes": 3405,
+        "sha256": "73e4443fa2cc7fcaed4877be6fa1d466e732768c794dd11f5d15128c3cec8393"
+      },
+      {
+        "source": "/workspace/scratch/a209cb821be1/game/modes/echos-de-la-greve/qa/reseau-logique.cjs",
+        "bytes": 6670,
+        "sha256": "e35e067be9c6daf87099b9596f8e6c10dcebc47816213e8f8d6f5561ebfc3a4a"
+      }
+    ],
+    "modes/echos-de-la-greve/qa/arenes.cjs": [
+      {
+        "source": "/workspace/scratch/c613b6c25cb0/game/modes/echos-de-la-greve/qa/arenes.cjs",
+        "bytes": 7282,
+        "sha256": "0ab8ec627bc3fbe132cb377310a1e5f3574cf532ee75584602b1e329b6e70967"
+      },
+      {
+        "source": "/workspace/scratch/9203aa9ebf25/Death-Stranding-2D/modes/echos-de-la-greve/qa/arenes.cjs",
+        "bytes": 9514,
+        "sha256": "20baadc717fcda01fed9cd32ce789e02a948b33ae6b88dfaec24d9209c6a23d1"
+      },
+      {
+        "source": "/workspace/scratch/31790f353ef8/game/modes/echos-de-la-greve/qa/arenes.cjs",
+        "bytes": 8987,
+        "sha256": "683e5deb3098faa836cef37d6da4d48517e9cc00b4a54a41f11a03d38b12d3e3"
+      },
+      {
+        "source": "/workspace/scratch/88ceffc16adf/game/modes/echos-de-la-greve/qa/arenes.cjs",
+        "bytes": 7391,
+        "sha256": "b67f9d3e1d8589f674347ba47cd56450df17cdf13e23b153fcecdf495b21a308"
+      },
+      {
+        "source": "/workspace/scratch/a209cb821be1/game/modes/echos-de-la-greve/qa/arenes.cjs",
+        "bytes": 7391,
+        "sha256": "b67f9d3e1d8589f674347ba47cd56450df17cdf13e23b153fcecdf495b21a308"
+      }
+    ],
+    "modes/echos-de-la-greve/qa/poses.cjs": [
+      {
+        "source": "/workspace/scratch/c613b6c25cb0/game/modes/echos-de-la-greve/qa/poses.cjs",
+        "bytes": 4482,
+        "sha256": "ac1d9aa51c0f4c8783be9053690d4ab388565a83d5558d734d382330694d6908"
+      },
+      {
+        "source": "/workspace/scratch/9203aa9ebf25/Death-Stranding-2D/modes/echos-de-la-greve/qa/poses.cjs",
+        "bytes": 4584,
+        "sha256": "f1e91e7d1df02c3d8f8a58550230ac2199d835a721e24813f8a5ba9a203647fd"
+      },
+      {
+        "source": "/workspace/scratch/31790f353ef8/game/modes/echos-de-la-greve/qa/poses.cjs",
+        "bytes": 4584,
+        "sha256": "f1e91e7d1df02c3d8f8a58550230ac2199d835a721e24813f8a5ba9a203647fd"
+      },
+      {
+        "source": "/workspace/scratch/88ceffc16adf/game/modes/echos-de-la-greve/qa/poses.cjs",
+        "bytes": 4584,
+        "sha256": "f1e91e7d1df02c3d8f8a58550230ac2199d835a721e24813f8a5ba9a203647fd"
+      },
+      {
+        "source": "/workspace/scratch/a209cb821be1/game/modes/echos-de-la-greve/qa/poses.cjs",
+        "bytes": 4584,
+        "sha256": "f1e91e7d1df02c3d8f8a58550230ac2199d835a721e24813f8a5ba9a203647fd"
+      }
+    ],
+    "modes/echos-de-la-greve/qa/assets.cjs": [
+      {
+        "source": "/workspace/scratch/9203aa9ebf25/Death-Stranding-2D/modes/echos-de-la-greve/qa/assets.cjs",
+        "bytes": 6235,
+        "sha256": "660056f0fed5f64696e8f694d49f17411f09e1522e388e09c26601384e4e31c8"
+      },
+      {
+        "source": "/workspace/scratch/31790f353ef8/game/modes/echos-de-la-greve/qa/assets.cjs",
+        "bytes": 6010,
+        "sha256": "9c767a68bf3deb7eac6e5983646c193e111aba27158e4d091bd0d8acdfbfc6bd"
+      },
+      {
+        "source": "/workspace/scratch/88ceffc16adf/game/modes/echos-de-la-greve/qa/assets.cjs",
+        "bytes": 6010,
+        "sha256": "9c767a68bf3deb7eac6e5983646c193e111aba27158e4d091bd0d8acdfbfc6bd"
+      },
+      {
+        "source": "/workspace/scratch/a209cb821be1/game/modes/echos-de-la-greve/qa/assets.cjs",
+        "bytes": 6010,
+        "sha256": "9c767a68bf3deb7eac6e5983646c193e111aba27158e4d091bd0d8acdfbfc6bd"
+      }
+    ]
+  },
+  "notes": [
+    "No missing file paths across these five repo trees. 9203 contains latest stage assembly revisions.",
+    "All 46 generated PNG files in the five session generated_images directories are already byte-identical to a file within recommended_base.",
+    "Historical recovery-audit.json describes a previous scratch reset; its missing-file counts are historical, not current.",
+    "No /tmp or /mnt/data file paths referenced by checked source manifests.",
+    "Cross-project GitHub/Vercel audit data in db44a0e340ea is unrelated and intentionally excluded.",
+    "Two local .patch files should be archived as historical patches; do not blindly apply on newest base."
+  ]
+}

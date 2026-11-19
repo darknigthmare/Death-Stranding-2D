@@ -15,7 +15,7 @@
     challenges:'<path d="M6 4h12v4a6 6 0 0 1-12 0zm6 10v5m-4 2h8M6 6H3v2a4 4 0 0 0 4 4m11-6h3v2a4 4 0 0 1-4 4"/>',
     training:'<circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="3"/><path d="M12 1v4m0 14v4M1 12h4m14 0h4"/>'
   };
-  const config = {mode:'story', p1:'sam', p2:'higgs', stage:'shore', difficulty:'normal', opponent:'cpu', count:'4', humans:'1', challenge:'survival'};
+  const config = {mode:'story', p1:'sam', p2:'higgs', stage:'shore', difficulty:'normal', opponent:'cpu', outfit1:'atelier', outfit2:'atelier', count:'4', humans:'1', challenge:'survival'};
   const held = new Map();
   let trial;
   const trialNames = {survival:'Survie', delivery:'Livraison sous pression'};
@@ -29,6 +29,8 @@
     try { localStorage.setItem('echos.v1.' + key, JSON.stringify(value)); return true; } catch { return false; }
   }
   let sound = read('sound',true);
+  const motionPreference = window.matchMedia?.('(prefers-reduced-motion: reduce)');
+  let reducedEffects = read('reducedEffects',!!motionPreference?.matches);
   let cup = read('cup',null);
   if (cup?.version !== 1 || !Array.isArray(cup?.rounds) || !Array.isArray(cup?.entrants)) cup = null;
   const progress = read('chapters',{});
@@ -51,6 +53,16 @@
     screen = name;
     document.body.classList.toggle('playing', name === 'fight');
     view.innerHTML = markup;
+    view.querySelectorAll('[data-layered-stage]').forEach(preview => {
+      const required = [...preview.querySelectorAll('.stageSky,.stageDistant,.stageFloor')];
+      const update = () => preview.classList.toggle('stageReady',
+        required.length === 3 && required.every(image => image.complete && image.naturalWidth > 0));
+      required.forEach(image => {
+        image.addEventListener('load', update);
+        image.addEventListener('error', update);
+      });
+      update();
+    });
     view.focus({preventScroll:true});
     window.scrollTo(0,0);
   }
@@ -76,10 +88,47 @@
       '<h1>Échos de<br>la Grève</h1><p>Choisis un combattant et suis son histoire jusqu’au duel avec son rival.</p>' +
       '<div class="actions">' + button('mode','Jouer l’histoire ' + arrow,'darkbtn','data-mode="story"') + '</div></div></section>' +
       '<section class="shelf"><div class="shelfhead"><h2>Modes de combat</h2></div><div class="tiles">' + tiles + '</div><div class="archives">' +
-      button('gallery','Galerie des scènes','mini') + '<a class="mini" href="duel-originel/index.html">Duel originel · Sam / Higgs</a><a class="mini" href="netplay.html">Salon privé en réseau</a>' +
+      button('stageGallery','Parcourir les arènes','mini') + button('gallery','Galerie des scènes','mini') + '<a class="mini" href="duel-originel/index.html">Duel originel · Sam / Higgs</a><a class="mini" href="netplay.html">Salon privé en réseau</a>' +
       '<a class="mini campaignLink" href="../../JOUER.html">Retour à la campagne ↗</a></div></section>');
   }
   function stageFor(id) { return fighters[id].route[0][1]; }
+  function stagePreview(id) {
+    if (!asset.stages?.[id]) return '';
+    const geometry = asset.stageGeometry?.[id] || {};
+    const layered = asset.skyplates?.[id] && asset.distants?.[id] && asset.floors?.[id];
+    // Use the combat's 1280×720 frame, source proportions and vertical anchors.
+    // Keep the full panorama until all three replacement layers have decoded.
+    const layer = (src, name, key, defaults) => {
+      if (!src) return '';
+      const config = geometry[key] || {};
+      const base = Number.isFinite(config.base) ? config.base : defaults.base;
+      const anchorY = Number.isFinite(config.anchorY) ? Math.max(0,Math.min(1,config.anchorY)) : defaults.anchorY;
+      const alpha = Number.isFinite(config.alpha) ? Math.max(0,Math.min(1,config.alpha)) : defaults.alpha;
+      return '<img class="stageLayer ' + name + '" src="' + esc(src) + '" alt="" style="left:' + (-defaults.margin/12.8) +
+        '%;top:' + (base/7.2) + '%;width:' + ((1280+defaults.margin*2)/12.8) + '%;transform:translateY(' + (-anchorY*100) + '%);opacity:' + alpha + '">';
+    };
+    return '<figure class="stagePreview"' + (layered ? ' data-layered-stage' : '') + ' role="img" aria-label="Aperçu de ' + esc(stages[id]) + '">' +
+      '<img class="stageLayer stageBackdrop stageLegacy" src="' + esc(asset.stages[id]) + '" alt="">' +
+      (layered ? '<img class="stageLayer stageBackdrop stageSky stageCandidate" src="' + esc(asset.skyplates[id]) + '" alt="">' +
+        layer(asset.distants[id],'stageDistant stageCandidate','distant',{margin:48,base:552,anchorY:.96,alpha:1}) : '') +
+      layer(asset.midgrounds?.[id],'stageMiddle','middle',{margin:48,base:576,anchorY:.97,alpha:.92}) +
+      (layered ? layer(asset.floors[id],'stageFloor stageCandidate','floor',{margin:80,base:588,anchorY:.3,alpha:1}) : '') +
+      '<span class="stageShade"></span>' +
+      (asset.foregrounds?.[id] ? '<img class="stageNear" src="' + esc(asset.foregrounds[id]) + '" alt="">' : '') + '</figure>';
+  }
+  function stageGallery() {
+    stopFight();
+    const details = window.StrandContent.stageDetails || {};
+    const cards = Object.entries(stages).map(([id,title]) => {
+      const info = details[id] || {};
+      return '<article class="stageCard">' + stagePreview(id) + '<div class="stageCardCopy"><p class="kicker">' + esc(info.place || '') +
+        '</p><h2>' + esc(title) + '</h2><p>' + esc(info.ambience || '') + '</p><div class="stageCardFoot"><span>' + esc(info.material || '') +
+        '</span>' + button('exploreStage','S’entraîner ici','mini','data-stage="' + id + '"') + '</div></div></article>';
+    }).join('');
+    setScreen('stages','<section class="shell">' + back() + '<div class="pagehead"><div><div class="eyebrow">Lieux de la simulation</div>' +
+      '<h1>Les arènes</h1></div><p>Dix lieux, de la Grève au col de Mountain Knot. Choisis une piste pour y entrer avec ton combattant.</p></div>' +
+      '<div class="stageGallery">' + cards + '</div></section>');
+  }
   function art(id, part) {
     const scene = asset.story || {};
     const fallback = part === 'rival' ? fighters[id].route[2][1] : stageFor(id);
@@ -88,13 +137,21 @@
   }
   function nameMap() { return Object.fromEntries(ids.map(id => [id, fighters[id].name])); }
   function chapter() { const n = progress[config.p1]; return Number.isInteger(n) && n >= 0 && n <= 3 ? n : 0; }
+  function outfitField(slot, id) {
+    const outfits = asset.wardrobe?.[id];
+    if (!outfits || Object.keys(outfits).length < 2) return '';
+    if (!Object.hasOwn(outfits, config['outfit' + slot])) config['outfit' + slot] = Object.keys(outfits)[0];
+    return choose('outfit' + slot, 'Tenue J' + slot + ' · ' + fighters[id].call,
+      Object.fromEntries(Object.entries(outfits).map(([key, outfit]) => [key, outfit.name])));
+  }
   function selection() {
     stopFight();
     const {mode,p1} = config;
     const character = fighters[p1];
     const cards = ids.map(id => {
       const f = fighters[id];
-      const portrait = asset.portraits?.[id], stance = asset.fighters?.[id];
+      const preview = id === p1 && ['versus','training'].includes(mode) ? asset.wardrobe?.[id]?.[config.outfit1] : null;
+      const portrait = preview?.portrait || asset.portraits?.[id], stance = asset.fighters?.[id];
       return '<button class="char ' + (portrait ? 'portrait' : stance ? '' : 'landscape') + '" data-act="pick" data-id="' + id +
         '" aria-pressed="' + (id === p1) + '">' + image(portrait || stance || asset.stages?.[stageFor(id)]) +
         '<span class="charlabel"><strong>' + f.call + '</strong><small>' + f.role + '</small></span></button>';
@@ -109,17 +166,16 @@
     }
     if (['versus','training'].includes(mode) || (mode === 'tournament' && config.humans === '2'))
       fields += choose('p2',mode === 'training' ? 'Mannequin' : 'Combattant adverse / J2',nameMap());
-    if (['versus','training'].includes(mode)) fields += choose('stage','Arène',stages);
+    if (['versus','training'].includes(mode)) {
+      fields += outfitField(1, p1) + outfitField(2, config.p2) + choose('stage','Arène',stages);
+    }
     if (isSolo) fields += choose('difficulty','Difficulté',{easy:'Débutant',normal:'Porteur',hard:'Vétéran'});
     const route = character.route.map(([rival,place]) => fighters[rival].call + ' · ' + stages[place]).join('　→　');
     const startLabel = mode === 'story' && chapter() > 0 && chapter() < 3 ? 'Reprendre le duel ' + (chapter() + 1) :
       ({challenges:'Lancer l’épreuve',story:'Ouvrir l’histoire',arcade:'Lancer le parcours',tournament:cup ? 'Créer un nouveau tableau' : 'Tirer le tableau',versus:'Lancer le duel',training:'Entrer dans l’arène'})[mode];
     setScreen('select','<section class="shell">' + back() + '<div class="pagehead"><div><div class="eyebrow">' + modes[mode] +
       '</div><h1>Choix du combattant</h1></div></div><div class="chars">' + cards + '</div><div class="options">' + fields +
-      '</div>' + (['versus','training'].includes(mode) && asset.stages?.[config.stage] ?
-        '<figure class="stagePreview">' + image(asset.stages[config.stage],stages[config.stage]) +
-        (asset.midgrounds?.[config.stage] ? '<img class="stageMiddle" src="' + esc(asset.midgrounds[config.stage]) + '" alt="">' : '') +
-        image(asset.foregrounds?.[config.stage]) + '</figure>' : '') +
+      '</div>' + (['versus','training'].includes(mode) ? stagePreview(config.stage) : '') +
       '<div class="brief"><strong>' + character.special + '</strong> · ' + character.tip + '</div>' +
       (['story','arcade'].includes(mode) ? '<p class="montage">' + (mode === 'story' ? '<b>' + character.story + '</b><br>' : '') + route + '</p>' : '') +
       (mode === 'challenges' ? trialBrief() : '') +
@@ -344,7 +400,8 @@
     const canvas = document.getElementById('arena'), signal = document.getElementById('signal');
     let phase = null;
     engine.start({canvas,p1:match.p1,p2:match.p2,stage:match.stage,mode:match.kind,difficulty:match.difficulty,seed:match.seed,record:match.mode==='tournament' && !watching,replay:match.replay,roundsToWin:match.mode === 'challenges' ? 1 : 2,startingVitality:match.vitality,parcel:match.parcel,training,
-      sound,visuals:asset.fighters || {},onStatus(status) {
+      outfits:['versus','training'].includes(match.mode) ? [config.outfit1,config.outfit2] : undefined,
+      sound,reducedEffects,visuals:asset.fighters || {},onStatus(status) {
         if (match.kind==="training") updateTraining(status);
         if (!signal || status.phase === phase) return;
         phase = status.phase;
@@ -436,11 +493,22 @@
     label.textContent = sound ? 'Son activé' : 'Son coupé'; label.setAttribute('aria-pressed',String(sound));
     engine?.setSound(sound);
   }
+  function updateEffects() {
+    const control = document.getElementById('effects');
+    control.setAttribute('aria-pressed',String(reducedEffects));
+    control.title = reducedEffects ? 'Animations de décor et secousses réduites' : 'Activer la réduction des animations de décor et des secousses';
+    engine?.setReducedEffects?.(reducedEffects);
+  }
+  document.getElementById('effects').onclick = () => { reducedEffects = !reducedEffects; save('reducedEffects',reducedEffects); updateEffects(); };
+  motionPreference?.addEventListener('change',event => {
+    if (read('reducedEffects',null) === null) { reducedEffects = event.matches; updateEffects(); }
+  });
   document.getElementById('audio').onclick = () => { sound = !sound; save('sound',sound); updateSound(); };
   document.getElementById('controlsLink').onclick = controls;
   document.getElementById('homeLink').onclick = () => { if (activeFight) setPause(true); else home(); };
   const actions = {
-    startTrial, trialFight, retryTrial, home, gallery, selection, bracket, cupFight, cupReplay, routeFight, start, newCup, controls,
+    startTrial, trialFight, retryTrial, home, gallery, stageGallery, selection, bracket, cupFight, cupReplay, routeFight, start, newCup, controls,
+    exploreStage:el => { if (!Object.hasOwn(stages,el.dataset.stage)) return; config.stage = el.dataset.stage; config.mode = 'training'; selection(); },
     mode:el => { config.mode = el.dataset.mode; selection(); },
     pick:el => { config.p1 = el.dataset.id; selection(); view.querySelector('[data-id="' + config.p1 + '"]')?.focus({preventScroll:true}); },
     replay:el => scene(el.dataset.id,el.dataset.part,true),
@@ -513,5 +581,5 @@
   document.addEventListener('visibilitychange',() => { if (document.hidden) backgroundPause(); });
   window.addEventListener('pagehide',stopFight);
   window.addEventListener('pageshow',event => { if (event.persisted && screen === 'fight') home(); });
-  updateSound(); home();
+  updateSound(); updateEffects(); home();
 })();

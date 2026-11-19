@@ -29,6 +29,8 @@ const required = [
         window.requestAnimationFrame = fn => { pending.set(++next, fn); return next; };
         window.cancelAnimationFrame = key => pending.delete(key);
         window.layerPositions = {};
+        window.layerRects = {};
+        window.layerSizes = {};
         window.advanceFrames = async count => {
           const canvas = document.getElementById('arena');
           for (let i = 0; i < count; i++) {
@@ -36,6 +38,7 @@ const required = [
             const current = [...pending.values()];
             pending.clear();
             window.layerPositions = {};
+            window.layerRects = {};
             for (const fn of current) fn(time);
             // Submit small batches so headless Chromium doesn't retain a duel's draw commands.
             if (i % 8 === 7 || i === count - 1) {
@@ -53,12 +56,18 @@ const required = [
         const draw = CanvasRenderingContext2D.prototype.drawImage;
         CanvasRenderingContext2D.prototype.drawImage = function (image, ...args) {
           if (this.canvas.id === 'arena' && image.src?.includes('/assets/stages/')) {
-            window.layerPositions[image.src.split('/').pop()] = args.length === 8 ? args[4] : args[0];
+            const rectangle=args.length===8?args.slice(4):args;
+            window.layerPositions[image.src.split('/').pop()] = rectangle[0];
+            window.layerRects[image.src.split('/').pop()] = rectangle;
+            window.layerSizes[image.src.split('/').pop()] = [image.naturalWidth,image.naturalHeight];
           }
           return draw.call(this,image,...args);
         };
       });
       await page.goto(menu);
+      const inventories=await page.evaluate(()=>Object.fromEntries(
+        ['skyplates','distants','midgrounds','floors','foregrounds'].map(key=>[key,Object.keys(StrandAssets[key] || {}).sort()])));
+      for (const [key,ids] of Object.entries(inventories)) assert.deepEqual(ids,required.slice().sort(),key+' : les dix arènes doivent être livrées');
       await page.locator('[data-mode="' + mode + '"]').click();
       const options = await page.locator('[data-option=stage] option').evaluateAll(items =>
         items.map(item => item.value));
@@ -79,7 +88,7 @@ const required = [
       if (mode === 'versus') await page.keyboard.up(secondKey);
       return page.evaluate(async () => {
         await advanceFrames(22);
-        return {layers:{...layerPositions},state:StrandFight.snapshot()};
+        return {layers:{...layerPositions},rects:{...layerRects},sizes:{...layerSizes},state:StrandFight.snapshot()};
       });
     }
 
@@ -89,14 +98,17 @@ const required = [
         const page = await openSelection(mode);
         try {
           for (const id of required.slice(index,index+3)) {
+            const normalMotion=[];
+            for (const reducedEffects of [false,true]) {
             const stageSelect = page.locator('[data-option=stage]');
             await stageSelect.selectOption(id);
             const title = await stageSelect.locator('option:checked').innerText();
-            const back = id + '.webp', front = id + '-foreground.webp';
-            const middle = 'shore-midground.png';
-            const ordered = id === 'shore' ? [back,middle,front] : [back,front];
+            const ordered=await page.evaluate(id=>['skyplates','distants','midgrounds','floors','foregrounds']
+              .map(key=>StrandAssets[key][id].split('/').pop()),id);
+            const [back,distant,middle,floor,front]=ordered;
             await page.locator('[data-act=start]').click();
-            let previous = await page.evaluate(async files => {
+            let previous = await page.evaluate(async ({files,reducedEffects}) => {
+              StrandFight.setReducedEffects(reducedEffects);
               resizeTarget(1/8);
               const sources = files.map(file => 'assets/stages/' + file).concat([
                 StrandAssets.fighters.higgs, StrandAssets.fighters.fragile
@@ -107,9 +119,10 @@ const required = [
                 await image.decode();
               }));
               await advanceFrames(78);
-              return {layers:{...layerPositions},state:StrandFight.snapshot()};
-            }, ordered);
+              return {layers:{...layerPositions},rects:{...layerRects},sizes:{...layerSizes},state:StrandFight.snapshot()};
+            }, {files:ordered,reducedEffects});
             assert.equal(previous.state.stage,id);
+            assert.equal(previous.state.reducedEffects,reducedEffects);
             assert.deepEqual(Object.keys(previous.layers),ordered,'Ordre des plans : ' + id);
             for (const direction of [1,-1]) {
               const after = await travel(page,mode,direction);
@@ -118,16 +131,32 @@ const required = [
                 assert((after.state.fighters[i].x-previous.state.fighters[i].x)*direction > 20);
               }
               const displacement = file => (previous.layers[file] - after.layers[file]) * direction;
-              const rearPan = displacement(back), nearPan = displacement(front);
-              const label = mode + ' / ' + id + ' (direction ' + direction + ')';
-              assert(rearPan > 0 && nearPan > rearPan,'Parallaxe arrière et avant : ' + label);
-              if (id === 'shore') {
-                const midPan = displacement(middle);
-                assert(midPan > rearPan && nearPan > midPan,'Parallaxe du rivage : ' + label);
-                assert(Math.abs(midPan/rearPan - .43/.14) < .02,'Vitesse du rivage : ' + label);
-                assert(Math.abs(nearPan/rearPan - .8/.14) < .02,'Vitesse du premier plan : ' + label);
+              const label = mode + ' / ' + id + ' (direction ' + direction + ', effets réduits ' + reducedEffects + ')';
+              const shifts=ordered.map(displacement), speeds=[.14,.27,.43,.62,.8];
+              assert(shifts[0]>0,'Déplacement du ciel : '+label);
+              for (let layer=1;layer<ordered.length;layer++) {
+                assert(shifts[layer]>shifts[layer-1],'Vitesses croissantes : '+label);
+                assert(Math.abs(shifts[layer]/shifts[0]-speeds[layer]/speeds[0])<.02,'Vitesse '+ordered[layer]+' : '+label);
               }
-              if (shots && mode === 'versus' && direction === 1) {
+              for (const file of ordered) {
+                const [x,,width,height]=after.rects[file];
+                const [sourceWidth,sourceHeight]=after.sizes[file];
+                assert(x<=0 && x+width>=1280,'Débord horizontal : '+file+' / '+label);
+                assert(Math.abs(width/height-sourceWidth/sourceHeight)<.00001,'Proportions préservées : '+file+' / '+label);
+              }
+              const [,floorY,,floorHeight]=after.rects[floor];
+              const floorAnchor=await page.evaluate(id=>StrandAssets.stageGeometry[id]?.floor?.anchorY ?? .3,id);
+              assert(Math.abs(floorY+floorHeight*floorAnchor-588)<.01,'Ligne de sol : '+label);
+              assert(floorY+floorHeight>=720,'Sol plein jusqu’au bas : '+label);
+              if (reducedEffects) {
+                const expected=normalMotion[direction===1?0:1];
+                for (let layer=0;layer<shifts.length;layer++) {
+                  assert(Math.abs(shifts[layer]/expected[layer]-.2)<.005,'Amplitude réduite à 20 % : '+label);
+                }
+              } else {
+                normalMotion.push(shifts);
+              }
+              if (shots && mode === 'versus' && direction === 1 && !reducedEffects) {
                 await page.evaluate(async () => {resizeTarget(1);await advanceFrames(1);});
                 await page.locator('#arena').screenshot({path:path.join(shots,id+'.png')});
                 captions[id] = title;
@@ -137,12 +166,13 @@ const required = [
             }
             await page.getByRole('button',{name:'Pause',exact:true}).click();
             await page.locator('[data-act=leave]').click();
+            }
           }
         } finally {await page.close();}
       }
     }
     if (shots) fs.writeFileSync(path.join(shots, 'titres.json'), JSON.stringify(captions));
     assert.deepEqual(errors, []);
-    console.log('OK — 10 arènes dans les deux sens en Versus et Entraînement, dont trois plans sur la Grève.');
+    console.log('OK — 10 arènes × 2 modes × 2 directions × 2 réglages : cinq plans chargés dans l’ordre, proportions conservées, vitesses distinctes, sol à 588, bords pleins et mouvement réduit à 20 %.');
   } finally { await browser.close(); }
 })().catch(error => {console.error(error); process.exitCode = 1;});

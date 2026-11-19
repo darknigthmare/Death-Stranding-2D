@@ -1,0 +1,64 @@
+{
+  "date": "2026-11-19",
+  "generator": "image_gen__imagegen (built-in)",
+  "scope": "Three missing Camp des MULEs stage layers",
+  "reference_observation": "Existing panorama: mustard and beige tents on left; grey strapped cargo; moss-covered basalt cliffs left; waterfall right of center; tall scanner beacon far right; rain-dark volcanic gravel with puddles. Midground already contains separate cases at far left/right.",
+  "jobs": [
+    {
+      "stage": "mule-camp",
+      "kind": "sky",
+      "filename": "mule-camp-sky.png",
+      "transparent_background": false,
+      "requested_size": [
+        2048,
+        1152
+      ],
+      "prompt": "Use case: background-extraction. Production raster art for the Camp des MULEs side-view 2D fighting arena in the Death Stranding 2D fan game. Input image 1 is the existing arena panorama and the sole visual reference/edit target. Preserve the existing realistic detailed painted rendering, restrained grey-green and mustard-yellow palette, rain-worn materials, overcast storm light and small warm opening in the upper-left clouds. Preserve the landmarks that remain in this requested layer; do not invent new buildings, vehicles or characters. Output exactly ONE independent game layer, one continuous image; no collage, no panels, no sprite sheet, no text, labels, captions, watermark or UI. Primary request: extract and reconstruct ONLY the farthest sky background plate. Keep the reference blue-slate and grey storm clouds with the small muted warm cream break in the upper-left, and faint cold atmospheric haze near the bottom. Remove every cliff, mountain, waterfall, mossy land, tent, pole, scanner beacon, cable, cargo case, water, ground and all objects. Extend only cloud and atmospheric haze through the removed areas, edge-to-edge. Wide 16:9 composition, requested 2048 by 1152 pixels. Fully opaque sky plate with no horizon edge and no transparency. Do not create another finished camp scene; this image must contain only clouds and haze.",
+      "reference_path": "/workspace/scratch/b2f07db751b1/Death-Stranding-2D/modes/echos-de-la-greve/assets/stages/mule-camp.webp",
+      "reference_sha256": "7dd8b42e158b4b9e01c062ab508c14e994e2053345ed33840f807d481984b632",
+      "reference_visually_inspected": true,
+      "intended_runtime_path": "modes/echos-de-la-greve/assets/stages/mule-camp-sky.png",
+      "status": "prepared-awaiting-parent-go-after-publication"
+    },
+    {
+      "stage": "mule-camp",
+      "kind": "distant",
+      "filename": "mule-camp-distant.png",
+      "transparent_background": true,
+      "requested_size": [
+        2172,
+        724
+      ],
+      "prompt": "Use case: background-extraction. Production raster art for the Camp des MULEs side-view 2D fighting arena in the Death Stranding 2D fan game. Input image 1 is the existing arena panorama and the sole visual reference/edit target. Preserve the existing realistic detailed painted rendering, restrained grey-green and mustard-yellow palette, rain-worn materials, overcast storm light and small warm opening in the upper-left clouds. Preserve the landmarks that remain in this requested layer; do not invent new buildings, vehicles or characters. Output exactly ONE independent game layer, one continuous image; no collage, no panels, no sprite sheet, no text, labels, captions, watermark or UI. Primary request: isolate and reconstruct the distant landscape and camp structures as ONE transparent parallax strip. Preserve the stepped moss-covered basalt cliffs highest at the far left, the lower remote ridge and narrow white waterfall right of center, the two weathered mustard-yellow/beige tents occupying the left third and the slender black scanner beacon with its two pale horizontal lights at the far right. These shapes and their relative left-right arrangement come from the reference; retain them faithfully. Include only a narrow low distant moss/gravel footing to connect their bases. Remove all sky, all open foreground ground and puddles, loose delivery crates, the yellow case at the beacon base, and every separate foreground prop: those belong to other layers. The center must stay unobstructed by camp equipment. Wide horizontal 3:1 canvas, requested 2172 by 724 pixels, consistent level side-scroller eye-height camera, no tilt, no isometric view. Keep tent/beacon bases close to the lower 96 percent baseline. True RGBA alpha transparency everywhere outside the physical silhouette, above cliffs, between poles and guy ropes, and beneath the narrow footing. No opaque sky, colored matte, gray haze rectangle, shadow blanket, vignette or checkerboard. Fine atmospheric mist may remain only inside the distant cliff/waterfall silhouettes, never outside them.",
+      "reference_path": "/workspace/scratch/b2f07db751b1/Death-Stranding-2D/modes/echos-de-la-greve/assets/stages/mule-camp.webp",
+      "reference_sha256": "7dd8b42e158b4b9e01c062ab508c14e994e2053345ed33840f807d481984b632",
+      "reference_visually_inspected": true,
+      "intended_runtime_path": "modes/echos-de-la-greve/assets/stages/mule-camp-distant.png",
+      "status": "prepared-awaiting-parent-go-after-publication"
+    },
+    {
+      "stage": "mule-camp",
+      "kind": "floor",
+      "filename": "mule-camp-floor.png",
+      "transparent_background": true,
+      "requested_size": [
+        2172,
+        724
+      ],
+      "prompt": "Use case: background-extraction. Production raster art for the Camp des MULEs side-view 2D fighting arena in the Death Stranding 2D fan game. Input image 1 is the existing arena panorama and the sole visual reference/edit target. Preserve the existing realistic detailed painted rendering, restrained grey-green and mustard-yellow palette, rain-worn materials, overcast storm light and small warm opening in the upper-left clouds. Preserve the landmarks that remain in this requested layer; do not invent new buildings, vehicles or characters. Output exactly ONE independent game layer, one continuous image; no collage, no panels, no sprite sheet, no text, labels, captions, watermark or UI. Primary request: create ONLY the continuous playable FLOOR strip from the reference foreground: rain-dark volcanic charcoal gravel, compacted muddy rock and very shallow puddles with subdued warm grey reflections, sparse tiny moss between stones. Exclude every tent, cliff, mountain, waterfall, sky, scanner, post, cable, cargo case, grass tuft taller than the ankle and other object. Wide 3:1 image, requested 2172 by 724 pixels. Critical gameplay geometry: the back edge of the floor is a perfectly horizontal straight line from left edge to right edge at y=217 pixels, approximately 30 percent down the canvas. The entire area above that line is truly transparent alpha. Beneath it, one continuous flat ground surface fills every pixel all the way to left, right and bottom edges, opaque except antialiasing on the topmost boundary. Keep terrain flat and walkable at a common height, only fine surface texture, no hills, ramp, slope, pit, ledge, floating platform, isolated chunks or scenic horizon. Low side-on game camera with shallow perspective depth, no top-down map or diagonal camera. Do not add an exposed geological cross-section or rocky platform front face: it is an uninterrupted wet gravel ground plane receding a little behind the horizontal fighter contact line.",
+      "reference_path": "/workspace/scratch/b2f07db751b1/Death-Stranding-2D/modes/echos-de-la-greve/assets/stages/mule-camp.webp",
+      "reference_sha256": "7dd8b42e158b4b9e01c062ab508c14e994e2053345ed33840f807d481984b632",
+      "reference_visually_inspected": true,
+      "intended_runtime_path": "modes/echos-de-la-greve/assets/stages/mule-camp-floor.png",
+      "status": "prepared-awaiting-parent-go-after-publication"
+    }
+  ],
+  "validation": [
+    "One image per requested layer",
+    "Inspect pixels and dimensions",
+    "Sky opaque",
+    "Distant/floor real alpha",
+    "Floor edge horizontal; derive actual anchor from delivered image",
+    "No runtime or Git modification by this agent"
+  ]
+}
