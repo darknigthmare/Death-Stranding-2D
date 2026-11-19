@@ -1,0 +1,150 @@
+{
+  "date": "2026-11-19",
+  "scope": "Inspection visuelle des dix rendus finaux statiques du vrai fight.js via @napi-rs/canvas, cinq arènes × deux directions de caméra. Ne constitue pas une validation navigateur ou une certification de fidélité canonique 1:1.",
+  "status": "pass",
+  "images_reviewed": 10,
+  "blocking_visual_defects": [],
+  "reviewed_geometry_bases": {
+    "mule-camp": {
+      "distant": 609
+    },
+    "heartman-lab": {
+      "distant": 590
+    },
+    "ruined-factory": {
+      "distant": 592,
+      "middle": 596
+    },
+    "timefall-shelter": {
+      "distant": 592
+    },
+    "tar-basin": {
+      "distant": 592
+    }
+  },
+  "checks": {
+    "no_exposed_sky_band_below_distant_layer": true,
+    "solid_floor_visible_to_bottom": true,
+    "central_combat_lane_clear": true,
+    "foreground_does_not_obscure_fighters": true,
+    "prop_scale_visually_plausible": true,
+    "fighter_silhouettes_readable": true
+  },
+  "stages": [
+    {
+      "id": "mule-camp",
+      "status": "pass",
+      "notes": "Raccord sol/arrière-plan fermé dans les deux vues ; aucune bande gris-bleu. Tentes et caisses aux bords, voie centrale libre et silhouettes lisibles.",
+      "views": [
+        {
+          "direction": "left",
+          "path": "../apercus/stages-completes-20261119/mule-camp-left.webp",
+          "width": 1280,
+          "height": 720,
+          "sha256": "093a27b820138a2925895400e8147f8a47d3e4b2d80e4a695488d8efca0da5de",
+          "status": "pass"
+        },
+        {
+          "direction": "right",
+          "path": "../apercus/stages-completes-20261119/mule-camp-right.webp",
+          "width": 1280,
+          "height": 720,
+          "sha256": "b0a48213c8fa1af9361d2743b381065538c87ac904847ed6babbfc25cacf1f6b",
+          "status": "pass"
+        }
+      ]
+    },
+    {
+      "id": "heartman-lab",
+      "status": "pass",
+      "notes": "Mobilier à échelle plausible ; pieds et reflets cohérents avec le parquet ; raccord arrière-plan/sol fermé, objets de premier plan hors de la zone centrale.",
+      "views": [
+        {
+          "direction": "left",
+          "path": "../apercus/stages-completes-20261119/heartman-lab-left.webp",
+          "width": 1280,
+          "height": 720,
+          "sha256": "c46d2e7235dbd50efeb4874335c455009f9ec8414ba679195ef412ecef34924f",
+          "status": "pass"
+        },
+        {
+          "direction": "right",
+          "path": "../apercus/stages-completes-20261119/heartman-lab-right.webp",
+          "width": 1280,
+          "height": 720,
+          "sha256": "a5ddd65a68e61d7a6ecc4e9c5f28688d572dafbd9c7a3b294a8d4b184e435c8c",
+          "status": "pass"
+        }
+      ]
+    },
+    {
+      "id": "ruined-factory",
+      "status": "pass",
+      "notes": "Ancienne bande gris-bleu supprimée ; gravats et pieds du portique rejoignent le sol. Centre dégagé et éclairage industriel cohérent.",
+      "views": [
+        {
+          "direction": "left",
+          "path": "../apercus/stages-completes-20261119/ruined-factory-left.webp",
+          "width": 1280,
+          "height": 720,
+          "sha256": "25f1a24b5f6cad88a3e483ddc5b2cc4c2310fd056fa03ed85cfa63aa915cca3f",
+          "status": "pass"
+        },
+        {
+          "direction": "right",
+          "path": "../apercus/stages-completes-20261119/ruined-factory-right.webp",
+          "width": 1280,
+          "height": 720,
+          "sha256": "265e4f46f0e668443dc9a891d1e42fb253d2dc1f2dae84619e27e0a3c5dc67ed",
+          "status": "pass"
+        }
+      ]
+    },
+    {
+      "id": "timefall-shelter",
+      "status": "pass",
+      "notes": "Ancien jour horizontal supprimé ; abri, terrain et équipement rejoignent le plan du sol. Reflets locaux plausibles, aucun ciel découvert sous le décor.",
+      "views": [
+        {
+          "direction": "left",
+          "path": "../apercus/stages-completes-20261119/timefall-shelter-left.webp",
+          "width": 1280,
+          "height": 720,
+          "sha256": "76f231ecf1c7c2f0874e054f857c3dea21d7e409af0e3923bdd31796020416ed",
+          "status": "pass"
+        },
+        {
+          "direction": "right",
+          "path": "../apercus/stages-completes-20261119/timefall-shelter-right.webp",
+          "width": 1280,
+          "height": 720,
+          "sha256": "77d15123eebbbe36210a96e2d661fec7684b90d6e896ce96bd1438b204237534",
+          "status": "pass"
+        }
+      ]
+    },
+    {
+      "id": "tar-basin",
+      "status": "pass",
+      "notes": "Ancienne bande rose-gris supprimée ; grues, falaises, bassin et quai composés sans ouverture au raccord. Aucun halo coloré gênant ; combattants et centre lisibles.",
+      "views": [
+        {
+          "direction": "left",
+          "path": "../apercus/stages-completes-20261119/tar-basin-left.webp",
+          "width": 1280,
+          "height": 720,
+          "sha256": "0def1d5c28c6df2495ee116d888ba4544cd0e27165ad869d3cbaba9ba14df463",
+          "status": "pass"
+        },
+        {
+          "direction": "right",
+          "path": "../apercus/stages-completes-20261119/tar-basin-right.webp",
+          "width": 1280,
+          "height": 720,
+          "sha256": "963e8d6f1ea910b79c721f0b5b51ee357ad554c2478eef0007c49294d7ade8e4",
+          "status": "pass"
+        }
+      ]
+    }
+  ]
+}

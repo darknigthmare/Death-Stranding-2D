@@ -14,7 +14,8 @@
   const roster = Object.keys(window.StrandContent.fighters);
   const arenas = Object.keys(window.StrandContent.stages);
   const stageLayers = (suffix, ids=arenas) => Object.fromEntries(ids.map(id => [id, 'assets/stages/' + id + suffix + '.png']));
-  // Register only delivered files. A missing production batch must not create broken URLs.
+  // All ten arenas have their five independent layers. Keep the panorama fallback
+  // for offline copies while the separate production files finish decoding.
   const movement = ['guard','crouch','rise','apex','fall'];
   const fixedFrame = poses => Object.fromEntries(poses.flatMap(pose => [
     [pose+'Anchor',.5], [pose+'Baseline',1017/1020], [pose+'Scale',1020/920]
@@ -54,22 +55,22 @@
     portraits: illustrations('fighters', roster, '-portrait'),
     finishers: illustrations('finishers', roster),
     stages: illustrations('stages', arenas),
-    skyplates: stageLayers('-sky',['shore','terminal','battlefield','heartman-lab','mama-workshop','ruined-factory','timefall-shelter','mountain-pass']),
-    distants: stageLayers('-distant',['shore','terminal','battlefield','mama-workshop','ruined-factory','mountain-pass']),
+    skyplates: stageLayers('-sky'),
+    distants: stageLayers('-distant'),
     midgrounds: stageLayers('-midground'),
-    floors: stageLayers('-floor',['shore','terminal','battlefield','mama-workshop','mountain-pass']),
+    floors: stageLayers('-floor'),
     stageGeometry: {
       // All layers retain their source aspect ratio. base positions anchorY in
       // the source at this screen height; transparent padding is never stretched.
       shore:{distant:{anchorY:.94,base:540},middle:{anchorY:.77,base:550,alpha:.9},floor:{anchorY:221/724}},
       terminal:{distant:{anchorY:.94,base:564},middle:{anchorY:.97,base:580},floor:{anchorY:214/724}},
       battlefield:{distant:{anchorY:.96,base:552},middle:{anchorY:.97,base:574},floor:{anchorY:229/724}},
-      'mule-camp':{distant:{anchorY:.96,base:560},middle:{anchorY:.97,base:576}},
-      'heartman-lab':{distant:{anchorY:.96,base:566},middle:{anchorY:.96,base:578}},
+      'mule-camp':{distant:{anchorY:.96,base:609},middle:{anchorY:.97,base:576},floor:{anchorY:302/724}},
+      'heartman-lab':{distant:{anchorY:.96,base:590},middle:{anchorY:.96,base:590},floor:{anchorY:225/724}},
       'mama-workshop':{distant:{anchorY:.96,base:564},middle:{anchorY:.93,base:578},floor:{anchorY:201/724}},
-      'ruined-factory':{distant:{anchorY:.96,base:566},middle:{anchorY:.93,base:578}},
-      'timefall-shelter':{distant:{anchorY:.96,base:562},middle:{anchorY:.93,base:576}},
-      'tar-basin':{distant:{anchorY:.96,base:550},middle:{anchorY:.95,base:572}},
+      'ruined-factory':{distant:{anchorY:.96,base:592},middle:{anchorY:.93,base:596},floor:{anchorY:202/724}},
+      'timefall-shelter':{distant:{anchorY:.96,base:592},middle:{anchorY:.93,base:576},floor:{anchorY:235/724}},
+      'tar-basin':{distant:{anchorY:.96,base:592},middle:{anchorY:.95,base:572},floor:{anchorY:213/724}},
       'mountain-pass':{distant:{anchorY:.96,base:554},middle:{anchorY:.96,base:574},floor:{anchorY:194/724}}
     },
     foregrounds: illustrations('stages', arenas, '-foreground')

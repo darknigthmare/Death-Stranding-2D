@@ -1,0 +1,609 @@
+{
+  "date": "2026-11-19",
+  "stage_count": 10,
+  "layers_per_stage": 5,
+  "layer_count": 50,
+  "missing": [],
+  "layers": [
+    {
+      "stage": "shore",
+      "layer": "sky",
+      "path": "modes/echos-de-la-greve/assets/stages/shore-sky.png",
+      "dimensions": [
+        1672,
+        941
+      ],
+      "mode": "RGB",
+      "bytes": 1616706,
+      "sha256": "9e4f6d40f8fd3552fab8908ec010443b2e1244e40400b44c7398d92d92a7e61d"
+    },
+    {
+      "stage": "shore",
+      "layer": "distant",
+      "path": "modes/echos-de-la-greve/assets/stages/shore-distant.png",
+      "dimensions": [
+        2172,
+        724
+      ],
+      "mode": "RGBA",
+      "bytes": 583598,
+      "sha256": "5d9ec451b8f353130582c342f45d00a05b012fc3bb7873876e803efc9320cf87"
+    },
+    {
+      "stage": "shore",
+      "layer": "midground",
+      "path": "modes/echos-de-la-greve/assets/stages/shore-midground.png",
+      "dimensions": [
+        2172,
+        724
+      ],
+      "mode": "RGBA",
+      "bytes": 705276,
+      "sha256": "83a7a4bac8eda094586f76e56ec27d35be51e37b6bfdef4e76eda6bfc4ecafb7"
+    },
+    {
+      "stage": "shore",
+      "layer": "floor",
+      "path": "modes/echos-de-la-greve/assets/stages/shore-floor.png",
+      "dimensions": [
+        2172,
+        724
+      ],
+      "mode": "RGBA",
+      "bytes": 2018784,
+      "sha256": "ab99f670b5ee4f867b44169ca2c4189a0f0cea193e865a740cf3c61e749f5202"
+    },
+    {
+      "stage": "shore",
+      "layer": "foreground",
+      "path": "modes/echos-de-la-greve/assets/stages/shore-foreground.webp",
+      "dimensions": [
+        2172,
+        724
+      ],
+      "mode": "RGBA",
+      "bytes": 122134,
+      "sha256": "49dea5694e0eddb313af78695f58e62fc427d45e8e7170a272739c6713c8dcc3"
+    },
+    {
+      "stage": "terminal",
+      "layer": "sky",
+      "path": "modes/echos-de-la-greve/assets/stages/terminal-sky.png",
+      "dimensions": [
+        1672,
+        941
+      ],
+      "mode": "RGB",
+      "bytes": 1630173,
+      "sha256": "f5fa6135390139add1e54e53fe170e87bdd9a0a222fed19d24eefffaf7576bf6"
+    },
+    {
+      "stage": "terminal",
+      "layer": "distant",
+      "path": "modes/echos-de-la-greve/assets/stages/terminal-distant.png",
+      "dimensions": [
+        2172,
+        724
+      ],
+      "mode": "RGBA",
+      "bytes": 1878672,
+      "sha256": "c150e8f099d7a90f49073bfe7b69343dac85dad2f614db9efba8ee9a4aeffe39"
+    },
+    {
+      "stage": "terminal",
+      "layer": "midground",
+      "path": "modes/echos-de-la-greve/assets/stages/terminal-midground.png",
+      "dimensions": [
+        2172,
+        724
+      ],
+      "mode": "RGBA",
+      "bytes": 729543,
+      "sha256": "d09eb84105d65f1af2eea0fcd24b9f00dfb5fd8faebd6d432672bfba5606ee21"
+    },
+    {
+      "stage": "terminal",
+      "layer": "floor",
+      "path": "modes/echos-de-la-greve/assets/stages/terminal-floor.png",
+      "dimensions": [
+        2172,
+        724
+      ],
+      "mode": "RGBA",
+      "bytes": 1976165,
+      "sha256": "46a9fb79825de9336c9742b630af0153deaf351a4b36732de77d062527d2beb2"
+    },
+    {
+      "stage": "terminal",
+      "layer": "foreground",
+      "path": "modes/echos-de-la-greve/assets/stages/terminal-foreground.webp",
+      "dimensions": [
+        2172,
+        255
+      ],
+      "mode": "RGBA",
+      "bytes": 63018,
+      "sha256": "357058916d40964581f65245f90f0259092c074ada40aa61f7206d765a71eceb"
+    },
+    {
+      "stage": "battlefield",
+      "layer": "sky",
+      "path": "modes/echos-de-la-greve/assets/stages/battlefield-sky.png",
+      "dimensions": [
+        1672,
+        941
+      ],
+      "mode": "RGB",
+      "bytes": 1679252,
+      "sha256": "1f9c3c2c8d4be97e6716bcf18f54dcf7164c38849b9b56185fa06a69dc09a628"
+    },
+    {
+      "stage": "battlefield",
+      "layer": "distant",
+      "path": "modes/echos-de-la-greve/assets/stages/battlefield-distant.png",
+      "dimensions": [
+        2172,
+        724
+      ],
+      "mode": "RGBA",
+      "bytes": 706636,
+      "sha256": "d04da948c077670ca316a200111e5911ab0959bea298a2c8bed7f58b27f0d3a4"
+    },
+    {
+      "stage": "battlefield",
+      "layer": "midground",
+      "path": "modes/echos-de-la-greve/assets/stages/battlefield-midground.png",
+      "dimensions": [
+        2172,
+        724
+      ],
+      "mode": "RGBA",
+      "bytes": 785605,
+      "sha256": "4514aba214923d9185b531ba8ba314d427a68ff63c5ca2ce6a6988d1bb6f0f8c"
+    },
+    {
+      "stage": "battlefield",
+      "layer": "floor",
+      "path": "modes/echos-de-la-greve/assets/stages/battlefield-floor.png",
+      "dimensions": [
+        2172,
+        724
+      ],
+      "mode": "RGBA",
+      "bytes": 1851095,
+      "sha256": "e47805a49b59715d5f6be08f30c39e068e9517f39c75b03490927c82667b6461"
+    },
+    {
+      "stage": "battlefield",
+      "layer": "foreground",
+      "path": "modes/echos-de-la-greve/assets/stages/battlefield-foreground.webp",
+      "dimensions": [
+        2172,
+        332
+      ],
+      "mode": "RGBA",
+      "bytes": 108118,
+      "sha256": "0e36aee7de1ac84752a128e8395bb2f5147d5a16976c05e638fd0d04d92eed6f"
+    },
+    {
+      "stage": "mule-camp",
+      "layer": "sky",
+      "path": "modes/echos-de-la-greve/assets/stages/mule-camp-sky.png",
+      "dimensions": [
+        1672,
+        941
+      ],
+      "mode": "RGB",
+      "bytes": 1604660,
+      "sha256": "5839a3e01a2803f08157f802f97af4ed7cbc1a890715f1fdaa176b0b21655c48"
+    },
+    {
+      "stage": "mule-camp",
+      "layer": "distant",
+      "path": "modes/echos-de-la-greve/assets/stages/mule-camp-distant.png",
+      "dimensions": [
+        2172,
+        724
+      ],
+      "mode": "RGBA",
+      "bytes": 1626774,
+      "sha256": "770ac508008aca3b1c4691b9a7e63300fa8c5358239750d67af7035168e3eba4"
+    },
+    {
+      "stage": "mule-camp",
+      "layer": "midground",
+      "path": "modes/echos-de-la-greve/assets/stages/mule-camp-midground.png",
+      "dimensions": [
+        2172,
+        724
+      ],
+      "mode": "RGBA",
+      "bytes": 541397,
+      "sha256": "163ce8713a1bdf28a67dc4c8443acf621e1f5175273289ae99ce1693d36c1f61"
+    },
+    {
+      "stage": "mule-camp",
+      "layer": "floor",
+      "path": "modes/echos-de-la-greve/assets/stages/mule-camp-floor.png",
+      "dimensions": [
+        2172,
+        724
+      ],
+      "mode": "RGBA",
+      "bytes": 2103001,
+      "sha256": "77fc1a7e0fef92200e66a9a464ea46b90dab00f03a23c1d647bc2711d045c809"
+    },
+    {
+      "stage": "mule-camp",
+      "layer": "foreground",
+      "path": "modes/echos-de-la-greve/assets/stages/mule-camp-foreground.webp",
+      "dimensions": [
+        2172,
+        272
+      ],
+      "mode": "RGBA",
+      "bytes": 100510,
+      "sha256": "733bfea13ebb6373a3efdac1f366ad2231fe498c9455bad21f39186f06712552"
+    },
+    {
+      "stage": "heartman-lab",
+      "layer": "sky",
+      "path": "modes/echos-de-la-greve/assets/stages/heartman-lab-sky.png",
+      "dimensions": [
+        1672,
+        941
+      ],
+      "mode": "RGB",
+      "bytes": 2481182,
+      "sha256": "5bb383d1dcfaa8080e808fef6ab3e9d59b5e55d52e3b385841bf442042b4c0f6"
+    },
+    {
+      "stage": "heartman-lab",
+      "layer": "distant",
+      "path": "modes/echos-de-la-greve/assets/stages/heartman-lab-distant.png",
+      "dimensions": [
+        2172,
+        724
+      ],
+      "mode": "RGBA",
+      "bytes": 1344606,
+      "sha256": "92bcfada8bf99682ca39a280a3ae8765d696100023fbc543f3ee23f874644bd4"
+    },
+    {
+      "stage": "heartman-lab",
+      "layer": "midground",
+      "path": "modes/echos-de-la-greve/assets/stages/heartman-lab-midground.png",
+      "dimensions": [
+        2172,
+        724
+      ],
+      "mode": "RGBA",
+      "bytes": 374117,
+      "sha256": "53d79f83953cfa4c8b6554619a3e1eaabde4d141986ef2396a6c72a1c232fef0"
+    },
+    {
+      "stage": "heartman-lab",
+      "layer": "floor",
+      "path": "modes/echos-de-la-greve/assets/stages/heartman-lab-floor.png",
+      "dimensions": [
+        2172,
+        724
+      ],
+      "mode": "RGBA",
+      "bytes": 1822402,
+      "sha256": "98d6604156dc8ec02939c5693bec09c19eade3cde45844e1ffbea7b6cd3e7fbd"
+    },
+    {
+      "stage": "heartman-lab",
+      "layer": "foreground",
+      "path": "modes/echos-de-la-greve/assets/stages/heartman-lab-foreground.webp",
+      "dimensions": [
+        2172,
+        336
+      ],
+      "mode": "RGBA",
+      "bytes": 93684,
+      "sha256": "a9660047869ea64af4b71dc4436c14867c3f29e39cda92a07de131e8680ec393"
+    },
+    {
+      "stage": "mama-workshop",
+      "layer": "sky",
+      "path": "modes/echos-de-la-greve/assets/stages/mama-workshop-sky.png",
+      "dimensions": [
+        1672,
+        941
+      ],
+      "mode": "RGB",
+      "bytes": 2527086,
+      "sha256": "8bd008a14c31168a91ea8fdae1019f6b06715a10f2df154c568e2ca2ecef0f5b"
+    },
+    {
+      "stage": "mama-workshop",
+      "layer": "distant",
+      "path": "modes/echos-de-la-greve/assets/stages/mama-workshop-distant.png",
+      "dimensions": [
+        2172,
+        724
+      ],
+      "mode": "RGBA",
+      "bytes": 1353534,
+      "sha256": "89a70c3c3a1071a5891e577fe6f7d7b190ead0ca0cf247f0285b838264dc7e84"
+    },
+    {
+      "stage": "mama-workshop",
+      "layer": "midground",
+      "path": "modes/echos-de-la-greve/assets/stages/mama-workshop-midground.png",
+      "dimensions": [
+        2172,
+        724
+      ],
+      "mode": "RGBA",
+      "bytes": 665711,
+      "sha256": "4573d4b88baf9195cf24093fb35b5011fbe2ad840eaf812be928e08ca357f6ad"
+    },
+    {
+      "stage": "mama-workshop",
+      "layer": "floor",
+      "path": "modes/echos-de-la-greve/assets/stages/mama-workshop-floor.png",
+      "dimensions": [
+        2172,
+        724
+      ],
+      "mode": "RGBA",
+      "bytes": 2178307,
+      "sha256": "425eb7e28baa632babf9e3e3d7975a1f9085598a33e51b34d6276cc21734873b"
+    },
+    {
+      "stage": "mama-workshop",
+      "layer": "foreground",
+      "path": "modes/echos-de-la-greve/assets/stages/mama-workshop-foreground.webp",
+      "dimensions": [
+        2172,
+        295
+      ],
+      "mode": "RGBA",
+      "bytes": 121076,
+      "sha256": "f41041dffb1a69123121be4c170da5ed45d3e110f1c5a30959a3ecb8496e0442"
+    },
+    {
+      "stage": "ruined-factory",
+      "layer": "sky",
+      "path": "modes/echos-de-la-greve/assets/stages/ruined-factory-sky.png",
+      "dimensions": [
+        1672,
+        941
+      ],
+      "mode": "RGB",
+      "bytes": 1864951,
+      "sha256": "15021b3630be79f0e1134f20565376dae6faa262ef592bd4c5c479ba205c5fce"
+    },
+    {
+      "stage": "ruined-factory",
+      "layer": "distant",
+      "path": "modes/echos-de-la-greve/assets/stages/ruined-factory-distant.png",
+      "dimensions": [
+        2172,
+        724
+      ],
+      "mode": "RGBA",
+      "bytes": 1692111,
+      "sha256": "cb9ae718e2de7904cd4e44f28caf8e3c0408db9a4410dd4747d5101f2e3401f2"
+    },
+    {
+      "stage": "ruined-factory",
+      "layer": "midground",
+      "path": "modes/echos-de-la-greve/assets/stages/ruined-factory-midground.png",
+      "dimensions": [
+        2172,
+        724
+      ],
+      "mode": "RGBA",
+      "bytes": 620159,
+      "sha256": "124484fb5f62505140a49f0a8e80e565bf2aa313062068295d0f5925a7de4286"
+    },
+    {
+      "stage": "ruined-factory",
+      "layer": "floor",
+      "path": "modes/echos-de-la-greve/assets/stages/ruined-factory-floor.png",
+      "dimensions": [
+        2172,
+        724
+      ],
+      "mode": "RGBA",
+      "bytes": 2158938,
+      "sha256": "e3495ab82c5235b50cb6a90c05bbbe9c4a43833118813e391a155eb3edc5b5da"
+    },
+    {
+      "stage": "ruined-factory",
+      "layer": "foreground",
+      "path": "modes/echos-de-la-greve/assets/stages/ruined-factory-foreground.webp",
+      "dimensions": [
+        2172,
+        173
+      ],
+      "mode": "RGBA",
+      "bytes": 75290,
+      "sha256": "a344df28843d461ce21dbceb19b59b96a902a0811cca8ce12cabf600db7b32fc"
+    },
+    {
+      "stage": "timefall-shelter",
+      "layer": "sky",
+      "path": "modes/echos-de-la-greve/assets/stages/timefall-shelter-sky.png",
+      "dimensions": [
+        1672,
+        941
+      ],
+      "mode": "RGB",
+      "bytes": 1548764,
+      "sha256": "d9e52fcb9b319e6dd3b33aeb36721fd82a5cc1b90d7db955a684e5141191d5c0"
+    },
+    {
+      "stage": "timefall-shelter",
+      "layer": "distant",
+      "path": "modes/echos-de-la-greve/assets/stages/timefall-shelter-distant.png",
+      "dimensions": [
+        2172,
+        724
+      ],
+      "mode": "RGBA",
+      "bytes": 1728775,
+      "sha256": "5790b4dafcd9c07bb140c854a8ff1f7b110dbb4153bd64ac63e4677692517964"
+    },
+    {
+      "stage": "timefall-shelter",
+      "layer": "midground",
+      "path": "modes/echos-de-la-greve/assets/stages/timefall-shelter-midground.png",
+      "dimensions": [
+        2172,
+        724
+      ],
+      "mode": "RGBA",
+      "bytes": 587909,
+      "sha256": "0df6d0a1d19aed18cf04eb630840632cc169238317f55d2536e7e641af6bdf9e"
+    },
+    {
+      "stage": "timefall-shelter",
+      "layer": "floor",
+      "path": "modes/echos-de-la-greve/assets/stages/timefall-shelter-floor.png",
+      "dimensions": [
+        2172,
+        724
+      ],
+      "mode": "RGBA",
+      "bytes": 2471648,
+      "sha256": "97199aee5942155ecaf30fa3570a54b009f3406f1dbc16049c898ffbeb702a6b"
+    },
+    {
+      "stage": "timefall-shelter",
+      "layer": "foreground",
+      "path": "modes/echos-de-la-greve/assets/stages/timefall-shelter-foreground.webp",
+      "dimensions": [
+        2172,
+        426
+      ],
+      "mode": "RGBA",
+      "bytes": 107120,
+      "sha256": "9815c4886d2e317fb2a2c9d98625d5a8d689efd80060eca5e46b9eb09243c907"
+    },
+    {
+      "stage": "tar-basin",
+      "layer": "sky",
+      "path": "modes/echos-de-la-greve/assets/stages/tar-basin-sky.png",
+      "dimensions": [
+        1672,
+        941
+      ],
+      "mode": "RGB",
+      "bytes": 1565578,
+      "sha256": "33a74b93c3b12e32c69e5a2959ae8f78e463bd4395fabedcb5059b233c8de922"
+    },
+    {
+      "stage": "tar-basin",
+      "layer": "distant",
+      "path": "modes/echos-de-la-greve/assets/stages/tar-basin-distant.png",
+      "dimensions": [
+        2172,
+        724
+      ],
+      "mode": "RGBA",
+      "bytes": 1449568,
+      "sha256": "842e2af7a567df14653ad339cd88b12ccf9ce05e52eb8d4913b0c051ba8a996c"
+    },
+    {
+      "stage": "tar-basin",
+      "layer": "midground",
+      "path": "modes/echos-de-la-greve/assets/stages/tar-basin-midground.png",
+      "dimensions": [
+        2172,
+        724
+      ],
+      "mode": "RGBA",
+      "bytes": 380441,
+      "sha256": "54340041e49c20cd5a3b85d456ae8aaf3dba836e984fb4627a33755ec473a2e9"
+    },
+    {
+      "stage": "tar-basin",
+      "layer": "floor",
+      "path": "modes/echos-de-la-greve/assets/stages/tar-basin-floor.png",
+      "dimensions": [
+        2172,
+        724
+      ],
+      "mode": "RGBA",
+      "bytes": 2215733,
+      "sha256": "faee362fe6538a96cdf7c385df545224725f7008b012801bda1fb51d7cbebe9a"
+    },
+    {
+      "stage": "tar-basin",
+      "layer": "foreground",
+      "path": "modes/echos-de-la-greve/assets/stages/tar-basin-foreground.webp",
+      "dimensions": [
+        2172,
+        404
+      ],
+      "mode": "RGBA",
+      "bytes": 153794,
+      "sha256": "e6566ce16296290d40df291cc45e5423464ca5835d588f8befbc5e2b01622b94"
+    },
+    {
+      "stage": "mountain-pass",
+      "layer": "sky",
+      "path": "modes/echos-de-la-greve/assets/stages/mountain-pass-sky.png",
+      "dimensions": [
+        1672,
+        941
+      ],
+      "mode": "RGB",
+      "bytes": 1572985,
+      "sha256": "a4937e5df5fc8fd0fc2e4d5d04aaa390898e978f7230a6fc2eec2470941da67c"
+    },
+    {
+      "stage": "mountain-pass",
+      "layer": "distant",
+      "path": "modes/echos-de-la-greve/assets/stages/mountain-pass-distant.png",
+      "dimensions": [
+        2172,
+        724
+      ],
+      "mode": "RGBA",
+      "bytes": 1726670,
+      "sha256": "ec7cbab1c1600642b64b4cab234310b1ce20e6346d354dbd785532c314bd3a1c"
+    },
+    {
+      "stage": "mountain-pass",
+      "layer": "midground",
+      "path": "modes/echos-de-la-greve/assets/stages/mountain-pass-midground.png",
+      "dimensions": [
+        2172,
+        724
+      ],
+      "mode": "RGBA",
+      "bytes": 330281,
+      "sha256": "9d5a0e2187477aaeef8a4d0822a3a362c9a25ac615c0b46f659100613e8e8112"
+    },
+    {
+      "stage": "mountain-pass",
+      "layer": "floor",
+      "path": "modes/echos-de-la-greve/assets/stages/mountain-pass-floor.png",
+      "dimensions": [
+        2172,
+        724
+      ],
+      "mode": "RGBA",
+      "bytes": 2070681,
+      "sha256": "69d7b282c976a5fed9ac25c336a96fcee443618d00519d28ec05482a022f77de"
+    },
+    {
+      "stage": "mountain-pass",
+      "layer": "foreground",
+      "path": "modes/echos-de-la-greve/assets/stages/mountain-pass-foreground.webp",
+      "dimensions": [
+        2172,
+        231
+      ],
+      "mode": "RGBA",
+      "bytes": 108790,
+      "sha256": "71e7b68e2bb60a1802c10ae1ecee94b5bd00d962e0e91b2dcc3cc357d55e6b2a"
+    }
+  ]
+}

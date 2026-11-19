@@ -380,7 +380,9 @@ Les quatre routes d’extension du chapitre 5 nomment un camp, une usine, un ate
 | Bassin de goudron · arène supplémentaire | Un bassin noir reflète les vestiges industriels et le ciel à l’extérieur de la piste. | Margelle continue aux pieds. Réserver les reflets dorés les plus francs aux techniques de Higgs. |
 | Col de Mountain Knot · arène supplémentaire | La succession des crêtes enneigées situe le duel en altitude. Un passage dégagé se dessine au milieu de la pente. | Les reliefs du premier plan restent bas. Les bords des bottes émergent sur la neige, même quand les deux joueurs se rapprochent. |
 
-**Découpage pour l’intégration.** Produire un panorama opaque et un WebP avec transparence pour les objets proches. Dans la vue de 1 280 × 720, le sol de simulation passe à 588. Le moteur déplace le paysage de 0,14 fois le décalage caméra et le premier plan de 0,8 fois ce décalage. Le décor proche doit déborder du cadre à ses deux extrêmes. Une paire de captures, joueurs serrés à gauche puis à droite, révèle immédiatement une bordure vide ou une rambarde qui empiète sur un combattant.
+**Découpage intégré au 19 novembre 2026.** Les dix arènes disposent chacune de cinq images indépendantes : ciel ou fond intérieur, lointain, plan intermédiaire, sol et premier plan, soit **50 couches livrées sur 50**. Les onze dernières images complètent le camp MULE, Heartman, l’usine, l’abri Timefall et le bassin de goudron. Le panorama opaque reste disponible pendant le chargement ou dans une ancienne copie privée de certaines images. Les PNG sont conservés dans leurs dimensions natives et les pixels générés n’ont pas été retouchés.
+
+Dans la vue de 1 280 × 720, le sol de simulation passe à 588. Le moteur déplace les cinq plans de **0,14 / 0,27 / 0,43 / 0,62 / 0,8** fois le décalage caméra. L’option d’effets réduits conserve cet ordre avec une amplitude de 20 %. Chaque ancre de sol est mesurée dans son image réelle ; les bases des structures et accessoires sont calées pour rejoindre la surface sans laisser voir une bande du ciel. Les proportions sont préservées et les couches débordent du cadre des deux côtés. [Bilan du lot, provenance et rendus](production/STAGES_COMPLETS_20261119.md).
 
 ## 8. Tournoi et modes complémentaires
 
@@ -446,6 +448,8 @@ Pour intégrer un personnage d’extension, commencer par un duel miroir complet
 | Reprendre un tableau à six après une qualification automatique et un match joué. | Les exemptions concernent deux entrées distinctes. Les qualifiés, les scores et les places du tour suivant sont conservés. |
 
 Les scénarios automatisés se trouvent dans `modes/echos-de-la-greve/qa/`. Le test `parcours.cjs` exerce les transitions des menus et la progression. Le test `techniques.cjs` pilote le moteur réel, décode le catalogue d’images et compare les commandes sur les deux côtés. Le test `mule.cjs` suit le marqueur et la caisse de chaque côté du terrain, y compris pendant une pause, un blocage ou un saut. Les épreuves ont leur scénario dans `defis.cjs`. Les tests `extensions.cjs`, `poses.cjs`, `dojo.cjs` et `replays.cjs` couvrent les nouveaux combattants, la marche, les impacts, l’enregistrement du mannequin et la restitution des matchs du tournoi. [Captures en jeu](apercus/)
+
+Le contrôle `arenes.cjs` conserve son parcours navigateur complet. Le complément `arenes-canvas.cjs` permet de tester directement le même `fight.js` avec Canvas natif quand Chromium n’est pas disponible : dix arènes, duel local et entraînement, deux directions, effets normaux et réduits, soit 80 cas de rendu. Il vérifie les cinq fichiers réellement dessinés, les proportions, les vitesses relatives, le débord horizontal et l’ancre de sol ; il ne valide pas les menus du navigateur ni la fidélité canonique des décors.
 
 ## 11. Références officielles
 

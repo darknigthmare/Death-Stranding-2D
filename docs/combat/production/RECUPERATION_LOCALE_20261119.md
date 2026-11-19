@@ -1,5 +1,14 @@
 # Récupération des fichiers locaux — 19 novembre 2026
 
+**Suivi de publication.** Le lot complet et les trois prompts retrouvés ensuite,
+soit 179 chemins ajoutés ou modifiés depuis `ec3d5fd`, sont publiés dans la PR #1
+au commit `97a9b210c3ce30bbf50a2ca6271d33f9ab80842f`. L’arbre distant
+`5f0884ec92617278907cf3d24e2fc8c758e2b268` correspond exactement à la copie
+locale consolidée `ac5ffd0`. La comparaison élargie à sept copies ne révèle
+aucun média de production supplémentaire à récupérer. Les chiffres ci-dessous
+décrivent l’état avant la reprise des stages ; les onze images manquantes ont
+depuis été produites et intégrées dans le [lot de complétion](STAGES_COMPLETS_20261119.md).
+
 ## Périmètre
 
 Point de départ distant vérifié : PR #1, branche `codex/echos-de-la-greve`,
