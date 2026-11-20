@@ -1,0 +1,40 @@
+{
+  "schemaVersion": 1,
+  "createdAt": "2026-11-19",
+  "generator": "image_gen__imagegen (native)",
+  "reference": {
+    "path": "modes/echos-de-la-greve/assets/props/mule-cargo.webp",
+    "inspected": true,
+    "passedToSuccessfulGeneration": false,
+    "note": "Local reference loading failed during environment reset. Successful generations use text descriptions informed by visual inspection."
+  },
+  "assets": [
+    {
+      "id": "gold-imprint",
+      "master": "art/sources/echos-de-la-greve/props/gold-imprint.png",
+      "runtime": "modes/echos-de-la-greve/assets/props/gold-imprint.png",
+      "prompt": "Use case: stylized-concept. Asset type: one transparent individual prop sprite for the Death Stranding 2D fighting mode Échos de la Grève. Generate a single ground marker: one black tar handprint with exactly five fingers, palm spread flat on the ground, veins and small jagged chiral-gold crystalline flecks embedded in the viscous tar. The imprint is nearly flat, a low irregular puddle, viewed from a low slightly elevated frontal side-scroller camera so it reads as a wide foreshortened hand shape along the ground. Detailed painted realistic game sprite with crisp edges, tangible wet tar and metallic gold, subdued cinematic DS1/Director's Cut palette. Use tactile painted realistic materials, cinematic game-sprite lighting, strong readability at small scale and restrained dark edge treatment. No cargo crate. Isolated complete object, fully within frame, generous transparent margins, no surface or rectangle beneath it. True transparent background, preserve alpha, no backdrop, no glow haze, no cast shadow outside the object, no other objects, no people, no lettering, no labels, no border, no sprite sheet. This is an original adaptation prop for Higgs's Empreinte d'or move, not a claim of an official exact model.",
+      "transparent_background": true,
+      "fidelityStatus": "original-adaptation-not-canonical-1to1",
+      "generatedOutputHint": "Generated images are saved to /workspace/scratch/c613b6c25cb0/generated_images as /workspace/scratch/c613b6c25cb0/generated_images/exec-84e17a0e-3de6-44eb-840b-99c97ee5de83.png by default.\nIf you need to use a generated image at another path, copy it and leave the original in place unless the user explicitly asks you to delete it.\nThe generated image is already displayed to the user. There is no need to render it in the final response as a Markdown image or file link."
+    },
+    {
+      "id": "bridge-deck",
+      "master": "art/sources/echos-de-la-greve/props/bridge-deck.png",
+      "runtime": "modes/echos-de-la-greve/assets/props/bridge-deck.png",
+      "prompt": "Use case: stylized-concept. Asset type: one transparent individual environment prop sprite for the Death Stranding 2D fighting mode Échos de la Grève. Generate one short deployable bridge deck segment for Mama's engineering move: a single continuous rectangular metal walkway module, fully extended horizontally from left to right, four slim interlocking gunmetal deck plates, visible telescoping chassis below, small hinges and mounting eyes at its two ends, restrained pale cyan utility strips, subtle yellow safety notches, no handrails. Strict low side view with just a small amount of top surface visible, matching a 2D side-scrolling combat stage and a roughly 3-to-1 horizontal silhouette. Keep structure level, intact, mechanically plausible. Detailed painted realistic game sprite, crisp readable construction, scratched brushed steel and weathered polymer. Use tactile painted realistic materials, cinematic game-sprite lighting, strong readability at small scale and restrained dark edge treatment. Do not draw a cargo crate. One complete connected object fully within frame, transparent margins all sides, true transparent background with real alpha. No scenery, floor, walls, isolated loose parts, people, labels, typography, cast shadow outside object, border or spritesheet. Original DS1/Director's Cut inspired combat adaptation equipment, not an official exact model.",
+      "transparent_background": true,
+      "fidelityStatus": "original-adaptation-not-canonical-1to1",
+      "generatedOutputHint": "Generated images are saved to /workspace/scratch/c613b6c25cb0/generated_images as /workspace/scratch/c613b6c25cb0/generated_images/exec-f76773b2-5229-4719-af5c-a1552c9c400a.png by default.\nIf you need to use a generated image at another path, copy it and leave the original in place unless the user explicitly asks you to delete it.\nThe generated image is already displayed to the user. There is no need to render it in the final response as a Markdown image or file link."
+    },
+    {
+      "id": "courier-parcel-open",
+      "master": "art/sources/echos-de-la-greve/props/courier-parcel-open.png",
+      "runtime": "modes/echos-de-la-greve/assets/props/courier-parcel-open.png",
+      "prompt": "Use case: stylized-concept. Asset type: one transparent individual courier equipment sprite for Death Stranding 2D Échos de la Grève. Generate one open rigid Bridges courier cargo case, industrial rugged silver-grey rectangular case with rounded reinforced metal corners, two ochre-yellow fabric straps released and attached to its sides, inset clips, weathered surface. Its attached hinged lid is open to the right, angled so both the dark grey shaped foam insert and the open lid's metal edge are visible; lid stays visibly connected by hinges. Empty dark foam interior, no loose floating items or contents. Low frontal three-quarter view with restrained depth, designed as an individual 2D side-view game prop. Materials and construction: reinforced ridged aluminium in silver grey, ochre woven straps with heavy metal buckles, softly rounded metal corner protection, battered finish, muted industrial palette, painted realistic rendering; create an OPEN case. Crisp readable silhouette, cool soft top-left light, complete case and lid fully within frame with transparent margins. True transparent background preserving alpha. No environment, floor, backdrop, extra crate, labels or text, characters, diagrams, borders, cast shadow outside the object or sprite sheet. Original fan-game adaptation equipment.",
+      "transparent_background": true,
+      "fidelityStatus": "original-adaptation-not-canonical-1to1",
+      "generatedOutputHint": "Generated images are saved to /workspace/scratch/c613b6c25cb0/generated_images as /workspace/scratch/c613b6c25cb0/generated_images/exec-de85783a-afc4-477f-955b-90dd2ba8e0eb.png by default.\nIf you need to use a generated image at another path, copy it and leave the original in place unless the user explicitly asks you to delete it.\nThe generated image is already displayed to the user. There is no need to render it in the final response as a Markdown image or file link."
+    }
+  ]
+}

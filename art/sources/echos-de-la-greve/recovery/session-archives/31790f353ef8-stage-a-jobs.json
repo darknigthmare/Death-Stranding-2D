@@ -1,0 +1,50 @@
+[
+  {
+    "stage": "shore",
+    "kind": "sky",
+    "source": "/workspace/scratch/31790f353ef8/generated_images/exec-e9bab412-452a-4fdf-ac29-9e1806c1e92c.png",
+    "destination": "/workspace/scratch/31790f353ef8/game/modes/echos-de-la-greve/assets/stages/shore-sky.png",
+    "prompt": "Use case: background-extraction. This is production art for the side-view 2D fighting arena La Grève in Death Stranding 2D. Input image 1 is the visual reference/edit target; preserve its cold slate-blue lighting, realistic painted quality, texture character, and geography. Output exactly ONE game layer; no text, no labels, no logos, no watermark, no collage or sprite sheet, no characters. Create the separate opaque SKY BACKPLATE ONLY, wide 16:9 composition, 2048x1152 requested. Reconstruct the clouded slate-grey sky and low atmospheric sea haze from this image. Erase every cliff, waterfall, rock, whale, humanlike figure, sea surface, shoreline and sand. Continue the pale diffuse atmospheric cloudscape through all vacated areas so this is purely sky and haze from edge to edge. Keep the soft bright cloud opening slightly right of center, no sun disc, no horizon line. Full opaque background, no transparency.",
+    "transparent": false
+  },
+  {
+    "stage": "shore",
+    "kind": "distant",
+    "source": "/workspace/scratch/31790f353ef8/generated_images/exec-df1c08e2-fd74-4e4c-b847-8dde933d56ee.png",
+    "destination": "/workspace/scratch/31790f353ef8/game/modes/echos-de-la-greve/assets/stages/shore-distant.png",
+    "prompt": "Use case: background-extraction. This is production art for the side-view 2D fighting arena La Grève in Death Stranding 2D. Input image 1 is the visual reference/edit target; preserve its cold slate-blue lighting, realistic painted quality, texture character, and geography. Output exactly ONE game layer; no text, no labels, no logos, no watermark, no collage or sprite sheet, no characters. Create one independent DISTANT SCENERY layer on genuine alpha, extremely wide 3:1 canvas 2172x724. Keep the distinctive terraced Icelandic basalt cliffs at left with thin waterfalls, fading low cliffs across the left half, very low remote wave line, and small stranded whale silhouette near the far right. Reconstruct these as one coherent horizontal horizon band with clear open central horizon. Every sky pixel above and between objects must be fully transparent; remove hovering human figures. Bottom of layer contains only a narrow distant sea band, not sand or a playable floor. Match atmospheric low contrast, no new structures. No opaque grey or checkerboard backing, no ground platform. Cliffs concentrated left, whale small on far right, no tall central occluder.",
+    "transparent": true
+  },
+  {
+    "stage": "shore",
+    "kind": "floor",
+    "source": "/workspace/scratch/31790f353ef8/generated_images/exec-b5e2ac82-cd05-4b20-8df1-fc98b32c6a0f.png",
+    "destination": "/workspace/scratch/31790f353ef8/game/modes/echos-de-la-greve/assets/stages/shore-floor.png",
+    "prompt": "Use case: background-extraction. This is production art for the side-view 2D fighting arena La Grève in Death Stranding 2D. Input image 1 is the visual reference/edit target; preserve its cold slate-blue lighting, realistic painted quality, texture character, and geography. Output exactly ONE game layer; no text, no labels, no logos, no watermark, no collage or sprite sheet, no characters. Create one independent PLAYABLE FLOOR layer on genuine alpha, extremely wide 3:1 canvas 2172x724. Material: wet compact black volcanic sand from the front half of the reference, fine granular texture, faint slate grey wet sheen and extremely subtle horizontal ripples. The TOP EDGE is a perfectly straight horizontal line at exactly 24 percent of the image height. Everything ABOVE that line is fully transparent. Everything BELOW it is a continuous opaque ground plane filling the entire width from left edge to right edge and continuing to the bottom edge. Uniform plane, eye-level side-view fighting-game floor with subtle depth texture, absolutely no floating island, no front cross-section or cliff, no mountains, no sea, no boulders, no debris, no footprints, no characters. Do not taper, round, fade or cut off either left or right edges. Keep dark neutral texture for excellent fighter silhouette contrast.",
+    "transparent": true
+  },
+  {
+    "stage": "terminal",
+    "kind": "sky",
+    "source": "/workspace/scratch/31790f353ef8/generated_images/exec-9f4d650f-ba91-4be0-a214-9d0e00f57482.png",
+    "destination": "/workspace/scratch/31790f353ef8/game/modes/echos-de-la-greve/assets/stages/terminal-sky.png",
+    "prompt": "Use case: background-extraction. Production game art for the Distribution Center arena of Death Stranding 2D. Input image 1 is the existing approved panorama. Keep the same realistic painted rendering, cold overcast blue-grey light with small warm industrial lamps, scale and material quality. Output exactly ONE separate layer, no characters, no text, no logos, no watermark, not a sprite sheet. Make an OPAQUE SKY BACKPLATE, wide 16:9 composition. Remove every building, antenna, radome, mountain, waterfall, grass, road, floor, railing and lamp. Reconstruct only the clouded blue-grey Icelandic sky from the reference, with overcast layered clouds and very soft pale haze extending all the way to the bottom edge. No horizon line, no objects or ground. Entire image should remain an atmospheric sky painting, no flat fill.",
+    "transparent": false
+  },
+  {
+    "stage": "terminal",
+    "kind": "distant",
+    "source": "/workspace/scratch/31790f353ef8/generated_images/exec-ff97b0f7-ebb5-4c2f-9c54-f13f345ab5a6.png",
+    "destination": "/workspace/scratch/31790f353ef8/game/modes/echos-de-la-greve/assets/stages/terminal-distant.png",
+    "prompt": "Use case: background-extraction. Production game art for the Distribution Center arena of Death Stranding 2D. Input image 1 is the existing approved panorama. Keep the same realistic painted rendering, cold overcast blue-grey light with small warm industrial lamps, scale and material quality. Output exactly ONE separate layer, no characters, no text, no logos, no watermark, not a sprite sheet. Make the independent DISTANT STRUCTURE layer, wide 3:1 canvas requested 2172x724. Extract and reconstruct the low receding left mountains and the very distinctive Bridges concrete distribution center on the right, including huge angled concrete supports, recessed warm-lit freight bay, two small roof radomes, antennas, low amber guardrails and distant crates INSIDE the bay. Carefully preserve large-scale silhouette and right-facing composition. Remove all sky and all foreground/paved fighting floor; outside silhouette is genuine alpha, no grey haze matte or checkerboard. Bottom of the building forms a straight horizontal foundation near the bottom of this strip. Across left center, only a low distant terrain line; no additional props in front of the center. Do not add signs, people or vehicles.",
+    "transparent": true
+  },
+  {
+    "stage": "terminal",
+    "kind": "floor",
+    "source": "/workspace/scratch/31790f353ef8/generated_images/exec-3e29b20d-1322-47f4-8796-e167c94ea088.png",
+    "destination": "/workspace/scratch/31790f353ef8/game/modes/echos-de-la-greve/assets/stages/terminal-floor.png",
+    "prompt": "Use case: background-extraction. Production game art for the Distribution Center arena of Death Stranding 2D. Input image 1 is the existing approved panorama. Keep the same realistic painted rendering, cold overcast blue-grey light with small warm industrial lamps, scale and material quality. Output exactly ONE separate layer, no characters, no text, no logos, no watermark, not a sprite sheet. Make one independent PLAYABLE FLOOR layer, genuine alpha, extremely wide 3:1 canvas 2172x724. Use the wet blue-grey concrete loading apron from the reference, broad worn slabs, restrained fine cracks and faint cool wet reflections, a few very small amber reflected light patches at outer sides only. TOP EDGE perfectly straight horizontal at 24 percent image height. Every pixel above it fully transparent. From that edge to the bottom, the continuous opaque floor fills the whole canvas width without gaps or edge taper, like a wide level ground surface. Subtle receding perspective of joints, no wall or visible vertical thickness, no floating platform, no horizon, no rails, no drainage objects, no building, no characters. Clean open fighting lane.",
+    "transparent": true
+  }
+]

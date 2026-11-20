@@ -1,0 +1,70 @@
+{
+  "variant": "mule-camp-dry",
+  "reviewed_utc": "2026-11-19T13:01:07.773273+00:00",
+  "overall": "Six assets generated individually with the built-in tool; coherent dry variant accepted for runtime integration and composition validation.",
+  "scope": "Visual inspection of all six original source exports and all six new PNGs. Read-only alpha and size measurement. No repository changes, image retouching, resizing, alpha editing or publication.",
+  "assets": {
+    "panorama": "Preserves original left cliff/tents, open valley/waterfall, crate and right beacon placement. Brighter pale overcast sky; compacted matte grey ground without puddles; vegetation remains olive green. Clear level fighting lane.",
+    "sky": "Cloud-only opaque full canvas, pale silver-grey overcast with soft upper-left light. No terrain or unwanted horizons.",
+    "distant": "Original cliffs, tents, waterfall and right beacon retained with dry materials and brighter light. True transparent sky. Lower terrain strip retains transparent bottom padding, so use measured geometry rather than assuming bottom-flush pixels.",
+    "midground": "Stacked grey/yellow cases remain on the far left, one yellow case and bundled tubes far right. Center remains clear above a thin low ground/cable strip. True alpha elsewhere.",
+    "floor": "Dry compacted grey volcanic gravel, small matte stones and subtle dust/tire marks. Straight threshold128 edge at row300 in every column, solid through bottom with no alpha holes. Small olive grass at lower corners follows panorama border; no puddles or wet reflections.",
+    "foreground": "Dry grey cargo case/strap on extreme left and folded yellow tarp/stakes on extreme right. True transparent upper field and central lane. Near-edge objects occupy lower30.5% rather than requested24%, but their projected physical size matches the former short strip at the same width."
+  },
+  "geometry": {
+    "floor": {
+      "anchorY": "300/724",
+      "anchorYDecimal": 0.4143646408839779,
+      "threshold": 128,
+      "columns": 2172,
+      "zeroAlphaBelowAnchor": 0,
+      "minimumAlphaBelowAnchor": 219,
+      "bottomRowMinimumAlpha": 245
+    },
+    "distant": {
+      "alpha128BBox": [
+        11,
+        46,
+        2160,
+        678
+      ],
+      "alpha128MedianBottomRow": 676,
+      "transparentBottomPaddingPixels": 46,
+      "suggestedStartingGeometry": {
+        "anchorY": 0.96,
+        "base": 609
+      },
+      "rationale": "At rendered width1376, height458.6667, the typical opaque bottom reaches about597.2, overlapping the floor baseline588. Confirm in actual fight.js renderer at both camera extremes."
+    },
+    "midground": {
+      "alpha128BBox": [
+        0,
+        373,
+        2171,
+        685
+      ],
+      "suggestedStartingGeometry": {
+        "anchorY": 0.97,
+        "base": 576
+      },
+      "rationale": "Preserved old prop framing; bottom strip projects near564, behind the fighting floor."
+    },
+    "foreground": {
+      "alpha128BBox": [
+        0,
+        503,
+        2172,
+        724
+      ],
+      "bottomAlignment": 720,
+      "projectedHeightAtWidth1440": 480,
+      "topmostVisiblePixelAtRenderedWidth1440": 573.4806629834254,
+      "rationale": "The added transparent top field preserves the former border prop size when width is1440; central low gravel stays nearbottom."
+    }
+  },
+  "alphaCaveats": [
+    "Generated solid surfaces mostly have alpha252–253 instead of255. Original bytes preserved; no holes below the floor boundary. Runtime compositing must judge visible result.",
+    "Tiny red RGB values at cutout boundaries have alpha only1–2; none reach alpha16. They are nearly invisible source edge data, not opaque red markings."
+  ],
+  "next": "Root integrates new variant separately from existing humid camp, then verifies actual fight.js composition and collision baseline."
+}

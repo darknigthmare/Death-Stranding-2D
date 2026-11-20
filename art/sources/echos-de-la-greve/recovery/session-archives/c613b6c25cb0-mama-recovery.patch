@@ -1,0 +1,265 @@
+diff --git a/modes/echos-de-la-greve/assets.js b/modes/echos-de-la-greve/assets.js
+--- a/modes/echos-de-la-greve/assets.js
++++ b/modes/echos-de-la-greve/assets.js
+@@ -13,7 +13,15 @@
+   story['sam-rival'] = story['sam-higgs-rival'];
+   const roster = Object.keys(window.StrandContent.fighters);
+   const arenas = Object.keys(window.StrandContent.stages);
++  const movement = ['guard','crouch','rise','apex','fall'];
++  const wardrobe = {mama:{
++    atelier:{name:'Atelier', poses:illustrations('fighters/mama/atelier', movement)},
++    viaduc:{name:'Maintenance du viaduc', portrait:'assets/fighters/mama/viaduc/portrait.webp',
++      poses:illustrations('fighters/mama/viaduc', ['stance','action','step','hit', ...movement])}
++  }};
+   window.StrandAssets = {
++    wardrobe,
++    jumps: illustrations('fighters', roster.filter(id => id !== 'mama'), '-jump'),
+     hero: story['sam-higgs-rival'],
+     story,
+     fighters: illustrations('fighters', roster, '-stance'),
+diff --git a/modes/echos-de-la-greve/app.js b/modes/echos-de-la-greve/app.js
+--- a/modes/echos-de-la-greve/app.js
++++ b/modes/echos-de-la-greve/app.js
+@@ -15,7 +15,7 @@
+     challenges:'<path d="M6 4h12v4a6 6 0 0 1-12 0zm6 10v5m-4 2h8M6 6H3v2a4 4 0 0 0 4 4m11-6h3v2a4 4 0 0 1-4 4"/>',
+     training:'<circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="3"/><path d="M12 1v4m0 14v4M1 12h4m14 0h4"/>'
+   };
+-  const config = {mode:'story', p1:'sam', p2:'higgs', stage:'shore', difficulty:'normal', opponent:'cpu', count:'4', humans:'1', challenge:'survival'};
++  const config = {mode:'story', p1:'sam', p2:'higgs', stage:'shore', difficulty:'normal', opponent:'cpu', outfit1:'atelier', outfit2:'atelier', count:'4', humans:'1', challenge:'survival'};
+   const held = new Map();
+   let trial;
+   const trialNames = {survival:'Survie', delivery:'Livraison sous pression'};
+@@ -88,13 +88,20 @@
+   }
+   function nameMap() { return Object.fromEntries(ids.map(id => [id, fighters[id].name])); }
+   function chapter() { const n = progress[config.p1]; return Number.isInteger(n) && n >= 0 && n <= 3 ? n : 0; }
++  function outfitField(slot, id) {
++    const outfits = asset.wardrobe?.[id];
++    if (!outfits) return '';
++    return choose('outfit' + slot, 'Tenue J' + slot + ' · ' + fighters[id].call,
++      Object.fromEntries(Object.entries(outfits).map(([key, outfit]) => [key, outfit.name])));
++  }
+   function selection() {
+     stopFight();
+     const {mode,p1} = config;
+     const character = fighters[p1];
+     const cards = ids.map(id => {
+       const f = fighters[id];
+-      const portrait = asset.portraits?.[id], stance = asset.fighters?.[id];
++      const preview = id === p1 && ['versus','training'].includes(mode) ? asset.wardrobe?.[id]?.[config.outfit1] : null;
++      const portrait = preview?.portrait || asset.portraits?.[id], stance = asset.fighters?.[id];
+       return '<button class="char ' + (portrait ? 'portrait' : stance ? '' : 'landscape') + '" data-act="pick" data-id="' + id +
+         '" aria-pressed="' + (id === p1) + '">' + image(portrait || stance || asset.stages?.[stageFor(id)]) +
+         '<span class="charlabel"><strong>' + f.call + '</strong><small>' + f.role + '</small></span></button>';
+@@ -109,7 +116,9 @@
+     }
+     if (['versus','training'].includes(mode) || (mode === 'tournament' && config.humans === '2'))
+       fields += choose('p2',mode === 'training' ? 'Mannequin' : 'Combattant adverse / J2',nameMap());
+-    if (['versus','training'].includes(mode)) fields += choose('stage','Arène',stages);
++    if (['versus','training'].includes(mode)) {
++      fields += outfitField(1, p1) + outfitField(2, config.p2) + choose('stage','Arène',stages);
++    }
+     if (isSolo) fields += choose('difficulty','Difficulté',{easy:'Débutant',normal:'Porteur',hard:'Vétéran'});
+     const route = character.route.map(([rival,place]) => fighters[rival].call + ' · ' + stages[place]).join('　→　');
+     const startLabel = mode === 'story' && chapter() > 0 && chapter() < 3 ? 'Reprendre le duel ' + (chapter() + 1) :
+@@ -344,6 +353,7 @@
+     const canvas = document.getElementById('arena'), signal = document.getElementById('signal');
+     let phase = null;
+     engine.start({canvas,p1:match.p1,p2:match.p2,stage:match.stage,mode:match.kind,difficulty:match.difficulty,seed:match.seed,record:match.mode==='tournament' && !watching,replay:match.replay,roundsToWin:match.mode === 'challenges' ? 1 : 2,startingVitality:match.vitality,parcel:match.parcel,training,
++      outfits:['versus','training'].includes(match.mode) ? [config.outfit1,config.outfit2] : undefined,
+       sound,visuals:asset.fighters || {},onStatus(status) {
+         if (match.kind==="training") updateTraining(status);
+         if (!signal || status.phase === phase) return;
+diff --git a/modes/echos-de-la-greve/fight.js b/modes/echos-de-la-greve/fight.js
+--- a/modes/echos-de-la-greve/fight.js
++++ b/modes/echos-de-la-greve/fight.js
+@@ -252,13 +252,20 @@
+       image.src = src;
+       return image;
+     };
+-    for (const id of new Set(ids)) {
+-      m.images[id] = load((o.visuals || {})[id] || art.fighters?.[id]);
+-      m.images[id + 'Action'] = load(art.actions?.[id]);
+-      m.images[id + 'Step'] = load(art.steps?.[id]);
+-      m.images[id + 'Hit'] = load(art.hits?.[id]);
++    m.fighterFrames = ids.map((id, side) => {
++      const base = {};
++      base.stance = load((o.visuals || {})[id] || art.fighters?.[id]);
++      base.action = load(art.actions?.[id]);
++      base.step = load(art.steps?.[id]);
++      base.hit = load(art.hits?.[id]);
++      base.jump = load(art.jumps?.[id]);
++      const options = art.wardrobe?.[id];
++      const kit = options?.[o.outfits?.[side]] || options?.atelier;
++      const tailored = {};
++      for (const [pose, file] of Object.entries(kit?.poses || {})) tailored[pose] = load(file);
+       if (m.mode !== 'training') m.images[id + 'Finale'] = load(art.finishers?.[id]);
+-    }
++      return {base, tailored};
++    });
+     m.scene.back = load(art.stages?.[stage]);
+     m.scene.middle = load(art.midgrounds?.[stage]);
+     m.scene.front = load(art.foregrounds?.[stage]);
+@@ -933,28 +940,29 @@
+ 
+   function drawFighter(m, f, index) {
+     const c = m.ctx, feet = FLOOR - f.y;
+-    const act = f.act, actionArt = m.images[f.id + 'Action'];
++    const act = f.act;
++    const {base, tailored} = m.fighterFrames[index];
++    const frameFor = pose => ready(tailored[pose]) ? tailored[pose] : base[pose];
+     const movement = m.phase === 'fight' && f.grounded && !f.act && !f.guard && !f.stun &&
+       !f.blockStun && !f.crouch && (f.dash || !!f.keys.left !== !!f.keys.right);
+     const phase = act ? act.t / (moves[act.key].start + moves[act.key].active + moves[act.key].recover) : 0;
+     const reach = act ? Math.sin(Math.PI * Math.min(1, Math.max(0, phase))) : 0;
+     const performing = act && act.t >= moves[act.key].start * .61 && phase < .85;
+     let pose = 'stance';
+-    let image = m.images[f.id];
+-    const hitArt = m.images[f.id + 'Hit'];
+-    const stepArt = m.images[f.id + 'Step'];
+-    if (f.stun > 0 && ready(hitArt)) {
+-      pose = 'hit';
+-      image = hitArt;
+-    } else if (performing && ready(actionArt)) {
+-      pose = 'action';
+-      image = actionArt;
+-    } else if (movement && (f.dash || Math.sin(f.walk) >= 0) && ready(stepArt)) {
+-      pose = 'step';
+-      image = stepArt;
+-    }
++    if (f.stun > 0) pose = 'hit';
++    else if (performing) pose = 'action';
++    else if (!f.grounded) {
++      const phase = f.vy > 4 ? 'rise' : f.vy < -4 ? 'fall' : 'apex';
++      pose = tailored[phase] ? phase : 'jump';
++    } else if (f.crouch && tailored.crouch) pose = 'crouch';
++    else if ((f.guard || f.blockStun) && tailored.guard) pose = 'guard';
++    else if (movement && (f.dash || Math.sin(f.walk) >= 0)) pose = 'step';
++    if (!ready(frameFor(pose))) pose = 'stance';
++    const image = frameFor(pose);
++    const fixedFrame = !!tailored[pose] && image === tailored[pose];
+     const lost = m.winner && m.winner !== index + 1 && ['finish','cinema','roundover','ended'].includes(m.phase);
+-    const compression = f.crouch ? .69 : f.guard ? .93 : lost ? .84 : 1;
++    const compression = fixedFrame && (pose === 'crouch' || pose === 'guard') ? 1 :
++      f.crouch ? .69 : f.guard ? .93 : lost ? .84 : 1;
+     const breathing = movement ? 2.1 * Math.sin(f.walk) : 1.1 * Math.sin(m.tick * .055 + index);
+     const height = f.spec.h * compression + breathing;
+     oval(c, f.x, FLOOR + 1, Math.max(11, 29 - f.y * .08), 4.3, 'rgba(4,11,14,.54)');
+@@ -966,11 +974,12 @@
+     if (immune(f)) c.globalAlpha = f.act?.key === 'syncope' ? .14 : .63;
+     if (ready(image)) {
+       const geometry = spriteGeometry[f.id];
+-      const h = height * (geometry[pose + 'Scale'] || 1);
++      // The articulated frames share a 340-unit viewport and a 920 px stance rendered at 3x.
++      const h = height * (fixedFrame ? 340 * 3 / 920 : geometry[pose + 'Scale'] || 1);
+       const frames = (pose === 'step' || pose === 'hit') ? geometry.motionFrames || 1 : 1;
+       const srcWidth = image.naturalWidth / frames;
+       const w = h * srcWidth / image.naturalHeight;
+-      const anchor = geometry[pose + 'Anchor'] ?? geometry.stanceAnchor;
++      const anchor = fixedFrame ? .5 : geometry[pose + 'Anchor'] ?? geometry.stanceAnchor;
+       if (f.flash > 1 && (f.flash % 4 < 2)) c.filter = 'brightness(1.5)';
+       const weight = pose === 'hit' ? Math.min(1, f.stun / 8) : f.dash ? 1 : Math.sin(f.walk);
+       const frame = clamp(Math.ceil(weight * frames)-1,0,frames-1);
+diff --git a/modes/echos-de-la-greve/qa/poses.cjs b/modes/echos-de-la-greve/qa/poses.cjs
+--- a/modes/echos-de-la-greve/qa/poses.cjs
++++ b/modes/echos-de-la-greve/qa/poses.cjs
+@@ -30,12 +30,14 @@
+       const seen = new Set();
+       ctx.drawImage = (image, ...args) => {
+         if (image.src?.includes('/assets/fighters/')) {
+-          const name = image.src.split('/').pop().replace('.webp','');
++          const url = new URL(image.src);
++          const file = url.pathname.split('/').pop().replace('.webp','');
++          const name = url.pathname.includes('/mama/atelier/') ? 'mama-' + file : file;
+           seen.add(name + '/' + Math.sign(ctx.getTransform().a));
+         }
+         return draw(image, ...args);
+       };
+-      const preload = [...Object.values(StrandAssets.fighters), ...Object.values(StrandAssets.steps), ...Object.values(StrandAssets.hits)];
++      const preload = [...Object.values(StrandAssets.fighters), ...Object.values(StrandAssets.steps), ...Object.values(StrandAssets.hits), StrandAssets.wardrobe.mama.atelier.poses.guard];
+       await Promise.all(preload.map(async src => { const image = new Image(); image.src = src; await image.decode(); }));
+       const results = [];
+       for (const id of Object.keys(StrandContent.fighters)) {
+@@ -59,7 +61,7 @@
+           StrandFight.input(other, 'light', false);
+           tick(16);
+           const block = StrandFight.snapshot().fighters[side - 1];
+-          const blockHit = pose('hit'), blockStance = pose('stance');
++          const blockHit = pose('hit'), blockStance = pose(id === 'mama' ? 'guard' : 'stance');
+           tick(14);
+           seen.clear();
+           StrandFight.input(side, 'guard', false);
+diff --git a/modes/echos-de-la-greve/qa/tenues.cjs b/modes/echos-de-la-greve/qa/tenues.cjs
+new file mode 100644
+--- /dev/null
++++ b/modes/echos-de-la-greve/qa/tenues.cjs
+@@ -0,0 +1,69 @@
++const assert = require('node:assert/strict');
++const path = require('node:path');
++const {pathToFileURL} = require('node:url');
++const {chromium} = require('playwright');
++
++(async () => {
++  const browser = await chromium.launch({executablePath:process.env.PLAYWRIGHT_CHROMIUM_EXECUTABLE || undefined});
++  try {
++    const page = await browser.newPage();
++    await page.goto(pathToFileURL(path.resolve(__dirname,'../index.html')).href);
++    await page.click('[data-mode="versus"]');
++    await page.click('[data-act="pick"][data-id="mama"]');
++    await page.selectOption('[data-option="opponent"]','local');
++    await page.selectOption('[data-option="p2"]','mama');
++    await page.selectOption('[data-option="outfit1"]','viaduc');
++    assert.equal(await page.locator('[data-id="mama"] img').getAttribute('src'), 'assets/fighters/mama/viaduc/portrait.webp');
++    await page.evaluate(async () => {
++      const costumes = Object.values(StrandAssets.wardrobe.mama);
++      const files = costumes.flatMap(c => Object.values(c.poses));
++      await Promise.all(files.map(async file => {
++        const image = new Image();
++        image.src = file;
++        await image.decode();
++      }));
++    });
++    await page.evaluate(() => {
++      let clock = 0, id = 0;
++      const queue = new Map();
++      const seen = new Set();
++      window.requestAnimationFrame = fn => { queue.set(++id, fn); return id; };
++      window.cancelAnimationFrame = key => queue.delete(key);
++      window.advance = count => {
++        for (let i = 0; i < count; i++) {
++          const callbacks = [...queue.values()];
++          queue.clear();
++          clock += 1000 / 60 + .000001;
++          callbacks.forEach(fn => fn(clock));
++        }
++      };
++      const drawImage = CanvasRenderingContext2D.prototype.drawImage;
++      CanvasRenderingContext2D.prototype.drawImage = function (image,...args) {
++        if (image.src?.includes('/fighters/mama/')) {
++          seen.add(image.src.split('/fighters/mama/')[1] + '/' + Math.sign(this.getTransform().a));
++        }
++        return drawImage.call(this,image,...args);
++      };
++      window.seenFrames = seen;
++    });
++    await page.dispatchEvent('[data-act="start"]','click');
++    await page.waitForSelector('#arena');
++    const frames = await page.evaluate(() => {
++      const both = (key, down) => [1,2].forEach(side => StrandFight.input(side,key,down));
++      advance(77);
++      both('guard',true); advance(7); both('guard',false);
++      both('down',true); advance(7); both('down',false);
++      both('up',true); advance(2); both('up',false); advance(44);
++      return [...seenFrames];
++    });
++    for (const pose of ['guard','crouch','rise','apex','fall']) {
++      assert.ok(frames.includes('atelier/' + pose + '.webp/-1'),pose + ' J2');
++      assert.ok(frames.includes('viaduc/' + pose + '.webp/1'),pose + ' J1');
++    }
++    assert.ok(frames.includes('viaduc/stance.webp/1'));
++    assert.ok(!frames.includes('viaduc/stance.webp/-1'));
++    console.log('OK — duel miroir, deux tenues indépendantes, portrait, garde, accroupissement et trois phases de saut.');
++  } finally {
++    await browser.close();
++  }
++})().catch(error => { console.error(error); process.exitCode = 1; });

@@ -1,0 +1,1066 @@
+{
+  "variant": "mule-camp-dry",
+  "measured_utc": "2026-11-19T13:00:00.407586+00:00",
+  "method": "Read-only Pillow/NumPy inspection of original PNG bytes; no image edits. Alpha ranges 0..255. Threshold128 marks visible geometry for anchors.",
+  "outputs": [
+    {
+      "key": "panorama",
+      "file": "mule-camp-dry.png",
+      "width": 1672,
+      "height": 941,
+      "mode": "RGB",
+      "sha256": "e1b9d305519c3107962a9a4a982077bf904a3237ad0fb76e87e8d6dd3c68ac22",
+      "bytes": 3036520,
+      "alpha_min": 255,
+      "alpha_max": 255,
+      "transparent_pixels": 0,
+      "partial_pixels": 0,
+      "opaque_pixels": 1573352,
+      "transparent_fraction": 0.0,
+      "alpha_common_values": [
+        [
+          255,
+          1573352
+        ]
+      ],
+      "bottom_row_alpha_min": 255,
+      "bottom_row_alpha_max": 255,
+      "red_fringe_diagnostic": {
+        "red_rgb_pixels": 0,
+        "red_pixels_alpha_ge128": 0,
+        "red_pixels_alpha_ge16": 0,
+        "red_alpha_max": null
+      },
+      "threshold_geometry": {
+        "1": {
+          "bbox": [
+            0,
+            0,
+            1672,
+            941
+          ],
+          "columns_present": 1672,
+          "first_row_quantiles": {
+            "0": 0.0,
+            "0.05": 0.0,
+            "0.5": 0.0,
+            "0.95": 0.0,
+            "1": 0.0
+          },
+          "last_row_quantiles": {
+            "0": 940.0,
+            "0.05": 940.0,
+            "0.5": 940.0,
+            "0.95": 940.0,
+            "1": 940.0
+          },
+          "row_full_width_first": 0,
+          "row_95pct_first": 0
+        },
+        "16": {
+          "bbox": [
+            0,
+            0,
+            1672,
+            941
+          ],
+          "columns_present": 1672,
+          "first_row_quantiles": {
+            "0": 0.0,
+            "0.05": 0.0,
+            "0.5": 0.0,
+            "0.95": 0.0,
+            "1": 0.0
+          },
+          "last_row_quantiles": {
+            "0": 940.0,
+            "0.05": 940.0,
+            "0.5": 940.0,
+            "0.95": 940.0,
+            "1": 940.0
+          },
+          "row_full_width_first": 0,
+          "row_95pct_first": 0
+        },
+        "128": {
+          "bbox": [
+            0,
+            0,
+            1672,
+            941
+          ],
+          "columns_present": 1672,
+          "first_row_quantiles": {
+            "0": 0.0,
+            "0.05": 0.0,
+            "0.5": 0.0,
+            "0.95": 0.0,
+            "1": 0.0
+          },
+          "last_row_quantiles": {
+            "0": 940.0,
+            "0.05": 940.0,
+            "0.5": 940.0,
+            "0.95": 940.0,
+            "1": 940.0
+          },
+          "row_full_width_first": 0,
+          "row_95pct_first": 0
+        },
+        "250": {
+          "bbox": [
+            0,
+            0,
+            1672,
+            941
+          ],
+          "columns_present": 1672,
+          "first_row_quantiles": {
+            "0": 0.0,
+            "0.05": 0.0,
+            "0.5": 0.0,
+            "0.95": 0.0,
+            "1": 0.0
+          },
+          "last_row_quantiles": {
+            "0": 940.0,
+            "0.05": 940.0,
+            "0.5": 940.0,
+            "0.95": 940.0,
+            "1": 940.0
+          },
+          "row_full_width_first": 0,
+          "row_95pct_first": 0
+        },
+        "255": {
+          "bbox": [
+            0,
+            0,
+            1672,
+            941
+          ],
+          "columns_present": 1672,
+          "first_row_quantiles": {
+            "0": 0.0,
+            "0.05": 0.0,
+            "0.5": 0.0,
+            "0.95": 0.0,
+            "1": 0.0
+          },
+          "last_row_quantiles": {
+            "0": 940.0,
+            "0.05": 940.0,
+            "0.5": 940.0,
+            "0.95": 940.0,
+            "1": 940.0
+          },
+          "row_full_width_first": 0,
+          "row_95pct_first": 0
+        }
+      }
+    },
+    {
+      "key": "sky",
+      "file": "mule-camp-dry-sky.png",
+      "width": 1672,
+      "height": 941,
+      "mode": "RGB",
+      "sha256": "e1c7c9468014292f5d1d9c19d47ac0092194722ffdc262f0341b0e2dc8a8b046",
+      "bytes": 1538420,
+      "alpha_min": 255,
+      "alpha_max": 255,
+      "transparent_pixels": 0,
+      "partial_pixels": 0,
+      "opaque_pixels": 1573352,
+      "transparent_fraction": 0.0,
+      "alpha_common_values": [
+        [
+          255,
+          1573352
+        ]
+      ],
+      "bottom_row_alpha_min": 255,
+      "bottom_row_alpha_max": 255,
+      "red_fringe_diagnostic": {
+        "red_rgb_pixels": 0,
+        "red_pixels_alpha_ge128": 0,
+        "red_pixels_alpha_ge16": 0,
+        "red_alpha_max": null
+      },
+      "threshold_geometry": {
+        "1": {
+          "bbox": [
+            0,
+            0,
+            1672,
+            941
+          ],
+          "columns_present": 1672,
+          "first_row_quantiles": {
+            "0": 0.0,
+            "0.05": 0.0,
+            "0.5": 0.0,
+            "0.95": 0.0,
+            "1": 0.0
+          },
+          "last_row_quantiles": {
+            "0": 940.0,
+            "0.05": 940.0,
+            "0.5": 940.0,
+            "0.95": 940.0,
+            "1": 940.0
+          },
+          "row_full_width_first": 0,
+          "row_95pct_first": 0
+        },
+        "16": {
+          "bbox": [
+            0,
+            0,
+            1672,
+            941
+          ],
+          "columns_present": 1672,
+          "first_row_quantiles": {
+            "0": 0.0,
+            "0.05": 0.0,
+            "0.5": 0.0,
+            "0.95": 0.0,
+            "1": 0.0
+          },
+          "last_row_quantiles": {
+            "0": 940.0,
+            "0.05": 940.0,
+            "0.5": 940.0,
+            "0.95": 940.0,
+            "1": 940.0
+          },
+          "row_full_width_first": 0,
+          "row_95pct_first": 0
+        },
+        "128": {
+          "bbox": [
+            0,
+            0,
+            1672,
+            941
+          ],
+          "columns_present": 1672,
+          "first_row_quantiles": {
+            "0": 0.0,
+            "0.05": 0.0,
+            "0.5": 0.0,
+            "0.95": 0.0,
+            "1": 0.0
+          },
+          "last_row_quantiles": {
+            "0": 940.0,
+            "0.05": 940.0,
+            "0.5": 940.0,
+            "0.95": 940.0,
+            "1": 940.0
+          },
+          "row_full_width_first": 0,
+          "row_95pct_first": 0
+        },
+        "250": {
+          "bbox": [
+            0,
+            0,
+            1672,
+            941
+          ],
+          "columns_present": 1672,
+          "first_row_quantiles": {
+            "0": 0.0,
+            "0.05": 0.0,
+            "0.5": 0.0,
+            "0.95": 0.0,
+            "1": 0.0
+          },
+          "last_row_quantiles": {
+            "0": 940.0,
+            "0.05": 940.0,
+            "0.5": 940.0,
+            "0.95": 940.0,
+            "1": 940.0
+          },
+          "row_full_width_first": 0,
+          "row_95pct_first": 0
+        },
+        "255": {
+          "bbox": [
+            0,
+            0,
+            1672,
+            941
+          ],
+          "columns_present": 1672,
+          "first_row_quantiles": {
+            "0": 0.0,
+            "0.05": 0.0,
+            "0.5": 0.0,
+            "0.95": 0.0,
+            "1": 0.0
+          },
+          "last_row_quantiles": {
+            "0": 940.0,
+            "0.05": 940.0,
+            "0.5": 940.0,
+            "0.95": 940.0,
+            "1": 940.0
+          },
+          "row_full_width_first": 0,
+          "row_95pct_first": 0
+        }
+      }
+    },
+    {
+      "key": "distant",
+      "file": "mule-camp-dry-distant.png",
+      "width": 2172,
+      "height": 724,
+      "mode": "RGBA",
+      "sha256": "6272360b26efed08e097f23e4531ea946959efe20943313c1f95b3a25ee781de",
+      "bytes": 1783192,
+      "alpha_min": 0,
+      "alpha_max": 255,
+      "transparent_pixels": 734582,
+      "partial_pixels": 837389,
+      "opaque_pixels": 557,
+      "transparent_fraction": 0.46713444848040864,
+      "alpha_common_values": [
+        [
+          0,
+          734582
+        ],
+        [
+          253,
+          714682
+        ],
+        [
+          252,
+          60639
+        ],
+        [
+          1,
+          11084
+        ],
+        [
+          251,
+          10115
+        ],
+        [
+          250,
+          4883
+        ],
+        [
+          2,
+          3079
+        ],
+        [
+          254,
+          2764
+        ]
+      ],
+      "bottom_row_alpha_min": 0,
+      "bottom_row_alpha_max": 0,
+      "red_fringe_diagnostic": {
+        "red_rgb_pixels": 788,
+        "red_pixels_alpha_ge128": 0,
+        "red_pixels_alpha_ge16": 0,
+        "red_alpha_max": 2
+      },
+      "threshold_geometry": {
+        "1": {
+          "bbox": [
+            0,
+            8,
+            2172,
+            692
+          ],
+          "columns_present": 2172,
+          "first_row_quantiles": {
+            "0": 8.0,
+            "0.05": 62.55000000000001,
+            "0.5": 275.0,
+            "0.95": 421.0,
+            "1": 652.0
+          },
+          "last_row_quantiles": {
+            "0": 553.0,
+            "0.05": 679.0,
+            "0.5": 680.0,
+            "0.95": 687.0,
+            "1": 691.0
+          },
+          "row_full_width_first": null,
+          "row_95pct_first": 438
+        },
+        "16": {
+          "bbox": [
+            10,
+            45,
+            2164,
+            679
+          ],
+          "columns_present": 2154,
+          "first_row_quantiles": {
+            "0": 45.0,
+            "0.05": 75.0,
+            "0.5": 284.0,
+            "0.95": 427.3499999999999,
+            "1": 669.0
+          },
+          "last_row_quantiles": {
+            "0": 450.0,
+            "0.05": 677.0,
+            "0.5": 677.0,
+            "0.95": 678.0,
+            "1": 678.0
+          },
+          "row_full_width_first": null,
+          "row_95pct_first": 447
+        },
+        "128": {
+          "bbox": [
+            11,
+            46,
+            2160,
+            678
+          ],
+          "columns_present": 2149,
+          "first_row_quantiles": {
+            "0": 46.0,
+            "0.05": 76.4,
+            "0.5": 285.0,
+            "0.95": 428.0,
+            "1": 660.0
+          },
+          "last_row_quantiles": {
+            "0": 454.0,
+            "0.05": 676.0,
+            "0.5": 676.0,
+            "0.95": 677.0,
+            "1": 677.0
+          },
+          "row_full_width_first": null,
+          "row_95pct_first": 448
+        },
+        "250": {
+          "bbox": [
+            13,
+            47,
+            2152,
+            677
+          ],
+          "columns_present": 2139,
+          "first_row_quantiles": {
+            "0": 47.0,
+            "0.05": 80.0,
+            "0.5": 289.0,
+            "0.95": 432.0,
+            "1": 442.0
+          },
+          "last_row_quantiles": {
+            "0": 295.0,
+            "0.05": 673.0,
+            "0.5": 675.0,
+            "0.95": 676.0,
+            "1": 676.0
+          },
+          "row_full_width_first": null,
+          "row_95pct_first": 451
+        },
+        "255": {
+          "bbox": [
+            16,
+            55,
+            2151,
+            677
+          ],
+          "columns_present": 479,
+          "first_row_quantiles": {
+            "0": 55.0,
+            "0.05": 151.0,
+            "0.5": 311.0,
+            "0.95": 675.0,
+            "1": 676.0
+          },
+          "last_row_quantiles": {
+            "0": 55.0,
+            "0.05": 151.0,
+            "0.5": 419.0,
+            "0.95": 675.0,
+            "1": 676.0
+          },
+          "row_full_width_first": null,
+          "row_95pct_first": null
+        }
+      }
+    },
+    {
+      "key": "midground",
+      "file": "mule-camp-dry-midground.png",
+      "width": 2172,
+      "height": 724,
+      "mode": "RGBA",
+      "sha256": "8175fa2d5bdeb0bfb6d48a00e4da113be023919aa7d84a31f2c47548e554ead3",
+      "bytes": 558723,
+      "alpha_min": 0,
+      "alpha_max": 255,
+      "transparent_pixels": 1357399,
+      "partial_pixels": 214798,
+      "opaque_pixels": 331,
+      "transparent_fraction": 0.8631954407171128,
+      "alpha_common_values": [
+        [
+          0,
+          1357399
+        ],
+        [
+          253,
+          125333
+        ],
+        [
+          252,
+          20411
+        ],
+        [
+          251,
+          12194
+        ],
+        [
+          1,
+          12036
+        ],
+        [
+          250,
+          7389
+        ],
+        [
+          2,
+          5140
+        ],
+        [
+          249,
+          3456
+        ]
+      ],
+      "bottom_row_alpha_min": 0,
+      "bottom_row_alpha_max": 0,
+      "red_fringe_diagnostic": {
+        "red_rgb_pixels": 331,
+        "red_pixels_alpha_ge128": 0,
+        "red_pixels_alpha_ge16": 0,
+        "red_alpha_max": 2
+      },
+      "threshold_geometry": {
+        "1": {
+          "bbox": [
+            0,
+            128,
+            2172,
+            702
+          ],
+          "columns_present": 2172,
+          "first_row_quantiles": {
+            "0": 128.0,
+            "0.05": 371.0,
+            "0.5": 650.0,
+            "0.95": 661.0,
+            "1": 676.0
+          },
+          "last_row_quantiles": {
+            "0": 685.0,
+            "0.05": 689.0,
+            "0.5": 691.0,
+            "0.95": 694.0,
+            "1": 701.0
+          },
+          "row_full_width_first": 676,
+          "row_95pct_first": 662
+        },
+        "16": {
+          "bbox": [
+            0,
+            372,
+            2172,
+            686
+          ],
+          "columns_present": 2172,
+          "first_row_quantiles": {
+            "0": 372.0,
+            "0.05": 377.0,
+            "0.5": 657.0,
+            "0.95": 663.0,
+            "1": 681.0
+          },
+          "last_row_quantiles": {
+            "0": 682.0,
+            "0.05": 683.0,
+            "0.5": 683.0,
+            "0.95": 684.0,
+            "1": 685.0
+          },
+          "row_full_width_first": 681,
+          "row_95pct_first": 663
+        },
+        "128": {
+          "bbox": [
+            0,
+            373,
+            2171,
+            685
+          ],
+          "columns_present": 2171,
+          "first_row_quantiles": {
+            "0": 373.0,
+            "0.05": 378.0,
+            "0.5": 659.0,
+            "0.95": 665.0,
+            "1": 682.0
+          },
+          "last_row_quantiles": {
+            "0": 682.0,
+            "0.05": 682.0,
+            "0.5": 683.0,
+            "0.95": 683.0,
+            "1": 684.0
+          },
+          "row_full_width_first": null,
+          "row_95pct_first": 665
+        },
+        "250": {
+          "bbox": [
+            1,
+            379,
+            2155,
+            683
+          ],
+          "columns_present": 2131,
+          "first_row_quantiles": {
+            "0": 379.0,
+            "0.05": 383.0,
+            "0.5": 660.0,
+            "0.95": 668.0,
+            "1": 681.0
+          },
+          "last_row_quantiles": {
+            "0": 669.0,
+            "0.05": 677.0,
+            "0.5": 681.0,
+            "0.95": 682.0,
+            "1": 682.0
+          },
+          "row_full_width_first": null,
+          "row_95pct_first": 669
+        },
+        "255": {
+          "bbox": [
+            34,
+            387,
+            2154,
+            683
+          ],
+          "columns_present": 257,
+          "first_row_quantiles": {
+            "0": 387.0,
+            "0.05": 518.2,
+            "0.5": 662.0,
+            "0.95": 681.0,
+            "1": 682.0
+          },
+          "last_row_quantiles": {
+            "0": 387.0,
+            "0.05": 532.0,
+            "0.5": 662.0,
+            "0.95": 682.0,
+            "1": 682.0
+          },
+          "row_full_width_first": null,
+          "row_95pct_first": null
+        }
+      }
+    },
+    {
+      "key": "floor",
+      "file": "mule-camp-dry-floor.png",
+      "width": 2172,
+      "height": 724,
+      "mode": "RGBA",
+      "sha256": "9125dd2f91c7219cedcdcaaad13d5449845579b3a9547c3521fbd4b503e50063",
+      "bytes": 2305089,
+      "alpha_min": 0,
+      "alpha_max": 255,
+      "transparent_pixels": 642123,
+      "partial_pixels": 930269,
+      "opaque_pixels": 136,
+      "transparent_fraction": 0.40833803913189465,
+      "alpha_common_values": [
+        [
+          0,
+          642123
+        ],
+        [
+          252,
+          455593
+        ],
+        [
+          253,
+          438145
+        ],
+        [
+          251,
+          17904
+        ],
+        [
+          1,
+          5148
+        ],
+        [
+          250,
+          3130
+        ],
+        [
+          2,
+          1802
+        ],
+        [
+          249,
+          1212
+        ]
+      ],
+      "bottom_row_alpha_min": 245,
+      "bottom_row_alpha_max": 253,
+      "red_fringe_diagnostic": {
+        "red_rgb_pixels": 18,
+        "red_pixels_alpha_ge128": 0,
+        "red_pixels_alpha_ge16": 0,
+        "red_alpha_max": 1
+      },
+      "threshold_geometry": {
+        "1": {
+          "bbox": [
+            0,
+            119,
+            2172,
+            724
+          ],
+          "columns_present": 2172,
+          "first_row_quantiles": {
+            "0": 119.0,
+            "0.05": 208.0,
+            "0.5": 296.0,
+            "0.95": 296.0,
+            "1": 297.0
+          },
+          "last_row_quantiles": {
+            "0": 723.0,
+            "0.05": 723.0,
+            "0.5": 723.0,
+            "0.95": 723.0,
+            "1": 723.0
+          },
+          "row_full_width_first": 299,
+          "row_95pct_first": 296
+        },
+        "16": {
+          "bbox": [
+            0,
+            299,
+            2172,
+            724
+          ],
+          "columns_present": 2172,
+          "first_row_quantiles": {
+            "0": 299.0,
+            "0.05": 299.0,
+            "0.5": 299.0,
+            "0.95": 299.0,
+            "1": 299.0
+          },
+          "last_row_quantiles": {
+            "0": 723.0,
+            "0.05": 723.0,
+            "0.5": 723.0,
+            "0.95": 723.0,
+            "1": 723.0
+          },
+          "row_full_width_first": 299,
+          "row_95pct_first": 299
+        },
+        "128": {
+          "bbox": [
+            0,
+            300,
+            2172,
+            724
+          ],
+          "columns_present": 2172,
+          "first_row_quantiles": {
+            "0": 300.0,
+            "0.05": 300.0,
+            "0.5": 300.0,
+            "0.95": 300.0,
+            "1": 300.0
+          },
+          "last_row_quantiles": {
+            "0": 723.0,
+            "0.05": 723.0,
+            "0.5": 723.0,
+            "0.95": 723.0,
+            "1": 723.0
+          },
+          "row_full_width_first": 300,
+          "row_95pct_first": 300
+        },
+        "250": {
+          "bbox": [
+            0,
+            300,
+            2172,
+            724
+          ],
+          "columns_present": 2172,
+          "first_row_quantiles": {
+            "0": 300.0,
+            "0.05": 300.0,
+            "0.5": 303.0,
+            "0.95": 304.0,
+            "1": 305.0
+          },
+          "last_row_quantiles": {
+            "0": 715.0,
+            "0.05": 723.0,
+            "0.5": 723.0,
+            "0.95": 723.0,
+            "1": 723.0
+          },
+          "row_full_width_first": 305,
+          "row_95pct_first": 304
+        },
+        "255": {
+          "bbox": [
+            0,
+            300,
+            2105,
+            301
+          ],
+          "columns_present": 136,
+          "first_row_quantiles": {
+            "0": 300.0,
+            "0.05": 300.0,
+            "0.5": 300.0,
+            "0.95": 300.0,
+            "1": 300.0
+          },
+          "last_row_quantiles": {
+            "0": 300.0,
+            "0.05": 300.0,
+            "0.5": 300.0,
+            "0.95": 300.0,
+            "1": 300.0
+          },
+          "row_full_width_first": null,
+          "row_95pct_first": null
+        }
+      },
+      "floor_anchor": {
+        "threshold": 128,
+        "row": 300,
+        "anchor_y": 0.4143646408839779,
+        "fraction": "300/724",
+        "all_columns_first_row_min": 300,
+        "all_columns_first_row_max": 300,
+        "alpha_min_below_boundary": 219,
+        "alpha_below128_below_boundary": 0,
+        "zero_alpha_below_boundary": 0
+      }
+    },
+    {
+      "key": "foreground",
+      "file": "mule-camp-dry-foreground.png",
+      "width": 2172,
+      "height": 724,
+      "mode": "RGBA",
+      "sha256": "13bdb3fa30e402f1d1c04653db7488e16dbcd0e47a3a8613cf1ca228f060194e",
+      "bytes": 464237,
+      "alpha_min": 0,
+      "alpha_max": 255,
+      "transparent_pixels": 1390734,
+      "partial_pixels": 181561,
+      "opaque_pixels": 233,
+      "transparent_fraction": 0.884393791398309,
+      "alpha_common_values": [
+        [
+          0,
+          1390734
+        ],
+        [
+          253,
+          110465
+        ],
+        [
+          252,
+          37244
+        ],
+        [
+          251,
+          6622
+        ],
+        [
+          1,
+          6348
+        ],
+        [
+          250,
+          2769
+        ],
+        [
+          2,
+          1945
+        ],
+        [
+          249,
+          1508
+        ]
+      ],
+      "bottom_row_alpha_min": 227,
+      "bottom_row_alpha_max": 254,
+      "red_fringe_diagnostic": {
+        "red_rgb_pixels": 882,
+        "red_pixels_alpha_ge128": 0,
+        "red_pixels_alpha_ge16": 0,
+        "red_alpha_max": 2
+      },
+      "threshold_geometry": {
+        "1": {
+          "bbox": [
+            0,
+            98,
+            2172,
+            724
+          ],
+          "columns_present": 2172,
+          "first_row_quantiles": {
+            "0": 98.0,
+            "0.05": 509.0,
+            "0.5": 665.5,
+            "0.95": 690.0,
+            "1": 693.0
+          },
+          "last_row_quantiles": {
+            "0": 723.0,
+            "0.05": 723.0,
+            "0.5": 723.0,
+            "0.95": 723.0,
+            "1": 723.0
+          },
+          "row_full_width_first": 694,
+          "row_95pct_first": 692
+        },
+        "16": {
+          "bbox": [
+            0,
+            502,
+            2172,
+            724
+          ],
+          "columns_present": 2172,
+          "first_row_quantiles": {
+            "0": 502.0,
+            "0.05": 525.0,
+            "0.5": 682.0,
+            "0.95": 693.0,
+            "1": 694.0
+          },
+          "last_row_quantiles": {
+            "0": 723.0,
+            "0.05": 723.0,
+            "0.5": 723.0,
+            "0.95": 723.0,
+            "1": 723.0
+          },
+          "row_full_width_first": 694,
+          "row_95pct_first": 693
+        },
+        "128": {
+          "bbox": [
+            0,
+            503,
+            2172,
+            724
+          ],
+          "columns_present": 2172,
+          "first_row_quantiles": {
+            "0": 503.0,
+            "0.05": 526.0,
+            "0.5": 683.0,
+            "0.95": 694.0,
+            "1": 695.0
+          },
+          "last_row_quantiles": {
+            "0": 723.0,
+            "0.05": 723.0,
+            "0.5": 723.0,
+            "0.95": 723.0,
+            "1": 723.0
+          },
+          "row_full_width_first": 695,
+          "row_95pct_first": 694
+        },
+        "250": {
+          "bbox": [
+            0,
+            504,
+            2172,
+            724
+          ],
+          "columns_present": 2172,
+          "first_row_quantiles": {
+            "0": 504.0,
+            "0.05": 530.0,
+            "0.5": 688.0,
+            "0.95": 696.0,
+            "1": 699.0
+          },
+          "last_row_quantiles": {
+            "0": 721.0,
+            "0.05": 723.0,
+            "0.5": 723.0,
+            "0.95": 723.0,
+            "1": 723.0
+          },
+          "row_full_width_first": 699,
+          "row_95pct_first": 696
+        },
+        "255": {
+          "bbox": [
+            0,
+            504,
+            2171,
+            697
+          ],
+          "columns_present": 219,
+          "first_row_quantiles": {
+            "0": 504.0,
+            "0.05": 601.5,
+            "0.5": 693.0,
+            "0.95": 694.0,
+            "1": 696.0
+          },
+          "last_row_quantiles": {
+            "0": 504.0,
+            "0.05": 601.5,
+            "0.5": 693.0,
+            "0.95": 694.0,
+            "1": 696.0
+          },
+          "row_full_width_first": null,
+          "row_95pct_first": null
+        }
+      }
+    }
+  ]
+}

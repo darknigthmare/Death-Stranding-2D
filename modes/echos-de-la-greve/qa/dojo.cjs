@@ -1,0 +1,143 @@
+const assert = require('node:assert/strict');
+const path = require('node:path');
+const {pathToFileURL} = require('node:url');
+const {chromium} = require('playwright');
+
+(async () => {
+  const browser = await chromium.launch({executablePath:process.env.PLAYWRIGHT_CHROMIUM_EXECUTABLE || undefined});
+  try {
+    const page = await browser.newPage({viewport:{width:700,height:850},hasTouch:true});
+    const errors = [];
+    page.on('pageerror', error => errors.push(error.message));
+    await page.addInitScript(() => {
+      let time=0, id=0;
+      const frames=new Map();
+      window.requestAnimationFrame=callback=>{frames.set(++id,callback); return id;};
+      window.cancelAnimationFrame=key=>frames.delete(key);
+      window.advanceDojo=count=>{
+        for (let i=0;i<count;i++) {
+          const callbacks=[...frames.values()];
+          frames.clear();
+          time+=1000/60+.000001;
+          for (const callback of callbacks) callback(time);
+        }
+      };
+    });
+    await page.goto(pathToFileURL(path.resolve(__dirname,'../index.html')).href);
+    const click=selector=>page.locator(selector).evaluate(el=>el.click());
+    const advance=count=>page.evaluate(count=>window.advanceDojo(count),count);
+    const status=()=>page.evaluate(()=>window.StrandFight.snapshot());
+    const mode=value=>page.locator('#dummy').selectOption(value);
+    await click('[data-mode="training"]');
+    await click('[data-act="start"]');
+    await page.locator('canvas').evaluate(canvas=>{
+      canvas.width=160; canvas.height=90; canvas.getContext('2d').scale(.125,.125);
+    });
+    await advance(74);
+    assert.deepEqual(errors,[]);
+    assert.equal(await page.locator('#dummy option[value="loop"]').evaluate(option=>option.disabled),true);
+    assert.equal(await page.locator('#dummyControls').isVisible(),false);
+
+    await mode('record');
+    assert.equal(await page.locator('#dummyControls').isVisible(),true);
+    await advance(4);
+    await page.keyboard.down('ArrowLeft');
+    await advance(7);
+    await page.keyboard.up('ArrowLeft');
+    const light=page.locator('#dummyControls [data-input="light"]');
+    const point=await light.evaluate(button=>{
+      button.scrollIntoView({block:'center'});
+      const r=button.getBoundingClientRect();
+      return {x:r.x+r.width/2,y:r.y+r.height/2};
+    });
+    await page.touchscreen.tap(point.x,point.y);
+    await advance(1);
+    assert.equal((await status()).fighters[1].action,'light','quick touch tap between two steps');
+    await advance(28);
+    await page.keyboard.down('u');
+    await advance(7);
+    assert.equal((await status()).fighters[1].guard,true);
+    const recorded=(await status()).training.frames;
+    assert.equal(recorded,47);
+    await mode('loop');
+    await page.keyboard.up('u');
+    assert.equal(await page.locator('#dummyControls').isVisible(),false);
+
+    await click('[data-act="resetTraining"]');
+    assert.equal((await status()).training.frames,47,'reset retains the take');
+    assert.equal((await status()).training.position,0);
+    await advance(66);
+    assert.equal((await status()).phase,'fight');
+    const origin=(await status()).fighters[1].x;
+    await page.keyboard.down('ArrowRight');
+    await advance(4);
+    await page.keyboard.up('ArrowRight');
+    assert.equal((await status()).fighters[1].x,origin,'silent opening and live J2 locked during playback');
+    await advance(7);
+    assert.ok((await status()).fighters[1].x<origin,'replayed movement');
+    await advance(1);
+    assert.equal((await status()).fighters[1].action,'light','touch is replayed at its original frame');
+    await advance(31);
+    assert.equal((await status()).fighters[1].guard,true);
+    await page.keyboard.press('Escape');
+    const paused=await status();
+    await advance(140);
+    assert.deepEqual((await status()).training,paused.training,'pause freezes playback');
+    await page.keyboard.press('Escape');
+    await advance(2);
+    assert.equal((await status()).fighters[1].guard,true,'held playback control survives pause');
+    await advance(3);
+    assert.equal((await status()).training.position,47);
+    await advance(1);
+    assert.equal((await status()).training.position,1);
+    assert.equal((await status()).fighters[1].guard,false,'last held control releases across loop boundary');
+    await advance(11);
+    assert.equal((await status()).fighters[1].action,'light','second loop repeats the same short tap');
+
+    await mode('record');
+    assert.equal((await status()).training.frames,0,'a new take replaces the old sequence');
+    await page.keyboard.down('u');
+    await advance(3);
+    await page.keyboard.press('Escape');
+    await page.keyboard.up('u');
+    await advance(65);
+    assert.equal((await status()).training.frames,3,'pause freezes capture');
+    await page.keyboard.press('Escape');
+    await advance(2);
+    assert.equal((await status()).training.frames,4);
+    await click('[data-act="resetTraining"]');
+    const reset=await status();
+    assert.equal(reset.training.dummy,'idle');
+    assert.equal(reset.training.frames,4,'reset finalizes an active recording');
+    assert.equal(reset.training.position,0);
+    assert.equal(reset.fighters[1].guard,false);
+    await mode('loop');
+    await advance(66);
+    await advance(1);
+    assert.equal((await status()).fighters[1].guard,true);
+    await advance(3);
+    assert.equal((await status()).fighters[1].guard,false,'pause release is part of the take');
+    await mode('idle');
+    await click('[data-act="resetTraining"]');
+    await advance(66);
+    await click('#dojoTiming');
+    assert.equal(await page.locator('#dojoData').isVisible(),true);
+    const row=()=>page.locator('#timingJ1 td').allTextContents();
+    await page.keyboard.press('h');
+    await advance(1);
+    const startup=await row();
+    assert.deepEqual(startup.slice(1),['16','1','23','Démarrage · 1','—']);
+    await advance(15);
+    const active=await row();
+    assert.deepEqual(active.slice(1),['16','1','23','Activité · 16','Émission de 76 pas']);
+    await advance(1);
+    assert.equal((await row())[4],'Récupération · 17');
+    await advance(42);
+    assert.equal((await row())[4],'Repos');
+    assert.equal((await row())[0],startup[0],'last move remains visible at rest');
+    await click('#dojoTiming');
+    assert.equal(await page.locator('#dojoData').isVisible(),false);
+    assert.deepEqual(errors,[]);
+    console.log('OK — Dojo à 60 Hz, clavier et tactile J2, pause, replacement, réenregistrement, boucle et données réelles du coup et du projectile.');
+  } finally { await browser.close(); }
+})().catch(error=>{console.error(error);process.exitCode=1;});

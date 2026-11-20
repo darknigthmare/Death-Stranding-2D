@@ -1,0 +1,67 @@
+{
+  "date": "2026-11-19",
+  "review": "Reference-conditioned fan-game layers; canonical 1:1 validation remains pending.",
+  "assets": [
+    {
+      "id": "mountain-pass",
+      "kind": "sky",
+      "tool": "image_gen.imagegen",
+      "reference": "modes/echos-de-la-greve/assets/stages/mountain-pass.webp",
+      "prompt": "Use case: background-extraction. Production art for Mountain Knot Pass, a side-view 2D fighting stage in the user's Death Stranding 2D fan game. Image 1 is the existing reference/edit target. Preserve its realistic finely painted materials, glacial slate-blue shadows and faint dusty pink dusk light, geography and calm mood. Exactly ONE layer per image; no collage, no sheet, no text, no labels, no people, no logo, no watermark. Create only an OPAQUE SKY BACKPLATE, wide 16:9 requested 2048x1152. Remove every mountain, glacier, dark ridge, rock, antenna, bunker and snowfield. Reconstruct the same atmospheric lavender-grey overcast sky through all removed areas, with quiet peach pink dusk glow on the lower right and cooler slate clouds on the left. Hazy air extends continuously to the bottom. No ground, horizon silhouette, water, sun disc or individual snow particles. This is the farthest empty sky behind four other separate game layers.",
+      "transparent": false,
+      "generatedPath": "/workspace/scratch/9203aa9ebf25/generated_images/exec-a3875a27-30a7-4757-965c-f582b646ca7a.png",
+      "file": "modes/echos-de-la-greve/assets/stages/mountain-pass-sky.png",
+      "status": "generated",
+      "dimensions": {
+        "width": 1672,
+        "height": 941
+      },
+      "sha256": "a4937e5df5fc8fd0fc2e4d5d04aaa390898e978f7230a6fc2eec2470941da67c",
+      "mode": "RGB"
+    },
+    {
+      "id": "mountain-pass",
+      "kind": "distant",
+      "tool": "image_gen.imagegen",
+      "reference": "modes/echos-de-la-greve/assets/stages/mountain-pass.webp",
+      "prompt": "Use case: background-extraction. Production art for Mountain Knot Pass, a side-view 2D fighting stage in the user's Death Stranding 2D fan game. Image 1 is the existing reference/edit target. Preserve its realistic finely painted materials, glacial slate-blue shadows and faint dusty pink dusk light, geography and calm mood. Exactly ONE layer per image; no collage, no sheet, no text, no labels, no people, no logo, no watermark. Create only the DISTANT LANDSCAPE on genuinely transparent alpha, an extremely wide 3:1 image requested 2172x724. Reconstruct the iconic snow-covered jagged glacial mountains rising highest on the left, stepping down in rocky terraces and crevassed blue glacier toward the open right. Include the small low concrete bunker embedded in the extreme left cliff with tiny warm recessed window and slender antenna. Preserve reference lighting. Horizon silhouette: all sky outside/above the silhouette transparent; NO opaque haze matte or checkerboard. No playable flat foreground, no nearby rocks, no floor, no foreground props. The bottom only a narrow base of distant low snow ridge. Keep center's upper half open and all major buildings very small at extreme left. Transparent sky clean even around antenna. A single coherent distant panorama strip.",
+      "transparent": true,
+      "generatedPath": "/workspace/scratch/9203aa9ebf25/generated_images/exec-472fb20b-8a0b-4684-95d5-f820ff9501bc.png",
+      "file": "modes/echos-de-la-greve/assets/stages/mountain-pass-distant.png",
+      "status": "generated",
+      "dimensions": {
+        "width": 2172,
+        "height": 724
+      },
+      "sha256": "ec7cbab1c1600642b64b4cab234310b1ce20e6346d354dbd785532c314bd3a1c",
+      "mode": "RGBA",
+      "alpha": {
+        "transparentFraction": 0.46052916068903066,
+        "firstMajorityOpaqueRow": 347,
+        "firstFullOpaqueRow": 562
+      }
+    },
+    {
+      "id": "mountain-pass",
+      "kind": "floor",
+      "tool": "image_gen.imagegen",
+      "reference": "modes/echos-de-la-greve/assets/stages/mountain-pass.webp",
+      "prompt": "Use case: background-extraction. Production art for Mountain Knot Pass, a side-view 2D fighting stage in the user's Death Stranding 2D fan game. Image 1 is the existing reference/edit target. Preserve its realistic finely painted materials, glacial slate-blue shadows and faint dusty pink dusk light, geography and calm mood. Exactly ONE layer per image; no collage, no sheet, no text, no labels, no people, no logo, no watermark. Create only the separate PLAYABLE FLOOR layer, genuinely transparent alpha, very wide 3:1 image requested 2172x724. Material: compacted powder snow with fine wind-swept lateral striations, subtle granular ice and quiet blue-grey shadows with very faint pink ambient dusk light. TOP EDGE must be a PERFECTLY LEVEL horizontal straight line at exactly 24% of image height. Above that line every pixel fully transparent. Below that line continuous opaque snow surface completely fills the image edge-to-edge and to the bottom. No edge taper, no fading sides, no holes. A broad level side-view combat lane with subtly receding fine texture, no horizon, no scenery, no mountains, no boulders, no footprints, no poles, no props, no vertical platform thickness, no floating island. Gentle neutral contrast to keep fighters readable.",
+      "transparent": true,
+      "generatedPath": "/workspace/scratch/9203aa9ebf25/generated_images/exec-8fe4c736-f562-4e42-af25-21ae6541fecc.png",
+      "file": "modes/echos-de-la-greve/assets/stages/mountain-pass-floor.png",
+      "status": "generated",
+      "dimensions": {
+        "width": 2172,
+        "height": 724
+      },
+      "sha256": "69d7b282c976a5fed9ac25c336a96fcee443618d00519d28ec05482a022f77de",
+      "mode": "RGBA",
+      "alpha": {
+        "transparentFraction": 0.20072647355086842,
+        "firstMajorityOpaqueRow": 194,
+        "firstFullOpaqueRow": 195
+      }
+    }
+  ]
+}

@@ -1,0 +1,106 @@
+{
+  "date": "2026-11-19",
+  "base_commit": "5d9dcf81c1a51ad246b6f0fc58cdeeca480f79fb",
+  "passed": true,
+  "scope": {
+    "locations": 10,
+    "stage_configurations": 11,
+    "stage_layers": 55,
+    "new_original_images": 6,
+    "unique_registered_images_decoded": 168,
+    "main_render_cases": 88,
+    "original_duel_render_cases": 48,
+    "original_duel_ui_rematches": 12,
+    "original_duel_story_cases": 2,
+    "audio_profiles": 11,
+    "new_gameplay_previews": 34
+  },
+  "executed_checks": [
+    {
+      "command": "node modes/echos-de-la-greve/qa/assets.cjs",
+      "exit_code": 0,
+      "stdout": "Ressources · 168 chemins uniques présents et images décodées.\nSauts · 8 combattants : poses livrées dessinées des deux côtés puis retour au sol.\nAccessoires · empreinte de Higgs, tablier de Mama et remplacement du colis après un impact réel.\nDécors · 11 arènes avec plans livrés et vitesses ordonnées.\n"
+    },
+    {
+      "command": "ARENA_SCREENSHOTS=docs/combat/apercus/stage-extension-20261119 node modes/echos-de-la-greve/qa/arenes-canvas.cjs",
+      "exit_code": 0,
+      "stdout": "OK shore — 8 cases, actual renderer, five layers, floor and parallax.\nOK terminal — 8 cases, actual renderer, five layers, floor and parallax.\nOK battlefield — 8 cases, actual renderer, five layers, floor and parallax.\nOK mule-camp — 8 cases, actual renderer, five layers, floor and parallax.\nOK mule-camp-dry — 8 cases, actual renderer, five layers, floor and parallax.\nOK heartman-lab — 8 cases, actual renderer, five layers, floor and parallax.\nOK mama-workshop — 8 cases, actual renderer, five layers, floor and parallax.\nOK ruined-factory — 8 cases, actual renderer, five layers, floor and parallax.\nOK timefall-shelter — 8 cases, actual renderer, five layers, floor and parallax.\nOK tar-basin — 8 cases, actual renderer, five layers, floor and parallax.\nOK mountain-pass — 8 cases, actual renderer, five layers, floor and parallax.\nPASS 11 stages / 88 rendering cases. Browser interface not exercised.\n",
+      "report": "../apercus/stage-extension-20261119/validation.json"
+    },
+    {
+      "command": "node modes/echos-de-la-greve/qa/ambiances.cjs",
+      "exit_code": 0,
+      "stdout": "Ambiances · 11 profils, localisation, volume, sources bornées, pause/reprise, arrêt, fin silencieuse, replay, effets réduits, rollback complet et autoplay vérifiés.\nInterface · curseurs sélection/pause/commandes, volume transmis au duel, mise à jour et persistance après rechargement vérifiés.\nRéseau · préférences son/volume/effets, reconstruction sans checkpoint, connexion interrompue, erreur, onglet, résultat divergent, replay et sortie vérifiés sans pause de simulation.\n",
+      "report": "ambience-qa-20261119.json"
+    },
+    {
+      "command": "node modes/echos-de-la-greve/qa/duel-originel-arenes.cjs",
+      "exit_code": 0,
+      "report": "../apercus/duel-originel-arenes-20261119/validation.json"
+    },
+    {
+      "command": "node modes/echos-de-la-greve/qa/reseau-logique.cjs",
+      "exit_code": 0,
+      "stdout": "Relais · création, deux places, choix, lancement, accusés, reprise, résultat et fermeture vérifiés.\nMoteur · état complet identique après correction d’une commande tardive, au pas 200.\nRessources réseau · tenues et pièces imbriquées servies, empreinte récursive stable, sources et traversées refusées.\n"
+    },
+    {
+      "command": "node --check (14 changed JavaScript files)",
+      "exit_code": 0
+    },
+    {
+      "command": "git diff --check",
+      "exit_code": 0
+    }
+  ],
+  "visual_review": {
+    "dry_camp": "Both directions reviewed independently; continuous terrain, grounded feet, clear center, low foreground props, no colored alpha fringe.",
+    "corrected_joins": [
+      "shore",
+      "terminal",
+      "battlefield",
+      "mountain-pass"
+    ],
+    "other_existing_stages": "Wet MULE camp, Heartman, Mama, factory, Timefall shelter and tar basin reviewed without a blocking terrain join issue.",
+    "original_duel": "All six locations reviewed; shore, terminal and battlefield reviewed again after shared-anchor correction.",
+    "raster_join_min_alpha": {
+      "shore": 252,
+      "terminal": 255,
+      "battlefield": 255,
+      "mule-camp-dry": 255,
+      "mountain-pass": 252
+    }
+  },
+  "audio_review_fixes": [
+    "All combat voices are released when presenting an ended state reached by silent rollback.",
+    "A rewind without a retained checkpoint rebuilds with audio suspended and resumes only when the corrected frame is presented."
+  ],
+  "source_sha256": {
+    "modes/echos-de-la-greve/content.js": "9f09411c33c30ae8f9147c1a7c8373ad11148f791fefa2d072b7b79dc7f91342",
+    "modes/echos-de-la-greve/assets.js": "59cb4f4175b72bba0afeb8d3e1b1e658b605d6ebb640069ac4944536963c3637",
+    "modes/echos-de-la-greve/fight.js": "4218267264988b5374685191702c20fca1ab3119c874911b293fb2ba8418e05f",
+    "modes/echos-de-la-greve/duel-originel/moteur.js": "d6338297ef5a2795836d8846c663077f9334245eb6ac808440a00068138fb47a",
+    "modes/echos-de-la-greve/duel-originel/scene.js": "9171f8fe9f66808b2c6e4f3ebbc079baf716476d839876cc110a627746f7a622",
+    "modes/echos-de-la-greve/duel-originel/interface.js": "47938173dd52f0d0329c96551ccc63b69f97b8c8faa9b51f639faa2ba6881e87",
+    "modes/echos-de-la-greve/duel-originel/index.html": "a0b893f5756442396ac25c3f777369b74c21d9adf35f3895b3fa716118aff3a3",
+    "modes/echos-de-la-greve/duel-originel/style.css": "6d35c78317f62c8ace804839782a9242f841cfbe7f60b7d68087a6b6ac9c166d",
+    "modes/echos-de-la-greve/qa/duel-originel-arenes.cjs": "55af817ab43f703e4dfddac913a3347d158128ebbf057e43c4da33d066664c2d",
+    "modes/echos-de-la-greve/app.js": "a9292c41d59799111d713871f8af6e015e6ad22cd912832a13d188e9b013ec1c",
+    "modes/echos-de-la-greve/netplay.js": "d0dbdd7d76c91fd7a47578cb76c04c4f9021bc58e371318753fc930449f43911",
+    "modes/echos-de-la-greve/style.css": "c2865a13f24b1a075365edec0ae53c02506d8ed1af034dea9dad34ee67ea18be",
+    "modes/echos-de-la-greve/qa/son.cjs": "d8b4d0e68978fbc397907ace3c15a9049f35cba62314d1ec048539110764e2b0",
+    "modes/echos-de-la-greve/qa/ambiances.cjs": "347417966873e5555c5c12206ac2bbc7df754c89894ece093c866f759b994d6b",
+    "modes/echos-de-la-greve/qa/arenes-canvas.cjs": "4fa0719e773a8e32e56425b9d5be6c4d1abc9db76aac5748c03a55917ffb401b",
+    "modes/echos-de-la-greve/qa/arenes.cjs": "5cfa5661b3b35b83cb186deaa95f04f12bf879fb9fbfb3fd54c013e092cab9a1",
+    "modes/echos-de-la-greve/qa/assets.cjs": "660056f0fed5f64696e8f694d49f17411f09e1522e388e09c26601384e4e31c8",
+    "modes/echos-de-la-greve/qa/reseau-logique.cjs": "0dccc39c477a96a1393c5eac074876cd70814cb339fea001e9aaa402ed0f2f6c",
+    "modes/echos-de-la-greve/qa/techniques.cjs": "f5375f8acfca0df38bb55c67cc1170479b047464a4873f3ad60391d978af9fd7"
+  },
+  "original_duel_engine_unchanged": true,
+  "limits": [
+    "Chromium cannot start because its profile socket is denied by the runtime.",
+    "Rendering is verified with native Canvas; interface handlers use DOM fixtures. Native browser layout, focus, pointer capture and accessibility tree are not verified.",
+    "Audio ownership, envelopes, scheduling and preferences are verified with a controlled WebAudio graph; no listening test was performed.",
+    "Historical browser-only son.cjs, arenes.cjs and techniques.cjs are updated where required but were not executed in this session.",
+    "Visual source fidelity against official game scenes is not certified by these tests."
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "project": "Death Stranding 2D — Échos de la Grève",
+  "audit_date": "2026-11-19",
+  "incident": "Workspace reset after storage exhaustion; previous scratch directories are no longer accessible.",
+  "last_observed_local_commit_before_incident": "cf4ed8e",
+  "last_observed_remote_commit": "ec3d5fda28041b5672d023c89b74ea809cfd3c56",
+  "persistent_checks": {
+    "exact_filename_searches": ["exec-b72d7256-72fe-4b62-8a5e-d3ddb09c82f9.png", "exec-bcf646fe-d2b7-4400-a0ca-b15e9201618f.png", "exec-120eb692-1a8b-4360-aa3c-38cd34fd5fd1.png", "exec-adffda56-2927-49a8-b465-737641871bb3.png", "BIBLE_COMBAT.md", "pivots.json"],
+    "matching_files": 0,
+    "all_files_since_2026_11_18": 28,
+    "most_recent_timestamp": "2026-11-18T13:55:30.773778+00:00",
+    "death_stranding_folder_files": 184,
+    "death_stranding_combat_matches": 0,
+    "latest_campaign_archive": "Death_Stranding_v0.58_LEVEL_DESIGN_REPAIR.zip"
+  },
+  "recovered_files": [],
+  "unrecovered": {
+    "additional_generated_png": 21,
+    "local_commit_production_sources": 76,
+    "mama_webp": 31,
+    "mama_metadata_and_native_source_files": 3
+  },
+  "notes": ["The latest campaign archive is already represented in GitHub and was not downloaded again.", "Newly generated replacements must be described as new creations, never as recovered original files.", "Historical image observations and diff excerpts survive in the conversation; image binary data does not."]
+}

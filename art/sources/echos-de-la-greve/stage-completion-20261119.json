@@ -1,0 +1,415 @@
+{
+  "date": "2026-11-19",
+  "repository": "darknigthmare/Death-Stranding-2D",
+  "pull_request": 1,
+  "initial_publication_commit": "97a9b210c3ce30bbf50a2ca6271d33f9ab80842f",
+  "scope": "Complete all five independent layers for the ten existing fighting arenas",
+  "before": {
+    "available_layers": 39,
+    "required_layers": 50,
+    "missing": 11
+  },
+  "after": {
+    "available_layers": 50,
+    "required_layers": 50,
+    "missing": 0
+  },
+  "generated_count": 11,
+  "generated_bytes": 20091683,
+  "floor_anchor_method": "Median first source row with alpha >= 128, normalized by the native image height. Native pixels and alpha retained. Distant/midground bases adjusted after composition review to overlap the playable floor.",
+  "assets": [
+    {
+      "stage": "mule-camp",
+      "layer": "sky",
+      "file": "modes/echos-de-la-greve/assets/stages/mule-camp-sky.png",
+      "generator": "image_gen.imagegen",
+      "generator_mode": "built-in",
+      "generated_image_id": "exec-28ed3324-cbed-4bfb-ae9c-43e1525f86f9.png",
+      "generated_after_initial_publication": true,
+      "reference": "modes/echos-de-la-greve/assets/stages/mule-camp.webp",
+      "reference_sha256": "7dd8b42e158b4b9e01c062ab508c14e994e2053345ed33840f807d481984b632",
+      "prompt": "Use case: background-extraction. Production raster art for the Camp des MULEs side-view 2D fighting arena in the Death Stranding 2D fan game. Input image 1 is the existing arena panorama and the sole visual reference/edit target. Preserve the existing realistic detailed painted rendering, restrained grey-green and mustard-yellow palette, rain-worn materials, overcast storm light and small warm opening in the upper-left clouds. Preserve the landmarks that remain in this requested layer; do not invent new buildings, vehicles or characters. Output exactly ONE independent game layer, one continuous image; no collage, no panels, no sprite sheet, no text, labels, captions, watermark or UI. Primary request: extract and reconstruct ONLY the farthest sky background plate. Keep the reference blue-slate and grey storm clouds with the small muted warm cream break in the upper-left, and faint cold atmospheric haze near the bottom. Remove every cliff, mountain, waterfall, mossy land, tent, pole, scanner beacon, cable, cargo case, water, ground and all objects. Extend only cloud and atmospheric haze through the removed areas, edge-to-edge. Wide 16:9 composition, requested 2048 by 1152 pixels. Fully opaque sky plate with no horizon edge and no transparency. Do not create another finished camp scene; this image must contain only clouds and haze.",
+      "transparent_background": false,
+      "requested_size": [
+        2048,
+        1152
+      ],
+      "actual": {
+        "file": "modes/echos-de-la-greve/assets/stages/mule-camp-sky.png",
+        "dimensions": [
+          1672,
+          941
+        ],
+        "sha256": "5839a3e01a2803f08157f802f97af4ed7cbc1a890715f1fdaa176b0b21655c48",
+        "bytes": 1604660,
+        "mode": "RGB",
+        "alpha_min": 255,
+        "alpha_max": 255,
+        "transparent_fraction": 0.0
+      },
+      "pixels_modified_after_generation": false,
+      "exact_original_copy_verified": true,
+      "visual_reference_review": "Matches the existing fan-game panorama; official canonical 1:1 comparison remains unverified."
+    },
+    {
+      "stage": "mule-camp",
+      "layer": "distant",
+      "file": "modes/echos-de-la-greve/assets/stages/mule-camp-distant.png",
+      "generator": "image_gen.imagegen",
+      "generator_mode": "built-in",
+      "generated_image_id": "exec-33d6d4f3-3569-4b0f-939c-f8f4d427d37a.png",
+      "generated_after_initial_publication": true,
+      "reference": "modes/echos-de-la-greve/assets/stages/mule-camp.webp",
+      "reference_sha256": "7dd8b42e158b4b9e01c062ab508c14e994e2053345ed33840f807d481984b632",
+      "prompt": "Use case: background-extraction. Production raster art for the Camp des MULEs side-view 2D fighting arena in the Death Stranding 2D fan game. Input image 1 is the existing arena panorama and the sole visual reference/edit target. Preserve the existing realistic detailed painted rendering, restrained grey-green and mustard-yellow palette, rain-worn materials, overcast storm light and small warm opening in the upper-left clouds. Preserve the landmarks that remain in this requested layer; do not invent new buildings, vehicles or characters. Output exactly ONE independent game layer, one continuous image; no collage, no panels, no sprite sheet, no text, labels, captions, watermark or UI. Primary request: isolate and reconstruct the distant landscape and camp structures as ONE transparent parallax strip. Preserve the stepped moss-covered basalt cliffs highest at the far left, the lower remote ridge and narrow white waterfall right of center, the two weathered mustard-yellow/beige tents occupying the left third and the slender black scanner beacon with its two pale horizontal lights at the far right. These shapes and their relative left-right arrangement come from the reference; retain them faithfully. Include only a narrow low distant moss/gravel footing to connect their bases. Remove all sky, all open foreground ground and puddles, loose delivery crates, the yellow case at the beacon base, and every separate foreground prop: those belong to other layers. The center must stay unobstructed by camp equipment. Wide horizontal 3:1 canvas, requested 2172 by 724 pixels, consistent level side-scroller eye-height camera, no tilt, no isometric view. Keep tent/beacon bases close to the lower 96 percent baseline. True RGBA alpha transparency everywhere outside the physical silhouette, above cliffs, between poles and guy ropes, and beneath the narrow footing. No opaque sky, colored matte, gray haze rectangle, shadow blanket, vignette or checkerboard. Fine atmospheric mist may remain only inside the distant cliff/waterfall silhouettes, never outside them.",
+      "transparent_background": true,
+      "requested_size": [
+        2172,
+        724
+      ],
+      "actual": {
+        "file": "modes/echos-de-la-greve/assets/stages/mule-camp-distant.png",
+        "dimensions": [
+          2172,
+          724
+        ],
+        "sha256": "770ac508008aca3b1c4691b9a7e63300fa8c5358239750d67af7035168e3eba4",
+        "bytes": 1626774,
+        "mode": "RGBA",
+        "alpha_min": 0,
+        "alpha_max": 255,
+        "transparent_fraction": 0.47495752062920343
+      },
+      "pixels_modified_after_generation": false,
+      "exact_original_copy_verified": true,
+      "visual_reference_review": "Matches the existing fan-game panorama; official canonical 1:1 comparison remains unverified."
+    },
+    {
+      "stage": "mule-camp",
+      "layer": "floor",
+      "file": "modes/echos-de-la-greve/assets/stages/mule-camp-floor.png",
+      "generator": "image_gen.imagegen",
+      "generator_mode": "built-in",
+      "generated_image_id": "exec-5b4e4276-110a-419b-961b-6fa608d1356a.png",
+      "generated_after_initial_publication": true,
+      "reference": "modes/echos-de-la-greve/assets/stages/mule-camp.webp",
+      "reference_sha256": "7dd8b42e158b4b9e01c062ab508c14e994e2053345ed33840f807d481984b632",
+      "prompt": "Use case: background-extraction. Production raster art for the Camp des MULEs side-view 2D fighting arena in the Death Stranding 2D fan game. Input image 1 is the existing arena panorama and the sole visual reference/edit target. Preserve the existing realistic detailed painted rendering, restrained grey-green and mustard-yellow palette, rain-worn materials, overcast storm light and small warm opening in the upper-left clouds. Preserve the landmarks that remain in this requested layer; do not invent new buildings, vehicles or characters. Output exactly ONE independent game layer, one continuous image; no collage, no panels, no sprite sheet, no text, labels, captions, watermark or UI. Primary request: create ONLY the continuous playable FLOOR strip from the reference foreground: rain-dark volcanic charcoal gravel, compacted muddy rock and very shallow puddles with subdued warm grey reflections, sparse tiny moss between stones. Exclude every tent, cliff, mountain, waterfall, sky, scanner, post, cable, cargo case, grass tuft taller than the ankle and other object. Wide 3:1 image, requested 2172 by 724 pixels. Critical gameplay geometry: the back edge of the floor is a perfectly horizontal straight line from left edge to right edge at y=217 pixels, approximately 30 percent down the canvas. The entire area above that line is truly transparent alpha. Beneath it, one continuous flat ground surface fills every pixel all the way to left, right and bottom edges, opaque except antialiasing on the topmost boundary. Keep terrain flat and walkable at a common height, only fine surface texture, no hills, ramp, slope, pit, ledge, floating platform, isolated chunks or scenic horizon. Low side-on game camera with shallow perspective depth, no top-down map or diagonal camera. Do not add an exposed geological cross-section or rocky platform front face: it is an uninterrupted wet gravel ground plane receding a little behind the horizontal fighter contact line.",
+      "transparent_background": true,
+      "requested_size": [
+        2172,
+        724
+      ],
+      "actual": {
+        "file": "modes/echos-de-la-greve/assets/stages/mule-camp-floor.png",
+        "dimensions": [
+          2172,
+          724
+        ],
+        "sha256": "77fc1a7e0fef92200e66a9a464ea46b90dab00f03a23c1d647bc2711d045c809",
+        "bytes": 2103001,
+        "mode": "RGBA",
+        "alpha_min": 0,
+        "alpha_max": 255,
+        "transparent_fraction": 0.4118298688481223,
+        "floor_anchor_row": 302,
+        "floor_anchor_y": 0.4171270718232044,
+        "floor_edge_row_range": [
+          302,
+          302
+        ]
+      },
+      "pixels_modified_after_generation": false,
+      "exact_original_copy_verified": true,
+      "visual_reference_review": "Matches the existing fan-game panorama; official canonical 1:1 comparison remains unverified."
+    },
+    {
+      "stage": "tar-basin",
+      "layer": "sky",
+      "file": "modes/echos-de-la-greve/assets/stages/tar-basin-sky.png",
+      "generator": "image_gen.imagegen",
+      "generator_mode": "built-in",
+      "generated_image_id": "exec-af7b8fe0-d394-477c-ab57-5d222431df0c.png",
+      "generated_after_initial_publication": true,
+      "reference": "modes/echos-de-la-greve/assets/stages/tar-basin.webp",
+      "reference_sha256": "cba707410739041c21754e5aae64337a02c9d0270304d1b4c3bc35c6e315aa07",
+      "prompt": "Use case: background-extraction. Asset type: exactly ONE independent parallax layer for the Bassin de goudron side-view fighting arena in the user's Death Stranding 2D fan game. Image 1 is the existing panorama reference/edit target. Preserve its finely painted realistic materials, slate grey atmosphere, muted warm late-evening light and location-specific industrial design. No characters, no text, no logo, no watermark, no collage, no spritesheet. Create only the OPAQUE SKY BACKPLATE. Wide 16:9 full-bleed, requested 2048 by 1152. Remove every crane, cable, building, mountain, waterfall, ridge, water surface, quay and rock. Fill all removed areas with the same continuous slate-grey layered storm cloud sky, darker grey on the upper left and muted peach-orange dusk glow toward the lower center-right. Soft diffuse cloudy air continues to the bottom edge. No sun disc, horizon line, silhouettes, landscape, sea, ground, precipitation, vignette or transparency. Maintain the original restrained exposure; this is a quiet distant backdrop behind four separate layers, not a complete finished environment.",
+      "transparent_background": false,
+      "requested_size": [
+        2048,
+        1152
+      ],
+      "actual": {
+        "file": "modes/echos-de-la-greve/assets/stages/tar-basin-sky.png",
+        "dimensions": [
+          1672,
+          941
+        ],
+        "sha256": "33a74b93c3b12e32c69e5a2959ae8f78e463bd4395fabedcb5059b233c8de922",
+        "bytes": 1565578,
+        "mode": "RGB",
+        "alpha_min": 255,
+        "alpha_max": 255,
+        "transparent_fraction": 0.0
+      },
+      "pixels_modified_after_generation": false,
+      "exact_original_copy_verified": true,
+      "visual_reference_review": "Matches the existing fan-game panorama; official canonical 1:1 comparison remains unverified."
+    },
+    {
+      "stage": "tar-basin",
+      "layer": "distant",
+      "file": "modes/echos-de-la-greve/assets/stages/tar-basin-distant.png",
+      "generator": "image_gen.imagegen",
+      "generator_mode": "built-in",
+      "generated_image_id": "exec-f3ac1a1b-b347-4632-8dd9-18dcc2c62da9.png",
+      "generated_after_initial_publication": true,
+      "reference": "modes/echos-de-la-greve/assets/stages/tar-basin.webp",
+      "reference_sha256": "cba707410739041c21754e5aae64337a02c9d0270304d1b4c3bc35c6e315aa07",
+      "prompt": "Use case: background-extraction. Asset type: exactly ONE independent parallax layer for the Bassin de goudron side-view fighting arena in the user's Death Stranding 2D fan game. Image 1 is the existing panorama reference/edit target. Preserve its finely painted realistic materials, slate grey atmosphere, muted warm late-evening light and location-specific industrial design. No characters, no text, no logo, no watermark, no collage, no spritesheet. Create only the DISTANT INDUSTRIAL LANDSCAPE layer, extremely wide 3:1 composition, requested 2172 by 724. Preserve the recognizable large rusted gantry crane on the far right with its trussed upper boom, small cabin, hanging cables and pier framework; smaller cranes receding toward the center-left; weathered grey basalt cliffs and slender waterfalls along the far left. A narrow band of distant glossy black tar basin spans the lower quarter, with subdued reflected silhouettes and faint muted peach highlights. Keep the central upper half mostly open and airy. Entire sky above and between silhouettes is genuine fully transparent alpha, including holes through crane frameworks and gaps around cables. No sky pixels or opaque grey matte. Remove the nearby concrete quay, front retaining curb, mooring bollards, chains, close basalt rocks and every foreground prop. No playable floor or large ground platform. One coherent distant landscape strip, with all crane tops and cables fully contained and small transparent padding above. Match the source lighting and keep reflected gold very subdued so combat effects stay readable.",
+      "transparent_background": true,
+      "requested_size": [
+        2172,
+        724
+      ],
+      "actual": {
+        "file": "modes/echos-de-la-greve/assets/stages/tar-basin-distant.png",
+        "dimensions": [
+          2172,
+          724
+        ],
+        "sha256": "842e2af7a567df14653ad339cd88b12ccf9ce05e52eb8d4913b0c051ba8a996c",
+        "bytes": 1449568,
+        "mode": "RGBA",
+        "alpha_min": 0,
+        "alpha_max": 255,
+        "transparent_fraction": 0.483200299136168
+      },
+      "pixels_modified_after_generation": false,
+      "exact_original_copy_verified": true,
+      "visual_reference_review": "Matches the existing fan-game panorama; official canonical 1:1 comparison remains unverified."
+    },
+    {
+      "stage": "tar-basin",
+      "layer": "floor",
+      "file": "modes/echos-de-la-greve/assets/stages/tar-basin-floor.png",
+      "generator": "image_gen.imagegen",
+      "generator_mode": "built-in",
+      "generated_image_id": "exec-7dcb8036-b7ea-42c0-bb99-367441e11ec7.png",
+      "generated_after_initial_publication": true,
+      "reference": "modes/echos-de-la-greve/assets/stages/tar-basin.webp",
+      "reference_sha256": "cba707410739041c21754e5aae64337a02c9d0270304d1b4c3bc35c6e315aa07",
+      "prompt": "Use case: background-extraction. Asset type: exactly ONE independent parallax layer for the Bassin de goudron side-view fighting arena in the user's Death Stranding 2D fan game. Image 1 is the existing panorama reference/edit target. Preserve its finely painted realistic materials, slate grey atmosphere, muted warm late-evening light and location-specific industrial design. No characters, no text, no logo, no watermark, no collage, no spritesheet. Create only the PLAYABLE FLOOR: the flat worn dark grey concrete quay from the reference, wet with restrained cold reflections and a faint muted peach light reflection toward the right. Extremely wide 3:1 canvas, requested 2172 by 724. The TOP EDGE is a perfectly straight horizontal line exactly 24 percent down the canvas. Every pixel ABOVE that line is fully transparent alpha. Every pixel BELOW that line is continuous opaque concrete surface filling the entire width and extending completely to the bottom edge. Subtle fine fissures and broad slab seams, unobtrusive low-contrast texture, side-view combat ground with gently receding detail. No raised curb, vertical front face, floating platform, bevel, edge taper, transparency holes, side fading, water basin, landscape, crane, chain, bollard, rocks, debris, grass or other props. The fighters stand on solid concrete, not liquid tar. Keep the center particularly clear and preserve a perfectly level continuous upper edge.",
+      "transparent_background": true,
+      "requested_size": [
+        2172,
+        724
+      ],
+      "actual": {
+        "file": "modes/echos-de-la-greve/assets/stages/tar-basin-floor.png",
+        "dimensions": [
+          2172,
+          724
+        ],
+        "sha256": "faee362fe6538a96cdf7c385df545224725f7008b012801bda1fb51d7cbebe9a",
+        "bytes": 2215733,
+        "mode": "RGBA",
+        "alpha_min": 0,
+        "alpha_max": 254,
+        "transparent_fraction": 0.27793908916089255,
+        "floor_anchor_row": 213,
+        "floor_anchor_y": 0.2941988950276243,
+        "floor_edge_row_range": [
+          213,
+          213
+        ]
+      },
+      "pixels_modified_after_generation": false,
+      "exact_original_copy_verified": true,
+      "visual_reference_review": "Matches the existing fan-game panorama; official canonical 1:1 comparison remains unverified."
+    },
+    {
+      "stage": "heartman-lab",
+      "layer": "distant",
+      "file": "modes/echos-de-la-greve/assets/stages/heartman-lab-distant.png",
+      "generator": "image_gen.imagegen",
+      "generator_mode": "built-in",
+      "generated_image_id": "exec-7a655126-3f1f-4b5b-a981-d261a45a59fd.png",
+      "generated_after_initial_publication": true,
+      "reference": "modes/echos-de-la-greve/assets/stages/heartman-lab.webp",
+      "reference_sha256": "2c4738cd4aee6e151673d6fc119a3e5cdfe511f21bb83a8189779f22c69b189f",
+      "prompt": "Use case: background-extraction. Production art for the user's Death Stranding 2D Échos de la Grève side-view fighting arena. Image 1 is the existing panorama, reference and edit target. Preserve its detailed realistic painted materials, color temperature, exposure and light direction. Exactly ONE separate parallax layer per image; no characters, no collage, no spritesheet, no labels, no text, no logos, no watermark. Wide horizontal 3:1 output, requested 2172 by 724 pixels. Actual transparent alpha wherever the scene is removed; never an opaque checkerboard, black background, haze matte or vignette. Isolate and reconstruct the background furnishings of Heartman's room: the tall dark walnut bookcase at the far left with closely packed old books and records and a small trailing plant; the low walnut record-player console with paired small speakers further left of center; a narrow sheer neutral curtain at the right side; the low dark leather lounge chair and tiny side table at the far right. Retain the reference's understated warm amber lamp lighting on wood and cooler blue daylight on the right. Keep the central fighting sightline predominantly open. The left bookcase may rise to the top edge, while the other silhouettes remain low. Remove the rear concrete wall, all ceiling, window glass, mountains and lake, every inch of floor and the medical trolley/ECG monitor (supplied by other layers). Transparent gaps must remain between every piece of furniture and around all silhouettes. Objects share a level bottom baseline very near the bottom of the strip, with feet intact and small clear side margins. Preserve coherent human scale. This layer is furniture only, no solid room background or shadow rectangle.",
+      "transparent_background": true,
+      "requested_size": [
+        2172,
+        724
+      ],
+      "actual": {
+        "file": "modes/echos-de-la-greve/assets/stages/heartman-lab-distant.png",
+        "dimensions": [
+          2172,
+          724
+        ],
+        "sha256": "92bcfada8bf99682ca39a280a3ae8765d696100023fbc543f3ee23f874644bd4",
+        "bytes": 1344606,
+        "mode": "RGBA",
+        "alpha_min": 0,
+        "alpha_max": 255,
+        "transparent_fraction": 0.5800653470081296
+      },
+      "pixels_modified_after_generation": false,
+      "exact_original_copy_verified": true,
+      "visual_reference_review": "Matches the existing fan-game panorama; official canonical 1:1 comparison remains unverified."
+    },
+    {
+      "stage": "heartman-lab",
+      "layer": "floor",
+      "file": "modes/echos-de-la-greve/assets/stages/heartman-lab-floor.png",
+      "generator": "image_gen.imagegen",
+      "generator_mode": "built-in",
+      "generated_image_id": "exec-96ec8e6b-ca7b-436a-96ed-a8f662eb1588.png",
+      "generated_after_initial_publication": true,
+      "reference": "modes/echos-de-la-greve/assets/stages/heartman-lab.webp",
+      "reference_sha256": "2c4738cd4aee6e151673d6fc119a3e5cdfe511f21bb83a8189779f22c69b189f",
+      "prompt": "Use case: background-extraction. Production art for the user's Death Stranding 2D Échos de la Grève side-view fighting arena. Image 1 is the existing panorama, reference and edit target. Preserve its detailed realistic painted materials, color temperature, exposure and light direction. Exactly ONE separate parallax layer per image; no characters, no collage, no spritesheet, no labels, no text, no logos, no watermark. Wide horizontal 3:1 output, requested 2172 by 724 pixels. Actual transparent alpha wherever the scene is removed; never an opaque checkerboard, black background, haze matte or vignette. Create ONLY the independent playable FLOOR layer. Its back/top edge is a perfectly level horizontal line at 24 percent of the canvas height. Every pixel above that line is fully transparent. Every pixel below that line is fully opaque, continuous floor surface through the bottom edge and both side edges. No holes, no edge fading or tapered ends. Side-view fighting-game ground with subtle receding texture, not a top-down plan. No vertical platform front face or floating island. No walls, ceiling, horizon, room, distant landscape, furniture, props, debris piles or upright objects. Match the reference's smooth dark charcoal-brown interior floor, very fine worn surface texture and restrained seams, with soft warm amber lamp reflections toward the left and cooler grey reflected window light toward the right. Keep the central lane quiet, level and readable. No strong checkerboard, no invented high-contrast parquet pattern, no floor tiles or stripes. The ground remains opaque even within dark shadows and reflections; transparency is only above the straight top edge.",
+      "transparent_background": true,
+      "requested_size": [
+        2172,
+        724
+      ],
+      "actual": {
+        "file": "modes/echos-de-la-greve/assets/stages/heartman-lab-floor.png",
+        "dimensions": [
+          2172,
+          724
+        ],
+        "sha256": "98d6604156dc8ec02939c5693bec09c19eade3cde45844e1ffbea7b6cd3e7fbd",
+        "bytes": 1822402,
+        "mode": "RGBA",
+        "alpha_min": 0,
+        "alpha_max": 255,
+        "transparent_fraction": 0.30827622783187325,
+        "floor_anchor_row": 225,
+        "floor_anchor_y": 0.31077348066298344,
+        "floor_edge_row_range": [
+          225,
+          225
+        ]
+      },
+      "pixels_modified_after_generation": false,
+      "exact_original_copy_verified": true,
+      "visual_reference_review": "Matches the existing fan-game panorama; official canonical 1:1 comparison remains unverified."
+    },
+    {
+      "stage": "ruined-factory",
+      "layer": "floor",
+      "file": "modes/echos-de-la-greve/assets/stages/ruined-factory-floor.png",
+      "generator": "image_gen.imagegen",
+      "generator_mode": "built-in",
+      "generated_image_id": "exec-b52f5760-78be-4eff-b265-8b2bb80ff61c.png",
+      "generated_after_initial_publication": true,
+      "reference": "modes/echos-de-la-greve/assets/stages/ruined-factory.webp",
+      "reference_sha256": "1bede323390ef4bab27583248a055dacab8bcd9ed8eefb8d43ea1bf7d7cfef63",
+      "prompt": "Use case: background-extraction. Production art for the user's Death Stranding 2D Échos de la Grève side-view fighting arena. Image 1 is the existing panorama, reference and edit target. Preserve its detailed realistic painted materials, color temperature, exposure and light direction. Exactly ONE separate parallax layer per image; no characters, no collage, no spritesheet, no labels, no text, no logos, no watermark. Wide horizontal 3:1 output, requested 2172 by 724 pixels. Actual transparent alpha wherever the scene is removed; never an opaque checkerboard, black background, haze matte or vignette. Create ONLY the independent playable FLOOR layer. Its back/top edge is a perfectly level horizontal line at 24 percent of the canvas height. Every pixel above that line is fully transparent. Every pixel below that line is fully opaque, continuous floor surface through the bottom edge and both side edges. No holes, no edge fading or tapered ends. Side-view fighting-game ground with subtle receding texture, not a top-down plan. No vertical platform front face or floating island. No walls, ceiling, horizon, room, distant landscape, furniture, props, debris piles or upright objects. Match only the weathered wet industrial concrete floor visible in the reference: broad subtle slab seams, shallow damp scuffs, a few fine cracks, very sparse dark moss staining. Cool blue-grey reflected skylight comes from the left; narrow soft amber wet reflections remain on the far right. Use restrained low-contrast fine texture across the clear central combat lane. The surface is almost level with shallow glossy damp patches, no deep water, no large puddle boundaries, no rocks or objects. No splashes and no drawn rain particles; the game supplies weather. Maintain opaque concrete through both bottom corners and the entire bottom edge.",
+      "transparent_background": true,
+      "requested_size": [
+        2172,
+        724
+      ],
+      "actual": {
+        "file": "modes/echos-de-la-greve/assets/stages/ruined-factory-floor.png",
+        "dimensions": [
+          2172,
+          724
+        ],
+        "sha256": "e3495ab82c5235b50cb6a90c05bbbe9c4a43833118813e391a155eb3edc5b5da",
+        "bytes": 2158938,
+        "mode": "RGBA",
+        "alpha_min": 0,
+        "alpha_max": 255,
+        "transparent_fraction": 0.2561645961152997,
+        "floor_anchor_row": 202,
+        "floor_anchor_y": 0.27900552486187846,
+        "floor_edge_row_range": [
+          202,
+          202
+        ]
+      },
+      "pixels_modified_after_generation": false,
+      "exact_original_copy_verified": true,
+      "visual_reference_review": "Matches the existing fan-game panorama; official canonical 1:1 comparison remains unverified."
+    },
+    {
+      "stage": "timefall-shelter",
+      "layer": "distant",
+      "file": "modes/echos-de-la-greve/assets/stages/timefall-shelter-distant.png",
+      "generator": "image_gen.imagegen",
+      "generator_mode": "built-in",
+      "generated_image_id": "exec-cbbde3a4-f243-4ba7-bb3f-ffb6d0b82e63.png",
+      "generated_after_initial_publication": true,
+      "reference": "modes/echos-de-la-greve/assets/stages/timefall-shelter.webp",
+      "reference_sha256": "e2b400fce5ec7580db9a14cfa518c353c4b5f6ee52445a3352245019df5a1c4c",
+      "prompt": "Use case: background-extraction. Asset type: ONE independent transparent distant parallax layer for the Timefall shelter side-view fighting arena in the user's Death Stranding 2D fan game. Image 1 is the existing panorama, the visual reference and edit target. Preserve its realistic detailed painted rendering, restrained cold grey-green palette, wet dark metal and mossy volcanic basalt, with subtle amber light under the canopy. Extract and reconstruct only the distant landscape and the rain shelter structure. Keep the recognizable broad two-wing canopy on the left, its supporting vertical pylon about one quarter of the way across the image, its thin braces and cables, and the small subdued amber strip lights. Preserve the tall stepped mossy basalt cliff at far left, lower receding valley ridges and thin watercourse, and the small distant arched bridge and faint beacon on the right. Keep these landmarks in the same left-right arrangement as the reference. Remove the entire sky, every delivery case, loose bag, close rock, foreground equipment and the entire open playable ground. Retain only a thin distant footing beneath the shelter and valley. The middle and right upper silhouette should remain airy and open. Extremely wide horizontal 3:1 composition, requested 2172 by 724 pixels, one coherent strip with level side-scroller eye-height camera, no isometric view. The shelter base is close to the lower 96 percent baseline. True transparent RGBA alpha above and around the landscape, around the canopy and between its braces where no landscape is behind them; no opaque sky or rectangular haze background. Keep atmospheric haze only inside the physical landscape silhouette. No floating isolated debris, no opaque shadow sheet, no vignette, no checkerboard, no text, no label, no logo, no watermark, no characters, no collage or sprite sheet. Do not regenerate a whole finished environment; produce only this single distant layer.",
+      "transparent_background": true,
+      "requested_size": [
+        2172,
+        724
+      ],
+      "actual": {
+        "file": "modes/echos-de-la-greve/assets/stages/timefall-shelter-distant.png",
+        "dimensions": [
+          2172,
+          724
+        ],
+        "sha256": "5790b4dafcd9c07bb140c854a8ff1f7b110dbb4153bd64ac63e4677692517964",
+        "bytes": 1728775,
+        "mode": "RGBA",
+        "alpha_min": 0,
+        "alpha_max": 255,
+        "transparent_fraction": 0.4306435243124447
+      },
+      "pixels_modified_after_generation": false,
+      "exact_original_copy_verified": true,
+      "visual_reference_review": "Matches the existing fan-game panorama; official canonical 1:1 comparison remains unverified."
+    },
+    {
+      "stage": "timefall-shelter",
+      "layer": "floor",
+      "file": "modes/echos-de-la-greve/assets/stages/timefall-shelter-floor.png",
+      "generator": "image_gen.imagegen",
+      "generator_mode": "built-in",
+      "generated_image_id": "exec-f8cff9c2-5391-408d-ab77-32555f2bfb11.png",
+      "generated_after_initial_publication": true,
+      "reference": "modes/echos-de-la-greve/assets/stages/timefall-shelter.webp",
+      "reference_sha256": "e2b400fce5ec7580db9a14cfa518c353c4b5f6ee52445a3352245019df5a1c4c",
+      "prompt": "Use case: background-extraction. Asset type: ONE independent playable floor layer for the Timefall shelter side-view fighting arena in the user's Death Stranding 2D fan game. Image 1 is the existing panorama, the visual reference and edit target. Preserve its finely detailed realistic wet materials and subdued grey-blue lighting. Reconstruct only the continuous flat ground from the foreground: rain-dark charcoal volcanic gravel and compacted rocky mud, with shallow low-contrast puddles, fine grit and restrained muted amber reflected light toward the left where the shelter lamps would be. No shelter, canopy, pylon, lamp, cliff, bridge, mountain, sky, distant valley, cargo, cable, rock pile or separate prop. Extremely wide horizontal 3:1 canvas, requested 2172 by 724 pixels. Critical gameplay geometry: one perfectly horizontal upper ground edge at 24 percent of the canvas height, edge to edge. Every pixel above that line is fully transparent alpha. Every pixel below is continuous opaque ground surface all the way to the bottom and both side edges. No transparency holes, fading sides or tapered ends. Low side-on game camera with subtle receding ground detail, never a top-down map. The fighter contact line is flat and uninterrupted; no slope, ramp, pit, exposed cross-section, floating platform, vertical front face or high obstacle. Keep the central fighting lane visually quiet and keep all puddles shallow; they are textured ground, not transparent cutouts. Exactly one floor image, no text, labels, watermark, characters, collage or spritesheet.",
+      "transparent_background": true,
+      "requested_size": [
+        2172,
+        724
+      ],
+      "actual": {
+        "file": "modes/echos-de-la-greve/assets/stages/timefall-shelter-floor.png",
+        "dimensions": [
+          2172,
+          724
+        ],
+        "sha256": "97199aee5942155ecaf30fa3570a54b009f3406f1dbc16049c898ffbeb702a6b",
+        "bytes": 2471648,
+        "mode": "RGBA",
+        "alpha_min": 0,
+        "alpha_max": 254,
+        "transparent_fraction": 0.3076466682946186,
+        "floor_anchor_row": 235,
+        "floor_anchor_y": 0.324585635359116,
+        "floor_edge_row_range": [
+          234,
+          235
+        ]
+      },
+      "pixels_modified_after_generation": false,
+      "exact_original_copy_verified": true,
+      "visual_reference_review": "Matches the existing fan-game panorama; official canonical 1:1 comparison remains unverified."
+    }
+  ]
+}

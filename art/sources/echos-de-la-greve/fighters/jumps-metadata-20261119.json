@@ -1,0 +1,71 @@
+[
+  {
+    "id": "higgs",
+    "path": "modes/echos-de-la-greve/assets/fighters/higgs-jump.png",
+    "source": "art/sources/echos-de-la-greve/fighters/higgs-jump.png",
+    "width": 1199,
+    "height": 1312,
+    "alpha_bbox_gt_8": [
+      12,
+      17,
+      1182,
+      1258
+    ],
+    "alpha_bbox_gt_128": [
+      12,
+      17,
+      1181,
+      1257
+    ],
+    "fully_transparent_pixels": 860337,
+    "sha256": "c3c0291cd6fd86d10c601ec3289bebc918f8d7837db89d99c99cc5ae91fcf673",
+    "pose_count": 1,
+    "notes": "Native generator PNG copied without resizing, crop or alpha manipulation. RGB colors behind alpha=0 are invisible in the game."
+  },
+  {
+    "id": "heartman",
+    "path": "modes/echos-de-la-greve/assets/fighters/heartman-jump.png",
+    "source": "art/sources/echos-de-la-greve/fighters/heartman-jump.png",
+    "width": 1024,
+    "height": 1536,
+    "alpha_bbox_gt_8": [
+      200,
+      37,
+      829,
+      1394
+    ],
+    "alpha_bbox_gt_128": [
+      201,
+      38,
+      828,
+      1393
+    ],
+    "fully_transparent_pixels": 1156802,
+    "sha256": "07c073a4ecf11451bb4f6c4b1ff6a11ee0575a77b8d070bfc0d9b415bbaa5336",
+    "pose_count": 1,
+    "notes": "Native generator PNG copied without resizing, crop or alpha manipulation. RGB colors behind alpha=0 are invisible in the game."
+  },
+  {
+    "id": "diehardman",
+    "path": "modes/echos-de-la-greve/assets/fighters/diehardman-jump.png",
+    "source": "art/sources/echos-de-la-greve/fighters/diehardman-jump.png",
+    "width": 1064,
+    "height": 1478,
+    "alpha_bbox_gt_8": [
+      132,
+      24,
+      899,
+      1217
+    ],
+    "alpha_bbox_gt_128": [
+      132,
+      25,
+      899,
+      1216
+    ],
+    "fully_transparent_pixels": 1150216,
+    "sha256": "db3002c367ac91da72870ac57becc3e77110b01f24b235699271ffc666438f37",
+    "pose_count": 1,
+    "notes": "Native generator PNG copied without resizing, crop or alpha manipulation. RGB colors behind alpha=0 are invisible in the game."
+  }
+]

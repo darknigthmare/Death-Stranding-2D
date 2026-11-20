@@ -1,0 +1,31 @@
+:root {color-scheme:dark;font:16px/1.5 system-ui,sans-serif;background:#10181a;color:#eaf0eb}
+* {box-sizing:border-box}
+body {margin:0;min-height:100vh;background:linear-gradient(140deg,#243a3b,#10191c 41%,#172728)}
+main {max-width:1020px;margin:auto;padding:clamp(16px,4vw,48px)}
+header {border-bottom:1px solid #54736e;margin-bottom:18px}
+h1 {font-size:clamp(2.05rem,6vw,4rem);margin:.15em 0;color:#eff2de;line-height:1.17}
+h2 {font-size:1.35rem;margin:.1em 0 .4em}
+section {margin:16px 0 22px;padding:clamp(12px,2vw,26px);background:#182528;border:1px solid #3d5856;border-radius:6px}
+p {margin:.45em 0 1em}
+a,summary {color:#c4d7c6}
+button,input,select {font:inherit;border:1px solid #69827e;border-radius:4px;padding:.5em .8em;margin:4px 4px 4px 0}
+button {font-weight:650;color:#142222;background:#c6d2b1;cursor:pointer}
+button:disabled {opacity:.52;cursor:default}
+:focus-visible {outline:3px solid #e7b574;outline-offset:2px}
+input,select {background:#102021;color:#eef2ed;max-width:100%}
+label {display:inline-flex;gap:8px;align-items:center;flex-wrap:wrap}
+form,#arena,#picks {margin-top:12px}
+#invite {width:min(100%,27rem)}
+.row {display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
+#status,#ping {color:#d6dda6}
+canvas {display:block;width:100%;height:auto;background:#101b1e}
+#controls {display:flex;flex-wrap:wrap;margin:8px 0}
+#controls button {touch-action:none;min-width:42px;background:#263b40;color:#dce6d9}
+pre {white-space:pre-wrap;overflow-wrap:anywhere;user-select:all}
+details {margin:10px 0}
+[hidden] {display:none!important}
+@media (max-width:550px) {
+  main,section {padding:12px}
+  label {display:flex}
+  #controls button {padding:.35rem .5rem}
+}

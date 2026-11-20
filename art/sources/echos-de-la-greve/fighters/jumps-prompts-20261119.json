@@ -1,0 +1,37 @@
+{
+  "date": "2026-11-19",
+  "mode": "built-in image_gen",
+  "review": "Each final PNG is one airborne pose, not a complete animation. Wardrobe continuity checked against local references; canonical 1:1 fidelity remains unverified.",
+  "assets": [
+    {
+      "id": "higgs",
+      "prompt": "Use case: identity-preserve. Asset type: one full-body 2D fighting-game jump sprite on a genuinely transparent background. Input image 1 is the existing Higgs stance sprite and the strict reference for costume, color, proportions and painted cel-shaded style; input image 2 is supporting identity/detail reference. Change the pose of image 1 into a convincing airborne jump apex, strict side profile facing RIGHT. Whole character from hood to boot soles stays visible with 10% empty transparent margin. Front knee lifted and bent, rear leg folded downward/back, both feet clearly airborne. Arms balance naturally in a guarded pose; cape trails left with believable weight. Preserve the gold segmented mask and black visor, black hood with gold handprint, gold edge and blue hem on black cape, mustard yellow suit, chest pod, straps/pouches, black gloves and heavy boots. Keep the exact recognizable costume, do not redesign or add equipment. Draw only ONE character and ONE pose. High-detail hand-painted 2D UHD game art, clean dark contour, readable silhouette. True alpha outside the character, no ground, no contact shadow, no ambient gray halo, no background, no fake checkerboard, no letters or watermark, no other figures or motion trails. Identity and costume preservation are the priority.",
+      "references": [
+        "modes/echos-de-la-greve/assets/fighters/higgs-stance.webp",
+        "modes/echos-de-la-greve/assets/fighters/higgs-portrait.webp"
+      ],
+      "transparent_background": true,
+      "output": "modes/echos-de-la-greve/assets/fighters/higgs-jump.png"
+    },
+    {
+      "id": "heartman",
+      "prompt": "Use case: identity-preserve. Asset type: one individual full-body 2D fighting-game jump sprite on a genuinely transparent background. Input image 1 is Heartman's existing stance and the exact wardrobe/proportion reference; image 2 is a supporting portrait identity reference. Change only the pose into a modest airborne hop near the apex, strict side profile facing RIGHT, whole character with 10% transparent margin. Both feet lifted, front knee bent and raised, rear leg tucked slightly backward, torso upright, forearms balanced forward without covering the amber chest device. Preserve his recognizable face, short swept brown hair, dark rectangular glasses, blue blazer with turned-up sleeves over light gray shirt, ochre/orange shoulder harness and chest-mounted amber defibrillator with cyan light, metallic upper-arm band, dark gloves, wrist device, charcoal trousers and blue sneakers with white soles. Match the detailed painted/cel-shaded 2D sprite style of image 1; clean readable outline, no photographic background. One character, one pose, no alternate views. Remove all background/halo seen around the old reference: new output must have actual alpha transparency with no floor, no shadow, no gray haze, no checkerboard image, no text, no watermark. Keep anatomy natural and all costume details consistent.",
+      "references": [
+        "modes/echos-de-la-greve/assets/fighters/heartman-stance.webp",
+        "modes/echos-de-la-greve/assets/fighters/heartman-portrait.webp"
+      ],
+      "transparent_background": true,
+      "output": "modes/echos-de-la-greve/assets/fighters/heartman-jump.png"
+    },
+    {
+      "id": "diehardman",
+      "prompt": "Use case: identity-preserve. Asset type: one individual full-body 2D fighting-game jump sprite, genuinely transparent background. Input image 1 is existing Die-Hardman stance and strict reference for silhouette, anatomy proportions, geometric cel-shaded style and clothing; image 2 is supporting mask/face/collar reference. Repose this same character in an airborne jump apex, strict side profile facing RIGHT: front knee raised, rear lower leg bent backward, both shoes lifted, arms in controlled close guard. Show entire head, hands and shoes with at least 10% transparent margin. Preserve dark brown skin at ear/neck, short textured black hair, angular black/gray skull-like full face mask and its straps/vents, formal charcoal business suit, white shirt, black tie, small gold lapel pin, pale pocket square, dark gloves and formal black shoes. Keep existing proportions and restrained graphic painted cel shading, with crisp dark outlines and the same costume; do not replace with armor, weapons, hat, cloak or different mask. One character, one pose. Real alpha transparency everywhere outside silhouette: no floor, no ground shadow, no gray halo, no background, no checkerboard texture, no motion trail, no text or watermark.",
+      "references": [
+        "modes/echos-de-la-greve/assets/fighters/diehardman-stance.webp",
+        "modes/echos-de-la-greve/assets/fighters/diehardman-portrait.webp"
+      ],
+      "transparent_background": true,
+      "output": "modes/echos-de-la-greve/assets/fighters/diehardman-jump.png"
+    }
+  ]
+}

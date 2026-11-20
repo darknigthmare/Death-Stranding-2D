@@ -1,0 +1,216 @@
+{
+  "date": "2026-11-19",
+  "renderer": "@napi-rs/canvas; unmodified fight.js",
+  "browser_verified": false,
+  "stages": 10,
+  "cases": 80,
+  "results": [
+    {
+      "stage": "shore",
+      "cases": 8,
+      "layers": [
+        "assets/stages/shore-sky.png",
+        "assets/stages/shore-distant.png",
+        "assets/stages/shore-midground.png",
+        "assets/stages/shore-floor.png",
+        "assets/stages/shore-foreground.webp"
+      ],
+      "passed": true
+    },
+    {
+      "stage": "terminal",
+      "cases": 8,
+      "layers": [
+        "assets/stages/terminal-sky.png",
+        "assets/stages/terminal-distant.png",
+        "assets/stages/terminal-midground.png",
+        "assets/stages/terminal-floor.png",
+        "assets/stages/terminal-foreground.webp"
+      ],
+      "passed": true
+    },
+    {
+      "stage": "battlefield",
+      "cases": 8,
+      "layers": [
+        "assets/stages/battlefield-sky.png",
+        "assets/stages/battlefield-distant.png",
+        "assets/stages/battlefield-midground.png",
+        "assets/stages/battlefield-floor.png",
+        "assets/stages/battlefield-foreground.webp"
+      ],
+      "passed": true
+    },
+    {
+      "stage": "mule-camp",
+      "cases": 8,
+      "layers": [
+        "assets/stages/mule-camp-sky.png",
+        "assets/stages/mule-camp-distant.png",
+        "assets/stages/mule-camp-midground.png",
+        "assets/stages/mule-camp-floor.png",
+        "assets/stages/mule-camp-foreground.webp"
+      ],
+      "passed": true
+    },
+    {
+      "stage": "heartman-lab",
+      "cases": 8,
+      "layers": [
+        "assets/stages/heartman-lab-sky.png",
+        "assets/stages/heartman-lab-distant.png",
+        "assets/stages/heartman-lab-midground.png",
+        "assets/stages/heartman-lab-floor.png",
+        "assets/stages/heartman-lab-foreground.webp"
+      ],
+      "passed": true
+    },
+    {
+      "stage": "mama-workshop",
+      "cases": 8,
+      "layers": [
+        "assets/stages/mama-workshop-sky.png",
+        "assets/stages/mama-workshop-distant.png",
+        "assets/stages/mama-workshop-midground.png",
+        "assets/stages/mama-workshop-floor.png",
+        "assets/stages/mama-workshop-foreground.webp"
+      ],
+      "passed": true
+    },
+    {
+      "stage": "ruined-factory",
+      "cases": 8,
+      "layers": [
+        "assets/stages/ruined-factory-sky.png",
+        "assets/stages/ruined-factory-distant.png",
+        "assets/stages/ruined-factory-midground.png",
+        "assets/stages/ruined-factory-floor.png",
+        "assets/stages/ruined-factory-foreground.webp"
+      ],
+      "passed": true
+    },
+    {
+      "stage": "timefall-shelter",
+      "cases": 8,
+      "layers": [
+        "assets/stages/timefall-shelter-sky.png",
+        "assets/stages/timefall-shelter-distant.png",
+        "assets/stages/timefall-shelter-midground.png",
+        "assets/stages/timefall-shelter-floor.png",
+        "assets/stages/timefall-shelter-foreground.webp"
+      ],
+      "passed": true
+    },
+    {
+      "stage": "tar-basin",
+      "cases": 8,
+      "layers": [
+        "assets/stages/tar-basin-sky.png",
+        "assets/stages/tar-basin-distant.png",
+        "assets/stages/tar-basin-midground.png",
+        "assets/stages/tar-basin-floor.png",
+        "assets/stages/tar-basin-foreground.webp"
+      ],
+      "passed": true
+    },
+    {
+      "stage": "mountain-pass",
+      "cases": 8,
+      "layers": [
+        "assets/stages/mountain-pass-sky.png",
+        "assets/stages/mountain-pass-distant.png",
+        "assets/stages/mountain-pass-midground.png",
+        "assets/stages/mountain-pass-floor.png",
+        "assets/stages/mountain-pass-foreground.webp"
+      ],
+      "passed": true
+    }
+  ],
+  "source_sha256": {
+    "modes/echos-de-la-greve/assets.js": "d3e9136ea018bd96b73bdc692f362575479d7dcac65e4cd9b5f53b68bdeab439",
+    "modes/echos-de-la-greve/fight.js": "d2969a9e76d2eda94dcbb738bfd31c8dff622ed9add8afee7f14a7f4987561a3",
+    "modes/echos-de-la-greve/qa/arenes-canvas.cjs": "56bebd77371c087d169028e6f944765a31abc96b345b17076868de65ed54e372"
+  },
+  "previews": [
+    {
+      "file": "battlefield-left.webp",
+      "sha256": "6472c42470ddd27098482319fbc72265b297719df42b78c6c0ecfa9cc617fb56"
+    },
+    {
+      "file": "battlefield-right.webp",
+      "sha256": "6ba80f1c20165f995ee8207d0a66a003b5e31a5049961a7841d1cb7d245f435d"
+    },
+    {
+      "file": "heartman-lab-left.webp",
+      "sha256": "c46d2e7235dbd50efeb4874335c455009f9ec8414ba679195ef412ecef34924f"
+    },
+    {
+      "file": "heartman-lab-right.webp",
+      "sha256": "a5ddd65a68e61d7a6ecc4e9c5f28688d572dafbd9c7a3b294a8d4b184e435c8c"
+    },
+    {
+      "file": "mama-workshop-left.webp",
+      "sha256": "03889dc881f14caa6927c851fa40f38e35410c13be5a39f4d55eff50506525bc"
+    },
+    {
+      "file": "mama-workshop-right.webp",
+      "sha256": "cc3c7b8d1621ae28349b20bdd007bb48b30c0ce1a9d554dd2c2c4b44da8c0c4b"
+    },
+    {
+      "file": "mountain-pass-left.webp",
+      "sha256": "1ca36aabd3ac9bfa7521d030c102bd697eaa817d2c73e9450125181bac578f2e"
+    },
+    {
+      "file": "mountain-pass-right.webp",
+      "sha256": "25ec7747e1f9cf7ea6e001b91291f3dae77b42a109cb6457c08aff2b1b6f104d"
+    },
+    {
+      "file": "mule-camp-left.webp",
+      "sha256": "093a27b820138a2925895400e8147f8a47d3e4b2d80e4a695488d8efca0da5de"
+    },
+    {
+      "file": "mule-camp-right.webp",
+      "sha256": "b0a48213c8fa1af9361d2743b381065538c87ac904847ed6babbfc25cacf1f6b"
+    },
+    {
+      "file": "ruined-factory-left.webp",
+      "sha256": "25f1a24b5f6cad88a3e483ddc5b2cc4c2310fd056fa03ed85cfa63aa915cca3f"
+    },
+    {
+      "file": "ruined-factory-right.webp",
+      "sha256": "265e4f46f0e668443dc9a891d1e42fb253d2dc1f2dae84619e27e0a3c5dc67ed"
+    },
+    {
+      "file": "shore-left.webp",
+      "sha256": "56202cc50ff0b736c5392ea4349251e162c7492b773552b183ba58c97c7026ca"
+    },
+    {
+      "file": "shore-right.webp",
+      "sha256": "b48b5fb9823cc2ab8b8b4c8b7f3f632e31a2e133a38574fbc9d4c088c9b4fcd7"
+    },
+    {
+      "file": "tar-basin-left.webp",
+      "sha256": "0def1d5c28c6df2495ee116d888ba4544cd0e27165ad869d3cbaba9ba14df463"
+    },
+    {
+      "file": "tar-basin-right.webp",
+      "sha256": "963e8d6f1ea910b79c721f0b5b51ee357ad554c2478eef0007c49294d7ade8e4"
+    },
+    {
+      "file": "terminal-left.webp",
+      "sha256": "20fc4585c93f6703984aea9cc3d1bbaa00f4dd385072fe94e801666169ae2524"
+    },
+    {
+      "file": "terminal-right.webp",
+      "sha256": "a7df11ddcd03fcfbd81d24379dce2fdae96d8cfc5994d449a15ec0f036bc5598"
+    },
+    {
+      "file": "timefall-shelter-left.webp",
+      "sha256": "76f231ecf1c7c2f0874e054f857c3dea21d7e409af0e3923bdd31796020416ed"
+    },
+    {
+      "file": "timefall-shelter-right.webp",
+      "sha256": "77d15123eebbbe36210a96e2d661fec7684b90d6e896ce96bd1438b204237534"
+    }
+  ]
+}

@@ -1,0 +1,170 @@
+{
+  "date": "2026-11-19",
+  "tool": "image_gen.imagegen (previous session outputs)",
+  "action": "Recovery and visual inspection only; no new generation, no raster editing.",
+  "assets": [
+    {
+      "stage": "heartman-lab",
+      "origin": "recovered_previous_session",
+      "originalFile": "/workspace/scratch/88ceffc16adf/generated_images/exec-05ab102e-ba5f-467f-a968-abc2f07eabfe.png",
+      "sourcePath": "art/sources/echos-de-la-greve/stages/heartman-lab-midground.png",
+      "runtimePath": "modes/echos-de-la-greve/assets/stages/heartman-lab-midground.png",
+      "sha256": "53d79f83953cfa4c8b6554619a3e1eaabde4d141986ef2396a6c72a1c232fef0",
+      "dimensions": {
+        "width": 2172,
+        "height": 724
+      },
+      "alpha": {
+        "fullyTransparentPixels": 1410820,
+        "partiallyTransparentPixels": 161090,
+        "opaquePixels": 618,
+        "nonzeroBounds": [
+          14,
+          276,
+          2155,
+          707
+        ],
+        "centralUpperPixels": 3775
+      },
+      "prompt": "Use case: stylized-concept. Asset type: ONE transparent midground parallax image for a side-view Death Stranding 2D fighting-game arena, heartman-lab. Create a brand new production game asset. A low medical research trolley at the far left with a compact ECG monitor, coiled leads and an amber glass sample jar; a low research chest and three small translucent specimen containers at the far right. The middle sixty percent stays almost empty, only a thin horizontal floor cable. Restrained blue grey metal, dark wood accents, subtle cyan monitor light and warm amber glass; realistic inhabited scientific laboratory props. Style: high-detail realistic painted game environment matching moody Death Stranding scenery, subtle texture, controlled edges. Composition: extremely wide horizontal canvas, requested 3:1 aspect ratio, 2172 by 724 pixels, one continuous layer with a shared perfectly horizontal baseline near the bottom; side-on eye-level camera with no isometric or overhead perspective. The two groups sit at the outer left and right; do not fill the clear central fighting area. Objects must be fully contained with small transparent margins, low silhouettes, coherent human scale. Output actual alpha transparency everywhere outside the props including above and between them. No opaque backdrop, no sky, no horizon landscape, no walls, no characters, no words, no labels, no checkerboard, no watermark. Only this single parallax layer, not a sprite sheet.\nStrict alpha requirement: NO gray haze or vignette beyond the physical props. No glow. All empty space around and between them completely transparent. Keep all objects below the lower 55% of the image and keep central 60% empty except a very thin cable or ground strip.",
+      "review": "Visually inspected: one separate low midground strip, side props, center open, alpha preserved byte-for-byte. Fan-game environment reconstruction, not independently verified against canonical scene geometry."
+    },
+    {
+      "stage": "tar-basin",
+      "origin": "recovered_previous_session",
+      "originalFile": "/workspace/scratch/88ceffc16adf/generated_images/exec-23e75c77-7bd1-46a9-a255-dca650b4f088.png",
+      "sourcePath": "art/sources/echos-de-la-greve/stages/tar-basin-midground.png",
+      "runtimePath": "modes/echos-de-la-greve/assets/stages/tar-basin-midground.png",
+      "sha256": "54340041e49c20cd5a3b85d456ae8aaf3dba836e984fb4627a33755ec473a2e9",
+      "dimensions": {
+        "width": 2172,
+        "height": 724
+      },
+      "alpha": {
+        "fullyTransparentPixels": 1435933,
+        "partiallyTransparentPixels": 136017,
+        "opaquePixels": 578,
+        "nonzeroBounds": [
+          0,
+          497,
+          2171,
+          691
+        ],
+        "centralUpperPixels": 0
+      },
+      "prompt": "Use case: stylized-concept. Asset type: ONE transparent midground parallax image for a side-view Death Stranding 2D fighting-game arena, tar-basin. Create a brand new production game asset. At the far left a low fractured concrete mooring block with a small rusted bollard and slack heavy chain; at the far right three low black basalt rocks with an old steel pipe fragment. The middle sixty percent remains low and empty, joined by a very thin flat glossy tar edge. Cold slate and deep charcoal, restrained golden flecks only inside tar cracks, worn concrete and oily surfaces, realistic overcast lighting. Style: high-detail realistic painted game environment matching moody Death Stranding scenery, subtle texture, controlled edges. Composition: extremely wide horizontal canvas, requested 3:1 aspect ratio, 2172 by 724 pixels, one continuous layer with a shared perfectly horizontal baseline near the bottom; side-on eye-level camera with no isometric or overhead perspective. The two groups sit at the outer left and right; do not fill the clear central fighting area. Objects must be fully contained with small transparent margins, low silhouettes, coherent human scale. Output actual alpha transparency everywhere outside the props including above and between them. No opaque backdrop, no sky, no horizon landscape, no walls, no characters, no words, no labels, no checkerboard, no watermark. Only this single parallax layer, not a sprite sheet.\nStrict alpha requirement: NO gray haze or vignette beyond the physical props. No glow. All empty space around and between them completely transparent. Keep all objects below the lower 55% of the image and keep central 60% empty except a very thin cable or ground strip.",
+      "review": "Visually inspected: one separate low midground strip, side props, center open, alpha preserved byte-for-byte. Fan-game environment reconstruction, not independently verified against canonical scene geometry."
+    },
+    {
+      "stage": "mule-camp",
+      "origin": "recovered_previous_session",
+      "originalFile": "/workspace/scratch/88ceffc16adf/generated_images/exec-6f0d443f-8da1-4d61-82b1-c713f28358b7.png",
+      "sourcePath": "art/sources/echos-de-la-greve/stages/mule-camp-midground.png",
+      "runtimePath": "modes/echos-de-la-greve/assets/stages/mule-camp-midground.png",
+      "sha256": "163ce8713a1bdf28a67dc4c8443acf621e1f5175273289ae99ce1693d36c1f61",
+      "dimensions": {
+        "width": 2172,
+        "height": 724
+      },
+      "alpha": {
+        "fullyTransparentPixels": 1367361,
+        "partiallyTransparentPixels": 204601,
+        "opaquePixels": 566,
+        "nonzeroBounds": [
+          0,
+          230,
+          2171,
+          704
+        ],
+        "centralUpperPixels": 0
+      },
+      "prompt": "Use case: stylized-concept. Asset type: ONE transparent midground parallax image for a side-view Death Stranding 2D fighting-game arena, mule-camp. Create a brand new production game asset. A stack of two battered grey delivery cases with mustard yellow straps at the far left and one low yellow supply crate with a folded scanner tripod lying beside it at the far right. The middle sixty percent contains only a low flat scatter of volcanic gravel. Charcoal and muted yellow colors, rain-worn hard plastic, canvas straps, sparse moss, realistic overcast daylight. Style: high-detail realistic painted game environment matching moody Death Stranding scenery, subtle texture, controlled edges. Composition: extremely wide horizontal canvas, requested 3:1 aspect ratio, 2172 by 724 pixels, one continuous layer with a shared perfectly horizontal baseline near the bottom; side-on eye-level camera with no isometric or overhead perspective. The two groups sit at the outer left and right; do not fill the clear central fighting area. Objects must be fully contained with small transparent margins, low silhouettes, coherent human scale. Output actual alpha transparency everywhere outside the props including above and between them. No opaque backdrop, no sky, no horizon landscape, no walls, no characters, no words, no labels, no checkerboard, no watermark. Only this single parallax layer, not a sprite sheet.\nStrict alpha requirement: NO gray haze or vignette beyond the physical props. No glow. All empty space around and between them completely transparent. Keep all objects below the lower 55% of the image and keep central 60% empty except a very thin cable or ground strip.",
+      "review": "Visually inspected: one separate low midground strip, side props, center open, alpha preserved byte-for-byte. Fan-game environment reconstruction, not independently verified against canonical scene geometry."
+    },
+    {
+      "stage": "mountain-pass",
+      "origin": "recovered_previous_session",
+      "originalFile": "/workspace/scratch/88ceffc16adf/generated_images/exec-7a3c4a99-09ff-4a91-99f9-f08593b0df7c.png",
+      "sourcePath": "art/sources/echos-de-la-greve/stages/mountain-pass-midground.png",
+      "runtimePath": "modes/echos-de-la-greve/assets/stages/mountain-pass-midground.png",
+      "sha256": "9d5a0e2187477aaeef8a4d0822a3a362c9a25ac615c0b46f659100613e8e8112",
+      "dimensions": {
+        "width": 2172,
+        "height": 724
+      },
+      "alpha": {
+        "fullyTransparentPixels": 1463051,
+        "partiallyTransparentPixels": 109057,
+        "opaquePixels": 420,
+        "nonzeroBounds": [
+          0,
+          477,
+          2171,
+          695
+        ],
+        "centralUpperPixels": 0
+      },
+      "prompt": "Use case: stylized-concept. Asset type: ONE transparent midground parallax image for a side-view Death Stranding 2D fighting-game arena, mountain-pass. Create a brand new production game asset. A low grey hard cargo case half buried in snow and two small basalt rocks at the far left; a low rocky snowbank with a short bent red trail marker at the far right. The middle sixty percent stays open, only a thin horizontal strip of snow and gravel. Cold blue grey shadows, neutral white snow, muted red tiny marker, realistic diffused alpine overcast lighting. Style: high-detail realistic painted game environment matching moody Death Stranding scenery, subtle texture, controlled edges. Composition: extremely wide horizontal canvas, requested 3:1 aspect ratio, 2172 by 724 pixels, one continuous layer with a shared perfectly horizontal baseline near the bottom; side-on eye-level camera with no isometric or overhead perspective. The two groups sit at the outer left and right; do not fill the clear central fighting area. Objects must be fully contained with small transparent margins, low silhouettes, coherent human scale. Output actual alpha transparency everywhere outside the props including above and between them. No opaque backdrop, no sky, no horizon landscape, no walls, no characters, no words, no labels, no checkerboard, no watermark. Only this single parallax layer, not a sprite sheet.\nStrict alpha requirement: NO gray haze or vignette beyond the physical props. No glow. All empty space around and between them completely transparent. Keep all objects below the lower 55% of the image and keep central 60% empty except a very thin cable or ground strip.",
+      "review": "Visually inspected: one separate low midground strip, side props, center open, alpha preserved byte-for-byte. Fan-game environment reconstruction, not independently verified against canonical scene geometry."
+    },
+    {
+      "stage": "ruined-factory",
+      "origin": "recovered_previous_session",
+      "originalFile": "/workspace/scratch/88ceffc16adf/generated_images/exec-84207571-5eda-4ebe-9758-a2a1afa517dd.png",
+      "sourcePath": "art/sources/echos-de-la-greve/stages/ruined-factory-midground.png",
+      "runtimePath": "modes/echos-de-la-greve/assets/stages/ruined-factory-midground.png",
+      "sha256": "124484fb5f62505140a49f0a8e80e565bf2aa313062068295d0f5925a7de4286",
+      "dimensions": {
+        "width": 2172,
+        "height": 724
+      },
+      "alpha": {
+        "fullyTransparentPixels": 1348149,
+        "partiallyTransparentPixels": 223417,
+        "opaquePixels": 962,
+        "nonzeroBounds": [
+          0,
+          31,
+          2171,
+          677
+        ],
+        "centralUpperPixels": 4923
+      },
+      "prompt": "Use case: stylized-concept. Asset type: ONE transparent midground parallax image for a side-view Death Stranding 2D fighting-game arena, ruined-factory. Create a brand new production game asset. A short broken conveyor drive housing and two fallen pipe elbows at the far left, a low collapsed roller conveyor section with rusty steel braces at the far right. The middle sixty percent stays open with only a very shallow flat row of debris. Decayed grey industrial steel, brown rust, weathered concrete, realistic soft cold daylight with faint warm reflections; no walls or room. Style: high-detail realistic painted game environment matching moody Death Stranding scenery, subtle texture, controlled edges. Composition: extremely wide horizontal canvas, requested 3:1 aspect ratio, 2172 by 724 pixels, one continuous layer with a shared perfectly horizontal baseline near the bottom; side-on eye-level camera with no isometric or overhead perspective. The two groups sit at the outer left and right; do not fill the clear central fighting area. Objects must be fully contained with small transparent margins, low silhouettes, coherent human scale. Output actual alpha transparency everywhere outside the props including above and between them. No opaque backdrop, no sky, no horizon landscape, no walls, no characters, no words, no labels, no checkerboard, no watermark. Only this single parallax layer, not a sprite sheet.\nStrict alpha requirement: NO gray haze or vignette beyond the physical props. No glow. All empty space around and between them completely transparent. Keep all objects below the lower 55% of the image and keep central 60% empty except a very thin cable or ground strip.",
+      "review": "Visually inspected: one separate low midground strip, side props, center open, alpha preserved byte-for-byte. Fan-game environment reconstruction, not independently verified against canonical scene geometry."
+    },
+    {
+      "stage": "timefall-shelter",
+      "origin": "recovered_previous_session",
+      "originalFile": "/workspace/scratch/88ceffc16adf/generated_images/exec-cbfdc3c6-2c33-4275-a8f0-131242ea5db4.png",
+      "sourcePath": "art/sources/echos-de-la-greve/stages/timefall-shelter-midground.png",
+      "runtimePath": "modes/echos-de-la-greve/assets/stages/timefall-shelter-midground.png",
+      "sha256": "0df6d0a1d19aed18cf04eb630840632cc169238317f55d2536e7e641af6bdf9e",
+      "dimensions": {
+        "width": 2172,
+        "height": 724
+      },
+      "alpha": {
+        "fullyTransparentPixels": 1325527,
+        "partiallyTransparentPixels": 245801,
+        "opaquePixels": 1200,
+        "nonzeroBounds": [
+          16,
+          29,
+          2157,
+          679
+        ],
+        "centralUpperPixels": 4285
+      },
+      "prompt": "Use case: stylized-concept. Asset type: ONE transparent midground parallax image for a side-view Death Stranding 2D fighting-game arena, timefall-shelter. Create a brand new production game asset. A low rack holding two grey delivery cases under a small draped ochre canvas cover on the far left, a compact rain collection cylinder and coiled hose on the far right. The middle sixty percent is open with a very thin flat dark stone strip. Weathered grey steel, charcoal rubber, faded yellow cloth, muted cyan equipment light, realistic overcast humid lighting; no roof or rain background. Style: high-detail realistic painted game environment matching moody Death Stranding scenery, subtle texture, controlled edges. Composition: extremely wide horizontal canvas, requested 3:1 aspect ratio, 2172 by 724 pixels, one continuous layer with a shared perfectly horizontal baseline near the bottom; side-on eye-level camera with no isometric or overhead perspective. The two groups sit at the outer left and right; do not fill the clear central fighting area. Objects must be fully contained with small transparent margins, low silhouettes, coherent human scale. Output actual alpha transparency everywhere outside the props including above and between them. No opaque backdrop, no sky, no horizon landscape, no walls, no characters, no words, no labels, no checkerboard, no watermark. Only this single parallax layer, not a sprite sheet.\nStrict alpha requirement: NO gray haze or vignette beyond the physical props. No glow. All empty space around and between them completely transparent. Keep all objects below the lower 55% of the image and keep central 60% empty except a very thin cable or ground strip.",
+      "review": "Visually inspected: one separate low midground strip, side props, center open, alpha preserved byte-for-byte. Fan-game environment reconstruction, not independently verified against canonical scene geometry."
+    }
+  ],
+  "visualQA": {
+    "contactSheet": "/workspace/scratch/a209cb821be1/stage-recovery-contact.png",
+    "compositionSheet": "/workspace/scratch/a209cb821be1/stage-recovery-composition.png",
+    "method": "Temporary QA compositions only, against each existing arena backdrop at approximately runtime layer placement. Original source/runtime PNG bytes remain unchanged.",
+    "result": "Six recovered layers visually fit the corresponding scenery and leave the central fighting area open. All files decode with real transparency. Faint alpha=1 pixels outside visible bounds are present in some originals and were preserved.",
+    "fidelity": "Composition continuity checked against current project art; exact Death Stranding canonical scene fidelity is not certified."
+  }
+}

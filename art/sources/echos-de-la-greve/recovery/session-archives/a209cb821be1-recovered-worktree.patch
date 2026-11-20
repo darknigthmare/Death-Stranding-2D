@@ -1,0 +1,366 @@
+diff --git a/modes/echos-de-la-greve/app.js b/modes/echos-de-la-greve/app.js
+index 4f10202..9f2b628 100644
+--- a/modes/echos-de-la-greve/app.js
++++ b/modes/echos-de-la-greve/app.js
+@@ -15,7 +15,7 @@
+     challenges:'<path d="M6 4h12v4a6 6 0 0 1-12 0zm6 10v5m-4 2h8M6 6H3v2a4 4 0 0 0 4 4m11-6h3v2a4 4 0 0 1-4 4"/>',
+     training:'<circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="3"/><path d="M12 1v4m0 14v4M1 12h4m14 0h4"/>'
+   };
+-  const config = {mode:'story', p1:'sam', p2:'higgs', stage:'shore', difficulty:'normal', opponent:'cpu', count:'4', humans:'1', challenge:'survival'};
++  const config = {mode:'story', p1:'sam', p2:'higgs', stage:'shore', difficulty:'normal', opponent:'cpu', outfit1:'atelier', outfit2:'atelier', count:'4', humans:'1', challenge:'survival'};
+   const held = new Map();
+   let trial;
+   const trialNames = {survival:'Survie', delivery:'Livraison sous pression'};
+@@ -88,13 +88,21 @@
+   }
+   function nameMap() { return Object.fromEntries(ids.map(id => [id, fighters[id].name])); }
+   function chapter() { const n = progress[config.p1]; return Number.isInteger(n) && n >= 0 && n <= 3 ? n : 0; }
++  function outfitField(slot, id) {
++    const outfits = asset.wardrobe?.[id];
++    if (!outfits || Object.keys(outfits).length < 2) return '';
++    if (!Object.hasOwn(outfits, config['outfit' + slot])) config['outfit' + slot] = Object.keys(outfits)[0];
++    return choose('outfit' + slot, 'Tenue J' + slot + ' · ' + fighters[id].call,
++      Object.fromEntries(Object.entries(outfits).map(([key, outfit]) => [key, outfit.name])));
++  }
+   function selection() {
+     stopFight();
+     const {mode,p1} = config;
+     const character = fighters[p1];
+     const cards = ids.map(id => {
+       const f = fighters[id];
+-      const portrait = asset.portraits?.[id], stance = asset.fighters?.[id];
++      const preview = id === p1 && ['versus','training'].includes(mode) ? asset.wardrobe?.[id]?.[config.outfit1] : null;
++      const portrait = preview?.portrait || asset.portraits?.[id], stance = asset.fighters?.[id];
+       return '<button class="char ' + (portrait ? 'portrait' : stance ? '' : 'landscape') + '" data-act="pick" data-id="' + id +
+         '" aria-pressed="' + (id === p1) + '">' + image(portrait || stance || asset.stages?.[stageFor(id)]) +
+         '<span class="charlabel"><strong>' + f.call + '</strong><small>' + f.role + '</small></span></button>';
+@@ -109,7 +117,9 @@
+     }
+     if (['versus','training'].includes(mode) || (mode === 'tournament' && config.humans === '2'))
+       fields += choose('p2',mode === 'training' ? 'Mannequin' : 'Combattant adverse / J2',nameMap());
+-    if (['versus','training'].includes(mode)) fields += choose('stage','Arène',stages);
++    if (['versus','training'].includes(mode)) {
++      fields += outfitField(1, p1) + outfitField(2, config.p2) + choose('stage','Arène',stages);
++    }
+     if (isSolo) fields += choose('difficulty','Difficulté',{easy:'Débutant',normal:'Porteur',hard:'Vétéran'});
+     const route = character.route.map(([rival,place]) => fighters[rival].call + ' · ' + stages[place]).join('　→　');
+     const startLabel = mode === 'story' && chapter() > 0 && chapter() < 3 ? 'Reprendre le duel ' + (chapter() + 1) :
+@@ -344,6 +354,7 @@
+     const canvas = document.getElementById('arena'), signal = document.getElementById('signal');
+     let phase = null;
+     engine.start({canvas,p1:match.p1,p2:match.p2,stage:match.stage,mode:match.kind,difficulty:match.difficulty,seed:match.seed,record:match.mode==='tournament' && !watching,replay:match.replay,roundsToWin:match.mode === 'challenges' ? 1 : 2,startingVitality:match.vitality,parcel:match.parcel,training,
++      outfits:['versus','training'].includes(match.mode) ? [config.outfit1,config.outfit2] : undefined,
+       sound,visuals:asset.fighters || {},onStatus(status) {
+         if (match.kind==="training") updateTraining(status);
+         if (!signal || status.phase === phase) return;
+diff --git a/modes/echos-de-la-greve/assets.js b/modes/echos-de-la-greve/assets.js
+index d97372b..6975523 100644
+--- a/modes/echos-de-la-greve/assets.js
++++ b/modes/echos-de-la-greve/assets.js
+@@ -13,18 +13,40 @@
+   story['sam-rival'] = story['sam-higgs-rival'];
+   const roster = Object.keys(window.StrandContent.fighters);
+   const arenas = Object.keys(window.StrandContent.stages);
++  // Register only delivered files. A missing production batch must not create broken URLs.
++  const wardrobe = {};
+   window.StrandAssets = {
++    wardrobe,
++    jumps: {
++      higgs:'assets/fighters/higgs-jump.png',
++      diehardman:'assets/fighters/diehardman-jump.png'
++    },
++    geometry: {
++      higgs:{jumpAnchor:.69,jumpBaseline:1258/1312,jumpScale:1},
++      diehardman:{jumpAnchor:.51,jumpBaseline:1217/1478,jumpScale:1}
++    },
+     hero: story['sam-higgs-rival'],
+     story,
+     fighters: illustrations('fighters', roster, '-stance'),
+     actions: illustrations('fighters', roster, '-action'),
+     steps: illustrations('fighters', roster, '-step'),
+     hits: illustrations('fighters', roster, '-hit'),
+-    props: {cargo:'assets/props/mule-cargo.webp'},
++    props: {
++      cargo:'assets/props/mule-cargo.webp',
++      closedParcel:'assets/props/courier-parcel-closed.png',
++      openParcel:'assets/props/courier-parcel-open.png',
++      bridgeDeck:'assets/props/bridge-deck.png',
++      goldImprint:'assets/props/gold-imprint.png'
++    },
+     portraits: illustrations('fighters', roster, '-portrait'),
+     finishers: illustrations('finishers', roster),
+     stages: illustrations('stages', arenas),
+-    midgrounds: {shore:'assets/stages/shore-midground.png'},
++    midgrounds: {
++      shore:'assets/stages/shore-midground.png',
++      terminal:'assets/stages/terminal-midground.png',
++      battlefield:'assets/stages/battlefield-midground.png',
++      'mama-workshop':'assets/stages/mama-workshop-midground.png'
++    },
+     foregrounds: illustrations('stages', arenas, '-foreground')
+   };
+ })();
+diff --git a/modes/echos-de-la-greve/fight.js b/modes/echos-de-la-greve/fight.js
+index b1cbccc..ff19f76 100644
+--- a/modes/echos-de-la-greve/fight.js
++++ b/modes/echos-de-la-greve/fight.js
+@@ -252,17 +252,33 @@
+       image.src = src;
+       return image;
+     };
+-    for (const id of new Set(ids)) {
+-      m.images[id] = load((o.visuals || {})[id] || art.fighters?.[id]);
+-      m.images[id + 'Action'] = load(art.actions?.[id]);
+-      m.images[id + 'Step'] = load(art.steps?.[id]);
+-      m.images[id + 'Hit'] = load(art.hits?.[id]);
++    m.fighterFrames = ids.map((id, side) => {
++      const base = {};
++      base.stance = load((o.visuals || {})[id] || art.fighters?.[id]);
++      base.action = load(art.actions?.[id]);
++      base.step = load(art.steps?.[id]);
++      base.hit = load(art.hits?.[id]);
++      const jump = art.jumps?.[id];
++      if (typeof jump === 'string') base.jump = load(jump);
++      else for (const phase of ['rise','apex','fall']) base[phase] = load(jump?.[phase]);
++      const options = art.wardrobe?.[id];
++      const kit = options?.[o.outfits?.[side]] || options?.atelier;
++      const tailored = {};
++      for (const [pose, file] of Object.entries(kit?.poses || {})) tailored[pose] = load(file);
+       if (m.mode !== 'training') m.images[id + 'Finale'] = load(art.finishers?.[id]);
+-    }
++      return {base, tailored, geometry:{...spriteGeometry[id], ...art.geometry?.[id], ...kit?.geometry}};
++    });
+     m.scene.back = load(art.stages?.[stage]);
+     m.scene.middle = load(art.midgrounds?.[stage]);
+     m.scene.front = load(art.foregrounds?.[stage]);
+-    if (ids.includes('mule') || m.parcel) m.images.cargo = load(art.props?.cargo);
++    if (ids.includes('mule')) m.images.cargo = load(art.props?.cargo);
++    if (m.parcel) {
++      m.images.closedParcel = load(art.props?.closedParcel || art.props?.cargo);
++      m.images.openParcel = load(art.props?.openParcel);
++    }
++    if (ids.includes('mama')) m.images.bridgeDeck = load(art.props?.bridgeDeck);
++    if (ids.includes('higgs')) m.images.goldImprint = load(art.props?.goldImprint);
++    if (ids.includes('heartman')) m.images.heartmanMonitor = load(art.props?.heartmanMonitor);
+     if (typeof o.sound==='boolean') setSound(o.sound);
+     o.canvas.width=WIDTH; o.canvas.height=HEIGHT; wakeAudio(); draw(m); notify(m,true);
+     function frame(t) {
+@@ -871,10 +887,11 @@
+       c.drawImage(s.back, -28 - m.camera * .14, -12, WIDTH + 56, HEIGHT + 24);
+     }
+     if (ready(s.middle)) {
+-      // Between the distant surf and the fighting lane. Keep the rocks below the horizon.
++      // This layer travels between the backdrop and foreground; its base stays behind the duel.
+       c.save();
+       c.globalAlpha = .82;
+-      c.drawImage(s.middle, -48 - m.camera * .43, 205, WIDTH + 96, 260);
++      const height = 260, base = m.stage === 'shore' ? 465 : FLOOR - 28;
++      c.drawImage(s.middle, -48 - m.camera * .43, base - height, WIDTH + 96, height);
+       c.restore();
+     }
+     const shade = c.createLinearGradient(0, HEIGHT * .45, 0, HEIGHT);
+@@ -933,28 +950,28 @@
+ 
+   function drawFighter(m, f, index) {
+     const c = m.ctx, feet = FLOOR - f.y;
+-    const act = f.act, actionArt = m.images[f.id + 'Action'];
++    const act = f.act;
++    const {base, tailored, geometry} = m.fighterFrames[index];
++    const frameFor = pose => ready(tailored[pose]) ? tailored[pose] : base[pose];
+     const movement = m.phase === 'fight' && f.grounded && !f.act && !f.guard && !f.stun &&
+       !f.blockStun && !f.crouch && (f.dash || !!f.keys.left !== !!f.keys.right);
+     const phase = act ? act.t / (moves[act.key].start + moves[act.key].active + moves[act.key].recover) : 0;
+     const reach = act ? Math.sin(Math.PI * Math.min(1, Math.max(0, phase))) : 0;
+     const performing = act && act.t >= moves[act.key].start * .61 && phase < .85;
+     let pose = 'stance';
+-    let image = m.images[f.id];
+-    const hitArt = m.images[f.id + 'Hit'];
+-    const stepArt = m.images[f.id + 'Step'];
+-    if (f.stun > 0 && ready(hitArt)) {
+-      pose = 'hit';
+-      image = hitArt;
+-    } else if (performing && ready(actionArt)) {
+-      pose = 'action';
+-      image = actionArt;
+-    } else if (movement && (f.dash || Math.sin(f.walk) >= 0) && ready(stepArt)) {
+-      pose = 'step';
+-      image = stepArt;
+-    }
++    if (f.stun > 0) pose = 'hit';
++    else if (performing) pose = 'action';
++    else if (!f.grounded) {
++      const phase = f.vy > 4 ? 'rise' : f.vy < -4 ? 'fall' : 'apex';
++      pose = ready(frameFor(phase)) ? phase : 'jump';
++    } else if (f.crouch && tailored.crouch) pose = 'crouch';
++    else if ((f.guard || f.blockStun) && tailored.guard) pose = 'guard';
++    else if (movement && (f.dash || Math.sin(f.walk) >= 0)) pose = 'step';
++    if (!ready(frameFor(pose))) pose = 'stance';
++    const image = frameFor(pose);
+     const lost = m.winner && m.winner !== index + 1 && ['finish','cinema','roundover','ended'].includes(m.phase);
+-    const compression = f.crouch ? .69 : f.guard ? .93 : lost ? .84 : 1;
++    const compression = pose === 'crouch' || pose === 'guard' ? 1 :
++      f.crouch ? .69 : f.guard ? .93 : lost ? .84 : 1;
+     const breathing = movement ? 2.1 * Math.sin(f.walk) : 1.1 * Math.sin(m.tick * .055 + index);
+     const height = f.spec.h * compression + breathing;
+     oval(c, f.x, FLOOR + 1, Math.max(11, 29 - f.y * .08), 4.3, 'rgba(4,11,14,.54)');
+@@ -965,16 +982,16 @@
+     c.rotate(sway + (performing ? .025 : .12) * reach);
+     if (immune(f)) c.globalAlpha = f.act?.key === 'syncope' ? .14 : .63;
+     if (ready(image)) {
+-      const geometry = spriteGeometry[f.id];
+       const h = height * (geometry[pose + 'Scale'] || 1);
+       const frames = (pose === 'step' || pose === 'hit') ? geometry.motionFrames || 1 : 1;
+       const srcWidth = image.naturalWidth / frames;
+       const w = h * srcWidth / image.naturalHeight;
+       const anchor = geometry[pose + 'Anchor'] ?? geometry.stanceAnchor;
++      const baseline = geometry[pose + 'Baseline'] ?? 1;
+       if (f.flash > 1 && (f.flash % 4 < 2)) c.filter = 'brightness(1.5)';
+       const weight = pose === 'hit' ? Math.min(1, f.stun / 8) : f.dash ? 1 : Math.sin(f.walk);
+       const frame = clamp(Math.ceil(weight * frames)-1,0,frames-1);
+-      c.drawImage(image,frame * srcWidth,0,srcWidth,image.naturalHeight,-w * anchor + 9 * reach,-h,w,h);
++      c.drawImage(image,frame * srcWidth,0,srcWidth,image.naturalHeight,-w * anchor + 9 * reach,-h * baseline,w,h);
+     } else {
+       // A temporary silhouette fills the same collision space during image decoding.
+       c.fillStyle = f.spec.suit;
+@@ -984,9 +1001,11 @@
+       line(c,7,-height*.36,18,-2,f.spec.suit,12);
+     }
+     c.restore();
+-    if (m.parcel && index===0 && ready(m.images.cargo)) {
++    const parcelImage = m.parcel === 'broken' && ready(m.images.openParcel) ? m.images.openParcel : m.images.closedParcel;
++    if (m.parcel && index===0 && ready(parcelImage)) {
+       c.save(); c.translate(f.x-f.face*13,feet-height*.44); c.rotate(f.face * (m.parcel==='broken' ? .24 : -.06));
+-      c.drawImage(m.images.cargo,-16,-14,32,16); c.restore();
++      const parcelHeight = 32 * parcelImage.naturalHeight / parcelImage.naturalWidth;
++      c.drawImage(parcelImage,-16,-parcelHeight,32,parcelHeight); c.restore();
+     }
+     if (act?.key === 'feint' && act.origin !== undefined && act.t < moves.feint.start + moves.feint.active) {
+       const elapsed = act.t - moves.feint.start;
+@@ -1088,13 +1107,25 @@
+         line(c,x-6,FLOOR-11,x+6,FLOOR-11,ICE,2);
+       } else if (kind === 'memory') {
+         oval(c,x,FLOOR-2,17,3,'#a77e73');
+-        pulseTrace(c,x,FLOOR-20,18,9,'#ffc9ad');
++        if (ready(m.images.heartmanMonitor)) {
++          const image=m.images.heartmanMonitor, width=30, height=width*image.naturalHeight/image.naturalWidth;
++          c.drawImage(image,x-width/2,FLOOR-height,width,height);
++          pulseTrace(c,x,FLOOR-height-8,18,7,'#ffc9ad');
++        } else pulseTrace(c,x,FLOOR-20,18,9,'#ffc9ad');
+       } else if (kind === 'beacon') {
+         oval(c,x,FLOOR-2,22,4,'rgba(175,240,250,.65)');
+         line(c,x,FLOOR-2,x,FLOOR-33,ICE,1.5);
+       } else if (kind === 'mine') {
+-        oval(c,x,FLOOR-2,17,4,ttl>130?'#8b784c':'#edc46e');
+-        for (let toe=-1; toe<=1; toe++) oval(c,x+toe*8,FLOOR-7,3,2,AMBER);
++        if (ready(m.images.goldImprint)) {
++          c.save();
++          c.globalAlpha = ttl > 130 ? .45 : 1;
++          c.drawImage(m.images.goldImprint,x-22,FLOOR-21,44,22);
++          c.restore();
++          if (ttl <= 130) oval(c,x,FLOOR-1,22,2,'rgba(239,186,96,.3)');
++        } else {
++          oval(c,x,FLOOR-2,17,4,ttl>130?'#8b784c':'#edc46e');
++          for (let toe=-1; toe<=1; toe++) oval(c,x+toe*8,FLOOR-7,3,2,AMBER);
++        }
+       } else if (kind === 'crate') {
+         if (ready(m.images.cargo)) {
+           c.drawImage(m.images.cargo,x-cargoWidth/2,FLOOR-cargoHeight,cargoWidth,cargoHeight);
+@@ -1115,10 +1146,15 @@
+         c.strokeStyle='#cae6ca'; c.lineWidth=2; c.strokeRect(s.x-15,FLOOR-143,30,143);
+         line(c,s.x-15,FLOOR-128,s.x+15,FLOOR-110,ICE,2);
+       } else if (s.kind === 'deck') {
+-        const tail=s.x-Math.sign(s.vx)*24;
+-        line(c,tail,s.y-4,s.x,s.y-4,'#b1f3ec',3);
+-        line(c,tail,s.y+5,s.x,s.y+5,'#79c0c0',2);
+-        line(c,tail,s.y+5,s.x,s.y-4,'#b1f3ec',2);
++        if (ready(m.images.bridgeDeck)) {
++          c.save(); c.translate(s.x,s.y); c.scale(Math.sign(s.vx) || 1,1);
++          c.drawImage(m.images.bridgeDeck,-18,-6,36,12); c.restore();
++        } else {
++          const tail=s.x-Math.sign(s.vx)*24;
++          line(c,tail,s.y-4,s.x,s.y-4,'#b1f3ec',3);
++          line(c,tail,s.y+5,s.x,s.y+5,'#79c0c0',2);
++          line(c,tail,s.y+5,s.x,s.y-4,'#b1f3ec',2);
++        }
+       } else if (s.kind === 'heartman' || s.kind === 'memory') {
+         pulseTrace(c,s.x,s.y,s.kind==='memory' ? 64 : 14,s.kind==='memory' ? 25 : 8,'#ffceae');
+       } else if (s.kind === 'recall') {
+diff --git a/modes/echos-de-la-greve/qa/arenes.cjs b/modes/echos-de-la-greve/qa/arenes.cjs
+index 98d9ddf..7968f55 100644
+--- a/modes/echos-de-la-greve/qa/arenes.cjs
++++ b/modes/echos-de-la-greve/qa/arenes.cjs
+@@ -93,8 +93,8 @@ const required = [
+             await stageSelect.selectOption(id);
+             const title = await stageSelect.locator('option:checked').innerText();
+             const back = id + '.webp', front = id + '-foreground.webp';
+-            const middle = 'shore-midground.png';
+-            const ordered = id === 'shore' ? [back,middle,front] : [back,front];
++            const middle = await page.evaluate(id => StrandAssets.midgrounds?.[id]?.split('/').pop(),id);
++            const ordered = middle ? [back,middle,front] : [back,front];
+             await page.locator('[data-act=start]').click();
+             let previous = await page.evaluate(async files => {
+               resizeTarget(1/8);
+@@ -121,10 +121,10 @@ const required = [
+               const rearPan = displacement(back), nearPan = displacement(front);
+               const label = mode + ' / ' + id + ' (direction ' + direction + ')';
+               assert(rearPan > 0 && nearPan > rearPan,'Parallaxe arrière et avant : ' + label);
+-              if (id === 'shore') {
++              if (middle) {
+                 const midPan = displacement(middle);
+-                assert(midPan > rearPan && nearPan > midPan,'Parallaxe du rivage : ' + label);
+-                assert(Math.abs(midPan/rearPan - .43/.14) < .02,'Vitesse du rivage : ' + label);
++                assert(midPan > rearPan && nearPan > midPan,'Parallaxe intermédiaire : ' + label);
++                assert(Math.abs(midPan/rearPan - .43/.14) < .02,'Vitesse intermédiaire : ' + label);
+                 assert(Math.abs(nearPan/rearPan - .8/.14) < .02,'Vitesse du premier plan : ' + label);
+               }
+               if (shots && mode === 'versus' && direction === 1) {
+@@ -143,6 +143,6 @@ const required = [
+     }
+     if (shots) fs.writeFileSync(path.join(shots, 'titres.json'), JSON.stringify(captions));
+     assert.deepEqual(errors, []);
+-    console.log('OK — 10 arènes dans les deux sens en Versus et Entraînement, dont trois plans sur la Grève.');
++    console.log('OK — 10 arènes dans les deux sens en Versus et Entraînement ; tous les plans intermédiaires déclarés se déplacent entre le fond et le premier plan.');
+   } finally { await browser.close(); }
+ })().catch(error => {console.error(error); process.exitCode = 1;});
+diff --git a/modes/echos-de-la-greve/qa/poses.cjs b/modes/echos-de-la-greve/qa/poses.cjs
+index 3106479..0ce39d5 100644
+--- a/modes/echos-de-la-greve/qa/poses.cjs
++++ b/modes/echos-de-la-greve/qa/poses.cjs
+@@ -30,12 +30,12 @@ const {chromium} = require('playwright');
+       const seen = new Set();
+       ctx.drawImage = (image, ...args) => {
+         if (image.src?.includes('/assets/fighters/')) {
+-          const name = image.src.split('/').pop().replace('.webp','');
+-          seen.add(name + '/' + Math.sign(ctx.getTransform().a));
++          seen.add(image.src + '/' + Math.sign(ctx.getTransform().a));
+         }
+         return draw(image, ...args);
+       };
+-      const preload = [...Object.values(StrandAssets.fighters), ...Object.values(StrandAssets.steps), ...Object.values(StrandAssets.hits)];
++      const preload = [...Object.values(StrandAssets.fighters), ...Object.values(StrandAssets.steps), ...Object.values(StrandAssets.hits),
++        ...Object.values(StrandAssets.wardrobe || {}).flatMap(kits => Object.values(kits.atelier?.poses || {}))];
+       await Promise.all(preload.map(async src => { const image = new Image(); image.src = src; await image.decode(); }));
+       const results = [];
+       for (const id of Object.keys(StrandContent.fighters)) {
+@@ -51,7 +51,11 @@ const {chromium} = require('playwright');
+           StrandFight.input(1, 'right', false);
+           StrandFight.input(2, 'left', false);
+           const facing = side === 1 ? 1 : -1;
+-          const pose = kind => seen.has(id + '-' + kind + '/' + facing);
++          const pose = kind => {
++            const category = {stance:'fighters',step:'steps',hit:'hits',guard:'fighters'}[kind];
++            const source = StrandAssets.wardrobe?.[id]?.atelier?.poses?.[kind] || StrandAssets[category]?.[id];
++            return seen.has(new URL(source, location.href).href + '/' + facing);
++          };
+           const step = pose('step'), stance = pose('stance');
+           seen.clear();
+           StrandFight.input(side, 'guard', true);
+@@ -59,7 +63,7 @@ const {chromium} = require('playwright');
+           StrandFight.input(other, 'light', false);
+           tick(16);
+           const block = StrandFight.snapshot().fighters[side - 1];
+-          const blockHit = pose('hit'), blockStance = pose('stance');
++          const blockHit = pose('hit'), blockStance = pose('guard');
+           tick(14);
+           seen.clear();
+           StrandFight.input(side, 'guard', false);

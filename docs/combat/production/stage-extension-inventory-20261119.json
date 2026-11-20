@@ -1,0 +1,747 @@
+{
+  "date": "2026-11-19",
+  "locations": 10,
+  "configurations": 11,
+  "layers": 55,
+  "new_images": 6,
+  "new_layers": 5,
+  "source_sha256": {
+    "assets.js": "59cb4f4175b72bba0afeb8d3e1b1e658b605d6ebb640069ac4944536963c3637",
+    "content.js": "9f09411c33c30ae8f9147c1a7c8373ad11148f791fefa2d072b7b79dc7f91342"
+  },
+  "stages": [
+    {
+      "id": "shore",
+      "title": "La Grève",
+      "variantOf": null,
+      "weather": "rain",
+      "geometry": {
+        "distant": {
+          "anchorY": 0.9392265193370166,
+          "base": 594
+        },
+        "middle": {
+          "anchorY": 0.7693370165745856,
+          "base": 596,
+          "alpha": 0.9
+        },
+        "floor": {
+          "anchorY": 0.3052486187845304
+        }
+      },
+      "layers": [
+        {
+          "layer": "skyplates",
+          "file": "modes/echos-de-la-greve/assets/stages/shore-sky.png",
+          "width": 1672,
+          "height": 941,
+          "mode": "RGB",
+          "bytes": 1616706,
+          "sha256": "9e4f6d40f8fd3552fab8908ec010443b2e1244e40400b44c7398d92d92a7e61d"
+        },
+        {
+          "layer": "distants",
+          "file": "modes/echos-de-la-greve/assets/stages/shore-distant.png",
+          "width": 2172,
+          "height": 724,
+          "mode": "RGBA",
+          "bytes": 583598,
+          "sha256": "5d9ec451b8f353130582c342f45d00a05b012fc3bb7873876e803efc9320cf87"
+        },
+        {
+          "layer": "midgrounds",
+          "file": "modes/echos-de-la-greve/assets/stages/shore-midground.png",
+          "width": 2172,
+          "height": 724,
+          "mode": "RGBA",
+          "bytes": 705276,
+          "sha256": "83a7a4bac8eda094586f76e56ec27d35be51e37b6bfdef4e76eda6bfc4ecafb7"
+        },
+        {
+          "layer": "floors",
+          "file": "modes/echos-de-la-greve/assets/stages/shore-floor.png",
+          "width": 2172,
+          "height": 724,
+          "mode": "RGBA",
+          "bytes": 2018784,
+          "sha256": "ab99f670b5ee4f867b44169ca2c4189a0f0cea193e865a740cf3c61e749f5202"
+        },
+        {
+          "layer": "foregrounds",
+          "file": "modes/echos-de-la-greve/assets/stages/shore-foreground.webp",
+          "width": 2172,
+          "height": 724,
+          "mode": "RGBA",
+          "bytes": 122134,
+          "sha256": "49dea5694e0eddb313af78695f58e62fc427d45e8e7170a272739c6713c8dcc3"
+        }
+      ]
+    },
+    {
+      "id": "terminal",
+      "title": "Centre de distribution",
+      "variantOf": null,
+      "weather": "rain",
+      "geometry": {
+        "distant": {
+          "anchorY": 0.9392265193370166,
+          "base": 594
+        },
+        "middle": {
+          "anchorY": 0.9682320441988951,
+          "base": 594
+        },
+        "floor": {
+          "anchorY": 0.2955801104972376
+        }
+      },
+      "layers": [
+        {
+          "layer": "skyplates",
+          "file": "modes/echos-de-la-greve/assets/stages/terminal-sky.png",
+          "width": 1672,
+          "height": 941,
+          "mode": "RGB",
+          "bytes": 1630173,
+          "sha256": "f5fa6135390139add1e54e53fe170e87bdd9a0a222fed19d24eefffaf7576bf6"
+        },
+        {
+          "layer": "distants",
+          "file": "modes/echos-de-la-greve/assets/stages/terminal-distant.png",
+          "width": 2172,
+          "height": 724,
+          "mode": "RGBA",
+          "bytes": 1878672,
+          "sha256": "c150e8f099d7a90f49073bfe7b69343dac85dad2f614db9efba8ee9a4aeffe39"
+        },
+        {
+          "layer": "midgrounds",
+          "file": "modes/echos-de-la-greve/assets/stages/terminal-midground.png",
+          "width": 2172,
+          "height": 724,
+          "mode": "RGBA",
+          "bytes": 729543,
+          "sha256": "d09eb84105d65f1af2eea0fcd24b9f00dfb5fd8faebd6d432672bfba5606ee21"
+        },
+        {
+          "layer": "floors",
+          "file": "modes/echos-de-la-greve/assets/stages/terminal-floor.png",
+          "width": 2172,
+          "height": 724,
+          "mode": "RGBA",
+          "bytes": 1976165,
+          "sha256": "46a9fb79825de9336c9742b630af0153deaf351a4b36732de77d062527d2beb2"
+        },
+        {
+          "layer": "foregrounds",
+          "file": "modes/echos-de-la-greve/assets/stages/terminal-foreground.webp",
+          "width": 2172,
+          "height": 255,
+          "mode": "RGBA",
+          "bytes": 63018,
+          "sha256": "357058916d40964581f65245f90f0259092c074ada40aa61f7206d765a71eceb"
+        }
+      ]
+    },
+    {
+      "id": "battlefield",
+      "title": "Champ de bataille",
+      "variantOf": null,
+      "weather": "embers",
+      "geometry": {
+        "distant": {
+          "anchorY": 1,
+          "base": 594
+        },
+        "middle": {
+          "anchorY": 0.9613259668508287,
+          "base": 594
+        },
+        "floor": {
+          "anchorY": 0.31629834254143646
+        }
+      },
+      "layers": [
+        {
+          "layer": "skyplates",
+          "file": "modes/echos-de-la-greve/assets/stages/battlefield-sky.png",
+          "width": 1672,
+          "height": 941,
+          "mode": "RGB",
+          "bytes": 1679252,
+          "sha256": "1f9c3c2c8d4be97e6716bcf18f54dcf7164c38849b9b56185fa06a69dc09a628"
+        },
+        {
+          "layer": "distants",
+          "file": "modes/echos-de-la-greve/assets/stages/battlefield-distant.png",
+          "width": 2172,
+          "height": 724,
+          "mode": "RGBA",
+          "bytes": 706636,
+          "sha256": "d04da948c077670ca316a200111e5911ab0959bea298a2c8bed7f58b27f0d3a4"
+        },
+        {
+          "layer": "midgrounds",
+          "file": "modes/echos-de-la-greve/assets/stages/battlefield-midground.png",
+          "width": 2172,
+          "height": 724,
+          "mode": "RGBA",
+          "bytes": 785605,
+          "sha256": "4514aba214923d9185b531ba8ba314d427a68ff63c5ca2ce6a6988d1bb6f0f8c"
+        },
+        {
+          "layer": "floors",
+          "file": "modes/echos-de-la-greve/assets/stages/battlefield-floor.png",
+          "width": 2172,
+          "height": 724,
+          "mode": "RGBA",
+          "bytes": 1851095,
+          "sha256": "e47805a49b59715d5f6be08f30c39e068e9517f39c75b03490927c82667b6461"
+        },
+        {
+          "layer": "foregrounds",
+          "file": "modes/echos-de-la-greve/assets/stages/battlefield-foreground.webp",
+          "width": 2172,
+          "height": 332,
+          "mode": "RGBA",
+          "bytes": 108118,
+          "sha256": "0e36aee7de1ac84752a128e8395bb2f5147d5a16976c05e638fd0d04d92eed6f"
+        }
+      ]
+    },
+    {
+      "id": "mule-camp",
+      "title": "Camp des MULEs",
+      "variantOf": null,
+      "weather": "rain",
+      "geometry": {
+        "distant": {
+          "anchorY": 0.96,
+          "base": 609
+        },
+        "middle": {
+          "anchorY": 0.97,
+          "base": 576
+        },
+        "floor": {
+          "anchorY": 0.4171270718232044
+        }
+      },
+      "layers": [
+        {
+          "layer": "skyplates",
+          "file": "modes/echos-de-la-greve/assets/stages/mule-camp-sky.png",
+          "width": 1672,
+          "height": 941,
+          "mode": "RGB",
+          "bytes": 1604660,
+          "sha256": "5839a3e01a2803f08157f802f97af4ed7cbc1a890715f1fdaa176b0b21655c48"
+        },
+        {
+          "layer": "distants",
+          "file": "modes/echos-de-la-greve/assets/stages/mule-camp-distant.png",
+          "width": 2172,
+          "height": 724,
+          "mode": "RGBA",
+          "bytes": 1626774,
+          "sha256": "770ac508008aca3b1c4691b9a7e63300fa8c5358239750d67af7035168e3eba4"
+        },
+        {
+          "layer": "midgrounds",
+          "file": "modes/echos-de-la-greve/assets/stages/mule-camp-midground.png",
+          "width": 2172,
+          "height": 724,
+          "mode": "RGBA",
+          "bytes": 541397,
+          "sha256": "163ce8713a1bdf28a67dc4c8443acf621e1f5175273289ae99ce1693d36c1f61"
+        },
+        {
+          "layer": "floors",
+          "file": "modes/echos-de-la-greve/assets/stages/mule-camp-floor.png",
+          "width": 2172,
+          "height": 724,
+          "mode": "RGBA",
+          "bytes": 2103001,
+          "sha256": "77fc1a7e0fef92200e66a9a464ea46b90dab00f03a23c1d647bc2711d045c809"
+        },
+        {
+          "layer": "foregrounds",
+          "file": "modes/echos-de-la-greve/assets/stages/mule-camp-foreground.webp",
+          "width": 2172,
+          "height": 272,
+          "mode": "RGBA",
+          "bytes": 100510,
+          "sha256": "733bfea13ebb6373a3efdac1f366ad2231fe498c9455bad21f39186f06712552"
+        }
+      ]
+    },
+    {
+      "id": "mule-camp-dry",
+      "title": "Camp des MULEs · temps sec",
+      "variantOf": "mule-camp",
+      "weather": "dust",
+      "geometry": {
+        "distant": {
+          "anchorY": 0.9378453038674033,
+          "base": 598
+        },
+        "middle": {
+          "anchorY": 0.9475138121546961,
+          "base": 592
+        },
+        "floor": {
+          "anchorY": 0.4143646408839779
+        }
+      },
+      "layers": [
+        {
+          "layer": "skyplates",
+          "file": "modes/echos-de-la-greve/assets/stages/mule-camp-dry-sky.png",
+          "width": 1672,
+          "height": 941,
+          "mode": "RGB",
+          "bytes": 1538420,
+          "sha256": "e1c7c9468014292f5d1d9c19d47ac0092194722ffdc262f0341b0e2dc8a8b046"
+        },
+        {
+          "layer": "distants",
+          "file": "modes/echos-de-la-greve/assets/stages/mule-camp-dry-distant.png",
+          "width": 2172,
+          "height": 724,
+          "mode": "RGBA",
+          "bytes": 1783192,
+          "sha256": "6272360b26efed08e097f23e4531ea946959efe20943313c1f95b3a25ee781de"
+        },
+        {
+          "layer": "midgrounds",
+          "file": "modes/echos-de-la-greve/assets/stages/mule-camp-dry-midground.png",
+          "width": 2172,
+          "height": 724,
+          "mode": "RGBA",
+          "bytes": 558723,
+          "sha256": "8175fa2d5bdeb0bfb6d48a00e4da113be023919aa7d84a31f2c47548e554ead3"
+        },
+        {
+          "layer": "floors",
+          "file": "modes/echos-de-la-greve/assets/stages/mule-camp-dry-floor.png",
+          "width": 2172,
+          "height": 724,
+          "mode": "RGBA",
+          "bytes": 2305089,
+          "sha256": "9125dd2f91c7219cedcdcaaad13d5449845579b3a9547c3521fbd4b503e50063"
+        },
+        {
+          "layer": "foregrounds",
+          "file": "modes/echos-de-la-greve/assets/stages/mule-camp-dry-foreground.png",
+          "width": 2172,
+          "height": 724,
+          "mode": "RGBA",
+          "bytes": 464237,
+          "sha256": "13bdb3fa30e402f1d1c04653db7488e16dbcd0e47a3a8613cf1ca228f060194e"
+        }
+      ]
+    },
+    {
+      "id": "heartman-lab",
+      "title": "Laboratoire de Heartman",
+      "variantOf": null,
+      "weather": null,
+      "geometry": {
+        "distant": {
+          "anchorY": 0.96,
+          "base": 590
+        },
+        "middle": {
+          "anchorY": 0.96,
+          "base": 590
+        },
+        "floor": {
+          "anchorY": 0.31077348066298344
+        }
+      },
+      "layers": [
+        {
+          "layer": "skyplates",
+          "file": "modes/echos-de-la-greve/assets/stages/heartman-lab-sky.png",
+          "width": 1672,
+          "height": 941,
+          "mode": "RGB",
+          "bytes": 2481182,
+          "sha256": "5bb383d1dcfaa8080e808fef6ab3e9d59b5e55d52e3b385841bf442042b4c0f6"
+        },
+        {
+          "layer": "distants",
+          "file": "modes/echos-de-la-greve/assets/stages/heartman-lab-distant.png",
+          "width": 2172,
+          "height": 724,
+          "mode": "RGBA",
+          "bytes": 1344606,
+          "sha256": "92bcfada8bf99682ca39a280a3ae8765d696100023fbc543f3ee23f874644bd4"
+        },
+        {
+          "layer": "midgrounds",
+          "file": "modes/echos-de-la-greve/assets/stages/heartman-lab-midground.png",
+          "width": 2172,
+          "height": 724,
+          "mode": "RGBA",
+          "bytes": 374117,
+          "sha256": "53d79f83953cfa4c8b6554619a3e1eaabde4d141986ef2396a6c72a1c232fef0"
+        },
+        {
+          "layer": "floors",
+          "file": "modes/echos-de-la-greve/assets/stages/heartman-lab-floor.png",
+          "width": 2172,
+          "height": 724,
+          "mode": "RGBA",
+          "bytes": 1822402,
+          "sha256": "98d6604156dc8ec02939c5693bec09c19eade3cde45844e1ffbea7b6cd3e7fbd"
+        },
+        {
+          "layer": "foregrounds",
+          "file": "modes/echos-de-la-greve/assets/stages/heartman-lab-foreground.webp",
+          "width": 2172,
+          "height": 336,
+          "mode": "RGBA",
+          "bytes": 93684,
+          "sha256": "a9660047869ea64af4b71dc4436c14867c3f29e39cda92a07de131e8680ec393"
+        }
+      ]
+    },
+    {
+      "id": "mama-workshop",
+      "title": "Atelier de Mama",
+      "variantOf": null,
+      "weather": null,
+      "geometry": {
+        "distant": {
+          "anchorY": 0.96,
+          "base": 564
+        },
+        "middle": {
+          "anchorY": 0.93,
+          "base": 578
+        },
+        "floor": {
+          "anchorY": 0.2776243093922652
+        }
+      },
+      "layers": [
+        {
+          "layer": "skyplates",
+          "file": "modes/echos-de-la-greve/assets/stages/mama-workshop-sky.png",
+          "width": 1672,
+          "height": 941,
+          "mode": "RGB",
+          "bytes": 2527086,
+          "sha256": "8bd008a14c31168a91ea8fdae1019f6b06715a10f2df154c568e2ca2ecef0f5b"
+        },
+        {
+          "layer": "distants",
+          "file": "modes/echos-de-la-greve/assets/stages/mama-workshop-distant.png",
+          "width": 2172,
+          "height": 724,
+          "mode": "RGBA",
+          "bytes": 1353534,
+          "sha256": "89a70c3c3a1071a5891e577fe6f7d7b190ead0ca0cf247f0285b838264dc7e84"
+        },
+        {
+          "layer": "midgrounds",
+          "file": "modes/echos-de-la-greve/assets/stages/mama-workshop-midground.png",
+          "width": 2172,
+          "height": 724,
+          "mode": "RGBA",
+          "bytes": 665711,
+          "sha256": "4573d4b88baf9195cf24093fb35b5011fbe2ad840eaf812be928e08ca357f6ad"
+        },
+        {
+          "layer": "floors",
+          "file": "modes/echos-de-la-greve/assets/stages/mama-workshop-floor.png",
+          "width": 2172,
+          "height": 724,
+          "mode": "RGBA",
+          "bytes": 2178307,
+          "sha256": "425eb7e28baa632babf9e3e3d7975a1f9085598a33e51b34d6276cc21734873b"
+        },
+        {
+          "layer": "foregrounds",
+          "file": "modes/echos-de-la-greve/assets/stages/mama-workshop-foreground.webp",
+          "width": 2172,
+          "height": 295,
+          "mode": "RGBA",
+          "bytes": 121076,
+          "sha256": "f41041dffb1a69123121be4c170da5ed45d3e110f1c5a30959a3ecb8496e0442"
+        }
+      ]
+    },
+    {
+      "id": "ruined-factory",
+      "title": "Usine en ruines",
+      "variantOf": null,
+      "weather": "dust",
+      "geometry": {
+        "distant": {
+          "anchorY": 0.96,
+          "base": 592
+        },
+        "middle": {
+          "anchorY": 0.93,
+          "base": 596
+        },
+        "floor": {
+          "anchorY": 0.27900552486187846
+        }
+      },
+      "layers": [
+        {
+          "layer": "skyplates",
+          "file": "modes/echos-de-la-greve/assets/stages/ruined-factory-sky.png",
+          "width": 1672,
+          "height": 941,
+          "mode": "RGB",
+          "bytes": 1864951,
+          "sha256": "15021b3630be79f0e1134f20565376dae6faa262ef592bd4c5c479ba205c5fce"
+        },
+        {
+          "layer": "distants",
+          "file": "modes/echos-de-la-greve/assets/stages/ruined-factory-distant.png",
+          "width": 2172,
+          "height": 724,
+          "mode": "RGBA",
+          "bytes": 1692111,
+          "sha256": "cb9ae718e2de7904cd4e44f28caf8e3c0408db9a4410dd4747d5101f2e3401f2"
+        },
+        {
+          "layer": "midgrounds",
+          "file": "modes/echos-de-la-greve/assets/stages/ruined-factory-midground.png",
+          "width": 2172,
+          "height": 724,
+          "mode": "RGBA",
+          "bytes": 620159,
+          "sha256": "124484fb5f62505140a49f0a8e80e565bf2aa313062068295d0f5925a7de4286"
+        },
+        {
+          "layer": "floors",
+          "file": "modes/echos-de-la-greve/assets/stages/ruined-factory-floor.png",
+          "width": 2172,
+          "height": 724,
+          "mode": "RGBA",
+          "bytes": 2158938,
+          "sha256": "e3495ab82c5235b50cb6a90c05bbbe9c4a43833118813e391a155eb3edc5b5da"
+        },
+        {
+          "layer": "foregrounds",
+          "file": "modes/echos-de-la-greve/assets/stages/ruined-factory-foreground.webp",
+          "width": 2172,
+          "height": 173,
+          "mode": "RGBA",
+          "bytes": 75290,
+          "sha256": "a344df28843d461ce21dbceb19b59b96a902a0811cca8ce12cabf600db7b32fc"
+        }
+      ]
+    },
+    {
+      "id": "timefall-shelter",
+      "title": "Abri sous la pluie temporelle",
+      "variantOf": null,
+      "weather": "shelter",
+      "geometry": {
+        "distant": {
+          "anchorY": 0.96,
+          "base": 592
+        },
+        "middle": {
+          "anchorY": 0.93,
+          "base": 576
+        },
+        "floor": {
+          "anchorY": 0.324585635359116
+        }
+      },
+      "layers": [
+        {
+          "layer": "skyplates",
+          "file": "modes/echos-de-la-greve/assets/stages/timefall-shelter-sky.png",
+          "width": 1672,
+          "height": 941,
+          "mode": "RGB",
+          "bytes": 1548764,
+          "sha256": "d9e52fcb9b319e6dd3b33aeb36721fd82a5cc1b90d7db955a684e5141191d5c0"
+        },
+        {
+          "layer": "distants",
+          "file": "modes/echos-de-la-greve/assets/stages/timefall-shelter-distant.png",
+          "width": 2172,
+          "height": 724,
+          "mode": "RGBA",
+          "bytes": 1728775,
+          "sha256": "5790b4dafcd9c07bb140c854a8ff1f7b110dbb4153bd64ac63e4677692517964"
+        },
+        {
+          "layer": "midgrounds",
+          "file": "modes/echos-de-la-greve/assets/stages/timefall-shelter-midground.png",
+          "width": 2172,
+          "height": 724,
+          "mode": "RGBA",
+          "bytes": 587909,
+          "sha256": "0df6d0a1d19aed18cf04eb630840632cc169238317f55d2536e7e641af6bdf9e"
+        },
+        {
+          "layer": "floors",
+          "file": "modes/echos-de-la-greve/assets/stages/timefall-shelter-floor.png",
+          "width": 2172,
+          "height": 724,
+          "mode": "RGBA",
+          "bytes": 2471648,
+          "sha256": "97199aee5942155ecaf30fa3570a54b009f3406f1dbc16049c898ffbeb702a6b"
+        },
+        {
+          "layer": "foregrounds",
+          "file": "modes/echos-de-la-greve/assets/stages/timefall-shelter-foreground.webp",
+          "width": 2172,
+          "height": 426,
+          "mode": "RGBA",
+          "bytes": 107120,
+          "sha256": "9815c4886d2e317fb2a2c9d98625d5a8d689efd80060eca5e46b9eb09243c907"
+        }
+      ]
+    },
+    {
+      "id": "tar-basin",
+      "title": "Bassin de goudron",
+      "variantOf": null,
+      "weather": null,
+      "geometry": {
+        "distant": {
+          "anchorY": 0.96,
+          "base": 592
+        },
+        "middle": {
+          "anchorY": 0.95,
+          "base": 572
+        },
+        "floor": {
+          "anchorY": 0.2941988950276243
+        }
+      },
+      "layers": [
+        {
+          "layer": "skyplates",
+          "file": "modes/echos-de-la-greve/assets/stages/tar-basin-sky.png",
+          "width": 1672,
+          "height": 941,
+          "mode": "RGB",
+          "bytes": 1565578,
+          "sha256": "33a74b93c3b12e32c69e5a2959ae8f78e463bd4395fabedcb5059b233c8de922"
+        },
+        {
+          "layer": "distants",
+          "file": "modes/echos-de-la-greve/assets/stages/tar-basin-distant.png",
+          "width": 2172,
+          "height": 724,
+          "mode": "RGBA",
+          "bytes": 1449568,
+          "sha256": "842e2af7a567df14653ad339cd88b12ccf9ce05e52eb8d4913b0c051ba8a996c"
+        },
+        {
+          "layer": "midgrounds",
+          "file": "modes/echos-de-la-greve/assets/stages/tar-basin-midground.png",
+          "width": 2172,
+          "height": 724,
+          "mode": "RGBA",
+          "bytes": 380441,
+          "sha256": "54340041e49c20cd5a3b85d456ae8aaf3dba836e984fb4627a33755ec473a2e9"
+        },
+        {
+          "layer": "floors",
+          "file": "modes/echos-de-la-greve/assets/stages/tar-basin-floor.png",
+          "width": 2172,
+          "height": 724,
+          "mode": "RGBA",
+          "bytes": 2215733,
+          "sha256": "faee362fe6538a96cdf7c385df545224725f7008b012801bda1fb51d7cbebe9a"
+        },
+        {
+          "layer": "foregrounds",
+          "file": "modes/echos-de-la-greve/assets/stages/tar-basin-foreground.webp",
+          "width": 2172,
+          "height": 404,
+          "mode": "RGBA",
+          "bytes": 153794,
+          "sha256": "e6566ce16296290d40df291cc45e5423464ca5835d588f8befbc5e2b01622b94"
+        }
+      ]
+    },
+    {
+      "id": "mountain-pass",
+      "title": "Col de Mountain Knot",
+      "variantOf": null,
+      "weather": "snow",
+      "geometry": {
+        "distant": {
+          "anchorY": 0.9765193370165746,
+          "base": 594
+        },
+        "middle": {
+          "anchorY": 0.9488950276243094,
+          "base": 594
+        },
+        "floor": {
+          "anchorY": 0.26795580110497236
+        }
+      },
+      "layers": [
+        {
+          "layer": "skyplates",
+          "file": "modes/echos-de-la-greve/assets/stages/mountain-pass-sky.png",
+          "width": 1672,
+          "height": 941,
+          "mode": "RGB",
+          "bytes": 1572985,
+          "sha256": "a4937e5df5fc8fd0fc2e4d5d04aaa390898e978f7230a6fc2eec2470941da67c"
+        },
+        {
+          "layer": "distants",
+          "file": "modes/echos-de-la-greve/assets/stages/mountain-pass-distant.png",
+          "width": 2172,
+          "height": 724,
+          "mode": "RGBA",
+          "bytes": 1726670,
+          "sha256": "ec7cbab1c1600642b64b4cab234310b1ce20e6346d354dbd785532c314bd3a1c"
+        },
+        {
+          "layer": "midgrounds",
+          "file": "modes/echos-de-la-greve/assets/stages/mountain-pass-midground.png",
+          "width": 2172,
+          "height": 724,
+          "mode": "RGBA",
+          "bytes": 330281,
+          "sha256": "9d5a0e2187477aaeef8a4d0822a3a362c9a25ac615c0b46f659100613e8e8112"
+        },
+        {
+          "layer": "floors",
+          "file": "modes/echos-de-la-greve/assets/stages/mountain-pass-floor.png",
+          "width": 2172,
+          "height": 724,
+          "mode": "RGBA",
+          "bytes": 2070681,
+          "sha256": "69d7b282c976a5fed9ac25c336a96fcee443618d00519d28ec05482a022f77de"
+        },
+        {
+          "layer": "foregrounds",
+          "file": "modes/echos-de-la-greve/assets/stages/mountain-pass-foreground.webp",
+          "width": 2172,
+          "height": 231,
+          "mode": "RGBA",
+          "bytes": 108790,
+          "sha256": "71e7b68e2bb60a1802c10ae1ecee94b5bd00d962e0e91b2dcc3cc357d55e6b2a"
+        }
+      ]
+    }
+  ],
+  "corrected_existing_joins": [
+    "shore",
+    "terminal",
+    "battlefield",
+    "mountain-pass"
+  ]
+}

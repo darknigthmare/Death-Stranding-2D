@@ -1,0 +1,71 @@
+{
+  "variant": "mule-camp-dry",
+  "reviewed_utc": "2026-11-19T13:02:34.833094+00:00",
+  "method": "Independent visual inspection of the two supplied actual fight.js renders; no image edits or repository changes.",
+  "renders": [
+    {
+      "file": "/home/agent/death-stranding-next-baf372eadbb3/validation/dry-first/mule-camp-dry-left.webp",
+      "sha256": "d9cb76a27916933a5b35460382b166c85c641777549310c01b0c5424b413cf7a",
+      "size": [
+        1280,
+        720
+      ]
+    },
+    {
+      "file": "/home/agent/death-stranding-next-baf372eadbb3/validation/dry-first/mule-camp-dry-right.webp",
+      "sha256": "e300d0d961a62f342764794b6ae421ce57849aaef3618f7d6e37bddf27e35d0f",
+      "size": [
+        1280,
+        720
+      ]
+    }
+  ],
+  "geometry": {
+    "distant": {
+      "anchorY": "679/724",
+      "base": 598
+    },
+    "middle": {
+      "anchorY": "686/724",
+      "base": 592
+    },
+    "floor": {
+      "anchorY": "300/724"
+    }
+  },
+  "result": "pass",
+  "blocking_defects": [],
+  "checks": [
+    {
+      "check": "Terrain join",
+      "result": "pass",
+      "observation": "Both camera positions show continuous landscape-to-floor coverage. No sky-colored horizontal gap beneath distant terrain or middle props."
+    },
+    {
+      "check": "Foot contact",
+      "result": "pass",
+      "observation": "Higgs and Fragile feet visually meet the gravel plane; no apparent floating or significant sinking. Contact shadows remain readable."
+    },
+    {
+      "check": "Central fighting lane",
+      "result": "pass",
+      "observation": "The space between fighters stays clear. Background tents, valley and waterfall provide depth without crossing the foreground fighting lane."
+    },
+    {
+      "check": "Near foreground props",
+      "result": "pass",
+      "observation": "Cropped cargo case/strap on left and tarp/stakes on right stay low at the outer edges, below the fighters lower legs in these views; no tall center occluders."
+    },
+    {
+      "check": "Alpha fringes",
+      "result": "pass",
+      "observation": "No visible red outline, opaque fringe or colored spill from the alpha1–2 edge pixels in either final composition."
+    },
+    {
+      "check": "Dry variant coherence",
+      "result": "pass",
+      "observation": "Bright overcast light, matte compacted gravel without puddles, olive vegetation and familiar camp placement form a consistent dry counterpart."
+    }
+  ],
+  "limits": "Approval concerns these two static rendered compositions. The parent separately reports eight runtime cases passed; this review does not independently claim browser or motion testing."
+}

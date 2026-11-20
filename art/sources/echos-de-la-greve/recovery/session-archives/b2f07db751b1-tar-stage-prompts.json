@@ -1,0 +1,39 @@
+{
+  "date": "2026-11-19",
+  "status": "prepared-awaiting-publication-go",
+  "tool": "image_gen.imagegen",
+  "reference": "/workspace/scratch/b2f07db751b1/Death-Stranding-2D/modes/echos-de-la-greve/assets/stages/tar-basin.webp",
+  "reference_inspection": "Existing panorama, midground and foreground visually inspected. Only the three missing layers will be generated.",
+  "jobs": [
+    {
+      "stage": "tar-basin",
+      "kind": "sky",
+      "file": "modes/echos-de-la-greve/assets/stages/tar-basin-sky.png",
+      "transparent_background": false,
+      "referenced_image_paths": [
+        "/workspace/scratch/b2f07db751b1/Death-Stranding-2D/modes/echos-de-la-greve/assets/stages/tar-basin.webp"
+      ],
+      "prompt": "Use case: background-extraction. Asset type: exactly ONE independent parallax layer for the Bassin de goudron side-view fighting arena in the user's Death Stranding 2D fan game. Image 1 is the existing panorama reference/edit target. Preserve its finely painted realistic materials, slate grey atmosphere, muted warm late-evening light and location-specific industrial design. No characters, no text, no logo, no watermark, no collage, no spritesheet. Create only the OPAQUE SKY BACKPLATE. Wide 16:9 full-bleed, requested 2048 by 1152. Remove every crane, cable, building, mountain, waterfall, ridge, water surface, quay and rock. Fill all removed areas with the same continuous slate-grey layered storm cloud sky, darker grey on the upper left and muted peach-orange dusk glow toward the lower center-right. Soft diffuse cloudy air continues to the bottom edge. No sun disc, horizon line, silhouettes, landscape, sea, ground, precipitation, vignette or transparency. Maintain the original restrained exposure; this is a quiet distant backdrop behind four separate layers, not a complete finished environment."
+    },
+    {
+      "stage": "tar-basin",
+      "kind": "distant",
+      "file": "modes/echos-de-la-greve/assets/stages/tar-basin-distant.png",
+      "transparent_background": true,
+      "referenced_image_paths": [
+        "/workspace/scratch/b2f07db751b1/Death-Stranding-2D/modes/echos-de-la-greve/assets/stages/tar-basin.webp"
+      ],
+      "prompt": "Use case: background-extraction. Asset type: exactly ONE independent parallax layer for the Bassin de goudron side-view fighting arena in the user's Death Stranding 2D fan game. Image 1 is the existing panorama reference/edit target. Preserve its finely painted realistic materials, slate grey atmosphere, muted warm late-evening light and location-specific industrial design. No characters, no text, no logo, no watermark, no collage, no spritesheet. Create only the DISTANT INDUSTRIAL LANDSCAPE layer, extremely wide 3:1 composition, requested 2172 by 724. Preserve the recognizable large rusted gantry crane on the far right with its trussed upper boom, small cabin, hanging cables and pier framework; smaller cranes receding toward the center-left; weathered grey basalt cliffs and slender waterfalls along the far left. A narrow band of distant glossy black tar basin spans the lower quarter, with subdued reflected silhouettes and faint muted peach highlights. Keep the central upper half mostly open and airy. Entire sky above and between silhouettes is genuine fully transparent alpha, including holes through crane frameworks and gaps around cables. No sky pixels or opaque grey matte. Remove the nearby concrete quay, front retaining curb, mooring bollards, chains, close basalt rocks and every foreground prop. No playable floor or large ground platform. One coherent distant landscape strip, with all crane tops and cables fully contained and small transparent padding above. Match the source lighting and keep reflected gold very subdued so combat effects stay readable."
+    },
+    {
+      "stage": "tar-basin",
+      "kind": "floor",
+      "file": "modes/echos-de-la-greve/assets/stages/tar-basin-floor.png",
+      "transparent_background": true,
+      "referenced_image_paths": [
+        "/workspace/scratch/b2f07db751b1/Death-Stranding-2D/modes/echos-de-la-greve/assets/stages/tar-basin.webp"
+      ],
+      "prompt": "Use case: background-extraction. Asset type: exactly ONE independent parallax layer for the Bassin de goudron side-view fighting arena in the user's Death Stranding 2D fan game. Image 1 is the existing panorama reference/edit target. Preserve its finely painted realistic materials, slate grey atmosphere, muted warm late-evening light and location-specific industrial design. No characters, no text, no logo, no watermark, no collage, no spritesheet. Create only the PLAYABLE FLOOR: the flat worn dark grey concrete quay from the reference, wet with restrained cold reflections and a faint muted peach light reflection toward the right. Extremely wide 3:1 canvas, requested 2172 by 724. The TOP EDGE is a perfectly straight horizontal line exactly 24 percent down the canvas. Every pixel ABOVE that line is fully transparent alpha. Every pixel BELOW that line is continuous opaque concrete surface filling the entire width and extending completely to the bottom edge. Subtle fine fissures and broad slab seams, unobtrusive low-contrast texture, side-view combat ground with gently receding detail. No raised curb, vertical front face, floating platform, bevel, edge taper, transparency holes, side fading, water basin, landscape, crane, chain, bollard, rocks, debris, grass or other props. The fighters stand on solid concrete, not liquid tar. Keep the center particularly clear and preserve a perfectly level continuous upper edge."
+    }
+  ]
+}
