@@ -48,5 +48,7 @@
     "canonical_1to1_certified": false
   },
   "source_hashes_synchronized": true,
-  "github_publication": "blocked by automatic approval review; explicit in-thread authorization required; no PR created"
+  "github_publication": "published",
+  "github_pr": "https://github.com/darknigthmare/Death-Stranding-2D/pull/6",
+  "github_asset_commit": "45c09e88fd080198c49b7d5f9bcbd8485f69a1c9"
 }

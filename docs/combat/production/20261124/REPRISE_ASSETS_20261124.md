@@ -116,4 +116,6 @@ Les références primaires comprennent [la présentation officielle PlayStation]
 
 L’archive de livraison est un **lot d’intégration à superposer au commit de base indiqué**, contenant tous les fichiers ajoutés ou modifiés, la galerie et les preuves de validation. Ce n’est pas une copie complète du jeu. Le fichier `LIRE_AVANT_INTEGRATION.md` de l’archive donne le commit local final, l’inventaire et la procédure de reprise.
 
-**Publication :** les modifications sont préparées localement. La revue automatique a refusé la publication vers le dépôt GitHub public et exige une autorisation donnée directement dans ce fil. Aucune nouvelle branche distante ni nouvelle PR n’a été créée pour ce lot. L’archive permet de vérifier le résultat concret avant cette dernière étape.
+**Publication réalisée le 24 novembre 2026 :** le lot est disponible dans la [PR #6](https://github.com/darknigthmare/Death-Stranding-2D/pull/6), commit distant `45c09e88fd080198c49b7d5f9bcbd8485f69a1c9`. Son arbre Git `b30a67e25c0534baf91a2572d8a5d1edcd742aee` est identique à celui du commit local validé `45e08624f4f2c2ccf4e68a82dd219d3b90897cd9`. L’utilisateur a explicitement autorisé la publication dans ce fil. Les lots suivants peuvent également être publiés dans cette PR.
+
+La [suite de production](../20261124-suite/SUITE_MANQUANTS_20261124.md) distingue les images supplémentaires publiées et l’intégration restant à finaliser.

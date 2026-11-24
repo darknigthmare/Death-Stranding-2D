@@ -1,0 +1,56 @@
+{
+  "date": "2026-11-24",
+  "scope": "Three support-character archive portraits, not new playable fighters.",
+  "canonicalFidelity": "Faces and clothing compared to supplied official references; chest-up pose adapted. Exact equivalence not certified.",
+  "publicationStatus": "Native images delivered; Archives page remains in the local integration.",
+  "assets": [
+    {
+      "id": "deadman",
+      "source": "/tmp/ds-next-audit/deadman.jpg",
+      "sourceUrl": "https://blog.de.playstation.com/uploads/sites/13/2021/10/ff53f52b0e9d873d74be27e0cbe8d6cb97bc2031.jpg",
+      "prompt": "Create ONE isolated high-detail hand-painted realistic 2D game archive PORTRAIT, based faithfully on the supplied official Death Stranding 1 screenshot. This is a character cutout for a fan-game, not a whole scene. Chest-up composition, entire head, hair and both shoulders visible, 10% transparent breathing room around the silhouette, restrained cinematic lighting and tactile fabric/skin. Preserve the subject's exact recognizable age, face, proportions and clothing from the reference; no glamour retouching or redesign. A single adult character only. TRUE ALPHA transparent background, no bed or scenery, no rectangle, vignette, surrounding haze, frame, typography or watermark. The subject faces slightly right in a calm neutral portrait. Subject is DEADMAN, as shown: stocky middle-aged man with short swept-back salt-and-pepper hair, round face, close grey beard and moustache, dark rectangular spectacles, rust-red medical jacket over matching red collared shirt, black tie and silver tie clip, black stethoscope around neck, small pale ID badge. Keep natural warm brown facial complexion and calm thoughtful expression. The image reference is authoritative for facial features and neckline. Show chest and shoulder details, not a floating severed head.",
+      "kind": "support-portrait",
+      "runtime": "modes/echos-de-la-greve/assets/fighters/support/deadman-portrait.png",
+      "transparentBackground": true,
+      "generatedSource": "/workspace/scratch/05d1f74d065e/generated_images/exec-1a9a9dc5-e7c3-42df-8677-1342eb173573.png",
+      "gitBlobSha1": "a19ffb6aa74cd463b1ed0c4e7b01b32c47a50249",
+      "nativePixelsPreserved": true,
+      "width": 1368,
+      "height": 1150,
+      "bytes": 1698217,
+      "pngColorType": 6
+    },
+    {
+      "id": "amelie",
+      "source": "/tmp/ds-next-audit/characters.jpg",
+      "sourceUrl": "https://www.kojimaproductions.jp/sites/default/files/2022-03/DSDC_PC_Characters02.jpg",
+      "prompt": "Create ONE isolated high-detail hand-painted realistic 2D game archive PORTRAIT, based faithfully on the supplied official Death Stranding 1 screenshot. This is a character cutout for a fan-game, not a whole scene. Chest-up composition, entire head, hair and both shoulders visible, 10% transparent breathing room around the silhouette, restrained cinematic lighting and tactile fabric/skin. Preserve the subject's exact recognizable age, face, proportions and clothing from the reference; no glamour retouching or redesign. A single adult character only. TRUE ALPHA transparent background, no bed or scenery, no rectangle, vignette, surrounding haze, frame, typography or watermark. The subject faces slightly right in a calm neutral portrait. Subject is AMELIE, the blonde woman on the LEFT in the supplied screenshot, in her RED long-sleeve dress with its same deep V neckline, straight shoulder-length golden blonde hair with a side part, pale blue eyes and the exact facial appearance shown. Ignore and REMOVE Sam and all other foreground arms, machinery, text, hologram scanlines and the room. Render Amelie alone as an opaque naturally lit portrait with true transparent exterior, not a transparent ghost. Head and shoulders only through the upper torso, no hands entering the frame. Maintain her adult facial likeness without beautification.",
+      "kind": "support-portrait",
+      "runtime": "modes/echos-de-la-greve/assets/fighters/support/amelie-portrait.png",
+      "transparentBackground": true,
+      "generatedSource": "/workspace/scratch/05d1f74d065e/generated_images/exec-b21b97ef-48b6-48da-b0ad-ba51efa2c31d.png",
+      "gitBlobSha1": "73fd9a93f38beacbb8dfe207ea66712b289902ed",
+      "nativePixelsPreserved": true,
+      "width": 1161,
+      "height": 1354,
+      "bytes": 1875494,
+      "pngColorType": 6
+    },
+    {
+      "id": "bridget",
+      "source": "/tmp/ds-next-audit/bridget.jpg",
+      "sourceUrl": "https://blog.de.playstation.com/uploads/sites/13/2021/10/af1d619c896432ac6b74397c67d74ecf4a4bbd41.jpg",
+      "prompt": "Create ONE isolated high-detail hand-painted realistic 2D game archive PORTRAIT, based faithfully on the supplied official Death Stranding 1 screenshot. This is a character cutout for a fan-game, not a whole scene. Chest-up composition, entire head, hair and both shoulders visible, 10% transparent breathing room around the silhouette, restrained cinematic lighting and tactile fabric/skin. Preserve the subject's exact recognizable age, face, proportions and clothing from the reference; no glamour retouching or redesign. A single adult character only. TRUE ALPHA transparent background, no bed or scenery, no rectangle, vignette, surrounding haze, frame, typography or watermark. The subject faces slightly right in a calm neutral portrait. Subject is BRIDGET STRAND as the ELDERLY woman in the official screenshot. Preserve her visibly elderly age, facial lines, thin cheek structure, pale blue eyes, pale pink-lilac headscarf with subtle gold pattern tied behind her head, and white pleated medical blouse with scalloped high neckline. Show a dignified calm expression with the same distinctive face. Repose gently upright for a chest-up archive portrait while maintaining the referenced clothing and age. Remove the hospital bed, pillow and furniture entirely. Do not make her younger, do not substitute Amelie's red dress or blonde hair, and do not add a uniform or new accessories.",
+      "kind": "support-portrait",
+      "runtime": "modes/echos-de-la-greve/assets/fighters/support/bridget-portrait.png",
+      "transparentBackground": true,
+      "generatedSource": "/workspace/scratch/05d1f74d065e/generated_images/exec-763ab798-b6b3-4efc-975b-468237fc1bf0.png",
+      "gitBlobSha1": "0b61865954a6b2248800223305124e1f461bf216",
+      "nativePixelsPreserved": true,
+      "width": 1312,
+      "height": 1199,
+      "bytes": 1674975,
+      "pngColorType": 6
+    }
+  ]
+}
