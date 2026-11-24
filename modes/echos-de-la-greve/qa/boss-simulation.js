@@ -42,7 +42,7 @@ function runBossSimulationQA(sources,options) {
       set src(file){
         this._src=file;requests.add(file);
         const known=options.imageSizes?.[file],size=Array.isArray(known)?known:known?[known.width,known.height]:file.includes('/stages/')?[1536,1024]:[1536,1536];
-        this.complete=!config.missingImages;this.naturalWidth=this.complete?size[0]:0;this.naturalHeight=this.complete?size[1]:0;
+        this.complete=!config.missingImages&&!config.unavailable?.(file);this.naturalWidth=this.complete?size[0]:0;this.naturalHeight=this.complete?size[1]:0;
       }
       get src(){return this._src;}
     }
@@ -164,6 +164,55 @@ function runBossSimulationQA(sources,options) {
     }
   }
   report.checks.push('eight fighters: guard/crouch/step and all three jump images; 24 direction-dependent signatures; expiring-marker actions');
+
+  // Exercise the selected native outfit and delayed-image fallback through the actual renderer.
+  const viaduc=w.host.StrandAssets.wardrobe?.mama?.viaduc;
+  if(viaduc?.nativePoses){
+    const wardrobeFiles=new Set(Object.values(viaduc.poses));
+    const fallback=world({unavailable:file=>wardrobeFiles.has(file)});
+    let comparisons=0;
+    function renderedPose(target,pose,missing){
+      const art=target.host.StrandAssets;
+      const file=missing?art.poses.mama[pose]:viaduc.poses[pose];
+      const geometry=missing?art.generatedGeometry.fighters.mama[pose]:viaduc.poseGeometry[pose];
+      const call=target.render().find(draw=>draw.file===file);
+      assert(call,'Selected outfit/base source: '+pose+' / '+missing);
+      equal(call.args.slice(0,4),geometry.crop,'Outfit/base measured crop: '+pose);
+      const [,dy,,height]=call.args.slice(4);
+      assert(Math.abs(dy+height*geometry.baselineY)<.00001,'Outfit/base boot baseline: '+pose);
+    }
+    for(const face of [1,-1]){
+      w.start('giant','mama',{outfit:'viaduc'});w.advance(76);
+      let point=e.checkpoint();
+      if(face===-1){Object.assign(point.state.p,{x:940,face:-1});Object.assign(point.state.boss,{x:300,face:1});}
+      assert(e.validCheckpoint(point),'Native outfit facing fixture valid');
+      w.start('giant','mama',{resume:point});fallback.start('giant','mama',{resume:point});
+      const together=(ticks,inputs=[])=>{
+        for(const target of [w,fallback]){
+          for(const [key,down]of inputs)target.engine.input(1,key,down);
+          target.advance(ticks);
+        }
+        equal(e.checkpoint(),fallback.engine.checkpoint(),'Outfit availability leaves Boss simulation identical');
+        comparisons++;
+      };
+      const pose=name=>{renderedPose(w,name,false);renderedPose(fallback,name,true);};
+      together(1);pose('stance');
+      together(2,[['guard',true]]);pose('guard');
+      together(2,[['guard',false],['down',true]]);pose('crouch');
+      together(3,[['down',false],['up',true],['up',false]]);pose('rise');
+      together(17);pose('apex');together(12);pose('fall');together(20);
+      const back=face===1?'left':'right';
+      together(2,[[back,true]]);pose('step');
+      together(8,[[back,false],['light',true],['light',false]]);pose('action');
+      point=e.checkpoint();point.state.p.stun=8;point.state.p.act=null;
+      assert(e.validCheckpoint(point),'Controlled hit pose fixture valid');
+      w.start('giant','mama',{resume:point});fallback.start('giant','mama',{resume:point});
+      together(1);pose('hit');
+    }
+    fallback.engine.stop();
+    report.nativeOutfitCheckpointComparisons=comparisons;
+    report.checks.push('Mama Viaduc: nine native poses, both directions, independent crops/baselines; delayed outfit images fall back to Atelier with identical Boss checkpoints');
+  }
 
   // Ground ring: compare the same genuinely generated incoming attack with and without a jump.
   w.start('giant');w.advance(130);set('right',true);w.advance(58);set('right',false);

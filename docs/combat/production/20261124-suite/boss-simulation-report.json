@@ -8,6 +8,7 @@
     "pause freezes state and inputs; active-telegraph checkpoint reproduces exact following frames",
     "invalid rules, numbers, identifiers, markers, attacks and damage arrays rejected",
     "eight fighters: guard/crouch/step and all three jump images; 24 direction-dependent signatures; expiring-marker actions",
+    "Mama Viaduc: nine native poses, both directions, independent crops/baselines; delayed outfit images fall back to Atelier with identical Boss checkpoints",
     "same real ground ring hits grounded player and is avoided by a jump",
     "same real MULE bolt: guard mitigates damage and consumes guard meter",
     "no-input defeat and fresh rematch; actual health loss recorded without overkill",
@@ -366,9 +367,19 @@
     "assets/fighters/mama/atelier/crouch.png",
     "assets/fighters/mama/atelier/fall.png",
     "assets/fighters/mama/atelier/guard.png",
+    "assets/fighters/mama/atelier/hit.png",
     "assets/fighters/mama/atelier/rise.png",
     "assets/fighters/mama/atelier/stance.png",
     "assets/fighters/mama/atelier/step.png",
+    "assets/fighters/mama/viaduc/action.png",
+    "assets/fighters/mama/viaduc/apex.png",
+    "assets/fighters/mama/viaduc/crouch.png",
+    "assets/fighters/mama/viaduc/fall.png",
+    "assets/fighters/mama/viaduc/guard.png",
+    "assets/fighters/mama/viaduc/hit.png",
+    "assets/fighters/mama/viaduc/rise.png",
+    "assets/fighters/mama/viaduc/stance.png",
+    "assets/fighters/mama/viaduc/step.png",
     "assets/fighters/mule-action.webp",
     "assets/fighters/mule-stance.webp",
     "assets/fighters/mule-step.webp",
@@ -428,24 +439,24 @@
   "rules": "boss-20261124-v1",
   "imageDimensions": "supplied metadata where available; synthetic fallback",
   "passed": true,
-  "executedAt": "2026-11-24T15:14:08.739Z",
+  "executedAt": "2026-11-24T15:43:44.818Z",
   "sourceBlobs": {
     "content.js": "a72d3e798df9bc8969b87488cea3058de66519a5",
-    "asset-geometry-20261124.js": "7e5631309557141be9ff2c14fd3865686cfd7d2e",
-    "assets.js": "54e5f7da3f3e85f1803e2ca3643a3867766251c7",
+    "asset-geometry-20261124.js": "f2172846267c946fae06d2532bdb8184330a6a7c",
+    "assets.js": "951c9cc903d93261cb2aa96cd659aa9c48b6890c",
     "boss-geometry-20261124.js": "0e677fe10a074be5e1f6be22cf981a27374384b0",
-    "qa/native-image-dimensions-20261124.cjs": "098387394a9a5eb6b751f8b8c0f395a238f9759c",
+    "qa/native-image-dimensions-20261124.cjs": "4a2e79cc794f0911992210f925a7aaabf72ae973",
     "boss-assets.js": "bd1945b42ef00825edf5bfebf1066ebacc2f0608",
-    "boss.js": "90dc2ef7e1d1884370c845274a1e9e6cf0dc5a81",
+    "boss.js": "50cd8ae96416b0d9e82499b5f4361cfd4829ca8e",
     "app.js": "d759d928febbcc8ddfd7527d9fb1d6fabfa27721",
-    "qa/boss-simulation.js": "d70c23ae8bbc0c97492fab4e32ce3bc9724a7a4f",
+    "qa/boss-simulation.js": "3ef80ac9828cb88e57716e0ff1bec8be80ff242d",
     "qa/boss.cjs": "21700f259108cd4c9138b9307b562f011c0d0a09"
   },
   "uiSourceBlobs": {
     "index.html": "f65ff80cc9d25aa2caa72482c5d1634893507a3b",
     "style.css": "af87a80fb4313881396c704d600e0e5e601e6426"
   },
-  "imageMetadataCount": 102,
+  "imageMetadataCount": 113,
   "reconstruction": {
     "baseCommit": "8afb60daabe1b7608ff42a16f5e92512422b3e45",
     "method": "Recovered historical patches and rebuilt modules in hosted JavaScript after local environment detached. This report is a fresh execution of the source blobs named above.",
@@ -465,20 +476,32 @@
       "bent giant high miss and torso hit",
       "squid instruction matches mechanics"
     ],
-    "method": "independent hosted JavaScript repros; no native Canvas or browser"
+    "method": "independent hosted JavaScript repros; no native Canvas or browser",
+    "relationshipToCurrent": "Historical logic review before native-outfit draw routing; its regressions are also included in the fresh full recipe above."
   },
   "limitations": [
     "Image pixels were not decoded in this execution.",
     "Canvas operations were recorded and geometrically checked through a simulated context; no native raster composition or browser layout was verified.",
-    "Known dimensions cover 102 supplied source images; legacy dimensions use explicit synthetic fallbacks.",
+    "Known dimensions cover 113 supplied source images; legacy dimensions use explicit synthetic fallbacks.",
     "App tests execute the actual app.js against an event-capable DOM host, with a stub of the original duel engine for route preservation.",
     "This report does not certify frame-by-frame or official-source 1:1 visual fidelity."
   ],
   "integrationUpdate": {
-    "baseCommit": "8e2a158b3a8fe0975f54196605a7c2bfcf11e352",
+    "baseCommit": "39069ad4f5fa956a2ad0bb114887a66b4da2ea2a",
     "changes": [
-      "Five Heartman core PNGs and measured geometry",
-      "Higgs portrait corrected from inspected DS1 gold skull-mask reference"
+      "Ten human Mama Viaduc native PNGs with independent pose geometry and safe base-image fallback",
+      "Die-Hardman rival scene native repaint",
+      "Eleven corrected Higgs mask images, measured boot baselines and updated geometry"
     ]
+  },
+  "nativeOutfitCheckpointComparisons": 20,
+  "nativeMetadataProvenance": "Dimensions read from source PNG headers and production manifests; full alpha decoding where documented in individual manifests. This runtime recipe does not decode image pixels.",
+  "nativeOutfitIndependentReview": {
+    "sourceReport": "native-outfit-independent-review.json",
+    "fightBlob": "4abdd2703562128a0a2c2ca9b22209a872056b31",
+    "bossBlob": "50cd8ae96416b0d9e82499b5f4361cfd4829ca8e",
+    "cases": 72,
+    "passed": true,
+    "method": "Actual extracted draw functions with synthetic source images and distinct geometry; no native pixels or browser."
   }
 }

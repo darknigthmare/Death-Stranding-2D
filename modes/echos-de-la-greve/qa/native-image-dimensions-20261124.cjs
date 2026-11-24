@@ -1,4 +1,5 @@
-/* Native dimensions verified in production manifests. Legacy-only images are intentionally absent. */
+'use strict';
+// Native dimensions read from production PNGs and recorded in source manifests; no image resize.
 module.exports = {
   "assets/fighters/sam/guard.png": {
     "width": 854,
@@ -49,16 +50,16 @@ module.exports = {
     "height": 1024
   },
   "assets/fighters/higgs/rise.png": {
-    "width": 1024,
-    "height": 1536
+    "width": 964,
+    "height": 1632
   },
   "assets/fighters/higgs/apex.png": {
-    "width": 1215,
-    "height": 1295
+    "width": 1176,
+    "height": 1337
   },
   "assets/fighters/higgs/fall.png": {
-    "width": 1132,
-    "height": 1389
+    "width": 1143,
+    "height": 1376
   },
   "assets/fighters/cliff/guard.png": {
     "width": 1024,
@@ -336,14 +337,6 @@ module.exports = {
     "width": 1991,
     "height": 790
   },
-  "assets/bosses/giant/idle.png": {
-    "width": 887,
-    "height": 1774
-  },
-  "assets/bosses/mule-truck/idle.png": {
-    "width": 1774,
-    "height": 887
-  },
   "assets/bosses/whale/attack.png": {
     "width": 1991,
     "height": 790
@@ -352,6 +345,10 @@ module.exports = {
     "width": 1991,
     "height": 790
   },
+  "assets/bosses/giant/idle.png": {
+    "width": 887,
+    "height": 1774
+  },
   "assets/bosses/giant/attack.png": {
     "width": 1199,
     "height": 1312
@@ -359,6 +356,10 @@ module.exports = {
   "assets/bosses/giant/stagger.png": {
     "width": 1024,
     "height": 1536
+  },
+  "assets/bosses/mule-truck/idle.png": {
+    "width": 1774,
+    "height": 887
   },
   "assets/bosses/mule-truck/damaged.png": {
     "width": 1774,
@@ -407,5 +408,49 @@ module.exports = {
   "assets/fighters/heartman/portrait.png": {
     "width": 1274,
     "height": 1235
+  },
+  "assets/fighters/mama/viaduc/stance.png": {
+    "width": 1024,
+    "height": 1536
+  },
+  "assets/fighters/mama/viaduc/action.png": {
+    "width": 1024,
+    "height": 1536
+  },
+  "assets/fighters/mama/viaduc/step.png": {
+    "width": 1024,
+    "height": 1536
+  },
+  "assets/fighters/mama/viaduc/hit.png": {
+    "width": 1024,
+    "height": 1536
+  },
+  "assets/fighters/mama/viaduc/guard.png": {
+    "width": 1024,
+    "height": 1536
+  },
+  "assets/fighters/mama/viaduc/crouch.png": {
+    "width": 1024,
+    "height": 1536
+  },
+  "assets/fighters/mama/viaduc/rise.png": {
+    "width": 1024,
+    "height": 1536
+  },
+  "assets/fighters/mama/viaduc/apex.png": {
+    "width": 1024,
+    "height": 1536
+  },
+  "assets/fighters/mama/viaduc/fall.png": {
+    "width": 1024,
+    "height": 1536
+  },
+  "assets/fighters/mama/viaduc/portrait.png": {
+    "width": 1254,
+    "height": 1254
+  },
+  "assets/story/diehardman-rival.png": {
+    "width": 1672,
+    "height": 941
   }
 };

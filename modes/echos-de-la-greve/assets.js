@@ -11,6 +11,7 @@
     'heartman-intro', 'heartman-rival', 'heartman-ending'
   ]);
   story['sam-rival'] = story['sam-higgs-rival'];
+  story['diehardman-rival'] = 'assets/story/diehardman-rival.png';
   const roster = Object.keys(window.StrandContent.fighters);
   const arenas = Object.keys(window.StrandContent.stages);
   const stageLayers = (suffix, ids=arenas) => Object.fromEntries(ids.map(id => [id, 'assets/stages/' + id + suffix + '.png']));
@@ -27,14 +28,12 @@
   poses.diehardman = {...poses.diehardman,...Object.fromEntries(['stance','action','step','hit','jump'].map(pose=>[pose,replacementRoot.diehardman+pose+'.png']))};
   poses.mama = Object.fromEntries(['stance','action','step','hit',...movement].map(pose=>[pose,replacementRoot.mama+pose+'.png']));
   const nativeStageIds = ['mule-camp-dry','port-knot','incinerator'];
-  const fixedFrame = poses => Object.fromEntries(poses.flatMap(pose => [
-    [pose+'Anchor',.5], [pose+'Baseline',1017/1020], [pose+'Scale',1020/920]
-  ]));
   const wardrobe = {mama:{
     atelier:{name:'Atelier'},
-    viaduc:{name:'Maintenance du viaduc', portrait:'assets/fighters/mama/viaduc/portrait.webp',
-      poses:illustrations('fighters/mama/viaduc',['stance','action','step','hit',...movement]),
-      geometry:{...fixedFrame(['stance','action','step','hit',...movement]),motionFrames:1}}
+    viaduc:{name:'Maintenance du viaduc', portrait:'assets/fighters/mama/viaduc/portrait.png',
+      poses:Object.fromEntries(['stance','action','step','hit',...movement].map(pose=>[pose,'assets/fighters/mama/viaduc/'+pose+'.png'])),
+      nativePoses:true,poseGeometry:window.StrandGeneratedGeometry?.wardrobes?.mama?.viaduc || {}}
+
   }};
   window.StrandAssets = {
     wardrobe,

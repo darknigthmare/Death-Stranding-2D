@@ -411,7 +411,8 @@
       for (const [pose, file] of Object.entries(kit?.poses || {})) tailored[pose] = load(file);
       if (m.mode !== 'training') m.images[id + 'Finale'] = load(art.finishers?.[id]);
       return {base, tailored, geometry:{...spriteGeometry[id], ...art.geometry?.[id], ...kit?.geometry},
-        generatedPoses:art.poses?.[id] || {}, poseGeometry:art.generatedGeometry?.fighters?.[id] || {}};
+        generatedPoses:art.poses?.[id] || {}, poseGeometry:art.generatedGeometry?.fighters?.[id] || {},
+        tailoredPoseGeometry:kit?.nativePoses ? kit.poseGeometry || {} : null};
     });
     const projectileOwners = {sam:'sam',higgs:'higgs',cliff:'cliff',recall:'cliff',gate:'diehardman',heartman:'heartman',memory:'heartman'};
     m.projectileImages = Object.fromEntries(Object.entries(art.projectiles || {})
@@ -1275,7 +1276,7 @@
   function drawFighter(m, f, index) {
     const c = m.ctx, feet = FLOOR - f.y;
     const act = f.act;
-    const {base, tailored, geometry, generatedPoses, poseGeometry} = m.fighterFrames[index];
+    const {base, tailored, geometry, generatedPoses, poseGeometry, tailoredPoseGeometry} = m.fighterFrames[index];
     const frameFor = pose => ready(tailored[pose]) ? tailored[pose] : base[pose];
     const movement = m.phase === 'fight' && f.grounded && !f.act && !f.guard && !f.stun &&
       !f.blockStun && !f.crouch && (f.dash || !!f.keys.left !== !!f.keys.right);
@@ -1293,6 +1294,11 @@
     else if (movement && (f.dash || Math.sin(f.walk) >= 0)) pose = 'step';
     if (!ready(frameFor(pose))) pose = 'stance';
     const image = frameFor(pose);
+    // Select geometry from the actual ready source: an unavailable outfit pose
+    // falls back to the base image with that base image's own measured crop.
+    const nativeGeometry = image === tailored[pose]
+      ? (tailoredPoseGeometry ? tailoredPoseGeometry[pose] || {} : null)
+      : (generatedPoses[pose] && image === base[pose] ? poseGeometry[pose] || {} : null);
     const lost = m.winner && m.winner !== index + 1 && ['finish','cinema','roundover','ended'].includes(m.phase);
     const compression = pose === 'crouch' || pose === 'guard' ? 1 :
       f.crouch ? .69 : f.guard ? .93 : lost ? .84 : 1;
@@ -1307,9 +1313,8 @@
     if (immune(f)) c.globalAlpha = f.act?.key === 'syncope' ? .14 : .63;
     if (ready(image)) {
       if (f.flash > 1 && (f.flash % 4 < 2)) c.filter = 'brightness(1.5)';
-      const generated = generatedPoses[pose] && image === base[pose] && !ready(tailored[pose]);
-      if (generated) {
-        const measured = poseGeometry[pose] || {};
+      if (nativeGeometry) {
+        const measured = nativeGeometry;
         const crop = nativeCrop(image,measured);
         const ratio = Math.max(.1,finiteOr(measured.heightRatio,generatedPoseRatios[pose] || 1));
         const h = height * ratio, w = h * crop[2] / crop[3];
@@ -1349,8 +1354,8 @@
       c.translate(echoX, feet);
       c.scale(f.face, 1);
       if (ready(image)) {
-        if (generatedPoses[pose] && image === base[pose] && !ready(tailored[pose])) {
-          const measured=poseGeometry[pose] || {}, crop=nativeCrop(image,measured);
+        if (nativeGeometry) {
+          const measured=nativeGeometry, crop=nativeCrop(image,measured);
           const h=height*Math.max(.1,finiteOr(measured.heightRatio,generatedPoseRatios[pose] || 1));
           const w=h*crop[2]/crop[3];
           c.drawImage(image,...crop,-w*finiteOr(measured.anchorX,.5),-h*finiteOr(measured.baselineY,1),w,h);

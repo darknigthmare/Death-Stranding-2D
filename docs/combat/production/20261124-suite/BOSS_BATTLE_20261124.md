@@ -83,7 +83,7 @@ Le catalogue de boss référence quatorze PNG : trois poses pour le lion, le cal
 
 `boss-geometry-20261124.js` fournit les crops et les ancres mesurés. Le rendu utilise `drawImage` sur les pixels sources, avec un facteur identique en largeur et en hauteur. Les poses de boss sont orientées nativement vers la gauche ; les effets vers la droite. La direction de combat applique un miroir horizontal lorsqu’il est nécessaire. Les images sources ne sont pas étirées ni recopiées pour fabriquer les variantes.
 
-Les poses des huit porteurs utilisent le catalogue commun et `asset-geometry-20261124.js`. Les tenues héritées conservent leur géométrie propre. Une image absente ou en cours de chargement utilise le dessin de secours ; sa disponibilité ne change pas la simulation.
+Les poses des huit porteurs utilisent le catalogue commun et `asset-geometry-20261124.js`. Mama Viaduc utilise neuf poses natives avec leurs crops et appuis propres. Le moteur choisit la géométrie de l’image effectivement disponible : une pose Viaduc indisponible se replie sur la source Atelier et son cadrage. Les tenues héritées sans géométrie native conservent leur traitement. La disponibilité d’une image ne change pas la simulation.
 
 La pose et la hauteur du corps sont résolues explicitement. Pendant l’annonce ou l’attaque penchée du géant, sa zone de réception des tirs mesure 266 px de haut, à l’intérieur de sa silhouette affichée d’environ 294 px. Elle reprend la hauteur debout dans les autres poses. Cette règle appartient à la simulation et fonctionne même si aucun PNG n’est disponible. Le test vérifie qu’un tir centré à y = 250, de hauteur 32 px, passe au-dessus ; un tir dans le buste touche.
 
@@ -97,18 +97,20 @@ Le [rapport JSON de la recette](boss-simulation-report.json) contient les SHA Gi
 
 Résultat sur les dépendances finales du lot :
 
-- **17 sections de vérification réussies** ;
+- **18 sections de vérification réussies** ;
 - **6 victoires** obtenues par pressions et relâchements des commandes, sans fixer les points de vie du boss ;
 - **1 550 checkpoints atteints** pendant ces parcours ;
-- **116 chemins d’images** employés par les appels de dessin du vrai moteur ;
+- **126 chemins d’images** employés par les appels de dessin du vrai moteur ;
 - les **14 poses de boss** et les **4 effets** effectivement demandés au rendu ;
 - les huit porteurs, leurs poses de déplacement et leurs 24 signatures ;
 - la collecte réelle, les deux vagues, les défaites, les reprises, la pause et la revanche ;
 - les cas limites identifiés en revue : contre, Scan, marqueurs, orientation et corps penché du géant.
 
+Le chargement des neuf poses Viaduc est exercé dans les deux directions. Vingt comparaisons de checkpoints confirment qu’un repli sur Atelier pendant le chargement laisse la simulation inchangée.
+
 Les fixtures de fin de temps, d’intégrité minimale, de contre à un point de vie et de tir à une hauteur donnée sont identifiées comme des cas limites. Elles ne sont pas comptées comme des victoires obtenues par le pilote.
 
-Une revue indépendante a rejoué onze contrôles ciblés sur le moteur final `90dc2ef7e1d1884370c845274a1e9e6cf0dc5a81` et confirmé les corrections correspondantes.
+Une revue indépendante a rejoué onze contrôles ciblés sur le moteur `90dc2ef7e1d1884370c845274a1e9e6cf0dc5a81`, avant l’extension de dessin des tenues natives et confirmé les corrections correspondantes. La recette complète ci-dessus a été réexécutée après cette extension. Une seconde revue indépendante de 72 cas cible les fonctions de dessin finales de duel et Boss : source de tenue prête, repli de base, stance de secours, anciennes tenues et fantôme de feinte. Son [rapport](native-outfit-independent-review.json) précise les blobs exécutés et les images synthétiques utilisées.
 
 Pour relancer la recette depuis la racine du dépôt :
 
@@ -116,6 +118,6 @@ Pour relancer la recette depuis la racine du dépôt :
 node modes/echos-de-la-greve/qa/boss.cjs docs/combat/production/20261124-suite/boss-local-report.json
 ```
 
-Le lanceur utilise le module de 102 dimensions natives `qa/native-image-dimensions-20261124.cjs`. Les sources héritées qui n’y figurent pas emploient des dimensions de substitution explicites dans le simulateur. Le lanceur est compilé, mais n’a pas été exécuté sous Node dans cette session ; le même noyau de recette a été exécuté en JavaScript hébergé.
+Le lanceur utilise le module de 113 dimensions natives `qa/native-image-dimensions-20261124.cjs`. Les sources héritées qui n’y figurent pas emploient des dimensions de substitution explicites dans le simulateur. Le lanceur est compilé, mais n’a pas été exécuté sous Node dans cette session ; le même noyau de recette a été exécuté en JavaScript hébergé.
 
 Cette vérification contrôle la simulation, les chemins de rendu, les bornes des crops, les facteurs d’échelle et les événements du menu. **Elle ne décode pas les pixels, ne produit pas de composition Canvas native et ne valide pas la mise en page d’un navigateur.** Une revue visuelle en scène reste nécessaire pour certifier le placement optique et la lisibilité sur les tailles d’écran réelles.

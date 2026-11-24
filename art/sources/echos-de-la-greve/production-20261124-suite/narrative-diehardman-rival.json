@@ -1,0 +1,159 @@
+{
+  "schema_version": 1,
+  "date": "2026-11-24",
+  "batch": "production-20261124-suite-narrative-diehardman-rival",
+  "repository": "darknigthmare/Death-Stranding-2D",
+  "scope": "One existing original fan-game narrative scene repainted with detailed materials; no added character image, no introduction/ending replacement",
+  "source_commit": "8afb60daabe1b7608ff42a16f5e92512422b3e45",
+  "generation_tool": "built-in image_gen.imagegen",
+  "generations": 1,
+  "rejected_generations": 0,
+  "native_pixels_preserved_after_generation": true,
+  "pixel_edits_outside_imagegen": 0,
+  "canonical_1to1_verified": false,
+  "provenance": {
+    "classification": "Original narrative illustration created for the Death Stranding 2D fan-game",
+    "canonical_limit": "Not presented as an official Death Stranding cutscene reproduction. No foreground head, face or mask is in frame; this scene makes no claim to verify canonical mask geometry.",
+    "reference": {
+      "path": "modes/echos-de-la-greve/assets/story/diehardman-rival.webp",
+      "sha": "588e718771093a0aa22905aeb2eacbaebd169bd9",
+      "width": 1600,
+      "height": 900
+    },
+    "reference_mechanism": "Hosted WebP fetched via GitHub base64 and displayed immediately before imagegen; num_last_images_to_include=1",
+    "generation_source": "Native opaque PNG returned in imagegen data URI; same bytes uploaded as a Git blob without conversion, resizing or retouching",
+    "output_hint": "Generated images are saved to /workspace/scratch/05d1f74d065e/generated_images as /workspace/scratch/05d1f74d065e/generated_images/exec-bd3ac036-c0c4-4683-b7de-eec3bcc8a9f7.png by default.\nIf you need to use a generated image at another path, copy it and leave the original in place unless the user explicitly asks you to delete it.\nThe generated image is already displayed to the user. There is no need to render it in the final response as a Markdown image or file link."
+  },
+  "original_audit": {
+    "date": "2026-11-24",
+    "repository": "darknigthmare/Death-Stranding-2D",
+    "source_commit": "8afb60daabe1b7608ff42a16f5e92512422b3e45",
+    "sources": [
+      {
+        "pose": "rival",
+        "path": "modes/echos-de-la-greve/assets/story/diehardman-rival.webp",
+        "git_blob_sha": "588e718771093a0aa22905aeb2eacbaebd169bd9",
+        "bytes": 59276,
+        "width": 1600,
+        "height": 900,
+        "pixels_inspected": true
+      },
+      {
+        "pose": "intro",
+        "path": "modes/echos-de-la-greve/assets/story/diehardman-intro.webp",
+        "git_blob_sha": "7e845428693e5c0db9f47f36f8028724e4f336f8",
+        "bytes": 175198,
+        "width": 1672,
+        "height": 941,
+        "pixels_inspected": true
+      },
+      {
+        "pose": "ending",
+        "path": "modes/echos-de-la-greve/assets/story/diehardman-ending.webp",
+        "git_blob_sha": "9242875f164fd988f3df308f560e9905ebaba37b",
+        "bytes": 214706,
+        "width": 1672,
+        "height": 941,
+        "pixels_inspected": true
+      }
+    ],
+    "portrait_comparison": {
+      "path": "modes/echos-de-la-greve/assets/fighters/diehardman/portrait.png",
+      "git_blob_sha": "736b1bd97c7fcb40c37d16ae9788818ca716545b",
+      "result_key": "suite-result-a-diehardman-portrait",
+      "pixels_inspected": true
+    },
+    "decision": "Only rival scene has a concrete rendering-style inconsistency; no missing image. Intro and ending can remain.",
+    "rival": {
+      "identity": "No head/face/mask shown, so no mask mismatch can be asserted",
+      "composition": "Bare hand in a dark suit sleeve holding an old brass key, removed dark glove on ledge, distant BT silhouettes in a misty landscape",
+      "defect": "Foreground hand, sleeve and key use flat color areas with visible drawn outlines and sparse highlight strokes, unlike the detailed painted/realistic intro, ending and new character portrait. Distant BT silhouettes are also schematic.",
+      "equipment": "Bare hand is explained by visibly removed glove lying in the same scene; not an equipment omission",
+      "suggested_scope": "If assigned: one detailed repaint retaining scene composition, sleeve/cuff, skin tone, key, removed glove, distant figures and atmosphere"
+    },
+    "intro_ending": {
+      "verdict": "Already detailed and consistent with project costume and rear/side identity cues",
+      "details": "Dark formal suit, white collar, cropped hair, dark face mask edge/straps visible from rear/side. Intro uses a folded note before a door; ending uses the key on a desk with a microphone.",
+      "limit": "Rear/side framing cannot verify frontal mask geometry; canonical 1:1 is not certified"
+    },
+    "generated_assets": 0,
+    "pixel_edits": 0,
+    "commits_or_refs": 0
+  },
+  "prompt": "Use case: faithful material/style upgrade of an existing original fan-game narrative illustration. The most recent reference image is the exact existing diehardman-rival.webp scene. Repaint this SAME image as a richly detailed realistic digital painting, keeping its composition, camera angle, crop, object identities, scale relationships, placements, gesture, lighting direction and muted gray-brown palette. Wide 16:9 narrative frame, opaque full scene. Preserve the foreground adult dark-brown bare hand and dark charcoal formal suit sleeve entering from the LEFT edge, with a small white shirt cuff. The hand reaches toward the RIGHT and holds exactly ONE small old brass key by its round bow between the fingertips; the key hangs downward near the lower-middle of the scene. Retain the key's recognizable simple silhouette, shaft and teeth. Preserve exactly ONE removed black leather glove resting on the diagonal dark ledge/table to the lower RIGHT of the key, fingers pointing right. Keep the original foreground ledge crossing diagonally from the bottom left toward the right side. Preserve the distant misty barren landscape, sparse dead tree trunks, cloudy brown-gray sky and the existing cluster of four small dark floating humanoid silhouettes on the RIGHT side in the distance; keep these figures soft, faceless and subordinate, in their original approximate spacing. Do not add any new people, head, face, mask, body, weapon, equipment, buildings or narrative object. The foreground person remains cropped to the same hand/forearm only; there is NO visible head or face to invent. Preserve the original visual story and negative space. Improve ONLY the rendering: natural adult hand anatomy and believable fingers with restrained skin pores, soft creases and fingernails; fine dark wool suit texture and seams; clean white cuff; convincing aged brass with small scratches and patina; worn supple black glove leather; fine weathered ledge grain and controlled realistic reflections. Paint atmospheric depth and diffused light in the misty background without making the distant silhouettes more prominent. Integrated soft cinematic lighting, nuanced shadows, carefully blended values and rich tactile detail matching the project's detailed painted narrative artwork. Avoid vector flats, cel-shading, bold drawn outlines, plastic mannequin anatomy, simplified cartoon hands or a flat infographic look. Keep the scene calm, solemn and unbloody. No added text, lettering, logo, watermark, border, montage or extra panel. Do not change object count or stage a different event. This is an original scene from the Death Stranding 2D fan-game, not a claim to reproduce an official cutscene.",
+  "imagegen_arguments": {
+    "num_last_images_to_include": 1,
+    "transparent_background": false
+  },
+  "asset": {
+    "path": "modes/echos-de-la-greve/assets/story/diehardman-rival.png",
+    "git_blob_sha": "b050a382c62c9fe12ddaf028b066c3004829cab3",
+    "bytes": 1883891,
+    "sha256": "c34f7a03e7aa6e7a10aed175cd134d6b7b7a408f249a4562e9a03c0c5e93497a",
+    "width": 1672,
+    "height": 941,
+    "bit_depth": 8,
+    "png_color_type": 2,
+    "mode": "RGB",
+    "has_alpha_channel": false,
+    "has_trns_chunk": false,
+    "chunk_types": [
+      "IHDR",
+      "caBX",
+      "IDAT",
+      "IEND"
+    ],
+    "opacity_qa": {
+      "opaque": true,
+      "method": "Native PNG color type 2 (RGB) with no tRNS chunk: all pixels implicitly opaque",
+      "implicit_alpha_range": [
+        255,
+        255
+      ]
+    }
+  },
+  "visual_review": {
+    "inspected_native_pixels": true,
+    "decision": "accepted",
+    "composition": "Foreground dark suit forearm enters from the left; adult brown bare hand holds the single old brass key downward near lower center; one removed black glove lies on the diagonal ledge at lower right; distant cluster of four faceless silhouettes remains on the right in a misty barren landscape",
+    "preserved_objects": [
+      "one cropped foreground forearm and bare hand",
+      "white shirt cuff",
+      "one brass key",
+      "one removed black glove",
+      "diagonal foreground ledge",
+      "four distant dark silhouettes",
+      "barren misty background and dead tree forms"
+    ],
+    "improvement": "Hand skin folds/nails, wool suit weave, seams/buttons, aged brass, glove leather and weathered ledge are rendered with detailed natural materials and blended shading; previous foreground flat-color outlines removed",
+    "head_face_or_mask_added": false,
+    "extra_foreground_character_added": false,
+    "extra_narrative_object_added": false,
+    "opaque_background": true,
+    "unwanted_text_or_watermark": false,
+    "limits": "Visual preservation of scene composition and objects, not pixel identity to the old illustration; no browser scene-layout check performed"
+  },
+  "retained_scenes": [
+    {
+      "pose": "intro",
+      "path": "modes/echos-de-la-greve/assets/story/diehardman-intro.webp",
+      "git_blob_sha": "7e845428693e5c0db9f47f36f8028724e4f336f8",
+      "bytes": 175198,
+      "width": 1672,
+      "height": 941,
+      "pixels_inspected": true,
+      "status": "existing source retained unchanged"
+    },
+    {
+      "pose": "ending",
+      "path": "modes/echos-de-la-greve/assets/story/diehardman-ending.webp",
+      "git_blob_sha": "9242875f164fd988f3df308f560e9905ebaba37b",
+      "bytes": 214706,
+      "width": 1672,
+      "height": 941,
+      "pixels_inspected": true,
+      "status": "existing source retained unchanged"
+    }
+  ],
+  "integration_note": "Parent can map the rival scene to the new .png. This agent did not modify code, commit, branch or reference."
+}

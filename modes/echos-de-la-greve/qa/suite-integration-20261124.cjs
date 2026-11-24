@@ -34,19 +34,26 @@ function runSuiteIntegration(options) {
   check(Object.keys(content.fighters).length===8,'The eight existing playable fighters remain available');
   check(Object.keys(content.stages).length===13,'Thirteen stage variants');
   check(!assets.wardrobe.mama.atelier.poses,'Atelier must use native base PNGs');
-  check(assets.wardrobe.mama.viaduc.poses.stance.endsWith('.webp'),'Viaduc keeps its own wardrobe source');
+  check(assets.wardrobe.mama.viaduc.poses.stance.endsWith(assets.wardrobe.mama.viaduc.nativePoses?'.png':'.webp'),'Viaduc keeps its own wardrobe source');
   report.catalog_paths=allFiles.size;
   const nativePoses=new Map();
-  for(const [id,poses] of Object.entries(assets.poses))for(const [pose,file] of Object.entries(poses)){
-    const geometry=assets.generatedGeometry.fighters[id]?.[pose],meta=dimensions[file];
+  function registerNative(id,pose,file,geometry,outfit=null){
+    const meta=dimensions[file];
     check(meta,'Native dimensions missing: '+file);
     check(geometry,'Native geometry missing: '+id+'/'+pose);
     const [x,y,w,h]=geometry.crop;
     check([x,y,w,h,geometry.anchorX,geometry.baselineY,geometry.heightRatio].every(Number.isFinite),'Finite geometry: '+file);
     check(x>=0&&y>=0&&w>0&&h>0&&x+w<=meta.width&&y+h<=meta.height,'Native crop lies inside source: '+file);
     check(geometry.anchorX>=0&&geometry.anchorX<=1&&geometry.baselineY>0&&geometry.baselineY<=1,'Valid image anchors: '+file);
-    nativePoses.set(file,{id,pose,geometry});
+    nativePoses.set(file,{id,pose,geometry,outfit});
   }
+  for(const [id,poses]of Object.entries(assets.poses))for(const [pose,file]of Object.entries(poses))
+    registerNative(id,pose,file,assets.generatedGeometry.fighters[id]?.[pose]);
+  report.native_base_pose_crops=nativePoses.size;
+  for(const [id,kits]of Object.entries(assets.wardrobe||{}))for(const [outfit,kit]of Object.entries(kits))
+    if(kit.nativePoses)for(const [pose,file]of Object.entries(kit.poses))
+      registerNative(id,pose,file,kit.poseGeometry?.[pose],outfit);
+  report.native_outfit_pose_crops=nativePoses.size-report.native_base_pose_crops;
   report.native_pose_crops=nativePoses.size;
   const repainted=Object.keys(content.fighters).filter(id=>assets.fighters[id].endsWith('.png'));
   function harness({unavailable=()=>false,read=source}={}){
@@ -108,9 +115,11 @@ function runSuiteIntegration(options) {
   const tap=(side,key)=>[[side,key,true],[side,key,false]];
   const special=(side,direction)=>direction?[[side,direction,true],...tap(side,'special'),[side,direction,false]]:tap(side,'special');
   const current=harness();
-  for(const id of repainted)for(const side of [1,2]){
+  const poseCases=repainted.flatMap(id=>[1,2].map(side=>({id,side,outfit:null})));
+  poseCases.push(...[1,2].map(side=>({id:'mama',side,outfit:'viaduc'})));
+  for(const {id,side,outfit}of poseCases){
     const facing=side===1?1:-1,forward=side===1?'right':'left';
-    current.start(id,side);current.step(1);
+    current.start(id,side,outfit?{outfits:side===1?[outfit,null]:[null,outfit]}:{});current.step(1);
     current.step(5,[[side,'guard',true]]);
     current.step(5,[[side,'guard',false],[side,'down',true]]);
     current.step(46,[[side,'down',false],...tap(side,'up')]);
@@ -125,10 +134,10 @@ function runSuiteIntegration(options) {
     check(current.engine.snapshot().fighters[side-1].hp<100,id+' receives a real hit');
     const poses=['stance','action','step','hit','guard','crouch','rise','apex','fall'];
     for(const pose of poses){
-      const file=assets.poses[id][pose];
+      const file=(outfit?assets.wardrobe[id][outfit].poses:assets.poses[id])[pose];
       check(current.seen.has(file+'/'+facing),'Pose not drawn through input flow: '+id+'/'+pose+' side '+side);
     }
-    report.poses.push({fighter:id,side,poses,real_hit:true});
+    report.poses.push({fighter:id,side,outfit:outfit||'default',poses,real_hit:true});
   }
   for(const id of repainted.filter(id=>assets.poses[id].jump))for(const side of [1,2]){
     const suppressed=new Set(['rise','apex','fall'].map(p=>assets.poses[id][p]));
@@ -139,11 +148,24 @@ function runSuiteIntegration(options) {
     fallback.engine.stop();
   }
   report.checks.push('Repainted fighter poses drawn on both sides, real hit, preserved crops, ratios and boot baselines; native jump fallbacks');
-  current.start('mama',1,{outfits:['viaduc',null]});
-  current.step(4,[[1,'guard',true]]);current.step(4,[[1,'guard',false],[1,'down',true]]);current.step(46,[[1,'down',false],...tap(1,'up')]);
-  for(const pose of ['guard','crouch','rise','apex','fall'])check(current.seen.has(assets.wardrobe.mama.viaduc.poses[pose]+'/1'),'Viaduc wardrobe route: '+pose);
-  check(!current.calls.some(c=>c.file.includes('/mama/atelier/')),'Viaduc must not use Atelier PNG geometry');
-  report.checks.push('Separate Mama Viaduc wardrobe remains independent');
+  const viaduc=assets.wardrobe.mama.viaduc;
+  if(viaduc.nativePoses){
+    const files=new Set(Object.values(viaduc.poses)),fallback=harness({unavailable:file=>files.has(file)});
+    for(const side of [1,2]){
+      const extra={outfits:side===1?['viaduc',null]:[null,'viaduc']};
+      current.start('mama',side,extra);fallback.start('mama',side,extra);
+      for(const [count,inputs]of [[4,[[side,'guard',true]]],[4,[[side,'guard',false],[side,'down',true]]],
+        [46,[[side,'down',false],...tap(side,'up')]],[30,tap(side,'light')]]){
+        current.step(count,inputs);fallback.step(count,inputs);
+        equal(current.engine.network.checkpoint(),fallback.engine.network.checkpoint(),'Unavailable Viaduc pose changes simulation');
+      }
+      for(const pose of ['guard','crouch','rise','apex','fall','action'])
+        check(fallback.seen.has(assets.poses.mama[pose]+'/'+(side===1?1:-1)),'Viaduc falls back to Atelier pose: '+pose);
+      check(!fallback.calls.some(c=>files.has(c.file)),'Unavailable Viaduc image must not be drawn');
+    }
+    fallback.engine.stop();
+    report.checks.push('Native Viaduc has its own measured geometry on both sides; delayed outfit images use Atelier crops and keep identical simulation');
+  }else report.checks.push('Historical Viaduc WebP wardrobe routes independently of Atelier PNGs');
   if(repainted.includes('higgs')){
     current.start('higgs',1);current.step(55,special(1,'left'));
     check(current.calls.some(c=>c.file===assets.fighters.higgs),'Higgs feint echo uses native pose crop');

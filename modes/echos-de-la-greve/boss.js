@@ -130,6 +130,7 @@
     return {base:Object.fromEntries(Object.entries(base).map(([key,path])=>[key,image(path)])),
       tailored:Object.fromEntries(Object.entries(tailored?.poses||{}).map(([key,path])=>[key,image(path)])),
       legacy:{...legacyGeometry[id],...art.geometry?.[id],...tailored?.geometry},measured:art.generatedGeometry?.fighters?.[id]||{},
+      tailoredMeasured:tailored?.nativePoses ? tailored.poseGeometry || {} : null,
       boss:Object.fromEntries(Object.entries(bossArt.sprites?.[encounters[s.bossId].type]||{}).map(([key,path])=>[key,image(path)])),
       effects:Object.fromEntries(Object.entries(bossArt.effects||{}).map(([key,path])=>[key,image(path)])),
       shots:Object.fromEntries(Object.entries(art.projectiles||{}).map(([key,path])=>[key,image(path)])),
@@ -463,11 +464,14 @@
     let pose=p.stun?'hit':p.act&&p.act.frame>=p.act.delay*.5?'action':p.y>0?p.vy>4?'rise':p.vy<-4?'fall':'apex':p.crouch?'crouch':p.guard||p.shield?'guard':!!p.keys.left!==!!p.keys.right&&Math.sin(p.walk)>=0?'step':'stance';
     const get=key=>ready(images.tailored[key])?images.tailored[key]:images.base[key];
     if(!ready(get(pose)))pose=p.y>0&&ready(get('jump'))?'jump':'stance';
-    const im=get(pose),g=images.measured[pose],height=players[s.p1].h,feet=FLOOR-p.y;
+    const im=get(pose),height=players[s.p1].h,feet=FLOOR-p.y;
+    const g=im===images.tailored[pose]
+      ? (images.tailoredMeasured ? images.tailoredMeasured[pose] || {} : null)
+      : images.measured[pose];
     oval(c,p.x,FLOOR+2,Math.max(12,29-p.y*.07),5,'#071116aa');c.save();
     if(p.invuln&&p.invuln%6<3)c.globalAlpha=.58;
     if(ready(im)){
-      if(g&&(!ready(images.tailored[pose])||images.tailored[pose]?.src===images.base[pose]?.src))sprite(c,im,p.x,feet,height*(g.heightRatio||1),g,'height',p.face);
+      if(g)sprite(c,im,p.x,feet,height*(g.heightRatio||1),g,'height',p.face);
       else{
         const legacy=images.legacy,frames=['step','hit'].includes(pose)?legacy.motionFrames||1:1,sw=im.naturalWidth/frames;
         const index=frames>1?clamp(Math.floor((Math.sin(p.walk)+1)*frames/2),0,frames-1):0;
