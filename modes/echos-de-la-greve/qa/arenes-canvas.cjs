@@ -12,7 +12,7 @@ const requested = process.argv.find(a=>a.startsWith('--stages='))?.slice(9).spli
 const groups = ['skyplates','distants','midgrounds','floors','foregrounds'];
 const speeds = [.14,.27,.43,.62,.8];
 // These exterior joins previously exposed a strip of sky above the floor.
-const joinRegressions = new Set(['shore','terminal','battlefield','mountain-pass','mule-camp-dry']);
+const joinRegressions = new Set(['shore','terminal','battlefield','mountain-pass','mule-camp-dry','port-knot','incinerator']);
 const script = name => fs.readFileSync(path.join(root,name),'utf8');
 const catalog = {window:{},structuredClone};
 vm.runInNewContext(script('content.js'),catalog);

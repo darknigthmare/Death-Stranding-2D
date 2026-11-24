@@ -1,0 +1,69 @@
+{
+  "date": "2026-11-24",
+  "scope": "Integration of published suite plus missing boss variants and Higgs core repaint",
+  "base_commit": "8afb60daabe1b7608ff42a16f5e92512422b3e45",
+  "counts": {
+    "native_images": 97,
+    "total_bytes": 150746863,
+    "first_lot": 42,
+    "suite": 55,
+    "bosses": 14,
+    "boss_effects": 4,
+    "new_stages": 2,
+    "stage_pngs": 12,
+    "support_portraits": 3,
+    "mama": 10,
+    "diehardman": 6,
+    "higgs": 6
+  },
+  "runtime": {
+    "playable_fighters": 8,
+    "stage_configurations": 13,
+    "locations": 12,
+    "stage_layers": 65,
+    "boss_encounters": 6,
+    "boss_images": 14,
+    "boss_effect_images": 4,
+    "principal_catalog_paths": 225,
+    "native_fighter_pose_crops": 54
+  },
+  "executed": {
+    "integration": {
+      "report": "integration-validation.json",
+      "passed": true,
+      "pose_side_cases": 6,
+      "stage_cases": 16,
+      "unchanged_duel_checkpoints": 72
+    },
+    "boss": {
+      "report": "boss-simulation-report.json",
+      "passed": true,
+      "sections": 17,
+      "victories": 6,
+      "checkpoint_samples": 1550,
+      "drawn_image_paths": 116,
+      "independent_regressions": 11
+    },
+    "relay": {
+      "report": "relay-validation.json",
+      "passed": true,
+      "http_transport_exercised": false
+    }
+  },
+  "limitations": {
+    "browser_executed": false,
+    "native_canvas_for_reconstructed_sources": false,
+    "pixel_decode_during_runtime_recipe": false,
+    "canonical_1_to_1_certified": false,
+    "legacy_dimension_placeholders_explicit": true
+  },
+  "followups": [
+    "Heartman main five images repaint in progress",
+    "Higgs eleven-pose canonical skull-mask correction in progress",
+    "Mama Viaduc ten-image human repaint audit in progress",
+    "Lockne supporting portrait",
+    "narrative image consistency",
+    "Sam/Cliff historical movement sheets",
+    "dedicated asymmetric left-facing views"
+  ]
+}

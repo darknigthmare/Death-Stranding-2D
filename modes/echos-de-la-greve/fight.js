@@ -204,7 +204,9 @@
     'ruined-factory':{filter:'lowpass',hz:410,level:.045,hum:49,cue:'pipe',interval:10,x:.84},
     'timefall-shelter':{filter:'lowpass',hz:1900,level:.06,cue:'drip',interval:6,x:.1},
     'tar-basin':{filter:'lowpass',hz:260,level:.055,cue:'bubble',interval:9,x:.84},
-    'mountain-pass':{filter:'bandpass',hz:960,level:.07,cue:'gust',interval:11,x:.16}
+    'mountain-pass':{filter:'bandpass',hz:960,level:.07,cue:'gust',interval:11,x:.16},
+    'port-knot':{filter:'lowpass',hz:430,level:.052,cue:'surf',interval:12,x:.15},
+    incinerator:{filter:'bandpass',hz:560,level:.04,hum:52,cue:'gust',interval:14,x:.72}
   };
   function releaseAmbientVoice(group,voice,stopSource=true) {
     if (voice.released) return;
@@ -1347,8 +1349,15 @@
       c.translate(echoX, feet);
       c.scale(f.face, 1);
       if (ready(image)) {
-        const width = height * image.naturalWidth / image.naturalHeight;
-        c.drawImage(image, -width / 2, -height, width, height);
+        if (generatedPoses[pose] && image === base[pose] && !ready(tailored[pose])) {
+          const measured=poseGeometry[pose] || {}, crop=nativeCrop(image,measured);
+          const h=height*Math.max(.1,finiteOr(measured.heightRatio,generatedPoseRatios[pose] || 1));
+          const w=h*crop[2]/crop[3];
+          c.drawImage(image,...crop,-w*finiteOr(measured.anchorX,.5),-h*finiteOr(measured.baselineY,1),w,h);
+        } else {
+          const width = height * image.naturalWidth / image.naturalHeight;
+          c.drawImage(image, -width / 2, -height, width, height);
+        }
       } else {
         oval(c,0,-height+14,12,14,AMBER);
         line(c,0,-height+30,-7,-23,AMBER,15);

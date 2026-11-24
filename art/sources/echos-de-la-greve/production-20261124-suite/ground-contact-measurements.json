@@ -1,0 +1,370 @@
+{
+  "method": "alpha>96 in last ceil(1.5% bbox alpha>8 height) rows; crop alpha bbox padded 3 pixels and clamped to source; anchorX uses midpoint of support extent",
+  "sources": [
+    {
+      "id": "diehardman",
+      "pose": "stance",
+      "path": "modes/echos-de-la-greve/assets/fighters/diehardman/stance.png",
+      "source_bbox": [
+        60,
+        54,
+        753,
+        1858
+      ],
+      "crop": [
+        57,
+        51,
+        756,
+        1861
+      ],
+      "band_start_y": 1830,
+      "band_end_y_exclusive": 1858,
+      "support_min_x": 61,
+      "support_max_x_exclusive": 738,
+      "support_pixels": 6317,
+      "center_of_extent_x": 399.5,
+      "mean_pixel_center_x": 317.12687984802915,
+      "anchorX": 0.4899856938483548,
+      "mean_anchorX": 0.372141459010056
+    },
+    {
+      "id": "diehardman",
+      "pose": "action",
+      "path": "modes/echos-de-la-greve/assets/fighters/diehardman/action.png",
+      "source_bbox": [
+        61,
+        38,
+        1126,
+        1292
+      ],
+      "crop": [
+        58,
+        35,
+        1129,
+        1295
+      ],
+      "band_start_y": 1273,
+      "band_end_y_exclusive": 1292,
+      "support_min_x": 62,
+      "support_max_x_exclusive": 925,
+      "support_pixels": 4201,
+      "center_of_extent_x": 493.5,
+      "mean_pixel_center_x": 433.90585574863127,
+      "anchorX": 0.4066293183940243,
+      "mean_anchorX": 0.3509858597092729
+    },
+    {
+      "id": "diehardman",
+      "pose": "step",
+      "path": "modes/echos-de-la-greve/assets/fighters/diehardman/step.png",
+      "source_bbox": [
+        56,
+        74,
+        951,
+        1484
+      ],
+      "crop": [
+        53,
+        71,
+        954,
+        1487
+      ],
+      "band_start_y": 1462,
+      "band_end_y_exclusive": 1484,
+      "support_min_x": 164,
+      "support_max_x_exclusive": 919,
+      "support_pixels": 3837,
+      "center_of_extent_x": 541.5,
+      "mean_pixel_center_x": 702.7796455564243,
+      "anchorX": 0.5421753607103219,
+      "mean_anchorX": 0.721176077199139
+    },
+    {
+      "id": "diehardman",
+      "pose": "hit",
+      "path": "modes/echos-de-la-greve/assets/fighters/diehardman/hit.png",
+      "source_bbox": [
+        77,
+        51,
+        916,
+        1512
+      ],
+      "crop": [
+        74,
+        48,
+        919,
+        1515
+      ],
+      "band_start_y": 1490,
+      "band_end_y_exclusive": 1512,
+      "support_min_x": 78,
+      "support_max_x_exclusive": 913,
+      "support_pixels": 5704,
+      "center_of_extent_x": 495.5,
+      "mean_pixel_center_x": 424.4032258064516,
+      "anchorX": 0.49881656804733726,
+      "mean_anchorX": 0.41467837373544564
+    },
+    {
+      "id": "mama",
+      "pose": "stance",
+      "path": "modes/echos-de-la-greve/assets/fighters/mama/atelier/stance.png",
+      "source_bbox": [
+        241,
+        19,
+        683,
+        1520
+      ],
+      "crop": [
+        238,
+        16,
+        686,
+        1523
+      ],
+      "band_start_y": 1497,
+      "band_end_y_exclusive": 1520,
+      "support_min_x": 301,
+      "support_max_x_exclusive": 636,
+      "support_pixels": 2950,
+      "center_of_extent_x": 468.5,
+      "mean_pixel_center_x": 398.6271186440678,
+      "anchorX": 0.5145089285714286,
+      "mean_anchorX": 0.35854267554479424
+    },
+    {
+      "id": "mama",
+      "pose": "action",
+      "path": "modes/echos-de-la-greve/assets/fighters/mama/atelier/action.png",
+      "source_bbox": [
+        52,
+        23,
+        1004,
+        1518
+      ],
+      "crop": [
+        49,
+        20,
+        1007,
+        1521
+      ],
+      "band_start_y": 1495,
+      "band_end_y_exclusive": 1518,
+      "support_min_x": 52,
+      "support_max_x_exclusive": 238,
+      "support_pixels": 2906,
+      "center_of_extent_x": 145,
+      "mean_pixel_center_x": 158.5860289057123,
+      "anchorX": 0.10020876826722339,
+      "mean_anchorX": 0.11439042683268509
+    },
+    {
+      "id": "mama",
+      "pose": "step",
+      "path": "modes/echos-de-la-greve/assets/fighters/mama/atelier/step.png",
+      "source_bbox": [
+        80,
+        17,
+        940,
+        1509
+      ],
+      "crop": [
+        77,
+        14,
+        943,
+        1512
+      ],
+      "band_start_y": 1486,
+      "band_end_y_exclusive": 1509,
+      "support_min_x": 166,
+      "support_max_x_exclusive": 868,
+      "support_pixels": 3505,
+      "center_of_extent_x": 517,
+      "mean_pixel_center_x": 534.7875891583452,
+      "anchorX": 0.5080831408775982,
+      "mean_anchorX": 0.5286230821689899
+    },
+    {
+      "id": "mama",
+      "pose": "hit",
+      "path": "modes/echos-de-la-greve/assets/fighters/mama/atelier/hit.png",
+      "source_bbox": [
+        115,
+        36,
+        821,
+        1518
+      ],
+      "crop": [
+        112,
+        33,
+        824,
+        1521
+      ],
+      "band_start_y": 1495,
+      "band_end_y_exclusive": 1518,
+      "support_min_x": 269,
+      "support_max_x_exclusive": 764,
+      "support_pixels": 3477,
+      "center_of_extent_x": 516.5,
+      "mean_pixel_center_x": 408.68291630716135,
+      "anchorX": 0.5681179775280899,
+      "mean_anchorX": 0.41668948919545135
+    },
+    {
+      "id": "mama",
+      "pose": "guard",
+      "path": "modes/echos-de-la-greve/assets/fighters/mama/atelier/guard.png",
+      "source_bbox": [
+        193,
+        49,
+        794,
+        1511
+      ],
+      "crop": [
+        190,
+        46,
+        797,
+        1514
+      ],
+      "band_start_y": 1489,
+      "band_end_y_exclusive": 1511,
+      "support_min_x": 194,
+      "support_max_x_exclusive": 765,
+      "support_pixels": 3663,
+      "center_of_extent_x": 479.5,
+      "mean_pixel_center_x": 347.94144144144144,
+      "anchorX": 0.4769357495881384,
+      "mean_anchorX": 0.26020006827255593
+    },
+    {
+      "id": "mama",
+      "pose": "crouch",
+      "path": "modes/echos-de-la-greve/assets/fighters/mama/atelier/crouch.png",
+      "source_bbox": [
+        171,
+        58,
+        1007,
+        1164
+      ],
+      "crop": [
+        168,
+        55,
+        1010,
+        1167
+      ],
+      "band_start_y": 1147,
+      "band_end_y_exclusive": 1164,
+      "support_min_x": 325,
+      "support_max_x_exclusive": 547,
+      "support_pixels": 2196,
+      "center_of_extent_x": 436,
+      "mean_pixel_center_x": 453.69990892531877,
+      "anchorX": 0.3182897862232779,
+      "mean_anchorX": 0.3393110557307824
+    },
+    {
+      "id": "higgs",
+      "pose": "stance",
+      "path": "modes/echos-de-la-greve/assets/fighters/higgs/stance.png",
+      "source_bbox": [
+        23,
+        31,
+        877,
+        1719
+      ],
+      "crop": [
+        20,
+        28,
+        880,
+        1722
+      ],
+      "band_start_y": 1693,
+      "band_end_y_exclusive": 1719,
+      "support_min_x": 377,
+      "support_max_x_exclusive": 876,
+      "support_pixels": 8269,
+      "center_of_extent_x": 626.5,
+      "mean_pixel_center_x": 602.7435602854033,
+      "anchorX": 0.7052325581395349,
+      "mean_anchorX": 0.6776087910295387
+    },
+    {
+      "id": "higgs",
+      "pose": "action",
+      "path": "modes/echos-de-la-greve/assets/fighters/higgs/action.png",
+      "source_bbox": [
+        22,
+        20,
+        1510,
+        999
+      ],
+      "crop": [
+        19,
+        17,
+        1513,
+        1002
+      ],
+      "band_start_y": 984,
+      "band_end_y_exclusive": 999,
+      "support_min_x": 353,
+      "support_max_x_exclusive": 1380,
+      "support_pixels": 3432,
+      "center_of_extent_x": 866.5,
+      "mean_pixel_center_x": 874.9128787878788,
+      "anchorX": 0.5672690763052208,
+      "mean_anchorX": 0.5729001866050059
+    },
+    {
+      "id": "higgs",
+      "pose": "step",
+      "path": "modes/echos-de-la-greve/assets/fighters/higgs/step.png",
+      "source_bbox": [
+        36,
+        39,
+        1144,
+        1263
+      ],
+      "crop": [
+        33,
+        36,
+        1147,
+        1266
+      ],
+      "band_start_y": 1244,
+      "band_end_y_exclusive": 1263,
+      "support_min_x": 456,
+      "support_max_x_exclusive": 1072,
+      "support_pixels": 3013,
+      "center_of_extent_x": 764,
+      "mean_pixel_center_x": 761.7860935944242,
+      "anchorX": 0.6561938958707361,
+      "mean_anchorX": 0.6542065472122299
+    },
+    {
+      "id": "higgs",
+      "pose": "hit",
+      "path": "modes/echos-de-la-greve/assets/fighters/higgs/hit.png",
+      "source_bbox": [
+        16,
+        128,
+        869,
+        1628
+      ],
+      "crop": [
+        13,
+        125,
+        872,
+        1631
+      ],
+      "band_start_y": 1605,
+      "band_end_y_exclusive": 1628,
+      "support_min_x": 194,
+      "support_max_x_exclusive": 418,
+      "support_pixels": 3696,
+      "center_of_extent_x": 306,
+      "mean_pixel_center_x": 312.9445346320346,
+      "anchorX": 0.3410942956926659,
+      "mean_anchorX": 0.3491787364750112
+    }
+  ],
+  "caveat": "A lowest-pixel support band can select one boot when the other is raised; Mama action/crouch and Higgs hit intentionally keep the measured planted support. Pose heights are art-direction calibration, not canonical measurements."
+}

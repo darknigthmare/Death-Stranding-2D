@@ -72,17 +72,33 @@ function verifyEngines() {
   console.log('Moteur · état complet identique après correction d’une commande tardive, au pas 200.');
 }
 verifyProtocol();
+for (const stage of ['port-knot','incinerator']) {
+  const receive=roomService('stages-test',()=>0);
+  const tokens=['c'.repeat(40),'d'.repeat(40)];
+  const room=receive({op:'create',version:'stages-test',token:tokens[0]}).room;
+  const call=(index,op,data={})=>receive({token:tokens[index],version:'stages-test',room,op,...data});
+  call(1,'join');call(0,'ready',{fighter:'mama',ready:true});call(1,'ready',{fighter:'diehardman',ready:true});
+  assert.equal(call(0,'start',{stage}).match.stage,stage,stage+' disponible en salon privé');
+  call(0,'leave');
+}
 verifyEngines();
 async function verifyNestedAssets() {
   const fixture = fs.mkdtempSync(path.join(os.tmpdir(),'echos-relay-assets-'));
   try {
-    for (const name of ['fight.js','content.js','assets.js','asset-geometry-20261124.js','netplay.js','netplay-server.cjs'])
+    for (const name of ['fight.js','content.js','assets.js','asset-geometry-20261124.js','boss-geometry-20261124.js','boss-assets.js','boss.js','netplay.js','netplay-server.cjs'])
       fs.writeFileSync(path.join(fixture,name),'fixture');
     const directory = path.join(fixture,'assets/fighters/mama/atelier');
     fs.mkdirSync(directory,{recursive:true});
     const guard = path.join(directory,'guard.webp'), jump = path.join(directory,'apex.png');
     fs.writeFileSync(guard,'first guard'); fs.writeFileSync(jump,'first jump');
+    const bossDirectory=path.join(fixture,'assets/bosses/giant');
+    fs.mkdirSync(bossDirectory,{recursive:true});
+    const bossPose=path.join(bossDirectory,'attack.png');
+    fs.writeFileSync(bossPose,'first boss pose');
     const initial = gameVersion(fixture);
+    fs.writeFileSync(bossPose,'revised boss pose');
+    assert.notEqual(gameVersion(fixture),initial,'Une variante de boss modifie la version du salon');
+    fs.writeFileSync(bossPose,'first boss pose');
     fs.writeFileSync(guard,'revised guard');
     assert.notEqual(gameVersion(fixture),initial,'Une pose imbriquée modifie la version du salon');
     fs.unlinkSync(guard); fs.unlinkSync(jump);
@@ -102,11 +118,20 @@ async function verifyNestedAssets() {
     const origin = 'http://127.0.0.1:' + server.address().port;
     const root = path.resolve(__dirname,'..');
     for (const file of ['assets/fighters/mama/atelier/guard.webp','assets/fighters/mama/viaduc/stance.webp','assets/fighters/mama/parts/helmet.webp',
-      'assets/stages/mule-camp-dry.png','assets/stages/mule-camp-dry-floor.png']) {
+      'assets/stages/mule-camp-dry.png','assets/stages/mule-camp-dry-floor.png',
+      'assets/fighters/mama/atelier/guard.png','assets/fighters/diehardman/stance.png',
+      'assets/fighters/support/deadman-portrait.png','assets/bosses/giant/attack.png',
+      'assets/bosses/mule-truck/damaged.png','assets/projectiles/boss-chiral-ring.png',
+      'assets/stages/port-knot-floor.png','assets/stages/incinerator-floor.png']) {
       const response = await fetch(origin + '/' + file);
       assert.equal(response.status,200,file + ' servi par le salon');
       assert.equal(response.headers.get('content-type'),file.endsWith('.png')?'image/png':'image/webp');
       assert.deepEqual(Buffer.from(await response.arrayBuffer()),fs.readFileSync(path.join(root,file)),file + ' contenu exact');
+    }
+    for (const file of ['boss.js','boss-assets.js','boss-geometry-20261124.js','archives.html']) {
+      const response=await fetch(origin+'/'+file);
+      assert.equal(response.status,200,file+' accessible');
+      assert.equal(await response.text(),fs.readFileSync(path.join(root,file),'utf8'),file+' source exacte');
     }
     const prefixed = await fetch(origin + '/modes/echos-de-la-greve/assets/fighters/mama/atelier/guard.webp');
     assert.equal(prefixed.status,200,'Le préfixe de l’entrée campagne conserve les images imbriquées');

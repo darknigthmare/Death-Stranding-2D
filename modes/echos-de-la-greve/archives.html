@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#101715">
+<title>Archives de Bridges · Échos de la Grève</title>
+<link rel="stylesheet" href="style.css">
+<style>
+.archive-page a{color:inherit;text-decoration-thickness:1px;text-underline-offset:5px}
+.archive-top{height:auto;min-height:72px;flex-wrap:wrap;padding-block:15px}
+.archive-top .wordmark{text-decoration:none}
+.archive-top nav a{font:11px var(--mono);padding:10px 0}
+.archive-intro{padding:52px 0 34px;max-width:820px}
+.archive-intro h1{font-size:clamp(40px,7vw,88px);line-height:1;letter-spacing:-.065em;font-weight:550;margin:20px 0}
+.archive-intro p{max-width:570px;line-height:1.7;color:var(--mute)}
+.archive-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));border:1px solid var(--rule)}
+.archive-card{min-width:0;background:var(--panel)}
+.archive-card+.archive-card{border-left:1px solid var(--rule)}
+.archive-visual{position:relative;aspect-ratio:1/1.08;overflow:hidden;background:radial-gradient(ellipse at 50% 67%,#38483e 0%,#202c25 47%,#111b16 100%)}
+.archive-visual:after{content:"";position:absolute;inset:auto 0 0;height:25%;pointer-events:none;background:linear-gradient(transparent,#19211e)}
+.archive-visual img{width:100%;height:100%;object-fit:contain;object-position:center bottom;display:block;padding:12px 12px 0}
+.archive-number{position:absolute;top:16px;left:18px;font:11px var(--mono);color:var(--acid);z-index:1}
+.archive-caption{padding:24px 24px 30px}
+.archive-caption .kicker{color:var(--acid)}
+.archive-caption h2{font-size:31px;letter-spacing:-.04em;font-weight:550;margin:10px 0 14px}
+.archive-caption p{color:var(--mute);font-size:14px;line-height:1.7}
+.archive-return{margin-top:30px}
+.archive-page footer{height:auto;min-height:64px;flex-wrap:wrap;padding-block:16px;margin-top:12px}
+@media(max-width:760px){.archive-grid{grid-template-columns:1fr}.archive-card+.archive-card{border-left:0;border-top:1px solid var(--rule)}.archive-card{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr)}.archive-visual{aspect-ratio:auto;min-height:270px}.archive-caption{align-self:center;padding:24px 18px}.archive-intro{padding-top:32px}.archive-caption h2{font-size:27px}}
+@media(max-width:420px){.archive-card{display:block}.archive-visual{aspect-ratio:1/1;min-height:0}.archive-caption{padding:20px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body class="archive-page">
+<header class="top archive-top">
+<a class="wordmark" href="index.html" aria-label="Échos de la Grève, accueil"><span class="linkmark" aria-hidden="true"><i></i><i></i><i></i></span>ÉCHOS DE LA GRÈVE</a>
+<nav aria-label="Navigation"><a href="index.html">Retour au menu ↗</a></nav>
+</header>
+<main class="shell">
+<section class="archive-intro" aria-labelledby="archive-title">
+<div class="eyebrow">Bridges · Dossiers</div>
+<h1 id="archive-title">Ceux qui<br>gardent le lien.</h1>
+<p>Au-delà des duels, des visages accompagnent chaque traversée. Retrouvez ici les figures de Bridges et les traces qu’elles laissent sur la route.</p>
+</section>
+<section class="archive-grid" aria-label="Figures de Bridges">
+<article class="archive-card">
+<div class="archive-visual"><span class="archive-number" aria-hidden="true">01 / BRIDGES</span><img src="assets/fighters/support/deadman-portrait.png" alt="Portrait de Deadman, avec ses lunettes et sa cicatrice au front" width="1368" height="1150"></div>
+<div class="archive-caption"><div class="kicker">Médecine · Recherche</div><h2>Deadman</h2><p>Derrière les constantes et les dossiers, il reste toujours quelqu’un à comprendre. Une présence attentive au milieu des signaux de Bridges.</p></div>
+</article>
+<article class="archive-card">
+<div class="archive-visual"><span class="archive-number" aria-hidden="true">02 / HORIZON</span><img loading="lazy" src="assets/fighters/support/amelie-portrait.png" alt="Portrait d’Amelie dans sa robe rouge" width="1161" height="1354"></div>
+<div class="archive-caption"><div class="kicker">La route vers l’Ouest</div><h2>Amelie</h2><p>Une silhouette rouge au bord d’une mer sans fin. Au-delà des relais et des montagnes, la Grève conserve son appel.</p></div>
+</article>
+<article class="archive-card">
+<div class="archive-visual"><span class="archive-number" aria-hidden="true">03 / UCA</span><img loading="lazy" src="assets/fighters/support/bridget-portrait.png" alt="Portrait de Bridget Strand, cheveux blancs et tenue claire" width="1312" height="1199"></div>
+<div class="archive-caption"><div class="kicker">Mémoire · Reconstruction</div><h2>Bridget Strand</h2><p>Les fondations d’un pays à réunir, et les liens qu’il reste à retisser. Son dossier appartient aux premières pages de cette traversée.</p></div>
+</article>
+</section>
+<div class="archive-return"><a class="secondary" href="index.html">Reprendre la traversée <span aria-hidden="true">↗</span></a></div>
+</main>
+<footer><span>ÉCHOS DE LA GRÈVE · ARCHIVES DE BRIDGES</span><span>Un fan-game inspiré de Death Stranding</span></footer>
+</body>
+</html>

@@ -1,79 +1,91 @@
-# Suite des éléments manquants — 24 novembre 2026
+# Personnages, projectiles, stages et boss : suite intégrée
 
-## Publication de ce lot
+**Échos de la Grève · 24 novembre 2026 · PR #6**
 
-Ce lot ajoute **44 PNG natifs** à la PR #6 du dépôt `darknigthmare/Death-Stranding-2D`. Il complète les **42 PNG déjà intégrés et validés** dans le premier commit de la PR, soit **86 nouveaux PNG produits au total pendant cette reprise**.
+Cette livraison raccorde les sources déjà publiées et complète les variantes restantes des boss ainsi que les six images principales de Higgs. Le total du 24 novembre atteint **97 PNG natifs**, dont **55 dans cette suite**. Les images restent dans leur format de génération ; aucun réencodage ou changement de pixels n’a été appliqué pendant l’intégration.
 
-Le premier lot est intégré au jeu. **Les 44 images de ce second lot sont publiées avec leurs manifestes ; leur raccordement final au jeu reste à publier.** L’environnement de travail a été détaché pendant la recette et aucun outil de rattachement n’était disponible. Les images terminées ont été préservées directement depuis les résultats natifs de génération par le connecteur GitHub, sans réencodage.
+## Contenu livré
 
-[Galerie des images de ce lot](index.html). Les références, prompts et empreintes Git se trouvent dans `art/sources/echos-de-la-greve/production-20261124-suite/`.
-
-## Images effectivement disponibles
-
-| Famille | Livré | Détail |
+| Ensemble | PNG de cette suite | Utilisation |
 |---|---:|---|
-| Mama, tenue Atelier | 10 | Stance, action, marche, impact, portrait, garde, accroupissement, montée, sommet et descente du saut. |
-| Die-Hardman | 6 | Stance, action, marche, impact, portrait et saut de repli. Les cinq poses du premier lot sont conservées. |
-| Personnages de soutien | 3 | Portraits de Deadman, Amelie et Bridget ; ils ne constituent pas trois nouveaux combattants jouables. |
-| Boss et véhicule | 9 | Lion : idle/attaque/impact ; Catcher aquatique : idle/attaque/impact ; baleine, géant et camion MULE : idle. |
-| Effets boss | 4 | Orbe de goudron, pointe de goudron, anneau chiral et trait électrique MULE. |
-| Port Knot City | 6 | Panorama et cinq couches indépendantes : ciel, lointain, plan moyen, sol et premier plan. |
-| Incinérateur de la région Est | 6 | Panorama et cinq couches indépendantes selon la même structure. |
-| **Total de ce lot** | **44** | Un élément ou une pose par image ; aucune nouvelle planche de sprites. |
+| Mama · Atelier | 10 | Posture, action, pas, impact, portrait, garde, accroupissement et trois phases du saut |
+| Die-Hardman | 6 | Posture, action, pas, impact, portrait et saut de repli ; ses cinq mouvements du premier lot sont conservés |
+| Higgs | 6 | Posture, action, pas, impact, portrait et saut de repli ; les cinq mouvements détaillés du premier lot restent disponibles |
+| Deadman, Amelie, Bridget | 3 | Portraits présentés dans les Archives de Bridges |
+| Catchers, baleine, géant, camion | 14 | Tous les états prévus pour les cinq familles de boss/véhicule |
+| Effets des boss | 4 | Orbe de goudron, pointe de goudron, anneau chiral, trait MULE |
+| Port Knot City | 6 | Panorama et cinq plans indépendants |
+| Incinérateur de la région Est | 6 | Panorama et cinq plans indépendants |
+| **Total de cette suite** | **55** | **Ajoutés aux 42 PNG du premier lot** |
 
-Les sprites et couches détachées ont un canal alpha. Les panoramas et les ciels restent opaques. Les sources natives sont conservées ; les recadrages prévus pour le rendu sont des coordonnées, sans modification des pixels.
+Les quatorze états des boss sont : repos/attaque/impact pour le lion, le Catcher aquatique, la baleine et le géant ; repos/endommagé pour le camion MULE. **Aucune variante d’image ne manque dans ce lot de boss.**
 
-## Fidélité et provenance
+Le catalogue principal du jeu déclare **225 chemins d’image uniques**. Le catalogue Boss ajoute quatorze images de boss et quatre effets. Les huit combattants du jeu conservent leurs fiches et campagnes ; les portraits de soutien n’ajoutent pas de kit de combat.
 
-Mama a été reprise depuis le spotlight PlayStation de 2019 : visage humain, lunettes fines, queue de cheval, haut clair, harnais ocre et Odradek. La continuité du bracelet et du pantalon asymétrique a fait l’objet de corrections de génération. La référence officielle disponible ne montrait pas le bas du corps en entier : cette partie est documentée comme complétée, sans prétention de validation intégrale.
+## Raccordement au jeu
 
-Die-Hardman reprend l’identité peinte du premier lot. Les trois portraits de soutien sont dérivés de références officielles PlayStation et Kojima Productions. Les formes des Catchers et véhicules sont accompagnées de leur propre audit de références dans le manifeste des boss.
+Mama Atelier utilise ses PNG détaillés dans le sélecteur, le duel et les états de mouvement. Die-Hardman et Higgs remplacent leurs images principales historiques. Mama Viaduc conserve son propre ensemble de tenue et sa géométrie : sélectionner ce costume ne mélange pas ses images avec celles de l’Atelier.
 
-Les décors utilisent des captures de jeu documentées : l’architecture et l’atmosphère guident les nouvelles images, tandis que la caméra latérale et les sols de combat sont adaptés au mode 2D. Les quatre effets sont des représentations de mécaniques du fan-game.
+Le moteur utilise **54 crops de poses mesurés**, auxquels s’ajoutent les sept effets du premier lot et les dix-huit géométries propres aux boss/effets. Les crops encadrent les pixels visibles avec une marge de trois pixels. Les ancres des poses au sol sont calculées sur la bande de contact des semelles ; le saut de Die-Hardman suit les bottes plutôt que le genou le plus bas. Le fantôme du faux départ de Higgs reprend désormais le même crop et la même échelle que sa pose native.
 
-**L’objectif est la fidélité 1:1 ; cette correspondance exacte n’est pas certifiée.** Les zones non visibles dans les références, les poses de combat adaptées, le miroir des accessoires asymétriques et les techniques originales demeurent explicitement identifiés.
+Les hauteurs de pose sont réglées pour limiter les changements apparents de tête et de torse. Une fente profonde ne doit pas être étirée jusqu’à la hauteur d’un personnage debout. Les premiers réglages sont notamment `0.80` pour la fente de Higgs, `0.72` pour son saut replié et `0.70` pour l’attaque penchée du géant. Ce sont des choix de calage artistique à revoir en scène, pas des mesures anatomiques officielles.
 
-## Intégration locale réalisée avant l’interruption
+Port Knot et l’incinérateur portent le catalogue à **douze lieux et treize configurations**, avec **65 couches de décor**. Chaque nouvelle configuration conserve un panorama de repli, cinq plans en parallaxe, un ancrage de sol et son profil d’ambiance. Le salon privé accepte les deux identifiants de lieu et distribue les nouvelles ressources imbriquées. Son empreinte de version inclut aussi les modules et les images des boss.
 
-Les fichiers de travail locaux comprennent déjà :
+## Boss Battle
 
-- le routage des nouveaux PNG par défaut de Mama et Die-Hardman, avec conservation de la tenue alternative Viaduc ;
-- le catalogue des 13 configurations de stages, dont les deux nouveaux lieux ;
-- les mesures des images déjà présentes et les ancres de sol à `367/941` pour Port Knot et `273/809` pour l’incinérateur ;
-- la page Archives de Bridges et ses trois portraits de soutien ;
-- les routes et empreintes de distribution des nouveaux assets ;
-- un module Boss Battle autonome et son interface.
+Le menu ouvre six rencontres : Catcher léonin, Catcher aquatique, baleine, géant, camion MULE et convoi. Les annonces d’attaque précèdent les dégâts. Les rencontres avec les Échoués possèdent une seconde phase ; les missions MULE ajoutent les colis et leur livraison. Le convoi comporte deux vagues.
 
-**Ces changements de code ne font pas partie de ce commit d’images.** Ils doivent être repris dans le même environnement, complétés, vérifiés puis publiés dans la PR.
+Les huit combattants disposent de leurs commandes et de trois signatures directionnelles adaptées à ce mode. Pause, perte de focus, commandes tactiles, résultats et revanche sont raccordés à l’interface. Une sauvegarde distincte, `echos.boss.v1`, conserve les résultats par rencontre, combattant et difficulté ainsi qu’une reprise valide.
 
-### Boss Battle
+La revue a corrigé des défauts concrets : arrêt d’un camion vaincu pendant sa charge, conservation des reprises après un Scan MULE au bord du terrain, refus d’actions incohérentes sans repère, orientation d’une attaque pendant le passage de côté, et zone vulnérable du géant pendant sa pose penchée. Les détails et les contrôles finaux figurent dans la [fiche Boss Battle](BOSS_BATTLE_20261124.md).
 
-L’implémentation locale comporte six rencontres : lion, Catcher aquatique, baleine, géant, camion MULE et convoi MULE en deux vagues. Les huit combattants disposent de commandes adaptées. Les véhicules introduisent le ramassage et la livraison des colis, avec suivi de leur intégrité. Le module comprend annonces d’attaques, phases, victoire/défaite, revanche, sauvegarde séparée `echos.boss.v1`, pause et reprise.
+## Vérifications réellement exécutées
 
-Avant le détachement, le contrôle logique a obtenu **six victoires avec de vraies commandes et 13 contrôles réussis**, dont livraison des colis, deuxième vague, pause et reprise déterministe. Il utilisait les replis du rendu. Il ne valide pas encore les 14 sprites boss finaux, les quatre FX ni les menus dans un navigateur.
+La recette de cette reprise s’exécute **en mémoire avec le véritable code du jeu et des méthodes Canvas instrumentées**. Elle vérifie les choix d’images et les calculs de rendu. Elle ne dessine pas des pixels dans un navigateur.
 
-### Deux nouveaux stages
+- Les 225 chemins du catalogue principal sont présents dans l’arbre Git préparé.
+- Les 54 crops de pose sont finis, non vides et contenus dans les dimensions natives déclarées.
+- Mama, Die-Hardman et Higgs passent chacun neuf poses sur les deux côtés, avec un coup reçu par la simulation réelle, des proportions conservées et les baselines de pieds attendues.
+- Le saut de repli et la tenue Mama Viaduc sont exercés séparément.
+- Port Knot et l’incinérateur passent **16 cas** : duel local et dojo, deux directions, effets normaux et réduits. Les cinq plans, les proportions natives, le sol et les vitesses relatives sont contrôlés.
+- Les huit combattants conservent **72 checkpoints identiques** au runtime publié précédemment (`8afb60daabe1b7608ff42a16f5e92512422b3e45`) ; le chargement ou l’absence des nouvelles images ne modifie pas la simulation.
+- Le véritable service de salon passe création, préparation, lancement, accusés des commandes, pause après déconnexion, reprise et résultat. Les deux nouveaux stages y sont acceptés.
+- La recette Boss et la revue indépendante sont décrites dans leurs rapports séparés.
 
-Les deux stages ont passé **16 cas de rendu avec le moteur réel et Canvas natif** : deux modes, deux directions et effets normaux/réduits. Les cinq plans, leurs proportions, la parallaxe et les raccords opaques au sol ont été contrôlés. Les deux compositions en combat ont aussi été relues visuellement.
+Les dimensions natives proviennent des manifestes dont les images ont été décodées lors de leur production. Les anciennes images hors de ces manifestes utilisent des dimensions de substitution dans la recette hébergée. Les contrôles de proportions natifs ne sont donc pas étendus abusivement à ces anciennes sources.
 
-Les preuves détaillées de ces nouveaux tests restent dans le répertoire de travail local et doivent être ajoutées avec l’intégration. Les tests du premier lot restent consultables dans `docs/combat/production/20261124/`.
+**Non exécutés pendant cette reprise :** lancement du serveur HTTP sur une machine, rendu Canvas natif du code reconstruit, navigation et commandes dans un vrai navigateur, comparaison de toutes les poses aux pixels du jeu officiel. Les scripts de recette locale sont livrés pour reprendre ces contrôles dès qu’un ordinateur est disponible. Les contrôles Canvas du premier lot restent des preuves de ce premier lot, sans être présentés comme une exécution fraîche du nouveau moteur Boss.
 
-## Prochaines opérations précises
+## Fidélité : acquis et points ouverts
 
-1. Rétablir l’accès à l’environnement de travail existant, sans recréer le projet ni écraser ses modifications locales.
-2. Reprendre la dernière Mama apex corrigée dans le résultat natif et synchroniser les trois derniers idles boss avec les fichiers publiés.
-3. Produire les **cinq images restantes du lot prévu de 49** : baleine attaque/impact, géant attaque/impact, camion MULE endommagé.
-4. Finaliser les mesures, puis vérifier le dessin effectif de chaque nouvelle pose et effet dans les deux orientations. Capturer explicitement le camion endommagé et l’anneau chiral.
-5. Achever les tests ciblés de garde/esquive, perte d’intégrité de cargaison, expiration et refus de stockage ; terminer les consignes UI du mode.
-6. Relancer la recette sur les sources définitives, ajouter les preuves et publier le code d’intégration dans la même PR.
-7. Continuer l’audit des autres manquants : Lockne, costumes et vues gauche asymétriques, tenue Viaduc, poses historiques encore hétérogènes dont la stance de Higgs, planches de Sam/Cliff et illustration rivale de Die-Hardman. Distinguer à chaque fois un fichier absent, un dessin à reprendre et une nouvelle mécanique.
+Les manifestes conservent les prompts exacts, les sources consultées, les dimensions, les empreintes et les mesures de transparence. Les boss dérivent de références du premier Death Stranding/Director’s Cut. Les panoramas de Port Knot et de l’incinérateur s’appuient sur des captures du jeu prises par des joueurs ; leur composition latérale et la piste de combat sont des adaptations.
 
-## Repères de reprise technique
+Le haut du corps de Mama a une référence officielle identifiée. Les parties cachées, certaines vues de bottes et les côtés éloignés restent moins documentés. Higgs conserve pour l’instant le masque à visière du dessin local : **sa correspondance avec la géométrie officielle du masque crânien doit encore être vérifiée**. Une finition plus détaillée ne suffit pas à établir cette correspondance.
 
-- PR : https://github.com/darknigthmare/Death-Stranding-2D/pull/6
-- Branche : `codex/echos-assets-fidelity-20261124`
-- Premier commit distant validé : `45c09e88fd080198c49b7d5f9bcbd8485f69a1c9`
-- Commit local équivalent du premier lot : `45e08624f4f2c2ccf4e68a82dd219d3b90897cd9`
-- Arbre commun de ce premier lot : `b30a67e25c0534baf91a2572d8a5d1edcd742aee`
+Le suivi restant porte sur :
 
-Le Git local et la branche distante ont des historiques de commits différents mais le même arbre pour le premier lot. La publication suivante doit partir du dernier head distant, protéger sa mise à jour par `expected_sha` et conserver les nouveaux manifestes/rapports distants. Aucun merge n’a été demandé.
+| Élément | État à cette livraison |
+|---|---|
+| Heartman · cinq images principales | Anciennes sources peintes de faible résolution ; reprise détaillée en cours dans un lot suivant |
+| Mama · Maintenance du viaduc | Dix images historiques de mannequin articulé ; reprise humaine détaillée encore nécessaire |
+| Masque de Higgs | Capture DS1 exploitable retrouvée après ce lot ; correction cohérente des onze poses en cours pour le commit suivant |
+| Lockne | Portrait de soutien à produire et à intégrer aux Archives |
+| Images narratives de rivalité | Revue de cohérence encore nécessaire, notamment Die-Hardman |
+| Pas/impacts historiques de Sam et Cliff | Planches encore utilisées ; découpage et fidélité à revoir séparément |
+| Vues gauche asymétriques | Le miroir actuel inverse aussi l’équipement ; vues dédiées encore nécessaires pour une certification 1:1 |
+| Validation finale | Revue en navigateur et comparaison systématique de chaque pose à sa référence encore nécessaires |
+
+Le lot livré complète ses variantes prévues et leur intégration. **Il ne constitue pas une certification globale 1:1 de tout le catalogue.**
+
+## Accès et traçabilité
+
+- [Galerie des 55 images séparées](index.html), avec fond clair, sombre ou damier.
+- [Recette d’intégration et empreintes des sources](integration-validation.json).
+- [Recette du service de salon](relay-validation.json).
+- [Premier lot : 42 PNG et contrôles initiaux](../20261124/REPRISE_ASSETS_20261124.md).
+- Manifestes : `art/sources/echos-de-la-greve/production-20261124-suite/`.
+- Code : `modes/echos-de-la-greve/`.
+- [PR #6](https://github.com/darknigthmare/Death-Stranding-2D/pull/6).
+
+Commandes locales disponibles : `node modes/echos-de-la-greve/qa/suite-integration-20261124.cjs`, `node modes/echos-de-la-greve/qa/boss.cjs`, `node modes/echos-de-la-greve/qa/reseau-logique.cjs`. Le contrôle de pixels des arènes utilise `qa/arenes-canvas.cjs` avec `@napi-rs/canvas` ; celui des PNG utilise les recettes existantes avec `sharp`.

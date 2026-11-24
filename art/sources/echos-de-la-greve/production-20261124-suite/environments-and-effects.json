@@ -264,5 +264,15 @@
       "bytes": 153111,
       "pngColorType": 6
     }
-  ]
+  ],
+  "runtime_integration": {
+    "date": "2026-11-24",
+    "status": "Wired to runtime and included in the same PR commit as the integration sources",
+    "reports": [
+      "docs/combat/production/20261124-suite/integration-validation.json",
+      "docs/combat/production/20261124-suite/boss-simulation-report.json"
+    ],
+    "native_canvas_or_browser_verified": false,
+    "canonical_1_to_1_verified": false
+  }
 }

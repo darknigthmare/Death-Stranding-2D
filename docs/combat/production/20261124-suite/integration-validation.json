@@ -1,0 +1,301 @@
+{
+  "date": "2026-11-24",
+  "renderer": "actual fight.js with instrumented Canvas methods",
+  "native_canvas_executed": false,
+  "browser_executed": false,
+  "pixels_decoded_in_this_test": false,
+  "native_dimension_source": "qa/native-image-dimensions-20261124.cjs (decoded production manifests)",
+  "legacy_dimensions": "1536x1024 test placeholder; legacy visual proportions are not certified by this test",
+  "checks": [
+    "Repainted fighter poses drawn on both sides, real hit, preserved crops, ratios and boot baselines; native jump fallbacks",
+    "Separate Mama Viaduc wardrobe remains independent",
+    "Higgs feint echo retains native PNG crop and scale",
+    "Two new stages: all five actual draw calls, both directions, local/training, reduced motion, floor contact and native aspect ratios",
+    "Eight fighters retain identical deterministic checkpoints against the previously published runtime",
+    "Unavailable native poses leave deterministic simulation unchanged"
+  ],
+  "poses": [
+    {
+      "fighter": "mama",
+      "side": 1,
+      "poses": [
+        "stance",
+        "action",
+        "step",
+        "hit",
+        "guard",
+        "crouch",
+        "rise",
+        "apex",
+        "fall"
+      ],
+      "real_hit": true
+    },
+    {
+      "fighter": "mama",
+      "side": 2,
+      "poses": [
+        "stance",
+        "action",
+        "step",
+        "hit",
+        "guard",
+        "crouch",
+        "rise",
+        "apex",
+        "fall"
+      ],
+      "real_hit": true
+    },
+    {
+      "fighter": "diehardman",
+      "side": 1,
+      "poses": [
+        "stance",
+        "action",
+        "step",
+        "hit",
+        "guard",
+        "crouch",
+        "rise",
+        "apex",
+        "fall"
+      ],
+      "real_hit": true
+    },
+    {
+      "fighter": "diehardman",
+      "side": 2,
+      "poses": [
+        "stance",
+        "action",
+        "step",
+        "hit",
+        "guard",
+        "crouch",
+        "rise",
+        "apex",
+        "fall"
+      ],
+      "real_hit": true
+    },
+    {
+      "fighter": "higgs",
+      "side": 1,
+      "poses": [
+        "stance",
+        "action",
+        "step",
+        "hit",
+        "guard",
+        "crouch",
+        "rise",
+        "apex",
+        "fall"
+      ],
+      "real_hit": true
+    },
+    {
+      "fighter": "higgs",
+      "side": 2,
+      "poses": [
+        "stance",
+        "action",
+        "step",
+        "hit",
+        "guard",
+        "crouch",
+        "rise",
+        "apex",
+        "fall"
+      ],
+      "real_hit": true
+    }
+  ],
+  "stage_cases": [
+    {
+      "stage": "port-knot",
+      "mode": "local",
+      "direction": 1,
+      "reducedEffects": false,
+      "layers": 5,
+      "passed": true
+    },
+    {
+      "stage": "port-knot",
+      "mode": "local",
+      "direction": -1,
+      "reducedEffects": false,
+      "layers": 5,
+      "passed": true
+    },
+    {
+      "stage": "port-knot",
+      "mode": "local",
+      "direction": 1,
+      "reducedEffects": true,
+      "layers": 5,
+      "passed": true
+    },
+    {
+      "stage": "port-knot",
+      "mode": "local",
+      "direction": -1,
+      "reducedEffects": true,
+      "layers": 5,
+      "passed": true
+    },
+    {
+      "stage": "port-knot",
+      "mode": "training",
+      "direction": 1,
+      "reducedEffects": false,
+      "layers": 5,
+      "passed": true
+    },
+    {
+      "stage": "port-knot",
+      "mode": "training",
+      "direction": -1,
+      "reducedEffects": false,
+      "layers": 5,
+      "passed": true
+    },
+    {
+      "stage": "port-knot",
+      "mode": "training",
+      "direction": 1,
+      "reducedEffects": true,
+      "layers": 5,
+      "passed": true
+    },
+    {
+      "stage": "port-knot",
+      "mode": "training",
+      "direction": -1,
+      "reducedEffects": true,
+      "layers": 5,
+      "passed": true
+    },
+    {
+      "stage": "incinerator",
+      "mode": "local",
+      "direction": 1,
+      "reducedEffects": false,
+      "layers": 5,
+      "passed": true
+    },
+    {
+      "stage": "incinerator",
+      "mode": "local",
+      "direction": -1,
+      "reducedEffects": false,
+      "layers": 5,
+      "passed": true
+    },
+    {
+      "stage": "incinerator",
+      "mode": "local",
+      "direction": 1,
+      "reducedEffects": true,
+      "layers": 5,
+      "passed": true
+    },
+    {
+      "stage": "incinerator",
+      "mode": "local",
+      "direction": -1,
+      "reducedEffects": true,
+      "layers": 5,
+      "passed": true
+    },
+    {
+      "stage": "incinerator",
+      "mode": "training",
+      "direction": 1,
+      "reducedEffects": false,
+      "layers": 5,
+      "passed": true
+    },
+    {
+      "stage": "incinerator",
+      "mode": "training",
+      "direction": -1,
+      "reducedEffects": false,
+      "layers": 5,
+      "passed": true
+    },
+    {
+      "stage": "incinerator",
+      "mode": "training",
+      "direction": 1,
+      "reducedEffects": true,
+      "layers": 5,
+      "passed": true
+    },
+    {
+      "stage": "incinerator",
+      "mode": "training",
+      "direction": -1,
+      "reducedEffects": true,
+      "layers": 5,
+      "passed": true
+    }
+  ],
+  "simulation_regressions": [
+    {
+      "fighter": "sam",
+      "checkpoints": 9,
+      "identical": true
+    },
+    {
+      "fighter": "fragile",
+      "checkpoints": 9,
+      "identical": true
+    },
+    {
+      "fighter": "higgs",
+      "checkpoints": 9,
+      "identical": true
+    },
+    {
+      "fighter": "cliff",
+      "checkpoints": 9,
+      "identical": true
+    },
+    {
+      "fighter": "mule",
+      "checkpoints": 9,
+      "identical": true
+    },
+    {
+      "fighter": "diehardman",
+      "checkpoints": 9,
+      "identical": true
+    },
+    {
+      "fighter": "mama",
+      "checkpoints": 9,
+      "identical": true
+    },
+    {
+      "fighter": "heartman",
+      "checkpoints": 9,
+      "identical": true
+    }
+  ],
+  "catalog_paths": 225,
+  "native_pose_crops": 54,
+  "passed": true,
+  "source_sha256": {
+    "content.js": "3616e71197f874262248cf8e91e409a9e98abcc8579d0222ae77d6508b7aaf9b",
+    "assets.js": "45102729417721df52a9c3c465ef249bfaf5375568b7f9718c55609e80c71b64",
+    "asset-geometry-20261124.js": "79e02f5326a814e0eade6186ab814a7b343d0ced4864d1516a28f13ef3662226",
+    "fight.js": "2f5957065bc0d55b6f0d7d9845f04950fc82ab4787e63ddd377e5bfb39558225",
+    "boss-geometry-20261124.js": "55655afb8a1b05027b521bda46a49c9ad1f1b202ae307fdca67aa3690657a928",
+    "netplay-server.cjs": "a93201ff95042fe43ddbe82f7a7d60129bed69d888340f2d4f625fc7e0452d67",
+    "qa/suite-integration-20261124.cjs": "d3207f1089d95d99a1ea8ff34143b94d20f0d6ac7f5af5755f27297a33f86ead",
+    "qa/native-image-dimensions-20261124.cjs": "2687e51c0f8138d855f266022a3a099482c032479b4ee29644bd16cfa8c44c81"
+  },
+  "baseline_commit": "8afb60daabe1b7608ff42a16f5e92512422b3e45"
+}
