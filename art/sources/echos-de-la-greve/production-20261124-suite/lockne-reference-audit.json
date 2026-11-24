@@ -1,0 +1,65 @@
+{
+  "date": "2026-11-24",
+  "character": "lockne",
+  "scope": "Death Stranding 1 / Director's Cut",
+  "status": "insufficient_inspected_visual_reference",
+  "generated_assets": 0,
+  "requested_asset": "Archives portrait; native transparent PNG coherent with Mama artwork",
+  "missing": "Inspectable pixels of Lockne's own hairstyle, high-collar garment, collar/fastener construction and body-side details; no reliable Lockne image data available to feed imagegen in this hosted-only pass",
+  "attempted_sources": [
+    {
+      "url": "https://deathstranding.fandom.com/wiki/Lockne",
+      "result": "Text searchable, no usable native image retrieved; secondary physical description is not sufficient for 1:1 portrait"
+    },
+    {
+      "url": "https://deathstranding.fandom.com/wiki/File:Lockne.png",
+      "result": "Image page not accessible via web tool"
+    },
+    {
+      "url": "https://nokuat.hatenablog.com/entry/2019/12/14/155059",
+      "result": "Article read and multiple explicit game screenshot URLs located; image tool returned text markers only, no image content pixels"
+    },
+    {
+      "url": "https://cdn-ak.f.st-hatena.com/images/fotolife/N/Nokuat/20191215/20191215103029.png",
+      "result": "Web open returned ImageDisplayed marker with no image content block/base64; not visually inspected"
+    },
+    {
+      "url": "https://cdn.statically.io/img/attackofthefanboy.com/wp-content/uploads/2019/11/Death-Stranding-How-to-Change-Locknes-Mind.jpg",
+      "result": "Not accessible via web tool"
+    },
+    {
+      "url": "https://www.diva-portal.org/smash/get/diva2:1677654/FULLTEXT01.pdf",
+      "result": "Paper with caption mentioning Lockne found; PDF retrieval timed out, no screenshot obtained"
+    },
+    {
+      "repository": "saalfernandes/Pratica",
+      "path": "desafio/site de jogos/death stranding.html",
+      "sha": "26b38038f072d34ecee013c0786b57e5c052828e",
+      "result": "Cast text only, no Lockne image"
+    },
+    {
+      "repository": "marwanali213/Internet-Programming-Project",
+      "path": "html/Death stranding.html",
+      "sha": "2bb560b4a239427c6d7fb3a4e909dea2ea89140e",
+      "result": "Character images include Mama and other cast but no Lockne source"
+    },
+    {
+      "repository": "Wtttach/wtttach.github.io",
+      "path": "post/deathstranding/index.html",
+      "sha": "77052424b9af1685b780a28b990b17974790d1f2",
+      "result": "Text discussion, generic post image, no dedicated Lockne screenshot"
+    },
+    {
+      "repository": "mwzhx/komicawiki-backup",
+      "sha": "2aaa154d704f436b1fbc42756263e0daef23ec5b",
+      "result": "Archived page includes Lockne text but inline images are site chrome, not Lockne"
+    },
+    {
+      "repository": "hanakarsin/plankboy",
+      "path": "death-stranding-how-to-change-locknes-mind.html",
+      "sha": "5f0c7e703bb719035c7edaceeaad8ce2e354f693",
+      "result": "Externally linked guide screenshot only; no repository image bytes"
+    }
+  ],
+  "decision": "No portrait generated; do not invent a wardrobe variant from Mama portrait. Resume once an inspectable game capture is attached or made available through a supported hosted image route."
+}

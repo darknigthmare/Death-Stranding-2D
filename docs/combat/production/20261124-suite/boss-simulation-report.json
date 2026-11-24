@@ -345,14 +345,14 @@
     "assets/fighters/fragile/fall.png",
     "assets/fighters/fragile/guard.png",
     "assets/fighters/fragile/rise.png",
-    "assets/fighters/heartman-action.webp",
-    "assets/fighters/heartman-stance.webp",
-    "assets/fighters/heartman-step.webp",
+    "assets/fighters/heartman/action.png",
     "assets/fighters/heartman/apex.png",
     "assets/fighters/heartman/crouch.png",
     "assets/fighters/heartman/fall.png",
     "assets/fighters/heartman/guard.png",
     "assets/fighters/heartman/rise.png",
+    "assets/fighters/heartman/stance.png",
+    "assets/fighters/heartman/step.png",
     "assets/fighters/higgs/action.png",
     "assets/fighters/higgs/apex.png",
     "assets/fighters/higgs/crouch.png",
@@ -428,13 +428,13 @@
   "rules": "boss-20261124-v1",
   "imageDimensions": "supplied metadata where available; synthetic fallback",
   "passed": true,
-  "executedAt": "2026-11-24T14:55:15.168Z",
+  "executedAt": "2026-11-24T15:14:08.739Z",
   "sourceBlobs": {
     "content.js": "a72d3e798df9bc8969b87488cea3058de66519a5",
-    "asset-geometry-20261124.js": "9b2d86656718740661ba96e42a514a9d5ab7f5f2",
-    "assets.js": "1d0c5f1cd72b80e98a445397b1155caea3d040c1",
+    "asset-geometry-20261124.js": "7e5631309557141be9ff2c14fd3865686cfd7d2e",
+    "assets.js": "54e5f7da3f3e85f1803e2ca3643a3867766251c7",
     "boss-geometry-20261124.js": "0e677fe10a074be5e1f6be22cf981a27374384b0",
-    "qa/native-image-dimensions-20261124.cjs": "904d5d25e1624167dc8b84e39508a4c9dc0d9bef",
+    "qa/native-image-dimensions-20261124.cjs": "098387394a9a5eb6b751f8b8c0f395a238f9759c",
     "boss-assets.js": "bd1945b42ef00825edf5bfebf1066ebacc2f0608",
     "boss.js": "90dc2ef7e1d1884370c845274a1e9e6cf0dc5a81",
     "app.js": "d759d928febbcc8ddfd7527d9fb1d6fabfa27721",
@@ -445,7 +445,7 @@
     "index.html": "f65ff80cc9d25aa2caa72482c5d1634893507a3b",
     "style.css": "af87a80fb4313881396c704d600e0e5e601e6426"
   },
-  "imageMetadataCount": 97,
+  "imageMetadataCount": 102,
   "reconstruction": {
     "baseCommit": "8afb60daabe1b7608ff42a16f5e92512422b3e45",
     "method": "Recovered historical patches and rebuilt modules in hosted JavaScript after local environment detached. This report is a fresh execution of the source blobs named above.",
@@ -470,28 +470,15 @@
   "limitations": [
     "Image pixels were not decoded in this execution.",
     "Canvas operations were recorded and geometrically checked through a simulated context; no native raster composition or browser layout was verified.",
-    "Known dimensions cover 97 supplied source images; legacy dimensions use explicit synthetic fallbacks.",
+    "Known dimensions cover 102 supplied source images; legacy dimensions use explicit synthetic fallbacks.",
     "App tests execute the actual app.js against an event-capable DOM host, with a stub of the original duel engine for route preservation.",
     "This report does not certify frame-by-frame or official-source 1:1 visual fidelity."
   ],
-  "concurrencyCheck": {
-    "head": "8afb60daabe1b7608ff42a16f5e92512422b3e45",
-    "files": {
-      "app.js": {
-        "sha": "91511575b88c6a03dee0c703767edebaea18e30e",
-        "expected": "91511575b88c6a03dee0c703767edebaea18e30e",
-        "unchanged": true
-      },
-      "index.html": {
-        "sha": "94c12b6b756b955bff1b3af5ce26e30570d44671",
-        "expected": "94c12b6b756b955bff1b3af5ce26e30570d44671",
-        "unchanged": true
-      },
-      "style.css": {
-        "sha": "0ed476676a53589386d741ea2587df060d31e391",
-        "expected": "0ed476676a53589386d741ea2587df060d31e391",
-        "unchanged": true
-      }
-    }
+  "integrationUpdate": {
+    "baseCommit": "8e2a158b3a8fe0975f54196605a7c2bfcf11e352",
+    "changes": [
+      "Five Heartman core PNGs and measured geometry",
+      "Higgs portrait corrected from inspected DS1 gold skull-mask reference"
+    ]
   }
 }

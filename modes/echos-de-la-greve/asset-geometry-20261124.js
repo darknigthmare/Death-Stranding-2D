@@ -513,6 +513,50 @@ window.StrandGeneratedGeometry = {
         "anchorX": 0.5,
         "baselineY": 0.99784,
         "heightRatio": 0.96
+      },
+      "stance": {
+        "crop": [
+          100,
+          16,
+          490,
+          2115
+        ],
+        "anchorX": 0.423469,
+        "baselineY": 0.998582,
+        "heightRatio": 1
+      },
+      "action": {
+        "crop": [
+          6,
+          33,
+          717,
+          2072
+        ],
+        "anchorX": 0.32357,
+        "baselineY": 0.998552,
+        "heightRatio": 0.98
+      },
+      "step": {
+        "crop": [
+          62,
+          45,
+          893,
+          1445
+        ],
+        "anchorX": 0.511198,
+        "baselineY": 0.997924,
+        "heightRatio": 0.93
+      },
+      "hit": {
+        "crop": [
+          11,
+          127,
+          705,
+          1852
+        ],
+        "anchorX": 0.219858,
+        "baselineY": 0.99838,
+        "heightRatio": 0.88
       }
     },
     "mama": {

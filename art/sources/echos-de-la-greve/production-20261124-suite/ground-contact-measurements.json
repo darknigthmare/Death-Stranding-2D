@@ -364,6 +364,110 @@
       "mean_pixel_center_x": 312.9445346320346,
       "anchorX": 0.3410942956926659,
       "mean_anchorX": 0.3491787364750112
+    },
+    {
+      "id": "heartman",
+      "pose": "stance",
+      "path": "modes/echos-de-la-greve/assets/fighters/heartman/stance.png",
+      "source_bbox": [
+        103,
+        19,
+        587,
+        2128
+      ],
+      "crop": [
+        100,
+        16,
+        590,
+        2131
+      ],
+      "band_start_y": 2096,
+      "band_end_y_exclusive": 2128,
+      "support_min_x": 126,
+      "support_max_x_exclusive": 489,
+      "support_pixels": 7510,
+      "center_of_extent_x": 307.5,
+      "mean_pixel_center_x": 278.9699067909454,
+      "anchorX": 0.42346938775510207,
+      "mean_anchorX": 0.36524470773662326
+    },
+    {
+      "id": "heartman",
+      "pose": "action",
+      "path": "modes/echos-de-la-greve/assets/fighters/heartman/action.png",
+      "source_bbox": [
+        9,
+        36,
+        720,
+        2102
+      ],
+      "crop": [
+        6,
+        33,
+        723,
+        2105
+      ],
+      "band_start_y": 2071,
+      "band_end_y_exclusive": 2102,
+      "support_min_x": 41,
+      "support_max_x_exclusive": 435,
+      "support_pixels": 6110,
+      "center_of_extent_x": 238,
+      "mean_pixel_center_x": 195.32127659574468,
+      "anchorX": 0.32357043235704325,
+      "mean_anchorX": 0.2640464108727262
+    },
+    {
+      "id": "heartman",
+      "pose": "step",
+      "path": "modes/echos-de-la-greve/assets/fighters/heartman/step.png",
+      "source_bbox": [
+        65,
+        48,
+        952,
+        1487
+      ],
+      "crop": [
+        62,
+        45,
+        955,
+        1490
+      ],
+      "band_start_y": 1465,
+      "band_end_y_exclusive": 1487,
+      "support_min_x": 142,
+      "support_max_x_exclusive": 895,
+      "support_pixels": 4277,
+      "center_of_extent_x": 518.5,
+      "mean_pixel_center_x": 568.8474397942483,
+      "anchorX": 0.5111982082866742,
+      "mean_anchorX": 0.567578320038352
+    },
+    {
+      "id": "heartman",
+      "pose": "hit",
+      "path": "modes/echos-de-la-greve/assets/fighters/heartman/hit.png",
+      "source_bbox": [
+        14,
+        130,
+        713,
+        1976
+      ],
+      "crop": [
+        11,
+        127,
+        716,
+        1979
+      ],
+      "band_start_y": 1948,
+      "band_end_y_exclusive": 1976,
+      "support_min_x": 58,
+      "support_max_x_exclusive": 274,
+      "support_pixels": 4056,
+      "center_of_extent_x": 166,
+      "mean_pixel_center_x": 184.57001972386587,
+      "anchorX": 0.2198581560283688,
+      "mean_anchorX": 0.2461986095373984
     }
   ],
   "caveat": "A lowest-pixel support band can select one boot when the other is raised; Mama action/crouch and Higgs hit intentionally keep the measured planted support. Pose heights are art-direction calibration, not canonical measurements."

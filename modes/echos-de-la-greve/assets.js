@@ -17,11 +17,12 @@
   // Every location has five independent layers and a panorama fallback.
   const movement = ['guard','crouch','rise','apex','fall'];
   const generatedFighters = ['sam','fragile','higgs','cliff','mule','diehardman','heartman'];
-  const replacementRoot = {higgs:'assets/fighters/higgs/',diehardman:'assets/fighters/diehardman/',mama:'assets/fighters/mama/atelier/'};
+  const replacementRoot = {heartman:'assets/fighters/heartman/',higgs:'assets/fighters/higgs/',diehardman:'assets/fighters/diehardman/',mama:'assets/fighters/mama/atelier/'};
   const replacement = pose => Object.fromEntries(Object.entries(replacementRoot).map(([id,folder])=>[id,folder+pose+'.png']));
   const poses = Object.fromEntries(generatedFighters.map(id => [id,
     Object.fromEntries(movement.map(pose => [pose,'assets/fighters/'+id+'/'+pose+'.png']))
   ]));
+  poses.heartman = {...poses.heartman,...Object.fromEntries(['stance','action','step','hit'].map(pose=>[pose,replacementRoot.heartman+pose+'.png']))};
   poses.higgs = {...poses.higgs,...Object.fromEntries(['stance','action','step','hit','jump'].map(pose=>[pose,replacementRoot.higgs+pose+'.png']))};
   poses.diehardman = {...poses.diehardman,...Object.fromEntries(['stance','action','step','hit','jump'].map(pose=>[pose,replacementRoot.diehardman+pose+'.png']))};
   poses.mama = Object.fromEntries(['stance','action','step','hit',...movement].map(pose=>[pose,replacementRoot.mama+pose+'.png']));

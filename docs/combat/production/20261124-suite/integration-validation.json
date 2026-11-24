@@ -16,7 +16,7 @@
   ],
   "poses": [
     {
-      "fighter": "mama",
+      "fighter": "higgs",
       "side": 1,
       "poses": [
         "stance",
@@ -32,7 +32,7 @@
       "real_hit": true
     },
     {
-      "fighter": "mama",
+      "fighter": "higgs",
       "side": 2,
       "poses": [
         "stance",
@@ -80,7 +80,7 @@
       "real_hit": true
     },
     {
-      "fighter": "higgs",
+      "fighter": "mama",
       "side": 1,
       "poses": [
         "stance",
@@ -96,7 +96,39 @@
       "real_hit": true
     },
     {
-      "fighter": "higgs",
+      "fighter": "mama",
+      "side": 2,
+      "poses": [
+        "stance",
+        "action",
+        "step",
+        "hit",
+        "guard",
+        "crouch",
+        "rise",
+        "apex",
+        "fall"
+      ],
+      "real_hit": true
+    },
+    {
+      "fighter": "heartman",
+      "side": 1,
+      "poses": [
+        "stance",
+        "action",
+        "step",
+        "hit",
+        "guard",
+        "crouch",
+        "rise",
+        "apex",
+        "fall"
+      ],
+      "real_hit": true
+    },
+    {
+      "fighter": "heartman",
       "side": 2,
       "poses": [
         "stance",
@@ -285,17 +317,18 @@
     }
   ],
   "catalog_paths": 225,
-  "native_pose_crops": 54,
+  "native_pose_crops": 58,
   "passed": true,
   "source_sha256": {
     "content.js": "3616e71197f874262248cf8e91e409a9e98abcc8579d0222ae77d6508b7aaf9b",
-    "assets.js": "45102729417721df52a9c3c465ef249bfaf5375568b7f9718c55609e80c71b64",
-    "asset-geometry-20261124.js": "79e02f5326a814e0eade6186ab814a7b343d0ced4864d1516a28f13ef3662226",
+    "assets.js": "65da3546502115d436d7cd269077d021a138080bca7390e3168d845a87e58785",
+    "asset-geometry-20261124.js": "bd7946b982dbdb577ff5092802d4217c7a349a45b5c83b9759b860ac48d4874b",
     "fight.js": "2f5957065bc0d55b6f0d7d9845f04950fc82ab4787e63ddd377e5bfb39558225",
     "boss-geometry-20261124.js": "55655afb8a1b05027b521bda46a49c9ad1f1b202ae307fdca67aa3690657a928",
     "netplay-server.cjs": "a93201ff95042fe43ddbe82f7a7d60129bed69d888340f2d4f625fc7e0452d67",
-    "qa/suite-integration-20261124.cjs": "d3207f1089d95d99a1ea8ff34143b94d20f0d6ac7f5af5755f27297a33f86ead",
-    "qa/native-image-dimensions-20261124.cjs": "2687e51c0f8138d855f266022a3a099482c032479b4ee29644bd16cfa8c44c81"
+    "qa/suite-integration-20261124.cjs": "f2bad6edf6b1600675adce3689fe03f9b1383925965e2bc6d72afe32ba76f908",
+    "qa/native-image-dimensions-20261124.cjs": "35741f42f86daea4060b48f578604e4897d56cbe4ae12d633e28ed0594dca352"
   },
-  "baseline_commit": "8afb60daabe1b7608ff42a16f5e92512422b3e45"
+  "baseline_commit": "8afb60daabe1b7608ff42a16f5e92512422b3e45",
+  "executedAt": "2026-11-24T15:17:38.466Z"
 }

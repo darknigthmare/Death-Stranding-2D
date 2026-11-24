@@ -48,7 +48,7 @@ function runSuiteIntegration(options) {
     nativePoses.set(file,{id,pose,geometry});
   }
   report.native_pose_crops=nativePoses.size;
-  const repainted=['mama','diehardman',...(assets.fighters.higgs.endsWith('.png')?['higgs']:[])];
+  const repainted=Object.keys(content.fighters).filter(id=>assets.fighters[id].endsWith('.png'));
   function harness({unavailable=()=>false,read=source}={}){
     const host=catalog(read),seen=new Set(),calls=[],stageDraws=[],stack=[];
     let facing=1,next=0,time=0,network=true;

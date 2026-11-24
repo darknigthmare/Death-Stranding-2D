@@ -1,12 +1,12 @@
 {
   "date": "2026-11-24",
-  "scope": "Integration of published suite plus missing boss variants and Higgs core repaint",
+  "scope": "Native art and Boss integration, including Heartman core repaint and corrected Higgs portrait",
   "base_commit": "8afb60daabe1b7608ff42a16f5e92512422b3e45",
   "counts": {
-    "native_images": 97,
-    "total_bytes": 150746863,
+    "native_images": 102,
+    "total_bytes": 159212972,
     "first_lot": 42,
-    "suite": 55,
+    "suite": 60,
     "bosses": 14,
     "boss_effects": 4,
     "new_stages": 2,
@@ -14,7 +14,9 @@
     "support_portraits": 3,
     "mama": 10,
     "diehardman": 6,
-    "higgs": 6
+    "higgs": 6,
+    "heartman": 5,
+    "higgs_corrected_portraits": 1
   },
   "runtime": {
     "playable_fighters": 8,
@@ -25,13 +27,13 @@
     "boss_images": 14,
     "boss_effect_images": 4,
     "principal_catalog_paths": 225,
-    "native_fighter_pose_crops": 54
+    "native_fighter_pose_crops": 58
   },
   "executed": {
     "integration": {
       "report": "integration-validation.json",
       "passed": true,
-      "pose_side_cases": 6,
+      "pose_side_cases": 8,
       "stage_cases": 16,
       "unchanged_duel_checkpoints": 72
     },
@@ -58,12 +60,14 @@
     "legacy_dimension_placeholders_explicit": true
   },
   "followups": [
-    "Heartman main five images repaint in progress",
-    "Higgs eleven-pose canonical skull-mask correction in progress",
-    "Mama Viaduc ten-image human repaint audit in progress",
-    "Lockne supporting portrait",
-    "narrative image consistency",
-    "Sam/Cliff historical movement sheets",
+    "Higgs ten full-body mask corrections in progress",
+    "Mama Viaduc ten-image human repaint in progress",
+    "Lockne supporting portrait blocked by unavailable inspectable reference",
+    "Die-Hardman rival scene repaint in progress",
     "dedicated asymmetric left-facing views"
-  ]
+  ],
+  "latest_art_base_commit": "8e2a158b3a8fe0975f54196605a7c2bfcf11e352",
+  "completed_audits": {
+    "sam_cliff_motion_sheets": "Four existing painted frame sheets, coherent identities/equipment; no missing art. Wider motion is a separate enhancement."
+  }
 }

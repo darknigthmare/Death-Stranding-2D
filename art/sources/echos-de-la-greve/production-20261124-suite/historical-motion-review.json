@@ -1,0 +1,212 @@
+{
+  "schema_version": 1,
+  "date": "2026-11-24",
+  "repository": "darknigthmare/Death-Stranding-2D",
+  "source_commit": "8afb60daabe1b7608ff42a16f5e92512422b3e45",
+  "scope": "Read-only visual review of four historical Sam/Cliff step and hit WebP sheets against their two detailed stance sources",
+  "decision": "Close missing-images concern for these four existing motion sheets; no new generation or replacement justified by the inspected artwork",
+  "native_pixels_edited": false,
+  "generated_assets": 0,
+  "sources": [
+    {
+      "character_id": "sam",
+      "pose": "stance",
+      "path": "modes/echos-de-la-greve/assets/fighters/sam-stance.webp",
+      "git_blob_sha": "40e55af970ffc1e48a2520cf1911fc0953b6070f",
+      "bytes": 310066,
+      "chunks": [
+        {
+          "kind": "VP8X",
+          "bytes": 10
+        },
+        {
+          "kind": "ALPH",
+          "bytes": 96577
+        },
+        {
+          "kind": "VP8 ",
+          "bytes": 213442
+        }
+      ],
+      "width": 699,
+      "height": 1506,
+      "alpha_flag": true,
+      "animated_flag": false,
+      "alpha_chunk": true,
+      "frames": 1,
+      "frame_width": 699,
+      "frame_height": 1506,
+      "pixels_inspected": true
+    },
+    {
+      "character_id": "sam",
+      "pose": "step",
+      "path": "modes/echos-de-la-greve/assets/fighters/sam-step.webp",
+      "git_blob_sha": "df4aed1edcec5c389f2c6476a28be3ee9b7a61b8",
+      "bytes": 212574,
+      "chunks": [
+        {
+          "kind": "VP8X",
+          "bytes": 10
+        },
+        {
+          "kind": "ALPH",
+          "bytes": 34943
+        },
+        {
+          "kind": "VP8 ",
+          "bytes": 177584
+        }
+      ],
+      "width": 1688,
+      "height": 672,
+      "alpha_flag": true,
+      "animated_flag": false,
+      "alpha_chunk": true,
+      "frames": 4,
+      "frame_width": 422,
+      "frame_height": 672,
+      "pixels_inspected": true
+    },
+    {
+      "character_id": "sam",
+      "pose": "hit",
+      "path": "modes/echos-de-la-greve/assets/fighters/sam-hit.webp",
+      "git_blob_sha": "802bb1604c1580e63eb6c63c43441bd7411e7733",
+      "bytes": 210054,
+      "chunks": [
+        {
+          "kind": "VP8X",
+          "bytes": 10
+        },
+        {
+          "kind": "ALPH",
+          "bytes": 28438
+        },
+        {
+          "kind": "VP8 ",
+          "bytes": 181570
+        }
+      ],
+      "width": 1688,
+      "height": 672,
+      "alpha_flag": true,
+      "animated_flag": false,
+      "alpha_chunk": true,
+      "frames": 4,
+      "frame_width": 422,
+      "frame_height": 672,
+      "pixels_inspected": true
+    },
+    {
+      "character_id": "cliff",
+      "pose": "stance",
+      "path": "modes/echos-de-la-greve/assets/fighters/cliff-stance.webp",
+      "git_blob_sha": "e69b2444fa5f7fb232a28aaae021dc883cfac23b",
+      "bytes": 233026,
+      "chunks": [
+        {
+          "kind": "VP8X",
+          "bytes": 10
+        },
+        {
+          "kind": "ALPH",
+          "bytes": 76393
+        },
+        {
+          "kind": "VP8 ",
+          "bytes": 156586
+        }
+      ],
+      "width": 687,
+      "height": 1503,
+      "alpha_flag": true,
+      "animated_flag": false,
+      "alpha_chunk": true,
+      "frames": 1,
+      "frame_width": 687,
+      "frame_height": 1503,
+      "pixels_inspected": true
+    },
+    {
+      "character_id": "cliff",
+      "pose": "step",
+      "path": "modes/echos-de-la-greve/assets/fighters/cliff-step.webp",
+      "git_blob_sha": "5be69373a7afa9e702760ae076f07a8a84e677b0",
+      "bytes": 161544,
+      "chunks": [
+        {
+          "kind": "VP8X",
+          "bytes": 10
+        },
+        {
+          "kind": "ALPH",
+          "bytes": 26848
+        },
+        {
+          "kind": "VP8 ",
+          "bytes": 134650
+        }
+      ],
+      "width": 1672,
+      "height": 672,
+      "alpha_flag": true,
+      "animated_flag": false,
+      "alpha_chunk": true,
+      "frames": 4,
+      "frame_width": 418,
+      "frame_height": 672,
+      "pixels_inspected": true
+    },
+    {
+      "character_id": "cliff",
+      "pose": "hit",
+      "path": "modes/echos-de-la-greve/assets/fighters/cliff-hit.webp",
+      "git_blob_sha": "4f893ea62cc6b588eb430691703d7e0ed0b0437c",
+      "bytes": 162268,
+      "chunks": [
+        {
+          "kind": "VP8X",
+          "bytes": 10
+        },
+        {
+          "kind": "ALPH",
+          "bytes": 24360
+        },
+        {
+          "kind": "VP8 ",
+          "bytes": 137862
+        }
+      ],
+      "width": 1672,
+      "height": 672,
+      "alpha_flag": true,
+      "animated_flag": false,
+      "alpha_chunk": true,
+      "frames": 4,
+      "frame_width": 418,
+      "frame_height": 672,
+      "pixels_inspected": true
+    }
+  ],
+  "findings": [
+    {
+      "character_id": "sam",
+      "verdict": "Detailed painted sheets consistent with inspected stance, no basic-vector/mannequin defect observed",
+      "identity_and_equipment": "Hood and dark goggles, blue suit with stripe markings, backpack case, odradek, harness, abdominal equipment case, gloves and boots retained across four frames in each sheet",
+      "motion": "Four closely related body variants with modest leg displacement and torso inclination; hands largely remain on harness"
+    },
+    {
+      "character_id": "cliff",
+      "verdict": "Detailed painted sheets consistent with inspected stance, no basic-vector/mannequin defect observed",
+      "identity_and_equipment": "Same recognizable face/hair and black face trail, olive camouflage, sleeve patch, tactical vest/pouches, gloves and boots retained across four frames in each sheet",
+      "motion": "Four closely related stance variants with modest leg displacement and torso inclination; arms remain near original guard"
+    }
+  ],
+  "caveats": [
+    "This is a comparison to the project's current detailed stance images, not a new canonical 1:1 check against official game frames.",
+    "Movement range is limited; improving animation expressiveness would be a separate art/animation task, not completion of missing character images.",
+    "All six WebP headers contain ALPH data, and none is an animated WebP. Alpha samples were not decoded in this hosted pass; gray RGB edges in previews alone were not classified as an opacity defect.",
+    "The four-frame layouts can be consumed as sprite sheets. No browser animation/crop/playback test was performed in this visual audit."
+  ]
+}

@@ -381,11 +381,31 @@ module.exports = {
     "height": 1747
   },
   "assets/fighters/higgs/portrait.png": {
-    "width": 1292,
-    "height": 1218
+    "width": 1312,
+    "height": 1199
   },
   "assets/fighters/higgs/jump.png": {
     "width": 1310,
     "height": 1200
+  },
+  "assets/fighters/heartman/stance.png": {
+    "width": 724,
+    "height": 2172
+  },
+  "assets/fighters/heartman/action.png": {
+    "width": 724,
+    "height": 2172
+  },
+  "assets/fighters/heartman/step.png": {
+    "width": 1024,
+    "height": 1536
+  },
+  "assets/fighters/heartman/hit.png": {
+    "width": 724,
+    "height": 2172
+  },
+  "assets/fighters/heartman/portrait.png": {
+    "width": 1274,
+    "height": 1235
   }
 };

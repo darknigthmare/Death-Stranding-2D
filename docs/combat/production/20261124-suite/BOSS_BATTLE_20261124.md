@@ -116,6 +116,6 @@ Pour relancer la recette depuis la racine du dépôt :
 node modes/echos-de-la-greve/qa/boss.cjs docs/combat/production/20261124-suite/boss-local-report.json
 ```
 
-Le lanceur utilise le module de 97 dimensions natives `qa/native-image-dimensions-20261124.cjs`. Les sources héritées qui n’y figurent pas emploient des dimensions de substitution explicites dans le simulateur. Le lanceur est compilé, mais n’a pas été exécuté sous Node dans cette session ; le même noyau de recette a été exécuté en JavaScript hébergé.
+Le lanceur utilise le module de 102 dimensions natives `qa/native-image-dimensions-20261124.cjs`. Les sources héritées qui n’y figurent pas emploient des dimensions de substitution explicites dans le simulateur. Le lanceur est compilé, mais n’a pas été exécuté sous Node dans cette session ; le même noyau de recette a été exécuté en JavaScript hébergé.
 
 Cette vérification contrôle la simulation, les chemins de rendu, les bornes des crops, les facteurs d’échelle et les événements du menu. **Elle ne décode pas les pixels, ne produit pas de composition Canvas native et ne valide pas la mise en page d’un navigateur.** Une revue visuelle en scène reste nécessaire pour certifier le placement optique et la lisibilité sur les tailles d’écran réelles.
