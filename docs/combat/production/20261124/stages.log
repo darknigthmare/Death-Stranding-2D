@@ -1,0 +1,15 @@
+Command: NODE_PATH="$CODEX_PRIMARY_RUNTIME_NODE_MODULES" ARENA_SCREENSHOTS="$PWD/docs/combat/production/20261124/stages" node modes/echos-de-la-greve/qa/arenes-canvas.cjs
+Exit code: 0
+
+OK shore — 8 cases, actual renderer, five layers, floor and parallax.
+OK terminal — 8 cases, actual renderer, five layers, floor and parallax.
+OK battlefield — 8 cases, actual renderer, five layers, floor and parallax.
+OK mule-camp — 8 cases, actual renderer, five layers, floor and parallax.
+OK mule-camp-dry — 8 cases, actual renderer, five layers, floor and parallax.
+OK heartman-lab — 8 cases, actual renderer, five layers, floor and parallax.
+OK mama-workshop — 8 cases, actual renderer, five layers, floor and parallax.
+OK ruined-factory — 8 cases, actual renderer, five layers, floor and parallax.
+OK timefall-shelter — 8 cases, actual renderer, five layers, floor and parallax.
+OK tar-basin — 8 cases, actual renderer, five layers, floor and parallax.
+OK mountain-pass — 8 cases, actual renderer, five layers, floor and parallax.
+PASS 11 stages / 88 rendering cases. Browser interface not exercised.

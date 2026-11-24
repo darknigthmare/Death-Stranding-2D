@@ -17,6 +17,7 @@
   // Ten locations and the dry MULE variant have five independent layers. Keep the panorama fallback
   // for offline copies while the separate production files finish decoding.
   const movement = ['guard','crouch','rise','apex','fall'];
+  const generatedFighters = ['sam','fragile','higgs','cliff','mule','diehardman','heartman'];
   const fixedFrame = poses => Object.fromEntries(poses.flatMap(pose => [
     [pose+'Anchor',.5], [pose+'Baseline',1017/1020], [pose+'Scale',1020/920]
   ]));
@@ -28,6 +29,14 @@
   }};
   window.StrandAssets = {
     wardrobe,
+    // Individual native PNGs; measured crops and foot anchors live separately.
+    // Keep every legacy jump available as a loading/offline fallback.
+    poses:Object.fromEntries(generatedFighters.map(id => [id,
+      Object.fromEntries(movement.map(pose => [pose,'assets/fighters/'+id+'/'+pose+'.png']))
+    ])),
+    projectiles:Object.fromEntries(['sam','higgs','cliff','recall','gate','heartman','memory']
+      .map(id => [id,'assets/projectiles/'+id+'.png'])),
+    generatedGeometry:window.StrandGeneratedGeometry || {},
     jumps:Object.fromEntries(roster.filter(id=>id!=='mama').map(id=>[id,'assets/fighters/'+id+'-jump.png'])),
     geometry: {
       sam:{jumpAnchor:.5,jumpBaseline:1306/1536,jumpScale:1},

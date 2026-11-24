@@ -1,4 +1,4 @@
-// Exercise the unmodified game renderer with native Canvas when Chromium is unavailable.
+// Exercise the actual game renderer with native Canvas when Chromium is unavailable.
 // This checks rendering and simulation only, not browser menus or canonical visual fidelity.
 const assert = require('node:assert/strict');
 const fs = require('node:fs');
@@ -16,9 +16,11 @@ const joinRegressions = new Set(['shore','terminal','battlefield','mountain-pass
 const script = name => fs.readFileSync(path.join(root,name),'utf8');
 const catalog = {window:{},structuredClone};
 vm.runInNewContext(script('content.js'),catalog);
+vm.runInNewContext(script('asset-geometry-20261124.js'),catalog);
 vm.runInNewContext(script('assets.js'),catalog);
 const assets = catalog.window.StrandAssets;
 const ids = requested || Object.keys(catalog.window.StrandContent.stages);
+const scenarioFighters = ['higgs','fragile'];
 
 (async()=>{
   fs.mkdirSync(output,{recursive:true});
@@ -29,10 +31,18 @@ const ids = requested || Object.keys(catalog.window.StrandContent.stages);
       return assets[group][id];
     });
     const files=new Set([...layers,assets.stages[id]]);
-    for(const fighter of ['higgs','fragile']) {
+    for(const fighter of scenarioFighters) {
       for(const kind of ['fighters','actions','steps','hits','jumps','finishers']) {
-        const f=assets[kind]?.[fighter]; if(typeof f==='string') files.add(f);
+        const f=assets[kind]?.[fighter];
+        if(typeof f==='string') files.add(f);
+        else if(f && typeof f==='object') Object.values(f).forEach(file=>files.add(file));
       }
+      Object.values(assets.poses?.[fighter] || {}).forEach(file=>files.add(file));
+      Object.values(assets.wardrobe?.[fighter]?.atelier?.poses || {}).forEach(file=>files.add(file));
+    }
+    for(const [kind,file] of Object.entries(assets.projectiles || {})) {
+      const owner=({recall:'cliff',gate:'diehardman',memory:'heartman'})[kind] || kind;
+      if(scenarioFighters.includes(owner)) files.add(file);
     }
     files.add(assets.props.goldImprint);
     const decoded=new Map();
@@ -111,7 +121,7 @@ const ids = requested || Object.keys(catalog.window.StrandContent.stages);
     for(const mode of ['local','training']){
       const normal=[];
       for(const reducedEffects of [false,true]){
-        engine.start({canvas,p1:'higgs',p2:'fragile',stage:id,mode,reducedEffects,sound:false,seed:8172});
+        engine.start({canvas,p1:scenarioFighters[0],p2:scenarioFighters[1],stage:id,mode,reducedEffects,sound:false,seed:8172});
         let before=advance(78);validateFrame(before,id);
         for(const direction of [1,-1]){
           const key=direction===1?'right':'left';
@@ -146,11 +156,11 @@ const ids = requested || Object.keys(catalog.window.StrandContent.stages);
     results.push({stage:id,cases,layers,...(joinRegressions.has(id)?{background_join_min_alpha:joinAlphaMin}:{}),passed:true});
     console.log('OK '+id+' — '+cases+' cases, actual renderer, five layers, floor and parallax.');
   }
-  const source_sha256=Object.fromEntries(['content.js','assets.js','fight.js'].map(file=>[
+  const source_sha256=Object.fromEntries(['content.js','asset-geometry-20261124.js','assets.js','fight.js'].map(file=>[
     file,createHash('sha256').update(script(file)).digest('hex')
   ]));
   const places=new Set(ids.map(id=>catalog.window.StrandContent.arenas[id].variantOf || id));
-  const report={date:'2026-11-19',renderer:'@napi-rs/canvas; actual fight.js',browser_verified:false,
+  const report={date:'2026-11-24',renderer:'@napi-rs/canvas; actual fight.js',browser_verified:false,
     locations:places.size,stages:results.length,cases:results.reduce((sum,r)=>sum+r.cases,0),source_sha256,results};
   fs.writeFileSync(path.join(output,'validation.json'),JSON.stringify(report,null,2)+'\n');
   console.log('PASS '+report.stages+' stages / '+report.cases+' rendering cases. Browser interface not exercised.');

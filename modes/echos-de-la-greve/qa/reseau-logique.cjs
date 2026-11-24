@@ -76,7 +76,7 @@ verifyEngines();
 async function verifyNestedAssets() {
   const fixture = fs.mkdtempSync(path.join(os.tmpdir(),'echos-relay-assets-'));
   try {
-    for (const name of ['fight.js','content.js','assets.js','netplay.js','netplay-server.cjs'])
+    for (const name of ['fight.js','content.js','assets.js','asset-geometry-20261124.js','netplay.js','netplay-server.cjs'])
       fs.writeFileSync(path.join(fixture,name),'fixture');
     const directory = path.join(fixture,'assets/fighters/mama/atelier');
     fs.mkdirSync(directory,{recursive:true});

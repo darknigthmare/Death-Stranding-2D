@@ -475,3 +475,13 @@ Les numéros ci-dessous renvoient aux fiches des chapitres 1 à 7. La présentat
 | 8 | L’usine en ruines du Director’s Cut et le saut de Fragile depuis le parapluie de la chambre privée. | [Kojima Productions · Guide du Director’s Cut](https://www.kojimaproductions.jp/en/death-stranding-directors-cut-beginners-guide) |
 
 Pour valider une correspondance 1:1, relever la version du jeu et le plan officiel comparé, puis placer la capture et le sprite à même hauteur de tête. Examiner le profil, chaque accessoire visible, son côté, sa fixation et la palette sous une lumière comparable. Un élément caché sur toutes les vues consultées reste à documenter. Conserver séparément l’état de chaque pose et les mouvements restant à dessiner.
+
+## 12. Reprise des poses et effets — 24 novembre 2026
+
+Sam, Fragile, Higgs, Cliff, le MULE, Die-Hardman et Heartman disposent maintenant de cinq PNG individuels supplémentaires : garde, accroupissement, montée, sommet et descente du saut. Les cinq poses de Mama étaient déjà présentes. Les nouvelles sources sont natives et transparentes ; leurs crops, proportions et ancres sont mesurés dans `asset-geometry-20261124.js`, sans modification des pixels. Le moteur conserve les poses historiques comme repli pendant le chargement et respecte les poses d’un costume optionnel lorsqu’elles existent.
+
+Sept effets déjà prévus dans la simulation disposent d’une image dédiée : bola de Sam, mains de goudron de Higgs, trait de Cliff, trait ascendant du rappel, portique de Die-Hardman, impulsion et mémoire de Heartman. Les effets ancrés au sol sont dimensionnés à la hauteur de frappe existante. Les sources sont affichées sans étirement ; les règles de combat et les checkpoints de simulation restent indépendants du chargement des images.
+
+La reprise porte donc sur **42 nouvelles images**. Les **55 couches des onze configurations d’arène** étaient complètes et ont été contrôlées à nouveau. Le catalogue déclare désormais **210 fichiers d’image**. Les anciens dessins de Mama et de Die-Hardman, les planches historiques de marche/impact et l’inversion par miroir restent des points distincts à revoir pour une certification canonique 1:1. La continuité avec les tenues locales ne constitue pas cette certification.
+
+[Rapport du lot, validation et limites](production/20261124/REPRISE_ASSETS_20261124.md) · [Galerie des éléments séparés et rendus](production/20261124/index.html) · [Inventaire natif et empreintes](../../art/sources/echos-de-la-greve/production-20261124/production-assets.json).

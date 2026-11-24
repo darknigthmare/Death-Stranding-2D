@@ -1,0 +1,52 @@
+{
+  "date": "2026-11-24",
+  "base_commit": "ba4431587f861823e453c85bdf7e6967778329a9",
+  "status": "passed for executable native checks; browser validation unavailable",
+  "new_png_assets": 42,
+  "new_pose_assets": 35,
+  "new_projectile_assets": 7,
+  "declared_images_decoded": 210,
+  "native_asset_bytes": 65399184,
+  "stages": {
+    "locations": 10,
+    "configurations": 11,
+    "layers": 55,
+    "render_cases": 88,
+    "new_stage_assets": 0
+  },
+  "checks": [
+    {
+      "name": "native images, actual pose/effect routing, aspect ratio, fallback, simulation checkpoints",
+      "status": "passed",
+      "evidence": "generated-assets-validation.json"
+    },
+    {
+      "name": "all declared image paths and decoding",
+      "status": "passed",
+      "evidence": "assets.log"
+    },
+    {
+      "name": "all stage layers, parallax and floor joins",
+      "status": "passed",
+      "evidence": "stages/validation.json"
+    },
+    {
+      "name": "network logic, rollback and asset service",
+      "status": "passed",
+      "evidence": "reseau-logique.log"
+    },
+    {
+      "name": "browser startup",
+      "status": "unavailable",
+      "evidence": "browser-check.json"
+    }
+  ],
+  "visual_review": {
+    "individual_sources": "reviewed by production agents",
+    "in_engine_frames": "four actual Canvas frames visually reviewed",
+    "native_pixels_preserved": true,
+    "canonical_1to1_certified": false
+  },
+  "source_hashes_synchronized": true,
+  "github_publication": "blocked by automatic approval review; explicit in-thread authorization required; no PR created"
+}

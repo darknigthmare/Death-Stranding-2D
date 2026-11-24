@@ -35,7 +35,8 @@ const {chromium} = require('playwright');
         return draw(image, ...args);
       };
       const preload = [...Object.values(StrandAssets.fighters), ...Object.values(StrandAssets.steps), ...Object.values(StrandAssets.hits),
-        ...Object.values(StrandAssets.wardrobe || {}).flatMap(kits => Object.values(kits.atelier?.poses || {}))];
+        ...Object.values(StrandAssets.wardrobe || {}).flatMap(kits => Object.values(kits.atelier?.poses || {})),
+        ...Object.values(StrandAssets.poses || {}).flatMap(poses => Object.values(poses))];
       await Promise.all(preload.map(async src => { const image = new Image(); image.src = src; await image.decode(); }));
       const results = [];
       for (const id of Object.keys(StrandContent.fighters)) {
@@ -53,7 +54,7 @@ const {chromium} = require('playwright');
           const facing = side === 1 ? 1 : -1;
           const pose = kind => {
             const category = {stance:'fighters',step:'steps',hit:'hits',guard:'fighters'}[kind];
-            const source = StrandAssets.wardrobe?.[id]?.atelier?.poses?.[kind] || StrandAssets[category]?.[id];
+            const source = StrandAssets.wardrobe?.[id]?.atelier?.poses?.[kind] || StrandAssets.poses?.[id]?.[kind] || StrandAssets[category]?.[id];
             return seen.has(new URL(source, location.href).href + '/' + facing);
           };
           const step = pose('step'), stance = pose('stance');

@@ -1,0 +1,153 @@
+{
+  "date": "2026-11-24",
+  "renderer": "@napi-rs/canvas; actual fight.js",
+  "browser_verified": false,
+  "locations": 10,
+  "stages": 11,
+  "cases": 88,
+  "source_sha256": {
+    "content.js": "9f09411c33c30ae8f9147c1a7c8373ad11148f791fefa2d072b7b79dc7f91342",
+    "asset-geometry-20261124.js": "bfa8befb6705a4d090d20bc6b39441ae8d34115b1439ae495a789e6da9996eb2",
+    "assets.js": "5006e6d6f44345b49777396b7aea66aa0dda35deab94d04ba0e37453331a93d3",
+    "fight.js": "224eba4e3ec60cc7a974549dc538478ceb6d5a94ce6cb580b08d8f4e80d19226"
+  },
+  "results": [
+    {
+      "stage": "shore",
+      "cases": 8,
+      "layers": [
+        "assets/stages/shore-sky.png",
+        "assets/stages/shore-distant.png",
+        "assets/stages/shore-midground.png",
+        "assets/stages/shore-floor.png",
+        "assets/stages/shore-foreground.webp"
+      ],
+      "background_join_min_alpha": 252,
+      "passed": true
+    },
+    {
+      "stage": "terminal",
+      "cases": 8,
+      "layers": [
+        "assets/stages/terminal-sky.png",
+        "assets/stages/terminal-distant.png",
+        "assets/stages/terminal-midground.png",
+        "assets/stages/terminal-floor.png",
+        "assets/stages/terminal-foreground.webp"
+      ],
+      "background_join_min_alpha": 255,
+      "passed": true
+    },
+    {
+      "stage": "battlefield",
+      "cases": 8,
+      "layers": [
+        "assets/stages/battlefield-sky.png",
+        "assets/stages/battlefield-distant.png",
+        "assets/stages/battlefield-midground.png",
+        "assets/stages/battlefield-floor.png",
+        "assets/stages/battlefield-foreground.webp"
+      ],
+      "background_join_min_alpha": 255,
+      "passed": true
+    },
+    {
+      "stage": "mule-camp",
+      "cases": 8,
+      "layers": [
+        "assets/stages/mule-camp-sky.png",
+        "assets/stages/mule-camp-distant.png",
+        "assets/stages/mule-camp-midground.png",
+        "assets/stages/mule-camp-floor.png",
+        "assets/stages/mule-camp-foreground.webp"
+      ],
+      "passed": true
+    },
+    {
+      "stage": "mule-camp-dry",
+      "cases": 8,
+      "layers": [
+        "assets/stages/mule-camp-dry-sky.png",
+        "assets/stages/mule-camp-dry-distant.png",
+        "assets/stages/mule-camp-dry-midground.png",
+        "assets/stages/mule-camp-dry-floor.png",
+        "assets/stages/mule-camp-dry-foreground.png"
+      ],
+      "background_join_min_alpha": 255,
+      "passed": true
+    },
+    {
+      "stage": "heartman-lab",
+      "cases": 8,
+      "layers": [
+        "assets/stages/heartman-lab-sky.png",
+        "assets/stages/heartman-lab-distant.png",
+        "assets/stages/heartman-lab-midground.png",
+        "assets/stages/heartman-lab-floor.png",
+        "assets/stages/heartman-lab-foreground.webp"
+      ],
+      "passed": true
+    },
+    {
+      "stage": "mama-workshop",
+      "cases": 8,
+      "layers": [
+        "assets/stages/mama-workshop-sky.png",
+        "assets/stages/mama-workshop-distant.png",
+        "assets/stages/mama-workshop-midground.png",
+        "assets/stages/mama-workshop-floor.png",
+        "assets/stages/mama-workshop-foreground.webp"
+      ],
+      "passed": true
+    },
+    {
+      "stage": "ruined-factory",
+      "cases": 8,
+      "layers": [
+        "assets/stages/ruined-factory-sky.png",
+        "assets/stages/ruined-factory-distant.png",
+        "assets/stages/ruined-factory-midground.png",
+        "assets/stages/ruined-factory-floor.png",
+        "assets/stages/ruined-factory-foreground.webp"
+      ],
+      "passed": true
+    },
+    {
+      "stage": "timefall-shelter",
+      "cases": 8,
+      "layers": [
+        "assets/stages/timefall-shelter-sky.png",
+        "assets/stages/timefall-shelter-distant.png",
+        "assets/stages/timefall-shelter-midground.png",
+        "assets/stages/timefall-shelter-floor.png",
+        "assets/stages/timefall-shelter-foreground.webp"
+      ],
+      "passed": true
+    },
+    {
+      "stage": "tar-basin",
+      "cases": 8,
+      "layers": [
+        "assets/stages/tar-basin-sky.png",
+        "assets/stages/tar-basin-distant.png",
+        "assets/stages/tar-basin-midground.png",
+        "assets/stages/tar-basin-floor.png",
+        "assets/stages/tar-basin-foreground.webp"
+      ],
+      "passed": true
+    },
+    {
+      "stage": "mountain-pass",
+      "cases": 8,
+      "layers": [
+        "assets/stages/mountain-pass-sky.png",
+        "assets/stages/mountain-pass-distant.png",
+        "assets/stages/mountain-pass-midground.png",
+        "assets/stages/mountain-pass-floor.png",
+        "assets/stages/mountain-pass-foreground.webp"
+      ],
+      "background_join_min_alpha": 252,
+      "passed": true
+    }
+  ]
+}

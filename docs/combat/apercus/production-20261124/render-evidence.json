@@ -1,0 +1,21 @@
+{
+  "date": "2026-11-24",
+  "renderer": "actual fight.js rendered with @napi-rs/canvas",
+  "canvas": [
+    1280,
+    720
+  ],
+  "screenshots": [
+    "sam-fragile-garde.png",
+    "sam-fragile-saut.png",
+    "higgs-maree-noire.png",
+    "heartman-impulsion.png"
+  ],
+  "source_sha256": {
+    "content.js": "9f09411c33c30ae8f9147c1a7c8373ad11148f791fefa2d072b7b79dc7f91342",
+    "assets.js": "5006e6d6f44345b49777396b7aea66aa0dda35deab94d04ba0e37453331a93d3",
+    "asset-geometry-20261124.js": "bfa8befb6705a4d090d20bc6b39441ae8d34115b1439ae495a789e6da9996eb2",
+    "fight.js": "224eba4e3ec60cc7a974549dc538478ceb6d5a94ce6cb580b08d8f4e80d19226"
+  },
+  "browserValidated": false
+}

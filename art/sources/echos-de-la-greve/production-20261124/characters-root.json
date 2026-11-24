@@ -1,0 +1,71 @@
+{
+  "date": "2026-11-24",
+  "assets": [
+    {
+      "id": "sam",
+      "pose": "guard",
+      "prompt": "Use case: identity-preserve. Asset type: ONE individual full-body 2D fighting-game sprite, high-detail painted realistic game art. Reference image is the existing Sam Porter Bridges DS1 blue BRIDGES porter suit sprite and must control costume, face, proportions, materials and lighting. Create the same character in a DEFENSIVE GUARD pose, oriented side-on facing RIGHT, both feet grounded at the same level, knees slightly bent, forearms raised close to the head, BB chest pod protected and not used as a weapon. Retain the navy hooded rain suit, dark visor, white and orange stripes, original BRIDGES arm patch, strapped cargo case, Odradek on its existing shoulder, straps, gloves, kneepads and boots. Pose must differ clearly from neutral stance, with guarded forearms. Preserve every costume component and its placement from the reference, do not redesign. Entire character including the Odradek and all boots visible with 8% empty margin. One character, one pose only. Truly transparent background, no ground plane, no drop shadow, no gray halo, no checkerboard, no labels, no additional figures, no sprite sheet. Crisp natural anatomy and detailed clean silhouette.",
+      "reference_paths": [
+        "modes/echos-de-la-greve/assets/fighters/sam-stance.webp"
+      ],
+      "generated_path": "/workspace/scratch/05d1f74d065e/generated_images/exec-ec710d16-6661-4d0a-83ae-9a5103af9690.png",
+      "runtime": "modes/echos-de-la-greve/assets/fighters/sam/guard.png",
+      "mode": "built-in image_gen",
+      "transparent_background": true,
+      "canonical_fidelity": "reference-consistent; exact canonical 1:1 not certified",
+      "recovered": true
+    },
+    {
+      "id": "sam",
+      "pose": "crouch",
+      "prompt": "Use case: identity-preserve. Asset type: ONE individual full-body 2D fighting-game sprite, high-detail painted realistic game art, side view facing RIGHT. The reference is the existing Sam Porter Bridges DS1 blue BRIDGES porter outfit; strictly preserve its costume, body proportions, identity, materials and lighting. Requested pose: LOW CROUCH: hips lowered deep, knees bent, both feet grounded and flat at one horizontal level, chest leaning slightly forward under the cargo weight, both gloved hands in a close low guard. This is a squat, not a kneeling pose; no knee touches the floor. Retain navy hooded rain suit, dark visor, white and orange stripes, original BRIDGES arm patch, strapped cargo case, Odradek on the same shoulder, amber chest pod, straps, gloves, kneepads and boots. All equipment stays fastened and asymmetries preserved. No redesign or added weapon. Whole figure including scanner, bag and every boot in frame, 10% empty margin on all sides. ONE character and ONE pose only, crisp detailed silhouette with natural anatomy. Actual transparent alpha background: no ground, floor shadow, gray haze, colored border, fake checkerboard, typography, grid, motion duplicate or extra person.",
+      "reference_paths": [
+        "modes/echos-de-la-greve/assets/fighters/sam-stance.webp"
+      ],
+      "runtime": "modes/echos-de-la-greve/assets/fighters/sam/crouch.png",
+      "mode": "built-in image_gen",
+      "transparent_background": true,
+      "canonical_fidelity": "reference-consistent; exact canonical 1:1 not certified",
+      "recovered": true
+    },
+    {
+      "id": "sam",
+      "pose": "rise",
+      "prompt": "Use case: identity-preserve. Asset type: ONE individual full-body 2D fighting-game sprite, high-detail painted realistic game art, side view facing RIGHT. The reference is the existing Sam Porter Bridges DS1 blue BRIDGES porter outfit; strictly preserve its costume, body proportions, identity, materials and lighting. Requested pose: JUMP ASCENT: torso driving upward, leading knee bent and rising toward waist, trailing leg extended downward and slightly backward, both boot soles suspended, arms balancing in a compact guard. Upward phase, not the same as the tucked apex. Retain navy hooded rain suit, dark visor, white and orange stripes, original BRIDGES arm patch, strapped cargo case, Odradek on the same shoulder, amber chest pod, straps, gloves, kneepads and boots. All equipment stays fastened and asymmetries preserved. No redesign or added weapon. Whole figure including scanner, bag and every boot in frame, 10% empty margin on all sides. ONE character and ONE pose only, crisp detailed silhouette with natural anatomy. Actual transparent alpha background: no ground, floor shadow, gray haze, colored border, fake checkerboard, typography, grid, motion duplicate or extra person.",
+      "reference_paths": [
+        "modes/echos-de-la-greve/assets/fighters/sam-stance.webp"
+      ],
+      "runtime": "modes/echos-de-la-greve/assets/fighters/sam/rise.png",
+      "mode": "built-in image_gen",
+      "transparent_background": true,
+      "canonical_fidelity": "reference-consistent; exact canonical 1:1 not certified",
+      "recovered": true
+    },
+    {
+      "id": "sam",
+      "pose": "apex",
+      "prompt": "Use case: identity-preserve. Asset type: ONE individual full-body 2D fighting-game sprite, high-detail painted realistic game art, side view facing RIGHT. The reference is the existing Sam Porter Bridges DS1 blue BRIDGES porter outfit; strictly preserve its costume, body proportions, identity, materials and lighting. Requested pose: JUMP APEX: both legs clearly bent and tucked beneath the torso, front knee raised and back knee drawn back, neither foot touching the floor, arms raised for balance, backpack stable. A compact silhouette at the highest part of a jump. Retain navy hooded rain suit, dark visor, white and orange stripes, original BRIDGES arm patch, strapped cargo case, Odradek on the same shoulder, amber chest pod, straps, gloves, kneepads and boots. All equipment stays fastened and asymmetries preserved. No redesign or added weapon. Whole figure including scanner, bag and every boot in frame, 10% empty margin on all sides. ONE character and ONE pose only, crisp detailed silhouette with natural anatomy. Actual transparent alpha background: no ground, floor shadow, gray haze, colored border, fake checkerboard, typography, grid, motion duplicate or extra person.",
+      "reference_paths": [
+        "modes/echos-de-la-greve/assets/fighters/sam-stance.webp"
+      ],
+      "runtime": "modes/echos-de-la-greve/assets/fighters/sam/apex.png",
+      "mode": "built-in image_gen",
+      "transparent_background": true,
+      "canonical_fidelity": "reference-consistent; exact canonical 1:1 not certified",
+      "recovered": true
+    },
+    {
+      "id": "sam",
+      "pose": "fall",
+      "prompt": "Use case: identity-preserve. Asset type: ONE individual full-body 2D fighting-game sprite, high-detail painted realistic game art, side view facing RIGHT. The reference is the existing Sam Porter Bridges DS1 blue BRIDGES porter outfit; strictly preserve its costume, body proportions, identity, materials and lighting. Requested pose: JUMP DESCENT: both legs extending downward preparing to land, front boot slightly forward and lower, rear knee a little bent, torso leaning forward slightly to absorb the backpack, arms open just enough to balance. Both feet airborne; clearly different from ascent and tucked apex. Retain navy hooded rain suit, dark visor, white and orange stripes, original BRIDGES arm patch, strapped cargo case, Odradek on the same shoulder, amber chest pod, straps, gloves, kneepads and boots. All equipment stays fastened and asymmetries preserved. No redesign or added weapon. Whole figure including scanner, bag and every boot in frame, 10% empty margin on all sides. ONE character and ONE pose only, crisp detailed silhouette with natural anatomy. Actual transparent alpha background: no ground, floor shadow, gray haze, colored border, fake checkerboard, typography, grid, motion duplicate or extra person.",
+      "reference_paths": [
+        "modes/echos-de-la-greve/assets/fighters/sam-stance.webp"
+      ],
+      "runtime": "modes/echos-de-la-greve/assets/fighters/sam/fall.png",
+      "mode": "built-in image_gen",
+      "transparent_background": true,
+      "canonical_fidelity": "reference-consistent; exact canonical 1:1 not certified",
+      "recovered": true
+    }
+  ]
+}

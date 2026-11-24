@@ -1,0 +1,68 @@
+{
+  "date": "2026-11-24",
+  "assets": [
+    {
+      "id": "sam",
+      "name": "Bola de liaison",
+      "prompt": "Use case: stylized-concept. Asset type: a single isolated raster effect for a detailed hand-painted 2D fighting game set in Death Stranding 1, to replace the game's existing Canvas effect. This is a gameplay visual adaptation, not a new official weapon. ONE effect per image, entire effect visible and centered with generous 15% transparent padding on all sides, sharp small-scale readability. High detail tactile materials, restrained cinematic lighting. Subject: ONE flying strand binding bola, a thin braided tan-gold binding cable stretched into an open horizontal loop, two compact weighted dark metallic ends, each about one eighth the loop width. A sense of rightward travel, cable loop trails gently left. Practical utilitarian material appropriate to Sam's nonlethal strand equipment, no gun, no hands, no other object. The loop stays mostly horizontal, width roughly three times its height. No oversized sci-fi sphere, flames, lightning, text or logo. Genuine alpha outside the cable and weights, including the hole inside the loop; no background, no floor, no shadow, no checkerboard.",
+      "official": "Bola Gun canonique; silhouette et animation de projectile adaptées pour la lisibilité 2D.",
+      "runtime": "modes/echos-de-la-greve/assets/projectiles/sam.png",
+      "transparent_background": true,
+      "mode": "built-in image_gen"
+    },
+    {
+      "id": "higgs",
+      "name": "Marée noire",
+      "prompt": "Use case: stylized-concept. Asset type: a single isolated raster effect for a detailed hand-painted 2D fighting game set in Death Stranding 1, to replace the game's existing Canvas effect. This is a gameplay visual adaptation, not a new official weapon. ONE effect per image, entire effect visible and centered with generous 15% transparent padding on all sides, sharp small-scale readability. High detail tactile materials, restrained cinematic lighting. Subject: ONE cohesive eruption of black tar with five reaching humanoid tar hands joined to the same short narrow puddle base. Uneven heights: tallest hand in center, lower hands on left/right, fingers extended and irregular but anatomically readable. Wet obsidian black tar, oil-like glossy reflections and tiny subdued chiral gold highlights at fingertips, dripping strands connecting all hands to base. Wide base, cluster about as tall as it is wide. 2D side view to sit on a horizontal fighting floor, no perspective ground or scenery. Dark supernatural substance only, no flesh or gore, no actual person, no detached inventory hands, no scene. Real transparent alpha everywhere outside the single connected effect and between fingers, no floor shadow, no atmospheric square, no words.",
+      "official": "Motif de goudron et de mains inspiré des Échoués; technique Marée noire créée pour le fan-game.",
+      "runtime": "modes/echos-de-la-greve/assets/projectiles/higgs.png",
+      "transparent_background": true,
+      "mode": "built-in image_gen"
+    },
+    {
+      "id": "cliff",
+      "name": "Écho de section",
+      "prompt": "Use case: stylized-concept. Asset type: a single isolated raster effect for a detailed hand-painted 2D fighting game set in Death Stranding 1, to replace the game's existing Canvas effect. This is a gameplay visual adaptation, not a new official weapon. ONE effect per image, entire effect visible and centered with generous 15% transparent padding on all sides, sharp small-scale readability. High detail tactile materials, restrained cinematic lighting. Subject: ONE compact horizontal rifle tracer streak moving toward the RIGHT. Narrow pale ivory gold pointed leading glint at the right, tapering desaturated brass light streak and very small dark smoky wisps behind toward the left. A grounded military gunfire visual, not a plasma fireball. Long narrow single connected shape about six times wider than tall, restrained luminosity, visible clean outline at small scale. No casing, no visible gun, no multiple bullets, no impact explosion, no weapon diagram. Actual transparent alpha around the isolated streak and through wispy smoke; no black rectangle, no background, no lens flare, no texts.",
+      "official": "Tir militaire comme motif; Écho de section et ses deux trajectoires relèvent du mode annexe.",
+      "runtime": "modes/echos-de-la-greve/assets/projectiles/cliff.png",
+      "transparent_background": true,
+      "mode": "built-in image_gen"
+    },
+    {
+      "id": "recall",
+      "name": "Rappel de section",
+      "prompt": "Use case: stylized-concept. Asset type: a single isolated raster effect for a detailed hand-painted 2D fighting game set in Death Stranding 1, to replace the game's existing Canvas effect. This is a gameplay visual adaptation, not a new official weapon. ONE effect per image, entire effect visible and centered with generous 15% transparent padding on all sides, sharp small-scale readability. High detail tactile materials, restrained cinematic lighting. Subject: ONE ascending military chiral tracer for Cliff's spectral squad recall, diagonal connected streak from lower LEFT to upper RIGHT at about 35 degrees, pale desaturated ivory olive-gold glint at its upper-right tip, a thin broken smoke filament flowing down-left. It should echo a physical tracer through battlefield fog, no electricity or science-fiction plasma. One linear effect, clean silhouette and simple readable contour, length roughly five times its thickness. Genuine transparent alpha around every wisp, no background, no gun, no shell casing, no person, no lens flare, no lettering.",
+      "official": "Technique Rappel de section propre au fan-game, pas une munition officielle.",
+      "runtime": "modes/echos-de-la-greve/assets/projectiles/recall.png",
+      "transparent_background": true,
+      "mode": "built-in image_gen"
+    },
+    {
+      "id": "gate",
+      "name": "Ligne d’arrêt",
+      "prompt": "Use case: stylized-concept. Asset type: a single isolated raster effect for a detailed hand-painted 2D fighting game set in Death Stranding 1, to replace the game's existing Canvas effect. This is a gameplay visual adaptation, not a new official weapon. ONE effect per image, entire effect visible and centered with generous 15% transparent padding on all sides, sharp small-scale readability. High detail tactile materials, restrained cinematic lighting. Subject: ONE upright narrow holographic Bridges control barrier for Die-Hardman's training-simulation technique. A thin freestanding tall rectangular pale desaturated mint-gray luminous frame, height about four times width, open transparent center with faint horizontal scanlines and a small diagonal light brace near the top. Practical minimal technical light projection, slightly imperfect flicker texture within the edges; no metallic physical door frame, no solid wall. Flat straight-on side-scrolling gameplay view, top horizontal, sides vertical, base horizontal. Actual alpha transparency inside center and outside frame, no scenery, floor, shadows, symbols, text, letters, HUD panel or surrounding glow rectangle.",
+      "official": "Projection Ligne d’arrêt inventée pour l'avatar d'entraînement; aucune arme canonique équivalente revendiquée.",
+      "runtime": "modes/echos-de-la-greve/assets/projectiles/gate.png",
+      "transparent_background": true,
+      "mode": "built-in image_gen"
+    },
+    {
+      "id": "heartman",
+      "name": "Impulsion témoin",
+      "prompt": "Use case: stylized-concept. Asset type: a single isolated raster effect for a detailed hand-painted 2D fighting game set in Death Stranding 1, to replace the game's existing Canvas effect. This is a gameplay visual adaptation, not a new official weapon. ONE effect per image, entire effect visible and centered with generous 15% transparent padding on all sides, sharp small-scale readability. High detail tactile materials, restrained cinematic lighting. Subject: ONE small isolated ECG-style travelling impulse, a fine horizontal warm peach amber luminous line with exactly one sharp asymmetric cardiac waveform pulse in its center, subtle thin pale ivory core, short lead-in on left and pointed trail toward right. The waveform is a game effect inspired by Heartman's portable heart monitor, not a medical chart. Width about four times height, no frame or monitor, no heart pictogram, no grid, no labels, no sparks burst, no secondary waveform. Hand-painted glow only very close to the line, with genuine transparent alpha outside. No colored rectangle, black background or stage.",
+      "official": "Onde offensive Impulsion témoin inventée; appareil et rythme cardiaque motivent sa direction artistique.",
+      "runtime": "modes/echos-de-la-greve/assets/projectiles/heartman.png",
+      "transparent_background": true,
+      "mode": "built-in image_gen"
+    },
+    {
+      "id": "memory",
+      "name": "Mémoire de phase",
+      "prompt": "Use case: stylized-concept. Asset type: a single isolated raster effect for a detailed hand-painted 2D fighting game set in Death Stranding 1, to replace the game's existing Canvas effect. This is a gameplay visual adaptation, not a new official weapon. ONE effect per image, entire effect visible and centered with generous 15% transparent padding on all sides, sharp small-scale readability. High detail tactile materials, restrained cinematic lighting. Subject: ONE wide horizontal echo of a cardiac monitor impulse for Heartman's phase-memory technique. A restrained warm pale peach amber waveform with one dominant high peak followed by one smaller echo oscillation fading to the right, very fine ivory center line and translucent amber-gold afterglow close to the line. One connected effect, significantly wider and airier than a short heartbeat bolt, about six times wider than tall. No heart icon, no chart, no axes, no lettering, no screen, no surrounding rectangle, no sparks or radial blast. Genuine transparent alpha outside and between line folds, no black background, scenery, floor or shadow.",
+      "official": "Mémoire de phase est une adaptation de gameplay propre au mode combat.",
+      "runtime": "modes/echos-de-la-greve/assets/projectiles/memory.png",
+      "transparent_background": true,
+      "mode": "built-in image_gen"
+    }
+  ]
+}

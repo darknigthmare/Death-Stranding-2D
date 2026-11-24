@@ -1,0 +1,7 @@
+Command: NODE_PATH="$CODEX_PRIMARY_RUNTIME_NODE_MODULES" node modes/echos-de-la-greve/qa/generated-assets-20261124.cjs
+Exit code: 0
+
+Production images · 42 native rasters decoded, transparency and measured geometry valid.
+Poses · all 35 images used by guard, crouch and full jump on both sides, with proportional crop and grounded baseline.
+Projectiles · all 7 rasters emitted by real techniques in both orientations; Higgs and gate visible heights/base match their ground envelopes within 2 pixels without stretching.
+Fallback · absent new images keep legacy sprites and procedural effects; simulation/checkpoints identical.

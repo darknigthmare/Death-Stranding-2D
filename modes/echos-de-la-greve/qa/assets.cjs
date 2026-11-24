@@ -11,6 +11,8 @@ const sharp = require('sharp');
   const source = name => fs.readFileSync(path.join(root, name), 'utf8');
   const context = {window:{}, structuredClone};
   vm.runInNewContext(source('content.js'), context);
+  const geometryFile = path.join(root,'asset-geometry-20261124.js');
+  if (fs.existsSync(geometryFile)) vm.runInNewContext(fs.readFileSync(geometryFile,'utf8'),context);
   vm.runInNewContext(source('assets.js'), context);
   const assets = context.window.StrandAssets;
   const files = new Set();
@@ -74,7 +76,7 @@ const sharp = require('sharp');
   // Every delivered airborne pose must be used in both orientations.
   let airborne = 0;
   for (const id of Object.keys(context.window.StrandContent.fighters)) {
-    const poses = assets.wardrobe?.[id]?.atelier?.poses;
+    const poses = assets.wardrobe?.[id]?.atelier?.poses || assets.poses?.[id];
     const jump = assets.jumps?.[id];
     const sources = poses?.rise ? [poses.rise,poses.apex,poses.fall] :
       typeof jump === 'string' ? [jump] : Object.values(jump || {});
