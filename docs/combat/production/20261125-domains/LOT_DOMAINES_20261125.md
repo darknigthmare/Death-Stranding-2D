@@ -4,7 +4,7 @@
 
 Ce lot prolonge le travail intégré dans `main` au commit `2250b7c1b54b445637e0c9354133e6fecbc325de`. Il ajoute des commandes configurables, une entrée manette standard, la première liaison d’arène, le catalogue des valeurs réellement exécutées, une matrice de rencontres et quatorze PNG statiques. La bible, les sources et le registre qualifient séparément ce qui est jouable, ce qui reste une base visuelle et ce qui appartient à la fiction du simulateur.
 
-**Publication :** branche `codex/echos-domains-20261125` préparée pour fusion dans `main`. La référence de PR sera ajoutée lors de la publication.
+**Publication :** [commit de production `d7ce813`](https://github.com/darknigthmare/Death-Stranding-2D/commit/d7ce8137633b3013481008a1af5242f13dbe7399), branche `codex/echos-domains-20261125`, destination [main](https://github.com/darknigthmare/Death-Stranding-2D/tree/main). L’ouverture de PR a rencontré une erreur interne du connecteur, sans création de PR. Le chemin de publication retenu est une fusion Git à deux parents, avec contrôle de la référence attendue et égalité entre l’arbre distant et l’arbre local vérifié.
 
 [Jeu local](../../../../modes/echos-de-la-greve/index.html) · [Catalogue des images](../../../../modes/echos-de-la-greve/static-assets.html) · [Bible, chapitre 18](../../BIBLE_COMBAT.md#lot-domaines-20261125) · [Registre de production](../../REGISTRE_PRODUCTION.md).
 
