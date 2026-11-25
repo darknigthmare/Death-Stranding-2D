@@ -27,6 +27,7 @@ Sur ce poste, ouvrir `http://127.0.0.1:8080/netplay.html`, créer le salon et co
 Le [Duel originel](modes/echos-de-la-greve/duel-originel/index.html) propose le duel direct Sam/Higgs et l’entraînement dans six décors : la Grève, le centre de distribution, le camp MULE, l’abri Timefall, le champ de bataille et le bassin de goudron. Le choix du décor est mémorisé pour la revanche. Ses deux récits restent sur la Grève, et ses commandes sont affichées sur l’écran de combat.
 
 - [Bible du mode de combat et fonctions jouables](docs/combat/BIBLE_COMBAT.md)
+- [Guide Combat Games v1.0 associé à la bible : périmètre, écarts et priorités](docs/combat/BIBLE_COMBAT.md#12-intégration-du-guide-combat-games-v10)
 - [Conception du duel entre Sam et Higgs](docs/combat/DUELS_SAM_HIGGS.md)
 
 ### Raccorder un autre export v0.58

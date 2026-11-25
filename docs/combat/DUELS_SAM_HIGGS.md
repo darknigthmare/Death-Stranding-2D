@@ -2,6 +2,8 @@
 
 Bible de conception du mode de combat de Death Stranding 2D · Version de travail 1.0 · 18 novembre 2026
 
+**Association documentaire du 25 novembre 2026.** Cette étude conserve les choix et les valeurs du Duel originel. La [bible principale d’Échos de la Grève](BIBLE_COMBAT.md) et son [chapitre d’application du guide](BIBLE_COMBAT.md#12-intégration-du-guide-combat-games-v10) font référence pour le mode actuel à huit combattants. Le [Guide Combat Games v1.0](references/Combat_Games_Guide_General_v1.0.txt) fournit les fiches communes ; il ne fusionne pas les deux moteurs, les sauvegardes ou les rosters. Nell et les autres propositions de cette étude ne deviennent pas automatiquement des entrées du catalogue actuel.
+
 ## 1. Le colis entre deux adversaires
 
 Sur la Grève, Sam voit une mallette dans le ressac. À l’intérieur, un récepteur continue d’appeler. Higgs pose la botte sur la poignée. Le joueur pourrait avancer en attaquant. Il peut aussi s’arrêter à une longueur de bras, laisser Higgs se découvrir, récupérer le centre et enfin remettre la mallette à son destinataire. La dernière image du parcours de Sam est celle d’une livraison.

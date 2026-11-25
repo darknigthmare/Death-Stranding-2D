@@ -4,15 +4,21 @@
 
 **Édition de conception du 18 novembre 2026 · Référence artistique : Death Stranding et Director’s Cut.**
 
+**Mise à jour documentaire du 25 novembre 2026 : association du Guide Combat Games v1.0, registre d’application et distinction entre règles chargées et conception cible.**
+
 Deux silhouettes se font face sur la laisse de mer. Sam se baisse pour poser une caisse. L’autre joueur dispose d’un instant pour avancer. S’il se précipite, Sam peut l’attendre, lien en main. S’il s’arrête, Sam regagne son équilibre et choisit la distance du prochain échange. Ce geste ordinaire de porteur résume le duel que nous voulons construire.
+
+### Référentiel commun associé
+
+Le [Guide général Combat Games v1.0](references/Combat_Games_Guide_General_v1.0.txt) complète cette bible selon le contexte d’Échos de la Grève. Le [chapitre 12](#12-intégration-du-guide-combat-games-v10) associe ses 30 rubriques aux chapitres existants, précise leur statut et fixe les contrôles attendus. Les règles actuellement chargées, la conception cible et les références officielles restent identifiées séparément.
 
 ### Périmètre de cette édition
 
 | Ensemble | Contenu | Lecture |
 |---|---|---|
 | Premier noyau | Sam, Fragile, Higgs, Cliff. La Grève, le terminal Bridges et le champ de bataille de Cliff. | Distribution et lieux retenus pour la première réalisation. |
-| Jeu de combat cible | Règles chiffrées, commandes techniques, 8 fiches de combat, 8 campagnes, 8 arènes et réalisation des fatalités. | Spécifications de production. Les valeurs proposées demandent des essais en jeu. |
-| Version jouable | Huit combattants, huit campagnes, dix lieux et une variante sèche du camp MULE, tournoi à élimination, dojo et deux défis. | Le tableau ci-dessous donne les règles chargées par le moteur. |
+| Jeu de combat cible | Règles chiffrées, commandes techniques, 8 fiches de combat, 8 histoires individuelles, 8 arènes de la cible initiale et réalisation des fatalités. | Spécifications de production. Les valeurs proposées demandent des essais en jeu. |
+| Version jouable | Huit combattants, huit histoires individuelles, dix lieux et une variante sèche du camp MULE, tournoi à élimination, dojo et deux défis. | Le tableau ci-dessous donne les règles chargées par le moteur. |
 | Fidélité | Le chapitre 11 associe les décisions visuelles à des images publiées par les créateurs et l’éditeur. | Chaque costume, accessoire et côté du corps demande une comparaison visuelle avant validation 1:1. |
 
 Les mentions **source** renvoient au jeu officiel. Les rencontres, dialogues, noms de techniques, effets de jauge et plans de mise en scène ci-dessous sont **des créations du mode annexe**. L’entrée dans la simulation isole ses résultats du récit de la campagne principale. Les boutons, règles et minutages qui suivent décrivent la cible de conception. Le menu Commandes de la version jouée fait foi pour les fonctions disponibles.
@@ -65,15 +71,18 @@ Les directions suivent la position adverse. La touche de signature est **H pour 
 2. [Règles du duel](#2-règles-du-duel)
 3. [Commandes et lecture des coups](#3-commandes-et-lecture-des-coups)
 4. [Huit combattants](#4-huit-combattants)
-5. [Huit campagnes](#5-huit-campagnes)
+5. [Huit histoires individuelles](#5-huit-histoires-individuelles)
 6. [Fatalités de la Grève](#6-fatalités-de-la-grève)
 7. [Arènes et parallaxe](#7-arènes-et-parallaxe)
 8. [Tournoi et modes complémentaires](#8-tournoi-et-modes-complémentaires)
 9. [Direction des sprites et du son](#9-direction-des-sprites-et-du-son)
 10. [Production et recette](#10-production-et-recette)
 11. [Références officielles](#11-références-officielles)
+12. [Intégration du Guide Combat Games v1.0](#12-intégration-du-guide-combat-games-v10)
 
 ## 1. Entrer dans le mode
+
+**Guide associé : §§01, 09, 19 et 24.** Le contrat avec La Ligne silencieuse, campagne principale du projet, est précisé au §12.6 ; les routes d’Échos restent les histoires individuelles du simulateur.
 
 Au terminal, **Échos de la Grève** ouvre une reconstitution d’empreintes chirales. Le stand de tir du Director’s Cut fournit un précédent diégétique pour les exercices accessibles à un terminal [3]. La rencontre de personnages d’époques différentes et l’existence de cette machine relèvent de notre fiction. Un personnage battu quitte la reconstitution. Le jeu principal conserve inventaire, livraisons, BB et progression.
 
@@ -88,6 +97,8 @@ Au terminal, **Échos de la Grève** ouvre une reconstitution d’empreintes chi
 La première minute d’apprentissage fait découvrir le jeu par trois actions. Avancer jusqu’à la caisse montre la portée des pas. Bloquer un coup lourd montre la durée de retour en garde. Répondre par deux coups courts puis une technique fait entendre trois impacts, dont le dernier change de timbre. La leçon suivante permet de refaire exactement cet échange depuis l’autre côté de l’écran.
 
 ## 2. Règles du duel
+
+**Guide associé : §§04, 05, 22 et 23.** Les règles de ce chapitre décrivent la cible. Le tableau du §12.3 distingue les paramètres du moteur principal inspecté, notamment 100 points de vie, 75 secondes et la jauge chirale.
 
 ### Ressources, temps et victoire
 
@@ -115,6 +126,8 @@ Les coups normaux autorisés peuvent passer de léger à fort, puis à spécial,
 
 ## 3. Commandes et lecture des coups
 
+**Guide associé : §§04, 05, 19 et 20.** La notation technique ci-dessous est une cible de conception. Les fiches C du §12.9 relient chaque action aux commandes et données de la version du moteur concernée.
+
 Les chiffres représentent le pavé numérique, vu par un personnage tourné vers la droite. **6** avance, **4** recule, **2** s’accroupit, **8** saute. **1**, **3**, **7** et **9** sont les diagonales. Le moteur inverse la direction horizontale quand le combattant change de côté. **L** signifie léger, **F** fort, **T** technique, **P** prise. La flèche « → » relie deux actions successives. Le signe « + » les demande ensemble.
 
 | Action | Entrée technique cible | Apprentissage et contre-jeu |
@@ -141,6 +154,8 @@ Fenêtre de commande proposée de 12 images pour un quart de cercle, tolérance 
 Toutes les données chiffrées de cette bible sont des valeurs de départ du fan-game. La notation des fiches spéciales exprime **démarrage / activité / récupération**. Pour un projectile ou une zone persistante, « activité » désigne la durée de l’objet autonome et « récupération » celle du lanceur après émission. Le dojo doit pouvoir afficher les valeurs effectivement chargées par le moteur.
 
 ## 4. Huit combattants
+
+**Guide associé : §§02, 03, 05, 07 et 16.** Les huit identités, les costumes et les objets de kit sont distingués au §12.4. Les fiches B et C complètent ces tableaux sans attribuer les créations du simulateur au canon officiel.
 
 Les quatre premières fiches approfondissent le noyau du prototype. Les quatre suivantes ouvrent le roster cible. Chacune donne six normales, trois spéciales, une projection, une ultime et deux exercices de combo. Le terme « exercice » désigne un enchaînement à vérifier dans la version réglée.
 
@@ -256,7 +271,11 @@ Les quatre premières fiches approfondissent le noyau du prototype. Les quatre s
 
 **Maîtrise.** 2L → 5F → 236T. Pour l’exercice de tempo, enregistrer 214T, reculer d’une unité puis déclencher 214T dans la fenêtre de battement. Le signal visuel pulse toutes les 60 images indépendamment de la musique. L’adversaire peut compter le même tempo.
 
-## 5. Huit campagnes
+<a id="5-huit-campagnes"></a>
+
+## 5. Huit histoires individuelles
+
+**Guide associé : §§07–10 et 24.** Ce chapitre décrit huit routes individuelles. Le §12.6 les associe à La Ligne silencieuse sans les confondre avec une campagne transversale du mode combat.
 
 Les huit parcours jouables suivent les séquences ci-dessous. Les dialogues et les récits sont originaux. Chaque parcours tient dans trois duels scénarisés et se rejoue en arcade sans les images. Une défaite reprend le duel en cours. Un ending débloqué devient consultable d’un seul geste.
 
@@ -346,6 +365,8 @@ Une intro emploie deux illustrations originales et une insertion de l’accessoi
 
 ## 6. Fatalités de la Grève
 
+**Guide associé : §06.** Le terme « finalité de la Grève » désigne ici un finisher du simulateur. Le §12.5 sépare ultime, finalité, victoire et épilogue, et relie les noms actuels aux scènes cibles ci-dessous.
+
 À la dernière manche gagnante, le simulateur suspend l’écho adverse et ouvre une invite de 120 images. Une action dédiée déclenche la scène. Les images décrivent la dissolution d’une reconstitution ou une évacuation. On peut donc faire jouer une fatalité à Sam tout en lui donnant un geste cohérent de porteur. Une option permet d’enchaîner directement sur la victoire. Les deux chemins donnent le même résultat de tournoi et les mêmes récompenses.
 
 | Combattant | Fatalité originale | Trois plans de réalisation | Son final |
@@ -362,6 +383,8 @@ Une intro emploie deux illustrations originales et une insertion de l’accessoi
 Limiter chaque séquence à environ quatre secondes. La caméra conserve la position des deux corps jusqu’au premier changement de plan, y compris près d’un mur. En tournoi, une validation commune passe directement au résultat. En cas de perte de focus, le vainqueur enregistré avant la scène reste acquis.
 
 ## 7. Arènes et parallaxe
+
+**Guide associé : §§13–15, 17 et 18.** Le §12.8 distingue présentation, interactions, dangers et connexions. L’inventaire actuel comprend dix lieux et onze configurations ; la caisse MULE reste un objet de kit.
 
 Le terminal ouvre sur une ligne de pieds commune. Dans une arène extérieure, une pente dessinée derrière les combattants peut conduire le regard vers l’horizon. La bande sur laquelle ils se tiennent reste horizontale. Dans un intérieur, les joints du dallage et le bas des portes donnent l’échelle. Un joueur qui passe du camp au laboratoire doit pouvoir juger la portée de sa projection avec le même pas.
 
@@ -389,6 +412,8 @@ La même revue a corrigé le bas visible des plans de la Grève, du terminal, du
 Dans la vue de 1 280 × 720, le sol de simulation passe à 588. Le moteur déplace les cinq plans de **0,14 / 0,27 / 0,43 / 0,62 / 0,8** fois le décalage caméra. L’option d’effets réduits conserve cet ordre avec une amplitude de 20 %. Chaque ancre de sol est mesurée dans son image réelle ; les bases des structures et accessoires sont calées pour rejoindre la surface sans laisser voir une bande du ciel. Les proportions sont préservées et les couches débordent du cadre des deux côtés. [Bilan du lot, provenance et rendus](production/STAGES_COMPLETS_20261119.md).
 
 ## 8. Tournoi et modes complémentaires
+
+**Guide associé : §§11, 12 et 20–24.** Boss Combat et Boss Rush sont cadrés au §12.7 comme cibles différées. Le §12.10 décrit la portée du salon privé et des replays déjà présents.
 
 Le **Duel originel** propose six décors en duel direct et entraînement : Grève, terminal, camp MULE, abri Timefall, champ de bataille et bassin de goudron. Son sélecteur illustré et sa sauvegarde propre conservent le choix du lieu ; la revanche reprend ce lieu. L’entraînement propose un adversaire immobile, en garde ou piloté par l’IA, un changement de lieu et une remise en place des combattants. Les récits de Sam et Higgs restent sur la Grève. Les cinq plans sont adaptés à sa vue de 1120 × 630 et à son sol à 528 sans modifier le moteur historique.
 
@@ -418,6 +443,8 @@ Le **Duel originel** propose six décors en duel direct et entraînement : Grèv
 
 ## 9. Direction des sprites et du son
 
+**Guide associé : §§10, 17, 18 et 22.** Les fiches F et J du §12.9 associent chaque scène ou asset à sa source, ses usages, son ancrage et sa preuve de contrôle ; les besoins d’animation suivent la phase de production du lot.
+
 ### Un geste, un point d’appui
 
 Préparer chaque pose sur fond transparent, personnage entier, initialement tourné vers la droite. Repérer la semelle qui porte le poids ainsi que la position du bassin. Prenons une fente de Fragile. La position du buste descend, sa largeur augmente et la main arrive devant la ligne des épaules. Recadrer sur la boîte visible, conserver dans le moteur l’ancrage mesuré entre les semelles, puis visionner l’entrée et la sortie de la pose sur le même dallage. Un glissement du pied arrière se corrige dans le calage du dessin. Un adversaire touché trop tôt demande de revoir les volumes dans le dojo.
@@ -444,6 +471,8 @@ Les onze configurations d’arène ont aussi un fond sonore synthétisé et un �
 
 ## 10. Production et recette
 
+**Guide associé : §§00, 25–28.** Le registre EDG-G00–EDG-G29, les statuts séparés et les lots du §12.11 encadrent toute extension. Les tests cités ci-dessous sont des moyens de validation, avec leur portée propre.
+
 Pour intégrer un personnage d’extension, commencer par un duel miroir complet. Résoudre le portrait et les pieds sur une arène neutre, relier les commandes, puis contrôler chaque technique dans les deux directions. Brancher ensuite les trois adversaires de la route, l’illustration du rival et la finalité. Un portrait ou une fiche de personnage isolés ne suffisent pas pour le compter dans la sélection jouable.
 
 | Essai reproductible | Observation attendue |
@@ -461,6 +490,8 @@ Le contrôle `arenes.cjs` conserve son parcours navigateur complet. Le compléme
 
 ## 11. Références officielles
 
+**Guide associé : §§02 et 29.** Les références Death Stranding de ce chapitre restent les sources du projet ; les inspirations S1–S5 du guide sont qualifiées séparément au §12.12.
+
 Les numéros ci-dessous renvoient aux fiches des chapitres 1 à 7. La présentation, le rôle et l’équipement du personnage viennent des sources indiquées. Les noms des techniques d’Échos de la Grève, leur coût, les dialogues de rivalité et les cadrages latéraux appartiennent au fan-game.
 
 | Réf. | Élément à comparer | Source primaire |
@@ -475,3 +506,312 @@ Les numéros ci-dessous renvoient aux fiches des chapitres 1 à 7. La présentat
 | 8 | L’usine en ruines du Director’s Cut et le saut de Fragile depuis le parapluie de la chambre privée. | [Kojima Productions · Guide du Director’s Cut](https://www.kojimaproductions.jp/en/death-stranding-directors-cut-beginners-guide) |
 
 Pour valider une correspondance 1:1, relever la version du jeu et le plan officiel comparé, puis placer la capture et le sprite à même hauteur de tête. Examiner le profil, chaque accessoire visible, son côté, sa fixation et la palette sous une lumière comparable. Un élément caché sur toutes les vues consultées reste à documenter. Conserver séparément l’état de chaque pose et les mouvements restant à dessiner.
+
+## 12. Intégration du Guide Combat Games v1.0
+
+**Intégration documentaire du 25 novembre 2026.** Le [Guide général Combat Games v1.0](references/Combat_Games_Guide_General_v1.0.txt), fourni par Darknigthmare, est associé à cette bible. Ses 30 rubriques servent de référentiel commun ; les choix propres à Échos de la Grève déterminent leur application. Le guide est conservé intégralement, sans modification : 55 172 octets, SHA-256 **4844584616072ac0d52d37c2fab4365e1ec489240f17a721ee216e223b0355b7**.
+
+La présente mise à jour porte sur la conception, les correspondances et les critères de production. L’état du jeu a été rapproché du code du [commit de référence ba4431587f86](https://github.com/darknigthmare/Death-Stranding-2D/tree/ba4431587f861823e453c85bdf7e6967778329a9), par lecture des catalogues, du moteur, des menus, du tournoi et du salon privé. Cette inspection atteste les définitions et les branchements observés ; elle ne constitue pas une nouvelle recette du jeu, du réseau ou des images.
+
+### 12.1. Périmètre conservé et ordre des références
+
+| Champ de la fiche projet A | Application à Échos de la Grève |
+|---|---|
+| Projet et rôle | Mode annexe de combat de Death Stranding 2D, accessible depuis La Ligne silencieuse. |
+| Œuvres de référence | Death Stranding et Director’s Cut, conformément au préambule. Death Stranding 2: On the Beach n’entre pas dans ce périmètre. |
+| Fiction | Reconstitutions d’empreintes dans un simulateur. Rencontres, dialogues, noms de techniques et dispositifs propres au mode sont des créations du projet. |
+| Format | Duel latéral 1 contre 1, une piste, caméra commune, simulation à 60 pas par seconde. |
+| Support observé | Navigateur, JavaScript et Canvas ; clavier et commandes tactiles dans le mode. Le salon privé emploie un relais Node.js. Les plateformes et périphériques supplémentaires demandent leur propre recette. |
+| Roster | Huit identités jouables : sam, fragile, higgs, cliff, mule, diehardman, mama, heartman. |
+| Contenu narratif du mode | Huit histoires individuelles de trois duels et trois scènes chacune ; campagne principale du projet conservée séparément. |
+| Décors | Dix lieux, onze configurations avec la variante sèche du camp MULE ; cinq couches référencées par configuration. |
+| Direction artistique | Personnages entiers lisibles de profil, matériaux et accessoires reconnaissables, pieds ancrés, paysages en plans séparés. La conformité 1:1 se contrôle pose par pose. |
+| Langue et audio | Textes français dans les catalogues inspectés ; signaux et ambiances synthétisés. Une autre langue, un doublage ou une bande musicale complète nécessite un lot de production distinct. |
+| Phase de cette intervention | Intégration documentaire. Les tâches d’assets, d’animation et de programmation gardent leur propre statut. |
+| Duel originel | Sous-mode historique avec moteur, commandes, récits et préférences enregistrées séparément ; ses valeurs ne deviennent pas celles du mode principal par défaut. |
+
+**Cinq piliers d’arbitrage :** reconnaître le personnage et son équipement ; lire la distance et le retour en garde ; donner un contre-jeu aux outils chiraux ; préserver le sens des gestes de livraison et de liaison ; distinguer ce qui est imaginé, produit, intégré et vérifié.
+
+L’ordre de lecture est le suivant :
+
+1. Les consignes du projet et le périmètre Death Stranding / Director’s Cut fixent les limites.
+2. Les sources officielles du chapitre 11 étayent l’identité et les éléments attestés.
+3. La bible décrit le jeu cible et qualifie ses adaptations.
+4. Le code et la version identifiée attestent les règles chargées ; un essai daté atteste leur fonctionnement dans la situation testée.
+5. Le guide commun complète les fiches et les contrôles. Une inspiration issue d’une autre licence ne modifie pas automatiquement notre univers ou notre moteur.
+
+Les cinq statuts de fidélité du guide s’appliquent à chaque fiche : **canon attesté**, **adaptation jouable**, **original compatible**, **alternatif / crossover**, **à confirmer**. Un personnage attesté peut avoir un kit composé d’adaptations et de créations. Les noms « Ordre de maintien », « Mémoire de phase » ou « Travée de retour » restent ceux du projet. Une scène originale n’acquiert pas un statut canonique parce qu’elle utilise des personnages officiels.
+
+### 12.2. Association des 30 rubriques
+
+Les identifiants **EDG-G00 à EDG-G29** assurent la traçabilité vers le guide. **Retenue** signifie que l’exigence s’applique à la conception ; cela ne signifie pas qu’elle est implémentée. **Différée** conserve un module dans la feuille de route. **À décider** désigne un choix encore ouvert. **Non applicable** exclut un élément du périmètre courant avec sa raison. L’état de réalisation est indiqué séparément.
+
+Les priorités sont celles du guide : **P0** fondations et dépendances techniques, **P1** enrichissements narratifs et rencontres, **P2** extensions choisies. Un système déjà réalisé, comme le tournoi, reste dans le périmètre même si sa famille figure en P2 dans le guide.
+
+| ID / guide | Association à la bible | Décision et priorité | Application, état et preuve attendue |
+|---|---|---|---|
+| EDG-G00 · utilisation | Préambule, §10, §12 | Retenue · P0 | Employer ce registre et les six axes de suivi ; chaque futur lot désigne sa portée, ses dépendances et sa preuve de recette. |
+| EDG-G01 · identité | §1, §11, §12.1 | Retenue · P0 | Conserver le duel 2D du simulateur, DS1 / Director’s Cut et les cinq piliers. Les plateformes supplémentaires restent à décider. |
+| EDG-G02 · fidélité | §4, §7, §11 | Retenue · P0/P1 | Associer œuvre, version et référence visuelle à chaque élément ; contrôler asymétries, personnalité et adaptations. Les images actuelles ne sont pas certifiées 1:1 par cet ajout. |
+| EDG-G03 · roster | §4, §12.4 | Retenue · P0 | Conserver huit combattants et leurs identifiants ; distinguer costumes, variantes, soutiens et boss. Aucun ajout automatique de Nell ou de personnages d’un autre épisode. |
+| EDG-G04 · fondations | §2–3, §12.3 | Retenue · P0 | Maintenir un relevé séparé des règles chargées et des règles cibles ; recette des gardes, côtés, égalités, interruptions et ressources. |
+| EDG-G05 · actions | §3–4, §8, §12.9 | Retenue · P0 | Lier une fiche C à chaque action et projectile. Compléter collisions, avantage temporel, annulations, coûts, limites et réponses adverses à partir du moteur concerné. |
+| EDG-G06 · conclusions | §4, §6, §12.5 | Retenue · P1 | Séparer ultime, finalité, victoire et épilogue. Finalités déjà branchées ; ultimes/renforcées cibles non branchées dans le moteur principal inspecté. |
+| EDG-G07 · relations | §4–5, §12.4 | Retenue · P1 | Prioriser les rivalités des routes et les rencontres significatives ; chaque échange indique son statut narratif, le savoir des personnages et une réponse générique de remplacement. |
+| EDG-G08 · histoires | §5, §8, §12.6 | Retenue · P1 | Huit routes déjà définies dans le catalogue ; compléter raison et conséquence de chaque duel. Vérifier début, reprise, rivalité, fin et galerie pour chacune. |
+| EDG-G09 · campagne globale | §1, §5, §12.6 | Retenue pour l’association ; extension à décider · P1 | La Ligne silencieuse reste la campagne principale. Les huit routes du simulateur sont individuelles. Une campagne transversale propre au combat demanderait un cadrage distinct. |
+| EDG-G10 · scènes | §5–6, §9, §12.9 | Retenue · P1 | Relier les 24 scènes cataloguées aux textes, personnages et images ; distinguer scène, illustration et plan. Documenter raccords de tenue, météo et état du monde. |
+| EDG-G11 · boss | §8, §12.7 | Retenue comme cible ; réalisation différée · P1 | Préparer Boss Combat et Boss Rush avec fiches I. Aucun catalogue de boss spécifique n’est branché dans les fichiers inspectés. Un rival final ne vaut pas validation de boss. |
+| EDG-G12 · modes | §1, §8, §12.7 | Retenue · P0/P1 | Conserver les six modes d’accueil, la galerie, le salon privé et le Duel originel ; chaque fonction se valide de l’entrée à la reprise. Les modules supplémentaires gardent un statut explicite. |
+| EDG-G13 · arènes | §7, §9, §12.8 | Retenue · P0/P1 | Fiche G par lieu et configuration ; dix lieux / onze configurations, sources et compositions originales qualifiées. Vérifier sol, limites, ancrages et lisibilité. |
+| EDG-G14 · activité des décors | §7, §9, §12.8 | Retenue · P1 | Séparer présentation, interactions, dangers et transitions. Effets réduits présents ; un profil entièrement statique reste à produire et vérifier. |
+| EDG-G15 · connexions | §7, §12.8 | Retenue comme cible ; réalisation différée · P1 | Définir un premier prototype de liaison avec deux zones jouables. Aucune transition en cours de manche n’est attestée ; les changements entre duels ne comptent pas. |
+| EDG-G16 · objets secondaires | §4, §7, §12.4 et §12.9 | Retenue selon les rôles · P0/P1 | Catalogues séparés pour projectiles, objets de kit, invocations, PNJ et ennemis. Les véhicules pilotables et vagues d’ennemis restent à décider selon un mode précis. |
+| EDG-G17 · assets | §7, §9–11, §12.9 | Retenue · P0/P1 | Un sujet exploitable par source autonome, alpha réel si détouré, échelle, marges et ancrage contrôlés. Un atlas n’efface pas les sources ; une scène narrative peut réunir plusieurs acteurs. |
+| EDG-G18 · présentation | §2–3, §7, §9 | Retenue · P0/P1 | Relier états, dessins, collisions, VFX, SFX et caméra ; conserver le 60 Hz et les signaux utiles en mode réduit ou sans son. |
+| EDG-G19 · interface | §1, §3, §8 | Retenue · P0 | Inventorier les parcours existants et les erreurs ; remappage complet et prise en charge de nouveaux périphériques restent à vérifier avant annonce de disponibilité. |
+| EDG-G20 · apprentissage | §1, §3–4, §8 | Retenue · P0 | Conserver le dojo, ses volumes, données et prises J2. Compléter exercices de portée, garde, punition et ressources ; les coups cibles absents ne deviennent pas des leçons disponibles. |
+| EDG-G21 · IA | §8, §10, §12.10 | Retenue · P0 | Documenter réaction, erreurs, priorités et ressources des profils. Distinguer IA qui combat et résultat IA–IA simulé du tournoi ; vérifier chaque outil réellement employé. |
+| EDG-G22 · équilibre et confort | §2–3, §7–10 | Retenue · P0/P1 | Matrice des confrontations, coins et sorties de pression ; options de confort sans perte d’information. Les règles cibles de réduction de dégâts restent distinctes du code chargé. |
+| EDG-G23 · réseau et replays | §8–10, §12.10 | Retenue · P0 | Salon privé, prédiction, checkpoints, resimulation et replays déjà présents. Qualifier la portée du relais et tester latence, reconnexion et versions ; classement/crossplay restent à décider hors du périmètre courant. |
+| EDG-G24 · progression | §1, §5, §8, §12.6 | Retenue · P0 | Préserver routes, galerie, tournoi, défis et préférences ; vérifier reprise et migration. Aucun bonus de la campagne principale n’est transféré au duel sans règle dédiée. |
+| EDG-G25 · suivi | §10, §12.9–12.11 | Retenue · P0 | Identifiants stables, dépendances et six axes de statut. Compter séparément personnages, scènes, configurations, couches et validations. |
+| EDG-G26 · recette | §10, §12.11 | Retenue · P0 | Relier chaque lot à des essais reproductibles ; une référence à un test existant n’est pas une nouvelle exécution de ce test. |
+| EDG-G27 · fiches | §4–7, §12.9 | Retenue · P0/P1 | Employer les dix modèles A–J du guide comme compléments aux fiches existantes, avec liens vers les IDs du dépôt et inconnues visibles. |
+| EDG-G28 · application | §10, §12.11 | Retenue · P0 | Avant tout lot : lire ce chapitre, inventorier, réutiliser les acquis, traiter les écarts puis produire et vérifier dans la phase demandée. |
+| EDG-G29 · inspirations | §3, §11, §12.12 | Retenue comme référence méthodologique | Conserver S1–S5 dans le guide associé ; elles ne sont pas des preuves du canon de Death Stranding. Employer le glossaire pour décrire précisément les fonctions. |
+
+### 12.3. Règles chargées et règles cibles
+
+Les chapitres 2–4 restent le cahier de conception. Le tableau suivant fixe la différence avec le moteur principal inspecté, [fight.js](../../modes/echos-de-la-greve/fight.js). Il ne concerne pas le moteur historique du Duel originel. Une évolution de valeur devra mettre à jour les fiches, le dojo, les replays et les règles du salon privé dans le même lot.
+
+| Sujet | Moteur principal inspecté | Cible conservée / décision |
+|---|---|---|
+| Simulation | 60 pas par seconde. | Cible commune à préserver indépendamment de l’affichage. |
+| Vitalité | 100 au départ d’une manche ordinaire. | 1 000 au §2 ; changement d’échelle et rééquilibrage à décider. |
+| Équilibre | 100 initialement ; rupture à zéro puis récupération. | Documenter ce système comme règle actuelle ; ne pas le confondre avec la jauge cible de Lien. |
+| Ressource offensive | Chiral : 42 au départ, plafond 100, gains et régénération propres au moteur. | Lien : 0 au départ, gains décrits au §2, renforcée à 50 et ultime à 100. Cible distincte. |
+| Entre les manches | Recréation des combattants ; retour des jauges à leurs valeurs initiales. | Conservation du Lien entre manches au §2. Migration à décider. |
+| Chronomètre | 75 secondes. | 60 secondes au §2. Aucun remplacement automatique. |
+| Victoire | Deux manches gagnantes ; une manche dans les défis. | Règles à préciser par mode, sans appliquer la règle arcade à tous les défis. |
+| Égalité | Repositionnement, vitalité à 1 chacun, période de 15 secondes ; nouvelle égalité traitée de nouveau. | Départage cible de 30 secondes à 250 points puis impact décisif, selon le §2. |
+| Garde | Bouton dédié, combiné à l’accroupissement pour la garde basse. | Arrière / bas-arrière, garde parfaite et déprojection décrites au §2 : cible à rapprocher des actions réellement présentes. |
+| Saisie | Signature neutre, avant et arrière ; conservation d’une entrée jusqu’à 9 pas dans la file du moteur. | Quarts de cercle, priorités et tampon de 5 images proposés au §3. Les directions et noms ne se traduisent pas automatiquement. |
+| Ultimes et renforcées | Aucune action dédiée branchée dans le moteur principal inspecté. | Conceptions conservées aux §3–4, à réaliser et équilibrer si retenues pour une prochaine version. |
+| Combos | Annulations conditionnées par une touche confirmée et par la classe d’action. | Réduction successive 80 / 65 / 50 / 40 % et limites détaillées au §2 : objectifs supplémentaires, pas formule actuelle démontrée. |
+| Finalité | Après K.-O. décisif : invite de 135 pas, soit 2,25 s ; séquence déclenchée de 108 pas, soit 1,8 s. | Invite de 120 pas et scène d’environ 4 s au §6 : version cible de mise en scène. |
+
+Les dégâts d’une cible à 1 000 points ne doivent pas être divisés par dix et annoncés comme données du moteur sans vérification de l’action, de ses effets et de ses ressources. Les six normales décrites dans une fiche ne prouvent pas six animations propres déjà produites. Un relevé de données doit toujours indiquer **moteur, version, unité et contexte**.
+
+### 12.4. Personnages, relations et éléments secondaires
+
+Le [catalogue de contenu](../../modes/echos-de-la-greve/content.js) conserve ses huit identifiants. Les mentions « extension » des fiches du chapitre 4 décrivent l’histoire de leur production : le MULE, Die-Hardman, Mama et Heartman font partie des huit entrées du catalogue actuel.
+
+| ID existant | Expression du personnage dans le mode | Qualification à conserver |
+|---|---|---|
+| sam | Portage, reprise d’appui, lien et projectile de liaison. | Les outils attestés inspirent le kit ; délais, dégâts et enchaînements sont des adaptations du duel. |
+| fragile | Déplacement, arrivée annoncée et repère de retour. | La capacité de saut inspire les outils ; balises et fenêtres de vulnérabilité sont réglées pour le jeu. |
+| higgs | Goudron, empreinte au sol, feinte de départ. | Silhouette et motifs tirés de la référence ; zones, timings et réponses conçus pour le mode. |
+| cliff | Ordre, poste avancé, salves et rappel. | Les manifestations sont des objets de son kit ; elles ne constituent pas des combattants jouables supplémentaires. |
+| mule | Détection, pose, poussée et récupération d’une caisse. | Représentant anonyme de faction ; histoire et mécanique de caisse adaptées au fan-game. |
+| diehardman | Interception, sceau et dispositifs de terminal. | Le rôle de commandement est la référence ; les pouvoirs du terminal de combat sont une création du simulateur. |
+| mama | Ancrage, travée et treuil de l’avatar d’exercice. | Constructions techniques du simulateur, sans attribuer ces attaques au personnage officiel comme des pouvoirs attestés. |
+| heartman | Moniteur, mémoire et impulsion sur un tempo visible. | Traduction ludique de recherche et de mesure ; le rythme de combat ne remplace pas son rythme narratif. |
+
+La garde-robe de Mama comporte les entrées Atelier et Maintenance du viaduc dans les fichiers inspectés. Cela n’atteste pas une garde-robe complète pour les huit personnages. Un costume conserve le kit et les collisions ; une modification de capacités ou de morphologie reçoit une fiche de variante et une recette spécifique.
+
+**Relations à traiter en priorité.** Sam / Higgs et Fragile / Higgs demandent des références de relation et un contexte de scène. Sam / Cliff demande une attention particulière à la période et aux informations connues des personnages. Mama / Die-Hardman, MULE / Sam et Heartman / Higgs possèdent déjà des rencontres de route écrites pour le simulateur. Leur dialogue précis est original. Les autres paires peuvent employer des entrées génériques fidèles ; une rencontre miroir représente deux empreintes, sans créer un événement dans la chronologie officielle.
+
+Une entrée de relation comprend les deux IDs, la nature de la relation attestée ou inventée, la période, les sources, la route concernée et les scènes. Les répliques déjà écrites au chapitre 5 restent les textes de référence ; la nouvelle matrice n’impose pas une scène unique pour chaque paire.
+
+**Catalogues séparés.** La caisse du MULE est un objet de kit avec propriétaire et durée de vie. La balise de Fragile, l’empreinte de Higgs et l’ancrage de Mama sont des marqueurs de simulation. Les échos de Cliff sont des manifestations liées à ses actions. Les silhouettes, portes, moniteurs et machines de fond restent des éléments de présentation tant qu’une règle de gameplay n’est pas définie. BB conserve son rôle narratif et visuel dans ce périmètre ; aucune fiche de combattant ne lui est attribuée. Le choix de l’étude du [Duel originel, chapitre 12](DUELS_SAM_HIGGS.md#12-finalités-narration-et-progression) est maintenu : BB est à protéger et sa capsule ne sert ni de cible ni de projectile.
+
+Pour chaque projectile : propriétaire, émission, vitesse, trajectoire, collision, durée, nombre d’impacts, garde, dissipation, VFX et son doivent être liés à la fiche C. Les règles de réflexion ou de destruction ne sont décrites comme disponibles que si elles existent dans le moteur visé ; toute règle nouvelle reste une cible identifiée et versionnée.
+
+### 12.5. Ultimes, finalités et fins narratives
+
+Quatre objets documentaires sont désormais nommés distinctement :
+
+- **Ultime** : action puissante pendant le duel, encore au stade de cible dans le moteur principal.
+- **Finalité de la Grève** : conclusion après la condition de victoire définie, appelée aussi « fatalité » dans le chapitre 6 historique.
+- **Victoire** : pose, annonce et résultat du match.
+- **Épilogue** : résolution narrative de la route, consultable dans la galerie.
+
+| Personnage | Finalité actuellement nommée dans le catalogue | Scène cible du chapitre 6 |
+|---|---|---|
+| Sam | Cargaison sécurisée | Reçu de livraison |
+| Fragile | Dernier saut | Quai de sortie |
+| Higgs | Rideau de goudron | Dernier spectateur |
+| Cliff | Rappel de section | Rompez |
+| MULE | Hors inventaire | Hors inventaire |
+| Die-Hardman | Levée de consigne | Levée de consigne |
+| Mama | Travée de retour | Travée de retour |
+| Heartman | Intervalle | Intervalle |
+
+Ces correspondances identifient des versions de réalisation, pas seize finalités intégrées. Une victoire au temps ne déclenche pas l’invite de K.-O. décisif dans le moteur inspecté. Le passage au résultat et les récompenses doivent donner la même issue, que le joueur déclenche la scène ou laisse passer l’invite.
+
+La dissolution, l’évacuation ou la libération d’une empreinte restent le principe de conclusion. Pour une future cible géante, mécanique ou immatérielle, la fiche D doit prévoir une variante de sortie du simulateur qui ne dépend pas d’une anatomie humanoïde. Cette compatibilité reste à concevoir et tester. Une finalité de stage recevrait une fiche distincte ; aucune n’est déclarée disponible ici.
+
+### 12.6. Association à La Ligne silencieuse et aux histoires individuelles
+
+La **campagne globale du projet est La Ligne silencieuse**. Le chapitre 5 d’Échos décrit **huit histoires individuelles**, chacune avec trois combats et trois scènes cataloguées. Le mot « campagne » employé pour un parcours de combattant dans l’interface ou les textes historiques ne lui donne pas le rôle d’une intrigue globale commune.
+
+La liaison documentaire avec la campagne principale porte sur quatre contrats :
+
+1. **Entrée et retour.** Depuis l’accueil du projet, entrer dans Échos puis retrouver l’écran titre de la campagne ; la recette doit vérifier les chemins relatifs et les données requises.
+2. **Continuité.** Les alliances, affrontements miroir et retours d’empreintes appartiennent au simulateur. Leurs résultats ne réécrivent ni les événements officiels ni l’histoire de La Ligne silencieuse.
+3. **Sauvegarde.** Livraisons, inventaire, état de BB et progression de l’aventure restent dans leur domaine. Routes, galerie, tournoi, défis et préférences du combat gardent leurs données propres.
+4. **Récompenses.** Une scène ou un sceau obtenu dans Échos conserve son usage annoncé. Tout transfert vers la campagne principale devra nommer la récompense, les conditions, la migration et les effets sur l’équilibre.
+
+La présente association ne certifie pas la complétude narrative de La Ligne silencieuse : sa chronologie, ses chapitres et ses checkpoints relèvent de sa documentation et de sa recette. Une campagne transversale supplémentaire au sein d’Échos reste **à décider**. Elle demanderait une intrigue commune, des points de vue alternés et une conclusion propre ; assembler les huit listes d’adversaires ne suffirait pas.
+
+Chaque fiche E reprend la route déjà définie dans le catalogue, puis complète : raison du combat, version du personnage, lieu, enjeu, conséquence, scène d’entrée et sortie, statut narratif et reprise. Les fiches F conservent textes et sous-titres séparément des illustrations. Un plan supplémentaire est une tâche d’asset ; il n’augmente pas à lui seul le nombre d’histoires.
+
+### 12.7. Boss, Boss Rush et sélection des extensions
+
+**Boss Combat et Boss Rush sont conservés comme objectifs P1 à concevoir ; leur réalisation est différée.** Le code inspecté ne fournit pas de catalogue de boss dédié, de machine à phases ou de rencontre géante. La Survie actuelle enchaîne les sept autres combattants avec récupération de 15 points de vie, plafonnée à 100 : elle conserve son nom et ses règles.
+
+Le premier lot de boss doit cadrer une rencontre compatible avec le moteur avant d’étendre la liste :
+
+| Champ de la fiche I de cadrage | Prescription pour le premier lot |
+|---|---|
+| Identité et source | Choisir une version précise dans DS1 / Director’s Cut ; distinguer le modèle officiel et la rencontre originale du simulateur. Le boss exact reste à décider. |
+| Type | Commencer par un duel ou une élite à phases ; une créature géante ou une machine demande une validation technique supplémentaire. |
+| Phases, si retenues | Le premier boss peut être un duel à règles explicites. Pour une rencontre à phases, définir déclencheurs, comportement, transitions d’état et retour au contrôle ; une hausse de vie seule ne constitue pas une nouvelle phase. |
+| Contre-jeu | Donner à chaque attaque un signal et au moins une réponse compatible avec les styles du roster ; rendre explicites les immunités aux prises ou aux marqueurs. |
+| Arène | Choisir un lieu et une configuration existants, puis documenter les adaptations nécessaires de caméra, limites et effets. |
+| Fin | Décrire victoire, échec, reprise, finalité compatible et récompense. Le résultat ne modifie pas la campagne principale par défaut. |
+| Version jouable | Si le boss réemploie Higgs, Cliff ou un autre combattant, créer un profil de règles distinct ; conserver l’équilibrage normal de son entrée jouable. |
+| Validation | Finir la rencontre avec chaque famille de jeu prévue ; vérifier distances extrêmes, transitions de phase, KO simultané et interruption. |
+
+**Règlement Boss Rush à compléter après ce prototype.** Liste des boss et ordre ; conditions d’accès ; vie et ressources conservées ; récupération ; nombre d’essais ; reprise ; difficulté ; calcul de score et temps ; récompenses ; entraînement de chaque rencontre ; version des règles. Les valeurs restent à définir à partir du nombre et de la durée des boss validés. Aucun bouton ni catalogue fictif n’est compté comme mode terminé.
+
+| Module supplémentaire du guide | Statut dans le périmètre actuel |
+|---|---|
+| Tournoi, Survie, Livraison sous pression | Déjà présents dans les fichiers du mode ; préserver leur recette et leurs sauvegardes. |
+| Boss Combat et Boss Rush | Cibles P1 ; conception détaillée et réalisation différées. |
+| Campagne globale propre au mode combat | À décider ; l’association à La Ligne silencieuse est déjà définie au §12.6. |
+| Tag, équipes successives, coop contre boss, affrontements à plusieurs | À décider, hors du périmètre courant. Chaque module nécessite un choix explicite et ses propres règles. |
+| Matchmaking, classement et crossplay | À décider, hors du périmètre courant ; le salon privé existant ne démontre pas ces services. |
+| Hub exploratoire, avatar et arbres RPG dans le mode | Non applicables au périmètre courant du duel annexe ; un besoin d’exploration relève d’abord de la campagne principale ou d’un cadrage séparé. |
+| Crossover et personnages DS2 | Non applicables à la continuité actuellement retenue ; leur présence demanderait un élargissement explicite. |
+
+### 12.8. Arènes : quatre axes, interactions et connexions
+
+| Axe du guide | État observé | Contrat de conception |
+|---|---|---|
+| Présentation | Parallaxe, météo, ambiances et événements visuels/sonores ; option d’effets réduits. | Conserver sol, limites et informations en présentation normale, réduite ou future version statique. |
+| Interactions | Objets de certains kits, notamment la caisse MULE. | Une interaction de décor commune exige sa fiche H, son objet, sa commande, sa portée et son contre-jeu. |
+| Dangers | Aucun système général de dégâts de météo ou d’événement de stage identifié dans les fichiers inspectés. | Ne pas attribuer de dégâts à la pluie, au goudron ou aux machines de fond par leur seule présence visuelle. |
+| Transitions | L’arène est choisie avant le duel ; aucune connexion jouable pendant la manche identifiée. | Une liaison doit changer réellement la zone de simulation et préserver commandes, état, replay et réseau. |
+
+Les interactions, dangers et transitions autorisés sont annoncés avant le match et partagés par les participants ; les options purement visuelles peuvent rester locales si elles préservent toutes les informations utiles.
+
+La variante **mule-camp-dry** reste une configuration de **mule-camp**, avec changement de présentation. Elle ne crée ni un onzième lieu ni une règle de friction ou de dégâts. Les corps restent sur la piste horizontale commune ; les variations de relief visibles au fond ne modifient pas les collisions du duel.
+
+**Profil statique cible.** Immobiliser les animations purement décoratives et la parallaxe selon le réglage choisi, conserver les silhouettes, les marqueurs utiles et les annonces de gameplay. L’option actuelle d’effets réduits diminue notamment l’amplitude de parallaxe ; elle n’atteste pas un décor entièrement figé. Une recette devra comparer les mêmes entrées et le même résultat dans les profils visuels.
+
+**Premier prototype de connexion, différé.** Préférer deux zones voisines d’un même lieu, par exemple un quai et son hangar dans une reconstitution du terminal. Cette liaison serait une création du projet, pas l’affirmation d’une géographie canonique. Avant production, sa fiche H doit arrêter :
+
+- Les IDs du lieu, de la zone de départ, de la destination et de la liaison ; les deux zones doivent posséder leur sol, leurs limites et leurs assets.
+- Le déclencheur, la position, la direction, le coût et la possibilité de l’empêcher ; une simple attaque ne déclenche pas un transfert sans règle annoncée.
+- Les dégâts éventuels, le compteur de combo, le traitement du chrono, des projectiles et des objets actifs.
+- Les positions et orientations à l’arrivée, les ressources conservées et l’instant de restitution des commandes.
+- L’usage unique ou répété, les règles de retour et la remise à zéro entre manches.
+- La résolution d’un double déclenchement, d’un K.-O. ou d’une déconnexion pendant le passage.
+- Les modes autorisés et la version des règles ; le mode privé et le replay doivent reproduire exactement la même transition.
+
+Le premier essai doit montrer une arrivée réellement jouable. Les séquences de caméra et illustrations viennent ensuite. Les dix arènes existantes ne sont pas considérées comme un réseau de zones tant que ces liaisons ne sont pas définies et intégrées.
+
+### 12.9. Fiches A–J, identifiants et inventaires
+
+Les [dix fiches types du guide, section 27](references/Combat_Games_Guide_General_v1.0.txt) complètent les tableaux actuels ; elles n’annulent pas les informations déjà spécifiques aux personnages, routes et lieux.
+
+| Fiche | Référence existante / association | Complément à renseigner |
+|---|---|---|
+| A · Projet | §12.1 et préambule | Périmètre de version, périphériques validés, budget de performances et décisions ouvertes. |
+| B · Personnage | §4 et ID de content.js | Version, période, relations, adaptations, costumes et liens vers actions, route, scènes et assets. |
+| C · Action/projectile | §3–4, moteur et dojo | Résultats en touche/garde/contre/échec, volumes, avantage temporel, annulations, interactions et version testée. |
+| D · Finisher | §6 et §12.5 | Nom actuel/cible, cibles compatibles, séquence, remplacement, passage abrégé et résultat persistant. |
+| E · Route | §5 et liste route du personnage | Cause et conséquence de chaque duel, statut narratif, sauvegarde, reprise et récompense. |
+| F · Chapitre/scène | §5–6, texte et catalogue d’images | Plans, continuité, émotions, lumière, sous-titres, sons, entrée/sortie et références. |
+| G · Arène | §7, arenas et stageDetails | Lieu/configuration, source, période, dimensions, sol, limites, couches, activités et quatre axes. |
+| H · Interaction/transition | §12.8 | Propriétaire, zone, commande, conditions, coût, contre-jeu, états, réseau, replay et cas limites. |
+| I · Boss | §12.7 | Version, phases, signaux, vulnérabilités, compatibilité roster, victoire, reprise et règles Boss Rush. |
+| J · Asset/suivi | §9–11 et inventaires de production | Fichier source/intégré, dimensions, alpha, orientation, ancrage, dépendances, provenance et preuve de contrôle. |
+
+**Convention d’identification documentaire.** Réutiliser d’abord les clés existantes du moteur. Les namespaces ci-dessous servent aux fiches ; ils ne renomment pas les clés des sauvegardes :
+
+| Exemple de fiche | Dépendances à associer |
+|---|---|
+| CHAR:sam | ID sam ; route correspondante ; actions ; portraits ; poses ; finalité et scènes. |
+| MOVE:mule:consigne-mobile | CHAR:mule ; objet de caisse ; règle de pose ; règle de poussée ; VFX/SFX ; essais garde/saut/rappel. |
+| ROUTE:mama | CHAR:mama ; ordre Heartman → MULE → Die-Hardman ; lieux définis dans content.js ; scènes intro/rival/ending. |
+| SCENE:heartman:ending | ROUTE:heartman ; texte du catalogue ; illustration ; continuité ; état de galerie. |
+| STAGE:mule-camp-dry | Lieu parent mule-camp ; météo sèche ; panorama ; cinq couches ; ambiance ; validation de rendu. |
+| LINK:terminal:quai-hangar | Exemple réservé au prototype différé ; zones de départ et arrivée à définir ; aucune liaison disponible annoncée. |
+
+Les assets autonomes demandés pour un futur lot gardent un sujet exploitable par image source, le corps entier lorsque nécessaire et un vrai fond transparent. Les décors et scènes narratives peuvent être opaques. Les planches et atlas déjà intégrés restent documentés ; leur existence ne supprime pas le contrôle de chaque pose ni les besoins futurs de sources autonomes. Si le lot demandé porte seulement sur les sprites de base, les autres états sont inventoriés sans lancer leur production.
+
+Chaque fiche suit séparément :
+
+| Axe | États ou preuve à conserver |
+|---|---|
+| Lore | Source identifiée, vérifiée ou incertaine ; adaptation et création qualifiées. |
+| Conception | À définir, documentée ou validée pour un périmètre nommé. |
+| Assets | Manquants, en production, produits ou vérifiés ; référence et version de chaque fichier. |
+| Intégration | Absente, partielle ou intégrée, avec emplacement effectif. |
+| Validation | Non testée, en échec ou validée ; essai, date et version précise. |
+| Publication | Locale, commit, PR, fusion ou version livrée ; conserver la référence effective après l’action. |
+
+**Inventaire de départ du rapprochement documentaire :** huit identités de combattants ; huit routes ; 24 entrées de scène ; dix lieux ; onze configurations ; 55 couches référencées par le catalogue ; six modes dans le sélecteur. Ces unités restent séparées. Les illustrations de finalité, poses, costumes, replays, accès à la galerie et salon privé appartiennent à d’autres catégories. Ce bilan n’est ni un décompte exhaustif de tous les fichiers ni un pourcentage global de réalisation. Tout futur taux indique son périmètre, son unité et son dénominateur : éléments ayant passé une étape / éléments retenus et applicables à cette étape. Un dénominateur nul donne « non applicable » ; une complétude de bout en bout exige les mêmes éléments à toutes les étapes requises.
+
+### 12.10. Réseau, IA, accessibilité et sauvegardes
+
+Le salon privé est déjà structurant pour P0. [netplay.js](../../modes/echos-de-la-greve/netplay.js) et [netplay-server.cjs](../../modes/echos-de-la-greve/netplay-server.cjs) définissent sélection, état prêt, commandes datées, prédiction locale, checkpoints, retour en arrière et resimulation. Le relais ordonne les entrées et compare les résultats déclarés ; il n’exécute pas lui-même une simulation autoritaire du combat. Les salons en mémoire ne constituent pas une sauvegarde durable de service.
+
+Le guide est appliqué en conservant cet acquis et en demandant, pour toute nouvelle règle : sérialisation des objets, aléatoire reproductible, compatibilité de version, reconnexion, résultat cohérent et reconstruction silencieuse des effets audio. Matchmaking, classement, anti-triche de service et crossplay ne sont pas déduits de l’existence d’un salon.
+
+Les replays de tournoi concernent les matchs effectivement joués et enregistrés. Les scores simulés entre IA ne créent pas rétrospectivement un enregistrement d’entrées. Le salon possède aussi son parcours de dernier duel et d’export ; chaque format doit conserver les informations de version nécessaires ou annoncer l’incompatibilité.
+
+Pour l’IA, la fiche de profil distingue délai de décision, lecture de distance, fréquence d’erreur, usage de ressources et réponses aux outils. Une difficulté supérieure ne doit pas masquer une exception aux règles ; une exception de boss sera explicite. Le calcul rapide d’un résultat IA–IA dans le tournoi reste une simulation de score, distincte de l’IA du moteur.
+
+Pour l’accessibilité, conserver les textes de commande, les effets réduits, les repères non exclusivement colorés et les réglages sonores disponibles. Compléter les contrôles de contraste, lisibilité, navigation et remappage selon les périphériques visés. Les volumes dédiés aux ambiances ne prouvent pas l’existence de pistes voix et musique séparées. Une aide qui change une action de combat est une règle à partager ; une simplification purement visuelle peut rester locale si elle conserve les informations.
+
+Toute évolution de sauvegarde doit identifier le schéma, les anciennes valeurs, la conversion, le comportement sur données manquantes et la conservation du résultat acquis. Les clés de personnage, d’arène et de variante déjà utilisées ne sont pas renommées par les nouveaux IDs documentaires.
+
+### 12.11. Ordre de production et critères d’acceptation
+
+La priorité immédiate est de fermer les écarts de documentation qui peuvent fausser un lot de production. Les modules supplémentaires viennent après leur preuve technique.
+
+| Lot | Priorité / dépendance | Résultat attendu avant de le dire terminé |
+|---|---|---|
+| 1 · Références et règles | P0 ; existant à préserver | Fiches et menu de commandes distinguent moteur principal, Duel originel et cible ; chaque chiffre porte son contexte ; sources et adaptations sont qualifiées. |
+| 2 · Actions et apprentissage | P0 ; règles identifiées | Fiches C complétées à partir du moteur ; exercices reproductibles dans les deux directions ; ressources, garde, annulations et perte de contrôle vérifiées. |
+| 3 · Assets et scènes | P1 ; fiches et inventaire | Références visuelles, asymétries, alpha, ancrages et réduction contrôlés ; une route représentative se parcourt de l’intro à l’épilogue avant extension du lot. |
+| 4 · Profils d’arène | P1 ; présentation existante | Présentations normale/réduite et futur statique gardent terrain et information ; activités visuelles ne créent pas de dégâts implicites. |
+| 5 · Boss représentatif | P1 différé ; fiche I | Rencontre jouable, éventuelles phases lisibles, contre-jeu pour les styles prévus, victoire/échec/reprise et fin compatibles. Boss Rush attend ce socle. |
+| 6 · Connexion représentative | P1 différé ; deux zones jouables | Déclenchement défendable, arrivée contrôlable, absence de boucle abusive, KO/interruption et replay/réseau cohérents. |
+| 7 · Extensions | P2 ; périmètre décidé | Fiche de mode, coût de contenu et recette complète avant annonce de disponibilité. |
+
+Les essais de réception prioritaires sont : changements de côté ; miroirs et costumes ; attaques simultanées ; K.-O. et temps écoulé ; ressources entre manches ; coin, projectiles et marqueurs ; fin déclenchée ou passée ; reprise de route et de tournoi ; sortie vers la campagne ; perte de focus ; reconnexion et replay de version compatible. Les nouveaux boss et transitions ajoutent leurs scénarios particuliers.
+
+Le dossier [qa du mode](../../modes/echos-de-la-greve/qa/) contient déjà les scénarios cités au chapitre 10, ainsi que les contrôles réseau, son et ambiances. Pour un lot donné, sélectionner les essais pertinents puis enregistrer le résultat et la version ; une modification documentaire seule n’est pas annoncée comme une validation supplémentaire du gameplay.
+
+**Définition de terminé :** une fiche est complète pour son périmètre et ses inconnues sont compatibles avec le niveau annoncé ; un sprite a passé les contrôles visuels et techniques de son périmètre ; un combattant réagit et se joue dans les modes annoncés ; une arène possède les configurations promises ; une route se termine et reprend ; un boss dispose de ses réponses et de sa reprise ; un mode s’ouvre, se joue, produit un résultat et se quitte correctement. Aucun de ces états n’est remplacé par le seul comptage de fichiers.
+
+**Instruction d’application au projet.** Pour poursuivre Échos de la Grève, lire cette bible et le guide associé, identifier la version du moteur concernée, préserver les huit combattants et la continuité DS1 / Director’s Cut, puis travailler le lot demandé. Relier chaque ajout à EDG-Gxx et à sa fiche ; distinguer source, adaptation et création ; conserver les écarts non résolus ; produire dans la phase prévue ; vérifier les fonctions annoncées ; mettre à jour les statuts et le bilan par unité.
+
+### 12.12. Sources associées et vocabulaire
+
+Le chapitre 11 reste le référentiel officiel de Death Stranding. Les inspirations **S1–S5** du guide restent consultables dans sa section 29 : séparation histoire individuelle / aventure globale, coopération éventuelle, campagne et défis distincts, interactions adaptées aux personnages. Elles n’imposent ni avatar RPG, ni coopération, ni finalités empruntées à une autre licence. Leur date de consultation du 25 novembre 2026 est celle déclarée par le guide ; cette intégration ne prétend pas avoir revérifié les cinq pages.
+
+Trois références primaires du chapitre 11 ont été consultées pour le rapprochement du 25 novembre 2026 :
+
+- [Kojima Productions · Conseils pour la région orientale](https://www.kojimaproductions.jp/en/DSTips) : lien en parade, cargaison utilisée en contact ou lancée, détection du fret et possibilités d’éviter une confrontation. Ces gestes étayent les thèmes de Sam et du MULE ; leurs règles de duel restent des adaptations.
+- [Kojima Productions · Guide du Director’s Cut](https://www.kojimaproductions.jp/en/death-stranding-directors-cut-beginners-guide) : gestion du chargement et accès au stand de tir depuis des terminaux. Le simulateur d’Échos et les rencontres d’empreintes demeurent une création du projet.
+- [PlayStation · Nouveautés du Director’s Cut](https://www.playstation.com/fr-fr/editorial/how-death-stranding-directors-cut-expands-kojimas-sci-fi-epic/) : exercices au stand de tir, gestes supplémentaires et possibilité de rejouer les combats de boss. Cette dernière fonction motive un module de rencontre rejouable ; elle ne prouve pas l’existence du Boss Rush envisagé ici.
+
+Pour la traçabilité technique, le relevé du §12.3 et les inventaires reposent sur content.js, assets.js, fight.js, app.js, tournament.js, netplay.js, netplay-server.cjs et duel-originel/interface.js au commit de référence cité au début de ce chapitre. Les liens relatifs donnent les fichiers de travail ; le commit fixe l’état observé.
+
+**Vocabulaire appliqué :** un lieu peut avoir plusieurs configurations ; une scène peut demander plusieurs plans ; une route est une histoire individuelle ; une transition de stage se déroule à l’intérieur d’un affrontement ; un objet de kit appartient au combattant ; un danger de décor possède une règle de gameplay ; une finalité conclut un match déjà décidé ; une cible de conception n’est pas une fonction livrée ; une fidélité 1:1 ne désigne pas une image carrée.
