@@ -35,6 +35,16 @@ const quantile=(values,p)=>values[Math.min(values.length-1,Math.floor((values.le
       item.centralSupport={columns:rows.length,min:rows[0],p10:quantile(rows,.1),median:quantile(rows,.5),p90:quantile(rows,.9),max:rows.at(-1)};
       item.suggestedAnchorY=quantile(rows,.5)/height;
       item.nativeLineToScreen588={sourceRow:quantile(rows,.5),sourceHeight:height};
+      // A stricter full-width support is useful for nearly opaque native PNGs:
+      // their antialiased edge can precede the stable floor by several rows.
+      const coverage=[];
+      for(let y=0;y<height;y++){
+        let count=0;for(let x=0;x<width;x++)if(alpha(x,y)>=250)count++;
+        coverage.push(count/width);
+      }
+      const stable=coverage.findIndex((fraction,y)=>fraction>=.985&&y+3<height&&coverage.slice(y,y+4).every(value=>value>=.985));
+      item.stableFullWidthSupport={alphaThreshold:250,minimumCoverage:.985,consecutiveRows:4,sourceRow:stable<0?null:stable,
+        coverage:stable<0?null:coverage.slice(stable,stable+4)};
     }
     if(layer==='distant'||layer==='midground'){
       let lastOpaqueRow=null;

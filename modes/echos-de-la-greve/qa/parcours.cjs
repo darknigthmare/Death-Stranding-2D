@@ -19,7 +19,10 @@ const mock = `window.StrandFight = {start(options){this.options=options;this.inp
     return route.fulfill({body,contentType:name.endsWith('css') ? 'text/css' : name.endsWith('js') ? 'application/javascript' : 'text/html'});
   });
   await page.goto('http://ui.test/modes/echos-de-la-greve/index.html');
-  const act = action => page.locator('[data-act="'+action+'"]').first().click();
+  const act = async action => {
+    await page.locator('[data-act="'+action+'"]').first().click();
+    if(['start','routeFight'].includes(action)&&await page.locator('[data-act="enterDuel"]').count())await page.locator('[data-act="enterDuel"]').click();
+  };
   const mode = value => page.locator('[data-act="mode"][data-mode="'+value+'"]').click();
   const pick = id => page.locator('[data-act="pick"][data-id="'+id+'"]').click();
   const end = winner => page.evaluate(win => StrandFight.end(win),winner);
@@ -35,7 +38,7 @@ const mock = `window.StrandFight = {start(options){this.options=options;this.inp
       assert.deepEqual(await page.evaluate(()=>StrandFight.inputs.slice(-2)),[[1,'right',true],[1,'right',false]]);
       await act('controls'); assert.equal(await page.locator('dialog').evaluate(el=>el.open),true);
       assert.match(await page.locator('dialog').textContent(),/Reprise d’appui/);
-      await page.locator('dialog button').click();
+      await page.locator('dialog form[method="dialog"] button').click();
       await page.waitForFunction(()=>StrandFight.paused===false,{},{timeout:2500});
     }
     await end(1); await act('routeFight'); await end(1); await act('rival'); assert.match(await page.locator('.speaker').textContent(),/Rivalité/);

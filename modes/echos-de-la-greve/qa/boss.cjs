@@ -5,7 +5,7 @@ const path = require('node:path');
 const crypto = require('node:crypto');
 const run = require('./boss-simulation.js');
 const root = path.resolve(__dirname, '..');
-const names = ['content.js','asset-geometry-20261124.js','assets.js','boss-geometry-20261124.js','boss-assets.js','boss.js','app.js'];
+const names = ['content.js','asset-geometry-20261124.js','assets.js','boss-geometry-20261124.js','boss-assets.js','boss.js','input.js','app.js'];
 const sources = Object.fromEntries(names.map(name => [name, fs.readFileSync(path.join(root,name),'utf8')]));
 const dimensionsPath = path.join(__dirname,'native-image-dimensions-20261124.cjs');
 const imageSizes = require(dimensionsPath);

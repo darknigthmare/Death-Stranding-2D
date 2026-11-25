@@ -44,7 +44,9 @@
       match.players = [draw.shift(), byes.includes(i) ? null : draw.shift()];
     }
     const cup = {version:1, seed:config.seed, difficulty:config.difficulty, entrants, rounds};
-    const arenas = Object.keys(window.StrandContent.stages);
+    // Gameplay links are an explicit choice in Versus/dojo/private rooms.
+    // Automatic draws use ordinary lanes; saved brackets retain their stages.
+    const arenas = Object.keys(window.StrandContent.stages).filter(id=>!window.StrandContent.stageLinks?.[id]);
     for (const match of rounds.flat()) match.stage = arenas[match.seed % arenas.length];
     advance(cup);
     return cup;

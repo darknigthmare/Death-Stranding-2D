@@ -1,0 +1,159 @@
+{
+  "date": "2026-11-25",
+  "method": "node --check on every changed/new JavaScript file; no browser execution inferred",
+  "passed": true,
+  "javascript_files": [
+    {
+      "path": "modes/echos-de-la-greve/app.js",
+      "exit_code": 0,
+      "sha256": "cdecf6d7003a52c1d8f147df73f69798f6484ae42b2c1a8384483419d568805a"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets.js",
+      "exit_code": 0,
+      "sha256": "8d04672f033b659b7e9ddd623fdea9392f74e7a2518f3b5a360d4948d118848e"
+    },
+    {
+      "path": "modes/echos-de-la-greve/boss.js",
+      "exit_code": 0,
+      "sha256": "7f8f997301148515ee59e9c658a300852d4a8ccecc32c45ca56e312a2dd7787a"
+    },
+    {
+      "path": "modes/echos-de-la-greve/content.js",
+      "exit_code": 0,
+      "sha256": "91923e26f31344ca9b0789720a3ea1040e20b810742b782f55638e32f789d683"
+    },
+    {
+      "path": "modes/echos-de-la-greve/fight.js",
+      "exit_code": 0,
+      "sha256": "17c3cfcdee2291dad721b312ee060ca3d341cb0734c30d57128152fa6d3e3f23"
+    },
+    {
+      "path": "modes/echos-de-la-greve/input.js",
+      "exit_code": 0,
+      "sha256": "f7edb32b31405a63a63df929bfb7832812591244a4cf01e1875367df053be3c6"
+    },
+    {
+      "path": "modes/echos-de-la-greve/moves-data.js",
+      "exit_code": 0,
+      "sha256": "f781bf43f7e4d7a4c474eed795d0c728de0cbd0daae7c74aa79ffedfa4915767"
+    },
+    {
+      "path": "modes/echos-de-la-greve/netplay-server.cjs",
+      "exit_code": 0,
+      "sha256": "be57ba6e41840426123170460eb79c25ce19a36cd723a5b516837fa958441848"
+    },
+    {
+      "path": "modes/echos-de-la-greve/netplay.js",
+      "exit_code": 0,
+      "sha256": "c5f0810eb76894a6d71e33193ef2be846908111e88faf976c9112a160b1c704f"
+    },
+    {
+      "path": "modes/echos-de-la-greve/qa/ambiances.cjs",
+      "exit_code": 0,
+      "sha256": "a12e2d8dcde48db6922c9b3558da378720e8961945bbf622bb06c2b509ec4fe0"
+    },
+    {
+      "path": "modes/echos-de-la-greve/qa/arenes-canvas.cjs",
+      "exit_code": 0,
+      "sha256": "ccdfcbfe879fd340efb9a556e44b03d3733d7edeb7f6ea592b7b0bb7056fef72"
+    },
+    {
+      "path": "modes/echos-de-la-greve/qa/arenes.cjs",
+      "exit_code": 0,
+      "sha256": "dc97b0cd7f26d30674b9ca74c3e9f56c052702d83bee78c3758a9b06caae7db3"
+    },
+    {
+      "path": "modes/echos-de-la-greve/qa/boss-simulation.js",
+      "exit_code": 0,
+      "sha256": "736ad8ff7b9ea135390ed23811eaaa6aaf22084a1157fc12f777e86c39eac3a3"
+    },
+    {
+      "path": "modes/echos-de-la-greve/qa/boss.cjs",
+      "exit_code": 0,
+      "sha256": "065449423404ea0f479016f4a70fd86df8e1c301537b58508d2a6a3617373a68"
+    },
+    {
+      "path": "modes/echos-de-la-greve/qa/campaign.cjs",
+      "exit_code": 0,
+      "sha256": "b03fb2d392519b1583b86f2ddee742e9c6d6493920d592606413183b3691fdca"
+    },
+    {
+      "path": "modes/echos-de-la-greve/qa/commandes.cjs",
+      "exit_code": 0,
+      "sha256": "79372518d790abdf203b2ed8295145658f921a2a6c040cb5d90b1d77bf19396d"
+    },
+    {
+      "path": "modes/echos-de-la-greve/qa/input-host.cjs",
+      "exit_code": 0,
+      "sha256": "03939e6dab80bd91aa63372a611fb64a0f99b5cc464f4c4d5543db52d597695b"
+    },
+    {
+      "path": "modes/echos-de-la-greve/qa/moves-domain.cjs",
+      "exit_code": 0,
+      "sha256": "3c331a00aedbc94b89e532a0a19c4a7b5ced42aacd7bfca0054211b042f6c2c1"
+    },
+    {
+      "path": "modes/echos-de-la-greve/qa/parcours.cjs",
+      "exit_code": 0,
+      "sha256": "a101ae1fdb2dd486fb07d42f7f38edda3abb9f6194f5469c6e0eea2662579d66"
+    },
+    {
+      "path": "modes/echos-de-la-greve/qa/reseau-logique.cjs",
+      "exit_code": 0,
+      "sha256": "3175ab2efe8670611a73179fad5bf40a0b08f3562b524e0b40a60100f36bd5ac"
+    },
+    {
+      "path": "modes/echos-de-la-greve/qa/stage-source-measurements-20261125.cjs",
+      "exit_code": 0,
+      "sha256": "e417ba7dfe20b5355249bc5943240c011ff67fa9885ccff455b7c6d43d049e4c"
+    },
+    {
+      "path": "modes/echos-de-la-greve/qa/static-gallery.cjs",
+      "exit_code": 0,
+      "sha256": "b2db6e89df370b723f073b72bdea9996d90762686245b8f578bc1abce521469f"
+    },
+    {
+      "path": "modes/echos-de-la-greve/qa/tenues.cjs",
+      "exit_code": 0,
+      "sha256": "b0458ebc06759a8c6262eaf8d62224df605980697ad1500c2ad15569abcf0b2b"
+    },
+    {
+      "path": "modes/echos-de-la-greve/qa/transitions-canvas.cjs",
+      "exit_code": 0,
+      "sha256": "688a7207e43a977975da891bd9b337ed278159267d9b552f9ec6f463aec02c72"
+    },
+    {
+      "path": "modes/echos-de-la-greve/qa/transitions.cjs",
+      "exit_code": 0,
+      "sha256": "d455bca693b33ffe52c4eea2a464cb3a4d25834291b6bffa59a3f988bd2c1f7a"
+    },
+    {
+      "path": "modes/echos-de-la-greve/relationships.js",
+      "exit_code": 0,
+      "sha256": "ad55b68c477b42d8e833dbe242dab055cfac19e596c7a143d3c781a23907f775"
+    },
+    {
+      "path": "modes/echos-de-la-greve/static-assets-data.js",
+      "exit_code": 0,
+      "sha256": "d4b22dac81e5104cae76129793444ddb12a114dc12d87a5439215a3d36315fb5"
+    },
+    {
+      "path": "modes/echos-de-la-greve/static-assets.js",
+      "exit_code": 0,
+      "sha256": "5f8a7b56415cb4f57452cc0f4e22d90090b82c1dd9fcae537b57758bff4244ff"
+    },
+    {
+      "path": "modes/echos-de-la-greve/tournament.js",
+      "exit_code": 0,
+      "sha256": "85f058fd5be04cec19b423b321d23846228bdc6538e39105fe4086fea310a9b6"
+    },
+    {
+      "path": "outils/generer_catalogue_combat.cjs",
+      "exit_code": 0,
+      "sha256": "3f7d288f0c0e243c87ff0283231114179ff3dc30e97476e1edd556f4c949505d"
+    }
+  ],
+  "guide_sha256": "4844584616072ac0d52d37c2fab4365e1ec489240f17a721ee216e223b0355b7",
+  "guide_unchanged": true
+}

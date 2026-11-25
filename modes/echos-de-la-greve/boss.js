@@ -21,7 +21,7 @@
       goal:'Sortez des zones de frappe. Sautez l’anneau chiral et exploitez les longues récupérations.',
       patterns:['stomp','ring','orbs'],tell:88,recover:115},
     truck:{name:'Camion MULE',type:'mule-truck',stage:'mule-camp-dry',hp:240,height:190,radius:205,bodyHeight:170,seconds:180,cargo:2,
-      goal:'Immobilisez le camion, puis rapportez ses deux colis au dépôt à gauche. T prend, pose ou livre un colis.',
+      goal:'Immobilisez le camion, puis rapportez ses deux colis au dépôt à gauche. La commande Colis prend, pose ou livre un colis.',
       patterns:['bolts','charge','bolts'],tell:76,recover:85},
     convoy:{name:'Convoi MULE',type:'mule-truck',stage:'mule-camp',hp:190,height:190,radius:205,bodyHeight:170,seconds:240,cargo:2,waves:2,
       goal:'Interceptez deux camions en deux vagues. Rapportez un colis par camion et protégez le dépôt des tirs bas.',
@@ -301,7 +301,7 @@
     for(let i=0;i<count;i++)s.cargo.boxes.push({id:s.nextId++,x:clamp(b.x+(i-(count-1)/2)*75,220,W-70),state:'ground'});
     s.phase='collect';
     if(s.wave<(d.waves||1)){s.waveDelay=180;message(s,'Camion immobilisé · deuxième vague dans 3 secondes. Récupérez le colis !',180);}
-    else message(s,'Camion immobilisé · T près des colis, puis T dans le dépôt à gauche.',240);
+    else message(s,'Camion immobilisé · prends un colis, puis livre-le au dépôt à gauche.',240);
     tone(380,.2);
   }
   function damageBoss(s,amount,stagger=12){
@@ -335,7 +335,7 @@
       const box=c.boxes.find(q=>q.id===c.carrying);if(!box){c.carrying=null;return false;}
       if(p.x<=155&&p.y<8){box.state='delivered';c.delivered++;c.carrying=null;message(s,'Colis livré · '+c.delivered+' / '+c.goal);tone(540,.12);
         if(c.delivered===c.goal&&s.boss.hp===0&&s.wave===(encounters[s.bossId].waves||1))finish(s,true,'cargo');
-      }else{box.state='ground';box.x=p.x;c.carrying=null;message(s,'Colis posé · T pour le reprendre');}
+      }else{box.state='ground';box.x=p.x;c.carrying=null;message(s,'Colis posé · commande Colis pour le reprendre');}
       return true;
     }
     const box=c.boxes.find(q=>q.state==='ground'&&Math.abs(q.x-p.x)<75&&p.y<20);
@@ -648,7 +648,7 @@
     text(c,String(Math.max(0,Math.ceil(s.remaining/60))).padStart(3,'0'),464,60,33,'#f1f0dc','center');
     const objective=s.cargo.goal?'COLIS '+s.cargo.delivered+' / '+s.cargo.goal+' · INTÉGRITÉ '+s.cargo.integrity+' %'+(s.cargo.carrying!==null?' · COLIS PORTÉ':''):
       'ATTAQUES ANNONCÉES → ESQUIVE → NOYAU EXPOSÉ';
-    text(c,objective,30,657,16,'#daedb8');text(c,'F léger · G lourd · H signature · R garde · Z/W saut'+(s.cargo.goal?' · T cargaison':' · Y charge chirale'),30,687,13,'#bcd1d2');
+    text(c,objective,30,657,16,'#daedb8');text(c,'Léger · Lourd · Signature · Garde · Saut'+(s.cargo.goal?' · Colis':' · Appui')+' · Charge chirale',30,687,13,'#bcd1d2');
     if(s.messageTicks>0&&!['tell'].includes(b.phase)){
       c.fillStyle='#07141bcf';c.fillRect(120,125,1040,55);wrappedText(c,s.message,640,147,1005,15,'#e5eed4');
     }

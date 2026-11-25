@@ -107,6 +107,7 @@ const required = [
               .map(key=>StrandAssets[key][id].split('/').pop()),id);
             const [back,distant,middle,floor,front]=ordered;
             await page.locator('[data-act=start]').click();
+            if(await page.locator('[data-act=enterDuel]').count())await page.locator('[data-act=enterDuel]').click();
             let previous = await page.evaluate(async ({files,reducedEffects}) => {
               StrandFight.setReducedEffects(reducedEffects);
               resizeTarget(1/8);

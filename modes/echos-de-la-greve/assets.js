@@ -36,7 +36,8 @@
     }];
   }));
   const arenas = Object.keys(window.StrandContent.stages);
-  const stageLayers = (suffix, ids=arenas) => Object.fromEntries(ids.map(id => [id, 'assets/stages/' + id + suffix + '.png']));
+  const stageAssetId = id => id==='terminal-linked' ? 'terminal' : id;
+  const stageLayers = (suffix, ids=arenas) => Object.fromEntries(ids.map(id => [id, 'assets/stages/' + stageAssetId(id) + suffix + '.png']));
   // Every location has five independent layers and a panorama fallback.
   const movement = ['guard','crouch','rise','apex','fall'];
   const generatedFighters = ['sam','fragile','higgs','cliff','mule','diehardman','heartman'];
@@ -57,7 +58,8 @@
     'magellan-ds2':'assets/static-universe-20261125/magellan-ds2-panorama.png',
     'plate-gate-ds2':'assets/static-universe-20261125/plate-gate-ds2-panorama.png',
     'sandstorm-ds2':'assets/static-universe-20261125/sandstorm-ds2-panorama.png',
-    'dunes-ds2':'assets/static-completion-20261125/dunes-ds2-panorama.png'
+    'dunes-ds2':'assets/static-completion-20261125/dunes-ds2-panorama.png',
+    'terminal-hangar':'assets/static-domains-20261125/terminal-hangar-panorama.png'
   };
   const wardrobe = {mama:{
     atelier:{name:'Atelier'},
@@ -102,7 +104,7 @@
     portraits: {...illustrations('fighters', roster, '-portrait'),...replacement('portrait')},
     supportPortraits:{...Object.fromEntries(['deadman','amelie','bridget'].map(id=>[id,'assets/fighters/support/'+id+'-portrait.png'])),lockne:'assets/static-20261125/lockne-portrait.png'},
     finishers: illustrations('finishers', roster),
-    stages: {...illustrations('stages', arenas),...stageLayers('',nativeStageIds),...universeStagePanoramas},
+    stages: {...illustrations('stages', arenas),...stageLayers('',nativeStageIds),...universeStagePanoramas,'terminal-linked':'assets/stages/terminal.webp'},
     skyplates: stageLayers('-sky'),
     distants: stageLayers('-distant'),
     midgrounds: stageLayers('-midground'),
@@ -112,6 +114,9 @@
       // the source at this screen height; transparent padding is never stretched.
       shore:{distant:{anchorY:680/724,base:594},middle:{anchorY:557/724,base:596,alpha:.9},floor:{anchorY:221/724}},
       terminal:{distant:{anchorY:680/724,base:594},middle:{anchorY:701/724,base:594},floor:{anchorY:214/724}},
+      'terminal-linked':{distant:{anchorY:680/724,base:594},middle:{anchorY:701/724,base:594},floor:{anchorY:214/724}},
+      // Unchanged native 1672 × 941 PNG: stable floor support row at y447.
+      'terminal-hangar':{distant:{anchorY:1,base:598},middle:{anchorY:1,base:594},floor:{anchorY:447/941}},
       battlefield:{distant:{anchorY:1,base:594},middle:{anchorY:696/724,base:594},floor:{anchorY:229/724}},
       'mule-camp':{distant:{anchorY:.96,base:609},middle:{anchorY:.97,base:576},floor:{anchorY:302/724}},
       'mule-camp-dry':{distant:{anchorY:679/724,base:598},middle:{anchorY:686/724,base:592},floor:{anchorY:300/724}},
@@ -133,6 +138,6 @@
       'sandstorm-ds2':{distant:{anchorY:1,base:598},middle:{anchorY:1,base:594},floor:{anchorY:458/941}},
       'dunes-ds2':{distant:{anchorY:1,base:598},middle:{anchorY:1,base:594},floor:{anchorY:435/941}}
     },
-    foregrounds: {...illustrations('stages', arenas, '-foreground'),...stageLayers('-foreground',[...nativeStageIds,...Object.keys(universeStagePanoramas)])}
+    foregrounds: {...illustrations('stages', arenas, '-foreground'),...stageLayers('-foreground',[...nativeStageIds,...Object.keys(universeStagePanoramas)]),'terminal-linked':'assets/stages/terminal-foreground.webp'}
   };
 })();

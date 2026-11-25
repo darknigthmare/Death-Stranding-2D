@@ -1,0 +1,38 @@
+{
+  "date": "2026-11-25T15:59:03.984796+00:00",
+  "method": "Local file and Markdown heading/explicit-anchor inspection. No external URL request, rendering or browser. Guide compared to its preserved exact SHA-256; runtime module hashes matched to the action and Commandes reports.",
+  "browser": false,
+  "documents": [
+    "README.md",
+    "docs/combat/BIBLE_COMBAT.md",
+    "docs/combat/REGISTRE_PRODUCTION.md",
+    "docs/combat/UNIVERS_DS.md",
+    "docs/combat/ACTIONS_ET_IA.md",
+    "docs/combat/RELATIONS_SIMULATEUR.md",
+    "docs/combat/production/20261125-domains/ACTIONS_RELATIONS_IA.md"
+  ],
+  "checked_relative_links": 425,
+  "issues": [],
+  "guide": {
+    "file": "docs/combat/references/Combat_Games_Guide_General_v1.0.txt",
+    "bytes": 55172,
+    "sha256": "4844584616072ac0d52d37c2fab4365e1ec489240f17a721ee216e223b0355b7",
+    "unchanged": true,
+    "matrix_rubrics": 30,
+    "all_00_to_29_once": true
+  },
+  "modules_sha256": {
+    "moves-data.js": "f781bf43f7e4d7a4c474eed795d0c728de0cbd0daae7c74aa79ffedfa4915767",
+    "relationships.js": "ad55b68c477b42d8e833dbe242dab055cfac19e596c7a143d3c781a23907f775"
+  },
+  "document_sha256": {
+    "README.md": "564d0106d7f6e93ba78f93b3dc9a850fd08ad8ff09b9be6774a04b0fc26a6209",
+    "docs/combat/BIBLE_COMBAT.md": "ae1c56058b9f122502fc4f7a6507b00167ef3802bb1a54083823f1c797f68f69",
+    "docs/combat/REGISTRE_PRODUCTION.md": "12fb49a110e39453aab548d54552c7a845433cdb5f573877a94dca2e3aceafcc",
+    "docs/combat/UNIVERS_DS.md": "b43ad5d6e5cdafd41379d09fc759f76f89354d4ff62f80b4076b904b0d38101d",
+    "docs/combat/ACTIONS_ET_IA.md": "4dead901b2722257e1da3dab0d361e72d2105b86e4442bc37d7e5f37ff75b472",
+    "docs/combat/RELATIONS_SIMULATEUR.md": "61d7c9954a21e50d35a20517fc32b8e2da51b1bde999ae1ce0f23f445b9c5cc7",
+    "docs/combat/production/20261125-domains/ACTIONS_RELATIONS_IA.md": "455e2549059ee0e259e7f97684c699828f86cecff1d323c61f9b83377f47eead"
+  },
+  "passed": true
+}

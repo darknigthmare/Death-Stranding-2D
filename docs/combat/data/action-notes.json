@@ -1,0 +1,242 @@
+{
+  "light": {
+    "role": "Interruption à courte portée",
+    "range": "81 px depuis le centre ; bande verticale 39–112 au-dessus des pieds.",
+    "guard": "Garde debout ou accroupie.",
+    "notes": [
+      "Une seule touche par action. Après touche confirmée : annulation vers Lourd ou Spécial à la fin de l’activité."
+    ]
+  },
+  "heavy": {
+    "role": "Frappe engagée et poussée de caisse",
+    "range": "111 px ; bande 63–152. Avance de 12 px au pas 11, ou 6 pour Die-Hardman.",
+    "guard": "Garde debout ou accroupie.",
+    "notes": [
+      "Une seule touche. À t=14, pousse la caisse MULE immobile située de −12 à 111 px vers l’avant ; déplacement ultérieur de 112 px au plus."
+    ]
+  },
+  "sweep": {
+    "role": "Attaque basse",
+    "range": "110 px ; bande 3–44.",
+    "guard": "Garde accroupie uniquement.",
+    "notes": [
+      "Bas est lu au déclenchement effectif, pas mémorisé avec le bouton."
+    ]
+  },
+  "lift": {
+    "role": "Frappe montante",
+    "range": "78 px ; bande 12–124.",
+    "guard": "Garde debout ou accroupie.",
+    "notes": [
+      "Sur touche, vitesse verticale adverse de 7. Aucun plafond de relancement ou réduction de combo dédié dans ce moteur."
+    ]
+  },
+  "air": {
+    "role": "Attaque aérienne haute",
+    "range": "94 px ; bande 6–105 relative aux pieds en l’air.",
+    "guard": "Garde debout uniquement.",
+    "notes": [
+      "Léger et Lourd donnent la même frappe aérienne. Une seule touche ; atterrir ne crée pas de récupération distincte."
+    ]
+  },
+  "grab": {
+    "role": "Réponse à la garde au sol",
+    "range": "56 px ; bande 14–115.",
+    "guard": "Traverse la garde ; cible au sol, hors stun de touche et invulnérabilité.",
+    "notes": [
+      "Pas de déchope dédiée. Le blockstun n’est pas exclu par le test de prise. Inflige une frappe et du recul, sans transport automatique de la cible."
+    ]
+  },
+  "sam": {
+    "role": "Projectile de liaison",
+    "range": "Origine +37, hauteur 87 ; vitesse 12 px/pas, durée 76, boîte 26×18.",
+    "guard": "Garde debout ou accroupie ; pas d’interception par contre de mêlée.",
+    "notes": [
+      "Émission à t=16. La phase active nominale ne limite pas le vol ; un projectile déjà émis subsiste après interruption du porteur."
+    ]
+  },
+  "fragile": {
+    "role": "Approche et frappe",
+    "range": "85 px ; bande 21–139. À t=8 : avance au plus 158 px, jusqu’à 52 px de la position adverse mesurée.",
+    "guard": "Garde debout ou accroupie.",
+    "notes": [
+      "Invulnérabilité à t=6–10 inclus ; frappe à t=12–15. Aucun changement de côté garanti."
+    ]
+  },
+  "higgs": {
+    "role": "Zone à une position mémorisée",
+    "range": "X adverse mémorisé à l’entrée, borné 48–1232 ; centre à 49 px du sol, boîte 86×102.",
+    "guard": "Garde debout ou accroupie ; pas de niveau bas malgré le visuel au sol.",
+    "notes": [
+      "Émission à t=25, durée 6. La zone vise l’ancienne position ; une seule touche au maximum."
+    ]
+  },
+  "cliff": {
+    "role": "Deux traits étagés",
+    "range": "Origine +36 ; hauteurs 97 puis 53 ; vitesse 13, durée 62 par trait, boîte 26×18.",
+    "guard": "Garde debout ou accroupie pour les deux traits.",
+    "notes": [
+      "Émissions à t=17 et 25. Une interruption avant la seconde l’empêche ; les traits déjà émis subsistent. Jusqu’à deux touches, cinq PV de base chacune."
+    ]
+  },
+  "brace": {
+    "role": "Interception ciblée",
+    "range": "Contact de mêlée reçu pendant t=8–13.",
+    "guard": "Intercepte seulement Coup léger ; pas les projectiles, prises ou autres mêlées.",
+    "notes": [
+      "Une interception au maximum. Aucun dégât ou stun infligé à l’attaquant ; contact consommé, puis récupération de la défense."
+    ]
+  },
+  "parry": {
+    "role": "Parade et changement de côté",
+    "range": "Contact de mêlée reçu pendant t=4–8.",
+    "guard": "Intercepte les mêlées sauf Projection ; aucun projectile.",
+    "notes": [
+      "Échange les positions, réoriente les combattants et impose au moins 15 pas de stun à l’attaquant ; une interception, aucun dégât direct."
+    ]
+  },
+  "fan": {
+    "role": "Frappe haute anti-saut",
+    "range": "114 px ; bande 118–217.",
+    "guard": "Garde debout ou accroupie si la zone touche ; aucun niveau overhead dédié.",
+    "notes": [
+      "Le volume peut passer au-dessus d’une petite cible accroupie. Sur touche : vitesse verticale adverse 5."
+    ]
+  },
+  "beacon": {
+    "role": "Point de retour",
+    "range": "Pose à la position du porteur ; retour au marqueur lors du nouvel usage.",
+    "guard": "Aucun contact offensif.",
+    "notes": [
+      "À t=15, pose un marqueur pour 180 pas, ou le consomme pour revenir. Coût payé à chaque usage ; pas d’invulnérabilité dédiée dans le duel."
+    ]
+  },
+  "mine": {
+    "role": "Piège bas",
+    "range": "Pose +55, bornée 48–1232 ; X ±22 ; de 23 px au-dessus du sol à 1 px au-dessous.",
+    "guard": "Garde accroupie uniquement.",
+    "notes": [
+      "Pose à t=18, durée 150. Armement quand ttl ≤130, après 20 mises à jour. Un seul marqueur, remplacé par une nouvelle pose ; disparaît au contact."
+    ]
+  },
+  "feint": {
+    "role": "Recul",
+    "range": "5,25 px de recul à chaque pas t=9–18 ; 52,5 px avant bornes et contacts de corps.",
+    "guard": "Aucun contact offensif ; aucune invulnérabilité dédiée.",
+    "notes": [
+      "Le coût est payé même au bord. Origine conservée pour le dessin, sans retour automatique."
+    ]
+  },
+  "post": {
+    "role": "Point d’émission",
+    "range": "Pose +165, bornée 48–1232.",
+    "guard": "Aucun contact offensif.",
+    "notes": [
+      "À t=19, poste pour 160 pas ; un seul marqueur. Ne crée aucune IA de soldat autonome."
+    ]
+  },
+  "recall": {
+    "role": "Colonne montante au poste",
+    "range": "Au poste : centre initial à 15 px du sol, montée de 16 par pas pendant 6 pas, boîte 92×18.",
+    "guard": "Garde debout ou accroupie.",
+    "notes": [
+      "À t=12, consomme le poste et émet. Sans poste : coût de 16 quand même payé, action jouée et notice AUCUN POSTE. Sur touche : lancement vertical 7."
+    ]
+  },
+  "mule": {
+    "role": "Repérage sans dégâts",
+    "range": "Onde symétrique à t=18–29 : rayon=(t−18+1)×38 ; distance de rayon−61 à rayon+22, maximum 478.",
+    "guard": "Toute garde active bloque le scan, sans perte de garde ajoutée.",
+    "notes": [
+      "Aucun PV, stun ou gain chiral de touche. Mémorise le X touché pendant 120 pas sans suivre ensuite la cible. Le test ne dépend pas de sa hauteur."
+    ]
+  },
+  "crate": {
+    "role": "Caisse à déplacer",
+    "range": "Pose +86, bornée 48–1232 ; collision balayée de 42×21 au sol une fois déplacée.",
+    "guard": "Caisse poussée : garde accroupie uniquement.",
+    "notes": [
+      "Pose à t=16, durée 180 ; pose seule sans dégâts. Coup lourd pousse à 10 px/pas sur 112 px maximum. Une touche par trajet ; caisse conservée à l’arrivée."
+    ]
+  },
+  "retrieve": {
+    "role": "Rappel de caisse",
+    "range": "Trajet vers le X courant du porteur, 14 px/pas ; collision balayée 42×21 au sol.",
+    "guard": "Garde accroupie uniquement.",
+    "notes": [
+      "Sans caisse ou rappel déjà actif : refus avant dépense. Durée protégée jusqu’au déclenchement, puis ne décroît pas pendant le rappel. Une touche par trajet ; disparition à l’arrivée."
+    ]
+  },
+  "diehardman": {
+    "role": "Contre médian et sceau",
+    "range": "Contact reçu pendant t=11–15.",
+    "guard": "Intercepte light, heavy, lift, relief ou fragile en mêlée ; pas sweep, air, fan, prise ou projectile.",
+    "notes": [
+      "Une interception accorde un sceau pour 120 pas, annule l’action adverse et impose au moins 26 pas de stun. Aucun dégât direct."
+    ]
+  },
+  "gate": {
+    "role": "Zone verticale",
+    "range": "Centre +108 borné ; hauteur 72, boîte 36×144, immobile.",
+    "guard": "Garde debout ou accroupie.",
+    "notes": [
+      "Émission à t=17 pour 6 pas, ou 8 si sceau présent à l’émission. Le sceau n’est pas consommé."
+    ]
+  },
+  "relief": {
+    "role": "Recul puis reprise",
+    "range": "Recul de 2,5 px à t=1–7 ; portée 77, ou 121 avec sceau ; bande 48–109.",
+    "guard": "Garde debout ou accroupie.",
+    "notes": [
+      "Sceau consommé dès le démarrage : portée +44, dégâts inchangés. Pas d’invulnérabilité dédiée dans le duel."
+    ]
+  },
+  "mama": {
+    "role": "Pose d’ancrage",
+    "range": "Pose +130, bornée 48–1232.",
+    "guard": "Aucun contact offensif.",
+    "notes": [
+      "À t=18, ancrage pour 200 pas. Ce marqueur n’est pas une plateforme de collision ni un personnage secondaire."
+    ]
+  },
+  "deck": {
+    "role": "Projectile depuis ancrage ou porteur",
+    "range": "À l’ancrage si présent, sinon au porteur ; hauteur 76 ; vitesse 7,2 avec ancrage, sinon 3,6 ; durée 10, boîte 26×18.",
+    "guard": "Garde debout ou accroupie.",
+    "notes": [
+      "Émission à t=16. Conserve l’ancrage ; l’absence d’ancrage réduit la vitesse sans interdire la technique."
+    ]
+  },
+  "winch": {
+    "role": "Déplacement vers l’ancrage",
+    "range": "Interpolation vers l’ancrage sur 8 pas actifs à partir de t=12.",
+    "guard": "Aucun contact offensif ni invulnérabilité dédiée.",
+    "notes": [
+      "Sans ancrage : refus avant dépense. Durée protégée au démarrage ; marqueur consommé à t=12. Bornes et contacts de corps continuent de s’appliquer."
+    ]
+  },
+  "heartman": {
+    "role": "Impulsion rythmée",
+    "range": "Origine au porteur, hauteur 83 ; vitesse 10 sur battement, sinon 7,5 ; durée 16, boîte 26×18.",
+    "guard": "Garde debout ou accroupie.",
+    "notes": [
+      "Émet à t=15. Battement capturé à la saisie : beat ≤3 ou ≥57 dans un cycle de 60. Augmente la vitesse, pas les dégâts ; rythme propre au simulateur."
+    ]
+  },
+  "memory": {
+    "role": "Mémoire de position et impulsion",
+    "range": "Première activation : marqueur au porteur. Seconde : centre au marqueur, hauteur 64, boîte 132×90, durée 8.",
+    "guard": "Garde debout ou accroupie lors de l’impulsion.",
+    "notes": [
+      "À t=14, pose une mémoire pour 120 pas, ou la consomme pour émettre. Coût 18 à chaque usage ; première activation sans dégâts."
+    ]
+  },
+  "syncope": {
+    "role": "Fenêtre d’invulnérabilité",
+    "range": "Aucun déplacement ou volume offensif propre.",
+    "guard": "Invulnérabilité à t=10–15 inclus.",
+    "notes": [
+      "Défense payante, sans riposte ni recul dans le duel ; début et récupération vulnérables."
+    ]
+  }
+}

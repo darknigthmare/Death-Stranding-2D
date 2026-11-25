@@ -6,7 +6,7 @@ const assert=require('node:assert/strict'),fs=require('node:fs'),path=require('n
 const {execFileSync}=require('node:child_process'),{createHash}=require('node:crypto');
 const root=path.resolve(__dirname,'..'),repo=path.resolve(root,'../..');
 const clone=value=>JSON.parse(JSON.stringify(value));
-const files=['content.js','asset-geometry-20261124.js','assets.js','boss-geometry-20261124.js','boss-assets.js','tournament.js','fight.js','boss.js','campaign.js','app.js'];
+const files=['content.js','asset-geometry-20261124.js','assets.js','boss-geometry-20261124.js','boss-assets.js','tournament.js','fight.js','boss.js','campaign.js','input.js','app.js'];
 const sources=Object.fromEntries(files.map(file=>[file,fs.readFileSync(path.join(root,file),'utf8')]));
 for(const file of files)new Function(sources[file]);
 const report={date:new Date().toISOString(),method:'Actual app, campaign, duel and boss modules; event-capable simulated DOM and Canvas; real input sequences and requestAnimationFrame clock',

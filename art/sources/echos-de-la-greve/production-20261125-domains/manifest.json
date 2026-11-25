@@ -1,0 +1,1229 @@
+{
+  "schema_version": 1,
+  "date": "2026-11-25",
+  "project": "Death Stranding 2D / Échos de la Grève",
+  "universe_scope": "DS1 / Director’s Cut, DS2 et autres œuvres qualifiées séparément ; le lot ne prétend pas achever tout l’univers.",
+  "scope_of_this_batch": "Première liaison quai–hangar, neuf entrées catalogue dont un panorama de reconstitution et huit bases sourcées.",
+  "baseline": {
+    "commit": "2250b7c1b54b445637e0c9354133e6fecbc325de",
+    "prior_manifest": "art/sources/echos-de-la-greve/production-20261125-completion/manifest.json"
+  },
+  "path_base": "repository_root",
+  "pixel_policy": "PNG natifs copiés octet pour octet ; aucune découpe, recoloration, mise à l’échelle ou retouche après génération. Les WebP de revue sont des dérivés séparés de vérification.",
+  "counts": {
+    "new_png": 14,
+    "new_animation_frames": 0,
+    "gallery_additions": 9,
+    "new_stage_layers": 5,
+    "new_playable_zones": 1,
+    "new_stage_configurations": 2,
+    "transparent_png": 11,
+    "opaque_png": 3,
+    "size_bytes": 22323710,
+    "previous_recent_outputs": 215,
+    "active_recent_outputs_after_integration": 229
+  },
+  "items": [
+    {
+      "id": "buddy-bot-dc",
+      "title": "Buddy Bot",
+      "path": "modes/echos-de-la-greve/assets/static-domains-20261125/buddy-bot-dc.png",
+      "work": "ds1-dc",
+      "version": "Director’s Cut · chargé",
+      "category": "props",
+      "status": "integrated_static_gallery",
+      "bindings": {
+        "static_gallery": true,
+        "archives": false,
+        "playable_fighter": false,
+        "playable_stages": []
+      },
+      "native_png": {
+        "width": 1024,
+        "height": 1536,
+        "mode": "RGBA",
+        "format": "PNG",
+        "frames": 1,
+        "size_bytes": 2048958,
+        "sha256": "351d97f3046ac6ad8be60c67dc26d68eef3ee07de4e02e6a9a5f0e009d62c94d",
+        "alpha_channel_present": true,
+        "alpha_extrema": [
+          0,
+          254
+        ],
+        "alpha_bbox": [
+          0,
+          23,
+          1010,
+          1520
+        ],
+        "alpha_zero_pixels": 987238,
+        "alpha_partial_pixels": 585626,
+        "alpha_opaque_pixels": 0,
+        "original_sha256": "351d97f3046ac6ad8be60c67dc26d68eef3ee07de4e02e6a9a5f0e009d62c94d",
+        "original_generation_filename": "exec-74f3dbbe-0cbe-4f19-9ecc-2485226f48cf.png",
+        "native_copy_unchanged": true,
+        "pixel_edit_after_generation": false,
+        "upsampled": false
+      },
+      "generation": {
+        "tool": "image_gen.imagegen",
+        "transparent_background": true,
+        "reference_ids": [
+          "dc-buddy-bot"
+        ],
+        "project_references": [],
+        "prompt": "Produce exactly ONE static standalone native PNG asset for the 2D fighting project Échos de la Grève, using the supplied official screenshot only as visual reference. Carefully preserve the visible identity, material, colors and silhouette of the specified subject. Single subject only, complete and centered with a generous clear margin, one still view, restrained high-quality realistic game-asset illustration. No contact sheet, no collection, no animation, no sprite sheet, no HUD, no explanatory text, no watermark. Transparent background unless a panorama is explicitly requested. Do not include the player holding or riding the object. Any occluded connection or unseen underside must be a sober reconstruction consistent with the image, not an invented decorative redesign. The BUDDY BOT at the right of the official snowy screenshot, isolated as a single complete cargo-bearing robot. Two sturdy articulated grey metal legs with broad feet and dark joints, no head and no arms, compact support chassis carrying a vertical stack of yellow/black freight containers as seen in the source. Retain the back/three-quarter view and cargo straps. Remove Sam, snow and all landscape. Neutral stable standing pose with both legs visible; interpret the small partly snow-hidden feet conservatively. Portrait 1024 x 1536. This is the bot carrying cargo, not a human in a suit.",
+        "successful_output_attempt": 1
+      },
+      "fidelity_status": "adaptation_depuis_les_parties_visibles_des_references",
+      "limitations": [
+        "Robot petit dans la capture et pieds partiellement enfouis dans la neige ; géométrie des articulations, des pieds et du fret interprétée.",
+        "Image fixe ; aucune animation supplémentaire ni kit de personnage nouveau."
+      ]
+    },
+    {
+      "id": "cargo-catapult-dc",
+      "title": "Catapulte de fret",
+      "path": "modes/echos-de-la-greve/assets/static-domains-20261125/cargo-catapult-dc.png",
+      "work": "ds1-dc",
+      "version": "Director’s Cut · socle et lanceur",
+      "category": "props",
+      "status": "integrated_static_gallery",
+      "bindings": {
+        "static_gallery": true,
+        "archives": false,
+        "playable_fighter": false,
+        "playable_stages": []
+      },
+      "native_png": {
+        "width": 1254,
+        "height": 1254,
+        "mode": "RGBA",
+        "format": "PNG",
+        "frames": 1,
+        "size_bytes": 1161454,
+        "sha256": "78ec782e595e99c13e5ae741e71f826898d4ad8e408f19c68de544c5b1ba8aed",
+        "alpha_channel_present": true,
+        "alpha_extrema": [
+          0,
+          255
+        ],
+        "alpha_bbox": [
+          0,
+          18,
+          1240,
+          1254
+        ],
+        "alpha_zero_pixels": 970874,
+        "alpha_partial_pixels": 600530,
+        "alpha_opaque_pixels": 1112,
+        "original_sha256": "78ec782e595e99c13e5ae741e71f826898d4ad8e408f19c68de544c5b1ba8aed",
+        "original_generation_filename": "exec-f0da3770-ced5-4439-8139-eea109792ac5.png",
+        "native_copy_unchanged": true,
+        "pixel_edit_after_generation": false,
+        "upsampled": false
+      },
+      "generation": {
+        "tool": "image_gen.imagegen",
+        "transparent_background": true,
+        "reference_ids": [
+          "dc-catapult",
+          "dc-catapult-supporting"
+        ],
+        "project_references": [],
+        "prompt": "Produce exactly ONE static standalone native PNG asset for the 2D fighting project Échos de la Grève, using the supplied official screenshot only as visual reference. Carefully preserve the visible identity, material, colors and silhouette of the specified subject. Single subject only, complete and centered with a generous clear margin, one still view, restrained high-quality realistic game-asset illustration. No contact sheet, no collection, no animation, no sprite sheet, no HUD, no explanatory text, no watermark. Transparent background unless a panorama is explicitly requested. Do not include the player holding or riding the object. Any occluded connection or unseen underside must be a sober reconstruction consistent with the image, not an invented decorative redesign. The complete CARGO CATAPULT structure from Director's Cut. A dark cylindrical pedestal on its round grey ground platform, tilted rectangular launching assembly rising diagonally toward the right, yellow support strut, restrained yellow lights and thin blue indicator on pedestal. Preserve the screenshot's near rear-left three-quarter viewpoint. Remove Sam, all landscape and rainbow. Include the entire round base without cropping; its small occluded rear or edge is an adaptation. One structure, portrait or near-square composition.",
+        "successful_output_attempt": 1
+      },
+      "fidelity_status": "adaptation_depuis_les_parties_visibles_des_references",
+      "limitations": [
+        "Sam retiré ; bord du socle et parties occultées complétés. Vue isolée adaptée depuis une capture oblique.",
+        "Image fixe ; aucune animation supplémentaire ni kit de personnage nouveau."
+      ]
+    },
+    {
+      "id": "chiral-bridge-dc",
+      "title": "Pont chiral",
+      "path": "modes/echos-de-la-greve/assets/static-domains-20261125/chiral-bridge-dc.png",
+      "work": "ds1-dc",
+      "version": "Director’s Cut · passerelle bleue",
+      "category": "props",
+      "status": "integrated_static_gallery",
+      "bindings": {
+        "static_gallery": true,
+        "archives": false,
+        "playable_fighter": false,
+        "playable_stages": []
+      },
+      "native_png": {
+        "width": 1536,
+        "height": 1024,
+        "mode": "RGBA",
+        "format": "PNG",
+        "frames": 1,
+        "size_bytes": 1285897,
+        "sha256": "2e66879739cd5391e3c74465cb56392f84a81ce8eb0486d23701c47c7f790167",
+        "alpha_channel_present": true,
+        "alpha_extrema": [
+          0,
+          254
+        ],
+        "alpha_bbox": [
+          23,
+          9,
+          1509,
+          998
+        ],
+        "alpha_zero_pixels": 1435297,
+        "alpha_partial_pixels": 137567,
+        "alpha_opaque_pixels": 0,
+        "original_sha256": "2e66879739cd5391e3c74465cb56392f84a81ce8eb0486d23701c47c7f790167",
+        "original_generation_filename": "exec-eca2e865-af6e-4bfa-ae95-5eb0ef0fcf38.png",
+        "native_copy_unchanged": true,
+        "pixel_edit_after_generation": false,
+        "upsampled": false
+      },
+      "generation": {
+        "tool": "image_gen.imagegen",
+        "transparent_background": true,
+        "reference_ids": [
+          "dc-chiral-bridge"
+        ],
+        "project_references": [],
+        "prompt": "Produce exactly ONE static standalone native PNG asset for the 2D fighting project Échos de la Grève, using the supplied official screenshot only as visual reference. Carefully preserve the visible identity, material, colors and silhouette of the specified subject. Single subject only, complete and centered with a generous clear margin, one still view, restrained high-quality realistic game-asset illustration. No contact sheet, no collection, no animation, no sprite sheet, no HUD, no explanatory text, no watermark. Transparent background unless a panorama is explicitly requested. Do not include the player holding or riding the object. Any occluded connection or unseen underside must be a sober reconstruction consistent with the image, not an invented decorative redesign. The CHIRAL BRIDGE from Director's Cut, isolated as a complete translucent blue narrow arched walkway. Preserve the long smooth sweeping arch and subtle luminous cyan surface lines visible in the official reference. Include its small endpoint emitters only if visible, do not add railings, stairs or a conventional steel bridge. No Sam, cliffs, ground or scenery. Entire clear arched bridge silhouette against genuine transparency, enough contrast to read its blue translucent material. Landscape 1536 x 1024.",
+        "successful_output_attempt": 1
+      },
+      "fidelity_status": "adaptation_depuis_les_parties_visibles_des_references",
+      "limitations": [
+        "Passerelle retirée de la falaise et du porteur ; extrémités, luminescence et inclinaison adaptées. Le PNG ne crée aucune surface jouable.",
+        "Image fixe ; aucune animation supplémentaire ni kit de personnage nouveau."
+      ]
+    },
+    {
+      "id": "firing-range-dc-panorama",
+      "title": "Stand de tir",
+      "path": "modes/echos-de-la-greve/assets/static-domains-20261125/firing-range-dc-panorama.png",
+      "work": "ds1-dc",
+      "version": "Director’s Cut · étude de décor",
+      "category": "stages",
+      "status": "integrated_static_gallery",
+      "bindings": {
+        "static_gallery": true,
+        "archives": false,
+        "playable_fighter": false,
+        "playable_stages": []
+      },
+      "native_png": {
+        "width": 1672,
+        "height": 941,
+        "mode": "RGB",
+        "format": "PNG",
+        "frames": 1,
+        "size_bytes": 2393212,
+        "sha256": "544b645be6f33c7292331ca8f11e0fac319c77072dfc11c0d40f1c4b5a0675d5",
+        "alpha_channel_present": false,
+        "alpha_extrema": [
+          255,
+          255
+        ],
+        "alpha_bbox": [
+          0,
+          0,
+          1672,
+          941
+        ],
+        "alpha_zero_pixels": 0,
+        "alpha_partial_pixels": 0,
+        "alpha_opaque_pixels": 1573352,
+        "original_sha256": "544b645be6f33c7292331ca8f11e0fac319c77072dfc11c0d40f1c4b5a0675d5",
+        "original_generation_filename": "exec-848befda-6d39-4d9c-82db-3d116eec4f0c.png",
+        "native_copy_unchanged": true,
+        "pixel_edit_after_generation": false,
+        "upsampled": false
+      },
+      "generation": {
+        "tool": "image_gen.imagegen",
+        "transparent_background": false,
+        "reference_ids": [
+          "dc-firing-range"
+        ],
+        "project_references": [],
+        "prompt": "Produce exactly ONE static standalone native PNG asset for the 2D fighting project Échos de la Grève, using the supplied official screenshot only as visual reference. Carefully preserve the visible identity, material, colors and silhouette of the specified subject. Single subject only, complete and centered with a generous clear margin, one still view, restrained high-quality realistic game-asset illustration. No contact sheet, no collection, no animation, no sprite sheet, no HUD, no explanatory text, no watermark. Transparent background unless a panorama is explicitly requested. Do not include the player holding or riding the object. Any occluded connection or unseen underside must be a sober reconstruction consistent with the image, not an invented decorative redesign. A single empty landscape panorama of the DIRECTOR'S CUT FIRING RANGE, based on the supplied official screenshot: modular grey concrete training walls, low barriers, steel grid decking and blue-white vertical training beacons, grey rocky hills and pale overcast sky in distance. Adapt the viewpoint to a level side-facing 2D fighting-game staging photograph with an empty flat foreground strip. No Sam, soldiers, holographic targets, muzzle fire, score, HUD or text. Retain the reference's sparse concrete training-course vocabulary without inventing a named geographical location. Wide 16:9 landscape, ideally 1672 x 941. OPAQUE background, one coherent empty training scene. It is a static catalogue panorama, not a new playable stage.",
+        "successful_output_attempt": 1
+      },
+      "fidelity_status": "adaptation_depuis_les_parties_visibles_des_references",
+      "limitations": [
+        "Caméra et disposition réorganisées pour une composition lisible. Panorama du catalogue seul ; ni cinq couches ni arène jouable ajoutées.",
+        "Image fixe ; aucune animation supplémentaire ni kit de personnage nouveau."
+      ]
+    },
+    {
+      "id": "jump-ramp-dc",
+      "title": "Rampe de saut",
+      "path": "modes/echos-de-la-greve/assets/static-domains-20261125/jump-ramp-dc.png",
+      "work": "ds1-dc",
+      "version": "Director’s Cut · arc jaune",
+      "category": "props",
+      "status": "integrated_static_gallery",
+      "bindings": {
+        "static_gallery": true,
+        "archives": false,
+        "playable_fighter": false,
+        "playable_stages": []
+      },
+      "native_png": {
+        "width": 1536,
+        "height": 1024,
+        "mode": "RGBA",
+        "format": "PNG",
+        "frames": 1,
+        "size_bytes": 1497380,
+        "sha256": "040a6c1618ea62c24b85789cdd23b599387c2ec943006bd93ed060517968cfda",
+        "alpha_channel_present": true,
+        "alpha_extrema": [
+          0,
+          254
+        ],
+        "alpha_bbox": [
+          0,
+          0,
+          1535,
+          1024
+        ],
+        "alpha_zero_pixels": 1246345,
+        "alpha_partial_pixels": 326519,
+        "alpha_opaque_pixels": 0,
+        "original_sha256": "040a6c1618ea62c24b85789cdd23b599387c2ec943006bd93ed060517968cfda",
+        "original_generation_filename": "exec-7c4984ed-bcc7-4170-9764-90ee8365b847.png",
+        "native_copy_unchanged": true,
+        "pixel_edit_after_generation": false,
+        "upsampled": false
+      },
+      "generation": {
+        "tool": "image_gen.imagegen",
+        "transparent_background": true,
+        "reference_ids": [
+          "dc-jump-ramp"
+        ],
+        "project_references": [],
+        "prompt": "Produce exactly ONE static standalone native PNG asset for the 2D fighting project Échos de la Grève, using the supplied official screenshot only as visual reference. Carefully preserve the visible identity, material, colors and silhouette of the specified subject. Single subject only, complete and centered with a generous clear margin, one still view, restrained high-quality realistic game-asset illustration. No contact sheet, no collection, no animation, no sprite sheet, no HUD, no explanatory text, no watermark. Transparent background unless a panorama is explicitly requested. Do not include the player holding or riding the object. Any occluded connection or unseen underside must be a sober reconstruction consistent with the image, not an invented decorative redesign. The JUMP RAMP from Director's Cut, the low dark grey rectangular ribbed launch platform in the lower right of the reference. Isolate only that platform and its distinctive thin yellow luminous almost-circular arc gate surrounding and rising above it. Keep it a low wedge/platform, with parallel metal deck slats, restrained small side hardware, viewed slightly from above three-quarter. No motorcycle, no Sam, no landscape, no sparks, no additional structures. One whole ramp and whole arc with ample margin; a small distant reference means details must remain simple. Horizontal 1536 x 1024.",
+        "successful_output_attempt": 1
+      },
+      "fidelity_status": "adaptation_depuis_les_parties_visibles_des_references",
+      "limitations": [
+        "La rampe occupe une petite partie de la référence ; les joints et la mécanique de support restent une adaptation de la silhouette.",
+        "Image fixe ; aucune animation supplémentaire ni kit de personnage nouveau."
+      ]
+    },
+    {
+      "id": "maser-gun-dc",
+      "title": "Maser Gun",
+      "path": "modes/echos-de-la-greve/assets/static-domains-20261125/maser-gun-dc.png",
+      "work": "ds1-dc",
+      "version": "Director’s Cut · vue isolée",
+      "category": "props",
+      "status": "integrated_static_gallery",
+      "bindings": {
+        "static_gallery": true,
+        "archives": false,
+        "playable_fighter": false,
+        "playable_stages": []
+      },
+      "native_png": {
+        "width": 1536,
+        "height": 1024,
+        "mode": "RGBA",
+        "format": "PNG",
+        "frames": 1,
+        "size_bytes": 1548996,
+        "sha256": "f93a87b6acea595f028f8573389945069b4274829ad37629a439d8884043ab37",
+        "alpha_channel_present": true,
+        "alpha_extrema": [
+          0,
+          254
+        ],
+        "alpha_bbox": [
+          0,
+          17,
+          1506,
+          1000
+        ],
+        "alpha_zero_pixels": 1129674,
+        "alpha_partial_pixels": 443190,
+        "alpha_opaque_pixels": 0,
+        "original_sha256": "f93a87b6acea595f028f8573389945069b4274829ad37629a439d8884043ab37",
+        "original_generation_filename": "exec-cd75949c-f937-4f01-a0c9-12c4b82b0dc9.png",
+        "native_copy_unchanged": true,
+        "pixel_edit_after_generation": false,
+        "upsampled": false
+      },
+      "generation": {
+        "tool": "image_gen.imagegen",
+        "transparent_background": true,
+        "reference_ids": [
+          "dc-maser",
+          "dc-maser-supporting"
+        ],
+        "project_references": [],
+        "prompt": "Produce exactly ONE static standalone native PNG asset for the 2D fighting project Échos de la Grève, using the supplied official screenshot only as visual reference. Carefully preserve the visible identity, material, colors and silhouette of the specified subject. Single subject only, complete and centered with a generous clear margin, one still view, restrained high-quality realistic game-asset illustration. No contact sheet, no collection, no animation, no sprite sheet, no HUD, no explanatory text, no watermark. Transparent background unless a panorama is explicitly requested. Do not include the player holding or riding the object. Any occluded connection or unseen underside must be a sober reconstruction consistent with the image, not an invented decorative redesign. The MASER GUN from Death Stranding Director's Cut (not the DS2 Maser Handgun). Render the entire weapon in a clear near-side three-quarter view pointing right. Preserve the black cylindrical main body with its circular rear housing, compact electronic sight on top, long paired thin emitter rails at the front, small red and yellow rectangular accents below, compact grip and bracing as visible. No electrical beam and no hands. Landscape composition 1536 x 1024.",
+        "successful_output_attempt": 2
+      },
+      "fidelity_status": "adaptation_depuis_les_parties_visibles_des_references",
+      "limitations": [
+        "Poignée et crosse partiellement masquées dans la capture ; reconstruction de ces parties et détails fins. Inscription et proportions non certifiées à l’identique.",
+        "Image fixe ; aucune animation supplémentaire ni kit de personnage nouveau."
+      ]
+    },
+    {
+      "id": "monorail-yamato-ds2",
+      "title": "Wagon de monorail · Yamato",
+      "path": "modes/echos-de-la-greve/assets/static-domains-20261125/monorail-yamato-ds2.png",
+      "work": "ds2",
+      "version": "On the Beach · livrée Yamato",
+      "category": "vehicles",
+      "status": "integrated_static_gallery",
+      "bindings": {
+        "static_gallery": true,
+        "archives": false,
+        "playable_fighter": false,
+        "playable_stages": []
+      },
+      "native_png": {
+        "width": 1536,
+        "height": 1024,
+        "mode": "RGBA",
+        "format": "PNG",
+        "frames": 1,
+        "size_bytes": 1901355,
+        "sha256": "cd6b0984a8c7e4596164ed659684347d383e84eaa8d597a6e42dca034a0dbe9f",
+        "alpha_channel_present": true,
+        "alpha_extrema": [
+          0,
+          254
+        ],
+        "alpha_bbox": [
+          0,
+          9,
+          1498,
+          1024
+        ],
+        "alpha_zero_pixels": 956188,
+        "alpha_partial_pixels": 616676,
+        "alpha_opaque_pixels": 0,
+        "original_sha256": "cd6b0984a8c7e4596164ed659684347d383e84eaa8d597a6e42dca034a0dbe9f",
+        "original_generation_filename": "exec-1cdb32d7-803f-4d3a-8e9a-8dc306323457.png",
+        "native_copy_unchanged": true,
+        "pixel_edit_after_generation": false,
+        "upsampled": false
+      },
+      "generation": {
+        "tool": "image_gen.imagegen",
+        "transparent_background": true,
+        "reference_ids": [
+          "ds2-yamato-cover"
+        ],
+        "project_references": [],
+        "prompt": "Create exactly ONE static standalone native PNG asset for the 2D fighting game Échos de la Grève, depicting ONE freight wagon from the official Death Stranding 2 x Yamato Transport reference photograph attached. Use the fully visible white freight wagon at the upper right of that image as reference. Preserve this specific white ribbed rectangular shipping-container wagon, dark underside framing, small yellow Yamato cat emblem and black Yamato Transport lettering on the side, yellow suspension/trolley attachment above it and the small thin metal side access ladder where visible. A clean slightly low three-quarter view of one whole wagon and its hanging trolley, with a short complete straight piece of dark overhead monorail included just above the trolley to explain its support. All wagon edges fully inside the image with ample margin. Stationary, photographic painted game-asset quality, realistic industrial materials, understated wear. Genuine transparent background. No Sam, other wagons, landscape, tall rail supports, HUD, watermark, infographic, sprite sheet, animation, or extra panels. The exact hidden underside is conservatively reconstructed; do not invent an unrelated locomotive or orange cabin. A single white Yamato freight module as seen in the source, horizontal composition 1536 x 1024.",
+        "successful_output_attempt": 1
+      },
+      "fidelity_status": "adaptation_depuis_les_parties_visibles_des_references",
+      "limitations": [
+        "Un module isolé de la rame officielle ; dessous, raccords et logo interprétés. Ce visuel ne couvre ni la cabine jaune de la première référence ni toutes les livrées.",
+        "Image fixe ; aucune animation supplémentaire ni kit de personnage nouveau."
+      ]
+    },
+    {
+      "id": "roadster-dc",
+      "title": "Roadster",
+      "path": "modes/echos-de-la-greve/assets/static-domains-20261125/roadster-dc.png",
+      "work": "ds1-dc",
+      "version": "Director’s Cut · trois quarts arrière",
+      "category": "vehicles",
+      "status": "integrated_static_gallery",
+      "bindings": {
+        "static_gallery": true,
+        "archives": false,
+        "playable_fighter": false,
+        "playable_stages": []
+      },
+      "native_png": {
+        "width": 1536,
+        "height": 1024,
+        "mode": "RGBA",
+        "format": "PNG",
+        "frames": 1,
+        "size_bytes": 1635720,
+        "sha256": "eaf9d4880910c40ea9e42d9cbc47c2811cccd32620fe655f85a1da71fb66de5c",
+        "alpha_channel_present": true,
+        "alpha_extrema": [
+          0,
+          254
+        ],
+        "alpha_bbox": [
+          0,
+          0,
+          1498,
+          1024
+        ],
+        "alpha_zero_pixels": 981361,
+        "alpha_partial_pixels": 591503,
+        "alpha_opaque_pixels": 0,
+        "original_sha256": "eaf9d4880910c40ea9e42d9cbc47c2811cccd32620fe655f85a1da71fb66de5c",
+        "original_generation_filename": "exec-e0e973c6-c443-4a35-ac06-51111fceca26.png",
+        "native_copy_unchanged": true,
+        "pixel_edit_after_generation": false,
+        "upsampled": false
+      },
+      "generation": {
+        "tool": "image_gen.imagegen",
+        "transparent_background": true,
+        "reference_ids": [
+          "dc-roadster",
+          "dc-roadster-supporting"
+        ],
+        "project_references": [],
+        "prompt": "Produce exactly ONE static standalone native PNG asset for the 2D fighting project Échos de la Grève, using the supplied official screenshot only as visual reference. Carefully preserve the visible identity, material, colors and silhouette of the specified subject. Single subject only, complete and centered with a generous clear margin, one still view, restrained high-quality realistic game-asset illustration. No contact sheet, no collection, no animation, no sprite sheet, no HUD, no explanatory text, no watermark. Transparent background unless a panorama is explicitly requested. Do not include the player holding or riding the object. Any occluded connection or unseen underside must be a sober reconstruction consistent with the image, not an invented decorative redesign. The ROADSTER from Director's Cut, shown stationary from the same rear-left three-quarter viewpoint as the screenshot. Entire low grey open-top vehicle with rounded wheel fairings, narrow orange-red rear lights, black roll bar, subtle rear fin/spoiler, dark tyres, visible front housing, grey cockpit. Empty seat, remove driver. No race track, holographic gate, HUD or background. Full car with all edges inside canvas, horizontal 1536 x 1024.",
+        "successful_output_attempt": 1
+      },
+      "fidelity_status": "adaptation_depuis_les_parties_visibles_des_references",
+      "limitations": [
+        "Pilote et piste retirés. Habitacle caché, roue opposée et petits marquages reconstruits ; plaque non certifiée.",
+        "Image fixe ; aucune animation supplémentaire ni kit de personnage nouveau."
+      ]
+    },
+    {
+      "id": "terminal-hangar-distant",
+      "title": "terminal-hangar-distant",
+      "path": "modes/echos-de-la-greve/assets/stages/terminal-hangar-distant.png",
+      "work": "project-simulation",
+      "version": "Hangar reconstitué du simulateur",
+      "category": "stage-layers",
+      "status": "integrated_stage_layer",
+      "bindings": {
+        "static_gallery": false,
+        "archives": false,
+        "playable_fighter": false,
+        "playable_stages": [
+          {
+            "stage": "terminal-hangar",
+            "layer": "distant"
+          }
+        ]
+      },
+      "native_png": {
+        "width": 1672,
+        "height": 941,
+        "mode": "RGBA",
+        "format": "PNG",
+        "frames": 1,
+        "size_bytes": 1447453,
+        "sha256": "f3cef5c0e030564212f1e71d308bf34ad29d1e06dd63d1795f1ecae7a8d78b95",
+        "alpha_channel_present": true,
+        "alpha_extrema": [
+          0,
+          255
+        ],
+        "alpha_bbox": [
+          0,
+          15,
+          1672,
+          941
+        ],
+        "alpha_zero_pixels": 752067,
+        "alpha_partial_pixels": 821015,
+        "alpha_opaque_pixels": 270,
+        "original_sha256": "f3cef5c0e030564212f1e71d308bf34ad29d1e06dd63d1795f1ecae7a8d78b95",
+        "original_generation_filename": "exec-fc241908-e69e-4ba0-9861-6922d6fbf3c8.png",
+        "native_copy_unchanged": true,
+        "pixel_edit_after_generation": false,
+        "upsampled": false
+      },
+      "generation": {
+        "tool": "image_gen.imagegen",
+        "transparent_background": true,
+        "reference_ids": [],
+        "project_references": [
+          {
+            "path": "modes/echos-de-la-greve/assets/static-domains-20261125/terminal-hangar-panorama.png",
+            "sha256": "96096b2711736a98b925ebae8d4f61de21797e1395b6758beed033776599ed89"
+          }
+        ],
+        "prompt": "Generate exactly ONE independent static background layer PNG for a 2D fighting game; no sprite sheet, no panels, no collage, no text, no watermark, no people or creatures. Match the architecture, subdued grey palette, warm industrial lights and restrained photorealistic painted-game style of the attached completed project hangar panorama. This is an original simulator reconstruction of a distribution hangar. Landscape 16:9, ideally 1672 x 941. Camera horizontal and level, no tilted perspective. Deliver only the requested layer; the image will be placed behind fighters, whose flat floor anchor is determined from the native alpha. Transparent layer of the far back-wall architecture: a coherent distant concrete service wall, subdued cyan doorway off center, tiny high steel trusses and small warm ceiling fixtures. No foreground wall, no near floor, no crates or orange rails. The visible wall mass occupies the lower half, with its top irregular skyline cut out against genuine alpha; fill the wall/base continuously down to the final bottom edge with opaque grey concrete so it can be anchored cleanly. Keep the upper 35 percent entirely transparent. No cast shadow outside the architecture. Wide horizontal wall layer viewed from level.",
+        "successful_output_attempt": 1
+      },
+      "fidelity_status": "reconstitution_du_simulateur",
+      "limitations": [
+        "Couche dérivée du panorama de reconstitution, sans assertion de géographie canonique.",
+        "Image fixe ; aucune animation supplémentaire ni kit de personnage nouveau."
+      ]
+    },
+    {
+      "id": "terminal-hangar-floor",
+      "title": "terminal-hangar-floor",
+      "path": "modes/echos-de-la-greve/assets/stages/terminal-hangar-floor.png",
+      "work": "project-simulation",
+      "version": "Hangar reconstitué du simulateur",
+      "category": "stage-layers",
+      "status": "integrated_stage_layer",
+      "bindings": {
+        "static_gallery": false,
+        "archives": false,
+        "playable_fighter": false,
+        "playable_stages": [
+          {
+            "stage": "terminal-hangar",
+            "layer": "floor"
+          }
+        ]
+      },
+      "native_png": {
+        "width": 1672,
+        "height": 941,
+        "mode": "RGBA",
+        "format": "PNG",
+        "frames": 1,
+        "size_bytes": 1583995,
+        "sha256": "e5c93e0ac7125c1e0ab7ed932724ab63810ea71cd49f970cf586e0a0dd064c11",
+        "alpha_channel_present": true,
+        "alpha_extrema": [
+          0,
+          255
+        ],
+        "alpha_bbox": [
+          0,
+          258,
+          1672,
+          941
+        ],
+        "alpha_zero_pixels": 731212,
+        "alpha_partial_pixels": 842138,
+        "alpha_opaque_pixels": 2,
+        "original_sha256": "e5c93e0ac7125c1e0ab7ed932724ab63810ea71cd49f970cf586e0a0dd064c11",
+        "original_generation_filename": "exec-0a97fcfc-304a-40b5-8c9b-a9a0ee88992f.png",
+        "native_copy_unchanged": true,
+        "pixel_edit_after_generation": false,
+        "upsampled": false
+      },
+      "generation": {
+        "tool": "image_gen.imagegen",
+        "transparent_background": true,
+        "reference_ids": [],
+        "project_references": [
+          {
+            "path": "modes/echos-de-la-greve/assets/static-domains-20261125/terminal-hangar-panorama.png",
+            "sha256": "96096b2711736a98b925ebae8d4f61de21797e1395b6758beed033776599ed89"
+          }
+        ],
+        "prompt": "Generate exactly ONE independent static background layer PNG for a 2D fighting game; no sprite sheet, no panels, no collage, no text, no watermark, no people or creatures. Match the architecture, subdued grey palette, warm industrial lights and restrained photorealistic painted-game style of the attached completed project hangar panorama. This is an original simulator reconstruction of a distribution hangar. Landscape 16:9, ideally 1672 x 941. Camera horizontal and level, no tilted perspective. Deliver only the requested layer; the image will be placed behind fighters, whose flat floor anchor is determined from the native alpha. A single empty fighting floor layer, only flat grey poured-concrete ground. The upper 40 percent of the PNG must be fully transparent; beginning at precisely 40 percent image height a nearly perfectly straight horizontal opaque ground strip extends across the entire image width and continues to the bottom. Neutral mid-dark weathered concrete, thin seam lines and faint warm/cold reflections compatible with the attached hangar. No curb, no ledge, no steps, no raised floor edge, no rails, no boxes, no architecture, no holes, no people, no rubble. The long upper edge of the floor is dead level and quiet, a continuous playable horizontal plane.",
+        "successful_output_attempt": 1
+      },
+      "fidelity_status": "reconstitution_du_simulateur",
+      "limitations": [
+        "Couche dérivée du panorama de reconstitution, sans assertion de géographie canonique.",
+        "Image fixe ; aucune animation supplémentaire ni kit de personnage nouveau."
+      ]
+    },
+    {
+      "id": "terminal-hangar-foreground",
+      "title": "terminal-hangar-foreground",
+      "path": "modes/echos-de-la-greve/assets/stages/terminal-hangar-foreground.png",
+      "work": "project-simulation",
+      "version": "Hangar reconstitué du simulateur",
+      "category": "stage-layers",
+      "status": "integrated_stage_layer",
+      "bindings": {
+        "static_gallery": false,
+        "archives": false,
+        "playable_fighter": false,
+        "playable_stages": [
+          {
+            "stage": "terminal-hangar",
+            "layer": "foreground"
+          }
+        ]
+      },
+      "native_png": {
+        "width": 1672,
+        "height": 941,
+        "mode": "RGBA",
+        "format": "PNG",
+        "frames": 1,
+        "size_bytes": 100047,
+        "sha256": "3d52eaca72329acd0764d5282d87190151d9b9fe022ce54a6a800de928acd362",
+        "alpha_channel_present": true,
+        "alpha_extrema": [
+          0,
+          255
+        ],
+        "alpha_bbox": [
+          0,
+          794,
+          1672,
+          941
+        ],
+        "alpha_zero_pixels": 1555153,
+        "alpha_partial_pixels": 18183,
+        "alpha_opaque_pixels": 16,
+        "original_sha256": "3d52eaca72329acd0764d5282d87190151d9b9fe022ce54a6a800de928acd362",
+        "original_generation_filename": "exec-e6274d5d-b067-4512-9605-eb9420db5400.png",
+        "native_copy_unchanged": true,
+        "pixel_edit_after_generation": false,
+        "upsampled": false
+      },
+      "generation": {
+        "tool": "image_gen.imagegen",
+        "transparent_background": true,
+        "reference_ids": [],
+        "project_references": [
+          {
+            "path": "modes/echos-de-la-greve/assets/static-domains-20261125/terminal-hangar-panorama.png",
+            "sha256": "96096b2711736a98b925ebae8d4f61de21797e1395b6758beed033776599ed89"
+          }
+        ],
+        "prompt": "Generate exactly ONE independent static background layer PNG for a 2D fighting game; no sprite sheet, no panels, no collage, no text, no watermark, no people or creatures. Match the architecture, subdued grey palette, warm industrial lights and restrained photorealistic painted-game style of the attached completed project hangar panorama. This is an original simulator reconstruction of a distribution hangar. Landscape 16:9, ideally 1672 x 941. Camera horizontal and level, no tilted perspective. Deliver only the requested layer; the image will be placed behind fighters, whose flat floor anchor is determined from the native alpha. A very sparse transparent foreground overlay only. Leave the top 88 percent and the central 72 percent width completely empty alpha. At the two very bottom corners only, a few tiny dark irregular concrete chips, a slack dark cable close to the bottom edge, and a faint worn dusty lip, maximum total height 8 percent. No wall, pillar, crate, yellow stripe, rail, canopy, floor sheet, arch, sign or central obstacle. Real transparent background, no fake checkerboard. Subtle framing that never obscures fighters or their feet.",
+        "successful_output_attempt": 1
+      },
+      "fidelity_status": "reconstitution_du_simulateur",
+      "limitations": [
+        "Couche dérivée du panorama de reconstitution, sans assertion de géographie canonique.",
+        "Image fixe ; aucune animation supplémentaire ni kit de personnage nouveau."
+      ]
+    },
+    {
+      "id": "terminal-hangar-midground",
+      "title": "terminal-hangar-midground",
+      "path": "modes/echos-de-la-greve/assets/stages/terminal-hangar-midground.png",
+      "work": "project-simulation",
+      "version": "Hangar reconstitué du simulateur",
+      "category": "stage-layers",
+      "status": "integrated_stage_layer",
+      "bindings": {
+        "static_gallery": false,
+        "archives": false,
+        "playable_fighter": false,
+        "playable_stages": [
+          {
+            "stage": "terminal-hangar",
+            "layer": "midground"
+          }
+        ]
+      },
+      "native_png": {
+        "width": 1672,
+        "height": 941,
+        "mode": "RGBA",
+        "format": "PNG",
+        "frames": 1,
+        "size_bytes": 1249098,
+        "sha256": "b7b8f3383043072b235854c0115a2c7eb204297757447271034c198585f7ab4e",
+        "alpha_channel_present": true,
+        "alpha_extrema": [
+          0,
+          255
+        ],
+        "alpha_bbox": [
+          0,
+          21,
+          1672,
+          941
+        ],
+        "alpha_zero_pixels": 937115,
+        "alpha_partial_pixels": 635881,
+        "alpha_opaque_pixels": 356,
+        "original_sha256": "b7b8f3383043072b235854c0115a2c7eb204297757447271034c198585f7ab4e",
+        "original_generation_filename": "exec-29e86d68-5790-4bb3-b421-845a88e4f0f3.png",
+        "native_copy_unchanged": true,
+        "pixel_edit_after_generation": false,
+        "upsampled": false
+      },
+      "generation": {
+        "tool": "image_gen.imagegen",
+        "transparent_background": true,
+        "reference_ids": [],
+        "project_references": [
+          {
+            "path": "modes/echos-de-la-greve/assets/static-domains-20261125/terminal-hangar-panorama.png",
+            "sha256": "96096b2711736a98b925ebae8d4f61de21797e1395b6758beed033776599ed89"
+          }
+        ],
+        "prompt": "Generate exactly ONE independent static background layer PNG for a 2D fighting game; no sprite sheet, no panels, no collage, no text, no watermark, no people or creatures. Match the architecture, subdued grey palette, warm industrial lights and restrained photorealistic painted-game style of the attached completed project hangar panorama. This is an original simulator reconstruction of a distribution hangar. Landscape 16:9, ideally 1672 x 941. Camera horizontal and level, no tilted perspective. Deliver only the requested layer; the image will be placed behind fighters, whose flat floor anchor is determined from the native alpha. Transparent middle-depth layer: orange safety rail segments and restrained stacks of grey rectangular cargo crates behind the fighting area, two broad weathered concrete supports toward far left and far right, a dark shutter at right background. Keep the upper 30 percent transparent, leave most central air area transparent. All supports and cargo bases sit on one very low straight wall/plinth, and continue as opaque neutral concrete down to the last bottom pixel across the entire width for clean compositing. Do not draw the fighting floor, sky or a whole room. Do not put high crates in the central corridor.",
+        "successful_output_attempt": 1
+      },
+      "fidelity_status": "reconstitution_du_simulateur",
+      "limitations": [
+        "Couche dérivée du panorama de reconstitution, sans assertion de géographie canonique.",
+        "Image fixe ; aucune animation supplémentaire ni kit de personnage nouveau."
+      ]
+    },
+    {
+      "id": "terminal-hangar-panorama",
+      "title": "Centre de distribution · hangar",
+      "path": "modes/echos-de-la-greve/assets/static-domains-20261125/terminal-hangar-panorama.png",
+      "work": "project-simulation",
+      "version": "Échos de la Grève · reconstitution",
+      "category": "stages",
+      "status": "integrated_static_gallery_and_stage",
+      "bindings": {
+        "static_gallery": true,
+        "archives": false,
+        "playable_fighter": false,
+        "playable_stages": [
+          {
+            "stage": "terminal-hangar",
+            "layer": "panorama"
+          }
+        ]
+      },
+      "native_png": {
+        "width": 1672,
+        "height": 941,
+        "mode": "RGB",
+        "format": "PNG",
+        "frames": 1,
+        "size_bytes": 2377248,
+        "sha256": "96096b2711736a98b925ebae8d4f61de21797e1395b6758beed033776599ed89",
+        "alpha_channel_present": false,
+        "alpha_extrema": [
+          255,
+          255
+        ],
+        "alpha_bbox": [
+          0,
+          0,
+          1672,
+          941
+        ],
+        "alpha_zero_pixels": 0,
+        "alpha_partial_pixels": 0,
+        "alpha_opaque_pixels": 1573352,
+        "original_sha256": "96096b2711736a98b925ebae8d4f61de21797e1395b6758beed033776599ed89",
+        "original_generation_filename": "exec-72eba811-7ce3-4f09-ab88-b57a559677e3.png",
+        "native_copy_unchanged": true,
+        "pixel_edit_after_generation": false,
+        "upsampled": false
+      },
+      "generation": {
+        "tool": "image_gen.imagegen",
+        "transparent_background": false,
+        "reference_ids": [],
+        "project_references": [
+          {
+            "path": "modes/echos-de-la-greve/assets/stages/terminal.webp",
+            "sha256": "1dcfd0d560f05ac9801df009cfa954edbdae015b832833969fa830fea1d87dd2"
+          }
+        ],
+        "prompt": "Create ONE static finished landscape panorama for the 2D fighting game Échos de la Grève. Use the attached existing project image as architectural and material reference, and depict the interior cargo hangar connected to its distribution dock, explicitly an original simulator reconstruction rather than a new canonical Death Stranding location. Match its subdued photorealistic painted game-background style: massive weathered grey concrete, angular steel structural beams, dark roller shutter doors, sparse warm white industrial ceiling lights and a small distant cyan terminal, muted orange safety rails and small stacked grey cargo boxes at far back. Horizontal 16:9, ideally 1672 x 941. Fixed frontal/side fighting-game camera, level horizon, architecture mainly above 58 percent image height. Empty continuous flat concrete fighting floor in the lower 40 percent, no ramp, no stairs, no holes, no protruding objects in the central path. No people, robots, creatures, text, HUD, watermark, motion blur, comic panel, animation sequence or spritesheet. The view is inside the same hangar; far-left open bay admits the cold grey daylight of the referenced outside dock. One coherent room with generous clear space, sober cinematic grey palette, crisp enough for a readable 2D combat backdrop.",
+        "successful_output_attempt": 1
+      },
+      "fidelity_status": "reconstitution_du_simulateur",
+      "limitations": [
+        "Création du simulateur issue du panorama terminal du projet ; ni nouveau lieu canonique ni cartographie officielle. Le kit de cinq couches associé est jouable.",
+        "Image fixe ; aucune animation supplémentaire ni kit de personnage nouveau."
+      ]
+    },
+    {
+      "id": "terminal-hangar-sky",
+      "title": "terminal-hangar-sky",
+      "path": "modes/echos-de-la-greve/assets/stages/terminal-hangar-sky.png",
+      "work": "project-simulation",
+      "version": "Hangar reconstitué du simulateur",
+      "category": "stage-layers",
+      "status": "integrated_stage_layer",
+      "bindings": {
+        "static_gallery": false,
+        "archives": false,
+        "playable_fighter": false,
+        "playable_stages": [
+          {
+            "stage": "terminal-hangar",
+            "layer": "sky"
+          }
+        ]
+      },
+      "native_png": {
+        "width": 1672,
+        "height": 941,
+        "mode": "RGB",
+        "format": "PNG",
+        "frames": 1,
+        "size_bytes": 2092897,
+        "sha256": "c1048c3721e9d270313022f46a2165159ae48b96b1cd776c996e0f7175f02111",
+        "alpha_channel_present": false,
+        "alpha_extrema": [
+          255,
+          255
+        ],
+        "alpha_bbox": [
+          0,
+          0,
+          1672,
+          941
+        ],
+        "alpha_zero_pixels": 0,
+        "alpha_partial_pixels": 0,
+        "alpha_opaque_pixels": 1573352,
+        "original_sha256": "c1048c3721e9d270313022f46a2165159ae48b96b1cd776c996e0f7175f02111",
+        "original_generation_filename": "exec-9fcf8188-6f96-471f-baa6-76fffc10eb15.png",
+        "native_copy_unchanged": true,
+        "pixel_edit_after_generation": false,
+        "upsampled": false
+      },
+      "generation": {
+        "tool": "image_gen.imagegen",
+        "transparent_background": false,
+        "reference_ids": [],
+        "project_references": [
+          {
+            "path": "modes/echos-de-la-greve/assets/static-domains-20261125/terminal-hangar-panorama.png",
+            "sha256": "96096b2711736a98b925ebae8d4f61de21797e1395b6758beed033776599ed89"
+          }
+        ],
+        "prompt": "Generate exactly ONE independent static background layer PNG for a 2D fighting game; no sprite sheet, no panels, no collage, no text, no watermark, no people or creatures. Match the architecture, subdued grey palette, warm industrial lights and restrained photorealistic painted-game style of the attached completed project hangar panorama. This is an original simulator reconstruction of a distribution hangar. Landscape 16:9, ideally 1672 x 941. Camera horizontal and level, no tilted perspective. Deliver only the requested layer; the image will be placed behind fighters, whose flat floor anchor is determined from the native alpha. Opaque backmost layer: only the very distant spacious interior volume, high dark steel ceiling, upper structural beams, far concrete back wall with a subdued hint of cyan terminal. Keep center and lower area calm and low contrast. Cold grey daylight enters a narrow bay at far left. No foreground pillar, no orange rails, no boxes, no close shutter door. Completely opaque image with continuous back wall/grey ambient base through the last bottom pixel; this is the ambient backdrop, not a ground platform.",
+        "successful_output_attempt": 1
+      },
+      "fidelity_status": "reconstitution_du_simulateur",
+      "limitations": [
+        "Couche dérivée du panorama de reconstitution, sans assertion de géographie canonique.",
+        "Image fixe ; aucune animation supplémentaire ni kit de personnage nouveau."
+      ]
+    }
+  ],
+  "reference_sources": [
+    {
+      "id": "dc-maser",
+      "url": "https://gmedia.playstation.com/is/image/SIEPDC/death-stranding-directors-cut-maser-gun-screen-01-ps5-en-21sep21",
+      "download_url": "https://gmedia.playstation.com/is/image/SIEPDC/death-stranding-directors-cut-maser-gun-screen-01-ps5-en-21sep21?wid=2400&fmt=png-alpha",
+      "page": "https://www.playstation.com/en-us/games/death-stranding/",
+      "observation": "Capture officielle du canon en action, vue oblique ; cylindre noir, paire de rails, viseur et accents rouges visibles. Main du porteur et angle masquent une partie de la poignée.",
+      "source_kind": "Image officielle PlayStation ou Kojima Productions",
+      "inspected": true,
+      "generated_assets": [
+        "maser-gun-dc"
+      ],
+      "dimensions": [
+        2400,
+        1080
+      ],
+      "sha256": "39309b612d5da13c925794955b24306a06aa03084b04fdca04a2d1db6f35374a",
+      "bytes": 4057434,
+      "inspected_on": "2026-11-25",
+      "local_inspection_file": "dc-maser.png"
+    },
+    {
+      "id": "dc-chiral-bridge",
+      "url": "https://gmedia.playstation.com/is/image/SIEPDC/death-stranding-directors-cut-chiral-bridges-screen-01-ps5-en-22sep21",
+      "download_url": "https://gmedia.playstation.com/is/image/SIEPDC/death-stranding-directors-cut-chiral-bridges-screen-01-ps5-en-22sep21?wid=2400&fmt=png-alpha",
+      "page": "https://www.playstation.com/en-us/games/death-stranding/",
+      "observation": "Capture officielle d’une passerelle arquée translucide bleue entre deux falaises. Un porteur en masque une petite partie et les extrémités sont peu détaillées.",
+      "source_kind": "Image officielle PlayStation ou Kojima Productions",
+      "inspected": true,
+      "generated_assets": [
+        "chiral-bridge-dc"
+      ],
+      "dimensions": [
+        2400,
+        1080
+      ],
+      "sha256": "2841dfd012ecf70a21adeedbbe7ba61efcbf4f97eafce4f4acf8047bd62ef53e",
+      "bytes": 3359945,
+      "inspected_on": "2026-11-25",
+      "local_inspection_file": "dc-chiral-bridge.png"
+    },
+    {
+      "id": "dc-firing-range",
+      "url": "https://gmedia.playstation.com/is/image/SIEPDC/death-stranding-directors-cut-screenshot-04-announce-en-01jul21",
+      "download_url": "https://gmedia.playstation.com/is/image/SIEPDC/death-stranding-directors-cut-screenshot-04-announce-en-01jul21?wid=2400&fmt=png-alpha",
+      "page": "https://www.playstation.com/en-us/games/death-stranding/",
+      "observation": "Capture du stand de tir : modules de béton, caillebotis, barrières et balises bleues ; personnages et interface présents dans la source.",
+      "source_kind": "Image officielle PlayStation ou Kojima Productions",
+      "inspected": true,
+      "generated_assets": [
+        "firing-range-dc-panorama"
+      ],
+      "dimensions": [
+        2400,
+        1350
+      ],
+      "sha256": "4f1bc4de28887700a6e840d0003f4630467c5fdc6ff9599e6c3934fa66a12e53",
+      "bytes": 4452407,
+      "inspected_on": "2026-11-25",
+      "local_inspection_file": "dc-firing-range.png"
+    },
+    {
+      "id": "dc-catapult",
+      "url": "https://gmedia.playstation.com/is/image/SIEPDC/death-stranding-directors-cut-screenshot-02-announce-en-04may21",
+      "download_url": "https://gmedia.playstation.com/is/image/SIEPDC/death-stranding-directors-cut-screenshot-02-announce-en-04may21?wid=2400&fmt=png-alpha",
+      "page": "https://www.playstation.com/en-us/games/death-stranding/",
+      "observation": "Capture du lanceur incliné sur pied cylindrique et plateforme ronde, vérin jaune. Sam occulte le bas gauche et le cadre coupe un morceau du socle.",
+      "source_kind": "Image officielle PlayStation ou Kojima Productions",
+      "inspected": true,
+      "generated_assets": [
+        "cargo-catapult-dc"
+      ],
+      "dimensions": [
+        2400,
+        1080
+      ],
+      "sha256": "699cb361b6cc3531bd9a02b440b3e6fbf26b63ad3fc6fc6811ba45348d47591f",
+      "bytes": 2612905,
+      "inspected_on": "2026-11-25",
+      "local_inspection_file": "dc-catapult.png"
+    },
+    {
+      "id": "dc-roadster",
+      "url": "https://gmedia.playstation.com/is/image/SIEPDC/death-stranding-directors-cut-screenshot-03-announce-en-04may21",
+      "download_url": "https://gmedia.playstation.com/is/image/SIEPDC/death-stranding-directors-cut-screenshot-03-announce-en-04may21?wid=2400&fmt=png-alpha",
+      "page": "https://www.playstation.com/en-us/games/death-stranding/",
+      "observation": "Capture du Roadster gris vue arrière gauche, roues carénées, siège ouvert, feux minces, cockpit et aileron ; pilote et interface du circuit présents.",
+      "source_kind": "Image officielle PlayStation ou Kojima Productions",
+      "inspected": true,
+      "generated_assets": [
+        "roadster-dc"
+      ],
+      "dimensions": [
+        2400,
+        1080
+      ],
+      "sha256": "de098ce3ff5a54f4cb39a792977cf6df188e623a56e933ba21213a30609fefac",
+      "bytes": 2286884,
+      "inspected_on": "2026-11-25",
+      "local_inspection_file": "dc-roadster.png"
+    },
+    {
+      "id": "ds2-gold-equipment",
+      "url": "https://gmedia.playstation.com/is/image/SIEPDC/Death-Stranding-2-ce-ingame-items-image-block-01-en-10mar25",
+      "download_url": "https://gmedia.playstation.com/is/image/SIEPDC/Death-Stranding-2-ce-ingame-items-image-block-01-en-10mar25?wid=2400&fmt=png-alpha",
+      "page": "https://www.playstation.com/en-us/games/death-stranding-2-on-the-beach/",
+      "observation": "Planche promotionnelle officielle ; profil de la mitrailleuse MP en haut, trois variantes d’exosquelettes dorés et badges. La correspondance exacte entre chaque silhouette et son nom n’est pas déterminée ici.",
+      "source_kind": "Image officielle PlayStation ou Kojima Productions",
+      "inspected": true,
+      "generated_assets": [],
+      "dimensions": [
+        2400,
+        1142
+      ],
+      "sha256": "06c11b793e0c0cbc986d088cd0ffb2cd107959034c0c58a8d7b7b2f5b620ab9c",
+      "bytes": 993601,
+      "inspected_on": "2026-11-25",
+      "local_inspection_file": "ds2-gold-equipment.png"
+    },
+    {
+      "id": "dc-support-skeleton",
+      "url": "https://www.kojimaproductions.jp/sites/default/files/2022-03/screensSupportSkeleton.jpg",
+      "page": "https://www.kojimaproductions.jp/en/death-stranding-directors-cut-beginners-guide",
+      "observation": "Sam en mouvement, très chargé, vu de dos. Les pièces de l’exosquelette sont partiellement visibles, insuffisantes ici pour une base isolée fidèle.",
+      "source_kind": "Image officielle PlayStation ou Kojima Productions",
+      "inspected": true,
+      "generated_assets": [],
+      "dimensions": [
+        1600,
+        900
+      ],
+      "sha256": "453e57c5c986f64e46d5982fb96d877a2032c52df286727e1772541a24048a6c",
+      "bytes": 201926,
+      "inspected_on": "2026-11-25",
+      "local_inspection_file": "dc-support-skeleton.jpg"
+    },
+    {
+      "id": "dc-buddy-bot",
+      "url": "https://www.kojimaproductions.jp/sites/default/files/2022-03/screensBuddyBot.jpg",
+      "page": "https://www.kojimaproductions.jp/en/death-stranding-directors-cut-beginners-guide",
+      "observation": "Robot porteur visible à droite d’une scène enneigée : deux jambes grises sous une pile de caisses jaunes/noires. Pieds masqués en partie par la neige.",
+      "source_kind": "Image officielle PlayStation ou Kojima Productions",
+      "inspected": true,
+      "generated_assets": [
+        "buddy-bot-dc"
+      ],
+      "dimensions": [
+        1600,
+        900
+      ],
+      "sha256": "4dd1987e9b7b8beb6a70ae2669e6697eedd9b7cd297285a711532fbd25ba4563",
+      "bytes": 109509,
+      "inspected_on": "2026-11-25",
+      "local_inspection_file": "dc-buddy-bot.jpg"
+    },
+    {
+      "id": "dc-jump-ramp",
+      "url": "https://www.kojimaproductions.jp/sites/default/files/2022-03/screensJumpRamp.jpg",
+      "page": "https://www.kojimaproductions.jp/en/death-stranding-directors-cut-beginners-guide",
+      "observation": "Petite plateforme grise et arc jaune visibles en bas à droite ; Sam et son véhicule sont déjà dans les airs.",
+      "source_kind": "Image officielle PlayStation ou Kojima Productions",
+      "inspected": true,
+      "generated_assets": [
+        "jump-ramp-dc"
+      ],
+      "dimensions": [
+        1600,
+        900
+      ],
+      "sha256": "e89c3d89b874860302a41b7e8aebbb08d7602df7752d24f28cf015e7842d0085",
+      "bytes": 151471,
+      "inspected_on": "2026-11-25",
+      "local_inspection_file": "dc-jump-ramp.jpg"
+    },
+    {
+      "id": "dc-repair-spray",
+      "url": "https://www.kojimaproductions.jp/sites/default/files/2022-03/screensContainerRepairSpray.jpg",
+      "page": "https://www.kojimaproductions.jp/en/death-stranding-directors-cut-beginners-guide",
+      "observation": "Sam est montré en cours de réparation d’un chargement ; la forme précise du flacon n’est pas lisible dans ce cadre.",
+      "source_kind": "Image officielle PlayStation ou Kojima Productions",
+      "inspected": true,
+      "generated_assets": [],
+      "dimensions": [
+        1600,
+        900
+      ],
+      "sha256": "9d3ac28e26773db657608eeec4d2141e41f168a99911d09f7d31031de6963373",
+      "bytes": 80120,
+      "inspected_on": "2026-11-25",
+      "local_inspection_file": "dc-repair-spray.jpg"
+    },
+    {
+      "id": "dc-maser-supporting",
+      "url": "https://www.kojimaproductions.jp/sites/default/files/2022-03/screensMaserGun.jpg",
+      "page": "https://www.kojimaproductions.jp/en/death-stranding-directors-cut-beginners-guide",
+      "observation": "Autre capture officielle en situation dans le stand de tir, utile pour l’identité et la fonction, pas pour la face cachée.",
+      "source_kind": "Image officielle PlayStation ou Kojima Productions",
+      "inspected": true,
+      "generated_assets": [
+        "maser-gun-dc"
+      ],
+      "dimensions": [
+        1600,
+        900
+      ],
+      "sha256": "73fab98b9d6f66f00bc8f42f5d508e7972a2a42002ac811cf5e6181988d1f156",
+      "bytes": 97419,
+      "inspected_on": "2026-11-25",
+      "local_inspection_file": "dc-maser-supporting.jpg"
+    },
+    {
+      "id": "dc-catapult-supporting",
+      "url": "https://www.kojimaproductions.jp/sites/default/files/2022-03/screensCargoCatapult.jpg",
+      "page": "https://www.kojimaproductions.jp/en/death-stranding-directors-cut-beginners-guide",
+      "observation": "Même vue de catapulte publiée dans le guide Kojima Productions ; confirme l’intitulé de la structure.",
+      "source_kind": "Image officielle PlayStation ou Kojima Productions",
+      "inspected": true,
+      "generated_assets": [
+        "cargo-catapult-dc"
+      ],
+      "dimensions": [
+        1600,
+        900
+      ],
+      "sha256": "f80113b98aaaa663695a13a54d15ace218db1fc982196357a44724f1ec50f00f",
+      "bytes": 112244,
+      "inspected_on": "2026-11-25",
+      "local_inspection_file": "dc-catapult-supporting.jpg"
+    },
+    {
+      "id": "dc-roadster-supporting",
+      "url": "https://www.kojimaproductions.jp/sites/default/files/2022-03/screensRaceTrack.jpg",
+      "page": "https://www.kojimaproductions.jp/en/death-stranding-directors-cut-beginners-guide",
+      "observation": "Vue d’ensemble du circuit ; documente le contexte du Roadster, sans donner une nouvelle vue rapprochée du véhicule.",
+      "source_kind": "Image officielle PlayStation ou Kojima Productions",
+      "inspected": true,
+      "generated_assets": [
+        "roadster-dc"
+      ],
+      "dimensions": [
+        1600,
+        900
+      ],
+      "sha256": "cfa6efd00e0d80011bab4590a25624d5b65f0888d6faeb5b574745ab8ebeabdf",
+      "bytes": 149657,
+      "inspected_on": "2026-11-25",
+      "local_inspection_file": "dc-roadster-supporting.jpg"
+    },
+    {
+      "id": "ds2-yamato-cover",
+      "url": "https://www.kojimaproductions.jp/sites/default/files/2025-06/yamato_coverimage.jpg",
+      "page": "https://www.kojimaproductions.jp/en/deathstranding2-yamatotransport-collaboration-announcement",
+      "observation": "Visuel de collaboration officiel : rame suspendue de conteneurs blancs Yamato, chariots jaunes sous un rail sombre ; premier module entièrement visible.",
+      "source_kind": "Image officielle PlayStation ou Kojima Productions",
+      "inspected": true,
+      "generated_assets": [
+        "monorail-yamato-ds2"
+      ],
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "19469b9193ad607a82858b1b2397663fbe0e130ed08a7f667921f592226439b9",
+      "bytes": 585851,
+      "inspected_on": "2026-11-25",
+      "local_inspection_file": "ds2-yamato-cover.jpg"
+    }
+  ],
+  "attempts_without_image": [
+    {
+      "id": "maser-gun-dc",
+      "attempt": 1,
+      "status": "tool-output-rejected",
+      "category": "illicit",
+      "note": "Demande de base fixe d’objet de fiction sans instructions de fabrication. Aucun fichier reçu et aucun asset livré pour cet essai."
+    },
+    {
+      "id": "machine-gun-mp-ds2",
+      "attempt": 1,
+      "status": "tool-output-rejected",
+      "category": "illicit",
+      "note": "Demande de base fixe d’objet de fiction sans instructions de fabrication. Aucun fichier reçu et aucun asset livré pour cet essai."
+    },
+    {
+      "id": "machine-gun-mp-ds2",
+      "attempt": 2,
+      "status": "tool-output-rejected",
+      "error": "image generation failed: http 400 Bad Request: Some(\"{\\n  \\\"error\\\": {\\n    \\\"message\\\": \\\"Your request was rejected by the safety system. If you believe this is an error, contact us at help.openai.com and include the request ID 94ef4207-8115-4c99-bf0d-af4948cece83. safety_violations=[illicit].\\\",\\n    \\\"type\\\": \\\"image_generation_user_error\\\",\\n    \\\"param\\\": null,\\n    \\\"code\\\": \\\"moderation_blocked\\\",\\n    \\\"moderation_details\\\": {\\n      \\\"moderation_stage\\\": \\\"output\\\",\\n      \\\"categories\\\": [\\n        \\\"illicit\\\"\\n      ]\\n    }\\n  }\\n}\")"
+    }
+  ],
+  "remaining": [
+    {
+      "id": "machine-gun-mp-ds2",
+      "status": "reference_inspected_generation_not_delivered",
+      "reason": "Deux refus de sortie imagegen ; aucun fichier obtenu."
+    },
+    {
+      "id": "support-skeleton-dc",
+      "status": "reference_partial",
+      "reason": "Exosquelette trop masqué par Sam et son fret pour isoler sa forme avec assurance."
+    },
+    {
+      "id": "container-repair-spray-dc",
+      "status": "reference_insufficient",
+      "reason": "Flacon non lisible dans la capture du guide."
+    },
+    {
+      "id": "monorail-yellow-ds2",
+      "status": "variant_pending",
+      "reason": "La livrée Yamato n’établit pas la cabine ou le module jaune de la capture précédente."
+    },
+    {
+      "id": "watcher-ds2",
+      "status": "visual_identification_pending"
+    },
+    {
+      "id": "armed-survivalist-ds2",
+      "status": "visual_identification_pending"
+    },
+    {
+      "id": "blood-boomerang-ds2",
+      "status": "visual_identification_pending"
+    },
+    {
+      "id": "tar-cannon-ds2",
+      "status": "visual_identification_pending"
+    },
+    {
+      "id": "bt-holographic-grenade-ds2",
+      "status": "visual_identification_pending"
+    }
+  ],
+  "limits": [
+    "Aucune fidélité géométrique 1:1 certifiée ; les détails occultés et petites références sont explicitement signalés.",
+    "Mitrailleuse MP DS2 non produite après deux refus de sortie du service de génération.",
+    "Stand de tir limité au panorama de catalogue.",
+    "Le hangar et sa liaison sont une reconstitution propre au projet."
+  ]
+}
