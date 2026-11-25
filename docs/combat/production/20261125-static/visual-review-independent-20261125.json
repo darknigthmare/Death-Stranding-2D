@@ -1,0 +1,710 @@
+{
+  "date": "2026-11-25",
+  "reviewer_role": "independent_visual_qa",
+  "scope": "All fifteen native PNGs in static-20261125; initial three reviews consolidated with batches 2 through 5.",
+  "reviewed_count": 15,
+  "accepted_with_documented_scope": 15,
+  "frames_per_image": 1,
+  "canonical_1_to_1_certified": false,
+  "native_pixels_modified": false,
+  "all_source_hashes_unchanged_after_review": true,
+  "previous_nine_hashes_still_match": true,
+  "methods": [
+    "Opened every native PNG for individual visual inspection.",
+    "Opened each listed reference image and compared visible features.",
+    "Measured native PNG dimensions, byte size, SHA-256, frame count and alpha values with Pillow/NumPy.",
+    "Composited diagnostic copies of all twelve cutouts onto gray #c8c8c8 and dark green #202b25, keeping all source PNGs untouched.",
+    "Rechecked source hashes after review and compared the nine previously recorded sources."
+  ],
+  "cautions": [
+    "Cutouts may retain colored RGB underneath fully transparent pixels. The broad halos seen in previews that ignore alpha did not form visible mattes in diagnostic composites.",
+    "Most character pixels lie near alpha 253, not necessarily 255; low-opacity pixels can reach canvas edges. Visible bounds above alpha 16 are recorded separately.",
+    "EX1 and EX2 share native dimensions with EX0 but are approximately 3.5 percent taller within the canvas. No claim of pixel-identical geometry is made.",
+    "Approche de Mountain Knot contains a mountain valley, not an urban skyline. Historical filename retained.",
+    "Static gallery readiness does not certify fighter movesets, collision, five-layer parallax or exact canonical fidelity."
+  ],
+  "assets": [
+    {
+      "id": "lockne-portrait",
+      "path": "modes/echos-de-la-greve/assets/static-20261125/lockne-portrait.png",
+      "sha256": "4df782a0a83ab2603f0625ba3c2090513e7979ac9011024be14f4bae671d1f93",
+      "size_bytes": 1965582,
+      "dimensions": [
+        1189,
+        1323
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "alpha_nonzero_percent": 59.383159,
+      "alpha_zero_percent": 40.616841,
+      "alpha_partial_1_254_percent": 59.371017,
+      "alpha_near_opaque_250_254_percent": 55.884281,
+      "alpha_low_1_16_percent": 0.969329,
+      "alpha_bbox": [
+        0,
+        0,
+        1177,
+        1323
+      ],
+      "visible_bbox_alpha_gt_16": [
+        13,
+        23,
+        1173,
+        1323
+      ],
+      "frame_count": 1,
+      "display_title": "Lockne — portrait",
+      "references": [
+        "lockne-game-screenshot-secondary.png"
+      ],
+      "observed": "Un portrait unique, tête complète et buste cadré ; coiffure asymétrique sombre, col bleu marine et boucles dorées cohérents avec la capture inspectée. Œil bleu du côté gauche de l’image, donc droit anatomique, et œil noisette du côté droit. Aucun miroir appliqué.",
+      "qualification": "Les traits sont transposés dans un nouveau rendu frontal ; cette comparaison visuelle ne démontre pas une égalité géométrique du visage avec le modèle du jeu.",
+      "sha256_unchanged_after_visual_review": true,
+      "visual_review": "accepted_with_documented_scope",
+      "native_pixels_modified": false,
+      "canonical_1_to_1_certified": false,
+      "alpha_compositing_review": "passed_gray_and_dark_green_no_visible_broad_matte"
+    },
+    {
+      "id": "lockne-body",
+      "path": "modes/echos-de-la-greve/assets/static-20261125/lockne-body.png",
+      "sha256": "9b8587b8a9b636df358a9ae1378eb1dd377cd4bc6680ae3bbe036588bec238bc",
+      "size_bytes": 1300154,
+      "dimensions": [
+        1024,
+        1536
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        254
+      ],
+      "alpha_nonzero_percent": 23.820241,
+      "alpha_zero_percent": 76.179759,
+      "alpha_partial_1_254_percent": 23.820241,
+      "alpha_near_opaque_250_254_percent": 21.773974,
+      "alpha_low_1_16_percent": 1.028633,
+      "alpha_bbox": [
+        0,
+        11,
+        998,
+        1536
+      ],
+      "visible_bbox_alpha_gt_16": [
+        330,
+        18,
+        705,
+        1530
+      ],
+      "frame_count": 1,
+      "display_title": "Lockne — silhouette fixe",
+      "references": [
+        "lockne-fullbody-hologram-secondary.jpg",
+        "lockne-game-screenshot-secondary.png"
+      ],
+      "observed": "Un personnage, tête et chaussures entières ; haut col bleu marine, pans asymétriques, manches grises, coiffure et boucle dorée présents. Œil droit anatomique bleu conservé ; aucun miroir appliqué.",
+      "qualification": "La référence holographique couvre surtout tête et cuisses. Pantalon inférieur, bottines et détails cachés restent une reconstruction non certifiée 1:1.",
+      "sha256_unchanged_after_visual_review": true,
+      "visual_review": "accepted_with_documented_scope",
+      "native_pixels_modified": false,
+      "canonical_1_to_1_certified": false,
+      "alpha_compositing_review": "passed_gray_and_dark_green_no_visible_broad_matte",
+      "matches_previous_review_sha256": true
+    },
+    {
+      "id": "deadman-body",
+      "path": "modes/echos-de-la-greve/assets/static-20261125/deadman-body.png",
+      "sha256": "819fa12825df97c0e7a5cab49d073577140b091b7a2a186831d8dd092d8d945b",
+      "size_bytes": 1500837,
+      "dimensions": [
+        1024,
+        1536
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        254
+      ],
+      "alpha_nonzero_percent": 32.863235,
+      "alpha_zero_percent": 67.136765,
+      "alpha_partial_1_254_percent": 32.863235,
+      "alpha_near_opaque_250_254_percent": 30.869293,
+      "alpha_low_1_16_percent": 0.974019,
+      "alpha_bbox": [
+        0,
+        23,
+        1006,
+        1522
+      ],
+      "visible_bbox_alpha_gt_16": [
+        251,
+        26,
+        770,
+        1519
+      ],
+      "frame_count": 1,
+      "display_title": "Deadman — silhouette fixe",
+      "references": [
+        "deadman-spotlight-official.jpg"
+      ],
+      "observed": "Un personnage entier, tête et chaussures dans le cadre ; costume sombre, chemise bordeaux, lunettes, barbe, cravate, barrette, gants et bracelet lumineux cohérents avec la capture officielle inspectée.",
+      "qualification": "La capture ne documente pas entièrement pantalon et chaussures. Ces parties et certains accessoires fins restent reconstruits, sans certification 1:1.",
+      "sha256_unchanged_after_visual_review": true,
+      "visual_review": "accepted_with_documented_scope",
+      "native_pixels_modified": false,
+      "canonical_1_to_1_certified": false,
+      "alpha_compositing_review": "passed_gray_and_dark_green_no_visible_broad_matte"
+    },
+    {
+      "id": "amelie-body",
+      "path": "modes/echos-de-la-greve/assets/static-20261125/amelie-body.png",
+      "sha256": "077d53be1faab5fe90aedb30ac13bce31da280a486eab81261cfc089211c0a50",
+      "size_bytes": 1388885,
+      "dimensions": [
+        1024,
+        1536
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        254
+      ],
+      "alpha_nonzero_percent": 24.457232,
+      "alpha_zero_percent": 75.542768,
+      "alpha_partial_1_254_percent": 24.457232,
+      "alpha_near_opaque_250_254_percent": 22.201157,
+      "alpha_low_1_16_percent": 1.033847,
+      "alpha_bbox": [
+        0,
+        0,
+        994,
+        1536
+      ],
+      "visible_bbox_alpha_gt_16": [
+        336,
+        15,
+        703,
+        1526
+      ],
+      "frame_count": 1,
+      "display_title": "Amelie — robe rouge",
+      "references": [
+        "amelie-red-full-secondary.jpeg",
+        "amelie-red-beach-register-secondary.jpg"
+      ],
+      "observed": "Un personnage complet ; robe rouge croisée à manches longues, ceinture nouée du côté gauche anatomique, collier, ourlet sous le genou et escarpins rouges. Les pieds et les mains sont dans le cadre.",
+      "qualification": "La vue de face ne montre pas l’ourlet et les chaussures ; leur présence est appuyée par une autre capture de dos. Les détails des chaussures vus de face restent interprétés.",
+      "sha256_unchanged_after_visual_review": true,
+      "visual_review": "accepted_with_documented_scope",
+      "native_pixels_modified": false,
+      "canonical_1_to_1_certified": false,
+      "alpha_compositing_review": "passed_gray_and_dark_green_no_visible_broad_matte",
+      "matches_previous_review_sha256": true
+    },
+    {
+      "id": "bridget-body",
+      "path": "modes/echos-de-la-greve/assets/static-20261125/bridget-body.png",
+      "sha256": "c68af7bf39edc915aca1701a2feea50ad21bbbb5562a3aa9acfa308cf9278a48",
+      "size_bytes": 1946859,
+      "dimensions": [
+        1536,
+        1024
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        254
+      ],
+      "alpha_nonzero_percent": 58.283297,
+      "alpha_zero_percent": 41.716703,
+      "alpha_partial_1_254_percent": 58.283297,
+      "alpha_near_opaque_250_254_percent": 54.309654,
+      "alpha_low_1_16_percent": 2.484322,
+      "alpha_bbox": [
+        0,
+        0,
+        1520,
+        1024
+      ],
+      "visible_bbox_alpha_gt_16": [
+        37,
+        41,
+        1501,
+        1013
+      ],
+      "frame_count": 1,
+      "display_title": "Bridget Strand — lit médical",
+      "references": [
+        "bridget-hospital-full-secondary.jpg",
+        "bridget-official.jpg"
+      ],
+      "observed": "Une seule Bridget allongée dans un lit complet ; foulard rose/lilas, blouse blanche plissée, couverture bordeaux, barrières et roulettes présents. Aucun élément majeur du groupe personnage/lit coupé.",
+      "qualification": "Adaptation d’un groupe personnage et accessoire, pas sprite d’une Bridget debout. Les jambes sont couvertes ; le cadrage ne prouve pas une tenue complète sous la couverture.",
+      "sha256_unchanged_after_visual_review": true,
+      "visual_review": "accepted_with_documented_scope",
+      "native_pixels_modified": false,
+      "canonical_1_to_1_certified": false,
+      "alpha_compositing_review": "passed_gray_and_dark_green_no_visible_broad_matte",
+      "matches_previous_review_sha256": true
+    },
+    {
+      "id": "bt-gazer",
+      "path": "modes/echos-de-la-greve/assets/static-20261125/bt-gazer.png",
+      "sha256": "1304a3c38816fb153aef734dafe2f3471b87354af7e23bcbcc5031cc9131c783",
+      "size_bytes": 1502779,
+      "dimensions": [
+        1024,
+        1536
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        254
+      ],
+      "alpha_nonzero_percent": 21.152306,
+      "alpha_zero_percent": 78.847694,
+      "alpha_partial_1_254_percent": 21.152306,
+      "alpha_near_opaque_250_254_percent": 8.718363,
+      "alpha_low_1_16_percent": 5.821037,
+      "alpha_bbox": [
+        0,
+        0,
+        998,
+        1536
+      ],
+      "visible_bbox_alpha_gt_16": [
+        131,
+        18,
+        737,
+        1405
+      ],
+      "frame_count": 1,
+      "display_title": "Échoué flottant — Gazer",
+      "references": [
+        "bt-areas-official.jpg"
+      ],
+      "observed": "Une seule silhouette humaine flottante, sans costume, avec corps particulaire sombre et cordons. Tête, mains, pieds et cordon principal restent visibles dans le cadre. Transparence plus diffuse que celle des personnages matériels, cohérente avec le sujet.",
+      "qualification": "Pose et répartition des particules diffèrent de la capture ; il s’agit d’une adaptation latérale statique, pas d’une reproduction d’un instant du jeu.",
+      "sha256_unchanged_after_visual_review": true,
+      "visual_review": "accepted_with_documented_scope",
+      "native_pixels_modified": false,
+      "canonical_1_to_1_certified": false,
+      "alpha_compositing_review": "passed_gray_and_dark_green_no_visible_broad_matte"
+    },
+    {
+      "id": "cliff-skeleton-nethelmet",
+      "path": "modes/echos-de-la-greve/assets/static-20261125/cliff-skeleton-nethelmet.png",
+      "sha256": "e77f21bf209c1f1cfee3f22d3b067ec330114407322a102fb5bf7f9757730c24",
+      "size_bytes": 2101843,
+      "dimensions": [
+        1024,
+        1536
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        254
+      ],
+      "alpha_nonzero_percent": 40.163104,
+      "alpha_zero_percent": 59.836896,
+      "alpha_partial_1_254_percent": 40.163104,
+      "alpha_near_opaque_250_254_percent": 36.090724,
+      "alpha_low_1_16_percent": 2.209791,
+      "alpha_bbox": [
+        0,
+        0,
+        1014,
+        1536
+      ],
+      "visible_bbox_alpha_gt_16": [
+        63,
+        12,
+        989,
+        1529
+      ],
+      "frame_count": 1,
+      "display_title": "Soldat squelettique de Cliff — casque à filet",
+      "references": [
+        "cliff-skeletons-secondary.jpg"
+      ],
+      "observed": "Un seul soldat complet, deux bottes et arme entièrement cadrées. Crâne, casque à filet, tenue usée et cordons sombres cohérents avec la variante de la capture.",
+      "qualification": "La capture source montre des soldats accroupis et partiellement occultés. Pose debout, bas du vêtement et détails d’arme sont adaptés ; aucune époque ou modèle de fusil précis n’est certifié.",
+      "sha256_unchanged_after_visual_review": true,
+      "visual_review": "accepted_with_documented_scope",
+      "native_pixels_modified": false,
+      "canonical_1_to_1_certified": false,
+      "alpha_compositing_review": "passed_gray_and_dark_green_no_visible_broad_matte",
+      "matches_previous_review_sha256": true
+    },
+    {
+      "id": "mule-eastern-gray",
+      "path": "modes/echos-de-la-greve/assets/static-20261125/mule-eastern-gray.png",
+      "sha256": "a325cd8c3ef05ec66fb62a13a4c10298c1a1a0b2e416697f4e98108829fc9580",
+      "size_bytes": 1877743,
+      "dimensions": [
+        1024,
+        1536
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        254
+      ],
+      "alpha_nonzero_percent": 31.221771,
+      "alpha_zero_percent": 68.778229,
+      "alpha_partial_1_254_percent": 31.221771,
+      "alpha_near_opaque_250_254_percent": 27.725474,
+      "alpha_low_1_16_percent": 2.092934,
+      "alpha_bbox": [
+        0,
+        19,
+        1012,
+        1536
+      ],
+      "visible_bbox_alpha_gt_16": [
+        199,
+        61,
+        729,
+        1511
+      ],
+      "frame_count": 1,
+      "display_title": "MULE gris de la région Est",
+      "references": [
+        "mule-dodge-official.jpg",
+        "mule-strand-official.jpg"
+      ],
+      "observed": "Une silhouette complète, capuche grise et masque noir, poche thoracique jaune, armature de fret, capteur et bâton électrique. Tête, bottes, sommet du capteur et pointe lumineuse sont dans le cadre.",
+      "qualification": "Les détails fins des sangles et du matériel sont reconstruits depuis des captures de jeu à petite échelle. Ce MULE ne remplace pas la référence manquante du terroriste Homo Demens.",
+      "sha256_unchanged_after_visual_review": true,
+      "visual_review": "accepted_with_documented_scope",
+      "native_pixels_modified": false,
+      "canonical_1_to_1_certified": false,
+      "alpha_compositing_review": "passed_gray_and_dark_green_no_visible_broad_matte",
+      "matches_previous_review_sha256": true
+    },
+    {
+      "id": "hematic-grenade",
+      "path": "modes/echos-de-la-greve/assets/static-20261125/hematic-grenade.png",
+      "sha256": "0277fb6902558495e5ae4c4f7bfb92e845e8bc7f810f21471d67a1586db7ac7e",
+      "size_bytes": 1753434,
+      "dimensions": [
+        1024,
+        1536
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        254
+      ],
+      "alpha_nonzero_percent": 35.246976,
+      "alpha_zero_percent": 64.753024,
+      "alpha_partial_1_254_percent": 35.246976,
+      "alpha_near_opaque_250_254_percent": 32.494481,
+      "alpha_low_1_16_percent": 1.641337,
+      "alpha_bbox": [
+        0,
+        16,
+        1004,
+        1522
+      ],
+      "visible_bbox_alpha_gt_16": [
+        261,
+        21,
+        862,
+        1513
+      ],
+      "frame_count": 1,
+      "display_title": "Grenade hématique",
+      "references": [
+        "hematic-grenade-ds1-equipment-secondary.jpg"
+      ],
+      "observed": "Un objet isolé entier ; corps blanc opaque avec fenêtre rouge, base rouge perforée, tête métallique sombre, anneau rectangulaire et levier latéral. Ces éléments sont visibles dans la référence détaillée. Les marquages principaux restent lisibles.",
+      "qualification": "Angle et détails de surface reconstruits ; l’intégralité des petits caractères, numéros et dimensions mécaniques n’est pas certifiée contre la capture source.",
+      "sha256_unchanged_after_visual_review": true,
+      "visual_review": "accepted_with_documented_scope",
+      "native_pixels_modified": false,
+      "canonical_1_to_1_certified": false,
+      "alpha_compositing_review": "passed_gray_and_dark_green_no_visible_broad_matte"
+    },
+    {
+      "id": "ex-grenade-0",
+      "path": "modes/echos-de-la-greve/assets/static-20261125/ex-grenade-0.png",
+      "sha256": "755e675f10c0a8f18f55325075c7068034cf54983728f95560e71f08efbf26db",
+      "size_bytes": 493532,
+      "dimensions": [
+        724,
+        2172
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "alpha_nonzero_percent": 21.29501,
+      "alpha_zero_percent": 78.70499,
+      "alpha_partial_1_254_percent": 21.261243,
+      "alpha_near_opaque_250_254_percent": 18.913431,
+      "alpha_low_1_16_percent": 1.029552,
+      "alpha_bbox": [
+        25,
+        23,
+        704,
+        2153
+      ],
+      "visible_bbox_alpha_gt_16": [
+        264,
+        89,
+        463,
+        2089
+      ],
+      "frame_count": 1,
+      "display_title": "Grenade EX n° 0",
+      "references": [
+        "ex-0-steam.jpg"
+      ],
+      "observed": "Un objet isolé complet, capsule longue à embout noir ajouré, chambre translucide beige pâle, anneau bas et extrémité arrondie. Forme générale cohérente avec la capture du présentoir inspectée.",
+      "qualification": "La référence montre plusieurs capsules dans leur présentoir sous une perspective oblique. L’objet isolé à grande échelle et ses détails fins sont une reconstruction ; ses proportions ne sont pas certifiées par mesure 1:1.",
+      "sha256_unchanged_after_visual_review": true,
+      "visual_review": "accepted_with_documented_scope",
+      "native_pixels_modified": false,
+      "canonical_1_to_1_certified": false,
+      "alpha_compositing_review": "passed_gray_and_dark_green_no_visible_broad_matte",
+      "matches_previous_review_sha256": true,
+      "ex_family_visible_height": 2000,
+      "ex_family_height_ratio_to_ex0": 1.0,
+      "bottom_visible_margin_px": 83
+    },
+    {
+      "id": "ex-grenade-1",
+      "path": "modes/echos-de-la-greve/assets/static-20261125/ex-grenade-1.png",
+      "sha256": "4295fb4499874de58bc45f845e83cae87785d1e33eee0155260d8d85c97c5de0",
+      "size_bytes": 523451,
+      "dimensions": [
+        724,
+        2172
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "alpha_nonzero_percent": 22.964996,
+      "alpha_zero_percent": 77.035004,
+      "alpha_partial_1_254_percent": 22.952914,
+      "alpha_near_opaque_250_254_percent": 20.7644,
+      "alpha_low_1_16_percent": 0.989235,
+      "alpha_bbox": [
+        256,
+        81,
+        638,
+        2159
+      ],
+      "visible_bbox_alpha_gt_16": [
+        262,
+        86,
+        464,
+        2157
+      ],
+      "frame_count": 1,
+      "display_title": "Grenade EX n° 1",
+      "references": [
+        "ex-1-steam.jpg"
+      ],
+      "observed": "Capsule unique et complète, contenu orange, embout noir ajouré, anneau bas et extrémité arrondie. La variante de couleur correspond à la capture du présentoir inspectée.",
+      "qualification": "Même famille visuelle que EX0, avec géométrie légèrement différente après génération : hauteur visible de 2071 px contre 2000 px pour EX0. La forme générale est conservée mais les pixels ne sont pas strictement alignés.",
+      "sha256_unchanged_after_visual_review": true,
+      "visual_review": "accepted_with_documented_scope",
+      "native_pixels_modified": false,
+      "canonical_1_to_1_certified": false,
+      "alpha_compositing_review": "passed_gray_and_dark_green_no_visible_broad_matte",
+      "ex_family_visible_height": 2071,
+      "ex_family_height_ratio_to_ex0": 1.0355,
+      "bottom_visible_margin_px": 15
+    },
+    {
+      "id": "ex-grenade-2",
+      "path": "modes/echos-de-la-greve/assets/static-20261125/ex-grenade-2.png",
+      "sha256": "a7040e33bc0396c172f120d7315177e785187c220153b645c2557cf5b5136a14",
+      "size_bytes": 513619,
+      "dimensions": [
+        724,
+        2172
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "alpha_nonzero_percent": 23.213514,
+      "alpha_zero_percent": 76.786486,
+      "alpha_partial_1_254_percent": 23.195135,
+      "alpha_near_opaque_250_254_percent": 20.731014,
+      "alpha_low_1_16_percent": 1.245828,
+      "alpha_bbox": [
+        43,
+        47,
+        710,
+        2157
+      ],
+      "visible_bbox_alpha_gt_16": [
+        261,
+        84,
+        466,
+        2154
+      ],
+      "frame_count": 1,
+      "display_title": "Grenade EX n° 2",
+      "references": [
+        "ex-2-steam.jpg"
+      ],
+      "observed": "Capsule unique et complète, contenu turquoise, embout noir ajouré, anneau bas et extrémité arrondie. La variante de couleur correspond à la capture du présentoir inspectée.",
+      "qualification": "Même famille visuelle que EX0, avec géométrie légèrement différente après génération : hauteur visible de 2070 px contre 2000 px pour EX0. La forme générale est conservée mais les pixels ne sont pas strictement alignés.",
+      "sha256_unchanged_after_visual_review": true,
+      "visual_review": "accepted_with_documented_scope",
+      "native_pixels_modified": false,
+      "canonical_1_to_1_certified": false,
+      "alpha_compositing_review": "passed_gray_and_dark_green_no_visible_broad_matte",
+      "ex_family_visible_height": 2070,
+      "ex_family_height_ratio_to_ex0": 1.035,
+      "bottom_visible_margin_px": 18
+    },
+    {
+      "id": "south-knot-ruins-panorama",
+      "path": "modes/echos-de-la-greve/assets/static-20261125/south-knot-ruins-panorama.png",
+      "sha256": "eb15d3769fbc716ca482655e9aae272b1aca13585654206f27bc5c9e094ae73c",
+      "size_bytes": 2720821,
+      "dimensions": [
+        1672,
+        941
+      ],
+      "mode": "RGB",
+      "alpha_extrema": [
+        255,
+        255
+      ],
+      "alpha_nonzero_percent": 100.0,
+      "alpha_zero_percent": 0.0,
+      "alpha_partial_1_254_percent": 0.0,
+      "alpha_near_opaque_250_254_percent": 0.0,
+      "alpha_low_1_16_percent": 0.0,
+      "alpha_bbox": [
+        0,
+        0,
+        1672,
+        941
+      ],
+      "visible_bbox_alpha_gt_16": [
+        0,
+        0,
+        1672,
+        941
+      ],
+      "frame_count": 1,
+      "display_title": "Ruines de South Knot",
+      "references": [
+        "south-knot-official.jpg"
+      ],
+      "observed": "Panorama unique et complet ; ruines, pont métallique, route rompue et pluie cohérents avec la référence inspectée. Bande de terrain latérale dégagée au premier plan.",
+      "qualification": "Composition latérale et piste de combat adaptées ; aucune séparation en cinq plans produite par ce PNG.",
+      "sha256_unchanged_after_visual_review": true,
+      "visual_review": "accepted_with_documented_scope",
+      "native_pixels_modified": false,
+      "canonical_1_to_1_certified": false,
+      "alpha_compositing_review": "not_applicable_opaque_panorama",
+      "matches_previous_review_sha256": true
+    },
+    {
+      "id": "timefall-farm-panorama",
+      "path": "modes/echos-de-la-greve/assets/static-20261125/timefall-farm-panorama.png",
+      "sha256": "6e64d772995dcaf74cac0972e20803ee574e6533d9d126209a3273820d504d39",
+      "size_bytes": 2513302,
+      "dimensions": [
+        1672,
+        941
+      ],
+      "mode": "RGB",
+      "alpha_extrema": [
+        255,
+        255
+      ],
+      "alpha_nonzero_percent": 100.0,
+      "alpha_zero_percent": 0.0,
+      "alpha_partial_1_254_percent": 0.0,
+      "alpha_near_opaque_250_254_percent": 0.0,
+      "alpha_low_1_16_percent": 0.0,
+      "alpha_bbox": [
+        0,
+        0,
+        1672,
+        941
+      ],
+      "visible_bbox_alpha_gt_16": [
+        0,
+        0,
+        1672,
+        941
+      ],
+      "frame_count": 1,
+      "display_title": "Ferme sous la pluie temporelle",
+      "references": [
+        "timefall-farm-official.jpg"
+      ],
+      "observed": "Panorama unique et complet ; champs dorés, machines jaunes, structures courbes, balises lumineuses et relief enneigé correspondent aux éléments visibles de la référence.",
+      "qualification": "Position des éléments et piste latérale adaptées ; ce fichier ne constitue pas une arène jouable ni un jeu de couches.",
+      "sha256_unchanged_after_visual_review": true,
+      "visual_review": "accepted_with_documented_scope",
+      "native_pixels_modified": false,
+      "canonical_1_to_1_certified": false,
+      "alpha_compositing_review": "not_applicable_opaque_panorama",
+      "matches_previous_review_sha256": true
+    },
+    {
+      "id": "mountain-knot-city-panorama",
+      "path": "modes/echos-de-la-greve/assets/static-20261125/mountain-knot-city-panorama.png",
+      "sha256": "92358b0accc8af6d2876662f84ca6d2d1ee00ab47fa1567d39df55a370b26126",
+      "size_bytes": 2451968,
+      "dimensions": [
+        1672,
+        941
+      ],
+      "mode": "RGB",
+      "alpha_extrema": [
+        255,
+        255
+      ],
+      "alpha_nonzero_percent": 100.0,
+      "alpha_zero_percent": 0.0,
+      "alpha_partial_1_254_percent": 0.0,
+      "alpha_near_opaque_250_254_percent": 0.0,
+      "alpha_low_1_16_percent": 0.0,
+      "alpha_bbox": [
+        0,
+        0,
+        1672,
+        941
+      ],
+      "visible_bbox_alpha_gt_16": [
+        0,
+        0,
+        1672,
+        941
+      ],
+      "frame_count": 1,
+      "display_title": "Approche de Mountain Knot",
+      "references": [
+        "mountain-knot-official.jpg"
+      ],
+      "observed": "Panorama unique et complet d’une vallée enneigée, relief à droite, brume, lignes verticales et arc-en-ciel. Aucun bâtiment urbain identifiable dans la génération.",
+      "qualification": "Titre corrigé vers Approche de Mountain Knot. Le nom de fichier historique contient city ; il ne doit pas servir de preuve d’une skyline de la ville. Les structures urbaines restent à documenter.",
+      "sha256_unchanged_after_visual_review": true,
+      "visual_review": "accepted_with_documented_scope",
+      "native_pixels_modified": false,
+      "canonical_1_to_1_certified": false,
+      "alpha_compositing_review": "not_applicable_opaque_panorama",
+      "matches_previous_review_sha256": true
+    }
+  ]
+}

@@ -68,7 +68,7 @@
       heartmanMonitor:'assets/props/heartman-monitor.png'
     },
     portraits: {...illustrations('fighters', roster, '-portrait'),...replacement('portrait')},
-    supportPortraits:Object.fromEntries(['deadman','amelie','bridget'].map(id=>[id,'assets/fighters/support/'+id+'-portrait.png'])),
+    supportPortraits:{...Object.fromEntries(['deadman','amelie','bridget'].map(id=>[id,'assets/fighters/support/'+id+'-portrait.png'])),lockne:'assets/static-20261125/lockne-portrait.png'},
     finishers: illustrations('finishers', roster),
     stages: {...illustrations('stages', arenas),...stageLayers('',nativeStageIds)},
     skyplates: stageLayers('-sky'),

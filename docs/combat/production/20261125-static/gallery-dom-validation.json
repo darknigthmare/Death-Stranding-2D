@@ -1,0 +1,163 @@
+{
+  "actual_catalogue": {
+    "total": 15,
+    "categories": {
+      "characters": 5,
+      "enemies": 3,
+      "projectiles": 4,
+      "stages": 3
+    }
+  },
+  "date": "2026-11-25",
+  "scope": "Actual static-assets.js executed in a simulated DOM",
+  "native_browser_rendering": false,
+  "layout_verified": false,
+  "checks_passed": 11,
+  "checks": [
+    "Unknown categories are excluded and the available count is derived from valid entries.",
+    "Category filters update visibility, result count and pressed state.",
+    "Failed images are excluded from filtered and total counts.",
+    "Backdrop selection supports neutral and safely falls back to dark.",
+    "Native load dimensions and original PNG download names are reflected.",
+    "Titles/descriptions stay text-only, and the viewer opens the selected original.",
+    "Inside-dialog clicks preserve the viewer; backdrop clicks close and clear the image.",
+    "Wide character views and panoramas receive the wide layout class.",
+    "Missing catalogue data yields a safe empty state.",
+    "All fifteen approved catalogue entries render as cards; each real category filter shows the expected total.",
+    "All real catalogue IDs are unique and their image paths exist."
+  ],
+  "native_png_checks": [
+    {
+      "id": "lockne-portrait",
+      "width": 1189,
+      "height": 1323,
+      "path_exists": true,
+      "dimensions_match": true
+    },
+    {
+      "id": "lockne-body",
+      "width": 1024,
+      "height": 1536,
+      "path_exists": true,
+      "dimensions_match": true
+    },
+    {
+      "id": "deadman-body",
+      "width": 1024,
+      "height": 1536,
+      "path_exists": true,
+      "dimensions_match": true
+    },
+    {
+      "id": "amelie-body",
+      "width": 1024,
+      "height": 1536,
+      "path_exists": true,
+      "dimensions_match": true
+    },
+    {
+      "id": "bridget-body",
+      "width": 1536,
+      "height": 1024,
+      "path_exists": true,
+      "dimensions_match": true
+    },
+    {
+      "id": "bt-gazer",
+      "width": 1024,
+      "height": 1536,
+      "path_exists": true,
+      "dimensions_match": true
+    },
+    {
+      "id": "cliff-skeleton-nethelmet",
+      "width": 1024,
+      "height": 1536,
+      "path_exists": true,
+      "dimensions_match": true
+    },
+    {
+      "id": "mule-eastern-gray",
+      "width": 1024,
+      "height": 1536,
+      "path_exists": true,
+      "dimensions_match": true
+    },
+    {
+      "id": "hematic-grenade",
+      "width": 1024,
+      "height": 1536,
+      "path_exists": true,
+      "dimensions_match": true
+    },
+    {
+      "id": "ex-grenade-0",
+      "width": 724,
+      "height": 2172,
+      "path_exists": true,
+      "dimensions_match": true
+    },
+    {
+      "id": "ex-grenade-1",
+      "width": 724,
+      "height": 2172,
+      "path_exists": true,
+      "dimensions_match": true
+    },
+    {
+      "id": "ex-grenade-2",
+      "width": 724,
+      "height": 2172,
+      "path_exists": true,
+      "dimensions_match": true
+    },
+    {
+      "id": "south-knot-ruins-panorama",
+      "width": 1672,
+      "height": 941,
+      "path_exists": true,
+      "dimensions_match": true
+    },
+    {
+      "id": "timefall-farm-panorama",
+      "width": 1672,
+      "height": 941,
+      "path_exists": true,
+      "dimensions_match": true
+    },
+    {
+      "id": "mountain-knot-city-panorama",
+      "width": 1672,
+      "height": 941,
+      "path_exists": true,
+      "dimensions_match": true
+    }
+  ],
+  "html_checks": [
+    {
+      "file": "modes/echos-de-la-greve/archives.html",
+      "duplicate_ids": [],
+      "missing_local_references": []
+    },
+    {
+      "file": "modes/echos-de-la-greve/static-assets.html",
+      "duplicate_ids": [],
+      "missing_local_references": []
+    }
+  ],
+  "syntax_checked": [
+    "static-assets.js",
+    "static-assets-data.js",
+    "assets.js",
+    "app.js"
+  ],
+  "source_sha256": {
+    "modes/echos-de-la-greve/static-assets.js": "2e3c99d74b19e6fc633e1f884aae647b672c0e1797545592687aa8a097c68084",
+    "modes/echos-de-la-greve/static-assets-data.js": "2a8114f8301d63f8d1a88d03fca6481a3290042074ec2dd131c30b538bcc1767",
+    "modes/echos-de-la-greve/static-assets.html": "c158559e6f63ef5a2b34a2c8a326a2428d2e7a03847b4232b5a66eb67a662f21",
+    "modes/echos-de-la-greve/static-assets.css": "39949ccabacf3f6d09342d7e56966ee909e3904184c7ba309a02d62620b62194",
+    "modes/echos-de-la-greve/archives.html": "d9234f1ababc7ee70a8b928ceabb63f7cdeaaa5f87342ce0141baf6162a01cbf",
+    "modes/echos-de-la-greve/assets.js": "784d9d7daa5295e0db9fac04ce7c8637354823312af9f6db6c621d064544af3a",
+    "modes/echos-de-la-greve/app.js": "f4847dd20a43a2a2443de55332f90907e62fdbaac9d84c63b79269b56b5e5b93"
+  }
+}

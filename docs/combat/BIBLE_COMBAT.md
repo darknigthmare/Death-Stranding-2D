@@ -2,7 +2,7 @@
 
 ## Bible du mode de combat de Death Stranding 2D
 
-**Édition de conception du 18 novembre 2026, mise à jour du 24 novembre 2026 · Référence artistique : Death Stranding et Director’s Cut.**
+**Édition de conception du 18 novembre 2026, mise à jour du 25 novembre 2026 · Référence artistique : Death Stranding et Director’s Cut.**
 
 Deux silhouettes se font face sur la laisse de mer. Sam se baisse pour poser une caisse. L’autre joueur dispose d’un instant pour avancer. S’il se précipite, Sam peut l’attendre, lien en main. S’il s’arrête, Sam regagne son équilibre et choisit la distance du prochain échange. Ce geste ordinaire de porteur résume le duel que nous voulons construire.
 
@@ -496,10 +496,22 @@ Mama Viaduc utilise désormais neuf poses humaines et un portrait, en conservant
 
 **Boss Battle** propose six rencontres : Catcher léonin, Catcher aquatique, baleine, géant, camion MULE et convoi. Les quatre Échoués ont des annonces d’attaque et une deuxième phase. Les missions MULE comportent l’immobilisation des véhicules et la livraison des colis ; le convoi enchaîne deux vagues. Les huit combattants sont disponibles. Résultats et reprise utilisent `echos.boss.v1`. Les règles figurent dans la [fiche Boss Battle](production/20261124-suite/BOSS_BATTLE_20261124.md).
 
-Les **Archives de Bridges** présentent Deadman, Amelie et Bridget comme dossiers illustrés. Le roster de duel compte huit combattants.
+Les **Archives de Bridges** présentaient Deadman, Amelie et Bridget comme dossiers illustrés dans le lot du 24 novembre. Lockne les rejoint dans la reprise du 25 novembre décrite ci-dessous. Le roster de duel compte huit combattants.
 
 La recette fraîche du vrai moteur en mémoire couvre dix cas personnage/tenue × côté, seize cas sur les nouveaux décors et **72 checkpoints de duel inchangés**. La recette Boss passe **18 sections**, dont six victoires par commandes et les livraisons. Une revue indépendante ajoute 72 cas de résolution entre tenue et source de base. Ces contrôles ne remplacent pas le rendu natif et les interactions dans un navigateur, encore indisponibles pendant cette reprise.
 
-Les **onze images de Higgs** ont reçu le masque crânien d’or d’une capture DS1 inspectée. La comparaison **1:1 reste ouverte** pour les autres détails non documentés, les vues gauche asymétriques et les adaptations latérales. Le portrait de Lockne reste bloqué faute de référence inspectable récupérée. Les manifestes distinguent références officielles, captures de joueurs et choix du fan-game.
+Les **onze images de Higgs** ont reçu le masque crânien d’or d’une capture DS1 inspectée. La comparaison **1:1 reste ouverte** pour les autres détails non documentés, les vues gauche asymétriques et les adaptations latérales. Le portrait de Lockne était encore bloqué le 24 novembre faute de référence inspectable récupérée ; le lot suivant résout ce manque. Les manifestes distinguent références officielles, captures de joueurs et choix du fan-game.
 
 [État détaillé et points ouverts](production/20261124-suite/SUITE_MANQUANTS_20261124.md) · [Galerie unifiée des 113 images](production/20261124-suite/index.html) · [Inventaire actif](production/20261124-suite/active-native-images.json) · [Recette d’intégration](production/20261124-suite/integration-validation.json).
+
+## 14. Silhouettes et horizons — 25 novembre 2026
+
+Le menu ouvre désormais **Silhouettes et horizons**, un catalogue de **quinze nouveaux PNG statiques** : cinq images de personnages, trois ennemis, quatre grenades et trois panoramas. Les filtres par catégorie, le choix d’un fond sombre ou neutre, l’agrandissement et le téléchargement donnent accès à chaque source native. Chaque fichier contient un seul sujet et une seule image ; aucune animation n’est ajoutée dans ce lot.
+
+Lockne reçoit un portrait après sa réunion avec Mama et une silhouette séparée. Le portrait complète les Archives ; son œil droit anatomique est bleu, à gauche de l’image, et il ne doit pas être retourné. Deadman apparaît en costume sombre, Amelie dans sa robe rouge mi-longue avec escarpins, et Bridget allongée dans son lit médical. Le Gazer, un soldat squelettique à casque à filet et un MULE gris de la région Est complètent les ennemis statiques. Les objets isolés comprennent la grenade hématique niveau 1 et les capsules EX n° 0, 1 et 2.
+
+Les nouveaux horizons sont **les ruines de South Knot**, **la ferme sous la pluie temporelle** et **l’approche de Mountain Knot**. Ce dernier montre une vallée montagneuse, sans ville visible. Ces trois panoramas sont consultables dans le catalogue ; leurs cinq plans et leur raccordement en arènes restent à réaliser. Les treize configurations de combat existantes, leurs soixante-cinq couches, les huit combattants et les six rencontres Boss conservent donc leur périmètre.
+
+Les quinze PNG natifs, totalisant 24 554 809 octets, sont conservés sans édition de pixels après génération. Leurs dimensions réelles, empreintes, prompts, vingt références utilisées et limites de reconstruction figurent dans le manifeste. Les douze détourés ont été examinés sur deux fonds ; les trois panoramas sont opaques. Le comportement du catalogue a été contrôlé sur son JavaScript réel dans un DOM simulé. Aucun rendu navigateur natif ni validation globale 1:1 n’est revendiqué. Le soldat Homo Demens reste différé faute de référence colorée assez claire ; les détails de costume masqués dans les captures et les vues gauche asymétriques restent à documenter.
+
+[Catalogue](../../modes/echos-de-la-greve/static-assets.html) · [Rapport du lot](production/20261125-static/LOT_STATIQUE_20261125.md) · [Manifeste natif et sources](../../art/sources/echos-de-la-greve/production-20261125-static/manifest.json) · [Revue visuelle indépendante](production/20261125-static/REVUE_VISUELLE_STATIQUES_20261125.md) · [Vérification du catalogue](production/20261125-static/GALERIE_VERIFICATION_20261125.md).
