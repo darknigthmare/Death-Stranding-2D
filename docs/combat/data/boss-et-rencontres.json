@@ -1,0 +1,3498 @@
+{
+  "schema": 1,
+  "date": "2026-11-25",
+  "engine": "StrandBoss",
+  "source": {
+    "file": "modes/echos-de-la-greve/boss.js",
+    "sha256": "59eaab71a30a97663c4d9d8cd087e5022ffccc2e2dbe817dd468c341a43ae806",
+    "content_sha256": "fe6e129844908ad3a0fa97d9e59cace35b1fb4c4cc54ba095de401bcac189578",
+    "campaign_sha256": "bf84ff01a0afc253c84f5087f040632895fe971f7f934abadd114c3f4311c08a",
+    "base": "8d274a015e0edf314a853630031d5eb507354811",
+    "method": "Constantes et mesures de fonctions réelles via hook VM en mémoire. Les notes interprétatives sont relues et testées séparément. Aucun nombre issu de StrandFight."
+  },
+  "units": {
+    "hz": 60,
+    "width": 1280,
+    "height": 720,
+    "floor": 588
+  },
+  "raw": {
+    "encounters": {
+      "lion": {
+        "name": "Catcher léonin",
+        "type": "lion",
+        "stage": "tar-basin",
+        "hp": 280,
+        "height": 270,
+        "radius": 162,
+        "bodyHeight": 230,
+        "seconds": 150,
+        "goal": "Abattez le Catcher. Sautez au-dessus de sa charge et frappez pendant sa récupération.",
+        "patterns": [
+          "charge",
+          "ring",
+          "pounce"
+        ],
+        "tell": 65,
+        "recover": 90
+      },
+      "squid": {
+        "name": "Catcher aquatique",
+        "type": "squid",
+        "stage": "shore",
+        "hp": 300,
+        "height": 345,
+        "radius": 150,
+        "bodyHeight": 300,
+        "seconds": 160,
+        "goal": "Évitez les tentacules annoncés au sol. Gardez face aux orbes et sautez l’anneau au sol.",
+        "patterns": [
+          "spikes",
+          "orbs",
+          "ring"
+        ],
+        "tell": 72,
+        "recover": 85
+      },
+      "whale": {
+        "name": "Baleine de goudron",
+        "type": "whale",
+        "stage": "tar-basin",
+        "hp": 340,
+        "height": 315,
+        "radius": 220,
+        "bodyHeight": 260,
+        "seconds": 180,
+        "goal": "Repérez sa réapparition. Quittez les jets annoncés, puis attaquez son noyau exposé.",
+        "patterns": [
+          "orbs",
+          "spikes",
+          "breach"
+        ],
+        "tell": 82,
+        "recover": 105
+      },
+      "giant": {
+        "name": "Géant de goudron",
+        "type": "giant",
+        "stage": "shore",
+        "hp": 400,
+        "height": 420,
+        "radius": 126,
+        "bodyHeight": 380,
+        "bodyHeights": {
+          "attack": 266
+        },
+        "seconds": 200,
+        "goal": "Sortez des zones de frappe. Sautez l’anneau chiral et exploitez les longues récupérations.",
+        "patterns": [
+          "stomp",
+          "ring",
+          "orbs"
+        ],
+        "tell": 88,
+        "recover": 115
+      },
+      "truck": {
+        "name": "Camion MULE",
+        "type": "mule-truck",
+        "stage": "mule-camp-dry",
+        "hp": 240,
+        "height": 190,
+        "radius": 205,
+        "bodyHeight": 170,
+        "seconds": 180,
+        "cargo": 2,
+        "goal": "Immobilisez le camion, puis rapportez ses deux colis au dépôt à gauche. La commande Colis prend, pose ou livre un colis.",
+        "patterns": [
+          "bolts",
+          "charge",
+          "bolts"
+        ],
+        "tell": 76,
+        "recover": 85
+      },
+      "convoy": {
+        "name": "Convoi MULE",
+        "type": "mule-truck",
+        "stage": "mule-camp",
+        "hp": 190,
+        "height": 190,
+        "radius": 205,
+        "bodyHeight": 170,
+        "seconds": 240,
+        "cargo": 2,
+        "waves": 2,
+        "goal": "Interceptez deux camions en deux vagues. Rapportez un colis par camion et protégez le dépôt des tirs bas.",
+        "patterns": [
+          "bolts",
+          "charge",
+          "bolts"
+        ],
+        "tell": 72,
+        "recover": 80
+      }
+    },
+    "players": {
+      "sam": {
+        "h": 176,
+        "speed": 4.4,
+        "power": 1
+      },
+      "fragile": {
+        "h": 166,
+        "speed": 4.95,
+        "power": 0.94
+      },
+      "higgs": {
+        "h": 184,
+        "speed": 4.05,
+        "power": 1.06
+      },
+      "cliff": {
+        "h": 179,
+        "speed": 4.2,
+        "power": 1.03
+      },
+      "mule": {
+        "h": 177,
+        "speed": 4.25,
+        "power": 1
+      },
+      "diehardman": {
+        "h": 181,
+        "speed": 4.1,
+        "power": 1.02
+      },
+      "mama": {
+        "h": 170,
+        "speed": 4.4,
+        "power": 0.96
+      },
+      "heartman": {
+        "h": 176,
+        "speed": 4.15,
+        "power": 0.96
+      }
+    },
+    "directions": {
+      "sam": [
+        "bola",
+        "brace",
+        "parry"
+      ],
+      "fragile": [
+        "blink",
+        "fan",
+        "beacon"
+      ],
+      "higgs": [
+        "tar",
+        "mine",
+        "feint"
+      ],
+      "cliff": [
+        "salvo",
+        "post",
+        "recall"
+      ],
+      "mule": [
+        "scan",
+        "crate",
+        "retrieve"
+      ],
+      "diehardman": [
+        "order",
+        "gate",
+        "relief"
+      ],
+      "mama": [
+        "anchor",
+        "deck",
+        "winch"
+      ],
+      "heartman": [
+        "pulse",
+        "memory",
+        "syncope"
+      ]
+    },
+    "costs": {
+      "bola": 28,
+      "brace": 14,
+      "parry": 18,
+      "blink": 28,
+      "fan": 18,
+      "beacon": 16,
+      "tar": 28,
+      "mine": 21,
+      "feint": 14,
+      "salvo": 28,
+      "post": 18,
+      "recall": 16,
+      "scan": 28,
+      "crate": 18,
+      "retrieve": 16,
+      "order": 28,
+      "gate": 18,
+      "relief": 16,
+      "anchor": 28,
+      "deck": 18,
+      "winch": 16,
+      "pulse": 28,
+      "memory": 18,
+      "syncope": 16
+    }
+  },
+  "difficulties": {
+    "easy": "Débutant",
+    "normal": "Porteur",
+    "hard": "Vétéran"
+  },
+  "encounters": [
+    {
+      "id": "lion",
+      "name": "Catcher léonin",
+      "type": "lion",
+      "stage": "tar-basin",
+      "stageName": "Bassin de goudron",
+      "seconds": 150,
+      "baseHp": 280,
+      "hp": {
+        "easy": [
+          230
+        ],
+        "normal": [
+          280
+        ],
+        "hard": [
+          336
+        ]
+      },
+      "tell": {
+        "easy": [
+          78,
+          67
+        ],
+        "normal": [
+          65,
+          56
+        ],
+        "hard": [
+          57,
+          49
+        ]
+      },
+      "patterns": [
+        "charge",
+        "ring",
+        "pounce"
+      ],
+      "normalRecovery": 90,
+      "forcedRecovery": 90,
+      "phase2AtRatio": 0.5,
+      "initialApproach": 55,
+      "followingApproach": [
+        42,
+        28
+      ],
+      "dive": 0,
+      "armour": 1,
+      "exposedMultiplier": 1.35,
+      "body": {
+        "radius": 162,
+        "height": 230,
+        "poseHeights": {},
+        "physicalRadius": 89.10000000000001,
+        "physicalBelow": 125
+      },
+      "waves": 1,
+      "cargo": 0,
+      "goal": "Abattez le Catcher. Sautez au-dessus de sa charge et frappez pendant sa récupération.",
+      "success": "Boss à 0 PV.",
+      "failures": [
+        "PV du joueur à 0",
+        "Temps écoulé"
+      ],
+      "notes": [
+        "Enchaînement fixe : charge, anneau, bond. La charge vise votre position au début de son annonce."
+      ],
+      "sources": [
+        "boss.js:encounters",
+        "boss.js:newBoss",
+        "boss.js:damageBoss",
+        "boss.js:bossTick",
+        "boss.js:defeatBoss",
+        "boss.js:interact",
+        "boss.js:step"
+      ]
+    },
+    {
+      "id": "squid",
+      "name": "Catcher aquatique",
+      "type": "squid",
+      "stage": "shore",
+      "stageName": "La Grève",
+      "seconds": 160,
+      "baseHp": 300,
+      "hp": {
+        "easy": [
+          246
+        ],
+        "normal": [
+          300
+        ],
+        "hard": [
+          360
+        ]
+      },
+      "tell": {
+        "easy": [
+          86,
+          74
+        ],
+        "normal": [
+          72,
+          62
+        ],
+        "hard": [
+          63,
+          54
+        ]
+      },
+      "patterns": [
+        "spikes",
+        "orbs",
+        "ring"
+      ],
+      "normalRecovery": 85,
+      "forcedRecovery": 90,
+      "phase2AtRatio": 0.5,
+      "initialApproach": 55,
+      "followingApproach": [
+        42,
+        28
+      ],
+      "dive": 0,
+      "armour": 1,
+      "exposedMultiplier": 1.35,
+      "body": {
+        "radius": 150,
+        "height": 300,
+        "poseHeights": {},
+        "physicalRadius": 82.5,
+        "physicalBelow": 125
+      },
+      "waves": 1,
+      "cargo": 0,
+      "goal": "Évitez les tentacules annoncés au sol. Gardez face aux orbes et sautez l’anneau au sol.",
+      "success": "Boss à 0 PV.",
+      "failures": [
+        "PV du joueur à 0",
+        "Temps écoulé"
+      ],
+      "notes": [
+        "Enchaînement fixe : jets, orbes, anneau. Les jets se resserrent près des bords quand plusieurs repères se confondent."
+      ],
+      "sources": [
+        "boss.js:encounters",
+        "boss.js:newBoss",
+        "boss.js:damageBoss",
+        "boss.js:bossTick",
+        "boss.js:defeatBoss",
+        "boss.js:interact",
+        "boss.js:step"
+      ]
+    },
+    {
+      "id": "whale",
+      "name": "Baleine de goudron",
+      "type": "whale",
+      "stage": "tar-basin",
+      "stageName": "Bassin de goudron",
+      "seconds": 180,
+      "baseHp": 340,
+      "hp": {
+        "easy": [
+          279
+        ],
+        "normal": [
+          340
+        ],
+        "hard": [
+          408
+        ]
+      },
+      "tell": {
+        "easy": [
+          98,
+          85
+        ],
+        "normal": [
+          82,
+          71
+        ],
+        "hard": [
+          72,
+          62
+        ]
+      },
+      "patterns": [
+        "orbs",
+        "spikes",
+        "breach"
+      ],
+      "normalRecovery": 105,
+      "forcedRecovery": 90,
+      "phase2AtRatio": 0.5,
+      "initialApproach": 55,
+      "followingApproach": 35,
+      "dive": 55,
+      "armour": 0.65,
+      "exposedMultiplier": 1.35,
+      "body": {
+        "radius": 220,
+        "height": 260,
+        "poseHeights": {},
+        "physicalRadius": 121.00000000000001,
+        "physicalBelow": 125
+      },
+      "waves": 1,
+      "cargo": 0,
+      "goal": "Repérez sa réapparition. Quittez les jets annoncés, puis attaquez son noyau exposé.",
+      "success": "Boss à 0 PV.",
+      "failures": [
+        "PV du joueur à 0",
+        "Temps écoulé"
+      ],
+      "notes": [
+        "Enchaînement fixe : orbes, jets, brèche. Après chaque récupération naturelle, immersion de 55 pas puis réapparition du côté opposé à la position actuelle du joueur (x=980 si joueur à gauche, sinon 300), suivie de 35 pas d’approche.",
+        "Pendant l’immersion, aucune mêlée ni aucun projectile ami ne peut infliger de dégâts. L’exposition du scan continue de s’écouler."
+      ],
+      "sources": [
+        "boss.js:encounters",
+        "boss.js:newBoss",
+        "boss.js:damageBoss",
+        "boss.js:bossTick",
+        "boss.js:defeatBoss",
+        "boss.js:interact",
+        "boss.js:step"
+      ]
+    },
+    {
+      "id": "giant",
+      "name": "Géant de goudron",
+      "type": "giant",
+      "stage": "shore",
+      "stageName": "La Grève",
+      "seconds": 200,
+      "baseHp": 400,
+      "hp": {
+        "easy": [
+          328
+        ],
+        "normal": [
+          400
+        ],
+        "hard": [
+          480
+        ]
+      },
+      "tell": {
+        "easy": [
+          106,
+          91
+        ],
+        "normal": [
+          88,
+          76
+        ],
+        "hard": [
+          77,
+          67
+        ]
+      },
+      "patterns": [
+        "stomp",
+        "ring",
+        "orbs"
+      ],
+      "normalRecovery": 115,
+      "forcedRecovery": 90,
+      "phase2AtRatio": 0.5,
+      "initialApproach": 55,
+      "followingApproach": [
+        42,
+        28
+      ],
+      "dive": 0,
+      "armour": 1,
+      "exposedMultiplier": 1.35,
+      "body": {
+        "radius": 126,
+        "height": 380,
+        "poseHeights": {
+          "attack": 266
+        },
+        "physicalRadius": 69.30000000000001,
+        "physicalBelow": 125
+      },
+      "waves": 1,
+      "cargo": 0,
+      "goal": "Sortez des zones de frappe. Sautez l’anneau chiral et exploitez les longues récupérations.",
+      "success": "Boss à 0 PV.",
+      "failures": [
+        "PV du joueur à 0",
+        "Temps écoulé"
+      ],
+      "notes": [
+        "Enchaînement fixe : écrasement, anneau, orbes. La hauteur de collision passe de 380 à 266 dans les poses d’annonce/attaque ; le dessin ne détermine pas cette collision."
+      ],
+      "sources": [
+        "boss.js:encounters",
+        "boss.js:newBoss",
+        "boss.js:damageBoss",
+        "boss.js:bossTick",
+        "boss.js:defeatBoss",
+        "boss.js:interact",
+        "boss.js:step"
+      ]
+    },
+    {
+      "id": "truck",
+      "name": "Camion MULE",
+      "type": "mule-truck",
+      "stage": "mule-camp-dry",
+      "stageName": "Camp des MULEs · temps sec",
+      "seconds": 180,
+      "baseHp": 240,
+      "hp": {
+        "easy": [
+          197
+        ],
+        "normal": [
+          240
+        ],
+        "hard": [
+          288
+        ]
+      },
+      "tell": {
+        "easy": [
+          91,
+          78
+        ],
+        "normal": [
+          76,
+          65
+        ],
+        "hard": [
+          67,
+          58
+        ]
+      },
+      "patterns": [
+        "bolts",
+        "charge",
+        "bolts"
+      ],
+      "normalRecovery": 85,
+      "forcedRecovery": 90,
+      "phase2AtRatio": 0.5,
+      "initialApproach": 55,
+      "followingApproach": [
+        42,
+        28
+      ],
+      "dive": 0,
+      "armour": 0.72,
+      "exposedMultiplier": 1.35,
+      "body": {
+        "radius": 205,
+        "height": 170,
+        "poseHeights": {},
+        "physicalRadius": 112.75000000000001,
+        "physicalBelow": 125
+      },
+      "waves": 1,
+      "cargo": 2,
+      "goal": "Immobilisez le camion, puis rapportez ses deux colis au dépôt à gauche. La commande Colis prend, pose ou livre un colis.",
+      "success": "Boss de la dernière vague à 0 PV et les deux colis livrés au dépôt.",
+      "failures": [
+        "PV du joueur à 0",
+        "Temps écoulé",
+        "Intégrité de cargaison à 0"
+      ],
+      "notes": [
+        "Un seul camion. Son immobilisation fait apparaître deux colis. Il faut les prendre et les livrer séparément au dépôt à gauche.",
+        "Ce Camion isolé n’endommage pas directement le dépôt avec ses tirs ou sa charge. Recevoir un coup non bloqué en portant un colis retire toutefois 12 d’intégrité."
+      ],
+      "sources": [
+        "boss.js:encounters",
+        "boss.js:newBoss",
+        "boss.js:damageBoss",
+        "boss.js:bossTick",
+        "boss.js:defeatBoss",
+        "boss.js:interact",
+        "boss.js:step"
+      ]
+    },
+    {
+      "id": "convoy",
+      "name": "Convoi MULE",
+      "type": "mule-truck",
+      "stage": "mule-camp",
+      "stageName": "Camp des MULEs",
+      "seconds": 240,
+      "baseHp": 190,
+      "hp": {
+        "easy": [
+          156,
+          174
+        ],
+        "normal": [
+          190,
+          213
+        ],
+        "hard": [
+          228,
+          255
+        ]
+      },
+      "tell": {
+        "easy": [
+          86,
+          74
+        ],
+        "normal": [
+          72,
+          62
+        ],
+        "hard": [
+          63,
+          54
+        ]
+      },
+      "patterns": [
+        "bolts",
+        "charge",
+        "bolts"
+      ],
+      "normalRecovery": 80,
+      "forcedRecovery": 90,
+      "phase2AtRatio": 0.5,
+      "initialApproach": 55,
+      "followingApproach": [
+        42,
+        28
+      ],
+      "dive": 0,
+      "armour": 0.72,
+      "exposedMultiplier": 1.35,
+      "body": {
+        "radius": 205,
+        "height": 170,
+        "poseHeights": {},
+        "physicalRadius": 112.75000000000001,
+        "physicalBelow": 125
+      },
+      "waves": 2,
+      "cargo": 2,
+      "goal": "Interceptez deux camions en deux vagues. Rapportez un colis par camion et protégez le dépôt des tirs bas.",
+      "success": "Boss de la dernière vague à 0 PV et les deux colis livrés au dépôt.",
+      "failures": [
+        "PV du joueur à 0",
+        "Temps écoulé",
+        "Intégrité de cargaison à 0"
+      ],
+      "notes": [
+        "Deux camions, un colis par camion. Le second arrive 180 pas après la destruction du premier, même si le premier colis n’a pas encore été livré.",
+        "Les PV du second camion sont arrondis après un facteur ×1,12. Le temps, la vitalité, l’énergie, la garde, l’intégrité et les colis ne sont pas réinitialisés entre les vagues.",
+        "Un tir bas non intercepté retire 7 d’intégrité au dépôt. Une charge qui atteint x<220 retire 18, une seule fois par charge. La première cargaison peut être livrée pendant la seconde vague."
+      ],
+      "sources": [
+        "boss.js:encounters",
+        "boss.js:newBoss",
+        "boss.js:damageBoss",
+        "boss.js:bossTick",
+        "boss.js:defeatBoss",
+        "boss.js:interact",
+        "boss.js:step"
+      ]
+    }
+  ],
+  "patterns": {
+    "charge": {
+      "id": "charge",
+      "title": "CHARGE",
+      "advice": "Sautez au-dessus du passage",
+      "damage": 25,
+      "response": "Sautez au passage ou utilisez un contre prêt en faisant face. La garde ordinaire ne bloque pas la charge.",
+      "details": "La cible est mémorisée au début de l’annonce, limitée à x=150…1130. Le Boss atteint cette abscisse en 38 pas ; contact à distance horizontale <125 et hauteur des pieds <120. Un seul impact réussi par charge.",
+      "damageByDifficulty": {
+        "easy": 18,
+        "normal": 25,
+        "hard": 31
+      },
+      "phases": {
+        "1": {
+          "active": 48,
+          "markers": [
+            {
+              "width": 480,
+              "height": 115,
+              "offsetFromTarget": 150
+            }
+          ],
+          "hazards": []
+        },
+        "2": {
+          "active": 48,
+          "markers": [
+            {
+              "width": 480,
+              "height": 115,
+              "offsetFromTarget": 150
+            }
+          ],
+          "hazards": []
+        }
+      },
+      "sources": [
+        "boss.js:prepareAttack",
+        "boss.js:launchAttack",
+        "boss.js:bossTick",
+        "boss.js:projectilesTick"
+      ]
+    },
+    "ring": {
+      "id": "ring",
+      "title": "ANNEAU AU SOL",
+      "advice": "Sautez lorsque l’anneau approche",
+      "damage": 20,
+      "response": "Sautez lorsque chaque anneau arrive. La garde ordinaire ne le bloque pas.",
+      "details": "Deux anneaux partent en sens opposés, bas et non gardables. Vitesse 7,2 en phase 1, 9 en phase 2 ; ils peuvent encore circuler pendant la récupération.",
+      "damageByDifficulty": {
+        "easy": 14,
+        "normal": 20,
+        "hard": 25
+      },
+      "phases": {
+        "1": {
+          "active": 90,
+          "markers": [
+            {
+              "width": 1220,
+              "height": 50,
+              "offsetFromTarget": 0
+            }
+          ],
+          "hazards": [
+            {
+              "kind": "ring",
+              "baseDamage": 20,
+              "width": 95,
+              "height": 46,
+              "speed": 7.2,
+              "ttl": 190,
+              "delay": 0,
+              "blockable": false,
+              "low": true,
+              "heightAboveFloor": 23
+            },
+            {
+              "kind": "ring",
+              "baseDamage": 20,
+              "width": 95,
+              "height": 46,
+              "speed": 7.2,
+              "ttl": 190,
+              "delay": 0,
+              "blockable": false,
+              "low": true,
+              "heightAboveFloor": 23
+            }
+          ]
+        },
+        "2": {
+          "active": 90,
+          "markers": [
+            {
+              "width": 1220,
+              "height": 50,
+              "offsetFromTarget": 0
+            }
+          ],
+          "hazards": [
+            {
+              "kind": "ring",
+              "baseDamage": 20,
+              "width": 95,
+              "height": 46,
+              "speed": 9,
+              "ttl": 190,
+              "delay": 0,
+              "blockable": false,
+              "low": true,
+              "heightAboveFloor": 23
+            },
+            {
+              "kind": "ring",
+              "baseDamage": 20,
+              "width": 95,
+              "height": 46,
+              "speed": 9,
+              "ttl": 190,
+              "delay": 0,
+              "blockable": false,
+              "low": true,
+              "heightAboveFloor": 23
+            }
+          ]
+        }
+      },
+      "sources": [
+        "boss.js:prepareAttack",
+        "boss.js:launchAttack",
+        "boss.js:bossTick",
+        "boss.js:projectilesTick"
+      ]
+    },
+    "pounce": {
+      "id": "pounce",
+      "title": "BOND",
+      "advice": "Sortez des zones avant l’impact",
+      "damage": 28,
+      "response": "Sortez de la marque au sol ; un simple saut dans la colonne n’assure pas l’esquive.",
+      "details": "Le Boss rejoint la cible de l’annonce en 14 pas ; zone de frappe de 215 × 240, délai propre 10 pas, non gardable.",
+      "damageByDifficulty": {
+        "easy": 20,
+        "normal": 28,
+        "hard": 35
+      },
+      "phases": {
+        "1": {
+          "active": 36,
+          "markers": [
+            {
+              "width": 215,
+              "height": 240,
+              "offsetFromTarget": 0
+            }
+          ],
+          "hazards": [
+            {
+              "kind": "slam",
+              "baseDamage": 28,
+              "width": 215,
+              "height": 240,
+              "speed": 0,
+              "ttl": 18,
+              "delay": 10,
+              "blockable": false,
+              "low": false,
+              "heightAboveFloor": 120
+            }
+          ]
+        },
+        "2": {
+          "active": 36,
+          "markers": [
+            {
+              "width": 215,
+              "height": 240,
+              "offsetFromTarget": 0
+            }
+          ],
+          "hazards": [
+            {
+              "kind": "slam",
+              "baseDamage": 28,
+              "width": 215,
+              "height": 240,
+              "speed": 0,
+              "ttl": 18,
+              "delay": 10,
+              "blockable": false,
+              "low": false,
+              "heightAboveFloor": 120
+            }
+          ]
+        }
+      },
+      "sources": [
+        "boss.js:prepareAttack",
+        "boss.js:launchAttack",
+        "boss.js:bossTick",
+        "boss.js:projectilesTick"
+      ]
+    },
+    "spikes": {
+      "id": "spikes",
+      "title": "JETS DE GOUDRON",
+      "advice": "Quittez les colonnes marquées",
+      "damage": 23,
+      "response": "Quittez les colonnes marquées avant leur émission ; la garde ordinaire ne les bloque pas.",
+      "details": "Trois colonnes en phase 1, jusqu’à cinq en phase 2. Les positions sont limitées à la piste et dédoublonnées près des bords. Les émissions sont décalées de 4 pas.",
+      "damageByDifficulty": {
+        "easy": 16,
+        "normal": 23,
+        "hard": 29
+      },
+      "phases": {
+        "1": {
+          "active": 42,
+          "markers": [
+            {
+              "width": 82,
+              "height": 240,
+              "offsetFromTarget": -245
+            },
+            {
+              "width": 82,
+              "height": 240,
+              "offsetFromTarget": 0
+            },
+            {
+              "width": 82,
+              "height": 240,
+              "offsetFromTarget": 245
+            }
+          ],
+          "hazards": [
+            {
+              "kind": "spike",
+              "baseDamage": 23,
+              "width": 82,
+              "height": 240,
+              "speed": 0,
+              "ttl": 22,
+              "delay": 0,
+              "blockable": false,
+              "low": false,
+              "heightAboveFloor": 120
+            },
+            {
+              "kind": "spike",
+              "baseDamage": 23,
+              "width": 82,
+              "height": 240,
+              "speed": 0,
+              "ttl": 22,
+              "delay": 4,
+              "blockable": false,
+              "low": false,
+              "heightAboveFloor": 120
+            },
+            {
+              "kind": "spike",
+              "baseDamage": 23,
+              "width": 82,
+              "height": 240,
+              "speed": 0,
+              "ttl": 22,
+              "delay": 8,
+              "blockable": false,
+              "low": false,
+              "heightAboveFloor": 120
+            }
+          ]
+        },
+        "2": {
+          "active": 42,
+          "markers": [
+            {
+              "width": 82,
+              "height": 240,
+              "offsetFromTarget": -360
+            },
+            {
+              "width": 82,
+              "height": 240,
+              "offsetFromTarget": -180
+            },
+            {
+              "width": 82,
+              "height": 240,
+              "offsetFromTarget": 0
+            },
+            {
+              "width": 82,
+              "height": 240,
+              "offsetFromTarget": 180
+            },
+            {
+              "width": 82,
+              "height": 240,
+              "offsetFromTarget": 360
+            }
+          ],
+          "hazards": [
+            {
+              "kind": "spike",
+              "baseDamage": 23,
+              "width": 82,
+              "height": 240,
+              "speed": 0,
+              "ttl": 22,
+              "delay": 0,
+              "blockable": false,
+              "low": false,
+              "heightAboveFloor": 120
+            },
+            {
+              "kind": "spike",
+              "baseDamage": 23,
+              "width": 82,
+              "height": 240,
+              "speed": 0,
+              "ttl": 22,
+              "delay": 4,
+              "blockable": false,
+              "low": false,
+              "heightAboveFloor": 120
+            },
+            {
+              "kind": "spike",
+              "baseDamage": 23,
+              "width": 82,
+              "height": 240,
+              "speed": 0,
+              "ttl": 22,
+              "delay": 8,
+              "blockable": false,
+              "low": false,
+              "heightAboveFloor": 120
+            },
+            {
+              "kind": "spike",
+              "baseDamage": 23,
+              "width": 82,
+              "height": 240,
+              "speed": 0,
+              "ttl": 22,
+              "delay": 12,
+              "blockable": false,
+              "low": false,
+              "heightAboveFloor": 120
+            },
+            {
+              "kind": "spike",
+              "baseDamage": 23,
+              "width": 82,
+              "height": 240,
+              "speed": 0,
+              "ttl": 22,
+              "delay": 16,
+              "blockable": false,
+              "low": false,
+              "heightAboveFloor": 120
+            }
+          ]
+        }
+      },
+      "sources": [
+        "boss.js:prepareAttack",
+        "boss.js:launchAttack",
+        "boss.js:bossTick",
+        "boss.js:projectilesTick"
+      ]
+    },
+    "orbs": {
+      "id": "orbs",
+      "title": "SALVE CHIRALE",
+      "advice": "Gardez face aux tirs · bas + garde pour les tirs bas",
+      "damage": 19,
+      "response": "Gardez face aux orbes ; accroupissez-vous avec la garde pour ceux du bas, ou évitez leur trajectoire.",
+      "details": "Trois orbes, puis quatre en phase 2. Hauteurs alternées 92 / 36 au-dessus du sol ; intervalle d’émission 18 pas. Ils peuvent persister après l’entrée en récupération.",
+      "damageByDifficulty": {
+        "easy": 13,
+        "normal": 19,
+        "hard": 24
+      },
+      "phases": {
+        "1": {
+          "active": 100,
+          "markers": [
+            {
+              "width": 440,
+              "height": 120,
+              "offsetFromTarget": 150
+            }
+          ],
+          "hazards": [
+            {
+              "kind": "orb",
+              "baseDamage": 19,
+              "width": 55,
+              "height": 48,
+              "speed": 5.8,
+              "ttl": 190,
+              "delay": 0,
+              "blockable": true,
+              "low": false,
+              "heightAboveFloor": 92
+            },
+            {
+              "kind": "orb",
+              "baseDamage": 19,
+              "width": 55,
+              "height": 48,
+              "speed": 5.8,
+              "ttl": 190,
+              "delay": 18,
+              "blockable": true,
+              "low": true,
+              "heightAboveFloor": 36
+            },
+            {
+              "kind": "orb",
+              "baseDamage": 19,
+              "width": 55,
+              "height": 48,
+              "speed": 5.8,
+              "ttl": 190,
+              "delay": 36,
+              "blockable": true,
+              "low": false,
+              "heightAboveFloor": 92
+            }
+          ]
+        },
+        "2": {
+          "active": 100,
+          "markers": [
+            {
+              "width": 440,
+              "height": 120,
+              "offsetFromTarget": 150
+            }
+          ],
+          "hazards": [
+            {
+              "kind": "orb",
+              "baseDamage": 19,
+              "width": 55,
+              "height": 48,
+              "speed": 5.8,
+              "ttl": 190,
+              "delay": 0,
+              "blockable": true,
+              "low": false,
+              "heightAboveFloor": 92
+            },
+            {
+              "kind": "orb",
+              "baseDamage": 19,
+              "width": 55,
+              "height": 48,
+              "speed": 5.8,
+              "ttl": 190,
+              "delay": 18,
+              "blockable": true,
+              "low": true,
+              "heightAboveFloor": 36
+            },
+            {
+              "kind": "orb",
+              "baseDamage": 19,
+              "width": 55,
+              "height": 48,
+              "speed": 5.8,
+              "ttl": 190,
+              "delay": 36,
+              "blockable": true,
+              "low": false,
+              "heightAboveFloor": 92
+            },
+            {
+              "kind": "orb",
+              "baseDamage": 19,
+              "width": 55,
+              "height": 48,
+              "speed": 5.8,
+              "ttl": 190,
+              "delay": 54,
+              "blockable": true,
+              "low": true,
+              "heightAboveFloor": 36
+            }
+          ]
+        }
+      },
+      "sources": [
+        "boss.js:prepareAttack",
+        "boss.js:launchAttack",
+        "boss.js:bossTick",
+        "boss.js:projectilesTick"
+      ]
+    },
+    "breach": {
+      "id": "breach",
+      "title": "SURGISSEMENT",
+      "advice": "Sortez des zones avant l’impact",
+      "damage": 28,
+      "response": "Quittez la zone annoncée de la réapparition et profitez ensuite du noyau exposé.",
+      "details": "Même bond de 14 pas et zone de 215 × 240 que le bond léonin ; délai propre 10 pas, non gardable.",
+      "damageByDifficulty": {
+        "easy": 20,
+        "normal": 28,
+        "hard": 35
+      },
+      "phases": {
+        "1": {
+          "active": 36,
+          "markers": [
+            {
+              "width": 215,
+              "height": 240,
+              "offsetFromTarget": 0
+            }
+          ],
+          "hazards": [
+            {
+              "kind": "slam",
+              "baseDamage": 28,
+              "width": 215,
+              "height": 240,
+              "speed": 0,
+              "ttl": 18,
+              "delay": 10,
+              "blockable": false,
+              "low": false,
+              "heightAboveFloor": 120
+            }
+          ]
+        },
+        "2": {
+          "active": 36,
+          "markers": [
+            {
+              "width": 215,
+              "height": 240,
+              "offsetFromTarget": 0
+            }
+          ],
+          "hazards": [
+            {
+              "kind": "slam",
+              "baseDamage": 28,
+              "width": 215,
+              "height": 240,
+              "speed": 0,
+              "ttl": 18,
+              "delay": 10,
+              "blockable": false,
+              "low": false,
+              "heightAboveFloor": 120
+            }
+          ]
+        }
+      },
+      "sources": [
+        "boss.js:prepareAttack",
+        "boss.js:launchAttack",
+        "boss.js:bossTick",
+        "boss.js:projectilesTick"
+      ]
+    },
+    "stomp": {
+      "id": "stomp",
+      "title": "FRAPPE DU GÉANT",
+      "advice": "Sortez des zones avant l’impact",
+      "damage": 28,
+      "response": "Déplacez-vous hors de chaque marque ; la colonne haute couvre un saut ordinaire.",
+      "details": "Une zone de 200 × 450. En phase 2, une seconde zone de 180 × 450 est placée à 290 unités du premier point, vers le centre et limitée à la piste. Délai propre 10 pas, non gardable.",
+      "damageByDifficulty": {
+        "easy": 20,
+        "normal": 28,
+        "hard": 35
+      },
+      "phases": {
+        "1": {
+          "active": 36,
+          "markers": [
+            {
+              "width": 200,
+              "height": 450,
+              "offsetFromTarget": 0
+            }
+          ],
+          "hazards": [
+            {
+              "kind": "slam",
+              "baseDamage": 28,
+              "width": 200,
+              "height": 450,
+              "speed": 0,
+              "ttl": 18,
+              "delay": 10,
+              "blockable": false,
+              "low": false,
+              "heightAboveFloor": 225
+            }
+          ]
+        },
+        "2": {
+          "active": 36,
+          "markers": [
+            {
+              "width": 200,
+              "height": 450,
+              "offsetFromTarget": 0
+            },
+            {
+              "width": 180,
+              "height": 450,
+              "offsetFromTarget": -290
+            }
+          ],
+          "hazards": [
+            {
+              "kind": "slam",
+              "baseDamage": 28,
+              "width": 200,
+              "height": 450,
+              "speed": 0,
+              "ttl": 18,
+              "delay": 10,
+              "blockable": false,
+              "low": false,
+              "heightAboveFloor": 225
+            },
+            {
+              "kind": "slam",
+              "baseDamage": 28,
+              "width": 180,
+              "height": 450,
+              "speed": 0,
+              "ttl": 18,
+              "delay": 10,
+              "blockable": false,
+              "low": false,
+              "heightAboveFloor": 225
+            }
+          ]
+        }
+      },
+      "sources": [
+        "boss.js:prepareAttack",
+        "boss.js:launchAttack",
+        "boss.js:bossTick",
+        "boss.js:projectilesTick"
+      ]
+    },
+    "bolts": {
+      "id": "bolts",
+      "title": "TIRS MULE",
+      "advice": "Gardez face aux tirs · bas + garde pour les tirs bas",
+      "damage": 15,
+      "response": "Gardez face aux tirs ; Bas + Garde pour les tirs bas. Dans le Convoi, interceptez les tirs bas avant le dépôt.",
+      "details": "Trois tirs, puis quatre en phase 2 ; hauteurs 92 / 36, intervalle 18 pas. Un tir bas non intercepté entre x=90 et 170 retire 7 d’intégrité au dépôt du Convoi.",
+      "damageByDifficulty": {
+        "easy": 11,
+        "normal": 15,
+        "hard": 19
+      },
+      "phases": {
+        "1": {
+          "active": 100,
+          "markers": [
+            {
+              "width": 440,
+              "height": 120,
+              "offsetFromTarget": 150
+            }
+          ],
+          "hazards": [
+            {
+              "kind": "bolt",
+              "baseDamage": 15,
+              "width": 38,
+              "height": 20,
+              "speed": 8,
+              "ttl": 190,
+              "delay": 0,
+              "blockable": true,
+              "low": false,
+              "heightAboveFloor": 92
+            },
+            {
+              "kind": "bolt",
+              "baseDamage": 15,
+              "width": 38,
+              "height": 20,
+              "speed": 8,
+              "ttl": 190,
+              "delay": 18,
+              "blockable": true,
+              "low": true,
+              "heightAboveFloor": 36
+            },
+            {
+              "kind": "bolt",
+              "baseDamage": 15,
+              "width": 38,
+              "height": 20,
+              "speed": 8,
+              "ttl": 190,
+              "delay": 36,
+              "blockable": true,
+              "low": false,
+              "heightAboveFloor": 92
+            }
+          ]
+        },
+        "2": {
+          "active": 100,
+          "markers": [
+            {
+              "width": 440,
+              "height": 120,
+              "offsetFromTarget": 150
+            }
+          ],
+          "hazards": [
+            {
+              "kind": "bolt",
+              "baseDamage": 15,
+              "width": 38,
+              "height": 20,
+              "speed": 8,
+              "ttl": 190,
+              "delay": 0,
+              "blockable": true,
+              "low": false,
+              "heightAboveFloor": 92
+            },
+            {
+              "kind": "bolt",
+              "baseDamage": 15,
+              "width": 38,
+              "height": 20,
+              "speed": 8,
+              "ttl": 190,
+              "delay": 18,
+              "blockable": true,
+              "low": true,
+              "heightAboveFloor": 36
+            },
+            {
+              "kind": "bolt",
+              "baseDamage": 15,
+              "width": 38,
+              "height": 20,
+              "speed": 8,
+              "ttl": 190,
+              "delay": 36,
+              "blockable": true,
+              "low": false,
+              "heightAboveFloor": 92
+            },
+            {
+              "kind": "bolt",
+              "baseDamage": 15,
+              "width": 38,
+              "height": 20,
+              "speed": 8,
+              "ttl": 190,
+              "delay": 54,
+              "blockable": true,
+              "low": true,
+              "heightAboveFloor": 36
+            }
+          ]
+        }
+      },
+      "sources": [
+        "boss.js:prepareAttack",
+        "boss.js:launchAttack",
+        "boss.js:bossTick",
+        "boss.js:projectilesTick"
+      ]
+    }
+  },
+  "actions": [
+    {
+      "id": "BOSS_MOVE:common:light",
+      "engineAction": "light",
+      "owner": "common",
+      "name": "Léger",
+      "command": "Léger",
+      "cost": 0,
+      "timing": {
+        "firstEffect": 6,
+        "clearAt": 20,
+        "nextUncancelledStartAt": 21,
+        "unit": "pas de simulation à 60 Hz",
+        "convention": "Effet unique quand frame atteint delay ; suppression à frame >= duration. Pas de fenêtre active de mêlée persistante."
+      },
+      "requiresMarker": null,
+      "effects": {
+        "melee": [
+          {
+            "baseDamage": 10,
+            "reach": 100,
+            "stagger": 11
+          }
+        ],
+        "shots": [],
+        "displacement": 0,
+        "invulnerability": 0,
+        "shield": 0,
+        "exposure": 0,
+        "markerBefore": null,
+        "markerAfter": null
+      },
+      "variants": [],
+      "notes": [
+        "Frappe unique ; aucun enchaînement par annulation ni touche confirmée n’est requis."
+      ],
+      "compatibility": {
+        "lion": "action-disponible",
+        "squid": "action-disponible",
+        "whale": "action-disponible",
+        "giant": "action-disponible",
+        "truck": "action-disponible",
+        "convoy": "action-disponible"
+      },
+      "sources": [
+        "boss.js:beginAction",
+        "boss.js:perform",
+        "boss.js:movePlayer",
+        "boss.js:melee",
+        "boss.js:projectilesTick"
+      ]
+    },
+    {
+      "id": "BOSS_MOVE:common:heavy",
+      "engineAction": "heavy",
+      "owner": "common",
+      "name": "Lourd",
+      "command": "Lourd",
+      "cost": 0,
+      "timing": {
+        "firstEffect": 14,
+        "clearAt": 34,
+        "nextUncancelledStartAt": 35,
+        "unit": "pas de simulation à 60 Hz",
+        "convention": "Effet unique quand frame atteint delay ; suppression à frame >= duration. Pas de fenêtre active de mêlée persistante."
+      },
+      "requiresMarker": null,
+      "effects": {
+        "melee": [
+          {
+            "baseDamage": 23,
+            "reach": 135,
+            "stagger": 24
+          }
+        ],
+        "shots": [],
+        "displacement": 0,
+        "invulnerability": 0,
+        "shield": 0,
+        "exposure": 0,
+        "markerBefore": null,
+        "markerAfter": null
+      },
+      "variants": [
+        {
+          "id": "crate",
+          "effects": {
+            "melee": [
+              {
+                "baseDamage": 23,
+                "reach": 135,
+                "stagger": 24
+              }
+            ],
+            "shots": [
+              {
+                "kind": "cargo",
+                "baseDamage": 32,
+                "width": 56,
+                "height": 42,
+                "velocity": 7,
+                "ttl": 160,
+                "delay": 0,
+                "spawnOffsetX": 86,
+                "heightAboveFloor": 22
+              }
+            ],
+            "displacement": 0,
+            "invulnerability": 0,
+            "shield": 0,
+            "exposure": 0,
+            "markerBefore": {
+              "kind": "crate",
+              "x": 486,
+              "ttl": 300
+            },
+            "markerAfter": null
+          }
+        }
+      ],
+      "notes": [
+        "Frappe unique. MULE peut aussi lancer sa propre caisse placée à moins de 180 unités ; la caisse est consommée."
+      ],
+      "compatibility": {
+        "lion": "action-disponible",
+        "squid": "action-disponible",
+        "whale": "action-disponible",
+        "giant": "action-disponible",
+        "truck": "action-disponible",
+        "convoy": "action-disponible"
+      },
+      "sources": [
+        "boss.js:beginAction",
+        "boss.js:perform",
+        "boss.js:movePlayer",
+        "boss.js:melee",
+        "boss.js:projectilesTick"
+      ]
+    },
+    {
+      "id": "BOSS_MOVE:common:sweep",
+      "engineAction": "sweep",
+      "owner": "common",
+      "name": "Balayage",
+      "command": "Bas + Léger",
+      "cost": 0,
+      "timing": {
+        "firstEffect": 6,
+        "clearAt": 20,
+        "nextUncancelledStartAt": 21,
+        "unit": "pas de simulation à 60 Hz",
+        "convention": "Effet unique quand frame atteint delay ; suppression à frame >= duration. Pas de fenêtre active de mêlée persistante."
+      },
+      "requiresMarker": null,
+      "effects": {
+        "melee": [
+          {
+            "baseDamage": 10,
+            "reach": 100,
+            "stagger": 11
+          }
+        ],
+        "shots": [],
+        "displacement": 0,
+        "invulnerability": 0,
+        "shield": 0,
+        "exposure": 0,
+        "markerBefore": null,
+        "markerAfter": null
+      },
+      "variants": [],
+      "notes": [
+        "Même frappe, portée et dégâts que Léger dans ce moteur. Aucun niveau de garde propre au Boss."
+      ],
+      "compatibility": {
+        "lion": "action-disponible",
+        "squid": "action-disponible",
+        "whale": "action-disponible",
+        "giant": "action-disponible",
+        "truck": "action-disponible",
+        "convoy": "action-disponible"
+      },
+      "sources": [
+        "boss.js:beginAction",
+        "boss.js:perform",
+        "boss.js:movePlayer",
+        "boss.js:melee",
+        "boss.js:projectilesTick"
+      ]
+    },
+    {
+      "id": "BOSS_MOVE:common:lift",
+      "engineAction": "lift",
+      "owner": "common",
+      "name": "Montant",
+      "command": "Bas + Lourd",
+      "cost": 0,
+      "timing": {
+        "firstEffect": 14,
+        "clearAt": 34,
+        "nextUncancelledStartAt": 35,
+        "unit": "pas de simulation à 60 Hz",
+        "convention": "Effet unique quand frame atteint delay ; suppression à frame >= duration. Pas de fenêtre active de mêlée persistante."
+      },
+      "requiresMarker": null,
+      "effects": {
+        "melee": [
+          {
+            "baseDamage": 23,
+            "reach": 135,
+            "stagger": 24
+          }
+        ],
+        "shots": [],
+        "displacement": 0,
+        "invulnerability": 0,
+        "shield": 0,
+        "exposure": 0,
+        "markerBefore": null,
+        "markerAfter": null
+      },
+      "variants": [
+        {
+          "id": "crate",
+          "effects": {
+            "melee": [
+              {
+                "baseDamage": 23,
+                "reach": 135,
+                "stagger": 24
+              }
+            ],
+            "shots": [
+              {
+                "kind": "cargo",
+                "baseDamage": 32,
+                "width": 56,
+                "height": 42,
+                "velocity": 7,
+                "ttl": 160,
+                "delay": 0,
+                "spawnOffsetX": 86,
+                "heightAboveFloor": 22
+              }
+            ],
+            "displacement": 0,
+            "invulnerability": 0,
+            "shield": 0,
+            "exposure": 0,
+            "markerBefore": {
+              "kind": "crate",
+              "x": 486,
+              "ttl": 300
+            },
+            "markerAfter": null
+          }
+        }
+      ],
+      "notes": [
+        "Même frappe que Lourd ; aucun lancement vertical du Boss. La poussée de sa propre caisse reste possible pour MULE."
+      ],
+      "compatibility": {
+        "lion": "action-disponible",
+        "squid": "action-disponible",
+        "whale": "action-disponible",
+        "giant": "action-disponible",
+        "truck": "action-disponible",
+        "convoy": "action-disponible"
+      },
+      "sources": [
+        "boss.js:beginAction",
+        "boss.js:perform",
+        "boss.js:movePlayer",
+        "boss.js:melee",
+        "boss.js:projectilesTick"
+      ]
+    },
+    {
+      "id": "BOSS_MOVE:common:grab",
+      "engineAction": "grab",
+      "owner": "common",
+      "name": "Frappe d’appui / Colis",
+      "command": "Colis / Appui",
+      "cost": 0,
+      "timing": {
+        "firstEffect": 6,
+        "clearAt": 20,
+        "nextUncancelledStartAt": 21,
+        "unit": "pas de simulation à 60 Hz",
+        "convention": "Effet unique quand frame atteint delay ; suppression à frame >= duration. Pas de fenêtre active de mêlée persistante."
+      },
+      "requiresMarker": null,
+      "effects": {
+        "melee": [
+          {
+            "baseDamage": 14,
+            "reach": 65,
+            "stagger": 28
+          }
+        ],
+        "shots": [],
+        "displacement": 0,
+        "invulnerability": 0,
+        "shield": 0,
+        "exposure": 0,
+        "markerBefore": null,
+        "markerAfter": null
+      },
+      "variants": [],
+      "notes": [
+        "Les grandes cibles ne sont pas projetées : frappe d’appui de base 14. Sur Camion et Convoi, la commande sert uniquement aux colis et ne démarre pas cette frappe."
+      ],
+      "compatibility": {
+        "lion": "action-disponible",
+        "squid": "action-disponible",
+        "whale": "action-disponible",
+        "giant": "action-disponible",
+        "truck": "interaction-colis",
+        "convoy": "interaction-colis"
+      },
+      "sources": [
+        "boss.js:beginAction",
+        "boss.js:perform",
+        "boss.js:movePlayer",
+        "boss.js:melee",
+        "boss.js:projectilesTick"
+      ]
+    },
+    {
+      "id": "BOSS_MOVE:common:finish",
+      "engineAction": "finish",
+      "owner": "common",
+      "name": "Charge chirale",
+      "command": "Charge chirale",
+      "cost": 70,
+      "timing": {
+        "firstEffect": 22,
+        "clearAt": 52,
+        "nextUncancelledStartAt": 53,
+        "unit": "pas de simulation à 60 Hz",
+        "convention": "Effet unique quand frame atteint delay ; suppression à frame >= duration. Pas de fenêtre active de mêlée persistante."
+      },
+      "requiresMarker": null,
+      "effects": {
+        "melee": [
+          {
+            "baseDamage": 65,
+            "reach": 230,
+            "stagger": 48
+          }
+        ],
+        "shots": [
+          {
+            "kind": "memory",
+            "baseDamage": 22,
+            "width": 110,
+            "height": 110,
+            "velocity": 8,
+            "ttl": 90,
+            "delay": 0,
+            "spawnOffsetX": 90,
+            "heightAboveFloor": 90
+          }
+        ],
+        "displacement": 0,
+        "invulnerability": 0,
+        "shield": 0,
+        "exposure": 0,
+        "markerBefore": null,
+        "markerAfter": null
+      },
+      "variants": [],
+      "notes": [
+        "Charge offensive pendant la rencontre : 70 points, une mêlée puis un projectile. Les deux contacts ne sont pas garantis. Aucun cinéma de finalité du duel."
+      ],
+      "compatibility": {
+        "lion": "action-disponible",
+        "squid": "action-disponible",
+        "whale": "action-disponible",
+        "giant": "action-disponible",
+        "truck": "action-disponible",
+        "convoy": "action-disponible"
+      },
+      "sources": [
+        "boss.js:beginAction",
+        "boss.js:perform",
+        "boss.js:movePlayer",
+        "boss.js:melee",
+        "boss.js:projectilesTick"
+      ]
+    },
+    {
+      "id": "BOSS_MOVE:sam:bola",
+      "engineAction": "bola",
+      "owner": "sam",
+      "name": "Bola de liaison",
+      "command": "Signature neutre",
+      "cost": 28,
+      "timing": {
+        "firstEffect": 12,
+        "clearAt": 34,
+        "nextUncancelledStartAt": 35,
+        "unit": "pas de simulation à 60 Hz",
+        "convention": "Effet unique quand frame atteint delay ; suppression à frame >= duration. Pas de fenêtre active de mêlée persistante."
+      },
+      "requiresMarker": null,
+      "effects": {
+        "melee": [],
+        "shots": [
+          {
+            "kind": "sam",
+            "baseDamage": 34,
+            "width": 42,
+            "height": 32,
+            "velocity": 9,
+            "ttl": 160,
+            "delay": 0,
+            "spawnOffsetX": 45,
+            "heightAboveFloor": 92
+          }
+        ],
+        "displacement": 0,
+        "invulnerability": 0,
+        "shield": 0,
+        "exposure": 0,
+        "markerBefore": null,
+        "markerAfter": null
+      },
+      "variants": [],
+      "notes": [
+        "Projectile unique à hauteur de torse ; ne lie pas le déplacement du Boss."
+      ],
+      "compatibility": {
+        "lion": "action-disponible",
+        "squid": "action-disponible",
+        "whale": "action-disponible",
+        "giant": "action-disponible",
+        "truck": "action-disponible",
+        "convoy": "action-disponible"
+      },
+      "sources": [
+        "boss.js:beginAction",
+        "boss.js:perform",
+        "boss.js:movePlayer",
+        "boss.js:melee",
+        "boss.js:projectilesTick"
+      ]
+    },
+    {
+      "id": "BOSS_MOVE:sam:brace",
+      "engineAction": "brace",
+      "owner": "sam",
+      "name": "Reprise d’appui",
+      "command": "Avant + Signature",
+      "cost": 14,
+      "timing": {
+        "firstEffect": 12,
+        "clearAt": 34,
+        "nextUncancelledStartAt": 35,
+        "unit": "pas de simulation à 60 Hz",
+        "convention": "Effet unique quand frame atteint delay ; suppression à frame >= duration. Pas de fenêtre active de mêlée persistante."
+      },
+      "requiresMarker": null,
+      "effects": {
+        "melee": [],
+        "shots": [],
+        "displacement": 0,
+        "invulnerability": 0,
+        "shield": 55,
+        "exposure": 0,
+        "markerBefore": null,
+        "markerAfter": null
+      },
+      "variants": [],
+      "notes": [
+        "Bouclier de contre, 55 pas à partir de l’exécution. Face au prochain impact, bloque même une attaque non gardable, riposte de base 24 et se consomme."
+      ],
+      "compatibility": {
+        "lion": "action-disponible",
+        "squid": "action-disponible",
+        "whale": "action-disponible",
+        "giant": "action-disponible",
+        "truck": "action-disponible",
+        "convoy": "action-disponible"
+      },
+      "sources": [
+        "boss.js:beginAction",
+        "boss.js:perform",
+        "boss.js:movePlayer",
+        "boss.js:melee",
+        "boss.js:projectilesTick"
+      ]
+    },
+    {
+      "id": "BOSS_MOVE:sam:parry",
+      "engineAction": "parry",
+      "owner": "sam",
+      "name": "Parade au lien",
+      "command": "Arrière + Signature",
+      "cost": 18,
+      "timing": {
+        "firstEffect": 12,
+        "clearAt": 34,
+        "nextUncancelledStartAt": 35,
+        "unit": "pas de simulation à 60 Hz",
+        "convention": "Effet unique quand frame atteint delay ; suppression à frame >= duration. Pas de fenêtre active de mêlée persistante."
+      },
+      "requiresMarker": null,
+      "effects": {
+        "melee": [],
+        "shots": [],
+        "displacement": 0,
+        "invulnerability": 0,
+        "shield": 55,
+        "exposure": 0,
+        "markerBefore": null,
+        "markerAfter": null
+      },
+      "variants": [],
+      "notes": [
+        "Même bouclier de contre de 55 pas que Reprise d’appui ici. Aucun échange automatique de côté."
+      ],
+      "compatibility": {
+        "lion": "action-disponible",
+        "squid": "action-disponible",
+        "whale": "action-disponible",
+        "giant": "action-disponible",
+        "truck": "action-disponible",
+        "convoy": "action-disponible"
+      },
+      "sources": [
+        "boss.js:beginAction",
+        "boss.js:perform",
+        "boss.js:movePlayer",
+        "boss.js:melee",
+        "boss.js:projectilesTick"
+      ]
+    },
+    {
+      "id": "BOSS_MOVE:fragile:blink",
+      "engineAction": "blink",
+      "owner": "fragile",
+      "name": "Pas de Grève",
+      "command": "Signature neutre",
+      "cost": 28,
+      "timing": {
+        "firstEffect": 12,
+        "clearAt": 34,
+        "nextUncancelledStartAt": 35,
+        "unit": "pas de simulation à 60 Hz",
+        "convention": "Effet unique quand frame atteint delay ; suppression à frame >= duration. Pas de fenêtre active de mêlée persistante."
+      },
+      "requiresMarker": null,
+      "effects": {
+        "melee": [
+          {
+            "baseDamage": 36,
+            "reach": 145,
+            "stagger": 24
+          }
+        ],
+        "shots": [],
+        "displacement": 210,
+        "invulnerability": 30,
+        "shield": 0,
+        "exposure": 0,
+        "markerBefore": null,
+        "markerAfter": null
+      },
+      "variants": [],
+      "notes": [
+        "Avance de 210 unités, limité à la piste ; 30 pas d’invulnérabilité et mêlée à la nouvelle position. Une traversée trop profonde peut placer la cible derrière la frappe."
+      ],
+      "compatibility": {
+        "lion": "action-disponible",
+        "squid": "action-disponible",
+        "whale": "action-disponible",
+        "giant": "action-disponible",
+        "truck": "action-disponible",
+        "convoy": "action-disponible"
+      },
+      "sources": [
+        "boss.js:beginAction",
+        "boss.js:perform",
+        "boss.js:movePlayer",
+        "boss.js:melee",
+        "boss.js:projectilesTick"
+      ]
+    },
+    {
+      "id": "BOSS_MOVE:fragile:fan",
+      "engineAction": "fan",
+      "owner": "fragile",
+      "name": "Éventail de pluie",
+      "command": "Avant + Signature",
+      "cost": 18,
+      "timing": {
+        "firstEffect": 12,
+        "clearAt": 34,
+        "nextUncancelledStartAt": 35,
+        "unit": "pas de simulation à 60 Hz",
+        "convention": "Effet unique quand frame atteint delay ; suppression à frame >= duration. Pas de fenêtre active de mêlée persistante."
+      },
+      "requiresMarker": null,
+      "effects": {
+        "melee": [
+          {
+            "baseDamage": 30,
+            "reach": 175,
+            "stagger": 22
+          }
+        ],
+        "shots": [],
+        "displacement": 0,
+        "invulnerability": 0,
+        "shield": 0,
+        "exposure": 0,
+        "markerBefore": null,
+        "markerAfter": null
+      },
+      "variants": [],
+      "notes": [
+        "Mêlée de base 30, sans restriction de garde haute ni soulèvement de la grande cible."
+      ],
+      "compatibility": {
+        "lion": "action-disponible",
+        "squid": "action-disponible",
+        "whale": "action-disponible",
+        "giant": "action-disponible",
+        "truck": "action-disponible",
+        "convoy": "action-disponible"
+      },
+      "sources": [
+        "boss.js:beginAction",
+        "boss.js:perform",
+        "boss.js:movePlayer",
+        "boss.js:melee",
+        "boss.js:projectilesTick"
+      ]
+    },
+    {
+      "id": "BOSS_MOVE:fragile:beacon",
+      "engineAction": "beacon",
+      "owner": "fragile",
+      "name": "Point de retour",
+      "command": "Arrière + Signature",
+      "cost": 16,
+      "timing": {
+        "firstEffect": 12,
+        "clearAt": 34,
+        "nextUncancelledStartAt": 35,
+        "unit": "pas de simulation à 60 Hz",
+        "convention": "Effet unique quand frame atteint delay ; suppression à frame >= duration. Pas de fenêtre active de mêlée persistante."
+      },
+      "requiresMarker": null,
+      "effects": {
+        "melee": [],
+        "shots": [],
+        "displacement": 0,
+        "invulnerability": 0,
+        "shield": 0,
+        "exposure": 0,
+        "markerBefore": null,
+        "markerAfter": {
+          "kind": "beacon",
+          "x": 400,
+          "ttl": 240
+        }
+      },
+      "variants": [
+        {
+          "id": "return",
+          "effects": {
+            "melee": [],
+            "shots": [],
+            "displacement": 86,
+            "invulnerability": 24,
+            "shield": 0,
+            "exposure": 0,
+            "markerBefore": {
+              "kind": "beacon",
+              "x": 486,
+              "ttl": 300
+            },
+            "markerAfter": null
+          }
+        }
+      ],
+      "notes": [
+        "Première activation : repère de 240 pas. Seconde : retour au repère, consommation et 24 pas d’invulnérabilité. Chaque activation coûte 16."
+      ],
+      "compatibility": {
+        "lion": "action-disponible",
+        "squid": "action-disponible",
+        "whale": "action-disponible",
+        "giant": "action-disponible",
+        "truck": "action-disponible",
+        "convoy": "action-disponible"
+      },
+      "sources": [
+        "boss.js:beginAction",
+        "boss.js:perform",
+        "boss.js:movePlayer",
+        "boss.js:melee",
+        "boss.js:projectilesTick"
+      ]
+    },
+    {
+      "id": "BOSS_MOVE:higgs:tar",
+      "engineAction": "tar",
+      "owner": "higgs",
+      "name": "Marée noire",
+      "command": "Signature neutre",
+      "cost": 28,
+      "timing": {
+        "firstEffect": 23,
+        "clearAt": 45,
+        "nextUncancelledStartAt": 46,
+        "unit": "pas de simulation à 60 Hz",
+        "convention": "Effet unique quand frame atteint delay ; suppression à frame >= duration. Pas de fenêtre active de mêlée persistante."
+      },
+      "requiresMarker": null,
+      "effects": {
+        "melee": [],
+        "shots": [
+          {
+            "kind": "higgs",
+            "baseDamage": 38,
+            "width": 86,
+            "height": 100,
+            "velocity": 0,
+            "ttl": 12,
+            "delay": 0,
+            "spawnOffsetX": 500,
+            "heightAboveFloor": 50
+          }
+        ],
+        "displacement": 0,
+        "invulnerability": 0,
+        "shield": 0,
+        "exposure": 0,
+        "markerBefore": null,
+        "markerAfter": null
+      },
+      "variants": [],
+      "notes": [
+        "La zone vise la position du Boss à l’exécution, après 23 pas, et non sa position au départ du geste."
+      ],
+      "compatibility": {
+        "lion": "action-disponible",
+        "squid": "action-disponible",
+        "whale": "action-disponible",
+        "giant": "action-disponible",
+        "truck": "action-disponible",
+        "convoy": "action-disponible"
+      },
+      "sources": [
+        "boss.js:beginAction",
+        "boss.js:perform",
+        "boss.js:movePlayer",
+        "boss.js:melee",
+        "boss.js:projectilesTick"
+      ]
+    },
+    {
+      "id": "BOSS_MOVE:higgs:mine",
+      "engineAction": "mine",
+      "owner": "higgs",
+      "name": "Empreinte d’or",
+      "command": "Avant + Signature",
+      "cost": 21,
+      "timing": {
+        "firstEffect": 12,
+        "clearAt": 34,
+        "nextUncancelledStartAt": 35,
+        "unit": "pas de simulation à 60 Hz",
+        "convention": "Effet unique quand frame atteint delay ; suppression à frame >= duration. Pas de fenêtre active de mêlée persistante."
+      },
+      "requiresMarker": null,
+      "effects": {
+        "melee": [],
+        "shots": [
+          {
+            "kind": "higgs",
+            "baseDamage": 34,
+            "width": 80,
+            "height": 80,
+            "velocity": 0,
+            "ttl": 200,
+            "delay": 18,
+            "spawnOffsetX": 185,
+            "heightAboveFloor": 35
+          }
+        ],
+        "displacement": 0,
+        "invulnerability": 0,
+        "shield": 0,
+        "exposure": 0,
+        "markerBefore": null,
+        "markerAfter": null
+      },
+      "variants": [],
+      "notes": [
+        "Zone immobile à 185 unités devant le joueur, limitée à la piste. Délai du projectile 18 pas ; ne remplace pas le marqueur personnel."
+      ],
+      "compatibility": {
+        "lion": "action-disponible",
+        "squid": "action-disponible",
+        "whale": "action-disponible",
+        "giant": "action-disponible",
+        "truck": "action-disponible",
+        "convoy": "action-disponible"
+      },
+      "sources": [
+        "boss.js:beginAction",
+        "boss.js:perform",
+        "boss.js:movePlayer",
+        "boss.js:melee",
+        "boss.js:projectilesTick"
+      ]
+    },
+    {
+      "id": "BOSS_MOVE:higgs:feint",
+      "engineAction": "feint",
+      "owner": "higgs",
+      "name": "Faux départ",
+      "command": "Arrière + Signature",
+      "cost": 14,
+      "timing": {
+        "firstEffect": 12,
+        "clearAt": 34,
+        "nextUncancelledStartAt": 35,
+        "unit": "pas de simulation à 60 Hz",
+        "convention": "Effet unique quand frame atteint delay ; suppression à frame >= duration. Pas de fenêtre active de mêlée persistante."
+      },
+      "requiresMarker": null,
+      "effects": {
+        "melee": [],
+        "shots": [],
+        "displacement": -110,
+        "invulnerability": 38,
+        "shield": 0,
+        "exposure": 0,
+        "markerBefore": null,
+        "markerAfter": null
+      },
+      "variants": [],
+      "notes": [
+        "Recul de 110 unités limité à la piste ; 38 pas d’invulnérabilité. Aucun leurre avec une collision indépendante."
+      ],
+      "compatibility": {
+        "lion": "action-disponible",
+        "squid": "action-disponible",
+        "whale": "action-disponible",
+        "giant": "action-disponible",
+        "truck": "action-disponible",
+        "convoy": "action-disponible"
+      },
+      "sources": [
+        "boss.js:beginAction",
+        "boss.js:perform",
+        "boss.js:movePlayer",
+        "boss.js:melee",
+        "boss.js:projectilesTick"
+      ]
+    },
+    {
+      "id": "BOSS_MOVE:cliff:salvo",
+      "engineAction": "salvo",
+      "owner": "cliff",
+      "name": "Écho de section",
+      "command": "Signature neutre",
+      "cost": 28,
+      "timing": {
+        "firstEffect": 12,
+        "clearAt": 34,
+        "nextUncancelledStartAt": 35,
+        "unit": "pas de simulation à 60 Hz",
+        "convention": "Effet unique quand frame atteint delay ; suppression à frame >= duration. Pas de fenêtre active de mêlée persistante."
+      },
+      "requiresMarker": null,
+      "effects": {
+        "melee": [],
+        "shots": [
+          {
+            "kind": "cliff",
+            "baseDamage": 20,
+            "width": 42,
+            "height": 32,
+            "velocity": 10,
+            "ttl": 160,
+            "delay": 0,
+            "spawnOffsetX": 38,
+            "heightAboveFloor": 95
+          },
+          {
+            "kind": "cliff",
+            "baseDamage": 20,
+            "width": 42,
+            "height": 32,
+            "velocity": 10,
+            "ttl": 160,
+            "delay": 9,
+            "spawnOffsetX": 38,
+            "heightAboveFloor": 55
+          }
+        ],
+        "displacement": 0,
+        "invulnerability": 0,
+        "shield": 0,
+        "exposure": 0,
+        "markerBefore": null,
+        "markerAfter": null
+      },
+      "variants": [],
+      "notes": [
+        "Deux projectiles de base 20, à deux hauteurs ; le second attend 9 pas. Aucune garantie de double touche."
+      ],
+      "compatibility": {
+        "lion": "action-disponible",
+        "squid": "action-disponible",
+        "whale": "action-disponible",
+        "giant": "action-disponible",
+        "truck": "action-disponible",
+        "convoy": "action-disponible"
+      },
+      "sources": [
+        "boss.js:beginAction",
+        "boss.js:perform",
+        "boss.js:movePlayer",
+        "boss.js:melee",
+        "boss.js:projectilesTick"
+      ]
+    },
+    {
+      "id": "BOSS_MOVE:cliff:post",
+      "engineAction": "post",
+      "owner": "cliff",
+      "name": "Poste avancé",
+      "command": "Avant + Signature",
+      "cost": 18,
+      "timing": {
+        "firstEffect": 12,
+        "clearAt": 34,
+        "nextUncancelledStartAt": 35,
+        "unit": "pas de simulation à 60 Hz",
+        "convention": "Effet unique quand frame atteint delay ; suppression à frame >= duration. Pas de fenêtre active de mêlée persistante."
+      },
+      "requiresMarker": null,
+      "effects": {
+        "melee": [],
+        "shots": [],
+        "displacement": 0,
+        "invulnerability": 0,
+        "shield": 0,
+        "exposure": 0,
+        "markerBefore": null,
+        "markerAfter": {
+          "kind": "post",
+          "x": 630,
+          "ttl": 300
+        }
+      },
+      "variants": [],
+      "notes": [
+        "Pose à 230 unités devant, limitée à la piste ; le poste dure 300 pas."
+      ],
+      "compatibility": {
+        "lion": "action-disponible",
+        "squid": "action-disponible",
+        "whale": "action-disponible",
+        "giant": "action-disponible",
+        "truck": "action-disponible",
+        "convoy": "action-disponible"
+      },
+      "sources": [
+        "boss.js:beginAction",
+        "boss.js:perform",
+        "boss.js:movePlayer",
+        "boss.js:melee",
+        "boss.js:projectilesTick"
+      ]
+    },
+    {
+      "id": "BOSS_MOVE:cliff:recall",
+      "engineAction": "recall",
+      "owner": "cliff",
+      "name": "Rappel de section",
+      "command": "Arrière + Signature",
+      "cost": 16,
+      "timing": {
+        "firstEffect": 12,
+        "clearAt": 34,
+        "nextUncancelledStartAt": 35,
+        "unit": "pas de simulation à 60 Hz",
+        "convention": "Effet unique quand frame atteint delay ; suppression à frame >= duration. Pas de fenêtre active de mêlée persistante."
+      },
+      "requiresMarker": "post",
+      "effects": {
+        "melee": [],
+        "shots": [
+          {
+            "kind": "recall",
+            "baseDamage": 45,
+            "width": 65,
+            "height": 165,
+            "velocity": 0,
+            "ttl": 18,
+            "delay": 0,
+            "spawnOffsetX": 86,
+            "heightAboveFloor": 85
+          }
+        ],
+        "displacement": 0,
+        "invulnerability": 0,
+        "shield": 0,
+        "exposure": 0,
+        "markerBefore": {
+          "kind": "post",
+          "x": 486,
+          "ttl": 300
+        },
+        "markerAfter": null
+      },
+      "variants": [],
+      "notes": [
+        "Exige son poste avant la dépense. Zone verticale sur le poste puis consommation ; aucun coût ni action si le poste manque."
+      ],
+      "compatibility": {
+        "lion": "action-disponible",
+        "squid": "action-disponible",
+        "whale": "action-disponible",
+        "giant": "action-disponible",
+        "truck": "action-disponible",
+        "convoy": "action-disponible"
+      },
+      "sources": [
+        "boss.js:beginAction",
+        "boss.js:perform",
+        "boss.js:movePlayer",
+        "boss.js:melee",
+        "boss.js:projectilesTick"
+      ]
+    },
+    {
+      "id": "BOSS_MOVE:mule:scan",
+      "engineAction": "scan",
+      "owner": "mule",
+      "name": "Balayage de capteur",
+      "command": "Signature neutre",
+      "cost": 28,
+      "timing": {
+        "firstEffect": 12,
+        "clearAt": 34,
+        "nextUncancelledStartAt": 35,
+        "unit": "pas de simulation à 60 Hz",
+        "convention": "Effet unique quand frame atteint delay ; suppression à frame >= duration. Pas de fenêtre active de mêlée persistante."
+      },
+      "requiresMarker": null,
+      "effects": {
+        "melee": [
+          {
+            "baseDamage": 18,
+            "reach": 480,
+            "stagger": 15
+          }
+        ],
+        "shots": [],
+        "displacement": 0,
+        "invulnerability": 0,
+        "shield": 0,
+        "exposure": 150,
+        "markerBefore": null,
+        "markerAfter": null
+      },
+      "variants": [],
+      "notes": [
+        "Expose le Boss pendant 150 pas, même hors de portée de la mêlée. La frappe de base 18 a une portée de 480 unités plus le rayon de la cible ; le bonus d’exposition s’applique déjà à cette frappe."
+      ],
+      "compatibility": {
+        "lion": "action-disponible",
+        "squid": "action-disponible",
+        "whale": "action-disponible",
+        "giant": "action-disponible",
+        "truck": "action-disponible",
+        "convoy": "action-disponible"
+      },
+      "sources": [
+        "boss.js:beginAction",
+        "boss.js:perform",
+        "boss.js:movePlayer",
+        "boss.js:melee",
+        "boss.js:projectilesTick"
+      ]
+    },
+    {
+      "id": "BOSS_MOVE:mule:crate",
+      "engineAction": "crate",
+      "owner": "mule",
+      "name": "Consigne mobile",
+      "command": "Avant + Signature",
+      "cost": 18,
+      "timing": {
+        "firstEffect": 12,
+        "clearAt": 34,
+        "nextUncancelledStartAt": 35,
+        "unit": "pas de simulation à 60 Hz",
+        "convention": "Effet unique quand frame atteint delay ; suppression à frame >= duration. Pas de fenêtre active de mêlée persistante."
+      },
+      "requiresMarker": null,
+      "effects": {
+        "melee": [],
+        "shots": [],
+        "displacement": 0,
+        "invulnerability": 0,
+        "shield": 0,
+        "exposure": 0,
+        "markerBefore": null,
+        "markerAfter": {
+          "kind": "crate",
+          "x": 486,
+          "ttl": 360
+        }
+      },
+      "variants": [],
+      "notes": [
+        "Pose sa caisse à 86 unités devant, limitée à la piste, pour 360 pas. Pose seule : aucun dégât. Lourd/Montant ou Saisie de lot la consomment."
+      ],
+      "compatibility": {
+        "lion": "action-disponible",
+        "squid": "action-disponible",
+        "whale": "action-disponible",
+        "giant": "action-disponible",
+        "truck": "action-disponible",
+        "convoy": "action-disponible"
+      },
+      "sources": [
+        "boss.js:beginAction",
+        "boss.js:perform",
+        "boss.js:movePlayer",
+        "boss.js:melee",
+        "boss.js:projectilesTick"
+      ]
+    },
+    {
+      "id": "BOSS_MOVE:mule:retrieve",
+      "engineAction": "retrieve",
+      "owner": "mule",
+      "name": "Saisie de lot",
+      "command": "Arrière + Signature",
+      "cost": 16,
+      "timing": {
+        "firstEffect": 12,
+        "clearAt": 34,
+        "nextUncancelledStartAt": 35,
+        "unit": "pas de simulation à 60 Hz",
+        "convention": "Effet unique quand frame atteint delay ; suppression à frame >= duration. Pas de fenêtre active de mêlée persistante."
+      },
+      "requiresMarker": "crate",
+      "effects": {
+        "melee": [],
+        "shots": [
+          {
+            "kind": "cargo",
+            "baseDamage": 36,
+            "width": 55,
+            "height": 42,
+            "velocity": -8,
+            "ttl": 120,
+            "delay": 0,
+            "spawnOffsetX": 86,
+            "heightAboveFloor": 22
+          }
+        ],
+        "displacement": 0,
+        "invulnerability": 0,
+        "shield": 0,
+        "exposure": 0,
+        "markerBefore": {
+          "kind": "crate",
+          "x": 486,
+          "ttl": 300
+        },
+        "markerAfter": null
+      },
+      "variants": [],
+      "notes": [
+        "Exige sa propre caisse avant la dépense. La caisse part vers la position du joueur au moment de l’exécution, vitesse 8 ; si les deux positions coïncident, vitesse 0."
+      ],
+      "compatibility": {
+        "lion": "action-disponible",
+        "squid": "action-disponible",
+        "whale": "action-disponible",
+        "giant": "action-disponible",
+        "truck": "action-disponible",
+        "convoy": "action-disponible"
+      },
+      "sources": [
+        "boss.js:beginAction",
+        "boss.js:perform",
+        "boss.js:movePlayer",
+        "boss.js:melee",
+        "boss.js:projectilesTick"
+      ]
+    },
+    {
+      "id": "BOSS_MOVE:diehardman:order",
+      "engineAction": "order",
+      "owner": "diehardman",
+      "name": "Ordre de maintien",
+      "command": "Signature neutre",
+      "cost": 28,
+      "timing": {
+        "firstEffect": 12,
+        "clearAt": 34,
+        "nextUncancelledStartAt": 35,
+        "unit": "pas de simulation à 60 Hz",
+        "convention": "Effet unique quand frame atteint delay ; suppression à frame >= duration. Pas de fenêtre active de mêlée persistante."
+      },
+      "requiresMarker": null,
+      "effects": {
+        "melee": [],
+        "shots": [],
+        "displacement": 0,
+        "invulnerability": 0,
+        "shield": 80,
+        "exposure": 0,
+        "markerBefore": null,
+        "markerAfter": null
+      },
+      "variants": [],
+      "notes": [
+        "Bouclier de contre pendant 80 pas. Même protection et riposte de base 24 que les contres de Sam ; aucun sceau ni renforcement ultérieur de Ligne d’arrêt/Relève."
+      ],
+      "compatibility": {
+        "lion": "action-disponible",
+        "squid": "action-disponible",
+        "whale": "action-disponible",
+        "giant": "action-disponible",
+        "truck": "action-disponible",
+        "convoy": "action-disponible"
+      },
+      "sources": [
+        "boss.js:beginAction",
+        "boss.js:perform",
+        "boss.js:movePlayer",
+        "boss.js:melee",
+        "boss.js:projectilesTick"
+      ]
+    },
+    {
+      "id": "BOSS_MOVE:diehardman:gate",
+      "engineAction": "gate",
+      "owner": "diehardman",
+      "name": "Ligne d’arrêt",
+      "command": "Avant + Signature",
+      "cost": 18,
+      "timing": {
+        "firstEffect": 12,
+        "clearAt": 34,
+        "nextUncancelledStartAt": 35,
+        "unit": "pas de simulation à 60 Hz",
+        "convention": "Effet unique quand frame atteint delay ; suppression à frame >= duration. Pas de fenêtre active de mêlée persistante."
+      },
+      "requiresMarker": null,
+      "effects": {
+        "melee": [],
+        "shots": [
+          {
+            "kind": "gate",
+            "baseDamage": 36,
+            "width": 45,
+            "height": 143,
+            "velocity": 0,
+            "ttl": 100,
+            "delay": 0,
+            "spawnOffsetX": 170,
+            "heightAboveFloor": 71
+          }
+        ],
+        "displacement": 0,
+        "invulnerability": 0,
+        "shield": 0,
+        "exposure": 0,
+        "markerBefore": null,
+        "markerAfter": null
+      },
+      "variants": [],
+      "notes": [
+        "Zone immobile à 170 unités devant, limitée à la piste ; sa durée ne dépend d’aucun sceau."
+      ],
+      "compatibility": {
+        "lion": "action-disponible",
+        "squid": "action-disponible",
+        "whale": "action-disponible",
+        "giant": "action-disponible",
+        "truck": "action-disponible",
+        "convoy": "action-disponible"
+      },
+      "sources": [
+        "boss.js:beginAction",
+        "boss.js:perform",
+        "boss.js:movePlayer",
+        "boss.js:melee",
+        "boss.js:projectilesTick"
+      ]
+    },
+    {
+      "id": "BOSS_MOVE:diehardman:relief",
+      "engineAction": "relief",
+      "owner": "diehardman",
+      "name": "Relève",
+      "command": "Arrière + Signature",
+      "cost": 16,
+      "timing": {
+        "firstEffect": 12,
+        "clearAt": 34,
+        "nextUncancelledStartAt": 35,
+        "unit": "pas de simulation à 60 Hz",
+        "convention": "Effet unique quand frame atteint delay ; suppression à frame >= duration. Pas de fenêtre active de mêlée persistante."
+      },
+      "requiresMarker": null,
+      "effects": {
+        "melee": [
+          {
+            "baseDamage": 30,
+            "reach": 210,
+            "stagger": 25
+          }
+        ],
+        "shots": [],
+        "displacement": -75,
+        "invulnerability": 18,
+        "shield": 0,
+        "exposure": 0,
+        "markerBefore": null,
+        "markerAfter": null
+      },
+      "variants": [],
+      "notes": [
+        "Recul de 75 unités limité à la piste, puis mêlée de portée 210 ; 18 pas d’invulnérabilité. Aucun bonus de sceau."
+      ],
+      "compatibility": {
+        "lion": "action-disponible",
+        "squid": "action-disponible",
+        "whale": "action-disponible",
+        "giant": "action-disponible",
+        "truck": "action-disponible",
+        "convoy": "action-disponible"
+      },
+      "sources": [
+        "boss.js:beginAction",
+        "boss.js:perform",
+        "boss.js:movePlayer",
+        "boss.js:melee",
+        "boss.js:projectilesTick"
+      ]
+    },
+    {
+      "id": "BOSS_MOVE:mama:anchor",
+      "engineAction": "anchor",
+      "owner": "mama",
+      "name": "Point d’ancrage",
+      "command": "Signature neutre",
+      "cost": 28,
+      "timing": {
+        "firstEffect": 12,
+        "clearAt": 34,
+        "nextUncancelledStartAt": 35,
+        "unit": "pas de simulation à 60 Hz",
+        "convention": "Effet unique quand frame atteint delay ; suppression à frame >= duration. Pas de fenêtre active de mêlée persistante."
+      },
+      "requiresMarker": null,
+      "effects": {
+        "melee": [],
+        "shots": [],
+        "displacement": 0,
+        "invulnerability": 0,
+        "shield": 0,
+        "exposure": 0,
+        "markerBefore": null,
+        "markerAfter": {
+          "kind": "anchor",
+          "x": 555,
+          "ttl": 360
+        }
+      },
+      "variants": [],
+      "notes": [
+        "Pose un ancrage à 155 unités devant, limité à la piste, pour 360 pas."
+      ],
+      "compatibility": {
+        "lion": "action-disponible",
+        "squid": "action-disponible",
+        "whale": "action-disponible",
+        "giant": "action-disponible",
+        "truck": "action-disponible",
+        "convoy": "action-disponible"
+      },
+      "sources": [
+        "boss.js:beginAction",
+        "boss.js:perform",
+        "boss.js:movePlayer",
+        "boss.js:melee",
+        "boss.js:projectilesTick"
+      ]
+    },
+    {
+      "id": "BOSS_MOVE:mama:deck",
+      "engineAction": "deck",
+      "owner": "mama",
+      "name": "Tablier",
+      "command": "Avant + Signature",
+      "cost": 18,
+      "timing": {
+        "firstEffect": 12,
+        "clearAt": 34,
+        "nextUncancelledStartAt": 35,
+        "unit": "pas de simulation à 60 Hz",
+        "convention": "Effet unique quand frame atteint delay ; suppression à frame >= duration. Pas de fenêtre active de mêlée persistante."
+      },
+      "requiresMarker": null,
+      "effects": {
+        "melee": [],
+        "shots": [
+          {
+            "kind": "deck",
+            "baseDamage": 38,
+            "width": 100,
+            "height": 55,
+            "velocity": 7,
+            "ttl": 130,
+            "delay": 0,
+            "spawnOffsetX": 0,
+            "heightAboveFloor": 55
+          }
+        ],
+        "displacement": 0,
+        "invulnerability": 0,
+        "shield": 0,
+        "exposure": 0,
+        "markerBefore": null,
+        "markerAfter": null
+      },
+      "variants": [
+        {
+          "id": "anchor",
+          "effects": {
+            "melee": [],
+            "shots": [
+              {
+                "kind": "deck",
+                "baseDamage": 38,
+                "width": 100,
+                "height": 55,
+                "velocity": 7,
+                "ttl": 130,
+                "delay": 0,
+                "spawnOffsetX": 86,
+                "heightAboveFloor": 55
+              }
+            ],
+            "displacement": 0,
+            "invulnerability": 0,
+            "shield": 0,
+            "exposure": 0,
+            "markerBefore": {
+              "kind": "anchor",
+              "x": 486,
+              "ttl": 300
+            },
+            "markerAfter": {
+              "kind": "anchor",
+              "x": 486,
+              "ttl": 300
+            }
+          }
+        }
+      ],
+      "notes": [
+        "Le projectile part de son ancrage, ou des pieds sans ancrage. Même vitesse, volume et dégâts dans les deux cas ; ne consomme pas l’ancrage."
+      ],
+      "compatibility": {
+        "lion": "action-disponible",
+        "squid": "action-disponible",
+        "whale": "action-disponible",
+        "giant": "action-disponible",
+        "truck": "action-disponible",
+        "convoy": "action-disponible"
+      },
+      "sources": [
+        "boss.js:beginAction",
+        "boss.js:perform",
+        "boss.js:movePlayer",
+        "boss.js:melee",
+        "boss.js:projectilesTick"
+      ]
+    },
+    {
+      "id": "BOSS_MOVE:mama:winch",
+      "engineAction": "winch",
+      "owner": "mama",
+      "name": "Treuil",
+      "command": "Arrière + Signature",
+      "cost": 16,
+      "timing": {
+        "firstEffect": 12,
+        "clearAt": 34,
+        "nextUncancelledStartAt": 35,
+        "unit": "pas de simulation à 60 Hz",
+        "convention": "Effet unique quand frame atteint delay ; suppression à frame >= duration. Pas de fenêtre active de mêlée persistante."
+      },
+      "requiresMarker": "anchor",
+      "effects": {
+        "melee": [],
+        "shots": [],
+        "displacement": 86,
+        "invulnerability": 25,
+        "shield": 0,
+        "exposure": 0,
+        "markerBefore": {
+          "kind": "anchor",
+          "x": 486,
+          "ttl": 300
+        },
+        "markerAfter": null
+      },
+      "variants": [],
+      "notes": [
+        "Exige son ancrage avant la dépense ; rejoint ce repère, le consomme et donne 25 pas d’invulnérabilité. Aucun dégât direct."
+      ],
+      "compatibility": {
+        "lion": "action-disponible",
+        "squid": "action-disponible",
+        "whale": "action-disponible",
+        "giant": "action-disponible",
+        "truck": "action-disponible",
+        "convoy": "action-disponible"
+      },
+      "sources": [
+        "boss.js:beginAction",
+        "boss.js:perform",
+        "boss.js:movePlayer",
+        "boss.js:melee",
+        "boss.js:projectilesTick"
+      ]
+    },
+    {
+      "id": "BOSS_MOVE:heartman:pulse",
+      "engineAction": "pulse",
+      "owner": "heartman",
+      "name": "Impulsion témoin",
+      "command": "Signature neutre",
+      "cost": 28,
+      "timing": {
+        "firstEffect": 12,
+        "clearAt": 34,
+        "nextUncancelledStartAt": 35,
+        "unit": "pas de simulation à 60 Hz",
+        "convention": "Effet unique quand frame atteint delay ; suppression à frame >= duration. Pas de fenêtre active de mêlée persistante."
+      },
+      "requiresMarker": null,
+      "effects": {
+        "melee": [],
+        "shots": [
+          {
+            "kind": "heartman",
+            "baseDamage": 38,
+            "width": 45,
+            "height": 50,
+            "velocity": 8,
+            "ttl": 160,
+            "delay": 0,
+            "spawnOffsetX": 40,
+            "heightAboveFloor": 90
+          }
+        ],
+        "displacement": 0,
+        "invulnerability": 0,
+        "shield": 0,
+        "exposure": 0,
+        "markerBefore": null,
+        "markerAfter": null
+      },
+      "variants": [],
+      "notes": [
+        "Projectile unique de base 38 ; aucune fenêtre de battement ni accélération liée au rythme dans boss.js."
+      ],
+      "compatibility": {
+        "lion": "action-disponible",
+        "squid": "action-disponible",
+        "whale": "action-disponible",
+        "giant": "action-disponible",
+        "truck": "action-disponible",
+        "convoy": "action-disponible"
+      },
+      "sources": [
+        "boss.js:beginAction",
+        "boss.js:perform",
+        "boss.js:movePlayer",
+        "boss.js:melee",
+        "boss.js:projectilesTick"
+      ]
+    },
+    {
+      "id": "BOSS_MOVE:heartman:memory",
+      "engineAction": "memory",
+      "owner": "heartman",
+      "name": "Mémoire de phase",
+      "command": "Avant + Signature",
+      "cost": 18,
+      "timing": {
+        "firstEffect": 12,
+        "clearAt": 34,
+        "nextUncancelledStartAt": 35,
+        "unit": "pas de simulation à 60 Hz",
+        "convention": "Effet unique quand frame atteint delay ; suppression à frame >= duration. Pas de fenêtre active de mêlée persistante."
+      },
+      "requiresMarker": null,
+      "effects": {
+        "melee": [],
+        "shots": [],
+        "displacement": 0,
+        "invulnerability": 0,
+        "shield": 0,
+        "exposure": 0,
+        "markerBefore": null,
+        "markerAfter": {
+          "kind": "memory",
+          "x": 400,
+          "ttl": 300
+        }
+      },
+      "variants": [
+        {
+          "id": "release",
+          "effects": {
+            "melee": [],
+            "shots": [
+              {
+                "kind": "memory",
+                "baseDamage": 48,
+                "width": 150,
+                "height": 150,
+                "velocity": 0,
+                "ttl": 18,
+                "delay": 0,
+                "spawnOffsetX": 86,
+                "heightAboveFloor": 75
+              }
+            ],
+            "displacement": 0,
+            "invulnerability": 0,
+            "shield": 0,
+            "exposure": 0,
+            "markerBefore": {
+              "kind": "memory",
+              "x": 486,
+              "ttl": 300
+            },
+            "markerAfter": null
+          }
+        }
+      ],
+      "notes": [
+        "Première activation : mémoire de 300 pas. Seconde : zone de base 48 sur le repère puis consommation. Chaque activation coûte 18."
+      ],
+      "compatibility": {
+        "lion": "action-disponible",
+        "squid": "action-disponible",
+        "whale": "action-disponible",
+        "giant": "action-disponible",
+        "truck": "action-disponible",
+        "convoy": "action-disponible"
+      },
+      "sources": [
+        "boss.js:beginAction",
+        "boss.js:perform",
+        "boss.js:movePlayer",
+        "boss.js:melee",
+        "boss.js:projectilesTick"
+      ]
+    },
+    {
+      "id": "BOSS_MOVE:heartman:syncope",
+      "engineAction": "syncope",
+      "owner": "heartman",
+      "name": "Syncope du signal",
+      "command": "Arrière + Signature",
+      "cost": 16,
+      "timing": {
+        "firstEffect": 12,
+        "clearAt": 34,
+        "nextUncancelledStartAt": 35,
+        "unit": "pas de simulation à 60 Hz",
+        "convention": "Effet unique quand frame atteint delay ; suppression à frame >= duration. Pas de fenêtre active de mêlée persistante."
+      },
+      "requiresMarker": null,
+      "effects": {
+        "melee": [],
+        "shots": [],
+        "displacement": -110,
+        "invulnerability": 38,
+        "shield": 0,
+        "exposure": 0,
+        "markerBefore": null,
+        "markerAfter": null
+      },
+      "variants": [],
+      "notes": [
+        "Recul de 110 unités limité à la piste ; 38 pas d’invulnérabilité, sans condition de battement."
+      ],
+      "compatibility": {
+        "lion": "action-disponible",
+        "squid": "action-disponible",
+        "whale": "action-disponible",
+        "giant": "action-disponible",
+        "truck": "action-disponible",
+        "convoy": "action-disponible"
+      },
+      "sources": [
+        "boss.js:beginAction",
+        "boss.js:perform",
+        "boss.js:movePlayer",
+        "boss.js:melee",
+        "boss.js:projectilesTick"
+      ]
+    }
+  ],
+  "fighters": {
+    "sam": {
+      "id": "sam",
+      "name": "Sam Porter Bridges",
+      "call": "Sam",
+      "h": 176,
+      "speed": 4.4,
+      "power": 1,
+      "techniques": [
+        "bola",
+        "brace",
+        "parry"
+      ],
+      "notes": "Nom repris du kit DS1 / Director’s Cut ; règles ci-dessous extraites uniquement de boss.js."
+    },
+    "fragile": {
+      "id": "fragile",
+      "name": "Fragile",
+      "call": "Fragile",
+      "h": 166,
+      "speed": 4.95,
+      "power": 0.94,
+      "techniques": [
+        "blink",
+        "fan",
+        "beacon"
+      ],
+      "notes": "Nom repris du kit DS1 / Director’s Cut ; règles ci-dessous extraites uniquement de boss.js."
+    },
+    "higgs": {
+      "id": "higgs",
+      "name": "Higgs Monaghan",
+      "call": "Higgs",
+      "h": 184,
+      "speed": 4.05,
+      "power": 1.06,
+      "techniques": [
+        "tar",
+        "mine",
+        "feint"
+      ],
+      "notes": "Nom repris du kit DS1 / Director’s Cut ; règles ci-dessous extraites uniquement de boss.js."
+    },
+    "cliff": {
+      "id": "cliff",
+      "name": "Clifford Unger",
+      "call": "Cliff",
+      "h": 179,
+      "speed": 4.2,
+      "power": 1.03,
+      "techniques": [
+        "salvo",
+        "post",
+        "recall"
+      ],
+      "notes": "Nom repris du kit DS1 / Director’s Cut ; règles ci-dessous extraites uniquement de boss.js."
+    },
+    "mule": {
+      "id": "mule",
+      "name": "Porteur MULE",
+      "call": "MULE",
+      "h": 177,
+      "speed": 4.25,
+      "power": 1,
+      "techniques": [
+        "scan",
+        "crate",
+        "retrieve"
+      ],
+      "notes": "Nom repris du kit DS1 / Director’s Cut ; règles ci-dessous extraites uniquement de boss.js."
+    },
+    "diehardman": {
+      "id": "diehardman",
+      "name": "Die-Hardman",
+      "call": "Die-Hardman",
+      "h": 181,
+      "speed": 4.1,
+      "power": 1.02,
+      "techniques": [
+        "order",
+        "gate",
+        "relief"
+      ],
+      "notes": "Nom repris du kit DS1 / Director’s Cut ; règles ci-dessous extraites uniquement de boss.js."
+    },
+    "mama": {
+      "id": "mama",
+      "name": "Mama",
+      "call": "Mama",
+      "h": 170,
+      "speed": 4.4,
+      "power": 0.96,
+      "techniques": [
+        "anchor",
+        "deck",
+        "winch"
+      ],
+      "notes": "Nom repris du kit DS1 / Director’s Cut ; règles ci-dessous extraites uniquement de boss.js."
+    },
+    "heartman": {
+      "id": "heartman",
+      "name": "Heartman",
+      "call": "Heartman",
+      "h": 176,
+      "speed": 4.15,
+      "power": 0.96,
+      "techniques": [
+        "pulse",
+        "memory",
+        "syncope"
+      ],
+      "notes": "Nom repris du kit DS1 / Director’s Cut ; règles ci-dessous extraites uniquement de boss.js."
+    }
+  },
+  "rules": [
+    "Une nouvelle rencontre Boss Battle ou un début de chapitre de campagne commence à 120 PV, énergie chirale 100 et garde 100. Boss Rush conserve ses PV de série ; une reprise conserve les ressources prévues par son mode. Simulation fixe à 60 pas par seconde ; aucune valeur du duel n’est reprise par ce catalogue.",
+    "L’énergie récupère 0,19 par pas actif. La garde récupère 0,12 si la commande Garde est tenue, sinon 0,55 ; plafonds 100. L’introduction et la pause ne font pas avancer ces recharges.",
+    "Une garde au sol exige aucune action ni étourdissement. L’impact doit arriver de face, avec une tolérance de 24 unités derrière le joueur. Les tirs bas exigent Bas + Garde.",
+    "La garde ordinaire retire 2 PV et 18 de garde par impact, puis donne 14 pas d’invulnérabilité. Le grattage peut tuer. À garde nulle : 45 pas d’étourdissement.",
+    "Un bouclier de contre prêt absorbe aussi les attaques non gardables et les tirs bas s’ils arrivent de face. Il coûte 6 de garde, ne gratte aucun PV, rend 14 pas invulnérable, riposte de base 24 et se consomme au premier impact.",
+    "Un coup non bloqué applique les dégâts arrondis selon la difficulté, interrompt l’action, étourdit 22 pas, rend invulnérable 38 pas et repousse de 34 unités. Porter un colis coûte alors 12 d’intégrité.",
+    "Dégâts sur le Boss = max(1, arrondi(base × puissance du combattant × facteur de cible)). Le facteur est 1,35 pendant une récupération ou une exposition au scan ; sinon 0,72 pour les camions, 0,65 pour la baleine, 1 pour les autres. Le bonus remplace le blindage, il ne se multiplie pas avec lui.",
+    "À 85 de déséquilibre cumulé, le Boss entre en récupération forcée de 90 pas. Les attaques en récupération ne rechargent pas cette fenêtre. Les orbes et tirs déjà émis subsistent ; les autres dangers sont supprimés par cette rupture. La sortie de récupération avance le cycle même si le motif interrompu n’avait pas encore été émis.",
+    "À 50 % des PV maximum ou moins après une touche non mortelle, la phase 2 est activée. Les futures annonces sont plus courtes ; les anneaux vont plus vite et certains motifs gagnent des zones ou projectiles. Le motif en cours n’est pas automatiquement annulé.",
+    "Une action exécute son effet une seule fois au pas indiqué, puis se termine à sa durée totale. Il n’y a pas d’annulation offensive ni de file d’entrée différée : les pressions non acceptées sont perdues. Les projectiles émis ont une durée indépendante.",
+    "Les actions et les spéciales sont autorisées en l’air ; il n’existe pas de frappe aérienne distincte. Le saut peut aussi commencer pendant une action. Une seule commande offensive par pas est essayée : Colis/Appui, Charge chirale, Signature, Lourd, Léger.",
+    "La marche reste possible pendant l’action (×0,75), la garde (×0,38), l’accroupissement (×0,5 si aucune garde) et le portage (×0,76). Les facteurs applicables se multiplient. Saut : vitesse 13,5, gravité 0,65 par pas ; aucun pas rapide du duel.",
+    "Le volume du joueur contre les dangers mesure 34 unités de large, 170 de haut debout et 105 accroupi, indépendamment de la hauteur visuelle du kit.",
+    "Un projectile ami réussi ajoute 16 de déséquilibre. Une mêlée teste le centre du joueur contre le rayon du Boss plus sa portée, avec une tolérance de 25 unités derrière. Un projectile avance avant son contact et peut toucher au dernier pas de sa durée ; les collisions utilisent les volumes du moteur, indépendamment du chargement des images.",
+    "Après l’introduction de 75 pas, le temps diminue pendant le combat, la collecte et l’intervalle entre vagues. Au dernier pas, actions du joueur, Boss puis projectiles sont résolus avant l’échec par le temps : une victoire obtenue avant ce contrôle reste une victoire."
+  ],
+  "player": {
+    "health": 120,
+    "energy": 100,
+    "guard": 100,
+    "collision": {
+      "halfWidth": 17,
+      "standingHeight": 170,
+      "crouchHeight": 105
+    },
+    "regen": {
+      "energy": 0.19,
+      "guardHeld": 0.12,
+      "guardReleased": 0.55
+    },
+    "damageScale": {
+      "easy": 0.7,
+      "normal": 1,
+      "hard": 1.25
+    },
+    "guardRules": {
+      "chip": 2,
+      "cost": 18,
+      "invulnerability": 14,
+      "breakStun": 45,
+      "facingTolerance": 24
+    },
+    "counter": {
+      "chip": 0,
+      "cost": 6,
+      "invulnerability": 14,
+      "riposteBase": 24,
+      "riposteStagger": 10,
+      "consumed": true
+    },
+    "hit": {
+      "stun": 22,
+      "invulnerability": 38,
+      "push": 34,
+      "cargoDamage": 12
+    }
+  },
+  "projectileRules": {
+    "staggerPerHit": 16,
+    "advanceBeforeContact": true,
+    "contactOnLastTtl": true
+  },
+  "cargo": {
+    "initialIntegrity": 100,
+    "pickupDistanceExclusive": 75,
+    "pickupHeightExclusive": 20,
+    "depotXInclusive": 155,
+    "depotHeightExclusive": 8,
+    "walkMultiplier": 0.76,
+    "waveDelay": 180,
+    "convoyLowBoltDamage": 7,
+    "convoyChargeDamage": 18
+  },
+  "modes": {
+    "boss": {
+      "title": "Boss Battle",
+      "storage": "echos.boss.v1",
+      "rules": "boss-20261124-v1",
+      "notes": [
+        "Une rencontre et une difficulté choisies ; départ neuf à 120 PV, énergie et garde 100.",
+        "Checkpoint propre avec l’état de simulation ; sauvegarde périodique tous les 180 ticks, aux pauses et aux sorties. Une reprise restaure les ressources sauvegardées et libère les commandes.",
+        "Les records sont séparés par combattant, rencontre et difficulté. Les images et le décor statique n’altèrent pas les valeurs de combat."
+      ]
+    },
+    "bossrush": {
+      "title": "Boss Rush",
+      "storage": "echos.boss-rush.v1",
+      "rules": "boss-rush-20261125-v1",
+      "order": [
+        "lion",
+        "squid",
+        "whale",
+        "giant",
+        "truck",
+        "convoy"
+      ],
+      "heal": 20,
+      "healthCap": 120,
+      "notes": [
+        "Six rencontres dans l’ordre indiqué, avec leur arène par défaut. Combattant, tenue et difficulté sont fixes pour la série.",
+        "Les PV exacts restants sont conservés ; chaque victoire ajoute 20, avec un plafond de 120. Énergie et garde repartent à 100 à la rencontre suivante.",
+        "La première défaite termine la série. Une série perdue ne reprend pas au Boss suivant ; un nouveau départ recommence au Catcher léonin.",
+        "Checkpoint et records de série indépendants de Boss Battle. Une reprise active conserve la rencontre et ses ressources ; aucune liste de replay Boss n’est produite par ce moteur."
+      ]
+    },
+    "campaign": {
+      "title": "Les Nœuds rompus",
+      "storage": "echos.campaign.v1",
+      "rules": "les-noeuds-rompus-20261125-v1",
+      "chapters": [
+        {
+          "id": "convoi-des-retours",
+          "title": "Le convoi des retours",
+          "p1": "diehardman",
+          "boss": "convoy",
+          "stage": "timefall-farm"
+        },
+        {
+          "id": "dernier-lien",
+          "title": "Le dernier lien",
+          "p1": "sam",
+          "boss": "whale",
+          "stage": "shore"
+        }
+      ],
+      "notes": [
+        "Le chapitre 5 utilise Die-Hardman / Convoi à la ferme ; le chapitre 6 utilise Sam / Baleine sur la Grève. Les règles de rencontre et la difficulté restent celles de boss.js.",
+        "La campagne appelle isolated:true. Aucun record ni checkpoint de Boss Battle ou de Boss Rush n’est lu ou écrit par ces rencontres.",
+        "La sauvegarde propre à la campagne reprend au début du chapitre. Les ressources reviennent à 120 / 100 / 100 à ce nouveau départ ; aucun soin de Boss Rush ni cumul de vitalité entre chapitres.",
+        "Les scènes relèvent de la fiction du simulateur ; elles ne réécrivent ni les événements officiels ni La Ligne silencieuse."
+      ]
+    }
+  },
+  "limits": [
+    "Les valeurs décrivent le moteur actuel du simulateur, pas des statistiques canoniques de Death Stranding.",
+    "Les variantes d’action sont mesurées sur des états préparés, à x=400, face à droite, repère éventuel x=486 et Boss x=900. Les limites de piste et une cible mobile peuvent modifier les contacts.",
+    "La compatibilité signifie que la commande dispose d’un chemin d’exécution dans les six rencontres. Elle ne garantit ni la touche de chaque projectile, ni un équilibre entre kits, ni une victoire.",
+    "Aucun jeu en navigateur, rendu matériel, manette physique ou calibrage humain n’est déduit de l’extraction."
+  ]
+}

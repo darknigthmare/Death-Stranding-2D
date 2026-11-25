@@ -1,0 +1,23 @@
+.bossGuide{margin:1.3rem 0;min-width:0;border:1px solid var(--rule,#48504a);background:var(--panel,#19211e);color:var(--fg,#f1f1e6);font-size:14px;line-height:1.65}
+.bossGuide summary{cursor:pointer;padding:.8rem 1rem;font-weight:650;line-height:1.45}
+.bossGuide>summary{color:var(--acid,#e0f193);font-size:16px}
+.bossGuide summary:focus-visible,.bossGuideTable:focus-visible{outline:3px solid #98d9ef;outline-offset:3px}
+.bossGuideBody{padding:0 1rem 1rem;min-width:0}
+.bossGuide section{margin:1.2rem 0}
+.bossGuide h3{font-size:18px;line-height:1.35;margin:1.3rem 0 .75rem;font-weight:650}
+.bossGuide p{margin:.7rem 0;max-width:100ch}
+.bossGuide ul{padding-left:1.4rem;margin:.75rem 0}
+.bossGuide li{margin:.45rem 0}
+.bossGuide details details{border-top:1px solid var(--rule,#48504a);margin-top:.65rem}
+.bossGuideBody>details,.bossGuideEncounter,.bossGuideKit{border:1px solid var(--rule,#48504a);margin:.8rem 0}
+.bossGuideBody>details[open],.bossGuideEncounter[open],.bossGuideKit[open]{padding:0 .8rem .8rem}
+.bossGuideBody>details[open]>summary,.bossGuideEncounter[open]>summary,.bossGuideKit[open]>summary{margin:0 -.8rem .5rem;background:#26342b}
+.bossGuideAction[open]{padding-bottom:.5rem}
+.bossGuideKey{padding:.85rem 1rem;border-left:3px solid var(--acid,#e0f193);background:#233128}
+.bossGuideLead,.bossGuideLimit{color:var(--mute,#b5c0b6)}
+.bossGuideTable{overflow:auto;max-width:100%;margin:.8rem 0}
+.bossGuide table{border-collapse:collapse;width:100%;min-width:500px;font-size:13px;line-height:1.5}
+.bossGuide caption{text-align:left;font-weight:650;padding:.3rem 0 .6rem;color:var(--acid,#e0f193)}
+.bossGuide th,.bossGuide td{text-align:left;vertical-align:top;padding:.65rem .7rem;border:1px solid var(--rule,#48504a);font-variant-numeric:tabular-nums}
+.bossGuide thead th{background:#24342c}.bossGuide tbody th{font-weight:600;width:24%}.bossGuide td:last-child{min-width:170px;overflow-wrap:anywhere}
+@media(max-width:600px){.bossGuide{font-size:13px}.bossGuideBody{padding:0 .65rem .65rem}.bossGuide summary{padding:.75rem .65rem}.bossGuide table{min-width:470px}.bossGuide h3{font-size:17px}}

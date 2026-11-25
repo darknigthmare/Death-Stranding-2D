@@ -1,0 +1,371 @@
+{
+  "date": "2026-11-25T16:55:04.174Z",
+  "method": "@napi-rs/canvas; native PNG pixels, no source modification",
+  "files": [
+    {
+      "id": "firing-range-dc",
+      "layer": "sky",
+      "file": "assets/stages/firing-range-dc-sky.png",
+      "width": 1672,
+      "height": 941,
+      "sha256": "a69a211853144cf4512a29582ee80f26a5f52a4b927eaa4e325afb97e450a194",
+      "alphaMin": 255,
+      "alphaMax": 255,
+      "transparentFraction": 0,
+      "opaqueFraction": 1,
+      "visibleBounds": [
+        0,
+        0,
+        1672,
+        941
+      ]
+    },
+    {
+      "id": "firing-range-dc",
+      "layer": "distant",
+      "file": "assets/stages/firing-range-dc-distant.png",
+      "width": 1672,
+      "height": 941,
+      "sha256": "274db3e255d6950a12eeb9476e027dbba0a9177ad36e258b3ce4f73bb4d9a2d7",
+      "alphaMin": 0,
+      "alphaMax": 255,
+      "transparentFraction": 0.7198980266335823,
+      "opaqueFraction": 0.00025868337155321886,
+      "visibleBounds": [
+        0,
+        639,
+        1672,
+        302
+      ],
+      "lowestCentralOpaqueRow": 940,
+      "suggestedBottomAnchorY": 1
+    },
+    {
+      "id": "firing-range-dc",
+      "layer": "midground",
+      "file": "assets/stages/firing-range-dc-midground.png",
+      "width": 1672,
+      "height": 941,
+      "sha256": "334d33afd115039a7993106bb6df615fe9eb0ec3270dd3fab9acfc133de22dac",
+      "alphaMin": 0,
+      "alphaMax": 255,
+      "transparentFraction": 0.7961651302442174,
+      "opaqueFraction": 0.00023453111573252522,
+      "visibleBounds": [
+        7,
+        409,
+        1655,
+        411
+      ],
+      "lowestCentralOpaqueRow": 799,
+      "suggestedBottomAnchorY": 0.8501594048884166
+    },
+    {
+      "id": "firing-range-dc",
+      "layer": "floor",
+      "file": "assets/stages/firing-range-dc-floor.png",
+      "width": 1672,
+      "height": 941,
+      "sha256": "dbffa41967ef0fd032d9a7aae00e9e9d3f562698656b336cfc5e3ab81588f431",
+      "alphaMin": 0,
+      "alphaMax": 255,
+      "transparentFraction": 0.5261022326853749,
+      "opaqueFraction": 0.0000031779283974596912,
+      "visibleBounds": [
+        0,
+        500,
+        1672,
+        441
+      ],
+      "centralSupport": {
+        "columns": 1337,
+        "min": 501,
+        "p10": 501,
+        "median": 501,
+        "p90": 501,
+        "max": 501
+      },
+      "suggestedAnchorY": 0.5324123273113709,
+      "nativeLineToScreen588": {
+        "sourceRow": 501,
+        "sourceHeight": 941
+      },
+      "stableFullWidthSupport": {
+        "alphaThreshold": 250,
+        "minimumCoverage": 0.985,
+        "consecutiveRows": 4,
+        "sourceRow": 503,
+        "coverage": [
+          0.9964114832535885,
+          1,
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "id": "firing-range-dc",
+      "layer": "foreground",
+      "file": "assets/stages/firing-range-dc-foreground.png",
+      "width": 1672,
+      "height": 941,
+      "sha256": "da8d2b1b6bf73db568621392017c6509a5c2244c9791528d5c25f61eda9000e2",
+      "alphaMin": 0,
+      "alphaMax": 255,
+      "transparentFraction": 0.9859942339667156,
+      "opaqueFraction": 0.000024152255820693654,
+      "visibleBounds": [
+        0,
+        872,
+        1672,
+        69
+      ],
+      "centralTopVisibleRow": 926,
+      "projectedCentralTopY": 707.0813397129186
+    },
+    {
+      "id": "night-viaduct-ds2",
+      "layer": "sky",
+      "file": "assets/stages/night-viaduct-ds2-sky.png",
+      "width": 1672,
+      "height": 941,
+      "sha256": "0f7795f1149ecb883ad11b227d5686b72a30cf1275fe793097a2646681fb02b9",
+      "alphaMin": 255,
+      "alphaMax": 255,
+      "transparentFraction": 0,
+      "opaqueFraction": 1,
+      "visibleBounds": [
+        0,
+        0,
+        1672,
+        941
+      ]
+    },
+    {
+      "id": "night-viaduct-ds2",
+      "layer": "distant",
+      "file": "assets/stages/night-viaduct-ds2-distant.png",
+      "width": 1672,
+      "height": 941,
+      "sha256": "73ff03ff6b48fecc5eb99b6312a6db05e42b652adc5783098a32067edf762546",
+      "alphaMin": 0,
+      "alphaMax": 255,
+      "transparentFraction": 0.6989071739826815,
+      "opaqueFraction": 0.0001881333611296137,
+      "visibleBounds": [
+        0,
+        455,
+        1672,
+        486
+      ],
+      "lowestCentralOpaqueRow": 940,
+      "suggestedBottomAnchorY": 1
+    },
+    {
+      "id": "night-viaduct-ds2",
+      "layer": "midground",
+      "file": "assets/stages/night-viaduct-ds2-midground.png",
+      "width": 1672,
+      "height": 941,
+      "sha256": "f3dceb0a466f7e22f83b6aa3090e5505a2b5a2934480079b20821172d84fafa5",
+      "alphaMin": 0,
+      "alphaMax": 255,
+      "transparentFraction": 0.8737466250400419,
+      "opaqueFraction": 0.00009660902328277462,
+      "visibleBounds": [
+        18,
+        436,
+        1634,
+        371
+      ],
+      "lowestCentralOpaqueRow": null,
+      "suggestedBottomAnchorY": null
+    },
+    {
+      "id": "night-viaduct-ds2",
+      "layer": "floor",
+      "file": "assets/stages/night-viaduct-ds2-floor.png",
+      "width": 1672,
+      "height": 941,
+      "sha256": "ba4323e7b3988c2562afb767c831aa92d3f1b1d5b17d54222d8403541ac422a4",
+      "alphaMin": 0,
+      "alphaMax": 255,
+      "transparentFraction": 0.4975269361210969,
+      "opaqueFraction": 0.00028220004169442057,
+      "visibleBounds": [
+        0,
+        472,
+        1672,
+        469
+      ],
+      "centralSupport": {
+        "columns": 1337,
+        "min": 474,
+        "p10": 474,
+        "median": 474,
+        "p90": 474,
+        "max": 474
+      },
+      "suggestedAnchorY": 0.5037194473963869,
+      "nativeLineToScreen588": {
+        "sourceRow": 474,
+        "sourceHeight": 941
+      },
+      "stableFullWidthSupport": {
+        "alphaThreshold": 250,
+        "minimumCoverage": 0.985,
+        "consecutiveRows": 4,
+        "sourceRow": 480,
+        "coverage": [
+          0.9970095693779905,
+          0.9970095693779905,
+          0.9988038277511961,
+          1
+        ]
+      }
+    },
+    {
+      "id": "night-viaduct-ds2",
+      "layer": "foreground",
+      "file": "assets/stages/night-viaduct-ds2-foreground.png",
+      "width": 1672,
+      "height": 941,
+      "sha256": "6c0534b61c125f01d16c1403089f0df2b1ccdd7a7d916c8f50fd3b84a998cb4f",
+      "alphaMin": 0,
+      "alphaMax": 254,
+      "transparentFraction": 0.9499609750392792,
+      "opaqueFraction": 0,
+      "visibleBounds": [
+        0,
+        853,
+        1672,
+        88
+      ],
+      "centralTopVisibleRow": 877,
+      "projectedCentralTopY": 664.8803827751196
+    },
+    {
+      "id": "red-ravine-ds2",
+      "layer": "sky",
+      "file": "assets/stages/red-ravine-ds2-sky.png",
+      "width": 1672,
+      "height": 941,
+      "sha256": "12738b4fbd1417ac12679f1cb347ae6c71480c8242ade14860ff29759389a87b",
+      "alphaMin": 255,
+      "alphaMax": 255,
+      "transparentFraction": 0,
+      "opaqueFraction": 1,
+      "visibleBounds": [
+        0,
+        0,
+        1672,
+        941
+      ]
+    },
+    {
+      "id": "red-ravine-ds2",
+      "layer": "distant",
+      "file": "assets/stages/red-ravine-ds2-distant.png",
+      "width": 1672,
+      "height": 941,
+      "sha256": "5746b56b8a1db6823c43e1d5ae978cfe84e7f2ea6d5c00e66191270789c5f782",
+      "alphaMin": 0,
+      "alphaMax": 255,
+      "transparentFraction": 0.546627201033208,
+      "opaqueFraction": 0.000216099131027259,
+      "visibleBounds": [
+        0,
+        286,
+        1672,
+        655
+      ],
+      "lowestCentralOpaqueRow": 940,
+      "suggestedBottomAnchorY": 1
+    },
+    {
+      "id": "red-ravine-ds2",
+      "layer": "midground",
+      "file": "assets/stages/red-ravine-ds2-midground.png",
+      "width": 1672,
+      "height": 941,
+      "sha256": "6263c9d46a79c987060b672a219db450a215879075c8d473b14df4066cdc6731",
+      "alphaMin": 0,
+      "alphaMax": 255,
+      "transparentFraction": 0.5309142518648083,
+      "opaqueFraction": 0.00038452933609262264,
+      "visibleBounds": [
+        0,
+        0,
+        1672,
+        917
+      ],
+      "lowestCentralOpaqueRow": null,
+      "suggestedBottomAnchorY": null
+    },
+    {
+      "id": "red-ravine-ds2",
+      "layer": "floor",
+      "file": "assets/stages/red-ravine-ds2-floor.png",
+      "width": 1672,
+      "height": 941,
+      "sha256": "a1ab7727b2addedda28a43b9d72ddf620da1c8abb8443c92b37be80798fcf28a",
+      "alphaMin": 0,
+      "alphaMax": 255,
+      "transparentFraction": 0.4953958173377604,
+      "opaqueFraction": 0.000008262613833395197,
+      "visibleBounds": [
+        0,
+        474,
+        1672,
+        467
+      ],
+      "centralSupport": {
+        "columns": 1337,
+        "min": 477,
+        "p10": 477,
+        "median": 477,
+        "p90": 477,
+        "max": 477
+      },
+      "suggestedAnchorY": 0.5069075451647184,
+      "nativeLineToScreen588": {
+        "sourceRow": 477,
+        "sourceHeight": 941
+      },
+      "stableFullWidthSupport": {
+        "alphaThreshold": 250,
+        "minimumCoverage": 0.985,
+        "consecutiveRows": 4,
+        "sourceRow": 483,
+        "coverage": [
+          0.9964114832535885,
+          1,
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "id": "red-ravine-ds2",
+      "layer": "foreground",
+      "file": "assets/stages/red-ravine-ds2-foreground.png",
+      "width": 1672,
+      "height": 941,
+      "sha256": "134fa97c911ad127cc61c44789e133c9d861cd26c4d3d00577d30286179ecd90",
+      "alphaMin": 0,
+      "alphaMax": 255,
+      "transparentFraction": 0.9557053984105274,
+      "opaqueFraction": 0.000049575683000371184,
+      "visibleBounds": [
+        0,
+        781,
+        1672,
+        160
+      ],
+      "centralTopVisibleRow": 857,
+      "projectedCentralTopY": 647.6555023923445
+    }
+  ],
+  "missing": [],
+  "complete": true
+}

@@ -1,0 +1,14 @@
+.lessonIntro{margin-top:1.2rem;padding:1.2rem;border:1px solid #b4c3be;background:#eef2ed;border-radius:.7rem}
+.lessonIntro h2{margin:0 0 .5rem}.lessonIntro p{max-width:70ch}.lessonIntro .actions{margin-top:.8rem}
+.lessonList{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1rem;padding:0;list-style:none;margin:1.5rem 0}
+.lessonCard{display:flex;flex-direction:column;align-items:flex-start;padding:1.3rem;border:1px solid #bbc8c1;border-radius:.7rem;background:#f7f7f0;gap:.5rem}
+.lessonCard h2{font-size:1.28rem;margin:.1rem 0}.lessonCard p{margin:.2rem 0 .7rem}.lessonCard button{margin-top:auto}.lessonCard.complete{border-color:#718b76}
+.lessonProgress{font-weight:700;color:#294b3a}.lessonResume{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:1rem 0;flex-wrap:wrap}
+.lessonPanel{background:#f5f6ed;color:#162a27;border:1px solid #94aaa0;border-radius:.6rem;margin:.5rem 0 1rem;padding:1rem 1.2rem}
+.lessonPanel h2{font-size:1.3rem;margin:.15rem 0 .6rem}.lessonSteps{padding-left:1.5rem;margin:.6rem 0}.lessonSteps li{padding:.15rem .2rem;color:#58685e}.lessonSteps li[aria-current=step]{font-weight:700;color:#173f32}.lessonSteps li.done{text-decoration:line-through;color:#526c58}
+.lessonKey{display:inline-block;border:1px solid #a9bcb0;border-radius:.25rem;padding:0 .35rem;min-width:1.3em;text-align:center;font-weight:700;white-space:nowrap}
+.lessonMetric{font-variant-numeric:tabular-nums;font-size:.87rem;margin:.4rem 0}.lessonFeedback{min-height:1.5em;margin:.4rem 0;font-weight:600}.lessonPanel .hint{font-size:.85rem;margin:.5rem 0}
+.lessonActions{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:.7rem}.lessonResult{border-top:1px solid #a9bcb0;margin-top:.9rem;padding-top:.8rem}.lessonResult h3{margin:0 0 .5rem}.lessonResult[hidden]{display:none}
+.lessonFight .combatNotes{margin-top:.5rem}.lessonFight .touchgroup{margin-bottom:1rem}
+.lessonFight .pausebox{inset:8%;overflow:auto;max-height:84%}.lessonFight .pausebox h2{font-size:1.5rem;margin:.2rem 0 .6rem}
+@media(max-width:700px){.lessonList{grid-template-columns:1fr}.lessonPanel{padding:.8rem}.lessonPanel h2{font-size:1.1rem}.lessonSteps{font-size:.9rem}.lessonFight .fightbar{flex-wrap:wrap;gap:.5rem}.lessonFight .pausebox{inset:4%;max-height:92%;padding:.6rem}.lessonFight .pausebox .ambienceControl{font-size:.75rem}.lessonFight .pausebox button{padding:.5rem .75rem}.lessonFight .pausebox h2{font-size:1.1rem}}

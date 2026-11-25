@@ -33,14 +33,14 @@ function assetFiles(baseRoot = root) {
     }
   }
   for (const folder of ['fighters','finishers','props','projectiles','stages','story','bosses','static-20261125','static-universe-20261125',
-    'static-completion-20261125','story-completion-20261125','static-domains-20261125']) visit('assets/' + folder);
+    'static-completion-20261125','story-completion-20261125','static-domains-20261125','static-extension-20261125']) visit('assets/' + folder);
   return files.sort();
 }
 function gameVersion(baseRoot = root, assets = assetFiles(baseRoot)) {
   const hash = createHash('sha256');
   for (const file of ['fight.js','content.js','asset-geometry-20261124.js','assets.js','boss-geometry-20261124.js','boss-assets.js','boss.js',
     'app.js','campaign.js','campaign.css','static-assets.html','static-assets.css','static-assets.js','static-assets-data.js','archives.html',
-    'input.js','input.css','moves-data.js','relationships.js','netplay.js','netplay-server.cjs']) {
+    'input.js','input.css','moves-data.js','relationships.js','lessons.js','lessons.css','boss-data.js','boss-guide.js','boss-guide.css','netplay.js','netplay-server.cjs']) {
     hash.update(file);
     hash.update(fs.readFileSync(path.join(baseRoot,file)));
   }
@@ -136,10 +136,11 @@ function roomService(version, clock = () => performance.now()) {
 }
 const statics = new Set(['index.html','style.css','app.js','fight.js','content.js','asset-geometry-20261124.js','assets.js','tournament.js','netplay.html','netplay.js','netplay.css',
   'boss.js','boss-assets.js','boss-geometry-20261124.js','campaign.js','campaign.css','archives.html','input.js','input.css','moves-data.js','relationships.js',
-  'static-assets.html','static-assets.css','static-assets.js','static-assets-data.js',
+  'static-assets.html','static-assets.css','static-assets.js','static-assets-data.js','lessons.js','lessons.css','boss-data.js','boss-guide.js','boss-guide.css',
   'duel-originel/index.html','duel-originel/style.css','duel-originel/interface.js','duel-originel/moteur.js','duel-originel/scene.js']);
 const documents = new Set(['docs/combat/BIBLE_COMBAT.md','docs/combat/UNIVERS_DS.md','docs/combat/REGISTRE_PRODUCTION.md',
-  'docs/combat/ACTIONS_ET_IA.md','docs/combat/RELATIONS_SIMULATEUR.md']);
+  'docs/combat/ACTIONS_ET_IA.md','docs/combat/RELATIONS_SIMULATEUR.md','docs/combat/BOSS_ET_RENCONTRES.md',
+  'docs/combat/production/20261125-extension/DOJO.md']);
 const types = {'.html':'text/html; charset=utf-8','.css':'text/css','.js':'text/javascript','.webp':'image/webp','.png':'image/png','.md':'text/plain; charset=utf-8'};
 function openRelay(clock) {
   const assets = new Set(assetFiles());

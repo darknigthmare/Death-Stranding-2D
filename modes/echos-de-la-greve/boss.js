@@ -339,8 +339,8 @@
       return true;
     }
     const box=c.boxes.find(q=>q.state==='ground'&&Math.abs(q.x-p.x)<75&&p.y<20);
-    if(box){box.state='carried';c.carrying=box.id;message(s,'Colis saisi · rejoignez le dépôt à gauche puis appuyez sur T');return true;}
-    message(s,s.boss.hp>0?'Immobilisez le camion avant de récupérer sa cargaison.':'Approchez-vous d’un colis et appuyez sur T.');return true;
+    if(box){box.state='carried';c.carrying=box.id;message(s,'Colis saisi · rejoignez le dépôt à gauche puis utilisez la commande Colis');return true;}
+    message(s,s.boss.hp>0?'Immobilisez le camion avant de récupérer sa cargaison.':'Approchez-vous d’un colis et utilisez la commande Colis.');return true;
   }
   function beginAction(s,key){
     const p=s.p;if(p.act||p.stun||p.guard)return;

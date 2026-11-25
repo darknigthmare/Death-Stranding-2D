@@ -1,0 +1,339 @@
+{
+  "date": "2026-11-25T17:04:10.217Z",
+  "passed": true,
+  "browser": false,
+  "nativeCanvas": true,
+  "htmlLayoutRendered": false,
+  "hardwareGamepadTested": false,
+  "method": "Deux exercices guidés exécutés par leurs entrées réelles ; PNG décodés et vrai renderer StrandFight à 1280×720 pour les captures. Aucun moteur de mise en page HTML.",
+  "nativeTextRenderingAvailable": false,
+  "limits": [
+    "Aucune police système disponible : ces captures valident images, barres et composition ; les glyphes du HUD ne sont pas rendus dans ce runtime."
+  ],
+  "stage": "firing-range-dc",
+  "decodedImages": 29,
+  "cases": [
+    {
+      "id": "guard-high",
+      "stage": "firing-range-dc",
+      "frames": 370,
+      "phase": "success",
+      "evidence": [
+        {
+          "goal": 1,
+          "tick": 368,
+          "blocks": 3,
+          "kind": "light",
+          "vitality": 100
+        }
+      ],
+      "compositeAlphaMin": 255,
+      "capture": "dojo-renders/guard-high.webp",
+      "captureSha256": "3e2731271a9329d6ded3976e67d0b2d566c1aa98c332995e996a3381c0af03c1",
+      "snapshot": {
+        "phase": "fight",
+        "tick": 368,
+        "paused": false,
+        "round": 1,
+        "wins": [
+          0,
+          0
+        ],
+        "maxRounds": 2,
+        "time": 75,
+        "stage": "firing-range-dc",
+        "mode": "training",
+        "reducedEffects": false,
+        "staticScenery": true,
+        "parcel": null,
+        "beat": 52,
+        "winner": 0,
+        "finisher": false,
+        "fighters": [
+          {
+            "id": "sam",
+            "hp": 100,
+            "balance": 67,
+            "chiral": 100,
+            "combo": 0,
+            "x": 442.0000000000222,
+            "y": 0,
+            "guard": true,
+            "action": "",
+            "stun": 0,
+            "move": "",
+            "marker": null,
+            "scan": null
+          },
+          {
+            "id": "higgs",
+            "hp": 100,
+            "balance": 100,
+            "chiral": 100,
+            "combo": 0,
+            "x": 510.2000000000034,
+            "y": 0,
+            "guard": false,
+            "action": "light",
+            "stun": 0,
+            "move": "light",
+            "marker": null,
+            "scan": null
+          }
+        ],
+        "training": {
+          "dummy": "record",
+          "hitboxes": false,
+          "timing": true,
+          "frames": 296,
+          "position": 0,
+          "moves": [
+            null,
+            {
+              "name": "Coup léger",
+              "start": 5,
+              "active": 3,
+              "recover": 10,
+              "phase": "Activité",
+              "frame": 5,
+              "projectile": 0,
+              "marker": null
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "punish",
+      "stage": "firing-range-dc",
+      "frames": 152,
+      "phase": "success",
+      "evidence": [
+        {
+          "goal": 1,
+          "tick": 132,
+          "kind": "heavy-whiff",
+          "gap": 155
+        },
+        {
+          "goal": 2,
+          "tick": 150,
+          "kind": "recovery-punish",
+          "damage": 5,
+          "opponentPhaseBeforeImpact": "Récupération"
+        }
+      ],
+      "compositeAlphaMin": 255,
+      "capture": "dojo-renders/punish.webp",
+      "captureSha256": "54bb2c28c9038a3be4261774f00f7b2fd9bb8fb59d777302e6127cb25722b7eb",
+      "snapshot": {
+        "phase": "fight",
+        "tick": 150,
+        "paused": false,
+        "round": 1,
+        "wins": [
+          0,
+          0
+        ],
+        "maxRounds": 2,
+        "time": 75,
+        "stage": "firing-range-dc",
+        "mode": "training",
+        "reducedEffects": false,
+        "staticScenery": true,
+        "parcel": null,
+        "beat": 18,
+        "winner": 0,
+        "finisher": false,
+        "fighters": [
+          {
+            "id": "sam",
+            "hp": 100,
+            "balance": 100,
+            "chiral": 72,
+            "combo": 1,
+            "x": 708.3999999999987,
+            "y": 0,
+            "guard": false,
+            "action": "light",
+            "stun": 0,
+            "move": "light",
+            "marker": null,
+            "scan": null
+          },
+          {
+            "id": "higgs",
+            "hp": 95,
+            "balance": 94,
+            "chiral": 71,
+            "combo": 0,
+            "x": 806,
+            "y": 0,
+            "guard": false,
+            "action": "",
+            "stun": 12,
+            "move": "heavy",
+            "marker": null,
+            "scan": null
+          }
+        ],
+        "training": {
+          "dummy": "record",
+          "hitboxes": false,
+          "timing": true,
+          "frames": 78,
+          "position": 0,
+          "moves": [
+            {
+              "name": "Coup léger",
+              "start": 5,
+              "active": 3,
+              "recover": 10,
+              "phase": "Activité",
+              "frame": 5,
+              "projectile": 0,
+              "marker": null
+            },
+            {
+              "name": "Coup lourd",
+              "start": 14,
+              "active": 4,
+              "recover": 19,
+              "phase": "Repos",
+              "frame": 0,
+              "projectile": 0,
+              "marker": null
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "sourceSha256": {
+    "content.js": "fe6e129844908ad3a0fa97d9e59cace35b1fb4c4cc54ba095de401bcac189578",
+    "asset-geometry-20261124.js": "61f830dc5036774529b7ecaf51f4c80386ef7f94447c55e044584e850e081934",
+    "assets.js": "4f0ae5349872b9391d7586bc98baf0baa211e83e59c7b1e4234aaf22525ecb01",
+    "moves-data.js": "f781bf43f7e4d7a4c474eed795d0c728de0cbd0daae7c74aa79ffedfa4915767",
+    "lessons.js": "d6c5a6e7d544edddca882e4f5ba255838de7ee566f613dacb02e490ce4e1b205",
+    "fight.js": "17c3cfcdee2291dad721b312ee060ca3d341cb0734c30d57128152fa6d3e3f23",
+    "qa/lessons-canvas.cjs": "32789c994ae0d64cfcafa1772faa6e1e9f12cfed63333db7df6611f7b1854f9b"
+  },
+  "imageSources": [
+    {
+      "path": "assets/fighters/sam-stance.webp",
+      "sha256": "9cc5ddecb03ec1ddf84b678211f4fa4a35c282d999cd3e776102cd2407a91c60"
+    },
+    {
+      "path": "assets/fighters/sam-action.webp",
+      "sha256": "d959b3e4ae4d97a5f146ae0252c4bffcbfdf85537a5b79b31c1c8a2b398e74cb"
+    },
+    {
+      "path": "assets/fighters/sam-step.webp",
+      "sha256": "42dddf61765bfdc0ddaaa09c7d816aabf99c35cfa74411151a303b2bc806c147"
+    },
+    {
+      "path": "assets/fighters/sam-hit.webp",
+      "sha256": "7fa86e3ca0ac0a0ec014cd99851e0ff7923d9742c16d65eac77996419c1f0989"
+    },
+    {
+      "path": "assets/fighters/sam/guard.png",
+      "sha256": "9ab6da9fcaab1d5cde6e39f475da7b233bf5829dd9a01f24814f2215e4eb2012"
+    },
+    {
+      "path": "assets/fighters/sam/crouch.png",
+      "sha256": "f787d9b3ba24609e7b48ee904c673115824ccc3aa85873e75761f18c2c2813c3"
+    },
+    {
+      "path": "assets/fighters/sam/rise.png",
+      "sha256": "1869e33970c12677fe53b5444a3dff6c5aa99a0dd9e0e8bcb5897b7acd29a4a3"
+    },
+    {
+      "path": "assets/fighters/sam/apex.png",
+      "sha256": "6ef109a246650a795a91c845b9ab2b8ea64e250bebd2f5017cbf51b94291a3ac"
+    },
+    {
+      "path": "assets/fighters/sam/fall.png",
+      "sha256": "8b3762a91937bbe24f9d1261b0b961f87d8ed8562e069e95d03cbb76fb92867f"
+    },
+    {
+      "path": "assets/fighters/sam-jump.png",
+      "sha256": "b403e7aaa243239137f991b9e952ba98a7a7b8ea7e518e0c537c7afe683631c8"
+    },
+    {
+      "path": "assets/fighters/higgs/stance.png",
+      "sha256": "bef8d4aa14f693abf574639aadf5e986ab41acf2347c9c1a6277c986f73e4c6b"
+    },
+    {
+      "path": "assets/fighters/higgs/action.png",
+      "sha256": "430a1a4933b85f1d2455b1a2659aeb4add108d00204b43a783c1dbd4148f771f"
+    },
+    {
+      "path": "assets/fighters/higgs/step.png",
+      "sha256": "562ba84fdc1901b58b24d5f5c9ca55cf176896ddbf65b1b4f6d79bc153e6fd72"
+    },
+    {
+      "path": "assets/fighters/higgs/hit.png",
+      "sha256": "066a55e99d37e4c0fd54d734a856fb2a98394a83e68935db4e2d082433a7090b"
+    },
+    {
+      "path": "assets/fighters/higgs/guard.png",
+      "sha256": "0d86739bd460302353d1ec6e2f614068f8cb1f84d9c83260962b343411c70b36"
+    },
+    {
+      "path": "assets/fighters/higgs/crouch.png",
+      "sha256": "fa1d8237b01f02f4081f7ab7a1c4908f898aa855e2fee6142a6d9ba43f7d2124"
+    },
+    {
+      "path": "assets/fighters/higgs/rise.png",
+      "sha256": "a12c14b8fc16f97c012e13a4a2d6ee251fe143c99ba4122477fb0e0c2752a876"
+    },
+    {
+      "path": "assets/fighters/higgs/apex.png",
+      "sha256": "a82ad43f4e1bff933f45449532f5e62ddf2a057418b5d51248925bd71f29e1b1"
+    },
+    {
+      "path": "assets/fighters/higgs/fall.png",
+      "sha256": "9b29d90e591099f7e4d956b49aab4aa6d28b199df0200b62be58b51b926fac8a"
+    },
+    {
+      "path": "assets/fighters/higgs/jump.png",
+      "sha256": "7c7c17863537877928b9622d68930b06a6f5ac3cea5f53c76236c4eb6ed373b5"
+    },
+    {
+      "path": "assets/projectiles/sam.png",
+      "sha256": "43827e84f9d3a142b1f1becb2c19ca4a795b438f0c5c975f1740ae547ad30edf"
+    },
+    {
+      "path": "assets/projectiles/higgs.png",
+      "sha256": "5daad21f052df501efb2e4d5845a26990319241d9230346bd912a052298662df"
+    },
+    {
+      "path": "assets/static-domains-20261125/firing-range-dc-panorama.png",
+      "sha256": "544b645be6f33c7292331ca8f11e0fac319c77072dfc11c0d40f1c4b5a0675d5"
+    },
+    {
+      "path": "assets/stages/firing-range-dc-sky.png",
+      "sha256": "a69a211853144cf4512a29582ee80f26a5f52a4b927eaa4e325afb97e450a194"
+    },
+    {
+      "path": "assets/stages/firing-range-dc-distant.png",
+      "sha256": "274db3e255d6950a12eeb9476e027dbba0a9177ad36e258b3ce4f73bb4d9a2d7"
+    },
+    {
+      "path": "assets/stages/firing-range-dc-midground.png",
+      "sha256": "334d33afd115039a7993106bb6df615fe9eb0ec3270dd3fab9acfc133de22dac"
+    },
+    {
+      "path": "assets/stages/firing-range-dc-floor.png",
+      "sha256": "dbffa41967ef0fd032d9a7aae00e9e9d3f562698656b336cfc5e3ab81588f431"
+    },
+    {
+      "path": "assets/stages/firing-range-dc-foreground.png",
+      "sha256": "da8d2b1b6bf73db568621392017c6509a5c2244c9791528d5c25f61eda9000e2"
+    },
+    {
+      "path": "assets/props/gold-imprint.png",
+      "sha256": "4972f5c23568ef4c408e6fb2015734e13089807af5fce6983641532c1fd73259"
+    }
+  ]
+}

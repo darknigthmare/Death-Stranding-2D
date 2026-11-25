@@ -1,0 +1,1404 @@
+{
+  "schema_version": 1,
+  "date": "2026-11-25",
+  "project": "Death Stranding 2D · Échos de la Grève",
+  "universe_scope": "DS1 / Director’s Cut, DS2: On the Beach ; autres œuvres suivies séparément dans UNIVERS_DS.md",
+  "source_main": "8d274a015e0edf314a853630031d5eb507354811",
+  "pixel_policy": "Sorties natives imagegen copiées sans modification, sans recadrage, sans redimensionnement. Captures QA séparées. Aucune nouvelle animation.",
+  "counts": {
+    "native_pngs": 28,
+    "isolated_bases": 11,
+    "new_panoramas": 2,
+    "new_stage_layers": 15,
+    "reused_panorama": 1,
+    "new_playable_arenas": 3,
+    "animations_generated": 0
+  },
+  "items": [
+    {
+      "id": "firing-range-dc-sky",
+      "path": "modes/echos-de-la-greve/assets/stages/firing-range-dc-sky.png",
+      "width": 1672,
+      "height": 941,
+      "mode": "RGB",
+      "bytes": 1665014,
+      "sha256": "a69a211853144cf4512a29582ee80f26a5f52a4b927eaa4e325afb97e450a194",
+      "git_blob_sha": "edb8a0bfdbc49a6cad40bc929cbedcf06b150d55",
+      "alpha_min": 255,
+      "alpha_max": 255,
+      "transparent_fraction": 0,
+      "title": "firing-range-dc-sky",
+      "work": "ds1-dc",
+      "status": "integrated_playable_stage",
+      "bindings": {
+        "static_gallery": false,
+        "playable_stage": "firing-range-dc",
+        "playable_fighter": false
+      },
+      "native_copy_unchanged": true,
+      "pixel_edit_after_generation": false,
+      "upsampled": false,
+      "generation": {
+        "tool": "image_gen.imagegen",
+        "transparent_background": false,
+        "original_generation_filename": "exec-d78f48af-6545-4844-82d9-e48c360907fc.png",
+        "native_bytes_recovered_from_tool_result": false,
+        "prompt": "Use case: stylized-concept. Project asset for Death Stranding 2D, Echos de la Greve. Create ONE separate native PNG parallax layer for the Director's Cut firing range shown in the reference image. The reference is a supporting identity and materials reference, not a sheet to reproduce. Preserve its modular gray concrete, dark metal, cyan-white beacons, rocky quarry and muted overcast light wherever relevant to this layer. UHD detailed painterly game-background rendering, sharp usable edges, landscape 16:9 canvas. Side-on fighting-game staging with a level horizontal play lane. No text, labels, HUD, characters, weapons, targets, montage, sheet, border, watermark or additional scene. Do not show multiple variants.\nLayer specification: Render ONLY the full opaque background sky plate: soft pale gray overcast cloud layers, faint cool atmospheric variation. Fill all edges with sky. No horizon, ground, buildings, beacons or rocks.\nTransparency: Opaque full canvas.",
+        "reference_paths": [
+          "firing-range-dc-panorama.png"
+        ]
+      },
+      "source_pages": [
+        "https://www.playstation.com/en-us/games/death-stranding/"
+      ],
+      "source_reference_quality": "Galerie officielle + adaptation latérale",
+      "limitations": [
+        "Stand de tir du Director’s Cut adapté à une piste latérale ; géométrie de combat et couches séparées propres au projet."
+      ]
+    },
+    {
+      "id": "firing-range-dc-midground",
+      "path": "modes/echos-de-la-greve/assets/stages/firing-range-dc-midground.png",
+      "width": 1672,
+      "height": 941,
+      "mode": "RGBA",
+      "bytes": 658190,
+      "sha256": "334d33afd115039a7993106bb6df615fe9eb0ec3270dd3fab9acfc133de22dac",
+      "git_blob_sha": "9ce27faf0a1c4d9854e3ac81a1de413647ff3684",
+      "alpha_min": 0,
+      "alpha_max": 255,
+      "transparent_fraction": 0.7961651302442174,
+      "title": "firing-range-dc-midground",
+      "work": "ds1-dc",
+      "status": "integrated_playable_stage",
+      "bindings": {
+        "static_gallery": false,
+        "playable_stage": "firing-range-dc",
+        "playable_fighter": false
+      },
+      "native_copy_unchanged": true,
+      "pixel_edit_after_generation": false,
+      "upsampled": false,
+      "generation": {
+        "tool": "image_gen.imagegen",
+        "transparent_background": true,
+        "original_generation_filename": "exec-665dc71b-a56f-47f5-b9b9-f1c0e952157a.png",
+        "native_bytes_recovered_from_tool_result": false,
+        "prompt": "Use case: stylized-concept. Project asset for Death Stranding 2D, Echos de la Greve. Create ONE separate native PNG parallax layer for the Director's Cut firing range shown in the reference image. The reference is a supporting identity and materials reference, not a sheet to reproduce. Preserve its modular gray concrete, dark metal, cyan-white beacons, rocky quarry and muted overcast light wherever relevant to this layer. UHD detailed painterly game-background rendering, sharp usable edges, landscape 16:9 canvas. Side-on fighting-game staging with a level horizontal play lane. No text, labels, HUD, characters, weapons, targets, montage, sheet, border, watermark or additional scene. Do not show multiple variants.\nLayer specification: Render ONLY the range's middle-distance industrial layer: low gray concrete dividers, a modest block-shaped observation wall near the right edge and two slender cyan-white beacon pillars. Arrange these as a wide horizontal strip behind the fighting lane. Keep the central 60 percent open and low so bodies are readable. Bases align along the bottom edge. Entire space above and between structures genuinely transparent, with no sky, rocks, ground slab, pit or continuous floor.\nTransparency: Use a genuinely transparent alpha background; no painted checkerboard or solid backdrop.",
+        "reference_paths": [
+          "firing-range-dc-panorama.png"
+        ]
+      },
+      "source_pages": [
+        "https://www.playstation.com/en-us/games/death-stranding/"
+      ],
+      "source_reference_quality": "Galerie officielle + adaptation latérale",
+      "limitations": [
+        "Stand de tir du Director’s Cut adapté à une piste latérale ; géométrie de combat et couches séparées propres au projet."
+      ]
+    },
+    {
+      "id": "firing-range-dc-distant",
+      "path": "modes/echos-de-la-greve/assets/stages/firing-range-dc-distant.png",
+      "width": 1672,
+      "height": 941,
+      "mode": "RGBA",
+      "bytes": 1041614,
+      "sha256": "274db3e255d6950a12eeb9476e027dbba0a9177ad36e258b3ce4f73bb4d9a2d7",
+      "git_blob_sha": "27ec47bafc132229c5750e5009067e4b448ffe88",
+      "alpha_min": 0,
+      "alpha_max": 255,
+      "transparent_fraction": 0.7198980266335823,
+      "title": "firing-range-dc-distant",
+      "work": "ds1-dc",
+      "status": "integrated_playable_stage",
+      "bindings": {
+        "static_gallery": false,
+        "playable_stage": "firing-range-dc",
+        "playable_fighter": false
+      },
+      "native_copy_unchanged": true,
+      "pixel_edit_after_generation": false,
+      "upsampled": false,
+      "generation": {
+        "tool": "image_gen.imagegen",
+        "transparent_background": true,
+        "original_generation_filename": "exec-d709142a-6799-4edf-9ee3-a3aa35c97f0c.png",
+        "native_bytes_recovered_from_tool_result": false,
+        "prompt": "Use case: stylized-concept. Project asset for Death Stranding 2D, Echos de la Greve. Create ONE separate native PNG parallax layer for the Director's Cut firing range shown in the reference image. The reference is a supporting identity and materials reference, not a sheet to reproduce. Preserve its modular gray concrete, dark metal, cyan-white beacons, rocky quarry and muted overcast light wherever relevant to this layer. UHD detailed painterly game-background rendering, sharp usable edges, landscape 16:9 canvas. Side-on fighting-game staging with a level horizontal play lane. No text, labels, HUD, characters, weapons, targets, montage, sheet, border, watermark or additional scene. Do not show multiple variants.\nLayer specification: Render ONLY the distant rocky quarry rim and subdued layered basalt ridges. Terrain occupies the lower 38 percent of the canvas, continuing horizontally to both side edges. Upper 62 percent genuinely transparent. No sky, floor, industrial structures or beacons. Keep all silhouettes distant, modest in contrast.\nTransparency: Use a genuinely transparent alpha background; no painted checkerboard or solid backdrop.",
+        "reference_paths": [
+          "firing-range-dc-panorama.png"
+        ]
+      },
+      "source_pages": [
+        "https://www.playstation.com/en-us/games/death-stranding/"
+      ],
+      "source_reference_quality": "Galerie officielle + adaptation latérale",
+      "limitations": [
+        "Stand de tir du Director’s Cut adapté à une piste latérale ; géométrie de combat et couches séparées propres au projet."
+      ]
+    },
+    {
+      "id": "firing-range-dc-foreground",
+      "path": "modes/echos-de-la-greve/assets/stages/firing-range-dc-foreground.png",
+      "width": 1672,
+      "height": 941,
+      "mode": "RGBA",
+      "bytes": 100908,
+      "sha256": "da8d2b1b6bf73db568621392017c6509a5c2244c9791528d5c25f61eda9000e2",
+      "git_blob_sha": "a71a9641a1b4669535c96ab82ddf35d25804a495",
+      "alpha_min": 0,
+      "alpha_max": 255,
+      "transparent_fraction": 0.9859942339667156,
+      "title": "firing-range-dc-foreground",
+      "work": "ds1-dc",
+      "status": "integrated_playable_stage",
+      "bindings": {
+        "static_gallery": false,
+        "playable_stage": "firing-range-dc",
+        "playable_fighter": false
+      },
+      "native_copy_unchanged": true,
+      "pixel_edit_after_generation": false,
+      "upsampled": false,
+      "generation": {
+        "tool": "image_gen.imagegen",
+        "transparent_background": true,
+        "original_generation_filename": "exec-2c222cbe-6864-4ac3-8987-48fa37876d19.png",
+        "native_bytes_recovered_from_tool_result": false,
+        "prompt": "Use case: stylized-concept. Project asset for Death Stranding 2D, Echos de la Greve. Create ONE separate native PNG parallax layer for the Director's Cut firing range shown in the reference image. The reference is a supporting identity and materials reference, not a sheet to reproduce. Preserve its modular gray concrete, dark metal, cyan-white beacons, rocky quarry and muted overcast light wherever relevant to this layer. UHD detailed painterly game-background rendering, sharp usable edges, landscape 16:9 canvas. Side-on fighting-game staging with a level horizontal play lane. No text, labels, HUD, characters, weapons, targets, montage, sheet, border, watermark or additional scene. Do not show multiple variants.\nLayer specification: Render ONLY a very low foreground edge strip: small cropped dark metal footing and concrete trim at the extreme lower left and lower right. At least the upper 88 percent of canvas and central 72 percent of width remain genuinely transparent. Nothing rises high enough to obscure feet or the playing lane. No whole barrier panels, poles, sky or floor plane.\nTransparency: Use a genuinely transparent alpha background; no painted checkerboard or solid backdrop.",
+        "reference_paths": [
+          "firing-range-dc-panorama.png"
+        ]
+      },
+      "source_pages": [
+        "https://www.playstation.com/en-us/games/death-stranding/"
+      ],
+      "source_reference_quality": "Galerie officielle + adaptation latérale",
+      "limitations": [
+        "Stand de tir du Director’s Cut adapté à une piste latérale ; géométrie de combat et couches séparées propres au projet."
+      ]
+    },
+    {
+      "id": "firing-range-dc-floor",
+      "path": "modes/echos-de-la-greve/assets/stages/firing-range-dc-floor.png",
+      "width": 1672,
+      "height": 941,
+      "mode": "RGBA",
+      "bytes": 1608287,
+      "sha256": "dbffa41967ef0fd032d9a7aae00e9e9d3f562698656b336cfc5e3ab81588f431",
+      "git_blob_sha": "6a0a140e466a4bb343304e8bd0348c8031ba1825",
+      "alpha_min": 0,
+      "alpha_max": 255,
+      "transparent_fraction": 0.5261022326853749,
+      "title": "firing-range-dc-floor",
+      "work": "ds1-dc",
+      "status": "integrated_playable_stage",
+      "bindings": {
+        "static_gallery": false,
+        "playable_stage": "firing-range-dc",
+        "playable_fighter": false
+      },
+      "native_copy_unchanged": true,
+      "pixel_edit_after_generation": false,
+      "upsampled": false,
+      "generation": {
+        "tool": "image_gen.imagegen",
+        "transparent_background": true,
+        "original_generation_filename": "exec-f380e6e6-6889-4bef-9b82-b87eebd34f75.png",
+        "native_bytes_recovered_from_tool_result": false,
+        "prompt": "Use case: stylized-concept. Project asset for Death Stranding 2D, Echos de la Greve. Create ONE separate native PNG parallax layer for the Director's Cut firing range shown in the reference image. The reference is a supporting identity and materials reference, not a sheet to reproduce. Preserve its modular gray concrete, dark metal, cyan-white beacons, rocky quarry and muted overcast light wherever relevant to this layer. UHD detailed painterly game-background rendering, sharp usable edges, landscape 16:9 canvas. Side-on fighting-game staging with a level horizontal play lane. No text, labels, HUD, characters, weapons, targets, montage, sheet, border, watermark or additional scene. Do not show multiple variants.\nLayer specification: Render ONLY a single continuous level gray concrete-and-dark-steel fighting platform. Its straight horizontal top back edge crosses the ENTIRE canvas at 48 percent height. Everything above that line is genuinely transparent. Below that line, fill the full width continuously to bottom with a shallow-perspective concrete top surface, inset dark grating and subtle cyan range markings. NO steps, pits, breaks, vertical posts, barriers or props. The usable walking surface is unobstructed and level from left to right.\nTransparency: Use a genuinely transparent alpha background; no painted checkerboard or solid backdrop.",
+        "reference_paths": [
+          "firing-range-dc-panorama.png"
+        ]
+      },
+      "source_pages": [
+        "https://www.playstation.com/en-us/games/death-stranding/"
+      ],
+      "source_reference_quality": "Galerie officielle + adaptation latérale",
+      "limitations": [
+        "Stand de tir du Director’s Cut adapté à une piste latérale ; géométrie de combat et couches séparées propres au projet."
+      ]
+    },
+    {
+      "id": "red-ravine-ds2-panorama",
+      "path": "modes/echos-de-la-greve/assets/static-extension-20261125/red-ravine-ds2-panorama.png",
+      "width": 1672,
+      "height": 941,
+      "mode": "RGB",
+      "bytes": 2195999,
+      "sha256": "71b1078b016e2e08c945e91c47c6a7b54adb6f8d216633abc9696f74078f25f1",
+      "git_blob_sha": "032e80beaa60c9f70968aa5e6a7d49410c52c266",
+      "alpha_min": 255,
+      "alpha_max": 255,
+      "transparent_fraction": 0,
+      "title": "Ravin rouge · vision DS2",
+      "work": "ds2",
+      "status": "integrated_playable_stage",
+      "bindings": {
+        "static_gallery": true,
+        "playable_stage": "red-ravine-ds2",
+        "playable_fighter": false
+      },
+      "native_copy_unchanged": true,
+      "pixel_edit_after_generation": false,
+      "upsampled": false,
+      "generation": {
+        "tool": "image_gen.imagegen",
+        "transparent_background": false,
+        "original_generation_filename": "exec-ac6e6779-4c49-422e-83de-99ab36f691b6.png",
+        "native_bytes_recovered_from_tool_result": false,
+        "prompt": "Use case: stylized-concept. Create a single finished UHD 2D fighting-game environment panorama for Death Stranding 2: On the Beach, adapting the supplied official screenshot into a playable side-view scene. The image is a reference for architecture, landscape, palette and atmosphere. Preserve identifiable visible motifs. Landscape 16:9 composition, detailed realistic painterly game art, restrained material texture, clean silhouettes. Natural environment staging, with an unobstructed level horizontal ground band near the lower fifth for a side-on duel. No player, no NPCs, no creatures, no vehicles, no weapon, no text, no UI, no branding, no watermark, no borders, no contact sheet. Do not introduce a theater stage, arena seating or decorative portals.\nSubject: The red-hazed rocky ravine shown in the reference: wet layered black basalt cliffs, sparse bare twisted branches, scattered dark stones, red luminous fog filling the distance, faint hanging vertical black strands far in the atmosphere. Remove the crouching porter and the humanoid shadow figures. Preserve the eerie red/charcoal contrast, rocky sediment edges and desolate terrain. Recompose a broad horizontal flat rocky path for the combat lane across the lower fifth, low shallow wet gravel surface with reddish reflections, no pits or tall foreground plants over the path. Avoid turning this into a dense forest, lava field or flame scene; the source is red atmosphere and rock, not fire.",
+        "reference_paths": [
+          "sop2024_014.jpg"
+        ]
+      },
+      "source_pages": [
+        "https://kojimaproductions.jp/en/death-stranding-2"
+      ],
+      "source_reference_quality": "Galerie officielle + adaptation latérale",
+      "limitations": [
+        "Nom DS2 descriptif, piste et couches adaptées au combat 2D ; aucune identité de lieu canonique supplémentaire."
+      ]
+    },
+    {
+      "id": "night-viaduct-ds2-panorama",
+      "path": "modes/echos-de-la-greve/assets/static-extension-20261125/night-viaduct-ds2-panorama.png",
+      "width": 1672,
+      "height": 941,
+      "mode": "RGB",
+      "bytes": 1828848,
+      "sha256": "047ee0d80616c646851a06cd060f4a3de80eb32594d6ec0223523282e1d44de9",
+      "git_blob_sha": "d4e748ab19bde2474a3161ecb1d09b0e9e9a39aa",
+      "alpha_min": 255,
+      "alpha_max": 255,
+      "transparent_fraction": 0,
+      "title": "Viaduc nocturne · DS2",
+      "work": "ds2",
+      "status": "integrated_playable_stage",
+      "bindings": {
+        "static_gallery": true,
+        "playable_stage": "night-viaduct-ds2",
+        "playable_fighter": false
+      },
+      "native_copy_unchanged": true,
+      "pixel_edit_after_generation": false,
+      "upsampled": false,
+      "generation": {
+        "tool": "image_gen.imagegen",
+        "transparent_background": false,
+        "original_generation_filename": "exec-4c328840-1b8b-4bed-a076-b20eeebc4842.png",
+        "native_bytes_recovered_from_tool_result": false,
+        "prompt": "Use case: stylized-concept. Create a single finished UHD 2D fighting-game environment panorama for Death Stranding 2: On the Beach, adapting the supplied official screenshot into a playable side-view scene. The image is a reference for architecture, landscape, palette and atmosphere. Preserve identifiable visible motifs. Landscape 16:9 composition, detailed realistic painterly game art, restrained material texture, clean silhouettes. Natural environment staging, with an unobstructed level horizontal ground band near the lower fifth for a side-on duel. No player, no NPCs, no creatures, no vehicles, no weapon, no text, no UI, no branding, no watermark, no borders, no contact sheet. Do not introduce a theater stage, arena seating or decorative portals.\nSubject: The storm-dark elevated roadway shown in the reference: blue-black sky, dark urban towers with sparse warm windows far left, broad wet concrete viaduct, cyan-white angular lamp heads on slender bent blue posts. Build the side-view fighting lane across the entire lower part, with the distant viaduct receding behind it and cyan reflections on wet panels. Make the lane clearly readable with even cool light. Keep the damaged-road atmosphere but no gaps, drops or obstacles in the actual playable horizontal ground. This is a visual reconstruction, so do not add a location name or claim unseen city layout. Rain in the panorama may be very subtle, no lightning flash or effects obscuring combat.",
+        "reference_paths": [
+          "sop2024_011.jpg"
+        ]
+      },
+      "source_pages": [
+        "https://kojimaproductions.jp/en/death-stranding-2"
+      ],
+      "source_reference_quality": "Galerie officielle + adaptation latérale",
+      "limitations": [
+        "Nom DS2 descriptif, piste et couches adaptées au combat 2D ; aucune identité de lieu canonique supplémentaire."
+      ]
+    },
+    {
+      "id": "night-viaduct-ds2-sky",
+      "path": "modes/echos-de-la-greve/assets/stages/night-viaduct-ds2-sky.png",
+      "width": 1672,
+      "height": 941,
+      "mode": "RGB",
+      "bytes": 1490274,
+      "sha256": "0f7795f1149ecb883ad11b227d5686b72a30cf1275fe793097a2646681fb02b9",
+      "git_blob_sha": "31e760e2fd1678c61e75f99d4e98285ccd75546b",
+      "alpha_min": 255,
+      "alpha_max": 255,
+      "transparent_fraction": 0,
+      "title": "night-viaduct-ds2-sky",
+      "work": "ds2",
+      "status": "integrated_playable_stage",
+      "bindings": {
+        "static_gallery": false,
+        "playable_stage": "night-viaduct-ds2",
+        "playable_fighter": false
+      },
+      "native_copy_unchanged": true,
+      "pixel_edit_after_generation": false,
+      "upsampled": false,
+      "generation": {
+        "tool": "image_gen.imagegen",
+        "transparent_background": false,
+        "original_generation_filename": "exec-e0682d73-7e0f-44a0-825b-19f404614a19.png",
+        "native_bytes_recovered_from_tool_result": false,
+        "prompt": "Use case: stylized-concept. Create ONE single native PNG parallax layer for Death Stranding 2D / Echos de la Greve. The first image is the approved scene composition and the second is the official screenshot for visible identity, materials and palette. UHD realistic painterly game-background art, landscape 16:9, side-view fighting-game scene, clean usable edges. Preserve scene identity and do not introduce new architecture or creatures. No text, no UI, no logo, no watermark, no borders, no sheet, no character, no vehicle or creature.\nLayer specification: Opaque full canvas of blue-black storm sky and smooth cool atmospheric haze. No horizon, lightning flash, rain streaks, towers, lamps, bridge or ground.\nTransparency: Opaque full canvas.",
+        "reference_paths": [
+          "exec-4c328840-1b8b-4bed-a076-b20eeebc4842.png",
+          "sop2024_011.jpg"
+        ]
+      },
+      "source_pages": [
+        "https://kojimaproductions.jp/en/death-stranding-2"
+      ],
+      "source_reference_quality": "Galerie officielle + adaptation latérale",
+      "limitations": [
+        "Nom DS2 descriptif, piste et couches adaptées au combat 2D ; aucune identité de lieu canonique supplémentaire."
+      ]
+    },
+    {
+      "id": "night-viaduct-ds2-floor",
+      "path": "modes/echos-de-la-greve/assets/stages/night-viaduct-ds2-floor.png",
+      "width": 1672,
+      "height": 941,
+      "mode": "RGBA",
+      "bytes": 1408716,
+      "sha256": "ba4323e7b3988c2562afb767c831aa92d3f1b1d5b17d54222d8403541ac422a4",
+      "git_blob_sha": "97c6f5299bc56262d3ee85b451bd23970f05ca95",
+      "alpha_min": 0,
+      "alpha_max": 255,
+      "transparent_fraction": 0.4975269361210969,
+      "title": "night-viaduct-ds2-floor",
+      "work": "ds2",
+      "status": "integrated_playable_stage",
+      "bindings": {
+        "static_gallery": false,
+        "playable_stage": "night-viaduct-ds2",
+        "playable_fighter": false
+      },
+      "native_copy_unchanged": true,
+      "pixel_edit_after_generation": false,
+      "upsampled": false,
+      "generation": {
+        "tool": "image_gen.imagegen",
+        "transparent_background": true,
+        "original_generation_filename": "exec-bd533b06-9bd1-4a90-905c-fc1b4b2366d6.png",
+        "native_bytes_recovered_from_tool_result": false,
+        "prompt": "Use case: stylized-concept. Create ONE single native PNG parallax layer for Death Stranding 2D / Echos de la Greve. The first image is the approved scene composition and the second is the official screenshot for visible identity, materials and palette. UHD realistic painterly game-background art, landscape 16:9, side-view fighting-game scene, clean usable edges. Preserve scene identity and do not introduce new architecture or creatures. No text, no UI, no logo, no watermark, no borders, no sheet, no character, no vehicle or creature.\nLayer specification: Only one continuous broad wet dark-concrete road surface, faint panel seams, subtle cyan reflections. Its straight horizontal back edge must cross the entire canvas exactly at 48 percent height. Everything above is genuinely transparent. The entire area below is filled continuously down to the bottom and both side edges; shallow perspective, unobstructed level surface. No posts, barriers, debris, potholes, broken slabs, skyline or horizon.\nTransparency: Use real transparent alpha, never a painted checkerboard or solid backdrop.",
+        "reference_paths": [
+          "exec-4c328840-1b8b-4bed-a076-b20eeebc4842.png",
+          "sop2024_011.jpg"
+        ]
+      },
+      "source_pages": [
+        "https://kojimaproductions.jp/en/death-stranding-2"
+      ],
+      "source_reference_quality": "Galerie officielle + adaptation latérale",
+      "limitations": [
+        "Nom DS2 descriptif, piste et couches adaptées au combat 2D ; aucune identité de lieu canonique supplémentaire."
+      ]
+    },
+    {
+      "id": "night-viaduct-ds2-foreground",
+      "path": "modes/echos-de-la-greve/assets/stages/night-viaduct-ds2-foreground.png",
+      "width": 1672,
+      "height": 941,
+      "mode": "RGBA",
+      "bytes": 180218,
+      "sha256": "6c0534b61c125f01d16c1403089f0df2b1ccdd7a7d916c8f50fd3b84a998cb4f",
+      "git_blob_sha": "737591f40a9b5015cf92ef67f758f8d2d92872d5",
+      "alpha_min": 0,
+      "alpha_max": 254,
+      "transparent_fraction": 0.9499609750392792,
+      "title": "night-viaduct-ds2-foreground",
+      "work": "ds2",
+      "status": "integrated_playable_stage",
+      "bindings": {
+        "static_gallery": false,
+        "playable_stage": "night-viaduct-ds2",
+        "playable_fighter": false
+      },
+      "native_copy_unchanged": true,
+      "pixel_edit_after_generation": false,
+      "upsampled": false,
+      "generation": {
+        "tool": "image_gen.imagegen",
+        "transparent_background": true,
+        "original_generation_filename": "exec-bbb7c837-4c15-4871-9790-3459397fd86f.png",
+        "native_bytes_recovered_from_tool_result": false,
+        "prompt": "Use case: stylized-concept. Create ONE single native PNG parallax layer for Death Stranding 2D / Echos de la Greve. The first image is the approved scene composition and the second is the official screenshot for visible identity, materials and palette. UHD realistic painterly game-background art, landscape 16:9, side-view fighting-game scene, clean usable edges. Preserve scene identity and do not introduce new architecture or creatures. No text, no UI, no logo, no watermark, no borders, no sheet, no character, no vehicle or creature.\nLayer specification: Only very low wet concrete edge fragments at extreme lower left and right, small cyan edge reflection. Upper 90 percent and central 72 percent of width genuinely transparent. No poles, lamps, barrier or tall object; keep combat feet visible.\nTransparency: Use real transparent alpha, never a painted checkerboard or solid backdrop.",
+        "reference_paths": [
+          "exec-4c328840-1b8b-4bed-a076-b20eeebc4842.png",
+          "sop2024_011.jpg"
+        ]
+      },
+      "source_pages": [
+        "https://kojimaproductions.jp/en/death-stranding-2"
+      ],
+      "source_reference_quality": "Galerie officielle + adaptation latérale",
+      "limitations": [
+        "Nom DS2 descriptif, piste et couches adaptées au combat 2D ; aucune identité de lieu canonique supplémentaire."
+      ]
+    },
+    {
+      "id": "night-viaduct-ds2-distant",
+      "path": "modes/echos-de-la-greve/assets/stages/night-viaduct-ds2-distant.png",
+      "width": 1672,
+      "height": 941,
+      "mode": "RGBA",
+      "bytes": 722218,
+      "sha256": "73ff03ff6b48fecc5eb99b6312a6db05e42b652adc5783098a32067edf762546",
+      "git_blob_sha": "d312a04ea9bc5891eadbfb965a6022173de9d2ea",
+      "alpha_min": 0,
+      "alpha_max": 255,
+      "transparent_fraction": 0.6989071739826815,
+      "title": "night-viaduct-ds2-distant",
+      "work": "ds2",
+      "status": "integrated_playable_stage",
+      "bindings": {
+        "static_gallery": false,
+        "playable_stage": "night-viaduct-ds2",
+        "playable_fighter": false
+      },
+      "native_copy_unchanged": true,
+      "pixel_edit_after_generation": false,
+      "upsampled": false,
+      "generation": {
+        "tool": "image_gen.imagegen",
+        "transparent_background": true,
+        "original_generation_filename": null,
+        "native_bytes_recovered_from_tool_result": true,
+        "prompt": "Use case: stylized-concept. Create ONE single native PNG parallax layer for Death Stranding 2D / Echos de la Greve. The first image is the approved scene composition and the second is the official screenshot for visible identity, materials and palette. UHD realistic painterly game-background art, landscape 16:9, side-view fighting-game scene, clean usable edges. Preserve scene identity and do not introduce new architecture or creatures. No text, no UI, no logo, no watermark, no borders, no sheet, no character, no vehicle or creature.\nLayer specification: Only the distant dark city skyline and low elevated-road infrastructure: squat black buildings, one taller rectangular tower group toward the left, sparse tiny warm window lights. Occupy lower 46 percent, continue to both side edges, upper space genuinely transparent. Subdued contrast, no sky, foreground lamps or playable floor.\nTransparency: Use real transparent alpha, never a painted checkerboard or solid backdrop.",
+        "reference_paths": [
+          "exec-4c328840-1b8b-4bed-a076-b20eeebc4842.png",
+          "sop2024_011.jpg"
+        ]
+      },
+      "source_pages": [
+        "https://kojimaproductions.jp/en/death-stranding-2"
+      ],
+      "source_reference_quality": "Galerie officielle + adaptation latérale",
+      "limitations": [
+        "Nom DS2 descriptif, piste et couches adaptées au combat 2D ; aucune identité de lieu canonique supplémentaire."
+      ]
+    },
+    {
+      "id": "night-viaduct-ds2-midground",
+      "path": "modes/echos-de-la-greve/assets/stages/night-viaduct-ds2-midground.png",
+      "width": 1672,
+      "height": 941,
+      "mode": "RGBA",
+      "bytes": 407457,
+      "sha256": "f3dceb0a466f7e22f83b6aa3090e5505a2b5a2934480079b20821172d84fafa5",
+      "git_blob_sha": "7835467a6372a68ac4fab6e974cc1461c80c9770",
+      "alpha_min": 0,
+      "alpha_max": 255,
+      "transparent_fraction": 0.8737466250400419,
+      "title": "night-viaduct-ds2-midground",
+      "work": "ds2",
+      "status": "integrated_playable_stage",
+      "bindings": {
+        "static_gallery": false,
+        "playable_stage": "night-viaduct-ds2",
+        "playable_fighter": false
+      },
+      "native_copy_unchanged": true,
+      "pixel_edit_after_generation": false,
+      "upsampled": false,
+      "generation": {
+        "tool": "image_gen.imagegen",
+        "transparent_background": true,
+        "original_generation_filename": "exec-9a1170a6-345c-4e08-aec9-b8c14a5e9d8a.png",
+        "native_bytes_recovered_from_tool_result": false,
+        "prompt": "Use case: stylized-concept. Create ONE single native PNG parallax layer for Death Stranding 2D / Echos de la Greve. The first image is the approved scene composition and the second is the official screenshot for visible identity, materials and palette. UHD realistic painterly game-background art, landscape 16:9, side-view fighting-game scene, clean usable edges. Preserve scene identity and do not introduce new architecture or creatures. No text, no UI, no logo, no watermark, no borders, no sheet, no character, no vehicle or creature.\nLayer specification: Only the middle-distance cyan-lit viaduct infrastructure: distant roadway segment and slender curved blue lamp posts with angular cyan-white lamp heads. Place the larger lamps near left and right edges, central area open and low. Bases align near the bottom of the image. No floor in the playable lane, no opaque sky or city silhouette; all empty spaces genuinely transparent. Preserve blue/black palette.\nTransparency: Use real transparent alpha, never a painted checkerboard or solid backdrop.",
+        "reference_paths": [
+          "exec-4c328840-1b8b-4bed-a076-b20eeebc4842.png",
+          "sop2024_011.jpg"
+        ]
+      },
+      "source_pages": [
+        "https://kojimaproductions.jp/en/death-stranding-2"
+      ],
+      "source_reference_quality": "Galerie officielle + adaptation latérale",
+      "limitations": [
+        "Nom DS2 descriptif, piste et couches adaptées au combat 2D ; aucune identité de lieu canonique supplémentaire."
+      ]
+    },
+    {
+      "id": "red-ravine-ds2-sky",
+      "path": "modes/echos-de-la-greve/assets/stages/red-ravine-ds2-sky.png",
+      "width": 1672,
+      "height": 941,
+      "mode": "RGB",
+      "bytes": 1624142,
+      "sha256": "12738b4fbd1417ac12679f1cb347ae6c71480c8242ade14860ff29759389a87b",
+      "git_blob_sha": "b70a9c351490ab8c8ec88df9324fb9d0a0d5ac0e",
+      "alpha_min": 255,
+      "alpha_max": 255,
+      "transparent_fraction": 0,
+      "title": "red-ravine-ds2-sky",
+      "work": "ds2",
+      "status": "integrated_playable_stage",
+      "bindings": {
+        "static_gallery": false,
+        "playable_stage": "red-ravine-ds2",
+        "playable_fighter": false
+      },
+      "native_copy_unchanged": true,
+      "pixel_edit_after_generation": false,
+      "upsampled": false,
+      "generation": {
+        "tool": "image_gen.imagegen",
+        "transparent_background": false,
+        "original_generation_filename": "exec-41efc76e-826d-4e17-ac01-dcdcf1fcce97.png",
+        "native_bytes_recovered_from_tool_result": false,
+        "prompt": "Use case: stylized-concept. Create ONE single native PNG parallax layer for Death Stranding 2D / Echos de la Greve. The first image is the approved scene composition and the second is the official screenshot for visible identity, materials and palette. UHD realistic painterly game-background art, landscape 16:9, side-view fighting-game scene, clean usable edges. Preserve scene identity and do not introduce new architecture or creatures. No text, no UI, no logo, no watermark, no borders, no sheet, no character, no vehicle or creature.\nLayer specification: Opaque full canvas atmospheric plate of saturated crimson upper sky blending to softer hazy dusty red toward the bottom, very faint long dark hanging filaments in the distance. NO flame, lava, sparks, sun, moon, terrain, trees, rocks or humanoid shapes.\nTransparency: Opaque full canvas.",
+        "reference_paths": [
+          "exec-ac6e6779-4c49-422e-83de-99ab36f691b6.png",
+          "sop2024_014.jpg"
+        ]
+      },
+      "source_pages": [
+        "https://kojimaproductions.jp/en/death-stranding-2"
+      ],
+      "source_reference_quality": "Galerie officielle + adaptation latérale",
+      "limitations": [
+        "Nom DS2 descriptif, piste et couches adaptées au combat 2D ; aucune identité de lieu canonique supplémentaire."
+      ]
+    },
+    {
+      "id": "red-ravine-ds2-foreground",
+      "path": "modes/echos-de-la-greve/assets/stages/red-ravine-ds2-foreground.png",
+      "width": 1672,
+      "height": 941,
+      "mode": "RGBA",
+      "bytes": 203643,
+      "sha256": "134fa97c911ad127cc61c44789e133c9d861cd26c4d3d00577d30286179ecd90",
+      "git_blob_sha": "a11aa50addcb54f7c965849a037e0e81dc3139ed",
+      "alpha_min": 0,
+      "alpha_max": 255,
+      "transparent_fraction": 0.9557053984105274,
+      "title": "red-ravine-ds2-foreground",
+      "work": "ds2",
+      "status": "integrated_playable_stage",
+      "bindings": {
+        "static_gallery": false,
+        "playable_stage": "red-ravine-ds2",
+        "playable_fighter": false
+      },
+      "native_copy_unchanged": true,
+      "pixel_edit_after_generation": false,
+      "upsampled": false,
+      "generation": {
+        "tool": "image_gen.imagegen",
+        "transparent_background": true,
+        "original_generation_filename": "exec-29e4ddfe-8274-4bec-83ca-16c70d5734e3.png",
+        "native_bytes_recovered_from_tool_result": false,
+        "prompt": "Use case: stylized-concept. Create ONE single native PNG parallax layer for Death Stranding 2D / Echos de la Greve. The first image is the approved scene composition and the second is the official screenshot for visible identity, materials and palette. UHD realistic painterly game-background art, landscape 16:9, side-view fighting-game scene, clean usable edges. Preserve scene identity and do not introduce new architecture or creatures. No text, no UI, no logo, no watermark, no borders, no sheet, no character, no vehicle or creature.\nLayer specification: Only low wet black-rock trims and one tiny bare twig at extreme bottom corners, restrained red highlights. Upper 90 percent and central 75 percent genuinely transparent. No tall plants, tree trunks, continuous floor, clouds or opaque background; never cover the fighting lane.\nTransparency: Use real transparent alpha, never a painted checkerboard or solid backdrop.",
+        "reference_paths": [
+          "exec-ac6e6779-4c49-422e-83de-99ab36f691b6.png",
+          "sop2024_014.jpg"
+        ]
+      },
+      "source_pages": [
+        "https://kojimaproductions.jp/en/death-stranding-2"
+      ],
+      "source_reference_quality": "Galerie officielle + adaptation latérale",
+      "limitations": [
+        "Nom DS2 descriptif, piste et couches adaptées au combat 2D ; aucune identité de lieu canonique supplémentaire."
+      ]
+    },
+    {
+      "id": "red-ravine-ds2-distant",
+      "path": "modes/echos-de-la-greve/assets/stages/red-ravine-ds2-distant.png",
+      "width": 1672,
+      "height": 941,
+      "mode": "RGBA",
+      "bytes": 1027220,
+      "sha256": "5746b56b8a1db6823c43e1d5ae978cfe84e7f2ea6d5c00e66191270789c5f782",
+      "git_blob_sha": "83a80f5e5d8651dc5744bdda10200a8bfe79e6d9",
+      "alpha_min": 0,
+      "alpha_max": 255,
+      "transparent_fraction": 0.546627201033208,
+      "title": "red-ravine-ds2-distant",
+      "work": "ds2",
+      "status": "integrated_playable_stage",
+      "bindings": {
+        "static_gallery": false,
+        "playable_stage": "red-ravine-ds2",
+        "playable_fighter": false
+      },
+      "native_copy_unchanged": true,
+      "pixel_edit_after_generation": false,
+      "upsampled": false,
+      "generation": {
+        "tool": "image_gen.imagegen",
+        "transparent_background": true,
+        "original_generation_filename": "exec-9fff4d14-f55f-44dc-ab4a-bfd71a2de0fd.png",
+        "native_bytes_recovered_from_tool_result": false,
+        "prompt": "Use case: stylized-concept. Create ONE single native PNG parallax layer for Death Stranding 2D / Echos de la Greve. The first image is the approved scene composition and the second is the official screenshot for visible identity, materials and palette. UHD realistic painterly game-background art, landscape 16:9, side-view fighting-game scene, clean usable edges. Preserve scene identity and do not introduce new architecture or creatures. No text, no UI, no logo, no watermark, no borders, no sheet, no character, no vehicle or creature.\nLayer specification: Only distant layered basalt ravine silhouettes, softened and muted by red atmospheric haze: low terraces across bottom, taller rock masses toward far edges, broad open gap at center. Terrain occupies lower 48 percent of canvas, upper and gap spaces genuinely transparent. No sky, trees, ground lane, characters or shadow figures.\nTransparency: Use real transparent alpha, never a painted checkerboard or solid backdrop.",
+        "reference_paths": [
+          "exec-ac6e6779-4c49-422e-83de-99ab36f691b6.png",
+          "sop2024_014.jpg"
+        ]
+      },
+      "source_pages": [
+        "https://kojimaproductions.jp/en/death-stranding-2"
+      ],
+      "source_reference_quality": "Galerie officielle + adaptation latérale",
+      "limitations": [
+        "Nom DS2 descriptif, piste et couches adaptées au combat 2D ; aucune identité de lieu canonique supplémentaire."
+      ]
+    },
+    {
+      "id": "red-ravine-ds2-floor",
+      "path": "modes/echos-de-la-greve/assets/stages/red-ravine-ds2-floor.png",
+      "width": 1672,
+      "height": 941,
+      "mode": "RGBA",
+      "bytes": 1608077,
+      "sha256": "a1ab7727b2addedda28a43b9d72ddf620da1c8abb8443c92b37be80798fcf28a",
+      "git_blob_sha": "2d3ef0450fdfb1194485dcadf38d1068622569b4",
+      "alpha_min": 0,
+      "alpha_max": 255,
+      "transparent_fraction": 0.4953958173377604,
+      "title": "red-ravine-ds2-floor",
+      "work": "ds2",
+      "status": "integrated_playable_stage",
+      "bindings": {
+        "static_gallery": false,
+        "playable_stage": "red-ravine-ds2",
+        "playable_fighter": false
+      },
+      "native_copy_unchanged": true,
+      "pixel_edit_after_generation": false,
+      "upsampled": false,
+      "generation": {
+        "tool": "image_gen.imagegen",
+        "transparent_background": true,
+        "original_generation_filename": "exec-9da6b648-77c3-4935-9fe6-8394ff1fb723.png",
+        "native_bytes_recovered_from_tool_result": false,
+        "prompt": "Use case: stylized-concept. Create ONE single native PNG parallax layer for Death Stranding 2D / Echos de la Greve. The first image is the approved scene composition and the second is the official screenshot for visible identity, materials and palette. UHD realistic painterly game-background art, landscape 16:9, side-view fighting-game scene, clean usable edges. Preserve scene identity and do not introduce new architecture or creatures. No text, no UI, no logo, no watermark, no borders, no sheet, no character, no vehicle or creature.\nLayer specification: Only one continuous unobstructed flat dark gravel and compacted rocky fighting path, wet with restrained red reflections. A straight level back edge crosses the whole canvas at 48 percent height; everything above is genuinely transparent. Everything below continues full width to bottom, subtle shallow-perspective stony surface. No tall rocks, trees, plants, gaps, slopes, fire or sky; small pebbles do not disrupt the level walking line.\nTransparency: Use real transparent alpha, never a painted checkerboard or solid backdrop.",
+        "reference_paths": [
+          "exec-ac6e6779-4c49-422e-83de-99ab36f691b6.png",
+          "sop2024_014.jpg"
+        ]
+      },
+      "source_pages": [
+        "https://kojimaproductions.jp/en/death-stranding-2"
+      ],
+      "source_reference_quality": "Galerie officielle + adaptation latérale",
+      "limitations": [
+        "Nom DS2 descriptif, piste et couches adaptées au combat 2D ; aucune identité de lieu canonique supplémentaire."
+      ]
+    },
+    {
+      "id": "red-ravine-ds2-midground",
+      "path": "modes/echos-de-la-greve/assets/stages/red-ravine-ds2-midground.png",
+      "width": 1672,
+      "height": 941,
+      "mode": "RGBA",
+      "bytes": 1654201,
+      "sha256": "6263c9d46a79c987060b672a219db450a215879075c8d473b14df4066cdc6731",
+      "git_blob_sha": "e38a425c81bd21a2698de6898a3962350d053084",
+      "alpha_min": 0,
+      "alpha_max": 255,
+      "transparent_fraction": 0.5309142518648083,
+      "title": "red-ravine-ds2-midground",
+      "work": "ds2",
+      "status": "integrated_playable_stage",
+      "bindings": {
+        "static_gallery": false,
+        "playable_stage": "red-ravine-ds2",
+        "playable_fighter": false
+      },
+      "native_copy_unchanged": true,
+      "pixel_edit_after_generation": false,
+      "upsampled": false,
+      "generation": {
+        "tool": "image_gen.imagegen",
+        "transparent_background": true,
+        "original_generation_filename": "exec-e8546c78-7bfc-47d4-a663-34f398f755c6.png",
+        "native_bytes_recovered_from_tool_result": false,
+        "prompt": "Use case: stylized-concept. Create ONE single native PNG parallax layer for Death Stranding 2D / Echos de la Greve. The first image is the approved scene composition and the second is the official screenshot for visible identity, materials and palette. UHD realistic painterly game-background art, landscape 16:9, side-view fighting-game scene, clean usable edges. Preserve scene identity and do not introduce new architecture or creatures. No text, no UI, no logo, no watermark, no borders, no sheet, no character, no vehicle or creature.\nLayer specification: Only side rock walls and sparse bare twisted branches from the approved ravine. Wet dark basalt layered ledges rise at left and right, with low broken-rock bases extending along bottom; the central 60 percent remains largely open to see the distant red haze. Genuine transparent background and openings. No opaque fog backdrop, no walking floor, humanoids, flames or lava.\nTransparency: Use real transparent alpha, never a painted checkerboard or solid backdrop.",
+        "reference_paths": [
+          "exec-ac6e6779-4c49-422e-83de-99ab36f691b6.png",
+          "sop2024_014.jpg"
+        ]
+      },
+      "source_pages": [
+        "https://kojimaproductions.jp/en/death-stranding-2"
+      ],
+      "source_reference_quality": "Galerie officielle + adaptation latérale",
+      "limitations": [
+        "Nom DS2 descriptif, piste et couches adaptées au combat 2D ; aucune identité de lieu canonique supplémentaire."
+      ]
+    },
+    {
+      "id": "pizza-chef-ds2",
+      "path": "modes/echos-de-la-greve/assets/static-extension-20261125/pizza-chef-ds2.png",
+      "width": 1312,
+      "height": 1199,
+      "mode": "RGBA",
+      "bytes": 1746483,
+      "sha256": "41f3cce4a731ab4204baa19e4cf28c75c9e064eeb89b1cfcd014965e05a90234",
+      "git_blob_sha": "146affcad06e1962ed3d1144f7c8caa499013a16",
+      "alpha_min": 0,
+      "alpha_max": 255,
+      "transparent_fraction": 0.48669495921397915,
+      "title": "Le Pizza Chef",
+      "work": "ds2",
+      "status": "integrated_static_gallery",
+      "bindings": {
+        "static_gallery": true,
+        "playable_stage": null,
+        "playable_fighter": false
+      },
+      "native_copy_unchanged": true,
+      "pixel_edit_after_generation": false,
+      "upsampled": false,
+      "generation": {
+        "tool": "image_gen.imagegen",
+        "transparent_background": true,
+        "original_generation_filename": null,
+        "native_bytes_recovered_from_tool_result": true,
+        "prompt": "Create one single static portrait asset of The Pizza Chef from Death Stranding 2: On the Beach, using the attached official in-game reference as identity and costume evidence. One isolated subject, head and shoulders to mid chest only, no legs or invented full body. Preserve his older East Asian face, narrow eyes, short grey moustache and grey goatee, broad nose, textured light grey knit beanie with folded rim, red T-shirt, black apron straps. Relax the arms out of the crop; neutral composed expression, subtle three-quarter orientation, eyes visible. Detailed painterly realistic videogame character illustration, dark grounded Death Stranding materials, subtle cool rim lighting and warm skin, coherent high-quality static fighting-game encyclopedia portrait. Preserve identity; no caricature, no younger face, no military equipment. Do not invent a karate fighter kit or pizza prop. Entire beanie and shoulders visible with generous transparent margin. Native transparent background, crisp clean alpha, no floor, no scene, no text, no frame, no labels, no multiple views. A single portrait only. This is an adapted static concept base, not a claim of pixel-perfect game extraction.",
+        "reference_paths": [
+          "https://www.kojimaproductions.jp/sites/default/files/2026-02/kungfustance.jpg"
+        ]
+      },
+      "source_pages": [
+        "https://www.kojimaproductions.jp/ds2_feature_PizzaChef"
+      ],
+      "source_reference_quality": "A",
+      "limitations": [
+        "Aucune vue neutre complète debout.",
+        "Ne pas fusionner le portrait photographique réel de droite avec le personnage in-game à gauche de characterandmodel."
+      ],
+      "reference_images": [
+        {
+          "url": "https://www.kojimaproductions.jp/sites/default/files/2026-02/kungfustance.jpg",
+          "sha256": "4565d0444a218021c3aa0379eaf14feb85d3ee45c41a6893241dfd9502e7cc04",
+          "width": 1920,
+          "height": 1080
+        },
+        {
+          "url": "https://www.kojimaproductions.jp/sites/default/files/2026-02/characterandmodel.jpg",
+          "sha256": "8dfd47babeb6e42dcb6dbc7de85a4598de198c952c413f0611ae43dcaf53f848",
+          "width": 1920,
+          "height": 1080
+        },
+        {
+          "url": "https://www.kojimaproductions.jp/sites/default/files/2026-02/servepizza.jpg",
+          "sha256": "ffc26a43dbb513c8b5f1834e647364a43fd599d3b50e344e6a32fe95b00d410f",
+          "width": 1920,
+          "height": 1080
+        },
+        {
+          "url": "https://www.kojimaproductions.jp/sites/default/files/2026-02/samandchef.jpg",
+          "sha256": "494955abe1acdaf1b585e1c0e08cb14c25923b4f82bb97b0f366f3b604d46f54",
+          "width": 1920,
+          "height": 1080
+        },
+        {
+          "url": "https://www.kojimaproductions.jp/sites/default/files/2026-02/pizzafight02.jpg",
+          "sha256": "f5c029b28162199944c3f0d2a2849768c7055fe7bce29a308446e42cbdfe60a1",
+          "width": 1920,
+          "height": 1080
+        }
+      ]
+    },
+    {
+      "id": "reverse-trike-cyberpunk-dc",
+      "path": "modes/echos-de-la-greve/assets/static-extension-20261125/reverse-trike-cyberpunk-dc.png",
+      "width": 1774,
+      "height": 887,
+      "mode": "RGBA",
+      "bytes": 1777126,
+      "sha256": "6465312d7befd379ae7d201adba9b7573f7b71c0f8fc257915c5c33906b7e3c3",
+      "git_blob_sha": "48601d41b2424c05424d240c6a0dc60222059a00",
+      "alpha_min": 0,
+      "alpha_max": 255,
+      "transparent_fraction": 0.4538879899945219,
+      "title": "Reverse Trike · Cyberpunk",
+      "work": "ds1-dc",
+      "status": "integrated_static_gallery",
+      "bindings": {
+        "static_gallery": true,
+        "playable_stage": null,
+        "playable_fighter": false
+      },
+      "native_copy_unchanged": true,
+      "pixel_edit_after_generation": false,
+      "upsampled": false,
+      "generation": {
+        "tool": "image_gen.imagegen",
+        "transparent_background": true,
+        "original_generation_filename": null,
+        "native_bytes_recovered_from_tool_result": true,
+        "prompt": "Create one single isolated static asset for a Death Stranding 2D fighting-game encyclopedia. Detailed painterly-realistic videogame concept art, readable physical materials and silhouette, no animation, no model sheet, one subject only. Native transparent background, clean alpha, no environment, no card frame, no caption, no watermark. Use the relevant official reference from the attached group; do not combine unrelated objects or outfits. Generous empty transparent margin around complete object unless a bust crop is explicitly requested. This is a source-guided adapted static base; do not invent unseen equipment or certify a 1:1 extraction. SUBJECT: the red-and-black CYBERPUNK Reverse Trike motorcycle shown overlooking the port in the first reference of this group. Isolate the entire vehicle without its rider or luggage worn by Sam. Preserve red angular front cowling, red front suspension/fork covers, compact grey/black mechanical engine and frame, black saddle, rear cargo rack, red wheel hubs and thick black tyres. Correct reverse-trike structure: two closely spaced front wheels and one rear wheel. Use the same side/three-quarter angle, facing right, so both front wheels can be distinguished subtly. Small markings faithful in placement, avoid invented readable lettering. No orange truck, no people, no hologram. Complete vehicle, wheels and rack with margins; a single static vehicle.",
+        "reference_paths": [
+          "https://deathstrandingpc.505games.com/wp-content/uploads/2020/11/cp_01-1920x1080.jpg"
+        ],
+        "context_reference_urls": [
+          "https://deathstrandingpc.505games.com/wp-content/uploads/2020/11/cp_01-1920x1080.jpg",
+          "https://deathstrandingpc.505games.com/wp-content/uploads/2020/06/DS-Scrrenshots_2560x1440-S7-1920x1080.jpg",
+          "https://deathstrandingpc.505games.com/wp-content/uploads/2020/06/DS-Scrrenshots_2560x1440-S3-1920x1080.jpg",
+          "https://deathstrandingpc.505games.com/wp-content/uploads/2020/06/DS-Scrrenshots_2560x1440-S2-1920x1080.jpg"
+        ]
+      },
+      "source_pages": [
+        "https://deathstrandingpc.505games.com/en/death-stranding-directors-cut-cross-over-content/",
+        "https://deathstrandingpc.505games.com/en/introducing-the-death-stranding-x-cyberpunk-2077-free-update-out-now-on-pc/",
+        "https://blog.playstation.com/2021/07/08/death-stranding-directors-cut-launches-on-ps5-september-24-2021/"
+      ],
+      "source_reference_quality": "A",
+      "limitations": [
+        "Petits textes, dessous et mécanique intérieure insuffisants pour une certification 1:1."
+      ],
+      "reference_images": [
+        {
+          "url": "https://deathstrandingpc.505games.com/wp-content/uploads/2020/11/cp_01-1920x1080.jpg",
+          "sha256": "e09d7fd5b583e7f9f07b222e738a54a67507e4661a04615666f26f8dece19310",
+          "width": 1920,
+          "height": 1080
+        },
+        {
+          "url": "https://deathstrandingpc.505games.com/wp-content/uploads/2020/11/cp_02-1920x1080.jpg",
+          "sha256": "83b38d199d2aa87f0c762354ba8356357cb0cd2ba51ba11b70fda6b7c2d2ad7b",
+          "width": 1920,
+          "height": 1080
+        },
+        {
+          "url": "https://deathstrandingpc.505games.com/wp-content/uploads/2020/11/cp_03-1920x1080.jpg",
+          "sha256": "e24107f770f97250a7e21b177d5ade04edf126d7b696876e45daf76aa0c1af73",
+          "width": 1920,
+          "height": 1080
+        },
+        {
+          "url": "https://deathstrandingpc.505games.com/wp-content/uploads/2020/11/cp_07-1920x1080.jpg",
+          "sha256": "2ddbb55f1cc54ee958f5ddf8cb146f4986787da308e4e43fc58e695911b7550b",
+          "width": 1920,
+          "height": 1080
+        }
+      ]
+    },
+    {
+      "id": "sam-cyberpunk-dc",
+      "path": "modes/echos-de-la-greve/assets/static-extension-20261125/sam-cyberpunk-dc.png",
+      "width": 1177,
+      "height": 1336,
+      "mode": "RGBA",
+      "bytes": 1701884,
+      "sha256": "1aa5db1d5b36c99498793c71e4200e0c2fb7e2301d474acd23cfbe0e73115cc4",
+      "git_blob_sha": "ab40a89fba529c299b6c2bc9c2b72fefb2744bea",
+      "alpha_min": 0,
+      "alpha_max": 255,
+      "transparent_fraction": 0.4750685544798254,
+      "title": "Sam · variante Cyberpunk",
+      "work": "ds1-dc",
+      "status": "integrated_static_gallery",
+      "bindings": {
+        "static_gallery": true,
+        "playable_stage": null,
+        "playable_fighter": false
+      },
+      "native_copy_unchanged": true,
+      "pixel_edit_after_generation": false,
+      "upsampled": false,
+      "generation": {
+        "tool": "image_gen.imagegen",
+        "transparent_background": true,
+        "original_generation_filename": null,
+        "native_bytes_recovered_from_tool_result": true,
+        "prompt": "Create one single isolated static asset for a Death Stranding 2D fighting-game encyclopedia. Detailed painterly-realistic videogame concept art, readable physical materials and silhouette, no animation, no model sheet, one subject only. Native transparent background, clean alpha, no environment, no card frame, no caption, no watermark. Use the relevant official reference from the attached group; do not combine unrelated objects or outfits. Generous empty transparent margin around complete object unless a bust crop is explicitly requested. This is a source-guided adapted static base; do not invent unseen equipment or certify a 1:1 extraction. SUBJECT: Sam Porter Bridges in the Cyberpunk crossover variant from Death Stranding 1 / Director's Cut, specifically the man standing beside the red motorcycle in the first reference. Make a single upper-body portrait down to waist, in the same three-quarter orientation. Preserve Norman Reedus/Sam's face, dark medium hair, red-tinted narrow glasses, blue-grey Bridges porter suit with tall collar, grey shoulder harness, small orange/yellow fittings, dark chest-mounted BB pod and grey metallic Silver Hand forearm. Keep the metallic lower forearm entering the bottom crop; do not invent a complete hand whose fingers are cut off in the reference. No motorcycle, no glove held up, no other characters, no hologram. Neutral composed pose.",
+        "reference_paths": [
+          "https://deathstrandingpc.505games.com/wp-content/uploads/2020/11/cp_07-1920x1080.jpg"
+        ],
+        "context_reference_urls": [
+          "https://deathstrandingpc.505games.com/wp-content/uploads/2020/11/cp_07-1920x1080.jpg",
+          "https://deathstrandingpc.505games.com/wp-content/uploads/2020/11/cp_01-1920x1080.jpg",
+          "https://deathstrandingpc.505games.com/wp-content/uploads/2020/06/DS-Scrrenshots_2560x1440-S7-1920x1080.jpg",
+          "https://deathstrandingpc.505games.com/wp-content/uploads/2020/06/DS-Scrrenshots_2560x1440-S3-1920x1080.jpg",
+          "https://deathstrandingpc.505games.com/wp-content/uploads/2020/06/DS-Scrrenshots_2560x1440-S2-1920x1080.jpg"
+        ]
+      },
+      "source_pages": [
+        "https://deathstrandingpc.505games.com/en/death-stranding-directors-cut-cross-over-content/",
+        "https://deathstrandingpc.505games.com/en/introducing-the-death-stranding-x-cyberpunk-2077-free-update-out-now-on-pc/",
+        "https://blog.playstation.com/2021/07/08/death-stranding-directors-cut-launches-on-ps5-september-24-2021/"
+      ],
+      "source_reference_quality": "A",
+      "limitations": [
+        "Extrémités des doigts coupées en bas ; intérieur de la main et face opposée non montrés.",
+        "cp_06 est floue : seulement complément de contexte."
+      ],
+      "reference_images": [
+        {
+          "url": "https://deathstrandingpc.505games.com/wp-content/uploads/2020/11/cp_07-1920x1080.jpg",
+          "sha256": "2ddbb55f1cc54ee958f5ddf8cb146f4986787da308e4e43fc58e695911b7550b",
+          "width": 1920,
+          "height": 1080
+        },
+        {
+          "url": "https://deathstrandingpc.505games.com/wp-content/uploads/2020/11/cp_06-1920x1080.jpg",
+          "sha256": "a3d18a454ad09f34732d25b0e7bd1e7d9fd9fa7224ca9ba7e62557382186659c",
+          "width": 1920,
+          "height": 1080
+        }
+      ]
+    },
+    {
+      "id": "lambda-truck-half-life-dc",
+      "path": "modes/echos-de-la-greve/assets/static-extension-20261125/lambda-truck-half-life-dc.png",
+      "width": 1536,
+      "height": 1024,
+      "mode": "RGBA",
+      "bytes": 2479325,
+      "sha256": "bf9c4a138af5025fa38d321aca2cde1a8c552eaa8b710d93772c53d38a6aa9f7",
+      "git_blob_sha": "e8cf82ec48559564b40904dcdcaf3da9fbde71d1",
+      "alpha_min": 0,
+      "alpha_max": 254,
+      "transparent_fraction": 0.39139048258463544,
+      "title": "Camion Lambda · Half-Life",
+      "work": "ds1-dc",
+      "status": "integrated_static_gallery",
+      "bindings": {
+        "static_gallery": true,
+        "playable_stage": null,
+        "playable_fighter": false
+      },
+      "native_copy_unchanged": true,
+      "pixel_edit_after_generation": false,
+      "upsampled": false,
+      "generation": {
+        "tool": "image_gen.imagegen",
+        "transparent_background": true,
+        "original_generation_filename": null,
+        "native_bytes_recovered_from_tool_result": true,
+        "prompt": "Create one single isolated static asset for a Death Stranding 2D fighting-game encyclopedia. Detailed painterly-realistic videogame concept art, readable physical materials and silhouette, no animation, no model sheet, one subject only. Native transparent background, clean alpha, no environment, no card frame, no caption, no watermark. Use the relevant official reference from the attached group; do not combine unrelated objects or outfits. Generous empty transparent margin around complete object unless a bust crop is explicitly requested. This is a source-guided adapted static base; do not invent unseen equipment or certify a 1:1 extraction. SUBJECT: the orange Lambda BRIDGES delivery truck from Death Stranding's Half-Life crossover, shown in the first reference. One entire isolated truck from the same three-quarter rear/side view, level wheels, no rocky hill or rain. Preserve tall compact front cab, long rectangular enclosed orange cargo body, silver grey top edge, large yellow lambda within a yellow circle on the broad side, restrained BRIDGES side marking, black window openings and dark rear panels, black chassis and four chunky black wheels with articulated suspensions. One truck, no rider, no motorcycle, no tripod creature. Faithful large-scale proportions, readable weathered material detail, all wheels and body visible, transparent margins.",
+        "reference_paths": [
+          "https://deathstrandingpc.505games.com/wp-content/uploads/2020/06/DS-Scrrenshots_2560x1440-S3-1920x1080.jpg"
+        ],
+        "context_reference_urls": [
+          "https://deathstrandingpc.505games.com/wp-content/uploads/2020/06/DS-Scrrenshots_2560x1440-S3-1920x1080.jpg",
+          "https://deathstrandingpc.505games.com/wp-content/uploads/2020/06/DS-Scrrenshots_2560x1440-S2-1920x1080.jpg"
+        ]
+      },
+      "source_pages": [
+        "https://deathstrandingpc.505games.com/en/death-stranding-directors-cut-cross-over-content/",
+        "https://blog.playstation.com/2021/07/08/death-stranding-directors-cut-launches-on-ps5-september-24-2021/"
+      ],
+      "source_reference_quality": "A",
+      "limitations": [
+        "Front et face opposée non intégralement montrés ; pas d’intérieur.",
+        "Ne pas assimiler cette variante au camion DS2 ni au camion Boss MULE."
+      ],
+      "reference_images": [
+        {
+          "url": "https://deathstrandingpc.505games.com/wp-content/uploads/2020/06/DS-Scrrenshots_2560x1440-S3-1920x1080.jpg",
+          "sha256": "f5cdfdd71a227946be8fc96932655bdd3213708eb3e34dc21ace437e6aa6fd81",
+          "width": 1920,
+          "height": 1080
+        },
+        {
+          "url": "https://deathstrandingpc.505games.com/wp-content/uploads/2020/06/DS-Scrrenshots_2560x1440-S6-1920x1080.jpg",
+          "sha256": "4bbd8947027a670e2927db9911790f28b5c10d402386e1f94c75529eaeba5f91",
+          "width": 1920,
+          "height": 1080
+        }
+      ]
+    },
+    {
+      "id": "gravity-gloves-half-life-dc",
+      "path": "modes/echos-de-la-greve/assets/static-extension-20261125/gravity-gloves-half-life-dc.png",
+      "width": 1536,
+      "height": 1024,
+      "mode": "RGBA",
+      "bytes": 1848175,
+      "sha256": "bb3698fb70c9eee4f97aff02e0d23f468e8d6f05c7570a3f689bb079dead3734",
+      "git_blob_sha": "8f9c663402367d31b5eb6901f1056d4c7383b91b",
+      "alpha_min": 0,
+      "alpha_max": 254,
+      "transparent_fraction": 0.6819839477539062,
+      "title": "Gant gravitationnel · Half-Life",
+      "work": "ds1-dc",
+      "status": "integrated_static_gallery",
+      "bindings": {
+        "static_gallery": true,
+        "playable_stage": null,
+        "playable_fighter": false
+      },
+      "native_copy_unchanged": true,
+      "pixel_edit_after_generation": false,
+      "upsampled": false,
+      "generation": {
+        "tool": "image_gen.imagegen",
+        "transparent_background": true,
+        "original_generation_filename": null,
+        "native_bytes_recovered_from_tool_result": true,
+        "prompt": "Create one single isolated static asset for a Death Stranding 2D fighting-game encyclopedia. Detailed painterly-realistic videogame concept art, readable physical materials and silhouette, no animation, no model sheet, one subject only. Native transparent background, clean alpha, no environment, no card frame, no caption, no watermark. Use the relevant official reference from the attached group; do not combine unrelated objects or outfits. Generous empty transparent margin around complete object unless a bust crop is explicitly requested. This is a source-guided adapted static base; do not invent unseen equipment or certify a 1:1 extraction. SUBJECT: one single Half-Life Gravity Glove from the official Death Stranding crossover, specifically the raised black mechanical glove in the first reference of this group. Isolate ONLY that one gloved hand and its wrist cuff, same dorsal angle and slightly bent fingers. Keep the dark padded black glove, exposed metal cylinders around the back of hand, bracket plates, thin red/copper cables, circular caps, three small red heart indicators, green indicator lamps, small turquoise status panel, bright cyan wrist panels. Preserve the complex compact dorsal device rather than inventing palm machinery. No face, no arm above wrist cuff, no second glove, no orange truck, no tripod. It is a static equipment reference, not a new in-game combat ability. Complete cuff and finger tips within frame.",
+        "reference_paths": [
+          "https://deathstrandingpc.505games.com/wp-content/uploads/2020/06/DS-Scrrenshots_2560x1440-S7-1920x1080.jpg"
+        ],
+        "context_reference_urls": [
+          "https://deathstrandingpc.505games.com/wp-content/uploads/2020/06/DS-Scrrenshots_2560x1440-S7-1920x1080.jpg",
+          "https://deathstrandingpc.505games.com/wp-content/uploads/2020/06/DS-Scrrenshots_2560x1440-S3-1920x1080.jpg",
+          "https://deathstrandingpc.505games.com/wp-content/uploads/2020/06/DS-Scrrenshots_2560x1440-S2-1920x1080.jpg"
+        ]
+      },
+      "source_pages": [
+        "https://deathstrandingpc.505games.com/en/death-stranding-directors-cut-cross-over-content/",
+        "https://blog.playstation.com/2021/07/08/death-stranding-directors-cut-launches-on-ps5-september-24-2021/"
+      ],
+      "source_reference_quality": "A",
+      "limitations": [
+        "Paume cachée et doigts repliés ; ne pas extrapoler une paire complète symétrique.",
+        "La galerie officielle classe l’image Half-Life sans donner de fiche de statistiques."
+      ],
+      "reference_images": [
+        {
+          "url": "https://deathstrandingpc.505games.com/wp-content/uploads/2020/06/DS-Scrrenshots_2560x1440-S7-1920x1080.jpg",
+          "sha256": "ab2ea218c3c0b217abd42beac717c549630c0cdfaeaf010aff116d6a1974d95f",
+          "width": 1920,
+          "height": 1080
+        }
+      ]
+    },
+    {
+      "id": "reverse-trike-ds1",
+      "path": "modes/echos-de-la-greve/assets/static-extension-20261125/reverse-trike-ds1.png",
+      "width": 1672,
+      "height": 941,
+      "mode": "RGBA",
+      "bytes": 1424703,
+      "sha256": "3c0a2846e29fcecf62dc2be67ba304253f0bab8c191a01b7274d542682aa1cbc",
+      "git_blob_sha": "25c98c88c010388ff03f6fac96762d07e1cf0f67",
+      "alpha_min": 0,
+      "alpha_max": 255,
+      "transparent_fraction": 0.5503072421174664,
+      "title": "Reverse Trike",
+      "work": "ds1-dc",
+      "status": "integrated_static_gallery",
+      "bindings": {
+        "static_gallery": true,
+        "playable_stage": null,
+        "playable_fighter": false
+      },
+      "native_copy_unchanged": true,
+      "pixel_edit_after_generation": false,
+      "upsampled": false,
+      "generation": {
+        "tool": "image_gen.imagegen",
+        "transparent_background": true,
+        "original_generation_filename": "exec-bf0e4343-1c07-4e66-ad58-f14f03beb5ff.png",
+        "native_bytes_recovered_from_tool_result": false,
+        "prompt": "Create ONE single static source-guided asset for the Death Stranding 2D encyclopedia. Detailed painterly-realistic videogame concept rendering with readable silhouette and restrained weathered materials. Native TRANSPARENT background with clean alpha, no background gradient, no terrain, no frame, no caption, no watermark, no collage, no extra subject, no animation. Preserve the selected object's identifiable shape from the official reference; the image is an adapted base, not a certified extraction. Entire selected object and ample transparent margin unless a portrait crop is requested. SUBJECT: the complete standard DS1 Reverse Trike motorbike, parked without rider in the right middle of the reference. Isolate this motorcycle only. Deep navy blue/black body panels, dark wheels, orange curved front support tubing, slim black saddle, open tubular rear cargo rack, compact mechanical engine. Correct reverse-trike arrangement: two close front wheels plus one rear wheel. Side/three-quarter view facing right as in source, leave rack empty. No Sam, no generator pole, no landscape, no electricity beam. Do not use the red Cyberpunk livery.",
+        "reference_paths": [
+          "ds-tips-07.jpg"
+        ]
+      },
+      "source_pages": [
+        "https://www.kojimaproductions.jp/en/DSTips"
+      ],
+      "source_reference_quality": "A",
+      "limitations": [
+        "Détails de roue avant lointaine partiellement masqués ; dessous non montré."
+      ],
+      "reference_images": [
+        {
+          "url": "https://www.kojimaproductions.jp/sites/default/files/2023-03/07.jpg",
+          "sha256": "8106a82b8bc701ae6f201b2edcf0d12e42cc41e4ea45361af44d9b05cdab5a8d",
+          "width": 1920,
+          "height": 1080
+        },
+        {
+          "url": "https://www.kojimaproductions.jp/sites/default/files/2023-03/08.jpg",
+          "sha256": "3f0dd2cac47ac8be6848b8b35da0cbd1402483272bc67c8d20c51a45f0683861",
+          "width": 1920,
+          "height": 1080
+        }
+      ]
+    },
+    {
+      "id": "armour-plate-silver-ds1",
+      "path": "modes/echos-de-la-greve/assets/static-extension-20261125/armour-plate-silver-ds1.png",
+      "width": 1448,
+      "height": 1086,
+      "mode": "RGBA",
+      "bytes": 1462615,
+      "sha256": "f69e8a9dee764c2486f055bb58bf4a99ef691692d84593cc81f2bae1b51c9dbe",
+      "git_blob_sha": "fd719f0ec1eb0896e2b1aabd1429d12b633831cb",
+      "alpha_min": 0,
+      "alpha_max": 255,
+      "transparent_fraction": 0.5746918337861074,
+      "title": "Plaque d’armure argentée",
+      "work": "ds1-dc",
+      "status": "integrated_static_gallery",
+      "bindings": {
+        "static_gallery": true,
+        "playable_stage": null,
+        "playable_fighter": false
+      },
+      "native_copy_unchanged": true,
+      "pixel_edit_after_generation": false,
+      "upsampled": false,
+      "generation": {
+        "tool": "image_gen.imagegen",
+        "transparent_background": true,
+        "original_generation_filename": "exec-016fffc3-a61f-41ef-b00d-3e7fcf59b289.png",
+        "native_bytes_recovered_from_tool_result": false,
+        "prompt": "Create ONE single static source-guided asset for the Death Stranding 2D encyclopedia. Detailed painterly-realistic videogame concept rendering with readable silhouette and restrained weathered materials. Native TRANSPARENT background with clean alpha, no background gradient, no terrain, no frame, no caption, no watermark, no collage, no extra subject, no animation. Preserve the selected object's identifiable shape from the official reference; the image is an adapted base, not a certified extraction. Entire selected object and ample transparent margin unless a portrait crop is requested. SUBJECT: ONLY ONE silver armour plate in the upper-right black promotional panel, the polygonal metal equipment piece below the loose sunglasses and left of the silver cap. Isolate one complete plate in that same three-quarter view. Preserve angular polygonal silver front shield, mustard yellow backing rim/side, compact mechanical fasteners and large round side module glowing pale cyan-blue. Reference markings small and restrained; do not invent a numeric equipment level or protection value. No cap, no eyewear, no skeleton, no wearer, no second plate. Simple faithful large shape and conservative secondary details from the small source.",
+        "reference_paths": [
+          "pc-vanity-standard.jpg"
+        ]
+      },
+      "source_pages": [
+        "https://deathstrandingpc.505games.com/en/death-stranding-coming-to-steam-and-the-epic-game-store-on-june-2-2020/"
+      ],
+      "source_reference_quality": "B",
+      "limitations": [
+        "Le texte groupe les niveaux 2 et supérieurs ; le visuel ne permet pas d’assigner sûrement un niveau exact.",
+        "Dos, épaisseur et fixation intérieure non montrés."
+      ],
+      "reference_images": [
+        {
+          "url": "https://deathstrandingpc.505games.com/wp-content/uploads/2020/03/vanityimage_pc_digital_standard_english.jpg",
+          "sha256": "2db4d2b7f0e646844fee4f918065491ba7713080a05b21c6d08666d6b25792e5",
+          "width": 1920,
+          "height": 1080
+        }
+      ]
+    },
+    {
+      "id": "sam-ludens-silver-ds1",
+      "path": "modes/echos-de-la-greve/assets/static-extension-20261125/sam-ludens-silver-ds1.png",
+      "width": 1312,
+      "height": 1199,
+      "mode": "RGBA",
+      "bytes": 1775175,
+      "sha256": "3db44233ee17c249b16a3c2e57164eef4bc459bd2d5dae7c2ed583a5e1201b79",
+      "git_blob_sha": "eba26e06c308d42be820d79bd7e60545377aaf08",
+      "alpha_min": 0,
+      "alpha_max": 255,
+      "transparent_fraction": 0.4789198061392624,
+      "title": "Sam · lunettes Ludens argentées",
+      "work": "ds1-dc",
+      "status": "integrated_static_gallery",
+      "bindings": {
+        "static_gallery": true,
+        "playable_stage": null,
+        "playable_fighter": false
+      },
+      "native_copy_unchanged": true,
+      "pixel_edit_after_generation": false,
+      "upsampled": false,
+      "generation": {
+        "tool": "image_gen.imagegen",
+        "transparent_background": true,
+        "original_generation_filename": "exec-0feaefd0-11bc-4f2b-a60e-cd680b1ec42d.png",
+        "native_bytes_recovered_from_tool_result": false,
+        "prompt": "Create ONE single static source-guided asset for the Death Stranding 2D encyclopedia. Detailed painterly-realistic videogame concept rendering with readable silhouette and restrained weathered materials. Native TRANSPARENT background with clean alpha, no background gradient, no terrain, no frame, no caption, no watermark, no collage, no extra subject, no animation. Preserve the selected object's identifiable shape from the official reference; the image is an adapted base, not a certified extraction. Entire selected object and ample transparent margin unless a portrait crop is requested. SUBJECT: ONLY a single head-and-chest portrait of Sam Porter Bridges wearing the SILVER LUDENS MASK SUNGLASSES from the small standing Sam near the lower-left centre of the promotional reference. Preserve his brown medium-length hair, slightly stubbled face, oversized angular silver sculpted goggles with dark lenses, dark blue-grey porter suit, high folded collar, grey shoulder straps and yellow/black BB chest harness. Use front/three-quarter bust pose corresponding to that small central Sam, head fully visible. No loose sunglasses product, no cap, no silver exoskeleton, no armour plate, no promotional layout. Facial and garment detail interpreted conservatively from a small source. No full body and no gameplay changes implied.",
+        "reference_paths": [
+          "pc-vanity-standard.jpg"
+        ]
+      },
+      "source_pages": [
+        "https://deathstrandingpc.505games.com/en/death-stranding-coming-to-steam-and-the-epic-game-store-on-june-2-2020/"
+      ],
+      "source_reference_quality": "B",
+      "limitations": [
+        "Illustration promotionnelle de taille réduite au milieu-gauche ; arrière et branches cachés.",
+        "Ne pas attribuer de kit distinct ou de bonus moteur à cette variante."
+      ],
+      "reference_images": [
+        {
+          "url": "https://deathstrandingpc.505games.com/wp-content/uploads/2020/03/vanityimage_pc_digital_standard_english.jpg",
+          "sha256": "2db4d2b7f0e646844fee4f918065491ba7713080a05b21c6d08666d6b25792e5",
+          "width": 1920,
+          "height": 1080
+        }
+      ]
+    },
+    {
+      "id": "mule-sensor-pole-ds1",
+      "path": "modes/echos-de-la-greve/assets/static-extension-20261125/mule-sensor-pole-ds1.png",
+      "width": 1024,
+      "height": 1536,
+      "mode": "RGBA",
+      "bytes": 1469054,
+      "sha256": "2f0fdb114af639737e8a027d6d30b73abcaa5ecf6aedc26d52f3e31f13916794",
+      "git_blob_sha": "4d7ffa560740a85418dd38b8610c53173209c034",
+      "alpha_min": 0,
+      "alpha_max": 254,
+      "transparent_fraction": 0.8336524963378906,
+      "title": "Borne de détection MULE",
+      "work": "ds1-dc",
+      "status": "integrated_static_gallery",
+      "bindings": {
+        "static_gallery": true,
+        "playable_stage": null,
+        "playable_fighter": false
+      },
+      "native_copy_unchanged": true,
+      "pixel_edit_after_generation": false,
+      "upsampled": false,
+      "generation": {
+        "tool": "image_gen.imagegen",
+        "transparent_background": true,
+        "original_generation_filename": "exec-580b566b-41ca-4922-bcbb-761192ae04a0.png",
+        "native_bytes_recovered_from_tool_result": false,
+        "prompt": "Create ONE single static source-guided asset for the Death Stranding 2D encyclopedia. Detailed painterly-realistic videogame concept rendering with readable silhouette and restrained weathered materials. Native TRANSPARENT background with clean alpha, no background gradient, no terrain, no frame, no caption, no watermark, no collage, no extra subject, no animation. Preserve the selected object's identifiable shape from the official reference; the image is an adapted base, not a certified extraction. Entire selected object and ample transparent margin unless a portrait crop is requested. SUBJECT: one complete MULE cargo sensor pole as visible at the front left of the reference. A narrow tall dark grey industrial post with a long bright yellow light segment on its lower-middle shaft, a very small yellow cap near top, black side rod/antenna branches, small crossing cable loops on the upper assembly, and a plain narrow grey anchored foot. Preserve the reference's spare vertical proportions, no large square tower or invented machinery. Vertical composition, all antennas and foot inside frame. No people, rocks, grass, scenery, detection waves or user-interface icons. This is a static structure base.",
+        "reference_paths": [
+          "ds-tips-09.jpg"
+        ]
+      },
+      "source_pages": [
+        "https://www.kojimaproductions.jp/en/DSTips"
+      ],
+      "source_reference_quality": "A",
+      "limitations": [
+        "Face arrière et connectique minuscules non lisibles.",
+        "Sa capacité officielle de détection n’est pas une fonctionnalité livrée automatiquement au projet."
+      ],
+      "reference_images": [
+        {
+          "url": "https://www.kojimaproductions.jp/sites/default/files/2023-03/09.jpg",
+          "sha256": "2491df10c07d5ab56abdc726b99c2b04f178b3b6ceee1d33b8e2ca1e45302b06",
+          "width": 1920,
+          "height": 1080
+        }
+      ]
+    },
+    {
+      "id": "atlas-trauma-hologram-dc",
+      "path": "modes/echos-de-la-greve/assets/static-extension-20261125/atlas-trauma-hologram-dc.png",
+      "width": 1774,
+      "height": 887,
+      "mode": "RGBA",
+      "bytes": 1229929,
+      "sha256": "f9f96125866009e6e422c55bb0bed3cb40c989b5c0cc3903ade43320543e2514",
+      "git_blob_sha": "2b4143237f2135c8bd31ae175a0148ce8db5ef1d",
+      "alpha_min": 0,
+      "alpha_max": 255,
+      "transparent_fraction": 0.5634506443441467,
+      "title": "Atlas Trauma Team · hologramme",
+      "work": "ds1-dc",
+      "status": "integrated_static_gallery",
+      "bindings": {
+        "static_gallery": true,
+        "playable_stage": null,
+        "playable_fighter": false
+      },
+      "native_copy_unchanged": true,
+      "pixel_edit_after_generation": false,
+      "upsampled": false,
+      "generation": {
+        "tool": "image_gen.imagegen",
+        "transparent_background": true,
+        "original_generation_filename": "exec-f4b75115-7611-4c96-b7f7-1a36e3d26ba2.png",
+        "native_bytes_recovered_from_tool_result": false,
+        "prompt": "Create ONE single static source-guided asset for the Death Stranding 2D encyclopedia. Detailed painterly-realistic videogame concept rendering with readable silhouette and restrained weathered materials. Native TRANSPARENT background with clean alpha, no background gradient, no terrain, no frame, no caption, no watermark, no collage, no extra subject, no animation. Preserve the selected object's identifiable shape from the official reference; the image is an adapted base, not a certified extraction. Entire selected object and ample transparent margin unless a portrait crop is requested. SUBJECT: only the small floating white-and-grey ATLAS Trauma Team hovercraft hologram in the upper left of the official Death Stranding Cyberpunk crossover reference. Reconstruct the visible broad proportions: compact horizontal rectangular cabin, paired bulky side engine pods, dark circular/open recesses and underside lights, white panels with muted teal/grey accents, flat angular roof. Same side/three-quarter orientation. It is a decorative hologram: subtle pale cyan translucency and scan lines. No added weapons, no rotor blades, no conventional airplane wings, no ground projector structure, no character, no snow. Original subject is small, so keep secondary details restrained and approximate; no invented readable branding. One complete hovering craft only.",
+        "reference_paths": [
+          "cp_04-1920x1080.jpg"
+        ]
+      },
+      "source_pages": [
+        "https://deathstrandingpc.505games.com/en/death-stranding-directors-cut-cross-over-content/",
+        "https://deathstrandingpc.505games.com/en/introducing-the-death-stranding-x-cyberpunk-2077-free-update-out-now-on-pc/",
+        "https://blog.playstation.com/2021/07/08/death-stranding-directors-cut-launches-on-ps5-september-24-2021/"
+      ],
+      "source_reference_quality": "B",
+      "limitations": [
+        "Sujet petit, environ 270 px de largeur dans les références 1920 ; détails mécaniques et marquages nécessitent adaptation.",
+        "Hologramme dans DS, pas la preuve d’un appareil pilotable ou d’un nouvel ennemi."
+      ],
+      "reference_images": [
+        {
+          "url": "https://deathstrandingpc.505games.com/wp-content/uploads/2020/11/cp_04-1920x1080.jpg",
+          "sha256": "f3f446950c869b4c37734fbe8f97928414c41f09956597dec59b64007e33d706",
+          "width": 1920,
+          "height": 1080
+        },
+        {
+          "url": "https://deathstrandingpc.505games.com/wp-content/uploads/2020/11/cp_05-1920x1080.jpg",
+          "sha256": "363a6daffd5dc5bcf2cb8174485033a0449d5e3de067aaae71db799634ac5a61",
+          "width": 1920,
+          "height": 1080
+        }
+      ]
+    },
+    {
+      "id": "speed-skeleton-silver-ds1",
+      "path": "modes/echos-de-la-greve/assets/static-extension-20261125/speed-skeleton-silver-ds1.png",
+      "width": 1024,
+      "height": 1536,
+      "mode": "RGBA",
+      "bytes": 1725939,
+      "sha256": "863112c1f5f6c83e080933c2e817d5ebce77949b9bcafb945f248c91c2589c0b",
+      "git_blob_sha": "9d29d9af9f01f0dfeb467c563eab2bd956154dd8",
+      "alpha_min": 0,
+      "alpha_max": 254,
+      "transparent_fraction": 0.7769858042399088,
+      "title": "Squelette de vitesse argenté",
+      "work": "ds1-dc",
+      "status": "integrated_static_gallery",
+      "bindings": {
+        "static_gallery": true,
+        "playable_stage": null,
+        "playable_fighter": false
+      },
+      "native_copy_unchanged": true,
+      "pixel_edit_after_generation": false,
+      "upsampled": false,
+      "generation": {
+        "tool": "image_gen.imagegen",
+        "transparent_background": true,
+        "original_generation_filename": "exec-cf271134-d444-481f-8aad-274f5c419501.png",
+        "native_bytes_recovered_from_tool_result": false,
+        "prompt": "Create ONE single static source-guided asset for the Death Stranding 2D encyclopedia. Detailed painterly-realistic videogame concept rendering with readable silhouette and restrained weathered materials. Native TRANSPARENT background with clean alpha, no background gradient, no terrain, no frame, no caption, no watermark, no collage, no extra subject, no animation. Preserve the selected object's identifiable shape from the official reference; the image is an adapted base, not a certified extraction. Entire selected object and ample transparent margin unless a portrait crop is requested. SUBJECT: ONLY the SILVER SPEED SKELETON exoskeleton isolated in the upper-right black promotional panel, immediately left of the loose silver glasses. One complete paired-leg support assembly without a person: small open waist/hip connector, angular silver outer thigh plates, black curved rods along the lower legs, small cyan-blue joint lights, ochre/orange mechanical connectors and foot brackets. Keep the thin open structure and original orientation, two complete slender legs visible top to bottom. Not a full armoured suit, no torso armour, no hands, no person, no floating other gear. Secondary joints remain simple because the source is small. No numeric level or stats.",
+        "reference_paths": [
+          "pc-vanity-standard.jpg"
+        ]
+      },
+      "source_pages": [
+        "https://deathstrandingpc.505games.com/en/death-stranding-coming-to-steam-and-the-epic-game-store-on-june-2-2020/"
+      ],
+      "source_reference_quality": "B",
+      "limitations": [
+        "Petit rendu promotionnel, environ 150×280 px ; dos, attaches internes et niveaux non certifiables."
+      ],
+      "reference_images": [
+        {
+          "url": "https://deathstrandingpc.505games.com/wp-content/uploads/2020/03/vanityimage_pc_digital_standard_english.jpg",
+          "sha256": "2db4d2b7f0e646844fee4f918065491ba7713080a05b21c6d08666d6b25792e5",
+          "width": 1920,
+          "height": 1080
+        }
+      ]
+    }
+  ],
+  "attempts_without_image": [
+    {
+      "id": "strider-hologram-half-life-dc",
+      "stage": "output",
+      "reason": "imagegen moderation_blocked (other)",
+      "request_id": "1aca92a3-6ef7-4261-8dad-136d11672db6",
+      "state": "not-generated-not-integrated",
+      "retry": false
+    }
+  ],
+  "limits": [
+    "Fidélité guidée par sources inspectées ; aucune certification 1:1.",
+    "Portraits, véhicules et objets de galerie ne créent aucun kit jouable.",
+    "Hologramme Strider non livré après refus du service d’images, non relancé.",
+    "Mesures Canvas natives et DOM simulé ; aucune certification navigateur, matériel de manette ou multijoueur distant."
+  ],
+  "reused_existing_assets": [
+    {
+      "id": "firing-range-dc-panorama",
+      "path": "modes/echos-de-la-greve/assets/static-domains-20261125/firing-range-dc-panorama.png",
+      "sha256": "544b645be6f33c7292331ca8f11e0fac319c77072dfc11c0d40f1c4b5a0675d5",
+      "width": 1672,
+      "height": 941,
+      "bytes": 2393212,
+      "unchanged": true,
+      "counted_as_new": false,
+      "official_reference": {
+        "page": "https://www.playstation.com/en-us/games/death-stranding/",
+        "url": "https://gmedia.playstation.com/is/image/SIEPDC/death-stranding-directors-cut-screenshot-04-announce-en-01jul21?wid=2400&fmt=png-alpha",
+        "sha256": "4f1bc4de28887700a6e840d0003f4630467c5fdc6ff9599e6c3934fa66a12e53",
+        "width": 2400,
+        "height": 1350
+      }
+    }
+  ]
+}
