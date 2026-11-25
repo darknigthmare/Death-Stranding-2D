@@ -89,7 +89,7 @@ test('Power, armor and exposure produce the advertised damage; phase two and sta
   }
   let s=fixture('whale');s.boss.phase='dive';assert.equal(a.damageBoss(s,65),false);assert.equal(s.boss.hp,5000);
   s=fixture();s.boss.stagger=84;s.hazards=[{kind:'bolt'},{kind:'orb'},{kind:'ring'},{kind:'spike'},{kind:'slam'}];a.damageBoss(s,1,1);assert.equal(s.boss.phase,'recover');assert.equal(s.boss.timer,90);assert.deepEqual(clone(s.hazards),[{kind:'bolt'},{kind:'orb'}]);
-  s.boss.timer=42;a.damageBoss(s,10,99);assert.equal(s.boss.timer,42);assert.equal(s.boss.stagger,0);
+  s.boss.timer=42;a.damageBoss(s,10,99);assert.equal(s.boss.timer,42);assert.equal(s.boss.stagger,0);s.boss.timer=1;a.bossTick(s);assert.equal(s.boss.phase,'approach');assert.equal(s.boss.cycle,1);
   s=fixture();s.boss.hp=101;s.boss.maxHp=200;s.boss.phase='tell';s.boss.timer=50;a.damageBoss(s,1,0);assert.equal(s.boss.hp,100);assert.equal(s.boss.tier,2);assert.equal(s.boss.timer,50);
   s=fixture('whale');s.boss.phase='recover';s.boss.timer=1;s.p.x=300;a.bossTick(s);assert.equal(s.boss.phase,'dive');assert.equal(s.boss.timer,55);for(let n=0;n<55;n++)a.bossTick(s);assert.equal(s.boss.x,980);assert.equal(s.boss.timer,35);
   s=fixture('giant');assert.equal(a.bossBodyHeight(s),380);s.boss.phase='tell';assert.equal(a.bossBodyHeight(s),266);s.boss.phase='attack';assert.equal(a.bossBodyHeight(s),266);s.boss.phase='recover';assert.equal(a.bossBodyHeight(s),380);
@@ -113,7 +113,7 @@ test('Resources, missing markers, mirrored directions and action restrictions ar
 });
 test('Truck collection and convoy timing, shared resources and depot damage are distinct',()=>{
   let m=live('truck'),s=m.s;s.boss.hp=1;a.damageBoss(s,1);assert.equal(s.phase,'collect');assert.equal(s.cargo.boxes.length,2);assert.equal(s.result,null);
-  const first=s.cargo.boxes[0];s.p.x=first.x+75;a.interact(s);assert.equal(s.cargo.carrying,null);s.p.x=first.x;s.p.y=20;a.interact(s);assert.equal(s.cargo.carrying,null);s.p.y=19.999;a.interact(s);assert.equal(s.cargo.carrying,first.id);
+  const first=s.cargo.boxes[0];s.p.x=first.x-75;a.interact(s);assert.equal(s.cargo.carrying,null);s.p.x=first.x;s.p.y=20;a.interact(s);assert.equal(s.cargo.carrying,null);s.p.y=19.999;a.interact(s);assert.equal(s.cargo.carrying,first.id);
   s.p.x=155;s.p.y=8;a.interact(s);assert.equal(first.state,'ground');s.p.y=0;a.interact(s);assert.equal(s.cargo.carrying,first.id);a.interact(s);assert.equal(s.cargo.delivered,1);
   const second=s.cargo.boxes[1];s.p.x=second.x;a.interact(s);s.p.x=155;s.p.y=0;s.remaining=1;s.p.taps.throw=true;a.step(m);assert.equal(s.result.won,true);assert.equal(s.result.reason,'cargo');assert.equal(s.remaining,0);
   m=live('convoy');s=m.s;s.boss.hp=1;a.damageBoss(s,1);s.p.hp=60;s.p.energy=40;s.p.guardMeter=30;s.cargo.integrity=90;s.remaining=1000;

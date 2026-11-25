@@ -1,0 +1,68 @@
+{
+  "startedAt": "2026-11-25T17:08:17.520Z",
+  "node": "v24.22.3",
+  "passed": true,
+  "browser": false,
+  "nativeCanvas": false,
+  "method": "Real HTTP GET on localhost and byte comparison with local files; actual relay protocol functions and deterministic engine checkpoint restoration. No browser, image decoding or public-network session.",
+  "checks": [
+    "Relay protocol: seats, readiness, acknowledgements, reconnect, result and close",
+    "Actual engine checkpoint identical after late-input correction at tick 200",
+    "Recursive fingerprint: all five new modules and extension images participate; symlinks and source formats excluded",
+    "Real HTTP serves exact bytes and MIME for runtime modules, catalogue, extended stages and story frames under both prefixes",
+    "Explicit public Markdown routes serve exact documents",
+    "Actual HTTP rejects encoded traversal, private formats, hidden files, symbolic files and symbolic directories"
+  ],
+  "relayStages": [
+    "port-knot",
+    "incinerator",
+    "south-knot-ruins",
+    "timefall-farm",
+    "mountain-knot-approach",
+    "magellan-ds2",
+    "plate-gate-ds2",
+    "sandstorm-ds2",
+    "dunes-ds2",
+    "terminal-linked",
+    "terminal-hangar",
+    "firing-range-dc",
+    "night-viaduct-ds2",
+    "red-ravine-ds2"
+  ],
+  "gameVersion": "3ce730200373aaffbd7d",
+  "catalogue": {
+    "items": 65,
+    "uniqueImages": 65,
+    "extensionImages": 13,
+    "extendedStageZones": 11,
+    "extendedStageImages": 66,
+    "storyFrames": 48,
+    "prefixes": [
+      "/",
+      "/modes/echos-de-la-greve/"
+    ]
+  },
+  "documents": [
+    "/docs/combat/BIBLE_COMBAT.md",
+    "/docs/combat/UNIVERS_DS.md",
+    "/docs/combat/ACTIONS_ET_IA.md",
+    "/docs/combat/RELATIONS_SIMULATEUR.md",
+    "/docs/combat/BOSS_ET_RENCONTRES.md",
+    "/docs/combat/production/20261125-extension/DOJO.md"
+  ],
+  "sourceSha256": {
+    "content.js": "fe6e129844908ad3a0fa97d9e59cace35b1fb4c4cc54ba095de401bcac189578",
+    "assets.js": "4f0ae5349872b9391d7586bc98baf0baa211e83e59c7b1e4234aaf22525ecb01",
+    "fight.js": "17c3cfcdee2291dad721b312ee060ca3d341cb0734c30d57128152fa6d3e3f23",
+    "netplay-server.cjs": "b574aca009ff8a6c3ca64fed68f11dbbb55401a7a621cd91a6489df282ff90a6",
+    "netplay.js": "c5f0810eb76894a6d71e33193ef2be846908111e88faf976c9112a160b1c704f",
+    "static-assets-data.js": "015b68e37a2d09bfc77506db3e8b2fc8e50faa46f1285d41e6f6cccfee0eb668",
+    "lessons.js": "d6c5a6e7d544edddca882e4f5ba255838de7ee566f613dacb02e490ce4e1b205",
+    "lessons.css": "dea91c67a2cd13cb1c8e1ee6171a61c70a16fa29c2eb79db128d0af0edea2b03",
+    "boss-data.js": "86d3edb5fd32572788b36de050e8e1980d211011c0176df03602ef73bb74405c",
+    "boss-guide.js": "ac0e1193327a82cef3bbfb0d5e7874fcdf1393f0a7b6a8447308356b3a89c4ee",
+    "boss-guide.css": "eee55297eadfce8f8efee066caf7a822cfb69cda0f8e885bc178c3681c7711ff",
+    "qa/reseau-logique.cjs": "c96d110f8c81daeed89961b1c350195608bd902328d06bff5ee4f7eaf478592c"
+  },
+  "completedAt": "2026-11-25T17:08:29.549Z"
+}

@@ -37,7 +37,8 @@
     html+='<p class="bossGuideLead">Fiches du simulateur Échos de la Grève. Profil affiché : <strong>'+esc(selectedFighter.name)+' · '+esc(data.difficulties[difficulty])+'</strong>. Les dégâts et commandes ci-dessous sont ceux des grandes rencontres.</p>';
     html+='<section><h3>'+esc(mode.title)+' · règles de départ et de reprise</h3>'+list(mode.notes);
     if(mode.order)html+='<p><strong>Ordre de la série :</strong> '+esc(mode.order.map(id=>data.forEncounter(id).name).join(' → '))+'.</p>';
-    html+='</section><p class="bossGuideKey"><strong>Départ neuf :</strong> 120 PV · énergie 100 · garde 100. <strong>Garde ordinaire :</strong> 2 PV et 18 de garde par impact. <strong>Charge chirale :</strong> une attaque de 70 points d’énergie pendant le combat.</p>';
+    const starting=context==='bossrush'?'Début de série : 120 PV ; ensuite PV restants +20, plafond 120. Énergie et garde : 100 à chaque nouveau Boss.':context==='campaign'?'Début ou reprise du chapitre : 120 PV · énergie 100 · garde 100.':'Nouvelle rencontre : 120 PV · énergie 100 · garde 100. Une reprise conserve les ressources sauvegardées.';
+    html+='</section><p class="bossGuideKey"><strong>'+esc(starting)+'</strong> Garde ordinaire : 2 PV et 18 de garde par impact. Charge chirale : une attaque de 70 points d’énergie pendant le combat.</p>';
     html+='<details><summary>Défense, ressources et lecture des délais</summary>'+list(data.rules);
     html+='<p><strong>E / D / prochaine :</strong> première exécution, fin de l’action, puis premier nouveau démarrage sans interruption. 60 pas = 1 seconde de simulation. Une mêlée s’exécute une seule fois ; les projectiles peuvent continuer après l’action. Les repères perdent déjà un pas à la fin de leur création.</p></details>';
     html+='<section><h3>Choisir sa réponse à chaque rencontre</h3>';
