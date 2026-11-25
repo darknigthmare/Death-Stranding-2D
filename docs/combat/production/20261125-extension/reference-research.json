@@ -1,0 +1,689 @@
+{
+  "schema_version": 2,
+  "date": "2026-11-25",
+  "phase": "checkpoint documentaire ; références inspectées, production et recettes en cours",
+  "repository_main": "8d274a015e0edf314a853630031d5eb507354811",
+  "catalogue_checked": {
+    "path": "modes/echos-de-la-greve/static-assets-data.js",
+    "sha256": "d4b22dac81e5104cae76129793444ddb12a114dc12d87a5439215a3d36315fb5",
+    "count": 52,
+    "note": "Catalogue lu avant réinitialisation du runtime. Les variantes restent distinctes des huit kits de base."
+  },
+  "selection_count": 12,
+  "grading": {
+    "A": "Sujet et cadrage suffisamment lisibles pour la base proposée, sans certification 1:1",
+    "B": "Sujet officiel identifiable, petit rendu ou détails partiels ; adaptation secondaire obligatoire"
+  },
+  "scope": [
+    "Images officielles utilisées comme références ; aucune cession de droits supposée.",
+    "Le rôle proposé appartient au projet, n’est pas une annonce du détenteur de la licence.",
+    "Aucune animation, image générée ni capacité de combat produite par cette recherche.",
+    "Les crossovers sont limités aux contenus attestés dans Death Stranding PC / Director’s Cut.",
+    "Les noms night-viaduct-ds2 et red-ravine-ds2 décrivent les visuels ; leur localisation canonique précise n’est pas identifiée."
+  ],
+  "restoration": {
+    "runtime_unavailable": true,
+    "local_reference_copies": "à rétablir depuis les URLs ; aucune copie locale déclarée disponible par ce checkpoint",
+    "checksums": "Les SHA-256 explicitement conservés sont publiés ; les autres restent null et doivent être recalculés, jamais inventés."
+  },
+  "candidates": [
+    {
+      "id": "pizza-chef-ds2",
+      "title": "Le Pizza Chef",
+      "work": "ds2",
+      "version": "On the Beach · Pizza Atami",
+      "role_propose": "Portrait de PNJ ; aucun statut jouable déduit",
+      "statut": "référence inspectée ; production en cours, aucun actif livré déduit de cette recherche",
+      "priorite": "P1",
+      "qualite_reference": "A",
+      "exploitable": true,
+      "absent_du_catalogue_52": true,
+      "visible": [
+        "Visage, barbe grise courte, bonnet gris à revers, T-shirt rouge, bretelles et tablier noirs.",
+        "servepizza montre pantalon noir et chaussure noire à semelle claire, en position accroupie."
+      ],
+      "inconnu_ou_limite": [
+        "Aucune vue neutre complète debout.",
+        "Ne pas fusionner le portrait photographique réel de droite avec le personnage in-game à gauche de characterandmodel."
+      ],
+      "cadrage_recommande": "Portrait tête/buste ; éviter d’inventer une silhouette debout complète.",
+      "source_pages": [
+        "https://www.kojimaproductions.jp/ds2_feature_PizzaChef"
+      ],
+      "references": [
+        {
+          "file": "kungfustance.jpg",
+          "url": "https://www.kojimaproductions.jp/sites/default/files/2026-02/kungfustance.jpg",
+          "page": "https://www.kojimaproductions.jp/ds2_feature_PizzaChef",
+          "width": 1920,
+          "height": 1080,
+          "bytes": 594004,
+          "sha256": "4565d0444a218021c3aa0379eaf14feb85d3ee45c41a6893241dfd9502e7cc04",
+          "sha256_status": "empreinte conservée du téléchargement inspecté",
+          "inspection": "Référence ouverte et inspectée visuellement le 25 novembre 2026 ; copies locales non promises dans ce checkpoint Git."
+        },
+        {
+          "file": "characterandmodel.jpg",
+          "url": "https://www.kojimaproductions.jp/sites/default/files/2026-02/characterandmodel.jpg",
+          "page": "https://www.kojimaproductions.jp/ds2_feature_PizzaChef",
+          "width": 1920,
+          "height": 1080,
+          "bytes": 1122225,
+          "sha256": "8dfd47babeb6e42dcb6dbc7de85a4598de198c952c413f0611ae43dcaf53f848",
+          "sha256_status": "empreinte conservée du téléchargement inspecté",
+          "inspection": "Référence ouverte et inspectée visuellement le 25 novembre 2026 ; copies locales non promises dans ce checkpoint Git."
+        },
+        {
+          "file": "servepizza.jpg",
+          "url": "https://www.kojimaproductions.jp/sites/default/files/2026-02/servepizza.jpg",
+          "page": "https://www.kojimaproductions.jp/ds2_feature_PizzaChef",
+          "width": 1920,
+          "height": 1080,
+          "bytes": 704522,
+          "sha256": "ffc26a43dbb513c8b5f1834e647364a43fd599d3b50e344e6a32fe95b00d410f",
+          "sha256_status": "empreinte conservée du téléchargement inspecté",
+          "inspection": "Référence ouverte et inspectée visuellement le 25 novembre 2026 ; copies locales non promises dans ce checkpoint Git."
+        },
+        {
+          "file": "samandchef.jpg",
+          "url": "https://www.kojimaproductions.jp/sites/default/files/2026-02/samandchef.jpg",
+          "page": "https://www.kojimaproductions.jp/ds2_feature_PizzaChef",
+          "width": 1920,
+          "height": 1080,
+          "bytes": 615987,
+          "sha256": "494955abe1acdaf1b585e1c0e08cb14c25923b4f82bb97b0f366f3b604d46f54",
+          "sha256_status": "empreinte conservée du téléchargement inspecté",
+          "inspection": "Référence ouverte et inspectée visuellement le 25 novembre 2026 ; copies locales non promises dans ce checkpoint Git."
+        },
+        {
+          "file": "pizzafight02.jpg",
+          "url": "https://www.kojimaproductions.jp/sites/default/files/2026-02/pizzafight02.jpg",
+          "page": "https://www.kojimaproductions.jp/ds2_feature_PizzaChef",
+          "width": 1920,
+          "height": 1080,
+          "bytes": 750363,
+          "sha256": "f5c029b28162199944c3f0d2a2849768c7055fe7bce29a308446e42cbdfe60a1",
+          "sha256_status": "empreinte conservée du téléchargement inspecté",
+          "inspection": "Référence ouverte et inspectée visuellement le 25 novembre 2026 ; copies locales non promises dans ce checkpoint Git."
+        }
+      ]
+    },
+    {
+      "id": "sam-cyberpunk-dc",
+      "title": "Sam · accessoires Cyberpunk",
+      "work": "ds1-dc",
+      "version": "Crossover Cyberpunk 2077 de DS PC, repris dans Director’s Cut",
+      "role_propose": "Variante visuelle de Sam ; lunettes rouges et Silver Hand",
+      "statut": "référence inspectée ; production en cours, aucun actif livré déduit de cette recherche",
+      "priorite": "P1",
+      "qualite_reference": "A",
+      "exploitable": true,
+      "absent_du_catalogue_52": true,
+      "visible": [
+        "Sam en tenue bleue DS1, lunettes rouges, avant-bras métallique argenté du côté visible.",
+        "Dans cp_07, buste, équipements et bras visibles jusqu’à la main au bord inférieur."
+      ],
+      "inconnu_ou_limite": [
+        "Extrémités des doigts coupées en bas ; intérieur de la main et face opposée non montrés.",
+        "cp_06 est floue : seulement complément de contexte."
+      ],
+      "cadrage_recommande": "Portrait allant au plus jusqu’à la taille/avant-bras ; aucune réécriture du kit Sam.",
+      "source_pages": [
+        "https://deathstrandingpc.505games.com/en/death-stranding-directors-cut-cross-over-content/",
+        "https://deathstrandingpc.505games.com/en/introducing-the-death-stranding-x-cyberpunk-2077-free-update-out-now-on-pc/",
+        "https://blog.playstation.com/2021/07/08/death-stranding-directors-cut-launches-on-ps5-september-24-2021/"
+      ],
+      "references": [
+        {
+          "file": "cp_07-1920x1080.jpg",
+          "url": "https://deathstrandingpc.505games.com/wp-content/uploads/2020/11/cp_07-1920x1080.jpg",
+          "page": "https://deathstrandingpc.505games.com/en/death-stranding-directors-cut-cross-over-content/",
+          "width": 1920,
+          "height": 1080,
+          "bytes": 214146,
+          "sha256": null,
+          "sha256_status": "à recalculer après restauration ; empreinte perdue avec le runtime",
+          "inspection": "Référence ouverte et inspectée visuellement le 25 novembre 2026 ; copies locales non promises dans ce checkpoint Git."
+        },
+        {
+          "file": "cp_06-1920x1080.jpg",
+          "url": "https://deathstrandingpc.505games.com/wp-content/uploads/2020/11/cp_06-1920x1080.jpg",
+          "page": "https://deathstrandingpc.505games.com/en/death-stranding-directors-cut-cross-over-content/",
+          "width": 1920,
+          "height": 1080,
+          "bytes": 182481,
+          "sha256": null,
+          "sha256_status": "à recalculer après restauration ; empreinte perdue avec le runtime",
+          "inspection": "Référence ouverte et inspectée visuellement le 25 novembre 2026 ; copies locales non promises dans ce checkpoint Git."
+        }
+      ]
+    },
+    {
+      "id": "gravity-gloves-half-life-dc",
+      "title": "Gant gravitationnel · Half-Life",
+      "work": "ds1-dc",
+      "version": "Crossover Half-Life de DS PC, repris dans Director’s Cut",
+      "role_propose": "Équipement fixe, vue dorsale du gant",
+      "statut": "référence inspectée ; production en cours, aucun actif livré déduit de cette recherche",
+      "priorite": "P1",
+      "qualite_reference": "A",
+      "exploitable": true,
+      "absent_du_catalogue_52": true,
+      "visible": [
+        "Gant noir, montage mécanique dorsal, cylindres métalliques, câbles, voyants verts, rangée de trois motifs rouges, écran cyan.",
+        "Poignet et bracelet lumineux visibles."
+      ],
+      "inconnu_ou_limite": [
+        "Paume cachée et doigts repliés ; ne pas extrapoler une paire complète symétrique.",
+        "La galerie officielle classe l’image Half-Life sans donner de fiche de statistiques."
+      ],
+      "cadrage_recommande": "Un gant côté dos/poignet ou accessoire porté ; pas de pouvoir nouveau déduit.",
+      "source_pages": [
+        "https://deathstrandingpc.505games.com/en/death-stranding-directors-cut-cross-over-content/",
+        "https://blog.playstation.com/2021/07/08/death-stranding-directors-cut-launches-on-ps5-september-24-2021/"
+      ],
+      "references": [
+        {
+          "file": "DS-Scrrenshots_2560x1440-S7-1920x1080.jpg",
+          "url": "https://deathstrandingpc.505games.com/wp-content/uploads/2020/06/DS-Scrrenshots_2560x1440-S7-1920x1080.jpg",
+          "page": "https://deathstrandingpc.505games.com/en/death-stranding-directors-cut-cross-over-content/",
+          "width": 1920,
+          "height": 1080,
+          "bytes": 219266,
+          "sha256": null,
+          "sha256_status": "à recalculer après restauration ; empreinte perdue avec le runtime",
+          "inspection": "Référence ouverte et inspectée visuellement le 25 novembre 2026 ; copies locales non promises dans ce checkpoint Git."
+        }
+      ]
+    },
+    {
+      "id": "reverse-trike-cyberpunk-dc",
+      "title": "Reverse Trike · Cyberpunk",
+      "work": "ds1-dc",
+      "version": "Crossover Cyberpunk 2077 de DS PC, repris dans Director’s Cut",
+      "role_propose": "Véhicule fixe de catalogue",
+      "statut": "référence inspectée ; production en cours, aucun actif livré déduit de cette recherche",
+      "priorite": "P1",
+      "qualite_reference": "A",
+      "exploitable": true,
+      "absent_du_catalogue_52": true,
+      "visible": [
+        "Carénage rouge/noir, deux roues avant rapprochées et roue arrière, selle, guidon, cadre de chargement arrière.",
+        "Vues latérale, trois-quarts arrière et avant."
+      ],
+      "inconnu_ou_limite": [
+        "Petits textes, dessous et mécanique intérieure insuffisants pour une certification 1:1."
+      ],
+      "cadrage_recommande": "Trois-quarts latéral sans conducteur ; conserver la différence avec Tri-Cruiser DS2.",
+      "source_pages": [
+        "https://deathstrandingpc.505games.com/en/death-stranding-directors-cut-cross-over-content/",
+        "https://deathstrandingpc.505games.com/en/introducing-the-death-stranding-x-cyberpunk-2077-free-update-out-now-on-pc/",
+        "https://blog.playstation.com/2021/07/08/death-stranding-directors-cut-launches-on-ps5-september-24-2021/"
+      ],
+      "references": [
+        {
+          "file": "cp_01-1920x1080.jpg",
+          "url": "https://deathstrandingpc.505games.com/wp-content/uploads/2020/11/cp_01-1920x1080.jpg",
+          "page": "https://deathstrandingpc.505games.com/en/death-stranding-directors-cut-cross-over-content/",
+          "width": 1920,
+          "height": 1080,
+          "bytes": 286984,
+          "sha256": null,
+          "sha256_status": "à recalculer après restauration ; empreinte perdue avec le runtime",
+          "inspection": "Référence ouverte et inspectée visuellement le 25 novembre 2026 ; copies locales non promises dans ce checkpoint Git."
+        },
+        {
+          "file": "cp_02-1920x1080.jpg",
+          "url": "https://deathstrandingpc.505games.com/wp-content/uploads/2020/11/cp_02-1920x1080.jpg",
+          "page": "https://deathstrandingpc.505games.com/en/death-stranding-directors-cut-cross-over-content/",
+          "width": 1920,
+          "height": 1080,
+          "bytes": 249622,
+          "sha256": null,
+          "sha256_status": "à recalculer après restauration ; empreinte perdue avec le runtime",
+          "inspection": "Référence ouverte et inspectée visuellement le 25 novembre 2026 ; copies locales non promises dans ce checkpoint Git."
+        },
+        {
+          "file": "cp_03-1920x1080.jpg",
+          "url": "https://deathstrandingpc.505games.com/wp-content/uploads/2020/11/cp_03-1920x1080.jpg",
+          "page": "https://deathstrandingpc.505games.com/en/death-stranding-directors-cut-cross-over-content/",
+          "width": 1920,
+          "height": 1080,
+          "bytes": 204946,
+          "sha256": null,
+          "sha256_status": "à recalculer après restauration ; empreinte perdue avec le runtime",
+          "inspection": "Référence ouverte et inspectée visuellement le 25 novembre 2026 ; copies locales non promises dans ce checkpoint Git."
+        },
+        {
+          "file": "cp_07-1920x1080.jpg",
+          "url": "https://deathstrandingpc.505games.com/wp-content/uploads/2020/11/cp_07-1920x1080.jpg",
+          "page": "https://deathstrandingpc.505games.com/en/death-stranding-directors-cut-cross-over-content/",
+          "width": 1920,
+          "height": 1080,
+          "bytes": 214146,
+          "sha256": null,
+          "sha256_status": "à recalculer après restauration ; empreinte perdue avec le runtime",
+          "inspection": "Référence ouverte et inspectée visuellement le 25 novembre 2026 ; copies locales non promises dans ce checkpoint Git."
+        }
+      ]
+    },
+    {
+      "id": "lambda-truck-half-life-dc",
+      "title": "Camion Lambda · Half-Life",
+      "work": "ds1-dc",
+      "version": "Crossover Half-Life de DS PC, repris dans Director’s Cut",
+      "role_propose": "Variante de véhicule fixe",
+      "statut": "référence inspectée ; production en cours, aucun actif livré déduit de cette recherche",
+      "priorite": "P1",
+      "qualite_reference": "A",
+      "exploitable": true,
+      "absent_du_catalogue_52": true,
+      "visible": [
+        "Camion Bridges orange, grand lambda jaune sur le flanc, cabine et caisse hautes, roues noires.",
+        "S3 donne une silhouette globale ; S6 détaille le flanc et la cabine."
+      ],
+      "inconnu_ou_limite": [
+        "Front et face opposée non intégralement montrés ; pas d’intérieur.",
+        "Ne pas assimiler cette variante au camion DS2 ni au camion Boss MULE."
+      ],
+      "cadrage_recommande": "Trois-quarts côté montré ; petits textes non garantis.",
+      "source_pages": [
+        "https://deathstrandingpc.505games.com/en/death-stranding-directors-cut-cross-over-content/",
+        "https://blog.playstation.com/2021/07/08/death-stranding-directors-cut-launches-on-ps5-september-24-2021/"
+      ],
+      "references": [
+        {
+          "file": "DS-Scrrenshots_2560x1440-S3-1920x1080.jpg",
+          "url": "https://deathstrandingpc.505games.com/wp-content/uploads/2020/06/DS-Scrrenshots_2560x1440-S3-1920x1080.jpg",
+          "page": "https://deathstrandingpc.505games.com/en/death-stranding-directors-cut-cross-over-content/",
+          "width": 1920,
+          "height": 1080,
+          "bytes": 364758,
+          "sha256": null,
+          "sha256_status": "à recalculer après restauration ; empreinte perdue avec le runtime",
+          "inspection": "Référence ouverte et inspectée visuellement le 25 novembre 2026 ; copies locales non promises dans ce checkpoint Git."
+        },
+        {
+          "file": "DS-Scrrenshots_2560x1440-S6-1920x1080.jpg",
+          "url": "https://deathstrandingpc.505games.com/wp-content/uploads/2020/06/DS-Scrrenshots_2560x1440-S6-1920x1080.jpg",
+          "page": "https://deathstrandingpc.505games.com/en/death-stranding-directors-cut-cross-over-content/",
+          "width": 1920,
+          "height": 1080,
+          "bytes": 402055,
+          "sha256": null,
+          "sha256_status": "à recalculer après restauration ; empreinte perdue avec le runtime",
+          "inspection": "Référence ouverte et inspectée visuellement le 25 novembre 2026 ; copies locales non promises dans ce checkpoint Git."
+        }
+      ]
+    },
+    {
+      "id": "strider-hologram-half-life-dc",
+      "title": "Hologramme Strider · Half-Life",
+      "work": "ds1-dc",
+      "version": "Crossover Half-Life de DS PC, repris dans Director’s Cut",
+      "role_propose": "Hologramme décoratif, pas ennemi jouable importé",
+      "statut": "référence inspectée ; production en cours, aucun actif livré déduit de cette recherche",
+      "priorite": "P1",
+      "qualite_reference": "A",
+      "exploitable": true,
+      "absent_du_catalogue_52": true,
+      "visible": [
+        "Trois très longues pattes, corps central suspendu, volume supérieur mécanique, apparence partiellement translucide et striée.",
+        "Trois vues montrent l’ensemble de la silhouette."
+      ],
+      "inconnu_ou_limite": [
+        "Petites articulations et surfaces arrière restent peu détaillées.",
+        "L’inclusion du crossover ne fait pas entrer tous les personnages de Half-Life dans le canon ou le roster."
+      ],
+      "cadrage_recommande": "Silhouette holographique entière ; statut de décoration conservé.",
+      "source_pages": [
+        "https://deathstrandingpc.505games.com/en/death-stranding-directors-cut-cross-over-content/",
+        "https://blog.playstation.com/2021/07/08/death-stranding-directors-cut-launches-on-ps5-september-24-2021/"
+      ],
+      "references": [
+        {
+          "file": "DS-Scrrenshots_2560x1440-S2-1920x1080.jpg",
+          "url": "https://deathstrandingpc.505games.com/wp-content/uploads/2020/06/DS-Scrrenshots_2560x1440-S2-1920x1080.jpg",
+          "page": "https://deathstrandingpc.505games.com/en/death-stranding-directors-cut-cross-over-content/",
+          "width": 1920,
+          "height": 1080,
+          "bytes": 177023,
+          "sha256": null,
+          "sha256_status": "à recalculer après restauration ; empreinte perdue avec le runtime",
+          "inspection": "Référence ouverte et inspectée visuellement le 25 novembre 2026 ; copies locales non promises dans ce checkpoint Git."
+        },
+        {
+          "file": "DS-Scrrenshots_2560x1440-S4-1920x1080.jpg",
+          "url": "https://deathstrandingpc.505games.com/wp-content/uploads/2020/06/DS-Scrrenshots_2560x1440-S4-1920x1080.jpg",
+          "page": "https://deathstrandingpc.505games.com/en/death-stranding-directors-cut-cross-over-content/",
+          "width": 1920,
+          "height": 1080,
+          "bytes": 223347,
+          "sha256": null,
+          "sha256_status": "à recalculer après restauration ; empreinte perdue avec le runtime",
+          "inspection": "Référence ouverte et inspectée visuellement le 25 novembre 2026 ; copies locales non promises dans ce checkpoint Git."
+        },
+        {
+          "file": "DS-Scrrenshots_2560x1440-S5-1920x1080.jpg",
+          "url": "https://deathstrandingpc.505games.com/wp-content/uploads/2020/06/DS-Scrrenshots_2560x1440-S5-1920x1080.jpg",
+          "page": "https://deathstrandingpc.505games.com/en/death-stranding-directors-cut-cross-over-content/",
+          "width": 1920,
+          "height": 1080,
+          "bytes": 234962,
+          "sha256": null,
+          "sha256_status": "à recalculer après restauration ; empreinte perdue avec le runtime",
+          "inspection": "Référence ouverte et inspectée visuellement le 25 novembre 2026 ; copies locales non promises dans ce checkpoint Git."
+        }
+      ]
+    },
+    {
+      "id": "reverse-trike-ds1",
+      "title": "Reverse Trike standard",
+      "work": "ds1-dc",
+      "version": "Death Stranding · région Est",
+      "role_propose": "Véhicule fixe de catalogue",
+      "statut": "référence inspectée ; production en cours, aucun actif livré déduit de cette recherche",
+      "priorite": "P1",
+      "qualite_reference": "A",
+      "exploitable": true,
+      "absent_du_catalogue_52": true,
+      "visible": [
+        "Vue latérale complète sans pilote dans 07, carrosserie bleu-noir, tubes orange, deux roues avant proches et roue arrière, porte-bagages.",
+        "08 complète l’arrière avec Sam à bord."
+      ],
+      "inconnu_ou_limite": [
+        "Détails de roue avant lointaine partiellement masqués ; dessous non montré."
+      ],
+      "cadrage_recommande": "Vue de trois-quarts latéral de 07, véhicule seul.",
+      "source_pages": [
+        "https://www.kojimaproductions.jp/en/DSTips"
+      ],
+      "references": [
+        {
+          "file": "ds-tips-07.jpg",
+          "url": "https://www.kojimaproductions.jp/sites/default/files/2023-03/07.jpg",
+          "page": "https://www.kojimaproductions.jp/en/DSTips",
+          "width": 1920,
+          "height": 1080,
+          "bytes": 200674,
+          "sha256": null,
+          "sha256_status": "à recalculer après restauration ; empreinte perdue avec le runtime",
+          "inspection": "Référence ouverte et inspectée visuellement le 25 novembre 2026 ; copies locales non promises dans ce checkpoint Git."
+        },
+        {
+          "file": "ds-tips-08.jpg",
+          "url": "https://www.kojimaproductions.jp/sites/default/files/2023-03/08.jpg",
+          "page": "https://www.kojimaproductions.jp/en/DSTips",
+          "width": 1920,
+          "height": 1080,
+          "bytes": 300087,
+          "sha256": null,
+          "sha256_status": "à recalculer après restauration ; empreinte perdue avec le runtime",
+          "inspection": "Référence ouverte et inspectée visuellement le 25 novembre 2026 ; copies locales non promises dans ce checkpoint Git."
+        }
+      ]
+    },
+    {
+      "id": "mule-sensor-pole-ds1",
+      "title": "Borne de détection MULE",
+      "work": "ds1-dc",
+      "version": "Death Stranding · région Est",
+      "role_propose": "Structure/objet fixe ; fonction source distincte du gameplay projet",
+      "statut": "référence inspectée ; production en cours, aucun actif livré déduit de cette recherche",
+      "priorite": "P1",
+      "qualite_reference": "A",
+      "exploitable": true,
+      "absent_du_catalogue_52": true,
+      "visible": [
+        "Borne entière, tige gris sombre, long segment lumineux jaune, branches noires verticales et petit câblage supérieur."
+      ],
+      "inconnu_ou_limite": [
+        "Face arrière et connectique minuscules non lisibles.",
+        "Sa capacité officielle de détection n’est pas une fonctionnalité livrée automatiquement au projet."
+      ],
+      "cadrage_recommande": "Borne entière verticale, même côté visible.",
+      "source_pages": [
+        "https://www.kojimaproductions.jp/en/DSTips"
+      ],
+      "references": [
+        {
+          "file": "ds-tips-09.jpg",
+          "url": "https://www.kojimaproductions.jp/sites/default/files/2023-03/09.jpg",
+          "page": "https://www.kojimaproductions.jp/en/DSTips",
+          "width": 1920,
+          "height": 1080,
+          "bytes": 246144,
+          "sha256": null,
+          "sha256_status": "à recalculer après restauration ; empreinte perdue avec le runtime",
+          "inspection": "Référence ouverte et inspectée visuellement le 25 novembre 2026 ; copies locales non promises dans ce checkpoint Git."
+        }
+      ]
+    },
+    {
+      "id": "atlas-trauma-hologram-dc",
+      "title": "Hologramme Atlas Trauma Team",
+      "work": "ds1-dc",
+      "version": "Crossover Cyberpunk 2077 de DS PC, repris dans Director’s Cut",
+      "role_propose": "Hologramme décoratif de véhicule",
+      "statut": "référence inspectée ; production en cours, aucun actif livré déduit de cette recherche",
+      "priorite": "P2",
+      "qualite_reference": "B",
+      "exploitable": true,
+      "absent_du_catalogue_52": true,
+      "visible": [
+        "Véhicule volant blanc/gris entier, corps cubique, modules latéraux, ouvertures sombres et lueurs sous le véhicule.",
+        "Deux angles sur fond clair."
+      ],
+      "inconnu_ou_limite": [
+        "Sujet petit, environ 270 px de largeur dans les références 1920 ; détails mécaniques et marquages nécessitent adaptation.",
+        "Hologramme dans DS, pas la preuve d’un appareil pilotable ou d’un nouvel ennemi."
+      ],
+      "cadrage_recommande": "Petite base holographique de trois-quarts ; éviter macro mécanique.",
+      "source_pages": [
+        "https://deathstrandingpc.505games.com/en/death-stranding-directors-cut-cross-over-content/",
+        "https://deathstrandingpc.505games.com/en/introducing-the-death-stranding-x-cyberpunk-2077-free-update-out-now-on-pc/",
+        "https://blog.playstation.com/2021/07/08/death-stranding-directors-cut-launches-on-ps5-september-24-2021/"
+      ],
+      "references": [
+        {
+          "file": "cp_04-1920x1080.jpg",
+          "url": "https://deathstrandingpc.505games.com/wp-content/uploads/2020/11/cp_04-1920x1080.jpg",
+          "page": "https://deathstrandingpc.505games.com/en/death-stranding-directors-cut-cross-over-content/",
+          "width": 1920,
+          "height": 1080,
+          "bytes": 293353,
+          "sha256": null,
+          "sha256_status": "à recalculer après restauration ; empreinte perdue avec le runtime",
+          "inspection": "Référence ouverte et inspectée visuellement le 25 novembre 2026 ; copies locales non promises dans ce checkpoint Git."
+        },
+        {
+          "file": "cp_05-1920x1080.jpg",
+          "url": "https://deathstrandingpc.505games.com/wp-content/uploads/2020/11/cp_05-1920x1080.jpg",
+          "page": "https://deathstrandingpc.505games.com/en/death-stranding-directors-cut-cross-over-content/",
+          "width": 1920,
+          "height": 1080,
+          "bytes": 155033,
+          "sha256": null,
+          "sha256_status": "à recalculer après restauration ; empreinte perdue avec le runtime",
+          "inspection": "Référence ouverte et inspectée visuellement le 25 novembre 2026 ; copies locales non promises dans ce checkpoint Git."
+        }
+      ]
+    },
+    {
+      "id": "sam-ludens-silver-ds1",
+      "title": "Sam · lunettes Ludens argentées",
+      "work": "ds1-dc",
+      "version": "Death Stranding PC · variante Omnireflector du Ludens Mask",
+      "role_propose": "Portrait de variante de Sam",
+      "statut": "référence inspectée ; production en cours, aucun actif livré déduit de cette recherche",
+      "priorite": "P2",
+      "qualite_reference": "B",
+      "exploitable": true,
+      "absent_du_catalogue_52": true,
+      "visible": [
+        "Buste de Sam en tenue DS1 avec grandes lunettes argentées Ludens, BB et sangles visibles."
+      ],
+      "inconnu_ou_limite": [
+        "Illustration promotionnelle de taille réduite au milieu-gauche ; arrière et branches cachés.",
+        "Ne pas attribuer de kit distinct ou de bonus moteur à cette variante."
+      ],
+      "cadrage_recommande": "Portrait buste inspiré du rendu promotionnel, détails secondaires explicitement adaptés.",
+      "source_pages": [
+        "https://deathstrandingpc.505games.com/en/death-stranding-coming-to-steam-and-the-epic-game-store-on-june-2-2020/"
+      ],
+      "references": [
+        {
+          "file": "pc-vanity-standard.jpg",
+          "url": "https://deathstrandingpc.505games.com/wp-content/uploads/2020/03/vanityimage_pc_digital_standard_english.jpg",
+          "page": "https://deathstrandingpc.505games.com/en/death-stranding-coming-to-steam-and-the-epic-game-store-on-june-2-2020/",
+          "width": 1920,
+          "height": 1080,
+          "bytes": 420220,
+          "sha256": null,
+          "sha256_status": "à recalculer après restauration ; empreinte perdue avec le runtime",
+          "inspection": "Référence ouverte et inspectée visuellement le 25 novembre 2026 ; copies locales non promises dans ce checkpoint Git."
+        }
+      ]
+    },
+    {
+      "id": "speed-skeleton-silver-ds1",
+      "title": "Squelette de vitesse argenté",
+      "work": "ds1-dc",
+      "version": "Death Stranding PC · bonus argenté du Speed Skeleton",
+      "role_propose": "Équipement fixe isolé",
+      "statut": "référence inspectée ; production en cours, aucun actif livré déduit de cette recherche",
+      "priorite": "P2",
+      "qualite_reference": "B",
+      "exploitable": true,
+      "absent_du_catalogue_52": true,
+      "visible": [
+        "Exosquelette de jambes isolé en haut à droite, hanche ouverte, plaques de cuisse argentées, longues tiges sombres, articulations bleues/orange et appuis inférieurs."
+      ],
+      "inconnu_ou_limite": [
+        "Petit rendu promotionnel, environ 150×280 px ; dos, attaches internes et niveaux non certifiables."
+      ],
+      "cadrage_recommande": "Équipement entier dans l’orientation publiée ; aucun niveau numérique ajouté.",
+      "source_pages": [
+        "https://deathstrandingpc.505games.com/en/death-stranding-coming-to-steam-and-the-epic-game-store-on-june-2-2020/"
+      ],
+      "references": [
+        {
+          "file": "pc-vanity-standard.jpg",
+          "url": "https://deathstrandingpc.505games.com/wp-content/uploads/2020/03/vanityimage_pc_digital_standard_english.jpg",
+          "page": "https://deathstrandingpc.505games.com/en/death-stranding-coming-to-steam-and-the-epic-game-store-on-june-2-2020/",
+          "width": 1920,
+          "height": 1080,
+          "bytes": 420220,
+          "sha256": null,
+          "sha256_status": "à recalculer après restauration ; empreinte perdue avec le runtime",
+          "inspection": "Référence ouverte et inspectée visuellement le 25 novembre 2026 ; copies locales non promises dans ce checkpoint Git."
+        }
+      ]
+    },
+    {
+      "id": "armour-plate-silver-ds1",
+      "title": "Plaque d’armure argentée",
+      "work": "ds1-dc",
+      "version": "Death Stranding PC · variante argentée du visuel promotionnel",
+      "role_propose": "Équipement défensif fixe isolé",
+      "statut": "référence inspectée ; production en cours, aucun actif livré déduit de cette recherche",
+      "priorite": "P2",
+      "qualite_reference": "B",
+      "exploitable": true,
+      "absent_du_catalogue_52": true,
+      "visible": [
+        "Plaque polygonale argentée, pièce jaune derrière, module rond latéral avec lueur bleue, attaches et marquage Bridges."
+      ],
+      "inconnu_ou_limite": [
+        "Le texte groupe les niveaux 2 et supérieurs ; le visuel ne permet pas d’assigner sûrement un niveau exact.",
+        "Dos, épaisseur et fixation intérieure non montrés."
+      ],
+      "cadrage_recommande": "Plaque isolée de trois-quarts, sans inventer de niveau ni valeur de protection.",
+      "source_pages": [
+        "https://deathstrandingpc.505games.com/en/death-stranding-coming-to-steam-and-the-epic-game-store-on-june-2-2020/"
+      ],
+      "references": [
+        {
+          "file": "pc-vanity-standard.jpg",
+          "url": "https://deathstrandingpc.505games.com/wp-content/uploads/2020/03/vanityimage_pc_digital_standard_english.jpg",
+          "page": "https://deathstrandingpc.505games.com/en/death-stranding-coming-to-steam-and-the-epic-game-store-on-june-2-2020/",
+          "width": 1920,
+          "height": 1080,
+          "bytes": 420220,
+          "sha256": null,
+          "sha256_status": "à recalculer après restauration ; empreinte perdue avec le runtime",
+          "inspection": "Référence ouverte et inspectée visuellement le 25 novembre 2026 ; copies locales non promises dans ce checkpoint Git."
+        }
+      ]
+    }
+  ],
+  "reserves_non_selectionnees": [
+    {
+      "id": "rubber-pizza-ds2",
+      "page": "https://www.kojimaproductions.jp/ds2_feature_PizzaChef",
+      "reference": {
+        "file": "touteki_re.jpg",
+        "url": "https://www.kojimaproductions.jp/sites/default/files/2026-02/touteki_re.jpg",
+        "page": "https://www.kojimaproductions.jp/ds2_feature_PizzaChef",
+        "width": 1920,
+        "height": 1080,
+        "bytes": 1917484,
+        "sha256": "a53577dc1e4604b2cf769a29eec3fc37e76d60b6b643434eca5e5a4e6ce177c7",
+        "sha256_status": "empreinte conservée du téléchargement inspecté",
+        "inspection": "Référence ouverte et inspectée visuellement le 25 novembre 2026 ; copies locales non promises dans ce checkpoint Git."
+      },
+      "visible": "Disque beige vu presque par la tranche, tenu dans la main de Sam.",
+      "limite": "Face supérieure et texture non montrées ; ne pas confondre avec la pizza alimentaire de servepizza.jpg.",
+      "status": "Référence partielle ; hors sélection prioritaire."
+    },
+    {
+      "id": "generator-ds1",
+      "page": "https://www.kojimaproductions.jp/en/DSTips",
+      "reference": {
+        "file": "ds-tips-07.jpg",
+        "url": "https://www.kojimaproductions.jp/sites/default/files/2023-03/07.jpg",
+        "page": "https://www.kojimaproductions.jp/en/DSTips",
+        "width": 1920,
+        "height": 1080,
+        "bytes": 200674,
+        "sha256": null,
+        "sha256_status": "à recalculer après restauration ; empreinte perdue avec le runtime",
+        "inspection": "Référence ouverte et inspectée visuellement le 25 novembre 2026 ; copies locales non promises dans ce checkpoint Git."
+      },
+      "visible": "Corps inférieur de générateur Bridges à gauche, logo et bandes, éclair de charge.",
+      "limite": "Sommet coupé par le cadre ; compléter avant base autonome entière.",
+      "status": "Référence partielle ; hors sélection prioritaire."
+    }
+  ],
+  "excluded": [
+    "Mitrailleuse MP DS2 : aucune nouvelle tentative demandée ni effectuée.",
+    "Watcher et ennemis non identifiés : aucune identité visuelle inventée.",
+    "Bande-annonce Preppers Awaiting Porter : sa vignette ne montre pas un visage identifiable ; pas de nouveau personnage déduit."
+  ],
+  "stage_references": [
+    {
+      "id": "011",
+      "stage_id": "night-viaduct-ds2",
+      "page": "https://kojimaproductions.jp/en/death-stranding-2",
+      "url": "https://www.kojimaproductions.jp/sites/default/files/2024-02/ds2_sop2024_screenshot011.jpg",
+      "width": 1920,
+      "height": 1080,
+      "bytes": 795362,
+      "sha256": "e83c09465e46eace6a9da7cca43b6ce593b51d7de7b6326cff4b412c183c603f",
+      "visible": "Voie humide, lumières cyan, ville sombre, pluie ; référence inspectée.",
+      "limite": "Nom descriptif du projet, localisation canonique précise non identifiée."
+    },
+    {
+      "id": "014",
+      "stage_id": "red-ravine-ds2",
+      "page": "https://kojimaproductions.jp/en/death-stranding-2",
+      "url": "https://www.kojimaproductions.jp/sites/default/files/2024-02/ds2_sop2024_screenshot014.jpg",
+      "width": 1920,
+      "height": 1080,
+      "bytes": 1046875,
+      "sha256": "5794c7477aeefa4134c15839969380f4f01d2b4ef7a2597a308745d6daf4c00c",
+      "visible": "Rochers sombres, arbres nus, lumière rouge, pluie, silhouettes lointaines ; référence inspectée.",
+      "limite": "Nom descriptif du projet, localisation et espèce précises non identifiées."
+    }
+  ]
+}

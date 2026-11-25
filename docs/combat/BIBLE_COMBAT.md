@@ -4,13 +4,13 @@
 
 **Édition de conception du 18 novembre 2026, mise à jour du 25 novembre 2026 · Périmètre : l’ensemble de l’univers Death Stranding.**
 
-**Mise à jour du 25 novembre 2026 : Guide Combat Games v1.0 associé ; lots univers et complément réceptionnés. Le lot domaines ajoute les fiches des trente actions du duel et des trois profils IA, les 28 paires de relations du simulateur, les commandes reconfigurables et une liaison jouable quai → hangar. Quatorze PNG fixes sont livrés ; leur réception, leurs sources et les limites de validation sont détaillées au [§18](#lot-domaines-20261125). Les §13–17 conservent les états datés de leurs lots.**
+**Mise à jour du 25 novembre 2026 : Guide Combat Games v1.0 associé ; lots univers, complément et domaines réceptionnés. Le lot extension prépare huit exercices guidés, un compendium propre aux six rencontres Boss, douze bases fixes et trois arènes supplémentaires. Les références visuelles sont inspectées ; la production et les recettes en cours sont distinguées au [§19](#lot-extension-20261125). Les §13–18 conservent les états datés de leurs lots.**
 
 Deux silhouettes se font face sur la laisse de mer. Sam se baisse pour poser une caisse. L’autre joueur dispose d’un instant pour avancer. S’il se précipite, Sam peut l’attendre, lien en main. S’il s’arrête, Sam regagne son équilibre et choisit la distance du prochain échange. Ce geste ordinaire de porteur résume le duel que nous voulons construire.
 
 ### Référentiel commun associé
 
-Le [Guide général Combat Games v1.0](references/Combat_Games_Guide_General_v1.0.txt) complète cette bible selon le contexte d’Échos de la Grève. Le [chapitre 12](#12-intégration-du-guide-combat-games-v10) associe ses 30 rubriques aux chapitres existants, précise leur statut et fixe les contrôles attendus. Les règles actuellement chargées, la conception cible et les références officielles restent identifiées séparément. Le [registre de l’univers](UNIVERS_DS.md) précise les œuvres, éditions, continuités, sources et projets annoncés ; le [chapitre 16](#16-univers-complet-boss-rush-et-nouvelles-arènes--25-novembre-2026) donne le bilan du lot univers livré. Le [registre de production](REGISTRE_PRODUCTION.md) suit les éléments présents et manquants par domaine, avec ID, œuvre/version, rôle, source, priorité, dépendances et preuve. Le [chapitre 17](#17-complément-de-production-campagne-et-plans-narratifs--25-novembre-2026) documente le complément livré et ses preuves locales. Le [chapitre 18](#lot-domaines-20261125) suit les actions, relations, contrôles, transition et références du lot suivant.
+Le [Guide général Combat Games v1.0](references/Combat_Games_Guide_General_v1.0.txt) complète cette bible selon le contexte d’Échos de la Grève. Le [chapitre 12](#12-intégration-du-guide-combat-games-v10) associe ses 30 rubriques aux chapitres existants, précise leur statut et fixe les contrôles attendus. Les règles actuellement chargées, la conception cible et les références officielles restent identifiées séparément. Le [registre de l’univers](UNIVERS_DS.md) précise les œuvres, éditions, continuités, sources et projets annoncés ; le [chapitre 16](#16-univers-complet-boss-rush-et-nouvelles-arènes--25-novembre-2026) donne le bilan du lot univers livré. Le [registre de production](REGISTRE_PRODUCTION.md) suit les éléments présents et manquants par domaine, avec ID, œuvre/version, rôle, source, priorité, dépendances et preuve. Le [chapitre 17](#17-complément-de-production-campagne-et-plans-narratifs--25-novembre-2026) documente le complément livré et ses preuves locales. Le [chapitre 18](#lot-domaines-20261125) suit les actions, relations, contrôles, transition et références du lot domaines. Le [chapitre 19](#lot-extension-20261125) suit les exercices, le compendium Boss et les nouvelles références en production.
 
 ### Périmètre de cette édition
 
@@ -23,6 +23,7 @@ Le [Guide général Combat Games v1.0](references/Combat_Games_Guide_General_v1.
 | Lot univers du 25 novembre | Boss Rush, quatorze images fixes DS2 et vingt plans pour quatre nouvelles arènes sont intégrés. | Huit modes, seize lieux, dix-sept configurations et quatre-vingt-cinq couches ; le §16 précise les comptes et la portée des vérifications. |
 | Complément du 25 novembre | 13 bases fixes, 24 plans narratifs, 1 panorama et 15 couches pour 3 arènes ; campagne Les Nœuds rompus et profil statique. | 53 PNG livrés ; neuf modes, dix-neuf lieux, vingt configurations et cent couches vérifiés localement au §17. Aucun nouveau combattant ou animation déduit des images. |
 | Lot domaines du 25 novembre | Catalogue des actions/IA, matrice des relations, commandes reconfigurables, hangar et liaison explicite ; 14 nouvelles images fixes. | 19 lieux, 20 zones graphiques, 22 configurations, 105 couches distinctes ; preuves et limites au §18. |
+| Lot extension du 25 novembre | Huit exercices dirigés, compendium des six Boss, douze bases fixes et trois arènes supplémentaires en production. | Références inspectées ; livraisons, intégration et validation suivies séparément au §19. Les neuf modes et huit kits restent le socle. |
 | Fidélité | Le chapitre 11 associe les décisions visuelles à des images publiées par les créateurs et l’éditeur. | Chaque costume, accessoire et côté du corps demande une comparaison visuelle avant validation 1:1. |
 
 Les mentions **source** renvoient à l’œuvre officielle et à sa version identifiées. Les rencontres, dialogues, noms de techniques, effets de jauge et plans de mise en scène ci-dessous sont **des créations du mode annexe**. L’entrée dans la simulation isole ses résultats du récit de la campagne principale. Les boutons, règles et minutages qui suivent décrivent la cible de conception. Le menu Commandes de la version jouée fait foi pour les fonctions disponibles.
@@ -89,6 +90,7 @@ Les directions suivent la position adverse. La touche de signature est **H pour 
 16. [Univers complet, Boss Rush et nouvelles arènes](#16-univers-complet-boss-rush-et-nouvelles-arènes--25-novembre-2026)
 17. [Complément de production, campagne et plans narratifs](#17-complément-de-production-campagne-et-plans-narratifs--25-novembre-2026)
 18. [Actions, relations, commandes et première liaison](#lot-domaines-20261125)
+19. [Exercices, compendium Boss et extension visuelle](#lot-extension-20261125)
 
 Registres associés : [œuvres, versions et sources de l’univers Death Stranding](UNIVERS_DS.md) · [production par domaine et dépendances](REGISTRE_PRODUCTION.md).
 
@@ -579,7 +581,7 @@ Les priorités sont celles du guide : **P0** fondations et dépendances techniqu
 | EDG-G08 · histoires | §5, §8, §12.6 | Retenue · P1 | Huit routes déjà définies dans le catalogue ; compléter raison et conséquence de chaque duel. Vérifier début, reprise, rivalité, fin et galerie pour chacune. |
 | EDG-G09 · campagne globale | §1, §5, §12.6, §17 | Retenue ; campagne intégrée, recette logique passée · P1 | La Ligne silencieuse reste la campagne principale. Les Nœuds rompus ajoute une campagne interne au simulateur, six chapitres et quatorze interludes, distincte des huit routes ; parcours complet gagné dans la recette à DOM simulé (§17). |
 | EDG-G10 · scènes | §5–6, §9, §12.9, §17 | Retenue · P1 | Les 24 scènes cataloguées conservent leurs illustrations ; 24 plans complémentaires sont livrés et intégrés, sans modifier textes ni rivalités. Les quatorze interludes de campagne réemploient les visuels existants. Distinguer scène, illustration et plan. |
-| EDG-G11 · boss | §8, §12.7, §14, §16 | Retenue ; Boss Battle et Boss Rush intégrés · P1 | Six rencontres Boss Battle existantes ; Boss Rush implémenté et testé en simulation avec son règlement et sa reprise propres. Les nouveaux boss, notamment DS2, demandent une fiche I et une recette ; un rival final ou une image ne vaut pas boss intégré. |
+| EDG-G11 · boss | §8, §12.7, §14, §16, §19 | Retenue ; Boss Battle et Boss Rush intégrés · P1 | Six rencontres Boss Battle existantes ; Boss Rush implémenté et testé en simulation avec son règlement et sa reprise propres. Un compendium propre à boss.js est en production (§19) ; les chiffres du duel ne lui sont pas appliqués. Les nouveaux boss, notamment DS2, demandent une fiche I et une recette ; un rival final ou une image ne vaut pas boss intégré. |
 | EDG-G12 · modes | §1, §8, §12.7, §16 | Retenue · P0/P1 | Huit modes réceptionnés : Histoire, Arcade, Versus, Boss Battle, Boss Rush, Tournoi, Entraînement et Défis ; Campagne du simulateur intégrée comme neuvième mode, avec recette logique au §17. Galerie, Archives, salon privé et Duel originel restent des accès distincts. Vérifier entrée, jeu, résultat, reprise et sortie. |
 | EDG-G13 · arènes | §7, §9, §12.8, §16–18 | Retenue · P0/P1 | 19 lieux, 20 zones graphiques, 22 configurations, 105 couches distinctes et 110 liaisons de couches. Le hangar est une zone du terminal et la configuration liée réemploie le quai. Fiches, sources, sol, limites, ancrages et rendus qualifiés par lot. |
 | EDG-G14 · activité des décors | §7, §9, §12.8 | Retenue · P1 | Séparer présentation, interactions, dangers et transitions. Effets réduits présents ; profil statique intégré dans le complément, avec parité de simulation, pixels et persistance vérifiés dans leurs hôtes documentés (§17). |
@@ -588,7 +590,7 @@ Les priorités sont celles du guide : **P0** fondations et dépendances techniqu
 | EDG-G17 · assets | §7, §9–11, §12.9 | Retenue · P0/P1 | Un sujet exploitable par source autonome, alpha réel si détouré, échelle, marges et ancrage contrôlés. Un atlas n’efface pas les sources ; une scène narrative peut réunir plusieurs acteurs. |
 | EDG-G18 · présentation | §2–3, §7, §9 | Retenue · P0/P1 | Relier états, dessins, collisions, VFX, SFX et caméra ; conserver le 60 Hz et les signaux utiles en mode réduit ou sans son. |
 | EDG-G19 · interface | §1, §3, §8, §18 | Retenue ; remappage intégré · P0 | Profils de commandes J1/J2 et contrôleur partagé ; données du duel et échanges avant-match intégrés. [Recette Commandes](production/20261125-domains/COMMANDES.md) à DOM simulé ; manettes synthétiques, pas de périphérique matériel certifié. |
-| EDG-G20 · apprentissage | §1, §3–4, §8, §18 | Retenue · P0 | Dojo, volumes, prises J2 et fiches des actions chargées disponibles. Les nouveaux tableaux explicitent coûts, limites et récupération. Des exercices dirigés de portée, garde, punition et ressources restent à concevoir ; aucune leçon d’une action cible absente. |
+| EDG-G20 · apprentissage | §1, §3–4, §8, §18–19 | Retenue · P0 | Dojo, volumes, prises J2 et fiches des actions chargées disponibles. Les nouveaux tableaux explicitent coûts, limites et récupération. Huit exercices dirigés de portée, garde, punition, ressources, signatures et annulation sont en production (§19), avec critères observés dans le moteur actuel ; aucune leçon d’une action cible absente. |
 | EDG-G21 · IA | §8, §10, §12.10, §18 | Retenue ; profils du duel documentés · P0 | Trois cadences et probabilités conditionnelles, huit notes de comportement, 24 cas de seuils vérifiés. Les réponses non spécialisées et l’absence de planificateur universel restent visibles ; le score IA–IA du tournoi est un autre calcul. |
 | EDG-G22 · équilibre et confort | §2–3, §7–10 | Retenue · P0/P1 | Matrice des confrontations, coins et sorties de pression ; options de confort sans perte d’information. Les règles cibles de réduction de dégâts restent distinctes du code chargé. |
 | EDG-G23 · réseau et replays | §8–10, §12.10 | Retenue · P0 | Salon privé, prédiction, checkpoints, resimulation et replays déjà présents. Qualifier la portée du relais et tester latence, reconnexion et versions ; classement/crossplay restent à décider hors du périmètre courant. |
@@ -1086,3 +1088,71 @@ La mitrailleuse MP DS2 a une référence inspectée mais **aucun fichier livré 
 Le [bilan du lot domaines](production/20261125-domains/LOT_DOMAINES_20261125.md) associe les livraisons, les comptes et la publication effective lorsqu’elle est consignée. Les [preuves d’actions](production/20261125-domains/moves-verification.json), [de commandes](production/20261125-domains/commandes-verification.json) et [de transitions](production/20261125-domains/transitions-verification.json) qualifient séparément fonctions réelles et hôtes simulés. Les [rendus du hangar](production/20261125-domains/stage-renders/validation.json) et de [la liaison](production/20261125-domains/linked-renders/validation.json) utilisent Canvas natif ; ils ne sont pas des captures de navigateur. Les images de référence ne donnent aucune certification 1:1 des faces invisibles.
 
 La [revue visuelle](production/20261125-domains/REVUE_VISUELLE.md) et le [manifeste de génération](../../art/sources/echos-de-la-greve/production-20261125-domains/manifest.json) associent les 14 fichiers reçus, les 52 entrées de galerie et les essais sans sortie. L’[inventaire consolidé](production/20261125-domains/catalogue-inventory.json) confirme **359 chemins d’image distincts, tous présents**, dont les 14 nouveaux PNG et les 215 natifs antérieurs inchangés. La [recette de galerie](production/20261125-domains/static-gallery-verification.json) passe 16 groupes sur les 52 entrées ; les neuf nouvelles cartes possèdent leurs deux ancres documentaires. Le [journal HTTP final](production/20261125-domains/http-verification.log) vérifie les modules et fichiers réellement servis, sous la version `54275b88dc7536168038`. La publication conserve sa référence effective dans le bilan. Les priorités ouvertes restent concrètes : références non identifiées, kit/rencontre propre à chaque futur candidat, fiches du moteur Boss, exercices dirigés du dojo, essais matériels des commandes et mesure d’équilibre. Les besoins de réseau, son, progression, accessibilité et localisation restent suivis dans le [registre de production](REGISTRE_PRODUCTION.md), sans pourcentage global inventé.
+
+
+---
+
+<a id="lot-extension-20261125"></a>
+## 19. Exercices, compendium Boss et extension visuelle — 25 novembre 2026
+
+**État du checkpoint : en production, sur le socle `8d274a015e0edf314a853630031d5eb507354811`.** Le présent chapitre distingue les références inspectées, les travaux engagés et les livraisons restant à contrôler après restauration de l’environnement. Il ne vaut ni recette de l’extension, ni annonce de fusion. Le socle conserve huit combattants et neuf modes ; l’Entraînement accueille les exercices, sans créer un dixième mode.
+
+Le Guide général v1.0 demeure conservé intégralement, à l’empreinte `4844584616072ac0d52d37c2fab4365e1ec489240f17a721ee216e223b0355b7`. Les [trente associations EDG](#122-association-des-30-rubriques), les cibles de conception et les règles actuellement chargées restent séparées. Les [sources du lot](production/20261125-extension/reference-research.json) et le [registre de l’univers](UNIVERS_DS.md#references-extension-20261125) relient les nouvelles propositions à leurs images officielles.
+
+### 19.1. Huit exercices pour les actions réellement présentes
+
+Le contrat de production porte sur les huit exercices ci-dessous. Les distances et pas sont ceux de la simulation actuelle ; ce ne sont pas des mesures physiques du canon Death Stranding.
+
+| ID | Exercice | Critère prévu dans le moteur actuel |
+| --- | --- | --- |
+| `distance` | Entrer et sortir de portée | Rester immobile quinze pas à 65–105 px du mannequin, puis atteindre au moins 250 px. |
+| `reach` | Faire toucher un coup léger | Terminer un léger dans le vide depuis au moins 150 px, puis réussir un impact léger. |
+| `guard-high` | Tenir la garde debout | Bloquer trois légers sans perte de PV. |
+| `guard-low` | Protéger les jambes | Bloquer trois balayages sans perte de PV. |
+| `punish` | Punir un coup dans le vide | Laisser un lourd manquer, sans blocage, puis toucher d’un léger pendant sa récupération. |
+| `resource` | Dépenser puis récupérer | Payer le coût réel d’une signature neutre, puis laisser la recharge du dojo remonter à 60 sans nouvelle attaque. |
+| `signatures` | Les trois signatures | Atteindre la phase active des signatures neutre, avant et arrière ; conserver les préparations propres à chaque kit. |
+| `combo` | Confirmer puis enchaîner | Annuler un léger confirmé vers un lourd et obtenir les deux impacts dans le même combo. |
+
+Les huit kits restent sélectionnables. L’élève utilise les commandes J1 reconfigurées, tactiles ou de manette standard ; le mannequin suit un script et les entrées J2 externes sont verrouillées pendant l’exercice. Tous les exercices restent accessibles, la reprise recommence l’exercice et la nouvelle tentative est libre. Le contrat prévoit de conserver les validations acquises sous `echos.lessons.v1`.
+
+Les fiches [Actions et IA](ACTIONS_ET_IA.md) restent le référentiel des trente attaques du duel. Une préparation nécessaire à une signature ne doit pas être effacée pour rendre une leçon artificiellement triviale. Les fichiers de preuve attendus sont `production/20261125-extension/DOJO.md` et `lessons-verification.json` ; leur recette finale doit être relue après restauration. Une manette synthétique ne constitue pas une recette sur matériel physique.
+
+### 19.2. Compendium propre au moteur Boss
+
+La production du compendium porte sur les six rencontres, huit motifs d’attaque adverses, trente actions joueur — six communes et vingt-quatre signatures — et trois difficultés extraits de `boss.js`. Elle doit préciser délais, coûts, dégâts, volumes, défense, exposition, transport, conditions de fin et limites. Les chiffres de [StrandFight](ACTIONS_ET_IA.md) restent ceux du duel et ne sont pas transposés à ces grandes rencontres.
+
+Les sorties prévues sont `BOSS_ET_RENCONTRES.md`, `data/boss-et-rencontres.json` et le module consultable `boss-data.js`. Le bilan `production/20261125-extension/BOSS_COMPENDIUM.md` et sa preuve `boss-compendium-verification.json` distingueront extraction et essais réellement exécutés. À ce checkpoint, aucune validation nouvelle n’est attribuée à ces fichiers.
+
+La fiche Camion doit distinguer neutralisation du véhicule et livraison de son colis. Le Convoi conserve deux vagues et deux colis. Les règles des parcours restent indépendantes : Survie à 100 PV avec soin de 15 plafonné à 100 ; Boss Rush à 120 PV avec soin de 20 plafonné à 120, énergie et garde rétablies à 100, arrêt à la défaite et reprise propre ; campagne avec remise des ressources au début de chaque chapitre. Une description pédagogique ne modifie aucune de ces règles.
+
+### 19.3. Douze bases visuelles sourcées
+
+Les douze sujets sont absents du catalogue de 52 cartes contrôlé au début du lot. La [recherche détaillée](production/20261125-extension/reference-research.json) conserve page officielle, URL de l’image, version, rôle proposé, cadrage, éléments visibles et inconnues. Huit références sont classées A pour la lisibilité du sujet ; quatre sont classées B parce que le rendu est petit ou partiel. Ce classement mesure l’utilité du cadrage, sans certifier une fidélité 1:1.
+
+| Groupe | Sujets retenus | Rôle et limites |
+| --- | --- | --- |
+| DS2 | Pizza Chef | Portrait de PNJ ; les vues inspectées ne fournissent pas un modèle neutre complet debout. Aucun statut jouable déduit. |
+| Half-Life réellement inclus dans DS PC/DC | Gant gravitationnel, camion Lambda, hologramme Strider | Équipement, variante de véhicule et décoration. Le gant est documenté côté dorsal ; le Strider reste un hologramme. |
+| Cyberpunk réellement inclus dans DS PC/DC | Sam avec accessoires, Reverse Trike, hologramme Atlas Trauma Team | Variante de Sam, véhicule et décoration ; aucun nouveau kit ni appareil pilotable déduit. |
+| DS1 et ses variantes PC | Reverse Trike standard, borne MULE, Sam avec lunettes Ludens argentées, squelette de vitesse argenté, plaque d’armure argentée | Bases de véhicule, structure, costume et équipement. Les trois rendus argentés proviennent d’un petit visuel promotionnel ; aucun niveau chiffré d’équipement n’est inventé. |
+
+Les zones cachées et les détails trop petits restent explicitement adaptés dans toute production suivante. Le disque Rubber Pizza vu par la tranche et le générateur dont le sommet est coupé restent des réserves hors sélection. La mitrailleuse MP DS2 ne fait l’objet d’aucune nouvelle tentative dans ce lot. Les identités d’ennemis non confirmées, dont les références Watcher insuffisantes, restent ouvertes.
+
+### 19.4. Trois arènes supplémentaires en préparation
+
+| ID | Référence et interprétation | Production prévue |
+| --- | --- | --- |
+| `firing-range-dc` | Stand de tir Director’s Cut : adaptation du panorama déjà livré au catalogue. Son statut « catalogue seulement » décrit le lot domaines (§18), avant cette extension. | Cinq couches nouvelles ; panorama existant réemployé. |
+| `night-viaduct-ds2` | Capture officielle DS2 011 de février 2024 : chaussée humide, lumières cyan et ville sombre. Nom descriptif ; localisation canonique précise non identifiée. | Un panorama et cinq couches. |
+| `red-ravine-ds2` | Capture officielle DS2 014 de février 2024 : roches sombres, arbres nus, lumière rouge et pluie. Nom descriptif ; localisation et silhouettes lointaines non identifiées davantage. | Un panorama et cinq couches. |
+
+Ces scènes relèvent de la reconstitution de combat du projet. Les images sources ne prouvent ni danger météorologique jouable, ni nouveau Boss, ni transition entre arènes. Le lot prévoit dix-sept images d’arènes : quinze couches et deux panoramas ; le panorama du stand de tir est réemployé, donc exclu des nouvelles sorties.
+
+### 19.5. Réception, preuves et manques conservés
+
+Le périmètre prévu est de **vingt-neuf PNG fixes** : douze bases et dix-sept images d’arènes. Ce total est un objectif de production, pas un inventaire livré. Les 229 PNG récents du socle devront être préservés ; les comptes d’images, cartes et configurations seront arrêtés sur les chemins réellement intégrés et mesurés.
+
+La réception doit relier chaque fichier à sa source, son rôle, son format natif, ses dimensions, son empreinte et sa revue visuelle. Les recettes distingueront serveur HTTP réel, logique du moteur, Canvas natif, DOM simulé et éventuels essais de navigateur réellement disponibles. Aucun résultat non restauré ne sera présenté comme une recette finale de ce lot.
+
+Les variantes restent distinctes de leurs identités et versions ; aucune base fixe n’augmente automatiquement le roster jouable. Les autres œuvres et projets Death Stranding restent dans le périmètre du [registre de l’univers](UNIVERS_DS.md), avec leurs statuts. Le [registre de production](REGISTRE_PRODUCTION.md) conserve les manques de réseau, audio, accessibilité, progression, localisation, contrôles et contenu : cette extension ne clôt pas l’univers entier.
