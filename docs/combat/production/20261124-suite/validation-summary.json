@@ -1,0 +1,91 @@
+{
+  "date": "2026-11-24",
+  "scope": "Native art and six Boss encounters; complete Viaduc human set, Die-Hardman rival scene, and eleven Higgs skull-mask corrections",
+  "baseline_commit": "8afb60daabe1b7608ff42a16f5e92512422b3e45",
+  "latest_art_base_commit": "39069ad4f5fa956a2ad0bb114887a66b4da2ea2a",
+  "counts": {
+    "native_images": 113,
+    "total_bytes": 181033776,
+    "first_lot_paths": 42,
+    "additional_paths": 71,
+    "fighter_images": 72,
+    "native_combat_poses": 67,
+    "fighter_portraits": 5,
+    "bosses": 14,
+    "boss_effects": 4,
+    "duel_effects": 7,
+    "new_stages": 2,
+    "stage_pngs": 12,
+    "support_portraits": 3,
+    "mama_atelier": 10,
+    "mama_viaduc": 10,
+    "diehardman_core": 6,
+    "higgs_core": 6,
+    "higgs_corrected_total": 11,
+    "heartman_core": 5,
+    "narrative_images": 1
+  },
+  "runtime": {
+    "playable_fighters": 8,
+    "stage_configurations": 13,
+    "locations": 12,
+    "stage_layers": 65,
+    "boss_encounters": 6,
+    "boss_images": 14,
+    "boss_effect_images": 4,
+    "principal_catalog_paths": 225,
+    "boss_catalog_paths": 18,
+    "total_catalog_paths": 243,
+    "native_fighter_pose_crops": 67,
+    "native_base_pose_crops": 58,
+    "native_outfit_pose_crops": 9
+  },
+  "executed": {
+    "integration": {
+      "report": "integration-validation.json",
+      "passed": true,
+      "pose_side_cases": 10,
+      "stage_cases": 16,
+      "unchanged_duel_checkpoints": 72
+    },
+    "boss": {
+      "report": "boss-simulation-report.json",
+      "passed": true,
+      "sections": 18,
+      "victories": 6,
+      "checkpoint_samples": 1550,
+      "drawn_image_paths": 126,
+      "native_outfit_checkpoint_comparisons": 20,
+      "historical_independent_logic_regressions": 11
+    },
+    "native_outfit_review": {
+      "report": "native-outfit-independent-review.json",
+      "passed": true,
+      "cases": 72
+    },
+    "relay": {
+      "report": "relay-validation.json",
+      "passed": true,
+      "http_transport_exercised": false
+    }
+  },
+  "limitations": {
+    "browser_executed": false,
+    "native_canvas_for_reconstructed_sources": false,
+    "pixel_decode_during_runtime_recipe": false,
+    "canonical_1_to_1_certified": false,
+    "legacy_dimension_placeholders_explicit": true
+  },
+  "followups": [
+    "Lockne supporting portrait blocked by unavailable inspectable reference",
+    "Dedicated asymmetric left-facing views",
+    "Systematic canonical comparison of unverified costume/equipment details and lateral scene adaptations",
+    "Native Canvas, browser and real HTTP transport verification"
+  ],
+  "completed_audits": {
+    "sam_cliff_motion_sheets": "Four existing painted frame sheets, coherent identities/equipment; no missing art. Wider motion is a separate enhancement.",
+    "higgs_mask": "All eleven runtime images corrected from inspected DS1 reference; complete costume 1:1 not certified.",
+    "mama_viaduc": "All ten human images integrated; existing fan-game outfit.",
+    "diehardman_rival": "Native repaint integrated, scene composition preserved."
+  }
+}

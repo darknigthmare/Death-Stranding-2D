@@ -1,0 +1,295 @@
+{
+  "date": "2026-11-25T13:18:36.449Z",
+  "renderer": "@napi-rs/canvas; actual fight.js",
+  "browser_verified": false,
+  "catalogue_locations": 16,
+  "catalogue_configurations": 17,
+  "locations": 4,
+  "stages": 4,
+  "cases": 32,
+  "source_sha256": {
+    "content.js": "4266da2b3b461ddab82771697db3e7a7c8155498f34212c1db6ff3fc1d9ef517",
+    "asset-geometry-20261124.js": "61f830dc5036774529b7ecaf51f4c80386ef7f94447c55e044584e850e081934",
+    "assets.js": "aabd0ad7d1d7867b659caedc15f3cf5cd7374113dcd1b6ae212ddd3296f849a9",
+    "fight.js": "886c21cf86569e0bea99c98d0a5e8ca5f72b55c92bd842df0085588f87ad81b6"
+  },
+  "results": [
+    {
+      "stage": "south-knot-ruins",
+      "cases": 8,
+      "captures": [
+        "south-knot-ruins-right.webp",
+        "south-knot-ruins-left.webp",
+        "south-knot-ruins-local-reduced-right.webp",
+        "south-knot-ruins-local-reduced-left.webp",
+        "south-knot-ruins-training-normal-right.webp",
+        "south-knot-ruins-training-normal-left.webp",
+        "south-knot-ruins-training-reduced-right.webp",
+        "south-knot-ruins-training-reduced-left.webp"
+      ],
+      "layers": [
+        "assets/stages/south-knot-ruins-sky.png",
+        "assets/stages/south-knot-ruins-distant.png",
+        "assets/stages/south-knot-ruins-midground.png",
+        "assets/stages/south-knot-ruins-floor.png",
+        "assets/stages/south-knot-ruins-foreground.png"
+      ],
+      "source_images": [
+        {
+          "file": "assets/stages/south-knot-ruins-sky.png",
+          "width": 1672,
+          "height": 941,
+          "sha256": "578b1727cc1a4a815d566aaf59b0cf0ae2a15ec106a90ec7515489acaada8562"
+        },
+        {
+          "file": "assets/stages/south-knot-ruins-distant.png",
+          "width": 1672,
+          "height": 941,
+          "sha256": "ea702583ee66c0c9eacab99a90eed6560390cb706f175894a83278a4c3a6528d"
+        },
+        {
+          "file": "assets/stages/south-knot-ruins-midground.png",
+          "width": 1672,
+          "height": 941,
+          "sha256": "28ba9cf06db9bdb0dd3524d28acebfd66dc01c2a7654e009922ece7ad5b387d2"
+        },
+        {
+          "file": "assets/stages/south-knot-ruins-floor.png",
+          "width": 1672,
+          "height": 941,
+          "sha256": "ef18ba9ad4c752c6a7bdf35698df0e896ea78b2f2e45922b1dfe224b46f835f2"
+        },
+        {
+          "file": "assets/stages/south-knot-ruins-foreground.png",
+          "width": 1672,
+          "height": 941,
+          "sha256": "c4a76af151a8b44a373adfd32da22b3e46af7f9ac14e9e5e8c6fe6c08527f62d"
+        },
+        {
+          "file": "assets/static-20261125/south-knot-ruins-panorama.png",
+          "width": 1672,
+          "height": 941,
+          "sha256": "eb15d3769fbc716ca482655e9aae272b1aca13585654206f27bc5c9e094ae73c"
+        }
+      ],
+      "background_join_min_alpha": 255,
+      "foreground_lane_max_alpha": 1,
+      "original_panorama_fallback": true,
+      "passed": true,
+      "executedAt": "2026-11-25T13:13:11.908Z"
+    },
+    {
+      "stage": "timefall-farm",
+      "cases": 8,
+      "captures": [
+        "timefall-farm-right.webp",
+        "timefall-farm-left.webp",
+        "timefall-farm-local-reduced-right.webp",
+        "timefall-farm-local-reduced-left.webp",
+        "timefall-farm-training-normal-right.webp",
+        "timefall-farm-training-normal-left.webp",
+        "timefall-farm-training-reduced-right.webp",
+        "timefall-farm-training-reduced-left.webp"
+      ],
+      "layers": [
+        "assets/stages/timefall-farm-sky.png",
+        "assets/stages/timefall-farm-distant.png",
+        "assets/stages/timefall-farm-midground.png",
+        "assets/stages/timefall-farm-floor.png",
+        "assets/stages/timefall-farm-foreground.png"
+      ],
+      "source_images": [
+        {
+          "file": "assets/stages/timefall-farm-sky.png",
+          "width": 1672,
+          "height": 941,
+          "sha256": "4ab30a291a99cb0a0f2a4ad4d3bb4ad7642f14390ec661d52cda81024010ceaf"
+        },
+        {
+          "file": "assets/stages/timefall-farm-distant.png",
+          "width": 1672,
+          "height": 941,
+          "sha256": "06006cfd020d88d4ae8a1024e0a5b1dfb8fd533fea8fcbe0230b6d9326d3adac"
+        },
+        {
+          "file": "assets/stages/timefall-farm-midground.png",
+          "width": 1672,
+          "height": 941,
+          "sha256": "fe38e10039fa670fcb4effc4cb57db22e1ee24300aa0caeaf7a5d1026a10a808"
+        },
+        {
+          "file": "assets/stages/timefall-farm-floor.png",
+          "width": 1672,
+          "height": 941,
+          "sha256": "7d201898dcdd3d1a2bc401b115665620c33e9089e850023221590099ecc7d3d4"
+        },
+        {
+          "file": "assets/stages/timefall-farm-foreground.png",
+          "width": 1672,
+          "height": 941,
+          "sha256": "0f3e9995be99d667be177cec7db3cc35cdeaad94aaaf8fe137e470dc1dbc4340"
+        },
+        {
+          "file": "assets/static-20261125/timefall-farm-panorama.png",
+          "width": 1672,
+          "height": 941,
+          "sha256": "6e64d772995dcaf74cac0972e20803ee574e6533d9d126209a3273820d504d39"
+        }
+      ],
+      "background_join_min_alpha": 255,
+      "foreground_lane_max_alpha": 1,
+      "original_panorama_fallback": true,
+      "passed": true,
+      "executedAt": "2026-11-25T13:13:11.908Z"
+    },
+    {
+      "stage": "mountain-knot-approach",
+      "cases": 8,
+      "captures": [
+        "mountain-knot-approach-right.webp",
+        "mountain-knot-approach-left.webp",
+        "mountain-knot-approach-local-reduced-right.webp",
+        "mountain-knot-approach-local-reduced-left.webp",
+        "mountain-knot-approach-training-normal-right.webp",
+        "mountain-knot-approach-training-normal-left.webp",
+        "mountain-knot-approach-training-reduced-right.webp",
+        "mountain-knot-approach-training-reduced-left.webp"
+      ],
+      "layers": [
+        "assets/stages/mountain-knot-approach-sky.png",
+        "assets/stages/mountain-knot-approach-distant.png",
+        "assets/stages/mountain-knot-approach-midground.png",
+        "assets/stages/mountain-knot-approach-floor.png",
+        "assets/stages/mountain-knot-approach-foreground.png"
+      ],
+      "source_images": [
+        {
+          "file": "assets/stages/mountain-knot-approach-sky.png",
+          "width": 1672,
+          "height": 941,
+          "sha256": "6a276d4006ecd5a094342b3debf4091fea62f7f3991d93cb73b49eaec6735943"
+        },
+        {
+          "file": "assets/stages/mountain-knot-approach-distant.png",
+          "width": 1672,
+          "height": 941,
+          "sha256": "fdae8dc3a6a5473150cb47f9de93c54a5c5796128a43e1936fa32ea97e23c4ef"
+        },
+        {
+          "file": "assets/stages/mountain-knot-approach-midground.png",
+          "width": 1672,
+          "height": 941,
+          "sha256": "02fb7cdbbcf13c8087d7803b162a3cedb66f7f525f7bad80d23fe963dcc3d8c9"
+        },
+        {
+          "file": "assets/stages/mountain-knot-approach-floor.png",
+          "width": 1672,
+          "height": 941,
+          "sha256": "f0809f99efc2e520f3b4b796e348d6ca7205f9404c3a2db97d241d3bcbe5a59e"
+        },
+        {
+          "file": "assets/stages/mountain-knot-approach-foreground.png",
+          "width": 1672,
+          "height": 941,
+          "sha256": "15e792f0c81993f25d4f1b2004d3b1f016dfde601c114ca984d6e9fec97826bb"
+        },
+        {
+          "file": "assets/static-20261125/mountain-knot-city-panorama.png",
+          "width": 1672,
+          "height": 941,
+          "sha256": "92358b0accc8af6d2876662f84ca6d2d1ee00ab47fa1567d39df55a370b26126"
+        }
+      ],
+      "background_join_min_alpha": 255,
+      "foreground_lane_max_alpha": 1,
+      "original_panorama_fallback": true,
+      "passed": true,
+      "executedAt": "2026-11-25T13:13:11.908Z"
+    },
+    {
+      "stage": "magellan-ds2",
+      "cases": 8,
+      "captures": [
+        "magellan-ds2-right.webp",
+        "magellan-ds2-left.webp",
+        "magellan-ds2-local-reduced-right.webp",
+        "magellan-ds2-local-reduced-left.webp",
+        "magellan-ds2-training-normal-right.webp",
+        "magellan-ds2-training-normal-left.webp",
+        "magellan-ds2-training-reduced-right.webp",
+        "magellan-ds2-training-reduced-left.webp"
+      ],
+      "layers": [
+        "assets/stages/magellan-ds2-sky.png",
+        "assets/stages/magellan-ds2-distant.png",
+        "assets/stages/magellan-ds2-midground.png",
+        "assets/stages/magellan-ds2-floor.png",
+        "assets/stages/magellan-ds2-foreground.png"
+      ],
+      "source_images": [
+        {
+          "file": "assets/stages/magellan-ds2-sky.png",
+          "width": 1672,
+          "height": 941,
+          "sha256": "953add4be03755a9b68c71ac3175ba3bf2eb32f9bbb56c4211deb8e1f85af442"
+        },
+        {
+          "file": "assets/stages/magellan-ds2-distant.png",
+          "width": 1672,
+          "height": 941,
+          "sha256": "ba85faa99e991e9519d366a2bf6cebc25b196ac71567481176041a06898f9e7c"
+        },
+        {
+          "file": "assets/stages/magellan-ds2-midground.png",
+          "width": 1672,
+          "height": 941,
+          "sha256": "a79d12f67df8a0cb7521e45499c7349c367b73cf3e6739bd28e438937dd4906a"
+        },
+        {
+          "file": "assets/stages/magellan-ds2-floor.png",
+          "width": 1672,
+          "height": 941,
+          "sha256": "4b046d7d3814dfd4c86ae9c340d00db859613472e7a71e17d72e570df64b576a"
+        },
+        {
+          "file": "assets/stages/magellan-ds2-foreground.png",
+          "width": 1672,
+          "height": 941,
+          "sha256": "4c93988a5469264c095cfcdd9c1e574cd75f9a2ded009f6b55c0ea86ec0640af"
+        },
+        {
+          "file": "assets/static-universe-20261125/magellan-ds2-panorama.png",
+          "width": 1672,
+          "height": 941,
+          "sha256": "5409160c50eb77a749b0dc01fa49cb45dc6c0a8c081e4943a9f8e7b346241ccd"
+        }
+      ],
+      "background_join_min_alpha": 255,
+      "foreground_lane_max_alpha": 1,
+      "original_panorama_fallback": true,
+      "passed": true,
+      "executedAt": "2026-11-25T13:17:57.311Z"
+    }
+  ],
+  "verificationRuns": [
+    {
+      "date": "2026-11-25T13:13:11.908Z",
+      "stages": [
+        "south-knot-ruins",
+        "timefall-farm",
+        "mountain-knot-approach",
+        "magellan-ds2"
+      ],
+      "cases": 32
+    },
+    {
+      "date": "2026-11-25T13:17:57.311Z",
+      "stages": [
+        "magellan-ds2"
+      ],
+      "cases": 8,
+      "reason": "Only the distant PNG was replaced; all Magellan captures supersede its first run."
+    }
+  ],
+  "aggregation": "Latest native run for each stage; unchanged runtime SHA-256 and every retained source image SHA-256 rechecked against current files."
+}

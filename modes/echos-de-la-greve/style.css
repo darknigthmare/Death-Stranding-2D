@@ -40,3 +40,15 @@ a{color:inherit;text-underline-offset:.2em}.hero a,.archives a{text-decoration:n
 @media (max-width: 760px) {
   .tile:last-child:nth-child(odd) { grid-column: 1 / -1; border-top: 1px solid var(--rule); }
 }
+
+.bossCards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin:22px 0 30px}
+.bossCard{position:relative;isolation:isolate;overflow:hidden;min-height:188px;border:1px solid var(--rule);padding:90px 18px 18px;text-align:left;background:#23312f}
+.bossCard:before{content:"";position:absolute;inset:0;z-index:-2;background-image:var(--picture);background-size:contain;background-repeat:no-repeat;background-position:80% 15%;opacity:.75}
+.bossCard:after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(0deg,#101a17,transparent 95%)}
+.bossCard[aria-pressed=true]{outline:2px solid var(--acid);outline-offset:-2px}.bossCard strong{display:block;font-size:25px;letter-spacing:-.04em;font-weight:550}.bossCard small{display:block;color:var(--acid);font:11px var(--mono);margin-top:7px;line-height:1.5}
+.bossCardNumber{position:absolute;top:16px;left:18px;color:var(--acid);font:13px var(--mono)}
+.bossResume{display:flex;align-items:center;justify-content:space-between;gap:16px;border:1px solid #80966b;padding:16px 20px;background:#243128;margin:18px 0}.bossResume p{color:var(--mute);font-size:13px;margin-top:6px}
+.bossBrief{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:26px;align-items:start;margin-top:22px}.bossBrief .stagePreview{width:100%;margin:0}.bossBrief h2{font-size:30px;font-weight:550;letter-spacing:-.04em;margin:0 0 12px}.bossBrief p{line-height:1.6;margin-bottom:12px;font-size:14px}
+.bossStats{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 22px;margin:24px 0}.bossStats>div{display:flex;justify-content:space-between;gap:14px;padding:12px 0;border-bottom:1px solid var(--rule)}.bossStats dt{color:var(--mute);font-size:12px}.bossStats dd{margin:0;font:600 14px var(--mono);color:var(--acid)}
+@media(min-width:761px){.tiles{grid-template-columns:repeat(3,minmax(0,1fr))}.tile:nth-child(3){border-right:0}.tile:nth-child(-n+3){border-bottom:1px solid var(--rule)}}
+@media(max-width:760px){.bossCards{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.bossCard{min-height:160px;padding:78px 12px 14px}.bossCard strong{font-size:21px}.bossBrief{grid-template-columns:1fr}.bossResume{align-items:start;flex-direction:column}.bossStats{grid-template-columns:1fr}.tile:nth-child(4){border-right:0}.tile:nth-child(3),.tile:nth-child(4){border-bottom:1px solid var(--rule)}}

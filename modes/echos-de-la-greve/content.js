@@ -137,7 +137,13 @@
     'ruined-factory':{title:'Usine en ruines', sky:'#53595d', light:'#bcafb0', weather:'dust'},
     'timefall-shelter':{title:'Abri sous la pluie temporelle', sky:'#526366', light:'#b5d7d7', weather:'shelter'},
     'tar-basin':{title:'Bassin de goudron', sky:'#555859', light:'#d4bc9d'},
-    'mountain-pass':{title:'Col de Mountain Knot', sky:'#758995', light:'#e0edf0', weather:'snow'}
+    'mountain-pass':{title:'Col de Mountain Knot', sky:'#758995', light:'#e0edf0', weather:'snow'},
+    'port-knot':{title:'Port Knot City', sky:'#788e98', light:'#d5d6b8', weather:'rain'},
+    incinerator:{title:'Incinérateur de la région Est', sky:'#838781', light:'#ded8bd', weather:'dust'},
+    'south-knot-ruins':{title:'Ruines de South Knot', sky:'#56686f', light:'#b1c6cb', weather:'rain'},
+    'timefall-farm':{title:'Ferme sous la pluie temporelle', sky:'#7d8980', light:'#cfdbc5', weather:'rain'},
+    'mountain-knot-approach':{title:'Approche de Mountain Knot', sky:'#7d929f', light:'#e0edf0', weather:'snow'},
+    'magellan-ds2':{title:'DHV Magellan · berge au couchant', sky:'#776663', light:'#edc591'}
   };
   const stages = Object.fromEntries(Object.entries(arenas).map(([id,arena]) => [id,arena.title]));
   const stageDetails = {
@@ -151,7 +157,13 @@
     'ruined-factory':{place:'Complexe abandonné',material:'Béton ruisselant',ambience:'De fines poussières se détachent des conduites et du plafond.'},
     'timefall-shelter':{place:'Halte des porteurs',material:'Roche détrempée',ambience:'Le ruissellement suit la rive de l’auvent, à la limite du sec.'},
     'tar-basin':{place:'Vestiges industriels',material:'Quai sombre',ambience:'Des bulles éclatent à distance de la piste, dans le goudron.'},
-    'mountain-pass':{place:'Col de Mountain Knot',material:'Neige tassée',ambience:'Le vent soulève de la poudrerie le long des reliefs.'}
+    'mountain-pass':{place:'Col de Mountain Knot',material:'Neige tassée',ambience:'Le vent soulève de la poudrerie le long des reliefs.'},
+    'port-knot':{place:'Région Est · quai portuaire',material:'Béton humide',ambience:'La baie et les grues s’effacent dans la brume au pied des falaises.'},
+    incinerator:{place:'Région Est · aire de service',material:'Béton usé et mousse',ambience:'Les câbles de la cheminée se découpent sur le ciel couvert.'},
+    'south-knot-ruins':{place:'Région centrale · ruines',material:'Béton détrempé',ambience:'La pluie traverse les façades abandonnées, loin de la piste des combattants.'},
+    'timefall-farm':{place:'Région centrale · exploitation agricole',material:'Terre et gravier tassés',ambience:'Le vent et la pluie accompagnent les rangées de cultures.'},
+    'mountain-knot-approach':{place:'Approche montagneuse · région centrale',material:'Neige tassée',ambience:'La poudrerie suit la vallée entre les reliefs enneigés ; la ville reste hors du cadre.'},
+    'magellan-ds2':{place:'On the Beach · berge au couchant',material:'Terre et gravier humides',ambience:'Le Magellan survole le marais derrière la piste ; son bourdonnement accompagne les roseaux et les collines.'}
   };
   const modes = {story:'Histoire', arcade:'Arcade', versus:'Versus', tournament:'Tournoi', training:'Entraînement', challenges:'Défis'};
   window.StrandContent = {fighters, stages, arenas, stageDetails, modes};

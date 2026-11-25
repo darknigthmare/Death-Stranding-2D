@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#101715">
+<title>Silhouettes et horizons · Échos de la Grève</title>
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="static-assets.css">
+</head>
+<body class="static-page" data-preview="dark">
+<header class="top static-top">
+<a class="wordmark" href="index.html" aria-label="Échos de la Grève, accueil"><span class="linkmark" aria-hidden="true"><i></i><i></i><i></i></span>ÉCHOS DE LA GRÈVE</a>
+<nav aria-label="Navigation"><a href="archives.html">Archives de Bridges</a><a href="index.html">Retour au menu ↗</a></nav>
+</header>
+<main class="shell">
+<section class="static-intro" aria-labelledby="static-title">
+<div class="eyebrow">Bridges · Catalogue visuel</div>
+<h1 id="static-title">Silhouettes<br>et horizons.</h1>
+<p>Les visages qui accompagnent la traversée, les présences qui la hantent et les lieux qui en gardent la mémoire. Explorez chaque silhouette et chaque panorama dans son format original.</p>
+</section>
+<section aria-label="Catalogue des images">
+<div class="static-toolbar">
+<div class="static-selectors">
+<label class="static-work-filter">Œuvre
+<select id="static-work"><option value="all">Tout l’univers</option><option value="ds1-dc">Death Stranding / Director’s Cut</option><option value="ds2">Death Stranding 2 · On the Beach</option></select>
+</label>
+<label class="static-background">Fond des silhouettes
+<select id="preview-background"><option value="dark">Sombre</option><option value="neutral">Neutre</option></select>
+</label>
+</div>
+<div class="static-filters" role="group" aria-label="Filtrer par catégorie">
+<button type="button" data-category="all" aria-pressed="true">Tout</button>
+<button type="button" data-category="characters" aria-pressed="false">Personnages</button>
+<button type="button" data-category="enemies" aria-pressed="false">Ennemis</button>
+<button type="button" data-category="projectiles" aria-pressed="false">Projectiles</button>
+<button type="button" data-category="props" aria-pressed="false">Objets et véhicules</button>
+<button type="button" data-category="stages" aria-pressed="false">Décors</button>
+</div>
+</div>
+<div class="static-listhead"><p id="static-count" role="status" aria-live="polite" aria-atomic="true">Chargement du catalogue…</p><span>Images fixes · Univers Death Stranding</span></div>
+<div class="static-grid" id="static-grid"></div>
+<div class="static-empty" id="static-empty" hidden><p id="static-empty-message">Aucune image dans cette sélection.</p><button class="secondary" id="static-reset" type="button">Afficher tout le catalogue</button></div>
+<noscript><p class="static-empty">Activez JavaScript pour parcourir le catalogue. Les <a href="archives.html">Archives de Bridges</a> restent accessibles.</p></noscript>
+</section>
+<div class="static-return"><a class="secondary" href="index.html">Reprendre la traversée <span aria-hidden="true">↗</span></a></div>
+</main>
+<dialog class="static-viewer" id="static-viewer" aria-labelledby="viewer-title">
+<div class="viewer-head"><div><p class="kicker" id="viewer-category"></p><h2 id="viewer-title"></h2><p class="viewer-origin" id="viewer-origin"></p></div><form method="dialog"><button class="mini" type="submit" autofocus>Fermer <span aria-hidden="true">×</span></button></form></div>
+<div class="viewer-image" id="viewer-image-panel" tabindex="-1" aria-label="Image agrandie"><img id="viewer-image" alt=""></div>
+<div class="viewer-foot"><div><p id="viewer-dimensions"></p><p id="viewer-zoom-hint" hidden>Faites défiler pour explorer l’image.</p></div><div class="viewer-actions"><button class="secondary" id="viewer-zoom" type="button" aria-controls="viewer-image-panel" aria-pressed="false">Taille réelle</button><a class="primary" id="viewer-download" download>Télécharger le PNG <span aria-hidden="true">↓</span></a></div></div>
+</dialog>
+<footer><span>ÉCHOS DE LA GRÈVE · SILHOUETTES ET HORIZONS</span><span>Un fan-game inspiré de Death Stranding</span></footer>
+<script src="static-assets-data.js"></script>
+<script src="static-assets.js"></script>
+</body>
+</html>

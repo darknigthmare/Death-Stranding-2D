@@ -1,0 +1,411 @@
+{
+  "date": "2026-11-24",
+  "generator": "built-in image_gen",
+  "scope": "DS1/DC existing combat roster",
+  "review": "Native PNG bytes preserved without resizing, cropping or alpha editing. Continuity with existing costume references; canonical 1:1 fidelity remains unverified.",
+  "assets": [
+    {
+      "id": "fragile",
+      "pose": "guard",
+      "prompt": "Use case: identity-preserve. Asset type: ONE individual full-body 2D fighting-game sprite for the existing Death Stranding 2D game. Input image 1 is the existing stance and is the strict identity, wardrobe, proportion and body-side placement reference; input image 2 is supporting airborne wardrobe reference only. Subject: Fragile from Death Stranding 1. Preserve her recognizable short swept blonde hair, adult face, black leather Fragile Express suit with narrow raised shoulder spikes, white angled bars on upper sleeve, front zipper and seam lines, black gloves, ridged knee pads, chunky black zip boots. Keep the closed black umbrella with gold angular handle in her rear hand; retain the reference's anatomy and costume placement. Change only pose to: DEFENSIVE STANDING GUARD. Both boots planted at the same level, knees slightly flexed. Upper body leaned forward slightly and forearms raised compactly to protect face and chest. Clearly distinct from the relaxed neutral stance. For Fragile the front hand guards high while her rear hand keeps the folded umbrella close across her outer hip, tip downward and fully visible. Strict lateral right-facing orientation, face and toes pointing RIGHT. Detailed high-resolution hand-painted realistic game sprite with crisp natural anatomy and material textures, clean silhouette, same palette and light direction as reference. Show the complete head, hands, equipment and all boot soles with 8 to 10 percent transparent breathing room on every edge. Exactly one character and one pose in the image; no second figure, no montage, no sprite sheet, no afterimages. TRUE ALPHA TRANSPARENT BACKGROUND everywhere outside the silhouette. No ground plane, no shadow under feet, no gray halo or haze, no backdrop, no checkerboard drawing, no text or labels or watermark. Preserve all costume pieces, do not invent new gear or redesign.",
+      "references": [
+        "modes/echos-de-la-greve/assets/fighters/fragile-stance.webp",
+        "modes/echos-de-la-greve/assets/fighters/fragile-jump.png"
+      ],
+      "runtime": "modes/echos-de-la-greve/assets/fighters/fragile/guard.png",
+      "status": "generated",
+      "originalGeneratedFile": "/tmp/ds-sprites-a/fragile-guard.png",
+      "visual_review": "Full body and folded umbrella preserved; right-facing and distinct pose. Native RGBA has transparent exterior. RGB background glow in preview may be present only at alpha 0; no background painted into the visible sprite. Reference continuity reviewed, canonical 1:1 not certified.",
+      "width": 971,
+      "height": 1619,
+      "sha256": "4e74b9bc66e42b75d16f29973126963a540e9a53424cba900b2669d2b664bf25",
+      "alpha_bbox_gt_8": [
+        75,
+        24,
+        911,
+        1594
+      ],
+      "fully_transparent_pixels": 971375,
+      "partial_alpha_pixels": 599838,
+      "native_bytes_preserved": true,
+      "recovery": "Returned native PNG bytes decoded from image_url after filesystem reset; no pixel or alpha edits."
+    },
+    {
+      "id": "fragile",
+      "pose": "crouch",
+      "prompt": "Use case: identity-preserve. Asset type: ONE individual full-body 2D fighting-game sprite for the existing Death Stranding 2D game. Input image 1 is the existing stance and is the strict identity, wardrobe, proportion and body-side placement reference; input image 2 is supporting airborne wardrobe reference only. Subject: Fragile from Death Stranding 1. Preserve her recognizable short swept blonde hair, adult face, black leather Fragile Express suit with narrow raised shoulder spikes, white angled bars on upper sleeve, front zipper and seam lines, black gloves, ridged knee pads, chunky black zip boots. Keep the closed black umbrella with gold angular handle in her rear hand; retain the reference's anatomy and costume placement. Change only pose to: LOW CROUCH. Knees deeply flexed, hips lowered to about half of standing height, one boot flat in front and rear toes braced behind; compact torso but natural adult anatomy. Front forearm protects face. Keep both complete feet in view. For Fragile the folded umbrella is held beside her rear hip angled backward, fully visible and not piercing ground. No seated pose. Strict lateral right-facing orientation, face and toes pointing RIGHT. Detailed high-resolution hand-painted realistic game sprite with crisp natural anatomy and material textures, clean silhouette, same palette and light direction as reference. Show the complete head, hands, equipment and all boot soles with 8 to 10 percent transparent breathing room on every edge. Exactly one character and one pose in the image; no second figure, no montage, no sprite sheet, no afterimages. TRUE ALPHA TRANSPARENT BACKGROUND everywhere outside the silhouette. No ground plane, no shadow under feet, no gray halo or haze, no backdrop, no checkerboard drawing, no text or labels or watermark. Preserve all costume pieces, do not invent new gear or redesign.",
+      "references": [
+        "modes/echos-de-la-greve/assets/fighters/fragile-stance.webp",
+        "modes/echos-de-la-greve/assets/fighters/fragile-jump.png"
+      ],
+      "runtime": "modes/echos-de-la-greve/assets/fighters/fragile/crouch.png",
+      "status": "generated",
+      "originalGeneratedFile": "/tmp/ds-sprites-a/fragile-crouch.png",
+      "visual_review": "Full body and folded umbrella preserved; right-facing and distinct pose. Native RGBA has transparent exterior. RGB background glow in preview may be present only at alpha 0; no background painted into the visible sprite. Reference continuity reviewed, canonical 1:1 not certified.",
+      "width": 1536,
+      "height": 1024,
+      "sha256": "6b347f10bb87ea36f328af36b4617ee7c71cdc5cc0b5863a9c263ac8c5cebe9b",
+      "alpha_bbox_gt_8": [
+        51,
+        19,
+        1407,
+        1008
+      ],
+      "fully_transparent_pixels": 972243,
+      "partial_alpha_pixels": 600621,
+      "native_bytes_preserved": true,
+      "recovery": "Returned native PNG bytes decoded from image_url after filesystem reset; no pixel or alpha edits."
+    },
+    {
+      "id": "fragile",
+      "pose": "rise",
+      "prompt": "Use case: identity-preserve. Asset type: ONE individual full-body 2D fighting-game sprite for the existing Death Stranding 2D game. Input image 1 is the existing stance and is the strict identity, wardrobe, proportion and body-side placement reference; input image 2 is supporting airborne wardrobe reference only. Subject: Fragile from Death Stranding 1. Preserve her recognizable short swept blonde hair, adult face, black leather Fragile Express suit with narrow raised shoulder spikes, white angled bars on upper sleeve, front zipper and seam lines, black gloves, ridged knee pads, chunky black zip boots. Keep the closed black umbrella with gold angular handle in her rear hand; retain the reference's anatomy and costume placement. Change only pose to: JUMP ASCENT. Single instant early in an upward jump: front knee raised to mid-waist, rear leg still extended downward with toes pointing down, both boots clearly airborne. Torso length stays natural and arms balance compactly. Cloaks/hair/clothing trail DOWNWARD from upward motion. Do not draw an apex tuck or a grounded stance. Strict lateral right-facing orientation, face and toes pointing RIGHT. Detailed high-resolution hand-painted realistic game sprite with crisp natural anatomy and material textures, clean silhouette, same palette and light direction as reference. Show the complete head, hands, equipment and all boot soles with 8 to 10 percent transparent breathing room on every edge. Exactly one character and one pose in the image; no second figure, no montage, no sprite sheet, no afterimages. TRUE ALPHA TRANSPARENT BACKGROUND everywhere outside the silhouette. No ground plane, no shadow under feet, no gray halo or haze, no backdrop, no checkerboard drawing, no text or labels or watermark. Preserve all costume pieces, do not invent new gear or redesign.",
+      "references": [
+        "modes/echos-de-la-greve/assets/fighters/fragile-stance.webp",
+        "modes/echos-de-la-greve/assets/fighters/fragile-jump.png"
+      ],
+      "runtime": "modes/echos-de-la-greve/assets/fighters/fragile/rise.png",
+      "status": "generated",
+      "originalGeneratedFile": "/tmp/ds-sprites-a/fragile-rise.png",
+      "visual_review": "Full body and folded umbrella preserved; right-facing and distinct pose. Native RGBA has transparent exterior. RGB background glow in preview may be present only at alpha 0; no background painted into the visible sprite. Reference continuity reviewed, canonical 1:1 not certified.",
+      "width": 1024,
+      "height": 1536,
+      "sha256": "337a3f215a3b6142ae733b03ac49dc035286d4bde100be94fd18c2712fadad6a",
+      "alpha_bbox_gt_8": [
+        57,
+        14,
+        903,
+        1528
+      ],
+      "fully_transparent_pixels": 1109052,
+      "partial_alpha_pixels": 463812,
+      "native_bytes_preserved": true,
+      "recovery": "Returned native PNG bytes decoded from image_url after filesystem reset; no pixel or alpha edits."
+    },
+    {
+      "id": "fragile",
+      "pose": "apex",
+      "prompt": "Use case: identity-preserve. Asset type: ONE individual full-body 2D fighting-game sprite for the existing Death Stranding 2D game. Input image 1 is the newly generated clean guard sprite and is the strict identity, wardrobe, proportion and body-side placement reference. Repose only this clean cutout; do not introduce any illumination haze surrounding the body. Subject: Fragile from Death Stranding 1. Preserve her recognizable short swept blonde hair, adult face, black leather Fragile Express suit with narrow raised shoulder spikes, white angled bars on upper sleeve, front zipper and seam lines, black gloves, ridged knee pads, chunky black zip boots. Keep the closed black umbrella with gold angular handle in her rear hand; retain the reference's anatomy and costume placement. Change only pose to: JUMP APEX. Single instant at the very top of a jump: both knees bent and tucked upward, front knee higher, rear lower leg folded back, both feet visibly suspended; torso upright and compact guard. Clothes/cape spread gently sideways at the top. Keep the whole folded umbrella for Fragile visible in her rear hand. Do not repeat the one-leg-extended ascent pose. Strict lateral right-facing orientation, face and toes pointing RIGHT. Detailed high-resolution hand-painted realistic game sprite with crisp natural anatomy and material textures, clean silhouette, same palette and light direction as reference. Show the complete head, hands, equipment and all boot soles with 8 to 10 percent transparent breathing room on every edge. Exactly one character and one pose in the image; no second figure, no montage, no sprite sheet, no afterimages. TRUE ALPHA TRANSPARENT BACKGROUND everywhere outside the silhouette. No ground plane, no shadow under feet, no gray halo or haze, no backdrop, no checkerboard drawing, no text or labels or watermark. Preserve all costume pieces, do not invent new gear or redesign.",
+      "references": [
+        "modes/echos-de-la-greve/assets/fighters/fragile/guard.png"
+      ],
+      "runtime": "modes/echos-de-la-greve/assets/fighters/fragile/apex.png",
+      "status": "generated",
+      "input_paths": [
+        "/tmp/ds-sprites-a/fragile-guard.png"
+      ],
+      "originalGeneratedFile": "/workspace/scratch/05d1f74d065e/generated_images/exec-5ecfa119-b23b-485c-8b3c-fc73251d9061.png",
+      "visual_review": "Full body and folded umbrella preserved; right-facing and distinct pose. Native RGBA has transparent exterior. RGB background glow in preview may be present only at alpha 0; no background painted into the visible sprite. Reference continuity reviewed, canonical 1:1 not certified.",
+      "width": 971,
+      "height": 1620,
+      "sha256": "16db4ada4269572de58ff6af582bce5e940b8fd6a1bd24f1fd8495b23e7890ec",
+      "alpha_bbox_gt_8": [
+        64,
+        31,
+        884,
+        1370
+      ],
+      "fully_transparent_pixels": 952869,
+      "partial_alpha_pixels": 619508,
+      "native_bytes_preserved": true
+    },
+    {
+      "id": "fragile",
+      "pose": "fall",
+      "prompt": "Use case: identity-preserve. Asset type: ONE individual full-body 2D fighting-game sprite for the existing Death Stranding 2D game. Input image 1 is the newly generated clean guard sprite and is the strict identity, wardrobe, proportion and body-side placement reference. Repose only this clean cutout; do not introduce any illumination haze surrounding the body. Subject: Fragile from Death Stranding 1. Preserve her recognizable short swept blonde hair, adult face, black leather Fragile Express suit with narrow raised shoulder spikes, white angled bars on upper sleeve, front zipper and seam lines, black gloves, ridged knee pads, chunky black zip boots. Keep the closed black umbrella with gold angular handle in her rear hand; retain the reference's anatomy and costume placement. Change only pose to: JUMP DESCENT. Single instant falling toward landing, both legs opening downward again and front boot extended lower ready to land, rear knee still gently bent, arms balancing. Entire body airborne, no floor. Cloak/hair edges lifted UPWARD by descent. Clearly different from tucked apex and upward ascent. Strict lateral right-facing orientation, face and toes pointing RIGHT. Detailed high-resolution hand-painted realistic game sprite with crisp natural anatomy and material textures, clean silhouette, same palette and light direction as reference. Show the complete head, hands, equipment and all boot soles with 8 to 10 percent transparent breathing room on every edge. Exactly one character and one pose in the image; no second figure, no montage, no sprite sheet, no afterimages. TRUE ALPHA TRANSPARENT BACKGROUND everywhere outside the silhouette. No ground plane, no shadow under feet, no gray halo or haze, no backdrop, no checkerboard drawing, no text or labels or watermark. Preserve all costume pieces, do not invent new gear or redesign.",
+      "references": [
+        "modes/echos-de-la-greve/assets/fighters/fragile/guard.png"
+      ],
+      "runtime": "modes/echos-de-la-greve/assets/fighters/fragile/fall.png",
+      "status": "generated",
+      "input_paths": [
+        "/tmp/ds-sprites-a/fragile-guard.png"
+      ],
+      "originalGeneratedFile": "/workspace/scratch/05d1f74d065e/generated_images/exec-0fc632e4-b938-4670-ab32-14c03574fc0f.png",
+      "visual_review": "Full body and folded umbrella preserved; right-facing and distinct pose. Native RGBA has transparent exterior. RGB background glow in preview may be present only at alpha 0; no background painted into the visible sprite. Reference continuity reviewed, canonical 1:1 not certified.",
+      "width": 971,
+      "height": 1620,
+      "sha256": "399c93011ea1fb44ceab4962787db17e0181d30fac66f18fcf9bfea6f1a54ffb",
+      "alpha_bbox_gt_8": [
+        17,
+        12,
+        953,
+        1517
+      ],
+      "fully_transparent_pixels": 1051793,
+      "partial_alpha_pixels": 520457,
+      "native_bytes_preserved": true
+    },
+    {
+      "id": "higgs",
+      "pose": "guard",
+      "prompt": "Use case: identity-preserve. Asset type: ONE individual full-body 2D fighting-game sprite for the existing Death Stranding 2D game. Input image 1 is the existing stance and is the strict identity, wardrobe, proportion and body-side placement reference; input image 2 is supporting airborne wardrobe reference only. Subject: Higgs Monaghan from Death Stranding 1, black hooded cape and mustard yellow suit. Preserve segmented golden full face mask with dark visor, gold handprint on hood, gold piping and blue hem stripe on cape, chest-mounted amber pod and blue tubing, harness straps, waist pouches, black gloves, knee pads and heavy dark boots. Keep all components in the same body-side placement. No DS2 costume, no guitar. Change only pose to: DEFENSIVE STANDING GUARD. Both boots planted at the same level, knees slightly flexed. Upper body leaned forward slightly and forearms raised compactly to protect face and chest. Clearly distinct from the relaxed neutral stance. For Fragile the front hand guards high while her rear hand keeps the folded umbrella close across her outer hip, tip downward and fully visible. Strict lateral right-facing orientation, face and toes pointing RIGHT. Detailed high-resolution hand-painted realistic game sprite with crisp natural anatomy and material textures, clean silhouette, same palette and light direction as reference. Show the complete head, hands, equipment and all boot soles with 8 to 10 percent transparent breathing room on every edge. Exactly one character and one pose in the image; no second figure, no montage, no sprite sheet, no afterimages. TRUE ALPHA TRANSPARENT BACKGROUND everywhere outside the silhouette. No ground plane, no shadow under feet, no gray halo or haze, no backdrop, no checkerboard drawing, no text or labels or watermark. Preserve all costume pieces, do not invent new gear or redesign.",
+      "references": [
+        "modes/echos-de-la-greve/assets/fighters/higgs-stance.webp",
+        "modes/echos-de-la-greve/assets/fighters/higgs-jump.png"
+      ],
+      "runtime": "modes/echos-de-la-greve/assets/fighters/higgs/guard.png",
+      "status": "generated",
+      "originalGeneratedFile": "/workspace/scratch/05d1f74d065e/generated_images/exec-6d52176b-e691-40c1-a268-d9ef333105ab.png",
+      "visual_review": "Single complete right-facing pose; mask, hood print, cape stripes, mustard suit, pod/harness, gloves and boots retained. Native transparent exterior. Continuity reviewed against local references, canonical 1:1 not certified.",
+      "width": 900,
+      "height": 1747,
+      "sha256": "83be12150424c200a2deb4f275e6cc98fc4c8d9ce859ba7dc2ab6c36a5307688",
+      "alpha_bbox_gt_8": [
+        11,
+        111,
+        880,
+        1604
+      ],
+      "fully_transparent_pixels": 805525,
+      "partial_alpha_pixels": 765683,
+      "native_bytes_preserved": true
+    },
+    {
+      "id": "higgs",
+      "pose": "crouch",
+      "prompt": "Use case: identity-preserve. Asset type: ONE individual full-body 2D fighting-game sprite for the existing Death Stranding 2D game. Input image 1 is the existing stance and is the strict identity, wardrobe, proportion and body-side placement reference; input image 2 is supporting airborne wardrobe reference only. Subject: Higgs Monaghan from Death Stranding 1, black hooded cape and mustard yellow suit. Preserve segmented golden full face mask with dark visor, gold handprint on hood, gold piping and blue hem stripe on cape, chest-mounted amber pod and blue tubing, harness straps, waist pouches, black gloves, knee pads and heavy dark boots. Keep all components in the same body-side placement. No DS2 costume, no guitar. Change only pose to: LOW CROUCH. Knees deeply flexed, hips lowered to about half of standing height, one boot flat in front and rear toes braced behind; compact torso but natural adult anatomy. Front forearm protects face. Keep both complete feet in view. For Fragile the folded umbrella is held beside her rear hip angled backward, fully visible and not piercing ground. No seated pose. Strict lateral right-facing orientation, face and toes pointing RIGHT. Detailed high-resolution hand-painted realistic game sprite with crisp natural anatomy and material textures, clean silhouette, same palette and light direction as reference. Show the complete head, hands, equipment and all boot soles with 8 to 10 percent transparent breathing room on every edge. Exactly one character and one pose in the image; no second figure, no montage, no sprite sheet, no afterimages. TRUE ALPHA TRANSPARENT BACKGROUND everywhere outside the silhouette. No ground plane, no shadow under feet, no gray halo or haze, no backdrop, no checkerboard drawing, no text or labels or watermark. Preserve all costume pieces, do not invent new gear or redesign.",
+      "references": [
+        "modes/echos-de-la-greve/assets/fighters/higgs-stance.webp",
+        "modes/echos-de-la-greve/assets/fighters/higgs-jump.png"
+      ],
+      "runtime": "modes/echos-de-la-greve/assets/fighters/higgs/crouch.png",
+      "status": "generated",
+      "originalGeneratedFile": "/workspace/scratch/05d1f74d065e/generated_images/exec-d4468bcb-5324-4036-be72-24275aa83fdb.png",
+      "visual_review": "Single complete right-facing pose; mask, hood print, cape stripes, mustard suit, pod/harness, gloves and boots retained. Native transparent exterior. Continuity reviewed against local references, canonical 1:1 not certified.",
+      "width": 1536,
+      "height": 1024,
+      "sha256": "36ec16e9fe571b9e29e40c8d7edde3a044a53b6d3737811e2f7fdaf24e68ab87",
+      "alpha_bbox_gt_8": [
+        63,
+        80,
+        1452,
+        975
+      ],
+      "fully_transparent_pixels": 854966,
+      "partial_alpha_pixels": 717898,
+      "native_bytes_preserved": true
+    },
+    {
+      "id": "higgs",
+      "pose": "rise",
+      "prompt": "Use case: identity-preserve. Asset type: ONE individual full-body 2D fighting-game sprite for the existing Death Stranding 2D game. Input image 1 is the existing stance and is the strict identity, wardrobe, proportion and body-side placement reference; input image 2 is supporting airborne wardrobe reference only. Subject: Higgs Monaghan from Death Stranding 1, black hooded cape and mustard yellow suit. Preserve segmented golden full face mask with dark visor, gold handprint on hood, gold piping and blue hem stripe on cape, chest-mounted amber pod and blue tubing, harness straps, waist pouches, black gloves, knee pads and heavy dark boots. Keep all components in the same body-side placement. No DS2 costume, no guitar. Change only pose to: JUMP ASCENT. Single instant early in an upward jump: front knee raised to mid-waist, rear leg still extended downward with toes pointing down, both boots clearly airborne. Torso length stays natural and arms balance compactly. Cloaks/hair/clothing trail DOWNWARD from upward motion. Do not draw an apex tuck or a grounded stance. Strict lateral right-facing orientation, face and toes pointing RIGHT. Detailed high-resolution hand-painted realistic game sprite with crisp natural anatomy and material textures, clean silhouette, same palette and light direction as reference. Show the complete head, hands, equipment and all boot soles with 8 to 10 percent transparent breathing room on every edge. Exactly one character and one pose in the image; no second figure, no montage, no sprite sheet, no afterimages. TRUE ALPHA TRANSPARENT BACKGROUND everywhere outside the silhouette. No ground plane, no shadow under feet, no gray halo or haze, no backdrop, no checkerboard drawing, no text or labels or watermark. Preserve all costume pieces, do not invent new gear or redesign.",
+      "references": [
+        "modes/echos-de-la-greve/assets/fighters/higgs-stance.webp",
+        "modes/echos-de-la-greve/assets/fighters/higgs-jump.png"
+      ],
+      "runtime": "modes/echos-de-la-greve/assets/fighters/higgs/rise.png",
+      "status": "generated",
+      "originalGeneratedFile": "/workspace/scratch/05d1f74d065e/generated_images/exec-43b63fbd-d1c7-4364-b976-eb5f38970e87.png",
+      "visual_review": "Single complete right-facing pose; mask, hood print, cape stripes, mustard suit, pod/harness, gloves and boots retained. Native transparent exterior. Continuity reviewed against local references, canonical 1:1 not certified.",
+      "width": 1024,
+      "height": 1536,
+      "sha256": "657a37a8a197fb3c725b67c813dd2834306c2d0ce6cc91f2eeaf36fa491d4d06",
+      "alpha_bbox_gt_8": [
+        41,
+        12,
+        982,
+        1510
+      ],
+      "fully_transparent_pixels": 912543,
+      "partial_alpha_pixels": 660321,
+      "native_bytes_preserved": true
+    },
+    {
+      "id": "higgs",
+      "pose": "apex",
+      "prompt": "Use case: precise-object-edit. Image 1 is a Higgs DS1 sprite to correct. Make ONLY this precise correction: remove the folded black handheld umbrella/strap-like object from his rear hand completely, and change that hand into an EMPTY relaxed guarding fist. Both hands must be empty. Preserve everything else EXACTLY: the same jump-apex pose, legs and boots, gold mask and black visor, hood gold handprint, black cape gold piping and blue hem stripe, yellow suit, chest pod, harnesses, blue tube, body proportions, side profile facing RIGHT, native painted detailed style and transparent background. Fill the removed object's area with the existing cape or suit surface as appropriate. Do not add any handheld object, weapon or umbrella. One complete character, one airborne pose, fully visible, genuine transparency outside the silhouette, no ground or shadow, no halo or checkerboard, no text.",
+      "references": [
+        "/workspace/scratch/05d1f74d065e/generated_images/exec-38f19140-2c91-48be-895a-3a90158f82ed.png"
+      ],
+      "runtime": "modes/echos-de-la-greve/assets/fighters/higgs/apex.png",
+      "status": "generated",
+      "rejected_attempts": [
+        {
+          "prompt": "Use case: identity-preserve. Asset type: ONE individual full-body 2D fighting-game sprite for the existing Death Stranding 2D game. Input image 1 is the existing stance and is the strict identity, wardrobe, proportion and body-side placement reference; input image 2 is supporting airborne wardrobe reference only. Subject: Higgs Monaghan from Death Stranding 1, black hooded cape and mustard yellow suit. Preserve segmented golden full face mask with dark visor, gold handprint on hood, gold piping and blue hem stripe on cape, chest-mounted amber pod and blue tubing, harness straps, waist pouches, black gloves, knee pads and heavy dark boots. Keep all components in the same body-side placement. No DS2 costume, no guitar. Change only pose to: JUMP APEX. Single instant at the very top of a jump: both knees bent and tucked upward, front knee higher, rear lower leg folded back, both feet visibly suspended; torso upright and compact guard. Clothes/cape spread gently sideways at the top. Keep the whole folded umbrella for Fragile visible in her rear hand. Do not repeat the one-leg-extended ascent pose. Strict lateral right-facing orientation, face and toes pointing RIGHT. Detailed high-resolution hand-painted realistic game sprite with crisp natural anatomy and material textures, clean silhouette, same palette and light direction as reference. Show the complete head, hands, equipment and all boot soles with 8 to 10 percent transparent breathing room on every edge. Exactly one character and one pose in the image; no second figure, no montage, no sprite sheet, no afterimages. TRUE ALPHA TRANSPARENT BACKGROUND everywhere outside the silhouette. No ground plane, no shadow under feet, no gray halo or haze, no backdrop, no checkerboard drawing, no text or labels or watermark. Preserve all costume pieces, do not invent new gear or redesign.",
+          "originalGeneratedFile": "/workspace/scratch/05d1f74d065e/generated_images/exec-38f19140-2c91-48be-895a-3a90158f82ed.png",
+          "reason": "Added a handheld accessory absent from reference; not integrated."
+        }
+      ],
+      "originalGeneratedFile": "/workspace/scratch/05d1f74d065e/generated_images/exec-398d24e5-2522-41c7-bb5f-3f33d545db1a.png",
+      "visual_review": "Single complete right-facing pose, natural anatomy and outfit continuity. Native transparent exterior. Canonical 1:1 not certified. Corrected the unintended held accessory; both hands are now empty.",
+      "width": 1215,
+      "height": 1295,
+      "sha256": "e40880de212b510221946da28edecd9e10db2754298fd932e5e44fcf9bec8859",
+      "alpha_bbox_gt_8": [
+        29,
+        26,
+        1184,
+        1102
+      ],
+      "fully_transparent_pixels": 873705,
+      "partial_alpha_pixels": 698484,
+      "native_bytes_preserved": true
+    },
+    {
+      "id": "higgs",
+      "pose": "fall",
+      "prompt": "Use case: identity-preserve. Asset type: ONE individual full-body 2D fighting-game sprite for the existing Death Stranding 2D game. Input image 1 is the existing stance and is the strict identity, wardrobe, proportion and body-side placement reference; input image 2 is supporting airborne wardrobe reference only. Subject: Higgs Monaghan from Death Stranding 1, black hooded cape and mustard yellow suit. Preserve segmented golden full face mask with dark visor, gold handprint on hood, gold piping and blue hem stripe on cape, chest-mounted amber pod and blue tubing, harness straps, waist pouches, black gloves, knee pads and heavy dark boots. Keep all components in the same body-side placement. No DS2 costume, no guitar. Change only pose to: JUMP DESCENT. Single instant falling toward landing, both legs opening downward again and front boot extended lower ready to land, rear knee still gently bent, arms balancing. Entire body airborne, no floor. Cloak/hair edges lifted UPWARD by descent. Clearly different from tucked apex and upward ascent. Strict lateral right-facing orientation, face and toes pointing RIGHT. Detailed high-resolution hand-painted realistic game sprite with crisp natural anatomy and material textures, clean silhouette, same palette and light direction as reference. Show the complete head, hands, equipment and all boot soles with 8 to 10 percent transparent breathing room on every edge. Exactly one character and one pose in the image; no second figure, no montage, no sprite sheet, no afterimages. TRUE ALPHA TRANSPARENT BACKGROUND everywhere outside the silhouette. No ground plane, no shadow under feet, no gray halo or haze, no backdrop, no checkerboard drawing, no text or labels or watermark. Preserve all costume pieces, do not invent new gear or redesign.",
+      "references": [
+        "modes/echos-de-la-greve/assets/fighters/higgs-stance.webp",
+        "modes/echos-de-la-greve/assets/fighters/higgs-jump.png"
+      ],
+      "runtime": "modes/echos-de-la-greve/assets/fighters/higgs/fall.png",
+      "status": "generated",
+      "originalGeneratedFile": "/workspace/scratch/05d1f74d065e/generated_images/exec-76d58f79-5b68-41fe-b21e-6c51c491b1a5.png",
+      "visual_review": "Single complete right-facing pose, all wardrobe components retained. Native transparent exterior. Continuity reviewed against local references; canonical 1:1 not certified.",
+      "width": 1132,
+      "height": 1389,
+      "sha256": "6a51c01c2cf24529de863871f5be8f0a169705a61d52b41d8b538d7c965a7691",
+      "alpha_bbox_gt_8": [
+        16,
+        8,
+        1097,
+        1374
+      ],
+      "fully_transparent_pixels": 961671,
+      "partial_alpha_pixels": 609035,
+      "native_bytes_preserved": true
+    },
+    {
+      "id": "diehardman",
+      "pose": "guard",
+      "prompt": "Use case: identity-preserve. Asset type: ONE individual full-body 2D fighting-game sprite for the existing Death Stranding 2D game. Input image 1 is the existing stance and is the strict identity, wardrobe, proportion and body-side placement reference; input image 2 is supporting airborne wardrobe reference only. Subject: Die-Hardman from Death Stranding 1. Preserve dark brown skin visible at ear and neck, close-cropped black textured hair, black/gray full-face skull-like metal mask with the reference's narrow angular eyeholes, vents, small studs and straps, charcoal formal suit, white dress shirt, black tie, small gold lapel pin and pale pocket square, black gloves, formal black leather shoes. Keep the exact local costume and mask geometry, no armor or weapons. Translate simple flat shading into detailed painted cloth and metal while retaining face coverage, silhouette and proportions. Change only pose to: DEFENSIVE STANDING GUARD. Both boots planted at the same level, knees slightly flexed. Upper body leaned forward slightly and forearms raised compactly to protect face and chest. Clearly distinct from the relaxed neutral stance. For Fragile the front hand guards high while her rear hand keeps the folded umbrella close across her outer hip, tip downward and fully visible. Strict lateral right-facing orientation, face and toes pointing RIGHT. Detailed high-resolution hand-painted realistic game sprite with crisp natural anatomy and material textures, clean silhouette, same palette and light direction as reference. Show the complete head, hands, equipment and all boot soles with 8 to 10 percent transparent breathing room on every edge. Exactly one character and one pose in the image; no second figure, no montage, no sprite sheet, no afterimages. TRUE ALPHA TRANSPARENT BACKGROUND everywhere outside the silhouette. No ground plane, no shadow under feet, no gray halo or haze, no backdrop, no checkerboard drawing, no text or labels or watermark. Preserve all costume pieces, do not invent new gear or redesign.",
+      "references": [
+        "modes/echos-de-la-greve/assets/fighters/diehardman-stance.webp",
+        "modes/echos-de-la-greve/assets/fighters/diehardman-jump.png"
+      ],
+      "runtime": "modes/echos-de-la-greve/assets/fighters/diehardman/guard.png",
+      "status": "generated",
+      "originalGeneratedFile": "/workspace/scratch/05d1f74d065e/generated_images/exec-d7a62558-e2a6-454e-beac-42684b8085c4.png",
+      "visual_review": "Single complete right-facing pose, all wardrobe components retained. Native transparent exterior. Continuity reviewed against local references; canonical 1:1 not certified.",
+      "width": 836,
+      "height": 1881,
+      "sha256": "89d29ca6c554f592dfbf6f697ff64b5dd508f160e0100c9740fa4fd41efd6538",
+      "alpha_bbox_gt_8": [
+        34,
+        106,
+        800,
+        1813
+      ],
+      "fully_transparent_pixels": 918311,
+      "partial_alpha_pixels": 653198,
+      "native_bytes_preserved": true
+    },
+    {
+      "id": "diehardman",
+      "pose": "crouch",
+      "prompt": "Use case: identity-preserve. Asset type: ONE individual full-body 2D fighting-game sprite for the existing Death Stranding 2D game. Input image 1 is the newly generated detailed guard sprite and is the strict identity, wardrobe, proportion, rendering style and body-side placement reference. Subject: Die-Hardman from Death Stranding 1. Preserve dark brown skin visible at ear and neck, close-cropped black textured hair, black/gray full-face skull-like metal mask with the reference's narrow angular eyeholes, vents, small studs and straps, charcoal formal suit, white dress shirt, black tie, small gold lapel pin and pale pocket square, black gloves, formal black leather shoes. Keep the exact local costume and mask geometry, no armor or weapons. Translate simple flat shading into detailed painted cloth and metal while retaining face coverage, silhouette and proportions. Change only pose to: LOW CROUCH. Knees deeply flexed, hips lowered to about half of standing height, one boot flat in front and rear toes braced behind; compact torso but natural adult anatomy. Front forearm protects face. Keep both complete feet in view. No seated pose. Strict lateral right-facing orientation, face and toes pointing RIGHT. Detailed high-resolution hand-painted realistic game sprite with crisp natural anatomy and material textures, clean silhouette, same palette and light direction as reference. Show the complete head, hands, equipment and all boot soles with 8 to 10 percent transparent breathing room on every edge. Exactly one character and one pose in the image; no second figure, no montage, no sprite sheet, no afterimages. TRUE ALPHA TRANSPARENT BACKGROUND everywhere outside the silhouette. No ground plane, no shadow under feet, no gray halo or haze, no backdrop, no checkerboard drawing, no text or labels or watermark. Preserve all costume pieces, do not invent new gear or redesign.",
+      "references": [
+        "modes/echos-de-la-greve/assets/fighters/diehardman/guard.png"
+      ],
+      "runtime": "modes/echos-de-la-greve/assets/fighters/diehardman/crouch.png",
+      "status": "generated",
+      "originalGeneratedFile": "/workspace/scratch/05d1f74d065e/generated_images/exec-25573f88-d258-4529-9f42-d9ca815d75c1.png",
+      "visual_review": "Single complete right-facing pose, natural anatomy and outfit continuity. Native transparent exterior. Canonical 1:1 not certified.",
+      "width": 1312,
+      "height": 1199,
+      "sha256": "db7b301896ab507603f5b2b031f40cbd99125aa82d75b12486f667f01c96cc13",
+      "alpha_bbox_gt_8": [
+        142,
+        83,
+        1117,
+        1147
+      ],
+      "fully_transparent_pixels": 939248,
+      "partial_alpha_pixels": 633571,
+      "native_bytes_preserved": true
+    },
+    {
+      "id": "diehardman",
+      "pose": "rise",
+      "prompt": "Use case: identity-preserve. Asset type: ONE individual full-body 2D fighting-game sprite for the existing Death Stranding 2D game. Input image 1 is the newly generated detailed guard sprite and is the strict identity, wardrobe, proportion, rendering style and body-side placement reference. Subject: Die-Hardman from Death Stranding 1. Preserve dark brown skin visible at ear and neck, close-cropped black textured hair, black/gray full-face skull-like metal mask with the reference's narrow angular eyeholes, vents, small studs and straps, charcoal formal suit, white dress shirt, black tie, small gold lapel pin and pale pocket square, black gloves, formal black leather shoes. Keep the exact local costume and mask geometry, no armor or weapons. Translate simple flat shading into detailed painted cloth and metal while retaining face coverage, silhouette and proportions. Change only pose to: JUMP ASCENT. Single instant early in an upward jump: front knee raised to mid-waist, rear leg still extended downward with toes pointing down, both boots clearly airborne. Torso length stays natural and arms balance compactly. Cloaks/hair/clothing trail DOWNWARD from upward motion. Do not draw an apex tuck or a grounded stance. Strict lateral right-facing orientation, face and toes pointing RIGHT. Detailed high-resolution hand-painted realistic game sprite with crisp natural anatomy and material textures, clean silhouette, same palette and light direction as reference. Show the complete head, hands, equipment and all boot soles with 8 to 10 percent transparent breathing room on every edge. Exactly one character and one pose in the image; no second figure, no montage, no sprite sheet, no afterimages. TRUE ALPHA TRANSPARENT BACKGROUND everywhere outside the silhouette. No ground plane, no shadow under feet, no gray halo or haze, no backdrop, no checkerboard drawing, no text or labels or watermark. Preserve all costume pieces, do not invent new gear or redesign.",
+      "references": [
+        "modes/echos-de-la-greve/assets/fighters/diehardman/guard.png"
+      ],
+      "runtime": "modes/echos-de-la-greve/assets/fighters/diehardman/rise.png",
+      "status": "generated",
+      "originalGeneratedFile": "/workspace/scratch/05d1f74d065e/generated_images/exec-0fa52cae-9913-41be-9b44-27673523f5ff.png",
+      "visual_review": "Single complete right-facing pose, natural anatomy and outfit continuity. Native transparent exterior. Canonical 1:1 not certified.",
+      "width": 836,
+      "height": 1882,
+      "sha256": "85e857d13f809634f432f6207fe17f4f44416586b622aac569e3922ed2be7273",
+      "alpha_bbox_gt_8": [
+        48,
+        88,
+        756,
+        1795
+      ],
+      "fully_transparent_pixels": 1021748,
+      "partial_alpha_pixels": 549878,
+      "native_bytes_preserved": true
+    },
+    {
+      "id": "diehardman",
+      "pose": "apex",
+      "prompt": "Use case: identity-preserve. Asset type: ONE individual full-body 2D fighting-game sprite for the existing Death Stranding 2D game. Input image 1 is the newly generated detailed guard sprite and is the strict identity, wardrobe, proportion, rendering style and body-side placement reference. Subject: Die-Hardman from Death Stranding 1. Preserve dark brown skin visible at ear and neck, close-cropped black textured hair, black/gray full-face skull-like metal mask with the reference's narrow angular eyeholes, vents, small studs and straps, charcoal formal suit, white dress shirt, black tie, small gold lapel pin and pale pocket square, black gloves, formal black leather shoes. Keep the exact local costume and mask geometry, no armor or weapons. Translate simple flat shading into detailed painted cloth and metal while retaining face coverage, silhouette and proportions. Change only pose to: JUMP APEX. Single instant at the very top of a jump: both knees bent and tucked upward, front knee higher, rear lower leg folded back, both feet visibly suspended; torso upright and compact guard. Clothes/cape spread gently sideways at the top. Do not repeat the one-leg-extended ascent pose. Strict lateral right-facing orientation, face and toes pointing RIGHT. Detailed high-resolution hand-painted realistic game sprite with crisp natural anatomy and material textures, clean silhouette, same palette and light direction as reference. Show the complete head, hands, equipment and all boot soles with 8 to 10 percent transparent breathing room on every edge. Exactly one character and one pose in the image; no second figure, no montage, no sprite sheet, no afterimages. TRUE ALPHA TRANSPARENT BACKGROUND everywhere outside the silhouette. No ground plane, no shadow under feet, no gray halo or haze, no backdrop, no checkerboard drawing, no text or labels or watermark. Preserve all costume pieces, do not invent new gear or redesign.",
+      "references": [
+        "modes/echos-de-la-greve/assets/fighters/diehardman/guard.png"
+      ],
+      "runtime": "modes/echos-de-la-greve/assets/fighters/diehardman/apex.png",
+      "status": "generated",
+      "originalGeneratedFile": "/workspace/scratch/05d1f74d065e/generated_images/exec-f6dddfec-8741-4558-af4f-2f6527d9d265.png",
+      "visual_review": "Single complete right-facing jump apex, both knees tucked, face mask/suit/accessories retained. Transparent exterior and detailed material continuity. Canonical 1:1 not certified.",
+      "width": 1077,
+      "height": 1461,
+      "sha256": "fcad41a26691abcb4fb0b8d348e3eeac4016627d5481c28946097d648e9e2071",
+      "alpha_bbox_gt_8": [
+        92,
+        69,
+        926,
+        1401
+      ],
+      "fully_transparent_pixels": 931103,
+      "partial_alpha_pixels": 641882,
+      "native_bytes_preserved": true
+    },
+    {
+      "id": "diehardman",
+      "pose": "fall",
+      "prompt": "Use case: precise-object-edit. Input image 1 is a completed full-body Die-Hardman descending-jump sprite whose hands are too near the left and right image edges. Reframe this SAME sprite with AT LEAST 10 percent EMPTY transparent margin around the head, every fingertip and both shoes. Preserve the exact descending pose, facial mask, charcoal formal suit, white shirt, tie, lapel pin, pocket square, gloves, shoes, right-facing orientation, proportions and material detail. Restore the tidy short close-cropped curls consistent with input image 2 (identity reference); no hair spikes. Do not introduce any other changes to the costume or pose. One character, one pose only. Actual alpha transparency beyond the complete clean silhouette; no backdrop, ground, floor shadow, haze or checkerboard. Every finger and every shoe must be fully visible, well away from canvas boundaries.",
+      "references": [
+        "/workspace/scratch/05d1f74d065e/generated_images/exec-e0c8240e-e83d-4355-a067-de4ebd47e094.png",
+        "modes/echos-de-la-greve/assets/fighters/diehardman/guard.png"
+      ],
+      "runtime": "modes/echos-de-la-greve/assets/fighters/diehardman/fall.png",
+      "status": "generated",
+      "rejected_attempts": [
+        {
+          "prompt": "Use case: identity-preserve. Asset type: ONE individual full-body 2D fighting-game sprite for the existing Death Stranding 2D game. Input image 1 is the newly generated detailed guard sprite and is the strict identity, wardrobe, proportion, rendering style and body-side placement reference. Subject: Die-Hardman from Death Stranding 1. Preserve dark brown skin visible at ear and neck, close-cropped black textured hair, black/gray full-face skull-like metal mask with the reference's narrow angular eyeholes, vents, small studs and straps, charcoal formal suit, white dress shirt, black tie, small gold lapel pin and pale pocket square, black gloves, formal black leather shoes. Keep the exact local costume and mask geometry, no armor or weapons. Translate simple flat shading into detailed painted cloth and metal while retaining face coverage, silhouette and proportions. Change only pose to: JUMP DESCENT. Single instant falling toward landing, both legs opening downward again and front boot extended lower ready to land, rear knee still gently bent, arms balancing. Entire body airborne, no floor. Cloak/hair edges lifted UPWARD by descent. Clearly different from tucked apex and upward ascent. Strict lateral right-facing orientation, face and toes pointing RIGHT. Detailed high-resolution hand-painted realistic game sprite with crisp natural anatomy and material textures, clean silhouette, same palette and light direction as reference. Show the complete head, hands, equipment and all boot soles with 8 to 10 percent transparent breathing room on every edge. Exactly one character and one pose in the image; no second figure, no montage, no sprite sheet, no afterimages. TRUE ALPHA TRANSPARENT BACKGROUND everywhere outside the silhouette. No ground plane, no shadow under feet, no gray halo or haze, no backdrop, no checkerboard drawing, no text or labels or watermark. Preserve all costume pieces, do not invent new gear or redesign.",
+          "originalGeneratedFile": "/workspace/scratch/05d1f74d065e/generated_images/exec-e0c8240e-e83d-4355-a067-de4ebd47e094.png",
+          "reason": "Extended hand touches image boundary; framing correction required."
+        }
+      ],
+      "originalGeneratedFile": "/workspace/scratch/05d1f74d065e/generated_images/exec-d6908b79-1c8e-4942-a08c-7f8e1c9c07ba.png",
+      "visual_review": "Complete descending pose with hands and shoes within frame. Short close-cropped hair restored; formal suit/mask and detailed texture preserved. Native alpha outside silhouette; no manual image processing. Canonical 1:1 not certified.",
+      "width": 850,
+      "height": 1850,
+      "sha256": "e82304da9ac8bae30002743cdb8d704dd8225d17803d1dacd0fae83c2de232e5",
+      "alpha_bbox_gt_8": [
+        29,
+        193,
+        824,
+        1590
+      ],
+      "fully_transparent_pixels": 1105366,
+      "partial_alpha_pixels": 465671,
+      "native_bytes_preserved": true
+    }
+  ],
+  "final_asset_count": 15,
+  "successful_generation_count": 17,
+  "validation": {
+    "all_files_decoded": true,
+    "all_sha256_match": true,
+    "all_rgba": true,
+    "all_have_transparent_exterior": true,
+    "native_bytes_preserved": true,
+    "runtime_integration_tested_by_this_agent": false,
+    "canonical_1_to_1_verified": false
+  }
+}

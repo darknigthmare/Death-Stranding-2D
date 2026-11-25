@@ -1,0 +1,389 @@
+{
+  "date": "2026-11-24",
+  "renderer": "actual fight.js with instrumented Canvas methods",
+  "native_canvas_executed": false,
+  "browser_executed": false,
+  "pixels_decoded_in_this_test": false,
+  "native_dimension_source": "qa/native-image-dimensions-20261124.cjs (decoded production manifests)",
+  "legacy_dimensions": "1536x1024 test placeholder; legacy visual proportions are not certified by this test",
+  "checks": [
+    "Repainted fighter poses drawn on both sides, real hit, preserved crops, ratios and boot baselines; native jump fallbacks",
+    "Native Viaduc has its own measured geometry on both sides; delayed outfit images use Atelier crops and keep identical simulation",
+    "Higgs feint echo retains native PNG crop and scale",
+    "Two new stages: all five actual draw calls, both directions, local/training, reduced motion, floor contact and native aspect ratios",
+    "Eight fighters retain identical deterministic checkpoints against the previously published runtime",
+    "Unavailable native poses leave deterministic simulation unchanged"
+  ],
+  "poses": [
+    {
+      "fighter": "higgs",
+      "side": 1,
+      "outfit": "default",
+      "poses": [
+        "stance",
+        "action",
+        "step",
+        "hit",
+        "guard",
+        "crouch",
+        "rise",
+        "apex",
+        "fall"
+      ],
+      "real_hit": true
+    },
+    {
+      "fighter": "higgs",
+      "side": 2,
+      "outfit": "default",
+      "poses": [
+        "stance",
+        "action",
+        "step",
+        "hit",
+        "guard",
+        "crouch",
+        "rise",
+        "apex",
+        "fall"
+      ],
+      "real_hit": true
+    },
+    {
+      "fighter": "diehardman",
+      "side": 1,
+      "outfit": "default",
+      "poses": [
+        "stance",
+        "action",
+        "step",
+        "hit",
+        "guard",
+        "crouch",
+        "rise",
+        "apex",
+        "fall"
+      ],
+      "real_hit": true
+    },
+    {
+      "fighter": "diehardman",
+      "side": 2,
+      "outfit": "default",
+      "poses": [
+        "stance",
+        "action",
+        "step",
+        "hit",
+        "guard",
+        "crouch",
+        "rise",
+        "apex",
+        "fall"
+      ],
+      "real_hit": true
+    },
+    {
+      "fighter": "mama",
+      "side": 1,
+      "outfit": "default",
+      "poses": [
+        "stance",
+        "action",
+        "step",
+        "hit",
+        "guard",
+        "crouch",
+        "rise",
+        "apex",
+        "fall"
+      ],
+      "real_hit": true
+    },
+    {
+      "fighter": "mama",
+      "side": 2,
+      "outfit": "default",
+      "poses": [
+        "stance",
+        "action",
+        "step",
+        "hit",
+        "guard",
+        "crouch",
+        "rise",
+        "apex",
+        "fall"
+      ],
+      "real_hit": true
+    },
+    {
+      "fighter": "heartman",
+      "side": 1,
+      "outfit": "default",
+      "poses": [
+        "stance",
+        "action",
+        "step",
+        "hit",
+        "guard",
+        "crouch",
+        "rise",
+        "apex",
+        "fall"
+      ],
+      "real_hit": true
+    },
+    {
+      "fighter": "heartman",
+      "side": 2,
+      "outfit": "default",
+      "poses": [
+        "stance",
+        "action",
+        "step",
+        "hit",
+        "guard",
+        "crouch",
+        "rise",
+        "apex",
+        "fall"
+      ],
+      "real_hit": true
+    },
+    {
+      "fighter": "mama",
+      "side": 1,
+      "outfit": "viaduc",
+      "poses": [
+        "stance",
+        "action",
+        "step",
+        "hit",
+        "guard",
+        "crouch",
+        "rise",
+        "apex",
+        "fall"
+      ],
+      "real_hit": true
+    },
+    {
+      "fighter": "mama",
+      "side": 2,
+      "outfit": "viaduc",
+      "poses": [
+        "stance",
+        "action",
+        "step",
+        "hit",
+        "guard",
+        "crouch",
+        "rise",
+        "apex",
+        "fall"
+      ],
+      "real_hit": true
+    }
+  ],
+  "stage_cases": [
+    {
+      "stage": "port-knot",
+      "mode": "local",
+      "direction": 1,
+      "reducedEffects": false,
+      "layers": 5,
+      "passed": true
+    },
+    {
+      "stage": "port-knot",
+      "mode": "local",
+      "direction": -1,
+      "reducedEffects": false,
+      "layers": 5,
+      "passed": true
+    },
+    {
+      "stage": "port-knot",
+      "mode": "local",
+      "direction": 1,
+      "reducedEffects": true,
+      "layers": 5,
+      "passed": true
+    },
+    {
+      "stage": "port-knot",
+      "mode": "local",
+      "direction": -1,
+      "reducedEffects": true,
+      "layers": 5,
+      "passed": true
+    },
+    {
+      "stage": "port-knot",
+      "mode": "training",
+      "direction": 1,
+      "reducedEffects": false,
+      "layers": 5,
+      "passed": true
+    },
+    {
+      "stage": "port-knot",
+      "mode": "training",
+      "direction": -1,
+      "reducedEffects": false,
+      "layers": 5,
+      "passed": true
+    },
+    {
+      "stage": "port-knot",
+      "mode": "training",
+      "direction": 1,
+      "reducedEffects": true,
+      "layers": 5,
+      "passed": true
+    },
+    {
+      "stage": "port-knot",
+      "mode": "training",
+      "direction": -1,
+      "reducedEffects": true,
+      "layers": 5,
+      "passed": true
+    },
+    {
+      "stage": "incinerator",
+      "mode": "local",
+      "direction": 1,
+      "reducedEffects": false,
+      "layers": 5,
+      "passed": true
+    },
+    {
+      "stage": "incinerator",
+      "mode": "local",
+      "direction": -1,
+      "reducedEffects": false,
+      "layers": 5,
+      "passed": true
+    },
+    {
+      "stage": "incinerator",
+      "mode": "local",
+      "direction": 1,
+      "reducedEffects": true,
+      "layers": 5,
+      "passed": true
+    },
+    {
+      "stage": "incinerator",
+      "mode": "local",
+      "direction": -1,
+      "reducedEffects": true,
+      "layers": 5,
+      "passed": true
+    },
+    {
+      "stage": "incinerator",
+      "mode": "training",
+      "direction": 1,
+      "reducedEffects": false,
+      "layers": 5,
+      "passed": true
+    },
+    {
+      "stage": "incinerator",
+      "mode": "training",
+      "direction": -1,
+      "reducedEffects": false,
+      "layers": 5,
+      "passed": true
+    },
+    {
+      "stage": "incinerator",
+      "mode": "training",
+      "direction": 1,
+      "reducedEffects": true,
+      "layers": 5,
+      "passed": true
+    },
+    {
+      "stage": "incinerator",
+      "mode": "training",
+      "direction": -1,
+      "reducedEffects": true,
+      "layers": 5,
+      "passed": true
+    }
+  ],
+  "simulation_regressions": [
+    {
+      "fighter": "sam",
+      "checkpoints": 9,
+      "identical": true
+    },
+    {
+      "fighter": "fragile",
+      "checkpoints": 9,
+      "identical": true
+    },
+    {
+      "fighter": "higgs",
+      "checkpoints": 9,
+      "identical": true
+    },
+    {
+      "fighter": "cliff",
+      "checkpoints": 9,
+      "identical": true
+    },
+    {
+      "fighter": "mule",
+      "checkpoints": 9,
+      "identical": true
+    },
+    {
+      "fighter": "diehardman",
+      "checkpoints": 9,
+      "identical": true
+    },
+    {
+      "fighter": "mama",
+      "checkpoints": 9,
+      "identical": true
+    },
+    {
+      "fighter": "heartman",
+      "checkpoints": 9,
+      "identical": true
+    }
+  ],
+  "catalog_paths": 225,
+  "native_base_pose_crops": 58,
+  "native_outfit_pose_crops": 9,
+  "native_pose_crops": 67,
+  "passed": true,
+  "executedAt": "2026-11-24T15:43:44.500Z",
+  "baseline_commit": "8afb60daabe1b7608ff42a16f5e92512422b3e45",
+  "source_sha256": {
+    "content.js": "3616e71197f874262248cf8e91e409a9e98abcc8579d0222ae77d6508b7aaf9b",
+    "assets.js": "b844b59073ab41fd091215c3a8a8cd88a0c477fca6ab5a58fa537c972e10b474",
+    "asset-geometry-20261124.js": "61f830dc5036774529b7ecaf51f4c80386ef7f94447c55e044584e850e081934",
+    "fight.js": "e987d51a07fa73e052d77bac0a866bc6aa5519ba07827c7668e63ee8056d150d",
+    "boss-geometry-20261124.js": "55655afb8a1b05027b521bda46a49c9ad1f1b202ae307fdca67aa3690657a928",
+    "netplay-server.cjs": "a93201ff95042fe43ddbe82f7a7d60129bed69d888340f2d4f625fc7e0452d67",
+    "qa/suite-integration-20261124.cjs": "e8a42a51fa472e5273d7cdc00a56576e33bab0a26ef51be3ad95f53f9b04c638",
+    "qa/native-image-dimensions-20261124.cjs": "c5802f775799166b55085bd357ea772a5459952c6b21d2fc78c89d371fc785af"
+  },
+  "source_blobs": {
+    "content.js": "a72d3e798df9bc8969b87488cea3058de66519a5",
+    "assets.js": "951c9cc903d93261cb2aa96cd659aa9c48b6890c",
+    "asset-geometry-20261124.js": "f2172846267c946fae06d2532bdb8184330a6a7c",
+    "fight.js": "4abdd2703562128a0a2c2ca9b22209a872056b31",
+    "boss-geometry-20261124.js": "0e677fe10a074be5e1f6be22cf981a27374384b0",
+    "netplay-server.cjs": "cc5cb200b565ccc586db09307eaffa7f99034868",
+    "qa/suite-integration-20261124.cjs": "ef873b7757a98f18041287932b1370a58034217a",
+    "qa/native-image-dimensions-20261124.cjs": "4a2e79cc794f0911992210f925a7aaabf72ae973"
+  },
+  "native_metadata_provenance": "Dimensions read from source PNG headers and production manifests; full alpha decoding where documented in individual manifests. This runtime recipe does not decode image pixels."
+}

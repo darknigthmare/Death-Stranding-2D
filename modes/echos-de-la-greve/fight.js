@@ -204,7 +204,13 @@
     'ruined-factory':{filter:'lowpass',hz:410,level:.045,hum:49,cue:'pipe',interval:10,x:.84},
     'timefall-shelter':{filter:'lowpass',hz:1900,level:.06,cue:'drip',interval:6,x:.1},
     'tar-basin':{filter:'lowpass',hz:260,level:.055,cue:'bubble',interval:9,x:.84},
-    'mountain-pass':{filter:'bandpass',hz:960,level:.07,cue:'gust',interval:11,x:.16}
+    'mountain-pass':{filter:'bandpass',hz:960,level:.07,cue:'gust',interval:11,x:.16},
+    'port-knot':{filter:'lowpass',hz:430,level:.052,cue:'surf',interval:12,x:.15},
+    incinerator:{filter:'bandpass',hz:560,level:.04,hum:52,cue:'gust',interval:14,x:.72},
+    'south-knot-ruins':{filter:'lowpass',hz:1700,level:.055,cue:'drip',interval:8,x:.16},
+    'timefall-farm':{filter:'lowpass',hz:1450,level:.05,cue:'gust',interval:12,x:.82},
+    'mountain-knot-approach':{filter:'bandpass',hz:1020,level:.065,cue:'gust',interval:11,x:.15},
+    'magellan-ds2':{filter:'lowpass',hz:620,level:.035,hum:64,cue:'winch',interval:14,x:.84}
   };
   function releaseAmbientVoice(group,voice,stopSource=true) {
     if (voice.released) return;
@@ -399,16 +405,23 @@
       base.action = load(art.actions?.[id]);
       base.step = load(art.steps?.[id]);
       base.hit = load(art.hits?.[id]);
+      for (const [pose, file] of Object.entries(art.poses?.[id] || {})) base[pose] = load(file);
       const jump = art.jumps?.[id];
       if (typeof jump === 'string') base.jump = load(jump);
-      else for (const phase of ['rise','apex','fall']) base[phase] = load(jump?.[phase]);
+      else for (const phase of ['rise','apex','fall']) base[phase] ||= load(jump?.[phase]);
       const options = art.wardrobe?.[id];
       const kit = options?.[o.outfits?.[side]] || options?.atelier;
       const tailored = {};
       for (const [pose, file] of Object.entries(kit?.poses || {})) tailored[pose] = load(file);
       if (m.mode !== 'training') m.images[id + 'Finale'] = load(art.finishers?.[id]);
-      return {base, tailored, geometry:{...spriteGeometry[id], ...art.geometry?.[id], ...kit?.geometry}};
+      return {base, tailored, geometry:{...spriteGeometry[id], ...art.geometry?.[id], ...kit?.geometry},
+        generatedPoses:art.poses?.[id] || {}, poseGeometry:art.generatedGeometry?.fighters?.[id] || {},
+        tailoredPoseGeometry:kit?.nativePoses ? kit.poseGeometry || {} : null};
     });
+    const projectileOwners = {sam:'sam',higgs:'higgs',cliff:'cliff',recall:'cliff',gate:'diehardman',heartman:'heartman',memory:'heartman'};
+    m.projectileImages = Object.fromEntries(Object.entries(art.projectiles || {})
+      .filter(([kind]) => ids.includes(projectileOwners[kind])).map(([kind,file]) => [kind,load(file)]));
+    m.projectileGeometry = art.generatedGeometry?.projectiles || {};
     // Keep the complete panorama available while a layered stage decodes, or
     // when a file is missing in an older/offline copy of the game.
     m.scene.legacy = load(art.stages?.[stage]);
@@ -1010,6 +1023,38 @@
     return image && image.complete && image.naturalWidth > 0;
   }
 
+  // Source rectangles use native pixels. Only the visible alpha bounds are
+  // sampled; scaling always keeps that rectangle's aspect ratio. A bad or absent
+  // measurement falls back to the full source, never to a distorted rectangle.
+  function nativeCrop(image, geometry) {
+    const crop = geometry?.crop;
+    if (Array.isArray(crop) && crop.length === 4 && crop.every(Number.isFinite) &&
+      crop[0] >= 0 && crop[1] >= 0 && crop[2] > 0 && crop[3] > 0 &&
+      crop[0] + crop[2] <= image.naturalWidth && crop[1] + crop[3] <= image.naturalHeight) return crop;
+    return [0,0,image.naturalWidth,image.naturalHeight];
+  }
+  const finiteOr = (value, fallback) => Number.isFinite(value) ? value : fallback;
+  const generatedPoseRatios = {guard:1,crouch:.69,rise:.90,apex:.82,fall:.94};
+  const projectileSizes = {sam:34,higgs:86,cliff:45,recall:54,gate:36,heartman:30,memory:128};
+
+  function drawProjectileSprite(m, shot) {
+    const image = m.projectileImages?.[shot.kind];
+    if (!ready(image)) return false;
+    const geometry = m.projectileGeometry?.[shot.kind] || {};
+    const crop = nativeCrop(image,geometry);
+    const width = Math.max(1,finiteOr(geometry.width,projectileSizes[shot.kind] || 40));
+    const height = width * crop[3] / crop[2];
+    const floorAnchored = shot.kind === 'higgs' || shot.kind === 'gate';
+    const anchorX = finiteOr(geometry.anchorX,.5), anchorY = finiteOr(geometry.anchorY,floorAnchored ? 1 : .5);
+    const c = m.ctx;
+    c.save();
+    c.translate(shot.x,floorAnchored ? FLOOR : shot.y);
+    c.scale(Math.sign(shot.vx) || m.f[shot.owner].face,1);
+    c.drawImage(image,...crop,-width*anchorX,-height*anchorY,width,height);
+    c.restore();
+    return true;
+  }
+
   function line(ctx, x, y, xx, yy, color, width = 1) {
     ctx.beginPath();
     ctx.strokeStyle = color;
@@ -1150,7 +1195,7 @@
         c.strokeStyle='rgba(146,143,128,'+((1-ring)*.17).toFixed(3)+')';c.lineWidth=1;c.stroke();
         if (ring<.16) oval(c,x,y-2-Math.sin(ring/.16*Math.PI)*4,3,2,'rgba(102,108,108,.23)');
       }
-    } else if (m.stage==='mountain-pass') {
+    } else if (m.stage==='mountain-pass' || m.stage==='mountain-knot-approach') {
       // Spindrift follows the far ridge in sparse lateral strokes.
       for (let i=0;i<18;i++) {
         const gust=cycle(440,i*31), x=-80+gust*(WIDTH+160), y=385+Math.sin(i*2.4+gust*5)*25;
@@ -1235,7 +1280,7 @@
   function drawFighter(m, f, index) {
     const c = m.ctx, feet = FLOOR - f.y;
     const act = f.act;
-    const {base, tailored, geometry} = m.fighterFrames[index];
+    const {base, tailored, geometry, generatedPoses, poseGeometry, tailoredPoseGeometry} = m.fighterFrames[index];
     const frameFor = pose => ready(tailored[pose]) ? tailored[pose] : base[pose];
     const movement = m.phase === 'fight' && f.grounded && !f.act && !f.guard && !f.stun &&
       !f.blockStun && !f.crouch && (f.dash || !!f.keys.left !== !!f.keys.right);
@@ -1248,11 +1293,16 @@
     else if (!f.grounded) {
       const phase = f.vy > 4 ? 'rise' : f.vy < -4 ? 'fall' : 'apex';
       pose = ready(frameFor(phase)) ? phase : 'jump';
-    } else if (f.crouch && tailored.crouch) pose = 'crouch';
-    else if ((f.guard || f.blockStun) && tailored.guard) pose = 'guard';
+    } else if (f.crouch && ready(frameFor('crouch'))) pose = 'crouch';
+    else if ((f.guard || f.blockStun) && ready(frameFor('guard'))) pose = 'guard';
     else if (movement && (f.dash || Math.sin(f.walk) >= 0)) pose = 'step';
     if (!ready(frameFor(pose))) pose = 'stance';
     const image = frameFor(pose);
+    // Select geometry from the actual ready source: an unavailable outfit pose
+    // falls back to the base image with that base image's own measured crop.
+    const nativeGeometry = image === tailored[pose]
+      ? (tailoredPoseGeometry ? tailoredPoseGeometry[pose] || {} : null)
+      : (generatedPoses[pose] && image === base[pose] ? poseGeometry[pose] || {} : null);
     const lost = m.winner && m.winner !== index + 1 && ['finish','cinema','roundover','ended'].includes(m.phase);
     const compression = pose === 'crouch' || pose === 'guard' ? 1 :
       f.crouch ? .69 : f.guard ? .93 : lost ? .84 : 1;
@@ -1266,16 +1316,25 @@
     c.rotate(sway + (performing ? .025 : .12) * reach);
     if (immune(f)) c.globalAlpha = f.act?.key === 'syncope' ? .14 : .63;
     if (ready(image)) {
-      const h = height * (geometry[pose + 'Scale'] || 1);
-      const frames = (pose === 'step' || pose === 'hit') ? geometry.motionFrames || 1 : 1;
-      const srcWidth = image.naturalWidth / frames;
-      const w = h * srcWidth / image.naturalHeight;
-      const anchor = geometry[pose + 'Anchor'] ?? geometry.stanceAnchor;
-      const baseline = geometry[pose + 'Baseline'] ?? 1;
       if (f.flash > 1 && (f.flash % 4 < 2)) c.filter = 'brightness(1.5)';
-      const weight = pose === 'hit' ? Math.min(1, f.stun / 8) : f.dash ? 1 : Math.sin(f.walk);
-      const frame = clamp(Math.ceil(weight * frames)-1,0,frames-1);
-      c.drawImage(image,frame * srcWidth,0,srcWidth,image.naturalHeight,-w * anchor + 9 * reach,-h * baseline,w,h);
+      if (nativeGeometry) {
+        const measured = nativeGeometry;
+        const crop = nativeCrop(image,measured);
+        const ratio = Math.max(.1,finiteOr(measured.heightRatio,generatedPoseRatios[pose] || 1));
+        const h = height * ratio, w = h * crop[2] / crop[3];
+        const anchor = finiteOr(measured.anchorX,.5), baseline = finiteOr(measured.baselineY,1);
+        c.drawImage(image,...crop,-w*anchor + 9*reach,-h*baseline,w,h);
+      } else {
+        const h = height * (geometry[pose + 'Scale'] || 1);
+        const frames = (pose === 'step' || pose === 'hit') ? geometry.motionFrames || 1 : 1;
+        const srcWidth = image.naturalWidth / frames;
+        const w = h * srcWidth / image.naturalHeight;
+        const anchor = geometry[pose + 'Anchor'] ?? geometry.stanceAnchor;
+        const baseline = geometry[pose + 'Baseline'] ?? 1;
+        const weight = pose === 'hit' ? Math.min(1, f.stun / 8) : f.dash ? 1 : Math.sin(f.walk);
+        const frame = clamp(Math.ceil(weight * frames)-1,0,frames-1);
+        c.drawImage(image,frame * srcWidth,0,srcWidth,image.naturalHeight,-w * anchor + 9 * reach,-h * baseline,w,h);
+      }
     } else {
       // A temporary silhouette fills the same collision space during image decoding.
       c.fillStyle = f.spec.suit;
@@ -1299,8 +1358,15 @@
       c.translate(echoX, feet);
       c.scale(f.face, 1);
       if (ready(image)) {
-        const width = height * image.naturalWidth / image.naturalHeight;
-        c.drawImage(image, -width / 2, -height, width, height);
+        if (nativeGeometry) {
+          const measured=nativeGeometry, crop=nativeCrop(image,measured);
+          const h=height*Math.max(.1,finiteOr(measured.heightRatio,generatedPoseRatios[pose] || 1));
+          const w=h*crop[2]/crop[3];
+          c.drawImage(image,...crop,-w*finiteOr(measured.anchorX,.5),-h*finiteOr(measured.baselineY,1),w,h);
+        } else {
+          const width = height * image.naturalWidth / image.naturalHeight;
+          c.drawImage(image, -width / 2, -height, width, height);
+        }
       } else {
         oval(c,0,-height+14,12,14,AMBER);
         line(c,0,-height+30,-7,-23,AMBER,15);
@@ -1425,6 +1491,7 @@
       }
     }
     for (const s of m.shots) {
+      if (drawProjectileSprite(m,s)) continue;
       if (s.kind === 'gate') {
         c.fillStyle='rgba(168,214,181,.18)'; c.fillRect(s.x-15,FLOOR-143,30,143);
         c.strokeStyle='#cae6ca'; c.lineWidth=2; c.strokeRect(s.x-15,FLOOR-143,30,143);

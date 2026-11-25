@@ -11,24 +11,45 @@
     'heartman-intro', 'heartman-rival', 'heartman-ending'
   ]);
   story['sam-rival'] = story['sam-higgs-rival'];
+  story['diehardman-rival'] = 'assets/story/diehardman-rival.png';
   const roster = Object.keys(window.StrandContent.fighters);
   const arenas = Object.keys(window.StrandContent.stages);
   const stageLayers = (suffix, ids=arenas) => Object.fromEntries(ids.map(id => [id, 'assets/stages/' + id + suffix + '.png']));
-  // Ten locations and the dry MULE variant have five independent layers. Keep the panorama fallback
-  // for offline copies while the separate production files finish decoding.
+  // Every location has five independent layers and a panorama fallback.
   const movement = ['guard','crouch','rise','apex','fall'];
-  const fixedFrame = poses => Object.fromEntries(poses.flatMap(pose => [
-    [pose+'Anchor',.5], [pose+'Baseline',1017/1020], [pose+'Scale',1020/920]
+  const generatedFighters = ['sam','fragile','higgs','cliff','mule','diehardman','heartman'];
+  const replacementRoot = {heartman:'assets/fighters/heartman/',higgs:'assets/fighters/higgs/',diehardman:'assets/fighters/diehardman/',mama:'assets/fighters/mama/atelier/'};
+  const replacement = pose => Object.fromEntries(Object.entries(replacementRoot).map(([id,folder])=>[id,folder+pose+'.png']));
+  const poses = Object.fromEntries(generatedFighters.map(id => [id,
+    Object.fromEntries(movement.map(pose => [pose,'assets/fighters/'+id+'/'+pose+'.png']))
   ]));
+  poses.heartman = {...poses.heartman,...Object.fromEntries(['stance','action','step','hit'].map(pose=>[pose,replacementRoot.heartman+pose+'.png']))};
+  poses.higgs = {...poses.higgs,...Object.fromEntries(['stance','action','step','hit','jump'].map(pose=>[pose,replacementRoot.higgs+pose+'.png']))};
+  poses.diehardman = {...poses.diehardman,...Object.fromEntries(['stance','action','step','hit','jump'].map(pose=>[pose,replacementRoot.diehardman+pose+'.png']))};
+  poses.mama = Object.fromEntries(['stance','action','step','hit',...movement].map(pose=>[pose,replacementRoot.mama+pose+'.png']));
+  const nativeStageIds = ['mule-camp-dry','port-knot','incinerator'];
+  const universeStagePanoramas = {
+    'south-knot-ruins':'assets/static-20261125/south-knot-ruins-panorama.png',
+    'timefall-farm':'assets/static-20261125/timefall-farm-panorama.png',
+    'mountain-knot-approach':'assets/static-20261125/mountain-knot-city-panorama.png',
+    'magellan-ds2':'assets/static-universe-20261125/magellan-ds2-panorama.png'
+  };
   const wardrobe = {mama:{
-    atelier:{name:'Atelier', poses:illustrations('fighters/mama/atelier',movement), geometry:fixedFrame(movement)},
-    viaduc:{name:'Maintenance du viaduc', portrait:'assets/fighters/mama/viaduc/portrait.webp',
-      poses:illustrations('fighters/mama/viaduc',['stance','action','step','hit',...movement]),
-      geometry:{...fixedFrame(['stance','action','step','hit',...movement]),motionFrames:1}}
+    atelier:{name:'Atelier'},
+    viaduc:{name:'Maintenance du viaduc', portrait:'assets/fighters/mama/viaduc/portrait.png',
+      poses:Object.fromEntries(['stance','action','step','hit',...movement].map(pose=>[pose,'assets/fighters/mama/viaduc/'+pose+'.png'])),
+      nativePoses:true,poseGeometry:window.StrandGeneratedGeometry?.wardrobes?.mama?.viaduc || {}}
+
   }};
   window.StrandAssets = {
     wardrobe,
-    jumps:Object.fromEntries(roster.filter(id=>id!=='mama').map(id=>[id,'assets/fighters/'+id+'-jump.png'])),
+    // Individual native PNGs; measured crops and foot anchors live separately.
+    // Keep every legacy jump available as a loading/offline fallback.
+    poses,
+    projectiles:Object.fromEntries(['sam','higgs','cliff','recall','gate','heartman','memory']
+      .map(id => [id,'assets/projectiles/'+id+'.png'])),
+    generatedGeometry:window.StrandGeneratedGeometry || {},
+    jumps:{...Object.fromEntries(roster.filter(id=>id!=='mama').map(id=>[id,'assets/fighters/'+id+'-jump.png'])),diehardman:replacementRoot.diehardman+'jump.png',higgs:replacementRoot.higgs+'jump.png'},
     geometry: {
       sam:{jumpAnchor:.5,jumpBaseline:1306/1536,jumpScale:1},
       fragile:{jumpAnchor:.5,jumpBaseline:1226/1536,jumpScale:1},
@@ -40,10 +61,10 @@
     },
     hero: story['sam-higgs-rival'],
     story,
-    fighters: illustrations('fighters', roster, '-stance'),
-    actions: illustrations('fighters', roster, '-action'),
-    steps: illustrations('fighters', roster, '-step'),
-    hits: illustrations('fighters', roster, '-hit'),
+    fighters: {...illustrations('fighters', roster, '-stance'),...replacement('stance')},
+    actions: {...illustrations('fighters', roster, '-action'),...replacement('action')},
+    steps: {...illustrations('fighters', roster, '-step'),...replacement('step')},
+    hits: {...illustrations('fighters', roster, '-hit'),...replacement('hit')},
     props: {
       cargo:'assets/props/mule-cargo.webp',
       closedParcel:'assets/props/courier-parcel-closed.png',
@@ -52,9 +73,10 @@
       goldImprint:'assets/props/gold-imprint.png',
       heartmanMonitor:'assets/props/heartman-monitor.png'
     },
-    portraits: illustrations('fighters', roster, '-portrait'),
+    portraits: {...illustrations('fighters', roster, '-portrait'),...replacement('portrait')},
+    supportPortraits:{...Object.fromEntries(['deadman','amelie','bridget'].map(id=>[id,'assets/fighters/support/'+id+'-portrait.png'])),lockne:'assets/static-20261125/lockne-portrait.png'},
     finishers: illustrations('finishers', roster),
-    stages: {...illustrations('stages', arenas), 'mule-camp-dry':'assets/stages/mule-camp-dry.png'},
+    stages: {...illustrations('stages', arenas),...stageLayers('',nativeStageIds),...universeStagePanoramas},
     skyplates: stageLayers('-sky'),
     distants: stageLayers('-distant'),
     midgrounds: stageLayers('-midground'),
@@ -72,8 +94,15 @@
       'ruined-factory':{distant:{anchorY:.96,base:592},middle:{anchorY:.93,base:596},floor:{anchorY:202/724}},
       'timefall-shelter':{distant:{anchorY:.96,base:592},middle:{anchorY:.93,base:576},floor:{anchorY:235/724}},
       'tar-basin':{distant:{anchorY:.96,base:592},middle:{anchorY:.95,base:572},floor:{anchorY:213/724}},
-      'mountain-pass':{distant:{anchorY:707/724,base:594},middle:{anchorY:687/724,base:594},floor:{anchorY:194/724}}
+      'mountain-pass':{distant:{anchorY:707/724,base:594},middle:{anchorY:687/724,base:594},floor:{anchorY:194/724}},
+      'port-knot':{distant:{anchorY:1,base:598},middle:{anchorY:1,base:594},floor:{anchorY:367/941}},
+      incinerator:{distant:{anchorY:1,base:598},middle:{anchorY:1,base:594},floor:{anchorY:273/809}},
+      // Native support rows measured on the unchanged 1672 × 941 PNGs (2026-11-25).
+      'south-knot-ruins':{distant:{anchorY:1,base:598},middle:{anchorY:913/941,base:594},floor:{anchorY:392/941}},
+      'timefall-farm':{distant:{anchorY:1,base:598},middle:{anchorY:840/941,base:594},floor:{anchorY:359/941}},
+      'mountain-knot-approach':{distant:{anchorY:1,base:598},middle:{anchorY:1,base:594},floor:{anchorY:376/941}},
+      'magellan-ds2':{distant:{anchorY:1,base:598},middle:{anchorY:1,base:594},floor:{anchorY:445/941}}
     },
-    foregrounds: {...illustrations('stages', arenas, '-foreground'), 'mule-camp-dry':'assets/stages/mule-camp-dry-foreground.png'}
+    foregrounds: {...illustrations('stages', arenas, '-foreground'),...stageLayers('-foreground',[...nativeStageIds,...Object.keys(universeStagePanoramas)])}
   };
 })();

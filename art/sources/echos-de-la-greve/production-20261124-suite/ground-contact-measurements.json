@@ -1,0 +1,1830 @@
+{
+  "date": "2026-11-24",
+  "scope": "Supplemental source-specific contact evidence for integrated repaint batches; complete 67-pose runtime geometry is in asset-geometry-20261124.js.",
+  "crop_format": "runtime_geometry.crop is [x,y,width,height]; original_measurement.crop is [left,top,right-exclusive,bottom-exclusive].",
+  "source_pixels": "Unchanged after generation; this file documents render placement only.",
+  "sources": [
+    {
+      "fighter": "diehardman",
+      "outfit": null,
+      "pose": "stance",
+      "path": "modes/echos-de-la-greve/assets/fighters/diehardman/stance.png",
+      "source_manifest": "art/sources/echos-de-la-greve/production-20261124-suite/characters-mama-diehardman.json",
+      "method": "alpha >96 in the lowest 1.5% alpha-bbox band; anchor from midpoint of support extent",
+      "original_measurement": {
+        "id": "diehardman",
+        "pose": "stance",
+        "path": "modes/echos-de-la-greve/assets/fighters/diehardman/stance.png",
+        "source_bbox": [
+          60,
+          54,
+          753,
+          1858
+        ],
+        "crop": [
+          57,
+          51,
+          756,
+          1861
+        ],
+        "band_start_y": 1830,
+        "band_end_y_exclusive": 1858,
+        "support_min_x": 61,
+        "support_max_x_exclusive": 738,
+        "support_pixels": 6317,
+        "center_of_extent_x": 399.5,
+        "mean_pixel_center_x": 317.12687984802915,
+        "anchorX": 0.4899856938483548,
+        "mean_anchorX": 0.372141459010056
+      },
+      "runtime_geometry": {
+        "crop": [
+          57,
+          51,
+          699,
+          1810
+        ],
+        "anchorX": 0.489986,
+        "baselineY": 0.998343,
+        "heightRatio": 1
+      }
+    },
+    {
+      "fighter": "diehardman",
+      "outfit": null,
+      "pose": "action",
+      "path": "modes/echos-de-la-greve/assets/fighters/diehardman/action.png",
+      "source_manifest": "art/sources/echos-de-la-greve/production-20261124-suite/characters-mama-diehardman.json",
+      "method": "alpha >96 in the lowest 1.5% alpha-bbox band; anchor from midpoint of support extent",
+      "original_measurement": {
+        "id": "diehardman",
+        "pose": "action",
+        "path": "modes/echos-de-la-greve/assets/fighters/diehardman/action.png",
+        "source_bbox": [
+          61,
+          38,
+          1126,
+          1292
+        ],
+        "crop": [
+          58,
+          35,
+          1129,
+          1295
+        ],
+        "band_start_y": 1273,
+        "band_end_y_exclusive": 1292,
+        "support_min_x": 62,
+        "support_max_x_exclusive": 925,
+        "support_pixels": 4201,
+        "center_of_extent_x": 493.5,
+        "mean_pixel_center_x": 433.90585574863127,
+        "anchorX": 0.4066293183940243,
+        "mean_anchorX": 0.3509858597092729
+      },
+      "runtime_geometry": {
+        "crop": [
+          58,
+          35,
+          1071,
+          1260
+        ],
+        "anchorX": 0.406629,
+        "baselineY": 0.997619,
+        "heightRatio": 1
+      }
+    },
+    {
+      "fighter": "diehardman",
+      "outfit": null,
+      "pose": "step",
+      "path": "modes/echos-de-la-greve/assets/fighters/diehardman/step.png",
+      "source_manifest": "art/sources/echos-de-la-greve/production-20261124-suite/characters-mama-diehardman.json",
+      "method": "alpha >96 in the lowest 1.5% alpha-bbox band; anchor from midpoint of support extent",
+      "original_measurement": {
+        "id": "diehardman",
+        "pose": "step",
+        "path": "modes/echos-de-la-greve/assets/fighters/diehardman/step.png",
+        "source_bbox": [
+          56,
+          74,
+          951,
+          1484
+        ],
+        "crop": [
+          53,
+          71,
+          954,
+          1487
+        ],
+        "band_start_y": 1462,
+        "band_end_y_exclusive": 1484,
+        "support_min_x": 164,
+        "support_max_x_exclusive": 919,
+        "support_pixels": 3837,
+        "center_of_extent_x": 541.5,
+        "mean_pixel_center_x": 702.7796455564243,
+        "anchorX": 0.5421753607103219,
+        "mean_anchorX": 0.721176077199139
+      },
+      "runtime_geometry": {
+        "crop": [
+          53,
+          71,
+          901,
+          1416
+        ],
+        "anchorX": 0.542175,
+        "baselineY": 0.997881,
+        "heightRatio": 1
+      }
+    },
+    {
+      "fighter": "diehardman",
+      "outfit": null,
+      "pose": "hit",
+      "path": "modes/echos-de-la-greve/assets/fighters/diehardman/hit.png",
+      "source_manifest": "art/sources/echos-de-la-greve/production-20261124-suite/characters-mama-diehardman.json",
+      "method": "alpha >96 in the lowest 1.5% alpha-bbox band; anchor from midpoint of support extent",
+      "original_measurement": {
+        "id": "diehardman",
+        "pose": "hit",
+        "path": "modes/echos-de-la-greve/assets/fighters/diehardman/hit.png",
+        "source_bbox": [
+          77,
+          51,
+          916,
+          1512
+        ],
+        "crop": [
+          74,
+          48,
+          919,
+          1515
+        ],
+        "band_start_y": 1490,
+        "band_end_y_exclusive": 1512,
+        "support_min_x": 78,
+        "support_max_x_exclusive": 913,
+        "support_pixels": 5704,
+        "center_of_extent_x": 495.5,
+        "mean_pixel_center_x": 424.4032258064516,
+        "anchorX": 0.49881656804733726,
+        "mean_anchorX": 0.41467837373544564
+      },
+      "runtime_geometry": {
+        "crop": [
+          74,
+          48,
+          845,
+          1467
+        ],
+        "anchorX": 0.498817,
+        "baselineY": 0.997955,
+        "heightRatio": 0.94
+      }
+    },
+    {
+      "fighter": "mama",
+      "outfit": "atelier",
+      "pose": "stance",
+      "path": "modes/echos-de-la-greve/assets/fighters/mama/atelier/stance.png",
+      "source_manifest": "art/sources/echos-de-la-greve/production-20261124-suite/characters-mama-diehardman.json",
+      "method": "alpha >96 in the lowest 1.5% alpha-bbox band; anchor from midpoint of support extent",
+      "original_measurement": {
+        "id": "mama",
+        "pose": "stance",
+        "path": "modes/echos-de-la-greve/assets/fighters/mama/atelier/stance.png",
+        "source_bbox": [
+          241,
+          19,
+          683,
+          1520
+        ],
+        "crop": [
+          238,
+          16,
+          686,
+          1523
+        ],
+        "band_start_y": 1497,
+        "band_end_y_exclusive": 1520,
+        "support_min_x": 301,
+        "support_max_x_exclusive": 636,
+        "support_pixels": 2950,
+        "center_of_extent_x": 468.5,
+        "mean_pixel_center_x": 398.6271186440678,
+        "anchorX": 0.5145089285714286,
+        "mean_anchorX": 0.35854267554479424
+      },
+      "runtime_geometry": {
+        "crop": [
+          238,
+          16,
+          448,
+          1507
+        ],
+        "anchorX": 0.514509,
+        "baselineY": 0.998009,
+        "heightRatio": 1
+      }
+    },
+    {
+      "fighter": "mama",
+      "outfit": "atelier",
+      "pose": "action",
+      "path": "modes/echos-de-la-greve/assets/fighters/mama/atelier/action.png",
+      "source_manifest": "art/sources/echos-de-la-greve/production-20261124-suite/characters-mama-diehardman.json",
+      "method": "alpha >96 in the lowest 1.5% alpha-bbox band; anchor from midpoint of support extent",
+      "original_measurement": {
+        "id": "mama",
+        "pose": "action",
+        "path": "modes/echos-de-la-greve/assets/fighters/mama/atelier/action.png",
+        "source_bbox": [
+          52,
+          23,
+          1004,
+          1518
+        ],
+        "crop": [
+          49,
+          20,
+          1007,
+          1521
+        ],
+        "band_start_y": 1495,
+        "band_end_y_exclusive": 1518,
+        "support_min_x": 52,
+        "support_max_x_exclusive": 238,
+        "support_pixels": 2906,
+        "center_of_extent_x": 145,
+        "mean_pixel_center_x": 158.5860289057123,
+        "anchorX": 0.10020876826722339,
+        "mean_anchorX": 0.11439042683268509
+      },
+      "runtime_geometry": {
+        "crop": [
+          49,
+          20,
+          958,
+          1501
+        ],
+        "anchorX": 0.100209,
+        "baselineY": 0.998001,
+        "heightRatio": 1
+      }
+    },
+    {
+      "fighter": "mama",
+      "outfit": "atelier",
+      "pose": "step",
+      "path": "modes/echos-de-la-greve/assets/fighters/mama/atelier/step.png",
+      "source_manifest": "art/sources/echos-de-la-greve/production-20261124-suite/characters-mama-diehardman.json",
+      "method": "alpha >96 in the lowest 1.5% alpha-bbox band; anchor from midpoint of support extent",
+      "original_measurement": {
+        "id": "mama",
+        "pose": "step",
+        "path": "modes/echos-de-la-greve/assets/fighters/mama/atelier/step.png",
+        "source_bbox": [
+          80,
+          17,
+          940,
+          1509
+        ],
+        "crop": [
+          77,
+          14,
+          943,
+          1512
+        ],
+        "band_start_y": 1486,
+        "band_end_y_exclusive": 1509,
+        "support_min_x": 166,
+        "support_max_x_exclusive": 868,
+        "support_pixels": 3505,
+        "center_of_extent_x": 517,
+        "mean_pixel_center_x": 534.7875891583452,
+        "anchorX": 0.5080831408775982,
+        "mean_anchorX": 0.5286230821689899
+      },
+      "runtime_geometry": {
+        "crop": [
+          77,
+          14,
+          866,
+          1498
+        ],
+        "anchorX": 0.508083,
+        "baselineY": 0.997997,
+        "heightRatio": 1
+      }
+    },
+    {
+      "fighter": "mama",
+      "outfit": "atelier",
+      "pose": "hit",
+      "path": "modes/echos-de-la-greve/assets/fighters/mama/atelier/hit.png",
+      "source_manifest": "art/sources/echos-de-la-greve/production-20261124-suite/characters-mama-diehardman.json",
+      "method": "alpha >96 in the lowest 1.5% alpha-bbox band; anchor from midpoint of support extent",
+      "original_measurement": {
+        "id": "mama",
+        "pose": "hit",
+        "path": "modes/echos-de-la-greve/assets/fighters/mama/atelier/hit.png",
+        "source_bbox": [
+          115,
+          36,
+          821,
+          1518
+        ],
+        "crop": [
+          112,
+          33,
+          824,
+          1521
+        ],
+        "band_start_y": 1495,
+        "band_end_y_exclusive": 1518,
+        "support_min_x": 269,
+        "support_max_x_exclusive": 764,
+        "support_pixels": 3477,
+        "center_of_extent_x": 516.5,
+        "mean_pixel_center_x": 408.68291630716135,
+        "anchorX": 0.5681179775280899,
+        "mean_anchorX": 0.41668948919545135
+      },
+      "runtime_geometry": {
+        "crop": [
+          112,
+          33,
+          712,
+          1488
+        ],
+        "anchorX": 0.568118,
+        "baselineY": 0.997984,
+        "heightRatio": 0.94
+      }
+    },
+    {
+      "fighter": "mama",
+      "outfit": "atelier",
+      "pose": "guard",
+      "path": "modes/echos-de-la-greve/assets/fighters/mama/atelier/guard.png",
+      "source_manifest": "art/sources/echos-de-la-greve/production-20261124-suite/characters-mama-diehardman.json",
+      "method": "alpha >96 in the lowest 1.5% alpha-bbox band; anchor from midpoint of support extent",
+      "original_measurement": {
+        "id": "mama",
+        "pose": "guard",
+        "path": "modes/echos-de-la-greve/assets/fighters/mama/atelier/guard.png",
+        "source_bbox": [
+          193,
+          49,
+          794,
+          1511
+        ],
+        "crop": [
+          190,
+          46,
+          797,
+          1514
+        ],
+        "band_start_y": 1489,
+        "band_end_y_exclusive": 1511,
+        "support_min_x": 194,
+        "support_max_x_exclusive": 765,
+        "support_pixels": 3663,
+        "center_of_extent_x": 479.5,
+        "mean_pixel_center_x": 347.94144144144144,
+        "anchorX": 0.4769357495881384,
+        "mean_anchorX": 0.26020006827255593
+      },
+      "runtime_geometry": {
+        "crop": [
+          190,
+          46,
+          607,
+          1468
+        ],
+        "anchorX": 0.476936,
+        "baselineY": 0.997956,
+        "heightRatio": 0.98
+      }
+    },
+    {
+      "fighter": "mama",
+      "outfit": "atelier",
+      "pose": "crouch",
+      "path": "modes/echos-de-la-greve/assets/fighters/mama/atelier/crouch.png",
+      "source_manifest": "art/sources/echos-de-la-greve/production-20261124-suite/characters-mama-diehardman.json",
+      "method": "alpha >96 in the lowest 1.5% alpha-bbox band; anchor from midpoint of support extent",
+      "original_measurement": {
+        "id": "mama",
+        "pose": "crouch",
+        "path": "modes/echos-de-la-greve/assets/fighters/mama/atelier/crouch.png",
+        "source_bbox": [
+          171,
+          58,
+          1007,
+          1164
+        ],
+        "crop": [
+          168,
+          55,
+          1010,
+          1167
+        ],
+        "band_start_y": 1147,
+        "band_end_y_exclusive": 1164,
+        "support_min_x": 325,
+        "support_max_x_exclusive": 547,
+        "support_pixels": 2196,
+        "center_of_extent_x": 436,
+        "mean_pixel_center_x": 453.69990892531877,
+        "anchorX": 0.3182897862232779,
+        "mean_anchorX": 0.3393110557307824
+      },
+      "runtime_geometry": {
+        "crop": [
+          168,
+          55,
+          842,
+          1112
+        ],
+        "anchorX": 0.31829,
+        "baselineY": 0.997302,
+        "heightRatio": 0.68
+      }
+    },
+    {
+      "fighter": "heartman",
+      "outfit": null,
+      "pose": "stance",
+      "path": "modes/echos-de-la-greve/assets/fighters/heartman/stance.png",
+      "source_manifest": "art/sources/echos-de-la-greve/production-20261124-suite/characters-heartman.json",
+      "method": "alpha >96 in the lowest 1.5% alpha-bbox band; anchor from midpoint of support extent",
+      "original_measurement": {
+        "id": "heartman",
+        "pose": "stance",
+        "path": "modes/echos-de-la-greve/assets/fighters/heartman/stance.png",
+        "source_bbox": [
+          103,
+          19,
+          587,
+          2128
+        ],
+        "crop": [
+          100,
+          16,
+          590,
+          2131
+        ],
+        "band_start_y": 2096,
+        "band_end_y_exclusive": 2128,
+        "support_min_x": 126,
+        "support_max_x_exclusive": 489,
+        "support_pixels": 7510,
+        "center_of_extent_x": 307.5,
+        "mean_pixel_center_x": 278.9699067909454,
+        "anchorX": 0.42346938775510207,
+        "mean_anchorX": 0.36524470773662326
+      },
+      "runtime_geometry": {
+        "crop": [
+          100,
+          16,
+          490,
+          2115
+        ],
+        "anchorX": 0.423469,
+        "baselineY": 0.998582,
+        "heightRatio": 1
+      }
+    },
+    {
+      "fighter": "heartman",
+      "outfit": null,
+      "pose": "action",
+      "path": "modes/echos-de-la-greve/assets/fighters/heartman/action.png",
+      "source_manifest": "art/sources/echos-de-la-greve/production-20261124-suite/characters-heartman.json",
+      "method": "alpha >96 in the lowest 1.5% alpha-bbox band; anchor from midpoint of support extent",
+      "original_measurement": {
+        "id": "heartman",
+        "pose": "action",
+        "path": "modes/echos-de-la-greve/assets/fighters/heartman/action.png",
+        "source_bbox": [
+          9,
+          36,
+          720,
+          2102
+        ],
+        "crop": [
+          6,
+          33,
+          723,
+          2105
+        ],
+        "band_start_y": 2071,
+        "band_end_y_exclusive": 2102,
+        "support_min_x": 41,
+        "support_max_x_exclusive": 435,
+        "support_pixels": 6110,
+        "center_of_extent_x": 238,
+        "mean_pixel_center_x": 195.32127659574468,
+        "anchorX": 0.32357043235704325,
+        "mean_anchorX": 0.2640464108727262
+      },
+      "runtime_geometry": {
+        "crop": [
+          6,
+          33,
+          717,
+          2072
+        ],
+        "anchorX": 0.32357,
+        "baselineY": 0.998552,
+        "heightRatio": 0.98
+      }
+    },
+    {
+      "fighter": "heartman",
+      "outfit": null,
+      "pose": "step",
+      "path": "modes/echos-de-la-greve/assets/fighters/heartman/step.png",
+      "source_manifest": "art/sources/echos-de-la-greve/production-20261124-suite/characters-heartman.json",
+      "method": "alpha >96 in the lowest 1.5% alpha-bbox band; anchor from midpoint of support extent",
+      "original_measurement": {
+        "id": "heartman",
+        "pose": "step",
+        "path": "modes/echos-de-la-greve/assets/fighters/heartman/step.png",
+        "source_bbox": [
+          65,
+          48,
+          952,
+          1487
+        ],
+        "crop": [
+          62,
+          45,
+          955,
+          1490
+        ],
+        "band_start_y": 1465,
+        "band_end_y_exclusive": 1487,
+        "support_min_x": 142,
+        "support_max_x_exclusive": 895,
+        "support_pixels": 4277,
+        "center_of_extent_x": 518.5,
+        "mean_pixel_center_x": 568.8474397942483,
+        "anchorX": 0.5111982082866742,
+        "mean_anchorX": 0.567578320038352
+      },
+      "runtime_geometry": {
+        "crop": [
+          62,
+          45,
+          893,
+          1445
+        ],
+        "anchorX": 0.511198,
+        "baselineY": 0.997924,
+        "heightRatio": 0.93
+      }
+    },
+    {
+      "fighter": "heartman",
+      "outfit": null,
+      "pose": "hit",
+      "path": "modes/echos-de-la-greve/assets/fighters/heartman/hit.png",
+      "source_manifest": "art/sources/echos-de-la-greve/production-20261124-suite/characters-heartman.json",
+      "method": "alpha >96 in the lowest 1.5% alpha-bbox band; anchor from midpoint of support extent",
+      "original_measurement": {
+        "id": "heartman",
+        "pose": "hit",
+        "path": "modes/echos-de-la-greve/assets/fighters/heartman/hit.png",
+        "source_bbox": [
+          14,
+          130,
+          713,
+          1976
+        ],
+        "crop": [
+          11,
+          127,
+          716,
+          1979
+        ],
+        "band_start_y": 1948,
+        "band_end_y_exclusive": 1976,
+        "support_min_x": 58,
+        "support_max_x_exclusive": 274,
+        "support_pixels": 4056,
+        "center_of_extent_x": 166,
+        "mean_pixel_center_x": 184.57001972386587,
+        "anchorX": 0.2198581560283688,
+        "mean_anchorX": 0.2461986095373984
+      },
+      "runtime_geometry": {
+        "crop": [
+          11,
+          127,
+          705,
+          1852
+        ],
+        "anchorX": 0.219858,
+        "baselineY": 0.99838,
+        "heightRatio": 0.88
+      }
+    },
+    {
+      "fighter": "higgs",
+      "pose": "stance",
+      "path": "modes/echos-de-la-greve/assets/fighters/higgs/stance.png",
+      "source_blob": "d32f4982688271f140a947f8c66b55edcacedccc",
+      "source_manifest": "art/sources/echos-de-la-greve/production-20261124-suite/higgs-canonical-mask.json",
+      "method": "Two independent alpha >96 boot ROIs. Grounded anchor averages boot centers, except hit uses planted rear foot; airborne anchor is crop center. Baseline follows lowest boot, excluding lower cape.",
+      "alpha_bbox": [
+        23,
+        26,
+        880,
+        1719
+      ],
+      "contacts": [
+        {
+          "label": "rear boot",
+          "roi": [
+            360,
+            1470,
+            612,
+            1747
+          ],
+          "alpha_threshold": 96,
+          "lower_band_depth": 26,
+          "native_point": [
+            490,
+            1717
+          ],
+          "weighted_center_x": 493.7892087779344,
+          "x_span": [
+            377,
+            604
+          ],
+          "sample_count": 4967
+        },
+        {
+          "label": "front boot",
+          "roi": [
+            615,
+            1470,
+            890,
+            1747
+          ],
+          "alpha_threshold": 96,
+          "lower_band_depth": 26,
+          "native_point": [
+            750.5,
+            1711
+          ],
+          "weighted_center_x": 753.1789569990851,
+          "x_span": [
+            623,
+            879
+          ],
+          "sample_count": 5465
+        }
+      ],
+      "preferred_native_baseline_y": 1717,
+      "contact_note": "Two boot ROIs sampled with alpha >96 in their lower band, depth 1.5% of the full alpha bbox height. Anchor values refer to raw crop; integration will add 3px margin and recompute.",
+      "runtime_geometry": {
+        "crop": [
+          20,
+          23,
+          863,
+          1699
+        ],
+        "anchorX": 0.695539,
+        "baselineY": 0.997057,
+        "heightRatio": 1
+      }
+    },
+    {
+      "fighter": "higgs",
+      "pose": "action",
+      "path": "modes/echos-de-la-greve/assets/fighters/higgs/action.png",
+      "source_blob": "92ed479ccfd0788cc015663fb0b4e50a2137b1ae",
+      "source_manifest": "art/sources/echos-de-la-greve/production-20261124-suite/higgs-canonical-mask.json",
+      "method": "Two independent alpha >96 boot ROIs. Grounded anchor averages boot centers, except hit uses planted rear foot; airborne anchor is crop center. Baseline follows lowest boot, excluding lower cape.",
+      "alpha_bbox": [
+        21,
+        18,
+        1514,
+        999
+      ],
+      "contacts": [
+        {
+          "label": "rear boot",
+          "roi": [
+            340,
+            850,
+            530,
+            1024
+          ],
+          "alpha_threshold": 96,
+          "lower_band_depth": 15,
+          "native_point": [
+            432,
+            997
+          ],
+          "weighted_center_x": 443.17110874200426,
+          "x_span": [
+            352,
+            513
+          ],
+          "sample_count": 1876
+        },
+        {
+          "label": "front boot",
+          "roi": [
+            1140,
+            850,
+            1400,
+            1024
+          ],
+          "alpha_threshold": 96,
+          "lower_band_depth": 15,
+          "native_point": [
+            1272.5,
+            995
+          ],
+          "weighted_center_x": 1269.198312236287,
+          "x_span": [
+            1158,
+            1388
+          ],
+          "sample_count": 2607
+        }
+      ],
+      "preferred_native_baseline_y": 997,
+      "contact_note": "Exactly two boot contacts from independent ROIs. Front outsole has a tread gap; its two raw alpha spans form one boot, not two supports.",
+      "runtime_geometry": {
+        "crop": [
+          18,
+          15,
+          1499,
+          987
+        ],
+        "anchorX": 0.556538,
+        "baselineY": 0.994934,
+        "heightRatio": 0.8
+      }
+    },
+    {
+      "fighter": "higgs",
+      "pose": "step",
+      "path": "modes/echos-de-la-greve/assets/fighters/higgs/step.png",
+      "source_blob": "c5a5ba4d5da4c96337232f4e2ddc1c1979868960",
+      "source_manifest": "art/sources/echos-de-la-greve/production-20261124-suite/higgs-canonical-mask.json",
+      "method": "Two independent alpha >96 boot ROIs. Grounded anchor averages boot centers, except hit uses planted rear foot; airborne anchor is crop center. Baseline follows lowest boot, excluding lower cape.",
+      "alpha_bbox": [
+        37,
+        36,
+        1159,
+        1277
+      ],
+      "contacts": [
+        {
+          "label": "rear boot",
+          "roi": [
+            360,
+            1040,
+            600,
+            1300
+          ],
+          "alpha_threshold": 96,
+          "lower_band_depth": 19,
+          "native_point": [
+            514.5,
+            1272
+          ],
+          "weighted_center_x": 520.2767467248908,
+          "x_span": [
+            458,
+            572
+          ],
+          "sample_count": 1832
+        },
+        {
+          "label": "front boot",
+          "roi": [
+            920,
+            1060,
+            1180,
+            1300
+          ],
+          "alpha_threshold": 96,
+          "lower_band_depth": 19,
+          "native_point": [
+            1016,
+            1275
+          ],
+          "weighted_center_x": 995.7483870967742,
+          "x_span": [
+            942,
+            1091
+          ],
+          "sample_count": 1705
+        }
+      ],
+      "preferred_native_baseline_y": 1275,
+      "contact_note": "Exactly two boot contacts from independent ROIs. Front outsole raw spans are grouped as one boot; raised rear heel remains part of the walking step.",
+      "runtime_geometry": {
+        "crop": [
+          34,
+          33,
+          1128,
+          1247
+        ],
+        "anchorX": 0.648271,
+        "baselineY": 0.99599,
+        "heightRatio": 0.95
+      }
+    },
+    {
+      "fighter": "higgs",
+      "pose": "hit",
+      "path": "modes/echos-de-la-greve/assets/fighters/higgs/hit.png",
+      "source_blob": "64cbea2c7484345afdad2f14aa592fc4c4fbf90e",
+      "source_manifest": "art/sources/echos-de-la-greve/production-20261124-suite/higgs-canonical-mask.json",
+      "method": "Two independent alpha >96 boot ROIs. Grounded anchor averages boot centers, except hit uses planted rear foot; airborne anchor is crop center. Baseline follows lowest boot, excluding lower cape.",
+      "alpha_bbox": [
+        16,
+        124,
+        873,
+        1629
+      ],
+      "contacts": [
+        {
+          "label": "rear boot",
+          "roi": [
+            180,
+            1470,
+            440,
+            1660
+          ],
+          "alpha_threshold": 96,
+          "lower_band_depth": 23,
+          "native_point": [
+            306.5,
+            1628
+          ],
+          "weighted_center_x": 312.74993226767816,
+          "x_span": [
+            194,
+            420
+          ],
+          "sample_count": 3691
+        },
+        {
+          "label": "front raised boot",
+          "roi": [
+            560,
+            1450,
+            880,
+            1620
+          ],
+          "alpha_threshold": 96,
+          "lower_band_depth": 23,
+          "native_point": [
+            714.5,
+            1592
+          ],
+          "weighted_center_x": 713.3653846153846,
+          "x_span": [
+            576,
+            854
+          ],
+          "sample_count": 4992
+        }
+      ],
+      "preferred_native_baseline_y": 1628,
+      "contact_note": "Front boot is raised: its lower native edge is y=1592, above rear boot y=1628. Use measured boot ROIs rather than assuming both soles share one baseline.",
+      "runtime_geometry": {
+        "crop": [
+          13,
+          121,
+          863,
+          1511
+        ],
+        "anchorX": 0.340093,
+        "baselineY": 0.997353,
+        "heightRatio": 0.94
+      }
+    },
+    {
+      "fighter": "higgs",
+      "pose": "jump",
+      "path": "modes/echos-de-la-greve/assets/fighters/higgs/jump.png",
+      "source_blob": "7aee67aa18fe97dfe2dec53de343b78274143f9f",
+      "source_manifest": "art/sources/echos-de-la-greve/production-20261124-suite/higgs-canonical-mask.json",
+      "method": "Two independent alpha >96 boot ROIs. Grounded anchor averages boot centers, except hit uses planted rear foot; airborne anchor is crop center. Baseline follows lowest boot, excluding lower cape.",
+      "alpha_bbox": [
+        28,
+        13,
+        1253,
+        1153
+      ],
+      "contacts": [
+        {
+          "label": "rear folded boot",
+          "roi": [
+            400,
+            820,
+            690,
+            1170
+          ],
+          "alpha_threshold": 96,
+          "lower_band_depth": 18,
+          "native_point": [
+            502,
+            1152
+          ],
+          "weighted_center_x": 502.00205338809036,
+          "x_span": [
+            481,
+            524
+          ],
+          "sample_count": 487
+        },
+        {
+          "label": "front raised boot",
+          "roi": [
+            920,
+            780,
+            1210,
+            1050
+          ],
+          "alpha_threshold": 96,
+          "lower_band_depth": 18,
+          "native_point": [
+            988,
+            1027
+          ],
+          "weighted_center_x": 983.448275862069,
+          "x_span": [
+            938,
+            1039
+          ],
+          "sample_count": 1305
+        }
+      ],
+      "preferred_native_baseline_y": 1152,
+      "contact_note": "Airborne pose; boot sample points are display calage, not ground contacts. Raised front sole is measured independently above the lower rear boot. Capsule and cloth remain in their existing body-side positions.",
+      "runtime_geometry": {
+        "crop": [
+          25,
+          10,
+          1231,
+          1146
+        ],
+        "anchorX": 0.5,
+        "baselineY": 0.99651,
+        "heightRatio": 0.72
+      }
+    },
+    {
+      "fighter": "higgs",
+      "pose": "guard",
+      "path": "modes/echos-de-la-greve/assets/fighters/higgs/guard.png",
+      "source_blob": "fd00384b28864b3ea5917a4143c486496c2fabf7",
+      "source_manifest": "art/sources/echos-de-la-greve/production-20261124-suite/higgs-canonical-mask.json",
+      "method": "Two independent alpha >96 boot ROIs. Grounded anchor averages boot centers, except hit uses planted rear foot; airborne anchor is crop center. Baseline follows lowest boot, excluding lower cape.",
+      "alpha_bbox": [
+        17,
+        51,
+        868,
+        1704
+      ],
+      "contacts": [
+        {
+          "label": "rear boot",
+          "roi": [
+            290,
+            1470,
+            550,
+            1747
+          ],
+          "alpha_threshold": 96,
+          "lower_band_depth": 25,
+          "native_point": [
+            419.5,
+            1702
+          ],
+          "weighted_center_x": 429.5002202643172,
+          "x_span": [
+            302,
+            538
+          ],
+          "sample_count": 4540
+        },
+        {
+          "label": "front boot",
+          "roi": [
+            570,
+            1470,
+            890,
+            1747
+          ],
+          "alpha_threshold": 96,
+          "lower_band_depth": 25,
+          "native_point": [
+            717.5,
+            1693
+          ],
+          "weighted_center_x": 720.2297580491522,
+          "x_span": [
+            580,
+            856
+          ],
+          "sample_count": 5249
+        }
+      ],
+      "preferred_native_baseline_y": 1702,
+      "contact_note": "Grounded pose; measured the two boot ROIs independently with alpha >96 in their bottom 1.5% bands.",
+      "runtime_geometry": {
+        "crop": [
+          14,
+          48,
+          857,
+          1659
+        ],
+        "anchorX": 0.647025,
+        "baselineY": 0.996986,
+        "heightRatio": 0.99
+      }
+    },
+    {
+      "fighter": "higgs",
+      "pose": "crouch",
+      "path": "modes/echos-de-la-greve/assets/fighters/higgs/crouch.png",
+      "source_blob": "dd9f6d3bbb6be8634866a9df194ee8137a212a4b",
+      "source_manifest": "art/sources/echos-de-la-greve/production-20261124-suite/higgs-canonical-mask.json",
+      "method": "Two independent alpha >96 boot ROIs. Grounded anchor averages boot centers, except hit uses planted rear foot; airborne anchor is crop center. Baseline follows lowest boot, excluding lower cape.",
+      "alpha_bbox": [
+        43,
+        10,
+        1460,
+        1015
+      ],
+      "contacts": [
+        {
+          "label": "rear toe-braced boot",
+          "roi": [
+            420,
+            820,
+            650,
+            1024
+          ],
+          "alpha_threshold": 96,
+          "lower_band_depth": 16,
+          "native_point": [
+            563.5,
+            1008
+          ],
+          "weighted_center_x": 568.5260257195346,
+          "x_span": [
+            502,
+            626
+          ],
+          "sample_count": 1633
+        },
+        {
+          "label": "front flat boot",
+          "roi": [
+            1070,
+            840,
+            1400,
+            1024
+          ],
+          "alpha_threshold": 96,
+          "lower_band_depth": 16,
+          "native_point": [
+            1226.5,
+            1007
+          ],
+          "weighted_center_x": 1230.2203249793445,
+          "x_span": [
+            1080,
+            1374
+          ],
+          "sample_count": 3631
+        }
+      ],
+      "preferred_native_baseline_y": 1008,
+      "contact_note": "Boot soles measured independently: the cape extends below the shoe baseline, so do not use the global alpha bottom as the ground contact.",
+      "runtime_geometry": {
+        "crop": [
+          40,
+          7,
+          1423,
+          1011
+        ],
+        "anchorX": 0.600843,
+        "baselineY": 0.990109,
+        "heightRatio": 0.7
+      }
+    },
+    {
+      "fighter": "higgs",
+      "pose": "rise",
+      "path": "modes/echos-de-la-greve/assets/fighters/higgs/rise.png",
+      "source_blob": "a8aeb74f5d967d5c5d421c68bc677ca2430973f8",
+      "source_manifest": "art/sources/echos-de-la-greve/production-20261124-suite/higgs-canonical-mask.json",
+      "method": "Two independent alpha >96 boot ROIs. Grounded anchor averages boot centers, except hit uses planted rear foot; airborne anchor is crop center. Baseline follows lowest boot, excluding lower cape.",
+      "alpha_bbox": [
+        7,
+        5,
+        940,
+        1601
+      ],
+      "contacts": [
+        {
+          "label": "rear extended boot",
+          "roi": [
+            240,
+            1210,
+            420,
+            1540
+          ],
+          "alpha_threshold": 96,
+          "lower_band_depth": 24,
+          "native_point": [
+            351.5,
+            1508
+          ],
+          "weighted_center_x": 352.8748280605227,
+          "x_span": [
+            326,
+            378
+          ],
+          "sample_count": 727
+        },
+        {
+          "label": "front lifted boot",
+          "roi": [
+            650,
+            850,
+            900,
+            1140
+          ],
+          "alpha_threshold": 96,
+          "lower_band_depth": 24,
+          "native_point": [
+            821,
+            1105
+          ],
+          "weighted_center_x": 832.3954141319607,
+          "x_span": [
+            759,
+            884
+          ],
+          "sample_count": 2137
+        }
+      ],
+      "preferred_native_baseline_y": 1508,
+      "contact_note": "Airborne. Rear boot y=1508 and front boot y=1105; the lowest alpha belongs to the cape at y=1600. Anchor to measured boot positions, not the cape tip.",
+      "runtime_geometry": {
+        "crop": [
+          4,
+          2,
+          939,
+          1602
+        ],
+        "anchorX": 0.5,
+        "baselineY": 0.940075,
+        "heightRatio": 0.94
+      }
+    },
+    {
+      "fighter": "higgs",
+      "pose": "apex",
+      "path": "modes/echos-de-la-greve/assets/fighters/higgs/apex.png",
+      "source_blob": "0cfdf3941a3ccc29ebb41b9c5fcdda6cc78ca3d7",
+      "source_manifest": "art/sources/echos-de-la-greve/production-20261124-suite/higgs-canonical-mask.json",
+      "method": "Two independent alpha >96 boot ROIs. Grounded anchor averages boot centers, except hit uses planted rear foot; airborne anchor is crop center. Baseline follows lowest boot, excluding lower cape.",
+      "alpha_bbox": [
+        21,
+        19,
+        1136,
+        1192
+      ],
+      "contacts": [
+        {
+          "label": "rear folded boot",
+          "roi": [
+            450,
+            920,
+            670,
+            1220
+          ],
+          "alpha_threshold": 96,
+          "lower_band_depth": 18,
+          "native_point": [
+            558.5,
+            1190
+          ],
+          "weighted_center_x": 559.406611570248,
+          "x_span": [
+            533,
+            585
+          ],
+          "sample_count": 605
+        },
+        {
+          "label": "front tucked boot",
+          "roi": [
+            840,
+            850,
+            1120,
+            1150
+          ],
+          "alpha_threshold": 96,
+          "lower_band_depth": 18,
+          "native_point": [
+            1024.5,
+            1111
+          ],
+          "weighted_center_x": 1032.6515249837769,
+          "x_span": [
+            965,
+            1085
+          ],
+          "sample_count": 1541
+        }
+      ],
+      "preferred_native_baseline_y": 1190,
+      "contact_note": "Airborne. Rear boot y=1190, front boot y=1111; neither is a ground contact. Both points measured independently inside boot ROIs.",
+      "runtime_geometry": {
+        "crop": [
+          18,
+          16,
+          1121,
+          1179
+        ],
+        "anchorX": 0.5,
+        "baselineY": 0.995759,
+        "heightRatio": 0.84
+      }
+    },
+    {
+      "fighter": "higgs",
+      "pose": "fall",
+      "path": "modes/echos-de-la-greve/assets/fighters/higgs/fall.png",
+      "source_blob": "abd96f7d45cdad6e210720b3fffa038d2e8de45f",
+      "source_manifest": "art/sources/echos-de-la-greve/production-20261124-suite/higgs-canonical-mask.json",
+      "method": "Two independent alpha >96 boot ROIs. Grounded anchor averages boot centers, except hit uses planted rear foot; airborne anchor is crop center. Baseline follows lowest boot, excluding lower cape.",
+      "alpha_bbox": [
+        8,
+        12,
+        1137,
+        1350
+      ],
+      "contacts": [
+        {
+          "label": "rear higher boot",
+          "roi": [
+            350,
+            900,
+            550,
+            1190
+          ],
+          "alpha_threshold": 96,
+          "lower_band_depth": 21,
+          "native_point": [
+            479,
+            1165
+          ],
+          "weighted_center_x": 484.743961352657,
+          "x_span": [
+            442,
+            517
+          ],
+          "sample_count": 1035
+        },
+        {
+          "label": "front landing boot",
+          "roi": [
+            875,
+            1120,
+            1143,
+            1376
+          ],
+          "alpha_threshold": 96,
+          "lower_band_depth": 21,
+          "native_point": [
+            1005,
+            1349
+          ],
+          "weighted_center_x": 1010.4823865439542,
+          "x_span": [
+            884,
+            1127
+          ],
+          "sample_count": 3151
+        }
+      ],
+      "preferred_native_baseline_y": 1349,
+      "contact_note": "Airborne landing preparation. Front boot y=1349, rear boot y=1165. Raised cape affects the top of bbox; boot anchors measured separately.",
+      "runtime_geometry": {
+        "crop": [
+          5,
+          9,
+          1135,
+          1344
+        ],
+        "anchorX": 0.5,
+        "baselineY": 0.997024,
+        "heightRatio": 1.04
+      }
+    },
+    {
+      "fighter": "mama",
+      "outfit": "viaduc",
+      "pose": "stance",
+      "path": "modes/echos-de-la-greve/assets/fighters/mama/viaduc/stance.png",
+      "source_blob": "378bdbad3745b52e819ca88082ed373d8a70b28d",
+      "source_manifest": "docs/combat/production/20261124-viaduc/mama-viaduc-manifest.json",
+      "method": "Centroid of alpha >96 pixels in lower 1.5% alpha-bbox band; uniform pose scale calibrated against inspected helmet width.",
+      "alpha_bbox": [
+        182,
+        33,
+        862,
+        1508
+      ],
+      "contact": {
+        "alphaThreshold": 96,
+        "bandFraction": 0.015,
+        "bandY": [
+          1485,
+          1508
+        ],
+        "pixels": 4956,
+        "centroidX": 437.930790960452,
+        "xBounds": [
+          183,
+          828
+        ],
+        "baselinePx": 1508
+      },
+      "helmet_measurement": {
+        "rgbRule": "R>90; G>35; R>1.12G; B<.65G; alpha>96",
+        "roiMaxY": 172,
+        "bbox": [
+          368,
+          34,
+          605,
+          161
+        ],
+        "pixels": 10250
+      },
+      "runtime_geometry": {
+        "crop": [
+          179,
+          30,
+          686,
+          1481
+        ],
+        "anchorX": 0.37745,
+        "baselineY": 0.997974,
+        "heightRatio": 1,
+        "nativeFacing": 1
+      }
+    },
+    {
+      "fighter": "mama",
+      "outfit": "viaduc",
+      "pose": "action",
+      "path": "modes/echos-de-la-greve/assets/fighters/mama/viaduc/action.png",
+      "source_blob": "d2fa73012ef5c88fe7c4825c22cb96df85b67a12",
+      "source_manifest": "docs/combat/production/20261124-viaduc/mama-viaduc-manifest.json",
+      "method": "Centroid of alpha >96 pixels in lower 1.5% alpha-bbox band; uniform pose scale calibrated against inspected helmet width.",
+      "alpha_bbox": [
+        16,
+        200,
+        1020,
+        1440
+      ],
+      "contact": {
+        "alphaThreshold": 96,
+        "bandFraction": 0.015,
+        "bandY": [
+          1421,
+          1440
+        ],
+        "pixels": 5033,
+        "centroidX": 494.4850983508842,
+        "xBounds": [
+          17,
+          990
+        ],
+        "baselinePx": 1440
+      },
+      "helmet_measurement": {
+        "rgbRule": "R>90; G>35; R>1.12G; B<.65G; alpha>96",
+        "roiMaxY": 342,
+        "bbox": [
+          383,
+          201,
+          621,
+          324
+        ],
+        "pixels": 11757
+      },
+      "runtime_geometry": {
+        "crop": [
+          13,
+          197,
+          1010,
+          1246
+        ],
+        "anchorX": 0.476718,
+        "baselineY": 0.997592,
+        "heightRatio": 0.837788,
+        "nativeFacing": 1
+      }
+    },
+    {
+      "fighter": "mama",
+      "outfit": "viaduc",
+      "pose": "step",
+      "path": "modes/echos-de-la-greve/assets/fighters/mama/viaduc/step.png",
+      "source_blob": "3fe8f5373abc8205bcaf9ad6b0cb59d85e319db1",
+      "source_manifest": "docs/combat/production/20261124-viaduc/mama-viaduc-manifest.json",
+      "method": "Centroid of alpha >96 pixels in lower 1.5% alpha-bbox band; uniform pose scale calibrated against inspected helmet width.",
+      "alpha_bbox": [
+        34,
+        19,
+        983,
+        1506
+      ],
+      "contact": {
+        "alphaThreshold": 96,
+        "bandFraction": 0.015,
+        "bandY": [
+          1483,
+          1506
+        ],
+        "pixels": 2795,
+        "centroidX": 663.1432915921288,
+        "xBounds": [
+          136,
+          900
+        ],
+        "baselinePx": 1506
+      },
+      "helmet_measurement": {
+        "rgbRule": "R>90; G>35; R>1.12G; B<.65G; alpha>96",
+        "roiMaxY": 172,
+        "bbox": [
+          335,
+          20,
+          592,
+          158
+        ],
+        "pixels": 13974
+      },
+      "runtime_geometry": {
+        "crop": [
+          31,
+          16,
+          955,
+          1493
+        ],
+        "anchorX": 0.66193,
+        "baselineY": 0.997991,
+        "heightRatio": 0.929651,
+        "nativeFacing": 1
+      }
+    },
+    {
+      "fighter": "mama",
+      "outfit": "viaduc",
+      "pose": "hit",
+      "path": "modes/echos-de-la-greve/assets/fighters/mama/viaduc/hit.png",
+      "source_blob": "541111f4608671869740554d65ced4e420b47c98",
+      "source_manifest": "docs/combat/production/20261124-viaduc/mama-viaduc-manifest.json",
+      "method": "Centroid of alpha >96 pixels in lower 1.5% alpha-bbox band; uniform pose scale calibrated against inspected helmet width.",
+      "alpha_bbox": [
+        58,
+        59,
+        926,
+        1508
+      ],
+      "contact": {
+        "alphaThreshold": 96,
+        "bandFraction": 0.015,
+        "bandY": [
+          1486,
+          1508
+        ],
+        "pixels": 5044,
+        "centroidX": 390.71570182394925,
+        "xBounds": [
+          58,
+          925
+        ],
+        "baselinePx": 1508
+      },
+      "helmet_measurement": {
+        "rgbRule": "R>90; G>35; R>1.12G; B<.65G; alpha>96",
+        "roiMaxY": 237,
+        "bbox": [
+          118,
+          60,
+          377,
+          218
+        ],
+        "pixels": 13862
+      },
+      "runtime_geometry": {
+        "crop": [
+          55,
+          56,
+          874,
+          1455
+        ],
+        "anchorX": 0.384114,
+        "baselineY": 0.997938,
+        "heightRatio": 0.898993,
+        "nativeFacing": 1
+      }
+    },
+    {
+      "fighter": "mama",
+      "outfit": "viaduc",
+      "pose": "guard",
+      "path": "modes/echos-de-la-greve/assets/fighters/mama/viaduc/guard.png",
+      "source_blob": "73ceb5f4828cc2579a6e4058a6fb4db5bd8db823",
+      "source_manifest": "docs/combat/production/20261124-viaduc/mama-viaduc-manifest.json",
+      "method": "Centroid of alpha >96 pixels in lower 1.5% alpha-bbox band; uniform pose scale calibrated against inspected helmet width.",
+      "alpha_bbox": [
+        98,
+        57,
+        886,
+        1503
+      ],
+      "contact": {
+        "alphaThreshold": 96,
+        "bandFraction": 0.015,
+        "bandY": [
+          1481,
+          1503
+        ],
+        "pixels": 4882,
+        "centroidX": 421.54834084391644,
+        "xBounds": [
+          99,
+          884
+        ],
+        "baselinePx": 1503
+      },
+      "helmet_measurement": {
+        "rgbRule": "R>90; G>35; R>1.12G; B<.65G; alpha>96",
+        "roiMaxY": 222,
+        "bbox": [
+          414,
+          58,
+          677,
+          185
+        ],
+        "pixels": 13930
+      },
+      "runtime_geometry": {
+        "crop": [
+          95,
+          54,
+          794,
+          1452
+        ],
+        "anchorX": 0.41127,
+        "baselineY": 0.997934,
+        "heightRatio": 0.883495,
+        "nativeFacing": 1
+      }
+    },
+    {
+      "fighter": "mama",
+      "outfit": "viaduc",
+      "pose": "crouch",
+      "path": "modes/echos-de-la-greve/assets/fighters/mama/viaduc/crouch.png",
+      "source_blob": "9ca8a67a49de2de1614ffedf9b63b9d38f1a19aa",
+      "source_manifest": "docs/combat/production/20261124-viaduc/mama-viaduc-manifest.json",
+      "method": "Centroid of alpha >96 pixels in lower 1.5% alpha-bbox band; uniform pose scale calibrated against inspected helmet width.",
+      "alpha_bbox": [
+        31,
+        241,
+        979,
+        1456
+      ],
+      "contact": {
+        "alphaThreshold": 96,
+        "bandFraction": 0.015,
+        "bandY": [
+          1437,
+          1456
+        ],
+        "pixels": 3356,
+        "centroidX": 261.2446364719905,
+        "xBounds": [
+          76,
+          830
+        ],
+        "baselinePx": 1456
+      },
+      "helmet_measurement": {
+        "rgbRule": "R>90; G>35; R>1.12G; B<.65G; alpha>96",
+        "roiMaxY": 426,
+        "bbox": [
+          464,
+          242,
+          789,
+          407
+        ],
+        "pixels": 20448
+      },
+      "runtime_geometry": {
+        "crop": [
+          28,
+          238,
+          954,
+          1221
+        ],
+        "anchorX": 0.244491,
+        "baselineY": 0.997543,
+        "heightRatio": 0.601209,
+        "nativeFacing": 1
+      }
+    },
+    {
+      "fighter": "mama",
+      "outfit": "viaduc",
+      "pose": "rise",
+      "path": "modes/echos-de-la-greve/assets/fighters/mama/viaduc/rise.png",
+      "source_blob": "4220bd171910ec118e645640c2f706f9a9bbc79c",
+      "source_manifest": "docs/combat/production/20261124-viaduc/mama-viaduc-manifest.json",
+      "method": "Centroid of alpha >96 pixels in lower 1.5% alpha-bbox band; uniform pose scale calibrated against inspected helmet width.",
+      "alpha_bbox": [
+        48,
+        14,
+        870,
+        1520
+      ],
+      "contact": {
+        "alphaThreshold": 96,
+        "bandFraction": 0.015,
+        "bandY": [
+          1497,
+          1520
+        ],
+        "pixels": 901,
+        "centroidX": 173.34461709211988,
+        "xBounds": [
+          140,
+          199
+        ],
+        "baselinePx": 1520
+      },
+      "helmet_measurement": {
+        "rgbRule": "R>90; G>35; R>1.12G; B<.65G; alpha>96",
+        "roiMaxY": 174,
+        "bbox": [
+          365,
+          15,
+          619,
+          154
+        ],
+        "pixels": 11775
+      },
+      "runtime_geometry": {
+        "crop": [
+          45,
+          11,
+          828,
+          1512
+        ],
+        "anchorX": 0.155006,
+        "baselineY": 0.998016,
+        "heightRatio": 0.952602,
+        "nativeFacing": 1
+      }
+    },
+    {
+      "fighter": "mama",
+      "outfit": "viaduc",
+      "pose": "apex",
+      "path": "modes/echos-de-la-greve/assets/fighters/mama/viaduc/apex.png",
+      "source_blob": "d7804c27ffab0fd194b4c7398c1c4a95ca9c5637",
+      "source_manifest": "docs/combat/production/20261124-viaduc/mama-viaduc-manifest.json",
+      "method": "Centroid of alpha >96 pixels in lower 1.5% alpha-bbox band; uniform pose scale calibrated against inspected helmet width.",
+      "alpha_bbox": [
+        117,
+        14,
+        946,
+        1524
+      ],
+      "contact": {
+        "alphaThreshold": 96,
+        "bandFraction": 0.015,
+        "bandY": [
+          1501,
+          1524
+        ],
+        "pixels": 1140,
+        "centroidX": 247.3684210526316,
+        "xBounds": [
+          216,
+          284
+        ],
+        "baselinePx": 1524
+      },
+      "helmet_measurement": {
+        "rgbRule": "R>90; G>35; R>1.12G; B<.65G; alpha>96",
+        "roiMaxY": 218,
+        "bbox": [
+          283,
+          15,
+          627,
+          201
+        ],
+        "pixels": 22408
+      },
+      "runtime_geometry": {
+        "crop": [
+          114,
+          11,
+          835,
+          1516
+        ],
+        "anchorX": 0.159723,
+        "baselineY": 0.998021,
+        "heightRatio": 0.705235,
+        "nativeFacing": 1
+      }
+    },
+    {
+      "fighter": "mama",
+      "outfit": "viaduc",
+      "pose": "fall",
+      "path": "modes/echos-de-la-greve/assets/fighters/mama/viaduc/fall.png",
+      "source_blob": "0d213432a396f062ab235a433c9b88e6fee6870a",
+      "source_manifest": "docs/combat/production/20261124-viaduc/mama-viaduc-manifest.json",
+      "method": "Centroid of alpha >96 pixels in lower 1.5% alpha-bbox band; uniform pose scale calibrated against inspected helmet width.",
+      "alpha_bbox": [
+        174,
+        26,
+        841,
+        1487
+      ],
+      "contact": {
+        "alphaThreshold": 96,
+        "bandFraction": 0.015,
+        "bandY": [
+          1465,
+          1487
+        ],
+        "pixels": 1649,
+        "centroidX": 406.849302607641,
+        "xBounds": [
+          242,
+          651
+        ],
+        "baselinePx": 1487
+      },
+      "helmet_measurement": {
+        "rgbRule": "R>90; G>35; R>1.12G; B<.65G; alpha>96",
+        "roiMaxY": 188,
+        "bbox": [
+          358,
+          27,
+          612,
+          158
+        ],
+        "pixels": 12722
+      },
+      "runtime_geometry": {
+        "crop": [
+          171,
+          23,
+          673,
+          1467
+        ],
+        "anchorX": 0.350445,
+        "baselineY": 0.997955,
+        "heightRatio": 0.92425,
+        "nativeFacing": 1
+      }
+    }
+  ],
+  "limitations": [
+    "Height ratios are display art direction, not official anatomical or motion data.",
+    "Airborne boot points are drawing pivots, not ground contacts.",
+    "Native in-game scene review remains required."
+  ]
+}

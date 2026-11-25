@@ -1,0 +1,6 @@
+Command: NODE_PATH="$CODEX_PRIMARY_RUNTIME_NODE_MODULES" node modes/echos-de-la-greve/qa/reseau-logique.cjs
+Exit code: 0
+
+Relais · création, deux places, choix, lancement, accusés, reprise, résultat et fermeture vérifiés.
+Moteur · état complet identique après correction d’une commande tardive, au pas 200.
+Ressources réseau · tenues et pièces imbriquées servies, empreinte récursive stable, sources et traversées refusées.

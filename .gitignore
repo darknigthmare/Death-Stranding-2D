@@ -1,0 +1,4 @@
+# Local optional developer-tool state; never part of the game or shared skills.
+.codegraph/
+.codegraph-wsl/
+.venv-sand3d/

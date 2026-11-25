@@ -1,0 +1,856 @@
+/* Native PNG crops are [x,y,width,height] with three pixels of margin.
+ * Anchors follow source-specific boot/contact measurements documented in the production manifests.
+ * Native outfits have independent pose geometry; loading fallback uses the chosen base image's geometry.
+ * Source pixels are never rescaled or rewritten. Height ratios are initial game art direction.
+ */
+window.StrandGeneratedGeometry = {
+  "fighters": {
+    "sam": {
+      "guard": {
+        "crop": [
+          10,
+          12,
+          820,
+          1788
+        ],
+        "anchorX": 0.508537,
+        "baselineY": 0.998322,
+        "heightRatio": 1
+      },
+      "crouch": {
+        "crop": [
+          139,
+          19,
+          906,
+          1231
+        ],
+        "anchorX": 0.513245,
+        "baselineY": 0.997563,
+        "heightRatio": 0.7
+      },
+      "rise": {
+        "crop": [
+          83,
+          6,
+          801,
+          1511
+        ],
+        "anchorX": 0.5,
+        "baselineY": 0.998015,
+        "heightRatio": 0.94
+      },
+      "apex": {
+        "crop": [
+          151,
+          8,
+          958,
+          1215
+        ],
+        "anchorX": 0.5,
+        "baselineY": 0.997531,
+        "heightRatio": 0.76
+      },
+      "fall": {
+        "crop": [
+          83,
+          40,
+          857,
+          1448
+        ],
+        "anchorX": 0.5,
+        "baselineY": 0.997928,
+        "heightRatio": 0.96
+      }
+    },
+    "fragile": {
+      "guard": {
+        "crop": [
+          72,
+          21,
+          842,
+          1576
+        ],
+        "anchorX": 0.499406,
+        "baselineY": 0.998096,
+        "heightRatio": 0.98
+      },
+      "crouch": {
+        "crop": [
+          48,
+          16,
+          1362,
+          995
+        ],
+        "anchorX": 0.616373,
+        "baselineY": 0.996985,
+        "heightRatio": 0.66
+      },
+      "rise": {
+        "crop": [
+          54,
+          11,
+          852,
+          1520
+        ],
+        "anchorX": 0.5,
+        "baselineY": 0.998026,
+        "heightRatio": 0.94
+      },
+      "apex": {
+        "crop": [
+          61,
+          28,
+          826,
+          1345
+        ],
+        "anchorX": 0.5,
+        "baselineY": 0.963569,
+        "heightRatio": 0.8
+      },
+      "fall": {
+        "crop": [
+          14,
+          9,
+          942,
+          1511
+        ],
+        "anchorX": 0.5,
+        "baselineY": 0.998015,
+        "heightRatio": 0.96
+      }
+    },
+    "higgs": {
+      "guard": {
+        "crop": [
+          14,
+          48,
+          857,
+          1659
+        ],
+        "anchorX": 0.647025,
+        "baselineY": 0.996986,
+        "heightRatio": 0.99
+      },
+      "crouch": {
+        "crop": [
+          40,
+          7,
+          1423,
+          1011
+        ],
+        "anchorX": 0.600843,
+        "baselineY": 0.990109,
+        "heightRatio": 0.7
+      },
+      "rise": {
+        "crop": [
+          4,
+          2,
+          939,
+          1602
+        ],
+        "anchorX": 0.5,
+        "baselineY": 0.940075,
+        "heightRatio": 0.94
+      },
+      "apex": {
+        "crop": [
+          18,
+          16,
+          1121,
+          1179
+        ],
+        "anchorX": 0.5,
+        "baselineY": 0.995759,
+        "heightRatio": 0.84
+      },
+      "fall": {
+        "crop": [
+          5,
+          9,
+          1135,
+          1344
+        ],
+        "anchorX": 0.5,
+        "baselineY": 0.997024,
+        "heightRatio": 1.04
+      },
+      "stance": {
+        "crop": [
+          20,
+          23,
+          863,
+          1699
+        ],
+        "anchorX": 0.695539,
+        "baselineY": 0.997057,
+        "heightRatio": 1
+      },
+      "action": {
+        "crop": [
+          18,
+          15,
+          1499,
+          987
+        ],
+        "anchorX": 0.556538,
+        "baselineY": 0.994934,
+        "heightRatio": 0.8
+      },
+      "step": {
+        "crop": [
+          34,
+          33,
+          1128,
+          1247
+        ],
+        "anchorX": 0.648271,
+        "baselineY": 0.99599,
+        "heightRatio": 0.95
+      },
+      "hit": {
+        "crop": [
+          13,
+          121,
+          863,
+          1511
+        ],
+        "anchorX": 0.340093,
+        "baselineY": 0.997353,
+        "heightRatio": 0.94
+      },
+      "jump": {
+        "crop": [
+          25,
+          10,
+          1231,
+          1146
+        ],
+        "anchorX": 0.5,
+        "baselineY": 0.99651,
+        "heightRatio": 0.72
+      }
+    },
+    "cliff": {
+      "guard": {
+        "crop": [
+          124,
+          38,
+          774,
+          1473
+        ],
+        "anchorX": 0.501938,
+        "baselineY": 0.997963,
+        "heightRatio": 0.99
+      },
+      "crouch": {
+        "crop": [
+          79,
+          85,
+          936,
+          1149
+        ],
+        "anchorX": 0.556624,
+        "baselineY": 0.997389,
+        "heightRatio": 0.66
+      },
+      "rise": {
+        "crop": [
+          51,
+          32,
+          809,
+          1489
+        ],
+        "anchorX": 0.5,
+        "baselineY": 0.997985,
+        "heightRatio": 0.94
+      },
+      "apex": {
+        "crop": [
+          98,
+          90,
+          841,
+          1293
+        ],
+        "anchorX": 0.5,
+        "baselineY": 0.99768,
+        "heightRatio": 0.8
+      },
+      "fall": {
+        "crop": [
+          60,
+          41,
+          898,
+          1472
+        ],
+        "anchorX": 0.5,
+        "baselineY": 0.997962,
+        "heightRatio": 0.96
+      }
+    },
+    "mule": {
+      "guard": {
+        "crop": [
+          152,
+          84,
+          794,
+          1295
+        ],
+        "anchorX": 0.464736,
+        "baselineY": 0.997683,
+        "heightRatio": 1
+      },
+      "crouch": {
+        "crop": [
+          127,
+          57,
+          1090,
+          1101
+        ],
+        "anchorX": 0.497706,
+        "baselineY": 0.997275,
+        "heightRatio": 0.7
+      },
+      "rise": {
+        "crop": [
+          72,
+          96,
+          881,
+          1382
+        ],
+        "anchorX": 0.5,
+        "baselineY": 0.997829,
+        "heightRatio": 0.94
+      },
+      "apex": {
+        "crop": [
+          95,
+          126,
+          835,
+          1209
+        ],
+        "anchorX": 0.5,
+        "baselineY": 0.997519,
+        "heightRatio": 0.82
+      },
+      "fall": {
+        "crop": [
+          35,
+          72,
+          909,
+          1408
+        ],
+        "anchorX": 0.5,
+        "baselineY": 0.997869,
+        "heightRatio": 0.96
+      }
+    },
+    "diehardman": {
+      "guard": {
+        "crop": [
+          31,
+          103,
+          772,
+          1713
+        ],
+        "anchorX": 0.170984,
+        "baselineY": 0.998249,
+        "heightRatio": 0.99
+      },
+      "crouch": {
+        "crop": [
+          139,
+          80,
+          981,
+          1070
+        ],
+        "anchorX": 0.4684,
+        "baselineY": 0.997196,
+        "heightRatio": 0.68
+      },
+      "rise": {
+        "crop": [
+          45,
+          85,
+          714,
+          1713
+        ],
+        "anchorX": 0.5,
+        "baselineY": 0.998249,
+        "heightRatio": 0.94
+      },
+      "apex": {
+        "crop": [
+          89,
+          66,
+          840,
+          1338
+        ],
+        "anchorX": 0.5,
+        "baselineY": 0.997758,
+        "heightRatio": 0.82
+      },
+      "fall": {
+        "crop": [
+          26,
+          190,
+          801,
+          1403
+        ],
+        "anchorX": 0.5,
+        "baselineY": 0.997862,
+        "heightRatio": 0.96
+      },
+      "stance": {
+        "crop": [
+          57,
+          51,
+          699,
+          1810
+        ],
+        "anchorX": 0.489986,
+        "baselineY": 0.998343,
+        "heightRatio": 1
+      },
+      "action": {
+        "crop": [
+          58,
+          35,
+          1071,
+          1260
+        ],
+        "anchorX": 0.406629,
+        "baselineY": 0.997619,
+        "heightRatio": 1
+      },
+      "step": {
+        "crop": [
+          53,
+          71,
+          901,
+          1416
+        ],
+        "anchorX": 0.542175,
+        "baselineY": 0.997881,
+        "heightRatio": 1
+      },
+      "hit": {
+        "crop": [
+          74,
+          48,
+          845,
+          1467
+        ],
+        "anchorX": 0.498817,
+        "baselineY": 0.997955,
+        "heightRatio": 0.94
+      },
+      "jump": {
+        "crop": [
+          121,
+          62,
+          783,
+          1210
+        ],
+        "anchorX": 0.5,
+        "baselineY": 0.973554,
+        "heightRatio": 0.8
+      }
+    },
+    "heartman": {
+      "guard": {
+        "crop": [
+          149,
+          69,
+          722,
+          1408
+        ],
+        "anchorX": 0.496537,
+        "baselineY": 0.997869,
+        "heightRatio": 0.99
+      },
+      "crouch": {
+        "crop": [
+          182,
+          73,
+          864,
+          1079
+        ],
+        "anchorX": 0.547454,
+        "baselineY": 0.99722,
+        "heightRatio": 0.7
+      },
+      "rise": {
+        "crop": [
+          91,
+          49,
+          709,
+          1451
+        ],
+        "anchorX": 0.5,
+        "baselineY": 0.997932,
+        "heightRatio": 0.94
+      },
+      "apex": {
+        "crop": [
+          164,
+          69,
+          708,
+          1238
+        ],
+        "anchorX": 0.5,
+        "baselineY": 0.997577,
+        "heightRatio": 0.8
+      },
+      "fall": {
+        "crop": [
+          125,
+          58,
+          760,
+          1389
+        ],
+        "anchorX": 0.5,
+        "baselineY": 0.99784,
+        "heightRatio": 0.96
+      },
+      "stance": {
+        "crop": [
+          100,
+          16,
+          490,
+          2115
+        ],
+        "anchorX": 0.423469,
+        "baselineY": 0.998582,
+        "heightRatio": 1
+      },
+      "action": {
+        "crop": [
+          6,
+          33,
+          717,
+          2072
+        ],
+        "anchorX": 0.32357,
+        "baselineY": 0.998552,
+        "heightRatio": 0.98
+      },
+      "step": {
+        "crop": [
+          62,
+          45,
+          893,
+          1445
+        ],
+        "anchorX": 0.511198,
+        "baselineY": 0.997924,
+        "heightRatio": 0.93
+      },
+      "hit": {
+        "crop": [
+          11,
+          127,
+          705,
+          1852
+        ],
+        "anchorX": 0.219858,
+        "baselineY": 0.99838,
+        "heightRatio": 0.88
+      }
+    },
+    "mama": {
+      "stance": {
+        "crop": [
+          238,
+          16,
+          448,
+          1507
+        ],
+        "anchorX": 0.514509,
+        "baselineY": 0.998009,
+        "heightRatio": 1
+      },
+      "action": {
+        "crop": [
+          49,
+          20,
+          958,
+          1501
+        ],
+        "anchorX": 0.100209,
+        "baselineY": 0.998001,
+        "heightRatio": 1
+      },
+      "step": {
+        "crop": [
+          77,
+          14,
+          866,
+          1498
+        ],
+        "anchorX": 0.508083,
+        "baselineY": 0.997997,
+        "heightRatio": 1
+      },
+      "hit": {
+        "crop": [
+          112,
+          33,
+          712,
+          1488
+        ],
+        "anchorX": 0.568118,
+        "baselineY": 0.997984,
+        "heightRatio": 0.94
+      },
+      "guard": {
+        "crop": [
+          190,
+          46,
+          607,
+          1468
+        ],
+        "anchorX": 0.476936,
+        "baselineY": 0.997956,
+        "heightRatio": 0.98
+      },
+      "crouch": {
+        "crop": [
+          168,
+          55,
+          842,
+          1112
+        ],
+        "anchorX": 0.31829,
+        "baselineY": 0.997302,
+        "heightRatio": 0.68
+      },
+      "rise": {
+        "crop": [
+          112,
+          19,
+          709,
+          1488
+        ],
+        "anchorX": 0.5,
+        "baselineY": 0.997984,
+        "heightRatio": 0.94
+      },
+      "apex": {
+        "crop": [
+          63,
+          39,
+          855,
+          1214
+        ],
+        "anchorX": 0.5,
+        "baselineY": 0.997529,
+        "heightRatio": 0.8
+      },
+      "fall": {
+        "crop": [
+          48,
+          4,
+          898,
+          1503
+        ],
+        "anchorX": 0.5,
+        "baselineY": 0.998004,
+        "heightRatio": 0.998694
+      }
+    }
+  },
+  "projectiles": {
+    "sam": {
+      "crop": [
+        120,
+        174,
+        1892,
+        370
+      ],
+      "width": 36,
+      "anchorX": 0.5,
+      "anchorY": 0.5
+    },
+    "higgs": {
+      "crop": [
+        180,
+        22,
+        800,
+        1310
+      ],
+      "width": 61.349693,
+      "anchorX": 0.5,
+      "anchorY": 0.99771
+    },
+    "cliff": {
+      "crop": [
+        135,
+        293,
+        1900,
+        131
+      ],
+      "width": 45,
+      "anchorX": 0.5,
+      "anchorY": 0.5
+    },
+    "recall": {
+      "crop": [
+        111,
+        6,
+        2010,
+        718
+      ],
+      "width": 54,
+      "anchorX": 0.5,
+      "anchorY": 0.5
+    },
+    "gate": {
+      "crop": [
+        297,
+        106,
+        440,
+        1337
+      ],
+      "width": 47.272727,
+      "anchorX": 0.5,
+      "anchorY": 0.997756
+    },
+    "heartman": {
+      "crop": [
+        154,
+        113,
+        1852,
+        469
+      ],
+      "width": 32,
+      "anchorX": 0.5,
+      "anchorY": 0.5
+    },
+    "memory": {
+      "crop": [
+        100,
+        100,
+        1968,
+        511
+      ],
+      "width": 128,
+      "anchorX": 0.5,
+      "anchorY": 0.5
+    }
+  },
+  "wardrobes": {
+    "mama": {
+      "viaduc": {
+        "stance": {
+          "crop": [
+            179,
+            30,
+            686,
+            1481
+          ],
+          "anchorX": 0.37745,
+          "baselineY": 0.997974,
+          "heightRatio": 1,
+          "nativeFacing": 1
+        },
+        "action": {
+          "crop": [
+            13,
+            197,
+            1010,
+            1246
+          ],
+          "anchorX": 0.476718,
+          "baselineY": 0.997592,
+          "heightRatio": 0.837788,
+          "nativeFacing": 1
+        },
+        "step": {
+          "crop": [
+            31,
+            16,
+            955,
+            1493
+          ],
+          "anchorX": 0.66193,
+          "baselineY": 0.997991,
+          "heightRatio": 0.929651,
+          "nativeFacing": 1
+        },
+        "hit": {
+          "crop": [
+            55,
+            56,
+            874,
+            1455
+          ],
+          "anchorX": 0.384114,
+          "baselineY": 0.997938,
+          "heightRatio": 0.898993,
+          "nativeFacing": 1
+        },
+        "guard": {
+          "crop": [
+            95,
+            54,
+            794,
+            1452
+          ],
+          "anchorX": 0.41127,
+          "baselineY": 0.997934,
+          "heightRatio": 0.883495,
+          "nativeFacing": 1
+        },
+        "crouch": {
+          "crop": [
+            28,
+            238,
+            954,
+            1221
+          ],
+          "anchorX": 0.244491,
+          "baselineY": 0.997543,
+          "heightRatio": 0.601209,
+          "nativeFacing": 1
+        },
+        "rise": {
+          "crop": [
+            45,
+            11,
+            828,
+            1512
+          ],
+          "anchorX": 0.155006,
+          "baselineY": 0.998016,
+          "heightRatio": 0.952602,
+          "nativeFacing": 1
+        },
+        "apex": {
+          "crop": [
+            114,
+            11,
+            835,
+            1516
+          ],
+          "anchorX": 0.159723,
+          "baselineY": 0.998021,
+          "heightRatio": 0.705235,
+          "nativeFacing": 1
+        },
+        "fall": {
+          "crop": [
+            171,
+            23,
+            673,
+            1467
+          ],
+          "anchorX": 0.350445,
+          "baselineY": 0.997955,
+          "heightRatio": 0.92425,
+          "nativeFacing": 1
+        }
+      }
+    }
+  }
+};

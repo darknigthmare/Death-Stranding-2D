@@ -10,6 +10,8 @@ Les références, versions et révisions vérifiées le **4 novembre 2026** sont
 | [Superpowers](https://github.com/obra/superpowers) | Implémentation, diagnostic, revue et vérification | Installer le plugin dans le client utilisé |
 | [Claude Code Game Studios](https://github.com/Donchitos/Claude-Code-Game-Studios) | Agents et compétences spécialisés dans les jeux | Préparer puis appliquer les fichiers utiles à Claude Code |
 
+Le [catalogue partagé des skills](SHARED_SKILLS.md) complète cette intégration avec les adaptateurs optionnels 3Dviz, GameDev, CodeGraph, Sand3D et SpriteCast pour Codex et Claude Code. Les catalogues externes utilisent deux sous-modules épinglés, un par dépôt amont. Leur présence ne les installe pas et n'ajoute aucune dépendance au jeu.
+
 ## Vérifier l'état local
 
 Depuis la racine du dépôt :

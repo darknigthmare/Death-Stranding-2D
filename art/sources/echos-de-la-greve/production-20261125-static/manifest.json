@@ -1,0 +1,1021 @@
+{
+  "schema_version": 1,
+  "date": "2026-11-25",
+  "project": "Death Stranding 2D / Échos de la Grève",
+  "artistic_reference": "Death Stranding (2019) / Director’s Cut",
+  "baseline_commit": "25bf4faa156d105e2bc2a03ee74b59a1b48f366f",
+  "pull_request": "https://github.com/darknigthmare/Death-Stranding-2D/pull/6",
+  "scope": "15 images statiques : 5 personnages, 3 ennemis, 4 objets/projectiles, 3 panoramas. Aucune animation.",
+  "delivery": "Catalogue statique et portrait Lockne dans les Archives ; aucun nouveau combattant ou stage jouable.",
+  "pixel_policy": "PNG natifs copiés sans recadrage, rééchantillonnage, recoloration ni édition de pixels après génération.",
+  "count": 15,
+  "total_size_bytes": 24554809,
+  "items": [
+    {
+      "id": "lockne-portrait",
+      "title": "Lockne · portrait après la réunion",
+      "category": "characters",
+      "path": "modes/echos-de-la-greve/assets/static-20261125/lockne-portrait.png",
+      "status": "accepted_static_catalogue",
+      "playable_binding": false,
+      "archives_binding": true,
+      "native_png": {
+        "width": 1189,
+        "height": 1323,
+        "mode": "RGBA",
+        "frames": 1,
+        "size_bytes": 1965582,
+        "sha256": "4df782a0a83ab2603f0625ba3c2090513e7979ac9011024be14f4bae671d1f93",
+        "original_generation_filename": "exec-28d12129-b9e9-4e62-87c0-985440048d48.png",
+        "original_sha256": "4df782a0a83ab2603f0625ba3c2090513e7979ac9011024be14f4bae671d1f93",
+        "native_copy_unchanged": true,
+        "alpha": {
+          "min": 0,
+          "max": 255,
+          "transparent_fraction": 0.406168,
+          "bbox_above_16": [
+            13,
+            23,
+            1173,
+            1323
+          ]
+        }
+      },
+      "generation": {
+        "tool": "image_gen.imagegen",
+        "transparent_background": true,
+        "prompt": "Use case: identity-preserve. Asset: one static high-resolution transparent PNG portrait for Death Stranding 2D, Archives de Bridges. The input is an actual Death Stranding 1 Lockne gameplay screenshot, used ONLY as canonical visual reference. Create a clean standalone chest-up Lockne portrait, natural neutral expression, gaze near viewer, arms lowered outside portrait. Faithfully match Margaret Qualley's Lockne face, asymmetric shoulder-length dark brown hairstyle with long hair on viewer left and tucked behind ear on viewer right, elongated angular GOLD earrings, dark navy blue high crossover collar, fitted dark gray long sleeves. Preserve heterochromia exactly: her anatomical right eye (viewer left) light blue, anatomical left eye (viewer right) hazel green, as in the reference. Realistic detailed painted game-art rendering with natural proportions, crisp separated hair edges; not cartoon. Entire head hair earrings and both shoulders uncropped with 8 percent margin. One character one image, no other person or hands near face, no HUD, no labels, no text, no logos, no background, no frame, no contact sheet, no duplicate views. Actual transparent alpha background. Portrait orientation.",
+        "references": [
+          {
+            "reference_id": "lockne-game-screenshot-secondary.png",
+            "sha256": "9b12a34cb3f09a95bc83e1eee595c9783d09818bef6d2968758f5ca2d9529c75"
+          }
+        ]
+      },
+      "checked_details": [
+        "Cheveux bruns asymétriques, col croisé bleu marine, boucles dorées",
+        "Œil droit anatomique bleu à gauche de l’image ; œil gauche noisette à droite"
+      ],
+      "limitations": [
+        "Ne pas appliquer de miroir horizontal : l’hétérochromie est asymétrique.",
+        "La capture source est secondaire ; aucune certification de ressemblance 1:1."
+      ]
+    },
+    {
+      "id": "deadman-body",
+      "title": "Deadman · costume sombre",
+      "category": "characters",
+      "path": "modes/echos-de-la-greve/assets/static-20261125/deadman-body.png",
+      "status": "accepted_static_catalogue",
+      "playable_binding": false,
+      "archives_binding": false,
+      "native_png": {
+        "width": 1024,
+        "height": 1536,
+        "mode": "RGBA",
+        "frames": 1,
+        "size_bytes": 1500837,
+        "sha256": "819fa12825df97c0e7a5cab49d073577140b091b7a2a186831d8dd092d8d945b",
+        "original_generation_filename": "exec-b0fd4047-fce8-45f3-8db6-e71cd1ec098e.png",
+        "original_sha256": "819fa12825df97c0e7a5cab49d073577140b091b7a2a186831d8dd092d8d945b",
+        "native_copy_unchanged": true,
+        "alpha": {
+          "min": 0,
+          "max": 254,
+          "transparent_fraction": 0.671368,
+          "bbox_above_16": [
+            251,
+            26,
+            770,
+            1519
+          ]
+        }
+      },
+      "generation": {
+        "tool": "image_gen.imagegen",
+        "transparent_background": true,
+        "prompt": "Use case: identity-preserve. Asset: one static full-body side-view game sprite for Death Stranding 2D. Reference is an official PlayStation scene. Reproduce ONLY Deadman, the stocky middle-aged bespectacled gray-bearded man in the center, with the same charcoal dark suit, muted burgundy shirt, black tie and small left chest badge, black gloves and illuminated blue cufflink. Do not reproduce Sam, BB pod or room. Faithful Guillermo del Toro / Deadman face: short wavy salt-and-pepper hair, thick rectangular dark glasses, round face, short gray beard, subtle forehead scar. FULL BODY from top of hair to dark dress shoes, relaxed weight-bearing neutral standing pose, slight three-quarter profile FACING RIGHT for a 2D side-view game, hands naturally held, empty hands. Stocky realistic body proportions, charcoal suit trousers matching jacket, black shoes. Highly detailed realistic illustrated raster sprite matching Death Stranding cinematics, soft directional neutral lighting, readable silhouette, natural fabric and skin texture, no stylized outlines. ONE character in ONE image, entire shoes visible with 8 percent empty margin, centered at consistent scale. Transparent background with clean true alpha; no floor, no shadow plane, no vignette, no lettering, no animation, no additional heads/poses. Tall portrait framing.",
+        "references": [
+          {
+            "reference_id": "deadman-spotlight-official.jpg",
+            "sha256": "deffc044dc6cf0161edff093282be761f48666a9c9f45a9796a0995476b83854"
+          }
+        ]
+      },
+      "checked_details": [
+        "Costume anthracite, chemise bordeaux, lunettes et barbe grise",
+        "Variante de costume issue d’une scène officielle PlayStation"
+      ],
+      "limitations": [
+        "Jambes et chaussures reconstruites sous le cadrage source.",
+        "Le portrait historique en blouse médicale rouge reste une autre tenue officielle valide."
+      ]
+    },
+    {
+      "id": "bt-gazer",
+      "title": "Échoué · Gazer",
+      "category": "enemies",
+      "path": "modes/echos-de-la-greve/assets/static-20261125/bt-gazer.png",
+      "status": "accepted_static_catalogue",
+      "playable_binding": false,
+      "archives_binding": false,
+      "native_png": {
+        "width": 1024,
+        "height": 1536,
+        "mode": "RGBA",
+        "frames": 1,
+        "size_bytes": 1502779,
+        "sha256": "1304a3c38816fb153aef734dafe2f3471b87354af7e23bcbcc5031cc9131c783",
+        "original_generation_filename": "exec-f493b81f-34b8-45ae-816e-fa57db6ff0e6.png",
+        "original_sha256": "1304a3c38816fb153aef734dafe2f3471b87354af7e23bcbcc5031cc9131c783",
+        "native_copy_unchanged": true,
+        "alpha": {
+          "min": 0,
+          "max": 254,
+          "transparent_fraction": 0.788477,
+          "bbox_above_16": [
+            131,
+            18,
+            737,
+            1405
+          ]
+        }
+      },
+      "generation": {
+        "tool": "image_gen.imagegen",
+        "transparent_background": true,
+        "prompt": "Use case: background-extraction and faithful game asset reconstruction. Asset: ONE adult humanoid BT Gazer from Death Stranding 1 as a static transparent sprite, fully visible, portrait format. The official gameplay screenshot is the exact design reference for the suspended human-shaped black particulate specter above the rock in the middle. Isolate and clearly reconstruct ONLY ONE such Gazer, full body, hovering upright with head bowed, limp long arms, bent dangling feet, smoky granular charcoal-black body and irregular translucent disintegrating edges, thin black umbilical strand trailing upward in a curved path. Preserve the eerie human anatomy and dark particulate surface; no skull, bones, armor, glowing eyes, cape, wings or invented monster anatomy. View slightly from the side facing right, calm idle silhouette, single fixed pose. Detailed photorealistic painted raster game art, soft cool-gray highlights on charcoal particles for readability on dark backgrounds. Include entire body and thin trailing cord with margins. Do not include Sam, cargo, rain streaks, landscape, rock, HUD, labels, floor or a large fog cloud. Genuine alpha transparent background, not checkerboard texture. One subject only; no collage, no frames.",
+        "references": [
+          {
+            "reference_id": "bt-areas-official.jpg",
+            "sha256": "ab5bab18de3173e3abfda3d850bbc1dbf65831d27d3942819fe6249fa503ada7"
+          }
+        ]
+      },
+      "checked_details": [
+        "Humanoïde noir suspendu, particules et cordon",
+        "Contours dissous conservés par le canal alpha"
+      ],
+      "limitations": [
+        "Pose et distribution des particules adaptées à un sprite autonome."
+      ]
+    },
+    {
+      "id": "south-knot-ruins-panorama",
+      "title": "Ruines de South Knot",
+      "category": "stages",
+      "path": "modes/echos-de-la-greve/assets/static-20261125/south-knot-ruins-panorama.png",
+      "status": "accepted_static_catalogue",
+      "playable_binding": false,
+      "archives_binding": false,
+      "native_png": {
+        "width": 1672,
+        "height": 941,
+        "mode": "RGB",
+        "frames": 1,
+        "size_bytes": 2720821,
+        "sha256": "eb15d3769fbc716ca482655e9aae272b1aca13585654206f27bc5c9e094ae73c",
+        "original_generation_filename": "exec-222e4679-f285-4e2e-a7b4-484219244004.png",
+        "original_sha256": "eb15d3769fbc716ca482655e9aae272b1aca13585654206f27bc5c9e094ae73c",
+        "native_copy_unchanged": true,
+        "alpha": null
+      },
+      "generation": {
+        "tool": "image_gen.imagegen",
+        "transparent_background": false,
+        "prompt": "Use case: stylized-concept. Asset type: static game-stage panorama. The source image is visual reference, not a deliverable to copy unaltered. Primary request: faithfully reconstruct the RUINS OF SOUTH KNOT CITY from this official licensed Death Stranding 1 reference as ONE high-resolution lateral 2D fighting-game stage panorama. Preserve the recognizable exact environment vocabulary in the image: skeletal broken concrete-and-brick buildings to left and right, the long steel truss viaduct spanning across the upper middle, sunken broken sloping highway and bent double-arm streetlamps, black rubble and tar-dark wet soil, subtle orange-brown dead vegetation, dense blue-gray Timefall mist and rain. Keep these environmental structures and muted colors close to the reference. Adapt the foreground ONLY into an uninterrupted nearly horizontal strip of wet asphalt and compacted rubble at the bottom 20 percent of image, broad empty fighting lane; all tall rubble behind the lane. Camera at fighter waist height, side-on environmental illustration, no fisheye, wide landscape 16:9. Highly detailed realistic hand-painted raster game background, cinematic overcast light, clear layered atmospheric depth. No people, no BT creatures, no enemies, no HUD, no text or logos, no invented neon signs, no collage. One complete environment image, edge to edge opaque, suitable as a static stage panorama. Do not create a five-panel layer sheet.",
+        "references": [
+          {
+            "reference_id": "south-knot-official.jpg",
+            "sha256": "a401dd223d5f840978690950fea34b5a4e43ab57c62f2a6b4df356911acdab04"
+          }
+        ]
+      },
+      "checked_details": [
+        "Ruines, viaduc métallique, route effondrée et pluie"
+      ],
+      "limitations": [
+        "Composition et piste de premier plan adaptées à la lecture latérale.",
+        "Panorama seul : cinq couches et intégration en arène restent à produire."
+      ]
+    },
+    {
+      "id": "timefall-farm-panorama",
+      "title": "Ferme sous la pluie temporelle",
+      "category": "stages",
+      "path": "modes/echos-de-la-greve/assets/static-20261125/timefall-farm-panorama.png",
+      "status": "accepted_static_catalogue",
+      "playable_binding": false,
+      "archives_binding": false,
+      "native_png": {
+        "width": 1672,
+        "height": 941,
+        "mode": "RGB",
+        "frames": 1,
+        "size_bytes": 2513302,
+        "sha256": "6e64d772995dcaf74cac0972e20803ee574e6533d9d126209a3273820d504d39",
+        "original_generation_filename": "exec-34eec191-f24b-4b9a-a971-edf91b7c1d58.png",
+        "original_sha256": "6e64d772995dcaf74cac0972e20803ee574e6533d9d126209a3273820d504d39",
+        "native_copy_unchanged": true,
+        "alpha": null
+      },
+      "generation": {
+        "tool": "image_gen.imagegen",
+        "transparent_background": false,
+        "prompt": "Use case: stylized-concept. Asset type: static game-stage panorama. The source image is visual reference, not a deliverable to copy unaltered. Primary request: faithfully reconstruct TIMEFALL FARM from the official licensed Death Stranding 1 reference as ONE high-resolution lateral 2D fighting-game stage panorama. Preserve distinctive reference elements: broad gold-brown crop field, angular low yellow agricultural robot machinery with black ventilation slits, many small gray wing-shaped umbrella sprinklers mounted on tall thin tripod stems, slim utility posts with vertical cold cyan lights, simple open steel water towers, gray mountains and pale misty sky. Preserve modest industrial scale and overcast cool gray/gold/yellow palette. Do not replace the wing-shaped sprinkler roofs with conventional circular umbrellas or windmills. At the very bottom reserve a flat unbroken dirt service track spanning width (bottom 20 percent), with short corrugated field boundary fence behind it and distant crops behind fence. Broad clear horizontal fighting lane; machines and stems stay in background, no foreground occlusion. Side-on eye-height camera, high-quality realistic illustrated raster game art, subdued cinematic atmospheric detail, wide landscape 16:9. No people, no animals, no HUD, no interface, no text, no logo, no exaggerated science fiction structures. One complete opaque panorama with layered depth, not a collage or split layer sheet.",
+        "references": [
+          {
+            "reference_id": "timefall-farm-official.jpg",
+            "sha256": "c2c831ce0dde7caf6e297fa1ff176aee37f789d06a77ec3c189cb7de8f5a24e6"
+          }
+        ]
+      },
+      "checked_details": [
+        "Cultures dorées, machines jaunes et installations agricoles"
+      ],
+      "limitations": [
+        "Composition et piste de premier plan adaptées à la lecture latérale.",
+        "Panorama seul : cinq couches et intégration en arène restent à produire."
+      ]
+    },
+    {
+      "id": "mountain-knot-city-panorama",
+      "title": "Approche de Mountain Knot",
+      "category": "stages",
+      "path": "modes/echos-de-la-greve/assets/static-20261125/mountain-knot-city-panorama.png",
+      "status": "accepted_static_catalogue",
+      "playable_binding": false,
+      "archives_binding": false,
+      "native_png": {
+        "width": 1672,
+        "height": 941,
+        "mode": "RGB",
+        "frames": 1,
+        "size_bytes": 2451968,
+        "sha256": "92358b0accc8af6d2876662f84ca6d2d1ee00ab47fa1567d39df55a370b26126",
+        "original_generation_filename": "exec-c9bcfafd-d330-4268-8921-cc693b9d8b6f.png",
+        "original_sha256": "92358b0accc8af6d2876662f84ca6d2d1ee00ab47fa1567d39df55a370b26126",
+        "native_copy_unchanged": true,
+        "alpha": null
+      },
+      "generation": {
+        "tool": "image_gen.imagegen",
+        "transparent_background": false,
+        "prompt": "Use case: stylized-concept. Asset type: static game-stage panorama. The source image is visual reference, not a deliverable to copy unaltered. Primary request: create ONE high-resolution static 2D stage panorama for the MOUNTAIN KNOT CITY APPROACH in Death Stranding 1, closely faithful to the attached licensed official in-game vista. Preserve the distinctive jagged huge snow-covered rocky pyramid peak on the RIGHT, overlapping snowy mountain ridges and thick pale gray valley mist, foreground volcanic dark gray-green rocky buttress on LEFT, fine falling snow, thin vertical distant black and pale cyan chiral strands, and subtle washed-out inverted rainbow. Match this desaturated blue-gray icy atmosphere; do not invent a city skyline, architecture or towers not present in the reference. Adapt the bottom 18 percent into one flat compacted-snow ledge with a rough dark rock face below, a broad empty side-view fighting lane. Background mountains tower behind, keep center readable. Wide landscape 16:9, side-on camera at waist height, no fisheye, highly detailed realistic painted raster environment with natural rock/snow detail and cinematic depth. No people, no UI, no words, no maps, no logos, no monster, no extra sun or moon. One complete opaque scene edge to edge, not parallax layers or multiple pictures.",
+        "references": [
+          {
+            "reference_id": "mountain-knot-official.jpg",
+            "sha256": "9298ccbe6fd89cf9955ffabaf93920cd12efeb8da4d02497b90076112cc7de23"
+          }
+        ]
+      },
+      "checked_details": [
+        "Relief enneigé, vallée rocheuse, cordons et arc chiral"
+      ],
+      "limitations": [
+        "Le fichier conserve son identifiant initial, mais ne montre pas une ville.",
+        "Structures urbaines de Mountain Knot non documentées par cette source.",
+        "Panorama seul : cinq couches et intégration en arène restent à produire."
+      ]
+    },
+    {
+      "id": "lockne-body",
+      "title": "Lockne · silhouette",
+      "category": "characters",
+      "path": "modes/echos-de-la-greve/assets/static-20261125/lockne-body.png",
+      "status": "accepted_static_catalogue",
+      "playable_binding": false,
+      "archives_binding": false,
+      "native_png": {
+        "width": 1024,
+        "height": 1536,
+        "mode": "RGBA",
+        "frames": 1,
+        "size_bytes": 1300154,
+        "sha256": "9b8587b8a9b636df358a9ae1378eb1dd377cd4bc6680ae3bbe036588bec238bc",
+        "original_generation_filename": "exec-ac4545b4-54f4-42e1-8885-45da8ed445b3.png",
+        "original_sha256": "9b8587b8a9b636df358a9ae1378eb1dd377cd4bc6680ae3bbe036588bec238bc",
+        "native_copy_unchanged": true,
+        "alpha": {
+          "min": 0,
+          "max": 254,
+          "transparent_fraction": 0.761798,
+          "bbox_above_16": [
+            330,
+            18,
+            705,
+            1530
+          ]
+        }
+      },
+      "generation": {
+        "tool": "image_gen.imagegen",
+        "transparent_background": true,
+        "prompt": "Use case: identity-preserve. Asset type: static game character PNG; preserve reference identity/costume faithfully. Reconstruct ONLY LOCKNE from Death Stranding 1 as one static full-body character sprite, no hologram effect. Reference 1 precisely defines her face, side-parted asymmetrical dark brown shoulder-length hair, angular gold earrings and heterochromia (anatomical right eye blue, anatomical left eye hazel); reference 2 defines her actual garment: dark navy sleeveless high-collar structured crossover vest/tunic with angled closure and asymmetric hem over close-fitting charcoal gray long sleeves. Preserve those garment construction details; no Mama tank top, no overalls tied around waist, no glasses. Relaxed stationary standing pose, three-quarter SIDE VIEW facing RIGHT, empty hands down at sides, head to toes visible, natural slender proportions. Continue below the reference with understated fitted charcoal trousers and simple low-profile dark ankle shoes; no invented armor/straps or weapons. Highly detailed realistic painted 2D raster game sprite, natural lighting and fabric texture. One person only, transparent genuine alpha background, no floor or broad glow, no shadows outside subject, no lettering, no frame, no multiple views, no sprite sheet. Full head and both shoes uncropped with breathing room.",
+        "references": [
+          {
+            "reference_id": "lockne-game-screenshot-secondary.png",
+            "sha256": "9b12a34cb3f09a95bc83e1eee595c9783d09818bef6d2968758f5ca2d9529c75"
+          },
+          {
+            "reference_id": "lockne-fullbody-hologram-secondary.jpg",
+            "sha256": "9172bf8f06eaba2646516bfa87d4f8e12bf06c6c7c08bf33fbeab5e40a76e70e"
+          }
+        ]
+      },
+      "checked_details": [
+        "Visage et hétérochromie cohérents avec le portrait",
+        "Gilet marine asymétrique et manches grises documentés jusqu’aux cuisses"
+      ],
+      "limitations": [
+        "Bas de pantalon et chaussures reconstruits : absents de la référence.",
+        "Pose latérale adaptée ; vue opposée asymétrique non produite."
+      ]
+    },
+    {
+      "id": "amelie-body",
+      "title": "Amelie · robe rouge",
+      "category": "characters",
+      "path": "modes/echos-de-la-greve/assets/static-20261125/amelie-body.png",
+      "status": "accepted_static_catalogue",
+      "playable_binding": false,
+      "archives_binding": false,
+      "native_png": {
+        "width": 1024,
+        "height": 1536,
+        "mode": "RGBA",
+        "frames": 1,
+        "size_bytes": 1388885,
+        "sha256": "077d53be1faab5fe90aedb30ac13bce31da280a486eab81261cfc089211c0a50",
+        "original_generation_filename": "exec-0449d8c4-6e65-4d50-8abb-2c7a2402e76c.png",
+        "original_sha256": "077d53be1faab5fe90aedb30ac13bce31da280a486eab81261cfc089211c0a50",
+        "native_copy_unchanged": true,
+        "alpha": {
+          "min": 0,
+          "max": 254,
+          "transparent_fraction": 0.755428,
+          "bbox_above_16": [
+            336,
+            15,
+            703,
+            1526
+          ]
+        }
+      },
+      "generation": {
+        "tool": "image_gen.imagegen",
+        "transparent_background": true,
+        "prompt": "Use case: identity-preserve. Asset type: static game character PNG; preserve reference identity/costume faithfully. Create ONLY AMELIE from Death Stranding 1 in her canonical RED DRESS as one static full-body neutral sprite. Reference 1: front wrap V-neck RED dress with fitted long sleeves, gathered waist and side waist tie, exact draping. Reference 2: complete back hem/footwear confirms BELOW-KNEE MIDI hem, bare lower legs, RED pointed stiletto pumps with very thin heels. Reference 3: face and necklace reference ONLY, do NOT use its black garment. Match Lindsay Wagner/Amelie young adult face, shoulder-length loosely waved blonde hair, blue eyes, the small gold double-curved pendant and hanging chains. Natural relaxed standing pose in slight three-quarter side view FACING RIGHT, head turned subtly toward viewer, arms down, both hands EMPTY. Entire body including high heels in frame with 8 percent margin. Realistic highly detailed painted raster game character, human proportions, soft neutral lighting. One character one image, no firearm or other prop, no beach, no Sam or child, no black dress, no floor, no glow, no text. Genuine transparent alpha background. Portrait format. Static base pose only.",
+        "references": [
+          {
+            "reference_id": "amelie-red-full-secondary.jpeg",
+            "sha256": "516968fad856f44a4a6424f243a44ce8e17fc85f4c4068cb12e400697796414a"
+          },
+          {
+            "reference_id": "amelie-red-beach-register-secondary.jpg",
+            "sha256": "177ed1d636bf36e21825472100f51b5bf59d495c54d1196729280cb539473d70"
+          },
+          {
+            "reference_id": "amelie-official.jpg",
+            "sha256": "902f02919c2cf79729e8ec00232ee7bfae6f1fa0102859ff5fb65b292f3391f6"
+          }
+        ]
+      },
+      "checked_details": [
+        "Robe portefeuille rouge mi-longue et escarpins rouges",
+        "Cheveux blonds, pendentif à deux arcs et chaînes"
+      ],
+      "limitations": [
+        "Combinaison de références avant/arrière ; pose neutre adaptée.",
+        "Aucun contrôle 1:1 de chaque détail de visage ou bijou."
+      ]
+    },
+    {
+      "id": "bridget-body",
+      "title": "Bridget · lit médical",
+      "category": "characters",
+      "path": "modes/echos-de-la-greve/assets/static-20261125/bridget-body.png",
+      "status": "accepted_static_catalogue",
+      "playable_binding": false,
+      "archives_binding": false,
+      "native_png": {
+        "width": 1536,
+        "height": 1024,
+        "mode": "RGBA",
+        "frames": 1,
+        "size_bytes": 1946859,
+        "sha256": "c68af7bf39edc915aca1701a2feea50ad21bbbb5562a3aa9acfa308cf9278a48",
+        "original_generation_filename": "exec-a64ed834-6aab-4493-8fb0-fab224e630bb.png",
+        "original_sha256": "c68af7bf39edc915aca1701a2feea50ad21bbbb5562a3aa9acfa308cf9278a48",
+        "native_copy_unchanged": true,
+        "alpha": {
+          "min": 0,
+          "max": 254,
+          "transparent_fraction": 0.417167,
+          "bbox_above_16": [
+            37,
+            41,
+            1501,
+            1013
+          ]
+        }
+      },
+      "generation": {
+        "tool": "image_gen.imagegen",
+        "transparent_background": true,
+        "prompt": "Use case: identity-preserve. Asset type: static game character PNG; preserve reference identity/costume faithfully. Create ONE static transparent character-and-bed game sprite of BRIDGET STRAND from Death Stranding 1 in the faithful HOSPITAL configuration shown by the references. Reference 1 is the full setup; reference 2 is her face/blouse/headscarf. Only the elderly frail Bridget reclining on the adjustable gray clinical hospital bed: raised backrest, white pillow, pale white pleated high-collar blouse with ruffled edge, pale pink/lilac patterned headscarf, lower body hidden by dark burgundy-red blanket, gray protective side rails, rectangular footboard, articulated gray chassis with caster wheels. Same gentle three-quarter SIDE VIEW, HEAD at image RIGHT, feet at LEFT, bed entire visible with 7 percent margins; Bridget's face visible above blanket. Keep white pillow and wrapped blanket and no exposed legs. Natural serious quiet expression, faithful aged Lindsay Wagner face. Crisp realistic painted 2D raster game sprite matching source detail. No Sam, no other person, no room, no window, no flags, no chairs, no hanging cables reaching canvas boundaries, no HUD or labels, no action. Transparent true alpha background, no floor or background shadow. Landscape framing around one bed with one patient, one image only.",
+        "references": [
+          {
+            "reference_id": "bridget-hospital-full-secondary.jpg",
+            "sha256": "e5c62a49a7fe7d273b0cf2a6ce21b3deb1b3cd4e29a339f0314f8a693294194d"
+          },
+          {
+            "reference_id": "bridget-official.jpg",
+            "sha256": "92d7531845f3224d8e74a3a32d27700743e3add0038b89ca81761cc51a7325a3"
+          }
+        ]
+      },
+      "checked_details": [
+        "Bridget âgée allongée, foulard lilas, blouse blanche et couverture bordeaux",
+        "Lit gris avec barrières et base roulante"
+      ],
+      "limitations": [
+        "La silhouette inclut son lit comme un seul ensemble.",
+        "Géométrie fine du lit reconstruite ; aucune tenue debout inventée."
+      ]
+    },
+    {
+      "id": "cliff-skeleton-nethelmet",
+      "title": "Soldat squelettique · casque à filet",
+      "category": "enemies",
+      "path": "modes/echos-de-la-greve/assets/static-20261125/cliff-skeleton-nethelmet.png",
+      "status": "accepted_static_catalogue",
+      "playable_binding": false,
+      "archives_binding": false,
+      "native_png": {
+        "width": 1024,
+        "height": 1536,
+        "mode": "RGBA",
+        "frames": 1,
+        "size_bytes": 2101843,
+        "sha256": "e77f21bf209c1f1cfee3f22d3b067ec330114407322a102fb5bf7f9757730c24",
+        "original_generation_filename": "exec-312d8b8f-422b-40ed-afd8-238338721432.png",
+        "original_sha256": "e77f21bf209c1f1cfee3f22d3b067ec330114407322a102fb5bf7f9757730c24",
+        "native_copy_unchanged": true,
+        "alpha": {
+          "min": 0,
+          "max": 254,
+          "transparent_fraction": 0.598369,
+          "bbox_above_16": [
+            63,
+            12,
+            989,
+            1529
+          ]
+        }
+      },
+      "generation": {
+        "tool": "image_gen.imagegen",
+        "transparent_background": true,
+        "prompt": "Use case: identity-preserve. Asset type: static game character PNG; preserve reference identity/costume faithfully. Faithfully reconstruct ONE of the SKELETAL SOLDIERS FLANKING CLIFF in the Death Stranding 1 reference, not Cliff himself, as a static full-body enemy sprite on genuine transparency. Use the soldier on the RIGHT side of the reference as costume guide: grimy tan/olive military field uniform, net-covered rounded steel helmet, visible skull face beneath helmet, dark soaked skeletal hands, worn chest pouches and webbing, tarnished metal, dark cords exiting upper body. Reconstruct a single complete soldier in relaxed ready stance, SIDE VIEW slightly three-quarter FACING RIGHT, knees softly bent, boots planted. Hold one period long rifle low across body rather than aiming; match visible worn dark metal and wooden sections, no sci-fi gun, no modern night-vision goggles. Keep skeleton skull without flesh, soaked uniform and cord motif; thin black cord contained in frame. Detailed realistic painted raster 2D sprite, subtle cool rim lighting for clear silhouette, no flaming aura. One enemy one image, full helmet-to-boots with margins, no other soldiers, no Cliff, no bridge, no ground, no background, no smoke rectangle, no text, no badges with invented writing, no multiple poses, no animation. Portrait format.",
+        "references": [
+          {
+            "reference_id": "cliff-skeletons-secondary.jpg",
+            "sha256": "a3ae30ec8f880047a975f135f5a06d8747e93200df027683606e3b77a77a7c3b"
+          }
+        ]
+      },
+      "checked_details": [
+        "Crâne, tenue terreuse, casque à filet, liens noirs et fusil"
+      ],
+      "limitations": [
+        "Capture promotionnelle réhébergée ; pose debout et parties masquées reconstruites.",
+        "Époque, modèle exact du fusil et chaussures non certifiés ; variante moderne avec NVG non couverte."
+      ]
+    },
+    {
+      "id": "mule-eastern-gray",
+      "title": "MULE gris · région Est",
+      "category": "enemies",
+      "path": "modes/echos-de-la-greve/assets/static-20261125/mule-eastern-gray.png",
+      "status": "accepted_static_catalogue",
+      "playable_binding": false,
+      "archives_binding": false,
+      "native_png": {
+        "width": 1024,
+        "height": 1536,
+        "mode": "RGBA",
+        "frames": 1,
+        "size_bytes": 1877743,
+        "sha256": "a325cd8c3ef05ec66fb62a13a4c10298c1a1a0b2e416697f4e98108829fc9580",
+        "original_generation_filename": "exec-5d02cfc6-b35f-4ea5-83e0-624c977e4146.png",
+        "original_sha256": "a325cd8c3ef05ec66fb62a13a4c10298c1a1a0b2e416697f4e98108829fc9580",
+        "native_copy_unchanged": true,
+        "alpha": {
+          "min": 0,
+          "max": 254,
+          "transparent_fraction": 0.687782,
+          "bbox_above_16": [
+            199,
+            61,
+            729,
+            1511
+          ]
+        }
+      },
+      "generation": {
+        "tool": "image_gen.imagegen",
+        "transparent_background": true,
+        "prompt": "Use case: identity-preserve. Create ONE static full-body raster enemy sprite for the Death Stranding 2D fan game, faithful to the ORIGINAL Death Stranding / Director's Cut. Reproduce only the GRAY HOODED MULE visible in the middle distance of reference 1 and from the back in reference 2. Do not reproduce Sam in the foreground. A rugged gray hood and black face covering, worn cool gray weatherproof jacket and gray trousers, black armored gloves and dark boots, compact mustard yellow cargo chest pouch, one dark box strapped on upper arm, metal tubular cargo backpack frame and small raised sensor pole. The outfit is predominantly gray, NOT a yellow central-region MULE uniform, no skull mask. Full body from hood top to toes and all equipment in frame, neutral standing guard pose facing RIGHT in a slight three-quarter side view. Hold the characteristic thin electric pole low beside body, restrained glowing orange-white tip, no attack motion or trail. Match visible reference silhouette, utilitarian hardware and mud-worn realistic fabrics. High detail realistic illustrated game raster sprite matching Death Stranding cinematics, soft neutral light, readable outline, no cartoon strokes. One person with their equipment in one image, no labels or HUD, no second pose, no animation. Tall portrait frame with 8 percent clear margin including boots and pole. True transparent background, no landscape, no floor or shadow plane or vignette.",
+        "references": [
+          {
+            "reference_id": "mule-dodge-official.jpg",
+            "sha256": "faa700d5f39c9d08bc05cca955ff6c3b60a8effdd65420973ddabebd76491f76"
+          },
+          {
+            "reference_id": "mule-strand-official.jpg",
+            "sha256": "c036108e1b53838612ee937220f5bd353e70b0056f393179760196cd990c139b"
+          }
+        ]
+      },
+      "checked_details": [
+        "Capuche grise, visage couvert, sacoche jaune, châssis de fret et bâton électrique",
+        "Comparaison avec deux captures officielles DSTips"
+      ],
+      "limitations": [
+        "Les petits détails du capteur et du harnais restent reconstruits.",
+        "Cet ennemi est un MULE, pas un soldat Homo Demens."
+      ]
+    },
+    {
+      "id": "ex-grenade-0",
+      "title": "Grenade EX n° 0",
+      "category": "projectiles",
+      "path": "modes/echos-de-la-greve/assets/static-20261125/ex-grenade-0.png",
+      "status": "accepted_static_catalogue",
+      "playable_binding": false,
+      "archives_binding": false,
+      "native_png": {
+        "width": 724,
+        "height": 2172,
+        "mode": "RGBA",
+        "frames": 1,
+        "size_bytes": 493532,
+        "sha256": "755e675f10c0a8f18f55325075c7068034cf54983728f95560e71f08efbf26db",
+        "original_generation_filename": "exec-171e64dc-904b-4e93-9c44-7140685894c6.png",
+        "original_sha256": "755e675f10c0a8f18f55325075c7068034cf54983728f95560e71f08efbf26db",
+        "native_copy_unchanged": true,
+        "alpha": {
+          "min": 0,
+          "max": 255,
+          "transparent_fraction": 0.78705,
+          "bbox_above_16": [
+            264,
+            89,
+            463,
+            2089
+          ]
+        }
+      },
+      "generation": {
+        "tool": "image_gen.imagegen",
+        "transparent_background": true,
+        "prompt": "Use case: faithful product-detail extraction and reconstruction. ONE static isolated EX GRENADE No.0 capsule from the ORIGINAL Death Stranding, following the physical capsules in this actual game screenshot. Render only ONE capsule, not the circular Solstice dispenser or rack or other capsules. It is a very long slender transparent straight cylindrical glass/polymer tube with a softly rounded closed lower end, filled with pale straw/cloudy beige liquid. Its upper neck has a short dark black cylindrical cage-like cap with rectangular cutout windows, and a narrow dark gray ring wraps the tube close to its lower rounded end. Keep the long thin proportions of the reference, approximately eight to ten times taller than its tube diameter. Small restrained metallic edge highlights and transparent glass reflections, believable pale liquid meniscus, used futuristic functional medical equipment. The isolated capsule is upright vertical with its top at the top and the rounded bottom at the bottom, centered, entire object visible, substantial clear margins. Realistic high-detail game asset rendering, crisp geometry and controlled neutral lighting. One single capsule in one image, no human, no background, no floor, no rack, no additional parts, no explosive effects, no shadows outside object, no labels or text or big 0 printed on tube, no classic round grenade handle. True clean alpha transparent background, portrait orientation. Static base projectile prop, no animation.",
+        "references": [
+          {
+            "reference_id": "ex-0-steam.jpg",
+            "sha256": "25ec6a3fb95c63417671fc025241c41b793a048ec7f1e37aed783fd3dcc99a30"
+          }
+        ]
+      },
+      "checked_details": [
+        "Capsule longue, bouchon noir ajouré, anneau bas et liquide beige pâle"
+      ],
+      "limitations": [
+        "Correspondance n°0/couleur établie par un guide secondaire.",
+        "Accessoire statique ; aucun effet d’impact ou jet ajouté."
+      ]
+    },
+    {
+      "id": "ex-grenade-1",
+      "title": "Grenade EX n° 1",
+      "category": "projectiles",
+      "path": "modes/echos-de-la-greve/assets/static-20261125/ex-grenade-1.png",
+      "status": "accepted_static_catalogue",
+      "playable_binding": false,
+      "archives_binding": false,
+      "native_png": {
+        "width": 724,
+        "height": 2172,
+        "mode": "RGBA",
+        "frames": 1,
+        "size_bytes": 523451,
+        "sha256": "4295fb4499874de58bc45f845e83cae87785d1e33eee0155260d8d85c97c5de0",
+        "original_generation_filename": "exec-84cb1e33-b7c7-4931-a0f9-8f3d3f5f4bc3.png",
+        "original_sha256": "4295fb4499874de58bc45f845e83cae87785d1e33eee0155260d8d85c97c5de0",
+        "native_copy_unchanged": true,
+        "alpha": {
+          "min": 0,
+          "max": 255,
+          "transparent_fraction": 0.77035,
+          "bbox_above_16": [
+            262,
+            86,
+            464,
+            2157
+          ]
+        }
+      },
+      "generation": {
+        "tool": "image_gen.imagegen",
+        "transparent_background": true,
+        "prompt": "Edit the FIRST image into the EX GRENADE No.1 variant from original Death Stranding. Preserve the first image's complete isolated capsule silhouette, exact proportions, vertical upright composition, black cage-like cap with rectangular windows, gray ring near rounded bottom, glass surface, lighting and true transparent background. Change ONLY the liquid filling from pale straw beige to rich clear saturated amber-ORANGE, as physically shown in the SECOND reference's radial dispenser capsules. Preserve the liquid meniscus and subtle glass reflections. ONE single capsule, no additional object, no rack, no background, no floor, no text or label or number printed on it. No animation. Keep clean transparent alpha.",
+        "references": [
+          {
+            "derived_asset_id": "ex-grenade-0",
+            "sha256": "755e675f10c0a8f18f55325075c7068034cf54983728f95560e71f08efbf26db"
+          },
+          {
+            "reference_id": "ex-1-steam.jpg",
+            "sha256": "d77309f7d3dbdea1523aa64c053d9ab606b6f9282c9b1b0363b3c001b6f4b0e1"
+          }
+        ]
+      },
+      "checked_details": [
+        "Même famille de capsule, liquide orange",
+        "Dérivée par imagegen de la capsule EX n°0 avec sa référence de couleur"
+      ],
+      "limitations": [
+        "Correspondance n°1/couleur établie par un guide secondaire.",
+        "Silhouette visible environ 3,5 % plus haute que EX0 malgré dimensions de fichier identiques ; géométrie non pixel-identique."
+      ]
+    },
+    {
+      "id": "ex-grenade-2",
+      "title": "Grenade EX n° 2",
+      "category": "projectiles",
+      "path": "modes/echos-de-la-greve/assets/static-20261125/ex-grenade-2.png",
+      "status": "accepted_static_catalogue",
+      "playable_binding": false,
+      "archives_binding": false,
+      "native_png": {
+        "width": 724,
+        "height": 2172,
+        "mode": "RGBA",
+        "frames": 1,
+        "size_bytes": 513619,
+        "sha256": "a7040e33bc0396c172f120d7315177e785187c220153b645c2557cf5b5136a14",
+        "original_generation_filename": "exec-8495e147-9c2a-404e-bb27-22d4d82ed7fb.png",
+        "original_sha256": "a7040e33bc0396c172f120d7315177e785187c220153b645c2557cf5b5136a14",
+        "native_copy_unchanged": true,
+        "alpha": {
+          "min": 0,
+          "max": 255,
+          "transparent_fraction": 0.767865,
+          "bbox_above_16": [
+            261,
+            84,
+            466,
+            2154
+          ]
+        }
+      },
+      "generation": {
+        "tool": "image_gen.imagegen",
+        "transparent_background": true,
+        "prompt": "Edit the FIRST image into the EX GRENADE No.2 variant from original Death Stranding. Preserve the first image's complete isolated capsule silhouette, exact proportions, vertical upright composition, black cage-like cap with rectangular windows, gray ring near rounded bottom, glass surface, lighting and true transparent background. Change ONLY the liquid filling from pale straw beige to clear AQUA TURQUOISE, as physically shown in the SECOND reference's radial dispenser capsules. Preserve the liquid meniscus and subtle glass reflections. ONE single capsule, no additional object, no rack, no background, no floor, no text or label or number printed on it. No animation. Keep clean transparent alpha.",
+        "references": [
+          {
+            "derived_asset_id": "ex-grenade-0",
+            "sha256": "755e675f10c0a8f18f55325075c7068034cf54983728f95560e71f08efbf26db"
+          },
+          {
+            "reference_id": "ex-2-steam.jpg",
+            "sha256": "02b849e87fd6e02711fe71fe17ad505e3255351ccf3673f026ce0f38e57deb54"
+          }
+        ]
+      },
+      "checked_details": [
+        "Même famille de capsule, liquide turquoise",
+        "Dérivée par imagegen de la capsule EX n°0 avec sa référence de couleur"
+      ],
+      "limitations": [
+        "Type n°2 corroboré par une capture sous-titrée supplémentaire.",
+        "Silhouette visible environ 3,5 % plus haute que EX0 malgré dimensions de fichier identiques ; géométrie non pixel-identique."
+      ]
+    },
+    {
+      "id": "hematic-grenade",
+      "title": "Grenade hématique · niveau 1",
+      "category": "projectiles",
+      "path": "modes/echos-de-la-greve/assets/static-20261125/hematic-grenade.png",
+      "status": "accepted_static_catalogue",
+      "playable_binding": false,
+      "archives_binding": false,
+      "native_png": {
+        "width": 1024,
+        "height": 1536,
+        "mode": "RGBA",
+        "frames": 1,
+        "size_bytes": 1753434,
+        "sha256": "0277fb6902558495e5ae4c4f7bfb92e845e8bc7f810f21471d67a1586db7ac7e",
+        "original_generation_filename": "exec-dd15bc69-4d64-47f4-96ed-0c553228f356.png",
+        "original_sha256": "0277fb6902558495e5ae4c4f7bfb92e845e8bc7f810f21471d67a1586db7ac7e",
+        "native_copy_unchanged": true,
+        "alpha": {
+          "min": 0,
+          "max": 254,
+          "transparent_fraction": 0.64753,
+          "bbox_above_16": [
+            261,
+            21,
+            862,
+            1513
+          ]
+        }
+      },
+      "generation": {
+        "tool": "image_gen.imagegen",
+        "transparent_background": true,
+        "prompt": "Use case: faithful game equipment reconstruction. Make ONE isolated static HEMATIC GRENADE LEVEL 1 from the original DEATH STRANDING, using these in-game DS1 equipment screenshots. Reproduce one of the vertical grenades in the FIRST reference, slight three-quarter view to show the narrow red gauge and the long safety spoon. Cylindrical long narrow body with an OPAQUE smooth painted off-white/pale gray main casing, thick off-white upper collar with rounded notches around its rims, small dark gunmetal top fuse mechanism, large angular rectangular pull ring tilted out to the upper right, and long thin ribbed gray metal safety lever descending down one side. Lower casing section is red with large circular perforations; dark red narrow vertical fluid gauge down the white side, small red BLOOD marking and droplet symbol, small understated equipment markings consistent with reference. The upper main body is NOT a transparent red glass jar. Preserve correct DS1 proportions and design; SECOND reference supports the entire outline. Whole grenade upright, top pin and lever and base all visible, centered with generous empty margin, one item only. Realistic high-detail raster inventory/projectile sprite with subtle worn painted finish and crisp machined edges, soft neutral light, no fantasy glow. True alpha transparent background, no backdrop or shadow plane, no game menu or other grenades or watermarks, no explosions or animation. Portrait composition.",
+        "references": [
+          {
+            "reference_id": "hematic-grenade-ds1-equipment-secondary.jpg",
+            "sha256": "3ac75063bf4f619dadf619559bdafd5a74e5a5d1872c347192792e19d83c7ebb"
+          },
+          {
+            "reference_id": "hematic-grenade-ds1-inventory.jpg",
+            "sha256": "ba6447991b9f06e49638ed6fc42b14804d1e5ce027c2510aafd0586b1a3d04d4"
+          }
+        ]
+      },
+      "checked_details": [
+        "Corps blanc opaque, base rouge perforée et jauge sombre",
+        "Mécanisme métallique, anneau angulaire et long levier latéral"
+      ],
+      "limitations": [
+        "Reconstruction depuis une capture de menu DS1 de 720×405.",
+        "Usure et micro-marquages générés ; pas de certification de chaque inscription."
+      ]
+    }
+  ],
+  "reference_sources": [
+    {
+      "filename": "amelie-official.jpg",
+      "page_url": "https://blog.de.playstation.com/2021/10/19/death-stranding-das-sind-die-charaktere/",
+      "image_url": "https://blog.de.playstation.com/uploads/sites/13/2021/10/c9ee58cae0a2201360e539aa82c5334de346bd63.jpg",
+      "provenance": "primary_playstation",
+      "visually_inspected": true,
+      "notes": "BLACK outfit closeup; blonde shoulder-length hair, blue eyes, doubled curved gold pendant with hanging chains. Not red-dress full-body reference.",
+      "size_bytes": 1985376,
+      "sha256": "902f02919c2cf79729e8ec00232ee7bfae6f1fa0102859ff5fb65b292f3391f6"
+    },
+    {
+      "filename": "amelie-red-beach-register-secondary.jpg",
+      "page_url": "https://www.theregister.com/2020/08/28/death_stranding/",
+      "image_url": "https://regmedia.co.uk/2020/08/27/dsbeach.jpg",
+      "provenance": "secondary_gameplay_capture",
+      "visually_inspected": true,
+      "notes": "Full BACK view Amelie memory figure walking with child. Confirms red midi dress hem below knee to upper calf, long fitted sleeves, waist tie, visible bare lower calves, red closed pumps with slender high heels. No floor-length gown. Foreground also has Amelie shoulder/back; use central full figure.",
+      "size_bytes": 147846,
+      "sha256": "177ed1d636bf36e21825472100f51b5bf59d495c54d1196729280cb539473d70"
+    },
+    {
+      "filename": "amelie-red-full-secondary.jpeg",
+      "page_url": "https://api.xiaoheihe.cn/maxnews/app/share/detail/2180901",
+      "image_url": "https://imgheybox.max-c.com/bbs/2021/08/06/bb8a66f7103df2bbecb59e741831a80a/thumb.jpeg",
+      "provenance": "secondary_gameplay_capture",
+      "visually_inspected": true,
+      "notes": "Front Amelie before ship: red wrap dress long sleeves, V neckline, gathering around waist, narrow red waist tie hanging on her anatomical left (viewer right), double curved necklace and dangling chains. Head through below thighs; hem and shoes cropped despite filename.",
+      "size_bytes": 70981,
+      "sha256": "516968fad856f44a4a6424f243a44ce8e17fc85f4c4068cb12e400697796414a"
+    },
+    {
+      "filename": "bridget-hospital-full-secondary.jpg",
+      "page_url": "https://www.gq-magazine.co.uk/games/article/death-stranding-review",
+      "image_url": "https://media.gq-magazine.co.uk/photos/5dc5517da950870008a87ab1/master/w_1600%2Cc_limit/Death-Stranding-2-811.jpg",
+      "provenance": "secondary_gameplay_capture",
+      "visually_inspected": true,
+      "notes": "Wide view: older sick Bridget reclining in adjustable gray hospital bed with gray rails and wheeled base, white pleated high-neck blouse, lilac/pink headscarf, burgundy blanket completely covers legs and feet. Black medical cables above. This supports a reclining hospital pose ONLY, no standing outfit.",
+      "size_bytes": 148861,
+      "sha256": "e5c62a49a7fe7d273b0cf2a6ce21b3deb1b3cd4e29a339f0314f8a693294194d"
+    },
+    {
+      "filename": "bridget-official.jpg",
+      "page_url": "https://blog.de.playstation.com/2021/10/19/death-stranding-das-sind-die-charaktere/",
+      "image_url": "https://blog.de.playstation.com/uploads/sites/13/2021/10/af1d619c896432ac6b74397c67d74ecf4a4bbd41.jpg",
+      "provenance": "primary_playstation",
+      "visually_inspected": true,
+      "notes": "Ill older Bridget in hospital bed; pale pink/lilac patterned headscarf and white pleated blouse with delicate edged collar. Not a standing costume reference.",
+      "size_bytes": 74887,
+      "sha256": "92d7531845f3224d8e74a3a32d27700743e3add0038b89ca81761cc51a7325a3"
+    },
+    {
+      "filename": "bt-areas-official.jpg",
+      "page_url": "https://www.kojimaproductions.jp/en/DSTips",
+      "image_url": "https://www.kojimaproductions.jp/sites/default/files/2023-03/bt_areas.jpg",
+      "provenance": "primary_kojima",
+      "visually_inspected": true,
+      "notes": "BT gazer suspended humanoid composed of black particles/tar with trailing strand. No visible human costume. Strong visual reference.",
+      "size_bytes": 1332305,
+      "sha256": "ab5bab18de3173e3abfda3d850bbc1dbf65831d27d3942819fe6249fa503ada7"
+    },
+    {
+      "filename": "cliff-skeletons-secondary.jpg",
+      "page_url": "https://wallpapers.com/wallpapers/death-stranding-cliff-s-skeleton-soldiers-4l7as12hy78zfvql.html",
+      "image_url": "https://wallpapers.com/images/hd/death-stranding-cliff-s-skeleton-soldiers-4l7as12hy78zfvql.jpg",
+      "provenance": "secondary_promotional_still",
+      "visually_inspected": true,
+      "notes": "WWII-style skeletal soldiers crouched, weathered khaki uniform, netted helmets, rifles, black cords; not modern NVG variation.",
+      "size_bytes": 305232,
+      "sha256": "a3ae30ec8f880047a975f135f5a06d8747e93200df027683606e3b77a77a7c3b"
+    },
+    {
+      "filename": "deadman-spotlight-official.jpg",
+      "page_url": "https://blog.playstation.com/2019/08/20/death-stranding-new-footage-and-character-spotlight-videos/",
+      "image_url": "https://i.ytimg.com/vi/ak7iITVTkSk/maxresdefault.jpg",
+      "provenance": "primary_playstation",
+      "visually_inspected": true,
+      "notes": "Dark suit jacket, burgundy shirt, black tie and tie clip; glasses, beard, medical gloves, blue cuff.",
+      "size_bytes": 108287,
+      "sha256": "deffc044dc6cf0161edff093282be761f48666a9c9f45a9796a0995476b83854"
+    },
+    {
+      "filename": "ex-0-steam.jpg",
+      "page_url": "https://steamcommunity.com/sharedfiles/filedetails/?id=2523254433",
+      "image_url": "https://images.steamusercontent.com/ugc/1822265814204266327/A2E45DC60994B9532C73FCA7F1C20BBAC355A455/",
+      "provenance": "secondary_gameplay_capture",
+      "visually_inspected": true,
+      "notes": "Guide labels EX type0. Three long transparent capsules in Solstice radial fabricator; pale straw/cloudy beige fluid, black cage-like neck cap, gray dark ring near rounded bottom. Screenshot itself has no number label; guide establishes mapping.",
+      "size_bytes": 174984,
+      "sha256": "25ec6a3fb95c63417671fc025241c41b793a048ec7f1e37aed783fd3dcc99a30"
+    },
+    {
+      "filename": "ex-1-steam.jpg",
+      "page_url": "https://steamcommunity.com/sharedfiles/filedetails/?id=2523254433",
+      "image_url": "https://images.steamusercontent.com/ugc/1791864611924503850/C73B63A648EB275ECD9C4E300BD21DEDEAA09DBF/",
+      "provenance": "secondary_gameplay_capture",
+      "visually_inspected": true,
+      "notes": "Guide labels EX type1. Four long transparent capsules, saturated orange liquid, same black cage-like neck cap and gray band near rounded bottom. Screenshot itself has no number label; guide establishes mapping.",
+      "size_bytes": 43693,
+      "sha256": "d77309f7d3dbdea1523aa64c053d9ab606b6f9282c9b1b0363b3c001b6f4b0e1"
+    },
+    {
+      "filename": "ex-2-steam.jpg",
+      "page_url": "https://steamcommunity.com/sharedfiles/filedetails/?id=2523254433",
+      "image_url": "https://images.steamusercontent.com/ugc/1822265814204258362/D2C76C5A605E696729C8577DAEB6E98010589DB6/",
+      "provenance": "secondary_gameplay_capture",
+      "visually_inspected": true,
+      "notes": "Guide labels EX type2. Four long transparent capsules, aqua/turquoise liquid, same black cage-like neck cap and gray band near rounded bottom. Mapping independently corroborated by subtitle in GamesRadar single-vial shot.",
+      "size_bytes": 178046,
+      "sha256": "02b849e87fd6e02711fe71fe17ad505e3255351ccf3673f026ce0f38e57deb54"
+    },
+    {
+      "filename": "hematic-grenade-ds1-equipment-secondary.jpg",
+      "page_url": "https://www.gamepressure.com/death-stranding/how-to-get-the-first-weapons/zccca5",
+      "image_url": "https://www.gamepressure.com/death-stranding/gfx/word/88292781.jpg",
+      "provenance": "secondary_gameplay_capture",
+      "visually_inspected": true,
+      "notes": "DS1 game equipment-rack render, UI explicitly Hematic Grenade (Lv.1); source page dated 21 November 2019, so not DS2. 720x405. Three standing grenades and one lying horizontally. Tall cylindrical OPAQUE off-white/light gray main shell, red lower sleeve with large circular perforations, narrow vertical dark-red gauge/window on one body. Thick pale upper collar with rounded scalloped indentations and red CAUTION/COLD GAS text. Dark gunmetal/black top fuze, angular rectangular pull ring, long gray side lever with ribbed lower grip. Red BLOOD word and droplet on shell, barcode/608 label on another face. Smooth painted appearance; exact substrate material cannot be proved from screenshot. No transparent upper blood reservoir should be assumed. Excellent physical design supplement to outline-only wheel icon.",
+      "size_bytes": 55960,
+      "sha256": "3ac75063bf4f619dadf619559bdafd5a74e5a5d1872c347192792e19d83c7ebb"
+    },
+    {
+      "filename": "hematic-grenade-ds1-inventory.jpg",
+      "page_url": "https://www.gamersdecide.com/articles/death-stranding-best-weapons",
+      "image_url": "https://www.gamersdecide.com/sites/default/files/authors/u157430/death-stranding-hematic-grenades.jpg",
+      "provenance": "secondary_gameplay_capture",
+      "visually_inspected": true,
+      "notes": "Menu DS1 : silhouette filaire de grenade hématique niveau1. Ne documente pas à lui seul les teintes physiques.",
+      "size_bytes": 119287,
+      "sha256": "ba6447991b9f06e49638ed6fc42b14804d1e5ce027c2510aafd0586b1a3d04d4"
+    },
+    {
+      "filename": "lockne-fullbody-hologram-secondary.jpg",
+      "page_url": "https://nokuat.hatenablog.com/entry/2019/12/14/155059",
+      "image_url": "https://cdn-ak.f.st-hatena.com/images/fotolife/N/Nokuat/20191215/20191215101803.jpg",
+      "provenance": "secondary_gameplay_capture",
+      "visually_inspected": true,
+      "notes": "Head-to-thigh hologram, NOT full body; navy sleeveless high collar vest, diagonal zipper, asymmetric hem, gray sleeves; footwear not visible.",
+      "size_bytes": 318562,
+      "sha256": "9172bf8f06eaba2646516bfa87d4f8e12bf06c6c7c08bf33fbeab5e40a76e70e"
+    },
+    {
+      "filename": "lockne-game-screenshot-secondary.png",
+      "page_url": "https://nokuat.hatenablog.com/entry/2019/12/14/155059",
+      "image_url": "https://cdn-ak.f.st-hatena.com/images/fotolife/N/Nokuat/20191215/20191215103029.png",
+      "provenance": "secondary_gameplay_capture",
+      "visually_inspected": true,
+      "notes": "Post-reunion face; anatomical right eye blue (viewer left), left eye hazel (viewer right); dark asymmetric hair; elongated angular gold earrings; navy standing collar; gray fitted sleeves.",
+      "size_bytes": 730614,
+      "sha256": "9b12a34cb3f09a95bc83e1eee595c9783d09818bef6d2968758f5ca2d9529c75"
+    },
+    {
+      "filename": "mountain-knot-official.jpg",
+      "page_url": "https://atmoph.com/en/products/deathstranding",
+      "image_url": "https://webres-atmoph.global.ssl.fastly.net/assets/images/products/aw102/deathstranding/thumb-view5.jpg",
+      "provenance": "licensed_partner_atmoph",
+      "visually_inspected": true,
+      "notes": "Approche montagneuse de Mountain Knot : relief neigeux, cordons et arc chiral. Aucune skyline urbaine visible.",
+      "size_bytes": 715953,
+      "sha256": "9298ccbe6fd89cf9955ffabaf93920cd12efeb8da4d02497b90076112cc7de23"
+    },
+    {
+      "filename": "mule-dodge-official.jpg",
+      "page_url": "https://www.kojimaproductions.jp/en/DSTips",
+      "image_url": "https://www.kojimaproductions.jp/sites/default/files/2023-03/dodge.jpg",
+      "provenance": "primary_kojima",
+      "visually_inspected": true,
+      "notes": "Gray MULE frontal, black face covering and hood, yellow chest bag, electric pole, sensor pole backpack. Small character on 1920x1080 image.",
+      "size_bytes": 1814186,
+      "sha256": "faa700d5f39c9d08bc05cca955ff6c3b60a8effdd65420973ddabebd76491f76"
+    },
+    {
+      "filename": "mule-strand-official.jpg",
+      "page_url": "https://www.kojimaproductions.jp/en/DSTips",
+      "image_url": "https://www.kojimaproductions.jp/sites/default/files/2023-03/03.jpg",
+      "provenance": "primary_kojima",
+      "visually_inspected": true,
+      "notes": "Gray eastern-region MULE rear, hood, cargo frame, side case, orange electric pole; not yellow central MULE.",
+      "size_bytes": 255407,
+      "sha256": "c036108e1b53838612ee937220f5bd353e70b0056f393179760196cd990c139b"
+    },
+    {
+      "filename": "south-knot-official.jpg",
+      "page_url": "https://atmoph.com/en/products/deathstranding",
+      "image_url": "https://webres-atmoph.global.ssl.fastly.net/assets/images/products/aw102/deathstranding/thumb_DS2_re.jpg",
+      "provenance": "licensed_partner_atmoph",
+      "visually_inspected": true,
+      "notes": "Page DS1 : ruines de South Knot. Le nom du fichier distant contenant DS2 ne désigne pas Death Stranding 2.",
+      "size_bytes": 1005020,
+      "sha256": "a401dd223d5f840978690950fea34b5a4e43ab57c62f2a6b4df356911acdab04"
+    },
+    {
+      "filename": "timefall-farm-official.jpg",
+      "page_url": "https://atmoph.com/en/products/deathstranding",
+      "image_url": "https://webres-atmoph.global.ssl.fastly.net/assets/images/products/aw102/deathstranding/thumb-view4.jpg",
+      "provenance": "licensed_partner_atmoph",
+      "visually_inspected": true,
+      "notes": "Ferme du premier Death Stranding, cultures dorées et machines agricoles jaunes.",
+      "size_bytes": 1127427,
+      "sha256": "c2c831ce0dde7caf6e297fa1ff176aee37f789d06a77ec3c189cb7de8f5a24e6"
+    }
+  ],
+  "additional_inspected_references": [
+    {
+      "filename": "ex-grenade-2-fabricator-secondary.jpg",
+      "page_url": "https://www.gamesradar.com/death-stranding-ex-grenades/",
+      "image_url": "https://cdn.mos.cms.futurecdn.net/hHQS2BdvXheqnjYpcFHtWK.jpg",
+      "provenance": "secondary_gameplay_capture",
+      "visually_inspected": true,
+      "notes": "Actual single EX No.2 capsule with subtitle identifying number two. Clear slender cylindrical tube, turquoise/aqua liquid, dark cage-like black cap at neck, narrow gray/dark ring near rounded closed bottom. In Solstice radial fabricator.",
+      "size_bytes": 571490,
+      "sha256": "8f32074bca5c19090801b90d79b0febad27e15214d65857d93817c7a7f5dab2f"
+    },
+    {
+      "filename": "homo-demens-hologram-secondary.jpg",
+      "page_url": "https://vandal.elespanol.com/guias/guia-death-stranding-trucos-consejos-y-secretos/enfrentarse-a-humanos",
+      "image_url": "https://media.vandal.net/master/11-2019/2019111204443_1.jpg",
+      "provenance": "secondary_gameplay_capture",
+      "visually_inspected": true,
+      "notes": "In-game briefing hologram of Higgs center with four Homo Demens riflemen. Ignore Higgs when making generic enemy. Flankers have covered heads/visors, broad shoulder armor, tactical torso vest, gloves, belt/thigh pouches, back sensor, rifles. All green due to hologram, so garment color is NOT verified. Lower feet cropped. No trustworthy uncolored full-body terrorist reference recovered.",
+      "size_bytes": 127242,
+      "sha256": "092ac3fc88cfd62c31ba639f58062dd84b35653d886289ac80029586387f58ab"
+    },
+    {
+      "filename": "official-gallery-gr.DeathStranding_GameScreenshot15.jpg",
+      "page_url": "https://www.kojimaproductions.jp/en/death-stranding-ps4/",
+      "image_url": "https://www.kojimaproductions.jp/sites/default/files/2021-08/gr.DeathStranding_GameScreenshot15.jpg",
+      "provenance": "primary_kojima",
+      "visually_inspected": true,
+      "notes": "Official PS4 gallery: Amelie red outfit hologram, head through waist, long fitted red sleeves, crossed low V neckline, blonde shoulder-length hair. Arms raised to glass. No hem or shoes visible; combine with secondary full back view.",
+      "size_bytes": 526150,
+      "sha256": "a90fc78402043724951f53745774eb069818d8d8a741f09a842c006ee07d5b47"
+    },
+    {
+      "filename": "official-gallery-gr.DeathStranding_GameScreenshot16.jpg",
+      "page_url": "https://www.kojimaproductions.jp/en/death-stranding-ps4/",
+      "image_url": "https://www.kojimaproductions.jp/sites/default/files/2021-08/gr.DeathStranding_GameScreenshot16.jpg",
+      "provenance": "primary_kojima",
+      "visually_inspected": true,
+      "notes": "Official PS4 gallery of Cliff and four skeletal soldiers in fire/water. Modern helmets with flipped-up twin night-vision tubes, skull faces with red glowing eyes, dirty tan long sleeves, dark tactical vests, black rifles, glowing tar-like cords on shoulders. Lower legs and feet fully hidden in water/fire. Supersedes secondary mirror for this composition.",
+      "size_bytes": 282054,
+      "sha256": "b3969f1b53e0026c5d01581240f111fbd61b65d395e39f08209ecac6f45b5ed2"
+    }
+  ],
+  "remaining": [
+    "Cinq plans et intégration pour les trois nouveaux panoramas.",
+    "Structures urbaines de Mountain Knot.",
+    "Soldat Homo Demens : couleurs non validables depuis la seule référence holographique.",
+    "Vues gauche asymétriques, parties de costumes non visibles, autres personnages secondaires et variantes non encore audités."
+  ],
+  "verification": {
+    "all_15_png_decoded": true,
+    "one_frame_each": true,
+    "all_native_hashes_match": true,
+    "visual_review": "docs/combat/production/20261125-static/visual-review-independent-20261125.json",
+    "interface_validation": "docs/combat/production/20261125-static/gallery-dom-validation.json",
+    "native_browser_rendering": false,
+    "global_one_to_one_fidelity_certified": false
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "date": "2026-11-24",
+  "scope": "Minimal Playwright startup check; no game browser suite ran.",
+  "browserVerified": false,
+  "attempts": [
+    {
+      "engine": "Playwright bundled Chromium",
+      "status": "unavailable",
+      "error": "Executable does not exist at the Playwright chromium_headless_shell-1234 cache path."
+    },
+    {
+      "engine": "/usr/bin/chromium",
+      "status": "startup-failed",
+      "error": "FATAL:chrome/browser/process_singleton_posix.cc:297 Check failed: . socket() failed: Operation not permitted (1)"
+    }
+  ],
+  "fallback": "Actual fight.js render and simulation exercised with native Canvas and decoded production images."
+}

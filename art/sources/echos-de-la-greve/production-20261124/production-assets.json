@@ -1,0 +1,1533 @@
+{
+  "date": "2026-11-24",
+  "sourceBranch": "main",
+  "baseCommit": "ba4431587f861823e453c85bdf7e6967778329a9",
+  "scope": "Seven existing DS1/DC fighters, five poses each, seven existing combat effects.",
+  "expectedAssets": 42,
+  "presentAssets": 42,
+  "missing": [],
+  "nativeImagesUntouched": true,
+  "canonicalFidelity": "Not certified: local costume continuity checked; official pose-by-pose comparison remains open.",
+  "assets": [
+    {
+      "type": "fighter",
+      "id": "sam",
+      "pose": "guard",
+      "runtime": "modes/echos-de-la-greve/assets/fighters/sam/guard.png",
+      "width": 854,
+      "height": 1840,
+      "sha256": "9ab6da9fcaab1d5cde6e39f475da7b233bf5829dd9a01f24814f2215e4eb2012",
+      "bytes": 2059493,
+      "alphaThreshold": 8,
+      "alphaBounds": [
+        13,
+        15,
+        827,
+        1797
+      ],
+      "crop": [
+        10,
+        12,
+        820,
+        1788
+      ],
+      "transparentPixels": 735196,
+      "nativePixelsPreserved": true,
+      "renderGeometry": {
+        "crop": [
+          10,
+          12,
+          820,
+          1788
+        ],
+        "anchorX": 0.508537,
+        "baselineY": 0.998322,
+        "heightRatio": 1.0
+      }
+    },
+    {
+      "type": "fighter",
+      "id": "sam",
+      "pose": "crouch",
+      "runtime": "modes/echos-de-la-greve/assets/fighters/sam/crouch.png",
+      "width": 1239,
+      "height": 1270,
+      "sha256": "f787d9b3ba24609e7b48ee904c673115824ccc3aa85873e75761f18c2c2813c3",
+      "bytes": 1683247,
+      "alphaThreshold": 8,
+      "alphaBounds": [
+        142,
+        22,
+        1042,
+        1247
+      ],
+      "crop": [
+        139,
+        19,
+        906,
+        1231
+      ],
+      "transparentPixels": 862704,
+      "nativePixelsPreserved": true,
+      "renderGeometry": {
+        "crop": [
+          139,
+          19,
+          906,
+          1231
+        ],
+        "anchorX": 0.513245,
+        "baselineY": 0.997563,
+        "heightRatio": 0.7
+      }
+    },
+    {
+      "type": "fighter",
+      "id": "sam",
+      "pose": "rise",
+      "runtime": "modes/echos-de-la-greve/assets/fighters/sam/rise.png",
+      "width": 1024,
+      "height": 1536,
+      "sha256": "1869e33970c12677fe53b5444a3dff6c5aa99a0dd9e0e8bcb5897b7acd29a4a3",
+      "bytes": 2011523,
+      "alphaThreshold": 8,
+      "alphaBounds": [
+        86,
+        9,
+        881,
+        1514
+      ],
+      "crop": [
+        83,
+        6,
+        801,
+        1511
+      ],
+      "transparentPixels": 1027586,
+      "nativePixelsPreserved": true,
+      "renderGeometry": {
+        "crop": [
+          83,
+          6,
+          801,
+          1511
+        ],
+        "anchorX": 0.5,
+        "baselineY": 0.998015,
+        "heightRatio": 0.94
+      }
+    },
+    {
+      "type": "fighter",
+      "id": "sam",
+      "pose": "apex",
+      "runtime": "modes/echos-de-la-greve/assets/fighters/sam/apex.png",
+      "width": 1191,
+      "height": 1321,
+      "sha256": "6ef109a246650a795a91c845b9ab2b8ea64e250bebd2f5017cbf51b94291a3ac",
+      "bytes": 1586608,
+      "alphaThreshold": 8,
+      "alphaBounds": [
+        154,
+        11,
+        1106,
+        1220
+      ],
+      "crop": [
+        151,
+        8,
+        958,
+        1215
+      ],
+      "transparentPixels": 918229,
+      "nativePixelsPreserved": true,
+      "renderGeometry": {
+        "crop": [
+          151,
+          8,
+          958,
+          1215
+        ],
+        "anchorX": 0.5,
+        "baselineY": 0.997531,
+        "heightRatio": 0.76
+      }
+    },
+    {
+      "type": "fighter",
+      "id": "sam",
+      "pose": "fall",
+      "runtime": "modes/echos-de-la-greve/assets/fighters/sam/fall.png",
+      "width": 1024,
+      "height": 1536,
+      "sha256": "8b3762a91937bbe24f9d1261b0b961f87d8ed8562e069e95d03cbb76fb92867f",
+      "bytes": 2076685,
+      "alphaThreshold": 8,
+      "alphaBounds": [
+        86,
+        43,
+        937,
+        1485
+      ],
+      "crop": [
+        83,
+        40,
+        857,
+        1448
+      ],
+      "transparentPixels": 1028017,
+      "nativePixelsPreserved": true,
+      "renderGeometry": {
+        "crop": [
+          83,
+          40,
+          857,
+          1448
+        ],
+        "anchorX": 0.5,
+        "baselineY": 0.997928,
+        "heightRatio": 0.96
+      }
+    },
+    {
+      "type": "fighter",
+      "id": "fragile",
+      "pose": "guard",
+      "runtime": "modes/echos-de-la-greve/assets/fighters/fragile/guard.png",
+      "width": 971,
+      "height": 1619,
+      "sha256": "4e74b9bc66e42b75d16f29973126963a540e9a53424cba900b2669d2b664bf25",
+      "bytes": 1428570,
+      "alphaThreshold": 8,
+      "alphaBounds": [
+        75,
+        24,
+        911,
+        1594
+      ],
+      "crop": [
+        72,
+        21,
+        842,
+        1576
+      ],
+      "transparentPixels": 971375,
+      "nativePixelsPreserved": true,
+      "renderGeometry": {
+        "crop": [
+          72,
+          21,
+          842,
+          1576
+        ],
+        "anchorX": 0.499406,
+        "baselineY": 0.998096,
+        "heightRatio": 0.98
+      }
+    },
+    {
+      "type": "fighter",
+      "id": "fragile",
+      "pose": "crouch",
+      "runtime": "modes/echos-de-la-greve/assets/fighters/fragile/crouch.png",
+      "width": 1536,
+      "height": 1024,
+      "sha256": "6b347f10bb87ea36f328af36b4617ee7c71cdc5cc0b5863a9c263ac8c5cebe9b",
+      "bytes": 2065682,
+      "alphaThreshold": 8,
+      "alphaBounds": [
+        51,
+        19,
+        1407,
+        1008
+      ],
+      "crop": [
+        48,
+        16,
+        1362,
+        995
+      ],
+      "transparentPixels": 972243,
+      "nativePixelsPreserved": true,
+      "renderGeometry": {
+        "crop": [
+          48,
+          16,
+          1362,
+          995
+        ],
+        "anchorX": 0.616373,
+        "baselineY": 0.996985,
+        "heightRatio": 0.66
+      }
+    },
+    {
+      "type": "fighter",
+      "id": "fragile",
+      "pose": "rise",
+      "runtime": "modes/echos-de-la-greve/assets/fighters/fragile/rise.png",
+      "width": 1024,
+      "height": 1536,
+      "sha256": "337a3f215a3b6142ae733b03ac49dc035286d4bde100be94fd18c2712fadad6a",
+      "bytes": 1826975,
+      "alphaThreshold": 8,
+      "alphaBounds": [
+        57,
+        14,
+        903,
+        1528
+      ],
+      "crop": [
+        54,
+        11,
+        852,
+        1520
+      ],
+      "transparentPixels": 1109052,
+      "nativePixelsPreserved": true,
+      "renderGeometry": {
+        "crop": [
+          54,
+          11,
+          852,
+          1520
+        ],
+        "anchorX": 0.5,
+        "baselineY": 0.998026,
+        "heightRatio": 0.94
+      }
+    },
+    {
+      "type": "fighter",
+      "id": "fragile",
+      "pose": "apex",
+      "runtime": "modes/echos-de-la-greve/assets/fighters/fragile/apex.png",
+      "width": 971,
+      "height": 1620,
+      "sha256": "16db4ada4269572de58ff6af582bce5e940b8fd6a1bd24f1fd8495b23e7890ec",
+      "bytes": 1490708,
+      "alphaThreshold": 8,
+      "alphaBounds": [
+        64,
+        31,
+        884,
+        1370
+      ],
+      "crop": [
+        61,
+        28,
+        826,
+        1345
+      ],
+      "transparentPixels": 952869,
+      "nativePixelsPreserved": true,
+      "renderGeometry": {
+        "crop": [
+          61,
+          28,
+          826,
+          1345
+        ],
+        "anchorX": 0.5,
+        "baselineY": 0.963569,
+        "heightRatio": 0.8
+      },
+      "anatomicalCalibration": {
+        "footY": 1324,
+        "note": "Umbrella tip reaches y1370; rear boot sole ends at y1324."
+      }
+    },
+    {
+      "type": "fighter",
+      "id": "fragile",
+      "pose": "fall",
+      "runtime": "modes/echos-de-la-greve/assets/fighters/fragile/fall.png",
+      "width": 971,
+      "height": 1620,
+      "sha256": "399c93011ea1fb44ceab4962787db17e0181d30fac66f18fcf9bfea6f1a54ffb",
+      "bytes": 1260820,
+      "alphaThreshold": 8,
+      "alphaBounds": [
+        17,
+        12,
+        953,
+        1517
+      ],
+      "crop": [
+        14,
+        9,
+        942,
+        1511
+      ],
+      "transparentPixels": 1051793,
+      "nativePixelsPreserved": true,
+      "renderGeometry": {
+        "crop": [
+          14,
+          9,
+          942,
+          1511
+        ],
+        "anchorX": 0.5,
+        "baselineY": 0.998015,
+        "heightRatio": 0.96
+      }
+    },
+    {
+      "type": "fighter",
+      "id": "higgs",
+      "pose": "guard",
+      "runtime": "modes/echos-de-la-greve/assets/fighters/higgs/guard.png",
+      "width": 900,
+      "height": 1747,
+      "sha256": "83be12150424c200a2deb4f275e6cc98fc4c8d9ce859ba7dc2ab6c36a5307688",
+      "bytes": 1494903,
+      "alphaThreshold": 8,
+      "alphaBounds": [
+        11,
+        111,
+        880,
+        1604
+      ],
+      "crop": [
+        8,
+        108,
+        875,
+        1499
+      ],
+      "transparentPixels": 805525,
+      "nativePixelsPreserved": true,
+      "renderGeometry": {
+        "crop": [
+          8,
+          108,
+          875,
+          1499
+        ],
+        "anchorX": 0.590286,
+        "baselineY": 0.997999,
+        "heightRatio": 0.99
+      }
+    },
+    {
+      "type": "fighter",
+      "id": "higgs",
+      "pose": "crouch",
+      "runtime": "modes/echos-de-la-greve/assets/fighters/higgs/crouch.png",
+      "width": 1536,
+      "height": 1024,
+      "sha256": "36ec16e9fe571b9e29e40c8d7edde3a044a53b6d3737811e2f7fdaf24e68ab87",
+      "bytes": 1953339,
+      "alphaThreshold": 8,
+      "alphaBounds": [
+        63,
+        80,
+        1452,
+        975
+      ],
+      "crop": [
+        60,
+        77,
+        1395,
+        901
+      ],
+      "transparentPixels": 854966,
+      "nativePixelsPreserved": true,
+      "renderGeometry": {
+        "crop": [
+          60,
+          77,
+          1395,
+          901
+        ],
+        "anchorX": 0.536918,
+        "baselineY": 0.99667,
+        "heightRatio": 0.73
+      }
+    },
+    {
+      "type": "fighter",
+      "id": "higgs",
+      "pose": "rise",
+      "runtime": "modes/echos-de-la-greve/assets/fighters/higgs/rise.png",
+      "width": 1024,
+      "height": 1536,
+      "sha256": "657a37a8a197fb3c725b67c813dd2834306c2d0ce6cc91f2eeaf36fa491d4d06",
+      "bytes": 1927560,
+      "alphaThreshold": 8,
+      "alphaBounds": [
+        41,
+        12,
+        982,
+        1510
+      ],
+      "crop": [
+        38,
+        9,
+        947,
+        1504
+      ],
+      "transparentPixels": 912543,
+      "nativePixelsPreserved": true,
+      "renderGeometry": {
+        "crop": [
+          38,
+          9,
+          947,
+          1504
+        ],
+        "anchorX": 0.5,
+        "baselineY": 0.998005,
+        "heightRatio": 0.94
+      }
+    },
+    {
+      "type": "fighter",
+      "id": "higgs",
+      "pose": "apex",
+      "runtime": "modes/echos-de-la-greve/assets/fighters/higgs/apex.png",
+      "width": 1215,
+      "height": 1295,
+      "sha256": "e40880de212b510221946da28edecd9e10db2754298fd932e5e44fcf9bec8859",
+      "bytes": 1374662,
+      "alphaThreshold": 8,
+      "alphaBounds": [
+        29,
+        26,
+        1184,
+        1102
+      ],
+      "crop": [
+        26,
+        23,
+        1161,
+        1082
+      ],
+      "transparentPixels": 873705,
+      "nativePixelsPreserved": true,
+      "renderGeometry": {
+        "crop": [
+          26,
+          23,
+          1161,
+          1082
+        ],
+        "anchorX": 0.5,
+        "baselineY": 0.975046,
+        "heightRatio": 0.84
+      },
+      "anatomicalCalibration": {
+        "footY": 1078,
+        "note": "Cape reaches y1102; rear boot sole ends at y1078."
+      }
+    },
+    {
+      "type": "fighter",
+      "id": "higgs",
+      "pose": "fall",
+      "runtime": "modes/echos-de-la-greve/assets/fighters/higgs/fall.png",
+      "width": 1132,
+      "height": 1389,
+      "sha256": "6a51c01c2cf24529de863871f5be8f0a169705a61d52b41d8b538d7c965a7691",
+      "bytes": 1228982,
+      "alphaThreshold": 8,
+      "alphaBounds": [
+        16,
+        8,
+        1097,
+        1374
+      ],
+      "crop": [
+        13,
+        5,
+        1087,
+        1372
+      ],
+      "transparentPixels": 961671,
+      "nativePixelsPreserved": true,
+      "renderGeometry": {
+        "crop": [
+          13,
+          5,
+          1087,
+          1372
+        ],
+        "anchorX": 0.5,
+        "baselineY": 0.997813,
+        "heightRatio": 1.04
+      },
+      "anatomicalCalibration": {
+        "headYApprox": 220,
+        "footY": 1374,
+        "note": "Cape rises to y8 above hood at approximately y220; height ratio reviewed against guard head and torso."
+      }
+    },
+    {
+      "type": "fighter",
+      "id": "cliff",
+      "pose": "guard",
+      "runtime": "modes/echos-de-la-greve/assets/fighters/cliff/guard.png",
+      "width": 1024,
+      "height": 1536,
+      "sha256": "281c41ea7ce4003c6db95903620024eea9347487c918138d59c7a52e85fe9f7b",
+      "bytes": 2124158,
+      "alphaThreshold": 8,
+      "alphaBounds": [
+        127,
+        41,
+        895,
+        1508
+      ],
+      "crop": [
+        124,
+        38,
+        774,
+        1473
+      ],
+      "transparentPixels": 984461,
+      "nativePixelsPreserved": true,
+      "renderGeometry": {
+        "crop": [
+          124,
+          38,
+          774,
+          1473
+        ],
+        "anchorX": 0.501938,
+        "baselineY": 0.997963,
+        "heightRatio": 0.99
+      }
+    },
+    {
+      "type": "fighter",
+      "id": "cliff",
+      "pose": "crouch",
+      "runtime": "modes/echos-de-la-greve/assets/fighters/cliff/crouch.png",
+      "width": 1199,
+      "height": 1312,
+      "sha256": "a89624158fd4a80b26023404da1e0308fcefaa2ea81c84750a4ce1e4e7f327cc",
+      "bytes": 1734522,
+      "alphaThreshold": 8,
+      "alphaBounds": [
+        82,
+        88,
+        1012,
+        1231
+      ],
+      "crop": [
+        79,
+        85,
+        936,
+        1149
+      ],
+      "transparentPixels": 856661,
+      "nativePixelsPreserved": true,
+      "renderGeometry": {
+        "crop": [
+          79,
+          85,
+          936,
+          1149
+        ],
+        "anchorX": 0.556624,
+        "baselineY": 0.997389,
+        "heightRatio": 0.66
+      }
+    },
+    {
+      "type": "fighter",
+      "id": "cliff",
+      "pose": "rise",
+      "runtime": "modes/echos-de-la-greve/assets/fighters/cliff/rise.png",
+      "width": 1024,
+      "height": 1536,
+      "sha256": "66f83f926bf47f847cc01a03cd9ac22ce36bc014aa642432cd0b662b80326b26",
+      "bytes": 2032377,
+      "alphaThreshold": 8,
+      "alphaBounds": [
+        54,
+        35,
+        857,
+        1518
+      ],
+      "crop": [
+        51,
+        32,
+        809,
+        1489
+      ],
+      "transparentPixels": 1058464,
+      "nativePixelsPreserved": true,
+      "renderGeometry": {
+        "crop": [
+          51,
+          32,
+          809,
+          1489
+        ],
+        "anchorX": 0.5,
+        "baselineY": 0.997985,
+        "heightRatio": 0.94
+      }
+    },
+    {
+      "type": "fighter",
+      "id": "cliff",
+      "pose": "apex",
+      "runtime": "modes/echos-de-la-greve/assets/fighters/cliff/apex.png",
+      "width": 1024,
+      "height": 1536,
+      "sha256": "a9a53ef0cb5ec64c3349f6191f67fd1e6019277ba36b931041ac01b15e0f88bf",
+      "bytes": 2180940,
+      "alphaThreshold": 8,
+      "alphaBounds": [
+        101,
+        93,
+        936,
+        1380
+      ],
+      "crop": [
+        98,
+        90,
+        841,
+        1293
+      ],
+      "transparentPixels": 926886,
+      "nativePixelsPreserved": true,
+      "renderGeometry": {
+        "crop": [
+          98,
+          90,
+          841,
+          1293
+        ],
+        "anchorX": 0.5,
+        "baselineY": 0.99768,
+        "heightRatio": 0.8
+      }
+    },
+    {
+      "type": "fighter",
+      "id": "cliff",
+      "pose": "fall",
+      "runtime": "modes/echos-de-la-greve/assets/fighters/cliff/fall.png",
+      "width": 1024,
+      "height": 1536,
+      "sha256": "a1ec46e55c691eed4dc5f338888cad40b8e33749ffe50e3a1113a3ed662b44d3",
+      "bytes": 2088554,
+      "alphaThreshold": 8,
+      "alphaBounds": [
+        63,
+        44,
+        955,
+        1510
+      ],
+      "crop": [
+        60,
+        41,
+        898,
+        1472
+      ],
+      "transparentPixels": 1024740,
+      "nativePixelsPreserved": true,
+      "renderGeometry": {
+        "crop": [
+          60,
+          41,
+          898,
+          1472
+        ],
+        "anchorX": 0.5,
+        "baselineY": 0.997962,
+        "heightRatio": 0.96
+      }
+    },
+    {
+      "type": "fighter",
+      "id": "mule",
+      "pose": "guard",
+      "runtime": "modes/echos-de-la-greve/assets/fighters/mule/guard.png",
+      "width": 1104,
+      "height": 1425,
+      "sha256": "56b9cdee2203aed673a2d9a4699459fae993814771891e66d835e2d5217e3794",
+      "bytes": 1403165,
+      "alphaThreshold": 8,
+      "alphaBounds": [
+        155,
+        87,
+        943,
+        1376
+      ],
+      "crop": [
+        152,
+        84,
+        794,
+        1295
+      ],
+      "transparentPixels": 1025184,
+      "nativePixelsPreserved": true,
+      "renderGeometry": {
+        "crop": [
+          152,
+          84,
+          794,
+          1295
+        ],
+        "anchorX": 0.464736,
+        "baselineY": 0.997683,
+        "heightRatio": 1.0
+      }
+    },
+    {
+      "type": "fighter",
+      "id": "mule",
+      "pose": "crouch",
+      "runtime": "modes/echos-de-la-greve/assets/fighters/mule/crouch.png",
+      "width": 1312,
+      "height": 1199,
+      "sha256": "b50694e4197d668190ad74c668269af27acc6696b5a8edcf9cba93d1930035d6",
+      "bytes": 1958872,
+      "alphaThreshold": 8,
+      "alphaBounds": [
+        130,
+        60,
+        1214,
+        1155
+      ],
+      "crop": [
+        127,
+        57,
+        1090,
+        1101
+      ],
+      "transparentPixels": 808612,
+      "nativePixelsPreserved": true,
+      "renderGeometry": {
+        "crop": [
+          127,
+          57,
+          1090,
+          1101
+        ],
+        "anchorX": 0.497706,
+        "baselineY": 0.997275,
+        "heightRatio": 0.7
+      }
+    },
+    {
+      "type": "fighter",
+      "id": "mule",
+      "pose": "rise",
+      "runtime": "modes/echos-de-la-greve/assets/fighters/mule/rise.png",
+      "width": 1024,
+      "height": 1536,
+      "sha256": "b0e6efe295e82f6570ee554e886eea8347abe95fda1145f6de18eed152c66ca7",
+      "bytes": 2091425,
+      "alphaThreshold": 8,
+      "alphaBounds": [
+        75,
+        99,
+        950,
+        1475
+      ],
+      "crop": [
+        72,
+        96,
+        881,
+        1382
+      ],
+      "transparentPixels": 1035270,
+      "nativePixelsPreserved": true,
+      "renderGeometry": {
+        "crop": [
+          72,
+          96,
+          881,
+          1382
+        ],
+        "anchorX": 0.5,
+        "baselineY": 0.997829,
+        "heightRatio": 0.94
+      }
+    },
+    {
+      "type": "fighter",
+      "id": "mule",
+      "pose": "apex",
+      "runtime": "modes/echos-de-la-greve/assets/fighters/mule/apex.png",
+      "width": 1024,
+      "height": 1536,
+      "sha256": "1008f3447a6cda6bf69eb185af9281fdc7a40e4905356cbd7aee6c3da12f6804",
+      "bytes": 2273159,
+      "alphaThreshold": 8,
+      "alphaBounds": [
+        98,
+        129,
+        927,
+        1332
+      ],
+      "crop": [
+        95,
+        126,
+        835,
+        1209
+      ],
+      "transparentPixels": 911761,
+      "nativePixelsPreserved": true,
+      "renderGeometry": {
+        "crop": [
+          95,
+          126,
+          835,
+          1209
+        ],
+        "anchorX": 0.5,
+        "baselineY": 0.997519,
+        "heightRatio": 0.82
+      }
+    },
+    {
+      "type": "fighter",
+      "id": "mule",
+      "pose": "fall",
+      "runtime": "modes/echos-de-la-greve/assets/fighters/mule/fall.png",
+      "width": 1024,
+      "height": 1536,
+      "sha256": "ab51fd2b501109aa7d756f519893b536223883aeb5448282c8335f265df74b70",
+      "bytes": 2244087,
+      "alphaThreshold": 8,
+      "alphaBounds": [
+        38,
+        75,
+        941,
+        1477
+      ],
+      "crop": [
+        35,
+        72,
+        909,
+        1408
+      ],
+      "transparentPixels": 1003801,
+      "nativePixelsPreserved": true,
+      "renderGeometry": {
+        "crop": [
+          35,
+          72,
+          909,
+          1408
+        ],
+        "anchorX": 0.5,
+        "baselineY": 0.997869,
+        "heightRatio": 0.96
+      }
+    },
+    {
+      "type": "fighter",
+      "id": "diehardman",
+      "pose": "guard",
+      "runtime": "modes/echos-de-la-greve/assets/fighters/diehardman/guard.png",
+      "width": 836,
+      "height": 1881,
+      "sha256": "89d29ca6c554f592dfbf6f697ff64b5dd508f160e0100c9740fa4fd41efd6538",
+      "bytes": 1263762,
+      "alphaThreshold": 8,
+      "alphaBounds": [
+        34,
+        106,
+        800,
+        1813
+      ],
+      "crop": [
+        31,
+        103,
+        772,
+        1713
+      ],
+      "transparentPixels": 918311,
+      "nativePixelsPreserved": true,
+      "renderGeometry": {
+        "crop": [
+          31,
+          103,
+          772,
+          1713
+        ],
+        "anchorX": 0.170984,
+        "baselineY": 0.998249,
+        "heightRatio": 0.99
+      }
+    },
+    {
+      "type": "fighter",
+      "id": "diehardman",
+      "pose": "crouch",
+      "runtime": "modes/echos-de-la-greve/assets/fighters/diehardman/crouch.png",
+      "width": 1312,
+      "height": 1199,
+      "sha256": "db7b301896ab507603f5b2b031f40cbd99125aa82d75b12486f667f01c96cc13",
+      "bytes": 1264064,
+      "alphaThreshold": 8,
+      "alphaBounds": [
+        142,
+        83,
+        1117,
+        1147
+      ],
+      "crop": [
+        139,
+        80,
+        981,
+        1070
+      ],
+      "transparentPixels": 939248,
+      "nativePixelsPreserved": true,
+      "renderGeometry": {
+        "crop": [
+          139,
+          80,
+          981,
+          1070
+        ],
+        "anchorX": 0.4684,
+        "baselineY": 0.997196,
+        "heightRatio": 0.68
+      }
+    },
+    {
+      "type": "fighter",
+      "id": "diehardman",
+      "pose": "rise",
+      "runtime": "modes/echos-de-la-greve/assets/fighters/diehardman/rise.png",
+      "width": 836,
+      "height": 1882,
+      "sha256": "85e857d13f809634f432f6207fe17f4f44416586b622aac569e3922ed2be7273",
+      "bytes": 1213590,
+      "alphaThreshold": 8,
+      "alphaBounds": [
+        48,
+        88,
+        756,
+        1795
+      ],
+      "crop": [
+        45,
+        85,
+        714,
+        1713
+      ],
+      "transparentPixels": 1021748,
+      "nativePixelsPreserved": true,
+      "renderGeometry": {
+        "crop": [
+          45,
+          85,
+          714,
+          1713
+        ],
+        "anchorX": 0.5,
+        "baselineY": 0.998249,
+        "heightRatio": 0.94
+      }
+    },
+    {
+      "type": "fighter",
+      "id": "diehardman",
+      "pose": "apex",
+      "runtime": "modes/echos-de-la-greve/assets/fighters/diehardman/apex.png",
+      "width": 1077,
+      "height": 1461,
+      "sha256": "fcad41a26691abcb4fb0b8d348e3eeac4016627d5481c28946097d648e9e2071",
+      "bytes": 1344753,
+      "alphaThreshold": 8,
+      "alphaBounds": [
+        92,
+        69,
+        926,
+        1401
+      ],
+      "crop": [
+        89,
+        66,
+        840,
+        1338
+      ],
+      "transparentPixels": 931103,
+      "nativePixelsPreserved": true,
+      "renderGeometry": {
+        "crop": [
+          89,
+          66,
+          840,
+          1338
+        ],
+        "anchorX": 0.5,
+        "baselineY": 0.997758,
+        "heightRatio": 0.82
+      }
+    },
+    {
+      "type": "fighter",
+      "id": "diehardman",
+      "pose": "fall",
+      "runtime": "modes/echos-de-la-greve/assets/fighters/diehardman/fall.png",
+      "width": 850,
+      "height": 1850,
+      "sha256": "e82304da9ac8bae30002743cdb8d704dd8225d17803d1dacd0fae83c2de232e5",
+      "bytes": 1029543,
+      "alphaThreshold": 8,
+      "alphaBounds": [
+        29,
+        193,
+        824,
+        1590
+      ],
+      "crop": [
+        26,
+        190,
+        801,
+        1403
+      ],
+      "transparentPixels": 1105366,
+      "nativePixelsPreserved": true,
+      "renderGeometry": {
+        "crop": [
+          26,
+          190,
+          801,
+          1403
+        ],
+        "anchorX": 0.5,
+        "baselineY": 0.997862,
+        "heightRatio": 0.96
+      }
+    },
+    {
+      "type": "fighter",
+      "id": "heartman",
+      "pose": "guard",
+      "runtime": "modes/echos-de-la-greve/assets/fighters/heartman/guard.png",
+      "width": 1024,
+      "height": 1536,
+      "sha256": "1cf591e0c7aab5fe217441b2b92b679e7f735cdbd2934125ed18d26e44058e36",
+      "bytes": 1745097,
+      "alphaThreshold": 8,
+      "alphaBounds": [
+        152,
+        72,
+        868,
+        1474
+      ],
+      "crop": [
+        149,
+        69,
+        722,
+        1408
+      ],
+      "transparentPixels": 1109719,
+      "nativePixelsPreserved": true,
+      "renderGeometry": {
+        "crop": [
+          149,
+          69,
+          722,
+          1408
+        ],
+        "anchorX": 0.496537,
+        "baselineY": 0.997869,
+        "heightRatio": 0.99
+      }
+    },
+    {
+      "type": "fighter",
+      "id": "heartman",
+      "pose": "crouch",
+      "runtime": "modes/echos-de-la-greve/assets/fighters/heartman/crouch.png",
+      "width": 1312,
+      "height": 1199,
+      "sha256": "1ef56c86631c5be4dc5fb90f73f4469152aa9d39869c341a6c8c886e43dc644a",
+      "bytes": 1212008,
+      "alphaThreshold": 8,
+      "alphaBounds": [
+        185,
+        76,
+        1043,
+        1149
+      ],
+      "crop": [
+        182,
+        73,
+        864,
+        1079
+      ],
+      "transparentPixels": 1013073,
+      "nativePixelsPreserved": true,
+      "renderGeometry": {
+        "crop": [
+          182,
+          73,
+          864,
+          1079
+        ],
+        "anchorX": 0.547454,
+        "baselineY": 0.99722,
+        "heightRatio": 0.7
+      }
+    },
+    {
+      "type": "fighter",
+      "id": "heartman",
+      "pose": "rise",
+      "runtime": "modes/echos-de-la-greve/assets/fighters/heartman/rise.png",
+      "width": 1024,
+      "height": 1536,
+      "sha256": "61043655a1d77d88732356f4687d187d1e3b3fad108854afa60b4f1a7936af63",
+      "bytes": 1602893,
+      "alphaThreshold": 8,
+      "alphaBounds": [
+        94,
+        52,
+        797,
+        1497
+      ],
+      "crop": [
+        91,
+        49,
+        709,
+        1451
+      ],
+      "transparentPixels": 1192172,
+      "nativePixelsPreserved": true,
+      "renderGeometry": {
+        "crop": [
+          91,
+          49,
+          709,
+          1451
+        ],
+        "anchorX": 0.5,
+        "baselineY": 0.997932,
+        "heightRatio": 0.94
+      }
+    },
+    {
+      "type": "fighter",
+      "id": "heartman",
+      "pose": "apex",
+      "runtime": "modes/echos-de-la-greve/assets/fighters/heartman/apex.png",
+      "width": 1024,
+      "height": 1536,
+      "sha256": "e5176935cd45411bf0767df07a46bbd0ac467bed688a0dec120a5a6868a2d7ff",
+      "bytes": 1788201,
+      "alphaThreshold": 8,
+      "alphaBounds": [
+        167,
+        72,
+        869,
+        1304
+      ],
+      "crop": [
+        164,
+        69,
+        708,
+        1238
+      ],
+      "transparentPixels": 1086737,
+      "nativePixelsPreserved": true,
+      "renderGeometry": {
+        "crop": [
+          164,
+          69,
+          708,
+          1238
+        ],
+        "anchorX": 0.5,
+        "baselineY": 0.997577,
+        "heightRatio": 0.8
+      }
+    },
+    {
+      "type": "fighter",
+      "id": "heartman",
+      "pose": "fall",
+      "runtime": "modes/echos-de-la-greve/assets/fighters/heartman/fall.png",
+      "width": 1024,
+      "height": 1536,
+      "sha256": "8487e53cd1e649e4de5456c47f99ca03aa17557a6a78a84ba8d8a0c51564d701",
+      "bytes": 1675765,
+      "alphaThreshold": 8,
+      "alphaBounds": [
+        128,
+        61,
+        882,
+        1444
+      ],
+      "crop": [
+        125,
+        58,
+        760,
+        1389
+      ],
+      "transparentPixels": 1187911,
+      "nativePixelsPreserved": true,
+      "renderGeometry": {
+        "crop": [
+          125,
+          58,
+          760,
+          1389
+        ],
+        "anchorX": 0.5,
+        "baselineY": 0.99784,
+        "heightRatio": 0.96
+      }
+    },
+    {
+      "type": "projectile",
+      "id": "sam",
+      "runtime": "modes/echos-de-la-greve/assets/projectiles/sam.png",
+      "width": 2172,
+      "height": 724,
+      "sha256": "43827e84f9d3a142b1f1becb2c19ca4a795b438f0c5c975f1740ae547ad30edf",
+      "bytes": 568725,
+      "alphaThreshold": 2,
+      "alphaBounds": [
+        123,
+        177,
+        2009,
+        541
+      ],
+      "crop": [
+        120,
+        174,
+        1892,
+        370
+      ],
+      "transparentPixels": 1352950,
+      "nativePixelsPreserved": true,
+      "renderGeometry": {
+        "crop": [
+          120,
+          174,
+          1892,
+          370
+        ],
+        "width": 36,
+        "anchorX": 0.5,
+        "anchorY": 0.5
+      }
+    },
+    {
+      "type": "projectile",
+      "id": "higgs",
+      "runtime": "modes/echos-de-la-greve/assets/projectiles/higgs.png",
+      "width": 1164,
+      "height": 1351,
+      "sha256": "5daad21f052df501efb2e4d5845a26990319241d9230346bd912a052298662df",
+      "bytes": 1364731,
+      "alphaThreshold": 2,
+      "alphaBounds": [
+        183,
+        25,
+        977,
+        1329
+      ],
+      "crop": [
+        180,
+        22,
+        800,
+        1310
+      ],
+      "transparentPixels": 977873,
+      "nativePixelsPreserved": true,
+      "renderGeometry": {
+        "crop": [
+          180,
+          22,
+          800,
+          1310
+        ],
+        "width": 61.349693,
+        "anchorX": 0.5,
+        "anchorY": 0.99771
+      },
+      "visibleHeightTarget": 100
+    },
+    {
+      "type": "projectile",
+      "id": "cliff",
+      "runtime": "modes/echos-de-la-greve/assets/projectiles/cliff.png",
+      "width": 2172,
+      "height": 724,
+      "sha256": "d9deca283e4bae414929d8f1da0978e4849a70e81f99437ab2f0f61950b9c4ce",
+      "bytes": 401259,
+      "alphaThreshold": 2,
+      "alphaBounds": [
+        138,
+        296,
+        2032,
+        421
+      ],
+      "crop": [
+        135,
+        293,
+        1900,
+        131
+      ],
+      "transparentPixels": 1390089,
+      "nativePixelsPreserved": true,
+      "renderGeometry": {
+        "crop": [
+          135,
+          293,
+          1900,
+          131
+        ],
+        "width": 45,
+        "anchorX": 0.5,
+        "anchorY": 0.5
+      }
+    },
+    {
+      "type": "projectile",
+      "id": "recall",
+      "runtime": "modes/echos-de-la-greve/assets/projectiles/recall.png",
+      "width": 2172,
+      "height": 724,
+      "sha256": "4d38d4d172ae74fec7b3ed04a7bed87c48e2dbf47d6b07d18e1dd6728d85e849",
+      "bytes": 841474,
+      "alphaThreshold": 2,
+      "alphaBounds": [
+        114,
+        9,
+        2118,
+        724
+      ],
+      "crop": [
+        111,
+        6,
+        2010,
+        718
+      ],
+      "transparentPixels": 638395,
+      "nativePixelsPreserved": true,
+      "renderGeometry": {
+        "crop": [
+          111,
+          6,
+          2010,
+          718
+        ],
+        "width": 54,
+        "anchorX": 0.5,
+        "anchorY": 0.5
+      }
+    },
+    {
+      "type": "projectile",
+      "id": "gate",
+      "runtime": "modes/echos-de-la-greve/assets/projectiles/gate.png",
+      "width": 1024,
+      "height": 1536,
+      "sha256": "5884198a2c9dd0cedfcec64030d24a229a13426f8e99c4ed8563628b8e7a88fe",
+      "bytes": 1432283,
+      "alphaThreshold": 2,
+      "alphaBounds": [
+        300,
+        109,
+        734,
+        1440
+      ],
+      "crop": [
+        297,
+        106,
+        440,
+        1337
+      ],
+      "transparentPixels": 1055440,
+      "nativePixelsPreserved": true,
+      "renderGeometry": {
+        "crop": [
+          297,
+          106,
+          440,
+          1337
+        ],
+        "width": 47.272727,
+        "anchorX": 0.5,
+        "anchorY": 0.997756
+      },
+      "visibleHeightTarget": 143
+    },
+    {
+      "type": "projectile",
+      "id": "heartman",
+      "runtime": "modes/echos-de-la-greve/assets/projectiles/heartman.png",
+      "width": 2172,
+      "height": 724,
+      "sha256": "706563a35afc105dc8263199e5c3e44dffa3e707a6a3ed0d7c490577745d7730",
+      "bytes": 515451,
+      "alphaThreshold": 2,
+      "alphaBounds": [
+        157,
+        116,
+        2003,
+        579
+      ],
+      "crop": [
+        154,
+        113,
+        1852,
+        469
+      ],
+      "transparentPixels": 1324012,
+      "nativePixelsPreserved": true,
+      "renderGeometry": {
+        "crop": [
+          154,
+          113,
+          1852,
+          469
+        ],
+        "width": 32,
+        "anchorX": 0.5,
+        "anchorY": 0.5
+      }
+    },
+    {
+      "type": "projectile",
+      "id": "memory",
+      "runtime": "modes/echos-de-la-greve/assets/projectiles/memory.png",
+      "width": 2172,
+      "height": 724,
+      "sha256": "5585d9e30f507473b8850e9d45c9c44cd937e74481390649a5d07f16eff81f05",
+      "bytes": 534569,
+      "alphaThreshold": 2,
+      "alphaBounds": [
+        103,
+        103,
+        2065,
+        608
+      ],
+      "crop": [
+        100,
+        100,
+        1968,
+        511
+      ],
+      "transparentPixels": 1302947,
+      "nativePixelsPreserved": true,
+      "renderGeometry": {
+        "crop": [
+          100,
+          100,
+          1968,
+          511
+        ],
+        "width": 128,
+        "anchorX": 0.5,
+        "anchorY": 0.5
+      }
+    }
+  ]
+}

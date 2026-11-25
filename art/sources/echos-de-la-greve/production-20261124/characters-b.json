@@ -1,0 +1,899 @@
+{
+  "schema_version": 1,
+  "batch": "characters-b",
+  "date": "2026-11-24",
+  "project": "Death Stranding 2D / Échos de la Grève",
+  "scope": "Death Stranding (2019) and Director's Cut",
+  "generation_tool": "built-in image_gen.imagegen",
+  "source_commit": "ba44315",
+  "native_pixels_preserved": true,
+  "canonical_1to1_verified": false,
+  "review_status": "local wardrobe continuity visually reviewed; canonical frame-by-frame comparison remains incomplete",
+  "alpha_note": "Original RGB beneath alpha=0 can contain the old reference halo. Actual exterior transparency was inspected. Use alpha_bbox_gt16 for visible bounds rather than the noisy raw alpha>0 rectangle.",
+  "poses_per_character": [
+    "guard",
+    "crouch",
+    "rise",
+    "apex",
+    "fall"
+  ],
+  "characters": [
+    "cliff",
+    "mule",
+    "heartman"
+  ],
+  "reference_audit": "art/sources/echos-de-la-greve/production-20261124/reference-audit.md",
+  "assets": [
+    {
+      "id": "cliff-guard",
+      "character_id": "cliff",
+      "pose": "guard",
+      "prompt": "Use case: identity-preserve. Asset type: ONE full-body 2D fighting-game sprite for an existing Death Stranding fan game. Reference image 1 is the exact existing standing costume and identity; reference image 2 is the same existing character airborne, a supporting proportions/detail/style reference. Clifford Unger from the first Death Stranding. Preserve the exact face and likeness, swept gray-brown hair, black tar streak at forehead and cheek, worn olive camouflage shirt with sleeves rolled below elbows, American flag shoulder patch, ammunition vest with rectangular pouches, backpack and hose, black tactical gloves, camouflage trousers, and worn military boots. Change ONLY the body pose into the following: Create a distinct STANDING GUARD pose: both feet grounded and separated for balance, knees slightly flexed, body facing right in strict side profile, shoulders tucked, forearms brought closer to face and chest to block an incoming strike. Hands protect rather than punch. Show a natural modest defensive lean backward. This is NOT an idle pose and NOT a jumping pose. Match the existing detailed painted 2D game art, realistic anatomy and materials, readable clean silhouette. Keep every clothing/accessory design, color and attachment location consistent; no new equipment, no redesign, no additional characters. Render one character and one pose only, facing RIGHT, entire head, all hands and both boot/shoe tips in frame, with generous 10 percent empty transparent margin on all sides. CRITICAL: use genuine alpha transparency outside the character, remove all old gray/black halo from references. No backdrop, no floor, no contact shadow, no gray glow, no painted checkerboard, no vignette, no motion trails, no effects, no labels, no watermark. Do not crop the figure.",
+      "references": [
+        "modes/echos-de-la-greve/assets/fighters/cliff-stance.webp",
+        "modes/echos-de-la-greve/assets/fighters/cliff-jump.png"
+      ],
+      "transparent_background": true,
+      "output": "modes/echos-de-la-greve/assets/fighters/cliff/guard.png",
+      "generation_source": "inline native PNG returned by imagegen; decoded without pixel changes",
+      "failed_attempts": [],
+      "visual_review": {
+        "inspected": true,
+        "single_character": true,
+        "single_pose": true,
+        "faces_right": true,
+        "full_body_visible": true,
+        "local_costume_continuity": "passed",
+        "pose_readability": "passed",
+        "canonical_1to1": "not certified; official frame comparison required",
+        "notes": "Compact upper-body guard, knees flexed, feet grounded."
+      },
+      "status": "generated_saved_reviewed",
+      "sha256": "281c41ea7ce4003c6db95903620024eea9347487c918138d59c7a52e85fe9f7b",
+      "file_size_bytes": 2124158,
+      "width": 1024,
+      "height": 1536,
+      "color_mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        254
+      ],
+      "alpha_bbox_gt0": [
+        0,
+        20,
+        1002,
+        1536
+      ],
+      "alpha_bbox_gt16": [
+        127,
+        42,
+        895,
+        1508
+      ],
+      "alpha_bbox_gt128": [
+        128,
+        43,
+        895,
+        1507
+      ],
+      "transparent_pixels": 984461,
+      "partial_alpha_pixels": 588403,
+      "opaque_pixels": 0,
+      "native_copy_verified": true
+    },
+    {
+      "id": "cliff-crouch",
+      "character_id": "cliff",
+      "pose": "crouch",
+      "prompt": "Use case: identity-preserve. Asset type: one individual full-body 2D game animation sprite. Reference image 1 is the existing Cliff guard sprite; reference image 2 is his existing standing sprite. Preserve this fully clothed adult fictional character's face, hair, olive camouflage clothing, rolled sleeves, vest pockets, backpack and boots exactly. Change only his posture into a quiet crouch as though lowering himself beneath a low doorway: knees deeply bent, hips lowered, front foot flat and rear heel raised, elbows bent with hands held naturally near chest. The figure faces RIGHT in side profile. No interaction and no other people. Keep the complete figure visible from hair to both boot tips with 10 percent transparent margin. Same detailed painted 2D art and natural anatomy as the references. Exactly one character, one pose, actual alpha-transparent background. No scenery, no floor, no gray halo, no shadow, no vignette, no motion blur, no text. Preserve clothing and attached equipment; do not add, remove or redesign them.",
+      "references": [
+        "modes/echos-de-la-greve/assets/fighters/cliff/guard.png",
+        "modes/echos-de-la-greve/assets/fighters/cliff-stance.webp"
+      ],
+      "transparent_background": true,
+      "output": "modes/echos-de-la-greve/assets/fighters/cliff/crouch.png",
+      "generation_source": "/workspace/scratch/05d1f74d065e/generated_images/exec-9f09880c-7d85-4cbd-b5a6-8c01aa5d1fbd.png",
+      "failed_attempts": [
+        {
+          "prompt": "Use case: identity-preserve. Asset type: ONE full-body 2D fighting-game sprite for an existing Death Stranding fan game. Reference image 1 is the exact existing standing costume and identity; reference image 2 is the same existing character airborne, a supporting proportions/detail/style reference. Clifford Unger from the first Death Stranding. Preserve the exact face and likeness, swept gray-brown hair, black tar streak at forehead and cheek, worn olive camouflage shirt with sleeves rolled below elbows, American flag shoulder patch, ammunition vest with rectangular pouches, backpack and hose, black tactical gloves, camouflage trousers, and worn military boots. Change ONLY the body pose into the following: Create a distinct LOW CROUCH / LOW GUARD pose: torso lowered by deep flexion at the hips and knees, front foot flat, rear heel slightly raised, both feet grounded on the same imaginary baseline, arms compact protecting face and torso. Strict right-facing side profile. Natural crouched anatomy, not kneeling and not sitting. The backpack and worn items follow the body naturally. Match the existing detailed painted 2D game art, realistic anatomy and materials, readable clean silhouette. Keep every clothing/accessory design, color and attachment location consistent; no new equipment, no redesign, no additional characters. Render one character and one pose only, facing RIGHT, entire head, all hands and both boot/shoe tips in frame, with generous 10 percent empty transparent margin on all sides. CRITICAL: use genuine alpha transparency outside the character, remove all old gray/black halo from references. No backdrop, no floor, no contact shadow, no gray glow, no painted checkerboard, no vignette, no motion trails, no effects, no labels, no watermark. Do not crop the figure.",
+          "reason": "imagegen output moderation_blocked category other",
+          "request_id": "31ba220e-3e7e-4086-8aea-1b06afa0a002"
+        }
+      ],
+      "visual_review": {
+        "inspected": true,
+        "single_character": true,
+        "single_pose": true,
+        "faces_right": true,
+        "full_body_visible": true,
+        "local_costume_continuity": "passed",
+        "pose_readability": "passed",
+        "canonical_1to1": "not certified; official frame comparison required",
+        "notes": "Lowered hip position and bent knees, both feet at ground line."
+      },
+      "status": "generated_saved_reviewed",
+      "sha256": "a89624158fd4a80b26023404da1e0308fcefaa2ea81c84750a4ce1e4e7f327cc",
+      "file_size_bytes": 1734522,
+      "width": 1199,
+      "height": 1312,
+      "color_mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "alpha_bbox_gt0": [
+        0,
+        8,
+        1185,
+        1289
+      ],
+      "alpha_bbox_gt16": [
+        83,
+        88,
+        1011,
+        1231
+      ],
+      "alpha_bbox_gt128": [
+        84,
+        91,
+        1011,
+        1230
+      ],
+      "transparent_pixels": 856661,
+      "partial_alpha_pixels": 716222,
+      "opaque_pixels": 205,
+      "native_copy_verified": true
+    },
+    {
+      "id": "cliff-rise",
+      "character_id": "cliff",
+      "pose": "rise",
+      "prompt": "Use case: identity-preserve. Asset type: ONE full-body 2D fighting-game sprite for an existing Death Stranding fan game. Reference image 1 is the exact existing standing costume and identity; reference image 2 is the same existing character airborne, a supporting proportions/detail/style reference. Clifford Unger from the first Death Stranding. Preserve the exact face and likeness, swept gray-brown hair, black tar streak at forehead and cheek, worn olive camouflage shirt with sleeves rolled below elbows, American flag shoulder patch, ammunition vest with rectangular pouches, backpack and hose, black tactical gloves, camouflage trousers, and worn military boots. Change ONLY the body pose into the following: Create a distinct JUMP RISE pose just after takeoff: both feet airborne, torso moving upward, front thigh beginning to lift but not yet horizontal, rear leg extending down and back after pushing off, hands naturally guarding, clothes reacting to upward acceleration. Strict right-facing side profile. Entire figure visible. This is earlier than the apex in the second reference. Match the existing detailed painted 2D game art, realistic anatomy and materials, readable clean silhouette. Keep every clothing/accessory design, color and attachment location consistent; no new equipment, no redesign, no additional characters. Render one character and one pose only, facing RIGHT, entire head, all hands and both boot/shoe tips in frame, with generous 10 percent empty transparent margin on all sides. CRITICAL: use genuine alpha transparency outside the character, remove all old gray/black halo from references. No backdrop, no floor, no contact shadow, no gray glow, no painted checkerboard, no vignette, no motion trails, no effects, no labels, no watermark. Do not crop the figure.",
+      "references": [
+        "modes/echos-de-la-greve/assets/fighters/cliff-stance.webp",
+        "modes/echos-de-la-greve/assets/fighters/cliff-jump.png"
+      ],
+      "transparent_background": true,
+      "output": "modes/echos-de-la-greve/assets/fighters/cliff/rise.png",
+      "generation_source": "/workspace/scratch/05d1f74d065e/generated_images/exec-55d7a225-5d77-4b63-bf2f-a3c028597e84.png",
+      "failed_attempts": [],
+      "visual_review": {
+        "inspected": true,
+        "single_character": true,
+        "single_pose": true,
+        "faces_right": true,
+        "full_body_visible": true,
+        "local_costume_continuity": "passed",
+        "pose_readability": "passed",
+        "canonical_1to1": "not certified; official frame comparison required",
+        "notes": "Rear leg extended downward after takeoff, distinct from compact apex."
+      },
+      "status": "generated_saved_reviewed",
+      "sha256": "66f83f926bf47f847cc01a03cd9ac22ce36bc014aa642432cd0b662b80326b26",
+      "file_size_bytes": 2032377,
+      "width": 1024,
+      "height": 1536,
+      "color_mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        254
+      ],
+      "alpha_bbox_gt0": [
+        43,
+        29,
+        1018,
+        1520
+      ],
+      "alpha_bbox_gt16": [
+        54,
+        35,
+        857,
+        1518
+      ],
+      "alpha_bbox_gt128": [
+        54,
+        36,
+        856,
+        1517
+      ],
+      "transparent_pixels": 1058464,
+      "partial_alpha_pixels": 514400,
+      "opaque_pixels": 0,
+      "native_copy_verified": true
+    },
+    {
+      "id": "cliff-apex",
+      "character_id": "cliff",
+      "pose": "apex",
+      "prompt": "Use case: identity-preserve. Asset type: ONE full-body 2D fighting-game sprite for an existing Death Stranding fan game. Reference image 1 is the exact existing standing costume and identity; reference image 2 is the same existing character airborne, a supporting proportions/detail/style reference. Clifford Unger from the first Death Stranding. Preserve the exact face and likeness, swept gray-brown hair, black tar streak at forehead and cheek, worn olive camouflage shirt with sleeves rolled below elbows, American flag shoulder patch, ammunition vest with rectangular pouches, backpack and hose, black tactical gloves, camouflage trousers, and worn military boots. Change ONLY the body pose into the following: Create a distinct JUMP APEX pose: both feet airborne, front knee raised nearly horizontal, rear leg bent back underneath, body compact at the peak of the arc, arms balanced in close guard. Strict right-facing side profile. Entire figure visible. Preserve proportions from the second reference but produce a clean polished single pose. Match the existing detailed painted 2D game art, realistic anatomy and materials, readable clean silhouette. Keep every clothing/accessory design, color and attachment location consistent; no new equipment, no redesign, no additional characters. Render one character and one pose only, facing RIGHT, entire head, all hands and both boot/shoe tips in frame, with generous 10 percent empty transparent margin on all sides. CRITICAL: use genuine alpha transparency outside the character, remove all old gray/black halo from references. No backdrop, no floor, no contact shadow, no gray glow, no painted checkerboard, no vignette, no motion trails, no effects, no labels, no watermark. Do not crop the figure.",
+      "references": [
+        "modes/echos-de-la-greve/assets/fighters/cliff-stance.webp",
+        "modes/echos-de-la-greve/assets/fighters/cliff-jump.png"
+      ],
+      "transparent_background": true,
+      "output": "modes/echos-de-la-greve/assets/fighters/cliff/apex.png",
+      "generation_source": "/workspace/scratch/05d1f74d065e/generated_images/exec-f15e4bf8-0d34-4d2a-8c5c-65bf4b04c6fb.png",
+      "failed_attempts": [],
+      "visual_review": {
+        "inspected": true,
+        "single_character": true,
+        "single_pose": true,
+        "faces_right": true,
+        "full_body_visible": true,
+        "local_costume_continuity": "passed",
+        "pose_readability": "passed",
+        "canonical_1to1": "not certified; official frame comparison required",
+        "notes": "Raised front knee and folded rear leg at peak, distinct from rise/fall."
+      },
+      "status": "generated_saved_reviewed",
+      "sha256": "a9a53ef0cb5ec64c3349f6191f67fd1e6019277ba36b931041ac01b15e0f88bf",
+      "file_size_bytes": 2180940,
+      "width": 1024,
+      "height": 1536,
+      "color_mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        254
+      ],
+      "alpha_bbox_gt0": [
+        96,
+        53,
+        1018,
+        1536
+      ],
+      "alpha_bbox_gt16": [
+        101,
+        93,
+        936,
+        1380
+      ],
+      "alpha_bbox_gt128": [
+        101,
+        94,
+        935,
+        1379
+      ],
+      "transparent_pixels": 926886,
+      "partial_alpha_pixels": 645978,
+      "opaque_pixels": 0,
+      "native_copy_verified": true
+    },
+    {
+      "id": "cliff-fall",
+      "character_id": "cliff",
+      "pose": "fall",
+      "prompt": "Use case: identity-preserve. Asset type: ONE full-body 2D fighting-game sprite for an existing Death Stranding fan game. Reference image 1 is the exact existing standing costume and identity; reference image 2 is the same existing character airborne, a supporting proportions/detail/style reference. Clifford Unger from the first Death Stranding. Preserve the exact face and likeness, swept gray-brown hair, black tar streak at forehead and cheek, worn olive camouflage shirt with sleeves rolled below elbows, American flag shoulder patch, ammunition vest with rectangular pouches, backpack and hose, black tactical gloves, camouflage trousers, and worn military boots. Change ONLY the body pose into the following: Create a distinct JUMP FALL / PRE-LANDING pose: body descending, both legs extending downward from the hips with soft knees in preparation for landing, forward boot lower and pointing slightly down, rear boot trailing a little higher, both feet still airborne, arms spread only enough to balance. Strict right-facing side profile. Clearly different silhouette from the raised-knee apex; no ground contact. Match the existing detailed painted 2D game art, realistic anatomy and materials, readable clean silhouette. Keep every clothing/accessory design, color and attachment location consistent; no new equipment, no redesign, no additional characters. Render one character and one pose only, facing RIGHT, entire head, all hands and both boot/shoe tips in frame, with generous 10 percent empty transparent margin on all sides. CRITICAL: use genuine alpha transparency outside the character, remove all old gray/black halo from references. No backdrop, no floor, no contact shadow, no gray glow, no painted checkerboard, no vignette, no motion trails, no effects, no labels, no watermark. Do not crop the figure.",
+      "references": [
+        "modes/echos-de-la-greve/assets/fighters/cliff-stance.webp",
+        "modes/echos-de-la-greve/assets/fighters/cliff-jump.png"
+      ],
+      "transparent_background": true,
+      "output": "modes/echos-de-la-greve/assets/fighters/cliff/fall.png",
+      "generation_source": "/workspace/scratch/05d1f74d065e/generated_images/exec-6acb4315-6e96-453c-8c2e-bbd6257b459e.png",
+      "failed_attempts": [],
+      "visual_review": {
+        "inspected": true,
+        "single_character": true,
+        "single_pose": true,
+        "faces_right": true,
+        "full_body_visible": true,
+        "local_costume_continuity": "passed",
+        "pose_readability": "passed",
+        "canonical_1to1": "not certified; official frame comparison required",
+        "notes": "Legs extend downward for landing, forward foot lower, both feet airborne."
+      },
+      "status": "generated_saved_reviewed",
+      "sha256": "a1ec46e55c691eed4dc5f338888cad40b8e33749ffe50e3a1113a3ed662b44d3",
+      "file_size_bytes": 2088554,
+      "width": 1024,
+      "height": 1536,
+      "color_mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        254
+      ],
+      "alpha_bbox_gt0": [
+        31,
+        37,
+        1010,
+        1522
+      ],
+      "alpha_bbox_gt16": [
+        63,
+        44,
+        955,
+        1510
+      ],
+      "alpha_bbox_gt128": [
+        64,
+        45,
+        954,
+        1509
+      ],
+      "transparent_pixels": 1024740,
+      "partial_alpha_pixels": 548124,
+      "opaque_pixels": 0,
+      "native_copy_verified": true
+    },
+    {
+      "id": "mule-guard",
+      "character_id": "mule",
+      "pose": "guard",
+      "prompt": "Use case: identity-preserve. Asset type: ONE full-body 2D fighting-game sprite for an existing Death Stranding fan game. Reference image 1 is the exact existing standing costume and identity; reference image 2 is the same existing character airborne, a supporting proportions/detail/style reference. The same anonymous yellow-suited MULE from the reference. Preserve the exact mustard yellow hooded waterproof suit, white reflective strips, black full gas mask with two circular filters and goggles, black reinforced elbows and knees, black gloves, shoulder/harness straps and buckles, side pouch, silver cargo case on a black rack with two yellow straps, chunky dark boots, and the small yellow handheld scanner with its cyan screen. The scanner stays in the front hand. Change ONLY the body pose into the following: Create a distinct STANDING GUARD pose: both feet grounded and separated for balance, knees slightly flexed, body facing right in strict side profile, shoulders tucked, forearms brought closer to face and chest to block an incoming strike. Hands protect rather than punch. Show a natural modest defensive lean backward. This is NOT an idle pose and NOT a jumping pose. Match the existing detailed painted 2D game art, realistic anatomy and materials, readable clean silhouette. Keep every clothing/accessory design, color and attachment location consistent; no new equipment, no redesign, no additional characters. Render one character and one pose only, facing RIGHT, entire head, all hands and both boot/shoe tips in frame, with generous 10 percent empty transparent margin on all sides. CRITICAL: use genuine alpha transparency outside the character, remove all old gray/black halo from references. No backdrop, no floor, no contact shadow, no gray glow, no painted checkerboard, no vignette, no motion trails, no effects, no labels, no watermark. Do not crop the figure.",
+      "references": [
+        "modes/echos-de-la-greve/assets/fighters/mule-stance.webp",
+        "modes/echos-de-la-greve/assets/fighters/mule-jump.png"
+      ],
+      "transparent_background": true,
+      "output": "modes/echos-de-la-greve/assets/fighters/mule/guard.png",
+      "generation_source": "inline native PNG returned by imagegen; decoded without pixel changes",
+      "failed_attempts": [],
+      "visual_review": {
+        "inspected": true,
+        "single_character": true,
+        "single_pose": true,
+        "faces_right": true,
+        "full_body_visible": true,
+        "local_costume_continuity": "passed",
+        "pose_readability": "passed",
+        "canonical_1to1": "not certified; official frame comparison required",
+        "notes": "Compact upper-body guard, knees flexed, feet grounded."
+      },
+      "status": "generated_saved_reviewed",
+      "sha256": "56b9cdee2203aed673a2d9a4699459fae993814771891e66d835e2d5217e3794",
+      "file_size_bytes": 1403165,
+      "width": 1104,
+      "height": 1425,
+      "color_mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "alpha_bbox_gt0": [
+        19,
+        19,
+        1094,
+        1425
+      ],
+      "alpha_bbox_gt16": [
+        155,
+        87,
+        943,
+        1376
+      ],
+      "alpha_bbox_gt128": [
+        156,
+        88,
+        942,
+        1375
+      ],
+      "transparent_pixels": 1025184,
+      "partial_alpha_pixels": 547824,
+      "opaque_pixels": 192,
+      "native_copy_verified": true
+    },
+    {
+      "id": "mule-crouch",
+      "character_id": "mule",
+      "pose": "crouch",
+      "prompt": "Use case: identity-preserve. Asset type: ONE full-body 2D fighting-game sprite for an existing Death Stranding fan game. Reference image 1 is the exact existing standing costume and identity; reference image 2 is the same existing character airborne, a supporting proportions/detail/style reference. The same anonymous yellow-suited MULE from the reference. Preserve the exact mustard yellow hooded waterproof suit, white reflective strips, black full gas mask with two circular filters and goggles, black reinforced elbows and knees, black gloves, shoulder/harness straps and buckles, side pouch, silver cargo case on a black rack with two yellow straps, chunky dark boots, and the small yellow handheld scanner with its cyan screen. The scanner stays in the front hand. Change ONLY the body pose into the following: Create a distinct LOW CROUCH / LOW GUARD pose: torso lowered by deep flexion at the hips and knees, front foot flat, rear heel slightly raised, both feet grounded on the same imaginary baseline, arms compact protecting face and torso. Strict right-facing side profile. Natural crouched anatomy, not kneeling and not sitting. The backpack and worn items follow the body naturally. Match the existing detailed painted 2D game art, realistic anatomy and materials, readable clean silhouette. Keep every clothing/accessory design, color and attachment location consistent; no new equipment, no redesign, no additional characters. Render one character and one pose only, facing RIGHT, entire head, all hands and both boot/shoe tips in frame, with generous 10 percent empty transparent margin on all sides. CRITICAL: use genuine alpha transparency outside the character, remove all old gray/black halo from references. No backdrop, no floor, no contact shadow, no gray glow, no painted checkerboard, no vignette, no motion trails, no effects, no labels, no watermark. Do not crop the figure.",
+      "references": [
+        "modes/echos-de-la-greve/assets/fighters/mule-stance.webp",
+        "modes/echos-de-la-greve/assets/fighters/mule-jump.png"
+      ],
+      "transparent_background": true,
+      "output": "modes/echos-de-la-greve/assets/fighters/mule/crouch.png",
+      "generation_source": "/workspace/scratch/05d1f74d065e/generated_images/exec-7f0dfff8-4e67-4825-90fa-f0e92d1f9c63.png",
+      "failed_attempts": [],
+      "visual_review": {
+        "inspected": true,
+        "single_character": true,
+        "single_pose": true,
+        "faces_right": true,
+        "full_body_visible": true,
+        "local_costume_continuity": "passed",
+        "pose_readability": "passed",
+        "canonical_1to1": "not certified; official frame comparison required",
+        "notes": "Lowered hip position and bent knees, both feet at ground line."
+      },
+      "status": "generated_saved_reviewed",
+      "sha256": "b50694e4197d668190ad74c668269af27acc6696b5a8edcf9cba93d1930035d6",
+      "file_size_bytes": 1958872,
+      "width": 1312,
+      "height": 1199,
+      "color_mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "alpha_bbox_gt0": [
+        0,
+        31,
+        1280,
+        1164
+      ],
+      "alpha_bbox_gt16": [
+        130,
+        60,
+        1213,
+        1155
+      ],
+      "alpha_bbox_gt128": [
+        130,
+        61,
+        1212,
+        1154
+      ],
+      "transparent_pixels": 808612,
+      "partial_alpha_pixels": 764059,
+      "opaque_pixels": 417,
+      "native_copy_verified": true
+    },
+    {
+      "id": "mule-rise",
+      "character_id": "mule",
+      "pose": "rise",
+      "prompt": "Use case: identity-preserve. Asset type: ONE full-body 2D fighting-game sprite for an existing Death Stranding fan game. Reference image 1 is the exact existing standing costume and identity; reference image 2 is the same existing character airborne, a supporting proportions/detail/style reference. The same anonymous yellow-suited MULE from the reference. Preserve the exact mustard yellow hooded waterproof suit, white reflective strips, black full gas mask with two circular filters and goggles, black reinforced elbows and knees, black gloves, shoulder/harness straps and buckles, side pouch, silver cargo case on a black rack with two yellow straps, chunky dark boots, and the small yellow handheld scanner with its cyan screen. The scanner stays in the front hand. Change ONLY the body pose into the following: Create a distinct JUMP RISE pose just after takeoff: both feet airborne, torso moving upward, front thigh beginning to lift but not yet horizontal, rear leg extending down and back after pushing off, hands naturally guarding, clothes reacting to upward acceleration. Strict right-facing side profile. Entire figure visible. This is earlier than the apex in the second reference. Match the existing detailed painted 2D game art, realistic anatomy and materials, readable clean silhouette. Keep every clothing/accessory design, color and attachment location consistent; no new equipment, no redesign, no additional characters. Render one character and one pose only, facing RIGHT, entire head, all hands and both boot/shoe tips in frame, with generous 10 percent empty transparent margin on all sides. CRITICAL: use genuine alpha transparency outside the character, remove all old gray/black halo from references. No backdrop, no floor, no contact shadow, no gray glow, no painted checkerboard, no vignette, no motion trails, no effects, no labels, no watermark. Do not crop the figure.",
+      "references": [
+        "modes/echos-de-la-greve/assets/fighters/mule-stance.webp",
+        "modes/echos-de-la-greve/assets/fighters/mule-jump.png"
+      ],
+      "transparent_background": true,
+      "output": "modes/echos-de-la-greve/assets/fighters/mule/rise.png",
+      "generation_source": "/workspace/scratch/05d1f74d065e/generated_images/exec-bf08e737-96c9-4f9f-919a-aee502475513.png",
+      "failed_attempts": [],
+      "visual_review": {
+        "inspected": true,
+        "single_character": true,
+        "single_pose": true,
+        "faces_right": true,
+        "full_body_visible": true,
+        "local_costume_continuity": "passed",
+        "pose_readability": "passed",
+        "canonical_1to1": "not certified; official frame comparison required",
+        "notes": "Rear leg extended downward after takeoff, distinct from compact apex."
+      },
+      "status": "generated_saved_reviewed",
+      "sha256": "b0e6efe295e82f6570ee554e886eea8347abe95fda1145f6de18eed152c66ca7",
+      "file_size_bytes": 2091425,
+      "width": 1024,
+      "height": 1536,
+      "color_mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        254
+      ],
+      "alpha_bbox_gt0": [
+        25,
+        35,
+        1010,
+        1482
+      ],
+      "alpha_bbox_gt16": [
+        75,
+        100,
+        949,
+        1475
+      ],
+      "alpha_bbox_gt128": [
+        76,
+        101,
+        949,
+        1474
+      ],
+      "transparent_pixels": 1035270,
+      "partial_alpha_pixels": 537594,
+      "opaque_pixels": 0,
+      "native_copy_verified": true
+    },
+    {
+      "id": "mule-apex",
+      "character_id": "mule",
+      "pose": "apex",
+      "prompt": "Use case: identity-preserve. Asset type: ONE full-body 2D fighting-game sprite for an existing Death Stranding fan game. Reference image 1 is the exact existing standing costume and identity; reference image 2 is the same existing character airborne, a supporting proportions/detail/style reference. The same anonymous yellow-suited MULE from the reference. Preserve the exact mustard yellow hooded waterproof suit, white reflective strips, black full gas mask with two circular filters and goggles, black reinforced elbows and knees, black gloves, shoulder/harness straps and buckles, side pouch, silver cargo case on a black rack with two yellow straps, chunky dark boots, and the small yellow handheld scanner with its cyan screen. The scanner stays in the front hand. Change ONLY the body pose into the following: Create a distinct JUMP APEX pose: both feet airborne, front knee raised nearly horizontal, rear leg bent back underneath, body compact at the peak of the arc, arms balanced in close guard. Strict right-facing side profile. Entire figure visible. Preserve proportions from the second reference but produce a clean polished single pose. Match the existing detailed painted 2D game art, realistic anatomy and materials, readable clean silhouette. Keep every clothing/accessory design, color and attachment location consistent; no new equipment, no redesign, no additional characters. Render one character and one pose only, facing RIGHT, entire head, all hands and both boot/shoe tips in frame, with generous 10 percent empty transparent margin on all sides. CRITICAL: use genuine alpha transparency outside the character, remove all old gray/black halo from references. No backdrop, no floor, no contact shadow, no gray glow, no painted checkerboard, no vignette, no motion trails, no effects, no labels, no watermark. Do not crop the figure.",
+      "references": [
+        "modes/echos-de-la-greve/assets/fighters/mule-stance.webp",
+        "modes/echos-de-la-greve/assets/fighters/mule-jump.png"
+      ],
+      "transparent_background": true,
+      "output": "modes/echos-de-la-greve/assets/fighters/mule/apex.png",
+      "generation_source": "/workspace/scratch/05d1f74d065e/generated_images/exec-4e2abb7b-b8b3-4af7-acee-997ef60df84f.png",
+      "failed_attempts": [],
+      "visual_review": {
+        "inspected": true,
+        "single_character": true,
+        "single_pose": true,
+        "faces_right": true,
+        "full_body_visible": true,
+        "local_costume_continuity": "passed",
+        "pose_readability": "passed",
+        "canonical_1to1": "not certified; official frame comparison required",
+        "notes": "Raised front knee and folded rear leg at peak, distinct from rise/fall."
+      },
+      "status": "generated_saved_reviewed",
+      "sha256": "1008f3447a6cda6bf69eb185af9281fdc7a40e4905356cbd7aee6c3da12f6804",
+      "file_size_bytes": 2273159,
+      "width": 1024,
+      "height": 1536,
+      "color_mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        254
+      ],
+      "alpha_bbox_gt0": [
+        0,
+        17,
+        986,
+        1512
+      ],
+      "alpha_bbox_gt16": [
+        98,
+        129,
+        927,
+        1332
+      ],
+      "alpha_bbox_gt128": [
+        98,
+        130,
+        927,
+        1331
+      ],
+      "transparent_pixels": 911761,
+      "partial_alpha_pixels": 661103,
+      "opaque_pixels": 0,
+      "native_copy_verified": true
+    },
+    {
+      "id": "mule-fall",
+      "character_id": "mule",
+      "pose": "fall",
+      "prompt": "Use case: identity-preserve. Asset type: ONE full-body 2D fighting-game sprite for an existing Death Stranding fan game. Reference image 1 is the exact existing standing costume and identity; reference image 2 is the same existing character airborne, a supporting proportions/detail/style reference. The same anonymous yellow-suited MULE from the reference. Preserve the exact mustard yellow hooded waterproof suit, white reflective strips, black full gas mask with two circular filters and goggles, black reinforced elbows and knees, black gloves, shoulder/harness straps and buckles, side pouch, silver cargo case on a black rack with two yellow straps, chunky dark boots, and the small yellow handheld scanner with its cyan screen. The scanner stays in the front hand. Change ONLY the body pose into the following: Create a distinct JUMP FALL / PRE-LANDING pose: body descending, both legs extending downward from the hips with soft knees in preparation for landing, forward boot lower and pointing slightly down, rear boot trailing a little higher, both feet still airborne, arms spread only enough to balance. Strict right-facing side profile. Clearly different silhouette from the raised-knee apex; no ground contact. Match the existing detailed painted 2D game art, realistic anatomy and materials, readable clean silhouette. Keep every clothing/accessory design, color and attachment location consistent; no new equipment, no redesign, no additional characters. Render one character and one pose only, facing RIGHT, entire head, all hands and both boot/shoe tips in frame, with generous 10 percent empty transparent margin on all sides. CRITICAL: use genuine alpha transparency outside the character, remove all old gray/black halo from references. No backdrop, no floor, no contact shadow, no gray glow, no painted checkerboard, no vignette, no motion trails, no effects, no labels, no watermark. Do not crop the figure.",
+      "references": [
+        "modes/echos-de-la-greve/assets/fighters/mule-stance.webp",
+        "modes/echos-de-la-greve/assets/fighters/mule-jump.png"
+      ],
+      "transparent_background": true,
+      "output": "modes/echos-de-la-greve/assets/fighters/mule/fall.png",
+      "generation_source": "/workspace/scratch/05d1f74d065e/generated_images/exec-b05f6274-6a20-4b26-8104-88e4378fa251.png",
+      "failed_attempts": [],
+      "visual_review": {
+        "inspected": true,
+        "single_character": true,
+        "single_pose": true,
+        "faces_right": true,
+        "full_body_visible": true,
+        "local_costume_continuity": "passed",
+        "pose_readability": "passed",
+        "canonical_1to1": "not certified; official frame comparison required",
+        "notes": "Legs extend downward for landing, forward foot lower, both feet airborne."
+      },
+      "status": "generated_saved_reviewed",
+      "sha256": "ab51fd2b501109aa7d756f519893b536223883aeb5448282c8335f265df74b70",
+      "file_size_bytes": 2244087,
+      "width": 1024,
+      "height": 1536,
+      "color_mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        254
+      ],
+      "alpha_bbox_gt0": [
+        0,
+        23,
+        1020,
+        1536
+      ],
+      "alpha_bbox_gt16": [
+        39,
+        75,
+        941,
+        1477
+      ],
+      "alpha_bbox_gt128": [
+        39,
+        76,
+        940,
+        1476
+      ],
+      "transparent_pixels": 1003801,
+      "partial_alpha_pixels": 569063,
+      "opaque_pixels": 0,
+      "native_copy_verified": true
+    },
+    {
+      "id": "heartman-guard",
+      "character_id": "heartman",
+      "pose": "guard",
+      "prompt": "Use case: identity-preserve. Asset type: ONE full-body 2D fighting-game sprite for an existing Death Stranding fan game. Reference image 1 is the exact existing standing costume and identity; reference image 2 is the same existing character airborne, a supporting proportions/detail/style reference. Heartman from the first Death Stranding. Preserve the exact face and likeness, short swept brown hair, dark rectangular glasses, blue blazer with rolled sleeves over pale gray shirt, orange/ochre shoulder harness, amber rectangular chest defibrillator with cyan light, metallic upper arm band, fingerless dark gloves, wrist device, charcoal trousers and blue sneakers with white soles. Change ONLY the body pose into the following: Create a distinct STANDING GUARD pose: both feet grounded and separated for balance, knees slightly flexed, body facing right in strict side profile, shoulders tucked, forearms brought closer to face and chest to block an incoming strike. Hands protect rather than punch. Show a natural modest defensive lean backward. This is NOT an idle pose and NOT a jumping pose. Match the existing detailed painted 2D game art, realistic anatomy and materials, readable clean silhouette. Keep every clothing/accessory design, color and attachment location consistent; no new equipment, no redesign, no additional characters. Render one character and one pose only, facing RIGHT, entire head, all hands and both boot/shoe tips in frame, with generous 10 percent empty transparent margin on all sides. CRITICAL: use genuine alpha transparency outside the character, remove all old gray/black halo from references. No backdrop, no floor, no contact shadow, no gray glow, no painted checkerboard, no vignette, no motion trails, no effects, no labels, no watermark. Do not crop the figure.",
+      "references": [
+        "modes/echos-de-la-greve/assets/fighters/heartman-stance.webp",
+        "modes/echos-de-la-greve/assets/fighters/heartman-jump.png"
+      ],
+      "transparent_background": true,
+      "output": "modes/echos-de-la-greve/assets/fighters/heartman/guard.png",
+      "generation_source": "inline native PNG returned by imagegen; decoded without pixel changes",
+      "failed_attempts": [],
+      "visual_review": {
+        "inspected": true,
+        "single_character": true,
+        "single_pose": true,
+        "faces_right": true,
+        "full_body_visible": true,
+        "local_costume_continuity": "passed",
+        "pose_readability": "passed",
+        "canonical_1to1": "not certified; official frame comparison required",
+        "notes": "Compact upper-body guard, knees flexed, feet grounded."
+      },
+      "status": "generated_saved_reviewed",
+      "sha256": "1cf591e0c7aab5fe217441b2b92b679e7f735cdbd2934125ed18d26e44058e36",
+      "file_size_bytes": 1745097,
+      "width": 1024,
+      "height": 1536,
+      "color_mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        254
+      ],
+      "alpha_bbox_gt0": [
+        0,
+        23,
+        1000,
+        1512
+      ],
+      "alpha_bbox_gt16": [
+        152,
+        72,
+        868,
+        1474
+      ],
+      "alpha_bbox_gt128": [
+        153,
+        73,
+        867,
+        1473
+      ],
+      "transparent_pixels": 1109719,
+      "partial_alpha_pixels": 463145,
+      "opaque_pixels": 0,
+      "native_copy_verified": true
+    },
+    {
+      "id": "heartman-crouch",
+      "character_id": "heartman",
+      "pose": "crouch",
+      "prompt": "Use case: identity-preserve. Asset type: ONE full-body 2D fighting-game sprite for an existing Death Stranding fan game. Reference image 1 is the exact existing standing costume and identity; reference image 2 is the same existing character airborne, a supporting proportions/detail/style reference. Heartman from the first Death Stranding. Preserve the exact face and likeness, short swept brown hair, dark rectangular glasses, blue blazer with rolled sleeves over pale gray shirt, orange/ochre shoulder harness, amber rectangular chest defibrillator with cyan light, metallic upper arm band, fingerless dark gloves, wrist device, charcoal trousers and blue sneakers with white soles. Change ONLY the body pose into the following: Create a distinct LOW CROUCH / LOW GUARD pose: torso lowered by deep flexion at the hips and knees, front foot flat, rear heel slightly raised, both feet grounded on the same imaginary baseline, arms compact protecting face and torso. Strict right-facing side profile. Natural crouched anatomy, not kneeling and not sitting. The backpack and worn items follow the body naturally. Match the existing detailed painted 2D game art, realistic anatomy and materials, readable clean silhouette. Keep every clothing/accessory design, color and attachment location consistent; no new equipment, no redesign, no additional characters. Render one character and one pose only, facing RIGHT, entire head, all hands and both boot/shoe tips in frame, with generous 10 percent empty transparent margin on all sides. CRITICAL: use genuine alpha transparency outside the character, remove all old gray/black halo from references. No backdrop, no floor, no contact shadow, no gray glow, no painted checkerboard, no vignette, no motion trails, no effects, no labels, no watermark. Do not crop the figure.",
+      "references": [
+        "modes/echos-de-la-greve/assets/fighters/heartman-stance.webp",
+        "modes/echos-de-la-greve/assets/fighters/heartman-jump.png"
+      ],
+      "transparent_background": true,
+      "output": "modes/echos-de-la-greve/assets/fighters/heartman/crouch.png",
+      "generation_source": "/workspace/scratch/05d1f74d065e/generated_images/exec-10198197-6a1d-4143-9fe1-61d9a7c78d24.png",
+      "failed_attempts": [],
+      "visual_review": {
+        "inspected": true,
+        "single_character": true,
+        "single_pose": true,
+        "faces_right": true,
+        "full_body_visible": true,
+        "local_costume_continuity": "passed",
+        "pose_readability": "passed",
+        "canonical_1to1": "not certified; official frame comparison required",
+        "notes": "Lowered hip position and bent knees, both feet at ground line."
+      },
+      "status": "generated_saved_reviewed",
+      "sha256": "1ef56c86631c5be4dc5fb90f73f4469152aa9d39869c341a6c8c886e43dc644a",
+      "file_size_bytes": 1212008,
+      "width": 1312,
+      "height": 1199,
+      "color_mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "alpha_bbox_gt0": [
+        0,
+        37,
+        1292,
+        1159
+      ],
+      "alpha_bbox_gt16": [
+        185,
+        76,
+        1043,
+        1149
+      ],
+      "alpha_bbox_gt128": [
+        186,
+        78,
+        1042,
+        1148
+      ],
+      "transparent_pixels": 1013073,
+      "partial_alpha_pixels": 559859,
+      "opaque_pixels": 156,
+      "native_copy_verified": true
+    },
+    {
+      "id": "heartman-rise",
+      "character_id": "heartman",
+      "pose": "rise",
+      "prompt": "Use case: identity-preserve. Asset type: ONE full-body 2D fighting-game sprite for an existing Death Stranding fan game. Reference image 1 is the exact existing standing costume and identity; reference image 2 is the same existing character airborne, a supporting proportions/detail/style reference. Heartman from the first Death Stranding. Preserve the exact face and likeness, short swept brown hair, dark rectangular glasses, blue blazer with rolled sleeves over pale gray shirt, orange/ochre shoulder harness, amber rectangular chest defibrillator with cyan light, metallic upper arm band, fingerless dark gloves, wrist device, charcoal trousers and blue sneakers with white soles. Change ONLY the body pose into the following: Create a distinct JUMP RISE pose just after takeoff: both feet airborne, torso moving upward, front thigh beginning to lift but not yet horizontal, rear leg extending down and back after pushing off, hands naturally guarding, clothes reacting to upward acceleration. Strict right-facing side profile. Entire figure visible. This is earlier than the apex in the second reference. Match the existing detailed painted 2D game art, realistic anatomy and materials, readable clean silhouette. Keep every clothing/accessory design, color and attachment location consistent; no new equipment, no redesign, no additional characters. Render one character and one pose only, facing RIGHT, entire head, all hands and both boot/shoe tips in frame, with generous 10 percent empty transparent margin on all sides. CRITICAL: use genuine alpha transparency outside the character, remove all old gray/black halo from references. No backdrop, no floor, no contact shadow, no gray glow, no painted checkerboard, no vignette, no motion trails, no effects, no labels, no watermark. Do not crop the figure.",
+      "references": [
+        "modes/echos-de-la-greve/assets/fighters/heartman-stance.webp",
+        "modes/echos-de-la-greve/assets/fighters/heartman-jump.png"
+      ],
+      "transparent_background": true,
+      "output": "modes/echos-de-la-greve/assets/fighters/heartman/rise.png",
+      "generation_source": "/workspace/scratch/05d1f74d065e/generated_images/exec-1a76ab2d-7643-419f-9a89-35445184fb6c.png",
+      "failed_attempts": [],
+      "visual_review": {
+        "inspected": true,
+        "single_character": true,
+        "single_pose": true,
+        "faces_right": true,
+        "full_body_visible": true,
+        "local_costume_continuity": "passed",
+        "pose_readability": "passed",
+        "canonical_1to1": "not certified; official frame comparison required",
+        "notes": "Rear leg extended downward after takeoff, distinct from compact apex."
+      },
+      "status": "generated_saved_reviewed",
+      "sha256": "61043655a1d77d88732356f4687d187d1e3b3fad108854afa60b4f1a7936af63",
+      "file_size_bytes": 1602893,
+      "width": 1024,
+      "height": 1536,
+      "color_mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        254
+      ],
+      "alpha_bbox_gt0": [
+        49,
+        47,
+        1004,
+        1499
+      ],
+      "alpha_bbox_gt16": [
+        94,
+        52,
+        797,
+        1497
+      ],
+      "alpha_bbox_gt128": [
+        94,
+        53,
+        796,
+        1496
+      ],
+      "transparent_pixels": 1192172,
+      "partial_alpha_pixels": 380692,
+      "opaque_pixels": 0,
+      "native_copy_verified": true
+    },
+    {
+      "id": "heartman-apex",
+      "character_id": "heartman",
+      "pose": "apex",
+      "prompt": "Use case: identity-preserve. Asset type: ONE full-body 2D fighting-game sprite for an existing Death Stranding fan game. Reference image 1 is the exact existing standing costume and identity; reference image 2 is the same existing character airborne, a supporting proportions/detail/style reference. Heartman from the first Death Stranding. Preserve the exact face and likeness, short swept brown hair, dark rectangular glasses, blue blazer with rolled sleeves over pale gray shirt, orange/ochre shoulder harness, amber rectangular chest defibrillator with cyan light, metallic upper arm band, fingerless dark gloves, wrist device, charcoal trousers and blue sneakers with white soles. Change ONLY the body pose into the following: Create a distinct JUMP APEX pose: both feet airborne, front knee raised nearly horizontal, rear leg bent back underneath, body compact at the peak of the arc, arms balanced in close guard. Strict right-facing side profile. Entire figure visible. Preserve proportions from the second reference but produce a clean polished single pose. Match the existing detailed painted 2D game art, realistic anatomy and materials, readable clean silhouette. Keep every clothing/accessory design, color and attachment location consistent; no new equipment, no redesign, no additional characters. Render one character and one pose only, facing RIGHT, entire head, all hands and both boot/shoe tips in frame, with generous 10 percent empty transparent margin on all sides. CRITICAL: use genuine alpha transparency outside the character, remove all old gray/black halo from references. No backdrop, no floor, no contact shadow, no gray glow, no painted checkerboard, no vignette, no motion trails, no effects, no labels, no watermark. Do not crop the figure.",
+      "references": [
+        "modes/echos-de-la-greve/assets/fighters/heartman-stance.webp",
+        "modes/echos-de-la-greve/assets/fighters/heartman-jump.png"
+      ],
+      "transparent_background": true,
+      "output": "modes/echos-de-la-greve/assets/fighters/heartman/apex.png",
+      "generation_source": "/workspace/scratch/05d1f74d065e/generated_images/exec-e32ac2ed-917c-4036-8427-e120b3c1a231.png",
+      "failed_attempts": [],
+      "visual_review": {
+        "inspected": true,
+        "single_character": true,
+        "single_pose": true,
+        "faces_right": true,
+        "full_body_visible": true,
+        "local_costume_continuity": "passed",
+        "pose_readability": "passed",
+        "canonical_1to1": "not certified; official frame comparison required",
+        "notes": "Raised front knee and folded rear leg at peak, distinct from rise/fall."
+      },
+      "status": "generated_saved_reviewed",
+      "sha256": "e5176935cd45411bf0767df07a46bbd0ac467bed688a0dec120a5a6868a2d7ff",
+      "file_size_bytes": 1788201,
+      "width": 1024,
+      "height": 1536,
+      "color_mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        254
+      ],
+      "alpha_bbox_gt0": [
+        17,
+        47,
+        1008,
+        1512
+      ],
+      "alpha_bbox_gt16": [
+        167,
+        73,
+        869,
+        1304
+      ],
+      "alpha_bbox_gt128": [
+        168,
+        74,
+        868,
+        1303
+      ],
+      "transparent_pixels": 1086737,
+      "partial_alpha_pixels": 486127,
+      "opaque_pixels": 0,
+      "native_copy_verified": true
+    },
+    {
+      "id": "heartman-fall",
+      "character_id": "heartman",
+      "pose": "fall",
+      "prompt": "Use case: identity-preserve. Asset type: ONE full-body 2D fighting-game sprite for an existing Death Stranding fan game. Reference image 1 is the exact existing standing costume and identity; reference image 2 is the same existing character airborne, a supporting proportions/detail/style reference. Heartman from the first Death Stranding. Preserve the exact face and likeness, short swept brown hair, dark rectangular glasses, blue blazer with rolled sleeves over pale gray shirt, orange/ochre shoulder harness, amber rectangular chest defibrillator with cyan light, metallic upper arm band, fingerless dark gloves, wrist device, charcoal trousers and blue sneakers with white soles. Change ONLY the body pose into the following: Create a distinct JUMP FALL / PRE-LANDING pose: body descending, both legs extending downward from the hips with soft knees in preparation for landing, forward boot lower and pointing slightly down, rear boot trailing a little higher, both feet still airborne, arms spread only enough to balance. Strict right-facing side profile. Clearly different silhouette from the raised-knee apex; no ground contact. Match the existing detailed painted 2D game art, realistic anatomy and materials, readable clean silhouette. Keep every clothing/accessory design, color and attachment location consistent; no new equipment, no redesign, no additional characters. Render one character and one pose only, facing RIGHT, entire head, all hands and both boot/shoe tips in frame, with generous 10 percent empty transparent margin on all sides. CRITICAL: use genuine alpha transparency outside the character, remove all old gray/black halo from references. No backdrop, no floor, no contact shadow, no gray glow, no painted checkerboard, no vignette, no motion trails, no effects, no labels, no watermark. Do not crop the figure.",
+      "references": [
+        "modes/echos-de-la-greve/assets/fighters/heartman-stance.webp",
+        "modes/echos-de-la-greve/assets/fighters/heartman-jump.png"
+      ],
+      "transparent_background": true,
+      "output": "modes/echos-de-la-greve/assets/fighters/heartman/fall.png",
+      "generation_source": "/workspace/scratch/05d1f74d065e/generated_images/exec-12f430e3-7779-49e2-ad4a-68439298841f.png",
+      "failed_attempts": [],
+      "visual_review": {
+        "inspected": true,
+        "single_character": true,
+        "single_pose": true,
+        "faces_right": true,
+        "full_body_visible": true,
+        "local_costume_continuity": "passed",
+        "pose_readability": "passed",
+        "canonical_1to1": "not certified; official frame comparison required",
+        "notes": "Legs extend downward for landing, forward foot lower, both feet airborne."
+      },
+      "status": "generated_saved_reviewed",
+      "sha256": "8487e53cd1e649e4de5456c47f99ca03aa17557a6a78a84ba8d8a0c51564d701",
+      "file_size_bytes": 1675765,
+      "width": 1024,
+      "height": 1536,
+      "color_mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        254
+      ],
+      "alpha_bbox_gt0": [
+        0,
+        55,
+        1010,
+        1536
+      ],
+      "alpha_bbox_gt16": [
+        128,
+        61,
+        882,
+        1444
+      ],
+      "alpha_bbox_gt128": [
+        129,
+        63,
+        882,
+        1443
+      ],
+      "transparent_pixels": 1187911,
+      "partial_alpha_pixels": 384953,
+      "opaque_pixels": 0,
+      "native_copy_verified": true
+    }
+  ],
+  "summary": {
+    "generated_count": 15,
+    "expected_count": 15,
+    "all_outputs_present": true,
+    "unique_sha256_count": 15,
+    "alpha_checked_count": 15,
+    "visual_reviewed_count": 15,
+    "total_png_bytes": 28155223,
+    "failed_attempts": 1
+  }
+}

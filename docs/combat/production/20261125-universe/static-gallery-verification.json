@@ -1,0 +1,210 @@
+{
+  "date": "2026-11-25",
+  "scope": "Shipped gallery controller in a simulated DOM; actual catalogue PNG files",
+  "native_browser_rendering": false,
+  "layout_verified": false,
+  "native_keyboard_verified": false,
+  "checks_passed": 12,
+  "checks": [
+    "The HTML exposes all categories, labeled work/background selectors and native button/dialog controls.",
+    "Work and category filters intersect in either order and preserve accessible pressed states.",
+    "Empty intersections offer a reset that restores both filters, the total and a visible focus target.",
+    "Works and versions are presented as text in both cards and viewer; image proportions use native dimensions.",
+    "Viewer and card downloads point to the same original PNG and retain a descriptive accessible name.",
+    "Zoom toggles fitted/original state, scroll accessibility, helper text and scroll origin.",
+    "Closing clears the displayed source, resets zoom and returns focus to the opener or a visible fallback.",
+    "Backdrop hit testing closes outside the dialog while an inside click preserves it.",
+    "Missing images leave both filtered and total counts; absent catalogues have a safe empty state.",
+    "The background selector and non-dialog fallback preserve their supported behavior.",
+    "Every real catalogue entry has a unique ID, a supported category and a readable original PNG at its declared size.",
+    "All work/category combinations match the real catalogue without a hard-coded item total."
+  ],
+  "actual_catalogue_total": 29,
+  "work_counts": {
+    "ds1-dc": 15,
+    "ds2": 14
+  },
+  "entries_without_work_or_version": [],
+  "original_pngs": [
+    {
+      "id": "lockne-portrait",
+      "work": "ds1-dc",
+      "width": 1189,
+      "height": 1323
+    },
+    {
+      "id": "lockne-body",
+      "work": "ds1-dc",
+      "width": 1024,
+      "height": 1536
+    },
+    {
+      "id": "deadman-body",
+      "work": "ds1-dc",
+      "width": 1024,
+      "height": 1536
+    },
+    {
+      "id": "amelie-body",
+      "work": "ds1-dc",
+      "width": 1024,
+      "height": 1536
+    },
+    {
+      "id": "bridget-body",
+      "work": "ds1-dc",
+      "width": 1536,
+      "height": 1024
+    },
+    {
+      "id": "bt-gazer",
+      "work": "ds1-dc",
+      "width": 1024,
+      "height": 1536
+    },
+    {
+      "id": "cliff-skeleton-nethelmet",
+      "work": "ds1-dc",
+      "width": 1024,
+      "height": 1536
+    },
+    {
+      "id": "mule-eastern-gray",
+      "work": "ds1-dc",
+      "width": 1024,
+      "height": 1536
+    },
+    {
+      "id": "hematic-grenade",
+      "work": "ds1-dc",
+      "width": 1024,
+      "height": 1536
+    },
+    {
+      "id": "ex-grenade-0",
+      "work": "ds1-dc",
+      "width": 724,
+      "height": 2172
+    },
+    {
+      "id": "ex-grenade-1",
+      "work": "ds1-dc",
+      "width": 724,
+      "height": 2172
+    },
+    {
+      "id": "ex-grenade-2",
+      "work": "ds1-dc",
+      "width": 724,
+      "height": 2172
+    },
+    {
+      "id": "south-knot-ruins-panorama",
+      "work": "ds1-dc",
+      "width": 1672,
+      "height": 941
+    },
+    {
+      "id": "timefall-farm-panorama",
+      "work": "ds1-dc",
+      "width": 1672,
+      "height": 941
+    },
+    {
+      "id": "mountain-knot-city-panorama",
+      "work": "ds1-dc",
+      "width": 1672,
+      "height": 941
+    },
+    {
+      "id": "sam-ds2-drawbridge-portrait",
+      "work": "ds2",
+      "width": 1536,
+      "height": 1024
+    },
+    {
+      "id": "fragile-ds2-portrait",
+      "work": "ds2",
+      "width": 1104,
+      "height": 1425
+    },
+    {
+      "id": "higgs-ds2-portrait",
+      "work": "ds2",
+      "width": 1310,
+      "height": 1200
+    },
+    {
+      "id": "dollman-ds2-body",
+      "work": "ds2",
+      "width": 941,
+      "height": 1672
+    },
+    {
+      "id": "tomorrow-ds2-portrait",
+      "work": "ds2",
+      "width": 1156,
+      "height": 1361
+    },
+    {
+      "id": "rainy-ds2-portrait",
+      "work": "ds2",
+      "width": 1199,
+      "height": 1312
+    },
+    {
+      "id": "tarman-ds2-portrait",
+      "work": "ds2",
+      "width": 1139,
+      "height": 1381
+    },
+    {
+      "id": "neil-ds2-portrait",
+      "work": "ds2",
+      "width": 1312,
+      "height": 1199
+    },
+    {
+      "id": "red-samurai-ds2-body",
+      "work": "ds2",
+      "width": 1024,
+      "height": 1536
+    },
+    {
+      "id": "chiral-cat-ds2-body",
+      "work": "ds2",
+      "width": 1254,
+      "height": 1254
+    },
+    {
+      "id": "higgs-ds2-guitar",
+      "work": "ds2",
+      "width": 2172,
+      "height": 724
+    },
+    {
+      "id": "magellan-ds2-panorama",
+      "work": "ds2",
+      "width": 1672,
+      "height": 941
+    },
+    {
+      "id": "plate-gate-ds2-panorama",
+      "work": "ds2",
+      "width": 1672,
+      "height": 941
+    },
+    {
+      "id": "sandstorm-ds2-panorama",
+      "work": "ds2",
+      "width": 1672,
+      "height": 941
+    }
+  ],
+  "source_sha256": {
+    "static-assets.html": "cfd720e3b386bcb44d30b978ad816f39d1734287acafebb6d56c46c43f083369",
+    "static-assets.css": "40d535c04991b1f1175a9fd76c458091752bd3e0aa7e33da105da5409c2cd300",
+    "static-assets.js": "decb59ccd51cd8812bee4a38e9e913f44d01292ed15911f692228fb17d68c382",
+    "static-assets-data.js": "0c16050c1b3b43807865dfa5b5bcac1a52cc151a30c28c78e6dfa3b84086027c"
+  }
+}

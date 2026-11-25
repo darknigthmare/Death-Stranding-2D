@@ -1,0 +1,21 @@
+{
+  "date": "2026-11-24",
+  "runtime": "actual netplay-server.cjs and existing verifyProtocol() in memory",
+  "passed": true,
+  "checks": [
+    "creation/join/readiness/start",
+    "input acknowledgements and retry idempotency",
+    "disconnect pause/rejoin/resume",
+    "agreed result and closure",
+    "Port Knot and incinerator selectable in actual room service"
+  ],
+  "http_server_started": false,
+  "filesystem_walk_executed": false,
+  "legacy_protocol_messages": [
+    "Relais · création, deux places, choix, lancement, accusés, reprise, résultat et fermeture vérifiés."
+  ],
+  "source_sha256": {
+    "content.js": "3616e71197f874262248cf8e91e409a9e98abcc8579d0222ae77d6508b7aaf9b",
+    "netplay-server.cjs": "a93201ff95042fe43ddbe82f7a7d60129bed69d888340f2d4f625fc7e0452d67"
+  }
+}

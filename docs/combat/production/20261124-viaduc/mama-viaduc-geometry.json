@@ -1,0 +1,124 @@
+{
+  "schema": 1,
+  "fighter": "mama",
+  "outfit": "viaduc",
+  "nativeFacing": 1,
+  "baseHeight": 170,
+  "poses": {
+    "stance": {
+      "crop": [
+        179,
+        30,
+        686,
+        1481
+      ],
+      "anchorX": 0.37745,
+      "baselineY": 0.997974,
+      "heightRatio": 1,
+      "nativeFacing": 1
+    },
+    "action": {
+      "crop": [
+        13,
+        197,
+        1010,
+        1246
+      ],
+      "anchorX": 0.476718,
+      "baselineY": 0.997592,
+      "heightRatio": 0.837788,
+      "nativeFacing": 1
+    },
+    "step": {
+      "crop": [
+        31,
+        16,
+        955,
+        1493
+      ],
+      "anchorX": 0.66193,
+      "baselineY": 0.997991,
+      "heightRatio": 0.929651,
+      "nativeFacing": 1
+    },
+    "hit": {
+      "crop": [
+        55,
+        56,
+        874,
+        1455
+      ],
+      "anchorX": 0.384114,
+      "baselineY": 0.997938,
+      "heightRatio": 0.898993,
+      "nativeFacing": 1
+    },
+    "guard": {
+      "crop": [
+        95,
+        54,
+        794,
+        1452
+      ],
+      "anchorX": 0.41127,
+      "baselineY": 0.997934,
+      "heightRatio": 0.883495,
+      "nativeFacing": 1
+    },
+    "crouch": {
+      "crop": [
+        28,
+        238,
+        954,
+        1221
+      ],
+      "anchorX": 0.244491,
+      "baselineY": 0.997543,
+      "heightRatio": 0.601209,
+      "nativeFacing": 1
+    },
+    "rise": {
+      "crop": [
+        45,
+        11,
+        828,
+        1512
+      ],
+      "anchorX": 0.155006,
+      "baselineY": 0.998016,
+      "heightRatio": 0.952602,
+      "nativeFacing": 1
+    },
+    "apex": {
+      "crop": [
+        114,
+        11,
+        835,
+        1516
+      ],
+      "anchorX": 0.159723,
+      "baselineY": 0.998021,
+      "heightRatio": 0.705235,
+      "nativeFacing": 1
+    },
+    "fall": {
+      "crop": [
+        171,
+        23,
+        673,
+        1467
+      ],
+      "anchorX": 0.350445,
+      "baselineY": 0.997955,
+      "heightRatio": 0.92425,
+      "nativeFacing": 1
+    }
+  },
+  "method": {
+    "crop": "alpha > 8 native bounding box, padded by 3 px; source bytes unchanged",
+    "contact": "centroid of alpha > 96 pixels in bottom ceil(1.5% of alpha bbox height) rows",
+    "baseline": "exclusive lower alpha > 8 bound, corresponding to lowest boot edge",
+    "heightRatio": "(padded crop height / stance padded crop height) × (stance ochre helmet width / pose ochre helmet width); measured helmet colors within visually inspected top ROI; preserves apparent head/helmet width with uniform scaling",
+    "visualReview": "All generated native poses inspected; optical pose shape and same face/costume checked. No browser/native Canvas scene review."
+  }
+}

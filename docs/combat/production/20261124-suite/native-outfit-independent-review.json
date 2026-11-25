@@ -1,0 +1,22 @@
+{
+  "date": "2026-11-24",
+  "method": "Independent automated review calling extracted real drawFighter/drawPlayer functions in hosted V8",
+  "source_blobs": {
+    "fight.js": "4abdd2703562128a0a2c2ca9b22209a872056b31",
+    "boss.js": "50cd8ae96416b0d9e82499b5f4361cfd4829ca8e"
+  },
+  "cases": 72,
+  "passed": true,
+  "images": "Synthetic images of known dimensions and distinct crop rectangles, used only to detect wrong source/geometry routing",
+  "outcomes": [
+    "Nine ready native outfit poses use their own geometry",
+    "Unavailable outfit pose uses the ready base source and its geometry",
+    "Missing pose falls back to the actually chosen stance geometry",
+    "A WebP outfit without nativePoses retains historical geometry",
+    "Guard, crouch, three jump phases and the feint echo use consistent sources/crops"
+  ],
+  "native_pixels_verified": false,
+  "native_canvas": false,
+  "browser": false,
+  "source_mutations": false
+}
