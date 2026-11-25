@@ -14,7 +14,7 @@ const source = fs.readFileSync(path.join(root, 'static-assets-data.js'), 'utf8')
 const dataScope = {window: {}};
 vm.runInNewContext(source, dataScope);
 const catalogue = dataScope.window.StrandStaticCatalogue;
-const categories = ['all', 'characters', 'enemies', 'projectiles', 'props', 'stages'];
+const categories = ['all', 'characters', 'costumes', 'enemies', 'projectiles', 'vehicles', 'props', 'stages'];
 const checks = [];
 function check(name, run) { run(); checks.push(name); }
 
@@ -177,8 +177,27 @@ check('The background selector and non-dialog fallback preserve their supported 
   assert.deepEqual(h.opened, [['assets/legacy.png', '_blank', 'noopener']]);
 });
 
+check('Costume and vehicle filters keep separate fixed-art entries and expose their qualified documentation.', () => {
+  const bible='../../docs/combat/BIBLE_COMBAT.md#172-sources-et-versions-des-nouvelles-bases';
+  const reference='../../docs/combat/UNIVERS_DS.md#ref-sam-grey-promo-ds2';
+  const h=harness({items:[...fixture.items,
+    {id:'costume',title:'Sam gris',category:'costumes',work:'ds2',src:'assets/costume.png',representation:'Image fixe',bible,reference},
+    {id:'vehicle',title:'Tri-Cruiser',category:'vehicles',work:'ds2',src:'assets/vehicle.png',bible:'javascript:alert(1)'}]});
+  h.chooseWork('ds2');h.chooseCategory('costumes');
+  assert.equal(h.visible().length,1);assert.equal(h.visible()[0].dataset.assetId,'costume');
+  h.visible()[0].children[0].emit('click');
+  assert.equal(h.nodes.get('viewer-representation').textContent,'Image fixe');
+  assert.equal(h.nodes.get('viewer-bible').href,bible);assert.equal(h.nodes.get('viewer-reference').href,reference);
+  assert.equal(h.nodes.get('viewer-bible').hidden,false);
+  h.nodes.get('static-viewer').close();h.chooseCategory('vehicles');
+  assert.equal(h.visible().length,1);assert.equal(h.visible()[0].dataset.assetId,'vehicle');
+  h.visible()[0].children[0].emit('click');
+  assert.equal(h.nodes.get('viewer-bible').hidden,true);assert.equal(h.nodes.get('viewer-bible').href,undefined);
+  h.chooseWork('ds1-dc');assert.equal(h.visible().length,0);
+});
+
 const pngs = [];
-check('Every real catalogue entry has a unique ID, a supported category and a readable original PNG at its declared size.', () => {
+check('Every real catalogue entry has a unique ID, a supported category and an original PNG header at its declared size.', () => {
   const ids = new Set();
   for (const item of catalogue.items) {
     assert(item.id && !ids.has(item.id), 'Duplicate/missing ID'); ids.add(item.id);
@@ -189,6 +208,33 @@ check('Every real catalogue entry has a unique ID, a supported category and a re
     const width = bytes.readUInt32BE(16), height = bytes.readUInt32BE(20);
     assert.equal(width, item.width, item.id + ' width'); assert.equal(height, item.height, item.id + ' height');
     pngs.push({id: item.id, work: item.work || 'ds1-dc', width, height});
+  }
+});
+check('New version links resolve to their exact documentation file and heading or explicit ID.', () => {
+  const sourceIds=new Set();
+  for(const item of catalogue.items){
+    if(!item.src.startsWith('assets/static-completion-20261125/'))continue;
+    assert.equal(item.representation,'Image fixe');
+    assert(item.bible && item.reference,item.id+' documentation');
+    for(const link of [item.bible,item.reference]){
+      assert.match(link,/^\.\.\/\.\.\/docs\/combat\/(?:BIBLE_COMBAT|UNIVERS_DS)\.md#/);
+      const [file,anchor]=link.split('#'),text=fs.readFileSync(path.resolve(root,file),'utf8');
+      const headings=[...text.matchAll(/^#{1,6}\s+(.+)$/gm)].map(match=>match[1].trim().toLowerCase().replace(/[^\p{L}\p{N}_ -]/gu,'').replace(/ /g,'-'));
+      assert(text.includes('id="'+anchor+'"')||headings.includes(anchor),item.id+' anchor '+anchor);
+    }
+    sourceIds.add(item.id);
+  }
+  assert.equal(sourceIds.size,14,'13 fixed bases and one new panorama');
+});
+const archiveSource=fs.readFileSync(path.join(root,'archives.html'),'utf8');
+const archiveImages=[...archiveSource.matchAll(/<img\b[^>]*\bsrc="([^"]+)"[^>]*>/g)];
+check('The four added Archives portraits retain the same work/version, image and measured dimensions as the catalogue.',()=>{
+  assert.equal(archiveImages.length,16);
+  for(const id of ['lucy-ds2','doctor-ds2','heartman-ds2','the-president-ds2']){
+    const item=catalogue.items.find(entry=>entry.id===id);assert(item);
+    assert(archiveSource.includes('id="archive-'+id+'"'));
+    const tag=archiveImages.find(match=>match[1]===item.src)?.[0];assert(tag,id+' image');
+    assert(tag.includes('width="'+item.width+'"') && tag.includes('height="'+item.height+'"'),id+' dimensions');
   }
 });
 check('All work/category combinations match the real catalogue without a hard-coded item total.', () => {
@@ -205,8 +251,9 @@ for (const name of ['static-assets.html', 'static-assets.css', 'static-assets.js
   hashes[name] = crypto.createHash('sha256').update(fs.readFileSync(path.join(root, name))).digest('hex');
 }
 console.log(JSON.stringify({
-  date: '2026-11-25', scope: 'Shipped gallery controller in a simulated DOM; actual catalogue PNG files',
+  date: new Date().toISOString(), scope: 'Shipped gallery controller in a simulated DOM; actual catalogue PNG headers/dimensions and Archives markup',
   native_browser_rendering: false, layout_verified: false, native_keyboard_verified: false,
+  image_pixels_decoded: false, archive_images: archiveImages.length, categories,
   checks_passed: checks.length, checks, actual_catalogue_total: catalogue.items.length,
   work_counts: Object.fromEntries(['ds1-dc', 'ds2'].map(work => [work, pngs.filter(item => item.work === work).length])),
   entries_without_work_or_version: catalogue.items.filter(item => !item.work || !item.version).map(item => item.id),

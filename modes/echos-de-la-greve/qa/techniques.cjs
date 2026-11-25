@@ -53,7 +53,7 @@ const {chromium} = require('playwright');
     assert.deepEqual(art.portraits, roster);
     assert.deepEqual(art.finishers, roster);
     assert.deepEqual(art.actions, roster);
-    assert.equal(art.stages.length,11);
+    assert.equal(art.stages.length,20,'Les vingt configurations livrées restent accessibles aux techniques et finalités');
     assert.deepEqual(art.stageVariants,{'mule-camp-dry':'mule-camp'});
     assert.deepEqual(art.fronts, art.stages);
     assert.notEqual(art.rivals[0], art.rivals[1]);

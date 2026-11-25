@@ -1,0 +1,204 @@
+{
+  "schema": 1,
+  "reviewed_at": "2026-11-25T14:47:32.173417+00:00",
+  "reviewer": "combat_state — revue indépendante de la génération",
+  "scope": "Huit nouveaux PNG présents : Sam ×3, Fragile ×2 hors intro-second, Higgs ×3. Les seize autres plans ne sont pas évalués ici.",
+  "method": "Lecture du brief approuvé puis inspection visuelle directe des PNG natifs via view_image ; comparaison complémentaire des quatre références listées. Aucun recadrage, rééchantillonnage, retouche ou nouveau binaire créé.",
+  "brief_source": {
+    "file": "docs/combat/production/20261125-completion/story-completion-briefs.json",
+    "sha256": "7f4aca2fdc837cfd426ce2ca07bb88391aef065c174bef51a7d9b3c1c1dcd82d"
+  },
+  "inspected_references": [
+    {
+      "file": "modes/echos-de-la-greve/assets/story/sam-intro.webp",
+      "sha256": "c235fccd5cf4b480b6e6450ee788438b535a4d7af65214388951e461724562b6"
+    },
+    {
+      "file": "modes/echos-de-la-greve/assets/story/sam-ending.webp",
+      "sha256": "49e485756401c9b926b44be219e11f4a8706906b1feb5360d1af61fa8cefaba5"
+    },
+    {
+      "file": "modes/echos-de-la-greve/assets/fighters/higgs/portrait.png",
+      "sha256": "65ae0f25519a62c2f202b2d6b81e7c3191c641a2f3efc5d33bcf3ec661aac63f"
+    },
+    {
+      "file": "modes/echos-de-la-greve/assets/story/higgs-intro.webp",
+      "sha256": "c0b69455dfa5e3b31acbddacaef39f9bb2d8c3aea74d2e109030d380a96dc5df"
+    }
+  ],
+  "summary": {
+    "reviewed": 8,
+    "central_narrative_accepted": 7,
+    "clarification_requested": 1,
+    "certain_blocking_narrative_contradictions": 0,
+    "pending_targeted_retake": [
+      "fragile-ending-final"
+    ]
+  },
+  "items": [
+    {
+      "id": "sam-intro-second",
+      "narrative_status": "accepted",
+      "observed": [
+        "Sam reconnaissable en tenue bleue de porteur, harnais et gants, au quai sous abri.",
+        "Un seul bracelet est suspendu à la poignée par une corde dont le nœud est visible entre les mains ; plusieurs bracelets demeurent dans le coffre ouvert.",
+        "Aucun autre intervenant ne prend part à l’action."
+      ],
+      "nonblocking_notes": [
+        "L’insigne de tenue porte le mot BRIDGES, lisible. Cela déroge à la consigne générale « aucun texte lisible », mais ne constitue ni un logo inventé ni une contradiction de récit. Aucune reprise narrative demandée pour ce détail."
+      ],
+      "file": "modes/echos-de-la-greve/assets/story-completion-20261125/sam-intro-second.png",
+      "width": 1672,
+      "height": 941,
+      "bytes": 2409025,
+      "sha256": "936ba35de659d2f8418dc427f9291ddaff106784d325fcd0de12992fbd483a48",
+      "caption_fr": "Le bracelet noué",
+      "brief_id": "sam-intro-second"
+    },
+    {
+      "id": "sam-intro-insert",
+      "narrative_status": "accepted",
+      "observed": [
+        "Plusieurs bracelets métalliques occupent le coffre jaune et usé.",
+        "L’étiquette effacée et le sel sont au premier plan ; aucune destination ni nom n’est lisible.",
+        "Le bord d’un gant reste accessoire ; la scène porte sur les objets."
+      ],
+      "nonblocking_notes": [],
+      "file": "modes/echos-de-la-greve/assets/story-completion-20261125/sam-intro-insert.png",
+      "width": 1672,
+      "height": 941,
+      "bytes": 2266642,
+      "sha256": "408d19826750106552cdc606d890d6f0bd7dd0fd2d93ed74d4b9f612edcd498c",
+      "caption_fr": "Sous le sel",
+      "brief_id": "sam-intro-insert"
+    },
+    {
+      "id": "sam-ending-final",
+      "narrative_status": "accepted",
+      "observed": [
+        "Exactement cinq marques de doigts distinctes apparaissent sur la vitre embuée, sans main, corps ou destinataire.",
+        "Le coffre ouvert contient quatre bracelets et un logement central vide, soit cinq emplacements visibles.",
+        "Le lecteur fixé au couvercle possède des témoins lumineux ; le quai et l’auvent restent visibles au fond."
+      ],
+      "nonblocking_notes": [
+        "Le coffre de conclusion reprend la famille visuelle grise de la référence sam-ending.webp ; les introductions utilisent le coffre jaune de leur propre référence. La revue ne certifie pas une identité géométrique parfaite de l’accessoire entre les illustrations historiques."
+      ],
+      "file": "modes/echos-de-la-greve/assets/story-completion-20261125/sam-ending-final.png",
+      "width": 1672,
+      "height": 941,
+      "bytes": 2584089,
+      "sha256": "e057d2eee0de460c9247543cc0076554600d00b575ce59da158309e9879b294d",
+      "caption_fr": "Cinq marques",
+      "brief_id": "sam-ending-final"
+    },
+    {
+      "id": "fragile-intro-insert",
+      "narrative_status": "accepted",
+      "observed": [
+        "Exactement deux feuilles sont présentées côte à côte.",
+        "Chacune porte une tache sombre de forme correspondante sur le bord gauche.",
+        "Les surfaces des feuilles paraissent sèches, tandis que le plateau et l’arrière-plan montrent la pluie ; aucun visage ni troisième feuille."
+      ],
+      "nonblocking_notes": [
+        "Les marques imprimées pâles ne permettent pas de lire une phrase, un numéro ou un code déterminé ; elles ne justifient pas un rejet."
+      ],
+      "file": "modes/echos-de-la-greve/assets/story-completion-20261125/fragile-intro-insert.png",
+      "width": 1672,
+      "height": 941,
+      "bytes": 2341359,
+      "sha256": "bbf7b2be9d6147783ba630077467347a38e593845aa3cac12f550f3542f0a0de",
+      "caption_fr": "La même tache",
+      "brief_id": "fragile-intro-insert"
+    },
+    {
+      "id": "fragile-ending-final",
+      "narrative_status": "clarification_requested",
+      "observed": [
+        "Une feuille est protégée sous la toile ; le quai est humide et le toit comporte des ouvertures.",
+        "Fragile est seule au fond, de dos, en train de repartir à pied ; aucun saut spatial.",
+        "La partie basse du crochet repose visiblement sur l’assise. Sa pointe remonte contre ou derrière la latte basse du dossier ; le blocage sous une latte n’est pas explicitement lisible."
+      ],
+      "nonblocking_notes": [
+        "L’abri improvisé, la feuille sèche et le départ sont conformes. Une lecture du crochet sous le dossier reste possible : il s’agit d’une ambiguïté de maintien, pas d’une contradiction certaine ni d’un rejet de la scène entière."
+      ],
+      "requested_fix": "Rendre le passage et le coincement du crochet sous une latte clairement visibles, en conservant le reste de la scène.",
+      "focus_region_native_px": [
+        1200,
+        560,
+        250,
+        240
+      ],
+      "file": "modes/echos-de-la-greve/assets/story-completion-20261125/fragile-ending-final.png",
+      "width": 1672,
+      "height": 941,
+      "bytes": 2385849,
+      "sha256": "3390dfdd552af5f18677638b566080e769a0ad359d416c8c4bfe70c84d008329",
+      "caption_fr": "Le troisième bon",
+      "brief_id": "fragile-ending-final"
+    },
+    {
+      "id": "higgs-intro-second",
+      "narrative_status": "accepted",
+      "observed": [
+        "Higgs porte la capuche sombre, la marque de main dorée et le masque crânien conformes au portrait de référence corrigé.",
+        "Il s’incline et ouvre la main vers la rangée de sièges ; les sièges sont vides.",
+        "Pas de guitare ni d’armure DS2. Le lecteur audio de la conclusion n’est pas introduit comme accessoire dans sa main."
+      ],
+      "nonblocking_notes": [
+        "Les silhouettes lointaines derrière la baie sont déjà présentes dans la référence de décor higgs-intro.webp ; elles n’occupent aucun siège et ne constituent pas un nouveau public assis."
+      ],
+      "file": "modes/echos-de-la-greve/assets/story-completion-20261125/higgs-intro-second.png",
+      "width": 1672,
+      "height": 941,
+      "bytes": 2331372,
+      "sha256": "bb0edd47f0a977c72a3cf4778c3ec26813bde44f88ace1f5df2b0bc5e3ea3103",
+      "caption_fr": "Le salut",
+      "brief_id": "higgs-intro-second"
+    },
+    {
+      "id": "higgs-intro-insert",
+      "narrative_status": "accepted",
+      "observed": [
+        "Gros plan sur le gant, le masque crânien doré et le bord de capuche ; identité cohérente avec le portrait corrigé.",
+        "Le gant touche le masque au niveau du visage, pose compatible avec la fin de sa remise.",
+        "Aucun lecteur audio ni inscription narrative lisible."
+      ],
+      "nonblocking_notes": [
+        "L’image fixe montre surtout l’ajustement final du masque ; elle ne permet pas de mesurer le mouvement d’approche. Cette limite ne contredit pas l’action."
+      ],
+      "file": "modes/echos-de-la-greve/assets/story-completion-20261125/higgs-intro-insert.png",
+      "width": 1672,
+      "height": 941,
+      "bytes": 2258298,
+      "sha256": "ed7cdbe4a34891aadb700dc482cc46d5bc48a85bee1aac66e3636bd577c0c5d2",
+      "caption_fr": "Le masque remis",
+      "brief_id": "higgs-intro-insert"
+    },
+    {
+      "id": "higgs-ending-final",
+      "narrative_status": "accepted",
+      "observed": [
+        "Higgs s’éloigne de dos en tenant un petit lecteur à écran sombre ; l’objet est visible dans sa main.",
+        "La rangée demeure vide ; un siège au premier plan est souligné par l’éclairage chaud.",
+        "La cape et la marque dorée de la capuche restent cohérentes avec l’introduction, sans attribut DS2 ajouté."
+      ],
+      "nonblocking_notes": [
+        "L’écran sombre soutient la lecture du son coupé ; une image fixe ne prouve pas l’état sonore. Les silhouettes extérieures relèvent du décor de référence, pas d’occupants des sièges."
+      ],
+      "file": "modes/echos-de-la-greve/assets/story-completion-20261125/higgs-ending-final.png",
+      "width": 1672,
+      "height": 941,
+      "bytes": 2247903,
+      "sha256": "49a3a0d454f3bb86426e48f7161bad8d0b437452296d2629ed8ce371373c3222",
+      "caption_fr": "Le son coupé",
+      "brief_id": "higgs-ending-final"
+    }
+  ],
+  "targeted_correction_brief_fr": "Modifier uniquement le contact de la poignée du parapluie avec le banc. Montrer sans ambiguïté le crochet passant sous une latte, avec une portion occultée par le bois et une ombre de contact qui rend le coincement compréhensible. La poignée ne doit plus paraître simplement posée sur l’assise. Conserver exactement une feuille sèche sous la toile, la pluie et le toit qui fuit, Fragile petite de dos repartant à pied, le cadrage, la lumière et la palette. Aucun personnage, accessoire ou texte supplémentaire ; aucun saut spatial.",
+  "limits": [
+    "Les états de son, l’avant/après et la provenance exacte d’un objet ne peuvent pas être prouvés par une image fixe.",
+    "Cette revue ne constitue pas une certification canonique externe ni une vérification de chaque détail graphique.",
+    "Les critères de récit priment pour ce lot ; les réserves secondaires explicites ne sont pas assimilées à des rejets.",
+    "La conclusion de Fragile devra être relue sur le nouveau PNG avant de clore le point de poignée."
+  ]
+}

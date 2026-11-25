@@ -1,0 +1,278 @@
+{
+  "date": "2026-11-25T14:55:03.669Z",
+  "method": "Actual app, campaign, duel and boss modules; event-capable simulated DOM and Canvas; real input sequences and requestAnimationFrame clock",
+  "browser": false,
+  "nativeCanvas": false,
+  "imagePixelsDecoded": false,
+  "syntheticStateFixtures": true,
+  "checks": [
+    "State-unit fixtures: fixed roster and DS1/DC versions, six ordered chapters, fourteen scenes, save schema, stale/duplicate/wrong result rejection, isolated key, restart retention and unavailable storage",
+    "Actual six-chapter UI traversal: four CPU duels and both isolated bosses, real victory/defeat/retry, two convoy deliveries, interludes, conclusion and retained gallery",
+    "Real keyboard and pointer controls, pause/controls/blur, chapter-start resume after return and pagehide/reload, fixed running difficulty, aftermath reload, exact independent save preservation",
+    "Static scenery preference reaches both real engines, survives reload and stays independent of reduced effects",
+    "Eight route definitions and original texts identical to c3fa7ea; 24 accessible manual sequences / 48 frames, ordered mappings, captions, clamp, enabled focus, stable live region/scrolling, arrow/modal/editable behavior and no gallery side effects",
+    "Original story route launches its real duel after the third intro illustration; primary narrative actions remain available on all three frames"
+  ],
+  "victories": [
+    {
+      "chapter": "balise-sans-adresse",
+      "kind": "duel",
+      "frames": 2035,
+      "carried": false,
+      "secondWave": false,
+      "result": {
+        "vitality": 55,
+        "parcel": null,
+        "winner": 1,
+        "loser": 2,
+        "rounds": [
+          2,
+          0
+        ],
+        "reason": "ko",
+        "finisher": false,
+        "stage": "mule-camp",
+        "fighters": [
+          "sam",
+          "mule"
+        ]
+      }
+    },
+    {
+      "chapter": "detour-higgs",
+      "kind": "duel",
+      "frames": 1960,
+      "carried": false,
+      "secondWave": false,
+      "result": {
+        "vitality": 83,
+        "parcel": null,
+        "winner": 1,
+        "loser": 2,
+        "rounds": [
+          2,
+          0
+        ],
+        "reason": "ko",
+        "finisher": false,
+        "stage": "south-knot-ruins",
+        "fighters": [
+          "fragile",
+          "higgs"
+        ]
+      }
+    },
+    {
+      "chapter": "ordre-ferme",
+      "kind": "duel",
+      "frames": 1910,
+      "carried": false,
+      "secondWave": false,
+      "result": {
+        "vitality": 65,
+        "parcel": null,
+        "winner": 1,
+        "loser": 2,
+        "rounds": [
+          2,
+          0
+        ],
+        "reason": "ko",
+        "finisher": false,
+        "stage": "ruined-factory",
+        "fighters": [
+          "mama",
+          "diehardman"
+        ]
+      }
+    },
+    {
+      "chapter": "memoire-ouverte",
+      "kind": "duel",
+      "frames": 2215,
+      "carried": false,
+      "secondWave": false,
+      "result": {
+        "vitality": 85,
+        "parcel": null,
+        "winner": 1,
+        "loser": 2,
+        "rounds": [
+          2,
+          0
+        ],
+        "reason": "ko",
+        "finisher": false,
+        "stage": "battlefield",
+        "fighters": [
+          "heartman",
+          "cliff"
+        ]
+      }
+    },
+    {
+      "chapter": "convoi-des-retours",
+      "kind": "boss",
+      "frames": 3410,
+      "carried": true,
+      "secondWave": true,
+      "result": {
+        "won": true,
+        "reason": "cargo",
+        "score": 13075,
+        "bossId": "convoy",
+        "p1": "diehardman",
+        "difficulty": "easy",
+        "stage": "timefall-farm",
+        "elapsed": 3330,
+        "vitality": 76,
+        "cargo": 2,
+        "cargoGoal": 2,
+        "integrity": 100,
+        "waves": 2,
+        "stats": {
+          "damageDealt": 330,
+          "damageTaken": 44,
+          "guarded": 22,
+          "avoided": 4,
+          "attacks": 26,
+          "signatures": 10,
+          "cargoHits": 0
+        },
+        "saved": null,
+        "isolated": true
+      }
+    },
+    {
+      "chapter": "dernier-lien",
+      "kind": "boss",
+      "frames": 1065,
+      "carried": false,
+      "secondWave": false,
+      "result": {
+        "won": true,
+        "reason": "boss",
+        "score": 15382,
+        "bossId": "whale",
+        "p1": "sam",
+        "difficulty": "easy",
+        "stage": "shore",
+        "elapsed": 986,
+        "vitality": 94,
+        "cargo": 0,
+        "cargoGoal": 0,
+        "integrity": 100,
+        "waves": 1,
+        "stats": {
+          "damageDealt": 279,
+          "damageTaken": 26,
+          "guarded": 3,
+          "avoided": 3,
+          "attacks": 13,
+          "signatures": 5,
+          "cargoHits": 0
+        },
+        "saved": null,
+        "isolated": true
+      }
+    }
+  ],
+  "defeats": [
+    {
+      "chapter": "detour-higgs",
+      "kind": "duel",
+      "frames": 1610,
+      "carried": false,
+      "secondWave": false,
+      "result": {
+        "vitality": 0,
+        "parcel": null,
+        "winner": 2,
+        "loser": 1,
+        "rounds": [
+          0,
+          2
+        ],
+        "reason": "ko",
+        "finisher": true,
+        "stage": "south-knot-ruins",
+        "fighters": [
+          "fragile",
+          "higgs"
+        ]
+      }
+    },
+    {
+      "chapter": "convoi-des-retours",
+      "kind": "boss",
+      "frames": 4890,
+      "carried": false,
+      "secondWave": false,
+      "result": {
+        "won": false,
+        "reason": "health",
+        "score": 0,
+        "bossId": "convoy",
+        "p1": "diehardman",
+        "difficulty": "easy",
+        "stage": "timefall-farm",
+        "elapsed": 4810,
+        "vitality": 0,
+        "cargo": 0,
+        "cargoGoal": 2,
+        "integrity": 3,
+        "waves": 1,
+        "stats": {
+          "damageDealt": 0,
+          "damageTaken": 120,
+          "guarded": 0,
+          "avoided": 0,
+          "attacks": 0,
+          "signatures": 0,
+          "cargoHits": 6
+        },
+        "saved": null,
+        "isolated": true
+      }
+    }
+  ],
+  "carousel": {
+    "sequences": 24,
+    "frames": 48
+  },
+  "sourceSHA256": {
+    "content.js": "98498d43b085a15d34a6fb464d528d6d5554cf635401b2edcd7a83d0155b4949",
+    "asset-geometry-20261124.js": "61f830dc5036774529b7ecaf51f4c80386ef7f94447c55e044584e850e081934",
+    "assets.js": "ce3f436a4cefe4871e68bf13d25e3b90f3c07bb0b6917b71ddc3096dff063d6b",
+    "boss-geometry-20261124.js": "55655afb8a1b05027b521bda46a49c9ad1f1b202ae307fdca67aa3690657a928",
+    "boss-assets.js": "2b3c644b456cb2de1180ef618b16b43eb26b761d4dc7e1187298420b8176bbe7",
+    "tournament.js": "287fa4ebbae35c53756a4f3845f6c3fd44ced56a2e743b817029aa5e9489da0d",
+    "fight.js": "e8046d571919f68f625b9886f5521ebed32bdee44a23282700c6b51fcce439d4",
+    "boss.js": "f0f3db6125cdf06cd664dd698d923f2fa492d86b1ef78300449e4620f08b5d88",
+    "campaign.js": "bf84ff01a0afc253c84f5087f040632895fe971f7f934abadd114c3f4311c08a",
+    "app.js": "1b8b03f877f9ace54d4ebfde46fa9986b6bd9d542a931c58fa55598654a613db"
+  },
+  "imageFiles": {
+    "expected": 55,
+    "missing": []
+  },
+  "save": {
+    "key": "echos.campaign.v1",
+    "rules": "les-noeuds-rompus-20261125-v1",
+    "sceneCount": 14,
+    "chapterCount": 6,
+    "foreignKeysPreserved": [
+      "echos.v1.sound",
+      "echos.v1.chapters",
+      "echos.v1.scenes",
+      "echos.v1.cup",
+      "echos.boss.v1",
+      "echos.boss-rush.v1",
+      "ds-silent-line-v3"
+    ]
+  },
+  "logicPassed": true,
+  "assetsComplete": true,
+  "assetsRequired": true,
+  "passed": true
+}

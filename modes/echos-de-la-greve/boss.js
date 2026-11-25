@@ -182,6 +182,7 @@
     return saved;
   }
   function persist(){
+    if(current?.isolated)return null;
     if(current?.rush){
       const p=rushProgress();p.run.checkpoint=checkpoint();p.run.status='active';p.run.health=current.s.p.hp;
       return writeRushProgress(p);
@@ -217,7 +218,10 @@
       stage:Object.fromEntries(['stages','skyplates','distants','midgrounds','floors','foregrounds'].map(key=>[key,image(art[key]?.[s.stage])]))};
   }
   function start(o){
-    stop();
+    if(o.isolated&&o.rush)throw new Error('Une rencontre isolée ne peut pas modifier une série Boss Rush.');
+    // The campaign owns its save. Even replacing a still-mounted encounter
+    // cannot touch the standalone records/checkpoint from this entry point.
+    clearSession(!o.isolated);
     const run=o.rush?rushProgress().run:null;
     if(o.rush&&(!run||!['ready','active'].includes(run.status)))return null;
     if(run)o={...o,p1:run.p1,boss:RUSH_ORDER[run.index],stage:encounters[RUSH_ORDER[run.index]].stage,
@@ -226,15 +230,17 @@
     if(run&&!saved)s.p.hp=run.health;
     s.p.keys={};s.p.taps={};
     current={s,canvas:o.canvas,ctx:o.canvas.getContext('2d'),images:loadArt(s),onEnd:o.onEnd,onStatus:o.onStatus,
-      manual:!!o.manualClock,paused:false,last:null,accumulator:0,statusKey:'',saved:true,rush:!!run};
+      manual:!!o.manualClock,paused:false,last:null,accumulator:0,statusKey:'',saved:true,rush:!!run,isolated:!!o.isolated,
+      staticScenery:!!o.staticScenery,staticSceneCamera:clamp((s.p.x-W/2)*.13,-65,65)};
     o.canvas.width=W;o.canvas.height=H;
     soundOn=o.sound!==false;ambience=clamp(Number.isFinite(o.ambienceVolume)?o.ambienceVolume:.35,0,1);reduced=!!o.reducedEffects;
     current.saved=persist();notify(true);draw();if(!current.manual)raf=host.requestAnimationFrame(frame);return snapshot();
   }
-  function stop(){
-    if(current&&current.s.phase!=='ended')persist();
+  function clearSession(save){
+    if(save&&current&&current.s.phase!=='ended')persist();
     if(raf)host.cancelAnimationFrame(raf);raf=0;current=null;stopAudio();
   }
+  function stop(){clearSession(true);}
   function pause(on){
     if(!current||current.s.phase==='ended')return;current.paused=!!on;current.s.p.keys={};current.s.p.taps={};current.last=null;current.accumulator=0;
     if(on){current.saved=persist();stopAudio();}notify(true);draw();
@@ -245,7 +251,7 @@
     if(down&&!p.keys[action])p.taps[action]=true;p.keys[action]=!!down;
     if(down&&soundOn)ensureAudio();
   }
-  function snapshot(){return current?{...clone(current.s),paused:current.paused,saved:current.saved}:null;}
+  function snapshot(){return current?{...clone(current.s),paused:current.paused,saved:current.saved,isolated:current.isolated,staticScenery:current.staticScenery}:null;}
   function notify(force=false){
     if(!current)return;const s=current.s,key=[s.phase,s.boss.phase,s.message,s.wave,s.cargo.delivered,current.paused].join('|');
     if(!force&&key===current.statusKey)return;current.statusKey=key;current.onStatus?.(snapshot());
@@ -258,7 +264,8 @@
     const score=won?Math.max(100,Math.round(12000+s.stats.damageDealt*9+s.p.hp*25+(d.cargo?s.cargo.integrity*12:0)-elapsed*1.5)):0;
     const result={won,reason,score,bossId:s.bossId,p1:s.p1,difficulty:s.difficulty,stage:s.stage,elapsed,
       vitality:Math.ceil(s.p.hp),cargo:s.cargo.delivered,cargoGoal:s.cargo.goal,integrity:s.cargo.integrity,waves:s.wave,stats:clone(s.stats)};
-    if(current.rush)result.saved=finishRush(result,s.p.hp);
+    if(current.isolated){result.saved=null;result.isolated=true;}
+    else if(current.rush)result.saved=finishRush(result,s.p.hp);
     else{
       const p=progress(),key=[s.p1,s.bossId,s.difficulty].join(':'),r=p.records[key]||{attempts:0,wins:0,best:0,fastest:null};
       r.attempts++;if(won){r.wins++;r.best=Math.max(r.best||0,score);r.fastest=r.fastest===null?elapsed:Math.min(r.fastest,elapsed);}
@@ -535,7 +542,7 @@
   function oval(c,x,y,rx,ry,color){c.beginPath();c.ellipse(x,y,Math.max(1,rx),Math.max(1,ry),0,0,Math.PI*2);c.fillStyle=color;c.fill();}
   function line(c,x,y,x2,y2,color,width=2){c.beginPath();c.moveTo(x,y);c.lineTo(x2,y2);c.strokeStyle=color;c.lineWidth=width;c.stroke();}
   function scenery(m){
-    const c=m.ctx,s=m.s,ims=m.images.stage,geo=art.stageGeometry?.[s.stage]||{},cam=clamp((s.p.x-W/2)*.13,-65,65)*(reduced?.2:1);
+    const c=m.ctx,s=m.s,ims=m.images.stage,geo=art.stageGeometry?.[s.stage]||{},cam=(m.staticScenery?m.staticSceneCamera:clamp((s.p.x-W/2)*.13,-65,65))*(reduced?.2:1);
     c.fillStyle=content.arenas[s.stage]?.sky||'#425358';c.fillRect(0,0,W,H);
     const sky=ready(ims.skyplates)&&ready(ims.distants)&&ready(ims.floors)?ims.skyplates:ims.stages;
     if(ready(sky)){const scale=Math.max((W+56)/sky.naturalWidth,(H+24)/sky.naturalHeight);c.drawImage(sky,-28-cam*.14,-12,sky.naturalWidth*scale,sky.naturalHeight*scale);}
@@ -668,8 +675,14 @@
   function setSound(on){soundOn=!!on;if(!on)stopAudio();}
   function setAmbienceVolume(value){ambience=clamp(value,0,1);if(audio)audio.gain.gain.value=ambience*.025;}
   function setReducedEffects(value){reduced=!!value;}
+  function setStaticScenery(value){
+    const m=current;if(!m)return;const next=!!value;
+    if(next===m.staticScenery)return;
+    if(next)m.staticSceneCamera=clamp((m.s.p.x-W/2)*.13,-65,65);
+    m.staticScenery=next;draw();notify(true);
+  }
   host.StrandBoss={encounters,players,start,stop,pause,input,snapshot,checkpoint,validCheckpoint,progress,advance,draw,
-    setSound,setAmbienceVolume,setReducedEffects,rules:RULES,storageKey:STORE,
+    setSound,setAmbienceVolume,setReducedEffects,setStaticScenery,rules:RULES,storageKey:STORE,
     rush:{order:RUSH_ORDER,rules:RUSH_RULES,storageKey:RUSH_STORE,progress:rushProgress,create:createRush,
       start:o=>start({...o,rush:true}),validRun:validRushRun,totals:rushTotals}};
 })(window);

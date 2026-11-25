@@ -32,12 +32,15 @@ function assetFiles(baseRoot = root) {
       else if (entry.isFile() && /^[\w-]+\.(?:webp|png)$/.test(entry.name)) files.push(file);
     }
   }
-  for (const folder of ['fighters','finishers','props','projectiles','stages','story','bosses','static-20261125','static-universe-20261125']) visit('assets/' + folder);
+  for (const folder of ['fighters','finishers','props','projectiles','stages','story','bosses','static-20261125','static-universe-20261125',
+    'static-completion-20261125','story-completion-20261125']) visit('assets/' + folder);
   return files.sort();
 }
 function gameVersion(baseRoot = root, assets = assetFiles(baseRoot)) {
   const hash = createHash('sha256');
-  for (const file of ['fight.js','content.js','asset-geometry-20261124.js','assets.js','boss-geometry-20261124.js','boss-assets.js','boss.js','netplay.js','netplay-server.cjs']) {
+  for (const file of ['fight.js','content.js','asset-geometry-20261124.js','assets.js','boss-geometry-20261124.js','boss-assets.js','boss.js',
+    'app.js','campaign.js','campaign.css','static-assets.html','static-assets.css','static-assets.js','static-assets-data.js','archives.html',
+    'netplay.js','netplay-server.cjs']) {
     hash.update(file);
     hash.update(fs.readFileSync(path.join(baseRoot,file)));
   }
@@ -131,10 +134,11 @@ function roomService(version, clock = () => performance.now()) {
   return receive;
 }
 const statics = new Set(['index.html','style.css','app.js','fight.js','content.js','asset-geometry-20261124.js','assets.js','tournament.js','netplay.html','netplay.js','netplay.css',
-  'boss.js','boss-assets.js','boss-geometry-20261124.js','archives.html',
+  'boss.js','boss-assets.js','boss-geometry-20261124.js','campaign.js','campaign.css','archives.html',
   'static-assets.html','static-assets.css','static-assets.js','static-assets-data.js',
   'duel-originel/index.html','duel-originel/style.css','duel-originel/interface.js','duel-originel/moteur.js','duel-originel/scene.js']);
-const types = {'.html':'text/html; charset=utf-8','.css':'text/css','.js':'text/javascript','.webp':'image/webp','.png':'image/png'};
+const documents = new Set(['docs/combat/BIBLE_COMBAT.md','docs/combat/UNIVERS_DS.md','docs/combat/REGISTRE_PRODUCTION.md']);
+const types = {'.html':'text/html; charset=utf-8','.css':'text/css','.js':'text/javascript','.webp':'image/webp','.png':'image/png','.md':'text/plain; charset=utf-8'};
 function openRelay(clock) {
   const assets = new Set(assetFiles());
   const version = gameVersion(root,assets);
@@ -171,11 +175,12 @@ function openRelay(clock) {
       const file = requested.replace(/^modes\/echos-de-la-greve\//,'') || 'netplay.html';
       const asset = assets.has(file);
       const campaign = file === 'JOUER.html' || /^campagne\/catalogue\/lot-0[1-5]\.js$/.test(file);
-      if (req.method !== 'GET' || (!statics.has(file) && !asset && !campaign)) reject(404,'Page introuvable.');
-      const location = path.join(campaign ? gameRoot : root,file);
+      const document = documents.has(file);
+      if (req.method !== 'GET' || (!statics.has(file) && !asset && !campaign && !document)) reject(404,'Page introuvable.');
+      const location = path.join(campaign || document ? gameRoot : root,file);
       const stat = fs.lstatSync(location,{throwIfNoEntry:false});
       if (!stat?.isFile()) reject(404,'Fichier absent.');
-      if (asset && fs.realpathSync(location) !== location) reject(404,'Fichier absent.');
+      if ((asset || document) && fs.realpathSync(location) !== location) reject(404,'Fichier absent.');
       res.writeHead(200,{'Content-Type':types[path.extname(file)],'Content-Length':stat.size,'Cache-Control':'no-cache'});
       fs.createReadStream(location).on('error',() => res.destroy()).pipe(res);
     } catch (err) {

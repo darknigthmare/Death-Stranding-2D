@@ -35,7 +35,7 @@ function runBossSimulationQA(sources,options) {
     };
     for(const name of ['moveTo','lineTo','fillRect','strokeRect','rect','ellipse','arc'])ctx[name]=(...args)=>numeric(args.filter(x=>typeof x!=='boolean'),name);
     surface.getContext=()=>ctx;
-    const host={localStorage:{getItem:key=>storage.get(key)??null,setItem:(key,value)=>{if(config.quota)throw Error('Storage unavailable');storage.set(key,value);}},
+    const host={localStorage:{getItem:key=>{config.onStorage?.('get',key);return storage.get(key)??null;},setItem:(key,value)=>{config.onStorage?.('set',key);if(config.quota)throw Error('Storage unavailable');storage.set(key,value);}},
       requestAnimationFrame(fn){queue.set(++serial,fn);return serial;},cancelAnimationFrame(id){queue.delete(id);},
       addEventListener(name,fn){(events[name]||=[]).push(fn);},scrollTo(){},matchMedia(){return {matches:false,addEventListener(){}};}};
     class Image {
@@ -101,8 +101,8 @@ function runBossSimulationQA(sources,options) {
     for(const key of ['heavy','special','throw'])E.input(1,key,false);
     if(interact)E.input(1,'throw',true);else if(special)E.input(1,'special',true);else if(attack)E.input(1,'heavy',true);
   }
-  function runVictory(boss,target=w,p1='sam'){
-    const E=target.engine;target.start(boss,p1);
+  function runVictory(boss,target=w,p1='sam',extra={}){
+    const E=target.engine;target.start(boss,p1,extra);
     const phases=new Set(),tiers=new Set();let carried=false,wave2=false;
     for(let ticks=0;ticks<18000&&!target.result;ticks+=5){
       pilot(target);const s=target.advance(5);if(!s)break;
@@ -120,7 +120,8 @@ function runBossSimulationQA(sources,options) {
     if(E.encounters[boss].cargo){assert(carried,'Actual parcel carry '+boss);assert(r.cargo===r.cargoGoal,'Required parcels delivered '+boss);}
     if(boss==='convoy')assert(wave2,'Two convoy waves');
     const s=E.snapshot();assert(s.shots.length===0&&s.hazards.length===0,'End clears autonomous damage');
-    assert(E.progress().checkpoint===null,'Victory clears resume');
+    if(extra.isolated)assert(r.isolated&&r.saved===null,'Isolated result delegates persistence to its caller');
+    else assert(E.progress().checkpoint===null,'Victory clears resume');
     return {...r,observedPhases:[...phases],carried,wave2};
   }
   for(const boss of Object.keys(e.encounters))report.victories.push(runVictory(boss));
@@ -197,6 +198,34 @@ function runBossSimulationQA(sources,options) {
   assert(!quotaRush.engine.snapshot().saved&&quotaRush.engine.rush.validRun(sessionRun),'Storage refusal retains a valid Rush session');
   quotaRush.engine.stop();quotaRush.startRush();equal(quotaRush.engine.checkpoint(),sessionRun.checkpoint,'Rush session checkpoint survives refused storage');
   report.checks.push('Boss Rush: six input-driven victories; persistent health + capped 20 HP; fresh energy/guard; in-flight and interlude reload; independent saves; cumulative records; defeat/retry; difficulty; corruption and quota refusal');
+
+  // The transversal campaign uses these exact encounters but owns its save.
+  const isolatedStorage=new Map(rushStorage),isolatedBefore=[...isolatedStorage],storageCalls=[];
+  const isolated=world({storage:isolatedStorage,onStorage:(operation,key)=>storageCalls.push([operation,key])});
+  isolated.start('convoy','diehardman',{isolated:true,stage:'timefall-farm'});isolated.advance(210);
+  isolated.engine.pause(true);const isolatedPoint=isolated.engine.checkpoint();
+  assert(isolated.engine.validCheckpoint(isolatedPoint),'Caller can retain an isolated encounter checkpoint');
+  assert(isolated.engine.snapshot().isolated&&isolated.engine.snapshot().saved===null,'Isolated engine reports caller-owned persistence');
+  isolated.engine.stop();isolated.start('convoy','diehardman',{isolated:true,resume:isolatedPoint});
+  equal(isolated.engine.checkpoint(),isolatedPoint,'Explicit isolated resume preserves the supplied encounter state');
+  let mixedModeRejected=false;
+  try{isolated.startRush({isolated:true});}catch{mixedModeRejected=true;}
+  assert(mixedModeRejected,'Isolated and Rush modes cannot be combined');
+  equal(isolated.engine.checkpoint(),isolatedPoint,'Rejected mixed mode leaves the current encounter intact');
+  isolated.engine.stop();
+  report.isolatedVictories=[runVictory('convoy',isolated,'diehardman',{isolated:true,stage:'timefall-farm'}),
+    runVictory('whale',isolated,'sam',{isolated:true,stage:'shore'})];
+  isolated.start('lion','sam',{isolated:true});isolated.advance(18000);
+  assert(isolated.result&&!isolated.result.won&&isolated.result.saved===null,'Isolated defeat returns a result without saving a standalone attempt');
+  isolated.engine.stop();
+  equal(storageCalls,[],'Isolated start, periodic checkpoint, pause, resume, result and stop never access any storage');
+  equal([...isolatedStorage],isolatedBefore,'Boss Battle, Rush and other saved bytes remain identical');
+  const replacementCalls=[],replacement=world({onStorage:(operation,key)=>replacementCalls.push([operation,key])});
+  replacement.start('squid');replacement.advance(210);const beforeReplacement=[...replacement.storage];replacementCalls.length=0;
+  replacement.start('lion','sam',{isolated:true});replacement.engine.pause(true);replacement.engine.stop();
+  equal(replacementCalls,[],'Starting an isolated session cannot save the replaced standalone session');
+  equal([...replacement.storage],beforeReplacement,'Direct isolated replacement leaves standalone save bytes intact');
+  report.checks.push('isolated campaign boss: input-driven Die-Hardman convoy and Sam whale victories; explicit checkpoint resume; defeat; mixed Rush rejection; zero external storage reads/writes, including direct session replacement');
 
   // Genuine in-flight resume, including active telegraphs, remains deterministic.
   w.start('squid');w.advance(140);set('right',true);w.advance(9);e.pause(true);

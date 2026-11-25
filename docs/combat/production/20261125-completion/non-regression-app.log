@@ -1,0 +1,41 @@
+Non-régression ciblée de l’application — 2026-11-25T14:58:47.965Z
+App final SHA-256 : 1b8b03f877f9ace54d4ebfde46fa9986b6bd9d542a931c58fa55598654a613db
+Node : v24.22.3
+
+RÉSULTAT : BLOQUÉ PAR L’ENVIRONNEMENT, avant lancement de l’application.
+Aucune assertion des trois suites Playwright n’a été exécutée ; elles ne sont pas déclarées réussies.
+
+Scripts existants effectivement tentés depuis modes/echos-de-la-greve :
+  node qa/parcours.cjs — sortie 1 avant le premier test.
+  node qa/defis.cjs    — sortie 1 avant le premier test.
+  node qa/dojo.cjs     — sortie 1 avant le premier test.
+
+Premier obstacle commun :
+  browserType.launch: Executable does not exist at
+  /home/agent/.cache/ms-playwright/chromium_headless_shell-1234/chrome-headless-shell-linux64/chrome-headless-shell
+
+La recherche locale a trouvé /usr/bin/chromium. Les trois mêmes scripts ont été retentés avec :
+  PLAYWRIGHT_CHROMIUM_EXECUTABLE=/usr/bin/chromium
+Ils ont encore terminé avec le code 1. Le lanceur système échoue avant de démarrer Chromium :
+  /usr/bin/chromium: 153: exec: /usr/lib/chromium/chromium: not found
+Le processus du lanceur se termine avec le code 127.
+
+Aucun navigateur installé, aucun contournement, aucune modification des scripts ou du jeu pour masquer cet échec.
+Les suites Boss et de parité n’ont pas été répétées pour cette vérification.
+
+PORTÉE DES PREUVES DÉJÀ PRODUITES SUR APP FINAL :
+  campaign-qa.json : parcours réel des six chapitres, six victoires, deux défaites/reprises,
+  galerie des quatorze interludes, carrousel des vingt-quatre scènes et entrée d’une route Histoire
+  dans le vrai moteur depuis le troisième plan d’introduction.
+  Les huit textes et ordres de route sont comparés au commit c3fa7ea.
+  Cette preuve utilise un DOM/Canvas simulé, sans navigateur ni mise en page native.
+  Elle ne couvre pas les huit routes complètes, tout Arcade, les deux Défis ou tout Dojo.
+
+PORTÉE PRÉVUE DES SUITES BLOQUÉES :
+  parcours.cjs : huit routes, galerie, Arcade, Versus, tournois, pause, clavier et tactile ;
+                 le moteur de duel y est remplacé pour piloter les résultats d’interface.
+  defis.cjs : mécanique de cargaison/vitalité puis progression et résultats des Défis.
+  dojo.cjs : interactions Dojo, mannequin, enregistrement/boucle et affichage des données de coups.
+
+Conclusion : aucune régression de jeu identifiée par ces tentatives, mais leur non-régression
+complète en navigateur reste NON VÉRIFIÉE dans cet environnement.

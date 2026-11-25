@@ -10,18 +10,22 @@ const {execFileSync}=require('node:child_process');
 const {createHash}=require('node:crypto');
 const root=path.resolve(__dirname,'..'),repo=path.resolve(root,'../..');
 const source=file=>fs.readFileSync(path.join(root,file),'utf8');
-const baseline='1cfc7787a49a7aaf6d7e82df28cfea57b1535e9b';
+const completion=process.argv.includes('--completion');
+const baseline=completion?'c3fa7ead88f1667b80202a44dca6549784021866':'1cfc7787a49a7aaf6d7e82df28cfea57b1535e9b';
 const oldFight=execFileSync('git',['show',baseline+':modes/echos-de-la-greve/fight.js'],{cwd:repo,encoding:'utf8'});
-const ids=['south-knot-ruins','timefall-farm','mountain-knot-approach','magellan-ds2'];
+const ids=completion?['plate-gate-ds2','sandstorm-ds2','dunes-ds2']:['south-knot-ruins','timefall-farm','mountain-knot-approach','magellan-ds2'];
 const panoramas={
   'south-knot-ruins':'assets/static-20261125/south-knot-ruins-panorama.png',
   'timefall-farm':'assets/static-20261125/timefall-farm-panorama.png',
   'mountain-knot-approach':'assets/static-20261125/mountain-knot-city-panorama.png',
-  'magellan-ds2':'assets/static-universe-20261125/magellan-ds2-panorama.png'
+  'magellan-ds2':'assets/static-universe-20261125/magellan-ds2-panorama.png',
+  'plate-gate-ds2':'assets/static-universe-20261125/plate-gate-ds2-panorama.png',
+  'sandstorm-ds2':'assets/static-universe-20261125/sandstorm-ds2-panorama.png',
+  'dunes-ds2':'assets/static-completion-20261125/dunes-ds2-panorama.png'
 };
 const groups=['skyplates','distants','midgrounds','floors','foregrounds'];
 const suffixes=['sky','distant','midground','floor','foreground'];
-const report={date:new Date().toISOString(),browser:false,nativeCanvas:false,pixelsDecoded:false,
+const report={date:new Date().toISOString(),profile:completion?'completion':'universe',browser:false,nativeCanvas:false,pixelsDecoded:false,
   baselineCommit:baseline,baselineMethod:'Previous fight.js with the same current content/assets; isolates runtime changes from added stage data.',
   stages:[],checkpointComparisons:0,ui:[],checks:[]};
 const clone=value=>JSON.parse(JSON.stringify(value));
@@ -32,10 +36,10 @@ function catalog(){
 }
 const catalogue=catalog(),content=catalogue.StrandContent,assets=catalogue.StrandAssets;
 assert.equal(Object.keys(content.fighters).length,8);
-assert.equal(Object.keys(content.stages).length,17);
-assert.equal(new Set(Object.entries(content.arenas).map(([id,a])=>a.variantOf||id)).size,16);
-assert.equal(new Set(groups.flatMap(group=>Object.values(assets[group]))).size,85);
-report.checks.push('8 playable fighters, 16 places, 17 configurations and 85 distinct layer paths');
+assert.equal(Object.keys(content.stages).length,20);
+assert.equal(new Set(Object.entries(content.arenas).map(([id,a])=>a.variantOf||id)).size,19);
+assert.equal(new Set(groups.flatMap(group=>Object.values(assets[group]))).size,100);
+report.checks.push('8 playable fighters, 19 places, 20 configurations and 100 distinct layer paths');
 for(const id of ids){
   assert.equal(assets.stages[id],panoramas[id],'Reuse the original panorama path: '+id);
   assert(content.stageDetails[id]?.place&&content.stageDetails[id]?.material&&content.stageDetails[id]?.ambience,'Stage card details: '+id);
@@ -53,7 +57,7 @@ if(!process.argv.includes('--logic-only')){
     assert(width>0&&height>0,'PNG dimensions: '+file);
     report.images.push({file,width,height,bytes:bytes.length,sha256:createHash('sha256').update(bytes).digest('hex')});
   }
-  report.checks.push('24 native PNG paths present; original panorama paths reused without duplicate copies');
+  report.checks.push(report.images.length+' native PNG paths present; original panorama paths reused without duplicate copies');
 }else report.assetFilesChecked=false;
 
 function engineHost(fightSource=source('fight.js')){
@@ -85,7 +89,7 @@ for(const stage of ['shore',...ids])for(const p1 of Object.keys(content.fighters
   }
   current.engine.stop();prior.engine.stop();
 }
-report.checks.push('360 identical checkpoints: eight fighters, all four new stages plus the shore, fixed input sequences against the previous fight.js');
+report.checks.push(report.checkpointComparisons+' identical checkpoints: eight fighters, all '+ids.length+' selected stages plus the shore, fixed input sequences against the previous fight.js');
 
 // Run actual app handlers and engines while only replacing browser surfaces.
 const ui=engineHost(),nodes=new Map(),persistent=new Set(['view','manual','keys','effects','audio','homeLink','controlsLink']);
@@ -109,7 +113,7 @@ for(const file of ['boss-geometry-20261124.js','boss-assets.js','boss.js','app.j
 const view=nodes.get('view');
 function click(act,data={}){const target=element();target.dataset={act,...data};for(const fn of view.listeners.click||[])fn({target});}
 function change(option,value){const target=element();target.dataset={option};target.value=value;for(const fn of view.listeners.change||[])fn({target});}
-click('stageGallery');assert.equal((view.innerHTML.match(/data-act="exploreStage"/g)||[]).length,17,'All configurations in arena gallery');
+click('stageGallery');assert.equal((view.innerHTML.match(/data-act="exploreStage"/g)||[]).length,20,'All configurations in arena gallery');
 for(const id of ids){
   assert(view.innerHTML.includes('data-stage="'+id+'"'),'Arena card: '+id);
   click('exploreStage',{stage:id});assert(view.innerHTML.includes(panoramas[id]),'Panorama in selection preview: '+id);click('start');
@@ -119,7 +123,7 @@ for(const id of ids){
   report.ui.push({stage:id,training:true,versus:true,bossBattle:true,gallery:true});click('stageGallery');
 }
 click('home');assert.equal(ui.engine.snapshot(),null);assert.equal(ui.host.StrandBoss.snapshot(),null);
-report.checks.push('Actual app flows: gallery, panorama preview, training, Versus and Boss Battle on all four new stages, pause/exit and return home');
+report.checks.push('Actual app flows: gallery, panorama preview, training, Versus and Boss Battle on all '+ids.length+' selected stages, pause/exit and return home');
 report.sourceSha256=Object.fromEntries(['content.js','assets.js','fight.js','app.js','boss.js'].map(file=>[file,createHash('sha256').update(source(file)).digest('hex')]));
 report.baselineFightSha256=createHash('sha256').update(oldFight).digest('hex');report.passed=true;
 const output=process.argv.find(arg=>arg.startsWith('--output='))?.slice(9);

@@ -6,7 +6,7 @@
 
 **Statut : registre documentaire du projet ; production et intégration suivies séparément dans la bible et les rapports datés.**
 
-[Bible de combat](BIBLE_COMBAT.md) · [Application des 30 rubriques du guide](BIBLE_COMBAT.md#122-association-des-30-rubriques) · [Lot univers du 25 novembre](BIBLE_COMBAT.md#16-univers-complet-boss-rush-et-nouvelles-arènes--25-novembre-2026).
+[Bible de combat](BIBLE_COMBAT.md) · [Registre de production](REGISTRE_PRODUCTION.md) · [Application des 30 rubriques du guide](BIBLE_COMBAT.md#122-association-des-30-rubriques) · [Lot univers du 25 novembre](BIBLE_COMBAT.md#16-univers-complet-boss-rush-et-nouvelles-arènes--25-novembre-2026).
 
 ## 1. Périmètre de référence
 
@@ -120,15 +120,15 @@ Les références de cette section proviennent des galeries officielles S18–S20
 | Guitare de Higgs, sur l’épaule | [Capture officielle Kojima 2025](https://www.kojimaproductions.jp/sites/default/files/2025-03/ds2_sxsw2025_screenshots008.jpg) : manche, orange/noir et embout lumineux. | Le corps de la guitare est masqué. |
 | Guitare entière, statue sous licence | [Photo du fabricant Prime 1 Studio](https://statue.prime1studio.co.jp/media/catalog/product/cache/5/p1s_cropped_image/1400x2625/9df78eab33525d08d6e5fb8d27136e95/r/e/remds2-02dxs_cropped.jpg), source S25 : silhouette complète de l’arme, caisse asymétrique, long manche ajouré et câble. | Objet dérivé officiellement licencié ; les mains occultent une petite partie. Ce visuel ne certifie pas un modèle de jeu exact. |
 | Tempête de sable DS2 | [Capture officielle PlayStation](https://gmedia.playstation.com/is/image/SIEPDC/death-stranding-2-screenshot-09-en-10mar25?wid=1600) : rue désertée, véhicules poussiéreux, câbles et front de poussière ocre. | Recomposition de paysage pour le projet ; aucun danger de gameplay déduit du seul décor. |
-| Dunes DS2 | [Capture officielle Kojima 2024](https://www.kojimaproductions.jp/sites/default/files/2024-02/ds2_sop2024_screenshot010.jpg) : grandes dunes, soleil bas et plans montagneux brumeux. | Référence complémentaire ; ne crée pas une cinquième arène dans le lot actuel. |
+| Dunes DS2 | [Capture officielle Kojima 2024](https://www.kojimaproductions.jp/sites/default/files/2024-02/ds2_sop2024_screenshot010.jpg) : grandes dunes, soleil bas et plans montagneux brumeux. | Référence complémentaire au lot univers, qui ne créait alors pas de cinquième arène ; une arène de dunes et ses cinq couches sont maintenant livrées dans le complément (§10 et §17 de la bible). |
 
-Le lot univers livre **quatorze PNG fixes DS2** : sept portraits, trois sujets entiers, une guitare et trois panoramas. Vingt plans de décor pour quatre arènes s’y ajoutent, soit **trente-quatre nouveaux PNG livrés**, sans nouvelles animations générées. Le catalogue statique contient désormais 29 images (15 DS1 / Director’s Cut et 14 DS2) ; les Archives comptent 12 dossiers. Les noms, rôles, quantités et preuves de livraison sont détaillés au [§16 de la bible](BIBLE_COMBAT.md#16-univers-complet-boss-rush-et-nouvelles-arènes--25-novembre-2026) et dans le [rapport du lot](production/20261125-universe/LOT_UNIVERS_20261125.md). L’inventaire du manifeste atteste les fichiers livrés ; une référence supplémentaire peut rester documentaire sans avoir donné lieu à un asset de jeu.
+Le lot univers réceptionné livre **quatorze PNG fixes DS2** : sept portraits, trois sujets entiers, une guitare et trois panoramas. Vingt plans de décor pour quatre arènes s’y ajoutent, soit **trente-quatre nouveaux PNG livrés**, sans nouvelles animations générées. À la réception de ce lot, le catalogue statique contient 29 images (15 DS1 / Director’s Cut et 14 DS2) ; les Archives comptent 12 dossiers. Les noms, rôles, quantités et preuves de livraison sont détaillés au [§16 de la bible](BIBLE_COMBAT.md#16-univers-complet-boss-rush-et-nouvelles-arènes--25-novembre-2026) et dans le [rapport du lot](production/20261125-universe/LOT_UNIVERS_20261125.md). L’inventaire du manifeste atteste les fichiers livrés ; une référence supplémentaire peut rester documentaire sans avoir donné lieu à un asset de jeu.
 
 ### Détails hors cadre
 
 Une image plein pied créée à partir d’un portrait comporte des parties extrapolées si aucune vue complémentaire ne les documente. Le fichier peut servir de proposition, mais son statut reste **adaptation visuelle à vérifier**. La certification de fidélité ne porte que sur les éléments réellement comparés.
 
-Pour le lot actuel, Dollman fournit la référence la plus complète d’un sujet en pied. Les sources de Tomorrow, Rainy, Tarman, Higgs, Sam, Fragile et Neil permettent des portraits immédiatement documentables ; elles ne suffisent pas seules à certifier tous leurs vêtements et accessoires de combat.
+Pour le lot univers, Dollman fournit la référence la plus complète d’un sujet en pied. Les sources de Tomorrow, Rainy, Tarman, Higgs, Sam, Fragile et Neil permettent des portraits immédiatement documentables ; elles ne suffisent pas seules à certifier tous leurs vêtements et accessoires de combat.
 
 ## 6. Catalogue complémentaire à ouvrir
 
@@ -193,3 +193,40 @@ Les URL ci-dessous sont les sources de l’inventaire. Les dates de publication 
 - La sélection de nouveaux combattants, boss et soutiens, leurs priorités et leur adaptation au moteur du projet.
 
 Ces points représentent du travail documentaire ou de conception restant. Ils ne rétablissent aucune exclusion de DS2 ou du reste de la franchise.
+
+
+## 10. Références du complément et rôles à concevoir
+
+**État : références inspectées ; treize bases fixes livrées et intégrées à la galerie, avec quatre nouveaux portraits aux Archives.** Les images et liens ont passé la [recette du catalogue](production/20261125-completion/static-gallery-verification.json) ; la [lecture complète des pixels](production/20261125-completion/gallery-png-decode.json) reste une preuve de fichier, distincte d’une certification canonique. Les vingt-quatre plans narratifs et trois arènes supplémentaires sont décrits au [§17 de la bible](BIBLE_COMBAT.md#17-complément-de-production-campagne-et-plans-narratifs--25-novembre-2026). L’ensemble des domaines et manques identifiés est suivi dans [REGISTRE_PRODUCTION.md](REGISTRE_PRODUCTION.md).
+
+Le [bilan du complément livré](production/20261125-completion/LOT_COMPLETION_20261125.md) et son [manifeste](../../art/sources/echos-de-la-greve/production-20261125-completion/manifest.json) distinguent les 53 PNG retenus, les 55 sorties natives et les deux sorties remplacées. La galerie atteint 43 images fixes, dont 28 DS2 ; les quatre nouveaux dossiers portent les Archives à 16 portraits. Les variantes gardent leur version et leur rôle documentaire.
+
+Le [manifeste de recherche du complément](production/20261125-completion/reference-research.json) donne pour chaque sujet : URL directe de l’image ou vidéo, page, crédit, cadre visible, zones inconnues et SHA de la copie consultée. Il conserve aussi les pistes qui restent sans image identifiée. Les observations ci-dessous sont des lectures visuelles ; les rôles proposés dans le projet sont de niveau P4.
+
+| Référence / œuvre | Observation fiable et usage retenu | Limite conservée |
+|---|---|---|
+| <a id="ref-lucy-ds2"></a>Lucy · DS2 · S22 | Cheveux bruns attachés, haut gris à col en V ; nouveau portrait. | Buste seulement ; aucun costume complet ni rôle jouable déduit. |
+| <a id="ref-doctor-ds2"></a>Doctor · DS2 · S22 | Crâne rasé, lunettes rouges, vêtement médical clair, stéthoscope et gants bleus ; nouveau portrait. | Bas du corps non visible ; rôle narratif/médical avant toute conception de combat. |
+| <a id="ref-the-president-ds2"></a>The President · DS2 · S22 | Cheveux/barbe gris courts, boucle d’oreille ronde, veste sombre avec broche crabe et col montant ; nouveau portrait. | Visage et haut du buste ; le dossier l’identifie avec Alastair Duncan. |
+| <a id="ref-heartman-ds2"></a>Heartman · DS2 · S22 | Costume bleu et appareil jaune/ambre au torse ; portrait de version. | Distinct du chercheur DS1 jouable, jambes/chaussures non documentées. |
+| <a id="ref-tomorrow-white-dress-ds2"></a>Tomorrow, robe blanche · DS2 · S19 | Robe plissée sans manches, col montant, paume sombre et liens au poignet ; variante en portrait. | Bas de robe coupé ; ne remplace pas le haut sombre déjà livré. |
+| <a id="ref-sam-grey-promo-ds2"></a>Sam gris promotionnel · DS2 · S18/S20 | Cheveux longs et barbe grise, épaules/torse découverts ; variante de portrait. | Ancien visuel promotionnel ; pas de substitution de tête sur la tenue DRAWBRIDGE ultérieure. |
+| <a id="ref-fragile-early-outfit-ds2"></a>Fragile première tenue · DS2 · S18/S20 | Cheveux courts et haut à sangles sous lumière rouge ; variante de portrait. | Couleurs influencées par l’éclairage, costume non visible en entier. |
+| <a id="ref-tri-cruiser-ds2"></a>Tri-Cruiser · DS2 · S26/S27 | Trois roues, carénage gris, éclairages bleus et siège bas ; véhicule fixe isolé à adapter. | Conducteur et cargaison occultent une partie de la structure ; nom confirmé par les publications. |
+| <a id="ref-truck-ds2"></a>Camion DS2 · S26 | Quatre grandes roues, cabine haute, structure gris sombre, détails orange/jaune et lumière bleue. | La légende primaire dit « truck » ; modèle exact « Pickup Off-Roader » non confirmé par cette recherche. |
+| <a id="ref-dhv-magellan-isolated-ds2"></a>DHV Magellan · DS2 · S18/S20 | Silhouette allongée en suspension, structures supérieures et contexte de berge ; véhicule isolé livré. | Dessous et côté opposé partiellement invisibles ; l’isolation reste une adaptation visuelle. |
+| <a id="ref-coffin-board-ds2"></a>Coffin board · DS2 · S26 | Plateforme sombre étroite à éclairage bleu, Sam debout au-dessus de l’eau ; objet fixe. | Dessus partiellement caché par les pieds ; source du joueur Chescone publiée par PlayStation. |
+| <a id="ref-cargo-capsule-ds2"></a>Capsule de fret déployée · DS2 · S26 | Module vertical ouvert avec ailes latérales ; équipement fixe. | Montre le module lancé, pas l’installation entière de la catapulte ; capture Milz_VP publiée par PlayStation. |
+| <a id="ref-maser-handgun-ds2"></a>Maser Handgun · DS2 · S28 | Nom et profil latéral dans la roue d’armes d’une vidéo officielle ; petite arme grise à poignée oblique et bloc supérieur. | Taille de la vignette limitée ; modèle détaillé, côté opposé et effet de duel restent à concevoir. |
+
+**Provenance des captures de joueurs.** La sélection *Share of the Week* est une publication officielle PlayStation, mais les prises de vue sont celles de joueurs crédités. Pour les références retenues : call_me_xavii (Tri-Cruiser complémentaire), F1Str4nd (camion), Chescone (coffin board), Milz_VP (capsule). Le wagon de monorail de MohdNazif reste une référence facultative, hors des treize bases retenues. Cette provenance est conservée au manifeste ; une capture publiée ne devient pas un asset créé par le studio.
+
+**Pistes de gameplay DS2.** Les nouvelles fiches suivent source → rôle → kit/rencontre à concevoir → assets → intégration → recette. Watcher et Armed Survivalists sont attestés textuellement (S23), mais leurs modèles précis ne sont pas identifiés dans le lot. Le boomerang sanguin est nommé par S27 ; la grenade holographique et l’usage du tar cannon sont décrits par S23. Leurs visuels complets restent à documenter. Aucune apparence de machine rouge ou de créature générique ne doit leur être attribuée par simple rapprochement.
+
+### Sources primaires complémentaires
+
+- **S26 — PlayStation, Share of the Week · Traversal, 11 juillet 2025.** Captures sélectionnées de joueurs, avec légendes et crédits : <https://blog.playstation.com/?p=407702>.
+- **S27 — PlayStation Allemagne, évolutions de Death Stranding 2, 4 juillet 2025.** Tri-Cruiser, Magellan, environnements et boomerang sanguin ; observations visuelles rattachées aux images effectivement inspectées : <https://blog.de.playstation.com/?p=192267>.
+- **S28 — PlayStation, guide de Death Stranding 2.** Vidéos officielles de jeu ; la vidéo de discrétion contient la roue nommant et montrant le Maser Handgun : <https://www.playstation.com/en-us/games/death-stranding-2-on-the-beach/death-stranding-2-on-the-beach-guide/>. Vidéo consultée : <https://gmedia.playstation.com/is/content/SIEPDC/global_pdc/en/games/pdps/d/de/death-stranding-2/_guide/videos/death-stranding2-stealth-video-01-20jun25.mp4>.
+
+Les nouvelles images du projet pourront être livrées à partir de ces références tout en conservant leurs limites. La référence inspectée, le fichier produit, sa place dans la galerie, un éventuel dossier d’Archives et un rôle de gameplay sont cinq états distincts.

@@ -1,0 +1,1198 @@
+{
+  "date": "2026-11-25T14:31:39.777Z",
+  "browser": false,
+  "nativeCanvas": true,
+  "baselineCommit": "c3fa7ead88f1667b80202a44dca6549784021866",
+  "baselineMethod": "Previous engines and current engines receive the same current content/assets; only runtime changes are compared.",
+  "staticAnimatedCheckpoints": 1440,
+  "baselineCheckpoints": 1440,
+  "bossStaticAnimatedCheckpoints": 432,
+  "bossBaselineCheckpoints": 432,
+  "preferenceChanges": 320,
+  "checks": [
+    "Eight fighters on every current arena: static/animated and previous/current duel checkpoints, toggles, reduced-effects independence and rollback",
+    "Six bosses with all eight fighters: static/animated and previous/current checkpoints remain identical",
+    "Native backdrop pixel hashes stay identical in static mode while fighter drawings and boss telegraphs continue; animated mode, live toggle, checkpoint rollback and full private-room reconstruction are checked separately"
+  ],
+  "nativeStages": [
+    {
+      "stage": "shore",
+      "animated": {
+        "before": "cd8237c32469dae016b34cef233031bad237d30cf2f07a521f574b66cefbef48",
+        "after": "9b6624826fca5a8ce31e37e41d615af7e5fbca471695c8c708ee8bce2db6299e",
+        "fighterDrawingChanges": true
+      },
+      "static": {
+        "before": "0afae565178d6762a2096653a165b0e4676e7942b37d701ef0090a2b98f34a2d",
+        "after": "0afae565178d6762a2096653a165b0e4676e7942b37d701ef0090a2b98f34a2d",
+        "fighterDrawingChanges": true
+      },
+      "captures": [
+        "shore-duel-animated-before.webp",
+        "shore-duel-animated-after.webp",
+        "shore-duel-static-before.webp",
+        "shore-duel-static-after.webp"
+      ],
+      "liveToggle": true,
+      "rollback": true,
+      "fullRebuild": true,
+      "sourceImages": [
+        {
+          "file": "assets/stages/shore.webp",
+          "width": 1672,
+          "height": 941,
+          "sha256": "df35c38ebe2fc30e6d938515bf3f04234bf43e23489acb788e5b9d240b4d69b8"
+        },
+        {
+          "file": "assets/stages/shore-sky.png",
+          "width": 1672,
+          "height": 941,
+          "sha256": "9e4f6d40f8fd3552fab8908ec010443b2e1244e40400b44c7398d92d92a7e61d"
+        },
+        {
+          "file": "assets/stages/shore-distant.png",
+          "width": 2172,
+          "height": 724,
+          "sha256": "5d9ec451b8f353130582c342f45d00a05b012fc3bb7873876e803efc9320cf87"
+        },
+        {
+          "file": "assets/stages/shore-midground.png",
+          "width": 2172,
+          "height": 724,
+          "sha256": "83a7a4bac8eda094586f76e56ec27d35be51e37b6bfdef4e76eda6bfc4ecafb7"
+        },
+        {
+          "file": "assets/stages/shore-floor.png",
+          "width": 2172,
+          "height": 724,
+          "sha256": "ab99f670b5ee4f867b44169ca2c4189a0f0cea193e865a740cf3c61e749f5202"
+        },
+        {
+          "file": "assets/stages/shore-foreground.webp",
+          "width": 2172,
+          "height": 724,
+          "sha256": "49dea5694e0eddb313af78695f58e62fc427d45e8e7170a272739c6713c8dcc3"
+        }
+      ]
+    },
+    {
+      "stage": "terminal",
+      "animated": {
+        "before": "d5c6bbf46a975127cd7fd8972440959f6bf7fc7f5e6bcb1cd0b88c500a9fec03",
+        "after": "63fb566b9857feb212e0cd6361741be5b7e92b59e59e6d4417eeff9c1963135e",
+        "fighterDrawingChanges": true
+      },
+      "static": {
+        "before": "f6b5de98e02b13c4f41556a6d8eaf99073f5ada07e5abcb9fb2cc55e9ff4855b",
+        "after": "f6b5de98e02b13c4f41556a6d8eaf99073f5ada07e5abcb9fb2cc55e9ff4855b",
+        "fighterDrawingChanges": true
+      },
+      "captures": [],
+      "liveToggle": true,
+      "rollback": true,
+      "fullRebuild": true,
+      "sourceImages": [
+        {
+          "file": "assets/stages/terminal.webp",
+          "width": 1672,
+          "height": 941,
+          "sha256": "1dcfd0d560f05ac9801df009cfa954edbdae015b832833969fa830fea1d87dd2"
+        },
+        {
+          "file": "assets/stages/terminal-sky.png",
+          "width": 1672,
+          "height": 941,
+          "sha256": "f5fa6135390139add1e54e53fe170e87bdd9a0a222fed19d24eefffaf7576bf6"
+        },
+        {
+          "file": "assets/stages/terminal-distant.png",
+          "width": 2172,
+          "height": 724,
+          "sha256": "c150e8f099d7a90f49073bfe7b69343dac85dad2f614db9efba8ee9a4aeffe39"
+        },
+        {
+          "file": "assets/stages/terminal-midground.png",
+          "width": 2172,
+          "height": 724,
+          "sha256": "d09eb84105d65f1af2eea0fcd24b9f00dfb5fd8faebd6d432672bfba5606ee21"
+        },
+        {
+          "file": "assets/stages/terminal-floor.png",
+          "width": 2172,
+          "height": 724,
+          "sha256": "46a9fb79825de9336c9742b630af0153deaf351a4b36732de77d062527d2beb2"
+        },
+        {
+          "file": "assets/stages/terminal-foreground.webp",
+          "width": 2172,
+          "height": 255,
+          "sha256": "357058916d40964581f65245f90f0259092c074ada40aa61f7206d765a71eceb"
+        }
+      ]
+    },
+    {
+      "stage": "battlefield",
+      "animated": {
+        "before": "3eb179cea55dece672ae3feca50ad83fb383886eb2bcc76318cdc99d88d72628",
+        "after": "388faeefbaa78d0328143e0915b4453ebfeb9b415bddb8f13c2fcaf9e1ed99ba",
+        "fighterDrawingChanges": true
+      },
+      "static": {
+        "before": "006ea60052fa85d52596ed6a4d33b73e962436616d3138a4b9b84200b8910115",
+        "after": "006ea60052fa85d52596ed6a4d33b73e962436616d3138a4b9b84200b8910115",
+        "fighterDrawingChanges": true
+      },
+      "captures": [],
+      "liveToggle": true,
+      "rollback": true,
+      "fullRebuild": true,
+      "sourceImages": [
+        {
+          "file": "assets/stages/battlefield.webp",
+          "width": 1672,
+          "height": 941,
+          "sha256": "e4481228a60fec7333fe8a13db4dd4a1a2d0045c59477f34e231ce5b01c4b1dd"
+        },
+        {
+          "file": "assets/stages/battlefield-sky.png",
+          "width": 1672,
+          "height": 941,
+          "sha256": "1f9c3c2c8d4be97e6716bcf18f54dcf7164c38849b9b56185fa06a69dc09a628"
+        },
+        {
+          "file": "assets/stages/battlefield-distant.png",
+          "width": 2172,
+          "height": 724,
+          "sha256": "d04da948c077670ca316a200111e5911ab0959bea298a2c8bed7f58b27f0d3a4"
+        },
+        {
+          "file": "assets/stages/battlefield-midground.png",
+          "width": 2172,
+          "height": 724,
+          "sha256": "4514aba214923d9185b531ba8ba314d427a68ff63c5ca2ce6a6988d1bb6f0f8c"
+        },
+        {
+          "file": "assets/stages/battlefield-floor.png",
+          "width": 2172,
+          "height": 724,
+          "sha256": "e47805a49b59715d5f6be08f30c39e068e9517f39c75b03490927c82667b6461"
+        },
+        {
+          "file": "assets/stages/battlefield-foreground.webp",
+          "width": 2172,
+          "height": 332,
+          "sha256": "0e36aee7de1ac84752a128e8395bb2f5147d5a16976c05e638fd0d04d92eed6f"
+        }
+      ]
+    },
+    {
+      "stage": "mule-camp",
+      "animated": {
+        "before": "d90db67033b789c241b8b46f4f91d6fbbfb8ab661265c70d6f26d42b6c2eb999",
+        "after": "113ef93136deceb2ae132e04684c96ab740633545550b350857e65adeb9ff911",
+        "fighterDrawingChanges": true
+      },
+      "static": {
+        "before": "3ab3d7a26b924e1623920ec21644f6bf01eb449504b6cafe665035decda9eb76",
+        "after": "3ab3d7a26b924e1623920ec21644f6bf01eb449504b6cafe665035decda9eb76",
+        "fighterDrawingChanges": true
+      },
+      "captures": [],
+      "liveToggle": true,
+      "rollback": true,
+      "fullRebuild": true,
+      "sourceImages": [
+        {
+          "file": "assets/stages/mule-camp.webp",
+          "width": 1672,
+          "height": 941,
+          "sha256": "7dd8b42e158b4b9e01c062ab508c14e994e2053345ed33840f807d481984b632"
+        },
+        {
+          "file": "assets/stages/mule-camp-sky.png",
+          "width": 1672,
+          "height": 941,
+          "sha256": "5839a3e01a2803f08157f802f97af4ed7cbc1a890715f1fdaa176b0b21655c48"
+        },
+        {
+          "file": "assets/stages/mule-camp-distant.png",
+          "width": 2172,
+          "height": 724,
+          "sha256": "770ac508008aca3b1c4691b9a7e63300fa8c5358239750d67af7035168e3eba4"
+        },
+        {
+          "file": "assets/stages/mule-camp-midground.png",
+          "width": 2172,
+          "height": 724,
+          "sha256": "163ce8713a1bdf28a67dc4c8443acf621e1f5175273289ae99ce1693d36c1f61"
+        },
+        {
+          "file": "assets/stages/mule-camp-floor.png",
+          "width": 2172,
+          "height": 724,
+          "sha256": "77fc1a7e0fef92200e66a9a464ea46b90dab00f03a23c1d647bc2711d045c809"
+        },
+        {
+          "file": "assets/stages/mule-camp-foreground.webp",
+          "width": 2172,
+          "height": 272,
+          "sha256": "733bfea13ebb6373a3efdac1f366ad2231fe498c9455bad21f39186f06712552"
+        }
+      ]
+    },
+    {
+      "stage": "mule-camp-dry",
+      "animated": {
+        "before": "1f5482ce28fdad9ffb0ab30cd3ec8cbcddc8cfe40aebe985e17a27c2e6048c2d",
+        "after": "17db46b4e526d9f897037f6913b31edb5b129300668f9ae8aebdbc43aedee8d6",
+        "fighterDrawingChanges": true
+      },
+      "static": {
+        "before": "2d8e67cf9fb21c51d95f16e5aae5b8871e0d19c756213cd9c9f19c6ae1ec252e",
+        "after": "2d8e67cf9fb21c51d95f16e5aae5b8871e0d19c756213cd9c9f19c6ae1ec252e",
+        "fighterDrawingChanges": true
+      },
+      "captures": [],
+      "liveToggle": true,
+      "rollback": true,
+      "fullRebuild": true,
+      "sourceImages": [
+        {
+          "file": "assets/stages/mule-camp-dry.png",
+          "width": 1672,
+          "height": 941,
+          "sha256": "e1b9d305519c3107962a9a4a982077bf904a3237ad0fb76e87e8d6dd3c68ac22"
+        },
+        {
+          "file": "assets/stages/mule-camp-dry-sky.png",
+          "width": 1672,
+          "height": 941,
+          "sha256": "e1c7c9468014292f5d1d9c19d47ac0092194722ffdc262f0341b0e2dc8a8b046"
+        },
+        {
+          "file": "assets/stages/mule-camp-dry-distant.png",
+          "width": 2172,
+          "height": 724,
+          "sha256": "6272360b26efed08e097f23e4531ea946959efe20943313c1f95b3a25ee781de"
+        },
+        {
+          "file": "assets/stages/mule-camp-dry-midground.png",
+          "width": 2172,
+          "height": 724,
+          "sha256": "8175fa2d5bdeb0bfb6d48a00e4da113be023919aa7d84a31f2c47548e554ead3"
+        },
+        {
+          "file": "assets/stages/mule-camp-dry-floor.png",
+          "width": 2172,
+          "height": 724,
+          "sha256": "9125dd2f91c7219cedcdcaaad13d5449845579b3a9547c3521fbd4b503e50063"
+        },
+        {
+          "file": "assets/stages/mule-camp-dry-foreground.png",
+          "width": 2172,
+          "height": 724,
+          "sha256": "13bdb3fa30e402f1d1c04653db7488e16dbcd0e47a3a8613cf1ca228f060194e"
+        }
+      ]
+    },
+    {
+      "stage": "heartman-lab",
+      "animated": {
+        "before": "08a8a41769682fbd5e312c22d3787d3fd869d7780f3f5035f6c4fdbc0e7f0c85",
+        "after": "cf28e1dde030d1f0038f3f9d5c2ca70652977af747212b769c287f4ca5d3f305",
+        "fighterDrawingChanges": true
+      },
+      "static": {
+        "before": "b0b123eaa76149ebdef927f19902452dcf8e565baa959b7fdb9ae6fe30cd0414",
+        "after": "b0b123eaa76149ebdef927f19902452dcf8e565baa959b7fdb9ae6fe30cd0414",
+        "fighterDrawingChanges": true
+      },
+      "captures": [],
+      "liveToggle": true,
+      "rollback": true,
+      "fullRebuild": true,
+      "sourceImages": [
+        {
+          "file": "assets/stages/heartman-lab.webp",
+          "width": 1672,
+          "height": 941,
+          "sha256": "2c4738cd4aee6e151673d6fc119a3e5cdfe511f21bb83a8189779f22c69b189f"
+        },
+        {
+          "file": "assets/stages/heartman-lab-sky.png",
+          "width": 1672,
+          "height": 941,
+          "sha256": "5bb383d1dcfaa8080e808fef6ab3e9d59b5e55d52e3b385841bf442042b4c0f6"
+        },
+        {
+          "file": "assets/stages/heartman-lab-distant.png",
+          "width": 2172,
+          "height": 724,
+          "sha256": "92bcfada8bf99682ca39a280a3ae8765d696100023fbc543f3ee23f874644bd4"
+        },
+        {
+          "file": "assets/stages/heartman-lab-midground.png",
+          "width": 2172,
+          "height": 724,
+          "sha256": "53d79f83953cfa4c8b6554619a3e1eaabde4d141986ef2396a6c72a1c232fef0"
+        },
+        {
+          "file": "assets/stages/heartman-lab-floor.png",
+          "width": 2172,
+          "height": 724,
+          "sha256": "98d6604156dc8ec02939c5693bec09c19eade3cde45844e1ffbea7b6cd3e7fbd"
+        },
+        {
+          "file": "assets/stages/heartman-lab-foreground.webp",
+          "width": 2172,
+          "height": 336,
+          "sha256": "a9660047869ea64af4b71dc4436c14867c3f29e39cda92a07de131e8680ec393"
+        }
+      ]
+    },
+    {
+      "stage": "mama-workshop",
+      "animated": {
+        "before": "009c8cedf732aa510a5401333d070be5854f7d590e5c677c865ebdd3f8cbc85d",
+        "after": "76c3cb7dbfbaabda0f502977c572c23e8f53b2c430ce33abbd54129637e4590b",
+        "fighterDrawingChanges": true
+      },
+      "static": {
+        "before": "7e514506c608306105489e282c70b70ee7a8a4c2bf4ef6bd4bcc89a280326540",
+        "after": "7e514506c608306105489e282c70b70ee7a8a4c2bf4ef6bd4bcc89a280326540",
+        "fighterDrawingChanges": true
+      },
+      "captures": [],
+      "liveToggle": true,
+      "rollback": true,
+      "fullRebuild": true,
+      "sourceImages": [
+        {
+          "file": "assets/stages/mama-workshop.webp",
+          "width": 1672,
+          "height": 941,
+          "sha256": "e97ea9434a95bd66f02fb55ae5405f20970397b89348c77c383b40abd184eeac"
+        },
+        {
+          "file": "assets/stages/mama-workshop-sky.png",
+          "width": 1672,
+          "height": 941,
+          "sha256": "8bd008a14c31168a91ea8fdae1019f6b06715a10f2df154c568e2ca2ecef0f5b"
+        },
+        {
+          "file": "assets/stages/mama-workshop-distant.png",
+          "width": 2172,
+          "height": 724,
+          "sha256": "89a70c3c3a1071a5891e577fe6f7d7b190ead0ca0cf247f0285b838264dc7e84"
+        },
+        {
+          "file": "assets/stages/mama-workshop-midground.png",
+          "width": 2172,
+          "height": 724,
+          "sha256": "4573d4b88baf9195cf24093fb35b5011fbe2ad840eaf812be928e08ca357f6ad"
+        },
+        {
+          "file": "assets/stages/mama-workshop-floor.png",
+          "width": 2172,
+          "height": 724,
+          "sha256": "425eb7e28baa632babf9e3e3d7975a1f9085598a33e51b34d6276cc21734873b"
+        },
+        {
+          "file": "assets/stages/mama-workshop-foreground.webp",
+          "width": 2172,
+          "height": 295,
+          "sha256": "f41041dffb1a69123121be4c170da5ed45d3e110f1c5a30959a3ecb8496e0442"
+        }
+      ]
+    },
+    {
+      "stage": "ruined-factory",
+      "animated": {
+        "before": "9900ed3b3fd19955920ce9b3d3dacf24bf5136f1cdea242c7ec7c6bcde2843fb",
+        "after": "b2a496ba6acb2868fe1581e53fa3dcc612a69504fed2aa617b38bc04b4e9776f",
+        "fighterDrawingChanges": true
+      },
+      "static": {
+        "before": "f5408f0448cdf6fdda6abf5f7ed41a40c39ca6068d5bd0b6b5d33bc9b5b1ff3e",
+        "after": "f5408f0448cdf6fdda6abf5f7ed41a40c39ca6068d5bd0b6b5d33bc9b5b1ff3e",
+        "fighterDrawingChanges": true
+      },
+      "captures": [],
+      "liveToggle": true,
+      "rollback": true,
+      "fullRebuild": true,
+      "sourceImages": [
+        {
+          "file": "assets/stages/ruined-factory.webp",
+          "width": 1672,
+          "height": 941,
+          "sha256": "1bede323390ef4bab27583248a055dacab8bcd9ed8eefb8d43ea1bf7d7cfef63"
+        },
+        {
+          "file": "assets/stages/ruined-factory-sky.png",
+          "width": 1672,
+          "height": 941,
+          "sha256": "15021b3630be79f0e1134f20565376dae6faa262ef592bd4c5c479ba205c5fce"
+        },
+        {
+          "file": "assets/stages/ruined-factory-distant.png",
+          "width": 2172,
+          "height": 724,
+          "sha256": "cb9ae718e2de7904cd4e44f28caf8e3c0408db9a4410dd4747d5101f2e3401f2"
+        },
+        {
+          "file": "assets/stages/ruined-factory-midground.png",
+          "width": 2172,
+          "height": 724,
+          "sha256": "124484fb5f62505140a49f0a8e80e565bf2aa313062068295d0f5925a7de4286"
+        },
+        {
+          "file": "assets/stages/ruined-factory-floor.png",
+          "width": 2172,
+          "height": 724,
+          "sha256": "e3495ab82c5235b50cb6a90c05bbbe9c4a43833118813e391a155eb3edc5b5da"
+        },
+        {
+          "file": "assets/stages/ruined-factory-foreground.webp",
+          "width": 2172,
+          "height": 173,
+          "sha256": "a344df28843d461ce21dbceb19b59b96a902a0811cca8ce12cabf600db7b32fc"
+        }
+      ]
+    },
+    {
+      "stage": "timefall-shelter",
+      "animated": {
+        "before": "c84a3a146912eecfb9daf34714cb903f7d7d056f3f3d68def64ca3186df28a71",
+        "after": "050c5b18905ace051227de63ff6edd4945827fe1fd586816c7683316936a5c4a",
+        "fighterDrawingChanges": true
+      },
+      "static": {
+        "before": "2fee3a16e2c3f643c9b78b6c5849a7b39fc603f881a1176877716d3faf7aaa66",
+        "after": "2fee3a16e2c3f643c9b78b6c5849a7b39fc603f881a1176877716d3faf7aaa66",
+        "fighterDrawingChanges": true
+      },
+      "captures": [],
+      "liveToggle": true,
+      "rollback": true,
+      "fullRebuild": true,
+      "sourceImages": [
+        {
+          "file": "assets/stages/timefall-shelter.webp",
+          "width": 1672,
+          "height": 941,
+          "sha256": "e2b400fce5ec7580db9a14cfa518c353c4b5f6ee52445a3352245019df5a1c4c"
+        },
+        {
+          "file": "assets/stages/timefall-shelter-sky.png",
+          "width": 1672,
+          "height": 941,
+          "sha256": "d9e52fcb9b319e6dd3b33aeb36721fd82a5cc1b90d7db955a684e5141191d5c0"
+        },
+        {
+          "file": "assets/stages/timefall-shelter-distant.png",
+          "width": 2172,
+          "height": 724,
+          "sha256": "5790b4dafcd9c07bb140c854a8ff1f7b110dbb4153bd64ac63e4677692517964"
+        },
+        {
+          "file": "assets/stages/timefall-shelter-midground.png",
+          "width": 2172,
+          "height": 724,
+          "sha256": "0df6d0a1d19aed18cf04eb630840632cc169238317f55d2536e7e641af6bdf9e"
+        },
+        {
+          "file": "assets/stages/timefall-shelter-floor.png",
+          "width": 2172,
+          "height": 724,
+          "sha256": "97199aee5942155ecaf30fa3570a54b009f3406f1dbc16049c898ffbeb702a6b"
+        },
+        {
+          "file": "assets/stages/timefall-shelter-foreground.webp",
+          "width": 2172,
+          "height": 426,
+          "sha256": "9815c4886d2e317fb2a2c9d98625d5a8d689efd80060eca5e46b9eb09243c907"
+        }
+      ]
+    },
+    {
+      "stage": "tar-basin",
+      "animated": {
+        "before": "e22127c246dcb48a64109e64b5496c362d30f709b995a09397bf3f4a56ffa5e1",
+        "after": "b08e64d34f2c89f34f976eeac1de73ced02f815ce10a61d373b9e2c5ac5a0b34",
+        "fighterDrawingChanges": true
+      },
+      "static": {
+        "before": "5cabecdbee4a8d27f3a1a4b76f3ba078fd7fb971a7cc7b94517e2a035df8e659",
+        "after": "5cabecdbee4a8d27f3a1a4b76f3ba078fd7fb971a7cc7b94517e2a035df8e659",
+        "fighterDrawingChanges": true
+      },
+      "captures": [],
+      "liveToggle": true,
+      "rollback": true,
+      "fullRebuild": true,
+      "sourceImages": [
+        {
+          "file": "assets/stages/tar-basin.webp",
+          "width": 1672,
+          "height": 941,
+          "sha256": "cba707410739041c21754e5aae64337a02c9d0270304d1b4c3bc35c6e315aa07"
+        },
+        {
+          "file": "assets/stages/tar-basin-sky.png",
+          "width": 1672,
+          "height": 941,
+          "sha256": "33a74b93c3b12e32c69e5a2959ae8f78e463bd4395fabedcb5059b233c8de922"
+        },
+        {
+          "file": "assets/stages/tar-basin-distant.png",
+          "width": 2172,
+          "height": 724,
+          "sha256": "842e2af7a567df14653ad339cd88b12ccf9ce05e52eb8d4913b0c051ba8a996c"
+        },
+        {
+          "file": "assets/stages/tar-basin-midground.png",
+          "width": 2172,
+          "height": 724,
+          "sha256": "54340041e49c20cd5a3b85d456ae8aaf3dba836e984fb4627a33755ec473a2e9"
+        },
+        {
+          "file": "assets/stages/tar-basin-floor.png",
+          "width": 2172,
+          "height": 724,
+          "sha256": "faee362fe6538a96cdf7c385df545224725f7008b012801bda1fb51d7cbebe9a"
+        },
+        {
+          "file": "assets/stages/tar-basin-foreground.webp",
+          "width": 2172,
+          "height": 404,
+          "sha256": "e6566ce16296290d40df291cc45e5423464ca5835d588f8befbc5e2b01622b94"
+        }
+      ]
+    },
+    {
+      "stage": "mountain-pass",
+      "animated": {
+        "before": "a8d8643ac9b72836993c321b87f0650999607748bf2aba235b436f031c357567",
+        "after": "1cf19410cbe004a0e3924d1d59dc2423465b6e08c4b87d24f50a3f3461f9ff9f",
+        "fighterDrawingChanges": true
+      },
+      "static": {
+        "before": "54253d8a09f91045c7bca90e5a71847ea0930ec62fdd1647d4c0e319f4c2738f",
+        "after": "54253d8a09f91045c7bca90e5a71847ea0930ec62fdd1647d4c0e319f4c2738f",
+        "fighterDrawingChanges": true
+      },
+      "captures": [],
+      "liveToggle": true,
+      "rollback": true,
+      "fullRebuild": true,
+      "sourceImages": [
+        {
+          "file": "assets/stages/mountain-pass.webp",
+          "width": 1672,
+          "height": 941,
+          "sha256": "00a4b7a07b01fc3c21c2710181c27ac31130a6e6da28ced70be5b53e18c8207f"
+        },
+        {
+          "file": "assets/stages/mountain-pass-sky.png",
+          "width": 1672,
+          "height": 941,
+          "sha256": "a4937e5df5fc8fd0fc2e4d5d04aaa390898e978f7230a6fc2eec2470941da67c"
+        },
+        {
+          "file": "assets/stages/mountain-pass-distant.png",
+          "width": 2172,
+          "height": 724,
+          "sha256": "ec7cbab1c1600642b64b4cab234310b1ce20e6346d354dbd785532c314bd3a1c"
+        },
+        {
+          "file": "assets/stages/mountain-pass-midground.png",
+          "width": 2172,
+          "height": 724,
+          "sha256": "9d5a0e2187477aaeef8a4d0822a3a362c9a25ac615c0b46f659100613e8e8112"
+        },
+        {
+          "file": "assets/stages/mountain-pass-floor.png",
+          "width": 2172,
+          "height": 724,
+          "sha256": "69d7b282c976a5fed9ac25c336a96fcee443618d00519d28ec05482a022f77de"
+        },
+        {
+          "file": "assets/stages/mountain-pass-foreground.webp",
+          "width": 2172,
+          "height": 231,
+          "sha256": "71e7b68e2bb60a1802c10ae1ecee94b5bd00d962e0e91b2dcc3cc357d55e6b2a"
+        }
+      ]
+    },
+    {
+      "stage": "port-knot",
+      "animated": {
+        "before": "eba9000a78e4b4f257dc4558a1fe4b54902a75db6ef736bba6e8b7a18e89969d",
+        "after": "f1e71b296b5ea8bcf8f007b82363acfd0e77cd9b1cb295c910c8a4768d9e5b17",
+        "fighterDrawingChanges": true
+      },
+      "static": {
+        "before": "d3d0b19d1532748832eacc5a2588a5ee99089a84c53690971c96cea54235fea7",
+        "after": "d3d0b19d1532748832eacc5a2588a5ee99089a84c53690971c96cea54235fea7",
+        "fighterDrawingChanges": true
+      },
+      "captures": [],
+      "liveToggle": true,
+      "rollback": true,
+      "fullRebuild": true,
+      "sourceImages": [
+        {
+          "file": "assets/stages/port-knot.png",
+          "width": 1672,
+          "height": 941,
+          "sha256": "91cb224f3d26a9f66acf0087b2d17d89a106a1a049dba81e05873a09fa690ebe"
+        },
+        {
+          "file": "assets/stages/port-knot-sky.png",
+          "width": 1672,
+          "height": 941,
+          "sha256": "8688a765dcee8a2e5e843b80f3997243cc09bbb0ad180dcbee9598a0386408ce"
+        },
+        {
+          "file": "assets/stages/port-knot-distant.png",
+          "width": 1672,
+          "height": 941,
+          "sha256": "fa124952e7125ff919320368a6e3fb41ad6e483b773ff0fb2ead18c0ece276af"
+        },
+        {
+          "file": "assets/stages/port-knot-midground.png",
+          "width": 1672,
+          "height": 941,
+          "sha256": "d575bf358b3a556334002c899dbfe9e35d29a115a175f763f375b2361ba6fa62"
+        },
+        {
+          "file": "assets/stages/port-knot-floor.png",
+          "width": 1672,
+          "height": 941,
+          "sha256": "fbbbc31900b7184c4ee9d263d38a1741c8d9443ba37c1dda9c0fd3b74b0520e1"
+        },
+        {
+          "file": "assets/stages/port-knot-foreground.png",
+          "width": 1672,
+          "height": 941,
+          "sha256": "ebeec997ce8fd801c2a1f9fb530ec0c0b2a71bb255a08526fe78811af758da45"
+        }
+      ]
+    },
+    {
+      "stage": "incinerator",
+      "animated": {
+        "before": "2aed2fdf30593e405655b5b1b571c0be855b96e59112e1216c7f3ffbe80c4fc4",
+        "after": "4727af36173431bcd2fc7b10f79d3ee31b5c814ae22ae6c164911ab4762b848b",
+        "fighterDrawingChanges": true
+      },
+      "static": {
+        "before": "276b7078271cfcc97febce32e7ca49fe8c4bd31de6b896c8010cc60d0b68c67d",
+        "after": "276b7078271cfcc97febce32e7ca49fe8c4bd31de6b896c8010cc60d0b68c67d",
+        "fighterDrawingChanges": true
+      },
+      "captures": [],
+      "liveToggle": true,
+      "rollback": true,
+      "fullRebuild": true,
+      "sourceImages": [
+        {
+          "file": "assets/stages/incinerator.png",
+          "width": 1672,
+          "height": 941,
+          "sha256": "a7e3f1beebc201fe01f1030999839a286f651bf0e6339b3bd3ddf7edb7459b08"
+        },
+        {
+          "file": "assets/stages/incinerator-sky.png",
+          "width": 1942,
+          "height": 809,
+          "sha256": "f8f96e14e4e5788e4d43daaa8f83245643e2c3d55e79d1bcf014f824c54b3779"
+        },
+        {
+          "file": "assets/stages/incinerator-distant.png",
+          "width": 1942,
+          "height": 809,
+          "sha256": "a4755e7d4f2488ae962c9f6c2cf0653c587e7643c4bf2314122358179af8c289"
+        },
+        {
+          "file": "assets/stages/incinerator-midground.png",
+          "width": 1942,
+          "height": 809,
+          "sha256": "a1351265c613b9211e0559d744e4aaaba5e3db64418fc50688dc9b9dfe6f889a"
+        },
+        {
+          "file": "assets/stages/incinerator-floor.png",
+          "width": 1942,
+          "height": 809,
+          "sha256": "ce8498abee8e6089bf55e454b06a4f92ae95fceb239e9f3f280fc016158ce8af"
+        },
+        {
+          "file": "assets/stages/incinerator-foreground.png",
+          "width": 1942,
+          "height": 809,
+          "sha256": "75801b9f56c3f947473e5f9b8e8f35565e74e9b2fe3272f7aec1c373b107bf87"
+        }
+      ]
+    },
+    {
+      "stage": "south-knot-ruins",
+      "animated": {
+        "before": "81c30f9cc85e2afaef9df7ca1ac1c2a660b1c9a7ef5a2cbf86bbe0d7c7177ead",
+        "after": "42e34b43ccdb58124e86ed8b5cbce67a469ad7cf510da96fb78b568643f275c1",
+        "fighterDrawingChanges": true
+      },
+      "static": {
+        "before": "f6036b3b034a12bc4f07f04bcb6273d1253176103e55634fd89d82f700d2722b",
+        "after": "f6036b3b034a12bc4f07f04bcb6273d1253176103e55634fd89d82f700d2722b",
+        "fighterDrawingChanges": true
+      },
+      "captures": [],
+      "liveToggle": true,
+      "rollback": true,
+      "fullRebuild": true,
+      "sourceImages": [
+        {
+          "file": "assets/static-20261125/south-knot-ruins-panorama.png",
+          "width": 1672,
+          "height": 941,
+          "sha256": "eb15d3769fbc716ca482655e9aae272b1aca13585654206f27bc5c9e094ae73c"
+        },
+        {
+          "file": "assets/stages/south-knot-ruins-sky.png",
+          "width": 1672,
+          "height": 941,
+          "sha256": "578b1727cc1a4a815d566aaf59b0cf0ae2a15ec106a90ec7515489acaada8562"
+        },
+        {
+          "file": "assets/stages/south-knot-ruins-distant.png",
+          "width": 1672,
+          "height": 941,
+          "sha256": "ea702583ee66c0c9eacab99a90eed6560390cb706f175894a83278a4c3a6528d"
+        },
+        {
+          "file": "assets/stages/south-knot-ruins-midground.png",
+          "width": 1672,
+          "height": 941,
+          "sha256": "28ba9cf06db9bdb0dd3524d28acebfd66dc01c2a7654e009922ece7ad5b387d2"
+        },
+        {
+          "file": "assets/stages/south-knot-ruins-floor.png",
+          "width": 1672,
+          "height": 941,
+          "sha256": "ef18ba9ad4c752c6a7bdf35698df0e896ea78b2f2e45922b1dfe224b46f835f2"
+        },
+        {
+          "file": "assets/stages/south-knot-ruins-foreground.png",
+          "width": 1672,
+          "height": 941,
+          "sha256": "c4a76af151a8b44a373adfd32da22b3e46af7f9ac14e9e5e8c6fe6c08527f62d"
+        }
+      ]
+    },
+    {
+      "stage": "timefall-farm",
+      "animated": {
+        "before": "566d2e0048e9728dc57c234506824c2a635ee61d0b380c6e17b530911688b542",
+        "after": "1f75e7d948c2531f355ce579f6f5ab480848f27ca4d6b342fa980a03997be77e",
+        "fighterDrawingChanges": true
+      },
+      "static": {
+        "before": "cfb19959d88466e61367ee966ff187bbea8f5972aa64f704478dd33970182da7",
+        "after": "cfb19959d88466e61367ee966ff187bbea8f5972aa64f704478dd33970182da7",
+        "fighterDrawingChanges": true
+      },
+      "captures": [],
+      "liveToggle": true,
+      "rollback": true,
+      "fullRebuild": true,
+      "sourceImages": [
+        {
+          "file": "assets/static-20261125/timefall-farm-panorama.png",
+          "width": 1672,
+          "height": 941,
+          "sha256": "6e64d772995dcaf74cac0972e20803ee574e6533d9d126209a3273820d504d39"
+        },
+        {
+          "file": "assets/stages/timefall-farm-sky.png",
+          "width": 1672,
+          "height": 941,
+          "sha256": "4ab30a291a99cb0a0f2a4ad4d3bb4ad7642f14390ec661d52cda81024010ceaf"
+        },
+        {
+          "file": "assets/stages/timefall-farm-distant.png",
+          "width": 1672,
+          "height": 941,
+          "sha256": "06006cfd020d88d4ae8a1024e0a5b1dfb8fd533fea8fcbe0230b6d9326d3adac"
+        },
+        {
+          "file": "assets/stages/timefall-farm-midground.png",
+          "width": 1672,
+          "height": 941,
+          "sha256": "fe38e10039fa670fcb4effc4cb57db22e1ee24300aa0caeaf7a5d1026a10a808"
+        },
+        {
+          "file": "assets/stages/timefall-farm-floor.png",
+          "width": 1672,
+          "height": 941,
+          "sha256": "7d201898dcdd3d1a2bc401b115665620c33e9089e850023221590099ecc7d3d4"
+        },
+        {
+          "file": "assets/stages/timefall-farm-foreground.png",
+          "width": 1672,
+          "height": 941,
+          "sha256": "0f3e9995be99d667be177cec7db3cc35cdeaad94aaaf8fe137e470dc1dbc4340"
+        }
+      ]
+    },
+    {
+      "stage": "mountain-knot-approach",
+      "animated": {
+        "before": "b2e5081a26e802d77ebd0867dfc1de7e39519395691ed1311862d0f0a682fab4",
+        "after": "93936fae5bda6d32931e50e9fb890790170ee313739bf2a0e778f43b877995c0",
+        "fighterDrawingChanges": true
+      },
+      "static": {
+        "before": "5cb4261014cdbada443472ab31231e3200dbfd7bc7d1f5f27f537ce242207aea",
+        "after": "5cb4261014cdbada443472ab31231e3200dbfd7bc7d1f5f27f537ce242207aea",
+        "fighterDrawingChanges": true
+      },
+      "captures": [],
+      "liveToggle": true,
+      "rollback": true,
+      "fullRebuild": true,
+      "sourceImages": [
+        {
+          "file": "assets/static-20261125/mountain-knot-city-panorama.png",
+          "width": 1672,
+          "height": 941,
+          "sha256": "92358b0accc8af6d2876662f84ca6d2d1ee00ab47fa1567d39df55a370b26126"
+        },
+        {
+          "file": "assets/stages/mountain-knot-approach-sky.png",
+          "width": 1672,
+          "height": 941,
+          "sha256": "6a276d4006ecd5a094342b3debf4091fea62f7f3991d93cb73b49eaec6735943"
+        },
+        {
+          "file": "assets/stages/mountain-knot-approach-distant.png",
+          "width": 1672,
+          "height": 941,
+          "sha256": "fdae8dc3a6a5473150cb47f9de93c54a5c5796128a43e1936fa32ea97e23c4ef"
+        },
+        {
+          "file": "assets/stages/mountain-knot-approach-midground.png",
+          "width": 1672,
+          "height": 941,
+          "sha256": "02fb7cdbbcf13c8087d7803b162a3cedb66f7f525f7bad80d23fe963dcc3d8c9"
+        },
+        {
+          "file": "assets/stages/mountain-knot-approach-floor.png",
+          "width": 1672,
+          "height": 941,
+          "sha256": "f0809f99efc2e520f3b4b796e348d6ca7205f9404c3a2db97d241d3bcbe5a59e"
+        },
+        {
+          "file": "assets/stages/mountain-knot-approach-foreground.png",
+          "width": 1672,
+          "height": 941,
+          "sha256": "15e792f0c81993f25d4f1b2004d3b1f016dfde601c114ca984d6e9fec97826bb"
+        }
+      ]
+    },
+    {
+      "stage": "magellan-ds2",
+      "animated": {
+        "before": "38781cb7f8ee94ae5842ddccd2ab182fd33498c4ba428b5f293cda89d71bf019",
+        "after": "e096c2185f9f000a6908925c15760344ca5f53f51053d3ecc1398ea677f15d8b",
+        "fighterDrawingChanges": true
+      },
+      "static": {
+        "before": "38781cb7f8ee94ae5842ddccd2ab182fd33498c4ba428b5f293cda89d71bf019",
+        "after": "38781cb7f8ee94ae5842ddccd2ab182fd33498c4ba428b5f293cda89d71bf019",
+        "fighterDrawingChanges": true
+      },
+      "captures": [],
+      "liveToggle": true,
+      "rollback": true,
+      "fullRebuild": true,
+      "sourceImages": [
+        {
+          "file": "assets/static-universe-20261125/magellan-ds2-panorama.png",
+          "width": 1672,
+          "height": 941,
+          "sha256": "5409160c50eb77a749b0dc01fa49cb45dc6c0a8c081e4943a9f8e7b346241ccd"
+        },
+        {
+          "file": "assets/stages/magellan-ds2-sky.png",
+          "width": 1672,
+          "height": 941,
+          "sha256": "953add4be03755a9b68c71ac3175ba3bf2eb32f9bbb56c4211deb8e1f85af442"
+        },
+        {
+          "file": "assets/stages/magellan-ds2-distant.png",
+          "width": 1672,
+          "height": 941,
+          "sha256": "ba85faa99e991e9519d366a2bf6cebc25b196ac71567481176041a06898f9e7c"
+        },
+        {
+          "file": "assets/stages/magellan-ds2-midground.png",
+          "width": 1672,
+          "height": 941,
+          "sha256": "a79d12f67df8a0cb7521e45499c7349c367b73cf3e6739bd28e438937dd4906a"
+        },
+        {
+          "file": "assets/stages/magellan-ds2-floor.png",
+          "width": 1672,
+          "height": 941,
+          "sha256": "4b046d7d3814dfd4c86ae9c340d00db859613472e7a71e17d72e570df64b576a"
+        },
+        {
+          "file": "assets/stages/magellan-ds2-foreground.png",
+          "width": 1672,
+          "height": 941,
+          "sha256": "4c93988a5469264c095cfcdd9c1e574cd75f9a2ded009f6b55c0ea86ec0640af"
+        }
+      ]
+    },
+    {
+      "stage": "plate-gate-ds2",
+      "animated": {
+        "before": "55a6b3c8b9367f6eee686fd2e377218ec185ecdb7ffe9a04c1b10b5c21be442a",
+        "after": "5c7b2904e22c4746856d492f09a28470b2fe61f830e51f25a0c13a4415bd7c09",
+        "fighterDrawingChanges": true
+      },
+      "static": {
+        "before": "16c351484475264870585067a4ca3e9dbed8d078579a0e18d35f8b9d769cd615",
+        "after": "16c351484475264870585067a4ca3e9dbed8d078579a0e18d35f8b9d769cd615",
+        "fighterDrawingChanges": true
+      },
+      "captures": [
+        "plate-gate-ds2-duel-animated-before.webp",
+        "plate-gate-ds2-duel-animated-after.webp",
+        "plate-gate-ds2-duel-static-before.webp",
+        "plate-gate-ds2-duel-static-after.webp"
+      ],
+      "liveToggle": true,
+      "rollback": true,
+      "fullRebuild": true,
+      "sourceImages": [
+        {
+          "file": "assets/static-universe-20261125/plate-gate-ds2-panorama.png",
+          "width": 1672,
+          "height": 941,
+          "sha256": "18153bcd7786cd033038d971bb975b40ca27137133d4eee92268151feedf3783"
+        },
+        {
+          "file": "assets/stages/plate-gate-ds2-sky.png",
+          "width": 1672,
+          "height": 941,
+          "sha256": "51532d4c61d1858ce1c7ec1d180a47aed4598bd8d190378b72badae5aded5919"
+        },
+        {
+          "file": "assets/stages/plate-gate-ds2-distant.png",
+          "width": 1672,
+          "height": 941,
+          "sha256": "64caa390849eb882f70c150674bfa5ad341805f71887cbf62564e98059d5c0ae"
+        },
+        {
+          "file": "assets/stages/plate-gate-ds2-midground.png",
+          "width": 1672,
+          "height": 941,
+          "sha256": "bbe9206a54a5ab8260808d92025cd2b0931fb26c9c8722576d053d0b9c1c876c"
+        },
+        {
+          "file": "assets/stages/plate-gate-ds2-floor.png",
+          "width": 1672,
+          "height": 941,
+          "sha256": "fb738bbc9d9112f933a05811332c468cdb191678ff4574a028cac8fff57bcaa7"
+        },
+        {
+          "file": "assets/stages/plate-gate-ds2-foreground.png",
+          "width": 1672,
+          "height": 941,
+          "sha256": "d3b8f21536ddc2b254522e7f20974482ec7e1f8c7b26fb88f633db3265d6df18"
+        }
+      ]
+    },
+    {
+      "stage": "sandstorm-ds2",
+      "animated": {
+        "before": "3a477d9f5cdff970f78317f5d8137086091c9d97c84690f149e48450af566480",
+        "after": "7f8106bba144a71841cc376117ce7a67ec407151873aa76c383cd4b0a7bd42c3",
+        "fighterDrawingChanges": true
+      },
+      "static": {
+        "before": "452e95a45cf9d981bbf1b3a78d635db096cc2bcca54b3259577987e8a3be5627",
+        "after": "452e95a45cf9d981bbf1b3a78d635db096cc2bcca54b3259577987e8a3be5627",
+        "fighterDrawingChanges": true
+      },
+      "captures": [
+        "sandstorm-ds2-duel-animated-before.webp",
+        "sandstorm-ds2-duel-animated-after.webp",
+        "sandstorm-ds2-duel-static-before.webp",
+        "sandstorm-ds2-duel-static-after.webp"
+      ],
+      "liveToggle": true,
+      "rollback": true,
+      "fullRebuild": true,
+      "sourceImages": [
+        {
+          "file": "assets/static-universe-20261125/sandstorm-ds2-panorama.png",
+          "width": 1672,
+          "height": 941,
+          "sha256": "101c42163fb410de3c33534b4b6b90a2ff21b9443659146f630e2ea7f4346ffa"
+        },
+        {
+          "file": "assets/stages/sandstorm-ds2-sky.png",
+          "width": 1672,
+          "height": 941,
+          "sha256": "8a144e3ff496cd741bf446a24e5669d2df6cb9b75622e444f413ad251d4e6d24"
+        },
+        {
+          "file": "assets/stages/sandstorm-ds2-distant.png",
+          "width": 1672,
+          "height": 941,
+          "sha256": "fb8925bad63c0b302be014ed26db1047e5c3015fe511258f2dc7eff88a688658"
+        },
+        {
+          "file": "assets/stages/sandstorm-ds2-midground.png",
+          "width": 1672,
+          "height": 941,
+          "sha256": "a8e15d3bb5529353ac52a3153d344166854bd5bc576758196e2c1a7fb12dc963"
+        },
+        {
+          "file": "assets/stages/sandstorm-ds2-floor.png",
+          "width": 1672,
+          "height": 941,
+          "sha256": "b9645bf76b7cd16eddd1b9d880cf63edf8619c7c4474e34e270fe3d3feeea593"
+        },
+        {
+          "file": "assets/stages/sandstorm-ds2-foreground.png",
+          "width": 1672,
+          "height": 941,
+          "sha256": "b3d841e80b71f32df9fae37a5c78bd3452f4c4cf70068f86fbe67d5a63f938a2"
+        }
+      ]
+    },
+    {
+      "stage": "dunes-ds2",
+      "animated": {
+        "before": "a970e18d52c227bb017f627bbfcf20fa7a492917297722908d0521e450254c06",
+        "after": "e97b7a5f2da027675330abfabbd1033484a8737f01cb02273401b8571eb16aeb",
+        "fighterDrawingChanges": true
+      },
+      "static": {
+        "before": "0328606212eb17fd4e09b3762c548eee6c5e6d6e445860108671b09cc3702619",
+        "after": "0328606212eb17fd4e09b3762c548eee6c5e6d6e445860108671b09cc3702619",
+        "fighterDrawingChanges": true
+      },
+      "captures": [
+        "dunes-ds2-duel-animated-before.webp",
+        "dunes-ds2-duel-animated-after.webp",
+        "dunes-ds2-duel-static-before.webp",
+        "dunes-ds2-duel-static-after.webp"
+      ],
+      "liveToggle": true,
+      "rollback": true,
+      "fullRebuild": true,
+      "sourceImages": [
+        {
+          "file": "assets/static-completion-20261125/dunes-ds2-panorama.png",
+          "width": 1672,
+          "height": 941,
+          "sha256": "2104de5e44b9f51ec6abedf529425f59a84bdd2ad29337d36df6f49782bbf641"
+        },
+        {
+          "file": "assets/stages/dunes-ds2-sky.png",
+          "width": 1672,
+          "height": 941,
+          "sha256": "5d2c7cd01b65e04a91ca2cc863fa438b9581eceffd46121bfa894b9951b6f7b2"
+        },
+        {
+          "file": "assets/stages/dunes-ds2-distant.png",
+          "width": 1672,
+          "height": 941,
+          "sha256": "d2d61c29698709434315cf0f2b9168cfd45d5ca717bc548ba1c6f92bbcd80bb6"
+        },
+        {
+          "file": "assets/stages/dunes-ds2-midground.png",
+          "width": 1672,
+          "height": 941,
+          "sha256": "74e633a5a703da672a4a82763d7ae293394a5d3944e6393b0eb62dc25ab82092"
+        },
+        {
+          "file": "assets/stages/dunes-ds2-floor.png",
+          "width": 1672,
+          "height": 941,
+          "sha256": "543aec7559d771024f6aeb47e1ba7619ae349e9448ccb7ca222287a33fee58e9"
+        },
+        {
+          "file": "assets/stages/dunes-ds2-foreground.png",
+          "width": 1672,
+          "height": 941,
+          "sha256": "2d8ecdcb5cb14e9fd022df699750e325220c42894bee55e4b63cbe446dd33e92"
+        }
+      ]
+    }
+  ],
+  "nativeBossStages": [
+    {
+      "stage": "shore",
+      "captures": [
+        "shore-boss-static-telegraph.webp"
+      ],
+      "staticBackdrop": true,
+      "telegraphContinues": true,
+      "playerDrawingChanges": true
+    },
+    {
+      "stage": "plate-gate-ds2",
+      "captures": [
+        "plate-gate-ds2-boss-static-telegraph.webp"
+      ],
+      "staticBackdrop": true,
+      "telegraphContinues": true,
+      "playerDrawingChanges": true
+    },
+    {
+      "stage": "sandstorm-ds2",
+      "captures": [
+        "sandstorm-ds2-boss-static-telegraph.webp"
+      ],
+      "staticBackdrop": true,
+      "telegraphContinues": true,
+      "playerDrawingChanges": true
+    },
+    {
+      "stage": "dunes-ds2",
+      "captures": [
+        "dunes-ds2-boss-static-telegraph.webp"
+      ],
+      "staticBackdrop": true,
+      "telegraphContinues": true,
+      "playerDrawingChanges": true
+    }
+  ],
+  "renderer": "@napi-rs/canvas; actual engine functions exposed by test-only closure hooks; function bodies unchanged",
+  "sourceSha256": {
+    "content.js": "98498d43b085a15d34a6fb464d528d6d5554cf635401b2edcd7a83d0155b4949",
+    "asset-geometry-20261124.js": "61f830dc5036774529b7ecaf51f4c80386ef7f94447c55e044584e850e081934",
+    "assets.js": "ce3f436a4cefe4871e68bf13d25e3b90f3c07bb0b6917b71ddc3096dff063d6b",
+    "fight.js": "e8046d571919f68f625b9886f5521ebed32bdee44a23282700c6b51fcce439d4",
+    "boss-geometry-20261124.js": "55655afb8a1b05027b521bda46a49c9ad1f1b202ae307fdca67aa3690657a928",
+    "boss-assets.js": "2b3c644b456cb2de1180ef618b16b43eb26b761d4dc7e1187298420b8176bbe7",
+    "boss.js": "f0f3db6125cdf06cd664dd698d923f2fa492d86b1ef78300449e4620f08b5d88",
+    "netplay.js": "68d4bcc9a3cd62645c7a8037784743e15880a1e16b919999e908a1333a73f862"
+  },
+  "baselineSha256": {
+    "fight.js": "886c21cf86569e0bea99c98d0a5e8ca5f72b55c92bd842df0085588f87ad81b6",
+    "boss.js": "0c36a2015d571f1e04a272e9c7af0c7eafaa484c6054ada4fb589c028c69466d"
+  },
+  "catalogue": {
+    "fighters": 8,
+    "places": 19,
+    "configurations": 20
+  },
+  "passed": true
+}

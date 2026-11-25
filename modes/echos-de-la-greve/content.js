@@ -143,7 +143,10 @@
     'south-knot-ruins':{title:'Ruines de South Knot', sky:'#56686f', light:'#b1c6cb', weather:'rain'},
     'timefall-farm':{title:'Ferme sous la pluie temporelle', sky:'#7d8980', light:'#cfdbc5', weather:'rain'},
     'mountain-knot-approach':{title:'Approche de Mountain Knot', sky:'#7d929f', light:'#e0edf0', weather:'snow'},
-    'magellan-ds2':{title:'DHV Magellan · berge au couchant', sky:'#776663', light:'#edc591'}
+    'magellan-ds2':{title:'DHV Magellan · berge au couchant', sky:'#776663', light:'#edc591'},
+    'plate-gate-ds2':{title:'Plate Gate · colonnes suspendues', sky:'#7e7a67', light:'#d9d0ad', weather:'dust'},
+    'sandstorm-ds2':{title:'Lisière urbaine · tempête de sable', sky:'#b49b74', light:'#ead5ad', weather:'dust'},
+    'dunes-ds2':{title:'Dunes sous le vent', sky:'#bd9f73', light:'#eddbb5', weather:'dust'}
   };
   const stages = Object.fromEntries(Object.entries(arenas).map(([id,arena]) => [id,arena.title]));
   const stageDetails = {
@@ -163,7 +166,10 @@
     'south-knot-ruins':{place:'Région centrale · ruines',material:'Béton détrempé',ambience:'La pluie traverse les façades abandonnées, loin de la piste des combattants.'},
     'timefall-farm':{place:'Région centrale · exploitation agricole',material:'Terre et gravier tassés',ambience:'Le vent et la pluie accompagnent les rangées de cultures.'},
     'mountain-knot-approach':{place:'Approche montagneuse · région centrale',material:'Neige tassée',ambience:'La poudrerie suit la vallée entre les reliefs enneigés ; la ville reste hors du cadre.'},
-    'magellan-ds2':{place:'On the Beach · berge au couchant',material:'Terre et gravier humides',ambience:'Le Magellan survole le marais derrière la piste ; son bourdonnement accompagne les roseaux et les collines.'}
+    'magellan-ds2':{place:'On the Beach · berge au couchant',material:'Terre et gravier humides',ambience:'Le Magellan survole le marais derrière la piste ; son bourdonnement accompagne les roseaux et les collines.'},
+    'plate-gate-ds2':{place:'On the Beach · Plate Gate',material:'Roche claire et gravier',ambience:'Un souffle grave traverse les colonnes minérales suspendues au-dessus de l’horizon.'},
+    'sandstorm-ds2':{place:'On the Beach · lisière urbaine',material:'Asphalte ensablé',ambience:'Un mur de sable enveloppe les bâtiments lointains et les véhicules abandonnés.'},
+    'dunes-ds2':{place:'On the Beach · désert',material:'Sable tassé',ambience:'Le vent suit les crêtes des dunes au-delà de la piste.'}
   };
   const modes = {story:'Histoire', arcade:'Arcade', versus:'Versus', tournament:'Tournoi', training:'Entraînement', challenges:'Défis'};
   window.StrandContent = {fighters, stages, arenas, stageDetails, modes};

@@ -1,0 +1,214 @@
+{
+  "date": "2026-11-25T14:28:25.786804+00:00",
+  "method": "Pillow full pixel decode of the 14 newly added gallery PNGs. Dimensions synchronized into catalogue and four Archives images; native PNGs only read, never altered. Not a visual/canonical/browser validation.",
+  "total": 14,
+  "images": [
+    {
+      "id": "lucy-ds2",
+      "path": "assets/static-completion-20261125/lucy-ds2.png",
+      "dimensions": [
+        1439,
+        1093
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "bytes": 1354246,
+      "sha256": "8f1e11d204df98e3a825c95d409442035ad1949edb089dba70bb6a31e1abbfeb"
+    },
+    {
+      "id": "doctor-ds2",
+      "path": "assets/static-completion-20261125/doctor-ds2.png",
+      "dimensions": [
+        1520,
+        1034
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "bytes": 1717670,
+      "sha256": "cd3dc98f80e50f91015a63060bbe7821879afcd9b91a5b7a6aefa5b2a0593bfd"
+    },
+    {
+      "id": "heartman-ds2",
+      "path": "assets/static-completion-20261125/heartman-ds2.png",
+      "dimensions": [
+        1484,
+        1060
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "bytes": 1049799,
+      "sha256": "ed5881ad673a36d723705fa9b7d113186d20175ed0ddc959007f59238538e294"
+    },
+    {
+      "id": "the-president-ds2",
+      "path": "assets/static-completion-20261125/the-president-ds2.png",
+      "dimensions": [
+        1453,
+        1083
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "bytes": 1515117,
+      "sha256": "967f8a256862a4a209f7064a60b405e68cb75fec73cd988f608cdf985e64d885"
+    },
+    {
+      "id": "tomorrow-white-dress-ds2",
+      "path": "assets/static-completion-20261125/tomorrow-white-dress-ds2.png",
+      "dimensions": [
+        1752,
+        897
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "bytes": 1152595,
+      "sha256": "7fe516c511e032a1b964f573c781c62497659562aeb6972d6a782396a0dae7f4"
+    },
+    {
+      "id": "sam-grey-promo-ds2",
+      "path": "assets/static-completion-20261125/sam-grey-promo-ds2.png",
+      "dimensions": [
+        1312,
+        1199
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "bytes": 1864191,
+      "sha256": "0335047def57e9092ebf7c7691b6125d4e34b6076d50e00e92f1c901e8aa8e75"
+    },
+    {
+      "id": "fragile-early-outfit-ds2",
+      "path": "assets/static-completion-20261125/fragile-early-outfit-ds2.png",
+      "dimensions": [
+        1402,
+        1122
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "bytes": 1415589,
+      "sha256": "89a13fbd2a148654f6c2996a75521a7e0a448b9400a35e7bf77f8c10fa10ae2e"
+    },
+    {
+      "id": "dhv-magellan-isolated-ds2",
+      "path": "assets/static-completion-20261125/dhv-magellan-isolated-ds2.png",
+      "dimensions": [
+        1774,
+        887
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "bytes": 1284715,
+      "sha256": "8cc004a53856c5a728a3f7f9097f8b463bc8b02ab3d9196d7a48426ce837b14f"
+    },
+    {
+      "id": "tri-cruiser-ds2",
+      "path": "assets/static-completion-20261125/tri-cruiser-ds2.png",
+      "dimensions": [
+        1774,
+        887
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "bytes": 1621377,
+      "sha256": "a9ca0016135de3275c5491efcb734e14b4624fdcbb05597d51fa943fbb5b39cb"
+    },
+    {
+      "id": "truck-ds2",
+      "path": "assets/static-completion-20261125/truck-ds2.png",
+      "dimensions": [
+        1536,
+        1024
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        254
+      ],
+      "bytes": 2064428,
+      "sha256": "06a8abfc48f1e1b2fcfeabd7c1b8ab6ac48634231fc93b7961afb420f229e96d"
+    },
+    {
+      "id": "coffin-board-ds2",
+      "path": "assets/static-completion-20261125/coffin-board-ds2.png",
+      "dimensions": [
+        2172,
+        724
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "bytes": 1393550,
+      "sha256": "5ffd0fc4ecb1071beabc74a59e073d1b1064bbf7b63217342abbf0a63a545a4d"
+    },
+    {
+      "id": "cargo-capsule-ds2",
+      "path": "assets/static-completion-20261125/cargo-capsule-ds2.png",
+      "dimensions": [
+        1672,
+        941
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "bytes": 747041,
+      "sha256": "825bac489030b182af90da36ac360d5d723d5d71413fcc0255c532f024e3b410"
+    },
+    {
+      "id": "maser-handgun-ds2",
+      "path": "assets/static-completion-20261125/maser-handgun-ds2.png",
+      "dimensions": [
+        1536,
+        1024
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        254
+      ],
+      "bytes": 1581074,
+      "sha256": "0d9c3b05fb825c66559012cbd8f969d319402552a0bcdaa68472f393056e2ef0"
+    },
+    {
+      "id": "dunes-ds2-panorama",
+      "path": "assets/static-completion-20261125/dunes-ds2-panorama.png",
+      "dimensions": [
+        1672,
+        941
+      ],
+      "mode": "RGB",
+      "alpha_extrema": null,
+      "bytes": 1790564,
+      "sha256": "2104de5e44b9f51ec6abedf529425f59a84bdd2ad29337d36df6f49782bbf641"
+    }
+  ]
+}

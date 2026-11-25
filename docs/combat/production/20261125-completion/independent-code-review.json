@@ -1,0 +1,247 @@
+{
+  "date": "2026-11-25T14:32:52.658Z",
+  "reviewer": "Independent code and native-render review",
+  "browser": false,
+  "fullSuitesRepeated": false,
+  "finding": {
+    "id": "NET-KEYUP-FOCUS",
+    "severity": "medium",
+    "status": "fixed",
+    "file": "modes/echos-de-la-greve/netplay.js",
+    "scenario": "Hold D in an active room, focus the scenery selector, release D. The old keyup filter omitted the release.",
+    "before": {
+      "submittedRight": [
+        true
+      ],
+      "expected": [
+        true,
+        false
+      ]
+    },
+    "after": {
+      "submittedRight": [
+        true,
+        false
+      ],
+      "modifierRelease": true,
+      "selectorTypingDoesNotStartMovement": true
+    },
+    "verification": "node modes/echos-de-la-greve/qa/ambiances.cjs --network-only"
+  },
+  "review": {
+    "staticScenery": "Held time/camera/phase live outside combat checkpoints; draw transforms and attack/telegraph clocks continue. Local preference survives restore and silent network reconstruction.",
+    "isolatedBoss": "Persistence and end-result branches return saved:null for isolated sessions; replacing a mounted session clears without external storage. Isolated plus Rush is rejected before replacement.",
+    "carousel": "In-place image/caption update keeps live region and page scrolling; enabled next/previous focus and gallery replay preserve progression.",
+    "gallery": "Combined work/category filters, fixed representations, exact documentation allowlist, download originals, dialog close cleanup and visible focus fallback reviewed.",
+    "server": "Exact static/document/image allowlists; same recursive image inventory participates in the room fingerprint; outdated client version rejected."
+  },
+  "visualReviews": [
+    {
+      "stage": "plate-gate-ds2",
+      "status": "accepted",
+      "captures": [
+        {
+          "path": "stage-renders/plate-gate-ds2-right.webp",
+          "sha256": "8fc026f9a1dfc02dab09169413414977ce238fa6004748ad39fe14eaca071a9d"
+        },
+        {
+          "path": "stage-renders/plate-gate-ds2-left.webp",
+          "sha256": "ad591b019e355dcd73f405d06d3f0606d01d2525a05f873c90f7853ef829c703"
+        }
+      ],
+      "observations": "Continuous floor, unobstructed feet, readable fighters/HUD; major scenic elements remain behind the fighting lane in both camera positions."
+    },
+    {
+      "stage": "sandstorm-ds2",
+      "status": "accepted",
+      "captures": [
+        {
+          "path": "stage-renders/sandstorm-ds2-right.webp",
+          "sha256": "bded9025af75eec1539b7a8234ad142c4bc68b600edef7933ecf436d0edc8a5a"
+        },
+        {
+          "path": "stage-renders/sandstorm-ds2-left.webp",
+          "sha256": "c055296d23d542edec69d1901936ef6e53532707e264013bb2d9b0092d9406ce"
+        }
+      ],
+      "observations": "Continuous floor, unobstructed feet, readable fighters/HUD; major scenic elements remain behind the fighting lane in both camera positions."
+    },
+    {
+      "stage": "dunes-ds2",
+      "status": "accepted",
+      "captures": [
+        {
+          "path": "stage-renders/dunes-ds2-right.webp",
+          "sha256": "eeed3e394266cda9a608426d6041b2466bdbd575c9b5313ef04819411ffb2a36"
+        },
+        {
+          "path": "stage-renders/dunes-ds2-left.webp",
+          "sha256": "b01836e9b0b5428732452bfe9fb618d3f073152df564071241f9500347352dd4"
+        }
+      ],
+      "observations": "Final floor v2: no bright hard strip at the foot line; dark sand continuity, readable boots and HUD in both camera positions."
+    }
+  ],
+  "targetedHTTP": [
+    {
+      "path": "/campaign.js",
+      "status": 200,
+      "type": "text/javascript",
+      "bytes": 16438,
+      "sha256": "bf84ff01a0afc253c84f5087f040632895fe971f7f934abadd114c3f4311c08a"
+    },
+    {
+      "path": "/campaign.css",
+      "status": 200,
+      "type": "text/css",
+      "bytes": 4615,
+      "sha256": "ec6551da06ccf6fcae15b65c78d84bad878592ef3efa400a63966a392267efc8"
+    },
+    {
+      "path": "/static-assets.html",
+      "status": 200,
+      "type": "text/html; charset=utf-8",
+      "bytes": 4657,
+      "sha256": "a3f845f57999497c309f6ff60f1dfef13e6255bf2b6694f8d1a3b841e7f4e5fc"
+    },
+    {
+      "path": "/static-assets.js",
+      "status": 200,
+      "type": "text/javascript",
+      "bytes": 9617,
+      "sha256": "c1162dbfc948e00a82d12dd10a1d782ca8fe4ffc57c250cf75be8356cd133384"
+    },
+    {
+      "path": "/static-assets-data.js",
+      "status": 200,
+      "type": "text/javascript",
+      "bytes": 25009,
+      "sha256": "f4ad171fb215b339f91fded9e131a55171111a910eb5ebd8199d42b763320b1e"
+    },
+    {
+      "path": "/assets/static-completion-20261125/lucy-ds2.png",
+      "status": 200,
+      "type": "image/png",
+      "bytes": 1354246,
+      "sha256": "8f1e11d204df98e3a825c95d409442035ad1949edb089dba70bb6a31e1abbfeb"
+    },
+    {
+      "path": "/assets/stages/dunes-ds2-floor.png",
+      "status": 200,
+      "type": "image/png",
+      "bytes": 1471746,
+      "sha256": "543aec7559d771024f6aeb47e1ba7619ae349e9448ccb7ca222287a33fee58e9"
+    },
+    {
+      "path": "/modes/echos-de-la-greve/campaign.js",
+      "status": 200,
+      "type": "text/javascript",
+      "bytes": 16438,
+      "sha256": "bf84ff01a0afc253c84f5087f040632895fe971f7f934abadd114c3f4311c08a"
+    },
+    {
+      "path": "/modes/echos-de-la-greve/campaign.css",
+      "status": 200,
+      "type": "text/css",
+      "bytes": 4615,
+      "sha256": "ec6551da06ccf6fcae15b65c78d84bad878592ef3efa400a63966a392267efc8"
+    },
+    {
+      "path": "/modes/echos-de-la-greve/static-assets.html",
+      "status": 200,
+      "type": "text/html; charset=utf-8",
+      "bytes": 4657,
+      "sha256": "a3f845f57999497c309f6ff60f1dfef13e6255bf2b6694f8d1a3b841e7f4e5fc"
+    },
+    {
+      "path": "/modes/echos-de-la-greve/static-assets.js",
+      "status": 200,
+      "type": "text/javascript",
+      "bytes": 9617,
+      "sha256": "c1162dbfc948e00a82d12dd10a1d782ca8fe4ffc57c250cf75be8356cd133384"
+    },
+    {
+      "path": "/modes/echos-de-la-greve/static-assets-data.js",
+      "status": 200,
+      "type": "text/javascript",
+      "bytes": 25009,
+      "sha256": "f4ad171fb215b339f91fded9e131a55171111a910eb5ebd8199d42b763320b1e"
+    },
+    {
+      "path": "/modes/echos-de-la-greve/assets/static-completion-20261125/lucy-ds2.png",
+      "status": 200,
+      "type": "image/png",
+      "bytes": 1354246,
+      "sha256": "8f1e11d204df98e3a825c95d409442035ad1949edb089dba70bb6a31e1abbfeb"
+    },
+    {
+      "path": "/modes/echos-de-la-greve/assets/stages/dunes-ds2-floor.png",
+      "status": 200,
+      "type": "image/png",
+      "bytes": 1471746,
+      "sha256": "543aec7559d771024f6aeb47e1ba7619ae349e9448ccb7ca222287a33fee58e9"
+    },
+    {
+      "path": "/docs/combat/BIBLE_COMBAT.md",
+      "status": 200,
+      "type": "text/plain; charset=utf-8",
+      "bytes": 154605,
+      "sha256": "e678d7c5e50d75d1aa444d931c8ab59a8397d6a306a00155196458d42b7bbe43"
+    },
+    {
+      "path": "/docs/combat/UNIVERS_DS.md",
+      "status": 200,
+      "type": "text/plain; charset=utf-8",
+      "bytes": 36012,
+      "sha256": "69708026dab90855f182e82c833062470d5a58b3d6e0f253e92a3df64fba342a"
+    },
+    {
+      "path": "/docs/combat/REGISTRE_PRODUCTION.md",
+      "status": 200,
+      "type": "text/plain; charset=utf-8",
+      "bytes": 47972,
+      "sha256": "449b072bf6a76962be32a54cb62d558e0215fd72dee140199c108c89c46077ce"
+    },
+    {
+      "path": "/docs/combat/production/20261125-completion/reference-research.json",
+      "status": 404
+    },
+    {
+      "path": "/assets/static-completion-20261125/%2e%2e%2f%2e%2e%2f%2e%2e%2fAGENTS.md",
+      "status": 404
+    }
+  ],
+  "roomVersionAtReview": "25711be83efe16f9ac14",
+  "outdatedVersionRejected": true,
+  "sourceSHA256": {
+    "fight.js": "e8046d571919f68f625b9886f5521ebed32bdee44a23282700c6b51fcce439d4",
+    "boss.js": "f0f3db6125cdf06cd664dd698d923f2fa492d86b1ef78300449e4620f08b5d88",
+    "netplay.js": "68d4bcc9a3cd62645c7a8037784743e15880a1e16b919999e908a1333a73f862",
+    "netplay-server.cjs": "229755cd7beefc50aa95eea4a63f4103c5846b6377b650b735f4602ef65b3dd0",
+    "static-assets.js": "c1162dbfc948e00a82d12dd10a1d782ca8fe4ffc57c250cf75be8356cd133384",
+    "static-assets-data.js": "f4ad171fb215b339f91fded9e131a55171111a910eb5ebd8199d42b763320b1e",
+    "app.js": "a09a0dc1ff52a66cfa7e8cb63d1e1fd18161eef2c8f92258bd5ce6a8f3fc857e",
+    "qa/ambiances.cjs": "52aeeff17c4a4615e3767f671ca4a4fa1030626b132f3d19ce22a00a68c6641c"
+  },
+  "notes": [
+    "Documentation files are served as readable plain Markdown; fragment anchors are metadata, not HTML navigation in this relay.",
+    "The final campaign --require-assets gate passed after delivery of all 24 complementary story PNGs; see finalCampaignGate."
+  ],
+  "finalCampaignGate": {
+    "date": "2026-11-25T14:55:03.669Z",
+    "logicPassed": true,
+    "assetsComplete": true,
+    "assetsRequired": true,
+    "checkedImagePaths": 55,
+    "missing": []
+  },
+  "finalProductReview": {
+    "date": "2026-11-25T14:55:45.045Z",
+    "modes": 9,
+    "campaignScenes": 14,
+    "independentSave": "echos.campaign.v1",
+    "mobilePause": "Campaign pause uses a scrollable viewport panel on small/short screens; focus goes to Resume, then returns to Pause.",
+    "appSHA256": "1b8b03f877f9ace54d4ebfde46fa9986b6bd9d542a931c58fa55598654a613db",
+    "cssSHA256": "8970dcfbc2594eb1981d7fe1e731b9093e40058600fac86471e360c5162174c0"
+  }
+}

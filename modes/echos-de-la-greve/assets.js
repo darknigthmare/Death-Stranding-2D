@@ -13,6 +13,28 @@
   story['sam-rival'] = story['sam-higgs-rival'];
   story['diehardman-rival'] = 'assets/story/diehardman-rival.png';
   const roster = Object.keys(window.StrandContent.fighters);
+  const storyCompletionCaptions={
+    sam:['Le bracelet noué','Sous le sel','Cinq marques'],
+    fragile:['Côte à côte','La même tache','Le troisième bon'],
+    higgs:['Le salut','Le masque remis','Le son coupé'],
+    cliff:['Le récepteur éteint','Le bouton','Entendre la suite'],
+    mule:['À travers le couvercle','Une caisse vide','Le départ signé'],
+    diehardman:['Reconnaître l’ordre','La ligne de fermeture','La clé descendue'],
+    mama:['Quelqu’un au centre','Deux points d’attache','La deuxième traversée'],
+    heartman:['Revenir au début','La seconde blanche','Deux cercles']
+  };
+  const storyFrames = Object.fromEntries(roster.map(id=>{
+    const name=window.StrandContent.fighters[id].name,root='assets/story-completion-20261125/'+id+'-',captions=storyCompletionCaptions[id];
+    const original=(part,caption)=>({src:story[id+'-'+part],caption:name+' · '+caption});
+    return [id,{
+      intro:[original('intro','introduction'),
+        {src:root+'intro-second.png',caption:captions[0]},
+        {src:root+'intro-insert.png',caption:captions[1]}],
+      rival:[original('rival','rencontre avec le rival')],
+      ending:[original('ending','conclusion'),
+        {src:root+'ending-final.png',caption:captions[2]}]
+    }];
+  }));
   const arenas = Object.keys(window.StrandContent.stages);
   const stageLayers = (suffix, ids=arenas) => Object.fromEntries(ids.map(id => [id, 'assets/stages/' + id + suffix + '.png']));
   // Every location has five independent layers and a panorama fallback.
@@ -32,7 +54,10 @@
     'south-knot-ruins':'assets/static-20261125/south-knot-ruins-panorama.png',
     'timefall-farm':'assets/static-20261125/timefall-farm-panorama.png',
     'mountain-knot-approach':'assets/static-20261125/mountain-knot-city-panorama.png',
-    'magellan-ds2':'assets/static-universe-20261125/magellan-ds2-panorama.png'
+    'magellan-ds2':'assets/static-universe-20261125/magellan-ds2-panorama.png',
+    'plate-gate-ds2':'assets/static-universe-20261125/plate-gate-ds2-panorama.png',
+    'sandstorm-ds2':'assets/static-universe-20261125/sandstorm-ds2-panorama.png',
+    'dunes-ds2':'assets/static-completion-20261125/dunes-ds2-panorama.png'
   };
   const wardrobe = {mama:{
     atelier:{name:'Atelier'},
@@ -61,6 +86,7 @@
     },
     hero: story['sam-higgs-rival'],
     story,
+    storyFrames,
     fighters: {...illustrations('fighters', roster, '-stance'),...replacement('stance')},
     actions: {...illustrations('fighters', roster, '-action'),...replacement('action')},
     steps: {...illustrations('fighters', roster, '-step'),...replacement('step')},
@@ -101,7 +127,11 @@
       'south-knot-ruins':{distant:{anchorY:1,base:598},middle:{anchorY:913/941,base:594},floor:{anchorY:392/941}},
       'timefall-farm':{distant:{anchorY:1,base:598},middle:{anchorY:840/941,base:594},floor:{anchorY:359/941}},
       'mountain-knot-approach':{distant:{anchorY:1,base:598},middle:{anchorY:1,base:594},floor:{anchorY:376/941}},
-      'magellan-ds2':{distant:{anchorY:1,base:598},middle:{anchorY:1,base:594},floor:{anchorY:445/941}}
+      'magellan-ds2':{distant:{anchorY:1,base:598},middle:{anchorY:1,base:594},floor:{anchorY:445/941}},
+      // Completion-lot support rows measured on the unchanged 1672 × 941 PNGs.
+      'plate-gate-ds2':{distant:{anchorY:1,base:598},middle:{anchorY:1,base:594},floor:{anchorY:471/941}},
+      'sandstorm-ds2':{distant:{anchorY:1,base:598},middle:{anchorY:1,base:594},floor:{anchorY:458/941}},
+      'dunes-ds2':{distant:{anchorY:1,base:598},middle:{anchorY:1,base:594},floor:{anchorY:435/941}}
     },
     foregrounds: {...illustrations('stages', arenas, '-foreground'),...stageLayers('-foreground',[...nativeStageIds,...Object.keys(universeStagePanoramas)])}
   };
