@@ -59,7 +59,10 @@
     'plate-gate-ds2':'assets/static-universe-20261125/plate-gate-ds2-panorama.png',
     'sandstorm-ds2':'assets/static-universe-20261125/sandstorm-ds2-panorama.png',
     'dunes-ds2':'assets/static-completion-20261125/dunes-ds2-panorama.png',
-    'terminal-hangar':'assets/static-domains-20261125/terminal-hangar-panorama.png'
+    'terminal-hangar':'assets/static-domains-20261125/terminal-hangar-panorama.png',
+    'firing-range-dc':'assets/static-domains-20261125/firing-range-dc-panorama.png',
+    'night-viaduct-ds2':'assets/static-extension-20261125/night-viaduct-ds2-panorama.png',
+    'red-ravine-ds2':'assets/static-extension-20261125/red-ravine-ds2-panorama.png'
   };
   const wardrobe = {mama:{
     atelier:{name:'Atelier'},
@@ -136,7 +139,11 @@
       // Completion-lot support rows measured on the unchanged 1672 × 941 PNGs.
       'plate-gate-ds2':{distant:{anchorY:1,base:598},middle:{anchorY:1,base:594},floor:{anchorY:471/941}},
       'sandstorm-ds2':{distant:{anchorY:1,base:598},middle:{anchorY:1,base:594},floor:{anchorY:458/941}},
-      'dunes-ds2':{distant:{anchorY:1,base:598},middle:{anchorY:1,base:594},floor:{anchorY:435/941}}
+      'dunes-ds2':{distant:{anchorY:1,base:598},middle:{anchorY:1,base:594},floor:{anchorY:435/941}},
+      // Extension: measured native support rows; source PNGs remain unchanged.
+      'firing-range-dc':{distant:{anchorY:1,base:598},middle:{anchorY:800/941,base:594},floor:{anchorY:503/941}},
+      'night-viaduct-ds2':{distant:{anchorY:1,base:598},middle:{anchorY:807/941,base:594},floor:{anchorY:480/941}},
+      'red-ravine-ds2':{distant:{anchorY:1,base:598},middle:{anchorY:917/941,base:594},floor:{anchorY:483/941}}
     },
     foregrounds: {...illustrations('stages', arenas, '-foreground'),...stageLayers('-foreground',[...nativeStageIds,...Object.keys(universeStagePanoramas)]),'terminal-linked':'assets/stages/terminal-foreground.webp'}
   };

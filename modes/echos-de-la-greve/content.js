@@ -148,7 +148,10 @@
     'magellan-ds2':{title:'DHV Magellan · berge au couchant', sky:'#776663', light:'#edc591'},
     'plate-gate-ds2':{title:'Plate Gate · colonnes suspendues', sky:'#7e7a67', light:'#d9d0ad', weather:'dust'},
     'sandstorm-ds2':{title:'Lisière urbaine · tempête de sable', sky:'#b49b74', light:'#ead5ad', weather:'dust'},
-    'dunes-ds2':{title:'Dunes sous le vent', sky:'#bd9f73', light:'#eddbb5', weather:'dust'}
+    'dunes-ds2':{title:'Dunes sous le vent', sky:'#bd9f73', light:'#eddbb5', weather:'dust'},
+    'firing-range-dc':{title:'Stand de tir · Director’s Cut', sky:'#828b88', light:'#c3d7d5'},
+    'night-viaduct-ds2':{title:'Viaduc nocturne · DS2', sky:'#253a5e', light:'#a3d9e5', weather:'rain'},
+    'red-ravine-ds2':{title:'Ravin rouge · vision DS2', sky:'#6c2431', light:'#cf787d'}
   };
   const stages = Object.fromEntries(Object.entries(arenas).map(([id,arena]) => [id,arena.title]));
   const stageDetails = {
@@ -173,7 +176,10 @@
     'magellan-ds2':{place:'On the Beach · berge au couchant',material:'Terre et gravier humides',ambience:'Le Magellan survole le marais derrière la piste ; son bourdonnement accompagne les roseaux et les collines.'},
     'plate-gate-ds2':{place:'On the Beach · Plate Gate',material:'Roche claire et gravier',ambience:'Un souffle grave traverse les colonnes minérales suspendues au-dessus de l’horizon.'},
     'sandstorm-ds2':{place:'On the Beach · lisière urbaine',material:'Asphalte ensablé',ambience:'Un mur de sable enveloppe les bâtiments lointains et les véhicules abandonnés.'},
-    'dunes-ds2':{place:'On the Beach · désert',material:'Sable tassé',ambience:'Le vent suit les crêtes des dunes au-delà de la piste.'}
+    'dunes-ds2':{place:'On the Beach · désert',material:'Sable tassé',ambience:'Le vent suit les crêtes des dunes au-delà de la piste.'},
+    'firing-range-dc':{place:'Director’s Cut · stand de tir',material:'Caillebotis et dalle de béton',ambience:'Modules de béton et balises bleues encadrent une piste plane adaptée au duel.'},
+    'night-viaduct-ds2':{place:'On the Beach · paysage nocturne',material:'Chaussée humide',ambience:'Des lampadaires courbes bleus jalonnent le viaduc devant une ville lointaine. Nom descriptif du paysage montré dans la galerie officielle.'},
+    'red-ravine-ds2':{place:'On the Beach · vision du ravin',material:'Roche sombre',ambience:'Des parois rocheuses et des branches nues se détachent sur une brume rouge. La piste est adaptée au duel ; aucun nom de lieu canonique n’est attribué.'}
   };
   const modes = {story:'Histoire', arcade:'Arcade', versus:'Versus', tournament:'Tournoi', training:'Entraînement', challenges:'Défis'};
   // This link is a rule of the simulator, not a claim about canonical geography.
