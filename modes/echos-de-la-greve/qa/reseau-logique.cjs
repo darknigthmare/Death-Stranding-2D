@@ -4,6 +4,12 @@ const path = require('node:path');
 const os = require('node:os');
 const vm = require('node:vm');
 const {roomService,openRelay,gameVersion} = require('../netplay-server.cjs');
+const {createHash} = require('node:crypto');
+const extensionModules=['lessons.js','lessons.css','boss-data.js','boss-guide.js','boss-guide.css'];
+const extensionStages=['firing-range-dc','night-viaduct-ds2','red-ravine-ds2'];
+const proof={startedAt:new Date().toISOString(),node:process.version,passed:false,browser:false,nativeCanvas:false,
+  method:'Real HTTP GET on localhost and byte comparison with local files; actual relay protocol functions and deterministic engine checkpoint restoration. No browser, image decoding or public-network session.',
+  checks:[],relayStages:[]};
 
 function verifyProtocol() {
   let now = 0;
@@ -43,6 +49,7 @@ function verifyProtocol() {
   assert.deepEqual(call(1,'sync',{done,cursor:2}).result,done);
   assert.equal(call(1,'leave').closed,true);
   assert.equal(call(2,'sync').closed,true);
+  proof.checks.push('Relay protocol: seats, readiness, acknowledgements, reconnect, result and close');
   console.log('Relais · création, deux places, choix, lancement, accusés, reprise, résultat et fermeture vérifiés.');
 }
 function verifyEngines() {
@@ -69,10 +76,11 @@ function verifyEngines() {
   const snap=engine.snapshot();
   assert(snap.fighters[0].x>462 && snap.fighters[1].x<818);
   assert.equal(snap.tick,200);
+  proof.checks.push('Actual engine checkpoint identical after late-input correction at tick 200');
   console.log('Moteur · état complet identique après correction d’une commande tardive, au pas 200.');
 }
 verifyProtocol();
-for (const stage of ['port-knot','incinerator','south-knot-ruins','timefall-farm','mountain-knot-approach','magellan-ds2','plate-gate-ds2','sandstorm-ds2','dunes-ds2','terminal-linked','terminal-hangar']) {
+for (const stage of ['port-knot','incinerator','south-knot-ruins','timefall-farm','mountain-knot-approach','magellan-ds2','plate-gate-ds2','sandstorm-ds2','dunes-ds2','terminal-linked','terminal-hangar',...extensionStages]) {
   const receive=roomService('stages-test',()=>0);
   const tokens=['c'.repeat(40),'d'.repeat(40)];
   const room=receive({op:'create',version:'stages-test',token:tokens[0]}).room;
@@ -82,7 +90,7 @@ for (const stage of ['port-knot','incinerator','south-knot-ruins','timefall-farm
   assert.equal(match.stage,stage,stage+' disponible en salon privé');
   if(stage==='terminal-linked') assert.equal(match.stageRules,'terminal-quay-hangar@1','La liaison porte sa version explicite');
   else assert.equal(Object.hasOwn(match,'stageRules'),false,'Les arènes ordinaires ne portent pas de règle liée');
-  call(0,'leave');
+  call(0,'leave');proof.relayStages.push(stage);
 }
 verifyEngines();
 async function verifyNestedAssets() {
@@ -90,7 +98,7 @@ async function verifyNestedAssets() {
   try {
     for (const name of ['fight.js','content.js','assets.js','asset-geometry-20261124.js','boss-geometry-20261124.js','boss-assets.js','boss.js',
       'app.js','campaign.js','campaign.css','static-assets.html','static-assets.css','static-assets.js','static-assets-data.js','archives.html',
-      'input.js','input.css','moves-data.js','relationships.js','netplay.js','netplay-server.cjs'])
+      'input.js','input.css','moves-data.js','relationships.js',...extensionModules,'netplay.js','netplay-server.cjs'])
       fs.writeFileSync(path.join(fixture,name),'fixture');
     const directory = path.join(fixture,'assets/fighters/mama/atelier');
     fs.mkdirSync(directory,{recursive:true});
@@ -100,13 +108,13 @@ async function verifyNestedAssets() {
     fs.mkdirSync(bossDirectory,{recursive:true});
     const bossPose=path.join(bossDirectory,'attack.png');
     fs.writeFileSync(bossPose,'first boss pose');
-    const staticPoses=['static-20261125','static-universe-20261125','static-completion-20261125','story-completion-20261125','static-domains-20261125'].map(folder=>{
+    const staticPoses=['static-20261125','static-universe-20261125','static-completion-20261125','story-completion-20261125','static-domains-20261125','static-extension-20261125'].map(folder=>{
       const directory=path.join(fixture,'assets',folder);
       fs.mkdirSync(directory,{recursive:true});
       const file=path.join(directory,'portrait.png');fs.writeFileSync(file,'first static pose');return file;
     });
     const initial = gameVersion(fixture);
-    for (const name of ['campaign.js','campaign.css','static-assets-data.js','static-assets.js','archives.html','input.js','input.css','moves-data.js','relationships.js']) {
+    for (const name of ['campaign.js','campaign.css','static-assets-data.js','static-assets.js','archives.html','input.js','input.css','moves-data.js','relationships.js',...extensionModules]) {
       const file=path.join(fixture,name);
       fs.writeFileSync(file,'revised module');
       assert.notEqual(gameVersion(fixture),initial,name+' modifie la version du salon');
@@ -131,10 +139,22 @@ async function verifyNestedAssets() {
     fs.symlinkSync(external,path.join(directory,'linked-folder'));
     fs.writeFileSync(path.join(directory,'source.svg'),'<svg/>');
     assert.equal(gameVersion(fixture),initial,'Les liens symboliques et les sources sont exclus');
+    proof.checks.push('Recursive fingerprint: all five new modules and extension images participate; symlinks and source formats excluded');
   } finally {fs.rmSync(fixture,{recursive:true,force:true});}
 
-  const server = openRelay();
+  const servedRoot=path.resolve(__dirname,'..');
+  const privateDirectory=fs.mkdtempSync(path.join(os.tmpdir(),'echos-http-private-'));
+  let server,linkedDirectory;
   try {
+    linkedDirectory=fs.mkdtempSync(path.join(servedRoot,'assets/static-extension-20261125/qa-links-'));
+    fs.writeFileSync(path.join(privateDirectory,'secret.png'),'synthetic private content');
+    fs.symlinkSync(path.join(privateDirectory,'secret.png'),path.join(linkedDirectory,'linked.png'));
+    fs.symlinkSync(privateDirectory,path.join(linkedDirectory,'linked-folder'));
+    fs.writeFileSync(path.join(linkedDirectory,'private.json'),'{"private":true}');
+    fs.writeFileSync(path.join(linkedDirectory,'source.svg'),'<svg/>');
+    fs.writeFileSync(path.join(linkedDirectory,'.hidden.png'),'synthetic hidden content');
+    const linkedRelative=path.relative(servedRoot,linkedDirectory).split(path.sep).join('/');
+    server=openRelay();
     await new Promise((resolve,reject) => {server.once('error',reject);server.listen(0,'127.0.0.1',resolve);});
     const origin = 'http://127.0.0.1:' + server.address().port;
     const root = path.resolve(__dirname,'..');
@@ -154,7 +174,7 @@ async function verifyNestedAssets() {
       assert.deepEqual(Buffer.from(await response.arrayBuffer()),fs.readFileSync(path.join(root,file)),file + ' contenu exact');
     }
     for (const file of ['boss.js','boss-assets.js','boss-geometry-20261124.js','campaign.js','campaign.css','archives.html',
-      'static-assets.html','static-assets.css','static-assets.js','static-assets-data.js','input.js','input.css','moves-data.js','relationships.js']) {
+      'static-assets.html','static-assets.css','static-assets.js','static-assets-data.js','input.js','input.css','moves-data.js','relationships.js',...extensionModules]) {
       const response=await fetch(origin+'/'+file);
       assert.equal(response.status,200,file+' accessible');
       assert.equal(response.headers.get('content-type'),file.endsWith('.html')?'text/html; charset=utf-8':file.endsWith('.css')?'text/css':'text/javascript');
@@ -164,14 +184,20 @@ async function verifyNestedAssets() {
     vm.runInNewContext(fs.readFileSync(path.join(root,'content.js'),'utf8'),catalogue);
     vm.runInNewContext(fs.readFileSync(path.join(root,'assets.js'),'utf8'),catalogue);
     vm.runInNewContext(fs.readFileSync(path.join(root,'static-assets-data.js'),'utf8'),catalogue);
-    const galleryPaths=[...new Set(catalogue.window.StrandStaticCatalogue.items.map(item=>item.src))];
+    const galleryItems=catalogue.window.StrandStaticCatalogue.items;
+    assert.equal(new Set(galleryItems.map(item=>item.id)).size,galleryItems.length,'Catalogue IDs remain unique');
+    const galleryPaths=[...new Set(galleryItems.map(item=>item.src))];
+    const extensionPaths=fs.readdirSync(path.join(root,'assets/static-extension-20261125'),{withFileTypes:true})
+      .filter(entry=>entry.isFile()&&/\.(?:png|webp)$/.test(entry.name)).map(entry=>'assets/static-extension-20261125/'+entry.name);
+    assert(extensionPaths.length>0,'Extension images are installed');
+    for(const file of extensionPaths)assert(galleryPaths.includes(file),file+' présent dans le catalogue courant');
     assert(galleryPaths.includes('assets/static-20261125/lockne-portrait.png'),'Le portrait de Lockne est couvert par le test HTTP');
-    const newStages=['south-knot-ruins','timefall-farm','mountain-knot-approach','magellan-ds2','plate-gate-ds2','sandstorm-ds2','dunes-ds2','terminal-hangar'];
+    const newStages=['south-knot-ruins','timefall-farm','mountain-knot-approach','magellan-ds2','plate-gate-ds2','sandstorm-ds2','dunes-ds2','terminal-hangar',...extensionStages];
     const stagePaths=[...new Set(newStages.flatMap(id=>['stages','skyplates','distants','midgrounds','floors','foregrounds'].map(group=>catalogue.window.StrandAssets[group][id])))];
     const storyPaths=[...new Set(Object.values(catalogue.window.StrandAssets.storyFrames).flatMap(parts=>Object.values(parts).flatMap(frames=>frames.map(frame=>frame.src))))];
     assert.equal(storyPaths.length,48,'Eight complete story frame sets preserve originals and add 24 frames');
     for(const prefix of ['/','/modes/echos-de-la-greve/']){
-      for(const file of new Set(['static-assets.html','static-assets.css','static-assets.js','static-assets-data.js','campaign.js','campaign.css','input.js','input.css','moves-data.js','relationships.js',...galleryPaths,...stagePaths,...storyPaths])){
+      for(const file of new Set(['static-assets.html','static-assets.css','static-assets.js','static-assets-data.js','campaign.js','campaign.css','input.js','input.css','moves-data.js','relationships.js',...extensionModules,...galleryPaths,...stagePaths,...storyPaths])){
         const response=await fetch(origin+prefix+file);
         assert.equal(response.status,200,prefix+file+' accessible');
         if(file.endsWith('.png'))assert.equal(response.headers.get('content-type'),'image/png');
@@ -180,7 +206,8 @@ async function verifyNestedAssets() {
       }
     }
     const documents=new Set([...catalogue.window.StrandStaticCatalogue.items.flatMap(item=>[item.bible,item.reference]).filter(Boolean),
-      '../../docs/combat/ACTIONS_ET_IA.md','../../docs/combat/RELATIONS_SIMULATEUR.md']);
+      '../../docs/combat/ACTIONS_ET_IA.md','../../docs/combat/RELATIONS_SIMULATEUR.md','../../docs/combat/BOSS_ET_RENCONTRES.md',
+      '../../docs/combat/production/20261125-extension/DOJO.md']);
     for (const entry of documents) {
       for (const base of ['/', '/modes/echos-de-la-greve/']) {
         const target=new URL(entry,origin+base+'static-assets.html');
@@ -196,13 +223,31 @@ async function verifyNestedAssets() {
     await prefixed.arrayBuffer();
     for (const file of ['assets/fighters/mama/reconstruction.json','assets/fighters/source/mama.svg',
       'assets/fighters/mama/__proto__/guard.webp','assets/fighters/mama/%2e%2e%2f%2e%2e%2f%2e%2e%2fAGENTS.md',
-      'docs/combat/production/20261125-completion/reference-research.json','docs/AGENTS.md']) {
+      'docs/combat/production/20261125-completion/reference-research.json','docs/AGENTS.md',
+      'assets/static-extension-20261125/private.json','assets/static-extension-20261125/.hidden.png',
+      'assets/static-extension-20261125/%2e%2e%2f%2e%2e%2fnetplay-server.cjs',
+      linkedRelative+'/linked.png',linkedRelative+'/linked-folder/secret.png',
+      linkedRelative+'/private.json',linkedRelative+'/source.svg',linkedRelative+'/.hidden.png']) {
       const response = await fetch(origin + '/' + file);
       assert.equal(response.status,404,file + ' reste inaccessible');
       await response.arrayBuffer();
     }
+    proof.gameVersion=currentVersion;
+    proof.catalogue={items:galleryItems.length,uniqueImages:galleryPaths.length,extensionImages:extensionPaths.length,
+      extendedStageZones:newStages.length,extendedStageImages:stagePaths.length,storyFrames:storyPaths.length,prefixes:['/','/modes/echos-de-la-greve/']};
+    proof.documents=[...new Set([...documents].map(entry=>new URL(entry,origin+'/static-assets.html').pathname))];
+    proof.checks.push('Real HTTP serves exact bytes and MIME for runtime modules, catalogue, extended stages and story frames under both prefixes',
+      'Explicit public Markdown routes serve exact documents',
+      'Actual HTTP rejects encoded traversal, private formats, hidden files, symbolic files and symbolic directories');
+    proof.sourceSha256=Object.fromEntries(['content.js','assets.js','fight.js','netplay-server.cjs','netplay.js','static-assets-data.js',...extensionModules,'qa/reseau-logique.cjs'].map(file=>[file,createHash('sha256').update(fs.readFileSync(path.join(root,file))).digest('hex')]));
+    proof.passed=true;proof.completedAt=new Date().toISOString();
+    if(process.argv[2]){const output=path.resolve(process.argv[2]);fs.mkdirSync(path.dirname(output),{recursive:true});fs.writeFileSync(output,JSON.stringify(proof,null,2)+'\n');}
     console.log('Ressources réseau · commandes, données, tenues, boss, campagne, galerie et '+galleryPaths.length+' images statiques, '+stagePaths.length+' images de '+newStages.length+' zones étendues et '+storyPaths.length+' plans narratifs, servis en HTTP réel avec et sans préfixe ; empreinte récursive stable, sources et traversées refusées.');
     console.log('Exécution · '+new Date().toISOString()+' ; version réelle du relais '+currentVersion+'.');
-  } finally {await new Promise(resolve => server.close(resolve));}
+  } finally {
+    if(server?.listening)await new Promise(resolve=>server.close(resolve));
+    if(linkedDirectory)fs.rmSync(linkedDirectory,{recursive:true,force:true});
+    fs.rmSync(privateDirectory,{recursive:true,force:true});
+  }
 }
 verifyNestedAssets().catch(error => {console.error(error);process.exitCode = 1;});

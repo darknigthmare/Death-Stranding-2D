@@ -1,0 +1,210 @@
+{
+  "date": "2026-11-25T17:02:29.089Z",
+  "renderer": "@napi-rs/canvas; actual fight.js",
+  "browser_verified": false,
+  "catalogue_locations": 22,
+  "catalogue_configurations": 25,
+  "locations": 3,
+  "stages": 3,
+  "cases": 24,
+  "source_sha256": {
+    "content.js": "fe6e129844908ad3a0fa97d9e59cace35b1fb4c4cc54ba095de401bcac189578",
+    "asset-geometry-20261124.js": "61f830dc5036774529b7ecaf51f4c80386ef7f94447c55e044584e850e081934",
+    "assets.js": "4f0ae5349872b9391d7586bc98baf0baa211e83e59c7b1e4234aaf22525ecb01",
+    "fight.js": "17c3cfcdee2291dad721b312ee060ca3d341cb0734c30d57128152fa6d3e3f23"
+  },
+  "results": [
+    {
+      "stage": "firing-range-dc",
+      "cases": 8,
+      "captures": [
+        "firing-range-dc-right.webp",
+        "firing-range-dc-left.webp",
+        "firing-range-dc-local-reduced-right.webp",
+        "firing-range-dc-local-reduced-left.webp",
+        "firing-range-dc-training-normal-right.webp",
+        "firing-range-dc-training-normal-left.webp",
+        "firing-range-dc-training-reduced-right.webp",
+        "firing-range-dc-training-reduced-left.webp"
+      ],
+      "layers": [
+        "assets/stages/firing-range-dc-sky.png",
+        "assets/stages/firing-range-dc-distant.png",
+        "assets/stages/firing-range-dc-midground.png",
+        "assets/stages/firing-range-dc-floor.png",
+        "assets/stages/firing-range-dc-foreground.png"
+      ],
+      "composite_min_alpha": 255,
+      "source_images": [
+        {
+          "file": "assets/stages/firing-range-dc-sky.png",
+          "width": 1672,
+          "height": 941,
+          "sha256": "a69a211853144cf4512a29582ee80f26a5f52a4b927eaa4e325afb97e450a194"
+        },
+        {
+          "file": "assets/stages/firing-range-dc-distant.png",
+          "width": 1672,
+          "height": 941,
+          "sha256": "274db3e255d6950a12eeb9476e027dbba0a9177ad36e258b3ce4f73bb4d9a2d7"
+        },
+        {
+          "file": "assets/stages/firing-range-dc-midground.png",
+          "width": 1672,
+          "height": 941,
+          "sha256": "334d33afd115039a7993106bb6df615fe9eb0ec3270dd3fab9acfc133de22dac"
+        },
+        {
+          "file": "assets/stages/firing-range-dc-floor.png",
+          "width": 1672,
+          "height": 941,
+          "sha256": "dbffa41967ef0fd032d9a7aae00e9e9d3f562698656b336cfc5e3ab81588f431"
+        },
+        {
+          "file": "assets/stages/firing-range-dc-foreground.png",
+          "width": 1672,
+          "height": 941,
+          "sha256": "da8d2b1b6bf73db568621392017c6509a5c2244c9791528d5c25f61eda9000e2"
+        },
+        {
+          "file": "assets/static-domains-20261125/firing-range-dc-panorama.png",
+          "width": 1672,
+          "height": 941,
+          "sha256": "544b645be6f33c7292331ca8f11e0fac319c77072dfc11c0d40f1c4b5a0675d5"
+        }
+      ],
+      "background_join_min_alpha": 255,
+      "foreground_lane_max_alpha": 1,
+      "original_panorama_fallback": true,
+      "passed": true
+    },
+    {
+      "stage": "night-viaduct-ds2",
+      "cases": 8,
+      "captures": [
+        "night-viaduct-ds2-right.webp",
+        "night-viaduct-ds2-left.webp",
+        "night-viaduct-ds2-local-reduced-right.webp",
+        "night-viaduct-ds2-local-reduced-left.webp",
+        "night-viaduct-ds2-training-normal-right.webp",
+        "night-viaduct-ds2-training-normal-left.webp",
+        "night-viaduct-ds2-training-reduced-right.webp",
+        "night-viaduct-ds2-training-reduced-left.webp"
+      ],
+      "layers": [
+        "assets/stages/night-viaduct-ds2-sky.png",
+        "assets/stages/night-viaduct-ds2-distant.png",
+        "assets/stages/night-viaduct-ds2-midground.png",
+        "assets/stages/night-viaduct-ds2-floor.png",
+        "assets/stages/night-viaduct-ds2-foreground.png"
+      ],
+      "composite_min_alpha": 255,
+      "source_images": [
+        {
+          "file": "assets/stages/night-viaduct-ds2-sky.png",
+          "width": 1672,
+          "height": 941,
+          "sha256": "0f7795f1149ecb883ad11b227d5686b72a30cf1275fe793097a2646681fb02b9"
+        },
+        {
+          "file": "assets/stages/night-viaduct-ds2-distant.png",
+          "width": 1672,
+          "height": 941,
+          "sha256": "73ff03ff6b48fecc5eb99b6312a6db05e42b652adc5783098a32067edf762546"
+        },
+        {
+          "file": "assets/stages/night-viaduct-ds2-midground.png",
+          "width": 1672,
+          "height": 941,
+          "sha256": "f3dceb0a466f7e22f83b6aa3090e5505a2b5a2934480079b20821172d84fafa5"
+        },
+        {
+          "file": "assets/stages/night-viaduct-ds2-floor.png",
+          "width": 1672,
+          "height": 941,
+          "sha256": "ba4323e7b3988c2562afb767c831aa92d3f1b1d5b17d54222d8403541ac422a4"
+        },
+        {
+          "file": "assets/stages/night-viaduct-ds2-foreground.png",
+          "width": 1672,
+          "height": 941,
+          "sha256": "6c0534b61c125f01d16c1403089f0df2b1ccdd7a7d916c8f50fd3b84a998cb4f"
+        },
+        {
+          "file": "assets/static-extension-20261125/night-viaduct-ds2-panorama.png",
+          "width": 1672,
+          "height": 941,
+          "sha256": "047ee0d80616c646851a06cd060f4a3de80eb32594d6ec0223523282e1d44de9"
+        }
+      ],
+      "background_join_min_alpha": 252,
+      "foreground_lane_max_alpha": 1,
+      "original_panorama_fallback": true,
+      "passed": true
+    },
+    {
+      "stage": "red-ravine-ds2",
+      "cases": 8,
+      "captures": [
+        "red-ravine-ds2-right.webp",
+        "red-ravine-ds2-left.webp",
+        "red-ravine-ds2-local-reduced-right.webp",
+        "red-ravine-ds2-local-reduced-left.webp",
+        "red-ravine-ds2-training-normal-right.webp",
+        "red-ravine-ds2-training-normal-left.webp",
+        "red-ravine-ds2-training-reduced-right.webp",
+        "red-ravine-ds2-training-reduced-left.webp"
+      ],
+      "layers": [
+        "assets/stages/red-ravine-ds2-sky.png",
+        "assets/stages/red-ravine-ds2-distant.png",
+        "assets/stages/red-ravine-ds2-midground.png",
+        "assets/stages/red-ravine-ds2-floor.png",
+        "assets/stages/red-ravine-ds2-foreground.png"
+      ],
+      "composite_min_alpha": 255,
+      "source_images": [
+        {
+          "file": "assets/stages/red-ravine-ds2-sky.png",
+          "width": 1672,
+          "height": 941,
+          "sha256": "12738b4fbd1417ac12679f1cb347ae6c71480c8242ade14860ff29759389a87b"
+        },
+        {
+          "file": "assets/stages/red-ravine-ds2-distant.png",
+          "width": 1672,
+          "height": 941,
+          "sha256": "5746b56b8a1db6823c43e1d5ae978cfe84e7f2ea6d5c00e66191270789c5f782"
+        },
+        {
+          "file": "assets/stages/red-ravine-ds2-midground.png",
+          "width": 1672,
+          "height": 941,
+          "sha256": "6263c9d46a79c987060b672a219db450a215879075c8d473b14df4066cdc6731"
+        },
+        {
+          "file": "assets/stages/red-ravine-ds2-floor.png",
+          "width": 1672,
+          "height": 941,
+          "sha256": "a1ab7727b2addedda28a43b9d72ddf620da1c8abb8443c92b37be80798fcf28a"
+        },
+        {
+          "file": "assets/stages/red-ravine-ds2-foreground.png",
+          "width": 1672,
+          "height": 941,
+          "sha256": "134fa97c911ad127cc61c44789e133c9d861cd26c4d3d00577d30286179ecd90"
+        },
+        {
+          "file": "assets/static-extension-20261125/red-ravine-ds2-panorama.png",
+          "width": 1672,
+          "height": 941,
+          "sha256": "71b1078b016e2e08c945e91c47c6a7b54adb6f8d216633abc9696f74078f25f1"
+        }
+      ],
+      "background_join_min_alpha": 252,
+      "foreground_lane_max_alpha": 1,
+      "original_panorama_fallback": true,
+      "passed": true
+    }
+  ]
+}

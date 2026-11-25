@@ -1,0 +1,213 @@
+{
+  "schema_version": 1,
+  "lot": "20261125-extension",
+  "state": "checkpoint-generation-before-integration",
+  "source_main": "8d274a015e0edf314a853630031d5eb507354811",
+  "scope": "Death Stranding 1 / Director's Cut et Death Stranding 2 : On the Beach",
+  "native_image_count": 17,
+  "animations_generated": 0,
+  "notes": [
+    "Sorties natives imagegen conservées sans transformation.",
+    "Point de sauvegarde après saturation et arrêt du runtime local.",
+    "Intégration des arènes, mesures alpha, QA finale et fusion non effectuées à ce point."
+  ],
+  "images": [
+    {
+      "id": "firing-range-dc-sky",
+      "path": "modes/echos-de-la-greve/assets/stages/firing-range-dc-sky.png",
+      "prompt": "Use case: stylized-concept. Project asset for Death Stranding 2D, Echos de la Greve. Create ONE separate native PNG parallax layer for the Director's Cut firing range shown in the reference image. The reference is a supporting identity and materials reference, not a sheet to reproduce. Preserve its modular gray concrete, dark metal, cyan-white beacons, rocky quarry and muted overcast light wherever relevant to this layer. UHD detailed painterly game-background rendering, sharp usable edges, landscape 16:9 canvas. Side-on fighting-game staging with a level horizontal play lane. No text, labels, HUD, characters, weapons, targets, montage, sheet, border, watermark or additional scene. Do not show multiple variants.\nLayer specification: Render ONLY the full opaque background sky plate: soft pale gray overcast cloud layers, faint cool atmospheric variation. Fill all edges with sky. No horizon, ground, buildings, beacons or rocks.\nTransparency: Opaque full canvas.",
+      "references": [
+        "/workspace/scratch/c34cb5872d3d/death-stranding-2d/modes/echos-de-la-greve/assets/static-domains-20261125/firing-range-dc-panorama.png"
+      ],
+      "transparent_background": false,
+      "git_blob_sha": "edb8a0bfdbc49a6cad40bc929cbedcf06b150d55",
+      "output_hint": "Generated images are saved to /workspace/scratch/c34cb5872d3d/generated_images as /workspace/scratch/c34cb5872d3d/generated_images/exec-d78f48af-6545-4844-82d9-e48c360907fc.png by default.\nIf you need to use a generated image at another path, copy it and leave the original in place unless the user explicitly asks you to delete it.\nThe generated image is already displayed to the user. There is no need to render it in the final response as a Markdown image or file link."
+    },
+    {
+      "id": "firing-range-dc-midground",
+      "path": "modes/echos-de-la-greve/assets/stages/firing-range-dc-midground.png",
+      "prompt": "Use case: stylized-concept. Project asset for Death Stranding 2D, Echos de la Greve. Create ONE separate native PNG parallax layer for the Director's Cut firing range shown in the reference image. The reference is a supporting identity and materials reference, not a sheet to reproduce. Preserve its modular gray concrete, dark metal, cyan-white beacons, rocky quarry and muted overcast light wherever relevant to this layer. UHD detailed painterly game-background rendering, sharp usable edges, landscape 16:9 canvas. Side-on fighting-game staging with a level horizontal play lane. No text, labels, HUD, characters, weapons, targets, montage, sheet, border, watermark or additional scene. Do not show multiple variants.\nLayer specification: Render ONLY the range's middle-distance industrial layer: low gray concrete dividers, a modest block-shaped observation wall near the right edge and two slender cyan-white beacon pillars. Arrange these as a wide horizontal strip behind the fighting lane. Keep the central 60 percent open and low so bodies are readable. Bases align along the bottom edge. Entire space above and between structures genuinely transparent, with no sky, rocks, ground slab, pit or continuous floor.\nTransparency: Use a genuinely transparent alpha background; no painted checkerboard or solid backdrop.",
+      "references": [
+        "/workspace/scratch/c34cb5872d3d/death-stranding-2d/modes/echos-de-la-greve/assets/static-domains-20261125/firing-range-dc-panorama.png"
+      ],
+      "transparent_background": true,
+      "git_blob_sha": "9ce27faf0a1c4d9854e3ac81a1de413647ff3684",
+      "output_hint": "Generated images are saved to /workspace/scratch/c34cb5872d3d/generated_images as /workspace/scratch/c34cb5872d3d/generated_images/exec-665dc71b-a56f-47f5-b9b9-f1c0e952157a.png by default.\nIf you need to use a generated image at another path, copy it and leave the original in place unless the user explicitly asks you to delete it.\nThe generated image is already displayed to the user. There is no need to render it in the final response as a Markdown image or file link."
+    },
+    {
+      "id": "firing-range-dc-distant",
+      "path": "modes/echos-de-la-greve/assets/stages/firing-range-dc-distant.png",
+      "prompt": "Use case: stylized-concept. Project asset for Death Stranding 2D, Echos de la Greve. Create ONE separate native PNG parallax layer for the Director's Cut firing range shown in the reference image. The reference is a supporting identity and materials reference, not a sheet to reproduce. Preserve its modular gray concrete, dark metal, cyan-white beacons, rocky quarry and muted overcast light wherever relevant to this layer. UHD detailed painterly game-background rendering, sharp usable edges, landscape 16:9 canvas. Side-on fighting-game staging with a level horizontal play lane. No text, labels, HUD, characters, weapons, targets, montage, sheet, border, watermark or additional scene. Do not show multiple variants.\nLayer specification: Render ONLY the distant rocky quarry rim and subdued layered basalt ridges. Terrain occupies the lower 38 percent of the canvas, continuing horizontally to both side edges. Upper 62 percent genuinely transparent. No sky, floor, industrial structures or beacons. Keep all silhouettes distant, modest in contrast.\nTransparency: Use a genuinely transparent alpha background; no painted checkerboard or solid backdrop.",
+      "references": [
+        "/workspace/scratch/c34cb5872d3d/death-stranding-2d/modes/echos-de-la-greve/assets/static-domains-20261125/firing-range-dc-panorama.png"
+      ],
+      "transparent_background": true,
+      "git_blob_sha": "27ec47bafc132229c5750e5009067e4b448ffe88",
+      "output_hint": "Generated images are saved to /workspace/scratch/c34cb5872d3d/generated_images as /workspace/scratch/c34cb5872d3d/generated_images/exec-d709142a-6799-4edf-9ee3-a3aa35c97f0c.png by default.\nIf you need to use a generated image at another path, copy it and leave the original in place unless the user explicitly asks you to delete it.\nThe generated image is already displayed to the user. There is no need to render it in the final response as a Markdown image or file link."
+    },
+    {
+      "id": "firing-range-dc-foreground",
+      "path": "modes/echos-de-la-greve/assets/stages/firing-range-dc-foreground.png",
+      "prompt": "Use case: stylized-concept. Project asset for Death Stranding 2D, Echos de la Greve. Create ONE separate native PNG parallax layer for the Director's Cut firing range shown in the reference image. The reference is a supporting identity and materials reference, not a sheet to reproduce. Preserve its modular gray concrete, dark metal, cyan-white beacons, rocky quarry and muted overcast light wherever relevant to this layer. UHD detailed painterly game-background rendering, sharp usable edges, landscape 16:9 canvas. Side-on fighting-game staging with a level horizontal play lane. No text, labels, HUD, characters, weapons, targets, montage, sheet, border, watermark or additional scene. Do not show multiple variants.\nLayer specification: Render ONLY a very low foreground edge strip: small cropped dark metal footing and concrete trim at the extreme lower left and lower right. At least the upper 88 percent of canvas and central 72 percent of width remain genuinely transparent. Nothing rises high enough to obscure feet or the playing lane. No whole barrier panels, poles, sky or floor plane.\nTransparency: Use a genuinely transparent alpha background; no painted checkerboard or solid backdrop.",
+      "references": [
+        "/workspace/scratch/c34cb5872d3d/death-stranding-2d/modes/echos-de-la-greve/assets/static-domains-20261125/firing-range-dc-panorama.png"
+      ],
+      "transparent_background": true,
+      "git_blob_sha": "a71a9641a1b4669535c96ab82ddf35d25804a495",
+      "output_hint": "Generated images are saved to /workspace/scratch/c34cb5872d3d/generated_images as /workspace/scratch/c34cb5872d3d/generated_images/exec-2c222cbe-6864-4ac3-8987-48fa37876d19.png by default.\nIf you need to use a generated image at another path, copy it and leave the original in place unless the user explicitly asks you to delete it.\nThe generated image is already displayed to the user. There is no need to render it in the final response as a Markdown image or file link."
+    },
+    {
+      "id": "firing-range-dc-floor",
+      "path": "modes/echos-de-la-greve/assets/stages/firing-range-dc-floor.png",
+      "prompt": "Use case: stylized-concept. Project asset for Death Stranding 2D, Echos de la Greve. Create ONE separate native PNG parallax layer for the Director's Cut firing range shown in the reference image. The reference is a supporting identity and materials reference, not a sheet to reproduce. Preserve its modular gray concrete, dark metal, cyan-white beacons, rocky quarry and muted overcast light wherever relevant to this layer. UHD detailed painterly game-background rendering, sharp usable edges, landscape 16:9 canvas. Side-on fighting-game staging with a level horizontal play lane. No text, labels, HUD, characters, weapons, targets, montage, sheet, border, watermark or additional scene. Do not show multiple variants.\nLayer specification: Render ONLY a single continuous level gray concrete-and-dark-steel fighting platform. Its straight horizontal top back edge crosses the ENTIRE canvas at 48 percent height. Everything above that line is genuinely transparent. Below that line, fill the full width continuously to bottom with a shallow-perspective concrete top surface, inset dark grating and subtle cyan range markings. NO steps, pits, breaks, vertical posts, barriers or props. The usable walking surface is unobstructed and level from left to right.\nTransparency: Use a genuinely transparent alpha background; no painted checkerboard or solid backdrop.",
+      "references": [
+        "/workspace/scratch/c34cb5872d3d/death-stranding-2d/modes/echos-de-la-greve/assets/static-domains-20261125/firing-range-dc-panorama.png"
+      ],
+      "transparent_background": true,
+      "git_blob_sha": "6a0a140e466a4bb343304e8bd0348c8031ba1825",
+      "output_hint": "Generated images are saved to /workspace/scratch/c34cb5872d3d/generated_images as /workspace/scratch/c34cb5872d3d/generated_images/exec-f380e6e6-6889-4bef-9b82-b87eebd34f75.png by default.\nIf you need to use a generated image at another path, copy it and leave the original in place unless the user explicitly asks you to delete it.\nThe generated image is already displayed to the user. There is no need to render it in the final response as a Markdown image or file link."
+    },
+    {
+      "id": "red-ravine-ds2-panorama",
+      "path": "modes/echos-de-la-greve/assets/static-extension-20261125/red-ravine-ds2-panorama.png",
+      "prompt": "Use case: stylized-concept. Create a single finished UHD 2D fighting-game environment panorama for Death Stranding 2: On the Beach, adapting the supplied official screenshot into a playable side-view scene. The image is a reference for architecture, landscape, palette and atmosphere. Preserve identifiable visible motifs. Landscape 16:9 composition, detailed realistic painterly game art, restrained material texture, clean silhouettes. Natural environment staging, with an unobstructed level horizontal ground band near the lower fifth for a side-on duel. No player, no NPCs, no creatures, no vehicles, no weapon, no text, no UI, no branding, no watermark, no borders, no contact sheet. Do not introduce a theater stage, arena seating or decorative portals.\nSubject: The red-hazed rocky ravine shown in the reference: wet layered black basalt cliffs, sparse bare twisted branches, scattered dark stones, red luminous fog filling the distance, faint hanging vertical black strands far in the atmosphere. Remove the crouching porter and the humanoid shadow figures. Preserve the eerie red/charcoal contrast, rocky sediment edges and desolate terrain. Recompose a broad horizontal flat rocky path for the combat lane across the lower fifth, low shallow wet gravel surface with reddish reflections, no pits or tall foreground plants over the path. Avoid turning this into a dense forest, lava field or flame scene; the source is red atmosphere and rock, not fire.",
+      "references": [
+        "/workspace/scratch/c34cb5872d3d/reference/universe-ds2/gallery-inspection/sop2024_014.jpg"
+      ],
+      "transparent_background": false,
+      "git_blob_sha": "032e80beaa60c9f70968aa5e6a7d49410c52c266",
+      "output_hint": "Generated images are saved to /workspace/scratch/c34cb5872d3d/generated_images as /workspace/scratch/c34cb5872d3d/generated_images/exec-ac6e6779-4c49-422e-83de-99ab36f691b6.png by default.\nIf you need to use a generated image at another path, copy it and leave the original in place unless the user explicitly asks you to delete it.\nThe generated image is already displayed to the user. There is no need to render it in the final response as a Markdown image or file link."
+    },
+    {
+      "id": "night-viaduct-ds2-panorama",
+      "path": "modes/echos-de-la-greve/assets/static-extension-20261125/night-viaduct-ds2-panorama.png",
+      "prompt": "Use case: stylized-concept. Create a single finished UHD 2D fighting-game environment panorama for Death Stranding 2: On the Beach, adapting the supplied official screenshot into a playable side-view scene. The image is a reference for architecture, landscape, palette and atmosphere. Preserve identifiable visible motifs. Landscape 16:9 composition, detailed realistic painterly game art, restrained material texture, clean silhouettes. Natural environment staging, with an unobstructed level horizontal ground band near the lower fifth for a side-on duel. No player, no NPCs, no creatures, no vehicles, no weapon, no text, no UI, no branding, no watermark, no borders, no contact sheet. Do not introduce a theater stage, arena seating or decorative portals.\nSubject: The storm-dark elevated roadway shown in the reference: blue-black sky, dark urban towers with sparse warm windows far left, broad wet concrete viaduct, cyan-white angular lamp heads on slender bent blue posts. Build the side-view fighting lane across the entire lower part, with the distant viaduct receding behind it and cyan reflections on wet panels. Make the lane clearly readable with even cool light. Keep the damaged-road atmosphere but no gaps, drops or obstacles in the actual playable horizontal ground. This is a visual reconstruction, so do not add a location name or claim unseen city layout. Rain in the panorama may be very subtle, no lightning flash or effects obscuring combat.",
+      "references": [
+        "/workspace/scratch/c34cb5872d3d/reference/universe-ds2/gallery-inspection/sop2024_011.jpg"
+      ],
+      "transparent_background": false,
+      "git_blob_sha": "d4e748ab19bde2474a3161ecb1d09b0e9e9a39aa",
+      "output_hint": "Generated images are saved to /workspace/scratch/c34cb5872d3d/generated_images as /workspace/scratch/c34cb5872d3d/generated_images/exec-4c328840-1b8b-4bed-a076-b20eeebc4842.png by default.\nIf you need to use a generated image at another path, copy it and leave the original in place unless the user explicitly asks you to delete it.\nThe generated image is already displayed to the user. There is no need to render it in the final response as a Markdown image or file link."
+    },
+    {
+      "id": "night-viaduct-ds2-sky",
+      "path": "modes/echos-de-la-greve/assets/stages/night-viaduct-ds2-sky.png",
+      "prompt": "Use case: stylized-concept. Create ONE single native PNG parallax layer for Death Stranding 2D / Echos de la Greve. The first image is the approved scene composition and the second is the official screenshot for visible identity, materials and palette. UHD realistic painterly game-background art, landscape 16:9, side-view fighting-game scene, clean usable edges. Preserve scene identity and do not introduce new architecture or creatures. No text, no UI, no logo, no watermark, no borders, no sheet, no character, no vehicle or creature.\nLayer specification: Opaque full canvas of blue-black storm sky and smooth cool atmospheric haze. No horizon, lightning flash, rain streaks, towers, lamps, bridge or ground.\nTransparency: Opaque full canvas.",
+      "references": [
+        "/workspace/scratch/c34cb5872d3d/generated_images/exec-4c328840-1b8b-4bed-a076-b20eeebc4842.png",
+        "/workspace/scratch/c34cb5872d3d/reference/universe-ds2/gallery-inspection/sop2024_011.jpg"
+      ],
+      "transparent_background": false,
+      "git_blob_sha": "31e760e2fd1678c61e75f99d4e98285ccd75546b",
+      "output_hint": "Generated images are saved to /workspace/scratch/c34cb5872d3d/generated_images as /workspace/scratch/c34cb5872d3d/generated_images/exec-e0682d73-7e0f-44a0-825b-19f404614a19.png by default.\nIf you need to use a generated image at another path, copy it and leave the original in place unless the user explicitly asks you to delete it.\nThe generated image is already displayed to the user. There is no need to render it in the final response as a Markdown image or file link."
+    },
+    {
+      "id": "night-viaduct-ds2-floor",
+      "path": "modes/echos-de-la-greve/assets/stages/night-viaduct-ds2-floor.png",
+      "prompt": "Use case: stylized-concept. Create ONE single native PNG parallax layer for Death Stranding 2D / Echos de la Greve. The first image is the approved scene composition and the second is the official screenshot for visible identity, materials and palette. UHD realistic painterly game-background art, landscape 16:9, side-view fighting-game scene, clean usable edges. Preserve scene identity and do not introduce new architecture or creatures. No text, no UI, no logo, no watermark, no borders, no sheet, no character, no vehicle or creature.\nLayer specification: Only one continuous broad wet dark-concrete road surface, faint panel seams, subtle cyan reflections. Its straight horizontal back edge must cross the entire canvas exactly at 48 percent height. Everything above is genuinely transparent. The entire area below is filled continuously down to the bottom and both side edges; shallow perspective, unobstructed level surface. No posts, barriers, debris, potholes, broken slabs, skyline or horizon.\nTransparency: Use real transparent alpha, never a painted checkerboard or solid backdrop.",
+      "references": [
+        "/workspace/scratch/c34cb5872d3d/generated_images/exec-4c328840-1b8b-4bed-a076-b20eeebc4842.png",
+        "/workspace/scratch/c34cb5872d3d/reference/universe-ds2/gallery-inspection/sop2024_011.jpg"
+      ],
+      "transparent_background": true,
+      "git_blob_sha": "97c6f5299bc56262d3ee85b451bd23970f05ca95",
+      "output_hint": "Generated images are saved to /workspace/scratch/c34cb5872d3d/generated_images as /workspace/scratch/c34cb5872d3d/generated_images/exec-bd533b06-9bd1-4a90-905c-fc1b4b2366d6.png by default.\nIf you need to use a generated image at another path, copy it and leave the original in place unless the user explicitly asks you to delete it.\nThe generated image is already displayed to the user. There is no need to render it in the final response as a Markdown image or file link."
+    },
+    {
+      "id": "night-viaduct-ds2-foreground",
+      "path": "modes/echos-de-la-greve/assets/stages/night-viaduct-ds2-foreground.png",
+      "prompt": "Use case: stylized-concept. Create ONE single native PNG parallax layer for Death Stranding 2D / Echos de la Greve. The first image is the approved scene composition and the second is the official screenshot for visible identity, materials and palette. UHD realistic painterly game-background art, landscape 16:9, side-view fighting-game scene, clean usable edges. Preserve scene identity and do not introduce new architecture or creatures. No text, no UI, no logo, no watermark, no borders, no sheet, no character, no vehicle or creature.\nLayer specification: Only very low wet concrete edge fragments at extreme lower left and right, small cyan edge reflection. Upper 90 percent and central 72 percent of width genuinely transparent. No poles, lamps, barrier or tall object; keep combat feet visible.\nTransparency: Use real transparent alpha, never a painted checkerboard or solid backdrop.",
+      "references": [
+        "/workspace/scratch/c34cb5872d3d/generated_images/exec-4c328840-1b8b-4bed-a076-b20eeebc4842.png",
+        "/workspace/scratch/c34cb5872d3d/reference/universe-ds2/gallery-inspection/sop2024_011.jpg"
+      ],
+      "transparent_background": true,
+      "git_blob_sha": "737591f40a9b5015cf92ef67f758f8d2d92872d5",
+      "output_hint": "Generated images are saved to /workspace/scratch/c34cb5872d3d/generated_images as /workspace/scratch/c34cb5872d3d/generated_images/exec-bbb7c837-4c15-4871-9790-3459397fd86f.png by default.\nIf you need to use a generated image at another path, copy it and leave the original in place unless the user explicitly asks you to delete it.\nThe generated image is already displayed to the user. There is no need to render it in the final response as a Markdown image or file link."
+    },
+    {
+      "id": "night-viaduct-ds2-distant",
+      "path": "modes/echos-de-la-greve/assets/stages/night-viaduct-ds2-distant.png",
+      "prompt": "Use case: stylized-concept. Create ONE single native PNG parallax layer for Death Stranding 2D / Echos de la Greve. The first image is the approved scene composition and the second is the official screenshot for visible identity, materials and palette. UHD realistic painterly game-background art, landscape 16:9, side-view fighting-game scene, clean usable edges. Preserve scene identity and do not introduce new architecture or creatures. No text, no UI, no logo, no watermark, no borders, no sheet, no character, no vehicle or creature.\nLayer specification: Only the distant dark city skyline and low elevated-road infrastructure: squat black buildings, one taller rectangular tower group toward the left, sparse tiny warm window lights. Occupy lower 46 percent, continue to both side edges, upper space genuinely transparent. Subdued contrast, no sky, foreground lamps or playable floor.\nTransparency: Use real transparent alpha, never a painted checkerboard or solid backdrop.",
+      "references": [
+        "/workspace/scratch/c34cb5872d3d/generated_images/exec-4c328840-1b8b-4bed-a076-b20eeebc4842.png",
+        "/workspace/scratch/c34cb5872d3d/reference/universe-ds2/gallery-inspection/sop2024_011.jpg"
+      ],
+      "transparent_background": true,
+      "git_blob_sha": "d312a04ea9bc5891eadbfb965a6022173de9d2ea",
+      "output_hint": null
+    },
+    {
+      "id": "night-viaduct-ds2-midground",
+      "path": "modes/echos-de-la-greve/assets/stages/night-viaduct-ds2-midground.png",
+      "prompt": "Use case: stylized-concept. Create ONE single native PNG parallax layer for Death Stranding 2D / Echos de la Greve. The first image is the approved scene composition and the second is the official screenshot for visible identity, materials and palette. UHD realistic painterly game-background art, landscape 16:9, side-view fighting-game scene, clean usable edges. Preserve scene identity and do not introduce new architecture or creatures. No text, no UI, no logo, no watermark, no borders, no sheet, no character, no vehicle or creature.\nLayer specification: Only the middle-distance cyan-lit viaduct infrastructure: distant roadway segment and slender curved blue lamp posts with angular cyan-white lamp heads. Place the larger lamps near left and right edges, central area open and low. Bases align near the bottom of the image. No floor in the playable lane, no opaque sky or city silhouette; all empty spaces genuinely transparent. Preserve blue/black palette.\nTransparency: Use real transparent alpha, never a painted checkerboard or solid backdrop.",
+      "references": [
+        "/workspace/scratch/c34cb5872d3d/generated_images/exec-4c328840-1b8b-4bed-a076-b20eeebc4842.png",
+        "/workspace/scratch/c34cb5872d3d/reference/universe-ds2/gallery-inspection/sop2024_011.jpg"
+      ],
+      "transparent_background": true,
+      "git_blob_sha": "7835467a6372a68ac4fab6e974cc1461c80c9770",
+      "output_hint": "Generated images are saved to /workspace/scratch/c34cb5872d3d/generated_images as /workspace/scratch/c34cb5872d3d/generated_images/exec-9a1170a6-345c-4e08-aec9-b8c14a5e9d8a.png by default.\nIf you need to use a generated image at another path, copy it and leave the original in place unless the user explicitly asks you to delete it.\nThe generated image is already displayed to the user. There is no need to render it in the final response as a Markdown image or file link."
+    },
+    {
+      "id": "red-ravine-ds2-sky",
+      "path": "modes/echos-de-la-greve/assets/stages/red-ravine-ds2-sky.png",
+      "prompt": "Use case: stylized-concept. Create ONE single native PNG parallax layer for Death Stranding 2D / Echos de la Greve. The first image is the approved scene composition and the second is the official screenshot for visible identity, materials and palette. UHD realistic painterly game-background art, landscape 16:9, side-view fighting-game scene, clean usable edges. Preserve scene identity and do not introduce new architecture or creatures. No text, no UI, no logo, no watermark, no borders, no sheet, no character, no vehicle or creature.\nLayer specification: Opaque full canvas atmospheric plate of saturated crimson upper sky blending to softer hazy dusty red toward the bottom, very faint long dark hanging filaments in the distance. NO flame, lava, sparks, sun, moon, terrain, trees, rocks or humanoid shapes.\nTransparency: Opaque full canvas.",
+      "references": [
+        "/workspace/scratch/c34cb5872d3d/generated_images/exec-ac6e6779-4c49-422e-83de-99ab36f691b6.png",
+        "/workspace/scratch/c34cb5872d3d/reference/universe-ds2/gallery-inspection/sop2024_014.jpg"
+      ],
+      "transparent_background": false,
+      "git_blob_sha": "b70a9c351490ab8c8ec88df9324fb9d0a0d5ac0e",
+      "output_hint": "Generated images are saved to /workspace/scratch/c34cb5872d3d/generated_images as /workspace/scratch/c34cb5872d3d/generated_images/exec-41efc76e-826d-4e17-ac01-dcdcf1fcce97.png by default.\nIf you need to use a generated image at another path, copy it and leave the original in place unless the user explicitly asks you to delete it.\nThe generated image is already displayed to the user. There is no need to render it in the final response as a Markdown image or file link."
+    },
+    {
+      "id": "red-ravine-ds2-foreground",
+      "path": "modes/echos-de-la-greve/assets/stages/red-ravine-ds2-foreground.png",
+      "prompt": "Use case: stylized-concept. Create ONE single native PNG parallax layer for Death Stranding 2D / Echos de la Greve. The first image is the approved scene composition and the second is the official screenshot for visible identity, materials and palette. UHD realistic painterly game-background art, landscape 16:9, side-view fighting-game scene, clean usable edges. Preserve scene identity and do not introduce new architecture or creatures. No text, no UI, no logo, no watermark, no borders, no sheet, no character, no vehicle or creature.\nLayer specification: Only low wet black-rock trims and one tiny bare twig at extreme bottom corners, restrained red highlights. Upper 90 percent and central 75 percent genuinely transparent. No tall plants, tree trunks, continuous floor, clouds or opaque background; never cover the fighting lane.\nTransparency: Use real transparent alpha, never a painted checkerboard or solid backdrop.",
+      "references": [
+        "/workspace/scratch/c34cb5872d3d/generated_images/exec-ac6e6779-4c49-422e-83de-99ab36f691b6.png",
+        "/workspace/scratch/c34cb5872d3d/reference/universe-ds2/gallery-inspection/sop2024_014.jpg"
+      ],
+      "transparent_background": true,
+      "git_blob_sha": "a11aa50addcb54f7c965849a037e0e81dc3139ed",
+      "output_hint": "Generated images are saved to /workspace/scratch/c34cb5872d3d/generated_images as /workspace/scratch/c34cb5872d3d/generated_images/exec-29e4ddfe-8274-4bec-83ca-16c70d5734e3.png by default.\nIf you need to use a generated image at another path, copy it and leave the original in place unless the user explicitly asks you to delete it.\nThe generated image is already displayed to the user. There is no need to render it in the final response as a Markdown image or file link."
+    },
+    {
+      "id": "red-ravine-ds2-distant",
+      "path": "modes/echos-de-la-greve/assets/stages/red-ravine-ds2-distant.png",
+      "prompt": "Use case: stylized-concept. Create ONE single native PNG parallax layer for Death Stranding 2D / Echos de la Greve. The first image is the approved scene composition and the second is the official screenshot for visible identity, materials and palette. UHD realistic painterly game-background art, landscape 16:9, side-view fighting-game scene, clean usable edges. Preserve scene identity and do not introduce new architecture or creatures. No text, no UI, no logo, no watermark, no borders, no sheet, no character, no vehicle or creature.\nLayer specification: Only distant layered basalt ravine silhouettes, softened and muted by red atmospheric haze: low terraces across bottom, taller rock masses toward far edges, broad open gap at center. Terrain occupies lower 48 percent of canvas, upper and gap spaces genuinely transparent. No sky, trees, ground lane, characters or shadow figures.\nTransparency: Use real transparent alpha, never a painted checkerboard or solid backdrop.",
+      "references": [
+        "/workspace/scratch/c34cb5872d3d/generated_images/exec-ac6e6779-4c49-422e-83de-99ab36f691b6.png",
+        "/workspace/scratch/c34cb5872d3d/reference/universe-ds2/gallery-inspection/sop2024_014.jpg"
+      ],
+      "transparent_background": true,
+      "git_blob_sha": "83a80f5e5d8651dc5744bdda10200a8bfe79e6d9",
+      "output_hint": "Generated images are saved to /workspace/scratch/c34cb5872d3d/generated_images as /workspace/scratch/c34cb5872d3d/generated_images/exec-9fff4d14-f55f-44dc-ab4a-bfd71a2de0fd.png by default.\nIf you need to use a generated image at another path, copy it and leave the original in place unless the user explicitly asks you to delete it.\nThe generated image is already displayed to the user. There is no need to render it in the final response as a Markdown image or file link."
+    },
+    {
+      "id": "red-ravine-ds2-floor",
+      "path": "modes/echos-de-la-greve/assets/stages/red-ravine-ds2-floor.png",
+      "prompt": "Use case: stylized-concept. Create ONE single native PNG parallax layer for Death Stranding 2D / Echos de la Greve. The first image is the approved scene composition and the second is the official screenshot for visible identity, materials and palette. UHD realistic painterly game-background art, landscape 16:9, side-view fighting-game scene, clean usable edges. Preserve scene identity and do not introduce new architecture or creatures. No text, no UI, no logo, no watermark, no borders, no sheet, no character, no vehicle or creature.\nLayer specification: Only one continuous unobstructed flat dark gravel and compacted rocky fighting path, wet with restrained red reflections. A straight level back edge crosses the whole canvas at 48 percent height; everything above is genuinely transparent. Everything below continues full width to bottom, subtle shallow-perspective stony surface. No tall rocks, trees, plants, gaps, slopes, fire or sky; small pebbles do not disrupt the level walking line.\nTransparency: Use real transparent alpha, never a painted checkerboard or solid backdrop.",
+      "references": [
+        "/workspace/scratch/c34cb5872d3d/generated_images/exec-ac6e6779-4c49-422e-83de-99ab36f691b6.png",
+        "/workspace/scratch/c34cb5872d3d/reference/universe-ds2/gallery-inspection/sop2024_014.jpg"
+      ],
+      "transparent_background": true,
+      "git_blob_sha": "2d3ef0450fdfb1194485dcadf38d1068622569b4",
+      "output_hint": "Generated images are saved to /workspace/scratch/c34cb5872d3d/generated_images as /workspace/scratch/c34cb5872d3d/generated_images/exec-9da6b648-77c3-4935-9fe6-8394ff1fb723.png by default.\nIf you need to use a generated image at another path, copy it and leave the original in place unless the user explicitly asks you to delete it.\nThe generated image is already displayed to the user. There is no need to render it in the final response as a Markdown image or file link."
+    },
+    {
+      "id": "red-ravine-ds2-midground",
+      "path": "modes/echos-de-la-greve/assets/stages/red-ravine-ds2-midground.png",
+      "prompt": "Use case: stylized-concept. Create ONE single native PNG parallax layer for Death Stranding 2D / Echos de la Greve. The first image is the approved scene composition and the second is the official screenshot for visible identity, materials and palette. UHD realistic painterly game-background art, landscape 16:9, side-view fighting-game scene, clean usable edges. Preserve scene identity and do not introduce new architecture or creatures. No text, no UI, no logo, no watermark, no borders, no sheet, no character, no vehicle or creature.\nLayer specification: Only side rock walls and sparse bare twisted branches from the approved ravine. Wet dark basalt layered ledges rise at left and right, with low broken-rock bases extending along bottom; the central 60 percent remains largely open to see the distant red haze. Genuine transparent background and openings. No opaque fog backdrop, no walking floor, humanoids, flames or lava.\nTransparency: Use real transparent alpha, never a painted checkerboard or solid backdrop.",
+      "references": [
+        "/workspace/scratch/c34cb5872d3d/generated_images/exec-ac6e6779-4c49-422e-83de-99ab36f691b6.png",
+        "/workspace/scratch/c34cb5872d3d/reference/universe-ds2/gallery-inspection/sop2024_014.jpg"
+      ],
+      "transparent_background": true,
+      "git_blob_sha": "e38a425c81bd21a2698de6898a3962350d053084",
+      "output_hint": "Generated images are saved to /workspace/scratch/c34cb5872d3d/generated_images as /workspace/scratch/c34cb5872d3d/generated_images/exec-e8546c78-7bfc-47d4-a663-34f398f755c6.png by default.\nIf you need to use a generated image at another path, copy it and leave the original in place unless the user explicitly asks you to delete it.\nThe generated image is already displayed to the user. There is no need to render it in the final response as a Markdown image or file link."
+    }
+  ]
+}

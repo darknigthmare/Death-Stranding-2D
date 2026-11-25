@@ -11,6 +11,9 @@
   let inputController=null,inputEditor=null,manualReturnFocus=null,pendingDuel=null;
   const campaignContent = window.StrandCampaign;
   const campaign = campaignContent?.createStore();
+  const lessonContent = window.StrandLessons;
+  const lessonStore = lessonContent?.createStore();
+  let lessonRun = null, lessonFighter = lessonStore?.progress().resume.fighter || 'sam';
   const view = document.getElementById('view');
   const manual = document.getElementById('manual');
   const ids = Object.keys(fighters);
@@ -101,6 +104,7 @@
     if (activeFight?.mode==='campaign') campaign?.suspend();
     if (activeFight) activeEngine()?.stop();
     if (activeFight?.kind==='training' && ['record','loop'].includes(training.dummy)) training.dummy='idle';
+    lessonRun = null;
     activeFight = null; paused = false;
   }
   function stageRule(stage) {
@@ -109,7 +113,7 @@
   }
   function home() {
     stopFight();
-    const copy = {arcade:'Trois adversaires jusqu’au rival.', versus:'Duel contre l’IA ou à deux en local.', tournament:'Tableau à élimination directe.', training:'Mannequin, garde et zones de touche.'};
+    const copy = {arcade:'Trois adversaires jusqu’au rival.', versus:'Duel contre l’IA ou à deux en local.', tournament:'Tableau à élimination directe.', training:'Dojo libre et huit exercices dirigés.'};
     copy.challenges='Survie ou livraison sous pression.';
     copy.boss='Quatre Échoués géants, camion et convoi MULE.';
     copy.bossrush='Six rencontres, une réserve de vie et une série à terminer.';
@@ -216,10 +220,12 @@
       '<div class="brief"><strong>' + character.special + '</strong> · ' + character.tip + '</div>' +
       (['story','arcade'].includes(mode) ? '<p class="montage">' + (mode === 'story' ? '<b>' + character.story + '</b><br>' : '') + route + '</p>' : '') +
       (mode === 'challenges' ? trialBrief() : '') +
+      (mode === 'training' && lessonContent ? '<section class="lessonIntro"><h2>Apprendre en pratiquant</h2><p>Huit exercices vérifient tes déplacements, tes gardes, tes punitions et tes signatures dans le vrai dojo. Choisis ton combattant, suis les étapes et reprends à ton rythme.</p>'+button('lessons','Parcours dirigé · 8 exercices','secondary')+'</section>' : '') +
       '<div class="actions">' + (mode === 'tournament' && cup ? button('bracket',cup.rounds.at(-1)[0].winner === null ? 'Reprendre le tableau' : 'Revoir le tableau') : '') +
       button('start',startLabel + ' ' + arrow,mode === 'tournament' && cup ? 'secondary' : 'primary') +
       (mode === 'story' && chapter() > 0 && chapter() < 3 ? button('restartStory','Recommencer l’histoire','secondary') : '') + '</div></section>');
   }
+  function bossGuide(options) { return window.StrandBossGuide?.render(options) || ''; }
   function bossSelection() {
     stopFight();
     if (!bossEngine) { setScreen('error','<section class="shell">'+back()+'<h1>Boss Battle indisponible</h1><p class="hint">Le module de grandes rencontres n’a pas pu être chargé.</p></section>'); return; }
@@ -248,7 +254,7 @@
       '<div class="options">'+field+'</div><div class="bossBrief">'+stagePreview(config.bossStage==='recommended'?selected.stage:config.bossStage)+
       '<div><h2>'+esc(selected.name)+'</h2><p>'+esc(selected.goal)+'</p><p class="hint">'+esc(fighters[config.p1].special)+' · '+esc(fighters[config.p1].tip)+
       '</p>'+recordLine+'<p class="hint">La rencontre en cours et les records de Boss Battle sont sauvegardés séparément.</p>'+
-      '<div class="actions">'+button('startBoss','Nouvelle tentative '+arrow)+button('controls','Commandes','secondary')+'</div></div></div></section>');
+      '<div class="actions">'+button('startBoss','Nouvelle tentative '+arrow)+button('controls','Commandes','secondary')+'</div></div></div>'+bossGuide({boss:config.boss,context:'boss',p1:config.p1,difficulty:config.difficulty})+'</section>');
   }
   function startBoss(resume=false) {
     const cp=resume?bossEngine?.progress().checkpoint:null;
@@ -308,7 +314,7 @@
       '<p class="hint">La reprise conserve le combattant, la tenue et la difficulté de la série sauvegardée. Les rencontres suivent leurs arènes conseillées. '+
       'Les bilans et la reprise de Boss Rush sont séparés de Boss Battle ; un entraînement libre reste accessible depuis l’accueil.</p><div class="actions">'+
       button('newRush',ongoing?'Recommencer au premier boss':'Commencer la série')+(run&&!ongoing?button('rushResult','Revoir le bilan','secondary'):'')+
-      button('controls','Commandes','secondary')+'</div></section>');
+      button('controls','Commandes','secondary')+'</div>'+bossGuide({boss:order[ongoing?run.index:0],context:'bossrush',p1:ongoing?run.p1:config.p1,difficulty:ongoing?run.difficulty:config.difficulty})+'</section>');
   }
   function startRush(fresh=false) {
     stopFight();
@@ -411,11 +417,13 @@
     const next=fromGallery?'Retour aux interludes':run.phase==='briefing'?'Entrer dans l’arène':run.phase==='prologue'?'Commencer le premier chapitre':
       run.phase==='ending'?'Clore la campagne':run.phase==='complete'?'Retour à la campagne':run.chapter===5?'Voir la conclusion':'Chapitre suivant';
     const portrait=asset.portraits?.[current.speaker];
+    const guideChapter=!fromGallery&&run?.phase==='briefing'?campaignContent.chapters[run.chapter]:null;
     setScreen('campaignScene','<section class="story-art campaignScene"'+backdrop(asset.stages?.[current.stage]||asset.hero)+'>'+
       (portrait?'<img class="campaignPortrait" src="'+esc(portrait)+'" alt="">':'')+'<div class="story-copy"><div class="eyebrow">Les Nœuds rompus · '+esc(label)+
       '</div><div class="speaker">'+esc(speaker)+'</div><h1>'+esc(current.title)+'</h1>'+current.paragraphs.map(p=>'<p>'+esc(p)+'</p>').join('')+
       '<div class="actions">'+button(action,next+' '+arrow)+(!fromGallery?button('campaignSelection','Retour au parcours','secondary'):'')+'</div></div></section>'+
-      '<div class="routebar">Fiction du simulateur · Empreintes DS1 / Director’s Cut'+(fromGallery?' · Relecture sans effet sur la progression':' · '+esc(campaignSaveHint()))+'</div>');
+      '<div class="routebar">Fiction du simulateur · Empreintes DS1 / Director’s Cut'+(fromGallery?' · Relecture sans effet sur la progression':' · '+esc(campaignSaveHint()))+'</div>'+
+      (guideChapter?.kind==='boss'?'<section class="shell">'+bossGuide({boss:guideChapter.boss,context:'campaign',p1:guideChapter.p1,difficulty:run.difficulty})+'</section>':''));
   }
   function campaignAdvance() {
     if(!campaign?.advance())return campaignSelection();
@@ -666,6 +674,67 @@
       '</div><div>' + keys.slice(4).map(control).join('') + '</div></div></div>';
   }
   const dojoSeconds=new Intl.NumberFormat('fr-FR',{minimumFractionDigits:1,maximumFractionDigits:1});
+  function lessonSelection() {
+    stopFight();config.mode='training';
+    if(!lessonContent||!lessonStore||!window.StrandMovesData){setScreen('error','<section class="shell">'+back()+'<h1>Parcours indisponible</h1><p>Le module des exercices ou les fiches de combat n’ont pas pu être chargés.</p></section>');return;}
+    const state=lessonStore.progress(),completed=Object.keys(state.completed).length,resume=state.resume;
+    const cards=lessonContent.lessons.map((lesson,index)=>{
+      const record=state.completed[lesson.id];
+      return '<li class="lessonCard'+(record?' complete':'')+'"><span class="kicker">Exercice '+(index+1)+' / '+lessonContent.lessons.length+(record?' · Validé':'')+
+        '</span><h2>'+esc(lesson.title)+'</h2><p>'+esc(lesson.summary)+'</p>'+(record?'<small>Validé avec '+record.fighters.map(id=>esc(fighters[id].call)).join(', ')+'.</small>':'')+
+        button('startLesson',record?'S’exercer à nouveau':'Commencer','secondary','data-lesson="'+lesson.id+'"')+'</li>';
+    }).join('');
+    const fighterChoice='<label>Combattant des exercices<select data-lesson-fighter>'+ids.map(id=>'<option value="'+id+'"'+(id===lessonFighter?' selected':'')+'>'+esc(fighters[id].name)+'</option>').join('')+'</select></label>';
+    setScreen('lessons','<section class="shell">'+button('selection','← Dojo libre','back')+'<div class="pagehead"><div><div class="eyebrow">Centre d’entraînement</div><h1>Le parcours du dojo</h1></div><p>Des objectifs concrets, un mannequin prévisible et les commandes de ton profil J1.</p></div>'+
+      '<p class="lessonProgress">'+completed+' / '+lessonContent.lessons.length+' exercices validés</p><p>Chaque exercice peut être joué directement. Les validations restent acquises. Une interruption reprend l’exercice depuis son début ; aucun duel, récit ou record Boss n’est modifié.</p>'+
+      '<div class="options">'+fighterChoice+ambienceControl()+'</div><div class="lessonResume"><span>Point de reprise · '+esc(lessonContent.get(resume.id).title)+' · '+esc(fighters[resume.fighter].call)+'</span>'+
+      button('startLesson',completed===lessonContent.lessons.length?'Rejouer le dernier exercice':'Reprendre le parcours','primary','data-lesson="'+resume.id+'" data-fighter="'+resume.fighter+'"')+'</div>'+
+      '<p class="hint" role="status">'+esc(state.notice||(state.saved?'Progression des exercices enregistrée dans ce navigateur.':'Progression disponible pendant cette session.'))+'</p><ol class="lessonList">'+cards+'</ol></section>');
+  }
+  function startLesson(id,selectedFighter=lessonFighter) {
+    if(!lessonContent?.get(id)||!fighters[selectedFighter])return lessonSelection();
+    stopFight();lessonFighter=selectedFighter;config.mode='training';config.p1=selectedFighter;
+    lessonStore.begin(id,selectedFighter);
+    fight({mode:'training',kind:'training',lesson:id,p1:selectedFighter,p2:selectedFighter==='higgs'?'sam':'higgs',
+      stage:stages['firing-range-dc']?'firing-range-dc':'terminal',difficulty:'easy',seed:0x1e550,
+      title:'Parcours du dojo · '+lessonContent.get(id).title});
+  }
+  function lessonMarkup() {
+    const definition=lessonRun.session.definition;
+    return '<section class="lessonPanel" aria-labelledby="lessonTitle"><p class="kicker">Exercice dirigé · J1 '+esc(fighters[lessonRun.fighter].call)+'</p><h2 id="lessonTitle">'+esc(definition.title)+
+      '</h2><ol class="lessonSteps" id="lessonSteps"></ol><p id="lessonFeedback" class="lessonFeedback" role="status"></p><p id="lessonMetric" class="lessonMetric"></p><p class="hint">'+esc(definition.note)+
+      '</p><div class="lessonActions">'+button('retryLesson','Recommencer l’exercice','mini')+button('lessons','Retour au parcours','mini')+'</div><div id="lessonResult" class="lessonResult" hidden></div></section>';
+  }
+  function renderLesson(state) {
+    if(!lessonRun)return;
+    const steps=document.getElementById('lessonSteps'),metric=document.getElementById('lessonMetric'),feedback=document.getElementById('lessonFeedback');
+    if(!steps)return;
+    const forward=state.forward||'right',backward=forward==='right'?'left':'right',stamp=[state.step,state.phase,forward].join(':');
+    if(lessonRun.renderStamp!==stamp){
+      lessonRun.renderStamp=stamp;
+      const text=value=>esc(value).replace(/\{([a-z]+)\}/g,(_,action)=>'<span class="lessonKey">'+keyText(1,action==='forward'?forward:action==='back'?backward:action)+'</span>');
+      steps.innerHTML=state.steps.map((step,index)=>'<li'+(index<state.step?' class="done"':index===state.step&&state.phase==='active'?' aria-current="step"':'')+'>'+text(step)+'</li>').join('');
+    }
+    if(metric.textContent!==state.metric)metric.textContent=state.metric;
+    if(feedback.textContent!==state.feedback)feedback.textContent=state.feedback;
+  }
+  function updateLesson(status) {
+    const run=lessonRun;if(!run)return;
+    const update=run.session.observe(status);
+    for(const [player,action,down] of update.commands)engine.input(player,action,down);
+    renderLesson(update.state);
+    if(update.state.phase==='active'||run.settled)return;
+    run.settled=true;paused=true;releaseControls();engine.pause(true);
+    const passed=update.state.phase==='success';
+    if(passed)lessonStore.complete(run.id,run.fighter);
+    const next=lessonContent.lessons[lessonContent.lessons.findIndex(item=>item.id===run.id)+1];
+    const result=document.getElementById('lessonResult');
+    result.innerHTML='<h3 tabindex="-1" id="lessonResultTitle">'+(passed?'Exercice validé':'À réessayer')+'</h3><p>'+esc(update.state.feedback)+'</p>'+
+      (passed?'<p class="hint">'+esc(lessonStore.progress().notice||'Cette validation reste acquise lorsque tu quittes le dojo.')+'</p>':'')+
+      '<div class="lessonActions">'+(passed&&next?button('startLesson','Exercice suivant','primary','data-lesson="'+next.id+'"'):button('lessons',passed?'Voir le parcours':'Choisir un autre exercice','secondary'))+
+      button('retryLesson','Recommencer','secondary')+'</div>';
+    result.hidden=false;document.getElementById('pauseBtn').disabled=true;document.getElementById('lessonResultTitle').focus();
+  }
   function trainingTools() {
     const options = {idle:'Immobile',guard:'En garde',cpu:'IA active',record:'Enregistrer J2',loop:'Lire en boucle'};
     return '<label>Mannequin <select id="dummy">' + Object.entries(options).map(([value,label]) => '<option value="' + value + '"' +
@@ -700,7 +769,7 @@
     });
   }
   function acceptsSecondPlayer() {
-    return activeFight?.kind==='local' || (activeFight?.kind==='training' && training.dummy==='record');
+    return activeFight?.kind==='local' || (activeFight?.kind==='training' && !lessonRun && training.dummy==='record');
   }
   function fight(match) {
     if(['versus','arcade'].includes(match.mode)&&!match.introSeen&&!match.replay){
@@ -718,21 +787,22 @@
       setScreen('error','<section class="shell">' + back() + '<h1>Moteur indisponible</h1><p class="hint">Le fichier du duel n’a pas pu être chargé.</p></section>'); return;
     }
     activeFight = match;
+    if(match.lesson)lessonRun={id:match.lesson,fighter:match.p1,session:lessonContent.createSession(match.lesson,match.p1),settled:false,renderStamp:null};
     const local = match.kind === 'local', watching=!!match.replay;
     const labels = match.labels || [fighters[match.p1].name,fighters[match.p2].name];
-    setScreen('fight','<section class="fightShell"><div class="fightbar"><div><div class="kicker">' + (watching ? 'Relecture · ' : '') + match.title +
+    setScreen('fight','<section class="fightShell'+(lessonRun?' lessonFight':'')+'"><div class="fightbar"><div><div class="kicker">' + (watching ? 'Relecture · ' : '') + match.title +
       '</div><b>' + stages[match.stage] + '</b></div><div class="tools">' + (watching ? button('leave','Retour au tableau','mini') : button('controls','Commandes','mini')) + button('pause','Pause','mini','id="pauseBtn"') +
-      '</div></div><div class="screen"><canvas id="arena" tabindex="0" aria-label="Duel entre ' + esc(labels.join(' et ')) + '"></canvas>' +
-      '<div id="pauseBox" class="pausebox'+(match.mode==='campaign'?' campaignPause':'')+'" hidden><h2>En pause</h2>' + (match.mode==='campaign'?'<p>Quitter ou fermer la page reprend ce chapitre depuis son début. Les chapitres précédents restent validés.</p>':'') + ambienceControl() + button('pause','Reprendre') + button('leave',watching ? 'Retour au tableau' : match.mode==='campaign'?'Retour à la campagne':'Quitter le duel','secondary') +
+      '</div></div>'+(lessonRun?lessonMarkup():'')+'<div class="screen"><canvas id="arena" tabindex="0" aria-label="Duel entre ' + esc(labels.join(' et ')) + '"></canvas>' +
+      '<div id="pauseBox" class="pausebox'+(match.mode==='campaign'?' campaignPause':'')+'" hidden><h2>En pause</h2>' + (match.mode==='campaign'?'<p>Quitter ou fermer la page reprend ce chapitre depuis son début. Les chapitres précédents restent validés.</p>':lessonRun?'<p>Quitter reprend cet exercice depuis son début. Les validations précédentes restent acquises.</p>':'') + ambienceControl() + button('pause','Reprendre') + button('leave',watching ? 'Retour au tableau' : match.mode==='campaign'?'Retour à la campagne':lessonRun?'Retour au parcours':'Quitter le duel','secondary') +
       '</div></div><div class="combatNotes"><span>' + (watching ? labels.join('　 /　') : 'Commandes J1 · ' + labels[0] + '　 /　' + (local ? 'Commandes J2' : match.kind==='training' ? 'Mannequin' : 'IA') + ' · ' + labels[1]) + '</span>' +
-      (match.kind === 'training' ? trainingTools() : '') + '<span id="signal" aria-live="polite"></span></div>'+stageRule(match.stage)+'<div class="touchgroup">' +
-      (watching ? '' : touchControls(1) + (local ? touchControls(2) : match.kind==='training' ? '<div id="dummyControls" hidden>'+touchControls(2)+'</div>' : '')) + '</div></section>');
+      (match.kind === 'training' && !lessonRun ? trainingTools() : '') + '<span id="signal" aria-live="polite"></span></div>'+stageRule(match.stage)+'<div class="touchgroup">' +
+      (watching ? '' : touchControls(1) + (local ? touchControls(2) : match.kind==='training' && !lessonRun ? '<div id="dummyControls" hidden>'+touchControls(2)+'</div>' : '')) + '</div></section>');
     const canvas = document.getElementById('arena'), signal = document.getElementById('signal');
     let phase = null;
-    engine.start({canvas,p1:match.p1,p2:match.p2,stage:match.stage,mode:match.kind,difficulty:match.difficulty,seed:match.seed,record:match.mode==='tournament' && !watching,replay:match.replay,roundsToWin:match.mode === 'challenges' ? 1 : 2,startingVitality:match.vitality,parcel:match.parcel,training,
+    engine.start({canvas,p1:match.p1,p2:match.p2,stage:match.stage,mode:match.kind,difficulty:match.difficulty,seed:match.seed,record:match.mode==='tournament' && !watching,replay:match.replay,roundsToWin:match.mode === 'challenges' ? 1 : 2,startingVitality:match.vitality,parcel:match.parcel,training:lessonRun?{dummy:'record',timing:true,hitboxes:false}:training,
       outfits:['versus','training'].includes(match.mode) ? [config.outfit1,config.outfit2] : undefined,
       sound,ambienceVolume,reducedEffects,staticScenery,visuals:asset.fighters || {},onStatus(status) {
-        if (match.kind==="training") updateTraining(status);
+        if (match.lesson)updateLesson(status);else if (match.kind==="training") updateTraining(status);
         if (!signal || status.phase === phase) return;
         phase = status.phase;
         signal.textContent = phase==='transition'?'Passage vers le hangar · chronomètre suspendu':phase === 'finish' && !watching ? finishHint(status,local) : '';
@@ -741,12 +811,13 @@
   }
   function setPause(on) {
     if (!activeFight) return;
+    if(lessonRun?.settled)return;
     paused = !!on;
     releaseControls(); activeEngine().pause(paused);
     const box=document.getElementById('pauseBox'),control=document.getElementById('pauseBtn');
     box.hidden = !paused;
     control.textContent = paused ? 'Reprendre' : 'Pause';
-    if(activeFight.mode==='campaign')(paused?box.querySelector('[data-act="pause"]'):control)?.focus({preventScroll:true});
+    if(activeFight.mode==='campaign'||lessonRun)(paused?box.querySelector('[data-act="pause"]'):control)?.focus({preventScroll:true});
   }
   function outcome(match, result) {
     if(match.mode==='campaign'){campaignOutcome(match,result);return;}
@@ -868,9 +939,10 @@
   view.addEventListener('input',changeAmbience);
   manual.addEventListener('input',changeAmbience);
   document.getElementById('controlsLink').onclick = controls;
-  document.getElementById('homeLink').onclick = () => { if (activeFight) setPause(true); else home(); };
+  document.getElementById('homeLink').onclick = () => { if (activeFight&&!lessonRun?.settled) setPause(true); else home(); };
   const actions = {
     startTrial, trialFight, retryTrial, home, gallery, stageGallery, selection, bracket, cupFight, cupReplay, routeFight, start, newCup, controls,
+    lessons:()=>lessonSelection(),startLesson:el=>startLesson(el.dataset.lesson,el.dataset.fighter||lessonFighter),retryLesson:()=>{if(lessonRun)startLesson(lessonRun.id,lessonRun.fighter);},
     campaignSelection:()=>campaignSelection(),campaignNew,campaignStart,campaignResume,campaignAdvance,campaignFight,campaignGallery,
     campaignInterlude:()=>campaignScene(),campaignConclusion:()=>campaignScene(),campaignReplay:el=>campaignScene(el.dataset.scene),
     previousSceneFrame:()=>sceneStep(-1),nextSceneFrame:()=>sceneStep(1),
@@ -886,7 +958,7 @@
     restartStory:() => { progress[config.p1] = 0; save('chapters',progress); openStory(); },
     ending:() => scene(config.p1,'ending'), rival:() => scene(config.p1,'rival'),
     pause:() => setPause(!paused),
-    leave:() => { const mode = activeFight?.mode; stopFight(); if (mode === 'tournament') bracket(); else if(mode==='campaign')campaignSelection();else selection(); },
+    leave:() => { const mode = activeFight?.mode,lesson=!!lessonRun; stopFight(); if(lesson)lessonSelection();else if (mode === 'tournament') bracket(); else if(mode==='campaign')campaignSelection();else selection(); },
     resetTraining:() => {
       if (activeFight?.kind==='training') { releaseControls(); engine.setTraining({reset:true}); }
     }
@@ -896,7 +968,9 @@
   });
   view.addEventListener('change',event => {
     const target = event.target, key = target.dataset.option;
-    if (key && Object.hasOwn(config,key)) {
+    if(target.matches?.('[data-lesson-fighter]')&&fighters[target.value]){
+      lessonFighter=target.value;lessonSelection();view.querySelector('[data-lesson-fighter]')?.focus({preventScroll:true});
+    } else if (key && Object.hasOwn(config,key)) {
       config[key] = target.value; selection();
       view.querySelector('[data-option="' + key + '"]')?.focus({preventScroll:true});
     } else if (['dummy','boxes','dojoTiming'].includes(target.id)) {
@@ -935,8 +1009,8 @@
   window.addEventListener('pagehide',stopFight);
   window.addEventListener('pageshow',event => { if (event.persisted && screen === 'fight') home(); });
   inputController=input.createController({settings:inputSettings,
-    accepts:player=>screen==='fight'&&!!activeFight&&!paused&&!manual.open&&!activeFight.replay&&(player===1||player===2&&acceptsSecondPlayer()),
-    canPause:player=>screen==='fight'&&!!activeFight&&!manual.open&&(player===1||player===2&&acceptsSecondPlayer()),
+    accepts:player=>screen==='fight'&&!!activeFight&&!paused&&!manual.open&&!activeFight.replay&&!lessonRun?.settled&&(player===1||player===2&&acceptsSecondPlayer()),
+    canPause:player=>screen==='fight'&&!!activeFight&&!manual.open&&!lessonRun?.settled&&(player===1||player===2&&acceptsSecondPlayer()),
     onInput:(player,action,down)=>{activeEngine()?.input(player,action,down);if(!down)view.querySelectorAll('[data-p="'+player+'"][data-input="'+action+'"]').forEach(button=>button.classList.remove('held'));},onPause:()=>setPause(!paused),
     onDeviceLost:backgroundPause,onSettingsChange:refreshInputLabels,
     onRelease:player=>view.querySelectorAll(player?'[data-p="'+player+'"].held':'.held').forEach(button=>button.classList.remove('held'))});

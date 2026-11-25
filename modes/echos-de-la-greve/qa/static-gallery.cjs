@@ -240,6 +240,18 @@ check('New domain catalogue cards retain the simulator distinction and resolve b
   assert.equal(h.visible().length,1);h.visible()[0].children[0].emit('click');
   assert.match(h.nodes.get('viewer-origin').textContent,/reconstitutions/);
 });
+check('Extension cards preserve source boundaries and resolve both documentation anchors.', () => {
+  const added=catalogue.items.filter(item=>item.src.startsWith('assets/static-extension-20261125/'));
+  assert.equal(added.length,13,'11 received bases and 2 new panoramas');
+  assert(!catalogue.items.some(item=>item.id==='strider-hologram-half-life-dc'),'Rejected generation must not appear as delivered');
+  for(const item of added) for(const link of [item.bible,item.reference]){
+    const [file,anchor]=link.split('#');
+    assert(fs.readFileSync(path.resolve(root,file),'utf8').includes('id="'+anchor+'"'),item.id+' source anchor');
+  }
+  assert.match(added.find(x=>x.id==='atlas-trauma-hologram-dc').kind,/décoratif/);
+  assert.match(added.find(x=>x.id==='speed-skeleton-silver-ds1').description,/niveau précis n’est pas attribué/);
+  assert.match(catalogue.items.find(x=>x.id==='firing-range-dc-panorama').version,/arène adaptée/);
+});
 const archiveSource=fs.readFileSync(path.join(root,'archives.html'),'utf8');
 const archiveImages=[...archiveSource.matchAll(/<img\b[^>]*\bsrc="([^"]+)"[^>]*>/g)];
 check('The four added Archives portraits retain the same work/version, image and measured dimensions as the catalogue.',()=>{

@@ -12,7 +12,7 @@ const requested = process.argv.find(a=>a.startsWith('--stages='))?.slice(9).spli
 const groups = ['skyplates','distants','midgrounds','floors','foregrounds'];
 const speeds = [.14,.27,.43,.62,.8];
 // These exterior joins previously exposed a strip of sky above the floor.
-const universeStages = new Set(['south-knot-ruins','timefall-farm','mountain-knot-approach','magellan-ds2','plate-gate-ds2','sandstorm-ds2','dunes-ds2','terminal-hangar']);
+const universeStages = new Set(['south-knot-ruins','timefall-farm','mountain-knot-approach','magellan-ds2','plate-gate-ds2','sandstorm-ds2','dunes-ds2','terminal-hangar','firing-range-dc','night-viaduct-ds2','red-ravine-ds2']);
 const joinRegressions = new Set(['shore','terminal','battlefield','mountain-pass','mule-camp-dry','port-knot','incinerator',...universeStages]);
 const script = name => fs.readFileSync(path.join(root,name),'utf8');
 const catalog = {window:{},structuredClone};
