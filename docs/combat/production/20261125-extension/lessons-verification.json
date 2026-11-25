@@ -1,0 +1,35 @@
+{
+  "date": "2026-11-25T16:43:54.342Z",
+  "status": "pending-replacement-runtime",
+  "passed": false,
+  "browser": false,
+  "nativeCanvas": false,
+  "hardwareGamepadTested": false,
+  "reason": "The local runtime disappeared. Sources were reconstructed from retained patches and exact main files; final execution is pending.",
+  "base_commit": "8d274a015e0edf314a853630031d5eb507354811",
+  "observed_before_reset": {
+    "initial_groups": 4,
+    "successful_runs": 16,
+    "eight_exercises": true,
+    "all_eight_fighters_three_signatures": true,
+    "invalid_and_unavailable_storage": true,
+    "artifact_lost": true,
+    "applies_to_reconstructed_sources": false
+  },
+  "syntax_check": {
+    "method": "V8 Function compilation",
+    "passed": true,
+    "files": [
+      "app.js",
+      "lessons.js",
+      "qa/lessons.cjs"
+    ]
+  },
+  "pending": [
+    "Run qa/lessons.cjs on reconstructed sources",
+    "Confirm full app course with remapped keys, pause, retry, return and save isolation",
+    "Check touch and synthetic gamepad adapters",
+    "Optional native renderer proof if dependency is available",
+    "Integrate Boss guide modules and validate resource serving"
+  ]
+}
