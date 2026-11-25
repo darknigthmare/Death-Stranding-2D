@@ -72,13 +72,16 @@ function verifyEngines() {
   console.log('Moteur · état complet identique après correction d’une commande tardive, au pas 200.');
 }
 verifyProtocol();
-for (const stage of ['port-knot','incinerator','south-knot-ruins','timefall-farm','mountain-knot-approach','magellan-ds2','plate-gate-ds2','sandstorm-ds2','dunes-ds2']) {
+for (const stage of ['port-knot','incinerator','south-knot-ruins','timefall-farm','mountain-knot-approach','magellan-ds2','plate-gate-ds2','sandstorm-ds2','dunes-ds2','terminal-linked','terminal-hangar']) {
   const receive=roomService('stages-test',()=>0);
   const tokens=['c'.repeat(40),'d'.repeat(40)];
   const room=receive({op:'create',version:'stages-test',token:tokens[0]}).room;
   const call=(index,op,data={})=>receive({token:tokens[index],version:'stages-test',room,op,...data});
   call(1,'join');call(0,'ready',{fighter:'mama',ready:true});call(1,'ready',{fighter:'diehardman',ready:true});
-  assert.equal(call(0,'start',{stage}).match.stage,stage,stage+' disponible en salon privé');
+  const match=call(0,'start',{stage}).match;
+  assert.equal(match.stage,stage,stage+' disponible en salon privé');
+  if(stage==='terminal-linked') assert.equal(match.stageRules,'terminal-quay-hangar@1','La liaison porte sa version explicite');
+  else assert.equal(Object.hasOwn(match,'stageRules'),false,'Les arènes ordinaires ne portent pas de règle liée');
   call(0,'leave');
 }
 verifyEngines();
@@ -87,7 +90,7 @@ async function verifyNestedAssets() {
   try {
     for (const name of ['fight.js','content.js','assets.js','asset-geometry-20261124.js','boss-geometry-20261124.js','boss-assets.js','boss.js',
       'app.js','campaign.js','campaign.css','static-assets.html','static-assets.css','static-assets.js','static-assets-data.js','archives.html',
-      'netplay.js','netplay-server.cjs'])
+      'input.js','input.css','moves-data.js','relationships.js','netplay.js','netplay-server.cjs'])
       fs.writeFileSync(path.join(fixture,name),'fixture');
     const directory = path.join(fixture,'assets/fighters/mama/atelier');
     fs.mkdirSync(directory,{recursive:true});
@@ -97,13 +100,13 @@ async function verifyNestedAssets() {
     fs.mkdirSync(bossDirectory,{recursive:true});
     const bossPose=path.join(bossDirectory,'attack.png');
     fs.writeFileSync(bossPose,'first boss pose');
-    const staticPoses=['static-20261125','static-universe-20261125','static-completion-20261125','story-completion-20261125'].map(folder=>{
+    const staticPoses=['static-20261125','static-universe-20261125','static-completion-20261125','story-completion-20261125','static-domains-20261125'].map(folder=>{
       const directory=path.join(fixture,'assets',folder);
       fs.mkdirSync(directory,{recursive:true});
       const file=path.join(directory,'portrait.png');fs.writeFileSync(file,'first static pose');return file;
     });
     const initial = gameVersion(fixture);
-    for (const name of ['campaign.js','campaign.css','static-assets-data.js','static-assets.js','archives.html']) {
+    for (const name of ['campaign.js','campaign.css','static-assets-data.js','static-assets.js','archives.html','input.js','input.css','moves-data.js','relationships.js']) {
       const file=path.join(fixture,name);
       fs.writeFileSync(file,'revised module');
       assert.notEqual(gameVersion(fixture),initial,name+' modifie la version du salon');
@@ -151,7 +154,7 @@ async function verifyNestedAssets() {
       assert.deepEqual(Buffer.from(await response.arrayBuffer()),fs.readFileSync(path.join(root,file)),file + ' contenu exact');
     }
     for (const file of ['boss.js','boss-assets.js','boss-geometry-20261124.js','campaign.js','campaign.css','archives.html',
-      'static-assets.html','static-assets.css','static-assets.js','static-assets-data.js']) {
+      'static-assets.html','static-assets.css','static-assets.js','static-assets-data.js','input.js','input.css','moves-data.js','relationships.js']) {
       const response=await fetch(origin+'/'+file);
       assert.equal(response.status,200,file+' accessible');
       assert.equal(response.headers.get('content-type'),file.endsWith('.html')?'text/html; charset=utf-8':file.endsWith('.css')?'text/css':'text/javascript');
@@ -163,12 +166,12 @@ async function verifyNestedAssets() {
     vm.runInNewContext(fs.readFileSync(path.join(root,'static-assets-data.js'),'utf8'),catalogue);
     const galleryPaths=[...new Set(catalogue.window.StrandStaticCatalogue.items.map(item=>item.src))];
     assert(galleryPaths.includes('assets/static-20261125/lockne-portrait.png'),'Le portrait de Lockne est couvert par le test HTTP');
-    const newStages=['south-knot-ruins','timefall-farm','mountain-knot-approach','magellan-ds2','plate-gate-ds2','sandstorm-ds2','dunes-ds2'];
+    const newStages=['south-knot-ruins','timefall-farm','mountain-knot-approach','magellan-ds2','plate-gate-ds2','sandstorm-ds2','dunes-ds2','terminal-hangar'];
     const stagePaths=[...new Set(newStages.flatMap(id=>['stages','skyplates','distants','midgrounds','floors','foregrounds'].map(group=>catalogue.window.StrandAssets[group][id])))];
     const storyPaths=[...new Set(Object.values(catalogue.window.StrandAssets.storyFrames).flatMap(parts=>Object.values(parts).flatMap(frames=>frames.map(frame=>frame.src))))];
     assert.equal(storyPaths.length,48,'Eight complete story frame sets preserve originals and add 24 frames');
     for(const prefix of ['/','/modes/echos-de-la-greve/']){
-      for(const file of new Set(['static-assets.html','static-assets.css','static-assets.js','static-assets-data.js','campaign.js','campaign.css',...galleryPaths,...stagePaths,...storyPaths])){
+      for(const file of new Set(['static-assets.html','static-assets.css','static-assets.js','static-assets-data.js','campaign.js','campaign.css','input.js','input.css','moves-data.js','relationships.js',...galleryPaths,...stagePaths,...storyPaths])){
         const response=await fetch(origin+prefix+file);
         assert.equal(response.status,200,prefix+file+' accessible');
         if(file.endsWith('.png'))assert.equal(response.headers.get('content-type'),'image/png');
@@ -176,7 +179,8 @@ async function verifyNestedAssets() {
         assert.deepEqual(Buffer.from(await response.arrayBuffer()),fs.readFileSync(path.join(root,file)),prefix+file+' contenu exact');
       }
     }
-    const documents=new Set(catalogue.window.StrandStaticCatalogue.items.flatMap(item=>[item.bible,item.reference]).filter(Boolean));
+    const documents=new Set([...catalogue.window.StrandStaticCatalogue.items.flatMap(item=>[item.bible,item.reference]).filter(Boolean),
+      '../../docs/combat/ACTIONS_ET_IA.md','../../docs/combat/RELATIONS_SIMULATEUR.md']);
     for (const entry of documents) {
       for (const base of ['/', '/modes/echos-de-la-greve/']) {
         const target=new URL(entry,origin+base+'static-assets.html');
@@ -197,7 +201,7 @@ async function verifyNestedAssets() {
       assert.equal(response.status,404,file + ' reste inaccessible');
       await response.arrayBuffer();
     }
-    console.log('Ressources réseau · tenues, boss, campagne, galerie et '+galleryPaths.length+' images statiques, '+stagePaths.length+' images des sept arènes étendues et '+storyPaths.length+' plans narratifs, servis en HTTP réel avec et sans préfixe ; empreinte récursive stable, sources et traversées refusées.');
+    console.log('Ressources réseau · commandes, données, tenues, boss, campagne, galerie et '+galleryPaths.length+' images statiques, '+stagePaths.length+' images de '+newStages.length+' zones étendues et '+storyPaths.length+' plans narratifs, servis en HTTP réel avec et sans préfixe ; empreinte récursive stable, sources et traversées refusées.');
     console.log('Exécution · '+new Date().toISOString()+' ; version réelle du relais '+currentVersion+'.');
   } finally {await new Promise(resolve => server.close(resolve));}
 }

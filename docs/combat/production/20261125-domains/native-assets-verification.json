@@ -1,0 +1,446 @@
+{
+  "date": "2026-11-25",
+  "method": "Pillow / NumPy : décodage PNG natif, alpha et comparaison SHA-256 avec les sorties originales conservées.",
+  "native_browser_rendering": false,
+  "all_native_copies_unchanged": true,
+  "all_files_single_frame_png": true,
+  "counts": {
+    "new_png": 14,
+    "new_animation_frames": 0,
+    "gallery_additions": 9,
+    "new_stage_layers": 5,
+    "new_playable_zones": 1,
+    "new_stage_configurations": 2,
+    "transparent_png": 11,
+    "opaque_png": 3,
+    "size_bytes": 22323710,
+    "previous_recent_outputs": 215,
+    "active_recent_outputs_after_integration": 229
+  },
+  "previous_preserved": {
+    "checked": 215,
+    "changed": []
+  },
+  "items": [
+    {
+      "id": "buddy-bot-dc",
+      "path": "modes/echos-de-la-greve/assets/static-domains-20261125/buddy-bot-dc.png",
+      "width": 1024,
+      "height": 1536,
+      "mode": "RGBA",
+      "format": "PNG",
+      "frames": 1,
+      "size_bytes": 2048958,
+      "sha256": "351d97f3046ac6ad8be60c67dc26d68eef3ee07de4e02e6a9a5f0e009d62c94d",
+      "alpha_channel_present": true,
+      "alpha_extrema": [
+        0,
+        254
+      ],
+      "alpha_bbox": [
+        0,
+        23,
+        1010,
+        1520
+      ],
+      "alpha_zero_pixels": 987238,
+      "alpha_partial_pixels": 585626,
+      "alpha_opaque_pixels": 0,
+      "original_sha256": "351d97f3046ac6ad8be60c67dc26d68eef3ee07de4e02e6a9a5f0e009d62c94d",
+      "original_generation_filename": "exec-74f3dbbe-0cbe-4f19-9ecc-2485226f48cf.png",
+      "native_copy_unchanged": true,
+      "pixel_edit_after_generation": false,
+      "upsampled": false
+    },
+    {
+      "id": "cargo-catapult-dc",
+      "path": "modes/echos-de-la-greve/assets/static-domains-20261125/cargo-catapult-dc.png",
+      "width": 1254,
+      "height": 1254,
+      "mode": "RGBA",
+      "format": "PNG",
+      "frames": 1,
+      "size_bytes": 1161454,
+      "sha256": "78ec782e595e99c13e5ae741e71f826898d4ad8e408f19c68de544c5b1ba8aed",
+      "alpha_channel_present": true,
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "alpha_bbox": [
+        0,
+        18,
+        1240,
+        1254
+      ],
+      "alpha_zero_pixels": 970874,
+      "alpha_partial_pixels": 600530,
+      "alpha_opaque_pixels": 1112,
+      "original_sha256": "78ec782e595e99c13e5ae741e71f826898d4ad8e408f19c68de544c5b1ba8aed",
+      "original_generation_filename": "exec-f0da3770-ced5-4439-8139-eea109792ac5.png",
+      "native_copy_unchanged": true,
+      "pixel_edit_after_generation": false,
+      "upsampled": false
+    },
+    {
+      "id": "chiral-bridge-dc",
+      "path": "modes/echos-de-la-greve/assets/static-domains-20261125/chiral-bridge-dc.png",
+      "width": 1536,
+      "height": 1024,
+      "mode": "RGBA",
+      "format": "PNG",
+      "frames": 1,
+      "size_bytes": 1285897,
+      "sha256": "2e66879739cd5391e3c74465cb56392f84a81ce8eb0486d23701c47c7f790167",
+      "alpha_channel_present": true,
+      "alpha_extrema": [
+        0,
+        254
+      ],
+      "alpha_bbox": [
+        23,
+        9,
+        1509,
+        998
+      ],
+      "alpha_zero_pixels": 1435297,
+      "alpha_partial_pixels": 137567,
+      "alpha_opaque_pixels": 0,
+      "original_sha256": "2e66879739cd5391e3c74465cb56392f84a81ce8eb0486d23701c47c7f790167",
+      "original_generation_filename": "exec-eca2e865-af6e-4bfa-ae95-5eb0ef0fcf38.png",
+      "native_copy_unchanged": true,
+      "pixel_edit_after_generation": false,
+      "upsampled": false
+    },
+    {
+      "id": "firing-range-dc-panorama",
+      "path": "modes/echos-de-la-greve/assets/static-domains-20261125/firing-range-dc-panorama.png",
+      "width": 1672,
+      "height": 941,
+      "mode": "RGB",
+      "format": "PNG",
+      "frames": 1,
+      "size_bytes": 2393212,
+      "sha256": "544b645be6f33c7292331ca8f11e0fac319c77072dfc11c0d40f1c4b5a0675d5",
+      "alpha_channel_present": false,
+      "alpha_extrema": [
+        255,
+        255
+      ],
+      "alpha_bbox": [
+        0,
+        0,
+        1672,
+        941
+      ],
+      "alpha_zero_pixels": 0,
+      "alpha_partial_pixels": 0,
+      "alpha_opaque_pixels": 1573352,
+      "original_sha256": "544b645be6f33c7292331ca8f11e0fac319c77072dfc11c0d40f1c4b5a0675d5",
+      "original_generation_filename": "exec-848befda-6d39-4d9c-82db-3d116eec4f0c.png",
+      "native_copy_unchanged": true,
+      "pixel_edit_after_generation": false,
+      "upsampled": false
+    },
+    {
+      "id": "jump-ramp-dc",
+      "path": "modes/echos-de-la-greve/assets/static-domains-20261125/jump-ramp-dc.png",
+      "width": 1536,
+      "height": 1024,
+      "mode": "RGBA",
+      "format": "PNG",
+      "frames": 1,
+      "size_bytes": 1497380,
+      "sha256": "040a6c1618ea62c24b85789cdd23b599387c2ec943006bd93ed060517968cfda",
+      "alpha_channel_present": true,
+      "alpha_extrema": [
+        0,
+        254
+      ],
+      "alpha_bbox": [
+        0,
+        0,
+        1535,
+        1024
+      ],
+      "alpha_zero_pixels": 1246345,
+      "alpha_partial_pixels": 326519,
+      "alpha_opaque_pixels": 0,
+      "original_sha256": "040a6c1618ea62c24b85789cdd23b599387c2ec943006bd93ed060517968cfda",
+      "original_generation_filename": "exec-7c4984ed-bcc7-4170-9764-90ee8365b847.png",
+      "native_copy_unchanged": true,
+      "pixel_edit_after_generation": false,
+      "upsampled": false
+    },
+    {
+      "id": "maser-gun-dc",
+      "path": "modes/echos-de-la-greve/assets/static-domains-20261125/maser-gun-dc.png",
+      "width": 1536,
+      "height": 1024,
+      "mode": "RGBA",
+      "format": "PNG",
+      "frames": 1,
+      "size_bytes": 1548996,
+      "sha256": "f93a87b6acea595f028f8573389945069b4274829ad37629a439d8884043ab37",
+      "alpha_channel_present": true,
+      "alpha_extrema": [
+        0,
+        254
+      ],
+      "alpha_bbox": [
+        0,
+        17,
+        1506,
+        1000
+      ],
+      "alpha_zero_pixels": 1129674,
+      "alpha_partial_pixels": 443190,
+      "alpha_opaque_pixels": 0,
+      "original_sha256": "f93a87b6acea595f028f8573389945069b4274829ad37629a439d8884043ab37",
+      "original_generation_filename": "exec-cd75949c-f937-4f01-a0c9-12c4b82b0dc9.png",
+      "native_copy_unchanged": true,
+      "pixel_edit_after_generation": false,
+      "upsampled": false
+    },
+    {
+      "id": "monorail-yamato-ds2",
+      "path": "modes/echos-de-la-greve/assets/static-domains-20261125/monorail-yamato-ds2.png",
+      "width": 1536,
+      "height": 1024,
+      "mode": "RGBA",
+      "format": "PNG",
+      "frames": 1,
+      "size_bytes": 1901355,
+      "sha256": "cd6b0984a8c7e4596164ed659684347d383e84eaa8d597a6e42dca034a0dbe9f",
+      "alpha_channel_present": true,
+      "alpha_extrema": [
+        0,
+        254
+      ],
+      "alpha_bbox": [
+        0,
+        9,
+        1498,
+        1024
+      ],
+      "alpha_zero_pixels": 956188,
+      "alpha_partial_pixels": 616676,
+      "alpha_opaque_pixels": 0,
+      "original_sha256": "cd6b0984a8c7e4596164ed659684347d383e84eaa8d597a6e42dca034a0dbe9f",
+      "original_generation_filename": "exec-1cdb32d7-803f-4d3a-8e9a-8dc306323457.png",
+      "native_copy_unchanged": true,
+      "pixel_edit_after_generation": false,
+      "upsampled": false
+    },
+    {
+      "id": "roadster-dc",
+      "path": "modes/echos-de-la-greve/assets/static-domains-20261125/roadster-dc.png",
+      "width": 1536,
+      "height": 1024,
+      "mode": "RGBA",
+      "format": "PNG",
+      "frames": 1,
+      "size_bytes": 1635720,
+      "sha256": "eaf9d4880910c40ea9e42d9cbc47c2811cccd32620fe655f85a1da71fb66de5c",
+      "alpha_channel_present": true,
+      "alpha_extrema": [
+        0,
+        254
+      ],
+      "alpha_bbox": [
+        0,
+        0,
+        1498,
+        1024
+      ],
+      "alpha_zero_pixels": 981361,
+      "alpha_partial_pixels": 591503,
+      "alpha_opaque_pixels": 0,
+      "original_sha256": "eaf9d4880910c40ea9e42d9cbc47c2811cccd32620fe655f85a1da71fb66de5c",
+      "original_generation_filename": "exec-e0e973c6-c443-4a35-ac06-51111fceca26.png",
+      "native_copy_unchanged": true,
+      "pixel_edit_after_generation": false,
+      "upsampled": false
+    },
+    {
+      "id": "terminal-hangar-distant",
+      "path": "modes/echos-de-la-greve/assets/stages/terminal-hangar-distant.png",
+      "width": 1672,
+      "height": 941,
+      "mode": "RGBA",
+      "format": "PNG",
+      "frames": 1,
+      "size_bytes": 1447453,
+      "sha256": "f3cef5c0e030564212f1e71d308bf34ad29d1e06dd63d1795f1ecae7a8d78b95",
+      "alpha_channel_present": true,
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "alpha_bbox": [
+        0,
+        15,
+        1672,
+        941
+      ],
+      "alpha_zero_pixels": 752067,
+      "alpha_partial_pixels": 821015,
+      "alpha_opaque_pixels": 270,
+      "original_sha256": "f3cef5c0e030564212f1e71d308bf34ad29d1e06dd63d1795f1ecae7a8d78b95",
+      "original_generation_filename": "exec-fc241908-e69e-4ba0-9861-6922d6fbf3c8.png",
+      "native_copy_unchanged": true,
+      "pixel_edit_after_generation": false,
+      "upsampled": false
+    },
+    {
+      "id": "terminal-hangar-floor",
+      "path": "modes/echos-de-la-greve/assets/stages/terminal-hangar-floor.png",
+      "width": 1672,
+      "height": 941,
+      "mode": "RGBA",
+      "format": "PNG",
+      "frames": 1,
+      "size_bytes": 1583995,
+      "sha256": "e5c93e0ac7125c1e0ab7ed932724ab63810ea71cd49f970cf586e0a0dd064c11",
+      "alpha_channel_present": true,
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "alpha_bbox": [
+        0,
+        258,
+        1672,
+        941
+      ],
+      "alpha_zero_pixels": 731212,
+      "alpha_partial_pixels": 842138,
+      "alpha_opaque_pixels": 2,
+      "original_sha256": "e5c93e0ac7125c1e0ab7ed932724ab63810ea71cd49f970cf586e0a0dd064c11",
+      "original_generation_filename": "exec-0a97fcfc-304a-40b5-8c9b-a9a0ee88992f.png",
+      "native_copy_unchanged": true,
+      "pixel_edit_after_generation": false,
+      "upsampled": false
+    },
+    {
+      "id": "terminal-hangar-foreground",
+      "path": "modes/echos-de-la-greve/assets/stages/terminal-hangar-foreground.png",
+      "width": 1672,
+      "height": 941,
+      "mode": "RGBA",
+      "format": "PNG",
+      "frames": 1,
+      "size_bytes": 100047,
+      "sha256": "3d52eaca72329acd0764d5282d87190151d9b9fe022ce54a6a800de928acd362",
+      "alpha_channel_present": true,
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "alpha_bbox": [
+        0,
+        794,
+        1672,
+        941
+      ],
+      "alpha_zero_pixels": 1555153,
+      "alpha_partial_pixels": 18183,
+      "alpha_opaque_pixels": 16,
+      "original_sha256": "3d52eaca72329acd0764d5282d87190151d9b9fe022ce54a6a800de928acd362",
+      "original_generation_filename": "exec-e6274d5d-b067-4512-9605-eb9420db5400.png",
+      "native_copy_unchanged": true,
+      "pixel_edit_after_generation": false,
+      "upsampled": false
+    },
+    {
+      "id": "terminal-hangar-midground",
+      "path": "modes/echos-de-la-greve/assets/stages/terminal-hangar-midground.png",
+      "width": 1672,
+      "height": 941,
+      "mode": "RGBA",
+      "format": "PNG",
+      "frames": 1,
+      "size_bytes": 1249098,
+      "sha256": "b7b8f3383043072b235854c0115a2c7eb204297757447271034c198585f7ab4e",
+      "alpha_channel_present": true,
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "alpha_bbox": [
+        0,
+        21,
+        1672,
+        941
+      ],
+      "alpha_zero_pixels": 937115,
+      "alpha_partial_pixels": 635881,
+      "alpha_opaque_pixels": 356,
+      "original_sha256": "b7b8f3383043072b235854c0115a2c7eb204297757447271034c198585f7ab4e",
+      "original_generation_filename": "exec-29e86d68-5790-4bb3-b421-845a88e4f0f3.png",
+      "native_copy_unchanged": true,
+      "pixel_edit_after_generation": false,
+      "upsampled": false
+    },
+    {
+      "id": "terminal-hangar-panorama",
+      "path": "modes/echos-de-la-greve/assets/static-domains-20261125/terminal-hangar-panorama.png",
+      "width": 1672,
+      "height": 941,
+      "mode": "RGB",
+      "format": "PNG",
+      "frames": 1,
+      "size_bytes": 2377248,
+      "sha256": "96096b2711736a98b925ebae8d4f61de21797e1395b6758beed033776599ed89",
+      "alpha_channel_present": false,
+      "alpha_extrema": [
+        255,
+        255
+      ],
+      "alpha_bbox": [
+        0,
+        0,
+        1672,
+        941
+      ],
+      "alpha_zero_pixels": 0,
+      "alpha_partial_pixels": 0,
+      "alpha_opaque_pixels": 1573352,
+      "original_sha256": "96096b2711736a98b925ebae8d4f61de21797e1395b6758beed033776599ed89",
+      "original_generation_filename": "exec-72eba811-7ce3-4f09-ab88-b57a559677e3.png",
+      "native_copy_unchanged": true,
+      "pixel_edit_after_generation": false,
+      "upsampled": false
+    },
+    {
+      "id": "terminal-hangar-sky",
+      "path": "modes/echos-de-la-greve/assets/stages/terminal-hangar-sky.png",
+      "width": 1672,
+      "height": 941,
+      "mode": "RGB",
+      "format": "PNG",
+      "frames": 1,
+      "size_bytes": 2092897,
+      "sha256": "c1048c3721e9d270313022f46a2165159ae48b96b1cd776c996e0f7175f02111",
+      "alpha_channel_present": false,
+      "alpha_extrema": [
+        255,
+        255
+      ],
+      "alpha_bbox": [
+        0,
+        0,
+        1672,
+        941
+      ],
+      "alpha_zero_pixels": 0,
+      "alpha_partial_pixels": 0,
+      "alpha_opaque_pixels": 1573352,
+      "original_sha256": "c1048c3721e9d270313022f46a2165159ae48b96b1cd776c996e0f7175f02111",
+      "original_generation_filename": "exec-9fcf8188-6f96-471f-baa6-76fffc10eb15.png",
+      "native_copy_unchanged": true,
+      "pixel_edit_after_generation": false,
+      "upsampled": false
+    }
+  ]
+}

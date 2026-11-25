@@ -6,6 +6,9 @@
   const asset = window.StrandAssets || {};
   const engine = window.StrandFight;
   const bossEngine = window.StrandBoss;
+  const input = window.StrandInput;
+  const inputSettings = input.createSettings();
+  let inputController=null,inputEditor=null,manualReturnFocus=null,pendingDuel=null;
   const campaignContent = window.StrandCampaign;
   const campaign = campaignContent?.createStore();
   const view = document.getElementById('view');
@@ -23,7 +26,6 @@
     campaign:'<circle cx="5" cy="5" r="2"/><circle cx="19" cy="6" r="2"/><circle cx="6" cy="19" r="2"/><circle cx="18" cy="18" r="2"/><path d="M7 5l10 1M5 7l1 10m2 2 8-1M8 17l9-9"/>'
   };
   const config = {mode:'story', p1:'sam', p2:'higgs', stage:'shore', difficulty:'normal', opponent:'cpu', outfit1:'atelier', outfit2:'atelier', count:'4', humans:'1', challenge:'survival',boss:'lion',bossStage:'recommended',campaignDifficulty:campaign?.progress().run?.difficulty||'normal'};
-  const held = new Map();
   let trial;
   const trialNames = {survival:'Survie', delivery:'Livraison sous pression'};
   let screen = '', activeFight = null, paused = false, resumeAfterManual = false, arcadeStep = 0, scenePlayback = null;
@@ -91,8 +93,7 @@
     window.scrollTo(0,0);
   }
   function releaseControls() {
-    for (const {player,action} of held.values()) activeEngine()?.input(player,action,false);
-    held.clear();
+    inputController?.releaseAll();
     view.querySelectorAll('.held').forEach(button => button.classList.remove('held'));
   }
   function stopFight() {
@@ -101,6 +102,10 @@
     if (activeFight) activeEngine()?.stop();
     if (activeFight?.kind==='training' && ['record','loop'].includes(training.dummy)) training.dummy='idle';
     activeFight = null; paused = false;
+  }
+  function stageRule(stage) {
+    const link=window.StrandContent.stageLinks?.[stage];
+    return link?'<p class="brief stageRule"><strong>Quai → hangar · liaison du simulateur.</strong> '+esc(link.description)+'</p>':'';
   }
   function home() {
     stopFight();
@@ -207,7 +212,7 @@
       ({challenges:'Lancer l’épreuve',story:'Ouvrir l’histoire',arcade:'Lancer le parcours',tournament:cup ? 'Créer un nouveau tableau' : 'Tirer le tableau',versus:'Lancer le duel',training:'Entrer dans l’arène'})[mode];
     setScreen('select','<section class="shell">' + back() + '<div class="pagehead"><div><div class="eyebrow">' + modes[mode] +
       '</div><h1>Choix du combattant</h1></div></div><div class="chars">' + cards + '</div><div class="options">' + fields +
-      '</div>' + (['versus','training'].includes(mode) ? stagePreview(config.stage) : '') +
+      '</div>' + (['versus','training'].includes(mode) ? stagePreview(config.stage)+stageRule(config.stage) : '') +
       '<div class="brief"><strong>' + character.special + '</strong> · ' + character.tip + '</div>' +
       (['story','arcade'].includes(mode) ? '<p class="montage">' + (mode === 'story' ? '<b>' + character.story + '</b><br>' : '') + route + '</p>' : '') +
       (mode === 'challenges' ? trialBrief() : '') +
@@ -228,8 +233,10 @@
     const fighterCards=ids.map(id=>'<button class="char portrait" data-act="pick" data-id="'+id+'" aria-pressed="'+(id===config.p1)+'">'+
       image(asset.wardrobe?.[id]?.[config.outfit1]?.portrait || asset.portraits?.[id])+'<span class="charlabel"><strong>'+esc(fighters[id].call)+
       '</strong><small>'+esc(fighters[id].role)+'</small></span></button>').join('');
+    const bossStages=Object.fromEntries(Object.entries(stages).filter(([id])=>!window.StrandContent.stageLinks?.[id]));
+    if(config.bossStage!=='recommended'&&!Object.hasOwn(bossStages,config.bossStage))config.bossStage='recommended';
     const field=outfitField(1,config.p1)+choose('difficulty','Difficulté',{easy:'Débutant',normal:'Porteur',hard:'Vétéran'})+
-      choose('bossStage','Arène',{recommended:'Lieu conseillé · '+stages[selected.stage],...stages})+ambienceControl();
+      choose('bossStage','Arène',{recommended:'Lieu conseillé · '+stages[selected.stage],...bossStages})+ambienceControl();
     const cp=history.checkpoint;
     const resume=cp?'<div class="bossResume"><div><strong>Rencontre en cours</strong><p>'+esc(bosses[cp.state.bossId].name)+' · '+esc(fighters[cp.state.p1].call)+
       ' · '+Math.ceil(cp.state.p.hp)+' PV · '+Math.ceil(cp.state.remaining/60)+' s restantes</p></div>'+button('resumeBoss','Reprendre la rencontre','secondary')+'</div>':'';
@@ -253,7 +260,7 @@
     const match={mode:'boss',kind:'boss',p1:config.p1,boss:config.boss,stage};activeFight=match;
     setScreen('fight','<section class="fightShell"><div class="fightbar"><div><div class="kicker">Boss Battle · '+esc(boss.name)+
       '</div><b>'+esc(stages[stage])+'</b></div><div class="tools">'+button('controls','Commandes','mini')+button('pause','Pause','mini','id="pauseBtn"')+
-      '</div></div><div class="screen"><canvas id="arena" aria-label="'+esc(fighters[match.p1].name+' affronte '+boss.name)+'"></canvas>'+
+      '</div></div><div class="screen"><canvas id="arena" tabindex="0" aria-label="'+esc(fighters[match.p1].name+' affronte '+boss.name)+'"></canvas>'+
       '<div id="pauseBox" class="pausebox" hidden><h2>En pause</h2><p>Votre rencontre est conservée pour la reprise.</p>'+ambienceControl()+
       button('pause','Reprendre')+button('leave','Choisir une rencontre','secondary')+'</div></div><div class="combatNotes"><span>'+esc(boss.goal)+
       '</span><span id="signal" aria-live="polite"></span></div><div class="touchgroup">'+touchControls(1)+'</div></section>');
@@ -314,7 +321,7 @@
     const match={mode:'bossrush',kind:'boss',p1:run.p1,boss:id,stage};activeFight=match;
     setScreen('fight','<section class="fightShell"><div class="fightbar"><div><div class="kicker">Boss Rush · '+(run.index+1)+' / '+bossEngine.rush.order.length+
       ' · '+esc(boss.name)+'</div><b>'+esc(stages[stage])+'</b></div><div class="tools">'+button('controls','Commandes','mini')+
-      button('pause','Pause','mini','id="pauseBtn"')+'</div></div><div class="screen"><canvas id="arena" aria-label="'+esc(fighters[run.p1].name+' affronte '+boss.name)+'"></canvas>'+
+      button('pause','Pause','mini','id="pauseBtn"')+'</div></div><div class="screen"><canvas id="arena" tabindex="0" aria-label="'+esc(fighters[run.p1].name+' affronte '+boss.name)+'"></canvas>'+
       '<div id="pauseBox" class="pausebox" hidden><h2>En pause</h2><p>Votre série et la rencontre en cours sont conservées pour la reprise.</p>'+ambienceControl()+
       button('pause','Reprendre')+button('leave','Retour à Boss Rush','secondary')+'</div></div><div class="combatNotes"><span>'+esc(boss.goal)+
       '</span><span id="signal" aria-live="polite"></span></div><div class="touchgroup">'+touchControls(1)+'</div></section>');
@@ -438,7 +445,7 @@
     const boss=bossEngine.encounters[c.boss];
     setScreen('fight','<section class="fightShell"><div class="fightbar"><div><div class="kicker">'+esc(match.title)+'</div><b>'+esc(stages[c.stage])+
       '</b></div><div class="tools">'+button('controls','Commandes','mini')+button('pause','Pause','mini','id="pauseBtn"')+'</div></div><div class="screen">'+
-      '<canvas id="arena" aria-label="'+esc(fighters[c.p1].name+' affronte '+boss.name)+'"></canvas><div id="pauseBox" class="pausebox campaignPause" hidden><h2>En pause</h2>'+
+      '<canvas id="arena" tabindex="0" aria-label="'+esc(fighters[c.p1].name+' affronte '+boss.name)+'"></canvas><div id="pauseBox" class="pausebox campaignPause" hidden><h2>En pause</h2>'+
       '<p>Quitter ou fermer la page reprend ce chapitre depuis son début. Les chapitres précédents restent validés.</p>'+ambienceControl()+button('pause','Reprendre')+
       button('leave','Retour à la campagne','secondary')+'</div></div><div class="combatNotes"><span>'+esc(boss.goal)+'</span><span id="signal" aria-live="polite"></span></div>'+
       '<div class="touchgroup">'+touchControls(1)+'</div></section>');
@@ -632,23 +639,28 @@
     cup = tournament.create({...config, count:Number(config.count), humans:Number(config.humans), seed:Math.floor(Math.random() * 0x100000000)});
     save('cup',cup); bracket();
   }
-  const keys = [
-    ['left','Gauche',['q','a'],['ArrowLeft'],'Q / A','←','←'], ['right','Droite',['d'],['ArrowRight'],'D','→','→'],
-    ['up','Saut',['z','w'],['ArrowUp'],'Z / W','↑','↑'], ['down','Bas',['s'],['ArrowDown'],'S','↓','↓'],
-    ['light','Coup léger',['f'],['j'],'F','J','Léger'], ['heavy','Coup lourd',['g'],['k'],'G','K','Lourd'],
-    ['special','Signature',['h'],['l'],'H','L','Spécial'], ['guard','Garde',['r'],['u'],'R','U','Garde'],
-    ['throw','Projection',['t'],['i'],'T','I','Prise'], ['finish','Finalité',['y'],['o'],'Y','O','Fin']
-  ];
-  const keymap = new Map();
-  for (const [action,,first,second] of keys) {
-    for (const key of first) keymap.set(key,{player:1,action});
-    for (const key of second) keymap.set(key,{player:2,action});
+  const keys = input.actions;
+  function keyText(player,action) {return '<span data-key-player="'+player+'" data-key-action="'+action+'">'+esc(inputSettings.label(player,action))+'</span>';}
+  function inputSummary(player) {return 'J'+player+' · Léger '+inputSettings.label(player,'light')+' · Lourd '+inputSettings.label(player,'heavy')+' · Signature '+inputSettings.label(player,'special')+' · Garde '+inputSettings.label(player,'guard');}
+  function refreshInputLabels() {
+    document.querySelectorAll('[data-key-player]').forEach(node=>{node.textContent=inputSettings.label(Number(node.dataset.keyPlayer),node.dataset.keyAction);});
+    document.querySelectorAll('[data-input-summary]').forEach(node=>{node.textContent=inputSummary(Number(node.dataset.inputSummary));});
+    view.querySelectorAll('[data-input]').forEach(node=>{
+      const text='J'+node.dataset.p+' · '+node.dataset.inputTitle+' · clavier '+inputSettings.label(Number(node.dataset.p),node.dataset.input);
+      node.setAttribute('aria-label',text);node.title=text;
+    });
+    if(activeFight?.kind!=='boss'&&activeFight&&!activeFight.replay){
+      const status=engine.snapshot?.(),signal=document.getElementById('signal');
+      if(signal&&status?.phase==='finish')signal.textContent=finishHint(status,activeFight.kind==='local');
+    }
   }
+  function finishHint(status,local){return 'Finalité disponible · '+(status.winner===1?'J1 · '+inputSettings.label(1,'finish'):local?'J2 · '+inputSettings.label(2,'finish'):'IA');}
   function touchControls(player) {
     function control(item) {
-      const [action,title,,,,,label] = item;
+      const {id:action,title,short:label} = item;
       const bossLabel=activeFight?.kind==='boss'?({throw:bossEngine.encounters[activeFight.boss]?.cargo?'Colis':'Appui',finish:'Chiral'})[action]:null;
-      return '<button type="button" aria-label="J' + player + ' · ' + (bossLabel || title) + '" data-p="' + player + '" data-input="' + action + '">' + (bossLabel || label) + '</button>';
+      const hint='J'+player+' · '+(bossLabel||title)+' · clavier '+inputSettings.label(player,action);
+      return '<button type="button" aria-label="'+esc(hint)+'" title="'+esc(hint)+'" data-input-title="'+esc(bossLabel||title)+'" data-p="' + player + '" data-input="' + action + '">' + (bossLabel || label) + '</button>';
     }
     return '<div class="touchRow"><small>J' + player + '</small><div class="touch"><div>' + keys.slice(0,4).map(control).join('') +
       '</div><div>' + keys.slice(4).map(control).join('') + '</div></div></div>';
@@ -658,7 +670,7 @@
     const options = {idle:'Immobile',guard:'En garde',cpu:'IA active',record:'Enregistrer J2',loop:'Lire en boucle'};
     return '<label>Mannequin <select id="dummy">' + Object.entries(options).map(([value,label]) => '<option value="' + value + '"' +
       (value === training.dummy ? ' selected' : '') + '>' + label + '</option>').join('') +
-      '</select></label><span id="tapeStatus"></span><label><input type="checkbox" id="boxes"' + (training.hitboxes ? ' checked' : '') + '>Zones de touche</label>' + button('resetTraining','Replacer au centre','mini') +
+      '</select></label><span id="tapeStatus"></span><span class="inputSummary" data-input-summary="2">'+esc(inputSummary(2))+'</span><label><input type="checkbox" id="boxes"' + (training.hitboxes ? ' checked' : '') + '>Zones de touche</label>' + button('resetTraining','Replacer au centre','mini') +
       '<label><input type="checkbox" id="dojoTiming"'+(training.timing ? ' checked' : '')+'>Données des coups</label>' +
       '<div id="dojoData" hidden><table><caption>Durées en pas de simulation (60 par seconde)</caption><thead><tr>' +
       ['Joueur','Dernier coup','Démarrage','Activité','Récupération','Phase en cours','Effet autonome'].map(label=>'<th scope="col">'+label+'</th>').join('') +
@@ -691,6 +703,16 @@
     return activeFight?.kind==='local' || (activeFight?.kind==='training' && training.dummy==='record');
   }
   function fight(match) {
+    if(['versus','arcade'].includes(match.mode)&&!match.introSeen&&!match.replay){
+      const relationship=window.StrandRelationships?.get(match.p1,match.p2);
+      if(relationship){
+        stopFight();pendingDuel=match;
+        setScreen('matchIntro','<section class="shell">'+back()+'<div class="pagehead"><div><div class="eyebrow">'+esc(match.title)+'</div><h1>Avant le duel</h1></div></div>'+
+          '<p class="hint">'+esc(relationship.status)+' · '+esc(relationship.version)+'</p><div class="relationLines">'+relationship.lines.map(line=>'<blockquote><p class="speaker">'+esc(fighters[line.fighter]?.call||line.fighter)+'</p><p>'+esc(line.text)+'</p></blockquote>').join('')+'</div>'+
+          stagePreview(match.stage)+stageRule(match.stage)+'<div class="actions">'+button('enterDuel','Combattre · passer l’échange '+arrow)+button('selection','Retour au choix','secondary')+button('controls','Commandes','secondary')+'</div></section>');
+        return;
+      }
+    }
     stopFight();
     if (!engine) {
       setScreen('error','<section class="shell">' + back() + '<h1>Moteur indisponible</h1><p class="hint">Le fichier du duel n’a pas pu être chargé.</p></section>'); return;
@@ -700,10 +722,10 @@
     const labels = match.labels || [fighters[match.p1].name,fighters[match.p2].name];
     setScreen('fight','<section class="fightShell"><div class="fightbar"><div><div class="kicker">' + (watching ? 'Relecture · ' : '') + match.title +
       '</div><b>' + stages[match.stage] + '</b></div><div class="tools">' + (watching ? button('leave','Retour au tableau','mini') : button('controls','Commandes','mini')) + button('pause','Pause','mini','id="pauseBtn"') +
-      '</div></div><div class="screen"><canvas id="arena" aria-label="Duel entre ' + esc(labels.join(' et ')) + '"></canvas>' +
+      '</div></div><div class="screen"><canvas id="arena" tabindex="0" aria-label="Duel entre ' + esc(labels.join(' et ')) + '"></canvas>' +
       '<div id="pauseBox" class="pausebox'+(match.mode==='campaign'?' campaignPause':'')+'" hidden><h2>En pause</h2>' + (match.mode==='campaign'?'<p>Quitter ou fermer la page reprend ce chapitre depuis son début. Les chapitres précédents restent validés.</p>':'') + ambienceControl() + button('pause','Reprendre') + button('leave',watching ? 'Retour au tableau' : match.mode==='campaign'?'Retour à la campagne':'Quitter le duel','secondary') +
       '</div></div><div class="combatNotes"><span>' + (watching ? labels.join('　 /　') : 'Commandes J1 · ' + labels[0] + '　 /　' + (local ? 'Commandes J2' : match.kind==='training' ? 'Mannequin' : 'IA') + ' · ' + labels[1]) + '</span>' +
-      (match.kind === 'training' ? trainingTools() : '<span id="signal" aria-live="polite"></span>') + '</div><div class="touchgroup">' +
+      (match.kind === 'training' ? trainingTools() : '') + '<span id="signal" aria-live="polite"></span></div>'+stageRule(match.stage)+'<div class="touchgroup">' +
       (watching ? '' : touchControls(1) + (local ? touchControls(2) : match.kind==='training' ? '<div id="dummyControls" hidden>'+touchControls(2)+'</div>' : '')) + '</div></section>');
     const canvas = document.getElementById('arena'), signal = document.getElementById('signal');
     let phase = null;
@@ -713,7 +735,7 @@
         if (match.kind==="training") updateTraining(status);
         if (!signal || status.phase === phase) return;
         phase = status.phase;
-        signal.textContent = phase === 'finish' && !watching ? 'Finalité disponible · ' + (status.winner === 1 ? 'J1 · Y' : local ? 'J2 · O' : 'IA') : '';
+        signal.textContent = phase==='transition'?'Passage vers le hangar · chronomètre suspendu':phase === 'finish' && !watching ? finishHint(status,local) : '';
       },onEnd(result) { if (activeFight === match) outcome(match,result); }
     });
   }
@@ -779,12 +801,14 @@
       buttons + button('home','Accueil','secondary') + '</div></div></section>');
   }
   function controls() {
+    if(manual.open)return;
+    manualReturnFocus=document.activeElement;inputEditor?.destroy();releaseControls();
     resumeAfterManual = !!activeFight && !paused;
     if (resumeAfterManual) setPause(true);
     const campaignChapter=campaignContent?.chapters[campaign?.progress().run?.chapter||0];
     const bossMode=activeFight?.kind==='boss' || (!activeFight && (['boss','bossrush'].includes(config.mode)||config.mode==='campaign'&&campaignChapter?.kind==='boss'));
     const table = '<table><thead><tr><th>Action</th><th>Joueur 1</th>'+(bossMode?'':'<th>Joueur 2</th>')+'</tr></thead><tbody>' +
-      keys.map(([action,title,,,first,second]) => '<tr><td>' + (bossMode?({throw:'Prendre / poser / livrer · frappe d’appui',finish:'Charge chirale'})[action]||title:title) + '</td><td>' + first + '</td>'+(bossMode?'':'<td>' + second + '</td>')+'</tr>').join('') +
+      keys.map(({id:action,title}) => '<tr><td>' + (bossMode?({throw:'Prendre / poser / livrer · frappe d’appui',finish:'Charge chirale'})[action]||title:title) + '</td><td>' + keyText(1,action) + '</td>'+(bossMode?'':'<td>' + keyText(2,action) + '</td>')+'</tr>').join('') +
       '</tbody></table>';
     const fighterIds = [activeFight?.p1 || (config.mode==='campaign'?campaignChapter?.p1:null) || config.p1];
     if (acceptsSecondPlayer() && !fighterIds.includes(activeFight.p2)) fighterIds.push(activeFight.p2);
@@ -792,16 +816,29 @@
       const current = fighters[id];
       const rows = current.techniques.map(([direction, name, cost, effect]) =>
         '<tr><td>' + direction + '</td><td><strong>' + name + '</strong><br>' + effect + '</td><td>' + cost + '</td></tr>').join('');
+      const sheet=window.StrandMovesData?.forFighter(id);
+      const details=sheet?'<details class="moveDetails"><summary>Données du duel · '+esc(current.call)+'</summary><p>'+esc(sheet.summary)+'</p><p class="hint">'+esc(sheet.version)+' · '+esc(window.StrandMovesData.units||'Pas de simulation à 60 Hz')+'</p>'+
+        [...sheet.common,...sheet.techniques].map(move=>'<article><h4>'+esc(move.name)+'</h4><p>'+esc(move.command)+'</p><dl>'+[
+          ['Démarrage / activité / récupération',[move.startup,move.active,move.recovery].map(value=>value??'—').join(' / ')],['Coût',move.cost??'—'],
+          ['Dégâts',move.damage],['Portée',move.range],['Garde',move.guard],['Enchaînement',move.cancel]
+        ].map(([label,value])=>'<dt>'+esc(label)+'</dt><dd>'+esc(value??'—')+'</dd>').join('')+'</dl>'+(move.notes?.length?'<ul>'+move.notes.map(note=>'<li>'+esc(note)+'</li>').join('')+'</ul>':'')+'</article>').join('')+
+        '<h4>Adversaire piloté par l’IA</h4><p>'+esc(sheet.ai?.summary||'')+'</p><ul>'+(sheet.ai?.notes||[]).concat(sheet.rules||[]).map(note=>'<li>'+esc(note)+'</li>').join('')+'</ul></details>':'';
       return '<h3>Techniques de ' + current.call + '</h3>' +
-        '<table><thead><tr><th>Direction</th><th>Technique</th><th>Coût chiral</th></tr></thead><tbody>' + rows + '</tbody></table>';
+        '<table><thead><tr><th>Direction</th><th>Technique</th><th>Coût chiral</th></tr></thead><tbody>' + rows + '</tbody></table>'+(!bossMode?details:'');
     }).join('');
-    document.getElementById('keys').innerHTML = '<div class="options">'+ambienceControl()+'</div>'+table +
-      (bossMode ? '<p class="hint">Les grandes rencontres se jouent avec J1. Q/A et D déplacent le porteur, Z/W saute, S s’accroupit et R garde. Combine bas et garde contre les tirs bas. Les zones pointillées annoncent les attaques à esquiver : sors de la zone ou saute selon le signal. F et G frappent, H utilise la signature directionnelle. Y libère une charge chirale (70 points). T prend, pose ou livre un colis ; le dépôt est à gauche. Les grandes cibles résistent à la projection et au soulèvement. Échap met en pause. Les dégâts, durées et effets de projection des techniques ci-dessous sont adaptés aux grandes rencontres.</p>' :
+    document.getElementById('keys').innerHTML = '<div class="options">'+ambienceControl()+'</div><div class="commandSheet">'+table+'</div>' +
+      (bossMode ? '<p class="hint">Les grandes rencontres se jouent avec J1. Les directions déplacent, font sauter et accroupir le porteur. Combine bas et garde contre les tirs bas. Les zones pointillées annoncent les attaques à esquiver : sors de la zone ou saute selon le signal. Léger et lourd frappent ; Signature utilise la technique directionnelle. Charge chirale ('+keyText(1,'finish')+') libère 70 points de jauge. La commande colis / appui ('+keyText(1,'throw')+') prend, pose ou livre un colis ; le dépôt est à gauche. Les grandes cibles résistent à la projection et au soulèvement. Échap met en pause. Les dégâts, durées et effets de projection des techniques ci-dessous sont adaptés aux grandes rencontres.</p>' :
       '<p class="hint">Appuie deux fois dans une direction pour une ruée. Combine bas et léger pour balayer, bas et lourd pour soulever. Sur impact, enchaîne léger, lourd et signature. La finalité s’ouvre au dernier K.-O. Échap met le duel en pause.</p>') +
-      '<p class="hint">Maintiens la direction au moment de la signature (H pour J1, L pour J2). « Avant » pointe toujours vers l’adversaire.</p>' + moveLists;
+      '<p class="hint">Maintiens la direction au moment de la signature ('+keyText(1,'special')+' pour J1'+(bossMode?'':', '+keyText(2,'special')+' pour J2')+'). « Avant » pointe toujours vers l’adversaire.</p>' + moveLists+'<div id="inputEditor"></div>';
+    inputEditor=input.mountEditor(document.getElementById('inputEditor'),{settings:inputSettings,controller:inputController});
     manual.showModal();
   }
-  manual.addEventListener('close',() => { if (resumeAfterManual && activeFight) setPause(false); resumeAfterManual = false; });
+  manual.addEventListener('cancel',event=>{if(inputEditor?.isCapturing()){event.preventDefault();inputEditor.cancel();}});
+  manual.addEventListener('close',() => {
+    inputEditor?.destroy();inputEditor=null;releaseControls();
+    if (resumeAfterManual && activeFight) setPause(false);resumeAfterManual=false;
+    if(manualReturnFocus?.isConnected!==false)manualReturnFocus?.focus?.({preventScroll:true});manualReturnFocus=null;
+  });
   function updateSound() {
     const label = document.getElementById('audio');
     label.textContent = sound ? 'Son activé' : 'Son coupé'; label.setAttribute('aria-pressed',String(sound));
@@ -837,6 +874,7 @@
     campaignSelection:()=>campaignSelection(),campaignNew,campaignStart,campaignResume,campaignAdvance,campaignFight,campaignGallery,
     campaignInterlude:()=>campaignScene(),campaignConclusion:()=>campaignScene(),campaignReplay:el=>campaignScene(el.dataset.scene),
     previousSceneFrame:()=>sceneStep(-1),nextSceneFrame:()=>sceneStep(1),
+    enterDuel:()=>{const match=pendingDuel;pendingDuel=null;if(match)fight({...match,introSeen:true});},
     startBoss:() => startBoss(), resumeBoss:() => startBoss(true), bossSelection,
     newRush:()=>startRush(true),continueRush:()=>startRush(),rushSelection,rushResult:()=>rushResult(),
     retryRush:()=>{const run=bossEngine.rush.progress().run;if(run){config.p1=run.p1;config.difficulty=run.difficulty;config.outfit1=run.outfit;}startRush(true);},
@@ -863,7 +901,7 @@
       view.querySelector('[data-option="' + key + '"]')?.focus({preventScroll:true});
     } else if (['dummy','boxes','dojoTiming'].includes(target.id)) {
       if (target.id==='dummy') {
-        for (const [token,binding] of held) if (binding.player===2) release(token);
+        inputController?.releaseAll(2);
         view.querySelectorAll('[data-p="2"].held').forEach(button=>button.classList.remove('held'));
         engine?.setTraining({dummy:target.value});
       } else {
@@ -873,42 +911,21 @@
       view.focus({preventScroll:true});
     }
   });
-  function press(token, player, action) {
-    if (held.has(token)) return;
-    held.set(token,{player,action}); activeEngine().input(player,action,true);
-  }
-  function release(token) {
-    const binding = held.get(token);
-    if (!binding) return;
-    held.delete(token);
-    if (![...held.values()].some(x => x.player === binding.player && x.action === binding.action))
-      activeEngine()?.input(binding.player,binding.action,false);
-  }
-  function editable(target) { return target.matches?.('input,textarea,select,[contenteditable="true"]'); }
+  function editable(target) { return target.closest?.('input,textarea,select,[contenteditable="true"]'); }
   window.addEventListener('keydown',event => {
     if(screen==='scene'&&!manual.open&&!event.ctrlKey&&!event.altKey&&!event.metaKey&&!editable(event.target)&&['ArrowLeft','ArrowRight'].includes(event.key)){
       event.preventDefault();if(!event.repeat)sceneStep(event.key==='ArrowLeft'?-1:1);return;
     }
-    if (screen !== 'fight' || manual.open || !activeFight || event.ctrlKey || event.altKey || event.metaKey) return;
-    if (event.key === 'Escape') { event.preventDefault(); if (!event.repeat) setPause(!paused); return; }
-    if (paused || activeFight.replay || editable(event.target)) return;
-    const key = event.key.length === 1 ? event.key.toLowerCase() : event.key;
-    const binding = keymap.get(key);
-    if (!binding || (binding.player === 2 && !acceptsSecondPlayer())) return;
-    event.preventDefault();
-    if (!event.repeat) press('key:' + (event.code || key),binding.player,binding.action);
   });
-  window.addEventListener('keyup',event => release('key:' + (event.code || (event.key.length === 1 ? event.key.toLowerCase() : event.key))));
   view.addEventListener('pointerdown',event => {
     const target = event.target.closest('[data-input]');
-    if (!target || !activeFight || paused) return;
+    if (!target || !activeFight || paused || !inputController.press('pointer:'+event.pointerId,Number(target.dataset.p),target.dataset.input)) return;
     event.preventDefault(); target.setPointerCapture(event.pointerId); target.classList.add('held');
-    press('pointer:' + event.pointerId,Number(target.dataset.p),target.dataset.input);
   });
   function pointerRelease(event) {
-    release('pointer:' + event.pointerId);
+    inputController.release('pointer:' + event.pointerId);
     const target = event.target.closest?.('[data-input]');
-    if (target && ![...held.values()].some(bind => bind.player === Number(target.dataset.p) && bind.action === target.dataset.input))
+    if (target && !inputController.isHeld(Number(target.dataset.p),target.dataset.input))
       target.classList.remove('held');
   }
   for (const type of ['pointerup','pointercancel','lostpointercapture']) view.addEventListener(type,pointerRelease);
@@ -917,6 +934,12 @@
   document.addEventListener('visibilitychange',() => { if (document.hidden) backgroundPause(); });
   window.addEventListener('pagehide',stopFight);
   window.addEventListener('pageshow',event => { if (event.persisted && screen === 'fight') home(); });
+  inputController=input.createController({settings:inputSettings,
+    accepts:player=>screen==='fight'&&!!activeFight&&!paused&&!manual.open&&!activeFight.replay&&(player===1||player===2&&acceptsSecondPlayer()),
+    canPause:player=>screen==='fight'&&!!activeFight&&!manual.open&&(player===1||player===2&&acceptsSecondPlayer()),
+    onInput:(player,action,down)=>{activeEngine()?.input(player,action,down);if(!down)view.querySelectorAll('[data-p="'+player+'"][data-input="'+action+'"]').forEach(button=>button.classList.remove('held'));},onPause:()=>setPause(!paused),
+    onDeviceLost:backgroundPause,onSettingsChange:refreshInputLabels,
+    onRelease:player=>view.querySelectorAll(player?'[data-p="'+player+'"].held':'.held').forEach(button=>button.classList.remove('held'))});
   engine?.setAmbienceVolume?.(ambienceVolume);
   bossEngine?.setAmbienceVolume?.(ambienceVolume);
   updateSound(); updateEffects(); updateScenery(); home();

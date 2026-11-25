@@ -1,0 +1,129 @@
+{
+  "date": "2026-11-25T15:32:43.131Z",
+  "method": "@napi-rs/canvas; native PNG pixels, no source modification",
+  "files": [
+    {
+      "id": "terminal-hangar",
+      "layer": "sky",
+      "file": "assets/stages/terminal-hangar-sky.png",
+      "width": 1672,
+      "height": 941,
+      "sha256": "c1048c3721e9d270313022f46a2165159ae48b96b1cd776c996e0f7175f02111",
+      "alphaMin": 255,
+      "alphaMax": 255,
+      "transparentFraction": 0,
+      "opaqueFraction": 1,
+      "visibleBounds": [
+        0,
+        0,
+        1672,
+        941
+      ]
+    },
+    {
+      "id": "terminal-hangar",
+      "layer": "distant",
+      "file": "assets/stages/terminal-hangar-distant.png",
+      "width": 1672,
+      "height": 941,
+      "sha256": "f3cef5c0e030564212f1e71d308bf34ad29d1e06dd63d1795f1ecae7a8d78b95",
+      "alphaMin": 0,
+      "alphaMax": 255,
+      "transparentFraction": 0.4780030152184635,
+      "opaqueFraction": 0.00017160813346282333,
+      "visibleBounds": [
+        0,
+        373,
+        1672,
+        568
+      ],
+      "lowestCentralOpaqueRow": 940,
+      "suggestedBottomAnchorY": 1
+    },
+    {
+      "id": "terminal-hangar",
+      "layer": "midground",
+      "file": "assets/stages/terminal-hangar-midground.png",
+      "width": 1672,
+      "height": 941,
+      "sha256": "b7b8f3383043072b235854c0115a2c7eb204297757447271034c198585f7ab4e",
+      "alphaMin": 0,
+      "alphaMax": 255,
+      "transparentFraction": 0.5956168740370877,
+      "opaqueFraction": 0.00022626850189913,
+      "visibleBounds": [
+        0,
+        272,
+        1672,
+        669
+      ],
+      "lowestCentralOpaqueRow": 940,
+      "suggestedBottomAnchorY": 1
+    },
+    {
+      "id": "terminal-hangar",
+      "layer": "floor",
+      "file": "assets/stages/terminal-hangar-floor.png",
+      "width": 1672,
+      "height": 941,
+      "sha256": "e5c93e0ac7125c1e0ab7ed932724ab63810ea71cd49f970cf586e0a0dd064c11",
+      "alphaMin": 0,
+      "alphaMax": 255,
+      "transparentFraction": 0.46474787587265914,
+      "opaqueFraction": 0.0000012711713589838765,
+      "visibleBounds": [
+        0,
+        441,
+        1672,
+        500
+      ],
+      "centralSupport": {
+        "columns": 1337,
+        "min": 443,
+        "p10": 443,
+        "median": 443,
+        "p90": 444,
+        "max": 444
+      },
+      "suggestedAnchorY": 0.4707757704569607,
+      "nativeLineToScreen588": {
+        "sourceRow": 443,
+        "sourceHeight": 941
+      },
+      "stableFullWidthSupport": {
+        "alphaThreshold": 250,
+        "minimumCoverage": 0.985,
+        "consecutiveRows": 4,
+        "sourceRow": 447,
+        "coverage": [
+          1,
+          1,
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "id": "terminal-hangar",
+      "layer": "foreground",
+      "file": "assets/stages/terminal-hangar-foreground.png",
+      "width": 1672,
+      "height": 941,
+      "sha256": "3d52eaca72329acd0764d5282d87190151d9b9fe022ce54a6a800de928acd362",
+      "alphaMin": 0,
+      "alphaMax": 255,
+      "transparentFraction": 0.9884329762189262,
+      "opaqueFraction": 0.000010169370871871012,
+      "visibleBounds": [
+        0,
+        898,
+        1672,
+        43
+      ],
+      "centralTopVisibleRow": 923,
+      "projectedCentralTopY": 704.4976076555024
+    }
+  ],
+  "missing": [],
+  "complete": true
+}

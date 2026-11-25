@@ -1,0 +1,595 @@
+{
+  "date": "2026-11-25T15:38:30.300Z",
+  "renderer": "@napi-rs/canvas; actual fight.js",
+  "browser": false,
+  "cases": [
+    {
+      "label": "quay-before",
+      "side": 1,
+      "staticScenery": false,
+      "phase": "fight",
+      "tick": 249,
+      "zone": "terminal",
+      "checkpointSha256": "37d9900401dc63106f71fe5f68616571d67b3d4e5bb31b6ecdb425759e83329d",
+      "rgbaSha256": "feb128bdf75acdae0441f4ea8302e1ca2d404535dff7ce868ff6422674d527ee",
+      "layers": [
+        "assets/stages/terminal-sky.png",
+        "assets/stages/terminal-distant.png",
+        "assets/stages/terminal-midground.png",
+        "assets/stages/terminal-floor.png",
+        "assets/stages/terminal-foreground.webp"
+      ],
+      "compositeMinAlpha": 255,
+      "capture": "terminal-linked-right-quay.webp",
+      "captureSha256": "901707ef16716f0b93bbf256b94aa207663e682ea37cf6eaa6d87f1606bbefc8"
+    },
+    {
+      "label": "passage",
+      "side": 1,
+      "staticScenery": false,
+      "phase": "transition",
+      "tick": 263,
+      "zone": "terminal",
+      "checkpointSha256": "6d0dbacbc65f4bb03b411b8891cf9db4efddd38fd59527476682f92f68d02724",
+      "rgbaSha256": "72285d79e2dbdf5908d16e9b57eafc4e742019f005f2376df2fdbb1d2a23d8c3",
+      "layers": [
+        "assets/stages/terminal-sky.png",
+        "assets/stages/terminal-distant.png",
+        "assets/stages/terminal-midground.png",
+        "assets/stages/terminal-floor.png",
+        "assets/stages/terminal-foreground.webp"
+      ],
+      "compositeMinAlpha": 255,
+      "capture": "terminal-linked-right-passage.webp",
+      "captureSha256": "fc32ce4843e7354fe1f91af2f4e8b0ec629febab5d6d97cfe67e16db9e497671"
+    },
+    {
+      "label": "hangar-arrival",
+      "side": 1,
+      "staticScenery": false,
+      "phase": "fight",
+      "tick": 299,
+      "zone": "terminal-hangar",
+      "checkpointSha256": "6a6d8d13c88b0b3f01618d1cebaa8a3dd717871d6d682fede5aa8a11faedba39",
+      "rgbaSha256": "4c3d2d512fe8bf520a9bc8835f0aec1329f321ba30b64a8a3d7effe41265ab26",
+      "layers": [
+        "assets/stages/terminal-hangar-sky.png",
+        "assets/stages/terminal-hangar-distant.png",
+        "assets/stages/terminal-hangar-midground.png",
+        "assets/stages/terminal-hangar-floor.png",
+        "assets/stages/terminal-hangar-foreground.png"
+      ],
+      "compositeMinAlpha": 255,
+      "capture": "terminal-linked-right-hangar.webp",
+      "captureSha256": "5471dca3af2eeae8f736203a932725a32c4bbcf30e0e2b82b8e179af3edf011a"
+    },
+    {
+      "label": "restore-quay",
+      "side": 1,
+      "staticScenery": false,
+      "phase": "fight",
+      "tick": 249,
+      "zone": "terminal",
+      "checkpointSha256": "37d9900401dc63106f71fe5f68616571d67b3d4e5bb31b6ecdb425759e83329d",
+      "rgbaSha256": "feb128bdf75acdae0441f4ea8302e1ca2d404535dff7ce868ff6422674d527ee",
+      "layers": [
+        "assets/stages/terminal-sky.png",
+        "assets/stages/terminal-distant.png",
+        "assets/stages/terminal-midground.png",
+        "assets/stages/terminal-floor.png",
+        "assets/stages/terminal-foreground.webp"
+      ],
+      "compositeMinAlpha": 255
+    },
+    {
+      "label": "restore-passage",
+      "side": 1,
+      "staticScenery": false,
+      "phase": "transition",
+      "tick": 263,
+      "zone": "terminal",
+      "checkpointSha256": "6d0dbacbc65f4bb03b411b8891cf9db4efddd38fd59527476682f92f68d02724",
+      "rgbaSha256": "72285d79e2dbdf5908d16e9b57eafc4e742019f005f2376df2fdbb1d2a23d8c3",
+      "layers": [
+        "assets/stages/terminal-sky.png",
+        "assets/stages/terminal-distant.png",
+        "assets/stages/terminal-midground.png",
+        "assets/stages/terminal-floor.png",
+        "assets/stages/terminal-foreground.webp"
+      ],
+      "compositeMinAlpha": 255
+    },
+    {
+      "label": "restore-hangar",
+      "side": 1,
+      "staticScenery": false,
+      "phase": "fight",
+      "tick": 299,
+      "zone": "terminal-hangar",
+      "checkpointSha256": "6a6d8d13c88b0b3f01618d1cebaa8a3dd717871d6d682fede5aa8a11faedba39",
+      "rgbaSha256": "4c3d2d512fe8bf520a9bc8835f0aec1329f321ba30b64a8a3d7effe41265ab26",
+      "layers": [
+        "assets/stages/terminal-hangar-sky.png",
+        "assets/stages/terminal-hangar-distant.png",
+        "assets/stages/terminal-hangar-midground.png",
+        "assets/stages/terminal-hangar-floor.png",
+        "assets/stages/terminal-hangar-foreground.png"
+      ],
+      "compositeMinAlpha": 255
+    },
+    {
+      "label": "quay-before",
+      "side": -1,
+      "staticScenery": false,
+      "phase": "fight",
+      "tick": 217,
+      "zone": "terminal",
+      "checkpointSha256": "fdadd2c4c27daaae72a96dcb5ced0ea4f3f75ba24e0d418ea4ba0eee611b65b2",
+      "rgbaSha256": "93fc2da9b8016c1e67aaa70e990f59eccc3eea72abc11a5ba93f70a99ada1542",
+      "layers": [
+        "assets/stages/terminal-sky.png",
+        "assets/stages/terminal-distant.png",
+        "assets/stages/terminal-midground.png",
+        "assets/stages/terminal-floor.png",
+        "assets/stages/terminal-foreground.webp"
+      ],
+      "compositeMinAlpha": 255
+    },
+    {
+      "label": "passage",
+      "side": -1,
+      "staticScenery": false,
+      "phase": "transition",
+      "tick": 231,
+      "zone": "terminal",
+      "checkpointSha256": "8456a8d2cccec334f758e7d13ea1abdac55202f79f5e55fd768dcd6108fee2eb",
+      "rgbaSha256": "487c3d019c4d76510911e02eb0108230f1d007ad43a12b7662eab0f4730f8600",
+      "layers": [
+        "assets/stages/terminal-sky.png",
+        "assets/stages/terminal-distant.png",
+        "assets/stages/terminal-midground.png",
+        "assets/stages/terminal-floor.png",
+        "assets/stages/terminal-foreground.webp"
+      ],
+      "compositeMinAlpha": 255
+    },
+    {
+      "label": "hangar-arrival",
+      "side": -1,
+      "staticScenery": false,
+      "phase": "fight",
+      "tick": 267,
+      "zone": "terminal-hangar",
+      "checkpointSha256": "30b5ef3f1322f54a1554459c1dcc973f8c05884e72bd6e185134e6e996ce00a3",
+      "rgbaSha256": "85d3e68ad79621a085277d68d61db55c5c2782a6f4d1feddc86ae8fce15a1c61",
+      "layers": [
+        "assets/stages/terminal-hangar-sky.png",
+        "assets/stages/terminal-hangar-distant.png",
+        "assets/stages/terminal-hangar-midground.png",
+        "assets/stages/terminal-hangar-floor.png",
+        "assets/stages/terminal-hangar-foreground.png"
+      ],
+      "compositeMinAlpha": 255,
+      "capture": "terminal-linked-left-hangar.webp",
+      "captureSha256": "b259f938ad621eb7099005b58fc8a2be2d5e726a9e096134f688acda845ccf41"
+    },
+    {
+      "label": "restore-quay",
+      "side": -1,
+      "staticScenery": false,
+      "phase": "fight",
+      "tick": 217,
+      "zone": "terminal",
+      "checkpointSha256": "fdadd2c4c27daaae72a96dcb5ced0ea4f3f75ba24e0d418ea4ba0eee611b65b2",
+      "rgbaSha256": "93fc2da9b8016c1e67aaa70e990f59eccc3eea72abc11a5ba93f70a99ada1542",
+      "layers": [
+        "assets/stages/terminal-sky.png",
+        "assets/stages/terminal-distant.png",
+        "assets/stages/terminal-midground.png",
+        "assets/stages/terminal-floor.png",
+        "assets/stages/terminal-foreground.webp"
+      ],
+      "compositeMinAlpha": 255
+    },
+    {
+      "label": "restore-passage",
+      "side": -1,
+      "staticScenery": false,
+      "phase": "transition",
+      "tick": 231,
+      "zone": "terminal",
+      "checkpointSha256": "8456a8d2cccec334f758e7d13ea1abdac55202f79f5e55fd768dcd6108fee2eb",
+      "rgbaSha256": "487c3d019c4d76510911e02eb0108230f1d007ad43a12b7662eab0f4730f8600",
+      "layers": [
+        "assets/stages/terminal-sky.png",
+        "assets/stages/terminal-distant.png",
+        "assets/stages/terminal-midground.png",
+        "assets/stages/terminal-floor.png",
+        "assets/stages/terminal-foreground.webp"
+      ],
+      "compositeMinAlpha": 255
+    },
+    {
+      "label": "restore-hangar",
+      "side": -1,
+      "staticScenery": false,
+      "phase": "fight",
+      "tick": 267,
+      "zone": "terminal-hangar",
+      "checkpointSha256": "30b5ef3f1322f54a1554459c1dcc973f8c05884e72bd6e185134e6e996ce00a3",
+      "rgbaSha256": "85d3e68ad79621a085277d68d61db55c5c2782a6f4d1feddc86ae8fce15a1c61",
+      "layers": [
+        "assets/stages/terminal-hangar-sky.png",
+        "assets/stages/terminal-hangar-distant.png",
+        "assets/stages/terminal-hangar-midground.png",
+        "assets/stages/terminal-hangar-floor.png",
+        "assets/stages/terminal-hangar-foreground.png"
+      ],
+      "compositeMinAlpha": 255
+    },
+    {
+      "label": "quay-before",
+      "side": 1,
+      "staticScenery": true,
+      "phase": "fight",
+      "tick": 249,
+      "zone": "terminal",
+      "checkpointSha256": "37d9900401dc63106f71fe5f68616571d67b3d4e5bb31b6ecdb425759e83329d",
+      "rgbaSha256": "feb128bdf75acdae0441f4ea8302e1ca2d404535dff7ce868ff6422674d527ee",
+      "layers": [
+        "assets/stages/terminal-sky.png",
+        "assets/stages/terminal-distant.png",
+        "assets/stages/terminal-midground.png",
+        "assets/stages/terminal-floor.png",
+        "assets/stages/terminal-foreground.webp"
+      ],
+      "compositeMinAlpha": 255
+    },
+    {
+      "label": "passage",
+      "side": 1,
+      "staticScenery": true,
+      "phase": "transition",
+      "tick": 263,
+      "zone": "terminal",
+      "checkpointSha256": "6d0dbacbc65f4bb03b411b8891cf9db4efddd38fd59527476682f92f68d02724",
+      "rgbaSha256": "8ec55bbd464993611e9cb110566a876d637fc51b2976e7cda91cd6f95f31a30a",
+      "layers": [
+        "assets/stages/terminal-sky.png",
+        "assets/stages/terminal-distant.png",
+        "assets/stages/terminal-midground.png",
+        "assets/stages/terminal-floor.png",
+        "assets/stages/terminal-foreground.webp"
+      ],
+      "compositeMinAlpha": 255
+    },
+    {
+      "label": "hangar-arrival",
+      "side": 1,
+      "staticScenery": true,
+      "phase": "fight",
+      "tick": 299,
+      "zone": "terminal-hangar",
+      "checkpointSha256": "6a6d8d13c88b0b3f01618d1cebaa8a3dd717871d6d682fede5aa8a11faedba39",
+      "rgbaSha256": "13f2965c699be381cc6fb9d43c3002d53cf9bed73316d0b1103202b3cd3640ee",
+      "layers": [
+        "assets/stages/terminal-hangar-sky.png",
+        "assets/stages/terminal-hangar-distant.png",
+        "assets/stages/terminal-hangar-midground.png",
+        "assets/stages/terminal-hangar-floor.png",
+        "assets/stages/terminal-hangar-foreground.png"
+      ],
+      "compositeMinAlpha": 255
+    },
+    {
+      "label": "restore-quay",
+      "side": 1,
+      "staticScenery": true,
+      "phase": "fight",
+      "tick": 249,
+      "zone": "terminal",
+      "checkpointSha256": "37d9900401dc63106f71fe5f68616571d67b3d4e5bb31b6ecdb425759e83329d",
+      "rgbaSha256": "feb128bdf75acdae0441f4ea8302e1ca2d404535dff7ce868ff6422674d527ee",
+      "layers": [
+        "assets/stages/terminal-sky.png",
+        "assets/stages/terminal-distant.png",
+        "assets/stages/terminal-midground.png",
+        "assets/stages/terminal-floor.png",
+        "assets/stages/terminal-foreground.webp"
+      ],
+      "compositeMinAlpha": 255
+    },
+    {
+      "label": "restore-passage",
+      "side": 1,
+      "staticScenery": true,
+      "phase": "transition",
+      "tick": 263,
+      "zone": "terminal",
+      "checkpointSha256": "6d0dbacbc65f4bb03b411b8891cf9db4efddd38fd59527476682f92f68d02724",
+      "rgbaSha256": "8ec55bbd464993611e9cb110566a876d637fc51b2976e7cda91cd6f95f31a30a",
+      "layers": [
+        "assets/stages/terminal-sky.png",
+        "assets/stages/terminal-distant.png",
+        "assets/stages/terminal-midground.png",
+        "assets/stages/terminal-floor.png",
+        "assets/stages/terminal-foreground.webp"
+      ],
+      "compositeMinAlpha": 255
+    },
+    {
+      "label": "restore-hangar",
+      "side": 1,
+      "staticScenery": true,
+      "phase": "fight",
+      "tick": 299,
+      "zone": "terminal-hangar",
+      "checkpointSha256": "6a6d8d13c88b0b3f01618d1cebaa8a3dd717871d6d682fede5aa8a11faedba39",
+      "rgbaSha256": "13f2965c699be381cc6fb9d43c3002d53cf9bed73316d0b1103202b3cd3640ee",
+      "layers": [
+        "assets/stages/terminal-hangar-sky.png",
+        "assets/stages/terminal-hangar-distant.png",
+        "assets/stages/terminal-hangar-midground.png",
+        "assets/stages/terminal-hangar-floor.png",
+        "assets/stages/terminal-hangar-foreground.png"
+      ],
+      "compositeMinAlpha": 255
+    },
+    {
+      "label": "network-rebuild-held-scenery",
+      "side": 1,
+      "staticScenery": true,
+      "phase": "fight",
+      "tick": 299,
+      "zone": "terminal-hangar",
+      "checkpointSha256": "6a6d8d13c88b0b3f01618d1cebaa8a3dd717871d6d682fede5aa8a11faedba39",
+      "rgbaSha256": "13f2965c699be381cc6fb9d43c3002d53cf9bed73316d0b1103202b3cd3640ee",
+      "layers": [
+        "assets/stages/terminal-hangar-sky.png",
+        "assets/stages/terminal-hangar-distant.png",
+        "assets/stages/terminal-hangar-midground.png",
+        "assets/stages/terminal-hangar-floor.png",
+        "assets/stages/terminal-hangar-foreground.png"
+      ],
+      "compositeMinAlpha": 255
+    },
+    {
+      "label": "quay-before",
+      "side": -1,
+      "staticScenery": true,
+      "phase": "fight",
+      "tick": 217,
+      "zone": "terminal",
+      "checkpointSha256": "fdadd2c4c27daaae72a96dcb5ced0ea4f3f75ba24e0d418ea4ba0eee611b65b2",
+      "rgbaSha256": "93fc2da9b8016c1e67aaa70e990f59eccc3eea72abc11a5ba93f70a99ada1542",
+      "layers": [
+        "assets/stages/terminal-sky.png",
+        "assets/stages/terminal-distant.png",
+        "assets/stages/terminal-midground.png",
+        "assets/stages/terminal-floor.png",
+        "assets/stages/terminal-foreground.webp"
+      ],
+      "compositeMinAlpha": 255
+    },
+    {
+      "label": "passage",
+      "side": -1,
+      "staticScenery": true,
+      "phase": "transition",
+      "tick": 231,
+      "zone": "terminal",
+      "checkpointSha256": "8456a8d2cccec334f758e7d13ea1abdac55202f79f5e55fd768dcd6108fee2eb",
+      "rgbaSha256": "f842daa8e2381712687868e275f836c7a695261af12a024417c88d0145ad73b6",
+      "layers": [
+        "assets/stages/terminal-sky.png",
+        "assets/stages/terminal-distant.png",
+        "assets/stages/terminal-midground.png",
+        "assets/stages/terminal-floor.png",
+        "assets/stages/terminal-foreground.webp"
+      ],
+      "compositeMinAlpha": 255
+    },
+    {
+      "label": "hangar-arrival",
+      "side": -1,
+      "staticScenery": true,
+      "phase": "fight",
+      "tick": 267,
+      "zone": "terminal-hangar",
+      "checkpointSha256": "30b5ef3f1322f54a1554459c1dcc973f8c05884e72bd6e185134e6e996ce00a3",
+      "rgbaSha256": "b57577d9ae18a60ee825c7aa57d7968372656a2230c0d10fc95b99beefaa9069",
+      "layers": [
+        "assets/stages/terminal-hangar-sky.png",
+        "assets/stages/terminal-hangar-distant.png",
+        "assets/stages/terminal-hangar-midground.png",
+        "assets/stages/terminal-hangar-floor.png",
+        "assets/stages/terminal-hangar-foreground.png"
+      ],
+      "compositeMinAlpha": 255
+    },
+    {
+      "label": "restore-quay",
+      "side": -1,
+      "staticScenery": true,
+      "phase": "fight",
+      "tick": 217,
+      "zone": "terminal",
+      "checkpointSha256": "fdadd2c4c27daaae72a96dcb5ced0ea4f3f75ba24e0d418ea4ba0eee611b65b2",
+      "rgbaSha256": "93fc2da9b8016c1e67aaa70e990f59eccc3eea72abc11a5ba93f70a99ada1542",
+      "layers": [
+        "assets/stages/terminal-sky.png",
+        "assets/stages/terminal-distant.png",
+        "assets/stages/terminal-midground.png",
+        "assets/stages/terminal-floor.png",
+        "assets/stages/terminal-foreground.webp"
+      ],
+      "compositeMinAlpha": 255
+    },
+    {
+      "label": "restore-passage",
+      "side": -1,
+      "staticScenery": true,
+      "phase": "transition",
+      "tick": 231,
+      "zone": "terminal",
+      "checkpointSha256": "8456a8d2cccec334f758e7d13ea1abdac55202f79f5e55fd768dcd6108fee2eb",
+      "rgbaSha256": "f842daa8e2381712687868e275f836c7a695261af12a024417c88d0145ad73b6",
+      "layers": [
+        "assets/stages/terminal-sky.png",
+        "assets/stages/terminal-distant.png",
+        "assets/stages/terminal-midground.png",
+        "assets/stages/terminal-floor.png",
+        "assets/stages/terminal-foreground.webp"
+      ],
+      "compositeMinAlpha": 255
+    },
+    {
+      "label": "restore-hangar",
+      "side": -1,
+      "staticScenery": true,
+      "phase": "fight",
+      "tick": 267,
+      "zone": "terminal-hangar",
+      "checkpointSha256": "30b5ef3f1322f54a1554459c1dcc973f8c05884e72bd6e185134e6e996ce00a3",
+      "rgbaSha256": "b57577d9ae18a60ee825c7aa57d7968372656a2230c0d10fc95b99beefaa9069",
+      "layers": [
+        "assets/stages/terminal-hangar-sky.png",
+        "assets/stages/terminal-hangar-distant.png",
+        "assets/stages/terminal-hangar-midground.png",
+        "assets/stages/terminal-hangar-floor.png",
+        "assets/stages/terminal-hangar-foreground.png"
+      ],
+      "compositeMinAlpha": 255
+    },
+    {
+      "label": "network-rebuild-held-scenery",
+      "side": -1,
+      "staticScenery": true,
+      "phase": "fight",
+      "tick": 267,
+      "zone": "terminal-hangar",
+      "checkpointSha256": "30b5ef3f1322f54a1554459c1dcc973f8c05884e72bd6e185134e6e996ce00a3",
+      "rgbaSha256": "b57577d9ae18a60ee825c7aa57d7968372656a2230c0d10fc95b99beefaa9069",
+      "layers": [
+        "assets/stages/terminal-hangar-sky.png",
+        "assets/stages/terminal-hangar-distant.png",
+        "assets/stages/terminal-hangar-midground.png",
+        "assets/stages/terminal-hangar-floor.png",
+        "assets/stages/terminal-hangar-foreground.png"
+      ],
+      "compositeMinAlpha": 255
+    }
+  ],
+  "captures": [
+    "terminal-linked-right-quay.webp",
+    "terminal-linked-right-passage.webp",
+    "terminal-linked-right-hangar.webp",
+    "terminal-linked-left-hangar.webp"
+  ],
+  "visualRestores": 14,
+  "sourceSha256": {
+    "fight.js": "17c3cfcdee2291dad721b312ee060ca3d341cb0734c30d57128152fa6d3e3f23",
+    "content.js": "91923e26f31344ca9b0789720a3ea1040e20b810742b782f55638e32f789d683",
+    "assets.js": "8d04672f033b659b7e9ddd623fdea9392f74e7a2518f3b5a360d4948d118848e",
+    "qa/transitions-canvas.cjs": "688a7207e43a977975da891bd9b337ed278159267d9b552f9ec6f463aec02c72"
+  },
+  "images": [
+    {
+      "zone": "terminal",
+      "group": "stages",
+      "file": "assets/stages/terminal.webp",
+      "width": 1672,
+      "height": 941,
+      "sha256": "1dcfd0d560f05ac9801df009cfa954edbdae015b832833969fa830fea1d87dd2"
+    },
+    {
+      "zone": "terminal",
+      "group": "skyplates",
+      "file": "assets/stages/terminal-sky.png",
+      "width": 1672,
+      "height": 941,
+      "sha256": "f5fa6135390139add1e54e53fe170e87bdd9a0a222fed19d24eefffaf7576bf6"
+    },
+    {
+      "zone": "terminal",
+      "group": "distants",
+      "file": "assets/stages/terminal-distant.png",
+      "width": 2172,
+      "height": 724,
+      "sha256": "c150e8f099d7a90f49073bfe7b69343dac85dad2f614db9efba8ee9a4aeffe39"
+    },
+    {
+      "zone": "terminal",
+      "group": "midgrounds",
+      "file": "assets/stages/terminal-midground.png",
+      "width": 2172,
+      "height": 724,
+      "sha256": "d09eb84105d65f1af2eea0fcd24b9f00dfb5fd8faebd6d432672bfba5606ee21"
+    },
+    {
+      "zone": "terminal",
+      "group": "floors",
+      "file": "assets/stages/terminal-floor.png",
+      "width": 2172,
+      "height": 724,
+      "sha256": "46a9fb79825de9336c9742b630af0153deaf351a4b36732de77d062527d2beb2"
+    },
+    {
+      "zone": "terminal",
+      "group": "foregrounds",
+      "file": "assets/stages/terminal-foreground.webp",
+      "width": 2172,
+      "height": 255,
+      "sha256": "357058916d40964581f65245f90f0259092c074ada40aa61f7206d765a71eceb"
+    },
+    {
+      "zone": "terminal-hangar",
+      "group": "stages",
+      "file": "assets/static-domains-20261125/terminal-hangar-panorama.png",
+      "width": 1672,
+      "height": 941,
+      "sha256": "96096b2711736a98b925ebae8d4f61de21797e1395b6758beed033776599ed89"
+    },
+    {
+      "zone": "terminal-hangar",
+      "group": "skyplates",
+      "file": "assets/stages/terminal-hangar-sky.png",
+      "width": 1672,
+      "height": 941,
+      "sha256": "c1048c3721e9d270313022f46a2165159ae48b96b1cd776c996e0f7175f02111"
+    },
+    {
+      "zone": "terminal-hangar",
+      "group": "distants",
+      "file": "assets/stages/terminal-hangar-distant.png",
+      "width": 1672,
+      "height": 941,
+      "sha256": "f3cef5c0e030564212f1e71d308bf34ad29d1e06dd63d1795f1ecae7a8d78b95"
+    },
+    {
+      "zone": "terminal-hangar",
+      "group": "midgrounds",
+      "file": "assets/stages/terminal-hangar-midground.png",
+      "width": 1672,
+      "height": 941,
+      "sha256": "b7b8f3383043072b235854c0115a2c7eb204297757447271034c198585f7ab4e"
+    },
+    {
+      "zone": "terminal-hangar",
+      "group": "floors",
+      "file": "assets/stages/terminal-hangar-floor.png",
+      "width": 1672,
+      "height": 941,
+      "sha256": "e5c93e0ac7125c1e0ab7ed932724ab63810ea71cd49f970cf586e0a0dd064c11"
+    },
+    {
+      "zone": "terminal-hangar",
+      "group": "foregrounds",
+      "file": "assets/stages/terminal-hangar-foreground.png",
+      "width": 1672,
+      "height": 941,
+      "sha256": "3d52eaca72329acd0764d5282d87190151d9b9fe022ce54a6a800de928acd362"
+    }
+  ],
+  "passed": true
+}

@@ -155,6 +155,7 @@ function uiHarness(storage=new Map()) {
     constructor(id){this.id=id;this.handlers={};this.dataset={};this.hidden=false;this.open=false;this.ranges=[];this.outputs=[];this.classList={toggle(){},add(){},remove(){}};}
     set innerHTML(html){
       this.html=html;this.ranges=[];this.outputs=[];
+      if(this.id==='inputEditor')this.editorParts=Object.fromEntries(['body','notice','device'].map(name=>['[data-input-'+name+']',new Element('editor-'+name)]));
       for(const tag of html.match(/<input\b[^>]*data-ambience-volume[^>]*>/g)||[]){
         const range={value:tag.match(/value="([^"]*)"/)?.[1]||'',dataset:{ambienceVolume:''},matches:selector=>selector==='[data-ambience-volume]'};this.ranges.push(range);
       }
@@ -164,7 +165,7 @@ function uiHarness(storage=new Map()) {
     addEventListener(name,handler){this.handlers[name]=handler;}
     emit(name,event){this.handlers[name]?.(event);}
     querySelectorAll(){return [];}
-    querySelector(){return null;}
+    querySelector(selector){return this.editorParts?.[selector]||null;}
     setAttribute(name,value){this[name]=value;}
     focus(){}
     showModal(){this.open=true;}
@@ -174,7 +175,8 @@ function uiHarness(storage=new Map()) {
   const engine={setAmbienceVolume:value=>calls.push(['volume',value]),setSound:value=>calls.push(['sound',value]),setReducedEffects(){},stop:()=>calls.push(['stop']),pause:value=>calls.push(['pause',value]),input(){},start:options=>calls.push(['start',options])};
   const window={StrandFight:engine,StrandTournament:{},StrandAssets:{},scrollTo(){},addEventListener(){},matchMedia:()=>({matches:false,addEventListener(){}})};
   const localStorage={getItem:key=>storage.get(key)??null,setItem:(key,value)=>storage.set(key,value)};
-  const context={window,document,localStorage,console};vm.createContext(context);vm.runInContext(source('content.js'),context);vm.runInContext(source('app.js'),context);
+  window.document=document;window.localStorage=localStorage;
+  const context={window,document,localStorage,console};vm.createContext(context);vm.runInContext(source('content.js'),context);vm.runInContext(source('input.js'),context);vm.runInContext(source('app.js'),context);
   const view=document.getElementById('view');
   const action=(act,extra={})=>view.emit('click',{target:{closest:()=>({dataset:{act,...extra}})}});
   return {storage,calls,document,view,action};
@@ -207,11 +209,13 @@ async function verifyNetworkUI(){
   const storage=new Map([['echos.v1.sound','false'],['echos.v1.ambienceVolume','0.6'],['echos.v1.reducedEffects','true'],['echos.v1.staticScenery','true'],
     ['echos.private.record',JSON.stringify({version:'test',result:{winner:1,rounds:'2-0'},tape})]]);
   class Element {
-    constructor(){this.value='';this.hidden=false;this.dataset={};}
+    constructor(){this.value='';this.hidden=false;this.dataset={};this.handlers={};}
     set innerHTML(html){for(const match of html.matchAll(/\bid="([^"]+)"/g))get(match[1]);}
     append(){}
     add(){}
     setAttribute(name,value){this[name]=value;}
+    addEventListener(name,handler){const before=this.handlers[name];this.handlers[name]=event=>{before?.(event);handler(event);};}
+    closest(selector){return this.matches?.(selector)?this:null;}
   }
   const get=id=>{if(!nodes.has(id))nodes.set(id,new Element());return nodes.get(id);};
   const document={hidden:false,getElementById:get,createElement:()=>new Element(),querySelector:()=>get('header'),addEventListener:(name,handler)=>{docEvents[name]=handler;}};
@@ -219,7 +223,7 @@ async function verifyNetworkUI(){
     setAmbienceVolume:value=>calls.push(['volume',value]),setAudioSuspended:value=>calls.push(['suspended',value]),setStaticScenery:value=>calls.push(['staticScenery',value]),validReplay:()=>true,
     network:{checkpoint:()=>({}),restore:()=>calls.push(['restore']),advance:(inputs,silent)=>calls.push(['advance',inputs,silent]),draw:()=>calls.push(['draw'])}};
   const store={getItem:key=>storage.get(key)??null,setItem:(key,value)=>storage.set(key,value)};
-  const window={StrandFight:engine,StrandRoomVersion:'test',localStorage:store,sessionStorage:{getItem:()=>null,setItem(){}},addEventListener:(name,handler)=>{events[name]=handler;},matchMedia:()=>({matches:false})};
+  const window={document,StrandFight:engine,StrandRoomVersion:'test',localStorage:store,sessionStorage:{getItem:()=>null,setItem(){}},addEventListener:(name,handler)=>{const before=events[name];events[name]=event=>{before?.(event);handler(event);};},matchMedia:()=>({matches:false})};
   const reply={live:true,tick:0,ack:0,cursor:0,total:0,events:[],result:null,
     seats:[{fighter:'sam',ready:true,connected:true},{fighter:'higgs',ready:true,connected:true}],
     match:{p1:'sam',p2:'higgs',stage:'shore',seed:42,version:'test'}};
@@ -233,7 +237,7 @@ async function verifyNetworkUI(){
       if(fail)throw new Error('Connection lost');
       return {ok:true,json:async()=>request.op==='create'?{player:1,room:'abc123456789'}:request.op==='leave'?{closed:true}:structuredClone(reply)};
     }};
-  vm.createContext(context);vm.runInContext(source('content.js'),context);vm.runInContext(source('netplay.js'),context);
+  vm.createContext(context);vm.runInContext(source('content.js'),context);vm.runInContext(source('input.js'),context);vm.runInContext(source('netplay.js'),context);
   const settle=async()=>{for(let i=0;i<12;i++)await Promise.resolve();};
   const sync=async()=>{const entry=[...timers].find(([,fn])=>fn.name==='sync');assert(entry,'A sync poll is scheduled');timers.delete(entry[0]);await entry[1]();await settle();};
   const frame=()=>{const [id,callback]=frames.entries().next().value;frames.delete(id);callback();};

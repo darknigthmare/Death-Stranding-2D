@@ -2,9 +2,10 @@
   'use strict';
   const $ = id => document.getElementById(id);
   const engine = window.StrandFight, {fighters,stages} = window.StrandContent;
+  const input=window.StrandInput,inputSettings=input.createSettings();
+  let inputController=null,inputEditor=null,manualReturnFocus=null;
   const commands = ['left','right','up','down','light','heavy','special','guard','throw','finish'];
   const labels = ['←','→','Saut','Bas','Léger','Lourd','Signature','Garde','Prise','Finalité'];
-  const keyMap = {ArrowLeft:'left',q:'left',a:'left',ArrowRight:'right',d:'right',ArrowUp:'up',z:'up',w:'up',ArrowDown:'down',s:'down',f:'light',g:'heavy',h:'special',r:'guard',t:'throw',y:'finish'};
   const sessionKey = 'echos.private.session', saveKey = 'echos.private.record';
   const held = new Set(), pingSamples = [];
   let identity=null, state=null, run=null, record=null, busy=false, timer=0, nextCommand=null;
@@ -24,7 +25,7 @@
   const audioBlocked=()=>audioBlurred || document.hidden || !!run && (audioDisconnected || !state?.live || !!state.result);
   function updateAudioState() {engine.setAudioSuspended(audioBlocked());}
   const audioControls=document.createElement('div');audioControls.className='row';
-  audioControls.innerHTML='<button id="roomSound" type="button"></button><label>Ambiance du décor <input id="roomAmbience" type="range" min="0" max="100" step="5" aria-label="Volume de l’ambiance"><output id="roomAmbienceValue"></output></label><label>Décor <select id="roomScenery" aria-label="Animation du décor"><option value="animated">Animé</option><option value="static">Statique</option></select></label>';
+  audioControls.innerHTML='<button id="roomCommands" type="button">Commandes</button><button id="roomSound" type="button"></button><label>Ambiance du décor <input id="roomAmbience" type="range" min="0" max="100" step="5" aria-label="Volume de l’ambiance"><output id="roomAmbienceValue"></output></label><label>Décor <select id="roomScenery" aria-label="Animation du décor"><option value="animated">Animé</option><option value="static">Statique</option></select></label>';
   document.querySelector('header').append(audioControls);
   function updateAudioControls() {
     $('roomSound').textContent=audioOptions.sound?'Son activé':'Son coupé';
@@ -65,7 +66,7 @@
   for (const [id,v] of Object.entries(fighters)) $('fighter').add(new Option(v.name,id));
   for (const [id,title] of Object.entries(stages)) $('stage').add(new Option(title,id));
   function clearRun() {
-    cancelAnimationFrame(run?.frame);engine.stop();run=null;pending=[];sequence=0;cursor=0;held.clear();pingSamples.length=0;
+    release();cancelAnimationFrame(run?.frame);engine.stop();run=null;pending=[];sequence=0;cursor=0;held.clear();pingSamples.length=0;
   }
   function resetLobby(message) {
     clearTimeout(timer);clearRun();identity=null;state=null;nextCommand=null;remember('sessionStorage',sessionKey,null);
@@ -81,7 +82,11 @@
     $('fighter').disabled=mine.ready;$('ready').textContent=mine.ready?'Annuler mon état prêt':'Prêt';
     $('picks').hidden=!!state.match;
     $('arena').hidden=!!state.match||identity.player!==1||!state.seats.every(s=>s?.ready && s.connected);
+    showStageRule();
   }
+  function stageRuleText(stage){return window.StrandContent.stageLinks?.[stage]?.description||'';}
+  function showStageRule(){if($('roomStageRule'))$('roomStageRule').textContent=stageRuleText($('stage').value);}
+  $('stage').onchange=showStageRule;
   // Acknowledged input replaces its predicted tick. Never apply the same serial twice.
   function insertEvent(event) {
     const [player,serial,tick]=event,key=player+'/'+serial;
@@ -138,28 +143,33 @@
     }
     // A full rebuild also stays silent until its corrected frame is ready.
     updateAudioState();engine.network.draw();
+    const snapshot=engine.snapshot?.(),phaseText=snapshot?.phase==='transition'?'Passage vers le hangar · chronomètre suspendu':stageRuleText(run.config.stage);
+    if($('roomPhase')&&$('roomPhase').textContent!==phaseText)$('roomPhase').textContent=phaseText;
     if (state.result && cursor===state.total && (run.done || state.result.mismatch)) networkResult(state.result);
     else run.frame=requestAnimationFrame(frame);
   }
   function launch(config) {
+    inputController?.releaseAll();held.clear();
     $('game').hidden=false;$('saved').hidden=true;$('fightTitle').textContent=fighters[config.p1].name+' / '+fighters[config.p2].name;
     run={config,tick:0,points:new Map(),known:new Map(),buckets:new Map(),dirty:Infinity,silentUntil:0,done:null,frame:0};
     startEngine();run.frame=requestAnimationFrame(frame);
   }
   function submit(action,down) {
-    if (!run || run.done || !state?.live || !commands.includes(action) || held.has(action)===down) return;
+    if (!run || !identity || !commands.includes(action) || held.has(action)===down || down&&(run.done||!state?.live||state.result||audioDisconnected)) return;
     if (down) held.add(action);else held.delete(action);
     const event=[++sequence,Math.max(run.tick,estimate()),action,down];
     pending.push(event);insertEvent([identity.player,...event]);
   }
-  function release() {for (const action of [...held]) submit(action,false);}
+  function release() {inputController?.releaseAll();for (const action of [...held]) submit(action,false);}
   function networkResult(result) {
+    release();
     engine.setAudioSuspended(true);
     if (result.mismatch) {status('Les deux simulations ont donné des résultats différents.');return;}
     if (!run?.done) return;
     const cfg=run.config;
     const events=[...run.known.values()].filter(e=>e[2]<result.tick).sort((a,b)=>a[2]-b[2]||a[0]-b[0]||a[1]-b[1]);
     const tape={version:1,p1:cfg.p1,p2:cfg.p2,stage:cfg.stage,mode:'local',seed:cfg.seed,difficulty:1,roundsToWin:2,ticks:result.tick,
+      ...(window.StrandContent.stageLinks?.[cfg.stage]?{stageRules:window.StrandContent.stageLinks[cfg.stage].replayTag}:{}),
       events:events.map(([p,,t,a,d])=>[t,((p-1)*commands.length+commands.indexOf(a))*2+Number(d)])};
     record={version:cfg.version,participants:[identity.room+'/1',identity.room+'/2'],result,tape};
     remember('localStorage',saveKey,record);
@@ -188,10 +198,7 @@
           for (const event of run.known.values()) if(event[0]===identity.player) latest.set(event[3],event[4]);
           for (const [action,down] of latest) if(down) pending.push([++sequence,reply.tick,action,false]);
         }
-        if (!reply.live && held.size) {
-          for(const action of held) pending.push([++sequence,reply.tick,action,false]);
-          held.clear();
-        }
+        if (!reply.live) release();
       }
       updateAudioState();updateLobby();
       status(run ? reply.live?'Duel en cours.':'Connexion interrompue · en attente de l’adversaire.':
@@ -199,7 +206,7 @@
       if (reply.result && cursor===reply.total && (run.done || reply.result.mismatch)) networkResult(reply.result);
     } catch(error) {
       if (identity!==who) return;
-      audioDisconnected=true;updateAudioState();
+      audioDisconnected=true;release();updateAudioState();
       if ([400,403,404,409,415].includes(error.status)) {
         if (cmd && error.status===409) status(error.message);else {resetLobby(error.message);return;}
       } else {
@@ -252,22 +259,30 @@
     const uri=URL.createObjectURL(new Blob([JSON.stringify(record)],{type:'application/json'}));
     const link=document.createElement('a');link.href=uri;link.download='duel-prive.json';link.click();setTimeout(()=>URL.revokeObjectURL(uri),2000);
   };
+  function updateInputLabels(){
+    const player=inputSettings.state().networkPlayer;
+    const text='Mes touches · '+inputSettings.profile().name+' · J'+player+' : '+input.actions.map(action=>action.title+' '+inputSettings.label(player,action.id)).join(' · ')+'.';
+    if($('roomKeySummary'))$('roomKeySummary').textContent=text;
+    if($('roomKeys'))$('roomKeys').innerHTML='<div class="commandSheet"><table><thead><tr><th>Action</th><th>Mon clavier · J'+player+'</th></tr></thead><tbody>'+input.actions.map(action=>'<tr><td>'+action.title+'</td><td>'+inputSettings.label(player,action.id).replace(/[&<>"']/g,ch=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[ch]))+'</td></tr>').join('')+'</tbody></table></div>';
+    for(const button of $('controls').querySelectorAll?.('[data-action]')||[]){const name=input.actions.find(action=>action.id===button.dataset.action)?.title||button.dataset.action;button.title=name+' · '+inputSettings.label(player,button.dataset.action);button.setAttribute('aria-label',button.title);}
+  }
+  $('roomCommands').onclick=()=>{
+    if($('roomManual').open)return;manualReturnFocus=document.activeElement;release();updateInputLabels();inputEditor?.destroy();
+    inputEditor=input.mountEditor($('roomInputEditor'),{settings:inputSettings,controller:inputController,network:true});$('roomManual').showModal();
+  };
+  $('roomManual').addEventListener('cancel',event=>{if(inputEditor?.isCapturing()){event.preventDefault();inputEditor.cancel();}});
+  $('roomManual').addEventListener('close',()=>{inputEditor?.destroy();inputEditor=null;release();if(manualReturnFocus?.isConnected!==false)manualReturnFocus?.focus?.({preventScroll:true});manualReturnFocus=null;});
   for (const [i,action] of commands.entries()) {
     const button=document.createElement('button');button.textContent=labels[i];button.type='button';button.dataset.action=action;
-    button.onpointerdown=e=>{e.preventDefault();button.setPointerCapture(e.pointerId);submit(action,true);};
-    button.onpointerup=button.onpointercancel=button.onlostpointercapture=()=>submit(action,false);
+    button.onpointerdown=e=>{e.preventDefault();button.setPointerCapture(e.pointerId);inputController?.press('pointer:'+e.pointerId,inputSettings.state().networkPlayer,action);};
+    button.onpointerup=button.onpointercancel=button.onlostpointercapture=e=>inputController?.release('pointer:'+e.pointerId);
     $('controls').append(button);
   }
-  for (const type of ['keydown','keyup']) window.addEventListener(type,event=>{
-    if (!run) return;
-    const action=keyMap[event.key]||keyMap[event.key.toLowerCase()];
-    if(!action)return;
-    // A local option can take focus while a movement key is still held.
-    // Always release that existing input, including after a modifier changes.
-    if(type==='keyup'){if(held.has(action))submit(action,false);return;}
-    if(event.altKey||event.ctrlKey||event.metaKey||event.target?.matches?.('input,select,textarea'))return;
-    event.preventDefault();if(!event.repeat)submit(action,true);
-  });
+  inputController=input.createController({settings:inputSettings,
+    accepts:player=>!!run&&!run.done&&!!identity&&!!state?.live&&!state.result&&!audioDisconnected&&!$('roomManual').open&&player===inputSettings.state().networkPlayer,
+    gamepadPlayers:()=>[inputSettings.state().networkPlayer],onInput:(_player,action,down)=>submit(action,down),onSettingsChange:updateInputLabels,
+    onDeviceLost:()=>{release();if(run&&!run.done)status('Manette déconnectée · les touches du profil restent disponibles.');}});
+  updateInputLabels();
   window.addEventListener('blur',()=>{audioBlurred=true;release();updateAudioState();});
   window.addEventListener('focus',()=>{audioBlurred=false;updateAudioState();});
   document.addEventListener('visibilitychange',()=>{if(document.hidden)release();updateAudioState();});

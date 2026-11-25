@@ -1,0 +1,1140 @@
+{
+  "schema": 1,
+  "date": "2026-11-25",
+  "scope": "28 paires des huit identités du socle, deux échanges orientés par paire ; huit miroirs distincts. Textes originaux, limités à Versus/Arcade.",
+  "source": "Création originale du simulateur Échos de la Grève ; cohérence avec les versions DS1/DC et les routes existantes, aucune relation officielle nouvelle affirmée.",
+  "fighters": [
+    "sam",
+    "fragile",
+    "higgs",
+    "cliff",
+    "mule",
+    "diehardman",
+    "mama",
+    "heartman"
+  ],
+  "pairs": [
+    {
+      "id": "REL:fragile:sam",
+      "fighters": [
+        "sam",
+        "fragile"
+      ],
+      "kind": "Coordination mise à l’épreuve",
+      "status": "Fiction du simulateur",
+      "version": "DS1 / Director’s Cut",
+      "official_relation_asserted": false,
+      "route_texts_modified": false,
+      "exchanges": {
+        "sam": [
+          {
+            "fighter": "sam",
+            "text": "Tu vois un passage ?"
+          },
+          {
+            "fighter": "fragile",
+            "text": "Une ouverture. À toi de la garder."
+          }
+        ],
+        "fragile": [
+          {
+            "fighter": "fragile",
+            "text": "Suis le détour, Sam."
+          },
+          {
+            "fighter": "sam",
+            "text": "Tant qu’il mène de l’autre côté."
+          }
+        ]
+      }
+    },
+    {
+      "id": "REL:higgs:sam",
+      "fighters": [
+        "sam",
+        "higgs"
+      ],
+      "kind": "Obstacle et provocation",
+      "status": "Fiction du simulateur",
+      "version": "DS1 / Director’s Cut",
+      "official_relation_asserted": false,
+      "route_texts_modified": false,
+      "exchanges": {
+        "sam": [
+          {
+            "fighter": "sam",
+            "text": "Tu as encore barré le chemin."
+          },
+          {
+            "fighter": "higgs",
+            "text": "Pour voir si tu en cherches un autre."
+          }
+        ],
+        "higgs": [
+          {
+            "fighter": "higgs",
+            "text": "Un colis, un obstacle. Tu connais la suite."
+          },
+          {
+            "fighter": "sam",
+            "text": "Je connais surtout la sortie."
+          }
+        ]
+      }
+    },
+    {
+      "id": "REL:cliff:sam",
+      "fighters": [
+        "sam",
+        "cliff"
+      ],
+      "kind": "Tension sur une ligne tenue",
+      "status": "Fiction du simulateur",
+      "version": "DS1 / Director’s Cut",
+      "official_relation_asserted": false,
+      "route_texts_modified": false,
+      "exchanges": {
+        "sam": [
+          {
+            "fighter": "sam",
+            "text": "Je ne vais pas te laisser avancer."
+          },
+          {
+            "fighter": "cliff",
+            "text": "Alors garde ta position."
+          }
+        ],
+        "cliff": [
+          {
+            "fighter": "cliff",
+            "text": "Reste de ce côté de la ligne."
+          },
+          {
+            "fighter": "sam",
+            "text": "Il faudra plus qu’un ordre."
+          }
+        ]
+      }
+    },
+    {
+      "id": "REL:mule:sam",
+      "fighters": [
+        "sam",
+        "mule"
+      ],
+      "kind": "Conflit d’inventaire",
+      "status": "Fiction du simulateur",
+      "version": "DS1 / Director’s Cut",
+      "official_relation_asserted": false,
+      "route_texts_modified": false,
+      "exchanges": {
+        "sam": [
+          {
+            "fighter": "sam",
+            "text": "Je viens reprendre la caisse."
+          },
+          {
+            "fighter": "mule",
+            "text": "Commence par retrouver son numéro."
+          }
+        ],
+        "mule": [
+          {
+            "fighter": "mule",
+            "text": "Ce chargement reste ici."
+          },
+          {
+            "fighter": "sam",
+            "text": "Il a encore du chemin à faire."
+          }
+        ]
+      }
+    },
+    {
+      "id": "REL:diehardman:sam",
+      "fighters": [
+        "sam",
+        "diehardman"
+      ],
+      "kind": "Ordre et décision",
+      "status": "Fiction du simulateur",
+      "version": "DS1 / Director’s Cut",
+      "official_relation_asserted": false,
+      "route_texts_modified": false,
+      "exchanges": {
+        "sam": [
+          {
+            "fighter": "sam",
+            "text": "Tu demandes de passer ou d’attendre ?"
+          },
+          {
+            "fighter": "diehardman",
+            "text": "De reconnaître le moment où la ligne est libre."
+          }
+        ],
+        "diehardman": [
+          {
+            "fighter": "diehardman",
+            "text": "La consigne tient toujours."
+          },
+          {
+            "fighter": "sam",
+            "text": "Alors montre-moi ce qu’elle protège."
+          }
+        ]
+      }
+    },
+    {
+      "id": "REL:mama:sam",
+      "fighters": [
+        "sam",
+        "mama"
+      ],
+      "kind": "Épreuve d’un point d’appui",
+      "status": "Fiction du simulateur",
+      "version": "DS1 / Director’s Cut",
+      "official_relation_asserted": false,
+      "route_texts_modified": false,
+      "exchanges": {
+        "sam": [
+          {
+            "fighter": "sam",
+            "text": "Ça tient ?"
+          },
+          {
+            "fighter": "mama",
+            "text": "Assez pour essayer. Regarde les points d’appui."
+          }
+        ],
+        "mama": [
+          {
+            "fighter": "mama",
+            "text": "Ne force pas au milieu."
+          },
+          {
+            "fighter": "sam",
+            "text": "Je vais d’abord chercher les bords."
+          }
+        ]
+      }
+    },
+    {
+      "id": "REL:heartman:sam",
+      "fighters": [
+        "sam",
+        "heartman"
+      ],
+      "kind": "Patience et mesure",
+      "status": "Fiction du simulateur",
+      "version": "DS1 / Director’s Cut",
+      "official_relation_asserted": false,
+      "route_texts_modified": false,
+      "exchanges": {
+        "sam": [
+          {
+            "fighter": "sam",
+            "text": "Combien de temps ?"
+          },
+          {
+            "fighter": "heartman",
+            "text": "Assez pour apprendre de ta prochaine erreur."
+          }
+        ],
+        "heartman": [
+          {
+            "fighter": "heartman",
+            "text": "Tu peux attendre le bon signal."
+          },
+          {
+            "fighter": "sam",
+            "text": "Je peux aussi le provoquer."
+          }
+        ]
+      }
+    },
+    {
+      "id": "REL:fragile:higgs",
+      "fighters": [
+        "fragile",
+        "higgs"
+      ],
+      "kind": "Passage disputé",
+      "status": "Fiction du simulateur",
+      "version": "DS1 / Director’s Cut",
+      "official_relation_asserted": false,
+      "route_texts_modified": false,
+      "exchanges": {
+        "fragile": [
+          {
+            "fighter": "fragile",
+            "text": "Tu veux encore décider du passage ?"
+          },
+          {
+            "fighter": "higgs",
+            "text": "Seulement de celui que tu ne prendras pas."
+          }
+        ],
+        "higgs": [
+          {
+            "fighter": "higgs",
+            "text": "Tu comptes disparaître au premier obstacle ?"
+          },
+          {
+            "fighter": "fragile",
+            "text": "Je compte choisir où je reviens."
+          }
+        ]
+      }
+    },
+    {
+      "id": "REL:cliff:fragile",
+      "fighters": [
+        "fragile",
+        "cliff"
+      ],
+      "kind": "Mobilité face à une position",
+      "status": "Fiction du simulateur",
+      "version": "DS1 / Director’s Cut",
+      "official_relation_asserted": false,
+      "route_texts_modified": false,
+      "exchanges": {
+        "fragile": [
+          {
+            "fighter": "fragile",
+            "text": "Ta ligne ne m’arrêtera pas."
+          },
+          {
+            "fighter": "cliff",
+            "text": "Elle n’est pas faite pour te suivre."
+          }
+        ],
+        "cliff": [
+          {
+            "fighter": "cliff",
+            "text": "Tu bouges. La position reste."
+          },
+          {
+            "fighter": "fragile",
+            "text": "J’ai besoin d’un instant, pas de la position."
+          }
+        ]
+      }
+    },
+    {
+      "id": "REL:fragile:mule",
+      "fighters": [
+        "fragile",
+        "mule"
+      ],
+      "kind": "Trajet contre possession",
+      "status": "Fiction du simulateur",
+      "version": "DS1 / Director’s Cut",
+      "official_relation_asserted": false,
+      "route_texts_modified": false,
+      "exchanges": {
+        "fragile": [
+          {
+            "fighter": "fragile",
+            "text": "Garde tes étiquettes."
+          },
+          {
+            "fighter": "mule",
+            "text": "Alors laisse mes caisses."
+          }
+        ],
+        "mule": [
+          {
+            "fighter": "mule",
+            "text": "Tout ce qui passe doit être enregistré."
+          },
+          {
+            "fighter": "fragile",
+            "text": "Il faudrait déjà voir par où je passe."
+          }
+        ]
+      }
+    },
+    {
+      "id": "REL:diehardman:fragile",
+      "fighters": [
+        "fragile",
+        "diehardman"
+      ],
+      "kind": "Négociation d’un passage",
+      "status": "Fiction du simulateur",
+      "version": "DS1 / Director’s Cut",
+      "official_relation_asserted": false,
+      "route_texts_modified": false,
+      "exchanges": {
+        "fragile": [
+          {
+            "fighter": "fragile",
+            "text": "Un ordre ne dessine pas un chemin."
+          },
+          {
+            "fighter": "diehardman",
+            "text": "Il peut empêcher qu’on le ferme."
+          }
+        ],
+        "diehardman": [
+          {
+            "fighter": "diehardman",
+            "text": "Je dois savoir où mène ton détour."
+          },
+          {
+            "fighter": "fragile",
+            "text": "Commence par me laisser une ouverture."
+          }
+        ]
+      }
+    },
+    {
+      "id": "REL:fragile:mama",
+      "fighters": [
+        "fragile",
+        "mama"
+      ],
+      "kind": "Départ et ancrage",
+      "status": "Fiction du simulateur",
+      "version": "DS1 / Director’s Cut",
+      "official_relation_asserted": false,
+      "route_texts_modified": false,
+      "exchanges": {
+        "fragile": [
+          {
+            "fighter": "fragile",
+            "text": "Je peux franchir cet espace."
+          },
+          {
+            "fighter": "mama",
+            "text": "Et moi, lui donner deux appuis."
+          }
+        ],
+        "mama": [
+          {
+            "fighter": "mama",
+            "text": "Il me faut un point qui reste."
+          },
+          {
+            "fighter": "fragile",
+            "text": "Je reviendrai à celui-là."
+          }
+        ]
+      }
+    },
+    {
+      "id": "REL:fragile:heartman",
+      "fighters": [
+        "fragile",
+        "heartman"
+      ],
+      "kind": "Intervalle à saisir",
+      "status": "Fiction du simulateur",
+      "version": "DS1 / Director’s Cut",
+      "official_relation_asserted": false,
+      "route_texts_modified": false,
+      "exchanges": {
+        "fragile": [
+          {
+            "fighter": "fragile",
+            "text": "Ton signal arrive toujours après moi."
+          },
+          {
+            "fighter": "heartman",
+            "text": "Alors laisse-moi mesurer ton avance."
+          }
+        ],
+        "heartman": [
+          {
+            "fighter": "heartman",
+            "text": "Il y a une pause entre deux retours."
+          },
+          {
+            "fighter": "fragile",
+            "text": "C’est là que je passe."
+          }
+        ]
+      }
+    },
+    {
+      "id": "REL:cliff:higgs",
+      "fighters": [
+        "higgs",
+        "cliff"
+      ],
+      "kind": "Provocation face à la discipline",
+      "status": "Fiction du simulateur",
+      "version": "DS1 / Director’s Cut",
+      "official_relation_asserted": false,
+      "route_texts_modified": false,
+      "exchanges": {
+        "higgs": [
+          {
+            "fighter": "higgs",
+            "text": "Tes soldats connaissent déjà la fin ?"
+          },
+          {
+            "fighter": "cliff",
+            "text": "Ils savent où tenir."
+          }
+        ],
+        "cliff": [
+          {
+            "fighter": "cliff",
+            "text": "Ta mise en scène encombre la ligne."
+          },
+          {
+            "fighter": "higgs",
+            "text": "Je préfère dire qu’elle attire l’attention."
+          }
+        ]
+      }
+    },
+    {
+      "id": "REL:higgs:mule",
+      "fighters": [
+        "higgs",
+        "mule"
+      ],
+      "kind": "Détournement d’inventaire",
+      "status": "Fiction du simulateur",
+      "version": "DS1 / Director’s Cut",
+      "official_relation_asserted": false,
+      "route_texts_modified": false,
+      "exchanges": {
+        "higgs": [
+          {
+            "fighter": "higgs",
+            "text": "Tu comptes aussi les ombres ?"
+          },
+          {
+            "fighter": "mule",
+            "text": "Celles qui emportent le stock."
+          }
+        ],
+        "mule": [
+          {
+            "fighter": "mule",
+            "text": "Rends ce qui manque."
+          },
+          {
+            "fighter": "higgs",
+            "text": "Il faudra d’abord nommer ce que tu cherches."
+          }
+        ]
+      }
+    },
+    {
+      "id": "REL:diehardman:higgs",
+      "fighters": [
+        "higgs",
+        "diehardman"
+      ],
+      "kind": "Deux usages du masque",
+      "status": "Fiction du simulateur",
+      "version": "DS1 / Director’s Cut",
+      "official_relation_asserted": false,
+      "route_texts_modified": false,
+      "exchanges": {
+        "higgs": [
+          {
+            "fighter": "higgs",
+            "text": "Un masque pour chaque consigne ?"
+          },
+          {
+            "fighter": "diehardman",
+            "text": "Le tien n’excuse pas de les ignorer."
+          }
+        ],
+        "diehardman": [
+          {
+            "fighter": "diehardman",
+            "text": "Tu ne décideras pas du dernier ordre."
+          },
+          {
+            "fighter": "higgs",
+            "text": "Je peux au moins en changer l’entrée."
+          }
+        ]
+      }
+    },
+    {
+      "id": "REL:higgs:mama",
+      "fighters": [
+        "higgs",
+        "mama"
+      ],
+      "kind": "Rupture d’une construction",
+      "status": "Fiction du simulateur",
+      "version": "DS1 / Director’s Cut",
+      "official_relation_asserted": false,
+      "route_texts_modified": false,
+      "exchanges": {
+        "higgs": [
+          {
+            "fighter": "higgs",
+            "text": "J’aimerais voir ce qui casse en premier."
+          },
+          {
+            "fighter": "mama",
+            "text": "Tu peux essayer. Je mesure aussi les défaillances."
+          }
+        ],
+        "mama": [
+          {
+            "fighter": "mama",
+            "text": "Ce point d’ancrage ne t’appartient pas."
+          },
+          {
+            "fighter": "higgs",
+            "text": "Alors je vais tester ce qui le retient."
+          }
+        ]
+      }
+    },
+    {
+      "id": "REL:heartman:higgs",
+      "fighters": [
+        "higgs",
+        "heartman"
+      ],
+      "kind": "Interruption d’un rythme",
+      "status": "Fiction du simulateur",
+      "version": "DS1 / Director’s Cut",
+      "official_relation_asserted": false,
+      "route_texts_modified": false,
+      "exchanges": {
+        "higgs": [
+          {
+            "fighter": "higgs",
+            "text": "Je peux interrompre ton petit rythme."
+          },
+          {
+            "fighter": "heartman",
+            "text": "Nous mesurerons cette interruption aussi."
+          }
+        ],
+        "heartman": [
+          {
+            "fighter": "heartman",
+            "text": "Ta répétition finit par devenir prévisible."
+          },
+          {
+            "fighter": "higgs",
+            "text": "C’est pour cela que je change le silence."
+          }
+        ]
+      }
+    },
+    {
+      "id": "REL:cliff:mule",
+      "fighters": [
+        "cliff",
+        "mule"
+      ],
+      "kind": "Occupation du terrain",
+      "status": "Fiction du simulateur",
+      "version": "DS1 / Director’s Cut",
+      "official_relation_asserted": false,
+      "route_texts_modified": false,
+      "exchanges": {
+        "cliff": [
+          {
+            "fighter": "cliff",
+            "text": "Dégage cette caisse de la ligne."
+          },
+          {
+            "fighter": "mule",
+            "text": "La ligne passe maintenant par elle."
+          }
+        ],
+        "mule": [
+          {
+            "fighter": "mule",
+            "text": "Ce périmètre appartient au camp."
+          },
+          {
+            "fighter": "cliff",
+            "text": "Un périmètre se tient. Il ne se réclame pas."
+          }
+        ]
+      }
+    },
+    {
+      "id": "REL:cliff:diehardman",
+      "fighters": [
+        "cliff",
+        "diehardman"
+      ],
+      "kind": "Consignes concurrentes",
+      "status": "Fiction du simulateur",
+      "version": "DS1 / Director’s Cut",
+      "official_relation_asserted": false,
+      "route_texts_modified": false,
+      "exchanges": {
+        "cliff": [
+          {
+            "fighter": "cliff",
+            "text": "Deux ordres pour une seule position."
+          },
+          {
+            "fighter": "diehardman",
+            "text": "Nous allons vérifier lequel tient."
+          }
+        ],
+        "diehardman": [
+          {
+            "fighter": "diehardman",
+            "text": "La ligne doit rester ouverte."
+          },
+          {
+            "fighter": "cliff",
+            "text": "Alors protège ceux qui la tiennent."
+          }
+        ]
+      }
+    },
+    {
+      "id": "REL:cliff:mama",
+      "fighters": [
+        "cliff",
+        "mama"
+      ],
+      "kind": "Appui à construire",
+      "status": "Fiction du simulateur",
+      "version": "DS1 / Director’s Cut",
+      "official_relation_asserted": false,
+      "route_texts_modified": false,
+      "exchanges": {
+        "cliff": [
+          {
+            "fighter": "cliff",
+            "text": "Il me faut un point d’appui."
+          },
+          {
+            "fighter": "mama",
+            "text": "Choisis ton côté. Je prépare l’autre."
+          }
+        ],
+        "mama": [
+          {
+            "fighter": "mama",
+            "text": "Ne place pas tout le poids au même endroit."
+          },
+          {
+            "fighter": "cliff",
+            "text": "Ma section sait se répartir."
+          }
+        ]
+      }
+    },
+    {
+      "id": "REL:cliff:heartman",
+      "fighters": [
+        "cliff",
+        "heartman"
+      ],
+      "kind": "Signal et mémoire",
+      "status": "Fiction du simulateur",
+      "version": "DS1 / Director’s Cut",
+      "official_relation_asserted": false,
+      "route_texts_modified": false,
+      "exchanges": {
+        "cliff": [
+          {
+            "fighter": "cliff",
+            "text": "Le signal revient."
+          },
+          {
+            "fighter": "heartman",
+            "text": "Écoutons ce qu’il répète avant d’y voir une réponse."
+          }
+        ],
+        "heartman": [
+          {
+            "fighter": "heartman",
+            "text": "Je peux isoler la répétition."
+          },
+          {
+            "fighter": "cliff",
+            "text": "Laisse-moi entendre ce qui reste."
+          }
+        ]
+      }
+    },
+    {
+      "id": "REL:diehardman:mule",
+      "fighters": [
+        "mule",
+        "diehardman"
+      ],
+      "kind": "Propriété et consigne",
+      "status": "Fiction du simulateur",
+      "version": "DS1 / Director’s Cut",
+      "official_relation_asserted": false,
+      "route_texts_modified": false,
+      "exchanges": {
+        "mule": [
+          {
+            "fighter": "mule",
+            "text": "Ton sceau ne prouve pas la propriété."
+          },
+          {
+            "fighter": "diehardman",
+            "text": "Non. Il indique une consigne à respecter."
+          }
+        ],
+        "diehardman": [
+          {
+            "fighter": "diehardman",
+            "text": "La caisse doit quitter ce camp."
+          },
+          {
+            "fighter": "mule",
+            "text": "Alors il manque une ligne à ton ordre."
+          }
+        ]
+      }
+    },
+    {
+      "id": "REL:mama:mule",
+      "fighters": [
+        "mule",
+        "mama"
+      ],
+      "kind": "Pièce retenue",
+      "status": "Fiction du simulateur",
+      "version": "DS1 / Director’s Cut",
+      "official_relation_asserted": false,
+      "route_texts_modified": false,
+      "exchanges": {
+        "mule": [
+          {
+            "fighter": "mule",
+            "text": "Cette pièce entre dans mon inventaire."
+          },
+          {
+            "fighter": "mama",
+            "text": "Pas tant que mon ancrage la retient."
+          }
+        ],
+        "mama": [
+          {
+            "fighter": "mama",
+            "text": "Il me faut cette pièce pour fermer la travée."
+          },
+          {
+            "fighter": "mule",
+            "text": "Il te faudra aussi son numéro de sortie."
+          }
+        ]
+      }
+    },
+    {
+      "id": "REL:heartman:mule",
+      "fighters": [
+        "mule",
+        "heartman"
+      ],
+      "kind": "Objet et observation",
+      "status": "Fiction du simulateur",
+      "version": "DS1 / Director’s Cut",
+      "official_relation_asserted": false,
+      "route_texts_modified": false,
+      "exchanges": {
+        "mule": [
+          {
+            "fighter": "mule",
+            "text": "Compte ce que tu veux. Pas ma caisse."
+          },
+          {
+            "fighter": "heartman",
+            "text": "Je voulais seulement mesurer son trajet."
+          }
+        ],
+        "heartman": [
+          {
+            "fighter": "heartman",
+            "text": "Cette caisse revient toujours au même point."
+          },
+          {
+            "fighter": "mule",
+            "text": "Parce que c’est le sien."
+          }
+        ]
+      }
+    },
+    {
+      "id": "REL:diehardman:mama",
+      "fighters": [
+        "diehardman",
+        "mama"
+      ],
+      "kind": "Fermeture et ouverture",
+      "status": "Fiction du simulateur",
+      "version": "DS1 / Director’s Cut",
+      "official_relation_asserted": false,
+      "route_texts_modified": false,
+      "exchanges": {
+        "diehardman": [
+          {
+            "fighter": "diehardman",
+            "text": "Le passage doit rester fermé."
+          },
+          {
+            "fighter": "mama",
+            "text": "Alors pourquoi garder un appui de l’autre côté ?"
+          }
+        ],
+        "mama": [
+          {
+            "fighter": "mama",
+            "text": "Je peux ouvrir une travée."
+          },
+          {
+            "fighter": "diehardman",
+            "text": "Je dois savoir qui pourra la traverser."
+          }
+        ]
+      }
+    },
+    {
+      "id": "REL:diehardman:heartman",
+      "fighters": [
+        "diehardman",
+        "heartman"
+      ],
+      "kind": "Décision sous information incomplète",
+      "status": "Fiction du simulateur",
+      "version": "DS1 / Director’s Cut",
+      "official_relation_asserted": false,
+      "route_texts_modified": false,
+      "exchanges": {
+        "diehardman": [
+          {
+            "fighter": "diehardman",
+            "text": "Nous ne pouvons pas attendre le signal parfait."
+          },
+          {
+            "fighter": "heartman",
+            "text": "Non. Mais nous pouvons reconnaître le mauvais."
+          }
+        ],
+        "heartman": [
+          {
+            "fighter": "heartman",
+            "text": "Le relevé laisse encore un blanc."
+          },
+          {
+            "fighter": "diehardman",
+            "text": "Nous déciderons avec ce qui reste lisible."
+          }
+        ]
+      }
+    },
+    {
+      "id": "REL:heartman:mama",
+      "fighters": [
+        "mama",
+        "heartman"
+      ],
+      "kind": "Deux formes de mesure",
+      "status": "Fiction du simulateur",
+      "version": "DS1 / Director’s Cut",
+      "official_relation_asserted": false,
+      "route_texts_modified": false,
+      "exchanges": {
+        "mama": [
+          {
+            "fighter": "mama",
+            "text": "J’ai besoin d’un repère qui dure."
+          },
+          {
+            "fighter": "heartman",
+            "text": "Je peux t’offrir un rythme. Il faudra le suivre."
+          }
+        ],
+        "heartman": [
+          {
+            "fighter": "heartman",
+            "text": "Le signal trouve un deuxième point."
+          },
+          {
+            "fighter": "mama",
+            "text": "Alors nous pouvons commencer la liaison."
+          }
+        ]
+      }
+    }
+  ],
+  "mirrors": [
+    {
+      "id": "MIRROR:sam",
+      "fighters": [
+        "sam",
+        "sam"
+      ],
+      "kind": "Empreintes miroir",
+      "status": "Fiction du simulateur",
+      "version": "DS1 / Director’s Cut",
+      "official_relation_asserted": false,
+      "lines": [
+        {
+          "fighter": "sam",
+          "text": "Même charge, même chemin ?"
+        },
+        {
+          "fighter": "sam",
+          "text": "On verra lequel tient jusqu’au bout."
+        }
+      ]
+    },
+    {
+      "id": "MIRROR:fragile",
+      "fighters": [
+        "fragile",
+        "fragile"
+      ],
+      "kind": "Empreintes miroir",
+      "status": "Fiction du simulateur",
+      "version": "DS1 / Director’s Cut",
+      "official_relation_asserted": false,
+      "lines": [
+        {
+          "fighter": "fragile",
+          "text": "Je ne prends jamais deux fois le même détour."
+        },
+        {
+          "fighter": "fragile",
+          "text": "Alors il nous reste deux passages à trouver."
+        }
+      ]
+    },
+    {
+      "id": "MIRROR:higgs",
+      "fighters": [
+        "higgs",
+        "higgs"
+      ],
+      "kind": "Empreintes miroir",
+      "status": "Fiction du simulateur",
+      "version": "DS1 / Director’s Cut",
+      "official_relation_asserted": false,
+      "lines": [
+        {
+          "fighter": "higgs",
+          "text": "Enfin un public qui me ressemble."
+        },
+        {
+          "fighter": "higgs",
+          "text": "Ne confonds pas le reflet avec une approbation."
+        }
+      ]
+    },
+    {
+      "id": "MIRROR:cliff",
+      "fighters": [
+        "cliff",
+        "cliff"
+      ],
+      "kind": "Empreintes miroir",
+      "status": "Fiction du simulateur",
+      "version": "DS1 / Director’s Cut",
+      "official_relation_asserted": false,
+      "lines": [
+        {
+          "fighter": "cliff",
+          "text": "Même position, même ordre."
+        },
+        {
+          "fighter": "cliff",
+          "text": "Pas forcément la même réponse."
+        }
+      ]
+    },
+    {
+      "id": "MIRROR:mule",
+      "fighters": [
+        "mule",
+        "mule"
+      ],
+      "kind": "Empreintes miroir",
+      "status": "Fiction du simulateur",
+      "version": "DS1 / Director’s Cut",
+      "official_relation_asserted": false,
+      "lines": [
+        {
+          "fighter": "mule",
+          "text": "Ce numéro est déjà dans mon registre."
+        },
+        {
+          "fighter": "mule",
+          "text": "Le mien aussi. Écarte-toi de la caisse."
+        }
+      ]
+    },
+    {
+      "id": "MIRROR:diehardman",
+      "fighters": [
+        "diehardman",
+        "diehardman"
+      ],
+      "kind": "Empreintes miroir",
+      "status": "Fiction du simulateur",
+      "version": "DS1 / Director’s Cut",
+      "official_relation_asserted": false,
+      "lines": [
+        {
+          "fighter": "diehardman",
+          "text": "La même consigne ne suffit pas à nous départager."
+        },
+        {
+          "fighter": "diehardman",
+          "text": "Son application le fera."
+        }
+      ]
+    },
+    {
+      "id": "MIRROR:mama",
+      "fighters": [
+        "mama",
+        "mama"
+      ],
+      "kind": "Empreintes miroir",
+      "status": "Fiction du simulateur",
+      "version": "DS1 / Director’s Cut",
+      "official_relation_asserted": false,
+      "lines": [
+        {
+          "fighter": "mama",
+          "text": "Deux modèles, les mêmes points d’appui."
+        },
+        {
+          "fighter": "mama",
+          "text": "Voyons lequel garde sa portée."
+        }
+      ]
+    },
+    {
+      "id": "MIRROR:heartman",
+      "fighters": [
+        "heartman",
+        "heartman"
+      ],
+      "kind": "Empreintes miroir",
+      "status": "Fiction du simulateur",
+      "version": "DS1 / Director’s Cut",
+      "official_relation_asserted": false,
+      "lines": [
+        {
+          "fighter": "heartman",
+          "text": "Une répétition aussi précise mérite une mesure."
+        },
+        {
+          "fighter": "heartman",
+          "text": "À condition de ne pas la prendre pour une preuve."
+        }
+      ]
+    }
+  ]
+}

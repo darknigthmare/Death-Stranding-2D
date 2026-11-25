@@ -47,6 +47,7 @@ const {chromium} = require('playwright');
       window.seenFrames = seen;
     });
     await page.dispatchEvent('[data-act="start"]','click');
+    if(await page.locator('[data-act="enterDuel"]').count())await page.dispatchEvent('[data-act="enterDuel"]','click');
     await page.waitForSelector('#arena');
     const frames = await page.evaluate(() => {
       const both = (key, down) => [1,2].forEach(side => StrandFight.input(side,key,down));

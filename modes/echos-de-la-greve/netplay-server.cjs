@@ -9,7 +9,7 @@ const root = __dirname;
 const gameRoot = path.resolve(root, '../..');
 const context = {window:{}};
 vm.runInNewContext(fs.readFileSync(path.join(root, 'content.js'), 'utf8'), context);
-const {fighters, stages} = context.window.StrandContent;
+const {fighters, stages, stageLinks = {}} = context.window.StrandContent;
 const actions = new Set(['left','right','up','down','light','heavy','guard','special','throw','finish']);
 const heartbeat = 3000;
 const pastWindow = 24;
@@ -33,14 +33,14 @@ function assetFiles(baseRoot = root) {
     }
   }
   for (const folder of ['fighters','finishers','props','projectiles','stages','story','bosses','static-20261125','static-universe-20261125',
-    'static-completion-20261125','story-completion-20261125']) visit('assets/' + folder);
+    'static-completion-20261125','story-completion-20261125','static-domains-20261125']) visit('assets/' + folder);
   return files.sort();
 }
 function gameVersion(baseRoot = root, assets = assetFiles(baseRoot)) {
   const hash = createHash('sha256');
   for (const file of ['fight.js','content.js','asset-geometry-20261124.js','assets.js','boss-geometry-20261124.js','boss-assets.js','boss.js',
     'app.js','campaign.js','campaign.css','static-assets.html','static-assets.css','static-assets.js','static-assets-data.js','archives.html',
-    'netplay.js','netplay-server.cjs']) {
+    'input.js','input.css','moves-data.js','relationships.js','netplay.js','netplay-server.cjs']) {
     hash.update(file);
     hash.update(fs.readFileSync(path.join(baseRoot,file)));
   }
@@ -101,6 +101,7 @@ function roomService(version, clock = () => performance.now()) {
     } else if (op === 'start' && !room.match && !room.closed) {
       if (i !== 0 || !seats.every(s => s?.ready && now-s.seen < heartbeat) || !Object.hasOwn(stages,data.stage)) reject(409,'Les deux joueurs doivent être présents et prêts.');
       room.match = {p1:seats[0].fighter,p2:seats[1].fighter,stage:data.stage,seed:randomBytes(4).readUInt32LE(),version};
+      if (stageLinks[data.stage]?.replayTag) room.match.stageRules = stageLinks[data.stage].replayTag;
     } else if (op === 'sync' && room.match && !room.closed) {
       const tick = Math.floor(room.frames);
       if (!Array.isArray(data.inputs) || data.inputs.length > 64) reject(400,'Lot de commandes incorrect.');
@@ -134,10 +135,11 @@ function roomService(version, clock = () => performance.now()) {
   return receive;
 }
 const statics = new Set(['index.html','style.css','app.js','fight.js','content.js','asset-geometry-20261124.js','assets.js','tournament.js','netplay.html','netplay.js','netplay.css',
-  'boss.js','boss-assets.js','boss-geometry-20261124.js','campaign.js','campaign.css','archives.html',
+  'boss.js','boss-assets.js','boss-geometry-20261124.js','campaign.js','campaign.css','archives.html','input.js','input.css','moves-data.js','relationships.js',
   'static-assets.html','static-assets.css','static-assets.js','static-assets-data.js',
   'duel-originel/index.html','duel-originel/style.css','duel-originel/interface.js','duel-originel/moteur.js','duel-originel/scene.js']);
-const documents = new Set(['docs/combat/BIBLE_COMBAT.md','docs/combat/UNIVERS_DS.md','docs/combat/REGISTRE_PRODUCTION.md']);
+const documents = new Set(['docs/combat/BIBLE_COMBAT.md','docs/combat/UNIVERS_DS.md','docs/combat/REGISTRE_PRODUCTION.md',
+  'docs/combat/ACTIONS_ET_IA.md','docs/combat/RELATIONS_SIMULATEUR.md']);
 const types = {'.html':'text/html; charset=utf-8','.css':'text/css','.js':'text/javascript','.webp':'image/webp','.png':'image/png','.md':'text/plain; charset=utf-8'};
 function openRelay(clock) {
   const assets = new Set(assetFiles());

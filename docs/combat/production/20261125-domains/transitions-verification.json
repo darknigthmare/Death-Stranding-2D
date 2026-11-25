@@ -1,0 +1,123 @@
+{
+  "date": "2026-11-25T15:39:47.193Z",
+  "browser": false,
+  "nativeCanvas": false,
+  "baselineCommit": "2250b7c1b54b445637e0c9354133e6fecbc325de",
+  "checks": [
+    "Dedicated linked configuration; ordinary terminal and standalone hangar have no link; all six quay files reused by path",
+    "200 automatic tournament draws exclude links; 200 pre-feature saved brackets resume with stages and completed results intact; stage-less legacy metadata remains untouched",
+    "8 successful edge contacts: both players × both edges × heavy/grab; 4 input-only approaches, guarded grabs, 36 exact ticks, resources and arrival control",
+    "Held movement/guard survive passage; an attack pressed during passage is not buffered and requires a new edge after arrival",
+    "6 exclusions; projectiles/markers/scans/combos cancelled; intact and broken parcel preserved; no second passage in the same round",
+    "K.O./double K.O./time/tied-time priorities, equal-frame trade, reset between rounds, actual dojo approach/reset and lethal-heavy vitality reset before passage",
+    "5 JSON restore positions, 650 static/animated checkpoint comparisons, 7 incompatible restores rejected atomically",
+    "336 unchanged ordinary checkpoints, including the standalone hangar; four representative kits on every unlinked configuration",
+    "Full input-only linked match, complete replay state parity, two clients with delayed commands and rollback to the exact same final checkpoint",
+    "Local pause freezes passage, resumption arrives once, stop during passage cancels frames and an obsolete callback cannot mutate a new ordinary match"
+  ],
+  "cases": [
+    {
+      "attacker": 1,
+      "side": -1,
+      "move": "heavy",
+      "inputOnly": false,
+      "triggerTick": 86,
+      "arrivalTick": 122,
+      "resourcesPreserved": true
+    },
+    {
+      "attacker": 1,
+      "side": -1,
+      "move": "throw",
+      "inputOnly": false,
+      "triggerTick": 80,
+      "arrivalTick": 116,
+      "resourcesPreserved": true
+    },
+    {
+      "attacker": 1,
+      "side": 1,
+      "move": "heavy",
+      "inputOnly": true,
+      "triggerTick": 252,
+      "arrivalTick": 288,
+      "resourcesPreserved": true
+    },
+    {
+      "attacker": 1,
+      "side": 1,
+      "move": "throw",
+      "inputOnly": true,
+      "triggerTick": 246,
+      "arrivalTick": 282,
+      "resourcesPreserved": true
+    },
+    {
+      "attacker": 2,
+      "side": -1,
+      "move": "heavy",
+      "inputOnly": true,
+      "triggerTick": 266,
+      "arrivalTick": 302,
+      "resourcesPreserved": true
+    },
+    {
+      "attacker": 2,
+      "side": -1,
+      "move": "throw",
+      "inputOnly": true,
+      "triggerTick": 260,
+      "arrivalTick": 296,
+      "resourcesPreserved": true
+    },
+    {
+      "attacker": 2,
+      "side": 1,
+      "move": "heavy",
+      "inputOnly": false,
+      "triggerTick": 86,
+      "arrivalTick": 122,
+      "resourcesPreserved": true
+    },
+    {
+      "attacker": 2,
+      "side": 1,
+      "move": "throw",
+      "inputOnly": false,
+      "triggerTick": 80,
+      "arrivalTick": 116,
+      "resourcesPreserved": true
+    }
+  ],
+  "baselineComparisons": 336,
+  "staticComparisons": 650,
+  "catalogue": {
+    "configurations": 22,
+    "places": 19,
+    "graphicalZones": 20,
+    "uniqueLayers": 105
+  },
+  "tournament": {
+    "automaticDrawsChecked": 200,
+    "oldSavesResumed": 200,
+    "legacyWithoutStagePreserved": true
+  },
+  "recording": {
+    "ticks": 802,
+    "events": 25,
+    "stageRules": "terminal-quay-hangar@1",
+    "winner": 1,
+    "replaySnapshotsCompared": 802,
+    "networkRewinds": 13,
+    "networkZoneChangesAfterRewind": 1,
+    "finalCheckpointSha256": "674770f109b30bd507113ba3c631cf5a48c32169f0fb65108d8cee9c92943040"
+  },
+  "sourceSha256": {
+    "content.js": "91923e26f31344ca9b0789720a3ea1040e20b810742b782f55638e32f789d683",
+    "assets.js": "8d04672f033b659b7e9ddd623fdea9392f74e7a2518f3b5a360d4948d118848e",
+    "fight.js": "17c3cfcdee2291dad721b312ee060ca3d341cb0734c30d57128152fa6d3e3f23",
+    "tournament.js": "85f058fd5be04cec19b423b321d23846228bdc6538e39105fe4086fea310a9b6",
+    "qa/transitions.cjs": "d455bca693b33ffe52c4eea2a464cb3a4d25834291b6bffa59a3f988bd2c1f7a"
+  },
+  "passed": true
+}

@@ -1,0 +1,82 @@
+{
+  "date": "2026-11-25T15:30:29.715Z",
+  "renderer": "@napi-rs/canvas; actual fight.js",
+  "browser_verified": false,
+  "catalogue_locations": 19,
+  "catalogue_configurations": 22,
+  "locations": 1,
+  "stages": 1,
+  "cases": 8,
+  "source_sha256": {
+    "content.js": "91923e26f31344ca9b0789720a3ea1040e20b810742b782f55638e32f789d683",
+    "asset-geometry-20261124.js": "61f830dc5036774529b7ecaf51f4c80386ef7f94447c55e044584e850e081934",
+    "assets.js": "8d04672f033b659b7e9ddd623fdea9392f74e7a2518f3b5a360d4948d118848e",
+    "fight.js": "17c3cfcdee2291dad721b312ee060ca3d341cb0734c30d57128152fa6d3e3f23"
+  },
+  "results": [
+    {
+      "stage": "terminal-hangar",
+      "cases": 8,
+      "captures": [
+        "terminal-hangar-right.webp",
+        "terminal-hangar-left.webp",
+        "terminal-hangar-local-reduced-right.webp",
+        "terminal-hangar-local-reduced-left.webp",
+        "terminal-hangar-training-normal-right.webp",
+        "terminal-hangar-training-normal-left.webp",
+        "terminal-hangar-training-reduced-right.webp",
+        "terminal-hangar-training-reduced-left.webp"
+      ],
+      "layers": [
+        "assets/stages/terminal-hangar-sky.png",
+        "assets/stages/terminal-hangar-distant.png",
+        "assets/stages/terminal-hangar-midground.png",
+        "assets/stages/terminal-hangar-floor.png",
+        "assets/stages/terminal-hangar-foreground.png"
+      ],
+      "composite_min_alpha": 255,
+      "source_images": [
+        {
+          "file": "assets/stages/terminal-hangar-sky.png",
+          "width": 1672,
+          "height": 941,
+          "sha256": "c1048c3721e9d270313022f46a2165159ae48b96b1cd776c996e0f7175f02111"
+        },
+        {
+          "file": "assets/stages/terminal-hangar-distant.png",
+          "width": 1672,
+          "height": 941,
+          "sha256": "f3cef5c0e030564212f1e71d308bf34ad29d1e06dd63d1795f1ecae7a8d78b95"
+        },
+        {
+          "file": "assets/stages/terminal-hangar-midground.png",
+          "width": 1672,
+          "height": 941,
+          "sha256": "b7b8f3383043072b235854c0115a2c7eb204297757447271034c198585f7ab4e"
+        },
+        {
+          "file": "assets/stages/terminal-hangar-floor.png",
+          "width": 1672,
+          "height": 941,
+          "sha256": "e5c93e0ac7125c1e0ab7ed932724ab63810ea71cd49f970cf586e0a0dd064c11"
+        },
+        {
+          "file": "assets/stages/terminal-hangar-foreground.png",
+          "width": 1672,
+          "height": 941,
+          "sha256": "3d52eaca72329acd0764d5282d87190151d9b9fe022ce54a6a800de928acd362"
+        },
+        {
+          "file": "assets/static-domains-20261125/terminal-hangar-panorama.png",
+          "width": 1672,
+          "height": 941,
+          "sha256": "96096b2711736a98b925ebae8d4f61de21797e1395b6758beed033776599ed89"
+        }
+      ],
+      "background_join_min_alpha": 255,
+      "foreground_lane_max_alpha": 1,
+      "original_panorama_fallback": true,
+      "passed": true
+    }
+  ]
+}

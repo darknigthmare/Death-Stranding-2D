@@ -34,6 +34,8 @@
     terminal:{title:'Centre de distribution', sky:'#4e727e', light:'#a6d2d8', weather:'rain'},
     battlefield:{title:'Champ de bataille', sky:'#816e69', light:'#e2b58a', weather:'embers'}
   };
+  const stageLinks = host.StrandContent?.stageLinks || {};
+  const stageId = m => m?.link?.zone || m?.stage;
   // start, active and recover are counted separately. Reach extends from the fighter's center.
   const moves = {
     light:   {start:5, active:3, recover:10, reach:81, low:39, high:112, damage:5, balance:9, stun:12, push:5},
@@ -196,6 +198,7 @@
   const ambiencePresets={
     shore:{filter:'lowpass',hz:540,level:.075,cue:'surf',interval:9,x:.18},
     terminal:{filter:'lowpass',hz:680,level:.038,hum:58,cue:'door',interval:12,x:.86},
+    'terminal-hangar':{filter:'lowpass',hz:360,level:.025,hum:58,cue:'door',interval:16,x:.86},
     battlefield:{filter:'bandpass',hz:380,level:.055,cue:'radio',interval:13,x:.16},
     'mule-camp':{filter:'highpass',hz:1250,level:.035,cue:'beacon',interval:11,x:.87},
     'mule-camp-dry':{filter:'bandpass',hz:720,level:.06,cue:'beacon',interval:11,x:.87},
@@ -281,13 +284,13 @@
     }
   }
   function syncAmbience(cues=false) {
-    const m=match,preset=ambiencePresets[m?.stage];
+    const m=match,preset=ambiencePresets[stageId(m)];
     if (!sound || !ambienceVolume || audioSuspended || !m || m.paused || m.phase==='ended' ||
         m.silentResimulation || host.document?.hidden || audio?.state!=='running' || !preset) {
       stopAmbience();return;
     }
     try {
-      if (ambience?.owner!==m) {
+      if (ambience?.owner!==m || ambience?.preset!==preset) {
         stopAmbience();
         const bus=audio.createGain();bus.connect(audio.destination);
         ambience={owner:m,preset,bus,voices:new Set(),nextAt:audio.currentTime+2};
@@ -345,7 +348,9 @@
   function snapshot() {
     const m=match; if (!m) return null;
     return {phase:m.phase, tick:m.tick, paused:m.paused, round:m.round, wins:m.wins.slice(), maxRounds:m.toWin, time:Math.ceil(m.remaining/60),
-      stage:m.stage, mode:m.mode, reducedEffects:m.reducedEffects, staticScenery:m.staticScenery, parcel:m.parcel, beat:m.beat, winner:m.winner, finisher:m.finisher, fighters:m.f.map(f=>({id:f.id,hp:Math.ceil(f.hp),balance:Math.ceil(f.balance),chiral:Math.floor(f.chiral),combo:f.combo,x:f.x,y:f.y,guard:f.guard,action:f.act?.key || '',stun:f.stun,move:f.lastMove,marker:f.marker ? {...f.marker} : null,scan:f.scan ? {...f.scan} : null})), training:{...m.training,...(m.dummyTape && m.training.timing ? {moves:m.f.map(trainingTiming)} : {})}};
+      stage:m.stage, ...(m.link ? {link:{...m.link,from:stageLinks[m.stage].source,to:stageLinks[m.stage].destination,limit:stageLinks[m.stage].limit,
+        ticksRemaining:m.phase==='transition'?m.phaseTicks:0}} : {}),
+      mode:m.mode, reducedEffects:m.reducedEffects, staticScenery:m.staticScenery, parcel:m.parcel, beat:m.beat, winner:m.winner, finisher:m.finisher, fighters:m.f.map(f=>({id:f.id,hp:Math.ceil(f.hp),balance:Math.ceil(f.balance),chiral:Math.floor(f.chiral),combo:f.combo,x:f.x,y:f.y,guard:f.guard,action:f.act?.key || '',stun:f.stun,move:f.lastMove,marker:f.marker ? {...f.marker} : null,scan:f.scan ? {...f.scan} : null})), training:{...m.training,...(m.dummyTape && m.training.timing ? {moves:m.f.map(trainingTiming)} : {})}};
   }
   function validReplay(tape) {
     if (!tape || tape.version !== 1 || !Object.hasOwn(roster,tape.p1) || !Object.hasOwn(roster,tape.p2) ||
@@ -353,7 +358,8 @@
         !Number.isInteger(tape.seed) || tape.seed<0 || tape.seed>0xffffffff ||
         !Number.isInteger(tape.difficulty) || tape.difficulty<0 || tape.difficulty>2 ||
         !Number.isInteger(tape.roundsToWin) || tape.roundsToWin<1 || tape.roundsToWin>5 ||
-        !Number.isSafeInteger(tape.ticks) || tape.ticks<1 || !Array.isArray(tape.events)) return false;
+        !Number.isSafeInteger(tape.ticks) || tape.ticks<1 || !Array.isArray(tape.events) ||
+        (tape.stageRules ?? null)!==(stageLinks[tape.stage]?.replayTag ?? null)) return false;
     let previous=0;
     return tape.events.every(event=>{
       if (!Array.isArray(event) || event.length!==2) return false;
@@ -385,6 +391,7 @@
       wins:[0,0], round:1, tick:0, beat:0, paused:false, phase:'intro', phaseTicks:72, remaining:75*60,
       f:ids.map((id,i)=>fighter(id,i?818:462,i?-1:1)), shots:[], sparks:[], hstop:0, shake:0, winner:0, finisher:false, reason:'',
       camera:0, images:{}, reducedEffects:!!o.reducedEffects, staticScenery:!!o.staticScenery, staticScene:null, training:{dummy:'idle',hitboxes:false,...o.training}, sudden:false, scene:makeScenery(stage), simRandom:randomSeed(seed), particlesRandom:randomSeed(782), now:null, lag:0};
+    if (Object.hasOwn(stageLinks,stage)) m.link=freshLink(stageLinks[stage]);
     if(m.staticScenery)m.staticScene=heldScenery||captureScenery(m);
     if (m.mode==='training') {
       m.dummyTape={events:[],next:0};
@@ -395,7 +402,7 @@
     m.playback=o.replay || null;
     m.eventIndex=0;
     m.recording=o.record && !m.playback && m.mode!=='training' ? {
-      version:1,p1:ids[0],p2:ids[1],stage,mode:m.mode,difficulty,seed,roundsToWin:m.toWin,events:[]
+      version:1,p1:ids[0],p2:ids[1],stage,...(m.link?{stageRules:stageLinks[stage].replayTag}:{}),mode:m.mode,difficulty,seed,roundsToWin:m.toWin,events:[]
     } : null;
     if (Number.isFinite(o.startingVitality)) m.f[0].hp=clamp(Math.round(o.startingVitality),1,100);
     m.parcel = o.parcel ? 'intact' : null;
@@ -432,13 +439,16 @@
     m.projectileGeometry = art.generatedGeometry?.projectiles || {};
     // Keep the complete panorama available while a layered stage decodes, or
     // when a file is missing in an older/offline copy of the game.
-    m.scene.legacy = load(art.stages?.[stage]);
-    m.scene.back = load(art.skyplates?.[stage]);
-    m.scene.distant = load(art.distants?.[stage]);
-    m.scene.middle = load(art.midgrounds?.[stage]);
-    m.scene.floor = load(art.floors?.[stage]);
-    m.scene.front = load(art.foregrounds?.[stage]);
-    m.scene.geometry = art.stageGeometry?.[stage] || {};
+    const sceneArt=(scene,id)=>Object.assign(scene,{
+      legacy:load(art.stages?.[id]),back:load(art.skyplates?.[id]),distant:load(art.distants?.[id]),
+      middle:load(art.midgrounds?.[id]),floor:load(art.floors?.[id]),front:load(art.foregrounds?.[id]),geometry:art.stageGeometry?.[id] || {}});
+    if (m.link) {
+      // Decode both zones ahead of time. Loading cannot delay the simulation or
+      // affect the tick at which a rollback/replay changes the active zone.
+      const rule=stageLinks[stage];
+      m.linkScenes=Object.fromEntries([rule.source,rule.destination].map(id=>[id,sceneArt(makeScenery(id),id)]));
+      m.scene=m.linkScenes[m.link.zone];
+    } else sceneArt(m.scene,stage);
     if (ids.includes('mule')) m.images.cargo = load(art.props?.cargo);
     if (m.parcel) {
       m.images.closedParcel = load(art.props?.closedParcel || art.props?.cargo);
@@ -740,7 +750,7 @@
     f.x=clamp(f.x+f.vx,48,WIDTH-48);f.vx*=.78;
     if (f.y>0 || f.vy!==0 || !f.grounded) {
       f.y+=f.vy;f.vy-=.77;
-      if (f.y<=0) {if(f.vy<-6) burst(m,f.x,FLOOR-4,stages[m.stage].light,5);f.y=0;f.vy=0;f.grounded=true;}
+      if (f.y<=0) {if(f.vy<-6) burst(m,f.x,FLOOR-4,stages[stageId(m)].light,5);f.y=0;f.vy=0;f.grounded=true;}
     }
     f.chiral=clamp(f.chiral+(m.mode==='training'?.34:.025),0,100);
     if (!f.postHit && !f.guard && !f.stun && !f.act) f.balance=clamp(f.balance+.28,0,100);
@@ -880,6 +890,7 @@
   }
   function contacts(m) {
     const bodies=m.f.map(hurt), events=[];
+    let passage=null;
     m.f.forEach((f,i)=>{
       const rect=strike(f), o=m.f[1-i], a=f.act;
       if (rect && !immune(o) && intersects(rect,bodies[1-i]) && !(a.key==='grab' && (!o.grounded || o.stun))) {
@@ -943,10 +954,54 @@
       if (intercept(m, defender, attacker, e.kind, !!e.a)) continue;
       const ok = hit(m, attacker, defender, e.kind, e.d, e.face);
       if (e.a) e.a.hitConfirmed = ok;
+      // Resolve every contact (including a simultaneous trade) before the
+      // passage is considered. A block, projectile or ordinary light hit never
+      // activates it, and an impact must point outwards from the fighting lane.
+      if (ok && !passage && m.link && !m.link.used && e.a && ['heavy','grab'].includes(e.kind) && attacker.grounded && defender.grounded) {
+        const rule=stageLinks[m.stage],side=defender.x<=48+rule.edge ? -1 : defender.x>=WIDTH-48-rule.edge ? 1 : 0;
+        if (side && e.face===side && side*(defender.x-attacker.x)>0) passage={side,attacker:e.i+1};
+      }
     }
+    return passage;
+  }
+  function freshLink(rule) {
+    return {id:rule.id,version:rule.version,zone:rule.source,used:0,side:0,attacker:0};
+  }
+  function neutralForPassage(m) {
+    // Resource values and physical held inputs survive. Transient attacks,
+    // buffers, targets and projectiles belong to the departed zone only.
+    m.f=m.f.map(f=>({...fighter(f.id,f.x,f.face),hp:f.hp,balance:f.balance,chiral:f.chiral,keys:{...f.keys}}));
+    m.shots=[];m.sparks=[];m.hstop=0;m.shake=0;
+  }
+  function beginPassage(m,passage) {
+    const rule=stageLinks[m.stage];
+    Object.assign(m.link,passage,{used:1});
+    neutralForPassage(m);
+    m.phase='transition';m.phaseTicks=rule.duration;
+    notify(m,true);
+  }
+  function arriveFromPassage(m) {
+    const rule=stageLinks[m.stage],{side,attacker}=m.link;
+    neutralForPassage(m);
+    m.f[attacker-1].x=WIDTH/2-side*rule.arrivalGap/2;
+    m.f[2-attacker].x=WIDTH/2+side*rule.arrivalGap/2;
+    m.f[attacker-1].face=side;m.f[2-attacker].face=-side;
+    m.link.zone=rule.destination;m.scene=m.linkScenes[m.link.zone];
+    m.camera=0;m.phase='fight';m.phaseTicks=0;
+    notify(m,true);
+  }
+  function validLinkCheckpoint(m,state) {
+    const rule=stageLinks[m.stage],link=state.link;
+    if (!rule) return !Object.hasOwn(state,'link') && state.phase!=='transition';
+    if (!link || link.id!==rule.id || link.version!==rule.version || ![0,1].includes(link.used)) return false;
+    if (!link.used) return link.zone===rule.source && link.side===0 && link.attacker===0 && state.phase!=='transition';
+    if (![-1,1].includes(link.side) || ![1,2].includes(link.attacker)) return false;
+    if (state.phase==='transition') return link.zone===rule.source && Number.isInteger(state.phaseTicks) && state.phaseTicks>0 && state.phaseTicks<=rule.duration;
+    return link.zone===rule.destination;
   }
   function resetRound(m) {
     m.round++;m.beat=0;m.winner=0;m.phase='intro';m.phaseTicks=66;m.remaining=75*60;m.sudden=false;m.hstop=0;m.shots=[];m.sparks=[];
+    if (m.link) {m.link=freshLink(stageLinks[m.stage]);m.scene=m.linkScenes[m.link.zone];}
     m.f=m.ids.map((id,i)=>fighter(id,i?818:462,i?-1:1));notify(m,true);
   }
   function winRound(m,index,reason) {
@@ -964,6 +1019,7 @@
     m.phase='ended';if (!m.silentResimulation) stopAudio();notify(m,true);
     if (m.onEnd) {
       const result={vitality:Math.ceil(m.f[0].hp),parcel:m.parcel,winner:m.winner,loser:3-m.winner,rounds:m.wins.slice(),reason:m.reason,finisher:m.finisher,stage:m.stage,fighters:m.ids.slice()};
+      if (m.link) result.link={...m.link};
       if (m.recording) result.replay={...m.recording,events:m.recording.events.slice(),ticks:m.tick};
       if (m.playback && m.tick!==m.playback.ticks) result.replayMismatch=true;
       m.onEnd(result);
@@ -995,6 +1051,7 @@
     if (m.phase!=='fight') {
       m.phaseTicks--;
       if (m.phase==='intro' && m.phaseTicks<=0) {m.phase='fight';tone(520,.13);notify(m,true);}
+      else if (m.phase==='transition' && m.phaseTicks<=0) arriveFromPassage(m);
       else if(m.phase==='finish' && m.mode!=='local' && m.winner===2 && m.phaseTicks===84) activateFinish(m);
       else if (['finish','cinema','roundover'].includes(m.phase) && m.phaseTicks<=0) {
         if (m.wins.some(w=>w>=m.toWin)) finishMatch(m);else resetRound(m);
@@ -1009,17 +1066,23 @@
     if(overlap>0 && Math.abs(a.y-b.y)<105) {
       const dir=delta>=0?1:-1;a.x=clamp(a.x-dir*overlap/2,48,WIDTH-48);b.x=clamp(b.x+dir*overlap/2,48,WIDTH-48);
     }
-    contacts(m);m.camera=mix(m.camera,clamp(((a.x+b.x)/2-WIDTH/2)/3,-96,96),.035);
+    const passage=contacts(m),knockedOut=a.hp<=0 || b.hp<=0;
+    m.camera=mix(m.camera,clamp(((a.x+b.x)/2-WIDTH/2)/3,-96,96),.035);
+    let expired=false;
     if(m.mode==='training') {
       for(const f of m.f) if(f.hp<=0){f.hp=100;f.balance=100;f.chiral=100;f.notice='VITALITÉ RÉTABLIE';f.noticeTTL=70;}
     } else {
       m.remaining=Math.max(0,m.remaining-1);
+      expired=!m.remaining;
       if ((a.hp<=0 && b.hp<=0) || (!m.remaining && a.hp===b.hp)) {
         m.sudden=true;a.hp=1;b.hp=1;m.remaining=15*60;m.shots=[];a.x=462;b.x=818;
         for(const f of m.f) {f.marker=null;f.act=null;f.stun=0;f.queue=[];f.vx=0;f.vy=0;f.y=0;f.grounded=true;f.notice='PROCHAIN IMPACT DÉCISIF';f.noticeTTL=85;}
       } else if (a.hp<=0 || b.hp<=0) winRound(m,a.hp>0?0:1,'ko');
       else if (!m.remaining) winRound(m,a.hp>b.hp?0:1,'time');
     }
+    // K.O., double K.O., tied time and the dojo's vitality reset have priority.
+    // A late hit cannot turn a decided round into a passage or an extra attack.
+    if (passage && !knockedOut && !expired && m.phase==='fight') beginPassage(m,passage);
     notify(m);
   }
 
@@ -1116,7 +1179,7 @@
 
   function ambientScenery(m) {
     if (m.reducedEffects) return;
-    const c=m.ctx, frame=sceneryFrame(m), tick=frame.tick, camera=sceneryCamera(m);
+    const c=m.ctx, frame=sceneryFrame(m), tick=frame.tick, camera=sceneryCamera(m), zone=stageId(m);
     const between=['roundover','finish','cinema','ended'].includes(frame.phase);
     const cycle=(ticks,offset=0)=>((tick+offset)%ticks)/ticks;
     const pulse=(ticks,offset=0)=>(1-Math.cos(cycle(ticks,offset)*TAU))*.5;
@@ -1125,7 +1188,7 @@
     // are computed from the recorded clock; drawing them consumes no RNG state.
     c.beginPath(); c.rect(0,90,WIDTH,FLOOR-118); c.clip();
     c.translate(-camera*.31,0);
-    if (m.stage==='shore') {
+    if (zone==='shore') {
       // A quiet tide during play; the shore advances further between rounds.
       for (let i=0;i<3;i++) {
         const tide=cycle(390,i*96), rise=Math.sin(tide*Math.PI);
@@ -1138,7 +1201,7 @@
         c.strokeStyle='rgba(183,211,210,'+((1-tide)*.18).toFixed(3)+')';
         c.lineWidth=1.5; c.stroke();
       }
-    } else if (m.stage==='terminal') {
+    } else if (zone==='terminal') {
       // Small shutters and their warm work light stay in a remote side bay.
       const closed=between ? pulse(192) : .14+.08*pulse(420);
       c.fillStyle='rgba(179,199,195,.09)'; c.fillRect(1032,281,126,112);
@@ -1146,7 +1209,7 @@
       c.fillRect(1032,281,63*closed,112); c.fillRect(1158-63*closed,281,63*closed,112);
       line(c,1035,279,1155,279,'rgba(223,193,130,'+(.18+.13*pulse(180)).toFixed(3)+')',3);
       for (let i=0;i<3;i++) oval(c,1044+i*13,407,2.2,1.4,i===Math.floor(cycle(180)*3)?'#9bbac1':'#526b71');
-    } else if (m.stage==='battlefield') {
+    } else if (zone==='battlefield') {
       // Distant memories fade during the result; they are never combat summons.
       const fade=between ? clamp(frame.phaseTicks/96,0,1) : .65+.2*pulse(480);
       for (const [x,y] of [[140,357],[213,364],[1070,344]]) {
@@ -1158,7 +1221,7 @@
       }
       c.globalAlpha=1;
       line(c,-40,402,WIDTH+40,402,'rgba(185,174,149,'+(.025+.035*pulse(340)).toFixed(3)+')',8);
-    } else if (m.stage==='mule-camp' || m.stage==='mule-camp-dry') {
+    } else if (zone==='mule-camp' || zone==='mule-camp-dry') {
       // Amber beacons have no expanding ring, unlike the fighter's cargo scan.
       for (const [index,x] of [124,244,1090].entries()) {
         const glow=Math.pow(pulse(240,index*62),10);
@@ -1166,7 +1229,7 @@
         oval(c,x,309,3,2,'rgba(220,178,93,'+(.12+glow*.35).toFixed(3)+')');
         if (glow>.45) line(c,x-6,309,x+6,309,'rgba(238,202,122,.15)',1);
       }
-    } else if (m.stage==='heartman-lab') {
+    } else if (zone==='heartman-lab') {
       // A small background ECG trace is unrelated to Heartman's gameplay beat.
       const x=113,y=347,w=74,h=30, sweep=cycle(159)*w;
       c.fillStyle='rgba(8,28,34,.35)'; c.fillRect(x,y,w,h);
@@ -1178,14 +1241,14 @@
       }
       c.strokeStyle='rgba(157,205,191,.42)'; c.lineWidth=1; c.stroke();
       line(c,x+sweep,y+3,x+sweep,y+h-3,'rgba(152,214,202,.12)',1);
-    } else if (m.stage==='mama-workshop') {
+    } else if (zone==='mama-workshop') {
       // Slack cable and a workshop status lamp, kept above the fighting lane.
       const sway=Math.sin(tick*.014)*3;
       c.beginPath();c.moveTo(1040,124);c.quadraticCurveTo(1025+sway,183,1062+sway,215);
       c.strokeStyle='rgba(128,153,149,.35)'; c.lineWidth=2; c.stroke();
       oval(c,1062+sway,216,3,4,'rgba(171,209,193,'+(.2+.18*pulse(290)).toFixed(3)+')');
       line(c,79,395,157,395,'rgba(120,187,177,'+(.04+.07*pulse(310)).toFixed(3)+')',1.5);
-    } else if (m.stage==='ruined-factory') {
+    } else if (zone==='ruined-factory') {
       // Air escaping a damaged side conduit carries dust slowly downward.
       for (let i=0;i<13;i++) {
         const drift=cycle(260+i*7,i*41);
@@ -1194,7 +1257,7 @@
         oval(c,x,y,1.1+i%3*.45,.8+i%2*.45,'rgba(172,155,133,'+((1-drift)*.16).toFixed(3)+')');
       }
       line(c,1059,222,1091,222,'rgba(149,117,83,'+(.03+.04*pulse(620)).toFixed(3)+')',1);
-    } else if (m.stage==='timefall-shelter') {
+    } else if (zone==='timefall-shelter') {
       // Drops come only from the outer roof edges; the central dry lane stays clear.
       for (let i=0;i<12;i++) {
         const fall=cycle(68+i*3,i*29), x=i<6?70+i*12:1114+(i-6)*13;
@@ -1205,7 +1268,7 @@
           c.strokeStyle='rgba(151,191,194,'+((1-fall)*.6).toFixed(3)+')';c.stroke();
         }
       }
-    } else if (m.stage==='tar-basin') {
+    } else if (zone==='tar-basin') {
       // Small matte rings stay far from Higgs's bright combat marks.
       for (const [index,x] of [171,1048,1151].entries()) {
         const ring=cycle(310,index*103), y=426+(index%2)*21;
@@ -1214,7 +1277,7 @@
         c.strokeStyle='rgba(146,143,128,'+((1-ring)*.17).toFixed(3)+')';c.lineWidth=1;c.stroke();
         if (ring<.16) oval(c,x,y-2-Math.sin(ring/.16*Math.PI)*4,3,2,'rgba(102,108,108,.23)');
       }
-    } else if (m.stage==='mountain-pass' || m.stage==='mountain-knot-approach') {
+    } else if (zone==='mountain-pass' || zone==='mountain-knot-approach') {
       // Spindrift follows the far ridge in sparse lateral strokes.
       for (let i=0;i<18;i++) {
         const gust=cycle(440,i*31), x=-80+gust*(WIDTH+160), y=385+Math.sin(i*2.4+gust*5)*25;
@@ -1225,7 +1288,7 @@
   }
 
   function weatherScenery(m) {
-    const c=m.ctx, s=m.scene, theme=stages[m.stage];
+    const c=m.ctx, s=m.scene, theme=stages[stageId(m)];
     if (m.reducedEffects || !theme.weather) return;
     const frame=sceneryFrame(m);
     const flakes = theme.weather === 'snow';
@@ -1247,7 +1310,7 @@
   }
 
   function scenery(m) {
-    const c=m.ctx, s=m.scene, theme=stages[m.stage];
+    const c=m.ctx, s=m.scene, theme=stages[stageId(m)];
     c.fillStyle=theme.sky; c.fillRect(0,0,WIDTH,HEIGHT);
     const layered=ready(s.back) && ready(s.distant) && ready(s.floor);
     const background=layered ? s.back : s.legacy;
@@ -1278,7 +1341,7 @@
       const x = -sceneryCamera(m) * .76;
       c.save();
       c.translate(x, 0);
-      if (m.stage === 'terminal') {
+      if (stageId(m) === 'terminal' || stageId(m)==='terminal-hangar') {
         for (const start of [-154, 1164]) {
           c.fillStyle = '#19252be8';
           c.fillRect(start, 659, 252, 77);
@@ -1582,11 +1645,13 @@
     label(c,display,WIDTH/2,61,46,'#f7f6ed','center');
     label(c,m.mode==='training'?'DOJO':'MANCHE '+m.round,WIDTH/2,83,12,'#c5d6d3','center');
     let caption='', sub='';
-    if(m.phase==='intro'){caption='MANCHE '+m.round;sub=stages[m.stage].title;}
+    if(m.phase==='intro'){caption='MANCHE '+m.round;sub=m.link?'RECONSTITUTION · LOURD / PROJECTION AU BORD → HANGAR · 1 PASSAGE / MANCHE':stages[m.stage].title;}
+    if(m.phase==='transition'){caption='PASSAGE VERS LE HANGAR';sub='RECONSTITUTION DU SIMULATEUR · REPRISE DANS '+(m.phaseTicks/60).toFixed(1)+' s';}
     if(m.phase==='roundover'){caption=m.reason==='time'?'TEMPS ÉCOULÉ':'K.-O.';sub=m.f[m.winner-1].spec.short;}
     if(m.phase==='finish'){caption='RUPTURE';sub=m.f[m.winner-1].spec.short+' · COMMANDE DE FINITION';}
     if(m.phase==='cinema'){caption=m.f[m.winner-1].spec.end.toUpperCase();sub='ÉCHO DISSIPÉ';}
     if(m.paused){caption='PAUSE';sub='';}
+    if(m.link) label(c,m.link.zone===stageLinks[m.stage].destination?'HANGAR · LIAISON UTILISÉE (1/1)':'QUAI → HANGAR · LOURD / PROJECTION VERS LE BORD',WIDTH/2,128,12,'#e2ca9d','center');
     if(caption) {
       c.fillStyle='rgba(4,13,17,.80)';c.fillRect(0,HEIGHT*.29,WIDTH,100);
       label(c,caption,WIDTH/2,HEIGHT*.29+49,34,'#f1f2e9','center');
@@ -1690,6 +1755,14 @@
     c.translate(WIDTH/2+shake,FLOOR+10+shake*.45);
     c.scale(zoom,zoom);
     c.translate(-center,-FLOOR);
+    if (m.link && !m.link.used) {
+      const edge=stageLinks[m.stage].edge;
+      c.fillStyle='rgba(239,186,96,.28)';
+      for (const x of [48,WIDTH-48-edge]) {
+        c.fillRect(x,FLOOR-3,edge,7);
+        label(c,'PASSAGE',x+edge/2,FLOOR-13,10,'#f0ce91','center');
+      }
+    }
     drawFighter(m,m.f[0],0);
     drawFighter(m,m.f[1],1);
     effects(m);
@@ -1710,12 +1783,15 @@
       if (!match?.networkClock) return null;
       const state={};
       for (const key of networkFields) state[key]=match[key];
+      if (match.link) state.link=match.link;
       return {state:structuredClone(state),particles:match.particlesRandom.state(),simulation:match.simRandom.state()};
     },
     restore(point) {
-      if (!match?.networkClock || !point) return;
+      if (!match?.networkClock || !point?.state || !validLinkCheckpoint(match,point.state)) return false;
       Object.assign(match,structuredClone(point.state));
       match.particlesRandom.restore(point.particles); match.simRandom.restore(point.simulation);
+      if (match.link) match.scene=match.linkScenes[match.link.zone];
+      return true;
     },
     advance(inputs,silent=false) {
       if (!match?.networkClock) return;

@@ -36,6 +36,7 @@ a{color:inherit;text-underline-offset:.2em}.hero a,.archives a{text-decoration:n
 @media(max-width:760px) { .stageGallery { grid-template-columns: 1fr; } .top { height: auto; min-height: 64px; flex-wrap: wrap; padding-top: 9px; padding-bottom: 9px; } .top nav { flex-wrap: wrap; } }
 
 #dojoData{flex-basis:100%;min-width:0;overflow-x:auto}#dojoData caption{text-align:left}#dojoData table{margin:5px 0 0}#dojoData td{font-variant-numeric:tabular-nums}
+.stageRule{margin-top:1rem}.relationLines{max-width:850px;margin:1.5rem 0}.relationLines blockquote{margin:1rem 0;padding:1rem;border-left:2px solid var(--acid);background:var(--panel);line-height:1.6}.relationLines .speaker{margin-top:0;margin-bottom:.4rem}#manual{width:min(850px,94vw)}#manual .inputEditor p{margin:.6rem 0}
 
 @media (max-width: 760px) {
   .tile:last-child:nth-child(odd) { grid-column: 1 / -1; border-top: 1px solid var(--rule); }

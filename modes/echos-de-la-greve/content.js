@@ -129,6 +129,8 @@
   const arenas = {
     shore:{title:'La Grève', sky:'#668184', light:'#d3d0aa', weather:'rain'},
     terminal:{title:'Centre de distribution', sky:'#4e727e', light:'#a6d2d8', weather:'rain'},
+    'terminal-linked':{title:'Quai → hangar · liaison du simulateur', variantOf:'terminal', sky:'#4e727e', light:'#a6d2d8', weather:'rain'},
+    'terminal-hangar':{title:'Hangar du centre · reconstitution', zoneOf:'terminal', sky:'#3d515b', light:'#b4c8ca'},
     battlefield:{title:'Champ de bataille', sky:'#816e69', light:'#e2b58a', weather:'embers'},
     'mule-camp':{title:'Camp des MULEs', sky:'#777961', light:'#d8c38b', weather:'rain'},
     'mule-camp-dry':{title:'Camp des MULEs · temps sec', variantOf:'mule-camp', sky:'#929582', light:'#e1d6af', weather:'dust'},
@@ -152,6 +154,8 @@
   const stageDetails = {
     shore:{place:'Rivage de la Grève',material:'Sable noir',ambience:'Le ressac avance après la manche, puis se retire avant la reprise.'},
     terminal:{place:'Réseau Bridges',material:'Quai de béton humide',ambience:'La porte lointaine et les témoins du quai ponctuent les intervalles.'},
+    'terminal-linked':{place:'Centre de distribution · reconstitution du simulateur',material:'Quai puis dalle du hangar',ambience:'Liaison optionnelle : un coup lourd ou une projection au sol, non bloqué et dirigé vers le bord, ouvre le hangar une fois par manche. Aucun dégât de décor ajouté.'},
+    'terminal-hangar':{place:'Centre de distribution · zone intérieure reconstituée',material:'Dalle de béton',ambience:'La ventilation et les témoins de service accompagnent cette piste intérieure. Sélectionné seul, le hangar ne comporte aucun passage.'},
     battlefield:{place:'Mémoire de Cliff',material:'Boue et planches',ambience:'Les ombres s’effacent dans la brume lorsque la manche prend fin.'},
     'mule-camp':{place:'Camp de récupération',material:'Gravier volcanique humide',ambience:'Sous la pluie, une impulsion discrète passe d’une balise à l’autre.'},
     'mule-camp-dry':{place:'Camp de récupération · temps sec',material:'Gravier sec et sol tassé',ambience:'Le vent soulève une poussière légère entre les tentes et les balises.'},
@@ -172,5 +176,12 @@
     'dunes-ds2':{place:'On the Beach · désert',material:'Sable tassé',ambience:'Le vent suit les crêtes des dunes au-delà de la piste.'}
   };
   const modes = {story:'Histoire', arcade:'Arcade', versus:'Versus', tournament:'Tournoi', training:'Entraînement', challenges:'Défis'};
-  window.StrandContent = {fighters, stages, arenas, stageDetails, modes};
+  // This link is a rule of the simulator, not a claim about canonical geography.
+  // The selected configuration is shared by both players and by replay tapes.
+  const stageLinks = {
+    'terminal-linked':{id:'terminal-quay-hangar',version:1,replayTag:'terminal-quay-hangar@1',source:'terminal',destination:'terminal-hangar',
+      edge:96,duration:36,limit:1,arrivalGap:260,
+      description:'Reconstitution du simulateur · quai → hangar. Coup lourd ou projection au sol, non bloqué et vers le bord : un passage par manche, sans dégât ajouté. Le chrono s’arrête pendant le passage.'}
+  };
+  window.StrandContent = {fighters, stages, arenas, stageDetails, stageLinks, modes};
 })();

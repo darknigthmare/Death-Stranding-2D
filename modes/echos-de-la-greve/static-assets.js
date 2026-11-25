@@ -6,7 +6,8 @@
   };
   const workNames = {
     'ds1-dc': 'Death Stranding / Director’s Cut',
-    ds2: 'Death Stranding 2 · On the Beach'
+    ds2: 'Death Stranding 2 · On the Beach',
+    'project-simulation': 'Échos de la Grève · reconstitutions'
   };
   const grid = document.getElementById('static-grid');
   const count = document.getElementById('static-count');

@@ -202,7 +202,7 @@ check('Every real catalogue entry has a unique ID, a supported category and an o
   for (const item of catalogue.items) {
     assert(item.id && !ids.has(item.id), 'Duplicate/missing ID'); ids.add(item.id);
     assert(categories.includes(item.category) && item.category !== 'all', 'Unsupported category: ' + item.category);
-    assert(!item.work || ['ds1-dc', 'ds2'].includes(item.work), 'Unsupported work: ' + item.work);
+    assert(!item.work || ['ds1-dc', 'ds2', 'project-simulation'].includes(item.work), 'Unsupported work: ' + item.work);
     const location = path.resolve(root, item.src); assert(location.startsWith(root + path.sep));
     const bytes = fs.readFileSync(location); assert.equal(bytes.subarray(1, 4).toString(), 'PNG');
     const width = bytes.readUInt32BE(16), height = bytes.readUInt32BE(20);
@@ -226,6 +226,20 @@ check('New version links resolve to their exact documentation file and heading o
   }
   assert.equal(sourceIds.size,14,'13 fixed bases and one new panorama');
 });
+check('New domain catalogue cards retain the simulator distinction and resolve both documentation anchors.', () => {
+  const added=catalogue.items.filter(item=>item.src.startsWith('assets/static-domains-20261125/'));
+  assert.equal(added.length,9);
+  assert.equal(added.filter(item=>item.work==='project-simulation').length,1);
+  assert.equal(added.find(item=>item.work==='project-simulation').id,'terminal-hangar-panorama');
+  for (const item of added) for (const link of [item.bible,item.reference]) {
+    assert.match(link,/^\.\.\/\.\.\/docs\/combat\/(?:BIBLE_COMBAT|UNIVERS_DS)\.md#[a-z0-9-]+$/);
+    const [file,anchor]=link.split('#');
+    assert(fs.readFileSync(path.resolve(root,file),'utf8').includes('id="'+anchor+'"'),item.id+' documentation anchor '+anchor);
+  }
+  const h=harness(catalogue);h.chooseWork('project-simulation');
+  assert.equal(h.visible().length,1);h.visible()[0].children[0].emit('click');
+  assert.match(h.nodes.get('viewer-origin').textContent,/reconstitutions/);
+});
 const archiveSource=fs.readFileSync(path.join(root,'archives.html'),'utf8');
 const archiveImages=[...archiveSource.matchAll(/<img\b[^>]*\bsrc="([^"]+)"[^>]*>/g)];
 check('The four added Archives portraits retain the same work/version, image and measured dimensions as the catalogue.',()=>{
@@ -239,7 +253,7 @@ check('The four added Archives portraits retain the same work/version, image and
 });
 check('All work/category combinations match the real catalogue without a hard-coded item total.', () => {
   const h = harness(catalogue); assert.equal(h.cards.length, catalogue.items.length);
-  for (const work of ['all', 'ds1-dc', 'ds2']) for (const category of categories) {
+  for (const work of ['all', 'ds1-dc', 'ds2', 'project-simulation']) for (const category of categories) {
     h.chooseWork(work); h.chooseCategory(category);
     const expected = catalogue.items.filter(item => (work === 'all' || (item.work || 'ds1-dc') === work) && (category === 'all' || item.category === category));
     assert.equal(h.visible().length, expected.length, work + '/' + category);
@@ -255,7 +269,7 @@ console.log(JSON.stringify({
   native_browser_rendering: false, layout_verified: false, native_keyboard_verified: false,
   image_pixels_decoded: false, archive_images: archiveImages.length, categories,
   checks_passed: checks.length, checks, actual_catalogue_total: catalogue.items.length,
-  work_counts: Object.fromEntries(['ds1-dc', 'ds2'].map(work => [work, pngs.filter(item => item.work === work).length])),
+  work_counts: Object.fromEntries(['ds1-dc', 'ds2', 'project-simulation'].map(work => [work, pngs.filter(item => item.work === work).length])),
   entries_without_work_or_version: catalogue.items.filter(item => !item.work || !item.version).map(item => item.id),
   original_pngs: pngs, source_sha256: hashes
 }, null, 2));

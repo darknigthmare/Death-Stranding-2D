@@ -29,3 +29,4 @@ details {margin:10px 0}
   label {display:flex}
   #controls button {padding:.35rem .5rem}
 }
+#roomManual{width:min(850px,94vw);max-height:90svh;padding:0;background:#152220;color:#e4eee9;border:1px solid #637971}#roomManual::backdrop{background:#07110cd9}#roomManual article{padding:clamp(16px,3vw,32px)}#roomManual h2{margin:0 0 1rem}#roomManual p{line-height:1.5}#roomManual .commandSheet th,#roomManual .commandSheet td{padding:.5rem;border-bottom:1px solid #50635b}#roomManual form[method=dialog]{margin-top:1rem}#roomStageRule,#roomPhase{line-height:1.5;font-size:.9rem}#roomPhase:empty{display:none}

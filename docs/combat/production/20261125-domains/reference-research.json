@@ -1,0 +1,314 @@
+{
+  "date": "2026-11-25",
+  "scope": "Références visuelles du lot domaines ; toute base générée reste une adaptation et non un modèle canonique certifié.",
+  "items": [
+    {
+      "id": "dc-maser",
+      "url": "https://gmedia.playstation.com/is/image/SIEPDC/death-stranding-directors-cut-maser-gun-screen-01-ps5-en-21sep21",
+      "download_url": "https://gmedia.playstation.com/is/image/SIEPDC/death-stranding-directors-cut-maser-gun-screen-01-ps5-en-21sep21?wid=2400&fmt=png-alpha",
+      "page": "https://www.playstation.com/en-us/games/death-stranding/",
+      "observation": "Capture officielle du canon en action, vue oblique ; cylindre noir, paire de rails, viseur et accents rouges visibles. Main du porteur et angle masquent une partie de la poignée.",
+      "source_kind": "Image officielle PlayStation ou Kojima Productions",
+      "inspected": true,
+      "generated_assets": [
+        "maser-gun-dc"
+      ],
+      "dimensions": [
+        2400,
+        1080
+      ],
+      "sha256": "39309b612d5da13c925794955b24306a06aa03084b04fdca04a2d1db6f35374a",
+      "bytes": 4057434,
+      "inspected_on": "2026-11-25",
+      "local_inspection_file": "dc-maser.png"
+    },
+    {
+      "id": "dc-chiral-bridge",
+      "url": "https://gmedia.playstation.com/is/image/SIEPDC/death-stranding-directors-cut-chiral-bridges-screen-01-ps5-en-22sep21",
+      "download_url": "https://gmedia.playstation.com/is/image/SIEPDC/death-stranding-directors-cut-chiral-bridges-screen-01-ps5-en-22sep21?wid=2400&fmt=png-alpha",
+      "page": "https://www.playstation.com/en-us/games/death-stranding/",
+      "observation": "Capture officielle d’une passerelle arquée translucide bleue entre deux falaises. Un porteur en masque une petite partie et les extrémités sont peu détaillées.",
+      "source_kind": "Image officielle PlayStation ou Kojima Productions",
+      "inspected": true,
+      "generated_assets": [
+        "chiral-bridge-dc"
+      ],
+      "dimensions": [
+        2400,
+        1080
+      ],
+      "sha256": "2841dfd012ecf70a21adeedbbe7ba61efcbf4f97eafce4f4acf8047bd62ef53e",
+      "bytes": 3359945,
+      "inspected_on": "2026-11-25",
+      "local_inspection_file": "dc-chiral-bridge.png"
+    },
+    {
+      "id": "dc-firing-range",
+      "url": "https://gmedia.playstation.com/is/image/SIEPDC/death-stranding-directors-cut-screenshot-04-announce-en-01jul21",
+      "download_url": "https://gmedia.playstation.com/is/image/SIEPDC/death-stranding-directors-cut-screenshot-04-announce-en-01jul21?wid=2400&fmt=png-alpha",
+      "page": "https://www.playstation.com/en-us/games/death-stranding/",
+      "observation": "Capture du stand de tir : modules de béton, caillebotis, barrières et balises bleues ; personnages et interface présents dans la source.",
+      "source_kind": "Image officielle PlayStation ou Kojima Productions",
+      "inspected": true,
+      "generated_assets": [
+        "firing-range-dc-panorama"
+      ],
+      "dimensions": [
+        2400,
+        1350
+      ],
+      "sha256": "4f1bc4de28887700a6e840d0003f4630467c5fdc6ff9599e6c3934fa66a12e53",
+      "bytes": 4452407,
+      "inspected_on": "2026-11-25",
+      "local_inspection_file": "dc-firing-range.png"
+    },
+    {
+      "id": "dc-catapult",
+      "url": "https://gmedia.playstation.com/is/image/SIEPDC/death-stranding-directors-cut-screenshot-02-announce-en-04may21",
+      "download_url": "https://gmedia.playstation.com/is/image/SIEPDC/death-stranding-directors-cut-screenshot-02-announce-en-04may21?wid=2400&fmt=png-alpha",
+      "page": "https://www.playstation.com/en-us/games/death-stranding/",
+      "observation": "Capture du lanceur incliné sur pied cylindrique et plateforme ronde, vérin jaune. Sam occulte le bas gauche et le cadre coupe un morceau du socle.",
+      "source_kind": "Image officielle PlayStation ou Kojima Productions",
+      "inspected": true,
+      "generated_assets": [
+        "cargo-catapult-dc"
+      ],
+      "dimensions": [
+        2400,
+        1080
+      ],
+      "sha256": "699cb361b6cc3531bd9a02b440b3e6fbf26b63ad3fc6fc6811ba45348d47591f",
+      "bytes": 2612905,
+      "inspected_on": "2026-11-25",
+      "local_inspection_file": "dc-catapult.png"
+    },
+    {
+      "id": "dc-roadster",
+      "url": "https://gmedia.playstation.com/is/image/SIEPDC/death-stranding-directors-cut-screenshot-03-announce-en-04may21",
+      "download_url": "https://gmedia.playstation.com/is/image/SIEPDC/death-stranding-directors-cut-screenshot-03-announce-en-04may21?wid=2400&fmt=png-alpha",
+      "page": "https://www.playstation.com/en-us/games/death-stranding/",
+      "observation": "Capture du Roadster gris vue arrière gauche, roues carénées, siège ouvert, feux minces, cockpit et aileron ; pilote et interface du circuit présents.",
+      "source_kind": "Image officielle PlayStation ou Kojima Productions",
+      "inspected": true,
+      "generated_assets": [
+        "roadster-dc"
+      ],
+      "dimensions": [
+        2400,
+        1080
+      ],
+      "sha256": "de098ce3ff5a54f4cb39a792977cf6df188e623a56e933ba21213a30609fefac",
+      "bytes": 2286884,
+      "inspected_on": "2026-11-25",
+      "local_inspection_file": "dc-roadster.png"
+    },
+    {
+      "id": "ds2-gold-equipment",
+      "url": "https://gmedia.playstation.com/is/image/SIEPDC/Death-Stranding-2-ce-ingame-items-image-block-01-en-10mar25",
+      "download_url": "https://gmedia.playstation.com/is/image/SIEPDC/Death-Stranding-2-ce-ingame-items-image-block-01-en-10mar25?wid=2400&fmt=png-alpha",
+      "page": "https://www.playstation.com/en-us/games/death-stranding-2-on-the-beach/",
+      "observation": "Planche promotionnelle officielle ; profil de la mitrailleuse MP en haut, trois variantes d’exosquelettes dorés et badges. La correspondance exacte entre chaque silhouette et son nom n’est pas déterminée ici.",
+      "source_kind": "Image officielle PlayStation ou Kojima Productions",
+      "inspected": true,
+      "generated_assets": [],
+      "dimensions": [
+        2400,
+        1142
+      ],
+      "sha256": "06c11b793e0c0cbc986d088cd0ffb2cd107959034c0c58a8d7b7b2f5b620ab9c",
+      "bytes": 993601,
+      "inspected_on": "2026-11-25",
+      "local_inspection_file": "ds2-gold-equipment.png"
+    },
+    {
+      "id": "dc-support-skeleton",
+      "url": "https://www.kojimaproductions.jp/sites/default/files/2022-03/screensSupportSkeleton.jpg",
+      "page": "https://www.kojimaproductions.jp/en/death-stranding-directors-cut-beginners-guide",
+      "observation": "Sam en mouvement, très chargé, vu de dos. Les pièces de l’exosquelette sont partiellement visibles, insuffisantes ici pour une base isolée fidèle.",
+      "source_kind": "Image officielle PlayStation ou Kojima Productions",
+      "inspected": true,
+      "generated_assets": [],
+      "dimensions": [
+        1600,
+        900
+      ],
+      "sha256": "453e57c5c986f64e46d5982fb96d877a2032c52df286727e1772541a24048a6c",
+      "bytes": 201926,
+      "inspected_on": "2026-11-25",
+      "local_inspection_file": "dc-support-skeleton.jpg"
+    },
+    {
+      "id": "dc-buddy-bot",
+      "url": "https://www.kojimaproductions.jp/sites/default/files/2022-03/screensBuddyBot.jpg",
+      "page": "https://www.kojimaproductions.jp/en/death-stranding-directors-cut-beginners-guide",
+      "observation": "Robot porteur visible à droite d’une scène enneigée : deux jambes grises sous une pile de caisses jaunes/noires. Pieds masqués en partie par la neige.",
+      "source_kind": "Image officielle PlayStation ou Kojima Productions",
+      "inspected": true,
+      "generated_assets": [
+        "buddy-bot-dc"
+      ],
+      "dimensions": [
+        1600,
+        900
+      ],
+      "sha256": "4dd1987e9b7b8beb6a70ae2669e6697eedd9b7cd297285a711532fbd25ba4563",
+      "bytes": 109509,
+      "inspected_on": "2026-11-25",
+      "local_inspection_file": "dc-buddy-bot.jpg"
+    },
+    {
+      "id": "dc-jump-ramp",
+      "url": "https://www.kojimaproductions.jp/sites/default/files/2022-03/screensJumpRamp.jpg",
+      "page": "https://www.kojimaproductions.jp/en/death-stranding-directors-cut-beginners-guide",
+      "observation": "Petite plateforme grise et arc jaune visibles en bas à droite ; Sam et son véhicule sont déjà dans les airs.",
+      "source_kind": "Image officielle PlayStation ou Kojima Productions",
+      "inspected": true,
+      "generated_assets": [
+        "jump-ramp-dc"
+      ],
+      "dimensions": [
+        1600,
+        900
+      ],
+      "sha256": "e89c3d89b874860302a41b7e8aebbb08d7602df7752d24f28cf015e7842d0085",
+      "bytes": 151471,
+      "inspected_on": "2026-11-25",
+      "local_inspection_file": "dc-jump-ramp.jpg"
+    },
+    {
+      "id": "dc-repair-spray",
+      "url": "https://www.kojimaproductions.jp/sites/default/files/2022-03/screensContainerRepairSpray.jpg",
+      "page": "https://www.kojimaproductions.jp/en/death-stranding-directors-cut-beginners-guide",
+      "observation": "Sam est montré en cours de réparation d’un chargement ; la forme précise du flacon n’est pas lisible dans ce cadre.",
+      "source_kind": "Image officielle PlayStation ou Kojima Productions",
+      "inspected": true,
+      "generated_assets": [],
+      "dimensions": [
+        1600,
+        900
+      ],
+      "sha256": "9d3ac28e26773db657608eeec4d2141e41f168a99911d09f7d31031de6963373",
+      "bytes": 80120,
+      "inspected_on": "2026-11-25",
+      "local_inspection_file": "dc-repair-spray.jpg"
+    },
+    {
+      "id": "dc-maser-supporting",
+      "url": "https://www.kojimaproductions.jp/sites/default/files/2022-03/screensMaserGun.jpg",
+      "page": "https://www.kojimaproductions.jp/en/death-stranding-directors-cut-beginners-guide",
+      "observation": "Autre capture officielle en situation dans le stand de tir, utile pour l’identité et la fonction, pas pour la face cachée.",
+      "source_kind": "Image officielle PlayStation ou Kojima Productions",
+      "inspected": true,
+      "generated_assets": [
+        "maser-gun-dc"
+      ],
+      "dimensions": [
+        1600,
+        900
+      ],
+      "sha256": "73fab98b9d6f66f00bc8f42f5d508e7972a2a42002ac811cf5e6181988d1f156",
+      "bytes": 97419,
+      "inspected_on": "2026-11-25",
+      "local_inspection_file": "dc-maser-supporting.jpg"
+    },
+    {
+      "id": "dc-catapult-supporting",
+      "url": "https://www.kojimaproductions.jp/sites/default/files/2022-03/screensCargoCatapult.jpg",
+      "page": "https://www.kojimaproductions.jp/en/death-stranding-directors-cut-beginners-guide",
+      "observation": "Même vue de catapulte publiée dans le guide Kojima Productions ; confirme l’intitulé de la structure.",
+      "source_kind": "Image officielle PlayStation ou Kojima Productions",
+      "inspected": true,
+      "generated_assets": [
+        "cargo-catapult-dc"
+      ],
+      "dimensions": [
+        1600,
+        900
+      ],
+      "sha256": "f80113b98aaaa663695a13a54d15ace218db1fc982196357a44724f1ec50f00f",
+      "bytes": 112244,
+      "inspected_on": "2026-11-25",
+      "local_inspection_file": "dc-catapult-supporting.jpg"
+    },
+    {
+      "id": "dc-roadster-supporting",
+      "url": "https://www.kojimaproductions.jp/sites/default/files/2022-03/screensRaceTrack.jpg",
+      "page": "https://www.kojimaproductions.jp/en/death-stranding-directors-cut-beginners-guide",
+      "observation": "Vue d’ensemble du circuit ; documente le contexte du Roadster, sans donner une nouvelle vue rapprochée du véhicule.",
+      "source_kind": "Image officielle PlayStation ou Kojima Productions",
+      "inspected": true,
+      "generated_assets": [
+        "roadster-dc"
+      ],
+      "dimensions": [
+        1600,
+        900
+      ],
+      "sha256": "cfa6efd00e0d80011bab4590a25624d5b65f0888d6faeb5b574745ab8ebeabdf",
+      "bytes": 149657,
+      "inspected_on": "2026-11-25",
+      "local_inspection_file": "dc-roadster-supporting.jpg"
+    },
+    {
+      "id": "ds2-yamato-cover",
+      "url": "https://www.kojimaproductions.jp/sites/default/files/2025-06/yamato_coverimage.jpg",
+      "page": "https://www.kojimaproductions.jp/en/deathstranding2-yamatotransport-collaboration-announcement",
+      "observation": "Visuel de collaboration officiel : rame suspendue de conteneurs blancs Yamato, chariots jaunes sous un rail sombre ; premier module entièrement visible.",
+      "source_kind": "Image officielle PlayStation ou Kojima Productions",
+      "inspected": true,
+      "generated_assets": [
+        "monorail-yamato-ds2"
+      ],
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "19469b9193ad607a82858b1b2397663fbe0e130ed08a7f667921f592226439b9",
+      "bytes": 585851,
+      "inspected_on": "2026-11-25",
+      "local_inspection_file": "ds2-yamato-cover.jpg"
+    }
+  ],
+  "pending": [
+    {
+      "id": "machine-gun-mp-ds2",
+      "status": "reference_inspected_generation_not_delivered",
+      "reason": "Deux refus de sortie imagegen ; aucun fichier obtenu."
+    },
+    {
+      "id": "support-skeleton-dc",
+      "status": "reference_partial",
+      "reason": "Exosquelette trop masqué par Sam et son fret pour isoler sa forme avec assurance."
+    },
+    {
+      "id": "container-repair-spray-dc",
+      "status": "reference_insufficient",
+      "reason": "Flacon non lisible dans la capture du guide."
+    },
+    {
+      "id": "monorail-yellow-ds2",
+      "status": "variant_pending",
+      "reason": "La livrée Yamato n’établit pas la cabine ou le module jaune de la capture précédente."
+    },
+    {
+      "id": "watcher-ds2",
+      "status": "visual_identification_pending"
+    },
+    {
+      "id": "armed-survivalist-ds2",
+      "status": "visual_identification_pending"
+    },
+    {
+      "id": "blood-boomerang-ds2",
+      "status": "visual_identification_pending"
+    },
+    {
+      "id": "tar-cannon-ds2",
+      "status": "visual_identification_pending"
+    },
+    {
+      "id": "bt-holographic-grenade-ds2",
+      "status": "visual_identification_pending"
+    }
+  ]
+}

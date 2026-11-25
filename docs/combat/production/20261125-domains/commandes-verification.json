@@ -1,0 +1,112 @@
+{
+  "date": "2026-11-25T15:51:12.434Z",
+  "method": "Actual input/app/netplay modules; event-capable simulated DOM and Canvas; synthetic standard-gamepad samples; actual duel and Boss engines for input integration",
+  "browser": false,
+  "nativeCanvas": false,
+  "hardwareGamepadTested": false,
+  "checks": [
+    "Default bindings, independent profiles and persistence",
+    "All twenty player/action pairs are remappable; collisions are rejected without mutation",
+    "Defaults restore per player; conflicting restoration preserves the current profile",
+    "Invalid storage and denied storage fail safely",
+    "Physical key releases, aliases, modifiers, repeated events and multi-source arbitration",
+    "Focus, blur, visibility, reconfiguration and player availability release held inputs",
+    "A valid external profile releases held inputs; invalid external data preserves the usable profile",
+    "Standard gamepad deadzone, neutral rearm, keyboard aggregation and stable assignments",
+    "Standard button mapping, pause, disconnection, unsupported pads and disable",
+    "Editor capture, collisions, Escape, Tab, cancellation, focus and profile navigation",
+    "Actual app: saved remap drives duel/Boss and updates touch, commands and dojo",
+    "Actual app: linked and standalone arena selection, Boss exclusion, optional Versus/Arcade exchanges",
+    "Actual app replay input guard uses logical recordings independently of current keys",
+    "All nine local modes accept remapped keyboard and standard-gamepad samples through their actual engines",
+    "J2 remap and second gamepad reach local Versus and dojo recording",
+    "Actual network module: local profile independent of remote seat, shared remap UI, keyboard/touch/pad arbitration, focus and disconnection releases; relay/engine are explicit test adapters"
+  ],
+  "modeInputs": [
+    {
+      "mode": "story",
+      "engine": "StrandFight",
+      "remappedKeyboard": true,
+      "syntheticStandardGamepad": true,
+      "disconnectPaused": true
+    },
+    {
+      "mode": "arcade",
+      "engine": "StrandFight",
+      "remappedKeyboard": true,
+      "syntheticStandardGamepad": true,
+      "disconnectPaused": true
+    },
+    {
+      "mode": "versus",
+      "engine": "StrandFight",
+      "remappedKeyboard": true,
+      "syntheticStandardGamepad": true,
+      "disconnectPaused": true
+    },
+    {
+      "mode": "tournament",
+      "engine": "StrandFight",
+      "remappedKeyboard": true,
+      "syntheticStandardGamepad": true,
+      "disconnectPaused": true
+    },
+    {
+      "mode": "challenges",
+      "engine": "StrandFight",
+      "remappedKeyboard": true,
+      "syntheticStandardGamepad": true,
+      "disconnectPaused": true
+    },
+    {
+      "mode": "training",
+      "engine": "StrandFight",
+      "remappedKeyboard": true,
+      "syntheticStandardGamepad": true,
+      "disconnectPaused": true
+    },
+    {
+      "mode": "boss",
+      "engine": "StrandBoss",
+      "remappedKeyboard": true,
+      "syntheticStandardGamepad": true,
+      "disconnectPaused": true
+    },
+    {
+      "mode": "bossrush",
+      "engine": "StrandBoss",
+      "remappedKeyboard": true,
+      "syntheticStandardGamepad": true,
+      "disconnectPaused": true
+    },
+    {
+      "mode": "campaign",
+      "engine": "StrandFight",
+      "remappedKeyboard": true,
+      "syntheticStandardGamepad": true,
+      "disconnectPaused": true
+    }
+  ],
+  "sourceSHA256": {
+    "content.js": "91923e26f31344ca9b0789720a3ea1040e20b810742b782f55638e32f789d683",
+    "asset-geometry-20261124.js": "61f830dc5036774529b7ecaf51f4c80386ef7f94447c55e044584e850e081934",
+    "assets.js": "8d04672f033b659b7e9ddd623fdea9392f74e7a2518f3b5a360d4948d118848e",
+    "boss-geometry-20261124.js": "55655afb8a1b05027b521bda46a49c9ad1f1b202ae307fdca67aa3690657a928",
+    "boss-assets.js": "2b3c644b456cb2de1180ef618b16b43eb26b761d4dc7e1187298420b8176bbe7",
+    "tournament.js": "85f058fd5be04cec19b423b321d23846228bdc6538e39105fe4086fea310a9b6",
+    "fight.js": "17c3cfcdee2291dad721b312ee060ca3d341cb0734c30d57128152fa6d3e3f23",
+    "boss.js": "7f8f997301148515ee59e9c658a300852d4a8ccecc32c45ca56e312a2dd7787a",
+    "campaign.js": "bf84ff01a0afc253c84f5087f040632895fe971f7f934abadd114c3f4311c08a",
+    "moves-data.js": "f781bf43f7e4d7a4c474eed795d0c728de0cbd0daae7c74aa79ffedfa4915767",
+    "relationships.js": "ad55b68c477b42d8e833dbe242dab055cfac19e596c7a143d3c781a23907f775",
+    "input.js": "f7edb32b31405a63a63df929bfb7832812591244a4cf01e1875367df053be3c6",
+    "app.js": "cdecf6d7003a52c1d8f147df73f69798f6484ae42b2c1a8384483419d568805a",
+    "netplay.js": "c5f0810eb76894a6d71e33193ef2be846908111e88faf976c9112a160b1c704f",
+    "netplay.html": "f49d9b1aad9633acb0f442a94aa69db6bf85d865c1e12171a04efa471bf79158",
+    "index.html": "0f257e54a79f4344bb2fc77d66abd377300b83c8298ab76252820d6da39932b1",
+    "input.css": "333bddf3ae040d2cb6b8820a5e893fc20e351cc61130f413e5faba5ca0b9d1a8",
+    "qa/commandes.cjs": "79372518d790abdf203b2ed8295145658f921a2a6c040cb5d90b1d77bf19396d",
+    "qa/input-host.cjs": "03939e6dab80bd91aa63372a611fb64a0f99b5cc464f4c4d5543db52d597695b"
+  },
+  "passed": true
+}

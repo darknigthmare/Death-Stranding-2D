@@ -9,7 +9,7 @@ function runBossSimulationQA(sources,options) {
   const equal=(actual,expected,message)=>assert(JSON.stringify(actual)===JSON.stringify(expected),message);
   const report={method:'hosted JavaScript; actual simulation and app; simulated Canvas, Image and DOM',
     imagePixelsDecoded:false,nativeCanvas:false,browser:false,checks:[],victories:[],defeats:[],drawnAssets:[],checkpointSamples:0};
-  for(const name of ['content.js','assets.js','boss-assets.js','boss.js','app.js']){
+  for(const name of ['content.js','assets.js','boss-assets.js','boss.js','input.js','app.js']){
     assert(typeof sources[name]==='string','Source required: '+name);new Function(sources[name]);
   }
   const scriptOrder=['content.js','asset-geometry-20261124.js','assets.js','boss-geometry-20261124.js','boss-assets.js','boss.js'];
@@ -475,6 +475,8 @@ function runBossSimulationQA(sources,options) {
   const duel={starts:[],inputs:[],pauses:[],start(o){this.starts.push(o);},stop(){},pause(on){this.pauses.push(on);},
     input(...args){this.inputs.push(args);},setSound(){},setAmbienceVolume(){},setReducedEffects(){}};
   ui.host.StrandFight=duel;ui.host.StrandTournament={};
+  ui.host.document=doc;
+  new Function('window',sources['input.js'])(ui.host);
   new Function('window','document','localStorage',sources['app.js'])(ui.host,doc,ui.host.localStorage);
   const view=nodes.get('view');
   function click(action,data={}){const target=element();target.dataset={act:action,...data};for(const fn of view.listeners.click||[])fn({target});}

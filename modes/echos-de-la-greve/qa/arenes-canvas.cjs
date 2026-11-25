@@ -12,7 +12,7 @@ const requested = process.argv.find(a=>a.startsWith('--stages='))?.slice(9).spli
 const groups = ['skyplates','distants','midgrounds','floors','foregrounds'];
 const speeds = [.14,.27,.43,.62,.8];
 // These exterior joins previously exposed a strip of sky above the floor.
-const universeStages = new Set(['south-knot-ruins','timefall-farm','mountain-knot-approach','magellan-ds2','plate-gate-ds2','sandstorm-ds2','dunes-ds2']);
+const universeStages = new Set(['south-knot-ruins','timefall-farm','mountain-knot-approach','magellan-ds2','plate-gate-ds2','sandstorm-ds2','dunes-ds2','terminal-hangar']);
 const joinRegressions = new Set(['shore','terminal','battlefield','mountain-pass','mule-camp-dry','port-knot','incinerator',...universeStages]);
 const script = name => fs.readFileSync(path.join(root,name),'utf8');
 const catalog = {window:{},structuredClone};
@@ -189,9 +189,9 @@ const scenarioFighters = ['higgs','fragile'];
   const source_sha256=Object.fromEntries(['content.js','asset-geometry-20261124.js','assets.js','fight.js'].map(file=>[
     file,createHash('sha256').update(script(file)).digest('hex')
   ]));
-  const places=new Set(ids.map(id=>catalog.window.StrandContent.arenas[id].variantOf || id));
+  const places=new Set(ids.map(id=>catalog.window.StrandContent.arenas[id].variantOf || catalog.window.StrandContent.arenas[id].zoneOf || id));
   const report={date:new Date().toISOString(),renderer:'@napi-rs/canvas; actual fight.js',browser_verified:false,
-    catalogue_locations:new Set(Object.entries(catalog.window.StrandContent.arenas).map(([id,a])=>a.variantOf||id)).size,
+    catalogue_locations:new Set(Object.entries(catalog.window.StrandContent.arenas).map(([id,a])=>a.variantOf||a.zoneOf||id)).size,
     catalogue_configurations:Object.keys(catalog.window.StrandContent.stages).length,
     locations:places.size,stages:results.length,cases:results.reduce((sum,r)=>sum+r.cases,0),source_sha256,results};
   fs.writeFileSync(path.join(output,'validation.json'),JSON.stringify(report,null,2)+'\n');

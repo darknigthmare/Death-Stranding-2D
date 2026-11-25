@@ -1,0 +1,4211 @@
+{
+  "date": "2026-11-25T15:54:02.500Z",
+  "method": "Évaluation des modules JavaScript réels, y compris StrandBossAssets ; lecture du menu, des Archives et des réemplois de campagne ; union des chemins réellement exposés et présence vérifiée. Empreintes des natifs récents comparées aux inventaires/manifeste antérieurs.",
+  "path_base": "repository_root",
+  "counts": {
+    "new_png": 14,
+    "new_gallery_images": 9,
+    "new_stage_layers": 5,
+    "new_stage_configurations": 2,
+    "new_playable_zones": 1,
+    "new_animation_frames": 0,
+    "transparent_png": 11,
+    "opaque_png": 3,
+    "size_bytes": 22323710,
+    "previous_recent_outputs": 215,
+    "active_recent_outputs_after_integration": 229,
+    "playable_fighters": 8,
+    "game_modes": 9,
+    "boss_encounters": 6,
+    "places": 19,
+    "zones": 20,
+    "stage_configurations": 22,
+    "linked_stage_configurations": 1,
+    "stage_layer_bindings": 110,
+    "stage_layer_paths": 105,
+    "static_gallery_images": 52,
+    "static_gallery_ds1_dc": 22,
+    "static_gallery_ds2": 29,
+    "archives_cards": 16,
+    "archives_image_bindings": 16,
+    "story_routes": 8,
+    "story_sequences": 24,
+    "story_frame_bindings": 48,
+    "story_unique_frame_paths": 48,
+    "campaign_chapters": 6,
+    "campaign_interludes": 14,
+    "campaign_image_bindings": 26,
+    "campaign_unique_image_paths": 12,
+    "runtime_and_gallery_unique_image_paths": 359
+  },
+  "count_rules": {
+    "places": "Nombre de valeurs distinctes : arenas[id].variantOf || arenas[id].zoneOf || id",
+    "zones": "Nombre de valeurs distinctes : arenas[id].variantOf || id",
+    "stage_configurations": "Nombre d’entrées arenas ; une configuration liée réutilise ses images source",
+    "stage_layer_bindings": "Nombre de liaisons présentes pour skyplates/distants/midgrounds/floors/foregrounds sur les configurations",
+    "stage_layer_paths": "Nombre de chemins de couche distincts après normalisation dépôt",
+    "native_pixels": "Identité SHA et en-têtes PNG vérifiés ici ; décodage intégral et alpha documentés par native-assets-verification.json, non répétés par cet inventaire"
+  },
+  "modes": {
+    "story": "Histoire",
+    "arcade": "Arcade",
+    "versus": "Versus",
+    "tournament": "Tournoi",
+    "training": "Entraînement",
+    "challenges": "Défis",
+    "boss": "Boss Battle",
+    "bossrush": "Boss Rush",
+    "campaign": "Campagne du simulateur"
+  },
+  "playable_fighter_ids": [
+    "sam",
+    "fragile",
+    "higgs",
+    "cliff",
+    "mule",
+    "diehardman",
+    "mama",
+    "heartman"
+  ],
+  "boss_encounter_ids": [
+    "lion",
+    "squid",
+    "whale",
+    "giant",
+    "truck",
+    "convoy"
+  ],
+  "place_ids": [
+    "battlefield",
+    "dunes-ds2",
+    "heartman-lab",
+    "incinerator",
+    "magellan-ds2",
+    "mama-workshop",
+    "mountain-knot-approach",
+    "mountain-pass",
+    "mule-camp",
+    "plate-gate-ds2",
+    "port-knot",
+    "ruined-factory",
+    "sandstorm-ds2",
+    "shore",
+    "south-knot-ruins",
+    "tar-basin",
+    "terminal",
+    "timefall-farm",
+    "timefall-shelter"
+  ],
+  "zone_ids": [
+    "battlefield",
+    "dunes-ds2",
+    "heartman-lab",
+    "incinerator",
+    "magellan-ds2",
+    "mama-workshop",
+    "mountain-knot-approach",
+    "mountain-pass",
+    "mule-camp",
+    "plate-gate-ds2",
+    "port-knot",
+    "ruined-factory",
+    "sandstorm-ds2",
+    "shore",
+    "south-knot-ruins",
+    "tar-basin",
+    "terminal",
+    "terminal-hangar",
+    "timefall-farm",
+    "timefall-shelter"
+  ],
+  "stage_configurations": {
+    "shore": {
+      "title": "La Grève",
+      "sky": "#668184",
+      "light": "#d3d0aa",
+      "weather": "rain"
+    },
+    "terminal": {
+      "title": "Centre de distribution",
+      "sky": "#4e727e",
+      "light": "#a6d2d8",
+      "weather": "rain"
+    },
+    "terminal-linked": {
+      "title": "Quai → hangar · liaison du simulateur",
+      "variantOf": "terminal",
+      "sky": "#4e727e",
+      "light": "#a6d2d8",
+      "weather": "rain"
+    },
+    "terminal-hangar": {
+      "title": "Hangar du centre · reconstitution",
+      "zoneOf": "terminal",
+      "sky": "#3d515b",
+      "light": "#b4c8ca"
+    },
+    "battlefield": {
+      "title": "Champ de bataille",
+      "sky": "#816e69",
+      "light": "#e2b58a",
+      "weather": "embers"
+    },
+    "mule-camp": {
+      "title": "Camp des MULEs",
+      "sky": "#777961",
+      "light": "#d8c38b",
+      "weather": "rain"
+    },
+    "mule-camp-dry": {
+      "title": "Camp des MULEs · temps sec",
+      "variantOf": "mule-camp",
+      "sky": "#929582",
+      "light": "#e1d6af",
+      "weather": "dust"
+    },
+    "heartman-lab": {
+      "title": "Laboratoire de Heartman",
+      "sky": "#505c66",
+      "light": "#a7cad7"
+    },
+    "mama-workshop": {
+      "title": "Atelier de Mama",
+      "sky": "#5c6865",
+      "light": "#acc9be"
+    },
+    "ruined-factory": {
+      "title": "Usine en ruines",
+      "sky": "#53595d",
+      "light": "#bcafb0",
+      "weather": "dust"
+    },
+    "timefall-shelter": {
+      "title": "Abri sous la pluie temporelle",
+      "sky": "#526366",
+      "light": "#b5d7d7",
+      "weather": "shelter"
+    },
+    "tar-basin": {
+      "title": "Bassin de goudron",
+      "sky": "#555859",
+      "light": "#d4bc9d"
+    },
+    "mountain-pass": {
+      "title": "Col de Mountain Knot",
+      "sky": "#758995",
+      "light": "#e0edf0",
+      "weather": "snow"
+    },
+    "port-knot": {
+      "title": "Port Knot City",
+      "sky": "#788e98",
+      "light": "#d5d6b8",
+      "weather": "rain"
+    },
+    "incinerator": {
+      "title": "Incinérateur de la région Est",
+      "sky": "#838781",
+      "light": "#ded8bd",
+      "weather": "dust"
+    },
+    "south-knot-ruins": {
+      "title": "Ruines de South Knot",
+      "sky": "#56686f",
+      "light": "#b1c6cb",
+      "weather": "rain"
+    },
+    "timefall-farm": {
+      "title": "Ferme sous la pluie temporelle",
+      "sky": "#7d8980",
+      "light": "#cfdbc5",
+      "weather": "rain"
+    },
+    "mountain-knot-approach": {
+      "title": "Approche de Mountain Knot",
+      "sky": "#7d929f",
+      "light": "#e0edf0",
+      "weather": "snow"
+    },
+    "magellan-ds2": {
+      "title": "DHV Magellan · berge au couchant",
+      "sky": "#776663",
+      "light": "#edc591"
+    },
+    "plate-gate-ds2": {
+      "title": "Plate Gate · colonnes suspendues",
+      "sky": "#7e7a67",
+      "light": "#d9d0ad",
+      "weather": "dust"
+    },
+    "sandstorm-ds2": {
+      "title": "Lisière urbaine · tempête de sable",
+      "sky": "#b49b74",
+      "light": "#ead5ad",
+      "weather": "dust"
+    },
+    "dunes-ds2": {
+      "title": "Dunes sous le vent",
+      "sky": "#bd9f73",
+      "light": "#eddbb5",
+      "weather": "dust"
+    }
+  },
+  "stage_links": {
+    "terminal-linked": {
+      "id": "terminal-quay-hangar",
+      "version": 1,
+      "replayTag": "terminal-quay-hangar@1",
+      "source": "terminal",
+      "destination": "terminal-hangar",
+      "edge": 96,
+      "duration": 36,
+      "limit": 1,
+      "arrivalGap": 260,
+      "description": "Reconstitution du simulateur · quai → hangar. Coup lourd ou projection au sol, non bloqué et vers le bord : un passage par manche, sans dégât ajouté. Le chrono s’arrête pendant le passage."
+    }
+  },
+  "stage_image_bindings": [
+    {
+      "configuration": "shore",
+      "panorama": "modes/echos-de-la-greve/assets/stages/shore.webp",
+      "layers": {
+        "skyplates": "modes/echos-de-la-greve/assets/stages/shore-sky.png",
+        "distants": "modes/echos-de-la-greve/assets/stages/shore-distant.png",
+        "midgrounds": "modes/echos-de-la-greve/assets/stages/shore-midground.png",
+        "floors": "modes/echos-de-la-greve/assets/stages/shore-floor.png",
+        "foregrounds": "modes/echos-de-la-greve/assets/stages/shore-foreground.webp"
+      }
+    },
+    {
+      "configuration": "terminal",
+      "panorama": "modes/echos-de-la-greve/assets/stages/terminal.webp",
+      "layers": {
+        "skyplates": "modes/echos-de-la-greve/assets/stages/terminal-sky.png",
+        "distants": "modes/echos-de-la-greve/assets/stages/terminal-distant.png",
+        "midgrounds": "modes/echos-de-la-greve/assets/stages/terminal-midground.png",
+        "floors": "modes/echos-de-la-greve/assets/stages/terminal-floor.png",
+        "foregrounds": "modes/echos-de-la-greve/assets/stages/terminal-foreground.webp"
+      }
+    },
+    {
+      "configuration": "terminal-linked",
+      "panorama": "modes/echos-de-la-greve/assets/stages/terminal.webp",
+      "layers": {
+        "skyplates": "modes/echos-de-la-greve/assets/stages/terminal-sky.png",
+        "distants": "modes/echos-de-la-greve/assets/stages/terminal-distant.png",
+        "midgrounds": "modes/echos-de-la-greve/assets/stages/terminal-midground.png",
+        "floors": "modes/echos-de-la-greve/assets/stages/terminal-floor.png",
+        "foregrounds": "modes/echos-de-la-greve/assets/stages/terminal-foreground.webp"
+      }
+    },
+    {
+      "configuration": "terminal-hangar",
+      "panorama": "modes/echos-de-la-greve/assets/static-domains-20261125/terminal-hangar-panorama.png",
+      "layers": {
+        "skyplates": "modes/echos-de-la-greve/assets/stages/terminal-hangar-sky.png",
+        "distants": "modes/echos-de-la-greve/assets/stages/terminal-hangar-distant.png",
+        "midgrounds": "modes/echos-de-la-greve/assets/stages/terminal-hangar-midground.png",
+        "floors": "modes/echos-de-la-greve/assets/stages/terminal-hangar-floor.png",
+        "foregrounds": "modes/echos-de-la-greve/assets/stages/terminal-hangar-foreground.png"
+      }
+    },
+    {
+      "configuration": "battlefield",
+      "panorama": "modes/echos-de-la-greve/assets/stages/battlefield.webp",
+      "layers": {
+        "skyplates": "modes/echos-de-la-greve/assets/stages/battlefield-sky.png",
+        "distants": "modes/echos-de-la-greve/assets/stages/battlefield-distant.png",
+        "midgrounds": "modes/echos-de-la-greve/assets/stages/battlefield-midground.png",
+        "floors": "modes/echos-de-la-greve/assets/stages/battlefield-floor.png",
+        "foregrounds": "modes/echos-de-la-greve/assets/stages/battlefield-foreground.webp"
+      }
+    },
+    {
+      "configuration": "mule-camp",
+      "panorama": "modes/echos-de-la-greve/assets/stages/mule-camp.webp",
+      "layers": {
+        "skyplates": "modes/echos-de-la-greve/assets/stages/mule-camp-sky.png",
+        "distants": "modes/echos-de-la-greve/assets/stages/mule-camp-distant.png",
+        "midgrounds": "modes/echos-de-la-greve/assets/stages/mule-camp-midground.png",
+        "floors": "modes/echos-de-la-greve/assets/stages/mule-camp-floor.png",
+        "foregrounds": "modes/echos-de-la-greve/assets/stages/mule-camp-foreground.webp"
+      }
+    },
+    {
+      "configuration": "mule-camp-dry",
+      "panorama": "modes/echos-de-la-greve/assets/stages/mule-camp-dry.png",
+      "layers": {
+        "skyplates": "modes/echos-de-la-greve/assets/stages/mule-camp-dry-sky.png",
+        "distants": "modes/echos-de-la-greve/assets/stages/mule-camp-dry-distant.png",
+        "midgrounds": "modes/echos-de-la-greve/assets/stages/mule-camp-dry-midground.png",
+        "floors": "modes/echos-de-la-greve/assets/stages/mule-camp-dry-floor.png",
+        "foregrounds": "modes/echos-de-la-greve/assets/stages/mule-camp-dry-foreground.png"
+      }
+    },
+    {
+      "configuration": "heartman-lab",
+      "panorama": "modes/echos-de-la-greve/assets/stages/heartman-lab.webp",
+      "layers": {
+        "skyplates": "modes/echos-de-la-greve/assets/stages/heartman-lab-sky.png",
+        "distants": "modes/echos-de-la-greve/assets/stages/heartman-lab-distant.png",
+        "midgrounds": "modes/echos-de-la-greve/assets/stages/heartman-lab-midground.png",
+        "floors": "modes/echos-de-la-greve/assets/stages/heartman-lab-floor.png",
+        "foregrounds": "modes/echos-de-la-greve/assets/stages/heartman-lab-foreground.webp"
+      }
+    },
+    {
+      "configuration": "mama-workshop",
+      "panorama": "modes/echos-de-la-greve/assets/stages/mama-workshop.webp",
+      "layers": {
+        "skyplates": "modes/echos-de-la-greve/assets/stages/mama-workshop-sky.png",
+        "distants": "modes/echos-de-la-greve/assets/stages/mama-workshop-distant.png",
+        "midgrounds": "modes/echos-de-la-greve/assets/stages/mama-workshop-midground.png",
+        "floors": "modes/echos-de-la-greve/assets/stages/mama-workshop-floor.png",
+        "foregrounds": "modes/echos-de-la-greve/assets/stages/mama-workshop-foreground.webp"
+      }
+    },
+    {
+      "configuration": "ruined-factory",
+      "panorama": "modes/echos-de-la-greve/assets/stages/ruined-factory.webp",
+      "layers": {
+        "skyplates": "modes/echos-de-la-greve/assets/stages/ruined-factory-sky.png",
+        "distants": "modes/echos-de-la-greve/assets/stages/ruined-factory-distant.png",
+        "midgrounds": "modes/echos-de-la-greve/assets/stages/ruined-factory-midground.png",
+        "floors": "modes/echos-de-la-greve/assets/stages/ruined-factory-floor.png",
+        "foregrounds": "modes/echos-de-la-greve/assets/stages/ruined-factory-foreground.webp"
+      }
+    },
+    {
+      "configuration": "timefall-shelter",
+      "panorama": "modes/echos-de-la-greve/assets/stages/timefall-shelter.webp",
+      "layers": {
+        "skyplates": "modes/echos-de-la-greve/assets/stages/timefall-shelter-sky.png",
+        "distants": "modes/echos-de-la-greve/assets/stages/timefall-shelter-distant.png",
+        "midgrounds": "modes/echos-de-la-greve/assets/stages/timefall-shelter-midground.png",
+        "floors": "modes/echos-de-la-greve/assets/stages/timefall-shelter-floor.png",
+        "foregrounds": "modes/echos-de-la-greve/assets/stages/timefall-shelter-foreground.webp"
+      }
+    },
+    {
+      "configuration": "tar-basin",
+      "panorama": "modes/echos-de-la-greve/assets/stages/tar-basin.webp",
+      "layers": {
+        "skyplates": "modes/echos-de-la-greve/assets/stages/tar-basin-sky.png",
+        "distants": "modes/echos-de-la-greve/assets/stages/tar-basin-distant.png",
+        "midgrounds": "modes/echos-de-la-greve/assets/stages/tar-basin-midground.png",
+        "floors": "modes/echos-de-la-greve/assets/stages/tar-basin-floor.png",
+        "foregrounds": "modes/echos-de-la-greve/assets/stages/tar-basin-foreground.webp"
+      }
+    },
+    {
+      "configuration": "mountain-pass",
+      "panorama": "modes/echos-de-la-greve/assets/stages/mountain-pass.webp",
+      "layers": {
+        "skyplates": "modes/echos-de-la-greve/assets/stages/mountain-pass-sky.png",
+        "distants": "modes/echos-de-la-greve/assets/stages/mountain-pass-distant.png",
+        "midgrounds": "modes/echos-de-la-greve/assets/stages/mountain-pass-midground.png",
+        "floors": "modes/echos-de-la-greve/assets/stages/mountain-pass-floor.png",
+        "foregrounds": "modes/echos-de-la-greve/assets/stages/mountain-pass-foreground.webp"
+      }
+    },
+    {
+      "configuration": "port-knot",
+      "panorama": "modes/echos-de-la-greve/assets/stages/port-knot.png",
+      "layers": {
+        "skyplates": "modes/echos-de-la-greve/assets/stages/port-knot-sky.png",
+        "distants": "modes/echos-de-la-greve/assets/stages/port-knot-distant.png",
+        "midgrounds": "modes/echos-de-la-greve/assets/stages/port-knot-midground.png",
+        "floors": "modes/echos-de-la-greve/assets/stages/port-knot-floor.png",
+        "foregrounds": "modes/echos-de-la-greve/assets/stages/port-knot-foreground.png"
+      }
+    },
+    {
+      "configuration": "incinerator",
+      "panorama": "modes/echos-de-la-greve/assets/stages/incinerator.png",
+      "layers": {
+        "skyplates": "modes/echos-de-la-greve/assets/stages/incinerator-sky.png",
+        "distants": "modes/echos-de-la-greve/assets/stages/incinerator-distant.png",
+        "midgrounds": "modes/echos-de-la-greve/assets/stages/incinerator-midground.png",
+        "floors": "modes/echos-de-la-greve/assets/stages/incinerator-floor.png",
+        "foregrounds": "modes/echos-de-la-greve/assets/stages/incinerator-foreground.png"
+      }
+    },
+    {
+      "configuration": "south-knot-ruins",
+      "panorama": "modes/echos-de-la-greve/assets/static-20261125/south-knot-ruins-panorama.png",
+      "layers": {
+        "skyplates": "modes/echos-de-la-greve/assets/stages/south-knot-ruins-sky.png",
+        "distants": "modes/echos-de-la-greve/assets/stages/south-knot-ruins-distant.png",
+        "midgrounds": "modes/echos-de-la-greve/assets/stages/south-knot-ruins-midground.png",
+        "floors": "modes/echos-de-la-greve/assets/stages/south-knot-ruins-floor.png",
+        "foregrounds": "modes/echos-de-la-greve/assets/stages/south-knot-ruins-foreground.png"
+      }
+    },
+    {
+      "configuration": "timefall-farm",
+      "panorama": "modes/echos-de-la-greve/assets/static-20261125/timefall-farm-panorama.png",
+      "layers": {
+        "skyplates": "modes/echos-de-la-greve/assets/stages/timefall-farm-sky.png",
+        "distants": "modes/echos-de-la-greve/assets/stages/timefall-farm-distant.png",
+        "midgrounds": "modes/echos-de-la-greve/assets/stages/timefall-farm-midground.png",
+        "floors": "modes/echos-de-la-greve/assets/stages/timefall-farm-floor.png",
+        "foregrounds": "modes/echos-de-la-greve/assets/stages/timefall-farm-foreground.png"
+      }
+    },
+    {
+      "configuration": "mountain-knot-approach",
+      "panorama": "modes/echos-de-la-greve/assets/static-20261125/mountain-knot-city-panorama.png",
+      "layers": {
+        "skyplates": "modes/echos-de-la-greve/assets/stages/mountain-knot-approach-sky.png",
+        "distants": "modes/echos-de-la-greve/assets/stages/mountain-knot-approach-distant.png",
+        "midgrounds": "modes/echos-de-la-greve/assets/stages/mountain-knot-approach-midground.png",
+        "floors": "modes/echos-de-la-greve/assets/stages/mountain-knot-approach-floor.png",
+        "foregrounds": "modes/echos-de-la-greve/assets/stages/mountain-knot-approach-foreground.png"
+      }
+    },
+    {
+      "configuration": "magellan-ds2",
+      "panorama": "modes/echos-de-la-greve/assets/static-universe-20261125/magellan-ds2-panorama.png",
+      "layers": {
+        "skyplates": "modes/echos-de-la-greve/assets/stages/magellan-ds2-sky.png",
+        "distants": "modes/echos-de-la-greve/assets/stages/magellan-ds2-distant.png",
+        "midgrounds": "modes/echos-de-la-greve/assets/stages/magellan-ds2-midground.png",
+        "floors": "modes/echos-de-la-greve/assets/stages/magellan-ds2-floor.png",
+        "foregrounds": "modes/echos-de-la-greve/assets/stages/magellan-ds2-foreground.png"
+      }
+    },
+    {
+      "configuration": "plate-gate-ds2",
+      "panorama": "modes/echos-de-la-greve/assets/static-universe-20261125/plate-gate-ds2-panorama.png",
+      "layers": {
+        "skyplates": "modes/echos-de-la-greve/assets/stages/plate-gate-ds2-sky.png",
+        "distants": "modes/echos-de-la-greve/assets/stages/plate-gate-ds2-distant.png",
+        "midgrounds": "modes/echos-de-la-greve/assets/stages/plate-gate-ds2-midground.png",
+        "floors": "modes/echos-de-la-greve/assets/stages/plate-gate-ds2-floor.png",
+        "foregrounds": "modes/echos-de-la-greve/assets/stages/plate-gate-ds2-foreground.png"
+      }
+    },
+    {
+      "configuration": "sandstorm-ds2",
+      "panorama": "modes/echos-de-la-greve/assets/static-universe-20261125/sandstorm-ds2-panorama.png",
+      "layers": {
+        "skyplates": "modes/echos-de-la-greve/assets/stages/sandstorm-ds2-sky.png",
+        "distants": "modes/echos-de-la-greve/assets/stages/sandstorm-ds2-distant.png",
+        "midgrounds": "modes/echos-de-la-greve/assets/stages/sandstorm-ds2-midground.png",
+        "floors": "modes/echos-de-la-greve/assets/stages/sandstorm-ds2-floor.png",
+        "foregrounds": "modes/echos-de-la-greve/assets/stages/sandstorm-ds2-foreground.png"
+      }
+    },
+    {
+      "configuration": "dunes-ds2",
+      "panorama": "modes/echos-de-la-greve/assets/static-completion-20261125/dunes-ds2-panorama.png",
+      "layers": {
+        "skyplates": "modes/echos-de-la-greve/assets/stages/dunes-ds2-sky.png",
+        "distants": "modes/echos-de-la-greve/assets/stages/dunes-ds2-distant.png",
+        "midgrounds": "modes/echos-de-la-greve/assets/stages/dunes-ds2-midground.png",
+        "floors": "modes/echos-de-la-greve/assets/stages/dunes-ds2-floor.png",
+        "foregrounds": "modes/echos-de-la-greve/assets/stages/dunes-ds2-foreground.png"
+      }
+    }
+  ],
+  "static_gallery_by_work": {
+    "ds1-dc": 22,
+    "ds2": 29,
+    "project-simulation": 1
+  },
+  "static_gallery_items": [
+    {
+      "id": "lockne-portrait",
+      "title": "Lockne",
+      "category": "characters",
+      "kind": "Portrait",
+      "description": "Le visage de Lockne, ingénieure de Bridges à Mountain Knot.",
+      "alt": "Portrait de Lockne en tenue d’ingénieure",
+      "src": "modes/echos-de-la-greve/assets/static-20261125/lockne-portrait.png",
+      "width": 1189,
+      "height": 1323,
+      "work": "ds1-dc",
+      "version": "Mountain Knot · portrait"
+    },
+    {
+      "id": "lockne-body",
+      "title": "Lockne",
+      "category": "characters",
+      "kind": "Silhouette",
+      "description": "Lockne en pied, dans sa tenue du premier Death Stranding.",
+      "alt": "Lockne entière en pose fixe",
+      "src": "modes/echos-de-la-greve/assets/static-20261125/lockne-body.png",
+      "width": 1024,
+      "height": 1536,
+      "work": "ds1-dc",
+      "version": "Tenue d’ingénieure"
+    },
+    {
+      "id": "deadman-body",
+      "title": "Deadman",
+      "category": "characters",
+      "kind": "Silhouette",
+      "description": "La présence familière du médecin de Bridges, en pied.",
+      "alt": "Deadman entier avec ses lunettes, son costume et sa cravate",
+      "src": "modes/echos-de-la-greve/assets/static-20261125/deadman-body.png",
+      "width": 1024,
+      "height": 1536,
+      "work": "ds1-dc",
+      "version": "Costume sombre"
+    },
+    {
+      "id": "amelie-body",
+      "title": "Amelie",
+      "category": "characters",
+      "kind": "Silhouette",
+      "description": "Une robe rouge sur la Grève, face à l’horizon.",
+      "alt": "Amelie entière dans sa robe rouge mi-longue, avec ses escarpins rouges",
+      "src": "modes/echos-de-la-greve/assets/static-20261125/amelie-body.png",
+      "width": 1024,
+      "height": 1536,
+      "work": "ds1-dc",
+      "version": "Robe rouge"
+    },
+    {
+      "id": "bridget-body",
+      "title": "Bridget · lit médical",
+      "category": "characters",
+      "kind": "Lit médical",
+      "description": "Bridget dans son lit médical gris, sous sa couverture bordeaux.",
+      "alt": "Bridget Strand âgée et alitée sous une couverture bordeaux, avec son lit médical gris",
+      "src": "modes/echos-de-la-greve/assets/static-20261125/bridget-body.png",
+      "layout": "wide",
+      "width": 1536,
+      "height": 1024,
+      "work": "ds1-dc",
+      "version": "Lit médical"
+    },
+    {
+      "id": "bt-gazer",
+      "title": "Échoué · Gazer",
+      "category": "enemies",
+      "kind": "Présence",
+      "description": "Une silhouette humaine suspendue, retenue par son lien à la Grève.",
+      "alt": "Échoué humain flottant, silhouette sombre avec son cordon",
+      "src": "modes/echos-de-la-greve/assets/static-20261125/bt-gazer.png",
+      "width": 1024,
+      "height": 1536,
+      "work": "ds1-dc",
+      "version": "Échoué humanoïde"
+    },
+    {
+      "id": "cliff-skeleton-nethelmet",
+      "title": "Soldat squelettique · casque à filet",
+      "category": "enemies",
+      "kind": "Soldat de Cliff",
+      "description": "Une présence de la section de Cliff, figée dans la mémoire du champ de bataille.",
+      "alt": "Soldat squelettique de Cliff portant un casque à filet",
+      "src": "modes/echos-de-la-greve/assets/static-20261125/cliff-skeleton-nethelmet.png",
+      "width": 1024,
+      "height": 1536,
+      "work": "ds1-dc",
+      "version": "Section de Cliff · casque à filet"
+    },
+    {
+      "id": "mule-eastern-gray",
+      "title": "MULE · région Est",
+      "category": "enemies",
+      "kind": "Porteur hostile",
+      "description": "Une tenue grise, un châssis de transport et un bâton électrique sur la route des porteurs.",
+      "alt": "MULE gris de la région Est avec son bâton électrique et son châssis de fret",
+      "src": "modes/echos-de-la-greve/assets/static-20261125/mule-eastern-gray.png",
+      "width": 1024,
+      "height": 1536,
+      "work": "ds1-dc",
+      "version": "Région Est · tenue grise"
+    },
+    {
+      "id": "hematic-grenade",
+      "title": "Grenade hématique",
+      "category": "projectiles",
+      "kind": "Grenade",
+      "description": "La grenade anti-Échoués de Bridges, isolée dans son format complet.",
+      "alt": "Grenade hématique de Death Stranding",
+      "src": "modes/echos-de-la-greve/assets/static-20261125/hematic-grenade.png",
+      "width": 1024,
+      "height": 1536,
+      "work": "ds1-dc",
+      "version": "Niveau 1"
+    },
+    {
+      "id": "ex-grenade-0",
+      "title": "Grenade EX n° 0",
+      "category": "projectiles",
+      "kind": "Capsule EX",
+      "description": "Une capsule EX du premier Death Stranding, présentée seule.",
+      "alt": "Capsule EX numéro zéro de Death Stranding",
+      "src": "modes/echos-de-la-greve/assets/static-20261125/ex-grenade-0.png",
+      "width": 724,
+      "height": 2172,
+      "work": "ds1-dc",
+      "version": "Capsule EX · numéro 0"
+    },
+    {
+      "id": "ex-grenade-1",
+      "title": "Grenade EX n° 1",
+      "category": "projectiles",
+      "kind": "Capsule EX",
+      "description": "Une capsule EX du premier Death Stranding, présentée seule.",
+      "alt": "Capsule EX numéro un de Death Stranding",
+      "src": "modes/echos-de-la-greve/assets/static-20261125/ex-grenade-1.png",
+      "width": 724,
+      "height": 2172,
+      "work": "ds1-dc",
+      "version": "Capsule EX · numéro 1"
+    },
+    {
+      "id": "ex-grenade-2",
+      "title": "Grenade EX n° 2",
+      "category": "projectiles",
+      "kind": "Capsule EX",
+      "description": "Une capsule EX du premier Death Stranding, présentée seule.",
+      "alt": "Capsule EX numéro deux de Death Stranding",
+      "src": "modes/echos-de-la-greve/assets/static-20261125/ex-grenade-2.png",
+      "width": 724,
+      "height": 2172,
+      "work": "ds1-dc",
+      "version": "Capsule EX · numéro 2"
+    },
+    {
+      "id": "south-knot-ruins-panorama",
+      "title": "Ruines de South Knot",
+      "category": "stages",
+      "kind": "Pluie temporelle",
+      "description": "Les bâtiments abandonnés de South Knot disparaissent sous la pluie.",
+      "alt": "Panorama latéral des ruines de South Knot sous la pluie temporelle",
+      "src": "modes/echos-de-la-greve/assets/static-20261125/south-knot-ruins-panorama.png",
+      "width": 1672,
+      "height": 941,
+      "work": "ds1-dc",
+      "version": "Ruines · pluie"
+    },
+    {
+      "id": "timefall-farm-panorama",
+      "title": "Ferme sous la pluie temporelle",
+      "category": "stages",
+      "kind": "Région centrale",
+      "description": "Des cultures et des installations agricoles au pied des reliefs.",
+      "alt": "Panorama de la ferme et de ses cultures sous la pluie temporelle",
+      "src": "modes/echos-de-la-greve/assets/static-20261125/timefall-farm-panorama.png",
+      "width": 1672,
+      "height": 941,
+      "work": "ds1-dc",
+      "version": "Ferme · pluie temporelle"
+    },
+    {
+      "id": "mountain-knot-city-panorama",
+      "title": "Approche de Mountain Knot",
+      "category": "stages",
+      "kind": "Hautes terres",
+      "description": "La route des porteurs s’ouvre entre les sommets enneigés de Mountain Knot.",
+      "alt": "Panorama montagneux enneigé de l’approche de Mountain Knot",
+      "src": "modes/echos-de-la-greve/assets/static-20261125/mountain-knot-city-panorama.png",
+      "width": 1672,
+      "height": 941,
+      "work": "ds1-dc",
+      "version": "Approche montagneuse"
+    },
+    {
+      "id": "sam-ds2-drawbridge-portrait",
+      "title": "Sam Porter Bridges",
+      "category": "characters",
+      "kind": "Portrait",
+      "work": "ds2",
+      "version": "Drawbridge · tenue sans manches",
+      "description": "Sam dans sa tenue Drawbridge sombre, au début d’une nouvelle traversée.",
+      "alt": "Portrait de Sam, cheveux mouillés et haut Drawbridge sans manches",
+      "src": "modes/echos-de-la-greve/assets/static-universe-20261125/sam-ds2-drawbridge-portrait.png",
+      "width": 1536,
+      "height": 1024
+    },
+    {
+      "id": "fragile-ds2-portrait",
+      "title": "Fragile",
+      "category": "characters",
+      "kind": "Portrait adapté",
+      "work": "ds2",
+      "version": "Béret et col Drawbridge",
+      "description": "Les cheveux courts, le béret et les mains sculptées du col marquent cette nouvelle tenue de Fragile.",
+      "alt": "Portrait de Fragile en béret Drawbridge, la main près du visage",
+      "src": "modes/echos-de-la-greve/assets/static-universe-20261125/fragile-ds2-portrait.png",
+      "width": 1104,
+      "height": 1425
+    },
+    {
+      "id": "higgs-ds2-portrait",
+      "title": "Higgs",
+      "category": "characters",
+      "kind": "Portrait",
+      "work": "ds2",
+      "version": "Armure rouge · visage découvert",
+      "description": "Le visage peint de Higgs et son armure rouge usée, dans sa version On the Beach.",
+      "alt": "Higgs aux cheveux longs, visage peint et plastron ambré",
+      "src": "modes/echos-de-la-greve/assets/static-universe-20261125/higgs-ds2-portrait.png",
+      "width": 1310,
+      "height": 1200
+    },
+    {
+      "id": "dollman-ds2-body",
+      "title": "Dollman",
+      "category": "characters",
+      "kind": "Silhouette",
+      "work": "ds2",
+      "version": "Marionnette · costume bordeaux",
+      "description": "Un visage articulé, un costume de velours côtelé et des chaussettes rouges : Dollman dans une pose fixe.",
+      "alt": "Dollman entier en costume bordeaux, nœud papillon et chaussettes rouges",
+      "src": "modes/echos-de-la-greve/assets/static-universe-20261125/dollman-ds2-body.png",
+      "width": 941,
+      "height": 1672
+    },
+    {
+      "id": "tomorrow-ds2-portrait",
+      "title": "Tomorrow",
+      "category": "characters",
+      "kind": "Portrait",
+      "work": "ds2",
+      "version": "Haut sombre",
+      "description": "Tomorrow dans sa tenue sombre, cheveux blonds libres sur les épaules.",
+      "alt": "Portrait de Tomorrow aux cheveux blonds et haut sombre sans manches",
+      "src": "modes/echos-de-la-greve/assets/static-universe-20261125/tomorrow-ds2-portrait.png",
+      "width": 1156,
+      "height": 1361
+    },
+    {
+      "id": "rainy-ds2-portrait",
+      "title": "Rainy",
+      "category": "characters",
+      "kind": "Portrait",
+      "work": "ds2",
+      "version": "Pull jaune · fleurs",
+      "description": "Rainy tient un pot de fleurs, avec son pull jaune côtelé et son sac clair.",
+      "alt": "Rainy au pull jaune tenant des fleurs, sac clair sur son épaule",
+      "src": "modes/echos-de-la-greve/assets/static-universe-20261125/rainy-ds2-portrait.png",
+      "width": 1199,
+      "height": 1312
+    },
+    {
+      "id": "tarman-ds2-portrait",
+      "title": "Tarman",
+      "category": "characters",
+      "kind": "Portrait",
+      "work": "ds2",
+      "version": "Tenue de capitaine",
+      "description": "La casquette, les verres ambrés et les jumelles composent le portrait de Tarman.",
+      "alt": "Tarman avec casquette, lunettes ambrées, jumelles et bras droit tronqué",
+      "src": "modes/echos-de-la-greve/assets/static-universe-20261125/tarman-ds2-portrait.png",
+      "width": 1139,
+      "height": 1381
+    },
+    {
+      "id": "neil-ds2-portrait",
+      "title": "Neil",
+      "category": "characters",
+      "kind": "Portrait",
+      "work": "ds2",
+      "version": "Écharpe sombre",
+      "description": "Neil apparaît avec son écharpe et son équipement sombre.",
+      "alt": "Portrait de Neil aux cheveux bruns et à l’écharpe sombre",
+      "src": "modes/echos-de-la-greve/assets/static-universe-20261125/neil-ds2-portrait.png",
+      "width": 1312,
+      "height": 1199
+    },
+    {
+      "id": "red-samurai-ds2-body",
+      "title": "Red Samurai",
+      "category": "enemies",
+      "kind": "Silhouette adaptée",
+      "work": "ds2",
+      "version": "Armure rouge · étude en pied",
+      "description": "Une étude en pied du combattant mécanique, avec son masque à capteurs et sa grande lame.",
+      "alt": "Red Samurai entier, armure rouge et grande lame tenue en garde",
+      "src": "modes/echos-de-la-greve/assets/static-universe-20261125/red-samurai-ds2-body.png",
+      "width": 1024,
+      "height": 1536
+    },
+    {
+      "id": "chiral-cat-ds2-body",
+      "title": "Chat chiral",
+      "category": "props",
+      "kind": "Compagnon",
+      "work": "ds2",
+      "version": "Silhouette isolée",
+      "description": "La petite silhouette sombre visible auprès de Tarman, isolée avec ses yeux lumineux et ses ramures.",
+      "alt": "Chat chiral noir, yeux jaunes, ramures et queue courbe",
+      "src": "modes/echos-de-la-greve/assets/static-universe-20261125/chiral-cat-ds2-body.png",
+      "width": 1254,
+      "height": 1254
+    },
+    {
+      "id": "higgs-ds2-guitar",
+      "title": "Guitare de Higgs",
+      "category": "props",
+      "kind": "Arme-instrument",
+      "work": "ds2",
+      "version": "Objet isolé",
+      "description": "La guitare de Higgs, isolée pour observer sa caisse anguleuse, son long manche et son câble.",
+      "alt": "Guitare orange et noire de Higgs avec câble courbe et extrémité lumineuse",
+      "src": "modes/echos-de-la-greve/assets/static-universe-20261125/higgs-ds2-guitar.png",
+      "width": 2172,
+      "height": 724,
+      "layout": "wide"
+    },
+    {
+      "id": "magellan-ds2-panorama",
+      "title": "DHV Magellan",
+      "category": "stages",
+      "kind": "Panorama",
+      "work": "ds2",
+      "version": "Berge au couchant",
+      "description": "Le Magellan survole une berge humide ; les roseaux et les collines ouvrent l’horizon.",
+      "alt": "Vaisseau Magellan au-dessus d’un marais au coucher du soleil, piste de terre au premier plan",
+      "src": "modes/echos-de-la-greve/assets/static-universe-20261125/magellan-ds2-panorama.png",
+      "width": 1672,
+      "height": 941,
+      "layout": "wide"
+    },
+    {
+      "id": "plate-gate-ds2-panorama",
+      "title": "Plate Gate",
+      "category": "stages",
+      "kind": "Panorama adapté",
+      "work": "ds2",
+      "version": "Colonnes minérales",
+      "description": "Des colonnes minérales immenses se perdent dans une brume pâle, au-delà d’une étendue de pierre.",
+      "alt": "Paysage de colonnes minérales et fragments suspendus dans une brume claire",
+      "src": "modes/echos-de-la-greve/assets/static-universe-20261125/plate-gate-ds2-panorama.png",
+      "width": 1672,
+      "height": 941,
+      "layout": "wide"
+    },
+    {
+      "id": "sandstorm-ds2-panorama",
+      "title": "Front de sable",
+      "category": "stages",
+      "kind": "Panorama adapté",
+      "work": "ds2",
+      "version": "Rue désertée",
+      "description": "Une tempête de sable approche derrière les voitures poussiéreuses et les câbles d’une rue déserte.",
+      "alt": "Rue déserte devant un immense front de poussière ocre",
+      "src": "modes/echos-de-la-greve/assets/static-universe-20261125/sandstorm-ds2-panorama.png",
+      "width": 1672,
+      "height": 941,
+      "layout": "wide"
+    },
+    {
+      "id": "lucy-ds2",
+      "title": "Lucy",
+      "category": "characters",
+      "kind": "Portrait",
+      "description": "Lucy, les cheveux bruns attachés, dans un haut gris à col en V.",
+      "alt": "Portrait fixe de Lucy, cheveux bruns attachés et haut gris",
+      "src": "modes/echos-de-la-greve/assets/static-completion-20261125/lucy-ds2.png",
+      "work": "ds2",
+      "version": "Haut gris · portrait",
+      "representation": "Image fixe",
+      "bible": "../../docs/combat/BIBLE_COMBAT.md#172-sources-et-versions-des-nouvelles-bases",
+      "reference": "../../docs/combat/UNIVERS_DS.md#ref-lucy-ds2",
+      "width": 1439,
+      "height": 1093
+    },
+    {
+      "id": "doctor-ds2",
+      "title": "Doctor",
+      "category": "characters",
+      "kind": "Portrait",
+      "description": "Les lunettes rouges, le stéthoscope et les gants bleus composent ce portrait de Doctor.",
+      "alt": "Portrait fixe de Doctor portant des lunettes rouges, un stéthoscope et des gants bleus",
+      "src": "modes/echos-de-la-greve/assets/static-completion-20261125/doctor-ds2.png",
+      "work": "ds2",
+      "version": "Tenue médicale · portrait",
+      "representation": "Image fixe",
+      "bible": "../../docs/combat/BIBLE_COMBAT.md#172-sources-et-versions-des-nouvelles-bases",
+      "reference": "../../docs/combat/UNIVERS_DS.md#ref-doctor-ds2",
+      "width": 1520,
+      "height": 1034
+    },
+    {
+      "id": "heartman-ds2",
+      "title": "Heartman · DS2",
+      "category": "characters",
+      "kind": "Portrait",
+      "description": "Heartman en costume bleu, avec son appareil jaune et ambré sur la poitrine.",
+      "alt": "Portrait fixe de Heartman dans sa version On the Beach, costume bleu et appareil au torse",
+      "src": "modes/echos-de-la-greve/assets/static-completion-20261125/heartman-ds2.png",
+      "work": "ds2",
+      "version": "Costume bleu · version DS2",
+      "representation": "Image fixe",
+      "bible": "../../docs/combat/BIBLE_COMBAT.md#172-sources-et-versions-des-nouvelles-bases",
+      "reference": "../../docs/combat/UNIVERS_DS.md#ref-heartman-ds2",
+      "width": 1484,
+      "height": 1060
+    },
+    {
+      "id": "the-president-ds2",
+      "title": "The President",
+      "category": "characters",
+      "kind": "Portrait",
+      "description": "Cheveux et barbe gris, col montant et broche crabe : The President dans On the Beach.",
+      "alt": "Portrait fixe de The President, cheveux et barbe gris, veste sombre et broche crabe",
+      "src": "modes/echos-de-la-greve/assets/static-completion-20261125/the-president-ds2.png",
+      "work": "ds2",
+      "version": "Veste sombre · portrait",
+      "representation": "Image fixe",
+      "bible": "../../docs/combat/BIBLE_COMBAT.md#172-sources-et-versions-des-nouvelles-bases",
+      "reference": "../../docs/combat/UNIVERS_DS.md#ref-the-president-ds2",
+      "width": 1453,
+      "height": 1083
+    },
+    {
+      "id": "tomorrow-white-dress-ds2",
+      "title": "Tomorrow · robe blanche",
+      "category": "costumes",
+      "kind": "Variante en portrait",
+      "description": "Le col montant et les plis de la robe blanche, avec la paume sombre de Tomorrow.",
+      "alt": "Tomorrow en robe blanche plissée, col montant et bras tendu",
+      "src": "modes/echos-de-la-greve/assets/static-completion-20261125/tomorrow-white-dress-ds2.png",
+      "work": "ds2",
+      "version": "Robe blanche · haut de la tenue",
+      "representation": "Image fixe",
+      "bible": "../../docs/combat/BIBLE_COMBAT.md#172-sources-et-versions-des-nouvelles-bases",
+      "reference": "../../docs/combat/UNIVERS_DS.md#ref-tomorrow-white-dress-ds2",
+      "width": 1752,
+      "height": 897
+    },
+    {
+      "id": "sam-grey-promo-ds2",
+      "title": "Sam · cheveux gris",
+      "category": "costumes",
+      "kind": "Variante en portrait",
+      "description": "Les cheveux et la barbe gris de Sam, dans la version du premier visuel promotionnel.",
+      "alt": "Portrait de Sam aux cheveux longs gris, barbe grise et épaules découvertes",
+      "src": "modes/echos-de-la-greve/assets/static-completion-20261125/sam-grey-promo-ds2.png",
+      "work": "ds2",
+      "version": "Visuel promotionnel ancien · épaules découvertes",
+      "representation": "Image fixe",
+      "bible": "../../docs/combat/BIBLE_COMBAT.md#172-sources-et-versions-des-nouvelles-bases",
+      "reference": "../../docs/combat/UNIVERS_DS.md#ref-sam-grey-promo-ds2",
+      "width": 1312,
+      "height": 1199
+    },
+    {
+      "id": "fragile-early-outfit-ds2",
+      "title": "Fragile · première tenue",
+      "category": "costumes",
+      "kind": "Variante en portrait",
+      "description": "Fragile aux cheveux courts, dans la tenue à sangles d’un visuel promotionnel ancien.",
+      "alt": "Portrait de Fragile aux cheveux courts avec son haut à sangles",
+      "src": "modes/echos-de-la-greve/assets/static-completion-20261125/fragile-early-outfit-ds2.png",
+      "work": "ds2",
+      "version": "Visuel promotionnel ancien · haut à sangles",
+      "representation": "Image fixe",
+      "bible": "../../docs/combat/BIBLE_COMBAT.md#172-sources-et-versions-des-nouvelles-bases",
+      "reference": "../../docs/combat/UNIVERS_DS.md#ref-fragile-early-outfit-ds2",
+      "width": 1402,
+      "height": 1122
+    },
+    {
+      "id": "dhv-magellan-isolated-ds2",
+      "title": "DHV Magellan",
+      "category": "vehicles",
+      "kind": "Véhicule isolé",
+      "description": "La silhouette allongée du Magellan, présentée seule pour en parcourir les formes.",
+      "alt": "Image fixe du DHV Magellan isolé, long vaisseau sombre aux structures supérieures",
+      "src": "modes/echos-de-la-greve/assets/static-completion-20261125/dhv-magellan-isolated-ds2.png",
+      "work": "ds2",
+      "version": "Vaisseau · vue fixe isolée",
+      "representation": "Image fixe",
+      "bible": "../../docs/combat/BIBLE_COMBAT.md#172-sources-et-versions-des-nouvelles-bases",
+      "reference": "../../docs/combat/UNIVERS_DS.md#ref-dhv-magellan-isolated-ds2",
+      "layout": "wide",
+      "width": 1774,
+      "height": 887
+    },
+    {
+      "id": "tri-cruiser-ds2",
+      "title": "Tri-Cruiser",
+      "category": "vehicles",
+      "kind": "Véhicule isolé",
+      "description": "Trois roues, carénage gris et éclairages bleus : le Tri-Cruiser dans une vue fixe.",
+      "alt": "Tri-Cruiser de Death Stranding 2, trois roues et carénage gris",
+      "src": "modes/echos-de-la-greve/assets/static-completion-20261125/tri-cruiser-ds2.png",
+      "work": "ds2",
+      "version": "Véhicule à trois roues",
+      "representation": "Image fixe",
+      "bible": "../../docs/combat/BIBLE_COMBAT.md#172-sources-et-versions-des-nouvelles-bases",
+      "reference": "../../docs/combat/UNIVERS_DS.md#ref-tri-cruiser-ds2",
+      "layout": "wide",
+      "width": 1774,
+      "height": 887
+    },
+    {
+      "id": "truck-ds2",
+      "title": "Camion tout-terrain · DS2",
+      "category": "vehicles",
+      "kind": "Véhicule isolé",
+      "description": "Une cabine haute et quatre grandes roues, dans cette silhouette de camion de DS2.",
+      "alt": "Camion tout-terrain de Death Stranding 2, cabine haute et quatre roues",
+      "src": "modes/echos-de-la-greve/assets/static-completion-20261125/truck-ds2.png",
+      "work": "ds2",
+      "version": "Camion DS2 · modèle précis à confirmer",
+      "representation": "Image fixe",
+      "bible": "../../docs/combat/BIBLE_COMBAT.md#172-sources-et-versions-des-nouvelles-bases",
+      "reference": "../../docs/combat/UNIVERS_DS.md#ref-truck-ds2",
+      "layout": "wide",
+      "width": 1536,
+      "height": 1024
+    },
+    {
+      "id": "coffin-board-ds2",
+      "title": "Coffin board",
+      "category": "props",
+      "kind": "Équipement isolé",
+      "description": "La plateforme sombre à éclairage bleu, présentée sans porteur dans une vue fixe.",
+      "alt": "Image fixe d’un coffin board sombre, plateforme étroite à éclairage bleu",
+      "src": "modes/echos-de-la-greve/assets/static-completion-20261125/coffin-board-ds2.png",
+      "work": "ds2",
+      "version": "Plateforme de déplacement",
+      "representation": "Image fixe",
+      "bible": "../../docs/combat/BIBLE_COMBAT.md#172-sources-et-versions-des-nouvelles-bases",
+      "reference": "../../docs/combat/UNIVERS_DS.md#ref-coffin-board-ds2",
+      "layout": "wide",
+      "width": 2172,
+      "height": 724
+    },
+    {
+      "id": "cargo-capsule-ds2",
+      "title": "Capsule de fret déployée",
+      "category": "props",
+      "kind": "Module isolé",
+      "description": "Le module de transport et ses ailes déployées, dans une vue fixe autonome.",
+      "alt": "Capsule de fret verticale et ouverte avec deux ailes latérales déployées",
+      "src": "modes/echos-de-la-greve/assets/static-completion-20261125/cargo-capsule-ds2.png",
+      "work": "ds2",
+      "version": "Module lancé · ailes déployées",
+      "representation": "Image fixe",
+      "bible": "../../docs/combat/BIBLE_COMBAT.md#172-sources-et-versions-des-nouvelles-bases",
+      "reference": "../../docs/combat/UNIVERS_DS.md#ref-cargo-capsule-ds2",
+      "width": 1672,
+      "height": 941
+    },
+    {
+      "id": "maser-handgun-ds2",
+      "title": "Maser Handgun",
+      "category": "props",
+      "kind": "Arme isolée",
+      "description": "Le profil compact du pistolet Maser, avec sa poignée oblique et son bloc supérieur.",
+      "alt": "Image fixe du Maser Handgun de Death Stranding 2, arme grise à poignée oblique",
+      "src": "modes/echos-de-la-greve/assets/static-completion-20261125/maser-handgun-ds2.png",
+      "work": "ds2",
+      "version": "Arme électrique · vue de profil",
+      "representation": "Image fixe",
+      "bible": "../../docs/combat/BIBLE_COMBAT.md#172-sources-et-versions-des-nouvelles-bases",
+      "reference": "../../docs/combat/UNIVERS_DS.md#ref-maser-handgun-ds2",
+      "layout": "wide",
+      "width": 1536,
+      "height": 1024
+    },
+    {
+      "id": "dunes-ds2-panorama",
+      "title": "Dunes sous le vent",
+      "category": "stages",
+      "kind": "Panorama",
+      "description": "Un soleil bas éclaire les crêtes de sable et les reliefs lointains du désert.",
+      "alt": "Panorama latéral de dunes au soleil bas, sable ocre et montagnes lointaines",
+      "src": "modes/echos-de-la-greve/assets/static-completion-20261125/dunes-ds2-panorama.png",
+      "work": "ds2",
+      "version": "Désert · soleil bas",
+      "representation": "Image fixe",
+      "bible": "../../docs/combat/BIBLE_COMBAT.md#175-trois-arènes-ds2-et-profil-statique",
+      "reference": "../../docs/combat/UNIVERS_DS.md#10-références-du-complément-et-rôles-à-concevoir",
+      "layout": "wide",
+      "width": 1672,
+      "height": 941
+    },
+    {
+      "id": "maser-gun-dc",
+      "title": "Maser Gun",
+      "category": "props",
+      "kind": "Arme électrique",
+      "work": "ds1-dc",
+      "version": "Director’s Cut · vue isolée",
+      "description": "Le corps cylindrique sombre et les deux rails du Maser Gun de Director’s Cut, présentés sans porteur.",
+      "alt": "Maser Gun de Director’s Cut, corps noir cylindrique, deux rails et petits accents rouges",
+      "src": "modes/echos-de-la-greve/assets/static-domains-20261125/maser-gun-dc.png",
+      "width": 1536,
+      "height": 1024,
+      "representation": "Image fixe",
+      "bible": "../../docs/combat/BIBLE_COMBAT.md#lot-domaines-20261125",
+      "reference": "../../docs/combat/UNIVERS_DS.md#ref-maser-gun-dc",
+      "layout": "wide"
+    },
+    {
+      "id": "cargo-catapult-dc",
+      "title": "Catapulte de fret",
+      "category": "props",
+      "kind": "Structure de livraison",
+      "work": "ds1-dc",
+      "version": "Director’s Cut · socle et lanceur",
+      "description": "Une plateforme circulaire, un pied sombre et un lanceur incliné à vérins jaunes composent cette structure de fret.",
+      "alt": "Catapulte de fret complète sur son socle circulaire",
+      "src": "modes/echos-de-la-greve/assets/static-domains-20261125/cargo-catapult-dc.png",
+      "width": 1254,
+      "height": 1254,
+      "representation": "Image fixe",
+      "bible": "../../docs/combat/BIBLE_COMBAT.md#lot-domaines-20261125",
+      "reference": "../../docs/combat/UNIVERS_DS.md#ref-cargo-catapult-dc",
+      "layout": "wide"
+    },
+    {
+      "id": "roadster-dc",
+      "title": "Roadster",
+      "category": "vehicles",
+      "kind": "Véhicule",
+      "work": "ds1-dc",
+      "version": "Director’s Cut · trois quarts arrière",
+      "description": "Le Roadster gris du circuit, à ciel ouvert, avec ses roues carénées et ses feux arrière étroits.",
+      "alt": "Roadster gris complet vu de trois quarts arrière, siège vide",
+      "src": "modes/echos-de-la-greve/assets/static-domains-20261125/roadster-dc.png",
+      "width": 1536,
+      "height": 1024,
+      "representation": "Image fixe",
+      "bible": "../../docs/combat/BIBLE_COMBAT.md#lot-domaines-20261125",
+      "reference": "../../docs/combat/UNIVERS_DS.md#ref-roadster-dc",
+      "layout": "wide"
+    },
+    {
+      "id": "buddy-bot-dc",
+      "title": "Buddy Bot",
+      "category": "props",
+      "kind": "Robot porteur",
+      "work": "ds1-dc",
+      "version": "Director’s Cut · chargé",
+      "description": "Deux jambes articulées soutiennent un empilement de caisses jaunes et noires. Le robot est présenté en pose fixe.",
+      "alt": "Buddy Bot à deux jambes métalliques portant des caisses jaunes et noires",
+      "src": "modes/echos-de-la-greve/assets/static-domains-20261125/buddy-bot-dc.png",
+      "width": 1024,
+      "height": 1536,
+      "representation": "Image fixe",
+      "bible": "../../docs/combat/BIBLE_COMBAT.md#lot-domaines-20261125",
+      "reference": "../../docs/combat/UNIVERS_DS.md#ref-buddy-bot-dc"
+    },
+    {
+      "id": "jump-ramp-dc",
+      "title": "Rampe de saut",
+      "category": "props",
+      "kind": "Structure de livraison",
+      "work": "ds1-dc",
+      "version": "Director’s Cut · arc jaune",
+      "description": "Une plateforme métallique basse sous un arc jaune, isolée pour les futures compositions.",
+      "alt": "Rampe grise de Director’s Cut avec son arc jaune lumineux",
+      "src": "modes/echos-de-la-greve/assets/static-domains-20261125/jump-ramp-dc.png",
+      "width": 1536,
+      "height": 1024,
+      "representation": "Image fixe",
+      "bible": "../../docs/combat/BIBLE_COMBAT.md#lot-domaines-20261125",
+      "reference": "../../docs/combat/UNIVERS_DS.md#ref-jump-ramp-dc",
+      "layout": "wide"
+    },
+    {
+      "id": "chiral-bridge-dc",
+      "title": "Pont chiral",
+      "category": "props",
+      "kind": "Structure de traversée",
+      "work": "ds1-dc",
+      "version": "Director’s Cut · passerelle bleue",
+      "description": "La courbe d’une passerelle bleutée apparaît entre deux extrémités, sur fond transparent.",
+      "alt": "Pont chiral translucide bleu formant une longue arche",
+      "src": "modes/echos-de-la-greve/assets/static-domains-20261125/chiral-bridge-dc.png",
+      "width": 1536,
+      "height": 1024,
+      "representation": "Image fixe",
+      "bible": "../../docs/combat/BIBLE_COMBAT.md#lot-domaines-20261125",
+      "reference": "../../docs/combat/UNIVERS_DS.md#ref-chiral-bridge-dc",
+      "layout": "wide"
+    },
+    {
+      "id": "firing-range-dc-panorama",
+      "title": "Stand de tir",
+      "category": "stages",
+      "kind": "Panorama",
+      "work": "ds1-dc",
+      "version": "Director’s Cut · étude de décor",
+      "description": "Murs modulaires, barrières et balises bleues composent cette étude fixe du stand de tir.",
+      "alt": "Stand de tir vide de Director’s Cut, modules de béton, caillebotis et balises bleues",
+      "src": "modes/echos-de-la-greve/assets/static-domains-20261125/firing-range-dc-panorama.png",
+      "width": 1672,
+      "height": 941,
+      "representation": "Image fixe",
+      "bible": "../../docs/combat/BIBLE_COMBAT.md#lot-domaines-20261125",
+      "reference": "../../docs/combat/UNIVERS_DS.md#ref-firing-range-dc-panorama",
+      "layout": "wide"
+    },
+    {
+      "id": "monorail-yamato-ds2",
+      "title": "Wagon de monorail · Yamato",
+      "category": "vehicles",
+      "kind": "Module de fret",
+      "work": "ds2",
+      "version": "On the Beach · livrée Yamato",
+      "description": "Un conteneur blanc suspendu à son chariot jaune, dans la livrée de la collaboration Yamato.",
+      "alt": "Wagon blanc Yamato de DS2 suspendu sous un court tronçon de monorail",
+      "src": "modes/echos-de-la-greve/assets/static-domains-20261125/monorail-yamato-ds2.png",
+      "width": 1536,
+      "height": 1024,
+      "representation": "Image fixe",
+      "bible": "../../docs/combat/BIBLE_COMBAT.md#lot-domaines-20261125",
+      "reference": "../../docs/combat/UNIVERS_DS.md#ref-monorail-yamato-ds2",
+      "layout": "wide"
+    },
+    {
+      "id": "terminal-hangar-panorama",
+      "title": "Centre de distribution · hangar",
+      "category": "stages",
+      "kind": "Panorama",
+      "work": "project-simulation",
+      "version": "Échos de la Grève · reconstitution",
+      "description": "Le hangar reconstruit pour prolonger le quai du centre : béton, fret en retrait et sol libre pour le duel.",
+      "alt": "Hangar de reconstitution, murs de béton, caisses à l’arrière et sol vide",
+      "src": "modes/echos-de-la-greve/assets/static-domains-20261125/terminal-hangar-panorama.png",
+      "width": 1672,
+      "height": 941,
+      "representation": "Image fixe",
+      "bible": "../../docs/combat/BIBLE_COMBAT.md#lot-domaines-20261125",
+      "reference": "../../docs/combat/UNIVERS_DS.md#ref-terminal-hangar-panorama",
+      "layout": "wide"
+    }
+  ],
+  "archive_images": [
+    "modes/echos-de-la-greve/assets/fighters/support/deadman-portrait.png",
+    "modes/echos-de-la-greve/assets/fighters/support/amelie-portrait.png",
+    "modes/echos-de-la-greve/assets/fighters/support/bridget-portrait.png",
+    "modes/echos-de-la-greve/assets/static-20261125/lockne-portrait.png",
+    "modes/echos-de-la-greve/assets/static-universe-20261125/sam-ds2-drawbridge-portrait.png",
+    "modes/echos-de-la-greve/assets/static-universe-20261125/fragile-ds2-portrait.png",
+    "modes/echos-de-la-greve/assets/static-universe-20261125/higgs-ds2-portrait.png",
+    "modes/echos-de-la-greve/assets/static-universe-20261125/dollman-ds2-body.png",
+    "modes/echos-de-la-greve/assets/static-universe-20261125/tomorrow-ds2-portrait.png",
+    "modes/echos-de-la-greve/assets/static-universe-20261125/rainy-ds2-portrait.png",
+    "modes/echos-de-la-greve/assets/static-universe-20261125/tarman-ds2-portrait.png",
+    "modes/echos-de-la-greve/assets/static-universe-20261125/neil-ds2-portrait.png",
+    "modes/echos-de-la-greve/assets/static-completion-20261125/lucy-ds2.png",
+    "modes/echos-de-la-greve/assets/static-completion-20261125/doctor-ds2.png",
+    "modes/echos-de-la-greve/assets/static-completion-20261125/heartman-ds2.png",
+    "modes/echos-de-la-greve/assets/static-completion-20261125/the-president-ds2.png"
+  ],
+  "story_frames": {
+    "sam": {
+      "intro": [
+        {
+          "src": "modes/echos-de-la-greve/assets/story/sam-intro.webp",
+          "caption": "Sam Porter Bridges · introduction"
+        },
+        {
+          "src": "modes/echos-de-la-greve/assets/story-completion-20261125/sam-intro-second.png",
+          "caption": "Le bracelet noué"
+        },
+        {
+          "src": "modes/echos-de-la-greve/assets/story-completion-20261125/sam-intro-insert.png",
+          "caption": "Sous le sel"
+        }
+      ],
+      "rival": [
+        {
+          "src": "modes/echos-de-la-greve/assets/story/sam-higgs-rival.webp",
+          "caption": "Sam Porter Bridges · rencontre avec le rival"
+        }
+      ],
+      "ending": [
+        {
+          "src": "modes/echos-de-la-greve/assets/story/sam-ending.webp",
+          "caption": "Sam Porter Bridges · conclusion"
+        },
+        {
+          "src": "modes/echos-de-la-greve/assets/story-completion-20261125/sam-ending-final.png",
+          "caption": "Cinq marques"
+        }
+      ]
+    },
+    "fragile": {
+      "intro": [
+        {
+          "src": "modes/echos-de-la-greve/assets/story/fragile-intro.webp",
+          "caption": "Fragile · introduction"
+        },
+        {
+          "src": "modes/echos-de-la-greve/assets/story-completion-20261125/fragile-intro-second.png",
+          "caption": "Côte à côte"
+        },
+        {
+          "src": "modes/echos-de-la-greve/assets/story-completion-20261125/fragile-intro-insert.png",
+          "caption": "La même tache"
+        }
+      ],
+      "rival": [
+        {
+          "src": "modes/echos-de-la-greve/assets/story/fragile-rival.webp",
+          "caption": "Fragile · rencontre avec le rival"
+        }
+      ],
+      "ending": [
+        {
+          "src": "modes/echos-de-la-greve/assets/story/fragile-ending.webp",
+          "caption": "Fragile · conclusion"
+        },
+        {
+          "src": "modes/echos-de-la-greve/assets/story-completion-20261125/fragile-ending-final.png",
+          "caption": "Le troisième bon"
+        }
+      ]
+    },
+    "higgs": {
+      "intro": [
+        {
+          "src": "modes/echos-de-la-greve/assets/story/higgs-intro.webp",
+          "caption": "Higgs Monaghan · introduction"
+        },
+        {
+          "src": "modes/echos-de-la-greve/assets/story-completion-20261125/higgs-intro-second.png",
+          "caption": "Le salut"
+        },
+        {
+          "src": "modes/echos-de-la-greve/assets/story-completion-20261125/higgs-intro-insert.png",
+          "caption": "Le masque remis"
+        }
+      ],
+      "rival": [
+        {
+          "src": "modes/echos-de-la-greve/assets/story/higgs-rival.webp",
+          "caption": "Higgs Monaghan · rencontre avec le rival"
+        }
+      ],
+      "ending": [
+        {
+          "src": "modes/echos-de-la-greve/assets/story/higgs-ending.webp",
+          "caption": "Higgs Monaghan · conclusion"
+        },
+        {
+          "src": "modes/echos-de-la-greve/assets/story-completion-20261125/higgs-ending-final.png",
+          "caption": "Le son coupé"
+        }
+      ]
+    },
+    "cliff": {
+      "intro": [
+        {
+          "src": "modes/echos-de-la-greve/assets/story/cliff-intro.webp",
+          "caption": "Clifford Unger · introduction"
+        },
+        {
+          "src": "modes/echos-de-la-greve/assets/story-completion-20261125/cliff-intro-second.png",
+          "caption": "Le récepteur éteint"
+        },
+        {
+          "src": "modes/echos-de-la-greve/assets/story-completion-20261125/cliff-intro-insert.png",
+          "caption": "Le bouton"
+        }
+      ],
+      "rival": [
+        {
+          "src": "modes/echos-de-la-greve/assets/story/cliff-rival.webp",
+          "caption": "Clifford Unger · rencontre avec le rival"
+        }
+      ],
+      "ending": [
+        {
+          "src": "modes/echos-de-la-greve/assets/story/cliff-ending.webp",
+          "caption": "Clifford Unger · conclusion"
+        },
+        {
+          "src": "modes/echos-de-la-greve/assets/story-completion-20261125/cliff-ending-final.png",
+          "caption": "Entendre la suite"
+        }
+      ]
+    },
+    "mule": {
+      "intro": [
+        {
+          "src": "modes/echos-de-la-greve/assets/story/mule-intro.webp",
+          "caption": "Porteur MULE · introduction"
+        },
+        {
+          "src": "modes/echos-de-la-greve/assets/story-completion-20261125/mule-intro-second.png",
+          "caption": "À travers le couvercle"
+        },
+        {
+          "src": "modes/echos-de-la-greve/assets/story-completion-20261125/mule-intro-insert.png",
+          "caption": "Une caisse vide"
+        }
+      ],
+      "rival": [
+        {
+          "src": "modes/echos-de-la-greve/assets/story/mule-rival.webp",
+          "caption": "Porteur MULE · rencontre avec le rival"
+        }
+      ],
+      "ending": [
+        {
+          "src": "modes/echos-de-la-greve/assets/story/mule-ending.webp",
+          "caption": "Porteur MULE · conclusion"
+        },
+        {
+          "src": "modes/echos-de-la-greve/assets/story-completion-20261125/mule-ending-final.png",
+          "caption": "Le départ signé"
+        }
+      ]
+    },
+    "diehardman": {
+      "intro": [
+        {
+          "src": "modes/echos-de-la-greve/assets/story/diehardman-intro.webp",
+          "caption": "Die-Hardman · introduction"
+        },
+        {
+          "src": "modes/echos-de-la-greve/assets/story-completion-20261125/diehardman-intro-second.png",
+          "caption": "Reconnaître l’ordre"
+        },
+        {
+          "src": "modes/echos-de-la-greve/assets/story-completion-20261125/diehardman-intro-insert.png",
+          "caption": "La ligne de fermeture"
+        }
+      ],
+      "rival": [
+        {
+          "src": "modes/echos-de-la-greve/assets/story/diehardman-rival.png",
+          "caption": "Die-Hardman · rencontre avec le rival"
+        }
+      ],
+      "ending": [
+        {
+          "src": "modes/echos-de-la-greve/assets/story/diehardman-ending.webp",
+          "caption": "Die-Hardman · conclusion"
+        },
+        {
+          "src": "modes/echos-de-la-greve/assets/story-completion-20261125/diehardman-ending-final.png",
+          "caption": "La clé descendue"
+        }
+      ]
+    },
+    "mama": {
+      "intro": [
+        {
+          "src": "modes/echos-de-la-greve/assets/story/mama-intro.webp",
+          "caption": "Mama · introduction"
+        },
+        {
+          "src": "modes/echos-de-la-greve/assets/story-completion-20261125/mama-intro-second.png",
+          "caption": "Quelqu’un au centre"
+        },
+        {
+          "src": "modes/echos-de-la-greve/assets/story-completion-20261125/mama-intro-insert.png",
+          "caption": "Deux points d’attache"
+        }
+      ],
+      "rival": [
+        {
+          "src": "modes/echos-de-la-greve/assets/story/mama-rival.webp",
+          "caption": "Mama · rencontre avec le rival"
+        }
+      ],
+      "ending": [
+        {
+          "src": "modes/echos-de-la-greve/assets/story/mama-ending.webp",
+          "caption": "Mama · conclusion"
+        },
+        {
+          "src": "modes/echos-de-la-greve/assets/story-completion-20261125/mama-ending-final.png",
+          "caption": "La deuxième traversée"
+        }
+      ]
+    },
+    "heartman": {
+      "intro": [
+        {
+          "src": "modes/echos-de-la-greve/assets/story/heartman-intro.webp",
+          "caption": "Heartman · introduction"
+        },
+        {
+          "src": "modes/echos-de-la-greve/assets/story-completion-20261125/heartman-intro-second.png",
+          "caption": "Revenir au début"
+        },
+        {
+          "src": "modes/echos-de-la-greve/assets/story-completion-20261125/heartman-intro-insert.png",
+          "caption": "La seconde blanche"
+        }
+      ],
+      "rival": [
+        {
+          "src": "modes/echos-de-la-greve/assets/story/heartman-rival.webp",
+          "caption": "Heartman · rencontre avec le rival"
+        }
+      ],
+      "ending": [
+        {
+          "src": "modes/echos-de-la-greve/assets/story/heartman-ending.webp",
+          "caption": "Heartman · conclusion"
+        },
+        {
+          "src": "modes/echos-de-la-greve/assets/story-completion-20261125/heartman-ending-final.png",
+          "caption": "Deux cercles"
+        }
+      ]
+    }
+  },
+  "campaign_image_bindings": [
+    {
+      "scene": "prologue",
+      "stage": "terminal",
+      "image_paths": [
+        "modes/echos-de-la-greve/assets/stages/terminal.webp"
+      ]
+    },
+    {
+      "scene": "balise-sans-adresse-avant",
+      "stage": "mule-camp",
+      "image_paths": [
+        "modes/echos-de-la-greve/assets/stages/mule-camp.webp",
+        "modes/echos-de-la-greve/assets/fighters/sam-portrait.webp"
+      ]
+    },
+    {
+      "scene": "balise-sans-adresse-apres",
+      "stage": "mule-camp",
+      "image_paths": [
+        "modes/echos-de-la-greve/assets/stages/mule-camp.webp",
+        "modes/echos-de-la-greve/assets/fighters/sam-portrait.webp"
+      ]
+    },
+    {
+      "scene": "detour-higgs-avant",
+      "stage": "south-knot-ruins",
+      "image_paths": [
+        "modes/echos-de-la-greve/assets/static-20261125/south-knot-ruins-panorama.png",
+        "modes/echos-de-la-greve/assets/fighters/fragile-portrait.webp"
+      ]
+    },
+    {
+      "scene": "detour-higgs-apres",
+      "stage": "south-knot-ruins",
+      "image_paths": [
+        "modes/echos-de-la-greve/assets/static-20261125/south-knot-ruins-panorama.png",
+        "modes/echos-de-la-greve/assets/fighters/fragile-portrait.webp"
+      ]
+    },
+    {
+      "scene": "ordre-ferme-avant",
+      "stage": "ruined-factory",
+      "image_paths": [
+        "modes/echos-de-la-greve/assets/stages/ruined-factory.webp",
+        "modes/echos-de-la-greve/assets/fighters/mama/atelier/portrait.png"
+      ]
+    },
+    {
+      "scene": "ordre-ferme-apres",
+      "stage": "ruined-factory",
+      "image_paths": [
+        "modes/echos-de-la-greve/assets/stages/ruined-factory.webp",
+        "modes/echos-de-la-greve/assets/fighters/mama/atelier/portrait.png"
+      ]
+    },
+    {
+      "scene": "memoire-ouverte-avant",
+      "stage": "battlefield",
+      "image_paths": [
+        "modes/echos-de-la-greve/assets/stages/battlefield.webp",
+        "modes/echos-de-la-greve/assets/fighters/heartman/portrait.png"
+      ]
+    },
+    {
+      "scene": "memoire-ouverte-apres",
+      "stage": "battlefield",
+      "image_paths": [
+        "modes/echos-de-la-greve/assets/stages/battlefield.webp",
+        "modes/echos-de-la-greve/assets/fighters/heartman/portrait.png"
+      ]
+    },
+    {
+      "scene": "convoi-des-retours-avant",
+      "stage": "timefall-farm",
+      "image_paths": [
+        "modes/echos-de-la-greve/assets/static-20261125/timefall-farm-panorama.png",
+        "modes/echos-de-la-greve/assets/fighters/diehardman/portrait.png"
+      ]
+    },
+    {
+      "scene": "convoi-des-retours-apres",
+      "stage": "timefall-farm",
+      "image_paths": [
+        "modes/echos-de-la-greve/assets/static-20261125/timefall-farm-panorama.png",
+        "modes/echos-de-la-greve/assets/fighters/diehardman/portrait.png"
+      ]
+    },
+    {
+      "scene": "dernier-lien-avant",
+      "stage": "shore",
+      "image_paths": [
+        "modes/echos-de-la-greve/assets/stages/shore.webp",
+        "modes/echos-de-la-greve/assets/fighters/sam-portrait.webp"
+      ]
+    },
+    {
+      "scene": "dernier-lien-apres",
+      "stage": "shore",
+      "image_paths": [
+        "modes/echos-de-la-greve/assets/stages/shore.webp",
+        "modes/echos-de-la-greve/assets/fighters/sam-portrait.webp"
+      ]
+    },
+    {
+      "scene": "conclusion",
+      "stage": "shore",
+      "image_paths": [
+        "modes/echos-de-la-greve/assets/stages/shore.webp"
+      ]
+    }
+  ],
+  "image_path_origins": {
+    "StrandAssets": [
+      "modes/echos-de-la-greve/assets/fighters/cliff-action.webp",
+      "modes/echos-de-la-greve/assets/fighters/cliff-hit.webp",
+      "modes/echos-de-la-greve/assets/fighters/cliff-jump.png",
+      "modes/echos-de-la-greve/assets/fighters/cliff-portrait.webp",
+      "modes/echos-de-la-greve/assets/fighters/cliff-stance.webp",
+      "modes/echos-de-la-greve/assets/fighters/cliff-step.webp",
+      "modes/echos-de-la-greve/assets/fighters/cliff/apex.png",
+      "modes/echos-de-la-greve/assets/fighters/cliff/crouch.png",
+      "modes/echos-de-la-greve/assets/fighters/cliff/fall.png",
+      "modes/echos-de-la-greve/assets/fighters/cliff/guard.png",
+      "modes/echos-de-la-greve/assets/fighters/cliff/rise.png",
+      "modes/echos-de-la-greve/assets/fighters/diehardman/action.png",
+      "modes/echos-de-la-greve/assets/fighters/diehardman/apex.png",
+      "modes/echos-de-la-greve/assets/fighters/diehardman/crouch.png",
+      "modes/echos-de-la-greve/assets/fighters/diehardman/fall.png",
+      "modes/echos-de-la-greve/assets/fighters/diehardman/guard.png",
+      "modes/echos-de-la-greve/assets/fighters/diehardman/hit.png",
+      "modes/echos-de-la-greve/assets/fighters/diehardman/jump.png",
+      "modes/echos-de-la-greve/assets/fighters/diehardman/portrait.png",
+      "modes/echos-de-la-greve/assets/fighters/diehardman/rise.png",
+      "modes/echos-de-la-greve/assets/fighters/diehardman/stance.png",
+      "modes/echos-de-la-greve/assets/fighters/diehardman/step.png",
+      "modes/echos-de-la-greve/assets/fighters/fragile-action.webp",
+      "modes/echos-de-la-greve/assets/fighters/fragile-hit.webp",
+      "modes/echos-de-la-greve/assets/fighters/fragile-jump.png",
+      "modes/echos-de-la-greve/assets/fighters/fragile-portrait.webp",
+      "modes/echos-de-la-greve/assets/fighters/fragile-stance.webp",
+      "modes/echos-de-la-greve/assets/fighters/fragile-step.webp",
+      "modes/echos-de-la-greve/assets/fighters/fragile/apex.png",
+      "modes/echos-de-la-greve/assets/fighters/fragile/crouch.png",
+      "modes/echos-de-la-greve/assets/fighters/fragile/fall.png",
+      "modes/echos-de-la-greve/assets/fighters/fragile/guard.png",
+      "modes/echos-de-la-greve/assets/fighters/fragile/rise.png",
+      "modes/echos-de-la-greve/assets/fighters/heartman-jump.png",
+      "modes/echos-de-la-greve/assets/fighters/heartman/action.png",
+      "modes/echos-de-la-greve/assets/fighters/heartman/apex.png",
+      "modes/echos-de-la-greve/assets/fighters/heartman/crouch.png",
+      "modes/echos-de-la-greve/assets/fighters/heartman/fall.png",
+      "modes/echos-de-la-greve/assets/fighters/heartman/guard.png",
+      "modes/echos-de-la-greve/assets/fighters/heartman/hit.png",
+      "modes/echos-de-la-greve/assets/fighters/heartman/portrait.png",
+      "modes/echos-de-la-greve/assets/fighters/heartman/rise.png",
+      "modes/echos-de-la-greve/assets/fighters/heartman/stance.png",
+      "modes/echos-de-la-greve/assets/fighters/heartman/step.png",
+      "modes/echos-de-la-greve/assets/fighters/higgs/action.png",
+      "modes/echos-de-la-greve/assets/fighters/higgs/apex.png",
+      "modes/echos-de-la-greve/assets/fighters/higgs/crouch.png",
+      "modes/echos-de-la-greve/assets/fighters/higgs/fall.png",
+      "modes/echos-de-la-greve/assets/fighters/higgs/guard.png",
+      "modes/echos-de-la-greve/assets/fighters/higgs/hit.png",
+      "modes/echos-de-la-greve/assets/fighters/higgs/jump.png",
+      "modes/echos-de-la-greve/assets/fighters/higgs/portrait.png",
+      "modes/echos-de-la-greve/assets/fighters/higgs/rise.png",
+      "modes/echos-de-la-greve/assets/fighters/higgs/stance.png",
+      "modes/echos-de-la-greve/assets/fighters/higgs/step.png",
+      "modes/echos-de-la-greve/assets/fighters/mama/atelier/action.png",
+      "modes/echos-de-la-greve/assets/fighters/mama/atelier/apex.png",
+      "modes/echos-de-la-greve/assets/fighters/mama/atelier/crouch.png",
+      "modes/echos-de-la-greve/assets/fighters/mama/atelier/fall.png",
+      "modes/echos-de-la-greve/assets/fighters/mama/atelier/guard.png",
+      "modes/echos-de-la-greve/assets/fighters/mama/atelier/hit.png",
+      "modes/echos-de-la-greve/assets/fighters/mama/atelier/portrait.png",
+      "modes/echos-de-la-greve/assets/fighters/mama/atelier/rise.png",
+      "modes/echos-de-la-greve/assets/fighters/mama/atelier/stance.png",
+      "modes/echos-de-la-greve/assets/fighters/mama/atelier/step.png",
+      "modes/echos-de-la-greve/assets/fighters/mama/viaduc/action.png",
+      "modes/echos-de-la-greve/assets/fighters/mama/viaduc/apex.png",
+      "modes/echos-de-la-greve/assets/fighters/mama/viaduc/crouch.png",
+      "modes/echos-de-la-greve/assets/fighters/mama/viaduc/fall.png",
+      "modes/echos-de-la-greve/assets/fighters/mama/viaduc/guard.png",
+      "modes/echos-de-la-greve/assets/fighters/mama/viaduc/hit.png",
+      "modes/echos-de-la-greve/assets/fighters/mama/viaduc/portrait.png",
+      "modes/echos-de-la-greve/assets/fighters/mama/viaduc/rise.png",
+      "modes/echos-de-la-greve/assets/fighters/mama/viaduc/stance.png",
+      "modes/echos-de-la-greve/assets/fighters/mama/viaduc/step.png",
+      "modes/echos-de-la-greve/assets/fighters/mule-action.webp",
+      "modes/echos-de-la-greve/assets/fighters/mule-hit.webp",
+      "modes/echos-de-la-greve/assets/fighters/mule-jump.png",
+      "modes/echos-de-la-greve/assets/fighters/mule-portrait.webp",
+      "modes/echos-de-la-greve/assets/fighters/mule-stance.webp",
+      "modes/echos-de-la-greve/assets/fighters/mule-step.webp",
+      "modes/echos-de-la-greve/assets/fighters/mule/apex.png",
+      "modes/echos-de-la-greve/assets/fighters/mule/crouch.png",
+      "modes/echos-de-la-greve/assets/fighters/mule/fall.png",
+      "modes/echos-de-la-greve/assets/fighters/mule/guard.png",
+      "modes/echos-de-la-greve/assets/fighters/mule/rise.png",
+      "modes/echos-de-la-greve/assets/fighters/sam-action.webp",
+      "modes/echos-de-la-greve/assets/fighters/sam-hit.webp",
+      "modes/echos-de-la-greve/assets/fighters/sam-jump.png",
+      "modes/echos-de-la-greve/assets/fighters/sam-portrait.webp",
+      "modes/echos-de-la-greve/assets/fighters/sam-stance.webp",
+      "modes/echos-de-la-greve/assets/fighters/sam-step.webp",
+      "modes/echos-de-la-greve/assets/fighters/sam/apex.png",
+      "modes/echos-de-la-greve/assets/fighters/sam/crouch.png",
+      "modes/echos-de-la-greve/assets/fighters/sam/fall.png",
+      "modes/echos-de-la-greve/assets/fighters/sam/guard.png",
+      "modes/echos-de-la-greve/assets/fighters/sam/rise.png",
+      "modes/echos-de-la-greve/assets/fighters/support/amelie-portrait.png",
+      "modes/echos-de-la-greve/assets/fighters/support/bridget-portrait.png",
+      "modes/echos-de-la-greve/assets/fighters/support/deadman-portrait.png",
+      "modes/echos-de-la-greve/assets/finishers/cliff.webp",
+      "modes/echos-de-la-greve/assets/finishers/diehardman.webp",
+      "modes/echos-de-la-greve/assets/finishers/fragile.webp",
+      "modes/echos-de-la-greve/assets/finishers/heartman.webp",
+      "modes/echos-de-la-greve/assets/finishers/higgs.webp",
+      "modes/echos-de-la-greve/assets/finishers/mama.webp",
+      "modes/echos-de-la-greve/assets/finishers/mule.webp",
+      "modes/echos-de-la-greve/assets/finishers/sam.webp",
+      "modes/echos-de-la-greve/assets/projectiles/cliff.png",
+      "modes/echos-de-la-greve/assets/projectiles/gate.png",
+      "modes/echos-de-la-greve/assets/projectiles/heartman.png",
+      "modes/echos-de-la-greve/assets/projectiles/higgs.png",
+      "modes/echos-de-la-greve/assets/projectiles/memory.png",
+      "modes/echos-de-la-greve/assets/projectiles/recall.png",
+      "modes/echos-de-la-greve/assets/projectiles/sam.png",
+      "modes/echos-de-la-greve/assets/props/bridge-deck.png",
+      "modes/echos-de-la-greve/assets/props/courier-parcel-closed.png",
+      "modes/echos-de-la-greve/assets/props/courier-parcel-open.png",
+      "modes/echos-de-la-greve/assets/props/gold-imprint.png",
+      "modes/echos-de-la-greve/assets/props/heartman-monitor.png",
+      "modes/echos-de-la-greve/assets/props/mule-cargo.webp",
+      "modes/echos-de-la-greve/assets/stages/battlefield-distant.png",
+      "modes/echos-de-la-greve/assets/stages/battlefield-floor.png",
+      "modes/echos-de-la-greve/assets/stages/battlefield-foreground.webp",
+      "modes/echos-de-la-greve/assets/stages/battlefield-midground.png",
+      "modes/echos-de-la-greve/assets/stages/battlefield-sky.png",
+      "modes/echos-de-la-greve/assets/stages/battlefield.webp",
+      "modes/echos-de-la-greve/assets/stages/dunes-ds2-distant.png",
+      "modes/echos-de-la-greve/assets/stages/dunes-ds2-floor.png",
+      "modes/echos-de-la-greve/assets/stages/dunes-ds2-foreground.png",
+      "modes/echos-de-la-greve/assets/stages/dunes-ds2-midground.png",
+      "modes/echos-de-la-greve/assets/stages/dunes-ds2-sky.png",
+      "modes/echos-de-la-greve/assets/stages/heartman-lab-distant.png",
+      "modes/echos-de-la-greve/assets/stages/heartman-lab-floor.png",
+      "modes/echos-de-la-greve/assets/stages/heartman-lab-foreground.webp",
+      "modes/echos-de-la-greve/assets/stages/heartman-lab-midground.png",
+      "modes/echos-de-la-greve/assets/stages/heartman-lab-sky.png",
+      "modes/echos-de-la-greve/assets/stages/heartman-lab.webp",
+      "modes/echos-de-la-greve/assets/stages/incinerator-distant.png",
+      "modes/echos-de-la-greve/assets/stages/incinerator-floor.png",
+      "modes/echos-de-la-greve/assets/stages/incinerator-foreground.png",
+      "modes/echos-de-la-greve/assets/stages/incinerator-midground.png",
+      "modes/echos-de-la-greve/assets/stages/incinerator-sky.png",
+      "modes/echos-de-la-greve/assets/stages/incinerator.png",
+      "modes/echos-de-la-greve/assets/stages/magellan-ds2-distant.png",
+      "modes/echos-de-la-greve/assets/stages/magellan-ds2-floor.png",
+      "modes/echos-de-la-greve/assets/stages/magellan-ds2-foreground.png",
+      "modes/echos-de-la-greve/assets/stages/magellan-ds2-midground.png",
+      "modes/echos-de-la-greve/assets/stages/magellan-ds2-sky.png",
+      "modes/echos-de-la-greve/assets/stages/mama-workshop-distant.png",
+      "modes/echos-de-la-greve/assets/stages/mama-workshop-floor.png",
+      "modes/echos-de-la-greve/assets/stages/mama-workshop-foreground.webp",
+      "modes/echos-de-la-greve/assets/stages/mama-workshop-midground.png",
+      "modes/echos-de-la-greve/assets/stages/mama-workshop-sky.png",
+      "modes/echos-de-la-greve/assets/stages/mama-workshop.webp",
+      "modes/echos-de-la-greve/assets/stages/mountain-knot-approach-distant.png",
+      "modes/echos-de-la-greve/assets/stages/mountain-knot-approach-floor.png",
+      "modes/echos-de-la-greve/assets/stages/mountain-knot-approach-foreground.png",
+      "modes/echos-de-la-greve/assets/stages/mountain-knot-approach-midground.png",
+      "modes/echos-de-la-greve/assets/stages/mountain-knot-approach-sky.png",
+      "modes/echos-de-la-greve/assets/stages/mountain-pass-distant.png",
+      "modes/echos-de-la-greve/assets/stages/mountain-pass-floor.png",
+      "modes/echos-de-la-greve/assets/stages/mountain-pass-foreground.webp",
+      "modes/echos-de-la-greve/assets/stages/mountain-pass-midground.png",
+      "modes/echos-de-la-greve/assets/stages/mountain-pass-sky.png",
+      "modes/echos-de-la-greve/assets/stages/mountain-pass.webp",
+      "modes/echos-de-la-greve/assets/stages/mule-camp-distant.png",
+      "modes/echos-de-la-greve/assets/stages/mule-camp-dry-distant.png",
+      "modes/echos-de-la-greve/assets/stages/mule-camp-dry-floor.png",
+      "modes/echos-de-la-greve/assets/stages/mule-camp-dry-foreground.png",
+      "modes/echos-de-la-greve/assets/stages/mule-camp-dry-midground.png",
+      "modes/echos-de-la-greve/assets/stages/mule-camp-dry-sky.png",
+      "modes/echos-de-la-greve/assets/stages/mule-camp-dry.png",
+      "modes/echos-de-la-greve/assets/stages/mule-camp-floor.png",
+      "modes/echos-de-la-greve/assets/stages/mule-camp-foreground.webp",
+      "modes/echos-de-la-greve/assets/stages/mule-camp-midground.png",
+      "modes/echos-de-la-greve/assets/stages/mule-camp-sky.png",
+      "modes/echos-de-la-greve/assets/stages/mule-camp.webp",
+      "modes/echos-de-la-greve/assets/stages/plate-gate-ds2-distant.png",
+      "modes/echos-de-la-greve/assets/stages/plate-gate-ds2-floor.png",
+      "modes/echos-de-la-greve/assets/stages/plate-gate-ds2-foreground.png",
+      "modes/echos-de-la-greve/assets/stages/plate-gate-ds2-midground.png",
+      "modes/echos-de-la-greve/assets/stages/plate-gate-ds2-sky.png",
+      "modes/echos-de-la-greve/assets/stages/port-knot-distant.png",
+      "modes/echos-de-la-greve/assets/stages/port-knot-floor.png",
+      "modes/echos-de-la-greve/assets/stages/port-knot-foreground.png",
+      "modes/echos-de-la-greve/assets/stages/port-knot-midground.png",
+      "modes/echos-de-la-greve/assets/stages/port-knot-sky.png",
+      "modes/echos-de-la-greve/assets/stages/port-knot.png",
+      "modes/echos-de-la-greve/assets/stages/ruined-factory-distant.png",
+      "modes/echos-de-la-greve/assets/stages/ruined-factory-floor.png",
+      "modes/echos-de-la-greve/assets/stages/ruined-factory-foreground.webp",
+      "modes/echos-de-la-greve/assets/stages/ruined-factory-midground.png",
+      "modes/echos-de-la-greve/assets/stages/ruined-factory-sky.png",
+      "modes/echos-de-la-greve/assets/stages/ruined-factory.webp",
+      "modes/echos-de-la-greve/assets/stages/sandstorm-ds2-distant.png",
+      "modes/echos-de-la-greve/assets/stages/sandstorm-ds2-floor.png",
+      "modes/echos-de-la-greve/assets/stages/sandstorm-ds2-foreground.png",
+      "modes/echos-de-la-greve/assets/stages/sandstorm-ds2-midground.png",
+      "modes/echos-de-la-greve/assets/stages/sandstorm-ds2-sky.png",
+      "modes/echos-de-la-greve/assets/stages/shore-distant.png",
+      "modes/echos-de-la-greve/assets/stages/shore-floor.png",
+      "modes/echos-de-la-greve/assets/stages/shore-foreground.webp",
+      "modes/echos-de-la-greve/assets/stages/shore-midground.png",
+      "modes/echos-de-la-greve/assets/stages/shore-sky.png",
+      "modes/echos-de-la-greve/assets/stages/shore.webp",
+      "modes/echos-de-la-greve/assets/stages/south-knot-ruins-distant.png",
+      "modes/echos-de-la-greve/assets/stages/south-knot-ruins-floor.png",
+      "modes/echos-de-la-greve/assets/stages/south-knot-ruins-foreground.png",
+      "modes/echos-de-la-greve/assets/stages/south-knot-ruins-midground.png",
+      "modes/echos-de-la-greve/assets/stages/south-knot-ruins-sky.png",
+      "modes/echos-de-la-greve/assets/stages/tar-basin-distant.png",
+      "modes/echos-de-la-greve/assets/stages/tar-basin-floor.png",
+      "modes/echos-de-la-greve/assets/stages/tar-basin-foreground.webp",
+      "modes/echos-de-la-greve/assets/stages/tar-basin-midground.png",
+      "modes/echos-de-la-greve/assets/stages/tar-basin-sky.png",
+      "modes/echos-de-la-greve/assets/stages/tar-basin.webp",
+      "modes/echos-de-la-greve/assets/stages/terminal-distant.png",
+      "modes/echos-de-la-greve/assets/stages/terminal-floor.png",
+      "modes/echos-de-la-greve/assets/stages/terminal-foreground.webp",
+      "modes/echos-de-la-greve/assets/stages/terminal-hangar-distant.png",
+      "modes/echos-de-la-greve/assets/stages/terminal-hangar-floor.png",
+      "modes/echos-de-la-greve/assets/stages/terminal-hangar-foreground.png",
+      "modes/echos-de-la-greve/assets/stages/terminal-hangar-midground.png",
+      "modes/echos-de-la-greve/assets/stages/terminal-hangar-sky.png",
+      "modes/echos-de-la-greve/assets/stages/terminal-midground.png",
+      "modes/echos-de-la-greve/assets/stages/terminal-sky.png",
+      "modes/echos-de-la-greve/assets/stages/terminal.webp",
+      "modes/echos-de-la-greve/assets/stages/timefall-farm-distant.png",
+      "modes/echos-de-la-greve/assets/stages/timefall-farm-floor.png",
+      "modes/echos-de-la-greve/assets/stages/timefall-farm-foreground.png",
+      "modes/echos-de-la-greve/assets/stages/timefall-farm-midground.png",
+      "modes/echos-de-la-greve/assets/stages/timefall-farm-sky.png",
+      "modes/echos-de-la-greve/assets/stages/timefall-shelter-distant.png",
+      "modes/echos-de-la-greve/assets/stages/timefall-shelter-floor.png",
+      "modes/echos-de-la-greve/assets/stages/timefall-shelter-foreground.webp",
+      "modes/echos-de-la-greve/assets/stages/timefall-shelter-midground.png",
+      "modes/echos-de-la-greve/assets/stages/timefall-shelter-sky.png",
+      "modes/echos-de-la-greve/assets/stages/timefall-shelter.webp",
+      "modes/echos-de-la-greve/assets/static-20261125/lockne-portrait.png",
+      "modes/echos-de-la-greve/assets/static-20261125/mountain-knot-city-panorama.png",
+      "modes/echos-de-la-greve/assets/static-20261125/south-knot-ruins-panorama.png",
+      "modes/echos-de-la-greve/assets/static-20261125/timefall-farm-panorama.png",
+      "modes/echos-de-la-greve/assets/static-completion-20261125/dunes-ds2-panorama.png",
+      "modes/echos-de-la-greve/assets/static-domains-20261125/terminal-hangar-panorama.png",
+      "modes/echos-de-la-greve/assets/static-universe-20261125/magellan-ds2-panorama.png",
+      "modes/echos-de-la-greve/assets/static-universe-20261125/plate-gate-ds2-panorama.png",
+      "modes/echos-de-la-greve/assets/static-universe-20261125/sandstorm-ds2-panorama.png",
+      "modes/echos-de-la-greve/assets/story-completion-20261125/cliff-ending-final.png",
+      "modes/echos-de-la-greve/assets/story-completion-20261125/cliff-intro-insert.png",
+      "modes/echos-de-la-greve/assets/story-completion-20261125/cliff-intro-second.png",
+      "modes/echos-de-la-greve/assets/story-completion-20261125/diehardman-ending-final.png",
+      "modes/echos-de-la-greve/assets/story-completion-20261125/diehardman-intro-insert.png",
+      "modes/echos-de-la-greve/assets/story-completion-20261125/diehardman-intro-second.png",
+      "modes/echos-de-la-greve/assets/story-completion-20261125/fragile-ending-final.png",
+      "modes/echos-de-la-greve/assets/story-completion-20261125/fragile-intro-insert.png",
+      "modes/echos-de-la-greve/assets/story-completion-20261125/fragile-intro-second.png",
+      "modes/echos-de-la-greve/assets/story-completion-20261125/heartman-ending-final.png",
+      "modes/echos-de-la-greve/assets/story-completion-20261125/heartman-intro-insert.png",
+      "modes/echos-de-la-greve/assets/story-completion-20261125/heartman-intro-second.png",
+      "modes/echos-de-la-greve/assets/story-completion-20261125/higgs-ending-final.png",
+      "modes/echos-de-la-greve/assets/story-completion-20261125/higgs-intro-insert.png",
+      "modes/echos-de-la-greve/assets/story-completion-20261125/higgs-intro-second.png",
+      "modes/echos-de-la-greve/assets/story-completion-20261125/mama-ending-final.png",
+      "modes/echos-de-la-greve/assets/story-completion-20261125/mama-intro-insert.png",
+      "modes/echos-de-la-greve/assets/story-completion-20261125/mama-intro-second.png",
+      "modes/echos-de-la-greve/assets/story-completion-20261125/mule-ending-final.png",
+      "modes/echos-de-la-greve/assets/story-completion-20261125/mule-intro-insert.png",
+      "modes/echos-de-la-greve/assets/story-completion-20261125/mule-intro-second.png",
+      "modes/echos-de-la-greve/assets/story-completion-20261125/sam-ending-final.png",
+      "modes/echos-de-la-greve/assets/story-completion-20261125/sam-intro-insert.png",
+      "modes/echos-de-la-greve/assets/story-completion-20261125/sam-intro-second.png",
+      "modes/echos-de-la-greve/assets/story/cliff-ending.webp",
+      "modes/echos-de-la-greve/assets/story/cliff-intro.webp",
+      "modes/echos-de-la-greve/assets/story/cliff-rival.webp",
+      "modes/echos-de-la-greve/assets/story/diehardman-ending.webp",
+      "modes/echos-de-la-greve/assets/story/diehardman-intro.webp",
+      "modes/echos-de-la-greve/assets/story/diehardman-rival.png",
+      "modes/echos-de-la-greve/assets/story/fragile-ending.webp",
+      "modes/echos-de-la-greve/assets/story/fragile-intro.webp",
+      "modes/echos-de-la-greve/assets/story/fragile-rival.webp",
+      "modes/echos-de-la-greve/assets/story/heartman-ending.webp",
+      "modes/echos-de-la-greve/assets/story/heartman-intro.webp",
+      "modes/echos-de-la-greve/assets/story/heartman-rival.webp",
+      "modes/echos-de-la-greve/assets/story/higgs-ending.webp",
+      "modes/echos-de-la-greve/assets/story/higgs-intro.webp",
+      "modes/echos-de-la-greve/assets/story/higgs-rival.webp",
+      "modes/echos-de-la-greve/assets/story/mama-ending.webp",
+      "modes/echos-de-la-greve/assets/story/mama-intro.webp",
+      "modes/echos-de-la-greve/assets/story/mama-rival.webp",
+      "modes/echos-de-la-greve/assets/story/mule-ending.webp",
+      "modes/echos-de-la-greve/assets/story/mule-intro.webp",
+      "modes/echos-de-la-greve/assets/story/mule-rival.webp",
+      "modes/echos-de-la-greve/assets/story/sam-ending.webp",
+      "modes/echos-de-la-greve/assets/story/sam-higgs-rival.webp",
+      "modes/echos-de-la-greve/assets/story/sam-intro-shore.webp",
+      "modes/echos-de-la-greve/assets/story/sam-intro.webp",
+      "modes/echos-de-la-greve/assets/story/shore-prologue.webp"
+    ],
+    "StrandBossAssets": [
+      "modes/echos-de-la-greve/assets/bosses/giant/attack.png",
+      "modes/echos-de-la-greve/assets/bosses/giant/idle.png",
+      "modes/echos-de-la-greve/assets/bosses/giant/stagger.png",
+      "modes/echos-de-la-greve/assets/bosses/lion/attack.png",
+      "modes/echos-de-la-greve/assets/bosses/lion/idle.png",
+      "modes/echos-de-la-greve/assets/bosses/lion/stagger.png",
+      "modes/echos-de-la-greve/assets/bosses/mule-truck/damaged.png",
+      "modes/echos-de-la-greve/assets/bosses/mule-truck/idle.png",
+      "modes/echos-de-la-greve/assets/bosses/squid/attack.png",
+      "modes/echos-de-la-greve/assets/bosses/squid/idle.png",
+      "modes/echos-de-la-greve/assets/bosses/squid/stagger.png",
+      "modes/echos-de-la-greve/assets/bosses/whale/attack.png",
+      "modes/echos-de-la-greve/assets/bosses/whale/idle.png",
+      "modes/echos-de-la-greve/assets/bosses/whale/stagger.png",
+      "modes/echos-de-la-greve/assets/projectiles/boss-chiral-ring.png",
+      "modes/echos-de-la-greve/assets/projectiles/boss-mule-bolt.png",
+      "modes/echos-de-la-greve/assets/projectiles/boss-tar-orb.png",
+      "modes/echos-de-la-greve/assets/projectiles/boss-tar-spike.png"
+    ],
+    "StrandStaticCatalogue": [
+      "modes/echos-de-la-greve/assets/static-20261125/amelie-body.png",
+      "modes/echos-de-la-greve/assets/static-20261125/bridget-body.png",
+      "modes/echos-de-la-greve/assets/static-20261125/bt-gazer.png",
+      "modes/echos-de-la-greve/assets/static-20261125/cliff-skeleton-nethelmet.png",
+      "modes/echos-de-la-greve/assets/static-20261125/deadman-body.png",
+      "modes/echos-de-la-greve/assets/static-20261125/ex-grenade-0.png",
+      "modes/echos-de-la-greve/assets/static-20261125/ex-grenade-1.png",
+      "modes/echos-de-la-greve/assets/static-20261125/ex-grenade-2.png",
+      "modes/echos-de-la-greve/assets/static-20261125/hematic-grenade.png",
+      "modes/echos-de-la-greve/assets/static-20261125/lockne-body.png",
+      "modes/echos-de-la-greve/assets/static-20261125/lockne-portrait.png",
+      "modes/echos-de-la-greve/assets/static-20261125/mountain-knot-city-panorama.png",
+      "modes/echos-de-la-greve/assets/static-20261125/mule-eastern-gray.png",
+      "modes/echos-de-la-greve/assets/static-20261125/south-knot-ruins-panorama.png",
+      "modes/echos-de-la-greve/assets/static-20261125/timefall-farm-panorama.png",
+      "modes/echos-de-la-greve/assets/static-completion-20261125/cargo-capsule-ds2.png",
+      "modes/echos-de-la-greve/assets/static-completion-20261125/coffin-board-ds2.png",
+      "modes/echos-de-la-greve/assets/static-completion-20261125/dhv-magellan-isolated-ds2.png",
+      "modes/echos-de-la-greve/assets/static-completion-20261125/doctor-ds2.png",
+      "modes/echos-de-la-greve/assets/static-completion-20261125/dunes-ds2-panorama.png",
+      "modes/echos-de-la-greve/assets/static-completion-20261125/fragile-early-outfit-ds2.png",
+      "modes/echos-de-la-greve/assets/static-completion-20261125/heartman-ds2.png",
+      "modes/echos-de-la-greve/assets/static-completion-20261125/lucy-ds2.png",
+      "modes/echos-de-la-greve/assets/static-completion-20261125/maser-handgun-ds2.png",
+      "modes/echos-de-la-greve/assets/static-completion-20261125/sam-grey-promo-ds2.png",
+      "modes/echos-de-la-greve/assets/static-completion-20261125/the-president-ds2.png",
+      "modes/echos-de-la-greve/assets/static-completion-20261125/tomorrow-white-dress-ds2.png",
+      "modes/echos-de-la-greve/assets/static-completion-20261125/tri-cruiser-ds2.png",
+      "modes/echos-de-la-greve/assets/static-completion-20261125/truck-ds2.png",
+      "modes/echos-de-la-greve/assets/static-domains-20261125/buddy-bot-dc.png",
+      "modes/echos-de-la-greve/assets/static-domains-20261125/cargo-catapult-dc.png",
+      "modes/echos-de-la-greve/assets/static-domains-20261125/chiral-bridge-dc.png",
+      "modes/echos-de-la-greve/assets/static-domains-20261125/firing-range-dc-panorama.png",
+      "modes/echos-de-la-greve/assets/static-domains-20261125/jump-ramp-dc.png",
+      "modes/echos-de-la-greve/assets/static-domains-20261125/maser-gun-dc.png",
+      "modes/echos-de-la-greve/assets/static-domains-20261125/monorail-yamato-ds2.png",
+      "modes/echos-de-la-greve/assets/static-domains-20261125/roadster-dc.png",
+      "modes/echos-de-la-greve/assets/static-domains-20261125/terminal-hangar-panorama.png",
+      "modes/echos-de-la-greve/assets/static-universe-20261125/chiral-cat-ds2-body.png",
+      "modes/echos-de-la-greve/assets/static-universe-20261125/dollman-ds2-body.png",
+      "modes/echos-de-la-greve/assets/static-universe-20261125/fragile-ds2-portrait.png",
+      "modes/echos-de-la-greve/assets/static-universe-20261125/higgs-ds2-guitar.png",
+      "modes/echos-de-la-greve/assets/static-universe-20261125/higgs-ds2-portrait.png",
+      "modes/echos-de-la-greve/assets/static-universe-20261125/magellan-ds2-panorama.png",
+      "modes/echos-de-la-greve/assets/static-universe-20261125/neil-ds2-portrait.png",
+      "modes/echos-de-la-greve/assets/static-universe-20261125/plate-gate-ds2-panorama.png",
+      "modes/echos-de-la-greve/assets/static-universe-20261125/rainy-ds2-portrait.png",
+      "modes/echos-de-la-greve/assets/static-universe-20261125/red-samurai-ds2-body.png",
+      "modes/echos-de-la-greve/assets/static-universe-20261125/sam-ds2-drawbridge-portrait.png",
+      "modes/echos-de-la-greve/assets/static-universe-20261125/sandstorm-ds2-panorama.png",
+      "modes/echos-de-la-greve/assets/static-universe-20261125/tarman-ds2-portrait.png",
+      "modes/echos-de-la-greve/assets/static-universe-20261125/tomorrow-ds2-portrait.png"
+    ],
+    "Archives": [
+      "modes/echos-de-la-greve/assets/fighters/support/amelie-portrait.png",
+      "modes/echos-de-la-greve/assets/fighters/support/bridget-portrait.png",
+      "modes/echos-de-la-greve/assets/fighters/support/deadman-portrait.png",
+      "modes/echos-de-la-greve/assets/static-20261125/lockne-portrait.png",
+      "modes/echos-de-la-greve/assets/static-completion-20261125/doctor-ds2.png",
+      "modes/echos-de-la-greve/assets/static-completion-20261125/heartman-ds2.png",
+      "modes/echos-de-la-greve/assets/static-completion-20261125/lucy-ds2.png",
+      "modes/echos-de-la-greve/assets/static-completion-20261125/the-president-ds2.png",
+      "modes/echos-de-la-greve/assets/static-universe-20261125/dollman-ds2-body.png",
+      "modes/echos-de-la-greve/assets/static-universe-20261125/fragile-ds2-portrait.png",
+      "modes/echos-de-la-greve/assets/static-universe-20261125/higgs-ds2-portrait.png",
+      "modes/echos-de-la-greve/assets/static-universe-20261125/neil-ds2-portrait.png",
+      "modes/echos-de-la-greve/assets/static-universe-20261125/rainy-ds2-portrait.png",
+      "modes/echos-de-la-greve/assets/static-universe-20261125/sam-ds2-drawbridge-portrait.png",
+      "modes/echos-de-la-greve/assets/static-universe-20261125/tarman-ds2-portrait.png",
+      "modes/echos-de-la-greve/assets/static-universe-20261125/tomorrow-ds2-portrait.png"
+    ],
+    "CampaignSceneReuse": [
+      "modes/echos-de-la-greve/assets/fighters/diehardman/portrait.png",
+      "modes/echos-de-la-greve/assets/fighters/fragile-portrait.webp",
+      "modes/echos-de-la-greve/assets/fighters/heartman/portrait.png",
+      "modes/echos-de-la-greve/assets/fighters/mama/atelier/portrait.png",
+      "modes/echos-de-la-greve/assets/fighters/sam-portrait.webp",
+      "modes/echos-de-la-greve/assets/stages/battlefield.webp",
+      "modes/echos-de-la-greve/assets/stages/mule-camp.webp",
+      "modes/echos-de-la-greve/assets/stages/ruined-factory.webp",
+      "modes/echos-de-la-greve/assets/stages/shore.webp",
+      "modes/echos-de-la-greve/assets/stages/terminal.webp",
+      "modes/echos-de-la-greve/assets/static-20261125/south-knot-ruins-panorama.png",
+      "modes/echos-de-la-greve/assets/static-20261125/timefall-farm-panorama.png"
+    ]
+  },
+  "image_paths": [
+    "modes/echos-de-la-greve/assets/bosses/giant/attack.png",
+    "modes/echos-de-la-greve/assets/bosses/giant/idle.png",
+    "modes/echos-de-la-greve/assets/bosses/giant/stagger.png",
+    "modes/echos-de-la-greve/assets/bosses/lion/attack.png",
+    "modes/echos-de-la-greve/assets/bosses/lion/idle.png",
+    "modes/echos-de-la-greve/assets/bosses/lion/stagger.png",
+    "modes/echos-de-la-greve/assets/bosses/mule-truck/damaged.png",
+    "modes/echos-de-la-greve/assets/bosses/mule-truck/idle.png",
+    "modes/echos-de-la-greve/assets/bosses/squid/attack.png",
+    "modes/echos-de-la-greve/assets/bosses/squid/idle.png",
+    "modes/echos-de-la-greve/assets/bosses/squid/stagger.png",
+    "modes/echos-de-la-greve/assets/bosses/whale/attack.png",
+    "modes/echos-de-la-greve/assets/bosses/whale/idle.png",
+    "modes/echos-de-la-greve/assets/bosses/whale/stagger.png",
+    "modes/echos-de-la-greve/assets/fighters/cliff-action.webp",
+    "modes/echos-de-la-greve/assets/fighters/cliff-hit.webp",
+    "modes/echos-de-la-greve/assets/fighters/cliff-jump.png",
+    "modes/echos-de-la-greve/assets/fighters/cliff-portrait.webp",
+    "modes/echos-de-la-greve/assets/fighters/cliff-stance.webp",
+    "modes/echos-de-la-greve/assets/fighters/cliff-step.webp",
+    "modes/echos-de-la-greve/assets/fighters/cliff/apex.png",
+    "modes/echos-de-la-greve/assets/fighters/cliff/crouch.png",
+    "modes/echos-de-la-greve/assets/fighters/cliff/fall.png",
+    "modes/echos-de-la-greve/assets/fighters/cliff/guard.png",
+    "modes/echos-de-la-greve/assets/fighters/cliff/rise.png",
+    "modes/echos-de-la-greve/assets/fighters/diehardman/action.png",
+    "modes/echos-de-la-greve/assets/fighters/diehardman/apex.png",
+    "modes/echos-de-la-greve/assets/fighters/diehardman/crouch.png",
+    "modes/echos-de-la-greve/assets/fighters/diehardman/fall.png",
+    "modes/echos-de-la-greve/assets/fighters/diehardman/guard.png",
+    "modes/echos-de-la-greve/assets/fighters/diehardman/hit.png",
+    "modes/echos-de-la-greve/assets/fighters/diehardman/jump.png",
+    "modes/echos-de-la-greve/assets/fighters/diehardman/portrait.png",
+    "modes/echos-de-la-greve/assets/fighters/diehardman/rise.png",
+    "modes/echos-de-la-greve/assets/fighters/diehardman/stance.png",
+    "modes/echos-de-la-greve/assets/fighters/diehardman/step.png",
+    "modes/echos-de-la-greve/assets/fighters/fragile-action.webp",
+    "modes/echos-de-la-greve/assets/fighters/fragile-hit.webp",
+    "modes/echos-de-la-greve/assets/fighters/fragile-jump.png",
+    "modes/echos-de-la-greve/assets/fighters/fragile-portrait.webp",
+    "modes/echos-de-la-greve/assets/fighters/fragile-stance.webp",
+    "modes/echos-de-la-greve/assets/fighters/fragile-step.webp",
+    "modes/echos-de-la-greve/assets/fighters/fragile/apex.png",
+    "modes/echos-de-la-greve/assets/fighters/fragile/crouch.png",
+    "modes/echos-de-la-greve/assets/fighters/fragile/fall.png",
+    "modes/echos-de-la-greve/assets/fighters/fragile/guard.png",
+    "modes/echos-de-la-greve/assets/fighters/fragile/rise.png",
+    "modes/echos-de-la-greve/assets/fighters/heartman-jump.png",
+    "modes/echos-de-la-greve/assets/fighters/heartman/action.png",
+    "modes/echos-de-la-greve/assets/fighters/heartman/apex.png",
+    "modes/echos-de-la-greve/assets/fighters/heartman/crouch.png",
+    "modes/echos-de-la-greve/assets/fighters/heartman/fall.png",
+    "modes/echos-de-la-greve/assets/fighters/heartman/guard.png",
+    "modes/echos-de-la-greve/assets/fighters/heartman/hit.png",
+    "modes/echos-de-la-greve/assets/fighters/heartman/portrait.png",
+    "modes/echos-de-la-greve/assets/fighters/heartman/rise.png",
+    "modes/echos-de-la-greve/assets/fighters/heartman/stance.png",
+    "modes/echos-de-la-greve/assets/fighters/heartman/step.png",
+    "modes/echos-de-la-greve/assets/fighters/higgs/action.png",
+    "modes/echos-de-la-greve/assets/fighters/higgs/apex.png",
+    "modes/echos-de-la-greve/assets/fighters/higgs/crouch.png",
+    "modes/echos-de-la-greve/assets/fighters/higgs/fall.png",
+    "modes/echos-de-la-greve/assets/fighters/higgs/guard.png",
+    "modes/echos-de-la-greve/assets/fighters/higgs/hit.png",
+    "modes/echos-de-la-greve/assets/fighters/higgs/jump.png",
+    "modes/echos-de-la-greve/assets/fighters/higgs/portrait.png",
+    "modes/echos-de-la-greve/assets/fighters/higgs/rise.png",
+    "modes/echos-de-la-greve/assets/fighters/higgs/stance.png",
+    "modes/echos-de-la-greve/assets/fighters/higgs/step.png",
+    "modes/echos-de-la-greve/assets/fighters/mama/atelier/action.png",
+    "modes/echos-de-la-greve/assets/fighters/mama/atelier/apex.png",
+    "modes/echos-de-la-greve/assets/fighters/mama/atelier/crouch.png",
+    "modes/echos-de-la-greve/assets/fighters/mama/atelier/fall.png",
+    "modes/echos-de-la-greve/assets/fighters/mama/atelier/guard.png",
+    "modes/echos-de-la-greve/assets/fighters/mama/atelier/hit.png",
+    "modes/echos-de-la-greve/assets/fighters/mama/atelier/portrait.png",
+    "modes/echos-de-la-greve/assets/fighters/mama/atelier/rise.png",
+    "modes/echos-de-la-greve/assets/fighters/mama/atelier/stance.png",
+    "modes/echos-de-la-greve/assets/fighters/mama/atelier/step.png",
+    "modes/echos-de-la-greve/assets/fighters/mama/viaduc/action.png",
+    "modes/echos-de-la-greve/assets/fighters/mama/viaduc/apex.png",
+    "modes/echos-de-la-greve/assets/fighters/mama/viaduc/crouch.png",
+    "modes/echos-de-la-greve/assets/fighters/mama/viaduc/fall.png",
+    "modes/echos-de-la-greve/assets/fighters/mama/viaduc/guard.png",
+    "modes/echos-de-la-greve/assets/fighters/mama/viaduc/hit.png",
+    "modes/echos-de-la-greve/assets/fighters/mama/viaduc/portrait.png",
+    "modes/echos-de-la-greve/assets/fighters/mama/viaduc/rise.png",
+    "modes/echos-de-la-greve/assets/fighters/mama/viaduc/stance.png",
+    "modes/echos-de-la-greve/assets/fighters/mama/viaduc/step.png",
+    "modes/echos-de-la-greve/assets/fighters/mule-action.webp",
+    "modes/echos-de-la-greve/assets/fighters/mule-hit.webp",
+    "modes/echos-de-la-greve/assets/fighters/mule-jump.png",
+    "modes/echos-de-la-greve/assets/fighters/mule-portrait.webp",
+    "modes/echos-de-la-greve/assets/fighters/mule-stance.webp",
+    "modes/echos-de-la-greve/assets/fighters/mule-step.webp",
+    "modes/echos-de-la-greve/assets/fighters/mule/apex.png",
+    "modes/echos-de-la-greve/assets/fighters/mule/crouch.png",
+    "modes/echos-de-la-greve/assets/fighters/mule/fall.png",
+    "modes/echos-de-la-greve/assets/fighters/mule/guard.png",
+    "modes/echos-de-la-greve/assets/fighters/mule/rise.png",
+    "modes/echos-de-la-greve/assets/fighters/sam-action.webp",
+    "modes/echos-de-la-greve/assets/fighters/sam-hit.webp",
+    "modes/echos-de-la-greve/assets/fighters/sam-jump.png",
+    "modes/echos-de-la-greve/assets/fighters/sam-portrait.webp",
+    "modes/echos-de-la-greve/assets/fighters/sam-stance.webp",
+    "modes/echos-de-la-greve/assets/fighters/sam-step.webp",
+    "modes/echos-de-la-greve/assets/fighters/sam/apex.png",
+    "modes/echos-de-la-greve/assets/fighters/sam/crouch.png",
+    "modes/echos-de-la-greve/assets/fighters/sam/fall.png",
+    "modes/echos-de-la-greve/assets/fighters/sam/guard.png",
+    "modes/echos-de-la-greve/assets/fighters/sam/rise.png",
+    "modes/echos-de-la-greve/assets/fighters/support/amelie-portrait.png",
+    "modes/echos-de-la-greve/assets/fighters/support/bridget-portrait.png",
+    "modes/echos-de-la-greve/assets/fighters/support/deadman-portrait.png",
+    "modes/echos-de-la-greve/assets/finishers/cliff.webp",
+    "modes/echos-de-la-greve/assets/finishers/diehardman.webp",
+    "modes/echos-de-la-greve/assets/finishers/fragile.webp",
+    "modes/echos-de-la-greve/assets/finishers/heartman.webp",
+    "modes/echos-de-la-greve/assets/finishers/higgs.webp",
+    "modes/echos-de-la-greve/assets/finishers/mama.webp",
+    "modes/echos-de-la-greve/assets/finishers/mule.webp",
+    "modes/echos-de-la-greve/assets/finishers/sam.webp",
+    "modes/echos-de-la-greve/assets/projectiles/boss-chiral-ring.png",
+    "modes/echos-de-la-greve/assets/projectiles/boss-mule-bolt.png",
+    "modes/echos-de-la-greve/assets/projectiles/boss-tar-orb.png",
+    "modes/echos-de-la-greve/assets/projectiles/boss-tar-spike.png",
+    "modes/echos-de-la-greve/assets/projectiles/cliff.png",
+    "modes/echos-de-la-greve/assets/projectiles/gate.png",
+    "modes/echos-de-la-greve/assets/projectiles/heartman.png",
+    "modes/echos-de-la-greve/assets/projectiles/higgs.png",
+    "modes/echos-de-la-greve/assets/projectiles/memory.png",
+    "modes/echos-de-la-greve/assets/projectiles/recall.png",
+    "modes/echos-de-la-greve/assets/projectiles/sam.png",
+    "modes/echos-de-la-greve/assets/props/bridge-deck.png",
+    "modes/echos-de-la-greve/assets/props/courier-parcel-closed.png",
+    "modes/echos-de-la-greve/assets/props/courier-parcel-open.png",
+    "modes/echos-de-la-greve/assets/props/gold-imprint.png",
+    "modes/echos-de-la-greve/assets/props/heartman-monitor.png",
+    "modes/echos-de-la-greve/assets/props/mule-cargo.webp",
+    "modes/echos-de-la-greve/assets/stages/battlefield-distant.png",
+    "modes/echos-de-la-greve/assets/stages/battlefield-floor.png",
+    "modes/echos-de-la-greve/assets/stages/battlefield-foreground.webp",
+    "modes/echos-de-la-greve/assets/stages/battlefield-midground.png",
+    "modes/echos-de-la-greve/assets/stages/battlefield-sky.png",
+    "modes/echos-de-la-greve/assets/stages/battlefield.webp",
+    "modes/echos-de-la-greve/assets/stages/dunes-ds2-distant.png",
+    "modes/echos-de-la-greve/assets/stages/dunes-ds2-floor.png",
+    "modes/echos-de-la-greve/assets/stages/dunes-ds2-foreground.png",
+    "modes/echos-de-la-greve/assets/stages/dunes-ds2-midground.png",
+    "modes/echos-de-la-greve/assets/stages/dunes-ds2-sky.png",
+    "modes/echos-de-la-greve/assets/stages/heartman-lab-distant.png",
+    "modes/echos-de-la-greve/assets/stages/heartman-lab-floor.png",
+    "modes/echos-de-la-greve/assets/stages/heartman-lab-foreground.webp",
+    "modes/echos-de-la-greve/assets/stages/heartman-lab-midground.png",
+    "modes/echos-de-la-greve/assets/stages/heartman-lab-sky.png",
+    "modes/echos-de-la-greve/assets/stages/heartman-lab.webp",
+    "modes/echos-de-la-greve/assets/stages/incinerator-distant.png",
+    "modes/echos-de-la-greve/assets/stages/incinerator-floor.png",
+    "modes/echos-de-la-greve/assets/stages/incinerator-foreground.png",
+    "modes/echos-de-la-greve/assets/stages/incinerator-midground.png",
+    "modes/echos-de-la-greve/assets/stages/incinerator-sky.png",
+    "modes/echos-de-la-greve/assets/stages/incinerator.png",
+    "modes/echos-de-la-greve/assets/stages/magellan-ds2-distant.png",
+    "modes/echos-de-la-greve/assets/stages/magellan-ds2-floor.png",
+    "modes/echos-de-la-greve/assets/stages/magellan-ds2-foreground.png",
+    "modes/echos-de-la-greve/assets/stages/magellan-ds2-midground.png",
+    "modes/echos-de-la-greve/assets/stages/magellan-ds2-sky.png",
+    "modes/echos-de-la-greve/assets/stages/mama-workshop-distant.png",
+    "modes/echos-de-la-greve/assets/stages/mama-workshop-floor.png",
+    "modes/echos-de-la-greve/assets/stages/mama-workshop-foreground.webp",
+    "modes/echos-de-la-greve/assets/stages/mama-workshop-midground.png",
+    "modes/echos-de-la-greve/assets/stages/mama-workshop-sky.png",
+    "modes/echos-de-la-greve/assets/stages/mama-workshop.webp",
+    "modes/echos-de-la-greve/assets/stages/mountain-knot-approach-distant.png",
+    "modes/echos-de-la-greve/assets/stages/mountain-knot-approach-floor.png",
+    "modes/echos-de-la-greve/assets/stages/mountain-knot-approach-foreground.png",
+    "modes/echos-de-la-greve/assets/stages/mountain-knot-approach-midground.png",
+    "modes/echos-de-la-greve/assets/stages/mountain-knot-approach-sky.png",
+    "modes/echos-de-la-greve/assets/stages/mountain-pass-distant.png",
+    "modes/echos-de-la-greve/assets/stages/mountain-pass-floor.png",
+    "modes/echos-de-la-greve/assets/stages/mountain-pass-foreground.webp",
+    "modes/echos-de-la-greve/assets/stages/mountain-pass-midground.png",
+    "modes/echos-de-la-greve/assets/stages/mountain-pass-sky.png",
+    "modes/echos-de-la-greve/assets/stages/mountain-pass.webp",
+    "modes/echos-de-la-greve/assets/stages/mule-camp-distant.png",
+    "modes/echos-de-la-greve/assets/stages/mule-camp-dry-distant.png",
+    "modes/echos-de-la-greve/assets/stages/mule-camp-dry-floor.png",
+    "modes/echos-de-la-greve/assets/stages/mule-camp-dry-foreground.png",
+    "modes/echos-de-la-greve/assets/stages/mule-camp-dry-midground.png",
+    "modes/echos-de-la-greve/assets/stages/mule-camp-dry-sky.png",
+    "modes/echos-de-la-greve/assets/stages/mule-camp-dry.png",
+    "modes/echos-de-la-greve/assets/stages/mule-camp-floor.png",
+    "modes/echos-de-la-greve/assets/stages/mule-camp-foreground.webp",
+    "modes/echos-de-la-greve/assets/stages/mule-camp-midground.png",
+    "modes/echos-de-la-greve/assets/stages/mule-camp-sky.png",
+    "modes/echos-de-la-greve/assets/stages/mule-camp.webp",
+    "modes/echos-de-la-greve/assets/stages/plate-gate-ds2-distant.png",
+    "modes/echos-de-la-greve/assets/stages/plate-gate-ds2-floor.png",
+    "modes/echos-de-la-greve/assets/stages/plate-gate-ds2-foreground.png",
+    "modes/echos-de-la-greve/assets/stages/plate-gate-ds2-midground.png",
+    "modes/echos-de-la-greve/assets/stages/plate-gate-ds2-sky.png",
+    "modes/echos-de-la-greve/assets/stages/port-knot-distant.png",
+    "modes/echos-de-la-greve/assets/stages/port-knot-floor.png",
+    "modes/echos-de-la-greve/assets/stages/port-knot-foreground.png",
+    "modes/echos-de-la-greve/assets/stages/port-knot-midground.png",
+    "modes/echos-de-la-greve/assets/stages/port-knot-sky.png",
+    "modes/echos-de-la-greve/assets/stages/port-knot.png",
+    "modes/echos-de-la-greve/assets/stages/ruined-factory-distant.png",
+    "modes/echos-de-la-greve/assets/stages/ruined-factory-floor.png",
+    "modes/echos-de-la-greve/assets/stages/ruined-factory-foreground.webp",
+    "modes/echos-de-la-greve/assets/stages/ruined-factory-midground.png",
+    "modes/echos-de-la-greve/assets/stages/ruined-factory-sky.png",
+    "modes/echos-de-la-greve/assets/stages/ruined-factory.webp",
+    "modes/echos-de-la-greve/assets/stages/sandstorm-ds2-distant.png",
+    "modes/echos-de-la-greve/assets/stages/sandstorm-ds2-floor.png",
+    "modes/echos-de-la-greve/assets/stages/sandstorm-ds2-foreground.png",
+    "modes/echos-de-la-greve/assets/stages/sandstorm-ds2-midground.png",
+    "modes/echos-de-la-greve/assets/stages/sandstorm-ds2-sky.png",
+    "modes/echos-de-la-greve/assets/stages/shore-distant.png",
+    "modes/echos-de-la-greve/assets/stages/shore-floor.png",
+    "modes/echos-de-la-greve/assets/stages/shore-foreground.webp",
+    "modes/echos-de-la-greve/assets/stages/shore-midground.png",
+    "modes/echos-de-la-greve/assets/stages/shore-sky.png",
+    "modes/echos-de-la-greve/assets/stages/shore.webp",
+    "modes/echos-de-la-greve/assets/stages/south-knot-ruins-distant.png",
+    "modes/echos-de-la-greve/assets/stages/south-knot-ruins-floor.png",
+    "modes/echos-de-la-greve/assets/stages/south-knot-ruins-foreground.png",
+    "modes/echos-de-la-greve/assets/stages/south-knot-ruins-midground.png",
+    "modes/echos-de-la-greve/assets/stages/south-knot-ruins-sky.png",
+    "modes/echos-de-la-greve/assets/stages/tar-basin-distant.png",
+    "modes/echos-de-la-greve/assets/stages/tar-basin-floor.png",
+    "modes/echos-de-la-greve/assets/stages/tar-basin-foreground.webp",
+    "modes/echos-de-la-greve/assets/stages/tar-basin-midground.png",
+    "modes/echos-de-la-greve/assets/stages/tar-basin-sky.png",
+    "modes/echos-de-la-greve/assets/stages/tar-basin.webp",
+    "modes/echos-de-la-greve/assets/stages/terminal-distant.png",
+    "modes/echos-de-la-greve/assets/stages/terminal-floor.png",
+    "modes/echos-de-la-greve/assets/stages/terminal-foreground.webp",
+    "modes/echos-de-la-greve/assets/stages/terminal-hangar-distant.png",
+    "modes/echos-de-la-greve/assets/stages/terminal-hangar-floor.png",
+    "modes/echos-de-la-greve/assets/stages/terminal-hangar-foreground.png",
+    "modes/echos-de-la-greve/assets/stages/terminal-hangar-midground.png",
+    "modes/echos-de-la-greve/assets/stages/terminal-hangar-sky.png",
+    "modes/echos-de-la-greve/assets/stages/terminal-midground.png",
+    "modes/echos-de-la-greve/assets/stages/terminal-sky.png",
+    "modes/echos-de-la-greve/assets/stages/terminal.webp",
+    "modes/echos-de-la-greve/assets/stages/timefall-farm-distant.png",
+    "modes/echos-de-la-greve/assets/stages/timefall-farm-floor.png",
+    "modes/echos-de-la-greve/assets/stages/timefall-farm-foreground.png",
+    "modes/echos-de-la-greve/assets/stages/timefall-farm-midground.png",
+    "modes/echos-de-la-greve/assets/stages/timefall-farm-sky.png",
+    "modes/echos-de-la-greve/assets/stages/timefall-shelter-distant.png",
+    "modes/echos-de-la-greve/assets/stages/timefall-shelter-floor.png",
+    "modes/echos-de-la-greve/assets/stages/timefall-shelter-foreground.webp",
+    "modes/echos-de-la-greve/assets/stages/timefall-shelter-midground.png",
+    "modes/echos-de-la-greve/assets/stages/timefall-shelter-sky.png",
+    "modes/echos-de-la-greve/assets/stages/timefall-shelter.webp",
+    "modes/echos-de-la-greve/assets/static-20261125/amelie-body.png",
+    "modes/echos-de-la-greve/assets/static-20261125/bridget-body.png",
+    "modes/echos-de-la-greve/assets/static-20261125/bt-gazer.png",
+    "modes/echos-de-la-greve/assets/static-20261125/cliff-skeleton-nethelmet.png",
+    "modes/echos-de-la-greve/assets/static-20261125/deadman-body.png",
+    "modes/echos-de-la-greve/assets/static-20261125/ex-grenade-0.png",
+    "modes/echos-de-la-greve/assets/static-20261125/ex-grenade-1.png",
+    "modes/echos-de-la-greve/assets/static-20261125/ex-grenade-2.png",
+    "modes/echos-de-la-greve/assets/static-20261125/hematic-grenade.png",
+    "modes/echos-de-la-greve/assets/static-20261125/lockne-body.png",
+    "modes/echos-de-la-greve/assets/static-20261125/lockne-portrait.png",
+    "modes/echos-de-la-greve/assets/static-20261125/mountain-knot-city-panorama.png",
+    "modes/echos-de-la-greve/assets/static-20261125/mule-eastern-gray.png",
+    "modes/echos-de-la-greve/assets/static-20261125/south-knot-ruins-panorama.png",
+    "modes/echos-de-la-greve/assets/static-20261125/timefall-farm-panorama.png",
+    "modes/echos-de-la-greve/assets/static-completion-20261125/cargo-capsule-ds2.png",
+    "modes/echos-de-la-greve/assets/static-completion-20261125/coffin-board-ds2.png",
+    "modes/echos-de-la-greve/assets/static-completion-20261125/dhv-magellan-isolated-ds2.png",
+    "modes/echos-de-la-greve/assets/static-completion-20261125/doctor-ds2.png",
+    "modes/echos-de-la-greve/assets/static-completion-20261125/dunes-ds2-panorama.png",
+    "modes/echos-de-la-greve/assets/static-completion-20261125/fragile-early-outfit-ds2.png",
+    "modes/echos-de-la-greve/assets/static-completion-20261125/heartman-ds2.png",
+    "modes/echos-de-la-greve/assets/static-completion-20261125/lucy-ds2.png",
+    "modes/echos-de-la-greve/assets/static-completion-20261125/maser-handgun-ds2.png",
+    "modes/echos-de-la-greve/assets/static-completion-20261125/sam-grey-promo-ds2.png",
+    "modes/echos-de-la-greve/assets/static-completion-20261125/the-president-ds2.png",
+    "modes/echos-de-la-greve/assets/static-completion-20261125/tomorrow-white-dress-ds2.png",
+    "modes/echos-de-la-greve/assets/static-completion-20261125/tri-cruiser-ds2.png",
+    "modes/echos-de-la-greve/assets/static-completion-20261125/truck-ds2.png",
+    "modes/echos-de-la-greve/assets/static-domains-20261125/buddy-bot-dc.png",
+    "modes/echos-de-la-greve/assets/static-domains-20261125/cargo-catapult-dc.png",
+    "modes/echos-de-la-greve/assets/static-domains-20261125/chiral-bridge-dc.png",
+    "modes/echos-de-la-greve/assets/static-domains-20261125/firing-range-dc-panorama.png",
+    "modes/echos-de-la-greve/assets/static-domains-20261125/jump-ramp-dc.png",
+    "modes/echos-de-la-greve/assets/static-domains-20261125/maser-gun-dc.png",
+    "modes/echos-de-la-greve/assets/static-domains-20261125/monorail-yamato-ds2.png",
+    "modes/echos-de-la-greve/assets/static-domains-20261125/roadster-dc.png",
+    "modes/echos-de-la-greve/assets/static-domains-20261125/terminal-hangar-panorama.png",
+    "modes/echos-de-la-greve/assets/static-universe-20261125/chiral-cat-ds2-body.png",
+    "modes/echos-de-la-greve/assets/static-universe-20261125/dollman-ds2-body.png",
+    "modes/echos-de-la-greve/assets/static-universe-20261125/fragile-ds2-portrait.png",
+    "modes/echos-de-la-greve/assets/static-universe-20261125/higgs-ds2-guitar.png",
+    "modes/echos-de-la-greve/assets/static-universe-20261125/higgs-ds2-portrait.png",
+    "modes/echos-de-la-greve/assets/static-universe-20261125/magellan-ds2-panorama.png",
+    "modes/echos-de-la-greve/assets/static-universe-20261125/neil-ds2-portrait.png",
+    "modes/echos-de-la-greve/assets/static-universe-20261125/plate-gate-ds2-panorama.png",
+    "modes/echos-de-la-greve/assets/static-universe-20261125/rainy-ds2-portrait.png",
+    "modes/echos-de-la-greve/assets/static-universe-20261125/red-samurai-ds2-body.png",
+    "modes/echos-de-la-greve/assets/static-universe-20261125/sam-ds2-drawbridge-portrait.png",
+    "modes/echos-de-la-greve/assets/static-universe-20261125/sandstorm-ds2-panorama.png",
+    "modes/echos-de-la-greve/assets/static-universe-20261125/tarman-ds2-portrait.png",
+    "modes/echos-de-la-greve/assets/static-universe-20261125/tomorrow-ds2-portrait.png",
+    "modes/echos-de-la-greve/assets/story-completion-20261125/cliff-ending-final.png",
+    "modes/echos-de-la-greve/assets/story-completion-20261125/cliff-intro-insert.png",
+    "modes/echos-de-la-greve/assets/story-completion-20261125/cliff-intro-second.png",
+    "modes/echos-de-la-greve/assets/story-completion-20261125/diehardman-ending-final.png",
+    "modes/echos-de-la-greve/assets/story-completion-20261125/diehardman-intro-insert.png",
+    "modes/echos-de-la-greve/assets/story-completion-20261125/diehardman-intro-second.png",
+    "modes/echos-de-la-greve/assets/story-completion-20261125/fragile-ending-final.png",
+    "modes/echos-de-la-greve/assets/story-completion-20261125/fragile-intro-insert.png",
+    "modes/echos-de-la-greve/assets/story-completion-20261125/fragile-intro-second.png",
+    "modes/echos-de-la-greve/assets/story-completion-20261125/heartman-ending-final.png",
+    "modes/echos-de-la-greve/assets/story-completion-20261125/heartman-intro-insert.png",
+    "modes/echos-de-la-greve/assets/story-completion-20261125/heartman-intro-second.png",
+    "modes/echos-de-la-greve/assets/story-completion-20261125/higgs-ending-final.png",
+    "modes/echos-de-la-greve/assets/story-completion-20261125/higgs-intro-insert.png",
+    "modes/echos-de-la-greve/assets/story-completion-20261125/higgs-intro-second.png",
+    "modes/echos-de-la-greve/assets/story-completion-20261125/mama-ending-final.png",
+    "modes/echos-de-la-greve/assets/story-completion-20261125/mama-intro-insert.png",
+    "modes/echos-de-la-greve/assets/story-completion-20261125/mama-intro-second.png",
+    "modes/echos-de-la-greve/assets/story-completion-20261125/mule-ending-final.png",
+    "modes/echos-de-la-greve/assets/story-completion-20261125/mule-intro-insert.png",
+    "modes/echos-de-la-greve/assets/story-completion-20261125/mule-intro-second.png",
+    "modes/echos-de-la-greve/assets/story-completion-20261125/sam-ending-final.png",
+    "modes/echos-de-la-greve/assets/story-completion-20261125/sam-intro-insert.png",
+    "modes/echos-de-la-greve/assets/story-completion-20261125/sam-intro-second.png",
+    "modes/echos-de-la-greve/assets/story/cliff-ending.webp",
+    "modes/echos-de-la-greve/assets/story/cliff-intro.webp",
+    "modes/echos-de-la-greve/assets/story/cliff-rival.webp",
+    "modes/echos-de-la-greve/assets/story/diehardman-ending.webp",
+    "modes/echos-de-la-greve/assets/story/diehardman-intro.webp",
+    "modes/echos-de-la-greve/assets/story/diehardman-rival.png",
+    "modes/echos-de-la-greve/assets/story/fragile-ending.webp",
+    "modes/echos-de-la-greve/assets/story/fragile-intro.webp",
+    "modes/echos-de-la-greve/assets/story/fragile-rival.webp",
+    "modes/echos-de-la-greve/assets/story/heartman-ending.webp",
+    "modes/echos-de-la-greve/assets/story/heartman-intro.webp",
+    "modes/echos-de-la-greve/assets/story/heartman-rival.webp",
+    "modes/echos-de-la-greve/assets/story/higgs-ending.webp",
+    "modes/echos-de-la-greve/assets/story/higgs-intro.webp",
+    "modes/echos-de-la-greve/assets/story/higgs-rival.webp",
+    "modes/echos-de-la-greve/assets/story/mama-ending.webp",
+    "modes/echos-de-la-greve/assets/story/mama-intro.webp",
+    "modes/echos-de-la-greve/assets/story/mama-rival.webp",
+    "modes/echos-de-la-greve/assets/story/mule-ending.webp",
+    "modes/echos-de-la-greve/assets/story/mule-intro.webp",
+    "modes/echos-de-la-greve/assets/story/mule-rival.webp",
+    "modes/echos-de-la-greve/assets/story/sam-ending.webp",
+    "modes/echos-de-la-greve/assets/story/sam-higgs-rival.webp",
+    "modes/echos-de-la-greve/assets/story/sam-intro-shore.webp",
+    "modes/echos-de-la-greve/assets/story/sam-intro.webp",
+    "modes/echos-de-la-greve/assets/story/shore-prologue.webp"
+  ],
+  "missing": [],
+  "native_original_hashes_match": true,
+  "previous_native_verification": {
+    "source": "docs/combat/production/20261125-completion/catalogue-inventory.json",
+    "count": 215,
+    "all_sha256_unchanged": true,
+    "disjoint_from_new_batch": true
+  },
+  "new_native_images": [
+    {
+      "id": "buddy-bot-dc",
+      "path": "modes/echos-de-la-greve/assets/static-domains-20261125/buddy-bot-dc.png",
+      "work": "ds1-dc",
+      "category": "props",
+      "sha256": "351d97f3046ac6ad8be60c67dc26d68eef3ee07de4e02e6a9a5f0e009d62c94d",
+      "original_sha256": "351d97f3046ac6ad8be60c67dc26d68eef3ee07de4e02e6a9a5f0e009d62c94d",
+      "size_bytes": 2048958,
+      "width": 1024,
+      "height": 1536,
+      "frames": 1,
+      "alpha_extrema": [
+        0,
+        254
+      ],
+      "native_copy_unchanged": true
+    },
+    {
+      "id": "cargo-catapult-dc",
+      "path": "modes/echos-de-la-greve/assets/static-domains-20261125/cargo-catapult-dc.png",
+      "work": "ds1-dc",
+      "category": "props",
+      "sha256": "78ec782e595e99c13e5ae741e71f826898d4ad8e408f19c68de544c5b1ba8aed",
+      "original_sha256": "78ec782e595e99c13e5ae741e71f826898d4ad8e408f19c68de544c5b1ba8aed",
+      "size_bytes": 1161454,
+      "width": 1254,
+      "height": 1254,
+      "frames": 1,
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "native_copy_unchanged": true
+    },
+    {
+      "id": "chiral-bridge-dc",
+      "path": "modes/echos-de-la-greve/assets/static-domains-20261125/chiral-bridge-dc.png",
+      "work": "ds1-dc",
+      "category": "props",
+      "sha256": "2e66879739cd5391e3c74465cb56392f84a81ce8eb0486d23701c47c7f790167",
+      "original_sha256": "2e66879739cd5391e3c74465cb56392f84a81ce8eb0486d23701c47c7f790167",
+      "size_bytes": 1285897,
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "alpha_extrema": [
+        0,
+        254
+      ],
+      "native_copy_unchanged": true
+    },
+    {
+      "id": "firing-range-dc-panorama",
+      "path": "modes/echos-de-la-greve/assets/static-domains-20261125/firing-range-dc-panorama.png",
+      "work": "ds1-dc",
+      "category": "stages",
+      "sha256": "544b645be6f33c7292331ca8f11e0fac319c77072dfc11c0d40f1c4b5a0675d5",
+      "original_sha256": "544b645be6f33c7292331ca8f11e0fac319c77072dfc11c0d40f1c4b5a0675d5",
+      "size_bytes": 2393212,
+      "width": 1672,
+      "height": 941,
+      "frames": 1,
+      "alpha_extrema": [
+        255,
+        255
+      ],
+      "native_copy_unchanged": true
+    },
+    {
+      "id": "jump-ramp-dc",
+      "path": "modes/echos-de-la-greve/assets/static-domains-20261125/jump-ramp-dc.png",
+      "work": "ds1-dc",
+      "category": "props",
+      "sha256": "040a6c1618ea62c24b85789cdd23b599387c2ec943006bd93ed060517968cfda",
+      "original_sha256": "040a6c1618ea62c24b85789cdd23b599387c2ec943006bd93ed060517968cfda",
+      "size_bytes": 1497380,
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "alpha_extrema": [
+        0,
+        254
+      ],
+      "native_copy_unchanged": true
+    },
+    {
+      "id": "maser-gun-dc",
+      "path": "modes/echos-de-la-greve/assets/static-domains-20261125/maser-gun-dc.png",
+      "work": "ds1-dc",
+      "category": "props",
+      "sha256": "f93a87b6acea595f028f8573389945069b4274829ad37629a439d8884043ab37",
+      "original_sha256": "f93a87b6acea595f028f8573389945069b4274829ad37629a439d8884043ab37",
+      "size_bytes": 1548996,
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "alpha_extrema": [
+        0,
+        254
+      ],
+      "native_copy_unchanged": true
+    },
+    {
+      "id": "monorail-yamato-ds2",
+      "path": "modes/echos-de-la-greve/assets/static-domains-20261125/monorail-yamato-ds2.png",
+      "work": "ds2",
+      "category": "vehicles",
+      "sha256": "cd6b0984a8c7e4596164ed659684347d383e84eaa8d597a6e42dca034a0dbe9f",
+      "original_sha256": "cd6b0984a8c7e4596164ed659684347d383e84eaa8d597a6e42dca034a0dbe9f",
+      "size_bytes": 1901355,
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "alpha_extrema": [
+        0,
+        254
+      ],
+      "native_copy_unchanged": true
+    },
+    {
+      "id": "roadster-dc",
+      "path": "modes/echos-de-la-greve/assets/static-domains-20261125/roadster-dc.png",
+      "work": "ds1-dc",
+      "category": "vehicles",
+      "sha256": "eaf9d4880910c40ea9e42d9cbc47c2811cccd32620fe655f85a1da71fb66de5c",
+      "original_sha256": "eaf9d4880910c40ea9e42d9cbc47c2811cccd32620fe655f85a1da71fb66de5c",
+      "size_bytes": 1635720,
+      "width": 1536,
+      "height": 1024,
+      "frames": 1,
+      "alpha_extrema": [
+        0,
+        254
+      ],
+      "native_copy_unchanged": true
+    },
+    {
+      "id": "terminal-hangar-distant",
+      "path": "modes/echos-de-la-greve/assets/stages/terminal-hangar-distant.png",
+      "work": "project-simulation",
+      "category": "stage-layers",
+      "sha256": "f3cef5c0e030564212f1e71d308bf34ad29d1e06dd63d1795f1ecae7a8d78b95",
+      "original_sha256": "f3cef5c0e030564212f1e71d308bf34ad29d1e06dd63d1795f1ecae7a8d78b95",
+      "size_bytes": 1447453,
+      "width": 1672,
+      "height": 941,
+      "frames": 1,
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "native_copy_unchanged": true
+    },
+    {
+      "id": "terminal-hangar-floor",
+      "path": "modes/echos-de-la-greve/assets/stages/terminal-hangar-floor.png",
+      "work": "project-simulation",
+      "category": "stage-layers",
+      "sha256": "e5c93e0ac7125c1e0ab7ed932724ab63810ea71cd49f970cf586e0a0dd064c11",
+      "original_sha256": "e5c93e0ac7125c1e0ab7ed932724ab63810ea71cd49f970cf586e0a0dd064c11",
+      "size_bytes": 1583995,
+      "width": 1672,
+      "height": 941,
+      "frames": 1,
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "native_copy_unchanged": true
+    },
+    {
+      "id": "terminal-hangar-foreground",
+      "path": "modes/echos-de-la-greve/assets/stages/terminal-hangar-foreground.png",
+      "work": "project-simulation",
+      "category": "stage-layers",
+      "sha256": "3d52eaca72329acd0764d5282d87190151d9b9fe022ce54a6a800de928acd362",
+      "original_sha256": "3d52eaca72329acd0764d5282d87190151d9b9fe022ce54a6a800de928acd362",
+      "size_bytes": 100047,
+      "width": 1672,
+      "height": 941,
+      "frames": 1,
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "native_copy_unchanged": true
+    },
+    {
+      "id": "terminal-hangar-midground",
+      "path": "modes/echos-de-la-greve/assets/stages/terminal-hangar-midground.png",
+      "work": "project-simulation",
+      "category": "stage-layers",
+      "sha256": "b7b8f3383043072b235854c0115a2c7eb204297757447271034c198585f7ab4e",
+      "original_sha256": "b7b8f3383043072b235854c0115a2c7eb204297757447271034c198585f7ab4e",
+      "size_bytes": 1249098,
+      "width": 1672,
+      "height": 941,
+      "frames": 1,
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "native_copy_unchanged": true
+    },
+    {
+      "id": "terminal-hangar-panorama",
+      "path": "modes/echos-de-la-greve/assets/static-domains-20261125/terminal-hangar-panorama.png",
+      "work": "project-simulation",
+      "category": "stages",
+      "sha256": "96096b2711736a98b925ebae8d4f61de21797e1395b6758beed033776599ed89",
+      "original_sha256": "96096b2711736a98b925ebae8d4f61de21797e1395b6758beed033776599ed89",
+      "size_bytes": 2377248,
+      "width": 1672,
+      "height": 941,
+      "frames": 1,
+      "alpha_extrema": [
+        255,
+        255
+      ],
+      "native_copy_unchanged": true
+    },
+    {
+      "id": "terminal-hangar-sky",
+      "path": "modes/echos-de-la-greve/assets/stages/terminal-hangar-sky.png",
+      "work": "project-simulation",
+      "category": "stage-layers",
+      "sha256": "c1048c3721e9d270313022f46a2165159ae48b96b1cd776c996e0f7175f02111",
+      "original_sha256": "c1048c3721e9d270313022f46a2165159ae48b96b1cd776c996e0f7175f02111",
+      "size_bytes": 2092897,
+      "width": 1672,
+      "height": 941,
+      "frames": 1,
+      "alpha_extrema": [
+        255,
+        255
+      ],
+      "native_copy_unchanged": true
+    }
+  ],
+  "active_recent_native_images": [
+    {
+      "path": "modes/echos-de-la-greve/assets/bosses/giant/attack.png",
+      "sha256": "074ab06989bf102a804dc6f3b449e656c19dd67c2090c26aebdf8aa513dedf21",
+      "lot": "20261124",
+      "size_bytes": 1107653
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/bosses/giant/idle.png",
+      "sha256": "ef561c3e5cfe5e00a9d52e5655944cdc7b76f24e2695c9879e405bc017288075",
+      "lot": "20261124",
+      "size_bytes": 1427523
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/bosses/giant/stagger.png",
+      "sha256": "02a35914959a8c533209cdeb919caabcc1ee081a87ce46cb3f3a7d90017c8a2e",
+      "lot": "20261124",
+      "size_bytes": 1858223
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/bosses/lion/attack.png",
+      "sha256": "158ebc0554351a643db65beedf2a32810d9e5ee670f307747d2784e6aed52767",
+      "lot": "20261124",
+      "size_bytes": 1647048
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/bosses/lion/idle.png",
+      "sha256": "b9897fdd6c4f35d3c5f5e18b2631ae77a93ea1a26404d6cb71bd85f65cd66662",
+      "lot": "20261124",
+      "size_bytes": 1537458
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/bosses/lion/stagger.png",
+      "sha256": "9314395690f87baaa9047ab5952b90898eca4b54beb54b2dbd182cb1b33ff59d",
+      "lot": "20261124",
+      "size_bytes": 1346988
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/bosses/mule-truck/damaged.png",
+      "sha256": "1017c8cf1d050e7f3fa9a631de25754b9924f6caf7e74a64e39dada910754ee7",
+      "lot": "20261124",
+      "size_bytes": 1999214
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/bosses/mule-truck/idle.png",
+      "sha256": "8dabcb18dea367d6c5d6ec8c8aedb3fe912d4b873d7e2c21439cb0253e759758",
+      "lot": "20261124",
+      "size_bytes": 1854409
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/bosses/squid/attack.png",
+      "sha256": "b8648778c08c40767f4fc14c0440c75ba2cb93f58fe2cfcb3b7a67968df77551",
+      "lot": "20261124",
+      "size_bytes": 1385258
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/bosses/squid/idle.png",
+      "sha256": "578677b92d5bae0b696e196182b496d6f4b9f11cf0cc23e012b945a8f956c3e8",
+      "lot": "20261124",
+      "size_bytes": 1280064
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/bosses/squid/stagger.png",
+      "sha256": "dd1c431edbc4e950c052f98432d658c281f46d83c5c0e5ae09eebad04072196d",
+      "lot": "20261124",
+      "size_bytes": 1387721
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/bosses/whale/attack.png",
+      "sha256": "53ee2ac5f0f907afb0c704a1eeb5f58f0cce98feb9c43b480395d0a4e897a932",
+      "lot": "20261124",
+      "size_bytes": 1466230
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/bosses/whale/idle.png",
+      "sha256": "74cc313476dd722237756d6ff96d93c7a38b4b2fc93baa94a6d8223834b14f6f",
+      "lot": "20261124",
+      "size_bytes": 1497304
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/bosses/whale/stagger.png",
+      "sha256": "637c4ef427843e9b4acf11dc10e3cc5c056bc60c1e48810367654f090e99a8ec",
+      "lot": "20261124",
+      "size_bytes": 1370051
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/fighters/cliff/apex.png",
+      "sha256": "a9a53ef0cb5ec64c3349f6191f67fd1e6019277ba36b931041ac01b15e0f88bf",
+      "lot": "20261124",
+      "size_bytes": 2180940
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/fighters/cliff/crouch.png",
+      "sha256": "a89624158fd4a80b26023404da1e0308fcefaa2ea81c84750a4ce1e4e7f327cc",
+      "lot": "20261124",
+      "size_bytes": 1734522
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/fighters/cliff/fall.png",
+      "sha256": "a1ec46e55c691eed4dc5f338888cad40b8e33749ffe50e3a1113a3ed662b44d3",
+      "lot": "20261124",
+      "size_bytes": 2088554
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/fighters/cliff/guard.png",
+      "sha256": "281c41ea7ce4003c6db95903620024eea9347487c918138d59c7a52e85fe9f7b",
+      "lot": "20261124",
+      "size_bytes": 2124158
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/fighters/cliff/rise.png",
+      "sha256": "66f83f926bf47f847cc01a03cd9ac22ce36bc014aa642432cd0b662b80326b26",
+      "lot": "20261124",
+      "size_bytes": 2032377
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/fighters/diehardman/action.png",
+      "sha256": "9cae0941e5cfa6ce22130ce659443e7c73c3a63b83b33edb20634bc169d8709e",
+      "lot": "20261124",
+      "size_bytes": 850971
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/fighters/diehardman/apex.png",
+      "sha256": "fcad41a26691abcb4fb0b8d348e3eeac4016627d5481c28946097d648e9e2071",
+      "lot": "20261124",
+      "size_bytes": 1344753
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/fighters/diehardman/crouch.png",
+      "sha256": "db7b301896ab507603f5b2b031f40cbd99125aa82d75b12486f667f01c96cc13",
+      "lot": "20261124",
+      "size_bytes": 1264064
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/fighters/diehardman/fall.png",
+      "sha256": "e82304da9ac8bae30002743cdb8d704dd8225d17803d1dacd0fae83c2de232e5",
+      "lot": "20261124",
+      "size_bytes": 1029543
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/fighters/diehardman/guard.png",
+      "sha256": "89d29ca6c554f592dfbf6f697ff64b5dd508f160e0100c9740fa4fd41efd6538",
+      "lot": "20261124",
+      "size_bytes": 1263762
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/fighters/diehardman/hit.png",
+      "sha256": "f211cdcd8a56ac290c6fefae261b0a2529a5f7c0a8a0550634515d93fc220fd3",
+      "lot": "20261124",
+      "size_bytes": 1666818
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/fighters/diehardman/jump.png",
+      "sha256": "a8a57c24b949d477f70848d5c526b69ef4c5c7b52f41695b1b66738277cb6da7",
+      "lot": "20261124",
+      "size_bytes": 994131
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/fighters/diehardman/portrait.png",
+      "sha256": "cfd54ec2f0975c0fea44cecbc2414e9820e59586266b06789aef42337b1f044e",
+      "lot": "20261124",
+      "size_bytes": 1570229
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/fighters/diehardman/rise.png",
+      "sha256": "85e857d13f809634f432f6207fe17f4f44416586b622aac569e3922ed2be7273",
+      "lot": "20261124",
+      "size_bytes": 1213590
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/fighters/diehardman/stance.png",
+      "sha256": "2877d7af9058771972f7aa7690ff9678022493f49bafd36dc404c0caa5e04d77",
+      "lot": "20261124",
+      "size_bytes": 1189390
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/fighters/diehardman/step.png",
+      "sha256": "27561492b8dbd0141c55da34ebbb5cf2cb7b246e74e2c86054fa1e51c35d29f9",
+      "lot": "20261124",
+      "size_bytes": 1582454
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/fighters/fragile/apex.png",
+      "sha256": "16db4ada4269572de58ff6af582bce5e940b8fd6a1bd24f1fd8495b23e7890ec",
+      "lot": "20261124",
+      "size_bytes": 1490708
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/fighters/fragile/crouch.png",
+      "sha256": "6b347f10bb87ea36f328af36b4617ee7c71cdc5cc0b5863a9c263ac8c5cebe9b",
+      "lot": "20261124",
+      "size_bytes": 2065682
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/fighters/fragile/fall.png",
+      "sha256": "399c93011ea1fb44ceab4962787db17e0181d30fac66f18fcf9bfea6f1a54ffb",
+      "lot": "20261124",
+      "size_bytes": 1260820
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/fighters/fragile/guard.png",
+      "sha256": "4e74b9bc66e42b75d16f29973126963a540e9a53424cba900b2669d2b664bf25",
+      "lot": "20261124",
+      "size_bytes": 1428570
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/fighters/fragile/rise.png",
+      "sha256": "337a3f215a3b6142ae733b03ac49dc035286d4bde100be94fd18c2712fadad6a",
+      "lot": "20261124",
+      "size_bytes": 1826975
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/fighters/heartman/action.png",
+      "sha256": "da6b95f96914ee7f22df4b65b93780521c2c3188952b6b0afef616bdb8ef9049",
+      "lot": "20261124",
+      "size_bytes": 1575223
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/fighters/heartman/apex.png",
+      "sha256": "e5176935cd45411bf0767df07a46bbd0ac467bed688a0dec120a5a6868a2d7ff",
+      "lot": "20261124",
+      "size_bytes": 1788201
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/fighters/heartman/crouch.png",
+      "sha256": "1ef56c86631c5be4dc5fb90f73f4469152aa9d39869c341a6c8c886e43dc644a",
+      "lot": "20261124",
+      "size_bytes": 1212008
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/fighters/heartman/fall.png",
+      "sha256": "8487e53cd1e649e4de5456c47f99ca03aa17557a6a78a84ba8d8a0c51564d701",
+      "lot": "20261124",
+      "size_bytes": 1675765
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/fighters/heartman/guard.png",
+      "sha256": "1cf591e0c7aab5fe217441b2b92b679e7f735cdbd2934125ed18d26e44058e36",
+      "lot": "20261124",
+      "size_bytes": 1745097
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/fighters/heartman/hit.png",
+      "sha256": "58a0d4f7ed05d2ebad93c8fab42f6894c66c076f579442aa7262cc0917a175f4",
+      "lot": "20261124",
+      "size_bytes": 1654098
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/fighters/heartman/portrait.png",
+      "sha256": "0b412e141daddf2e08c106d4c4fa7a4783ed6dcae37ecd2e04f2c7b2359cc5f2",
+      "lot": "20261124",
+      "size_bytes": 1638232
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/fighters/heartman/rise.png",
+      "sha256": "61043655a1d77d88732356f4687d187d1e3b3fad108854afa60b4f1a7936af63",
+      "lot": "20261124",
+      "size_bytes": 1602893
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/fighters/heartman/stance.png",
+      "sha256": "3fc213af154b9db73d69285f75ad7a6e50e24b83c822017b513cf49c26fb30b6",
+      "lot": "20261124",
+      "size_bytes": 1713298
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/fighters/heartman/step.png",
+      "sha256": "5abacd15c820c17454b209b76c7f5009945846d890d6c18cbe29f0b81b426cf8",
+      "lot": "20261124",
+      "size_bytes": 1822480
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/fighters/higgs/action.png",
+      "sha256": "430a1a4933b85f1d2455b1a2659aeb4add108d00204b43a783c1dbd4148f771f",
+      "lot": "20261124",
+      "size_bytes": 2017810
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/fighters/higgs/apex.png",
+      "sha256": "a82ad43f4e1bff933f45449532f5e62ddf2a057418b5d51248925bd71f29e1b1",
+      "lot": "20261124",
+      "size_bytes": 1553540
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/fighters/higgs/crouch.png",
+      "sha256": "fa1d8237b01f02f4081f7ab7a1c4908f898aa855e2fee6142a6d9ba43f7d2124",
+      "lot": "20261124",
+      "size_bytes": 2258989
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/fighters/higgs/fall.png",
+      "sha256": "9b29d90e591099f7e4d956b49aab4aa6d28b199df0200b62be58b51b926fac8a",
+      "lot": "20261124",
+      "size_bytes": 1541669
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/fighters/higgs/guard.png",
+      "sha256": "0d86739bd460302353d1ec6e2f614068f8cb1f84d9c83260962b343411c70b36",
+      "lot": "20261124",
+      "size_bytes": 1804744
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/fighters/higgs/hit.png",
+      "sha256": "066a55e99d37e4c0fd54d734a856fb2a98394a83e68935db4e2d082433a7090b",
+      "lot": "20261124",
+      "size_bytes": 1738676
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/fighters/higgs/jump.png",
+      "sha256": "7c7c17863537877928b9622d68930b06a6f5ac3cea5f53c76236c4eb6ed373b5",
+      "lot": "20261124",
+      "size_bytes": 1609351
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/fighters/higgs/portrait.png",
+      "sha256": "65ae0f25519a62c2f202b2d6b81e7c3191c641a2f3efc5d33bcf3ec661aac63f",
+      "lot": "20261124",
+      "size_bytes": 2119285
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/fighters/higgs/rise.png",
+      "sha256": "a12c14b8fc16f97c012e13a4a2d6ee251fe143c99ba4122477fb0e0c2752a876",
+      "lot": "20261124",
+      "size_bytes": 1527304
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/fighters/higgs/stance.png",
+      "sha256": "bef8d4aa14f693abf574639aadf5e986ab41acf2347c9c1a6277c986f73e4c6b",
+      "lot": "20261124",
+      "size_bytes": 1945551
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/fighters/higgs/step.png",
+      "sha256": "562ba84fdc1901b58b24d5f5c9ca55cf176896ddbf65b1b4f6d79bc153e6fd72",
+      "lot": "20261124",
+      "size_bytes": 1398510
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/fighters/mama/atelier/action.png",
+      "sha256": "4b1d7123737ae4768079c3f09b7379fa4a0c8d61646be120f9d4c0b171eb19aa",
+      "lot": "20261124",
+      "size_bytes": 1886645
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/fighters/mama/atelier/apex.png",
+      "sha256": "8745b93dfc7928551e1f03314e643dad9f249652ce841c46b2cd54391935bf01",
+      "lot": "20261124",
+      "size_bytes": 1971858
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/fighters/mama/atelier/crouch.png",
+      "sha256": "0f6981404bbb950a29009f098d869c89952e8ba5f6037128a4eeb3aa178ea5f4",
+      "lot": "20261124",
+      "size_bytes": 1302188
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/fighters/mama/atelier/fall.png",
+      "sha256": "8aece1b82055903f4ce41fa7345293582f813803741a8d30cf405eaadb97f390",
+      "lot": "20261124",
+      "size_bytes": 1836803
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/fighters/mama/atelier/guard.png",
+      "sha256": "99c3724fdbd5e47349f63d021c1c0bad459adbff08a1f5f34dd61960318b0417",
+      "lot": "20261124",
+      "size_bytes": 1905530
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/fighters/mama/atelier/hit.png",
+      "sha256": "adb012044b8c325110e3eee527fa90b2f3891cba0bb04a15ed979cc813f4a7e2",
+      "lot": "20261124",
+      "size_bytes": 1862100
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/fighters/mama/atelier/portrait.png",
+      "sha256": "a0e1bd00d3bd96a0cf524ab2150bd217f2c2c170d90991fa395847d54e44f1f0",
+      "lot": "20261124",
+      "size_bytes": 1617366
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/fighters/mama/atelier/rise.png",
+      "sha256": "92e73749da44af6510db329a76da1ca6ff9df38c3d71bcda9fd0d1866e49f316",
+      "lot": "20261124",
+      "size_bytes": 1676600
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/fighters/mama/atelier/stance.png",
+      "sha256": "28307fe4c1462bbb8839f63d029b9e7e6e4051c0fb7a5a4dfc7ff35d13dc36e6",
+      "lot": "20261124",
+      "size_bytes": 1572939
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/fighters/mama/atelier/step.png",
+      "sha256": "c61b23bd2d502216453d9ae87e45e418ccd656600af8df9660c78239c4e96b15",
+      "lot": "20261124",
+      "size_bytes": 1896873
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/fighters/mama/viaduc/action.png",
+      "sha256": "5a30a1290c1298a2f1ce00f8f984e15c7f3b8fd0216d2a16ed749986374db200",
+      "lot": "20261124",
+      "size_bytes": 1823960
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/fighters/mama/viaduc/apex.png",
+      "sha256": "747939fe0ceecc41483df618710729fdeaf99d08e606cca070bbdb123fb7f013",
+      "lot": "20261124",
+      "size_bytes": 2174873
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/fighters/mama/viaduc/crouch.png",
+      "sha256": "4f7155e4a28780fad7ff96d0b4ce0ca02da3c504049acae1dac5d4b3a7fabe58",
+      "lot": "20261124",
+      "size_bytes": 2129349
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/fighters/mama/viaduc/fall.png",
+      "sha256": "f79113135e0181f4b09d2697b10356a7dc108b9d4ca888d4ae577d5b4f299c57",
+      "lot": "20261124",
+      "size_bytes": 1869357
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/fighters/mama/viaduc/guard.png",
+      "sha256": "d65b21abea6d14c15828fdebd974a9403a727c5ced8383631f4b47c1c483412d",
+      "lot": "20261124",
+      "size_bytes": 1963426
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/fighters/mama/viaduc/hit.png",
+      "sha256": "50da01524cb037918060ff980450fc71aca5e44c7440f7df09a2e7b82625cd99",
+      "lot": "20261124",
+      "size_bytes": 2056608
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/fighters/mama/viaduc/portrait.png",
+      "sha256": "41e762ebb6113868c00d40cc1a877f9af43ef4fceb8424c0003fab31fa3b0df6",
+      "lot": "20261124",
+      "size_bytes": 1598683
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/fighters/mama/viaduc/rise.png",
+      "sha256": "7df2108faaf5249c67ec6846eed8d307f985fe381e742d7fb58e1898416ca163",
+      "lot": "20261124",
+      "size_bytes": 1826467
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/fighters/mama/viaduc/stance.png",
+      "sha256": "64be5a628f7d94daf0a04d793ce1e2ec19b61d2bb02c7bab169aeeff168be664",
+      "lot": "20261124",
+      "size_bytes": 1804335
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/fighters/mama/viaduc/step.png",
+      "sha256": "6a387d3a3a3f59eb44f880b6db6e31f0adce9891e58804165e62a2fc2ff02c8d",
+      "lot": "20261124",
+      "size_bytes": 1880229
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/fighters/mule/apex.png",
+      "sha256": "1008f3447a6cda6bf69eb185af9281fdc7a40e4905356cbd7aee6c3da12f6804",
+      "lot": "20261124",
+      "size_bytes": 2273159
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/fighters/mule/crouch.png",
+      "sha256": "b50694e4197d668190ad74c668269af27acc6696b5a8edcf9cba93d1930035d6",
+      "lot": "20261124",
+      "size_bytes": 1958872
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/fighters/mule/fall.png",
+      "sha256": "ab51fd2b501109aa7d756f519893b536223883aeb5448282c8335f265df74b70",
+      "lot": "20261124",
+      "size_bytes": 2244087
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/fighters/mule/guard.png",
+      "sha256": "56b9cdee2203aed673a2d9a4699459fae993814771891e66d835e2d5217e3794",
+      "lot": "20261124",
+      "size_bytes": 1403165
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/fighters/mule/rise.png",
+      "sha256": "b0e6efe295e82f6570ee554e886eea8347abe95fda1145f6de18eed152c66ca7",
+      "lot": "20261124",
+      "size_bytes": 2091425
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/fighters/sam/apex.png",
+      "sha256": "6ef109a246650a795a91c845b9ab2b8ea64e250bebd2f5017cbf51b94291a3ac",
+      "lot": "20261124",
+      "size_bytes": 1586608
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/fighters/sam/crouch.png",
+      "sha256": "f787d9b3ba24609e7b48ee904c673115824ccc3aa85873e75761f18c2c2813c3",
+      "lot": "20261124",
+      "size_bytes": 1683247
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/fighters/sam/fall.png",
+      "sha256": "8b3762a91937bbe24f9d1261b0b961f87d8ed8562e069e95d03cbb76fb92867f",
+      "lot": "20261124",
+      "size_bytes": 2076685
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/fighters/sam/guard.png",
+      "sha256": "9ab6da9fcaab1d5cde6e39f475da7b233bf5829dd9a01f24814f2215e4eb2012",
+      "lot": "20261124",
+      "size_bytes": 2059493
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/fighters/sam/rise.png",
+      "sha256": "1869e33970c12677fe53b5444a3dff6c5aa99a0dd9e0e8bcb5897b7acd29a4a3",
+      "lot": "20261124",
+      "size_bytes": 2011523
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/fighters/support/amelie-portrait.png",
+      "sha256": "24e2369c8d9c752052ff609f11678e15e0f26564512642dbc05fd73f3f111612",
+      "lot": "20261124",
+      "size_bytes": 1875494
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/fighters/support/bridget-portrait.png",
+      "sha256": "949020a2bdb17e051369e9ee27bc7e1ded3fda86cce3265311876635fabfe13d",
+      "lot": "20261124",
+      "size_bytes": 1674975
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/fighters/support/deadman-portrait.png",
+      "sha256": "d4b5e507b8ac0ccf57bc25ce884f0d9fa78ba2be4372813ff2ef862403254959",
+      "lot": "20261124",
+      "size_bytes": 1698217
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/projectiles/boss-chiral-ring.png",
+      "sha256": "fb50eb1a966c7a0c3c607f06245ccbc61bbdd4784a41e7356db717b2d85cb9e3",
+      "lot": "20261124",
+      "size_bytes": 1506755
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/projectiles/boss-mule-bolt.png",
+      "sha256": "ec6fd07ddfba9587507c188e5be4018b9547008ac53319aa5a6cc6e1e520868d",
+      "lot": "20261124",
+      "size_bytes": 588287
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/projectiles/boss-tar-orb.png",
+      "sha256": "ff60a5ce5f61f082a100c35fd983a349e5b1d75a90de8b0b47475ed51e589ac9",
+      "lot": "20261124",
+      "size_bytes": 966931
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/projectiles/boss-tar-spike.png",
+      "sha256": "65a1192886186ed1aeb975fb1e54464f450b23ba554f894d2979ed68258a8522",
+      "lot": "20261124",
+      "size_bytes": 1536140
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/projectiles/cliff.png",
+      "sha256": "d9deca283e4bae414929d8f1da0978e4849a70e81f99437ab2f0f61950b9c4ce",
+      "lot": "20261124",
+      "size_bytes": 401259
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/projectiles/gate.png",
+      "sha256": "5884198a2c9dd0cedfcec64030d24a229a13426f8e99c4ed8563628b8e7a88fe",
+      "lot": "20261124",
+      "size_bytes": 1432283
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/projectiles/heartman.png",
+      "sha256": "706563a35afc105dc8263199e5c3e44dffa3e707a6a3ed0d7c490577745d7730",
+      "lot": "20261124",
+      "size_bytes": 515451
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/projectiles/higgs.png",
+      "sha256": "5daad21f052df501efb2e4d5845a26990319241d9230346bd912a052298662df",
+      "lot": "20261124",
+      "size_bytes": 1364731
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/projectiles/memory.png",
+      "sha256": "5585d9e30f507473b8850e9d45c9c44cd937e74481390649a5d07f16eff81f05",
+      "lot": "20261124",
+      "size_bytes": 534569
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/projectiles/recall.png",
+      "sha256": "4d38d4d172ae74fec7b3ed04a7bed87c48e2dbf47d6b07d18e1dd6728d85e849",
+      "lot": "20261124",
+      "size_bytes": 841474
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/projectiles/sam.png",
+      "sha256": "43827e84f9d3a142b1f1becb2c19ca4a795b438f0c5c975f1740ae547ad30edf",
+      "lot": "20261124",
+      "size_bytes": 568725
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/stages/dunes-ds2-distant.png",
+      "sha256": "d2d61c29698709434315cf0f2b9168cfd45d5ca717bc548ba1c6f92bbcd80bb6",
+      "lot": "20261125-completion",
+      "size_bytes": 1776023
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/stages/dunes-ds2-floor.png",
+      "sha256": "543aec7559d771024f6aeb47e1ba7619ae349e9448ccb7ca222287a33fee58e9",
+      "lot": "20261125-completion",
+      "size_bytes": 1471746
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/stages/dunes-ds2-foreground.png",
+      "sha256": "2d8ecdcb5cb14e9fd022df699750e325220c42894bee55e4b63cbe446dd33e92",
+      "lot": "20261125-completion",
+      "size_bytes": 104522
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/stages/dunes-ds2-midground.png",
+      "sha256": "74e633a5a703da672a4a82763d7ae293394a5d3944e6393b0eb62dc25ab82092",
+      "lot": "20261125-completion",
+      "size_bytes": 814548
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/stages/dunes-ds2-sky.png",
+      "sha256": "5d2c7cd01b65e04a91ca2cc863fa438b9581eceffd46121bfa894b9951b6f7b2",
+      "lot": "20261125-completion",
+      "size_bytes": 1540440
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/stages/incinerator-distant.png",
+      "sha256": "a4755e7d4f2488ae962c9f6c2cf0653c587e7643c4bf2314122358179af8c289",
+      "lot": "20261124",
+      "size_bytes": 1296621
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/stages/incinerator-floor.png",
+      "sha256": "ce8498abee8e6089bf55e454b06a4f92ae95fceb239e9f3f280fc016158ce8af",
+      "lot": "20261124",
+      "size_bytes": 2420768
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/stages/incinerator-foreground.png",
+      "sha256": "75801b9f56c3f947473e5f9b8e8f35565e74e9b2fe3272f7aec1c373b107bf87",
+      "lot": "20261124",
+      "size_bytes": 153111
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/stages/incinerator-midground.png",
+      "sha256": "a1351265c613b9211e0559d744e4aaaba5e3db64418fc50688dc9b9dfe6f889a",
+      "lot": "20261124",
+      "size_bytes": 894376
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/stages/incinerator-sky.png",
+      "sha256": "f8f96e14e4e5788e4d43daaa8f83245643e2c3d55e79d1bcf014f824c54b3779",
+      "lot": "20261124",
+      "size_bytes": 1773518
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/stages/incinerator.png",
+      "sha256": "a7e3f1beebc201fe01f1030999839a286f651bf0e6339b3bd3ddf7edb7459b08",
+      "lot": "20261124",
+      "size_bytes": 2284761
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/stages/magellan-ds2-distant.png",
+      "sha256": "ba85faa99e991e9519d366a2bf6cebc25b196ac71567481176041a06898f9e7c",
+      "lot": "20261125-universe",
+      "size_bytes": 370358
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/stages/magellan-ds2-floor.png",
+      "sha256": "4b046d7d3814dfd4c86ae9c340d00db859613472e7a71e17d72e570df64b576a",
+      "lot": "20261125-universe",
+      "size_bytes": 2048430
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/stages/magellan-ds2-foreground.png",
+      "sha256": "4c93988a5469264c095cfcdd9c1e574cd75f9a2ded009f6b55c0ea86ec0640af",
+      "lot": "20261125-universe",
+      "size_bytes": 188208
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/stages/magellan-ds2-midground.png",
+      "sha256": "a79d12f67df8a0cb7521e45499c7349c367b73cf3e6739bd28e438937dd4906a",
+      "lot": "20261125-universe",
+      "size_bytes": 1431026
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/stages/magellan-ds2-sky.png",
+      "sha256": "953add4be03755a9b68c71ac3175ba3bf2eb32f9bbb56c4211deb8e1f85af442",
+      "lot": "20261125-universe",
+      "size_bytes": 1721695
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/stages/mountain-knot-approach-distant.png",
+      "sha256": "fdae8dc3a6a5473150cb47f9de93c54a5c5796128a43e1936fa32ea97e23c4ef",
+      "lot": "20261125-universe",
+      "size_bytes": 1575419
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/stages/mountain-knot-approach-floor.png",
+      "sha256": "f0809f99efc2e520f3b4b796e348d6ca7205f9404c3a2db97d241d3bcbe5a59e",
+      "lot": "20261125-universe",
+      "size_bytes": 2169060
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/stages/mountain-knot-approach-foreground.png",
+      "sha256": "15e792f0c81993f25d4f1b2004d3b1f016dfde601c114ca984d6e9fec97826bb",
+      "lot": "20261125-universe",
+      "size_bytes": 144310
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/stages/mountain-knot-approach-midground.png",
+      "sha256": "02fb7cdbbcf13c8087d7803b162a3cedb66f7f525f7bad80d23fe963dcc3d8c9",
+      "lot": "20261125-universe",
+      "size_bytes": 1055333
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/stages/mountain-knot-approach-sky.png",
+      "sha256": "6a276d4006ecd5a094342b3debf4091fea62f7f3991d93cb73b49eaec6735943",
+      "lot": "20261125-universe",
+      "size_bytes": 1602065
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/stages/plate-gate-ds2-distant.png",
+      "sha256": "64caa390849eb882f70c150674bfa5ad341805f71887cbf62564e98059d5c0ae",
+      "lot": "20261125-completion",
+      "size_bytes": 1697556
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/stages/plate-gate-ds2-floor.png",
+      "sha256": "fb738bbc9d9112f933a05811332c468cdb191678ff4574a028cac8fff57bcaa7",
+      "lot": "20261125-completion",
+      "size_bytes": 1869795
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/stages/plate-gate-ds2-foreground.png",
+      "sha256": "d3b8f21536ddc2b254522e7f20974482ec7e1f8c7b26fb88f633db3265d6df18",
+      "lot": "20261125-completion",
+      "size_bytes": 110053
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/stages/plate-gate-ds2-midground.png",
+      "sha256": "bbe9206a54a5ab8260808d92025cd2b0931fb26c9c8722576d053d0b9c1c876c",
+      "lot": "20261125-completion",
+      "size_bytes": 795243
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/stages/plate-gate-ds2-sky.png",
+      "sha256": "51532d4c61d1858ce1c7ec1d180a47aed4598bd8d190378b72badae5aded5919",
+      "lot": "20261125-completion",
+      "size_bytes": 1524978
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/stages/port-knot-distant.png",
+      "sha256": "fa124952e7125ff919320368a6e3fb41ad6e483b773ff0fb2ead18c0ece276af",
+      "lot": "20261124",
+      "size_bytes": 1697319
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/stages/port-knot-floor.png",
+      "sha256": "fbbbc31900b7184c4ee9d263d38a1741c8d9443ba37c1dda9c0fd3b74b0520e1",
+      "lot": "20261124",
+      "size_bytes": 2064194
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/stages/port-knot-foreground.png",
+      "sha256": "ebeec997ce8fd801c2a1f9fb530ec0c0b2a71bb255a08526fe78811af758da45",
+      "lot": "20261124",
+      "size_bytes": 117315
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/stages/port-knot-midground.png",
+      "sha256": "d575bf358b3a556334002c899dbfe9e35d29a115a175f763f375b2361ba6fa62",
+      "lot": "20261124",
+      "size_bytes": 1564066
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/stages/port-knot-sky.png",
+      "sha256": "8688a765dcee8a2e5e843b80f3997243cc09bbb0ad180dcbee9598a0386408ce",
+      "lot": "20261124",
+      "size_bytes": 1681106
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/stages/port-knot.png",
+      "sha256": "91cb224f3d26a9f66acf0087b2d17d89a106a1a049dba81e05873a09fa690ebe",
+      "lot": "20261124",
+      "size_bytes": 2342107
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/stages/sandstorm-ds2-distant.png",
+      "sha256": "fb8925bad63c0b302be014ed26db1047e5c3015fe511258f2dc7eff88a688658",
+      "lot": "20261125-completion",
+      "size_bytes": 1873729
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/stages/sandstorm-ds2-floor.png",
+      "sha256": "b9645bf76b7cd16eddd1b9d880cf63edf8619c7c4474e34e270fe3d3feeea593",
+      "lot": "20261125-completion",
+      "size_bytes": 1773816
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/stages/sandstorm-ds2-foreground.png",
+      "sha256": "b3d841e80b71f32df9fae37a5c78bd3452f4c4cf70068f86fbe67d5a63f938a2",
+      "lot": "20261125-completion",
+      "size_bytes": 106747
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/stages/sandstorm-ds2-midground.png",
+      "sha256": "a8e15d3bb5529353ac52a3153d344166854bd5bc576758196e2c1a7fb12dc963",
+      "lot": "20261125-completion",
+      "size_bytes": 927029
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/stages/sandstorm-ds2-sky.png",
+      "sha256": "8a144e3ff496cd741bf446a24e5669d2df6cb9b75622e444f413ad251d4e6d24",
+      "lot": "20261125-completion",
+      "size_bytes": 1807115
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/stages/south-knot-ruins-distant.png",
+      "sha256": "ea702583ee66c0c9eacab99a90eed6560390cb706f175894a83278a4c3a6528d",
+      "lot": "20261125-universe",
+      "size_bytes": 716456
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/stages/south-knot-ruins-floor.png",
+      "sha256": "ef18ba9ad4c752c6a7bdf35698df0e896ea78b2f2e45922b1dfe224b46f835f2",
+      "lot": "20261125-universe",
+      "size_bytes": 2057364
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/stages/south-knot-ruins-foreground.png",
+      "sha256": "c4a76af151a8b44a373adfd32da22b3e46af7f9ac14e9e5e8c6fe6c08527f62d",
+      "lot": "20261125-universe",
+      "size_bytes": 139861
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/stages/south-knot-ruins-midground.png",
+      "sha256": "28ba9cf06db9bdb0dd3524d28acebfd66dc01c2a7654e009922ece7ad5b387d2",
+      "lot": "20261125-universe",
+      "size_bytes": 2056961
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/stages/south-knot-ruins-sky.png",
+      "sha256": "578b1727cc1a4a815d566aaf59b0cf0ae2a15ec106a90ec7515489acaada8562",
+      "lot": "20261125-universe",
+      "size_bytes": 1615781
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/stages/terminal-hangar-distant.png",
+      "sha256": "f3cef5c0e030564212f1e71d308bf34ad29d1e06dd63d1795f1ecae7a8d78b95",
+      "lot": "20261125-domains",
+      "size_bytes": 1447453
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/stages/terminal-hangar-floor.png",
+      "sha256": "e5c93e0ac7125c1e0ab7ed932724ab63810ea71cd49f970cf586e0a0dd064c11",
+      "lot": "20261125-domains",
+      "size_bytes": 1583995
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/stages/terminal-hangar-foreground.png",
+      "sha256": "3d52eaca72329acd0764d5282d87190151d9b9fe022ce54a6a800de928acd362",
+      "lot": "20261125-domains",
+      "size_bytes": 100047
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/stages/terminal-hangar-midground.png",
+      "sha256": "b7b8f3383043072b235854c0115a2c7eb204297757447271034c198585f7ab4e",
+      "lot": "20261125-domains",
+      "size_bytes": 1249098
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/stages/terminal-hangar-sky.png",
+      "sha256": "c1048c3721e9d270313022f46a2165159ae48b96b1cd776c996e0f7175f02111",
+      "lot": "20261125-domains",
+      "size_bytes": 2092897
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/stages/timefall-farm-distant.png",
+      "sha256": "06006cfd020d88d4ae8a1024e0a5b1dfb8fd533fea8fcbe0230b6d9326d3adac",
+      "lot": "20261125-universe",
+      "size_bytes": 1518013
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/stages/timefall-farm-floor.png",
+      "sha256": "7d201898dcdd3d1a2bc401b115665620c33e9089e850023221590099ecc7d3d4",
+      "lot": "20261125-universe",
+      "size_bytes": 2156921
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/stages/timefall-farm-foreground.png",
+      "sha256": "0f3e9995be99d667be177cec7db3cc35cdeaad94aaaf8fe137e470dc1dbc4340",
+      "lot": "20261125-universe",
+      "size_bytes": 151558
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/stages/timefall-farm-midground.png",
+      "sha256": "fe38e10039fa670fcb4effc4cb57db22e1ee24300aa0caeaf7a5d1026a10a808",
+      "lot": "20261125-universe",
+      "size_bytes": 1148780
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/stages/timefall-farm-sky.png",
+      "sha256": "4ab30a291a99cb0a0f2a4ad4d3bb4ad7642f14390ec661d52cda81024010ceaf",
+      "lot": "20261125-universe",
+      "size_bytes": 1561540
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/static-20261125/amelie-body.png",
+      "sha256": "077d53be1faab5fe90aedb30ac13bce31da280a486eab81261cfc089211c0a50",
+      "lot": "20261125-static",
+      "size_bytes": 1388885
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/static-20261125/bridget-body.png",
+      "sha256": "c68af7bf39edc915aca1701a2feea50ad21bbbb5562a3aa9acfa308cf9278a48",
+      "lot": "20261125-static",
+      "size_bytes": 1946859
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/static-20261125/bt-gazer.png",
+      "sha256": "1304a3c38816fb153aef734dafe2f3471b87354af7e23bcbcc5031cc9131c783",
+      "lot": "20261125-static",
+      "size_bytes": 1502779
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/static-20261125/cliff-skeleton-nethelmet.png",
+      "sha256": "e77f21bf209c1f1cfee3f22d3b067ec330114407322a102fb5bf7f9757730c24",
+      "lot": "20261125-static",
+      "size_bytes": 2101843
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/static-20261125/deadman-body.png",
+      "sha256": "819fa12825df97c0e7a5cab49d073577140b091b7a2a186831d8dd092d8d945b",
+      "lot": "20261125-static",
+      "size_bytes": 1500837
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/static-20261125/ex-grenade-0.png",
+      "sha256": "755e675f10c0a8f18f55325075c7068034cf54983728f95560e71f08efbf26db",
+      "lot": "20261125-static",
+      "size_bytes": 493532
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/static-20261125/ex-grenade-1.png",
+      "sha256": "4295fb4499874de58bc45f845e83cae87785d1e33eee0155260d8d85c97c5de0",
+      "lot": "20261125-static",
+      "size_bytes": 523451
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/static-20261125/ex-grenade-2.png",
+      "sha256": "a7040e33bc0396c172f120d7315177e785187c220153b645c2557cf5b5136a14",
+      "lot": "20261125-static",
+      "size_bytes": 513619
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/static-20261125/hematic-grenade.png",
+      "sha256": "0277fb6902558495e5ae4c4f7bfb92e845e8bc7f810f21471d67a1586db7ac7e",
+      "lot": "20261125-static",
+      "size_bytes": 1753434
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/static-20261125/lockne-body.png",
+      "sha256": "9b8587b8a9b636df358a9ae1378eb1dd377cd4bc6680ae3bbe036588bec238bc",
+      "lot": "20261125-static",
+      "size_bytes": 1300154
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/static-20261125/lockne-portrait.png",
+      "sha256": "4df782a0a83ab2603f0625ba3c2090513e7979ac9011024be14f4bae671d1f93",
+      "lot": "20261125-static",
+      "size_bytes": 1965582
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/static-20261125/mountain-knot-city-panorama.png",
+      "sha256": "92358b0accc8af6d2876662f84ca6d2d1ee00ab47fa1567d39df55a370b26126",
+      "lot": "20261125-static",
+      "size_bytes": 2451968
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/static-20261125/mule-eastern-gray.png",
+      "sha256": "a325cd8c3ef05ec66fb62a13a4c10298c1a1a0b2e416697f4e98108829fc9580",
+      "lot": "20261125-static",
+      "size_bytes": 1877743
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/static-20261125/south-knot-ruins-panorama.png",
+      "sha256": "eb15d3769fbc716ca482655e9aae272b1aca13585654206f27bc5c9e094ae73c",
+      "lot": "20261125-static",
+      "size_bytes": 2720821
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/static-20261125/timefall-farm-panorama.png",
+      "sha256": "6e64d772995dcaf74cac0972e20803ee574e6533d9d126209a3273820d504d39",
+      "lot": "20261125-static",
+      "size_bytes": 2513302
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/static-completion-20261125/cargo-capsule-ds2.png",
+      "sha256": "825bac489030b182af90da36ac360d5d723d5d71413fcc0255c532f024e3b410",
+      "lot": "20261125-completion",
+      "size_bytes": 747041
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/static-completion-20261125/coffin-board-ds2.png",
+      "sha256": "5ffd0fc4ecb1071beabc74a59e073d1b1064bbf7b63217342abbf0a63a545a4d",
+      "lot": "20261125-completion",
+      "size_bytes": 1393550
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/static-completion-20261125/dhv-magellan-isolated-ds2.png",
+      "sha256": "8cc004a53856c5a728a3f7f9097f8b463bc8b02ab3d9196d7a48426ce837b14f",
+      "lot": "20261125-completion",
+      "size_bytes": 1284715
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/static-completion-20261125/doctor-ds2.png",
+      "sha256": "cd3dc98f80e50f91015a63060bbe7821879afcd9b91a5b7a6aefa5b2a0593bfd",
+      "lot": "20261125-completion",
+      "size_bytes": 1717670
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/static-completion-20261125/dunes-ds2-panorama.png",
+      "sha256": "2104de5e44b9f51ec6abedf529425f59a84bdd2ad29337d36df6f49782bbf641",
+      "lot": "20261125-completion",
+      "size_bytes": 1790564
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/static-completion-20261125/fragile-early-outfit-ds2.png",
+      "sha256": "89a13fbd2a148654f6c2996a75521a7e0a448b9400a35e7bf77f8c10fa10ae2e",
+      "lot": "20261125-completion",
+      "size_bytes": 1415589
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/static-completion-20261125/heartman-ds2.png",
+      "sha256": "ed5881ad673a36d723705fa9b7d113186d20175ed0ddc959007f59238538e294",
+      "lot": "20261125-completion",
+      "size_bytes": 1049799
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/static-completion-20261125/lucy-ds2.png",
+      "sha256": "8f1e11d204df98e3a825c95d409442035ad1949edb089dba70bb6a31e1abbfeb",
+      "lot": "20261125-completion",
+      "size_bytes": 1354246
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/static-completion-20261125/maser-handgun-ds2.png",
+      "sha256": "0d9c3b05fb825c66559012cbd8f969d319402552a0bcdaa68472f393056e2ef0",
+      "lot": "20261125-completion",
+      "size_bytes": 1581074
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/static-completion-20261125/sam-grey-promo-ds2.png",
+      "sha256": "0335047def57e9092ebf7c7691b6125d4e34b6076d50e00e92f1c901e8aa8e75",
+      "lot": "20261125-completion",
+      "size_bytes": 1864191
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/static-completion-20261125/the-president-ds2.png",
+      "sha256": "967f8a256862a4a209f7064a60b405e68cb75fec73cd988f608cdf985e64d885",
+      "lot": "20261125-completion",
+      "size_bytes": 1515117
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/static-completion-20261125/tomorrow-white-dress-ds2.png",
+      "sha256": "7fe516c511e032a1b964f573c781c62497659562aeb6972d6a782396a0dae7f4",
+      "lot": "20261125-completion",
+      "size_bytes": 1152595
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/static-completion-20261125/tri-cruiser-ds2.png",
+      "sha256": "a9ca0016135de3275c5491efcb734e14b4624fdcbb05597d51fa943fbb5b39cb",
+      "lot": "20261125-completion",
+      "size_bytes": 1621377
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/static-completion-20261125/truck-ds2.png",
+      "sha256": "06a8abfc48f1e1b2fcfeabd7c1b8ab6ac48634231fc93b7961afb420f229e96d",
+      "lot": "20261125-completion",
+      "size_bytes": 2064428
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/static-domains-20261125/buddy-bot-dc.png",
+      "sha256": "351d97f3046ac6ad8be60c67dc26d68eef3ee07de4e02e6a9a5f0e009d62c94d",
+      "lot": "20261125-domains",
+      "size_bytes": 2048958
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/static-domains-20261125/cargo-catapult-dc.png",
+      "sha256": "78ec782e595e99c13e5ae741e71f826898d4ad8e408f19c68de544c5b1ba8aed",
+      "lot": "20261125-domains",
+      "size_bytes": 1161454
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/static-domains-20261125/chiral-bridge-dc.png",
+      "sha256": "2e66879739cd5391e3c74465cb56392f84a81ce8eb0486d23701c47c7f790167",
+      "lot": "20261125-domains",
+      "size_bytes": 1285897
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/static-domains-20261125/firing-range-dc-panorama.png",
+      "sha256": "544b645be6f33c7292331ca8f11e0fac319c77072dfc11c0d40f1c4b5a0675d5",
+      "lot": "20261125-domains",
+      "size_bytes": 2393212
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/static-domains-20261125/jump-ramp-dc.png",
+      "sha256": "040a6c1618ea62c24b85789cdd23b599387c2ec943006bd93ed060517968cfda",
+      "lot": "20261125-domains",
+      "size_bytes": 1497380
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/static-domains-20261125/maser-gun-dc.png",
+      "sha256": "f93a87b6acea595f028f8573389945069b4274829ad37629a439d8884043ab37",
+      "lot": "20261125-domains",
+      "size_bytes": 1548996
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/static-domains-20261125/monorail-yamato-ds2.png",
+      "sha256": "cd6b0984a8c7e4596164ed659684347d383e84eaa8d597a6e42dca034a0dbe9f",
+      "lot": "20261125-domains",
+      "size_bytes": 1901355
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/static-domains-20261125/roadster-dc.png",
+      "sha256": "eaf9d4880910c40ea9e42d9cbc47c2811cccd32620fe655f85a1da71fb66de5c",
+      "lot": "20261125-domains",
+      "size_bytes": 1635720
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/static-domains-20261125/terminal-hangar-panorama.png",
+      "sha256": "96096b2711736a98b925ebae8d4f61de21797e1395b6758beed033776599ed89",
+      "lot": "20261125-domains",
+      "size_bytes": 2377248
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/static-universe-20261125/chiral-cat-ds2-body.png",
+      "sha256": "3b861b712655b53c38c4eab90296d03c000169a2d0491a8e6d1865a658da8e33",
+      "lot": "20261125-universe",
+      "size_bytes": 1254658
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/static-universe-20261125/dollman-ds2-body.png",
+      "sha256": "45ef2e8e367983df95e54c0709447461c019b31c552c59fb69d2b72a7fafca69",
+      "lot": "20261125-universe",
+      "size_bytes": 1431312
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/static-universe-20261125/fragile-ds2-portrait.png",
+      "sha256": "d637fd3bd50da8e9a54472aaee8c7704378b84d10d2089df9ac624036bfda4e9",
+      "lot": "20261125-universe",
+      "size_bytes": 2260707
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/static-universe-20261125/higgs-ds2-guitar.png",
+      "sha256": "303bfe43e2a2db2698a43b8abbd57805d5241aa3f9ed46e2fbef6f4f0b7b27dc",
+      "lot": "20261125-universe",
+      "size_bytes": 1035732
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/static-universe-20261125/higgs-ds2-portrait.png",
+      "sha256": "ad7fddae20512544dd7549067cf0504266f999deeec37fa8f214407e3e4d193a",
+      "lot": "20261125-universe",
+      "size_bytes": 2138174
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/static-universe-20261125/magellan-ds2-panorama.png",
+      "sha256": "5409160c50eb77a749b0dc01fa49cb45dc6c0a8c081e4943a9f8e7b346241ccd",
+      "lot": "20261125-universe",
+      "size_bytes": 2435534
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/static-universe-20261125/neil-ds2-portrait.png",
+      "sha256": "2d8e326ec662875f6b1588a1f3e5cd06acd834caee078803e1cee97d598b3d08",
+      "lot": "20261125-universe",
+      "size_bytes": 2159228
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/static-universe-20261125/plate-gate-ds2-panorama.png",
+      "sha256": "18153bcd7786cd033038d971bb975b40ca27137133d4eee92268151feedf3783",
+      "lot": "20261125-universe",
+      "size_bytes": 1977389
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/static-universe-20261125/rainy-ds2-portrait.png",
+      "sha256": "82587f47a4ee6838f46cb6760ff0a57778b93da8c0a10b952ddd5c180102ad9a",
+      "lot": "20261125-universe",
+      "size_bytes": 1812581
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/static-universe-20261125/red-samurai-ds2-body.png",
+      "sha256": "0370c9a24971a763fc87da583c83cc91ecc9f388df493024e49f1612d3c9fcef",
+      "lot": "20261125-universe",
+      "size_bytes": 2314640
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/static-universe-20261125/sam-ds2-drawbridge-portrait.png",
+      "sha256": "6d38a1241e98bd9ad03d9c2ef384d468d9f4c282004ffc99b0adc522dc9c6c74",
+      "lot": "20261125-universe",
+      "size_bytes": 2231925
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/static-universe-20261125/sandstorm-ds2-panorama.png",
+      "sha256": "101c42163fb410de3c33534b4b6b90a2ff21b9443659146f630e2ea7f4346ffa",
+      "lot": "20261125-universe",
+      "size_bytes": 2216650
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/static-universe-20261125/tarman-ds2-portrait.png",
+      "sha256": "17c407342b8e97bf2df27ec8e2df179098fce0955a69e84d265a88c360655c81",
+      "lot": "20261125-universe",
+      "size_bytes": 2150150
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/static-universe-20261125/tomorrow-ds2-portrait.png",
+      "sha256": "07b69ce09ced7647fa435152117d70bc4c8ebdcc4c8f7ed49a2453e3081ec3ab",
+      "lot": "20261125-universe",
+      "size_bytes": 2729741
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/story-completion-20261125/cliff-ending-final.png",
+      "sha256": "03aa966c419fff4a06dc5eac23b4da1c5eb31e861f03239c1f0d195a6f1befd4",
+      "lot": "20261125-completion",
+      "size_bytes": 2372693
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/story-completion-20261125/cliff-intro-insert.png",
+      "sha256": "0dc7073eaa9ea5ba4b1c5e2ee76c8c6825e9d687e21a64443bb6f1b6126fbfeb",
+      "lot": "20261125-completion",
+      "size_bytes": 2403463
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/story-completion-20261125/cliff-intro-second.png",
+      "sha256": "37685b30fdf67cab40521f4d7e604d887119e6cc8b074b0a91ad2ee26affed61",
+      "lot": "20261125-completion",
+      "size_bytes": 2591968
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/story-completion-20261125/diehardman-ending-final.png",
+      "sha256": "b11ce665d5c46acc9054fc4fe7de401ce29a078f5dc2e3ca2f8299a559993ff9",
+      "lot": "20261125-completion",
+      "size_bytes": 2058210
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/story-completion-20261125/diehardman-intro-insert.png",
+      "sha256": "6141f83ade43a15ee5e31c7212a3fa683b9ad218e9ba2cdf2eb92d94dabeaede",
+      "lot": "20261125-completion",
+      "size_bytes": 2421585
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/story-completion-20261125/diehardman-intro-second.png",
+      "sha256": "cfc2a65f562d3a8452f1d605b7ed0f91f0f682a815bbd2cba490dae13c8e5e60",
+      "lot": "20261125-completion",
+      "size_bytes": 2150983
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/story-completion-20261125/fragile-ending-final.png",
+      "sha256": "adf80a0f7908dc861ab1965bd985d415703cc026fcaecb7a5c497647206c3a19",
+      "lot": "20261125-completion",
+      "size_bytes": 2400122
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/story-completion-20261125/fragile-intro-insert.png",
+      "sha256": "bbf7b2be9d6147783ba630077467347a38e593845aa3cac12f550f3542f0a0de",
+      "lot": "20261125-completion",
+      "size_bytes": 2341359
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/story-completion-20261125/fragile-intro-second.png",
+      "sha256": "45132d3fa92e494402c692810e93b38a91fd6b73ba662a3641404018366174fd",
+      "lot": "20261125-completion",
+      "size_bytes": 2190829
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/story-completion-20261125/heartman-ending-final.png",
+      "sha256": "2720f57ac7c3d11ef1c88399d649dd7186eea4b36775c694cf75702f0b260409",
+      "lot": "20261125-completion",
+      "size_bytes": 2008066
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/story-completion-20261125/heartman-intro-insert.png",
+      "sha256": "bea1d2e7c551d6d88d3569baf39a467b291ded4d0df188997d2a8c2ecebab743",
+      "lot": "20261125-completion",
+      "size_bytes": 1838248
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/story-completion-20261125/heartman-intro-second.png",
+      "sha256": "b20ae2f258e33fc385b7b82ccfc76f12714d688c68777f6e577b6f0941b8f4a7",
+      "lot": "20261125-completion",
+      "size_bytes": 2111596
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/story-completion-20261125/higgs-ending-final.png",
+      "sha256": "49a3a0d454f3bb86426e48f7161bad8d0b437452296d2629ed8ce371373c3222",
+      "lot": "20261125-completion",
+      "size_bytes": 2247903
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/story-completion-20261125/higgs-intro-insert.png",
+      "sha256": "ed7cdbe4a34891aadb700dc482cc46d5bc48a85bee1aac66e3636bd577c0c5d2",
+      "lot": "20261125-completion",
+      "size_bytes": 2258298
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/story-completion-20261125/higgs-intro-second.png",
+      "sha256": "bb0edd47f0a977c72a3cf4778c3ec26813bde44f88ace1f5df2b0bc5e3ea3103",
+      "lot": "20261125-completion",
+      "size_bytes": 2331372
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/story-completion-20261125/mama-ending-final.png",
+      "sha256": "b0d3a32b68ca5a734563fa6bc69bf0d6e3e3550587abb29858a4360fea6a2bea",
+      "lot": "20261125-completion",
+      "size_bytes": 2480991
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/story-completion-20261125/mama-intro-insert.png",
+      "sha256": "8dda7245075756d816cca930a013be1b807fdc3abec88a6a779950eec08e400f",
+      "lot": "20261125-completion",
+      "size_bytes": 2530619
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/story-completion-20261125/mama-intro-second.png",
+      "sha256": "d7388c0c208ea5babec54b1bf06523600a4dc7f49b22a5a05cebc82347468b83",
+      "lot": "20261125-completion",
+      "size_bytes": 2453052
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/story-completion-20261125/mule-ending-final.png",
+      "sha256": "b3829a6b3dd5c89af399ede4dda7eea68de8a815fb876b915b1f7e85b9e9562c",
+      "lot": "20261125-completion",
+      "size_bytes": 2741193
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/story-completion-20261125/mule-intro-insert.png",
+      "sha256": "6b37a82cfc012fe1eb1404c34d21b49626beb386a6c8a052cdb8e2ea36787c7d",
+      "lot": "20261125-completion",
+      "size_bytes": 2398422
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/story-completion-20261125/mule-intro-second.png",
+      "sha256": "b23536dfd55479bdbf6e216271804a96870dd47482069dbc798683707824f5a0",
+      "lot": "20261125-completion",
+      "size_bytes": 2430144
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/story-completion-20261125/sam-ending-final.png",
+      "sha256": "e057d2eee0de460c9247543cc0076554600d00b575ce59da158309e9879b294d",
+      "lot": "20261125-completion",
+      "size_bytes": 2584089
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/story-completion-20261125/sam-intro-insert.png",
+      "sha256": "408d19826750106552cdc606d890d6f0bd7dd0fd2d93ed74d4b9f612edcd498c",
+      "lot": "20261125-completion",
+      "size_bytes": 2266642
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/story-completion-20261125/sam-intro-second.png",
+      "sha256": "936ba35de659d2f8418dc427f9291ddaff106784d325fcd0de12992fbd483a48",
+      "lot": "20261125-completion",
+      "size_bytes": 2409025
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/story/diehardman-rival.png",
+      "sha256": "c34f7a03e7aa6e7a10aed175cd134d6b7b7a408f249a4562e9a03c0c5e93497a",
+      "lot": "20261124",
+      "size_bytes": 1883891
+    }
+  ],
+  "active_recent_native_paths_not_in_catalogues": [],
+  "source_files": [
+    {
+      "path": "art/sources/echos-de-la-greve/production-20261125-domains/manifest.json",
+      "sha256": "f01e68c444f1f08b54c6d6a2d00205b23ce058b14b458ce9c444832f55534581",
+      "size_bytes": 63842
+    },
+    {
+      "path": "docs/combat/production/20261125-completion/catalogue-inventory.json",
+      "sha256": "3392d0b9fdf330bf73fad1cfdad27e7a29bcc408caabf1a4b646a275e74d6cf2",
+      "size_bytes": 87887
+    },
+    {
+      "path": "docs/combat/production/20261125-domains/native-assets-verification.json",
+      "sha256": "9b7ce99be0532afd4a8051e2591fab8144d6fb743fba61d2e684a52a517c0ae7",
+      "size_bytes": 13611
+    },
+    {
+      "path": "modes/echos-de-la-greve/app.js",
+      "sha256": "cdecf6d7003a52c1d8f147df73f69798f6484ae42b2c1a8384483419d568805a",
+      "size_bytes": 80540
+    },
+    {
+      "path": "modes/echos-de-la-greve/archives.html",
+      "sha256": "58fb94bf79f768edee552e0053ce4ddb3138a81f620c919df8ac214d7d1e4b23",
+      "size_bytes": 14129
+    },
+    {
+      "path": "modes/echos-de-la-greve/asset-geometry-20261124.js",
+      "sha256": "61f830dc5036774529b7ecaf51f4c80386ef7f94447c55e044584e850e081934",
+      "size_bytes": 15624
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets.js",
+      "sha256": "8d04672f033b659b7e9ddd623fdea9392f74e7a2518f3b5a360d4948d118848e",
+      "size_bytes": 10478
+    },
+    {
+      "path": "modes/echos-de-la-greve/boss-assets.js",
+      "sha256": "2b3c644b456cb2de1180ef618b16b43eb26b761d4dc7e1187298420b8176bbe7",
+      "size_bytes": 675
+    },
+    {
+      "path": "modes/echos-de-la-greve/boss-geometry-20261124.js",
+      "sha256": "55655afb8a1b05027b521bda46a49c9ad1f1b202ae307fdca67aa3690657a928",
+      "size_bytes": 4325
+    },
+    {
+      "path": "modes/echos-de-la-greve/boss.js",
+      "sha256": "7f8f997301148515ee59e9c658a300852d4a8ccecc32c45ca56e312a2dd7787a",
+      "size_bytes": 53428
+    },
+    {
+      "path": "modes/echos-de-la-greve/campaign.css",
+      "sha256": "8970dcfbc2594eb1981d7fe1e731b9093e40058600fac86471e360c5162174c0",
+      "size_bytes": 4991
+    },
+    {
+      "path": "modes/echos-de-la-greve/campaign.js",
+      "sha256": "bf84ff01a0afc253c84f5087f040632895fe971f7f934abadd114c3f4311c08a",
+      "size_bytes": 16438
+    },
+    {
+      "path": "modes/echos-de-la-greve/content.js",
+      "sha256": "91923e26f31344ca9b0789720a3ea1040e20b810742b782f55638e32f789d683",
+      "size_bytes": 18749
+    },
+    {
+      "path": "modes/echos-de-la-greve/fight.js",
+      "sha256": "17c3cfcdee2291dad721b312ee060ca3d341cb0734c30d57128152fa6d3e3f23",
+      "size_bytes": 95328
+    },
+    {
+      "path": "modes/echos-de-la-greve/index.html",
+      "sha256": "0f257e54a79f4344bb2fc77d66abd377300b83c8298ab76252820d6da39932b1",
+      "size_bytes": 1824
+    },
+    {
+      "path": "modes/echos-de-la-greve/input.css",
+      "sha256": "333bddf3ae040d2cb6b8820a5e893fc20e351cc61130f413e5faba5ca0b9d1a8",
+      "size_bytes": 3233
+    },
+    {
+      "path": "modes/echos-de-la-greve/input.js",
+      "sha256": "f7edb32b31405a63a63df929bfb7832812591244a4cf01e1875367df053be3c6",
+      "size_bytes": 24563
+    },
+    {
+      "path": "modes/echos-de-la-greve/moves-data.js",
+      "sha256": "f781bf43f7e4d7a4c474eed795d0c728de0cbd0daae7c74aa79ffedfa4915767",
+      "size_bytes": 87287
+    },
+    {
+      "path": "modes/echos-de-la-greve/netplay.css",
+      "sha256": "35858c0a484ca1614b8977dc510c482c3238fc5b6a08a9d308d0fb119de63122",
+      "size_bytes": 2223
+    },
+    {
+      "path": "modes/echos-de-la-greve/netplay.html",
+      "sha256": "f49d9b1aad9633acb0f442a94aa69db6bf85d865c1e12171a04efa471bf79158",
+      "size_bytes": 3592
+    },
+    {
+      "path": "modes/echos-de-la-greve/netplay.js",
+      "sha256": "c5f0810eb76894a6d71e33193ef2be846908111e88faf976c9112a160b1c704f",
+      "size_bytes": 20784
+    },
+    {
+      "path": "modes/echos-de-la-greve/relationships.js",
+      "sha256": "ad55b68c477b42d8e833dbe242dab055cfac19e596c7a143d3c781a23907f775",
+      "size_bytes": 29879
+    },
+    {
+      "path": "modes/echos-de-la-greve/static-assets-data.js",
+      "sha256": "d4b22dac81e5104cae76129793444ddb12a114dc12d87a5439215a3d36315fb5",
+      "size_bytes": 31774
+    },
+    {
+      "path": "modes/echos-de-la-greve/static-assets.css",
+      "sha256": "33edc8e4f966bfcc6aaa8a65fdb60d91f0bc69312ecfefdcecb134917565649a",
+      "size_bytes": 6433
+    },
+    {
+      "path": "modes/echos-de-la-greve/static-assets.html",
+      "sha256": "88f085069cb59883b476b240193f7cf3ed412e2294de75f3feec5c38f6191d2b",
+      "size_bytes": 4739
+    },
+    {
+      "path": "modes/echos-de-la-greve/static-assets.js",
+      "sha256": "5f8a7b56415cb4f57452cc0f4e22d90090b82c1dd9fcae537b57758bff4244ff",
+      "size_bytes": 9685
+    },
+    {
+      "path": "modes/echos-de-la-greve/style.css",
+      "sha256": "4e54b7b80cd444f4701f3433634eb509f3e530eb7bcf27dd3b3a74bfdd6f8f51",
+      "size_bytes": 18537
+    },
+    {
+      "path": "modes/echos-de-la-greve/tournament.js",
+      "sha256": "85f058fd5be04cec19b423b321d23846228bdc6538e39105fe4086fea310a9b6",
+      "size_bytes": 3913
+    }
+  ],
+  "limits": [
+    "Inventaire des images référencées par les modules et interfaces du mode principal ; le Duel originel et la campagne principale ne sont pas ajoutés à cette union.",
+    "Les références visuelles externes et les planches/captures de QA ne sont pas comptées comme images runtime.",
+    "Aucune session de navigateur, validation matérielle ou nouvelle production visuelle n’est effectuée par cet inventaire."
+  ]
+}
