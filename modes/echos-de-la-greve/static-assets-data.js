@@ -1,6 +1,6 @@
-/* Reviewed static images. Keep this catalogue separate from the playable roster. */
+/* Static source images: identities, works and versions stay distinct from playable kits. */
 window.StrandStaticCatalogue = {
-  "schemaVersion": 1,
+  "schemaVersion": 2,
   "date": "2026-11-25",
   "items": [
     {
@@ -12,7 +12,9 @@ window.StrandStaticCatalogue = {
       "alt": "Portrait de Lockne en tenue d’ingénieure",
       "src": "assets/static-20261125/lockne-portrait.png",
       "width": 1189,
-      "height": 1323
+      "height": 1323,
+      "work": "ds1-dc",
+      "version": "Mountain Knot · portrait"
     },
     {
       "id": "lockne-body",
@@ -23,7 +25,9 @@ window.StrandStaticCatalogue = {
       "alt": "Lockne entière en pose fixe",
       "src": "assets/static-20261125/lockne-body.png",
       "width": 1024,
-      "height": 1536
+      "height": 1536,
+      "work": "ds1-dc",
+      "version": "Tenue d’ingénieure"
     },
     {
       "id": "deadman-body",
@@ -34,7 +38,9 @@ window.StrandStaticCatalogue = {
       "alt": "Deadman entier avec ses lunettes, son costume et sa cravate",
       "src": "assets/static-20261125/deadman-body.png",
       "width": 1024,
-      "height": 1536
+      "height": 1536,
+      "work": "ds1-dc",
+      "version": "Costume sombre"
     },
     {
       "id": "amelie-body",
@@ -45,7 +51,9 @@ window.StrandStaticCatalogue = {
       "alt": "Amelie entière dans sa robe rouge mi-longue, avec ses escarpins rouges",
       "src": "assets/static-20261125/amelie-body.png",
       "width": 1024,
-      "height": 1536
+      "height": 1536,
+      "work": "ds1-dc",
+      "version": "Robe rouge"
     },
     {
       "id": "bridget-body",
@@ -57,7 +65,9 @@ window.StrandStaticCatalogue = {
       "src": "assets/static-20261125/bridget-body.png",
       "layout": "wide",
       "width": 1536,
-      "height": 1024
+      "height": 1024,
+      "work": "ds1-dc",
+      "version": "Lit médical"
     },
     {
       "id": "bt-gazer",
@@ -68,7 +78,9 @@ window.StrandStaticCatalogue = {
       "alt": "Échoué humain flottant, silhouette sombre avec son cordon",
       "src": "assets/static-20261125/bt-gazer.png",
       "width": 1024,
-      "height": 1536
+      "height": 1536,
+      "work": "ds1-dc",
+      "version": "Échoué humanoïde"
     },
     {
       "id": "cliff-skeleton-nethelmet",
@@ -79,7 +91,9 @@ window.StrandStaticCatalogue = {
       "alt": "Soldat squelettique de Cliff portant un casque à filet",
       "src": "assets/static-20261125/cliff-skeleton-nethelmet.png",
       "width": 1024,
-      "height": 1536
+      "height": 1536,
+      "work": "ds1-dc",
+      "version": "Section de Cliff · casque à filet"
     },
     {
       "id": "mule-eastern-gray",
@@ -90,7 +104,9 @@ window.StrandStaticCatalogue = {
       "alt": "MULE gris de la région Est avec son bâton électrique et son châssis de fret",
       "src": "assets/static-20261125/mule-eastern-gray.png",
       "width": 1024,
-      "height": 1536
+      "height": 1536,
+      "work": "ds1-dc",
+      "version": "Région Est · tenue grise"
     },
     {
       "id": "hematic-grenade",
@@ -101,7 +117,9 @@ window.StrandStaticCatalogue = {
       "alt": "Grenade hématique de Death Stranding",
       "src": "assets/static-20261125/hematic-grenade.png",
       "width": 1024,
-      "height": 1536
+      "height": 1536,
+      "work": "ds1-dc",
+      "version": "Niveau 1"
     },
     {
       "id": "ex-grenade-0",
@@ -112,7 +130,9 @@ window.StrandStaticCatalogue = {
       "alt": "Capsule EX numéro zéro de Death Stranding",
       "src": "assets/static-20261125/ex-grenade-0.png",
       "width": 724,
-      "height": 2172
+      "height": 2172,
+      "work": "ds1-dc",
+      "version": "Capsule EX · numéro 0"
     },
     {
       "id": "ex-grenade-1",
@@ -123,7 +143,9 @@ window.StrandStaticCatalogue = {
       "alt": "Capsule EX numéro un de Death Stranding",
       "src": "assets/static-20261125/ex-grenade-1.png",
       "width": 724,
-      "height": 2172
+      "height": 2172,
+      "work": "ds1-dc",
+      "version": "Capsule EX · numéro 1"
     },
     {
       "id": "ex-grenade-2",
@@ -134,7 +156,9 @@ window.StrandStaticCatalogue = {
       "alt": "Capsule EX numéro deux de Death Stranding",
       "src": "assets/static-20261125/ex-grenade-2.png",
       "width": 724,
-      "height": 2172
+      "height": 2172,
+      "work": "ds1-dc",
+      "version": "Capsule EX · numéro 2"
     },
     {
       "id": "south-knot-ruins-panorama",
@@ -145,7 +169,9 @@ window.StrandStaticCatalogue = {
       "alt": "Panorama latéral des ruines de South Knot sous la pluie temporelle",
       "src": "assets/static-20261125/south-knot-ruins-panorama.png",
       "width": 1672,
-      "height": 941
+      "height": 941,
+      "work": "ds1-dc",
+      "version": "Ruines · pluie"
     },
     {
       "id": "timefall-farm-panorama",
@@ -156,7 +182,9 @@ window.StrandStaticCatalogue = {
       "alt": "Panorama de la ferme et de ses cultures sous la pluie temporelle",
       "src": "assets/static-20261125/timefall-farm-panorama.png",
       "width": 1672,
-      "height": 941
+      "height": 941,
+      "work": "ds1-dc",
+      "version": "Ferme · pluie temporelle"
     },
     {
       "id": "mountain-knot-city-panorama",
@@ -167,7 +195,195 @@ window.StrandStaticCatalogue = {
       "alt": "Panorama montagneux enneigé de l’approche de Mountain Knot",
       "src": "assets/static-20261125/mountain-knot-city-panorama.png",
       "width": 1672,
-      "height": 941
+      "height": 941,
+      "work": "ds1-dc",
+      "version": "Approche montagneuse"
+    },
+    {
+      "id": "sam-ds2-drawbridge-portrait",
+      "title": "Sam Porter Bridges",
+      "category": "characters",
+      "kind": "Portrait",
+      "work": "ds2",
+      "version": "Drawbridge · tenue sans manches",
+      "description": "Sam dans sa tenue Drawbridge sombre, au début d’une nouvelle traversée.",
+      "alt": "Portrait de Sam, cheveux mouillés et haut Drawbridge sans manches",
+      "src": "assets/static-universe-20261125/sam-ds2-drawbridge-portrait.png",
+      "width": 1536,
+      "height": 1024
+    },
+    {
+      "id": "fragile-ds2-portrait",
+      "title": "Fragile",
+      "category": "characters",
+      "kind": "Portrait adapté",
+      "work": "ds2",
+      "version": "Béret et col Drawbridge",
+      "description": "Les cheveux courts, le béret et les mains sculptées du col marquent cette nouvelle tenue de Fragile.",
+      "alt": "Portrait de Fragile en béret Drawbridge, la main près du visage",
+      "src": "assets/static-universe-20261125/fragile-ds2-portrait.png",
+      "width": 1104,
+      "height": 1425
+    },
+    {
+      "id": "higgs-ds2-portrait",
+      "title": "Higgs",
+      "category": "characters",
+      "kind": "Portrait",
+      "work": "ds2",
+      "version": "Armure rouge · visage découvert",
+      "description": "Le visage peint de Higgs et son armure rouge usée, dans sa version On the Beach.",
+      "alt": "Higgs aux cheveux longs, visage peint et plastron ambré",
+      "src": "assets/static-universe-20261125/higgs-ds2-portrait.png",
+      "width": 1310,
+      "height": 1200
+    },
+    {
+      "id": "dollman-ds2-body",
+      "title": "Dollman",
+      "category": "characters",
+      "kind": "Silhouette",
+      "work": "ds2",
+      "version": "Marionnette · costume bordeaux",
+      "description": "Un visage articulé, un costume de velours côtelé et des chaussettes rouges : Dollman dans une pose fixe.",
+      "alt": "Dollman entier en costume bordeaux, nœud papillon et chaussettes rouges",
+      "src": "assets/static-universe-20261125/dollman-ds2-body.png",
+      "width": 941,
+      "height": 1672
+    },
+    {
+      "id": "tomorrow-ds2-portrait",
+      "title": "Tomorrow",
+      "category": "characters",
+      "kind": "Portrait",
+      "work": "ds2",
+      "version": "Haut sombre",
+      "description": "Tomorrow dans sa tenue sombre, cheveux blonds libres sur les épaules.",
+      "alt": "Portrait de Tomorrow aux cheveux blonds et haut sombre sans manches",
+      "src": "assets/static-universe-20261125/tomorrow-ds2-portrait.png",
+      "width": 1156,
+      "height": 1361
+    },
+    {
+      "id": "rainy-ds2-portrait",
+      "title": "Rainy",
+      "category": "characters",
+      "kind": "Portrait",
+      "work": "ds2",
+      "version": "Pull jaune · fleurs",
+      "description": "Rainy tient un pot de fleurs, avec son pull jaune côtelé et son sac clair.",
+      "alt": "Rainy au pull jaune tenant des fleurs, sac clair sur son épaule",
+      "src": "assets/static-universe-20261125/rainy-ds2-portrait.png",
+      "width": 1199,
+      "height": 1312
+    },
+    {
+      "id": "tarman-ds2-portrait",
+      "title": "Tarman",
+      "category": "characters",
+      "kind": "Portrait",
+      "work": "ds2",
+      "version": "Tenue de capitaine",
+      "description": "La casquette, les verres ambrés et les jumelles composent le portrait de Tarman.",
+      "alt": "Tarman avec casquette, lunettes ambrées, jumelles et bras droit tronqué",
+      "src": "assets/static-universe-20261125/tarman-ds2-portrait.png",
+      "width": 1139,
+      "height": 1381
+    },
+    {
+      "id": "neil-ds2-portrait",
+      "title": "Neil",
+      "category": "characters",
+      "kind": "Portrait",
+      "work": "ds2",
+      "version": "Écharpe sombre",
+      "description": "Neil apparaît avec son écharpe et son équipement sombre.",
+      "alt": "Portrait de Neil aux cheveux bruns et à l’écharpe sombre",
+      "src": "assets/static-universe-20261125/neil-ds2-portrait.png",
+      "width": 1312,
+      "height": 1199
+    },
+    {
+      "id": "red-samurai-ds2-body",
+      "title": "Red Samurai",
+      "category": "enemies",
+      "kind": "Silhouette adaptée",
+      "work": "ds2",
+      "version": "Armure rouge · étude en pied",
+      "description": "Une étude en pied du combattant mécanique, avec son masque à capteurs et sa grande lame.",
+      "alt": "Red Samurai entier, armure rouge et grande lame tenue en garde",
+      "src": "assets/static-universe-20261125/red-samurai-ds2-body.png",
+      "width": 1024,
+      "height": 1536
+    },
+    {
+      "id": "chiral-cat-ds2-body",
+      "title": "Chat chiral",
+      "category": "props",
+      "kind": "Compagnon",
+      "work": "ds2",
+      "version": "Silhouette isolée",
+      "description": "La petite silhouette sombre visible auprès de Tarman, isolée avec ses yeux lumineux et ses ramures.",
+      "alt": "Chat chiral noir, yeux jaunes, ramures et queue courbe",
+      "src": "assets/static-universe-20261125/chiral-cat-ds2-body.png",
+      "width": 1254,
+      "height": 1254
+    },
+    {
+      "id": "higgs-ds2-guitar",
+      "title": "Guitare de Higgs",
+      "category": "props",
+      "kind": "Arme-instrument",
+      "work": "ds2",
+      "version": "Objet isolé",
+      "description": "La guitare de Higgs, isolée pour observer sa caisse anguleuse, son long manche et son câble.",
+      "alt": "Guitare orange et noire de Higgs avec câble courbe et extrémité lumineuse",
+      "src": "assets/static-universe-20261125/higgs-ds2-guitar.png",
+      "width": 2172,
+      "height": 724,
+      "layout": "wide"
+    },
+    {
+      "id": "magellan-ds2-panorama",
+      "title": "DHV Magellan",
+      "category": "stages",
+      "kind": "Panorama",
+      "work": "ds2",
+      "version": "Berge au couchant",
+      "description": "Le Magellan survole une berge humide ; les roseaux et les collines ouvrent l’horizon.",
+      "alt": "Vaisseau Magellan au-dessus d’un marais au coucher du soleil, piste de terre au premier plan",
+      "src": "assets/static-universe-20261125/magellan-ds2-panorama.png",
+      "width": 1672,
+      "height": 941,
+      "layout": "wide"
+    },
+    {
+      "id": "plate-gate-ds2-panorama",
+      "title": "Plate Gate",
+      "category": "stages",
+      "kind": "Panorama adapté",
+      "work": "ds2",
+      "version": "Colonnes minérales",
+      "description": "Des colonnes minérales immenses se perdent dans une brume pâle, au-delà d’une étendue de pierre.",
+      "alt": "Paysage de colonnes minérales et fragments suspendus dans une brume claire",
+      "src": "assets/static-universe-20261125/plate-gate-ds2-panorama.png",
+      "width": 1672,
+      "height": 941,
+      "layout": "wide"
+    },
+    {
+      "id": "sandstorm-ds2-panorama",
+      "title": "Front de sable",
+      "category": "stages",
+      "kind": "Panorama adapté",
+      "work": "ds2",
+      "version": "Rue désertée",
+      "description": "Une tempête de sable approche derrière les voitures poussiéreuses et les câbles d’une rue déserte.",
+      "alt": "Rue déserte devant un immense front de poussière ocre",
+      "src": "assets/static-universe-20261125/sandstorm-ds2-panorama.png",
+      "width": 1672,
+      "height": 941,
+      "layout": "wide"
     }
   ]
 };

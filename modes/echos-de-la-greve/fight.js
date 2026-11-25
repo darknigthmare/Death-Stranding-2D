@@ -206,7 +206,11 @@
     'tar-basin':{filter:'lowpass',hz:260,level:.055,cue:'bubble',interval:9,x:.84},
     'mountain-pass':{filter:'bandpass',hz:960,level:.07,cue:'gust',interval:11,x:.16},
     'port-knot':{filter:'lowpass',hz:430,level:.052,cue:'surf',interval:12,x:.15},
-    incinerator:{filter:'bandpass',hz:560,level:.04,hum:52,cue:'gust',interval:14,x:.72}
+    incinerator:{filter:'bandpass',hz:560,level:.04,hum:52,cue:'gust',interval:14,x:.72},
+    'south-knot-ruins':{filter:'lowpass',hz:1700,level:.055,cue:'drip',interval:8,x:.16},
+    'timefall-farm':{filter:'lowpass',hz:1450,level:.05,cue:'gust',interval:12,x:.82},
+    'mountain-knot-approach':{filter:'bandpass',hz:1020,level:.065,cue:'gust',interval:11,x:.15},
+    'magellan-ds2':{filter:'lowpass',hz:620,level:.035,hum:64,cue:'winch',interval:14,x:.84}
   };
   function releaseAmbientVoice(group,voice,stopSource=true) {
     if (voice.released) return;
@@ -1191,7 +1195,7 @@
         c.strokeStyle='rgba(146,143,128,'+((1-ring)*.17).toFixed(3)+')';c.lineWidth=1;c.stroke();
         if (ring<.16) oval(c,x,y-2-Math.sin(ring/.16*Math.PI)*4,3,2,'rgba(102,108,108,.23)');
       }
-    } else if (m.stage==='mountain-pass') {
+    } else if (m.stage==='mountain-pass' || m.stage==='mountain-knot-approach') {
       // Spindrift follows the far ridge in sparse lateral strokes.
       for (let i=0;i<18;i++) {
         const gust=cycle(440,i*31), x=-80+gust*(WIDTH+160), y=385+Math.sin(i*2.4+gust*5)*25;

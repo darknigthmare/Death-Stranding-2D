@@ -1,0 +1,1508 @@
+{
+  "date": "2026-11-25",
+  "method": "Pillow PNG verification and RGBA reading; NumPy statistics. No image saved or altered.",
+  "expected_pngs": 34,
+  "inspected_pngs": 34,
+  "missing": [],
+  "complete": true,
+  "coordinate_convention": "bbox [left, top, right exclusive, bottom exclusive]; margins in source pixels at alpha >= 128",
+  "interpretation": "Portraits may intentionally touch image borders. Alpha253–254 on the subject is retained; invisible RGB outside alpha does not prove a halo. Native compositions decide visible edge quality.",
+  "items": [
+    {
+      "file": "modes/echos-de-la-greve/assets/static-universe-20261125/sam-ds2-drawbridge-portrait.png",
+      "role": "portrait",
+      "width": 1536,
+      "height": 1024,
+      "mode": "RGBA",
+      "bytes": 2231925,
+      "sha256": "6d38a1241e98bd9ad03d9c2ef384d468d9f4c282004ffc99b0adc522dc9c6c74",
+      "png_decoding": "passed",
+      "alpha_min": 0,
+      "alpha_max": 254,
+      "alpha_zero_pct": 50.80655,
+      "alpha_255_pct": 0.0,
+      "alpha_ge_128_pct": 47.11183,
+      "edge_alpha_max": 254,
+      "bbox_at_least_alpha": {
+        "1": [
+          57,
+          0,
+          1498,
+          1024
+        ],
+        "16": [
+          97,
+          0,
+          1459,
+          1024
+        ],
+        "128": [
+          98,
+          1,
+          1458,
+          1024
+        ]
+      },
+      "margins_at_least_alpha_128": {
+        "left": 98,
+        "top": 1,
+        "right": 78,
+        "bottom": 0
+      },
+      "matches_preliminary_source_sha256": true,
+      "preliminary_source_file": "exec-ac53af04-4719-478a-896f-d9f3f0641584.png"
+    },
+    {
+      "file": "modes/echos-de-la-greve/assets/static-universe-20261125/fragile-ds2-portrait.png",
+      "role": "portrait",
+      "width": 1104,
+      "height": 1425,
+      "mode": "RGBA",
+      "bytes": 2260707,
+      "sha256": "d637fd3bd50da8e9a54472aaee8c7704378b84d10d2089df9ac624036bfda4e9",
+      "png_decoding": "passed",
+      "alpha_min": 0,
+      "alpha_max": 255,
+      "alpha_zero_pct": 32.06871,
+      "alpha_255_pct": 0.01214,
+      "alpha_ge_128_pct": 66.82742,
+      "edge_alpha_max": 255,
+      "bbox_at_least_alpha": {
+        "1": [
+          0,
+          0,
+          1104,
+          1425
+        ],
+        "16": [
+          0,
+          2,
+          1104,
+          1425
+        ],
+        "128": [
+          0,
+          3,
+          1104,
+          1425
+        ]
+      },
+      "margins_at_least_alpha_128": {
+        "left": 0,
+        "top": 3,
+        "right": 0,
+        "bottom": 0
+      },
+      "matches_preliminary_source_sha256": true,
+      "preliminary_source_file": "exec-b9ef3e14-14b9-4e70-9508-eb92124b01fb.png"
+    },
+    {
+      "file": "modes/echos-de-la-greve/assets/static-universe-20261125/higgs-ds2-portrait.png",
+      "role": "portrait",
+      "width": 1310,
+      "height": 1200,
+      "mode": "RGBA",
+      "bytes": 2138174,
+      "sha256": "ad7fddae20512544dd7549067cf0504266f999deeec37fa8f214407e3e4d193a",
+      "png_decoding": "passed",
+      "alpha_min": 0,
+      "alpha_max": 255,
+      "alpha_zero_pct": 41.68416,
+      "alpha_255_pct": 0.0077,
+      "alpha_ge_128_pct": 55.41024,
+      "edge_alpha_max": 1,
+      "bbox_at_least_alpha": {
+        "1": [
+          0,
+          0,
+          1284,
+          1200
+        ],
+        "16": [
+          32,
+          11,
+          1281,
+          1186
+        ],
+        "128": [
+          32,
+          12,
+          1280,
+          1185
+        ]
+      },
+      "margins_at_least_alpha_128": {
+        "left": 32,
+        "top": 12,
+        "right": 30,
+        "bottom": 15
+      },
+      "matches_preliminary_source_sha256": true,
+      "preliminary_source_file": "exec-62b7bab1-f192-4728-a058-39f41accd843.png"
+    },
+    {
+      "file": "modes/echos-de-la-greve/assets/static-universe-20261125/tomorrow-ds2-portrait.png",
+      "role": "portrait",
+      "width": 1156,
+      "height": 1361,
+      "mode": "RGBA",
+      "bytes": 2729741,
+      "sha256": "07b69ce09ced7647fa435152117d70bc4c8ebdcc4c8f7ed49a2453e3081ec3ab",
+      "png_decoding": "passed",
+      "alpha_min": 0,
+      "alpha_max": 255,
+      "alpha_zero_pct": 26.66762,
+      "alpha_255_pct": 0.00133,
+      "alpha_ge_128_pct": 68.01183,
+      "edge_alpha_max": 253,
+      "bbox_at_least_alpha": {
+        "1": [
+          0,
+          0,
+          1156,
+          1361
+        ],
+        "16": [
+          1,
+          0,
+          1154,
+          1361
+        ],
+        "128": [
+          2,
+          15,
+          1153,
+          1361
+        ]
+      },
+      "margins_at_least_alpha_128": {
+        "left": 2,
+        "top": 15,
+        "right": 3,
+        "bottom": 0
+      },
+      "matches_preliminary_source_sha256": true,
+      "preliminary_source_file": "exec-492a7ca3-52c9-490a-bad1-76e2ee1058f3.png"
+    },
+    {
+      "file": "modes/echos-de-la-greve/assets/static-universe-20261125/neil-ds2-portrait.png",
+      "role": "portrait",
+      "width": 1312,
+      "height": 1199,
+      "mode": "RGBA",
+      "bytes": 2159228,
+      "sha256": "2d8e326ec662875f6b1588a1f3e5cd06acd834caee078803e1cee97d598b3d08",
+      "png_decoding": "passed",
+      "alpha_min": 0,
+      "alpha_max": 255,
+      "alpha_zero_pct": 41.70377,
+      "alpha_255_pct": 0.00534,
+      "alpha_ge_128_pct": 56.06234,
+      "edge_alpha_max": 249,
+      "bbox_at_least_alpha": {
+        "1": [
+          0,
+          0,
+          1312,
+          1199
+        ],
+        "16": [
+          0,
+          0,
+          1312,
+          1199
+        ],
+        "128": [
+          0,
+          4,
+          1312,
+          1199
+        ]
+      },
+      "margins_at_least_alpha_128": {
+        "left": 0,
+        "top": 4,
+        "right": 0,
+        "bottom": 0
+      },
+      "matches_preliminary_source_sha256": true,
+      "preliminary_source_file": "exec-2092c4fc-cb12-471b-abf8-94fa8a3c32ed.png"
+    },
+    {
+      "file": "modes/echos-de-la-greve/assets/static-universe-20261125/rainy-ds2-portrait.png",
+      "role": "portrait",
+      "width": 1199,
+      "height": 1312,
+      "mode": "RGBA",
+      "bytes": 1812581,
+      "sha256": "82587f47a4ee6838f46cb6760ff0a57778b93da8c0a10b952ddd5c180102ad9a",
+      "png_decoding": "passed",
+      "alpha_min": 0,
+      "alpha_max": 255,
+      "alpha_zero_pct": 52.00504,
+      "alpha_255_pct": 0.02079,
+      "alpha_ge_128_pct": 46.53586,
+      "edge_alpha_max": 1,
+      "bbox_at_least_alpha": {
+        "1": [
+          58,
+          10,
+          1183,
+          1312
+        ],
+        "16": [
+          85,
+          12,
+          1014,
+          1301
+        ],
+        "128": [
+          86,
+          13,
+          1013,
+          1300
+        ]
+      },
+      "margins_at_least_alpha_128": {
+        "left": 86,
+        "top": 13,
+        "right": 186,
+        "bottom": 12
+      },
+      "matches_preliminary_source_sha256": true,
+      "preliminary_source_file": "rainy-ds2-portrait.png"
+    },
+    {
+      "file": "modes/echos-de-la-greve/assets/static-universe-20261125/tarman-ds2-portrait.png",
+      "role": "portrait",
+      "width": 1139,
+      "height": 1381,
+      "mode": "RGBA",
+      "bytes": 2150150,
+      "sha256": "17c407342b8e97bf2df27ec8e2df179098fce0955a69e84d265a88c360655c81",
+      "png_decoding": "passed",
+      "alpha_min": 0,
+      "alpha_max": 255,
+      "alpha_zero_pct": 34.37451,
+      "alpha_255_pct": 0.02409,
+      "alpha_ge_128_pct": 63.57089,
+      "edge_alpha_max": 6,
+      "bbox_at_least_alpha": {
+        "1": [
+          0,
+          0,
+          1139,
+          1381
+        ],
+        "16": [
+          4,
+          5,
+          1135,
+          1372
+        ],
+        "128": [
+          5,
+          6,
+          1135,
+          1372
+        ]
+      },
+      "margins_at_least_alpha_128": {
+        "left": 5,
+        "top": 6,
+        "right": 4,
+        "bottom": 9
+      },
+      "matches_preliminary_source_sha256": true,
+      "preliminary_source_file": "exec-9a9d459d-69de-4b5c-98f4-55a98c54caeb.png"
+    },
+    {
+      "file": "modes/echos-de-la-greve/assets/static-universe-20261125/dollman-ds2-body.png",
+      "role": "body",
+      "width": 941,
+      "height": 1672,
+      "mode": "RGBA",
+      "bytes": 1431312,
+      "sha256": "45ef2e8e367983df95e54c0709447461c019b31c552c59fb69d2b72a7fafca69",
+      "png_decoding": "passed",
+      "alpha_min": 0,
+      "alpha_max": 255,
+      "alpha_zero_pct": 60.80731,
+      "alpha_255_pct": 0.04538,
+      "alpha_ge_128_pct": 37.59356,
+      "edge_alpha_max": 0,
+      "bbox_at_least_alpha": {
+        "1": [
+          25,
+          13,
+          921,
+          1657
+        ],
+        "16": [
+          118,
+          40,
+          760,
+          1654
+        ],
+        "128": [
+          119,
+          40,
+          759,
+          1654
+        ]
+      },
+      "margins_at_least_alpha_128": {
+        "left": 119,
+        "top": 40,
+        "right": 182,
+        "bottom": 18
+      },
+      "matches_preliminary_source_sha256": true,
+      "preliminary_source_file": "dollman-ds2-body.png"
+    },
+    {
+      "file": "modes/echos-de-la-greve/assets/static-universe-20261125/red-samurai-ds2-body.png",
+      "role": "body",
+      "width": 1024,
+      "height": 1536,
+      "mode": "RGBA",
+      "bytes": 2314640,
+      "sha256": "0370c9a24971a763fc87da583c83cc91ecc9f388df493024e49f1612d3c9fcef",
+      "png_decoding": "passed",
+      "alpha_min": 0,
+      "alpha_max": 254,
+      "alpha_zero_pct": 61.88615,
+      "alpha_255_pct": 0.0,
+      "alpha_ge_128_pct": 35.52653,
+      "edge_alpha_max": 1,
+      "bbox_at_least_alpha": {
+        "1": [
+          60,
+          0,
+          1024,
+          1523
+        ],
+        "16": [
+          62,
+          12,
+          1015,
+          1521
+        ],
+        "128": [
+          63,
+          13,
+          1014,
+          1520
+        ]
+      },
+      "margins_at_least_alpha_128": {
+        "left": 63,
+        "top": 13,
+        "right": 10,
+        "bottom": 16
+      },
+      "matches_preliminary_source_sha256": true,
+      "preliminary_source_file": "exec-e810888e-2991-4bb3-b64c-b2ac650f1b47.png"
+    },
+    {
+      "file": "modes/echos-de-la-greve/assets/static-universe-20261125/chiral-cat-ds2-body.png",
+      "role": "body",
+      "width": 1254,
+      "height": 1254,
+      "mode": "RGBA",
+      "bytes": 1254658,
+      "sha256": "3b861b712655b53c38c4eab90296d03c000169a2d0491a8e6d1865a658da8e33",
+      "png_decoding": "passed",
+      "alpha_min": 0,
+      "alpha_max": 255,
+      "alpha_zero_pct": 67.24885,
+      "alpha_255_pct": 0.01749,
+      "alpha_ge_128_pct": 29.91035,
+      "edge_alpha_max": 1,
+      "bbox_at_least_alpha": {
+        "1": [
+          37,
+          23,
+          1240,
+          1254
+        ],
+        "16": [
+          113,
+          29,
+          1184,
+          1214
+        ],
+        "128": [
+          114,
+          30,
+          1183,
+          1213
+        ]
+      },
+      "margins_at_least_alpha_128": {
+        "left": 114,
+        "top": 30,
+        "right": 71,
+        "bottom": 41
+      },
+      "matches_preliminary_source_sha256": true,
+      "preliminary_source_file": "exec-51789eb8-59e6-4ff6-80d3-c356237d8783.png"
+    },
+    {
+      "file": "modes/echos-de-la-greve/assets/static-universe-20261125/higgs-ds2-guitar.png",
+      "role": "prop",
+      "width": 2172,
+      "height": 724,
+      "mode": "RGBA",
+      "bytes": 1035732,
+      "sha256": "303bfe43e2a2db2698a43b8abbd57805d5241aa3f9ed46e2fbef6f4f0b7b27dc",
+      "png_decoding": "passed",
+      "alpha_min": 0,
+      "alpha_max": 255,
+      "alpha_zero_pct": 74.50373,
+      "alpha_255_pct": 0.09424,
+      "alpha_ge_128_pct": 24.25362,
+      "edge_alpha_max": 1,
+      "bbox_at_least_alpha": {
+        "1": [
+          0,
+          9,
+          2160,
+          708
+        ],
+        "16": [
+          14,
+          13,
+          2158,
+          706
+        ],
+        "128": [
+          14,
+          14,
+          2157,
+          706
+        ]
+      },
+      "margins_at_least_alpha_128": {
+        "left": 14,
+        "top": 14,
+        "right": 15,
+        "bottom": 18
+      },
+      "matches_preliminary_source_sha256": false,
+      "preliminary_source_file": null
+    },
+    {
+      "file": "modes/echos-de-la-greve/assets/static-universe-20261125/magellan-ds2-panorama.png",
+      "role": "panorama",
+      "width": 1672,
+      "height": 941,
+      "mode": "RGB",
+      "bytes": 2435534,
+      "sha256": "5409160c50eb77a749b0dc01fa49cb45dc6c0a8c081e4943a9f8e7b346241ccd",
+      "png_decoding": "passed",
+      "alpha_min": 255,
+      "alpha_max": 255,
+      "alpha_zero_pct": 0.0,
+      "alpha_255_pct": 100.0,
+      "alpha_ge_128_pct": 100.0,
+      "edge_alpha_max": 255,
+      "bbox_at_least_alpha": {
+        "1": [
+          0,
+          0,
+          1672,
+          941
+        ],
+        "16": [
+          0,
+          0,
+          1672,
+          941
+        ],
+        "128": [
+          0,
+          0,
+          1672,
+          941
+        ]
+      },
+      "margins_at_least_alpha_128": {
+        "left": 0,
+        "top": 0,
+        "right": 0,
+        "bottom": 0
+      },
+      "matches_preliminary_source_sha256": true,
+      "preliminary_source_file": "exec-8a85647f-f5d9-4cc0-8d19-193251a5562f.png"
+    },
+    {
+      "file": "modes/echos-de-la-greve/assets/static-universe-20261125/plate-gate-ds2-panorama.png",
+      "role": "panorama",
+      "width": 1672,
+      "height": 941,
+      "mode": "RGB",
+      "bytes": 1977389,
+      "sha256": "18153bcd7786cd033038d971bb975b40ca27137133d4eee92268151feedf3783",
+      "png_decoding": "passed",
+      "alpha_min": 255,
+      "alpha_max": 255,
+      "alpha_zero_pct": 0.0,
+      "alpha_255_pct": 100.0,
+      "alpha_ge_128_pct": 100.0,
+      "edge_alpha_max": 255,
+      "bbox_at_least_alpha": {
+        "1": [
+          0,
+          0,
+          1672,
+          941
+        ],
+        "16": [
+          0,
+          0,
+          1672,
+          941
+        ],
+        "128": [
+          0,
+          0,
+          1672,
+          941
+        ]
+      },
+      "margins_at_least_alpha_128": {
+        "left": 0,
+        "top": 0,
+        "right": 0,
+        "bottom": 0
+      },
+      "matches_preliminary_source_sha256": true,
+      "preliminary_source_file": "exec-70de4cae-a6c9-4f66-be5c-a91777c50946.png"
+    },
+    {
+      "file": "modes/echos-de-la-greve/assets/static-universe-20261125/sandstorm-ds2-panorama.png",
+      "role": "panorama",
+      "width": 1672,
+      "height": 941,
+      "mode": "RGB",
+      "bytes": 2216650,
+      "sha256": "101c42163fb410de3c33534b4b6b90a2ff21b9443659146f630e2ea7f4346ffa",
+      "png_decoding": "passed",
+      "alpha_min": 255,
+      "alpha_max": 255,
+      "alpha_zero_pct": 0.0,
+      "alpha_255_pct": 100.0,
+      "alpha_ge_128_pct": 100.0,
+      "edge_alpha_max": 255,
+      "bbox_at_least_alpha": {
+        "1": [
+          0,
+          0,
+          1672,
+          941
+        ],
+        "16": [
+          0,
+          0,
+          1672,
+          941
+        ],
+        "128": [
+          0,
+          0,
+          1672,
+          941
+        ]
+      },
+      "margins_at_least_alpha_128": {
+        "left": 0,
+        "top": 0,
+        "right": 0,
+        "bottom": 0
+      },
+      "matches_preliminary_source_sha256": true,
+      "preliminary_source_file": "exec-7882664c-278f-41e4-a924-76baf0d97b9a.png"
+    },
+    {
+      "file": "modes/echos-de-la-greve/assets/stages/south-knot-ruins-sky.png",
+      "role": "sky",
+      "width": 1672,
+      "height": 941,
+      "mode": "RGB",
+      "bytes": 1615781,
+      "sha256": "578b1727cc1a4a815d566aaf59b0cf0ae2a15ec106a90ec7515489acaada8562",
+      "png_decoding": "passed",
+      "alpha_min": 255,
+      "alpha_max": 255,
+      "alpha_zero_pct": 0.0,
+      "alpha_255_pct": 100.0,
+      "alpha_ge_128_pct": 100.0,
+      "edge_alpha_max": 255,
+      "bbox_at_least_alpha": {
+        "1": [
+          0,
+          0,
+          1672,
+          941
+        ],
+        "16": [
+          0,
+          0,
+          1672,
+          941
+        ],
+        "128": [
+          0,
+          0,
+          1672,
+          941
+        ]
+      },
+      "margins_at_least_alpha_128": {
+        "left": 0,
+        "top": 0,
+        "right": 0,
+        "bottom": 0
+      },
+      "matches_preliminary_source_sha256": false,
+      "preliminary_source_file": null
+    },
+    {
+      "file": "modes/echos-de-la-greve/assets/stages/south-knot-ruins-distant.png",
+      "role": "distant",
+      "width": 1672,
+      "height": 941,
+      "mode": "RGBA",
+      "bytes": 716456,
+      "sha256": "ea702583ee66c0c9eacab99a90eed6560390cb706f175894a83278a4c3a6528d",
+      "png_decoding": "passed",
+      "alpha_min": 0,
+      "alpha_max": 255,
+      "alpha_zero_pct": 76.82032,
+      "alpha_255_pct": 0.01633,
+      "alpha_ge_128_pct": 18.39563,
+      "edge_alpha_max": 254,
+      "bbox_at_least_alpha": {
+        "1": [
+          0,
+          103,
+          1672,
+          941
+        ],
+        "16": [
+          0,
+          606,
+          1672,
+          941
+        ],
+        "128": [
+          0,
+          610,
+          1672,
+          941
+        ]
+      },
+      "margins_at_least_alpha_128": {
+        "left": 0,
+        "top": 610,
+        "right": 0,
+        "bottom": 0
+      },
+      "matches_preliminary_source_sha256": false,
+      "preliminary_source_file": null
+    },
+    {
+      "file": "modes/echos-de-la-greve/assets/stages/south-knot-ruins-midground.png",
+      "role": "midground",
+      "width": 1672,
+      "height": 941,
+      "mode": "RGBA",
+      "bytes": 2056961,
+      "sha256": "28ba9cf06db9bdb0dd3524d28acebfd66dc01c2a7654e009922ece7ad5b387d2",
+      "png_decoding": "passed",
+      "alpha_min": 0,
+      "alpha_max": 255,
+      "alpha_zero_pct": 44.10132,
+      "alpha_255_pct": 0.03439,
+      "alpha_ge_128_pct": 49.37357,
+      "edge_alpha_max": 255,
+      "bbox_at_least_alpha": {
+        "1": [
+          0,
+          0,
+          1672,
+          941
+        ],
+        "16": [
+          0,
+          108,
+          1672,
+          915
+        ],
+        "128": [
+          0,
+          115,
+          1672,
+          915
+        ]
+      },
+      "margins_at_least_alpha_128": {
+        "left": 0,
+        "top": 115,
+        "right": 0,
+        "bottom": 26
+      },
+      "matches_preliminary_source_sha256": false,
+      "preliminary_source_file": null
+    },
+    {
+      "file": "modes/echos-de-la-greve/assets/stages/south-knot-ruins-floor.png",
+      "role": "floor",
+      "width": 1672,
+      "height": 941,
+      "mode": "RGBA",
+      "bytes": 2057364,
+      "sha256": "ef18ba9ad4c752c6a7bdf35698df0e896ea78b2f2e45922b1dfe224b46f835f2",
+      "png_decoding": "passed",
+      "alpha_min": 0,
+      "alpha_max": 255,
+      "alpha_zero_pct": 36.00224,
+      "alpha_255_pct": 0.08307,
+      "alpha_ge_128_pct": 58.4484,
+      "edge_alpha_max": 255,
+      "bbox_at_least_alpha": {
+        "1": [
+          0,
+          17,
+          1672,
+          941
+        ],
+        "16": [
+          0,
+          390,
+          1672,
+          941
+        ],
+        "128": [
+          0,
+          391,
+          1672,
+          941
+        ]
+      },
+      "margins_at_least_alpha_128": {
+        "left": 0,
+        "top": 391,
+        "right": 0,
+        "bottom": 0
+      },
+      "matches_preliminary_source_sha256": false,
+      "preliminary_source_file": null
+    },
+    {
+      "file": "modes/echos-de-la-greve/assets/stages/south-knot-ruins-foreground.png",
+      "role": "foreground",
+      "width": 1672,
+      "height": 941,
+      "mode": "RGBA",
+      "bytes": 139861,
+      "sha256": "c4a76af151a8b44a373adfd32da22b3e46af7f9ac14e9e5e8c6fe6c08527f62d",
+      "png_decoding": "passed",
+      "alpha_min": 0,
+      "alpha_max": 255,
+      "alpha_zero_pct": 97.96924,
+      "alpha_255_pct": 0.00299,
+      "alpha_ge_128_pct": 1.30619,
+      "edge_alpha_max": 254,
+      "bbox_at_least_alpha": {
+        "1": [
+          0,
+          210,
+          1672,
+          941
+        ],
+        "16": [
+          0,
+          868,
+          1672,
+          941
+        ],
+        "128": [
+          0,
+          872,
+          1672,
+          941
+        ]
+      },
+      "margins_at_least_alpha_128": {
+        "left": 0,
+        "top": 872,
+        "right": 0,
+        "bottom": 0
+      },
+      "matches_preliminary_source_sha256": false,
+      "preliminary_source_file": null
+    },
+    {
+      "file": "modes/echos-de-la-greve/assets/stages/timefall-farm-sky.png",
+      "role": "sky",
+      "width": 1672,
+      "height": 941,
+      "mode": "RGB",
+      "bytes": 1561540,
+      "sha256": "4ab30a291a99cb0a0f2a4ad4d3bb4ad7642f14390ec661d52cda81024010ceaf",
+      "png_decoding": "passed",
+      "alpha_min": 255,
+      "alpha_max": 255,
+      "alpha_zero_pct": 0.0,
+      "alpha_255_pct": 100.0,
+      "alpha_ge_128_pct": 100.0,
+      "edge_alpha_max": 255,
+      "bbox_at_least_alpha": {
+        "1": [
+          0,
+          0,
+          1672,
+          941
+        ],
+        "16": [
+          0,
+          0,
+          1672,
+          941
+        ],
+        "128": [
+          0,
+          0,
+          1672,
+          941
+        ]
+      },
+      "margins_at_least_alpha_128": {
+        "left": 0,
+        "top": 0,
+        "right": 0,
+        "bottom": 0
+      },
+      "matches_preliminary_source_sha256": false,
+      "preliminary_source_file": null
+    },
+    {
+      "file": "modes/echos-de-la-greve/assets/stages/timefall-farm-distant.png",
+      "role": "distant",
+      "width": 1672,
+      "height": 941,
+      "mode": "RGBA",
+      "bytes": 1518013,
+      "sha256": "06006cfd020d88d4ae8a1024e0a5b1dfb8fd533fea8fcbe0230b6d9326d3adac",
+      "png_decoding": "passed",
+      "alpha_min": 0,
+      "alpha_max": 255,
+      "alpha_zero_pct": 44.87063,
+      "alpha_255_pct": 0.0122,
+      "alpha_ge_128_pct": 54.66857,
+      "edge_alpha_max": 255,
+      "bbox_at_least_alpha": {
+        "1": [
+          0,
+          41,
+          1672,
+          941
+        ],
+        "16": [
+          0,
+          246,
+          1672,
+          941
+        ],
+        "128": [
+          0,
+          247,
+          1672,
+          941
+        ]
+      },
+      "margins_at_least_alpha_128": {
+        "left": 0,
+        "top": 247,
+        "right": 0,
+        "bottom": 0
+      },
+      "matches_preliminary_source_sha256": false,
+      "preliminary_source_file": null
+    },
+    {
+      "file": "modes/echos-de-la-greve/assets/stages/timefall-farm-midground.png",
+      "role": "midground",
+      "width": 1672,
+      "height": 941,
+      "mode": "RGBA",
+      "bytes": 1148780,
+      "sha256": "fe38e10039fa670fcb4effc4cb57db22e1ee24300aa0caeaf7a5d1026a10a808",
+      "png_decoding": "passed",
+      "alpha_min": 0,
+      "alpha_max": 255,
+      "alpha_zero_pct": 70.73636,
+      "alpha_255_pct": 0.04494,
+      "alpha_ge_128_pct": 24.09245,
+      "edge_alpha_max": 254,
+      "bbox_at_least_alpha": {
+        "1": [
+          0,
+          31,
+          1672,
+          941
+        ],
+        "16": [
+          0,
+          432,
+          1672,
+          843
+        ],
+        "128": [
+          0,
+          433,
+          1672,
+          842
+        ]
+      },
+      "margins_at_least_alpha_128": {
+        "left": 0,
+        "top": 433,
+        "right": 0,
+        "bottom": 99
+      },
+      "matches_preliminary_source_sha256": false,
+      "preliminary_source_file": null
+    },
+    {
+      "file": "modes/echos-de-la-greve/assets/stages/timefall-farm-floor.png",
+      "role": "floor",
+      "width": 1672,
+      "height": 941,
+      "mode": "RGBA",
+      "bytes": 2156921,
+      "sha256": "7d201898dcdd3d1a2bc401b115665620c33e9089e850023221590099ecc7d3d4",
+      "png_decoding": "passed",
+      "alpha_min": 0,
+      "alpha_max": 255,
+      "alpha_zero_pct": 37.62457,
+      "alpha_255_pct": 0.00216,
+      "alpha_ge_128_pct": 61.87713,
+      "edge_alpha_max": 255,
+      "bbox_at_least_alpha": {
+        "1": [
+          0,
+          94,
+          1672,
+          941
+        ],
+        "16": [
+          0,
+          357,
+          1672,
+          941
+        ],
+        "128": [
+          0,
+          358,
+          1672,
+          941
+        ]
+      },
+      "margins_at_least_alpha_128": {
+        "left": 0,
+        "top": 358,
+        "right": 0,
+        "bottom": 0
+      },
+      "matches_preliminary_source_sha256": false,
+      "preliminary_source_file": null
+    },
+    {
+      "file": "modes/echos-de-la-greve/assets/stages/timefall-farm-foreground.png",
+      "role": "foreground",
+      "width": 1672,
+      "height": 941,
+      "mode": "RGBA",
+      "bytes": 151558,
+      "sha256": "0f3e9995be99d667be177cec7db3cc35cdeaad94aaaf8fe137e470dc1dbc4340",
+      "png_decoding": "passed",
+      "alpha_min": 0,
+      "alpha_max": 255,
+      "alpha_zero_pct": 97.83106,
+      "alpha_255_pct": 0.0007,
+      "alpha_ge_128_pct": 1.1534,
+      "edge_alpha_max": 254,
+      "bbox_at_least_alpha": {
+        "1": [
+          0,
+          478,
+          1672,
+          941
+        ],
+        "16": [
+          0,
+          877,
+          1672,
+          941
+        ],
+        "128": [
+          0,
+          878,
+          1672,
+          941
+        ]
+      },
+      "margins_at_least_alpha_128": {
+        "left": 0,
+        "top": 878,
+        "right": 0,
+        "bottom": 0
+      },
+      "matches_preliminary_source_sha256": false,
+      "preliminary_source_file": null
+    },
+    {
+      "file": "modes/echos-de-la-greve/assets/stages/mountain-knot-approach-sky.png",
+      "role": "sky",
+      "width": 1672,
+      "height": 941,
+      "mode": "RGB",
+      "bytes": 1602065,
+      "sha256": "6a276d4006ecd5a094342b3debf4091fea62f7f3991d93cb73b49eaec6735943",
+      "png_decoding": "passed",
+      "alpha_min": 255,
+      "alpha_max": 255,
+      "alpha_zero_pct": 0.0,
+      "alpha_255_pct": 100.0,
+      "alpha_ge_128_pct": 100.0,
+      "edge_alpha_max": 255,
+      "bbox_at_least_alpha": {
+        "1": [
+          0,
+          0,
+          1672,
+          941
+        ],
+        "16": [
+          0,
+          0,
+          1672,
+          941
+        ],
+        "128": [
+          0,
+          0,
+          1672,
+          941
+        ]
+      },
+      "margins_at_least_alpha_128": {
+        "left": 0,
+        "top": 0,
+        "right": 0,
+        "bottom": 0
+      },
+      "matches_preliminary_source_sha256": false,
+      "preliminary_source_file": null
+    },
+    {
+      "file": "modes/echos-de-la-greve/assets/stages/mountain-knot-approach-distant.png",
+      "role": "distant",
+      "width": 1672,
+      "height": 941,
+      "mode": "RGBA",
+      "bytes": 1575419,
+      "sha256": "fdae8dc3a6a5473150cb47f9de93c54a5c5796128a43e1936fa32ea97e23c4ef",
+      "png_decoding": "passed",
+      "alpha_min": 0,
+      "alpha_max": 255,
+      "alpha_zero_pct": 47.84733,
+      "alpha_255_pct": 0.00744,
+      "alpha_ge_128_pct": 51.61769,
+      "edge_alpha_max": 253,
+      "bbox_at_least_alpha": {
+        "1": [
+          0,
+          133,
+          1672,
+          941
+        ],
+        "16": [
+          0,
+          250,
+          1672,
+          941
+        ],
+        "128": [
+          0,
+          251,
+          1672,
+          941
+        ]
+      },
+      "margins_at_least_alpha_128": {
+        "left": 0,
+        "top": 251,
+        "right": 0,
+        "bottom": 0
+      },
+      "matches_preliminary_source_sha256": false,
+      "preliminary_source_file": null
+    },
+    {
+      "file": "modes/echos-de-la-greve/assets/stages/mountain-knot-approach-midground.png",
+      "role": "midground",
+      "width": 1672,
+      "height": 941,
+      "mode": "RGBA",
+      "bytes": 1055333,
+      "sha256": "02fb7cdbbcf13c8087d7803b162a3cedb66f7f525f7bad80d23fe963dcc3d8c9",
+      "png_decoding": "passed",
+      "alpha_min": 0,
+      "alpha_max": 255,
+      "alpha_zero_pct": 72.78962,
+      "alpha_255_pct": 0.00515,
+      "alpha_ge_128_pct": 26.19274,
+      "edge_alpha_max": 254,
+      "bbox_at_least_alpha": {
+        "1": [
+          0,
+          19,
+          1672,
+          941
+        ],
+        "16": [
+          0,
+          528,
+          1672,
+          941
+        ],
+        "128": [
+          0,
+          529,
+          1672,
+          941
+        ]
+      },
+      "margins_at_least_alpha_128": {
+        "left": 0,
+        "top": 529,
+        "right": 0,
+        "bottom": 0
+      },
+      "matches_preliminary_source_sha256": false,
+      "preliminary_source_file": null
+    },
+    {
+      "file": "modes/echos-de-la-greve/assets/stages/mountain-knot-approach-floor.png",
+      "role": "floor",
+      "width": 1672,
+      "height": 941,
+      "mode": "RGBA",
+      "bytes": 2169060,
+      "sha256": "f0809f99efc2e520f3b4b796e348d6ca7205f9404c3a2db97d241d3bcbe5a59e",
+      "png_decoding": "passed",
+      "alpha_min": 0,
+      "alpha_max": 255,
+      "alpha_zero_pct": 39.54188,
+      "alpha_255_pct": 0.00083,
+      "alpha_ge_128_pct": 60.04378,
+      "edge_alpha_max": 255,
+      "bbox_at_least_alpha": {
+        "1": [
+          0,
+          21,
+          1672,
+          941
+        ],
+        "16": [
+          0,
+          374,
+          1672,
+          941
+        ],
+        "128": [
+          0,
+          375,
+          1672,
+          941
+        ]
+      },
+      "margins_at_least_alpha_128": {
+        "left": 0,
+        "top": 375,
+        "right": 0,
+        "bottom": 0
+      },
+      "matches_preliminary_source_sha256": false,
+      "preliminary_source_file": null
+    },
+    {
+      "file": "modes/echos-de-la-greve/assets/stages/mountain-knot-approach-foreground.png",
+      "role": "foreground",
+      "width": 1672,
+      "height": 941,
+      "mode": "RGBA",
+      "bytes": 144310,
+      "sha256": "15e792f0c81993f25d4f1b2004d3b1f016dfde601c114ca984d6e9fec97826bb",
+      "png_decoding": "passed",
+      "alpha_min": 0,
+      "alpha_max": 255,
+      "alpha_zero_pct": 97.61871,
+      "alpha_255_pct": 0.00089,
+      "alpha_ge_128_pct": 1.5078,
+      "edge_alpha_max": 253,
+      "bbox_at_least_alpha": {
+        "1": [
+          0,
+          37,
+          1672,
+          941
+        ],
+        "16": [
+          0,
+          878,
+          1672,
+          941
+        ],
+        "128": [
+          0,
+          879,
+          1672,
+          941
+        ]
+      },
+      "margins_at_least_alpha_128": {
+        "left": 0,
+        "top": 879,
+        "right": 0,
+        "bottom": 0
+      },
+      "matches_preliminary_source_sha256": false,
+      "preliminary_source_file": null
+    },
+    {
+      "file": "modes/echos-de-la-greve/assets/stages/magellan-ds2-sky.png",
+      "role": "sky",
+      "width": 1672,
+      "height": 941,
+      "mode": "RGB",
+      "bytes": 1721695,
+      "sha256": "953add4be03755a9b68c71ac3175ba3bf2eb32f9bbb56c4211deb8e1f85af442",
+      "png_decoding": "passed",
+      "alpha_min": 255,
+      "alpha_max": 255,
+      "alpha_zero_pct": 0.0,
+      "alpha_255_pct": 100.0,
+      "alpha_ge_128_pct": 100.0,
+      "edge_alpha_max": 255,
+      "bbox_at_least_alpha": {
+        "1": [
+          0,
+          0,
+          1672,
+          941
+        ],
+        "16": [
+          0,
+          0,
+          1672,
+          941
+        ],
+        "128": [
+          0,
+          0,
+          1672,
+          941
+        ]
+      },
+      "margins_at_least_alpha_128": {
+        "left": 0,
+        "top": 0,
+        "right": 0,
+        "bottom": 0
+      },
+      "matches_preliminary_source_sha256": false,
+      "preliminary_source_file": null
+    },
+    {
+      "file": "modes/echos-de-la-greve/assets/stages/magellan-ds2-distant.png",
+      "role": "distant",
+      "width": 1672,
+      "height": 941,
+      "mode": "RGBA",
+      "bytes": 370358,
+      "sha256": "ba85faa99e991e9519d366a2bf6cebc25b196ac71567481176041a06898f9e7c",
+      "png_decoding": "passed",
+      "alpha_min": 0,
+      "alpha_max": 255,
+      "alpha_zero_pct": 87.05312,
+      "alpha_255_pct": 0.02612,
+      "alpha_ge_128_pct": 12.29852,
+      "edge_alpha_max": 255,
+      "bbox_at_least_alpha": {
+        "1": [
+          0,
+          35,
+          1672,
+          941
+        ],
+        "16": [
+          0,
+          403,
+          1672,
+          941
+        ],
+        "128": [
+          0,
+          404,
+          1672,
+          941
+        ]
+      },
+      "margins_at_least_alpha_128": {
+        "left": 0,
+        "top": 404,
+        "right": 0,
+        "bottom": 0
+      },
+      "matches_preliminary_source_sha256": false,
+      "preliminary_source_file": null
+    },
+    {
+      "file": "modes/echos-de-la-greve/assets/stages/magellan-ds2-midground.png",
+      "role": "midground",
+      "width": 1672,
+      "height": 941,
+      "mode": "RGBA",
+      "bytes": 1431026,
+      "sha256": "a79d12f67df8a0cb7521e45499c7349c367b73cf3e6739bd28e438937dd4906a",
+      "png_decoding": "passed",
+      "alpha_min": 0,
+      "alpha_max": 255,
+      "alpha_zero_pct": 59.94107,
+      "alpha_255_pct": 0.00426,
+      "alpha_ge_128_pct": 34.96834,
+      "edge_alpha_max": 253,
+      "bbox_at_least_alpha": {
+        "1": [
+          0,
+          13,
+          1672,
+          941
+        ],
+        "16": [
+          0,
+          369,
+          1672,
+          941
+        ],
+        "128": [
+          0,
+          370,
+          1672,
+          941
+        ]
+      },
+      "margins_at_least_alpha_128": {
+        "left": 0,
+        "top": 370,
+        "right": 0,
+        "bottom": 0
+      },
+      "matches_preliminary_source_sha256": false,
+      "preliminary_source_file": null
+    },
+    {
+      "file": "modes/echos-de-la-greve/assets/stages/magellan-ds2-floor.png",
+      "role": "floor",
+      "width": 1672,
+      "height": 941,
+      "mode": "RGBA",
+      "bytes": 2048430,
+      "sha256": "4b046d7d3814dfd4c86ae9c340d00db859613472e7a71e17d72e570df64b576a",
+      "png_decoding": "passed",
+      "alpha_min": 0,
+      "alpha_max": 255,
+      "alpha_zero_pct": 43.51626,
+      "alpha_255_pct": 0.00013,
+      "alpha_ge_128_pct": 52.81641,
+      "edge_alpha_max": 255,
+      "bbox_at_least_alpha": {
+        "1": [
+          0,
+          9,
+          1672,
+          941
+        ],
+        "16": [
+          0,
+          441,
+          1672,
+          941
+        ],
+        "128": [
+          0,
+          443,
+          1672,
+          941
+        ]
+      },
+      "margins_at_least_alpha_128": {
+        "left": 0,
+        "top": 443,
+        "right": 0,
+        "bottom": 0
+      },
+      "matches_preliminary_source_sha256": false,
+      "preliminary_source_file": null
+    },
+    {
+      "file": "modes/echos-de-la-greve/assets/stages/magellan-ds2-foreground.png",
+      "role": "foreground",
+      "width": 1672,
+      "height": 941,
+      "mode": "RGBA",
+      "bytes": 188208,
+      "sha256": "4c93988a5469264c095cfcdd9c1e574cd75f9a2ded009f6b55c0ea86ec0640af",
+      "png_decoding": "passed",
+      "alpha_min": 0,
+      "alpha_max": 255,
+      "alpha_zero_pct": 96.79245,
+      "alpha_255_pct": 0.00432,
+      "alpha_ge_128_pct": 2.30368,
+      "edge_alpha_max": 254,
+      "bbox_at_least_alpha": {
+        "1": [
+          0,
+          71,
+          1672,
+          941
+        ],
+        "16": [
+          0,
+          842,
+          1672,
+          941
+        ],
+        "128": [
+          0,
+          844,
+          1672,
+          941
+        ]
+      },
+      "margins_at_least_alpha_128": {
+        "left": 0,
+        "top": 844,
+        "right": 0,
+        "bottom": 0
+      },
+      "matches_preliminary_source_sha256": false,
+      "preliminary_source_file": null
+    }
+  ]
+}

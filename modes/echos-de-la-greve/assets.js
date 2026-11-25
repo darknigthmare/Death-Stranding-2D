@@ -28,6 +28,12 @@
   poses.diehardman = {...poses.diehardman,...Object.fromEntries(['stance','action','step','hit','jump'].map(pose=>[pose,replacementRoot.diehardman+pose+'.png']))};
   poses.mama = Object.fromEntries(['stance','action','step','hit',...movement].map(pose=>[pose,replacementRoot.mama+pose+'.png']));
   const nativeStageIds = ['mule-camp-dry','port-knot','incinerator'];
+  const universeStagePanoramas = {
+    'south-knot-ruins':'assets/static-20261125/south-knot-ruins-panorama.png',
+    'timefall-farm':'assets/static-20261125/timefall-farm-panorama.png',
+    'mountain-knot-approach':'assets/static-20261125/mountain-knot-city-panorama.png',
+    'magellan-ds2':'assets/static-universe-20261125/magellan-ds2-panorama.png'
+  };
   const wardrobe = {mama:{
     atelier:{name:'Atelier'},
     viaduc:{name:'Maintenance du viaduc', portrait:'assets/fighters/mama/viaduc/portrait.png',
@@ -70,7 +76,7 @@
     portraits: {...illustrations('fighters', roster, '-portrait'),...replacement('portrait')},
     supportPortraits:{...Object.fromEntries(['deadman','amelie','bridget'].map(id=>[id,'assets/fighters/support/'+id+'-portrait.png'])),lockne:'assets/static-20261125/lockne-portrait.png'},
     finishers: illustrations('finishers', roster),
-    stages: {...illustrations('stages', arenas),...stageLayers('',nativeStageIds)},
+    stages: {...illustrations('stages', arenas),...stageLayers('',nativeStageIds),...universeStagePanoramas},
     skyplates: stageLayers('-sky'),
     distants: stageLayers('-distant'),
     midgrounds: stageLayers('-midground'),
@@ -90,8 +96,13 @@
       'tar-basin':{distant:{anchorY:.96,base:592},middle:{anchorY:.95,base:572},floor:{anchorY:213/724}},
       'mountain-pass':{distant:{anchorY:707/724,base:594},middle:{anchorY:687/724,base:594},floor:{anchorY:194/724}},
       'port-knot':{distant:{anchorY:1,base:598},middle:{anchorY:1,base:594},floor:{anchorY:367/941}},
-      incinerator:{distant:{anchorY:1,base:598},middle:{anchorY:1,base:594},floor:{anchorY:273/809}}
+      incinerator:{distant:{anchorY:1,base:598},middle:{anchorY:1,base:594},floor:{anchorY:273/809}},
+      // Native support rows measured on the unchanged 1672 × 941 PNGs (2026-11-25).
+      'south-knot-ruins':{distant:{anchorY:1,base:598},middle:{anchorY:913/941,base:594},floor:{anchorY:392/941}},
+      'timefall-farm':{distant:{anchorY:1,base:598},middle:{anchorY:840/941,base:594},floor:{anchorY:359/941}},
+      'mountain-knot-approach':{distant:{anchorY:1,base:598},middle:{anchorY:1,base:594},floor:{anchorY:376/941}},
+      'magellan-ds2':{distant:{anchorY:1,base:598},middle:{anchorY:1,base:594},floor:{anchorY:445/941}}
     },
-    foregrounds: {...illustrations('stages', arenas, '-foreground'),...stageLayers('-foreground',nativeStageIds)}
+    foregrounds: {...illustrations('stages', arenas, '-foreground'),...stageLayers('-foreground',[...nativeStageIds,...Object.keys(universeStagePanoramas)])}
   };
 })();

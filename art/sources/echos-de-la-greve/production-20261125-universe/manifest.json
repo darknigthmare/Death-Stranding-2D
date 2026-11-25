@@ -1,0 +1,2194 @@
+{
+  "schema_version": 1,
+  "date": "2026-11-25",
+  "project": "Death Stranding 2D · Échos de la Grève",
+  "universe_scope": "Toute la licence Death Stranding ; œuvres, éditions, périodes et projets annoncés conservés séparément dans docs/combat/UNIVERS_DS.md.",
+  "scope_of_this_batch": "14 bases fixes DS2 et 20 plans séparés pour 4 arènes ; aucun nouveau kit jouable ni nouvelle animation générée.",
+  "baseline": {
+    "main_commit": "6a70d23de1df7624ac0c0c141fd49b6086275c18",
+    "asset_branch_commit": "1cfc7787a49a7aaf6d7e82df28cfea57b1535e9b"
+  },
+  "pixel_policy": "PNG natifs du générateur copiés octet pour octet ; aucune retouche, aucun upscale. Les planches de contrôle et captures de moteur sont des dérivés de revue.",
+  "resolution_note": "Dimensions natives enregistrées par fichier ; aucune revendication de sortie 4K.",
+  "counts": {
+    "new_png": 34,
+    "ds2_base_images": 14,
+    "portraits": 7,
+    "full_subject_images": 3,
+    "isolated_instrument": 1,
+    "panoramas": 3,
+    "new_stage_layers": 20,
+    "new_playable_stages": 4,
+    "new_animation_frames": 0,
+    "generation_outputs": 35,
+    "superseded_outputs": 1,
+    "transparent_png": 27,
+    "opaque_png": 7,
+    "previous_recent_outputs": 128,
+    "active_recent_outputs_after_integration": 162,
+    "playable_fighters": 8,
+    "game_modes": 8,
+    "boss_encounters": 6,
+    "places": 16,
+    "stage_configurations": 17,
+    "stage_layer_paths": 85,
+    "static_gallery_images": 29,
+    "static_gallery_ds1_dc": 15,
+    "static_gallery_ds2": 14,
+    "archives_cards": 12,
+    "runtime_and_gallery_unique_image_paths": 292,
+    "size_bytes": 53577560
+  },
+  "items": [
+    {
+      "id": "dollman-ds2-body",
+      "title": "Dollman",
+      "path": "modes/echos-de-la-greve/assets/static-universe-20261125/dollman-ds2-body.png",
+      "work": "ds2",
+      "version": "Marionnette · costume bordeaux",
+      "category": "characters",
+      "status": "integrated_static_catalogue",
+      "bindings": {
+        "static_gallery": true,
+        "archives": true,
+        "playable_fighter": false,
+        "playable_stage_id": null,
+        "stage_layer": null
+      },
+      "native_png": {
+        "width": 941,
+        "height": 1672,
+        "mode": "RGBA",
+        "frames": 1,
+        "size_bytes": 1431312,
+        "sha256": "45ef2e8e367983df95e54c0709447461c019b31c552c59fb69d2b72a7fafca69",
+        "original_sha256": "45ef2e8e367983df95e54c0709447461c019b31c552c59fb69d2b72a7fafca69",
+        "original_generation_filename": "dollman-ds2-body.png",
+        "native_copy_unchanged": true,
+        "pixel_edit_after_generation": false,
+        "upsampled": false,
+        "alpha_extrema": [
+          0,
+          255
+        ],
+        "alpha_bbox": [
+          25,
+          13,
+          921,
+          1657
+        ]
+      },
+      "generation": {
+        "tool": "image_gen.imagegen",
+        "transparent_background": true,
+        "reference_ids": [
+          "dollman"
+        ],
+        "project_references": [],
+        "prompt": "Use case: style-transfer. Transform the provided OFFICIAL CHARACTER REFERENCE into ONE isolated static 2D game sprite of Dollman from Death Stranding 2, full body, no animation sheet. Keep his exact recognisable puppet design: dark brown side-parted molded hair, large brown articulated eyes, segmented wooden jaw, burgundy-brown corduroy three-piece suit and bow tie, cropped trousers, vivid red socks, dark shoes. Preserve physical puppet proportions and material seams. Neutral standing pose, gently raised right hand, readable silhouette, front three-quarter view. The input is only a character/costume reference, remove all background and dramatic red color cast. High-end hand-painted realistic 2D fighting-game asset, fine textile and carved face detail, crisp clean antialiased edges, soft neutral directional light. Entire feet, head and hand inside frame with generous transparent margins. Genuine transparent background, no floor, no shadow plate, no lettering, no logo, no duplicate, no other character. Largest practical native portrait resolution, do not invent weapons or costume.",
+        "superseded_attempt": null
+      },
+      "fidelity_status": "adaptation_du_projet_comparee_aux_references_visibles",
+      "limitations": [
+        "Pose de soutien adaptée ; le costume et la segmentation sont comparés à une référence en pied. Aucun kit jouable ajouté."
+      ]
+    },
+    {
+      "id": "higgs-ds2-portrait",
+      "title": "Higgs",
+      "path": "modes/echos-de-la-greve/assets/static-universe-20261125/higgs-ds2-portrait.png",
+      "work": "ds2",
+      "version": "Armure rouge · visage découvert",
+      "category": "characters",
+      "status": "integrated_static_catalogue",
+      "bindings": {
+        "static_gallery": true,
+        "archives": true,
+        "playable_fighter": false,
+        "playable_stage_id": null,
+        "stage_layer": null
+      },
+      "native_png": {
+        "width": 1310,
+        "height": 1200,
+        "mode": "RGBA",
+        "frames": 1,
+        "size_bytes": 2138174,
+        "sha256": "ad7fddae20512544dd7549067cf0504266f999deeec37fa8f214407e3e4d193a",
+        "original_sha256": "ad7fddae20512544dd7549067cf0504266f999deeec37fa8f214407e3e4d193a",
+        "original_generation_filename": "exec-62b7bab1-f192-4728-a058-39f41accd843.png",
+        "native_copy_unchanged": true,
+        "pixel_edit_after_generation": false,
+        "upsampled": false,
+        "alpha_extrema": [
+          0,
+          255
+        ],
+        "alpha_bbox": [
+          0,
+          0,
+          1284,
+          1200
+        ]
+      },
+      "generation": {
+        "tool": "image_gen.imagegen",
+        "transparent_background": true,
+        "reference_ids": [
+          "higgs"
+        ],
+        "project_references": [],
+        "prompt": "Use case: style-transfer. Create ONE static isolated chest-up portrait sprite of Higgs in his Death Stranding 2 appearance, based faithfully on the supplied official reference. Preserve long wet brown hair, pale white painted face, black around the eyes, fine gold tears, uneven theatrical mouth marks, battered red-orange armor plates, the translucent amber-gold chest structure, black ribbed collar and cables. This is the DS2 variant, NOT the hooded DS1 golden-skull costume. Frontal three-quarter bust, complete head and shoulders with margin, readable face, lower edge ends cleanly at upper torso. Refined realistic hand-painted 2D art for our Death Stranding 2D fighting-game archive, subtle brushwork and very detailed surfaces, neutral soft lighting with restrained amber accents. Remove the reference scenery. Genuine transparent background. One character only; no text, border, icon, logo, extra props, duplicate, animation frames, or invented lower-body outfit. Largest practical native resolution.",
+        "superseded_attempt": null
+      },
+      "fidelity_status": "adaptation_du_projet_comparee_aux_references_visibles",
+      "limitations": [
+        "Portrait de la version DS2, distinct du kit DS1 ; ne documente pas un costume complet."
+      ]
+    },
+    {
+      "id": "rainy-ds2-portrait",
+      "title": "Rainy",
+      "path": "modes/echos-de-la-greve/assets/static-universe-20261125/rainy-ds2-portrait.png",
+      "work": "ds2",
+      "version": "Pull jaune · fleurs",
+      "category": "characters",
+      "status": "integrated_static_catalogue",
+      "bindings": {
+        "static_gallery": true,
+        "archives": true,
+        "playable_fighter": false,
+        "playable_stage_id": null,
+        "stage_layer": null
+      },
+      "native_png": {
+        "width": 1199,
+        "height": 1312,
+        "mode": "RGBA",
+        "frames": 1,
+        "size_bytes": 1812581,
+        "sha256": "82587f47a4ee6838f46cb6760ff0a57778b93da8c0a10b952ddd5c180102ad9a",
+        "original_sha256": "82587f47a4ee6838f46cb6760ff0a57778b93da8c0a10b952ddd5c180102ad9a",
+        "original_generation_filename": "rainy-ds2-portrait.png",
+        "native_copy_unchanged": true,
+        "pixel_edit_after_generation": false,
+        "upsampled": false,
+        "alpha_extrema": [
+          0,
+          255
+        ],
+        "alpha_bbox": [
+          58,
+          10,
+          1183,
+          1312
+        ]
+      },
+      "generation": {
+        "tool": "image_gen.imagegen",
+        "transparent_background": true,
+        "reference_ids": [
+          "rainy"
+        ],
+        "project_references": [],
+        "prompt": "Use case: style-transfer. Reinterpret the supplied official Rainy reference as ONE isolated static waist-up 2D portrait asset for the Death Stranding 2D fighting-game archive. Preserve Rainy's facial identity and gentle expression, short straight black hair with fringe, yellow mustard ribbed zip-neck sweater, dark upper-arm patch, cream shoulder bag and its strap, hands together holding the same small gray flowerpot with a few yellow flowers. Subject is Rainy with her reference prop only, omit the foreground person's shoulder and entire greenhouse. Keep only the upper body visible in the reference; do not fabricate a full lower outfit. High-quality realistic hand-painted 2D game art, softly textured, crisp readable outline, neutral natural lighting retaining authentic muted colors. Centered complete head, bag shoulder and flowerpot within generous transparent margins. Genuine transparent background, no scenery, no ground, no text, no watermark, no animation or duplicates. Largest practical native portrait resolution.",
+        "superseded_attempt": null
+      },
+      "fidelity_status": "adaptation_du_projet_comparee_aux_references_visibles",
+      "limitations": [
+        "Cadrage à la taille ; fleurs, pull et sac documentés, bas du corps non extrapolé."
+      ]
+    },
+    {
+      "id": "tomorrow-ds2-portrait",
+      "title": "Tomorrow",
+      "path": "modes/echos-de-la-greve/assets/static-universe-20261125/tomorrow-ds2-portrait.png",
+      "work": "ds2",
+      "version": "Haut sombre",
+      "category": "characters",
+      "status": "integrated_static_catalogue",
+      "bindings": {
+        "static_gallery": true,
+        "archives": true,
+        "playable_fighter": false,
+        "playable_stage_id": null,
+        "stage_layer": null
+      },
+      "native_png": {
+        "width": 1156,
+        "height": 1361,
+        "mode": "RGBA",
+        "frames": 1,
+        "size_bytes": 2729741,
+        "sha256": "07b69ce09ced7647fa435152117d70bc4c8ebdcc4c8f7ed49a2453e3081ec3ab",
+        "original_sha256": "07b69ce09ced7647fa435152117d70bc4c8ebdcc4c8f7ed49a2453e3081ec3ab",
+        "original_generation_filename": "exec-492a7ca3-52c9-490a-bad1-76e2ee1058f3.png",
+        "native_copy_unchanged": true,
+        "pixel_edit_after_generation": false,
+        "upsampled": false,
+        "alpha_extrema": [
+          0,
+          255
+        ],
+        "alpha_bbox": [
+          0,
+          0,
+          1156,
+          1361
+        ]
+      },
+      "generation": {
+        "tool": "image_gen.imagegen",
+        "transparent_background": true,
+        "reference_ids": [
+          "tomorrow"
+        ],
+        "project_references": [],
+        "prompt": "Use case: style-transfer. Turn this official Tomorrow reference from Death Stranding 2 into ONE isolated static chest-up portrait asset for our 2D fighting-game archive. Preserve her face, long blond hair with natural flyaways, understated expression, and the dark sleeveless round-neck top visible in this exact reference. Do not combine it with her separate white dress costume. Center the entire head and shoulders with generous margins, soft neutral light instead of the strong orange poster cast. Refined hand-painted realistic 2D game art, detailed hair and fabric, restrained brush texture, readable features at thumbnail size. Reference is for identity and clothing. Genuine transparent background, clean edges, no scenery, no text, no logos, no borders, no weapon, no extra character, no animation frames, do not invent the unseen lower body. Largest practical native portrait resolution.",
+        "superseded_attempt": null
+      },
+      "fidelity_status": "adaptation_du_projet_comparee_aux_references_visibles",
+      "limitations": [
+        "Version en haut sombre ; ne doit pas être confondue avec la référence en robe blanche."
+      ]
+    },
+    {
+      "id": "tarman-ds2-portrait",
+      "title": "Tarman",
+      "path": "modes/echos-de-la-greve/assets/static-universe-20261125/tarman-ds2-portrait.png",
+      "work": "ds2",
+      "version": "Tenue de capitaine",
+      "category": "characters",
+      "status": "integrated_static_catalogue",
+      "bindings": {
+        "static_gallery": true,
+        "archives": true,
+        "playable_fighter": false,
+        "playable_stage_id": null,
+        "stage_layer": null
+      },
+      "native_png": {
+        "width": 1139,
+        "height": 1381,
+        "mode": "RGBA",
+        "frames": 1,
+        "size_bytes": 2150150,
+        "sha256": "17c407342b8e97bf2df27ec8e2df179098fce0955a69e84d265a88c360655c81",
+        "original_sha256": "17c407342b8e97bf2df27ec8e2df179098fce0955a69e84d265a88c360655c81",
+        "original_generation_filename": "exec-9a9d459d-69de-4b5c-98f4-55a98c54caeb.png",
+        "native_copy_unchanged": true,
+        "pixel_edit_after_generation": false,
+        "upsampled": false,
+        "alpha_extrema": [
+          0,
+          255
+        ],
+        "alpha_bbox": [
+          0,
+          0,
+          1139,
+          1381
+        ]
+      },
+      "generation": {
+        "tool": "image_gen.imagegen",
+        "transparent_background": true,
+        "reference_ids": [
+          "tarman"
+        ],
+        "project_references": [],
+        "prompt": "Use case: style-transfer. Produce ONE static isolated waist-up 2D portrait of Tarman from Death Stranding 2 based closely on this official visual. Preserve his elderly face, gray hair, officer cap with gold badge, amber round glasses, dark burgundy captain coat, neck scarf, and binoculars. His anatomically RIGHT arm is truncated and blackened as in the reference, on the VIEWER'S LEFT: preserve this asymmetry, never mirror or regrow that hand. Other hand stays ordinary. Tarman is the sole subject: omit the chiral cat (it will have its own asset), seat, ship walls and surroundings. Keep the portrait shoulders, cap and binoculars fully inside frame. Realistic hand-painted 2D game illustration, precise worn cloth and metal, neutral soft light, subdued burgundy/black colors. Actual transparent background, clean cutout, no typography, watermark, border, animation, extra person, extra props or invented legs. Largest practical native resolution.",
+        "superseded_attempt": null
+      },
+      "fidelity_status": "adaptation_du_projet_comparee_aux_references_visibles",
+      "limitations": [
+        "Portrait assis ; bras droit anatomique tronqué, jumelles et visage comparés. Ne certifie pas une tenue en pied."
+      ]
+    },
+    {
+      "id": "fragile-ds2-portrait",
+      "title": "Fragile",
+      "path": "modes/echos-de-la-greve/assets/static-universe-20261125/fragile-ds2-portrait.png",
+      "work": "ds2",
+      "version": "Béret et col Drawbridge",
+      "category": "characters",
+      "status": "integrated_static_catalogue",
+      "bindings": {
+        "static_gallery": true,
+        "archives": true,
+        "playable_fighter": false,
+        "playable_stage_id": null,
+        "stage_layer": null
+      },
+      "native_png": {
+        "width": 1104,
+        "height": 1425,
+        "mode": "RGBA",
+        "frames": 1,
+        "size_bytes": 2260707,
+        "sha256": "d637fd3bd50da8e9a54472aaee8c7704378b84d10d2089df9ac624036bfda4e9",
+        "original_sha256": "d637fd3bd50da8e9a54472aaee8c7704378b84d10d2089df9ac624036bfda4e9",
+        "original_generation_filename": "exec-b9ef3e14-14b9-4e70-9508-eb92124b01fb.png",
+        "native_copy_unchanged": true,
+        "pixel_edit_after_generation": false,
+        "upsampled": false,
+        "alpha_extrema": [
+          0,
+          255
+        ],
+        "alpha_bbox": [
+          0,
+          0,
+          1104,
+          1425
+        ]
+      },
+      "generation": {
+        "tool": "image_gen.imagegen",
+        "transparent_background": true,
+        "reference_ids": [
+          "fragile_ds2_poster"
+        ],
+        "project_references": [],
+        "prompt": "Use case: style-transfer. Make ONE isolated static portrait of Fragile in the Death Stranding 2 DRAWBRIDGE costume shown in this official reference. Preserve the same face, short swept brown-blond hair, dark DRAWBRIDGE beret, dark coat, pair of sculptural glove-like hands at her collar and neck fastening. DS2 only, do not substitute the longer-haired DS1 Fragile suit or umbrella. Portrait head, shoulders and upper chest; composed calm expression, complete beret and shoulder outline visible with transparent margin. Hand resting near her lips as in reference may remain, but omit the cigarette and smoke for a clean menu silhouette. Refined hand-painted realistic 2D fighting-game portrait, highly detailed fabric, soft neutral light removing red poster cast. Actual transparent background, no ship scenery or chair, no border, captions, watermark, duplicate character, animation sheet or invented lower body. Largest practical native resolution.",
+        "superseded_attempt": null
+      },
+      "fidelity_status": "adaptation_du_projet_comparee_aux_references_visibles",
+      "limitations": [
+        "Béret, coiffure et col comparés ; cigarette omise en conservant la main près du visage. Adaptation signalée."
+      ]
+    },
+    {
+      "id": "sam-ds2-drawbridge-portrait",
+      "title": "Sam Porter Bridges",
+      "path": "modes/echos-de-la-greve/assets/static-universe-20261125/sam-ds2-drawbridge-portrait.png",
+      "work": "ds2",
+      "version": "Drawbridge · tenue sans manches",
+      "category": "characters",
+      "status": "integrated_static_catalogue",
+      "bindings": {
+        "static_gallery": true,
+        "archives": true,
+        "playable_fighter": false,
+        "playable_stage_id": null,
+        "stage_layer": null
+      },
+      "native_png": {
+        "width": 1536,
+        "height": 1024,
+        "mode": "RGBA",
+        "frames": 1,
+        "size_bytes": 2231925,
+        "sha256": "6d38a1241e98bd9ad03d9c2ef384d468d9f4c282004ffc99b0adc522dc9c6c74",
+        "original_sha256": "6d38a1241e98bd9ad03d9c2ef384d468d9f4c282004ffc99b0adc522dc9c6c74",
+        "original_generation_filename": "exec-ac53af04-4719-478a-896f-d9f3f0641584.png",
+        "native_copy_unchanged": true,
+        "pixel_edit_after_generation": false,
+        "upsampled": false,
+        "alpha_extrema": [
+          0,
+          254
+        ],
+        "alpha_bbox": [
+          57,
+          0,
+          1498,
+          1024
+        ]
+      },
+      "generation": {
+        "tool": "image_gen.imagegen",
+        "transparent_background": true,
+        "reference_ids": [
+          "sam_ds2_pc",
+          "sam_ds2_poster"
+        ],
+        "project_references": [],
+        "prompt": "Use case: style-transfer. Create ONE isolated static chest-up portrait of Sam Porter Bridges in Death Stranding 2 for our 2D fighting-game archive. Reference image1 controls the outfit: black sleeveless technical DRAWBRIDGE top, ribbed high collar, bare arms, wet dark shoulder-length hair. Reference image2 is only supplementary facial-identity reference for Sam; do NOT use its orange suit and do NOT include Lou or another person. Preserve Sam's weary mature face, stubble, hair over the forehead and intent downward gaze, with the complete head and both shoulders visible. Do not add a BB pod or cargo absent from image1. High-end realistic hand-painted 2D game art, crisp natural skin/fabric detail, soft neutral lighting, clean readable silhouette. Genuine transparent background, chest-up crop with margins, no scenery, no new text or watermark, no border, no duplicates, no animation frames, no invented lower body. Largest practical native portrait resolution.",
+        "superseded_attempt": null
+      },
+      "fidelity_status": "adaptation_du_projet_comparee_aux_references_visibles",
+      "limitations": [
+        "Tenue noire Drawbridge de la capture PC ; seconde référence utilisée uniquement pour le visage, sans costume clair ni Lou."
+      ]
+    },
+    {
+      "id": "neil-ds2-portrait",
+      "title": "Neil",
+      "path": "modes/echos-de-la-greve/assets/static-universe-20261125/neil-ds2-portrait.png",
+      "work": "ds2",
+      "version": "Écharpe sombre",
+      "category": "characters",
+      "status": "integrated_static_catalogue",
+      "bindings": {
+        "static_gallery": true,
+        "archives": true,
+        "playable_fighter": false,
+        "playable_stage_id": null,
+        "stage_layer": null
+      },
+      "native_png": {
+        "width": 1312,
+        "height": 1199,
+        "mode": "RGBA",
+        "frames": 1,
+        "size_bytes": 2159228,
+        "sha256": "2d8e326ec662875f6b1588a1f3e5cd06acd834caee078803e1cee97d598b3d08",
+        "original_sha256": "2d8e326ec662875f6b1588a1f3e5cd06acd834caee078803e1cee97d598b3d08",
+        "original_generation_filename": "exec-2092c4fc-cb12-471b-abf8-94fa8a3c32ed.png",
+        "native_copy_unchanged": true,
+        "pixel_edit_after_generation": false,
+        "upsampled": false,
+        "alpha_extrema": [
+          0,
+          255
+        ],
+        "alpha_bbox": [
+          0,
+          0,
+          1312,
+          1199
+        ]
+      },
+      "generation": {
+        "tool": "image_gen.imagegen",
+        "transparent_background": true,
+        "reference_ids": [
+          "neil"
+        ],
+        "project_references": [],
+        "prompt": "Use case: style-transfer. Create ONE isolated static chest-up portrait of Neil from Death Stranding 2 based faithfully on this official character poster. Preserve his facial identity, tousled dark-brown hair, short facial stubble, gray-green eyes, somber focused expression, weathered dark suit, broad dark patterned neck scarf and visible straps. Crop as a character archive portrait, entire head and both shoulders inside generous margins. Remove the large foreground blades so the chest and scarf read clearly; do not invent weapons or unseen lower-body design. Refined realistic hand-painted 2D fighting-game illustration with detailed materials, neutral light and authentic restrained dark palette instead of fire-red poster illumination. Genuine transparent background, one character, no backdrop, no typography, logo, border, watermark, gore, duplicated body parts or animation sheet. Largest practical native resolution.",
+        "superseded_attempt": null
+      },
+      "fidelity_status": "adaptation_du_projet_comparee_aux_references_visibles",
+      "limitations": [
+        "Portrait avec écharpe ; aucune silhouette complète ni capacité de combat déduite."
+      ]
+    },
+    {
+      "id": "chiral-cat-ds2-body",
+      "title": "Chat chiral",
+      "path": "modes/echos-de-la-greve/assets/static-universe-20261125/chiral-cat-ds2-body.png",
+      "work": "ds2",
+      "version": "Silhouette isolée",
+      "category": "props",
+      "status": "integrated_static_catalogue",
+      "bindings": {
+        "static_gallery": true,
+        "archives": false,
+        "playable_fighter": false,
+        "playable_stage_id": null,
+        "stage_layer": null
+      },
+      "native_png": {
+        "width": 1254,
+        "height": 1254,
+        "mode": "RGBA",
+        "frames": 1,
+        "size_bytes": 1254658,
+        "sha256": "3b861b712655b53c38c4eab90296d03c000169a2d0491a8e6d1865a658da8e33",
+        "original_sha256": "3b861b712655b53c38c4eab90296d03c000169a2d0491a8e6d1865a658da8e33",
+        "original_generation_filename": "exec-51789eb8-59e6-4ff6-80d3-c356237d8783.png",
+        "native_copy_unchanged": true,
+        "pixel_edit_after_generation": false,
+        "upsampled": false,
+        "alpha_extrema": [
+          0,
+          255
+        ],
+        "alpha_bbox": [
+          37,
+          23,
+          1240,
+          1254
+        ]
+      },
+      "generation": {
+        "tool": "image_gen.imagegen",
+        "transparent_background": true,
+        "reference_ids": [
+          "tarman"
+        ],
+        "project_references": [],
+        "prompt": "Use case: style-transfer. Use ONLY the small chiral cat visible on the captain's shoulder in this official Death Stranding 2 reference. Recreate this ONE cat as an isolated static full-body companion sprite, no human, no shoulder, no other subject. Preserve its dark black glossy tar-like fur surface, bright yellow eyes, pointed cat ears and irregular branching black antler-like growths on its head. Small animal proportions, compact perched crouch with four paws readable, tail curved around behind; retain the strange textured material and recognisable head rather than turning it into a deer. Full silhouette including branching horns and tail inside generous margins. Realistic hand-painted 2D game art, neutral grazing highlights revealing the black form, controlled fine texture, no floor or pedestal. Actual transparent background, no smoke cloud, lettering, icons, border, watermark, duplicates or animation frames. Largest practical native square resolution.",
+        "superseded_attempt": null
+      },
+      "fidelity_status": "adaptation_du_projet_comparee_aux_references_visibles",
+      "limitations": [
+        "Sujet isolé à partir du compagnon visible sur Tarman ; posture et parties masquées reconstituées."
+      ]
+    },
+    {
+      "id": "magellan-ds2-panorama",
+      "title": "DHV Magellan",
+      "path": "modes/echos-de-la-greve/assets/static-universe-20261125/magellan-ds2-panorama.png",
+      "work": "ds2",
+      "version": "Berge au couchant",
+      "category": "stages",
+      "status": "integrated_static_catalogue",
+      "bindings": {
+        "static_gallery": true,
+        "archives": false,
+        "playable_fighter": false,
+        "playable_stage_id": "magellan-ds2",
+        "stage_layer": null
+      },
+      "native_png": {
+        "width": 1672,
+        "height": 941,
+        "mode": "RGB",
+        "frames": 1,
+        "size_bytes": 2435534,
+        "sha256": "5409160c50eb77a749b0dc01fa49cb45dc6c0a8c081e4943a9f8e7b346241ccd",
+        "original_sha256": "5409160c50eb77a749b0dc01fa49cb45dc6c0a8c081e4943a9f8e7b346241ccd",
+        "original_generation_filename": "exec-8a85647f-f5d9-4cc0-8d19-193251a5562f.png",
+        "native_copy_unchanged": true,
+        "pixel_edit_after_generation": false,
+        "upsampled": false,
+        "alpha_extrema": null,
+        "alpha_bbox": null
+      },
+      "generation": {
+        "tool": "image_gen.imagegen",
+        "transparent_background": false,
+        "reference_ids": [
+          "magellan"
+        ],
+        "project_references": [],
+        "prompt": "Use case: style-transfer. Create ONE wide landscape environment panorama for our Death Stranding 2D fighting game, based on the supplied official DS2 scene with the DHV Magellan. Retain the recognisable immense industrial hovering ship in the upper-left/middle distance, its flat angular gray hull and dark bulbous underside, muted wet marsh, reeds, dead tree silhouettes, low hills and golden late-day sky. Remove Fragile and all other characters. Recompose for a side-on fighting arena: broad uninterrupted fairly level muddy/gravel shore across the entire lower quarter, horizon above it, no obstacle or steep perspective vanishing point on the fight lane. Keep ship and distant reeds behind that lane, with breathing space for two fighters in the center. Painterly realistic high-detail 2D environment, atmospheric layers, believable scale, restrained gray/ochre colors, no graphic UI. One complete static image, no grid, no lettering, no watermark. Opaque full-bleed panorama, 16:9 landscape, request native 3840x2160 if supported; never simulate detail by enlargement.",
+        "superseded_attempt": null
+      },
+      "fidelity_status": "adaptation_du_projet_comparee_aux_references_visibles",
+      "limitations": [
+        "Personnage retiré et berge aménagée pour le combat latéral ; adaptation de composition du paysage, pas un relevé de carte."
+      ]
+    },
+    {
+      "id": "plate-gate-ds2-panorama",
+      "title": "Plate Gate",
+      "path": "modes/echos-de-la-greve/assets/static-universe-20261125/plate-gate-ds2-panorama.png",
+      "work": "ds2",
+      "version": "Colonnes minérales",
+      "category": "stages",
+      "status": "integrated_static_catalogue",
+      "bindings": {
+        "static_gallery": true,
+        "archives": false,
+        "playable_fighter": false,
+        "playable_stage_id": null,
+        "stage_layer": null
+      },
+      "native_png": {
+        "width": 1672,
+        "height": 941,
+        "mode": "RGB",
+        "frames": 1,
+        "size_bytes": 1977389,
+        "sha256": "18153bcd7786cd033038d971bb975b40ca27137133d4eee92268151feedf3783",
+        "original_sha256": "18153bcd7786cd033038d971bb975b40ca27137133d4eee92268151feedf3783",
+        "original_generation_filename": "exec-70de4cae-a6c9-4f66-be5c-a91777c50946.png",
+        "native_copy_unchanged": true,
+        "pixel_edit_after_generation": false,
+        "upsampled": false,
+        "alpha_extrema": null,
+        "alpha_bbox": null
+      },
+      "generation": {
+        "tool": "image_gen.imagegen",
+        "transparent_background": false,
+        "reference_ids": [
+          "plate_gate"
+        ],
+        "project_references": [],
+        "prompt": "Use case: style-transfer. Create ONE static wide 2D environment panorama derived from this official Death Stranding 2 Plate Gate scene. Keep the pale impossible vertical mineral columns and fragmented suspended rock formations, vast misty depth, desaturated warm-gray atmosphere, sparse grass and sandy stone terrain. Remove EVERY red-armored figure and all characters. Recompose the landscape as an empty lateral fighting-game backdrop: continuous horizontal clear rocky strip across the lower quarter, distant stone formations much farther behind it, center visually open, no ledge crossing the fighting lane. Preserve the immense column geometry and hazy olive/cream light of the reference, realistic hand-painted 2D game art with crisp near textures and soft distant silhouettes. One opaque full-bleed panorama, 16:9 landscape, ideally native3840x2160 if supported. No typography, logo, watermark, enemies, UI or multiple panels. This is a stage composition adaptation from the reference, not a map screenshot.",
+        "superseded_attempt": null
+      },
+      "fidelity_status": "adaptation_du_projet_comparee_aux_references_visibles",
+      "limitations": [
+        "Personnages retirés et composition latérale adaptée ; panorama disponible en galerie, pas une arène jouable supplémentaire."
+      ]
+    },
+    {
+      "id": "sandstorm-ds2-panorama",
+      "title": "Front de sable",
+      "path": "modes/echos-de-la-greve/assets/static-universe-20261125/sandstorm-ds2-panorama.png",
+      "work": "ds2",
+      "version": "Rue désertée",
+      "category": "stages",
+      "status": "integrated_static_catalogue",
+      "bindings": {
+        "static_gallery": true,
+        "archives": false,
+        "playable_fighter": false,
+        "playable_stage_id": null,
+        "stage_layer": null
+      },
+      "native_png": {
+        "width": 1672,
+        "height": 941,
+        "mode": "RGB",
+        "frames": 1,
+        "size_bytes": 2216650,
+        "sha256": "101c42163fb410de3c33534b4b6b90a2ff21b9443659146f630e2ea7f4346ffa",
+        "original_sha256": "101c42163fb410de3c33534b4b6b90a2ff21b9443659146f630e2ea7f4346ffa",
+        "original_generation_filename": "exec-7882664c-278f-41e4-a924-76baf0d97b9a.png",
+        "native_copy_unchanged": true,
+        "pixel_edit_after_generation": false,
+        "upsampled": false,
+        "alpha_extrema": null,
+        "alpha_bbox": null
+      },
+      "generation": {
+        "tool": "image_gen.imagegen",
+        "transparent_background": false,
+        "reference_ids": [
+          "sandstorm"
+        ],
+        "project_references": [],
+        "prompt": "Use case: style-transfer. Create ONE static wide environment panorama for Death Stranding 2D using this official DS2 dust-storm reference. Preserve the abandoned sun-bleached street, dusty pale vehicles parked well behind the combat area, low weathered buildings, overhead sagging cables on utility poles, and an immense billowing ochre sandstorm wall consuming the skyline. Remove Sam and all humans. Reframe into a side-view fighting-game composition with a broad straight uninterrupted strip of worn asphalt and sand across the lower quarter, all cars/buildings beyond its back edge; avoid a road that converges sharply toward the horizon. Fine hand-painted realistic 2D environmental art, strong layered depth, cream/ochre dust, readable silhouettes against the storm, static environment with no particle overlay. Opaque full-bleed16:9 panorama; request native3840x2160 if supported. No signs with readable text, no brand, watermark, borders, UI, grids or characters.",
+        "superseded_attempt": null
+      },
+      "fidelity_status": "adaptation_du_projet_comparee_aux_references_visibles",
+      "limitations": [
+        "Personnage retiré et composition latérale adaptée ; panorama disponible en galerie, sans simulation nouvelle de tempête."
+      ]
+    },
+    {
+      "id": "red-samurai-ds2-body",
+      "title": "Red Samurai",
+      "path": "modes/echos-de-la-greve/assets/static-universe-20261125/red-samurai-ds2-body.png",
+      "work": "ds2",
+      "version": "Armure rouge · étude en pied",
+      "category": "enemies",
+      "status": "integrated_static_catalogue",
+      "bindings": {
+        "static_gallery": true,
+        "archives": false,
+        "playable_fighter": false,
+        "playable_stage_id": null,
+        "stage_layer": null
+      },
+      "native_png": {
+        "width": 1024,
+        "height": 1536,
+        "mode": "RGBA",
+        "frames": 1,
+        "size_bytes": 2314640,
+        "sha256": "0370c9a24971a763fc87da583c83cc91ecc9f388df493024e49f1612d3c9fcef",
+        "original_sha256": "0370c9a24971a763fc87da583c83cc91ecc9f388df493024e49f1612d3c9fcef",
+        "original_generation_filename": "exec-e810888e-2991-4bb3-b64c-b2ac650f1b47.png",
+        "native_copy_unchanged": true,
+        "pixel_edit_after_generation": false,
+        "upsampled": false,
+        "alpha_extrema": [
+          0,
+          254
+        ],
+        "alpha_bbox": [
+          60,
+          0,
+          1024,
+          1523
+        ]
+      },
+      "generation": {
+        "tool": "image_gen.imagegen",
+        "transparent_background": true,
+        "reference_ids": [
+          "red_samurai"
+        ],
+        "project_references": [],
+        "prompt": "Use case: style-transfer. Create ONE full-body static 2D base sprite of the Red Samurai mechanical enemy from Death Stranding 2 using the supplied official poster as visual reference. Preserve the distinctive red-orange worn armor, ribbed dark undersuit, straps, mechanical helmet, radial pale sensor vanes around a single red central eye, long angular jaw plate, boxy back frame, shoulder plates and huge industrial sword. No human face. Full body head to both feet, three-quarter lateral guard facing right, weight balanced, sword held diagonally in a readable still guard. The reference does not show all boots and lower legs: continue the visible mechanical armor conservatively as a coherent game-art adaptation, not a claimed exact canonical turnaround. Keep anatomy mechanical and plausible, two arms/two legs, every extremity and blade fully inside wide transparent margins. Very detailed realistic hand-painted 2D game asset, crisp silhouette, neutral studio light, orange-red metal and black fabric as source. Genuine transparent background, no scenery, floor, cast-shadow plate, extra enemy, labels, logo, watermark or animation sheet. Largest practical native portrait resolution.",
+        "superseded_attempt": null
+      },
+      "fidelity_status": "adaptation_du_projet_comparee_aux_references_visibles",
+      "limitations": [
+        "La référence coupe les jambes ; jambes, pieds et posture complète sont une reconstruction. Aucun comportement de boss ou identité supplémentaire attribué."
+      ]
+    },
+    {
+      "id": "higgs-ds2-guitar",
+      "title": "Guitare de Higgs",
+      "path": "modes/echos-de-la-greve/assets/static-universe-20261125/higgs-ds2-guitar.png",
+      "work": "ds2",
+      "version": "Objet isolé",
+      "category": "props",
+      "status": "integrated_static_catalogue",
+      "bindings": {
+        "static_gallery": true,
+        "archives": false,
+        "playable_fighter": false,
+        "playable_stage_id": null,
+        "stage_layer": null
+      },
+      "native_png": {
+        "width": 2172,
+        "height": 724,
+        "mode": "RGBA",
+        "frames": 1,
+        "size_bytes": 1035732,
+        "sha256": "303bfe43e2a2db2698a43b8abbd57805d5241aa3f9ed46e2fbef6f4f0b7b27dc",
+        "original_sha256": "303bfe43e2a2db2698a43b8abbd57805d5241aa3f9ed46e2fbef6f4f0b7b27dc",
+        "original_generation_filename": "exec-5f02e936-0728-4e22-bd13-979a9cf9bd08.png",
+        "native_copy_unchanged": true,
+        "pixel_edit_after_generation": false,
+        "upsampled": false,
+        "alpha_extrema": [
+          0,
+          255
+        ],
+        "alpha_bbox": [
+          0,
+          9,
+          2160,
+          708
+        ]
+      },
+      "generation": {
+        "tool": "image_gen.imagegen",
+        "transparent_background": true,
+        "reference_ids": [
+          "higgs_guitar_statue_parts_licensed",
+          "higgs_guitar_duel_detail",
+          "higgs_guitar_shoulder_detail"
+        ],
+        "project_references": [],
+        "prompt": "Use case: style-transfer. Produce ONE isolated static equipment sprite: Higgs's red-orange electric guitar weapon from Death Stranding 2. Reference1, an officially licensed statue, shows the COMPLETE object and establishes its asymmetric sharply angular guitar body, twin-rail long neck, small black controls and looping dark cable; references2 and3 are official game captures and control the worn orange finish, technical details and long luminous tip. Extract ONLY the guitar and its own cable, no Higgs, hands, straps from clothing, statue plinth, skulls, enemy or scenery. Show the entire guitar at a slight diagonal in near side view from body at lower-left to tip at upper-right, all parts comfortably inside frame. Carefully reconstruct the small parts obscured by the hands. Highly detailed realistic hand-painted 2D equipment art, restrained highlights and scratches, precise black metal fittings. Actual transparent background, no shadow plane, typography, decorative frame, duplicates, diagrams, animation or effects cloud. Largest practical native wide resolution.",
+        "superseded_attempt": null
+      },
+      "fidelity_status": "adaptation_du_projet_comparee_aux_references_visibles",
+      "limitations": [
+        "Silhouette complétée avec une statue sous licence et deux captures officielles partielles ; détails masqués reconstitués. Aucun modèle 1:1 certifié."
+      ]
+    },
+    {
+      "id": "south-knot-ruins-sky",
+      "title": "Ruines de South Knot · sky",
+      "path": "modes/echos-de-la-greve/assets/stages/south-knot-ruins-sky.png",
+      "work": "ds1-dc",
+      "version": "Cinq plans indépendants · composition latérale",
+      "category": "stage_layer",
+      "status": "integrated_static_layer",
+      "bindings": {
+        "static_gallery": false,
+        "archives": false,
+        "playable_fighter": false,
+        "playable_stage_id": "south-knot-ruins",
+        "stage_layer": "sky"
+      },
+      "native_png": {
+        "width": 1672,
+        "height": 941,
+        "mode": "RGB",
+        "frames": 1,
+        "size_bytes": 1615781,
+        "sha256": "578b1727cc1a4a815d566aaf59b0cf0ae2a15ec106a90ec7515489acaada8562",
+        "original_sha256": "578b1727cc1a4a815d566aaf59b0cf0ae2a15ec106a90ec7515489acaada8562",
+        "original_generation_filename": "exec-29eb5714-05b9-435c-badc-f96d7d973853.png",
+        "native_copy_unchanged": true,
+        "pixel_edit_after_generation": false,
+        "upsampled": false,
+        "alpha_extrema": null,
+        "alpha_bbox": null
+      },
+      "generation": {
+        "tool": "image_gen.imagegen",
+        "transparent_background": false,
+        "reference_ids": [],
+        "project_references": [
+          {
+            "path": "modes/echos-de-la-greve/assets/static-20261125/south-knot-ruins-panorama.png",
+            "sha256": "eb15d3769fbc716ca482655e9aae272b1aca13585654206f27bc5c9e094ae73c",
+            "kind": "generated_project_panorama"
+          }
+        ],
+        "prompt": "Use case: style-transfer. Derive exactly ONE separate SKY BACKGROUND LAYER for a side-view 2D fighting arena from the supplied South Knot ruins panorama. Keep only the matching cold slate-blue overcast storm sky with subtle cloud gradients and atmospheric haze, extending seamlessly edge to edge. Remove all buildings, bridge, lampposts, ground, rubble and characters. No foreground rain streaks: the engine handles rain. This sky must be fully OPAQUE across the entire canvas, no transparency. Consistent light and painterly realistic textures with reference. Wide16:9 native landscape, preferably1672x941 or the reference aspect ratio, no text, UI, watermark, outlines, floor, horizon objects or multiple layers in one image. It is a full rectangular sky plate, not a miniature sky object.",
+        "superseded_attempt": null
+      },
+      "fidelity_status": "adaptation_du_projet_comparee_aux_references_visibles",
+      "limitations": [
+        "Plan statique créé à partir du panorama du projet ; raccord et cadrage adaptés au moteur 1280×720. Les effets de météo sont rendus par le moteur."
+      ]
+    },
+    {
+      "id": "south-knot-ruins-distant",
+      "title": "Ruines de South Knot · distant",
+      "path": "modes/echos-de-la-greve/assets/stages/south-knot-ruins-distant.png",
+      "work": "ds1-dc",
+      "version": "Cinq plans indépendants · composition latérale",
+      "category": "stage_layer",
+      "status": "integrated_static_layer",
+      "bindings": {
+        "static_gallery": false,
+        "archives": false,
+        "playable_fighter": false,
+        "playable_stage_id": "south-knot-ruins",
+        "stage_layer": "distant"
+      },
+      "native_png": {
+        "width": 1672,
+        "height": 941,
+        "mode": "RGBA",
+        "frames": 1,
+        "size_bytes": 716456,
+        "sha256": "ea702583ee66c0c9eacab99a90eed6560390cb706f175894a83278a4c3a6528d",
+        "original_sha256": "ea702583ee66c0c9eacab99a90eed6560390cb706f175894a83278a4c3a6528d",
+        "original_generation_filename": "exec-4e7447d9-262f-4696-ae53-a4d0c97a3177.png",
+        "native_copy_unchanged": true,
+        "pixel_edit_after_generation": false,
+        "upsampled": false,
+        "alpha_extrema": [
+          0,
+          255
+        ],
+        "alpha_bbox": [
+          0,
+          103,
+          1672,
+          941
+        ]
+      },
+      "generation": {
+        "tool": "image_gen.imagegen",
+        "transparent_background": true,
+        "reference_ids": [],
+        "project_references": [
+          {
+            "path": "modes/echos-de-la-greve/assets/static-20261125/south-knot-ruins-panorama.png",
+            "sha256": "eb15d3769fbc716ca482655e9aae272b1aca13585654206f27bc5c9e094ae73c",
+            "kind": "generated_project_panorama"
+          }
+        ],
+        "prompt": "Use case: style-transfer. Derive ONE separately usable static parallax layer for our side-view 2D fighting arena from the reference panorama. Match its cold wet slate-blue palette and realistic painterly texture. Landscape16:9, keep content reaching both horizontal edges and allow6% overscan. No UI, text, watermark, characters, panel grid or foreground rain streaks. Preserve the transparent alpha genuinely outside the requested objects. Requested layer: DISTANT HORIZON ONLY. A long ruined steel bridge across distant skeletal city silhouettes in rain haze, as visible in the reference. Keep distant structures muted and small, most high silhouettes to the outer sides, center open. Include a shallow continuous opaque dark hazy rubble/terrain band along the ENTIRE bottom edge, so it joins the other ground layers without holes. The sky above and every space between silhouettes must be fully transparent. No nearby lampposts, large rubble piles, asphalt fighting floor or separate sky. All silhouettes should end coherently at the bottom baseline. One wide cutout layer, not a complete scene.",
+        "superseded_attempt": null
+      },
+      "fidelity_status": "adaptation_du_projet_comparee_aux_references_visibles",
+      "limitations": [
+        "Plan statique créé à partir du panorama du projet ; raccord et cadrage adaptés au moteur 1280×720. Les effets de météo sont rendus par le moteur."
+      ]
+    },
+    {
+      "id": "south-knot-ruins-midground",
+      "title": "Ruines de South Knot · midground",
+      "path": "modes/echos-de-la-greve/assets/stages/south-knot-ruins-midground.png",
+      "work": "ds1-dc",
+      "version": "Cinq plans indépendants · composition latérale",
+      "category": "stage_layer",
+      "status": "integrated_static_layer",
+      "bindings": {
+        "static_gallery": false,
+        "archives": false,
+        "playable_fighter": false,
+        "playable_stage_id": "south-knot-ruins",
+        "stage_layer": "midground"
+      },
+      "native_png": {
+        "width": 1672,
+        "height": 941,
+        "mode": "RGBA",
+        "frames": 1,
+        "size_bytes": 2056961,
+        "sha256": "28ba9cf06db9bdb0dd3524d28acebfd66dc01c2a7654e009922ece7ad5b387d2",
+        "original_sha256": "28ba9cf06db9bdb0dd3524d28acebfd66dc01c2a7654e009922ece7ad5b387d2",
+        "original_generation_filename": "exec-0af13270-1ac0-4d0d-b14f-389d7d0dc81b.png",
+        "native_copy_unchanged": true,
+        "pixel_edit_after_generation": false,
+        "upsampled": false,
+        "alpha_extrema": [
+          0,
+          255
+        ],
+        "alpha_bbox": [
+          0,
+          0,
+          1672,
+          941
+        ]
+      },
+      "generation": {
+        "tool": "image_gen.imagegen",
+        "transparent_background": true,
+        "reference_ids": [],
+        "project_references": [
+          {
+            "path": "modes/echos-de-la-greve/assets/static-20261125/south-knot-ruins-panorama.png",
+            "sha256": "eb15d3769fbc716ca482655e9aae272b1aca13585654206f27bc5c9e094ae73c",
+            "kind": "generated_project_panorama"
+          }
+        ],
+        "prompt": "Use case: style-transfer. Derive ONE separately usable static parallax layer for our side-view 2D fighting arena from the reference panorama. Match its cold wet slate-blue palette and realistic painterly texture. Landscape16:9, keep content reaching both horizontal edges and allow6% overscan. No UI, text, watermark, characters, panel grid or foreground rain streaks. Preserve the transparent alpha genuinely outside the requested objects. Requested layer: MIDGROUND RUINS ONLY. The recognizable broken concrete facades at left and right, bent streetlamps, fallen road sections and rubble from the reference. They form a shallow side-view scene behind the fight lane, with a lower and less busy center. Windows and open sky gaps are genuinely transparent. Include a continuous low opaque band of wet rubble/earth along the full bottom edge. No sky, no distant long bridge, no foreground asphalt lane, no tall obstruction rising from the center foreground. Detailed chipped wet concrete, muted dark blue-gray, structures positioned across the width and anchored to a common lower baseline.",
+        "superseded_attempt": null
+      },
+      "fidelity_status": "adaptation_du_projet_comparee_aux_references_visibles",
+      "limitations": [
+        "Plan statique créé à partir du panorama du projet ; raccord et cadrage adaptés au moteur 1280×720. Les effets de météo sont rendus par le moteur."
+      ]
+    },
+    {
+      "id": "south-knot-ruins-floor",
+      "title": "Ruines de South Knot · floor",
+      "path": "modes/echos-de-la-greve/assets/stages/south-knot-ruins-floor.png",
+      "work": "ds1-dc",
+      "version": "Cinq plans indépendants · composition latérale",
+      "category": "stage_layer",
+      "status": "integrated_static_layer",
+      "bindings": {
+        "static_gallery": false,
+        "archives": false,
+        "playable_fighter": false,
+        "playable_stage_id": "south-knot-ruins",
+        "stage_layer": "floor"
+      },
+      "native_png": {
+        "width": 1672,
+        "height": 941,
+        "mode": "RGBA",
+        "frames": 1,
+        "size_bytes": 2057364,
+        "sha256": "ef18ba9ad4c752c6a7bdf35698df0e896ea78b2f2e45922b1dfe224b46f835f2",
+        "original_sha256": "ef18ba9ad4c752c6a7bdf35698df0e896ea78b2f2e45922b1dfe224b46f835f2",
+        "original_generation_filename": "exec-13ef739e-d08c-4791-a787-b78851dbaa80.png",
+        "native_copy_unchanged": true,
+        "pixel_edit_after_generation": false,
+        "upsampled": false,
+        "alpha_extrema": [
+          0,
+          255
+        ],
+        "alpha_bbox": [
+          0,
+          17,
+          1672,
+          941
+        ]
+      },
+      "generation": {
+        "tool": "image_gen.imagegen",
+        "transparent_background": true,
+        "reference_ids": [],
+        "project_references": [
+          {
+            "path": "modes/echos-de-la-greve/assets/static-20261125/south-knot-ruins-panorama.png",
+            "sha256": "eb15d3769fbc716ca482655e9aae272b1aca13585654206f27bc5c9e094ae73c",
+            "kind": "generated_project_panorama"
+          }
+        ],
+        "prompt": "Use case: style-transfer. Derive ONE separately usable static parallax layer for our side-view 2D fighting arena from the reference panorama. Match its cold wet slate-blue palette and realistic painterly texture. Landscape16:9, keep content reaching both horizontal edges and allow6% overscan. No UI, text, watermark, characters, panel grid or foreground rain streaks. Preserve the transparent alpha genuinely outside the requested objects. Requested layer: FLOOR ONLY, a continuous wide horizontal strip of wet cracked dark asphalt with shallow puddles and small gravel matching the lower foreground of the reference. The upper32% of the canvas is completely transparent. At about32% height a perfectly level straight back boundary runs from left edge to right edge. From that boundary to the bottom edge, opaque terrain fills the entire width and all pixels, without holes. Flat central fighting lane, no wall, bridge, lamppost, ruins, big rocks, vertical relief or perspective vanishing point. Gentle texture perspective and subtle wet reflections only. Do not fade the bottom or side edges; continuous opaque ground is essential.",
+        "superseded_attempt": null
+      },
+      "fidelity_status": "adaptation_du_projet_comparee_aux_references_visibles",
+      "limitations": [
+        "Plan statique créé à partir du panorama du projet ; raccord et cadrage adaptés au moteur 1280×720. Les effets de météo sont rendus par le moteur.",
+        "Surface de rendu recalée sur les pieds à y=588 ; géométrie visuelle seule, physique du duel inchangée."
+      ]
+    },
+    {
+      "id": "south-knot-ruins-foreground",
+      "title": "Ruines de South Knot · foreground",
+      "path": "modes/echos-de-la-greve/assets/stages/south-knot-ruins-foreground.png",
+      "work": "ds1-dc",
+      "version": "Cinq plans indépendants · composition latérale",
+      "category": "stage_layer",
+      "status": "integrated_static_layer",
+      "bindings": {
+        "static_gallery": false,
+        "archives": false,
+        "playable_fighter": false,
+        "playable_stage_id": "south-knot-ruins",
+        "stage_layer": "foreground"
+      },
+      "native_png": {
+        "width": 1672,
+        "height": 941,
+        "mode": "RGBA",
+        "frames": 1,
+        "size_bytes": 139861,
+        "sha256": "c4a76af151a8b44a373adfd32da22b3e46af7f9ac14e9e5e8c6fe6c08527f62d",
+        "original_sha256": "c4a76af151a8b44a373adfd32da22b3e46af7f9ac14e9e5e8c6fe6c08527f62d",
+        "original_generation_filename": "exec-88d5e7a5-92a4-4755-85c2-d57834f6ccba.png",
+        "native_copy_unchanged": true,
+        "pixel_edit_after_generation": false,
+        "upsampled": false,
+        "alpha_extrema": [
+          0,
+          255
+        ],
+        "alpha_bbox": [
+          0,
+          210,
+          1672,
+          941
+        ]
+      },
+      "generation": {
+        "tool": "image_gen.imagegen",
+        "transparent_background": true,
+        "reference_ids": [],
+        "project_references": [
+          {
+            "path": "modes/echos-de-la-greve/assets/static-20261125/south-knot-ruins-panorama.png",
+            "sha256": "eb15d3769fbc716ca482655e9aae272b1aca13585654206f27bc5c9e094ae73c",
+            "kind": "generated_project_panorama"
+          }
+        ],
+        "prompt": "Use case: style-transfer. Derive ONE separately usable static parallax layer for our side-view 2D fighting arena from the reference panorama. Match its cold wet slate-blue palette and realistic painterly texture. Landscape16:9, keep content reaching both horizontal edges and allow6% overscan. No UI, text, watermark, characters, panel grid or foreground rain streaks. Preserve the transparent alpha genuinely outside the requested objects. Requested layer: VERY LOW FOREGROUND ACCENTS ONLY. Sparse wet dark pebbles, short broken concrete chips and two tiny tufts of dried weeds along the lowest8% of this wide canvas, slightly fuller at the extreme left and right, practically empty at center. At least the upper90% of the canvas is entirely transparent. No floor plate, sky, bridge, architecture, tall rubble, characters or grass crossing the fighter feet. Fine low dark cutout details only, their bottoms reaching the lower edge, with ample horizontal span. This is one isolated foreground layer, not a panorama.",
+        "superseded_attempt": null
+      },
+      "fidelity_status": "adaptation_du_projet_comparee_aux_references_visibles",
+      "limitations": [
+        "Plan statique créé à partir du panorama du projet ; raccord et cadrage adaptés au moteur 1280×720. Les effets de météo sont rendus par le moteur."
+      ]
+    },
+    {
+      "id": "timefall-farm-sky",
+      "title": "Ferme sous la pluie temporelle · sky",
+      "path": "modes/echos-de-la-greve/assets/stages/timefall-farm-sky.png",
+      "work": "ds1-dc",
+      "version": "Cinq plans indépendants · composition latérale",
+      "category": "stage_layer",
+      "status": "integrated_static_layer",
+      "bindings": {
+        "static_gallery": false,
+        "archives": false,
+        "playable_fighter": false,
+        "playable_stage_id": "timefall-farm",
+        "stage_layer": "sky"
+      },
+      "native_png": {
+        "width": 1672,
+        "height": 941,
+        "mode": "RGB",
+        "frames": 1,
+        "size_bytes": 1561540,
+        "sha256": "4ab30a291a99cb0a0f2a4ad4d3bb4ad7642f14390ec661d52cda81024010ceaf",
+        "original_sha256": "4ab30a291a99cb0a0f2a4ad4d3bb4ad7642f14390ec661d52cda81024010ceaf",
+        "original_generation_filename": "exec-e963d4dc-1bdc-45f3-b43a-000189760bd1.png",
+        "native_copy_unchanged": true,
+        "pixel_edit_after_generation": false,
+        "upsampled": false,
+        "alpha_extrema": null,
+        "alpha_bbox": null
+      },
+      "generation": {
+        "tool": "image_gen.imagegen",
+        "transparent_background": false,
+        "reference_ids": [],
+        "project_references": [
+          {
+            "path": "modes/echos-de-la-greve/assets/static-20261125/timefall-farm-panorama.png",
+            "sha256": "6e64d772995dcaf74cac0972e20803ee574e6533d9d126209a3273820d504d39",
+            "kind": "generated_project_panorama"
+          }
+        ],
+        "prompt": "Use case: style-transfer. Derive ONE separate SKY plate from the supplied Death Stranding Timefall Farm panorama: a complete cool pale gray-blue overcast cloudy sky, atmospheric depth, soft diffuse daylight matching the source. Entire16:9 rectangle fully opaque. Remove mountains, fields, poles, water towers, equipment, fences, ground and every object. No rain streaks (the game draws weather), no characters, text, logo, watermark, panels or transparency. Realistic painterly2D game background, smooth distant cloud detail, edge-to-edge sky, native landscape resolution.",
+        "superseded_attempt": null
+      },
+      "fidelity_status": "adaptation_du_projet_comparee_aux_references_visibles",
+      "limitations": [
+        "Plan statique créé à partir du panorama du projet ; raccord et cadrage adaptés au moteur 1280×720. Les effets de météo sont rendus par le moteur."
+      ]
+    },
+    {
+      "id": "timefall-farm-distant",
+      "title": "Ferme sous la pluie temporelle · distant",
+      "path": "modes/echos-de-la-greve/assets/stages/timefall-farm-distant.png",
+      "work": "ds1-dc",
+      "version": "Cinq plans indépendants · composition latérale",
+      "category": "stage_layer",
+      "status": "integrated_static_layer",
+      "bindings": {
+        "static_gallery": false,
+        "archives": false,
+        "playable_fighter": false,
+        "playable_stage_id": "timefall-farm",
+        "stage_layer": "distant"
+      },
+      "native_png": {
+        "width": 1672,
+        "height": 941,
+        "mode": "RGBA",
+        "frames": 1,
+        "size_bytes": 1518013,
+        "sha256": "06006cfd020d88d4ae8a1024e0a5b1dfb8fd533fea8fcbe0230b6d9326d3adac",
+        "original_sha256": "06006cfd020d88d4ae8a1024e0a5b1dfb8fd533fea8fcbe0230b6d9326d3adac",
+        "original_generation_filename": "exec-9bfea038-3e72-4b2c-9e19-3c21425c84e7.png",
+        "native_copy_unchanged": true,
+        "pixel_edit_after_generation": false,
+        "upsampled": false,
+        "alpha_extrema": [
+          0,
+          255
+        ],
+        "alpha_bbox": [
+          0,
+          41,
+          1672,
+          941
+        ]
+      },
+      "generation": {
+        "tool": "image_gen.imagegen",
+        "transparent_background": true,
+        "reference_ids": [],
+        "project_references": [
+          {
+            "path": "modes/echos-de-la-greve/assets/static-20261125/timefall-farm-panorama.png",
+            "sha256": "6e64d772995dcaf74cac0972e20803ee574e6533d9d126209a3273820d504d39",
+            "kind": "generated_project_panorama"
+          }
+        ],
+        "prompt": "Use case: style-transfer. Produce exactly ONE independent static parallax layer for a side-view Death Stranding 2D fighting arena, derived from the provided Timefall Farm panorama. Match the pale cool rainy daylight, ochre fields and finely detailed realistic painterly game-art finish. Landscape16:9, content to both horizontal edges with6% overscan, no text, logo, watermark, UI, grid, characters or foreground rain streaks. Actual transparent alpha outside the requested layer. DISTANT LAYER ONLY: the broad gray rocky mountain chain with snow caps, misty slopes and hazy low foothills from the background. Keep these mountains distant, cool, softly detailed, with a low continuous opaque strip of foothill terrain across the ENTIRE bottom edge. The sky above the mountain silhouette is transparent. Remove all fields, crop machines, poles, antennas, rain shelters, water towers, fence, fighting lane and foreground objects. One mountain cutout anchored to the bottom, filling the wide frame coherently; no opaque sky.",
+        "superseded_attempt": null
+      },
+      "fidelity_status": "adaptation_du_projet_comparee_aux_references_visibles",
+      "limitations": [
+        "Plan statique créé à partir du panorama du projet ; raccord et cadrage adaptés au moteur 1280×720. Les effets de météo sont rendus par le moteur."
+      ]
+    },
+    {
+      "id": "timefall-farm-midground",
+      "title": "Ferme sous la pluie temporelle · midground",
+      "path": "modes/echos-de-la-greve/assets/stages/timefall-farm-midground.png",
+      "work": "ds1-dc",
+      "version": "Cinq plans indépendants · composition latérale",
+      "category": "stage_layer",
+      "status": "integrated_static_layer",
+      "bindings": {
+        "static_gallery": false,
+        "archives": false,
+        "playable_fighter": false,
+        "playable_stage_id": "timefall-farm",
+        "stage_layer": "midground"
+      },
+      "native_png": {
+        "width": 1672,
+        "height": 941,
+        "mode": "RGBA",
+        "frames": 1,
+        "size_bytes": 1148780,
+        "sha256": "fe38e10039fa670fcb4effc4cb57db22e1ee24300aa0caeaf7a5d1026a10a808",
+        "original_sha256": "fe38e10039fa670fcb4effc4cb57db22e1ee24300aa0caeaf7a5d1026a10a808",
+        "original_generation_filename": "exec-bcddc843-e53d-4a13-9e04-da017f8b413b.png",
+        "native_copy_unchanged": true,
+        "pixel_edit_after_generation": false,
+        "upsampled": false,
+        "alpha_extrema": [
+          0,
+          255
+        ],
+        "alpha_bbox": [
+          0,
+          31,
+          1672,
+          941
+        ]
+      },
+      "generation": {
+        "tool": "image_gen.imagegen",
+        "transparent_background": true,
+        "reference_ids": [],
+        "project_references": [
+          {
+            "path": "modes/echos-de-la-greve/assets/static-20261125/timefall-farm-panorama.png",
+            "sha256": "6e64d772995dcaf74cac0972e20803ee574e6533d9d126209a3273820d504d39",
+            "kind": "generated_project_panorama"
+          }
+        ],
+        "prompt": "Use case: style-transfer. Produce exactly ONE independent static parallax layer for a side-view Death Stranding 2D fighting arena, derived from the provided Timefall Farm panorama. Match the pale cool rainy daylight, ochre fields and finely detailed realistic painterly game-art finish. Landscape16:9, content to both horizontal edges with6% overscan, no text, logo, watermark, UI, grid, characters or foreground rain streaks. Actual transparent alpha outside the requested layer. MIDGROUND LAYER ONLY: ochre crop fields, sparse umbrella-like timefall collectors, slim sensor poles with restrained cyan lights, small water towers, the familiar yellow farm machines and a low corrugated field fence, as arranged in the reference. Keep machines and structures behind the fight lane, with calm open central spacing. Crops/fence form a continuous opaque shallow band across the ENTIRE bottom edge. Everything above and between isolated tall structures is transparent, no sky or mountain background. No foreground dirt lane. Maintain fine mechanical detail and the reference scale, without enlarging machines into foreground obstacles.",
+        "superseded_attempt": null
+      },
+      "fidelity_status": "adaptation_du_projet_comparee_aux_references_visibles",
+      "limitations": [
+        "Plan statique créé à partir du panorama du projet ; raccord et cadrage adaptés au moteur 1280×720. Les effets de météo sont rendus par le moteur."
+      ]
+    },
+    {
+      "id": "timefall-farm-floor",
+      "title": "Ferme sous la pluie temporelle · floor",
+      "path": "modes/echos-de-la-greve/assets/stages/timefall-farm-floor.png",
+      "work": "ds1-dc",
+      "version": "Cinq plans indépendants · composition latérale",
+      "category": "stage_layer",
+      "status": "integrated_static_layer",
+      "bindings": {
+        "static_gallery": false,
+        "archives": false,
+        "playable_fighter": false,
+        "playable_stage_id": "timefall-farm",
+        "stage_layer": "floor"
+      },
+      "native_png": {
+        "width": 1672,
+        "height": 941,
+        "mode": "RGBA",
+        "frames": 1,
+        "size_bytes": 2156921,
+        "sha256": "7d201898dcdd3d1a2bc401b115665620c33e9089e850023221590099ecc7d3d4",
+        "original_sha256": "7d201898dcdd3d1a2bc401b115665620c33e9089e850023221590099ecc7d3d4",
+        "original_generation_filename": "exec-e5aefcfa-5a19-46f6-b369-ccdae4356605.png",
+        "native_copy_unchanged": true,
+        "pixel_edit_after_generation": false,
+        "upsampled": false,
+        "alpha_extrema": [
+          0,
+          255
+        ],
+        "alpha_bbox": [
+          0,
+          94,
+          1672,
+          941
+        ]
+      },
+      "generation": {
+        "tool": "image_gen.imagegen",
+        "transparent_background": true,
+        "reference_ids": [],
+        "project_references": [
+          {
+            "path": "modes/echos-de-la-greve/assets/static-20261125/timefall-farm-panorama.png",
+            "sha256": "6e64d772995dcaf74cac0972e20803ee574e6533d9d126209a3273820d504d39",
+            "kind": "generated_project_panorama"
+          }
+        ],
+        "prompt": "Use case: style-transfer. Produce exactly ONE independent static parallax layer for a side-view Death Stranding 2D fighting arena, derived from the provided Timefall Farm panorama. Match the pale cool rainy daylight, ochre fields and finely detailed realistic painterly game-art finish. Landscape16:9, content to both horizontal edges with6% overscan, no text, logo, watermark, UI, grid, characters or foreground rain streaks. Actual transparent alpha outside the requested layer. FLOOR ONLY: a continuous horizontal strip of compact wet brown farm dirt and scattered tiny gravel, subtle shallow puddles. Upper32% of full canvas is entirely transparent. At about32% height, a perfectly LEVEL straight back boundary extends edge to edge. Below it, opaque textured terrain fills100% of the remaining area to both sides and the bottom, no holes or fading. Flat traversable central lane, no fence, crop stalks, machinery, mountain, rocks or obstacle. No strong vanishing point, only restrained texture perspective and damp earth sheen.",
+        "superseded_attempt": null
+      },
+      "fidelity_status": "adaptation_du_projet_comparee_aux_references_visibles",
+      "limitations": [
+        "Plan statique créé à partir du panorama du projet ; raccord et cadrage adaptés au moteur 1280×720. Les effets de météo sont rendus par le moteur.",
+        "Surface de rendu recalée sur les pieds à y=588 ; géométrie visuelle seule, physique du duel inchangée."
+      ]
+    },
+    {
+      "id": "timefall-farm-foreground",
+      "title": "Ferme sous la pluie temporelle · foreground",
+      "path": "modes/echos-de-la-greve/assets/stages/timefall-farm-foreground.png",
+      "work": "ds1-dc",
+      "version": "Cinq plans indépendants · composition latérale",
+      "category": "stage_layer",
+      "status": "integrated_static_layer",
+      "bindings": {
+        "static_gallery": false,
+        "archives": false,
+        "playable_fighter": false,
+        "playable_stage_id": "timefall-farm",
+        "stage_layer": "foreground"
+      },
+      "native_png": {
+        "width": 1672,
+        "height": 941,
+        "mode": "RGBA",
+        "frames": 1,
+        "size_bytes": 151558,
+        "sha256": "0f3e9995be99d667be177cec7db3cc35cdeaad94aaaf8fe137e470dc1dbc4340",
+        "original_sha256": "0f3e9995be99d667be177cec7db3cc35cdeaad94aaaf8fe137e470dc1dbc4340",
+        "original_generation_filename": "exec-bfe99c83-3cf1-4375-98ec-581bd2a912eb.png",
+        "native_copy_unchanged": true,
+        "pixel_edit_after_generation": false,
+        "upsampled": false,
+        "alpha_extrema": [
+          0,
+          255
+        ],
+        "alpha_bbox": [
+          0,
+          478,
+          1672,
+          941
+        ]
+      },
+      "generation": {
+        "tool": "image_gen.imagegen",
+        "transparent_background": true,
+        "reference_ids": [],
+        "project_references": [
+          {
+            "path": "modes/echos-de-la-greve/assets/static-20261125/timefall-farm-panorama.png",
+            "sha256": "6e64d772995dcaf74cac0972e20803ee574e6533d9d126209a3273820d504d39",
+            "kind": "generated_project_panorama"
+          }
+        ],
+        "prompt": "Use case: style-transfer. Produce exactly ONE independent static parallax layer for a side-view Death Stranding 2D fighting arena, derived from the provided Timefall Farm panorama. Match the pale cool rainy daylight, ochre fields and finely detailed realistic painterly game-art finish. Landscape16:9, content to both horizontal edges with6% overscan, no text, logo, watermark, UI, grid, characters or foreground rain streaks. Actual transparent alpha outside the requested layer. FOREGROUND ACCENTS ONLY: a few small wet pebbles, tiny dark clods and very short ochre grass/crop stubs right along the lowest6–8% of the canvas, slightly denser at extreme left/right and almost empty through the center. The upper92% is fully transparent. No large stalks, fence, mountains, machine, dirt plate or other scenery; nothing can reach the feet of fighters. Very low fine detail only, cutout silhouettes anchored to the bottom edge. One wide foreground layer.",
+        "superseded_attempt": null
+      },
+      "fidelity_status": "adaptation_du_projet_comparee_aux_references_visibles",
+      "limitations": [
+        "Plan statique créé à partir du panorama du projet ; raccord et cadrage adaptés au moteur 1280×720. Les effets de météo sont rendus par le moteur."
+      ]
+    },
+    {
+      "id": "mountain-knot-approach-sky",
+      "title": "Approche de Mountain Knot · sky",
+      "path": "modes/echos-de-la-greve/assets/stages/mountain-knot-approach-sky.png",
+      "work": "ds1-dc",
+      "version": "Cinq plans indépendants · composition latérale",
+      "category": "stage_layer",
+      "status": "integrated_static_layer",
+      "bindings": {
+        "static_gallery": false,
+        "archives": false,
+        "playable_fighter": false,
+        "playable_stage_id": "mountain-knot-approach",
+        "stage_layer": "sky"
+      },
+      "native_png": {
+        "width": 1672,
+        "height": 941,
+        "mode": "RGB",
+        "frames": 1,
+        "size_bytes": 1602065,
+        "sha256": "6a276d4006ecd5a094342b3debf4091fea62f7f3991d93cb73b49eaec6735943",
+        "original_sha256": "6a276d4006ecd5a094342b3debf4091fea62f7f3991d93cb73b49eaec6735943",
+        "original_generation_filename": "exec-dbbc868a-3291-4efd-9cc3-23555b91bb71.png",
+        "native_copy_unchanged": true,
+        "pixel_edit_after_generation": false,
+        "upsampled": false,
+        "alpha_extrema": null,
+        "alpha_bbox": null
+      },
+      "generation": {
+        "tool": "image_gen.imagegen",
+        "transparent_background": false,
+        "reference_ids": [],
+        "project_references": [
+          {
+            "path": "modes/echos-de-la-greve/assets/static-20261125/mountain-knot-city-panorama.png",
+            "sha256": "92358b0accc8af6d2876662f84ca6d2d1ee00ab47fa1567d39df55a370b26126",
+            "kind": "generated_project_panorama"
+          }
+        ],
+        "prompt": "Use case: style-transfer. Create ONE separate SKY BACKGROUND plate for the snowy Mountain Knot approach arena based on this panorama. Retain only the cold gray-blue overcast mountain sky with a subtle pale inverted chiral rainbow, soft mist and diffuse light consistent with the source. Fully opaque edge-to-edge16:9 rectangle. Remove ALL mountains, rocks, ground, vertical strands, snowflakes and other objects; the engine handles weather and other layers contain terrain. No city, building, text, watermark, UI, panel grid or transparency. Realistic finely painted2D sky plate, not a whole landscape.",
+        "superseded_attempt": null
+      },
+      "fidelity_status": "adaptation_du_projet_comparee_aux_references_visibles",
+      "limitations": [
+        "Plan statique créé à partir du panorama du projet ; raccord et cadrage adaptés au moteur 1280×720. Les effets de météo sont rendus par le moteur.",
+        "Approche enneigée de Mountain Knot ; aucune ville bâtie ne figure dans la référence."
+      ]
+    },
+    {
+      "id": "mountain-knot-approach-distant",
+      "title": "Approche de Mountain Knot · distant",
+      "path": "modes/echos-de-la-greve/assets/stages/mountain-knot-approach-distant.png",
+      "work": "ds1-dc",
+      "version": "Cinq plans indépendants · composition latérale",
+      "category": "stage_layer",
+      "status": "integrated_static_layer",
+      "bindings": {
+        "static_gallery": false,
+        "archives": false,
+        "playable_fighter": false,
+        "playable_stage_id": "mountain-knot-approach",
+        "stage_layer": "distant"
+      },
+      "native_png": {
+        "width": 1672,
+        "height": 941,
+        "mode": "RGBA",
+        "frames": 1,
+        "size_bytes": 1575419,
+        "sha256": "fdae8dc3a6a5473150cb47f9de93c54a5c5796128a43e1936fa32ea97e23c4ef",
+        "original_sha256": "fdae8dc3a6a5473150cb47f9de93c54a5c5796128a43e1936fa32ea97e23c4ef",
+        "original_generation_filename": "exec-98eafc59-3636-4291-b45c-f9824a2dc2f0.png",
+        "native_copy_unchanged": true,
+        "pixel_edit_after_generation": false,
+        "upsampled": false,
+        "alpha_extrema": [
+          0,
+          255
+        ],
+        "alpha_bbox": [
+          0,
+          133,
+          1672,
+          941
+        ]
+      },
+      "generation": {
+        "tool": "image_gen.imagegen",
+        "transparent_background": true,
+        "reference_ids": [],
+        "project_references": [
+          {
+            "path": "modes/echos-de-la-greve/assets/static-20261125/mountain-knot-city-panorama.png",
+            "sha256": "92358b0accc8af6d2876662f84ca6d2d1ee00ab47fa1567d39df55a370b26126",
+            "kind": "generated_project_panorama"
+          }
+        ],
+        "prompt": "Use case: style-transfer. Derive ONE separately usable STATIC parallax layer from the supplied Death Stranding snowy mountain-approach panorama for our side-view 2D fighting game. Match the cool gray-blue white snow and black mossy stone, realistic painterly rendering. Native landscape16:9. One layer per image, content reaching both side edges with6% overscan. No characters, text, logo, panels, UI, watermark or foreground snow/rain streaks. Transparent alpha outside the requested layer, without a baked checkerboard. DISTANT MOUNTAINS ONLY. Preserve the source valley shape: lower dark ridges to the left and tall white snowy peaks to the right, cold mist softening the distant contours, a low valley through the center. No sky, rainbow, city buildings, trees, nearby large boulders or fighting floor. Sky around mountain silhouettes is fully transparent. The mountains join a shallow continuous fully opaque terrain band along the ENTIRE bottom edge, so this layer can be composited with nearer terrain without a hole. Recognizable source geography, not invented city architecture. Peak shapes sit mainly in the middle and lower two thirds, allowing space above.",
+        "superseded_attempt": null
+      },
+      "fidelity_status": "adaptation_du_projet_comparee_aux_references_visibles",
+      "limitations": [
+        "Plan statique créé à partir du panorama du projet ; raccord et cadrage adaptés au moteur 1280×720. Les effets de météo sont rendus par le moteur.",
+        "Approche enneigée de Mountain Knot ; aucune ville bâtie ne figure dans la référence."
+      ]
+    },
+    {
+      "id": "mountain-knot-approach-midground",
+      "title": "Approche de Mountain Knot · midground",
+      "path": "modes/echos-de-la-greve/assets/stages/mountain-knot-approach-midground.png",
+      "work": "ds1-dc",
+      "version": "Cinq plans indépendants · composition latérale",
+      "category": "stage_layer",
+      "status": "integrated_static_layer",
+      "bindings": {
+        "static_gallery": false,
+        "archives": false,
+        "playable_fighter": false,
+        "playable_stage_id": "mountain-knot-approach",
+        "stage_layer": "midground"
+      },
+      "native_png": {
+        "width": 1672,
+        "height": 941,
+        "mode": "RGBA",
+        "frames": 1,
+        "size_bytes": 1055333,
+        "sha256": "02fb7cdbbcf13c8087d7803b162a3cedb66f7f525f7bad80d23fe963dcc3d8c9",
+        "original_sha256": "02fb7cdbbcf13c8087d7803b162a3cedb66f7f525f7bad80d23fe963dcc3d8c9",
+        "original_generation_filename": "exec-42e5a474-e578-44ba-9df6-89272c80b28a.png",
+        "native_copy_unchanged": true,
+        "pixel_edit_after_generation": false,
+        "upsampled": false,
+        "alpha_extrema": [
+          0,
+          255
+        ],
+        "alpha_bbox": [
+          0,
+          19,
+          1672,
+          941
+        ]
+      },
+      "generation": {
+        "tool": "image_gen.imagegen",
+        "transparent_background": true,
+        "reference_ids": [],
+        "project_references": [
+          {
+            "path": "modes/echos-de-la-greve/assets/static-20261125/mountain-knot-city-panorama.png",
+            "sha256": "92358b0accc8af6d2876662f84ca6d2d1ee00ab47fa1567d39df55a370b26126",
+            "kind": "generated_project_panorama"
+          }
+        ],
+        "prompt": "Use case: style-transfer. Derive ONE separately usable STATIC parallax layer from the supplied Death Stranding snowy mountain-approach panorama for our side-view 2D fighting game. Match the cool gray-blue white snow and black mossy stone, realistic painterly rendering. Native landscape16:9. One layer per image, content reaching both side edges with6% overscan. No characters, text, logo, panels, UI, watermark or foreground snow/rain streaks. Transparent alpha outside the requested layer, without a baked checkerboard. MIDGROUND FOOTHILLS ONLY. A shallow side-view arrangement of dark mossy rocky foothills with white snow resting on their ledges, matching the source: low boulder outcrops left and right, center low and open to the valley, no tall obstruction at center. Remove the high distant peaks, sky, rainbow and foreground fighting lane. Above and between rock silhouettes alpha is transparent. A continuous low opaque base of snowy earth stretches fully across the bottom edge without holes. Place the major terrain in the lower half, low center; realistic black basalt and muted green moss under cold white snow. No city architecture.",
+        "superseded_attempt": null
+      },
+      "fidelity_status": "adaptation_du_projet_comparee_aux_references_visibles",
+      "limitations": [
+        "Plan statique créé à partir du panorama du projet ; raccord et cadrage adaptés au moteur 1280×720. Les effets de météo sont rendus par le moteur.",
+        "Approche enneigée de Mountain Knot ; aucune ville bâtie ne figure dans la référence."
+      ]
+    },
+    {
+      "id": "mountain-knot-approach-floor",
+      "title": "Approche de Mountain Knot · floor",
+      "path": "modes/echos-de-la-greve/assets/stages/mountain-knot-approach-floor.png",
+      "work": "ds1-dc",
+      "version": "Cinq plans indépendants · composition latérale",
+      "category": "stage_layer",
+      "status": "integrated_static_layer",
+      "bindings": {
+        "static_gallery": false,
+        "archives": false,
+        "playable_fighter": false,
+        "playable_stage_id": "mountain-knot-approach",
+        "stage_layer": "floor"
+      },
+      "native_png": {
+        "width": 1672,
+        "height": 941,
+        "mode": "RGBA",
+        "frames": 1,
+        "size_bytes": 2169060,
+        "sha256": "f0809f99efc2e520f3b4b796e348d6ca7205f9404c3a2db97d241d3bcbe5a59e",
+        "original_sha256": "f0809f99efc2e520f3b4b796e348d6ca7205f9404c3a2db97d241d3bcbe5a59e",
+        "original_generation_filename": "exec-8c5024b5-4c94-4817-b9be-a6d89f55f7e5.png",
+        "native_copy_unchanged": true,
+        "pixel_edit_after_generation": false,
+        "upsampled": false,
+        "alpha_extrema": [
+          0,
+          255
+        ],
+        "alpha_bbox": [
+          0,
+          21,
+          1672,
+          941
+        ]
+      },
+      "generation": {
+        "tool": "image_gen.imagegen",
+        "transparent_background": true,
+        "reference_ids": [],
+        "project_references": [
+          {
+            "path": "modes/echos-de-la-greve/assets/static-20261125/mountain-knot-city-panorama.png",
+            "sha256": "92358b0accc8af6d2876662f84ca6d2d1ee00ab47fa1567d39df55a370b26126",
+            "kind": "generated_project_panorama"
+          }
+        ],
+        "prompt": "Use case: style-transfer. Derive ONE separately usable STATIC parallax layer from the supplied Death Stranding snowy mountain-approach panorama for our side-view 2D fighting game. Match the cool gray-blue white snow and black mossy stone, realistic painterly rendering. Native landscape16:9. One layer per image, content reaching both side edges with6% overscan. No characters, text, logo, panels, UI, watermark or foreground snow/rain streaks. Transparent alpha outside the requested layer, without a baked checkerboard. FLOOR ONLY: broad flat packed white-gray snow, fine dark grit and a few small shallow stones, matching the snowy ground of the reference. Upper32% completely transparent. A straight level horizontal back boundary from left to right at about32% height; everything below that boundary fully opaque continuous ground to every side and bottom edge. Flat safe central fighting lane, subtle packed snow texture and shallow tracks only, no cliff, wall, hill, large rock, mountain, snowbank, horizon, sky or perspective vanishing point. Do not fade bottom/side edges, do not make holes in the ground.",
+        "superseded_attempt": null
+      },
+      "fidelity_status": "adaptation_du_projet_comparee_aux_references_visibles",
+      "limitations": [
+        "Plan statique créé à partir du panorama du projet ; raccord et cadrage adaptés au moteur 1280×720. Les effets de météo sont rendus par le moteur.",
+        "Approche enneigée de Mountain Knot ; aucune ville bâtie ne figure dans la référence.",
+        "Surface de rendu recalée sur les pieds à y=588 ; géométrie visuelle seule, physique du duel inchangée."
+      ]
+    },
+    {
+      "id": "mountain-knot-approach-foreground",
+      "title": "Approche de Mountain Knot · foreground",
+      "path": "modes/echos-de-la-greve/assets/stages/mountain-knot-approach-foreground.png",
+      "work": "ds1-dc",
+      "version": "Cinq plans indépendants · composition latérale",
+      "category": "stage_layer",
+      "status": "integrated_static_layer",
+      "bindings": {
+        "static_gallery": false,
+        "archives": false,
+        "playable_fighter": false,
+        "playable_stage_id": "mountain-knot-approach",
+        "stage_layer": "foreground"
+      },
+      "native_png": {
+        "width": 1672,
+        "height": 941,
+        "mode": "RGBA",
+        "frames": 1,
+        "size_bytes": 144310,
+        "sha256": "15e792f0c81993f25d4f1b2004d3b1f016dfde601c114ca984d6e9fec97826bb",
+        "original_sha256": "15e792f0c81993f25d4f1b2004d3b1f016dfde601c114ca984d6e9fec97826bb",
+        "original_generation_filename": "exec-0e236e09-71cc-47e9-aeff-a49a960282ba.png",
+        "native_copy_unchanged": true,
+        "pixel_edit_after_generation": false,
+        "upsampled": false,
+        "alpha_extrema": [
+          0,
+          255
+        ],
+        "alpha_bbox": [
+          0,
+          37,
+          1672,
+          941
+        ]
+      },
+      "generation": {
+        "tool": "image_gen.imagegen",
+        "transparent_background": true,
+        "reference_ids": [],
+        "project_references": [
+          {
+            "path": "modes/echos-de-la-greve/assets/static-20261125/mountain-knot-city-panorama.png",
+            "sha256": "92358b0accc8af6d2876662f84ca6d2d1ee00ab47fa1567d39df55a370b26126",
+            "kind": "generated_project_panorama"
+          }
+        ],
+        "prompt": "Use case: style-transfer. Derive ONE separately usable STATIC parallax layer from the supplied Death Stranding snowy mountain-approach panorama for our side-view 2D fighting game. Match the cool gray-blue white snow and black mossy stone, realistic painterly rendering. Native landscape16:9. One layer per image, content reaching both side edges with6% overscan. No characters, text, logo, panels, UI, watermark or foreground snow/rain streaks. Transparent alpha outside the requested layer, without a baked checkerboard. VERY LOW FOREGROUND ACCENTS ONLY. A few tiny dark pebbles, flat black stone chips and soft low white snow edges restricted to the bottom6–8% of the canvas, slightly fuller at extreme left/right and sparse/empty in the center. Upper92% fully transparent. No floor plate, hill, mountain, sky, rainbow, big rocks, plants or tall snowbanks. Tiny details must not cover fighter feet when placed at the bottom of the game screen. Separate dark stone and low snow cutouts with their bottoms touching the lower image edge.",
+        "superseded_attempt": null
+      },
+      "fidelity_status": "adaptation_du_projet_comparee_aux_references_visibles",
+      "limitations": [
+        "Plan statique créé à partir du panorama du projet ; raccord et cadrage adaptés au moteur 1280×720. Les effets de météo sont rendus par le moteur.",
+        "Approche enneigée de Mountain Knot ; aucune ville bâtie ne figure dans la référence."
+      ]
+    },
+    {
+      "id": "magellan-ds2-sky",
+      "title": "DHV Magellan · berge au couchant · sky",
+      "path": "modes/echos-de-la-greve/assets/stages/magellan-ds2-sky.png",
+      "work": "ds2",
+      "version": "Cinq plans indépendants · composition latérale",
+      "category": "stage_layer",
+      "status": "integrated_static_layer",
+      "bindings": {
+        "static_gallery": false,
+        "archives": false,
+        "playable_fighter": false,
+        "playable_stage_id": "magellan-ds2",
+        "stage_layer": "sky"
+      },
+      "native_png": {
+        "width": 1672,
+        "height": 941,
+        "mode": "RGB",
+        "frames": 1,
+        "size_bytes": 1721695,
+        "sha256": "953add4be03755a9b68c71ac3175ba3bf2eb32f9bbb56c4211deb8e1f85af442",
+        "original_sha256": "953add4be03755a9b68c71ac3175ba3bf2eb32f9bbb56c4211deb8e1f85af442",
+        "original_generation_filename": "exec-95471a3f-794f-44d5-8c46-ba0642738d0c.png",
+        "native_copy_unchanged": true,
+        "pixel_edit_after_generation": false,
+        "upsampled": false,
+        "alpha_extrema": null,
+        "alpha_bbox": null
+      },
+      "generation": {
+        "tool": "image_gen.imagegen",
+        "transparent_background": false,
+        "reference_ids": [],
+        "project_references": [
+          {
+            "path": "modes/echos-de-la-greve/assets/static-universe-20261125/magellan-ds2-panorama.png",
+            "sha256": "5409160c50eb77a749b0dc01fa49cb45dc6c0a8c081e4943a9f8e7b346241ccd",
+            "kind": "generated_project_panorama"
+          }
+        ],
+        "prompt": "Use case: style-transfer. Derive ONE static SKY PLATE from the provided Death Stranding2 Magellan wetland sunset panorama. A complete landscape16:9 fully opaque rectangle of luminous warm pale gold, dusty salmon and subdued lavender sunset clouds, faint diffuse sun glow on the left, matching the source atmosphere and soft realistic painterly texture. Remove the Magellan ship, all land, hills, marsh water, trees, reeds, people and objects. Sky only, edge to edge, no silhouettes. No text, logo, watermark, panels, rain particles or transparency. Preserve natural subdued cinematic color rather than saturated fantasy sky.",
+        "superseded_attempt": null
+      },
+      "fidelity_status": "adaptation_du_projet_comparee_aux_references_visibles",
+      "limitations": [
+        "Plan statique créé à partir du panorama du projet ; raccord et cadrage adaptés au moteur 1280×720. Les effets de météo sont rendus par le moteur.",
+        "Vaisseau présent seulement dans le plan distant ; position abaissée pour garder la silhouette entière sous le HUD. Berge extérieure, pas intérieur du vaisseau."
+      ]
+    },
+    {
+      "id": "magellan-ds2-midground",
+      "title": "DHV Magellan · berge au couchant · midground",
+      "path": "modes/echos-de-la-greve/assets/stages/magellan-ds2-midground.png",
+      "work": "ds2",
+      "version": "Cinq plans indépendants · composition latérale",
+      "category": "stage_layer",
+      "status": "integrated_static_layer",
+      "bindings": {
+        "static_gallery": false,
+        "archives": false,
+        "playable_fighter": false,
+        "playable_stage_id": "magellan-ds2",
+        "stage_layer": "midground"
+      },
+      "native_png": {
+        "width": 1672,
+        "height": 941,
+        "mode": "RGBA",
+        "frames": 1,
+        "size_bytes": 1431026,
+        "sha256": "a79d12f67df8a0cb7521e45499c7349c367b73cf3e6739bd28e438937dd4906a",
+        "original_sha256": "a79d12f67df8a0cb7521e45499c7349c367b73cf3e6739bd28e438937dd4906a",
+        "original_generation_filename": "exec-4c758bb0-4d8d-4497-a36d-5687ef0bda96.png",
+        "native_copy_unchanged": true,
+        "pixel_edit_after_generation": false,
+        "upsampled": false,
+        "alpha_extrema": [
+          0,
+          255
+        ],
+        "alpha_bbox": [
+          0,
+          13,
+          1672,
+          941
+        ]
+      },
+      "generation": {
+        "tool": "image_gen.imagegen",
+        "transparent_background": true,
+        "reference_ids": [],
+        "project_references": [
+          {
+            "path": "modes/echos-de-la-greve/assets/static-universe-20261125/magellan-ds2-panorama.png",
+            "sha256": "5409160c50eb77a749b0dc01fa49cb45dc6c0a8c081e4943a9f8e7b346241ccd",
+            "kind": "generated_project_panorama"
+          }
+        ],
+        "prompt": "Use case: style-transfer. Extract and thoughtfully recompose ONE separately usable static parallax layer for a side-view2D fighting arena from the provided Death Stranding2 Magellan wetland panorama. Match the subdued warm golden sunset light, damp brown earth and realistic painterly textures. Native landscape16:9. One layer, no sprite sheet or panels. No text, logo, watermark, UI or characters. Genuine alpha transparency outside requested objects. Content spans to the sides with6% overscan. MIDGROUND WETLAND ONLY: shallow reflective marsh water, sparse brown reed islands, a few thin dead trunks and the recognizable bare tree at the extreme right from the source. Keep central area open and low. The whole terrain composition stays in the LOWER HALF of the image, and reaches an opaque continuous low shoreline base along the full bottom edge. Upper half and gaps around tall details genuinely transparent. NO ship, sky, sun, distant hills or foreground fighting floor; the Magellan will be composited in a different layer. Warm reflected sunset glints in still water, subdued golden-brown reeds. No reed mass in the central foreground and no high obstruction where fighters stand.",
+        "superseded_attempt": null
+      },
+      "fidelity_status": "adaptation_du_projet_comparee_aux_references_visibles",
+      "limitations": [
+        "Plan statique créé à partir du panorama du projet ; raccord et cadrage adaptés au moteur 1280×720. Les effets de météo sont rendus par le moteur.",
+        "Vaisseau présent seulement dans le plan distant ; position abaissée pour garder la silhouette entière sous le HUD. Berge extérieure, pas intérieur du vaisseau."
+      ]
+    },
+    {
+      "id": "magellan-ds2-floor",
+      "title": "DHV Magellan · berge au couchant · floor",
+      "path": "modes/echos-de-la-greve/assets/stages/magellan-ds2-floor.png",
+      "work": "ds2",
+      "version": "Cinq plans indépendants · composition latérale",
+      "category": "stage_layer",
+      "status": "integrated_static_layer",
+      "bindings": {
+        "static_gallery": false,
+        "archives": false,
+        "playable_fighter": false,
+        "playable_stage_id": "magellan-ds2",
+        "stage_layer": "floor"
+      },
+      "native_png": {
+        "width": 1672,
+        "height": 941,
+        "mode": "RGBA",
+        "frames": 1,
+        "size_bytes": 2048430,
+        "sha256": "4b046d7d3814dfd4c86ae9c340d00db859613472e7a71e17d72e570df64b576a",
+        "original_sha256": "4b046d7d3814dfd4c86ae9c340d00db859613472e7a71e17d72e570df64b576a",
+        "original_generation_filename": "exec-1372c288-dc95-4083-84a7-6457a52dd4dc.png",
+        "native_copy_unchanged": true,
+        "pixel_edit_after_generation": false,
+        "upsampled": false,
+        "alpha_extrema": [
+          0,
+          255
+        ],
+        "alpha_bbox": [
+          0,
+          9,
+          1672,
+          941
+        ]
+      },
+      "generation": {
+        "tool": "image_gen.imagegen",
+        "transparent_background": true,
+        "reference_ids": [],
+        "project_references": [
+          {
+            "path": "modes/echos-de-la-greve/assets/static-universe-20261125/magellan-ds2-panorama.png",
+            "sha256": "5409160c50eb77a749b0dc01fa49cb45dc6c0a8c081e4943a9f8e7b346241ccd",
+            "kind": "generated_project_panorama"
+          }
+        ],
+        "prompt": "Use case: style-transfer. Extract and thoughtfully recompose ONE separately usable static parallax layer for a side-view2D fighting arena from the provided Death Stranding2 Magellan wetland panorama. Match the subdued warm golden sunset light, damp brown earth and realistic painterly textures. Native landscape16:9. One layer, no sprite sheet or panels. No text, logo, watermark, UI or characters. Genuine alpha transparency outside requested objects. Content spans to the sides with6% overscan. FLOOR ONLY: wide flat wet brown-gray mud and gravel shoreline matching the reference foreground, with a few very shallow small puddles reflecting muted warm sunset. Upper32% fully transparent. A perfectly level straight back boundary at about32% image height runs from left to right. Entire area beneath that line is fully opaque continuous ground to all side and bottom edges, no alpha holes or fades. Central fighting lane broad, flat and readable. No ship, tree, reeds, hills, large stones, marsh panorama, sky, water horizon or perspective vanishing point. Fine pebbles and damp mud texture only.",
+        "superseded_attempt": null
+      },
+      "fidelity_status": "adaptation_du_projet_comparee_aux_references_visibles",
+      "limitations": [
+        "Plan statique créé à partir du panorama du projet ; raccord et cadrage adaptés au moteur 1280×720. Les effets de météo sont rendus par le moteur.",
+        "Vaisseau présent seulement dans le plan distant ; position abaissée pour garder la silhouette entière sous le HUD. Berge extérieure, pas intérieur du vaisseau.",
+        "Surface de rendu recalée sur les pieds à y=588 ; géométrie visuelle seule, physique du duel inchangée."
+      ]
+    },
+    {
+      "id": "magellan-ds2-foreground",
+      "title": "DHV Magellan · berge au couchant · foreground",
+      "path": "modes/echos-de-la-greve/assets/stages/magellan-ds2-foreground.png",
+      "work": "ds2",
+      "version": "Cinq plans indépendants · composition latérale",
+      "category": "stage_layer",
+      "status": "integrated_static_layer",
+      "bindings": {
+        "static_gallery": false,
+        "archives": false,
+        "playable_fighter": false,
+        "playable_stage_id": "magellan-ds2",
+        "stage_layer": "foreground"
+      },
+      "native_png": {
+        "width": 1672,
+        "height": 941,
+        "mode": "RGBA",
+        "frames": 1,
+        "size_bytes": 188208,
+        "sha256": "4c93988a5469264c095cfcdd9c1e574cd75f9a2ded009f6b55c0ea86ec0640af",
+        "original_sha256": "4c93988a5469264c095cfcdd9c1e574cd75f9a2ded009f6b55c0ea86ec0640af",
+        "original_generation_filename": "exec-951a749c-0682-4535-80b1-f6794f61b978.png",
+        "native_copy_unchanged": true,
+        "pixel_edit_after_generation": false,
+        "upsampled": false,
+        "alpha_extrema": [
+          0,
+          255
+        ],
+        "alpha_bbox": [
+          0,
+          71,
+          1672,
+          941
+        ]
+      },
+      "generation": {
+        "tool": "image_gen.imagegen",
+        "transparent_background": true,
+        "reference_ids": [],
+        "project_references": [
+          {
+            "path": "modes/echos-de-la-greve/assets/static-universe-20261125/magellan-ds2-panorama.png",
+            "sha256": "5409160c50eb77a749b0dc01fa49cb45dc6c0a8c081e4943a9f8e7b346241ccd",
+            "kind": "generated_project_panorama"
+          }
+        ],
+        "prompt": "Use case: style-transfer. Extract and thoughtfully recompose ONE separately usable static parallax layer for a side-view2D fighting arena from the provided Death Stranding2 Magellan wetland panorama. Match the subdued warm golden sunset light, damp brown earth and realistic painterly textures. Native landscape16:9. One layer, no sprite sheet or panels. No text, logo, watermark, UI or characters. Genuine alpha transparency outside requested objects. Content spans to the sides with6% overscan. VERY LOW FOREGROUND ACCENTS ONLY: tiny damp pebbles and very short broken brown reed stubs along the lowest6–8% of the canvas, mostly at the extreme left and right. Center nearly empty; upper92% completely transparent. Cutout details only, some bottoms meeting the bottom image edge, no solid ground plate. NO ship, water scene, trees, distant hills, sky, tall grass or tall reeds. These accents must sit below the fighters' feet in the game; keep all objects very low. Warm light edge on wet stones, dark subdued brown material.",
+        "superseded_attempt": null
+      },
+      "fidelity_status": "adaptation_du_projet_comparee_aux_references_visibles",
+      "limitations": [
+        "Plan statique créé à partir du panorama du projet ; raccord et cadrage adaptés au moteur 1280×720. Les effets de météo sont rendus par le moteur.",
+        "Vaisseau présent seulement dans le plan distant ; position abaissée pour garder la silhouette entière sous le HUD. Berge extérieure, pas intérieur du vaisseau."
+      ]
+    },
+    {
+      "id": "magellan-ds2-distant",
+      "title": "DHV Magellan · berge au couchant · distant",
+      "path": "modes/echos-de-la-greve/assets/stages/magellan-ds2-distant.png",
+      "work": "ds2",
+      "version": "Cinq plans indépendants · composition latérale",
+      "category": "stage_layer",
+      "status": "integrated_static_layer",
+      "bindings": {
+        "static_gallery": false,
+        "archives": false,
+        "playable_fighter": false,
+        "playable_stage_id": "magellan-ds2",
+        "stage_layer": "distant"
+      },
+      "native_png": {
+        "width": 1672,
+        "height": 941,
+        "mode": "RGBA",
+        "frames": 1,
+        "size_bytes": 370358,
+        "sha256": "ba85faa99e991e9519d366a2bf6cebc25b196ac71567481176041a06898f9e7c",
+        "original_sha256": "ba85faa99e991e9519d366a2bf6cebc25b196ac71567481176041a06898f9e7c",
+        "original_generation_filename": "exec-57bfdde5-427e-4e28-b401-17baff75e59e.png",
+        "native_copy_unchanged": true,
+        "pixel_edit_after_generation": false,
+        "upsampled": false,
+        "alpha_extrema": [
+          0,
+          255
+        ],
+        "alpha_bbox": [
+          0,
+          35,
+          1672,
+          941
+        ]
+      },
+      "generation": {
+        "tool": "image_gen.imagegen",
+        "transparent_background": true,
+        "reference_ids": [],
+        "project_references": [
+          {
+            "path": "modes/echos-de-la-greve/assets/static-universe-20261125/magellan-ds2-panorama.png",
+            "sha256": "5409160c50eb77a749b0dc01fa49cb45dc6c0a8c081e4943a9f8e7b346241ccd",
+            "kind": "generated_project_panorama"
+          }
+        ],
+        "prompt": "Use case: style-transfer. Generate ONE separately usable static parallax layer for a side-view2D fighting arena, based on this Death Stranding2 Magellan wetland panorama. Landscape16:9, true transparent alpha, realistic painterly texture matching muted warm sunset. Distant layer ONLY: ONE complete hovering Magellan vessel plus distant low hazy hills. CRITICAL COMPOSITION: the COMPLETE ship, including every bottom sphere, is SMALLER than in the reference, contained entirely inside a box from about14% to46% of image width and37% to61% of image height. Preserve natural vessel proportions, no stretching. Maximum ship width about32% canvas, maximum ship height about24% canvas. This smaller floating vessel sits in the middle-left, clearly separated from the land. The whole upper36% of the image is fully transparent. Below the ship, leave a LARGE transparent open gap; distant hazy hill silhouettes start only around84% of canvas height and join a fully opaque shallow terrain band spanning the entire bottom edge. Ship must not overlap or touch the hills, so it reads as airborne. Include its identifiable boxy armored hull, side railings, rear raised structure, orange lighting and ALL round dark flotation volumes visible underneath. No water, shoreline, reeds, trees, sky, sun, people, text, logo, watermark, duplicate ship or panels. Do not enlarge the ship to fill the frame. Correct transparent separation and complete small silhouette are more important than filling empty space.",
+        "superseded_attempt": {
+          "sha256": "65ce262e4cd9feff82c88260483aff887ffd6645478ada68cc9c7d750232e2de",
+          "original_filename": "exec-d5fe6a16-8aca-462c-a960-792db6a7b87d.png",
+          "reason": "Coque basse occultée par le plan de marais ; silhouette réduite dans la reprise pour lire le survol complet."
+        }
+      },
+      "fidelity_status": "adaptation_du_projet_comparee_aux_references_visibles",
+      "limitations": [
+        "Plan statique créé à partir du panorama du projet ; raccord et cadrage adaptés au moteur 1280×720. Les effets de météo sont rendus par le moteur.",
+        "Vaisseau présent seulement dans le plan distant ; position abaissée pour garder la silhouette entière sous le HUD. Berge extérieure, pas intérieur du vaisseau."
+      ]
+    }
+  ],
+  "reference_sources": [
+    {
+      "id": "dollman",
+      "filename": "dollman.jpg",
+      "work": "Death Stranding 2: On the Beach",
+      "image_url": "https://gmedia.playstation.com/is/image/SIEPDC/death-stranding-2-vertical-poster-puppet-en-10dec24?wid=900",
+      "page_url": "https://www.playstation.com/en-us/games/death-stranding-2-on-the-beach/",
+      "source_kind": "image officielle PlayStation",
+      "retrieved_on": "2026-11-25",
+      "visually_inspected": true,
+      "sha256": "ac83e4416cd8220480a3d3f093ecf879bd70d72bcd2cc4068f42c5465b0e6094",
+      "size_bytes": 111540,
+      "observations": "Marionnette à visage segmenté, grands yeux et cheveux sombres ; costume sombre, nœud papillon, pantalon court, chaussettes rouges et chaussures sombres. Sujet en pied.",
+      "framing": "corps entier"
+    },
+    {
+      "id": "higgs",
+      "filename": "higgs.jpg",
+      "work": "Death Stranding 2: On the Beach",
+      "image_url": "https://gmedia.playstation.com/is/image/SIEPDC/death-stranding-2-vertical-poster-higgs-monaghan-en-10dec24?wid=900",
+      "page_url": "https://www.playstation.com/en-us/games/death-stranding-2-on-the-beach/",
+      "source_kind": "image officielle PlayStation",
+      "retrieved_on": "2026-11-25",
+      "visually_inspected": true,
+      "sha256": "f88068a23c78f6cdbfed8155b7754069beca128d0e6a2cb03db107aedc497b6c",
+      "size_bytes": 205813,
+      "observations": "Version DS2 : cheveux longs, visage pâle, yeux noirs et coulures dorées ; armure rouge/orange éraflée, plastron translucide/doré. Torse visible ; arme et jambes non documentées par ce poster.",
+      "framing": "torse"
+    },
+    {
+      "id": "rainy",
+      "filename": "rainy.jpg",
+      "work": "Death Stranding 2: On the Beach",
+      "image_url": "https://gmedia.playstation.com/is/image/SIEPDC/death-stranding-2-pc-screenshot-12-05feb26?wid=900",
+      "page_url": "https://www.playstation.com/en-fi/games/death-stranding-2-on-the-beach/death-stranding-2-on-the-beach-pc/",
+      "source_kind": "image officielle PlayStation",
+      "retrieved_on": "2026-11-25",
+      "visually_inspected": true,
+      "sha256": "68a8d4962761ba03713d5b924858ab59bb297aa85aaa800d955c6a712b52a7b1",
+      "size_bytes": 60198,
+      "observations": "Cheveux noirs courts ; pull jaune côtelé à col zippé, sac clair et pot de fleurs. Plan coupé à la taille.",
+      "framing": "buste"
+    },
+    {
+      "id": "tomorrow",
+      "filename": "tomorrow.jpg",
+      "work": "Death Stranding 2: On the Beach",
+      "image_url": "https://gmedia.playstation.com/is/image/SIEPDC/death-stranding-2-vertical-poster-elle-fanning-en-10dec24?wid=900",
+      "page_url": "https://www.playstation.com/en-us/games/death-stranding-2-on-the-beach/",
+      "source_kind": "image officielle PlayStation",
+      "retrieved_on": "2026-11-25",
+      "visually_inspected": true,
+      "sha256": "bc46a54e900c55a23e33af37617a46815513737b2f4b4fdc1fcd266bfbf4b211",
+      "size_bytes": 173475,
+      "observations": "Portrait de Tomorrow, cheveux blonds longs et haut sombre sans manches. Ne pas fusionner cette tenue avec la robe blanche de la capture PC.",
+      "framing": "portrait"
+    },
+    {
+      "id": "tarman",
+      "filename": "tarman.jpg",
+      "work": "Death Stranding 2: On the Beach",
+      "image_url": "https://gmedia.playstation.com/is/image/SIEPDC/death-stranding-2-vertical-poster-george-miller-en-10dec24?wid=900",
+      "page_url": "https://www.playstation.com/en-us/games/death-stranding-2-on-the-beach/",
+      "source_kind": "image officielle PlayStation",
+      "retrieved_on": "2026-11-25",
+      "visually_inspected": true,
+      "sha256": "4f4abfaf8c2d2469cccda31bae950518ccfa24e0cc69abf77ce1929115a06818",
+      "size_bytes": 174911,
+      "observations": "Casquette d’officier, lunettes à verres ambrés, manteau, jumelles ; bras tronqué noirci et chat sombre à ramures sur l’épaule. Portrait assis ; vérifier le côté anatomique sur la référence.",
+      "framing": "portrait assis"
+    },
+    {
+      "id": "fragile_ds2_poster",
+      "filename": "fragile_ds2_poster.jpg",
+      "work": "Death Stranding 2: On the Beach",
+      "image_url": "https://gmedia.playstation.com/is/image/SIEPDC/death-stranding-2-vertical-poster-fragile-en-10dec24?wid=900",
+      "page_url": "https://www.playstation.com/en-us/games/death-stranding-2-on-the-beach/",
+      "source_kind": "image officielle PlayStation",
+      "retrieved_on": "2026-11-25",
+      "visually_inspected": true,
+      "sha256": "db8236509b3059b0e6f1d81c9d8a77b6e3d948bad6d8d35144161a240cca3d3e",
+      "size_bytes": 123522,
+      "observations": "Cheveux courts, béret DRAWBRIDGE, tenue sombre, formes de mains/gants autour du col. Costume de référence distinct de Fragile DS1.",
+      "framing": "portrait"
+    },
+    {
+      "id": "sam_ds2_pc",
+      "filename": "sam_ds2_pc.jpg",
+      "work": "Death Stranding 2: On the Beach",
+      "image_url": "https://gmedia.playstation.com/is/image/SIEPDC/death-stranding-2-pc-screenshot-06-05feb26?wid=900",
+      "page_url": "https://www.playstation.com/en-fi/games/death-stranding-2-on-the-beach/death-stranding-2-on-the-beach-pc/",
+      "source_kind": "image officielle PlayStation",
+      "retrieved_on": "2026-11-25",
+      "visually_inspected": true,
+      "sha256": "c66d40b13fc9a4d02c5e8d6c3ecd84b9612a2f8c4f34e54fec8a6530266a0a31",
+      "size_bytes": 36937,
+      "observations": "Sam aux cheveux foncés mouillés, haut noir sans manches marqué DRAWBRIDGE. Vue de buste ; ne pas employer comme preuve d’une tenue complète.",
+      "framing": "buste"
+    },
+    {
+      "id": "sam_ds2_poster",
+      "filename": "sam_ds2_poster.jpg",
+      "work": "Death Stranding 2: On the Beach",
+      "image_url": "https://gmedia.playstation.com/is/image/SIEPDC/death-stranding-2-vertical-poster-keyart-01-en-10dec24?wid=900",
+      "page_url": "https://www.playstation.com/en-us/games/death-stranding-2-on-the-beach/",
+      "source_kind": "image officielle PlayStation",
+      "retrieved_on": "2026-11-25",
+      "visually_inspected": true,
+      "sha256": "9715fd342472d62924265117819636dcdb253e5183dc605eb10aedd83cb2c224",
+      "size_bytes": 184125,
+      "observations": "Sam en tenue beige/orange tient Lou dans les bras. Illustration narrative à deux personnages, pas sprite de garde autonome.",
+      "framing": "portrait narratif"
+    },
+    {
+      "id": "neil",
+      "filename": "neil.jpg",
+      "work": "Death Stranding 2: On the Beach",
+      "image_url": "https://gmedia.playstation.com/is/image/SIEPDC/death-stranding-2-vertical-poster-neil-02-en-12jun25?wid=900",
+      "page_url": "https://www.playstation.com/en-us/games/death-stranding-2-on-the-beach/",
+      "source_kind": "image officielle PlayStation",
+      "retrieved_on": "2026-11-25",
+      "visually_inspected": true,
+      "sha256": "be1c1ca06f19fbbcf18e4143eb6621acd723f6e10f9d540daa4370eb490b7a2f",
+      "size_bytes": 173325,
+      "observations": "Cheveux bruns, étoffe sombre au cou, équipement sombre ; grandes lames au premier plan. Le bas du corps n’est pas visible.",
+      "framing": "portrait"
+    },
+    {
+      "id": "magellan",
+      "filename": "magellan.jpg",
+      "work": "Death Stranding 2: On the Beach",
+      "image_url": "https://gmedia.playstation.com/is/image/SIEPDC/death-stranding-2-screenshot-05-en-10mar25?wid=900",
+      "page_url": "https://www.playstation.com/en-us/games/death-stranding-2-on-the-beach/",
+      "source_kind": "image officielle PlayStation",
+      "retrieved_on": "2026-11-25",
+      "visually_inspected": true,
+      "sha256": "e555005b99698df69dc64eb970dcfd21ce4644ff0243fcb5b77275955e000cb5",
+      "size_bytes": 54113,
+      "observations": "Vaisseau industriel massif au-dessus d’un terrain humide ; Fragile au premier plan, herbes et lumière de fin de journée. Composition de paysage, pas plan jouable de duel.",
+      "framing": "paysage"
+    },
+    {
+      "id": "plate_gate",
+      "filename": "plate_gate.jpg",
+      "work": "Death Stranding 2: On the Beach",
+      "image_url": "https://gmedia.playstation.com/is/image/SIEPDC/death-stranding-2-pc-screenshot-03-05feb26?wid=900",
+      "page_url": "https://www.playstation.com/en-fi/games/death-stranding-2-on-the-beach/death-stranding-2-on-the-beach-pc/",
+      "source_kind": "image officielle PlayStation",
+      "retrieved_on": "2026-11-25",
+      "visually_inspected": true,
+      "sha256": "15d5cbceea946e6dd4ee7964b8430b1043edd4759447bd7cfc4ffc56ac0ae5a0",
+      "size_bytes": 49546,
+      "observations": "Colonnes géantes claires et relief minéral ; figures en équipement rouge au premier plan. Titre de galerie : approche d’une Plate Gate.",
+      "framing": "paysage"
+    },
+    {
+      "id": "sandstorm",
+      "filename": "sandstorm.jpg",
+      "work": "Death Stranding 2: On the Beach",
+      "image_url": "https://gmedia.playstation.com/is/image/SIEPDC/death-stranding-2-screenshot-09-en-10mar25?wid=1600",
+      "page_url": "https://www.playstation.com/en-us/games/death-stranding-2-on-the-beach/",
+      "source_kind": "official_game_capture",
+      "retrieved_on": "2026-11-25",
+      "visually_inspected": true,
+      "sha256": "a360666974324912cfa9d84495d9a575729f3d5e798a5fae90d7021833acedcc",
+      "size_bytes": 162887,
+      "observations": "Capture officielle PS5. Rue désertée, véhicules couverts de poussière, fils et pylônes, énorme front de sable. Sam au premier plan à omettre dans un décor autonome.",
+      "framing": "Voir observations et limites de la référence."
+    },
+    {
+      "id": "red_samurai",
+      "filename": "red_samurai.jpg",
+      "work": "Death Stranding 2: On the Beach",
+      "image_url": "https://gmedia.playstation.com/is/image/SIEPDC/death-stranding-2-vertical-poster-keyart-02-en-10dec24?wid=900",
+      "page_url": "https://www.playstation.com/en-us/games/death-stranding-2-on-the-beach/",
+      "source_kind": "image officielle PlayStation",
+      "retrieved_on": "2026-11-25",
+      "visually_inspected": true,
+      "sha256": "d637b9b616d71eb436f94f6780fa6e83fb212406e1b4e6ab72dc5474e040c7ee",
+      "size_bytes": 179222,
+      "observations": "Armure rouge/orange, sangles, masque mécanique avec modules clairs autour d’un œil central ; grande lame. Ne pas assimiler automatiquement ce personnage à Higgs.",
+      "framing": "corps partiel"
+    },
+    {
+      "id": "higgs_guitar_statue_parts_licensed",
+      "filename": "higgs_guitar_statue_parts_licensed.jpg",
+      "work": "Death Stranding 2: On the Beach",
+      "image_url": "https://statue.prime1studio.co.jp/media/catalog/product/cache/5/p1s_cropped_image/1400x2625/9df78eab33525d08d6e5fb8d27136e95/r/e/remds2-02dxs_cropped.jpg",
+      "page_url": "https://statue.prime1studio.co.jp/ds2-higgs-remds2-02dxs.html",
+      "source_kind": "licensed_statue",
+      "retrieved_on": "2026-11-25",
+      "visually_inspected": true,
+      "sha256": "1a8a0cda0776c188700982d7828fc211038fe35286d832659794818f2c15f4a2",
+      "size_bytes": 587647,
+      "observations": "Photo du fabricant d’une statue officiellement licenciée, référence dérivée distincte du jeu. Higgs entier avec guitare entière tenue devant le corps : silhouette de caisse asymétrique anguleuse orange, long manche orange/noir ajouré à deux rails, commandes noires, câble courbé. Les mains occultent une petite portion ; ne certifie pas un modèle jeu exact.",
+      "framing": "Voir observations et limites de la référence."
+    },
+    {
+      "id": "higgs_guitar_duel_detail",
+      "filename": "higgs_guitar_duel_detail.jpg",
+      "work": "Death Stranding 2: On the Beach",
+      "image_url": "https://www.kojimaproductions.jp/sites/default/files/2024-02/ds2_sop2024_screenshot021.jpg",
+      "page_url": "https://www.kojimaproductions.jp/en/death-stranding-2",
+      "source_kind": "official_game_capture",
+      "retrieved_on": "2026-11-25",
+      "visually_inspected": true,
+      "sha256": "cbf21076866fe07492374a3e7c23ff2dcfed4f8a6e1301bc4a9fcb8ce728532a",
+      "size_bytes": 895152,
+      "observations": "Capture promotionnelle officielle 2024. Gros plan partiel sur corps orange anguleux de la guitare de Higgs, affrontant le Red Samurai. Manche non entièrement visible.",
+      "framing": "Voir observations et limites de la référence."
+    },
+    {
+      "id": "higgs_guitar_shoulder_detail",
+      "filename": "higgs_guitar_shoulder_detail.jpg",
+      "work": "Death Stranding 2: On the Beach",
+      "image_url": "https://www.kojimaproductions.jp/sites/default/files/2025-03/ds2_sxsw2025_screenshots008.jpg",
+      "page_url": "https://www.kojimaproductions.jp/en/death-stranding-2",
+      "source_kind": "official_game_capture",
+      "retrieved_on": "2026-11-25",
+      "visually_inspected": true,
+      "sha256": "f7df9df22cdf7d302b8701a1e33e853ef1a28790ba6d5a47d0bf7560d89d4921",
+      "size_bytes": 233730,
+      "observations": "Capture promotionnelle officielle 2025. Manche de guitare sur épaule de Higgs, finition orange usée et embout lumineux ; corps masqué.",
+      "framing": "Voir observations et limites de la référence."
+    }
+  ],
+  "reused_panorama_source_chains": [
+    {
+      "path": "modes/echos-de-la-greve/assets/static-20261125/south-knot-ruins-panorama.png",
+      "sha256": "eb15d3769fbc716ca482655e9aae272b1aca13585654206f27bc5c9e094ae73c",
+      "original_manifest": "art/sources/echos-de-la-greve/production-20261125-static/manifest.json",
+      "original_item_id": "south-knot-ruins-panorama",
+      "source_chain": [
+        {
+          "filename": "south-knot-official.jpg",
+          "page_url": "https://atmoph.com/en/products/deathstranding",
+          "image_url": "https://webres-atmoph.global.ssl.fastly.net/assets/images/products/aw102/deathstranding/thumb_DS2_re.jpg",
+          "provenance": "licensed_partner_atmoph",
+          "visually_inspected": true,
+          "notes": "Page DS1 : ruines de South Knot. Le nom du fichier distant contenant DS2 ne désigne pas Death Stranding 2.",
+          "size_bytes": 1005020,
+          "sha256": "a401dd223d5f840978690950fea34b5a4e43ab57c62f2a6b4df356911acdab04"
+        }
+      ],
+      "current_binding": "Panorama de secours et référence des cinq nouveaux plans ; le manifeste initial reste un instantané historique."
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/static-20261125/timefall-farm-panorama.png",
+      "sha256": "6e64d772995dcaf74cac0972e20803ee574e6533d9d126209a3273820d504d39",
+      "original_manifest": "art/sources/echos-de-la-greve/production-20261125-static/manifest.json",
+      "original_item_id": "timefall-farm-panorama",
+      "source_chain": [
+        {
+          "filename": "timefall-farm-official.jpg",
+          "page_url": "https://atmoph.com/en/products/deathstranding",
+          "image_url": "https://webres-atmoph.global.ssl.fastly.net/assets/images/products/aw102/deathstranding/thumb-view4.jpg",
+          "provenance": "licensed_partner_atmoph",
+          "visually_inspected": true,
+          "notes": "Ferme du premier Death Stranding, cultures dorées et machines agricoles jaunes.",
+          "size_bytes": 1127427,
+          "sha256": "c2c831ce0dde7caf6e297fa1ff176aee37f789d06a77ec3c189cb7de8f5a24e6"
+        }
+      ],
+      "current_binding": "Panorama de secours et référence des cinq nouveaux plans ; le manifeste initial reste un instantané historique."
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/static-20261125/mountain-knot-city-panorama.png",
+      "sha256": "92358b0accc8af6d2876662f84ca6d2d1ee00ab47fa1567d39df55a370b26126",
+      "original_manifest": "art/sources/echos-de-la-greve/production-20261125-static/manifest.json",
+      "original_item_id": "mountain-knot-city-panorama",
+      "source_chain": [
+        {
+          "filename": "mountain-knot-official.jpg",
+          "page_url": "https://atmoph.com/en/products/deathstranding",
+          "image_url": "https://webres-atmoph.global.ssl.fastly.net/assets/images/products/aw102/deathstranding/thumb-view5.jpg",
+          "provenance": "licensed_partner_atmoph",
+          "visually_inspected": true,
+          "notes": "Approche montagneuse de Mountain Knot : relief neigeux, cordons et arc chiral. Aucune skyline urbaine visible.",
+          "size_bytes": 715953,
+          "sha256": "9298ccbe6fd89cf9955ffabaf93920cd12efeb8da4d02497b90076112cc7de23"
+        }
+      ],
+      "current_binding": "Panorama de secours et référence des cinq nouveaux plans ; le manifeste initial reste un instantané historique."
+    }
+  ],
+  "verification": {
+    "all_34_source_and_integrated_hashes_equal": true,
+    "all_files_single_frame_png": true,
+    "all_catalogue_and_archive_paths_exist": true,
+    "missing_image_paths": [],
+    "guide_path": "docs/combat/references/Combat_Games_Guide_General_v1.0.txt",
+    "guide_sha256": "4844584616072ac0d52d37c2fab4365e1ec489240f17a721ee216e223b0355b7",
+    "report": "docs/combat/production/20261125-universe/LOT_UNIVERS_20261125.md",
+    "visual_review": "docs/combat/production/20261125-universe/review/REVUE_VISUELLE.md",
+    "native_canvas_report": "docs/combat/production/20261125-universe/stage-renders/validation.json"
+  },
+  "remaining": [
+    "Les huit nouveaux dossiers DS2 sont des archives illustrées ; ils ne constituent pas huit combattants supplémentaires.",
+    "Plate Gate et Front de sable restent des panoramas de galerie. Les cinq plans jouables sont livrés pour South Knot, la ferme, Mountain Knot et Magellan seulement.",
+    "Étendre les fiches, références et productions aux autres personnages, ennemis, lieux et équipements de la licence selon le registre univers.",
+    "Animations, sons et futurs kits nécessitent une phase distincte ; ce lot produit des images fixes.",
+    "Les œuvres annoncées sont inventoriées sur leurs informations officielles disponibles, sans inventer leur contenu non dévoilé."
+  ]
+}

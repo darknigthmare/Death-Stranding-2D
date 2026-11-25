@@ -1,0 +1,444 @@
+{
+  "date": "2026-11-25T13:17:54.967Z",
+  "method": "@napi-rs/canvas; native PNG pixels, no source modification",
+  "files": [
+    {
+      "id": "south-knot-ruins",
+      "layer": "sky",
+      "file": "assets/stages/south-knot-ruins-sky.png",
+      "width": 1672,
+      "height": 941,
+      "sha256": "578b1727cc1a4a815d566aaf59b0cf0ae2a15ec106a90ec7515489acaada8562",
+      "alphaMin": 255,
+      "alphaMax": 255,
+      "transparentFraction": 0,
+      "opaqueFraction": 1,
+      "visibleBounds": [
+        0,
+        0,
+        1672,
+        941
+      ]
+    },
+    {
+      "id": "south-knot-ruins",
+      "layer": "distant",
+      "file": "assets/stages/south-knot-ruins-distant.png",
+      "width": 1672,
+      "height": 941,
+      "sha256": "ea702583ee66c0c9eacab99a90eed6560390cb706f175894a83278a4c3a6528d",
+      "alphaMin": 0,
+      "alphaMax": 255,
+      "transparentFraction": 0.7682031738606491,
+      "opaqueFraction": 0.00016334551962942813,
+      "visibleBounds": [
+        0,
+        606,
+        1672,
+        335
+      ],
+      "lowestCentralOpaqueRow": 940,
+      "suggestedBottomAnchorY": 1
+    },
+    {
+      "id": "south-knot-ruins",
+      "layer": "midground",
+      "file": "assets/stages/south-knot-ruins-midground.png",
+      "width": 1672,
+      "height": 941,
+      "sha256": "28ba9cf06db9bdb0dd3524d28acebfd66dc01c2a7654e009922ece7ad5b387d2",
+      "alphaMin": 0,
+      "alphaMax": 255,
+      "transparentFraction": 0.4410131998433917,
+      "opaqueFraction": 0.00034385185260513856,
+      "visibleBounds": [
+        0,
+        108,
+        1672,
+        807
+      ],
+      "lowestCentralOpaqueRow": 912,
+      "suggestedBottomAnchorY": 0.9702444208289054
+    },
+    {
+      "id": "south-knot-ruins",
+      "layer": "floor",
+      "file": "assets/stages/south-knot-ruins-floor.png",
+      "width": 1672,
+      "height": 941,
+      "sha256": "ef18ba9ad4c752c6a7bdf35698df0e896ea78b2f2e45922b1dfe224b46f835f2",
+      "alphaMin": 0,
+      "alphaMax": 255,
+      "transparentFraction": 0.36002242346277247,
+      "opaqueFraction": 0.0008307104830959633,
+      "visibleBounds": [
+        0,
+        390,
+        1672,
+        551
+      ],
+      "centralSupport": {
+        "columns": 1337,
+        "min": 391,
+        "p10": 392,
+        "median": 392,
+        "p90": 392,
+        "max": 392
+      },
+      "suggestedAnchorY": 0.4165781083953241,
+      "nativeLineToScreen588": {
+        "sourceRow": 392,
+        "sourceHeight": 941
+      }
+    },
+    {
+      "id": "south-knot-ruins",
+      "layer": "foreground",
+      "file": "assets/stages/south-knot-ruins-foreground.png",
+      "width": 1672,
+      "height": 941,
+      "sha256": "c4a76af151a8b44a373adfd32da22b3e46af7f9ac14e9e5e8c6fe6c08527f62d",
+      "alphaMin": 0,
+      "alphaMax": 255,
+      "transparentFraction": 0.9796924019545531,
+      "opaqueFraction": 0.000029872526936121098,
+      "visibleBounds": [
+        0,
+        868,
+        1672,
+        73
+      ],
+      "centralTopVisibleRow": 902,
+      "projectedCentralTopY": 686.4114832535885
+    },
+    {
+      "id": "timefall-farm",
+      "layer": "sky",
+      "file": "assets/stages/timefall-farm-sky.png",
+      "width": 1672,
+      "height": 941,
+      "sha256": "4ab30a291a99cb0a0f2a4ad4d3bb4ad7642f14390ec661d52cda81024010ceaf",
+      "alphaMin": 255,
+      "alphaMax": 255,
+      "transparentFraction": 0,
+      "opaqueFraction": 1,
+      "visibleBounds": [
+        0,
+        0,
+        1672,
+        941
+      ]
+    },
+    {
+      "id": "timefall-farm",
+      "layer": "distant",
+      "file": "assets/stages/timefall-farm-distant.png",
+      "width": 1672,
+      "height": 941,
+      "sha256": "06006cfd020d88d4ae8a1024e0a5b1dfb8fd533fea8fcbe0230b6d9326d3adac",
+      "alphaMin": 0,
+      "alphaMax": 255,
+      "transparentFraction": 0.4487063289079621,
+      "opaqueFraction": 0.00012203245046245214,
+      "visibleBounds": [
+        0,
+        246,
+        1672,
+        695
+      ],
+      "lowestCentralOpaqueRow": 940,
+      "suggestedBottomAnchorY": 1
+    },
+    {
+      "id": "timefall-farm",
+      "layer": "midground",
+      "file": "assets/stages/timefall-farm-midground.png",
+      "width": 1672,
+      "height": 941,
+      "sha256": "fe38e10039fa670fcb4effc4cb57db22e1ee24300aa0caeaf7a5d1026a10a808",
+      "alphaMin": 0,
+      "alphaMax": 255,
+      "transparentFraction": 0.7073636414483218,
+      "opaqueFraction": 0.00044935907540080033,
+      "visibleBounds": [
+        0,
+        433,
+        1672,
+        410
+      ],
+      "lowestCentralOpaqueRow": 839,
+      "suggestedBottomAnchorY": 0.8926673751328374
+    },
+    {
+      "id": "timefall-farm",
+      "layer": "floor",
+      "file": "assets/stages/timefall-farm-floor.png",
+      "width": 1672,
+      "height": 941,
+      "sha256": "7d201898dcdd3d1a2bc401b115665620c33e9089e850023221590099ecc7d3d4",
+      "alphaMin": 0,
+      "alphaMax": 255,
+      "transparentFraction": 0.3762457479318042,
+      "opaqueFraction": 0.0000216099131027259,
+      "visibleBounds": [
+        0,
+        358,
+        1672,
+        583
+      ],
+      "centralSupport": {
+        "columns": 1337,
+        "min": 359,
+        "p10": 359,
+        "median": 359,
+        "p90": 359,
+        "max": 359
+      },
+      "suggestedAnchorY": 0.38150903294367694,
+      "nativeLineToScreen588": {
+        "sourceRow": 359,
+        "sourceHeight": 941
+      }
+    },
+    {
+      "id": "timefall-farm",
+      "layer": "foreground",
+      "file": "assets/stages/timefall-farm-foreground.png",
+      "width": 1672,
+      "height": 941,
+      "sha256": "0f3e9995be99d667be177cec7db3cc35cdeaad94aaaf8fe137e470dc1dbc4340",
+      "alphaMin": 0,
+      "alphaMax": 255,
+      "transparentFraction": 0.9783106386873376,
+      "opaqueFraction": 0.00000699144247441132,
+      "visibleBounds": [
+        0,
+        877,
+        1672,
+        64
+      ],
+      "centralTopVisibleRow": 905,
+      "projectedCentralTopY": 688.9952153110048
+    },
+    {
+      "id": "mountain-knot-approach",
+      "layer": "sky",
+      "file": "assets/stages/mountain-knot-approach-sky.png",
+      "width": 1672,
+      "height": 941,
+      "sha256": "6a276d4006ecd5a094342b3debf4091fea62f7f3991d93cb73b49eaec6735943",
+      "alphaMin": 255,
+      "alphaMax": 255,
+      "transparentFraction": 0,
+      "opaqueFraction": 1,
+      "visibleBounds": [
+        0,
+        0,
+        1672,
+        941
+      ]
+    },
+    {
+      "id": "mountain-knot-approach",
+      "layer": "distant",
+      "file": "assets/stages/mountain-knot-approach-distant.png",
+      "width": 1672,
+      "height": 941,
+      "sha256": "fdae8dc3a6a5473150cb47f9de93c54a5c5796128a43e1936fa32ea97e23c4ef",
+      "alphaMin": 0,
+      "alphaMax": 255,
+      "transparentFraction": 0.47847334862128754,
+      "opaqueFraction": 0.00007436352450055678,
+      "visibleBounds": [
+        0,
+        251,
+        1672,
+        690
+      ],
+      "lowestCentralOpaqueRow": 940,
+      "suggestedBottomAnchorY": 1
+    },
+    {
+      "id": "mountain-knot-approach",
+      "layer": "midground",
+      "file": "assets/stages/mountain-knot-approach-midground.png",
+      "width": 1672,
+      "height": 941,
+      "sha256": "02fb7cdbbcf13c8087d7803b162a3cedb66f7f525f7bad80d23fe963dcc3d8c9",
+      "alphaMin": 0,
+      "alphaMax": 255,
+      "transparentFraction": 0.7278962368243088,
+      "opaqueFraction": 0.000051482440038846994,
+      "visibleBounds": [
+        0,
+        528,
+        1672,
+        413
+      ],
+      "lowestCentralOpaqueRow": 940,
+      "suggestedBottomAnchorY": 1
+    },
+    {
+      "id": "mountain-knot-approach",
+      "layer": "floor",
+      "file": "assets/stages/mountain-knot-approach-floor.png",
+      "width": 1672,
+      "height": 941,
+      "sha256": "f0809f99efc2e520f3b4b796e348d6ca7205f9404c3a2db97d241d3bcbe5a59e",
+      "alphaMin": 0,
+      "alphaMax": 255,
+      "transparentFraction": 0.39541882553935803,
+      "opaqueFraction": 0.000008262613833395197,
+      "visibleBounds": [
+        0,
+        375,
+        1672,
+        566
+      ],
+      "centralSupport": {
+        "columns": 1337,
+        "min": 376,
+        "p10": 376,
+        "median": 376,
+        "p90": 377,
+        "max": 377
+      },
+      "suggestedAnchorY": 0.3995749202975558,
+      "nativeLineToScreen588": {
+        "sourceRow": 376,
+        "sourceHeight": 941
+      }
+    },
+    {
+      "id": "mountain-knot-approach",
+      "layer": "foreground",
+      "file": "assets/stages/mountain-knot-approach-foreground.png",
+      "width": 1672,
+      "height": 941,
+      "sha256": "15e792f0c81993f25d4f1b2004d3b1f016dfde601c114ca984d6e9fec97826bb",
+      "alphaMin": 0,
+      "alphaMax": 255,
+      "transparentFraction": 0.976187146932155,
+      "opaqueFraction": 0.000008898199512887135,
+      "visibleBounds": [
+        0,
+        878,
+        1672,
+        63
+      ],
+      "centralTopVisibleRow": 906,
+      "projectedCentralTopY": 689.8564593301436
+    },
+    {
+      "id": "magellan-ds2",
+      "layer": "sky",
+      "file": "assets/stages/magellan-ds2-sky.png",
+      "width": 1672,
+      "height": 941,
+      "sha256": "953add4be03755a9b68c71ac3175ba3bf2eb32f9bbb56c4211deb8e1f85af442",
+      "alphaMin": 255,
+      "alphaMax": 255,
+      "transparentFraction": 0,
+      "opaqueFraction": 1,
+      "visibleBounds": [
+        0,
+        0,
+        1672,
+        941
+      ]
+    },
+    {
+      "id": "magellan-ds2",
+      "layer": "distant",
+      "file": "assets/stages/magellan-ds2-distant.png",
+      "width": 1672,
+      "height": 941,
+      "sha256": "ba85faa99e991e9519d366a2bf6cebc25b196ac71567481176041a06898f9e7c",
+      "alphaMin": 0,
+      "alphaMax": 255,
+      "transparentFraction": 0.8705311970874922,
+      "opaqueFraction": 0.0002612257142711866,
+      "visibleBounds": [
+        0,
+        403,
+        1672,
+        538
+      ],
+      "lowestCentralOpaqueRow": 940,
+      "suggestedBottomAnchorY": 1
+    },
+    {
+      "id": "magellan-ds2",
+      "layer": "midground",
+      "file": "assets/stages/magellan-ds2-midground.png",
+      "width": 1672,
+      "height": 941,
+      "sha256": "a79d12f67df8a0cb7521e45499c7349c367b73cf3e6739bd28e438937dd4906a",
+      "alphaMin": 0,
+      "alphaMax": 255,
+      "transparentFraction": 0.5994106849579751,
+      "opaqueFraction": 0.000042584240525959865,
+      "visibleBounds": [
+        0,
+        369,
+        1672,
+        572
+      ],
+      "lowestCentralOpaqueRow": 940,
+      "suggestedBottomAnchorY": 1
+    },
+    {
+      "id": "magellan-ds2",
+      "layer": "floor",
+      "file": "assets/stages/magellan-ds2-floor.png",
+      "width": 1672,
+      "height": 941,
+      "sha256": "4b046d7d3814dfd4c86ae9c340d00db859613472e7a71e17d72e570df64b576a",
+      "alphaMin": 0,
+      "alphaMax": 255,
+      "transparentFraction": 0.4351626336636684,
+      "opaqueFraction": 0.0000012711713589838765,
+      "visibleBounds": [
+        0,
+        441,
+        1672,
+        500
+      ],
+      "centralSupport": {
+        "columns": 1337,
+        "min": 444,
+        "p10": 445,
+        "median": 445,
+        "p90": 445,
+        "max": 445
+      },
+      "suggestedAnchorY": 0.4729011689691817,
+      "nativeLineToScreen588": {
+        "sourceRow": 445,
+        "sourceHeight": 941
+      }
+    },
+    {
+      "id": "magellan-ds2",
+      "layer": "foreground",
+      "file": "assets/stages/magellan-ds2-foreground.png",
+      "width": 1672,
+      "height": 941,
+      "sha256": "4c93988a5469264c095cfcdd9c1e574cd75f9a2ded009f6b55c0ea86ec0640af",
+      "alphaMin": 0,
+      "alphaMax": 255,
+      "transparentFraction": 0.9679245330987598,
+      "opaqueFraction": 0.0000432198262054518,
+      "visibleBounds": [
+        0,
+        842,
+        1672,
+        99
+      ],
+      "centralTopVisibleRow": 882,
+      "projectedCentralTopY": 669.1866028708134
+    }
+  ],
+  "missing": [],
+  "complete": true
+}

@@ -58,7 +58,7 @@ function assertSilent(ctx,label){assert.equal(ctx.active().length,0,label+' : no
 
 async function verifyAudio() {
   const h=harness(),{engine,start}=h;
-  const stages=['shore','terminal','battlefield','mule-camp','mule-camp-dry','heartman-lab','mama-workshop','ruined-factory','timefall-shelter','tar-basin','mountain-pass'];
+  const stages=Object.keys(h.window.StrandContent.stages);
   assert(stages.every(id=>Object.hasOwn(h.window.StrandContent.stages,id)),'Every audio profile names a delivered stage or variant');
   const profiles={};
   for(const stage of stages){
@@ -85,7 +85,7 @@ async function verifyAudio() {
     engine.stop();assertSilent(ctx,stage+' stop');
   }
   assert.notDeepEqual(profiles['mule-camp'],profiles['mule-camp-dry'],'Wet rain and dry wind use different beds');
-  assert.equal(new Set(Object.values(profiles).map(JSON.stringify)).size,11,'Eleven distinct ambient beds');
+  assert.equal(new Set(Object.values(profiles).map(JSON.stringify)).size,stages.length,'Each arena configuration has a distinct ambient bed');
 
   start();const ctx=h.contexts[0];
   engine.setReducedEffects(true);const quietStart=ctx.starts.length;
@@ -144,7 +144,7 @@ async function verifyAudio() {
   }
   const delayed=harness({state:'suspended',resume:'defer'});delayed.start();delayed.engine.stop();delayed.contexts[0].resolveResume();
   await Promise.resolve();assertSilent(delayed.contexts[0],'A late resume does not revive the old duel');
-  console.log('Ambiances · 11 profils, localisation, volume, sources bornées, pause/reprise, arrêt, fin silencieuse, replay, effets réduits, rollback complet et autoplay vérifiés.');
+  console.log('Ambiances · '+stages.length+' profils, localisation, volume, sources bornées, pause/reprise, arrêt, fin silencieuse, replay, effets réduits, rollback complet et autoplay vérifiés.');
 }
 
 // The real application is executed against a small event/DOM adapter. This

@@ -2,7 +2,10 @@
 (function(host){
   'use strict';
   const W=1280,H=720,FLOOR=588,STEP=1000/60,RULES='boss-20261124-v1',STORE='echos.boss.v1';
+  const RUSH_RULES='boss-rush-20261125-v1',RUSH_STORE='echos.boss-rush.v1';
+  const RUSH_ORDER=Object.freeze(['lion','squid','whale','giant','truck','convoy']);
   const clamp=(n,a,b)=>Math.max(a,Math.min(b,n)),clone=value=>JSON.parse(JSON.stringify(value));
+  const own=(object,key)=>typeof key==='string'&&Object.hasOwn(object,key);
   const content=host.StrandContent,art=host.StrandAssets||{},bossArt=host.StrandBossAssets||{};
   const encounters={
     lion:{name:'Catcher léonin',type:'lion',stage:'tar-basin',hp:280,height:270,radius:162,bodyHeight:230,seconds:150,
@@ -44,9 +47,10 @@
     scan:28,crate:18,retrieve:16,order:28,gate:18,relief:16,anchor:28,deck:18,winch:16,pulse:28,memory:18,syncope:16};
   const actionNames=new Set(['left','right','up','down','light','heavy','special','guard','throw','finish']);
   const validKinds=new Set(['light','heavy','lift','sweep','grab','finish',...Object.keys(costs)]);
-  let current=null,raf=0,audio=null,soundOn=true,ambience=.35,reduced=false,sessionProgress=null;
+  let current=null,raf=0,audio=null,soundOn=true,ambience=.35,reduced=false,sessionProgress=null,sessionRush=null;
 
   function storage(){try{return host.localStorage;}catch{return null;}}
+  function validOutfit(p1,outfit){return outfit==='atelier'||own(art.wardrobe?.[p1]||{},outfit);}
   function emptyProgress(){return {version:1,rules:RULES,records:{},recent:[],checkpoint:null};}
   function finiteTree(value,depth=0){
     if(depth>14)return false;
@@ -57,7 +61,8 @@
   }
   function validCheckpoint(cp){
     if(!cp||cp.version!==1||cp.rules!==RULES||!finiteTree(cp))return false;
-    const s=cp.state,p=s?.p,b=s?.boss,d=encounters[s?.bossId];
+    const s=cp.state,p=s?.p,b=s?.boss,d=own(encounters,s?.bossId)?encounters[s.bossId]:null;
+    if(!d||!own(players,s?.p1)||!own(content.stages,s?.stage))return false;
     const scalar=(v,min,max)=>Number.isFinite(v)&&v>=min&&v<=max;
     const attack=b?.attack,attackOK=!attack || (typeof attack==='object'&&d?.patterns.includes(attack.type)&&
       Array.isArray(attack.markers)&&attack.markers.length<=5&&attack.markers.every(q=>q&&scalar(q.x,0,W)&&scalar(q.w,1,W)&&scalar(q.h,1,H))&&
@@ -76,7 +81,7 @@
       boxes.every(q=>q&&Number.isInteger(q.id)&&q.id>0&&scalar(q.x,0,W)&&['ground','carried','delivered'].includes(q.state))&&
       new Set(boxes.map(q=>q.id)).size===boxes.length&&boxes.filter(q=>q.state==='delivered').length===s.cargo.delivered&&
       (s.cargo.carrying===null?boxes.every(q=>q.state!=='carried'):boxes.filter(q=>q.state==='carried').length===1&&boxes.some(q=>q.state==='carried'&&q.id===s.cargo.carrying));
-    return !!(d&&players[s.p1]&&content.stages[s.stage]&&['easy','normal','hard'].includes(s.difficulty)&&
+    return !!(['easy','normal','hard'].includes(s.difficulty)&&
       ['intro','active','collect'].includes(s.phase)&&Number.isInteger(s.tick)&&s.tick>=0&&s.tick<=18000&&
       Number.isInteger(s.remaining)&&s.remaining>0&&s.remaining<=d.seconds*60&&scalar(s.phaseTicks,0,75)&&scalar(s.waveDelay,0,180)&&
       typeof s.message==='string'&&scalar(s.messageTicks,0,300)&&
@@ -99,7 +104,7 @@
       const p=JSON.parse(raw);if(p.version!==1||p.rules!==RULES||!p.records||typeof p.records!=='object'||!Array.isArray(p.recent))return remember(emptyProgress());
       const clean=emptyProgress();
       for(const [key,r] of Object.entries(p.records).slice(0,200))if(/^(sam|fragile|higgs|cliff|mule|diehardman|mama|heartman):(lion|squid|whale|giant|truck|convoy):(easy|normal|hard)$/.test(key)&&finiteTree(r)&&Number.isInteger(r.attempts)&&r.attempts>=0&&Number.isInteger(r.wins)&&r.wins>=0&&r.wins<=r.attempts&&Number.isFinite(r.best)&&r.best>=0&&(r.fastest===null||Number.isFinite(r.fastest)))clean.records[key]=r;
-      clean.recent=p.recent.filter(r=>r&&encounters[r.bossId]&&players[r.p1]&&Number.isFinite(r.score)&&typeof r.won==='boolean').slice(0,12);
+      clean.recent=p.recent.filter(r=>r&&own(encounters,r.bossId)&&own(players,r.p1)&&Number.isFinite(r.score)&&typeof r.won==='boolean').slice(0,12);
       clean.checkpoint=validCheckpoint(p.checkpoint)?p.checkpoint:null;return remember(clean);
     }catch{return remember(emptyProgress());}
   }
@@ -108,16 +113,90 @@
     if(!current||!['intro','active','collect'].includes(current.s.phase))return null;
     const state=clone(current.s);state.p.keys={};state.p.taps={};return {version:1,rules:RULES,state};
   }
-  function persist(){const p=progress();p.checkpoint=checkpoint();return writeProgress(p);}
+  function emptyRushProgress(){return {version:1,rules:RUSH_RULES,engineRules:RULES,records:{},recent:[],run:null};}
+  function rushTotals(run){return {score:run.results.reduce((total,r)=>total+r.score,0),elapsed:run.results.reduce((total,r)=>total+r.elapsed,0)};}
+  function validRushRun(run){
+    if(!run||!finiteTree(run)||!own(players,run.p1)||!['easy','normal','hard'].includes(run.difficulty)||
+      !validOutfit(run.p1,run.outfit)||!Number.isInteger(run.index)||run.index<0||run.index>RUSH_ORDER.length||
+      !['ready','active','won','lost'].includes(run.status)||!Number.isFinite(run.health)||run.health<0||run.health>120||
+      !Array.isArray(run.results)||run.results.length>RUSH_ORDER.length)return false;
+    const lost=run.status==='lost',won=run.status==='won';
+    if(run.results.length!==run.index+(lost?1:0)||won!==(run.index===RUSH_ORDER.length)||(!lost&&run.health<=0))return false;
+    for(let i=0;i<run.results.length;i++){
+      const r=run.results[i],d=encounters[RUSH_ORDER[i]];
+      if(!r||r.bossId!==RUSH_ORDER[i]||r.won!==(!lost||i<run.index)||
+        !Number.isFinite(r.score)||r.score<0||r.score>1e6||!Number.isInteger(r.elapsed)||r.elapsed<0||r.elapsed>d.seconds*60||
+        !Number.isFinite(r.vitality)||r.vitality<0||r.vitality>120||
+        !['boss','cargo','time','health'].includes(r.reason))return false;
+    }
+    if(run.status==='active'){
+      const cp=run.checkpoint,s=cp?.state;
+      return validCheckpoint(cp)&&s.bossId===RUSH_ORDER[run.index]&&s.p1===run.p1&&s.difficulty===run.difficulty&&
+        s.outfit===run.outfit&&s.stage===encounters[s.bossId].stage&&s.p.hp===run.health;
+    }
+    if(run.checkpoint!==null)return false;
+    if(run.status==='ready'||won){
+      const expected=run.index?Math.min(120,run.results[run.index-1].vitality+20):120;
+      return run.health===expected;
+    }
+    return run.health===run.results.at(-1).vitality;
+  }
+  function rushProgress(){
+    if(sessionRush)return clone(sessionRush);
+    const remember=p=>{sessionRush=p;return clone(p);};
+    try{
+      const raw=storage()?.getItem(RUSH_STORE);if(!raw||raw.length>220000)return remember(emptyRushProgress());
+      const p=JSON.parse(raw);
+      if(p.version!==1||p.rules!==RUSH_RULES||p.engineRules!==RULES||!p.records||typeof p.records!=='object'||!Array.isArray(p.recent))return remember(emptyRushProgress());
+      const clean=emptyRushProgress();
+      for(const [key,r] of Object.entries(p.records).slice(0,24))if(/^(sam|fragile|higgs|cliff|mule|diehardman|mama|heartman):(easy|normal|hard)$/.test(key)&&
+        finiteTree(r)&&Number.isInteger(r.attempts)&&r.attempts>=0&&Number.isInteger(r.wins)&&r.wins>=0&&r.wins<=r.attempts&&
+        Number.isFinite(r.best)&&r.best>=0&&(r.fastest===null||Number.isFinite(r.fastest)&&r.fastest>=0))clean.records[key]=r;
+      clean.recent=p.recent.filter(r=>validRushRun(r)&&['won','lost'].includes(r.status)).slice(0,8);
+      clean.run=validRushRun(p.run)?p.run:null;return remember(clean);
+    }catch{return remember(emptyRushProgress());}
+  }
+  function writeRushProgress(p){sessionRush=clone(p);try{const store=storage();if(!store)return false;store.setItem(RUSH_STORE,JSON.stringify(p));return true;}catch{return false;}}
+  function createRush(o={}){
+    stop();
+    const p=rushProgress(),p1=own(players,o.p1)?o.p1:'sam';
+    const outfit=validOutfit(p1,o.outfit)?o.outfit:'atelier';
+    p.run={p1,difficulty:['easy','normal','hard'].includes(o.difficulty)?o.difficulty:'normal',outfit,
+      index:0,status:'ready',health:120,results:[],checkpoint:null};
+    const saved=writeRushProgress(p);return {...clone(p.run),saved};
+  }
+  function finishRush(result,health){
+    const p=rushProgress(),run=p.run;
+    run.results.push({bossId:result.bossId,won:result.won,reason:result.reason,score:result.score,elapsed:result.elapsed,vitality:health});
+    run.checkpoint=null;
+    if(result.won){run.index++;run.health=Math.min(120,health+20);run.status=run.index===RUSH_ORDER.length?'won':'ready';}
+    else{run.health=health;run.status='lost';}
+    if(['won','lost'].includes(run.status)){
+      const key=[run.p1,run.difficulty].join(':'),r=p.records[key]||{attempts:0,wins:0,best:0,fastest:null},totals=rushTotals(run);
+      r.attempts++;
+      if(run.status==='won'){r.wins++;r.best=Math.max(r.best,totals.score);r.fastest=r.fastest===null?totals.elapsed:Math.min(r.fastest,totals.elapsed);}
+      p.records[key]=r;p.recent.unshift(clone(run));p.recent=p.recent.slice(0,8);
+    }
+    const saved=writeRushProgress(p);
+    result.rush={index:run.index,total:RUSH_ORDER.length,status:run.status,health:run.health,...rushTotals(run)};
+    return saved;
+  }
+  function persist(){
+    if(current?.rush){
+      const p=rushProgress();p.run.checkpoint=checkpoint();p.run.status='active';p.run.health=current.s.p.hp;
+      return writeRushProgress(p);
+    }
+    const p=progress();p.checkpoint=checkpoint();return writeProgress(p);
+  }
   function newBoss(d,difficulty,wave){
     const maxHp=Math.round(d.hp*({easy:.82,normal:1,hard:1.2}[difficulty])*(wave>1?1.12:1));
     return {type:d.type,x:940,face:-1,hp:maxHp,maxHp,phase:'approach',timer:55,tier:1,cycle:0,attack:null,
       stagger:0,flash:0,exposed:0,damageToDepot:false};
   }
   function makeState(o){
-    const d=encounters[o.boss]||encounters.lion,bossId=encounters[o.boss]?o.boss:'lion';
-    const p1=players[o.p1]?o.p1:'sam',difficulty=['easy','normal','hard'].includes(o.difficulty)?o.difficulty:'normal';
-    return {bossId,p1,difficulty,stage:content.stages[o.stage]?o.stage:d.stage,outfit:o.outfit||'atelier',tick:0,phase:'intro',phaseTicks:75,
+    const bossId=own(encounters,o.boss)?o.boss:'lion',d=encounters[bossId];
+    const p1=own(players,o.p1)?o.p1:'sam',difficulty=['easy','normal','hard'].includes(o.difficulty)?o.difficulty:'normal';
+    return {bossId,p1,difficulty,stage:own(content.stages,o.stage)?o.stage:d.stage,outfit:validOutfit(p1,o.outfit)?o.outfit:'atelier',tick:0,phase:'intro',phaseTicks:75,
       remaining:d.seconds*60,p:{x:250,y:0,vy:0,face:1,hp:120,energy:100,guardMeter:100,guard:false,crouch:false,keys:{},taps:{},
         act:null,stun:0,invuln:0,shield:0,walk:0,marker:null,flash:0},boss:newBoss(d,difficulty,1),wave:1,waveDelay:0,
       cargo:{goal:d.cargo||0,delivered:0,integrity:100,carrying:null,boxes:[]},shots:[],hazards:[],effects:[],nextId:1,
@@ -139,10 +218,15 @@
   }
   function start(o){
     stop();
+    const run=o.rush?rushProgress().run:null;
+    if(o.rush&&(!run||!['ready','active'].includes(run.status)))return null;
+    if(run)o={...o,p1:run.p1,boss:RUSH_ORDER[run.index],stage:encounters[RUSH_ORDER[run.index]].stage,
+      difficulty:run.difficulty,outfit:run.outfit,resume:run.checkpoint};
     const saved=o.resume&&validCheckpoint(o.resume)?clone(o.resume.state):null,s=saved||makeState(o);
+    if(run&&!saved)s.p.hp=run.health;
     s.p.keys={};s.p.taps={};
     current={s,canvas:o.canvas,ctx:o.canvas.getContext('2d'),images:loadArt(s),onEnd:o.onEnd,onStatus:o.onStatus,
-      manual:!!o.manualClock,paused:false,last:null,accumulator:0,statusKey:'',saved:true};
+      manual:!!o.manualClock,paused:false,last:null,accumulator:0,statusKey:'',saved:true,rush:!!run};
     o.canvas.width=W;o.canvas.height=H;
     soundOn=o.sound!==false;ambience=clamp(Number.isFinite(o.ambienceVolume)?o.ambienceVolume:.35,0,1);reduced=!!o.reducedEffects;
     current.saved=persist();notify(true);draw();if(!current.manual)raf=host.requestAnimationFrame(frame);return snapshot();
@@ -152,7 +236,7 @@
     if(raf)host.cancelAnimationFrame(raf);raf=0;current=null;stopAudio();
   }
   function pause(on){
-    if(!current)return;current.paused=!!on;current.s.p.keys={};current.s.p.taps={};current.last=null;current.accumulator=0;
+    if(!current||current.s.phase==='ended')return;current.paused=!!on;current.s.p.keys={};current.s.p.taps={};current.last=null;current.accumulator=0;
     if(on){current.saved=persist();stopAudio();}notify(true);draw();
   }
   function input(player,action,down){
@@ -174,9 +258,12 @@
     const score=won?Math.max(100,Math.round(12000+s.stats.damageDealt*9+s.p.hp*25+(d.cargo?s.cargo.integrity*12:0)-elapsed*1.5)):0;
     const result={won,reason,score,bossId:s.bossId,p1:s.p1,difficulty:s.difficulty,stage:s.stage,elapsed,
       vitality:Math.ceil(s.p.hp),cargo:s.cargo.delivered,cargoGoal:s.cargo.goal,integrity:s.cargo.integrity,waves:s.wave,stats:clone(s.stats)};
-    const p=progress(),key=[s.p1,s.bossId,s.difficulty].join(':'),r=p.records[key]||{attempts:0,wins:0,best:0,fastest:null};
-    r.attempts++;if(won){r.wins++;r.best=Math.max(r.best||0,score);r.fastest=r.fastest===null?elapsed:Math.min(r.fastest,elapsed);}
-    p.records[key]=r;p.recent.unshift(result);p.recent=p.recent.slice(0,12);p.checkpoint=null;result.saved=writeProgress(p);
+    if(current.rush)result.saved=finishRush(result,s.p.hp);
+    else{
+      const p=progress(),key=[s.p1,s.bossId,s.difficulty].join(':'),r=p.records[key]||{attempts:0,wins:0,best:0,fastest:null};
+      r.attempts++;if(won){r.wins++;r.best=Math.max(r.best||0,score);r.fastest=r.fastest===null?elapsed:Math.min(r.fastest,elapsed);}
+      p.records[key]=r;p.recent.unshift(result);p.recent=p.recent.slice(0,12);p.checkpoint=null;result.saved=writeProgress(p);
+    }
     s.result=result;current.saved=result.saved;stopAudio();notify(true);current?.onEnd?.(clone(result));
   }
   function damageCargo(s,amount){
@@ -582,5 +669,7 @@
   function setAmbienceVolume(value){ambience=clamp(value,0,1);if(audio)audio.gain.gain.value=ambience*.025;}
   function setReducedEffects(value){reduced=!!value;}
   host.StrandBoss={encounters,players,start,stop,pause,input,snapshot,checkpoint,validCheckpoint,progress,advance,draw,
-    setSound,setAmbienceVolume,setReducedEffects,rules:RULES,storageKey:STORE};
+    setSound,setAmbienceVolume,setReducedEffects,rules:RULES,storageKey:STORE,
+    rush:{order:RUSH_ORDER,rules:RUSH_RULES,storageKey:RUSH_STORE,progress:rushProgress,create:createRush,
+      start:o=>start({...o,rush:true}),validRun:validRushRun,totals:rushTotals}};
 })(window);

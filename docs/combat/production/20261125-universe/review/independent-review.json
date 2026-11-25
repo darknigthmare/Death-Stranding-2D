@@ -1,0 +1,368 @@
+{
+  "date": "2026-11-25",
+  "status": "completed-independent-visual-review",
+  "scope": "14 images de base et 20 plans nouveaux ; transparence, anatomie visible, cadrage et quatre compositions d’arène.",
+  "production_manifest": "art/sources/echos-de-la-greve/production-20261125-universe/manifest.json",
+  "source_images_unchanged_by_review": true,
+  "method": {
+    "native_composition": "@napi-rs/canvas",
+    "backgrounds": [
+      "#14231f",
+      "#c8c9c2"
+    ],
+    "native_engine_renderer": "fight.js via qa/arenes-canvas.cjs; captures fournies par la validation moteur",
+    "browser_verified": false,
+    "source_reading": "Pillow PNG verify + RGBA statistics only; no image editing"
+  },
+  "counts": {
+    "base_images": 14,
+    "transparent_cutouts": 11,
+    "opaque_panoramas": 3,
+    "stage_layers": 20,
+    "opaque_stage_skies": 4,
+    "native_engine_captures_independently_reviewed": 8,
+    "png_bytes": 53577560
+  },
+  "findings": {
+    "blocking_anomalies": [],
+    "minor_adaptations": [
+      "Fragile : cigarette de l’affiche absente, geste conservé.",
+      "Samouraï rouge : bas des jambes et bottes reconstruits à partir d’une référence qui les coupe.",
+      "Chat chiral : pose assise reconstruite depuis le sujet présent sur Tarman.",
+      "Guitare : captures officielles partielles complétées par une statue licenciée ; proportions détaillées interprétées.",
+      "Panoramas : personnages de référence retirés et espace du combat recomposé.",
+      "Magellan en arène : vaisseau au plan lointain seulement, échelle et hauteur adaptées pour montrer la lévitation dans le cadrage 1280 × 720."
+    ],
+    "alpha_note": "Sam, Samouraï rouge et guitare examinés sur deux fonds : les couleurs RGB invisibles de la prévisualisation brute ne constituent pas un halo en composition. Alpha 253–254 conservé sans correction."
+  },
+  "items": [
+    {
+      "file": "modes/echos-de-la-greve/assets/static-universe-20261125/dollman-ds2-body.png",
+      "id": "dollman-ds2-body",
+      "kind": "full-body-cutout",
+      "observations": [
+        "Les deux chaussures, le sommet de la tête et la main levée sont entiers.",
+        "Costume bordeaux, nœud papillon, pantalon court, chaussettes rouges et segmentation du visage présents.",
+        "Main levée du même côté à l’écran que sur la référence."
+      ],
+      "sha256": "45ef2e8e367983df95e54c0709447461c019b31c552c59fb69d2b72a7fafca69",
+      "reference_ids": [
+        "dollman"
+      ],
+      "decision": "retain-reviewed-asset"
+    },
+    {
+      "file": "modes/echos-de-la-greve/assets/static-universe-20261125/rainy-ds2-portrait.png",
+      "id": "rainy-ds2-portrait",
+      "kind": "portrait-cutout",
+      "observations": [
+        "Sac clair du même côté à l’écran que sur la référence (gauche du spectateur).",
+        "Pull jaune à col zippé, pot fleuri et deux mains lisibles ; pas de doigt supplémentaire évident au contrôle visuel.",
+        "La coupe à la taille correspond au périmètre d’un portrait, sans preuve d’une silhouette entière."
+      ],
+      "sha256": "82587f47a4ee6838f46cb6760ff0a57778b93da8c0a10b952ddd5c180102ad9a",
+      "reference_ids": [
+        "rainy"
+      ],
+      "decision": "retain-reviewed-asset"
+    },
+    {
+      "file": "modes/echos-de-la-greve/assets/static-universe-20261125/neil-ds2-portrait.png",
+      "id": "neil-ds2-portrait",
+      "kind": "portrait-cutout",
+      "observations": [
+        "Étoffe sombre au cou, cheveux et équipement cohérents avec les parties visibles de la référence.",
+        "Les grandes lames de l’affiche ne sont pas incluses dans ce portrait isolé.",
+        "Buste coupé en bas ; aucune validation du bas du corps n’est déduite."
+      ],
+      "sha256": "2d8e326ec662875f6b1588a1f3e5cd06acd834caee078803e1cee97d598b3d08",
+      "reference_ids": [
+        "neil"
+      ],
+      "decision": "retain-reviewed-asset"
+    },
+    {
+      "file": "modes/echos-de-la-greve/assets/static-universe-20261125/tomorrow-ds2-portrait.png",
+      "id": "tomorrow-ds2-portrait",
+      "kind": "portrait-cutout",
+      "observations": [
+        "Cheveux blonds et haut sombre sans manches cohérents avec l’affiche retenue.",
+        "Cette variante ne mélange pas les éléments de la robe blanche de la capture PC.",
+        "Buste coupé au cadre inférieur, à conserver comme portrait."
+      ],
+      "sha256": "07b69ce09ced7647fa435152117d70bc4c8ebdcc4c8f7ed49a2453e3081ec3ab",
+      "reference_ids": [
+        "tomorrow"
+      ],
+      "decision": "retain-reviewed-asset"
+    },
+    {
+      "file": "modes/echos-de-la-greve/assets/static-universe-20261125/chiral-cat-ds2-body.png",
+      "id": "chiral-cat-ds2-body",
+      "kind": "creature-cutout",
+      "observations": [
+        "Corps, pattes, queue et ramures inclus sans coupe du cadre.",
+        "Yeux jaunes et matière noire brillante cohérents avec le chat présent sur l’épaule de Tarman.",
+        "Pose assise reconstruite à partir du sujet debout de la référence ; ne pas présenter la pose comme relevé exact du jeu."
+      ],
+      "sha256": "3b861b712655b53c38c4eab90296d03c000169a2d0491a8e6d1865a658da8e33",
+      "reference_ids": [
+        "tarman"
+      ],
+      "decision": "retain-reviewed-asset"
+    },
+    {
+      "file": "modes/echos-de-la-greve/assets/static-universe-20261125/higgs-ds2-portrait.png",
+      "id": "higgs-ds2-portrait",
+      "kind": "portrait-cutout",
+      "observations": [
+        "Armure orange/rouge, plastron ambré, longs cheveux, maquillage pâle et traces noires/dorées reconnaissables.",
+        "Le portrait reste une variante DS2 distincte du masque doré de Higgs DS1.",
+        "Aucune anomalie de détourage évidente sur les deux fonds de contrôle."
+      ],
+      "sha256": "ad7fddae20512544dd7549067cf0504266f999deeec37fa8f214407e3e4d193a",
+      "reference_ids": [
+        "higgs"
+      ],
+      "decision": "retain-reviewed-asset"
+    },
+    {
+      "file": "modes/echos-de-la-greve/assets/static-universe-20261125/tarman-ds2-portrait.png",
+      "id": "tarman-ds2-portrait",
+      "kind": "portrait-cutout",
+      "observations": [
+        "Moignon noirci conservé à gauche du spectateur ; main intacte et bague à droite, comme sur la référence.",
+        "Casquette, lunettes ambrées et jumelles conservées.",
+        "Chat retiré du portrait et traité séparément ; cette séparation est cohérente avec la contrainte d’un sujet par image."
+      ],
+      "sha256": "17c407342b8e97bf2df27ec8e2df179098fce0955a69e84d265a88c360655c81",
+      "reference_ids": [
+        "tarman"
+      ],
+      "decision": "retain-reviewed-asset"
+    },
+    {
+      "file": "modes/echos-de-la-greve/assets/static-universe-20261125/fragile-ds2-portrait.png",
+      "id": "fragile-ds2-portrait",
+      "kind": "portrait-cutout",
+      "observations": [
+        "Béret, marquages DRAWBRIDGE lisibles, cheveux courts et col à formes de mains cohérents avec l’affiche.",
+        "La main levée conserve son côté à l’écran.",
+        "Béret et buste cadrés serrés ; il s’agit d’un portrait."
+      ],
+      "deviations": [
+        {
+          "severity": "minor-adaptation",
+          "detail": "La cigarette visible dans l’affiche officielle est absente alors que le geste près des lèvres reste présent.",
+          "recommendation": "Documenter comme portrait adapté ; aucune correction nécessaire pour la lisibilité ou l’intégration statique."
+        }
+      ],
+      "sha256": "d637fd3bd50da8e9a54472aaee8c7704378b84d10d2089df9ac624036bfda4e9",
+      "reference_ids": [
+        "fragile_ds2_poster"
+      ],
+      "decision": "retain-reviewed-asset"
+    },
+    {
+      "file": "modes/echos-de-la-greve/assets/static-universe-20261125/sam-ds2-drawbridge-portrait.png",
+      "id": "sam-ds2-drawbridge-portrait",
+      "kind": "portrait-cutout",
+      "observations": [
+        "Composites Canvas natifs séparés sur fond sombre et neutre : aucun halo de fond visible autour des cheveux ou des bras.",
+        "Le halo apparent de la prévisualisation brute n’est pas retenu comme défaut du PNG affiché avec son alpha.",
+        "Cheveux foncés mouillés, haut noir sans manches et marquage DRAWBRIDGE cohérents avec la capture PC.",
+        "Cadrage serré au sommet et coupe au bas du buste : emploi comme portrait uniquement."
+      ],
+      "decision": "retain-original-no-alpha-correction-requested",
+      "sha256": "6d38a1241e98bd9ad03d9c2ef384d468d9f4c282004ffc99b0adc522dc9c6c74",
+      "reference_ids": [
+        "sam_ds2_pc"
+      ]
+    },
+    {
+      "file": "modes/echos-de-la-greve/assets/static-universe-20261125/plate-gate-ds2-panorama.png",
+      "id": "plate-gate-ds2-panorama",
+      "kind": "opaque-panorama",
+      "observations": [
+        "Colonnes minérales verticales et masses suspendues reconnaissables.",
+        "Les personnages de la référence sont omis ; l’espace du premier plan est recomposé pour un paysage autonome.",
+        "Pas de coupe ou de bord transparent attendu pour ce panorama."
+      ],
+      "sha256": "18153bcd7786cd033038d971bb975b40ca27137133d4eee92268151feedf3783",
+      "reference_ids": [
+        "plate_gate"
+      ],
+      "decision": "retain-reviewed-asset"
+    },
+    {
+      "file": "modes/echos-de-la-greve/assets/static-universe-20261125/sandstorm-ds2-panorama.png",
+      "id": "sandstorm-ds2-panorama",
+      "kind": "opaque-panorama",
+      "observations": [
+        "Front de sable, voitures poussiéreuses, lignes électriques et bâtiments bas cohérents avec la référence.",
+        "Sam a été retiré de la scène ; la composition latérale est une adaptation.",
+        "Pas de coupe ou de bord transparent attendu pour ce panorama."
+      ],
+      "sha256": "101c42163fb410de3c33534b4b6b90a2ff21b9443659146f630e2ea7f4346ffa",
+      "reference_ids": [
+        "sandstorm"
+      ],
+      "decision": "retain-reviewed-asset"
+    },
+    {
+      "file": "modes/echos-de-la-greve/assets/static-universe-20261125/magellan-ds2-panorama.png",
+      "id": "magellan-ds2-panorama",
+      "kind": "opaque-panorama",
+      "observations": [
+        "Vaisseau industriel avec volumes sous la coque, terrain humide et coucher de soleil reconnaissables.",
+        "Personnage de premier plan omis pour le paysage autonome.",
+        "Le panorama reste distinct des cinq plans de l’arène ; le vaisseau est porté uniquement par le plan lointain de cette dernière."
+      ],
+      "sha256": "5409160c50eb77a749b0dc01fa49cb45dc6c0a8c081e4943a9f8e7b346241ccd",
+      "reference_ids": [
+        "magellan"
+      ],
+      "decision": "retain-reviewed-asset"
+    },
+    {
+      "file": "modes/echos-de-la-greve/assets/static-universe-20261125/red-samurai-ds2-body.png",
+      "id": "red-samurai-ds2-body",
+      "kind": "full-body-cutout",
+      "observations": [
+        "Détourage propre dans deux composites Canvas natifs ; le halo brun de la prévisualisation brute ne subsiste pas.",
+        "Deux mains sur le manche, pointe de lame, cadre dorsal, plaques du masque et deux bottes inclus sans coupe.",
+        "Masque à cinq plaques claires et œil rouge central, armure orange et sangles cohérents avec la référence."
+      ],
+      "limitations": [
+        "Le bas des jambes et les chaussures sont reconstruits : la référence officielle fournie coupe cette zone.",
+        "Marge minimale du sujet à alpha ≥ 128 : droite 10 px, haut 13 px, bas 16 px. Préserver cette marge lors de futures mises en atlas."
+      ],
+      "decision": "retain-with-partial-reference-note",
+      "sha256": "0370c9a24971a763fc87da583c83cc91ecc9f388df493024e49f1612d3c9fcef",
+      "reference_ids": [
+        "red_samurai"
+      ]
+    },
+    {
+      "id": "higgs-ds2-guitar",
+      "file": "modes/echos-de-la-greve/assets/static-universe-20261125/higgs-ds2-guitar.png",
+      "sha256": "303bfe43e2a2db2698a43b8abbd57805d5241aa3f9ed46e2fbef6f4f0b7b27dc",
+      "kind": "prop-cutout",
+      "reference_ids": [
+        "higgs_guitar_duel_detail",
+        "higgs_guitar_shoulder_detail",
+        "higgs_guitar_statue_parts_licensed"
+      ],
+      "observations": [
+        "Corps orange anguleux, commandes noires, câble bouclé, manche allongé et extrémité lumineuse cohérents avec les parties visibles des références.",
+        "Câble et pointe complets ; marges alpha ≥ 128 de 14 px à gauche et en haut, 15 px à droite et 18 px en bas.",
+        "Composée à 100 % sur deux fonds : pas de halo rouge visible autour de l’objet."
+      ],
+      "limitations": [
+        "Les captures officielles montrent des vues partielles. La statue licenciée complète la silhouette ; cette reconstruction isolée ne certifie pas chaque proportion ou détail du modèle du jeu."
+      ],
+      "decision": "retain-with-partial-and-licensed-reference-note"
+    }
+  ],
+  "stages": [
+    {
+      "id": "south-knot-ruins",
+      "source_files": [
+        "modes/echos-de-la-greve/assets/stages/south-knot-ruins-sky.png",
+        "modes/echos-de-la-greve/assets/stages/south-knot-ruins-distant.png",
+        "modes/echos-de-la-greve/assets/stages/south-knot-ruins-midground.png",
+        "modes/echos-de-la-greve/assets/stages/south-knot-ruins-floor.png",
+        "modes/echos-de-la-greve/assets/stages/south-knot-ruins-foreground.png"
+      ],
+      "observations": [
+        "Nuages opaques, pont et ruines détourés, route mouillée continue ; débris du premier plan périphériques.",
+        "Deux cadrages moteur : pas de bande vide ou de raccord perceptible au sol, personnages lisibles."
+      ],
+      "native_engine_captures_reviewed": [
+        "docs/combat/production/20261125-universe/stage-renders/south-knot-ruins-right.webp",
+        "docs/combat/production/20261125-universe/stage-renders/south-knot-ruins-left.webp"
+      ],
+      "blocking_anomalies": []
+    },
+    {
+      "id": "timefall-farm",
+      "source_files": [
+        "modes/echos-de-la-greve/assets/stages/timefall-farm-sky.png",
+        "modes/echos-de-la-greve/assets/stages/timefall-farm-distant.png",
+        "modes/echos-de-la-greve/assets/stages/timefall-farm-midground.png",
+        "modes/echos-de-la-greve/assets/stages/timefall-farm-floor.png",
+        "modes/echos-de-la-greve/assets/stages/timefall-farm-foreground.png"
+      ],
+      "observations": [
+        "Ciel couvert opaque, relief lointain séparé, champs/clôture/robots au plan intermédiaire ; piste de terre dégagée.",
+        "Deux cadrages moteur : raccord clôture/sol continu, végétation du premier plan hors des pieds."
+      ],
+      "native_engine_captures_reviewed": [
+        "docs/combat/production/20261125-universe/stage-renders/timefall-farm-right.webp",
+        "docs/combat/production/20261125-universe/stage-renders/timefall-farm-left.webp"
+      ],
+      "blocking_anomalies": []
+    },
+    {
+      "id": "mountain-knot-approach",
+      "source_files": [
+        "modes/echos-de-la-greve/assets/stages/mountain-knot-approach-sky.png",
+        "modes/echos-de-la-greve/assets/stages/mountain-knot-approach-distant.png",
+        "modes/echos-de-la-greve/assets/stages/mountain-knot-approach-midground.png",
+        "modes/echos-de-la-greve/assets/stages/mountain-knot-approach-floor.png",
+        "modes/echos-de-la-greve/assets/stages/mountain-knot-approach-foreground.png"
+      ],
+      "observations": [
+        "Ciel avec arc inversé, massif lointain et vallée rocheuse séparés ; sol neigeux continu et premier plan très bas.",
+        "Deux cadrages moteur : pas de bande vide, silhouettes contrastées sur la neige et pieds lisibles."
+      ],
+      "native_engine_captures_reviewed": [
+        "docs/combat/production/20261125-universe/stage-renders/mountain-knot-approach-right.webp",
+        "docs/combat/production/20261125-universe/stage-renders/mountain-knot-approach-left.webp"
+      ],
+      "blocking_anomalies": []
+    },
+    {
+      "id": "magellan-ds2",
+      "source_files": [
+        "modes/echos-de-la-greve/assets/stages/magellan-ds2-sky.png",
+        "modes/echos-de-la-greve/assets/stages/magellan-ds2-distant.png",
+        "modes/echos-de-la-greve/assets/stages/magellan-ds2-midground.png",
+        "modes/echos-de-la-greve/assets/stages/magellan-ds2-floor.png",
+        "modes/echos-de-la-greve/assets/stages/magellan-ds2-foreground.png"
+      ],
+      "observations": [
+        "Coucher de soleil opaque, vaisseau uniquement dans le plan lointain, marais au plan intermédiaire, sol humide et débris périphériques.",
+        "Échelle et hauteur du vaisseau adaptées pour préserver sa lévitation visible dans le cadre 1280 × 720 ; adaptation de composition pour le combat 2D.",
+        "Deux captures finales après reprise du seul plan lointain : coque et volumes sphériques entiers, séparation visible au-dessus du marais, une seule occurrence et aucun chevauchement du HUD. Sol continu et pieds lisibles."
+      ],
+      "native_engine_captures_reviewed": [
+        "docs/combat/production/20261125-universe/stage-renders/magellan-ds2-right.webp",
+        "docs/combat/production/20261125-universe/stage-renders/magellan-ds2-left.webp"
+      ],
+      "blocking_anomalies": []
+    }
+  ],
+  "evidence": {
+    "technical": "technical-inspection.json",
+    "contact_sheets": "contact-sheets.json",
+    "written_review": "REVUE_VISUELLE.md"
+  },
+  "limitations": [
+    "Revue statique sur références disponibles, pas une certification exhaustive de fidélité canonique.",
+    "Pas de validation navigateur effectuée dans cette revue.",
+    "Les portraits restent des portraits ; aucune animation ou silhouette entière n’est déduite des bustes."
+  ],
+  "production_manifest_checks": {
+    "all_34_sha256_match": true,
+    "all_reference_ids_exist": true
+  },
+  "resolved_revision": {
+    "file": "modes/echos-de-la-greve/assets/stages/magellan-ds2-distant.png",
+    "replaced_sha256": "65ce262e4cd9feff82c88260483aff887ffd6645478ada68cc9c7d750232e2de",
+    "retained_sha256": "ba85faa99e991e9519d366a2bf6cebc25b196ac71567481176041a06898f9e7c",
+    "other_33_png_unchanged": true,
+    "reason": "L’ancienne composition masquait la coque basse et les sphères, donnant l’impression que le vaisseau était posé.",
+    "result": "Lévitation visible, coque et sphères entières dans les deux captures finales ; aucune anomalie bloquante restante observée."
+  }
+}

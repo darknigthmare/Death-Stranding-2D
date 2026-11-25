@@ -12,7 +12,8 @@ const requested = process.argv.find(a=>a.startsWith('--stages='))?.slice(9).spli
 const groups = ['skyplates','distants','midgrounds','floors','foregrounds'];
 const speeds = [.14,.27,.43,.62,.8];
 // These exterior joins previously exposed a strip of sky above the floor.
-const joinRegressions = new Set(['shore','terminal','battlefield','mountain-pass','mule-camp-dry','port-knot','incinerator']);
+const universeStages = new Set(['south-knot-ruins','timefall-farm','mountain-knot-approach','magellan-ds2']);
+const joinRegressions = new Set(['shore','terminal','battlefield','mountain-pass','mule-camp-dry','port-knot','incinerator',...universeStages]);
 const script = name => fs.readFileSync(path.join(root,name),'utf8');
 const catalog = {window:{},structuredClone};
 vm.runInNewContext(script('content.js'),catalog);
@@ -30,6 +31,7 @@ const scenarioFighters = ['higgs','fragile'];
       assert.ok(assets[group]?.[id],id+' missing '+group);
       return assets[group][id];
     });
+    const stageFiles=new Set([...layers,assets.stages[id]]),unavailable=new Set();
     const files=new Set([...layers,assets.stages[id]]);
     for(const fighter of scenarioFighters) {
       for(const kind of ['fighters','actions','steps','hits','jumps','finishers']) {
@@ -49,14 +51,15 @@ const scenarioFighters = ['higgs','fragile'];
     for(const file of files) decoded.set(file,await loadImage(path.join(root,file)));
     const draws=[];
     const joinCanvas=createCanvas(1280,4),joinContext=joinCanvas.getContext('2d');
-    let joinAlphaMin=255;
+    const frontCanvas=createCanvas(1280,720),frontContext=frontCanvas.getContext('2d');
+    let joinAlphaMin=255,foregroundLaneAlphaMax=0;
     const nativeCanvas=createCanvas(160,90);
     const nativeContext=nativeCanvas.getContext('2d');
     nativeContext.scale(.125,.125);
     const ctx=new Proxy(nativeContext,{
       get(target,key){
         if(key==='drawImage') return (image,...args)=>{
-          if(image.src?.startsWith('assets/stages/')) draws.push({file:image.src,rect:args.length===8?args.slice(4):args,alpha:target.globalAlpha});
+          if(stageFiles.has(image.src)) draws.push({file:image.src,rect:args.length===8?args.slice(4):args,alpha:target.globalAlpha});
           return target.drawImage(image.drawable || image,...args);
         };
         const value=Reflect.get(target,key,target);
@@ -76,7 +79,7 @@ const scenarioFighters = ['higgs','fragile'];
       set src(file){
         this._src=file;this.drawable=decoded.get(file);
         assert.ok(this.drawable,'Missing decoded source '+file);
-        this.complete=true;this.naturalWidth=this.drawable.width;this.naturalHeight=this.drawable.height;
+        this.complete=!unavailable.has(file);this.naturalWidth=this.complete?this.drawable.width:0;this.naturalHeight=this.complete?this.drawable.height:0;
       }
       get src(){return this._src;}
     }};
@@ -116,8 +119,17 @@ const scenarioFighters = ['higgs','fragile'];
         joinAlphaMin=Math.min(joinAlphaMin,minimum);
         assert(minimum>=224,'Background must meet the floor without a sky strip '+label+' (minimum alpha '+minimum+')');
       }
+      if(universeStages.has(id)){
+        frontContext.clearRect(0,0,1280,720);
+        frontContext.drawImage(decoded.get(layers[4]),...frame.rects.get(layers[4]));
+        const pixels=frontContext.getImageData(48,180,1184,414).data;
+        let maximum=0;
+        for(let i=3;i<pixels.length;i+=4)maximum=Math.max(maximum,pixels[i]);
+        foregroundLaneAlphaMax=Math.max(foregroundLaneAlphaMax,maximum);
+        assert(maximum<=24,'Foreground leaves the combat lane and feet clear '+label+' (maximum alpha '+maximum+')');
+      }
     }
-    let cases=0;
+    let cases=0;const captures=[];
     for(const mode of ['local','training']){
       const normal=[];
       for(const reducedEffects of [false,true]){
@@ -141,11 +153,13 @@ const scenarioFighters = ['higgs','fragile'];
             const expected=normal[direction===1?0:1];
             for(let i=0;i<shifts.length;i++)assert(Math.abs(shifts[i]/expected[i]-.2)<.005,'Reduced motion '+label);
           }else normal.push(shifts);
-          if(mode==='local'&&!reducedEffects){
+          {
             nativeCanvas.width=1280;nativeCanvas.height=720;
             const frame=[...pending.values()];pending.clear();
             for(const draw of frame)draw(time);
-            fs.writeFileSync(path.join(output,id+(direction===1?'-right':'-left')+'.webp'),nativeCanvas.toBuffer('image/webp',88));
+            const suffix=(mode==='local'&&!reducedEffects?'':'-'+mode+(reducedEffects?'-reduced':'-normal'))+(direction===1?'-right':'-left');
+            const filename=id+suffix+'.webp';
+            fs.writeFileSync(path.join(output,filename),nativeCanvas.toBuffer('image/webp',88));captures.push(filename);
             nativeCanvas.width=160;nativeCanvas.height=90;nativeContext.scale(.125,.125);
           }
           before=after;cases++;
@@ -153,14 +167,28 @@ const scenarioFighters = ['higgs','fragile'];
         engine.stop();
       }
     }
-    results.push({stage:id,cases,layers,...(joinRegressions.has(id)?{background_join_min_alpha:joinAlphaMin}:{}),passed:true});
+    if(universeStages.has(id)){
+      for(const file of [layers[0],layers[1],layers[3]])unavailable.add(file);
+      engine.start({canvas,p1:scenarioFighters[0],p2:scenarioFighters[1],stage:id,mode:'local',sound:false,seed:8172});
+      const fallback=advance(1),rect=fallback.rects.get(assets.stages[id]),panorama=decoded.get(assets.stages[id]);
+      assert(rect,'Original panorama is drawn while essential layers are unavailable: '+id);
+      assert(Math.abs(rect[2]/rect[3]-panorama.width/panorama.height)<.00001,'Panorama fallback preserves native ratio: '+id);
+      engine.stop();unavailable.clear();
+    }
+    results.push({stage:id,cases,captures,layers,
+      source_images:[...stageFiles].map(file=>({file,width:decoded.get(file).width,height:decoded.get(file).height,
+        sha256:createHash('sha256').update(fs.readFileSync(path.join(root,file))).digest('hex')})),
+      ...(joinRegressions.has(id)?{background_join_min_alpha:joinAlphaMin}:{}),
+      ...(universeStages.has(id)?{foreground_lane_max_alpha:foregroundLaneAlphaMax,original_panorama_fallback:true}:{}),passed:true});
     console.log('OK '+id+' — '+cases+' cases, actual renderer, five layers, floor and parallax.');
   }
   const source_sha256=Object.fromEntries(['content.js','asset-geometry-20261124.js','assets.js','fight.js'].map(file=>[
     file,createHash('sha256').update(script(file)).digest('hex')
   ]));
   const places=new Set(ids.map(id=>catalog.window.StrandContent.arenas[id].variantOf || id));
-  const report={date:'2026-11-24',renderer:'@napi-rs/canvas; actual fight.js',browser_verified:false,
+  const report={date:new Date().toISOString(),renderer:'@napi-rs/canvas; actual fight.js',browser_verified:false,
+    catalogue_locations:new Set(Object.entries(catalog.window.StrandContent.arenas).map(([id,a])=>a.variantOf||id)).size,
+    catalogue_configurations:Object.keys(catalog.window.StrandContent.stages).length,
     locations:places.size,stages:results.length,cases:results.reduce((sum,r)=>sum+r.cases,0),source_sha256,results};
   fs.writeFileSync(path.join(output,'validation.json'),JSON.stringify(report,null,2)+'\n');
   console.log('PASS '+report.stages+' stages / '+report.cases+' rendering cases. Browser interface not exercised.');

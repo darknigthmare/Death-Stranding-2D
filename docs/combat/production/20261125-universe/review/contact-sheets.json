@@ -1,0 +1,247 @@
+{
+  "method": "Native @napi-rs/canvas compositions; sources read only.",
+  "outputs": [
+    "docs/combat/production/20261125-universe/review/01-personnages-objets-dark.webp",
+    "docs/combat/production/20261125-universe/review/01-personnages-objets-neutral.webp",
+    "docs/combat/production/20261125-universe/review/02-panoramas-rendus-dark.webp",
+    "docs/combat/production/20261125-universe/review/03-plans-south-knot-farm-dark.webp",
+    "docs/combat/production/20261125-universe/review/03-plans-south-knot-farm-neutral.webp",
+    "docs/combat/production/20261125-universe/review/04-plans-mountain-magellan-dark.webp",
+    "docs/combat/production/20261125-universe/review/04-plans-mountain-magellan-neutral.webp",
+    "docs/combat/production/20261125-universe/review/detail-guitare-dark.webp",
+    "docs/combat/production/20261125-universe/review/detail-guitare-neutral.webp",
+    "docs/combat/production/20261125-universe/review/detail-sam-dark.webp",
+    "docs/combat/production/20261125-universe/review/detail-sam-neutral.webp"
+  ],
+  "pending": [],
+  "sourceFiles": [
+    "modes/echos-de-la-greve/assets/static-universe-20261125/sam-ds2-drawbridge-portrait.png",
+    "modes/echos-de-la-greve/assets/static-universe-20261125/fragile-ds2-portrait.png",
+    "modes/echos-de-la-greve/assets/static-universe-20261125/higgs-ds2-portrait.png",
+    "modes/echos-de-la-greve/assets/static-universe-20261125/tomorrow-ds2-portrait.png",
+    "modes/echos-de-la-greve/assets/static-universe-20261125/neil-ds2-portrait.png",
+    "modes/echos-de-la-greve/assets/static-universe-20261125/rainy-ds2-portrait.png",
+    "modes/echos-de-la-greve/assets/static-universe-20261125/tarman-ds2-portrait.png",
+    "modes/echos-de-la-greve/assets/static-universe-20261125/dollman-ds2-body.png",
+    "modes/echos-de-la-greve/assets/static-universe-20261125/red-samurai-ds2-body.png",
+    "modes/echos-de-la-greve/assets/static-universe-20261125/chiral-cat-ds2-body.png",
+    "modes/echos-de-la-greve/assets/static-universe-20261125/higgs-ds2-guitar.png",
+    "modes/echos-de-la-greve/assets/static-universe-20261125/magellan-ds2-panorama.png",
+    "modes/echos-de-la-greve/assets/static-universe-20261125/plate-gate-ds2-panorama.png",
+    "modes/echos-de-la-greve/assets/static-universe-20261125/sandstorm-ds2-panorama.png",
+    "modes/echos-de-la-greve/assets/stages/south-knot-ruins-sky.png",
+    "modes/echos-de-la-greve/assets/stages/south-knot-ruins-distant.png",
+    "modes/echos-de-la-greve/assets/stages/south-knot-ruins-midground.png",
+    "modes/echos-de-la-greve/assets/stages/south-knot-ruins-floor.png",
+    "modes/echos-de-la-greve/assets/stages/south-knot-ruins-foreground.png",
+    "modes/echos-de-la-greve/assets/stages/timefall-farm-sky.png",
+    "modes/echos-de-la-greve/assets/stages/timefall-farm-distant.png",
+    "modes/echos-de-la-greve/assets/stages/timefall-farm-midground.png",
+    "modes/echos-de-la-greve/assets/stages/timefall-farm-floor.png",
+    "modes/echos-de-la-greve/assets/stages/timefall-farm-foreground.png",
+    "modes/echos-de-la-greve/assets/stages/mountain-knot-approach-sky.png",
+    "modes/echos-de-la-greve/assets/stages/mountain-knot-approach-distant.png",
+    "modes/echos-de-la-greve/assets/stages/mountain-knot-approach-midground.png",
+    "modes/echos-de-la-greve/assets/stages/mountain-knot-approach-floor.png",
+    "modes/echos-de-la-greve/assets/stages/mountain-knot-approach-foreground.png",
+    "modes/echos-de-la-greve/assets/stages/magellan-ds2-sky.png",
+    "modes/echos-de-la-greve/assets/stages/magellan-ds2-distant.png",
+    "modes/echos-de-la-greve/assets/stages/magellan-ds2-midground.png",
+    "modes/echos-de-la-greve/assets/stages/magellan-ds2-floor.png",
+    "modes/echos-de-la-greve/assets/stages/magellan-ds2-foreground.png"
+  ],
+  "pages": [
+    {
+      "id": "01-personnages-objets",
+      "title": "11 sujets isolés · PNG originaux composés",
+      "entries": [
+        {
+          "file": "modes/echos-de-la-greve/assets/static-universe-20261125/sam-ds2-drawbridge-portrait.png",
+          "label": "Sam · tenue DRAWBRIDGE"
+        },
+        {
+          "file": "modes/echos-de-la-greve/assets/static-universe-20261125/fragile-ds2-portrait.png",
+          "label": "Fragile · tenue DRAWBRIDGE"
+        },
+        {
+          "file": "modes/echos-de-la-greve/assets/static-universe-20261125/higgs-ds2-portrait.png",
+          "label": "Higgs · armure DS2"
+        },
+        {
+          "file": "modes/echos-de-la-greve/assets/static-universe-20261125/tomorrow-ds2-portrait.png",
+          "label": "Tomorrow · haut sombre"
+        },
+        {
+          "file": "modes/echos-de-la-greve/assets/static-universe-20261125/neil-ds2-portrait.png",
+          "label": "Neil · portrait"
+        },
+        {
+          "file": "modes/echos-de-la-greve/assets/static-universe-20261125/rainy-ds2-portrait.png",
+          "label": "Rainy · pot de fleurs"
+        },
+        {
+          "file": "modes/echos-de-la-greve/assets/static-universe-20261125/tarman-ds2-portrait.png",
+          "label": "Tarman · sans le chat"
+        },
+        {
+          "file": "modes/echos-de-la-greve/assets/static-universe-20261125/dollman-ds2-body.png",
+          "label": "Dollman · corps entier"
+        },
+        {
+          "file": "modes/echos-de-la-greve/assets/static-universe-20261125/red-samurai-ds2-body.png",
+          "label": "Samouraï rouge · corps entier"
+        },
+        {
+          "file": "modes/echos-de-la-greve/assets/static-universe-20261125/chiral-cat-ds2-body.png",
+          "label": "Chat chiral · sujet séparé"
+        },
+        {
+          "file": "modes/echos-de-la-greve/assets/static-universe-20261125/higgs-ds2-guitar.png",
+          "label": "Higgs · guitare isolée"
+        }
+      ]
+    },
+    {
+      "id": "02-panoramas-rendus",
+      "title": "3 panoramas + 8 captures du moteur Canvas",
+      "entries": [
+        {
+          "file": "modes/echos-de-la-greve/assets/static-universe-20261125/magellan-ds2-panorama.png",
+          "label": "Magellan · panorama"
+        },
+        {
+          "file": "modes/echos-de-la-greve/assets/static-universe-20261125/plate-gate-ds2-panorama.png",
+          "label": "Plate Gate · panorama"
+        },
+        {
+          "file": "modes/echos-de-la-greve/assets/static-universe-20261125/sandstorm-ds2-panorama.png",
+          "label": "Tempête de sable · panorama"
+        },
+        {
+          "file": "docs/combat/production/20261125-universe/stage-renders/south-knot-ruins-right.webp",
+          "label": "South Knot · moteur / droite"
+        },
+        {
+          "file": "docs/combat/production/20261125-universe/stage-renders/south-knot-ruins-left.webp",
+          "label": "South Knot · moteur / gauche"
+        },
+        {
+          "file": "docs/combat/production/20261125-universe/stage-renders/timefall-farm-right.webp",
+          "label": "Ferme de précipitations · moteur / droite"
+        },
+        {
+          "file": "docs/combat/production/20261125-universe/stage-renders/timefall-farm-left.webp",
+          "label": "Ferme de précipitations · moteur / gauche"
+        },
+        {
+          "file": "docs/combat/production/20261125-universe/stage-renders/mountain-knot-approach-right.webp",
+          "label": "Approche de Mountain Knot · moteur / droite"
+        },
+        {
+          "file": "docs/combat/production/20261125-universe/stage-renders/mountain-knot-approach-left.webp",
+          "label": "Approche de Mountain Knot · moteur / gauche"
+        },
+        {
+          "file": "docs/combat/production/20261125-universe/stage-renders/magellan-ds2-right.webp",
+          "label": "Magellan · moteur / droite"
+        },
+        {
+          "file": "docs/combat/production/20261125-universe/stage-renders/magellan-ds2-left.webp",
+          "label": "Magellan · moteur / gauche"
+        }
+      ]
+    },
+    {
+      "id": "03-plans-south-knot-farm",
+      "title": "10 plans · South Knot et ferme de précipitations",
+      "entries": [
+        {
+          "file": "modes/echos-de-la-greve/assets/stages/south-knot-ruins-sky.png",
+          "label": "South Knot · ciel"
+        },
+        {
+          "file": "modes/echos-de-la-greve/assets/stages/south-knot-ruins-distant.png",
+          "label": "South Knot · lointain"
+        },
+        {
+          "file": "modes/echos-de-la-greve/assets/stages/south-knot-ruins-midground.png",
+          "label": "South Knot · plan intermédiaire"
+        },
+        {
+          "file": "modes/echos-de-la-greve/assets/stages/south-knot-ruins-floor.png",
+          "label": "South Knot · sol"
+        },
+        {
+          "file": "modes/echos-de-la-greve/assets/stages/south-knot-ruins-foreground.png",
+          "label": "South Knot · premier plan"
+        },
+        {
+          "file": "modes/echos-de-la-greve/assets/stages/timefall-farm-sky.png",
+          "label": "Ferme de précipitations · ciel"
+        },
+        {
+          "file": "modes/echos-de-la-greve/assets/stages/timefall-farm-distant.png",
+          "label": "Ferme de précipitations · lointain"
+        },
+        {
+          "file": "modes/echos-de-la-greve/assets/stages/timefall-farm-midground.png",
+          "label": "Ferme de précipitations · plan intermédiaire"
+        },
+        {
+          "file": "modes/echos-de-la-greve/assets/stages/timefall-farm-floor.png",
+          "label": "Ferme de précipitations · sol"
+        },
+        {
+          "file": "modes/echos-de-la-greve/assets/stages/timefall-farm-foreground.png",
+          "label": "Ferme de précipitations · premier plan"
+        }
+      ]
+    },
+    {
+      "id": "04-plans-mountain-magellan",
+      "title": "10 plans · Mountain Knot et Magellan",
+      "entries": [
+        {
+          "file": "modes/echos-de-la-greve/assets/stages/mountain-knot-approach-sky.png",
+          "label": "Approche de Mountain Knot · ciel"
+        },
+        {
+          "file": "modes/echos-de-la-greve/assets/stages/mountain-knot-approach-distant.png",
+          "label": "Approche de Mountain Knot · lointain"
+        },
+        {
+          "file": "modes/echos-de-la-greve/assets/stages/mountain-knot-approach-midground.png",
+          "label": "Approche de Mountain Knot · plan intermédiaire"
+        },
+        {
+          "file": "modes/echos-de-la-greve/assets/stages/mountain-knot-approach-floor.png",
+          "label": "Approche de Mountain Knot · sol"
+        },
+        {
+          "file": "modes/echos-de-la-greve/assets/stages/mountain-knot-approach-foreground.png",
+          "label": "Approche de Mountain Knot · premier plan"
+        },
+        {
+          "file": "modes/echos-de-la-greve/assets/stages/magellan-ds2-sky.png",
+          "label": "Magellan · ciel"
+        },
+        {
+          "file": "modes/echos-de-la-greve/assets/stages/magellan-ds2-distant.png",
+          "label": "Magellan · lointain"
+        },
+        {
+          "file": "modes/echos-de-la-greve/assets/stages/magellan-ds2-midground.png",
+          "label": "Magellan · plan intermédiaire"
+        },
+        {
+          "file": "modes/echos-de-la-greve/assets/stages/magellan-ds2-floor.png",
+          "label": "Magellan · sol"
+        },
+        {
+          "file": "modes/echos-de-la-greve/assets/stages/magellan-ds2-foreground.png",
+          "label": "Magellan · premier plan"
+        }
+      ]
+    }
+  ]
+}

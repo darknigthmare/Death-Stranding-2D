@@ -32,7 +32,7 @@ function assetFiles(baseRoot = root) {
       else if (entry.isFile() && /^[\w-]+\.(?:webp|png)$/.test(entry.name)) files.push(file);
     }
   }
-  for (const folder of ['fighters','finishers','props','projectiles','stages','story','bosses']) visit('assets/' + folder);
+  for (const folder of ['fighters','finishers','props','projectiles','stages','story','bosses','static-20261125','static-universe-20261125']) visit('assets/' + folder);
   return files.sort();
 }
 function gameVersion(baseRoot = root, assets = assetFiles(baseRoot)) {
@@ -132,6 +132,7 @@ function roomService(version, clock = () => performance.now()) {
 }
 const statics = new Set(['index.html','style.css','app.js','fight.js','content.js','asset-geometry-20261124.js','assets.js','tournament.js','netplay.html','netplay.js','netplay.css',
   'boss.js','boss-assets.js','boss-geometry-20261124.js','archives.html',
+  'static-assets.html','static-assets.css','static-assets.js','static-assets-data.js',
   'duel-originel/index.html','duel-originel/style.css','duel-originel/interface.js','duel-originel/moteur.js','duel-originel/scene.js']);
 const types = {'.html':'text/html; charset=utf-8','.css':'text/css','.js':'text/javascript','.webp':'image/webp','.png':'image/png'};
 function openRelay(clock) {
