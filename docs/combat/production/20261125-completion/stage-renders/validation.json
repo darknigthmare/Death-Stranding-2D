@@ -1,0 +1,210 @@
+{
+  "date": "2026-11-25T14:29:38.924Z",
+  "renderer": "@napi-rs/canvas; actual fight.js",
+  "browser_verified": false,
+  "catalogue_locations": 19,
+  "catalogue_configurations": 20,
+  "locations": 3,
+  "stages": 3,
+  "cases": 24,
+  "source_sha256": {
+    "content.js": "98498d43b085a15d34a6fb464d528d6d5554cf635401b2edcd7a83d0155b4949",
+    "asset-geometry-20261124.js": "61f830dc5036774529b7ecaf51f4c80386ef7f94447c55e044584e850e081934",
+    "assets.js": "ce3f436a4cefe4871e68bf13d25e3b90f3c07bb0b6917b71ddc3096dff063d6b",
+    "fight.js": "e8046d571919f68f625b9886f5521ebed32bdee44a23282700c6b51fcce439d4"
+  },
+  "results": [
+    {
+      "stage": "plate-gate-ds2",
+      "cases": 8,
+      "captures": [
+        "plate-gate-ds2-right.webp",
+        "plate-gate-ds2-left.webp",
+        "plate-gate-ds2-local-reduced-right.webp",
+        "plate-gate-ds2-local-reduced-left.webp",
+        "plate-gate-ds2-training-normal-right.webp",
+        "plate-gate-ds2-training-normal-left.webp",
+        "plate-gate-ds2-training-reduced-right.webp",
+        "plate-gate-ds2-training-reduced-left.webp"
+      ],
+      "layers": [
+        "assets/stages/plate-gate-ds2-sky.png",
+        "assets/stages/plate-gate-ds2-distant.png",
+        "assets/stages/plate-gate-ds2-midground.png",
+        "assets/stages/plate-gate-ds2-floor.png",
+        "assets/stages/plate-gate-ds2-foreground.png"
+      ],
+      "composite_min_alpha": 255,
+      "source_images": [
+        {
+          "file": "assets/stages/plate-gate-ds2-sky.png",
+          "width": 1672,
+          "height": 941,
+          "sha256": "51532d4c61d1858ce1c7ec1d180a47aed4598bd8d190378b72badae5aded5919"
+        },
+        {
+          "file": "assets/stages/plate-gate-ds2-distant.png",
+          "width": 1672,
+          "height": 941,
+          "sha256": "64caa390849eb882f70c150674bfa5ad341805f71887cbf62564e98059d5c0ae"
+        },
+        {
+          "file": "assets/stages/plate-gate-ds2-midground.png",
+          "width": 1672,
+          "height": 941,
+          "sha256": "bbe9206a54a5ab8260808d92025cd2b0931fb26c9c8722576d053d0b9c1c876c"
+        },
+        {
+          "file": "assets/stages/plate-gate-ds2-floor.png",
+          "width": 1672,
+          "height": 941,
+          "sha256": "fb738bbc9d9112f933a05811332c468cdb191678ff4574a028cac8fff57bcaa7"
+        },
+        {
+          "file": "assets/stages/plate-gate-ds2-foreground.png",
+          "width": 1672,
+          "height": 941,
+          "sha256": "d3b8f21536ddc2b254522e7f20974482ec7e1f8c7b26fb88f633db3265d6df18"
+        },
+        {
+          "file": "assets/static-universe-20261125/plate-gate-ds2-panorama.png",
+          "width": 1672,
+          "height": 941,
+          "sha256": "18153bcd7786cd033038d971bb975b40ca27137133d4eee92268151feedf3783"
+        }
+      ],
+      "background_join_min_alpha": 255,
+      "foreground_lane_max_alpha": 0,
+      "original_panorama_fallback": true,
+      "passed": true
+    },
+    {
+      "stage": "sandstorm-ds2",
+      "cases": 8,
+      "captures": [
+        "sandstorm-ds2-right.webp",
+        "sandstorm-ds2-left.webp",
+        "sandstorm-ds2-local-reduced-right.webp",
+        "sandstorm-ds2-local-reduced-left.webp",
+        "sandstorm-ds2-training-normal-right.webp",
+        "sandstorm-ds2-training-normal-left.webp",
+        "sandstorm-ds2-training-reduced-right.webp",
+        "sandstorm-ds2-training-reduced-left.webp"
+      ],
+      "layers": [
+        "assets/stages/sandstorm-ds2-sky.png",
+        "assets/stages/sandstorm-ds2-distant.png",
+        "assets/stages/sandstorm-ds2-midground.png",
+        "assets/stages/sandstorm-ds2-floor.png",
+        "assets/stages/sandstorm-ds2-foreground.png"
+      ],
+      "composite_min_alpha": 255,
+      "source_images": [
+        {
+          "file": "assets/stages/sandstorm-ds2-sky.png",
+          "width": 1672,
+          "height": 941,
+          "sha256": "8a144e3ff496cd741bf446a24e5669d2df6cb9b75622e444f413ad251d4e6d24"
+        },
+        {
+          "file": "assets/stages/sandstorm-ds2-distant.png",
+          "width": 1672,
+          "height": 941,
+          "sha256": "fb8925bad63c0b302be014ed26db1047e5c3015fe511258f2dc7eff88a688658"
+        },
+        {
+          "file": "assets/stages/sandstorm-ds2-midground.png",
+          "width": 1672,
+          "height": 941,
+          "sha256": "a8e15d3bb5529353ac52a3153d344166854bd5bc576758196e2c1a7fb12dc963"
+        },
+        {
+          "file": "assets/stages/sandstorm-ds2-floor.png",
+          "width": 1672,
+          "height": 941,
+          "sha256": "b9645bf76b7cd16eddd1b9d880cf63edf8619c7c4474e34e270fe3d3feeea593"
+        },
+        {
+          "file": "assets/stages/sandstorm-ds2-foreground.png",
+          "width": 1672,
+          "height": 941,
+          "sha256": "b3d841e80b71f32df9fae37a5c78bd3452f4c4cf70068f86fbe67d5a63f938a2"
+        },
+        {
+          "file": "assets/static-universe-20261125/sandstorm-ds2-panorama.png",
+          "width": 1672,
+          "height": 941,
+          "sha256": "101c42163fb410de3c33534b4b6b90a2ff21b9443659146f630e2ea7f4346ffa"
+        }
+      ],
+      "background_join_min_alpha": 255,
+      "foreground_lane_max_alpha": 1,
+      "original_panorama_fallback": true,
+      "passed": true
+    },
+    {
+      "stage": "dunes-ds2",
+      "cases": 8,
+      "captures": [
+        "dunes-ds2-right.webp",
+        "dunes-ds2-left.webp",
+        "dunes-ds2-local-reduced-right.webp",
+        "dunes-ds2-local-reduced-left.webp",
+        "dunes-ds2-training-normal-right.webp",
+        "dunes-ds2-training-normal-left.webp",
+        "dunes-ds2-training-reduced-right.webp",
+        "dunes-ds2-training-reduced-left.webp"
+      ],
+      "layers": [
+        "assets/stages/dunes-ds2-sky.png",
+        "assets/stages/dunes-ds2-distant.png",
+        "assets/stages/dunes-ds2-midground.png",
+        "assets/stages/dunes-ds2-floor.png",
+        "assets/stages/dunes-ds2-foreground.png"
+      ],
+      "composite_min_alpha": 255,
+      "source_images": [
+        {
+          "file": "assets/stages/dunes-ds2-sky.png",
+          "width": 1672,
+          "height": 941,
+          "sha256": "5d2c7cd01b65e04a91ca2cc863fa438b9581eceffd46121bfa894b9951b6f7b2"
+        },
+        {
+          "file": "assets/stages/dunes-ds2-distant.png",
+          "width": 1672,
+          "height": 941,
+          "sha256": "d2d61c29698709434315cf0f2b9168cfd45d5ca717bc548ba1c6f92bbcd80bb6"
+        },
+        {
+          "file": "assets/stages/dunes-ds2-midground.png",
+          "width": 1672,
+          "height": 941,
+          "sha256": "74e633a5a703da672a4a82763d7ae293394a5d3944e6393b0eb62dc25ab82092"
+        },
+        {
+          "file": "assets/stages/dunes-ds2-floor.png",
+          "width": 1672,
+          "height": 941,
+          "sha256": "543aec7559d771024f6aeb47e1ba7619ae349e9448ccb7ca222287a33fee58e9"
+        },
+        {
+          "file": "assets/stages/dunes-ds2-foreground.png",
+          "width": 1672,
+          "height": 941,
+          "sha256": "2d8ecdcb5cb14e9fd022df699750e325220c42894bee55e4b63cbe446dd33e92"
+        },
+        {
+          "file": "assets/static-completion-20261125/dunes-ds2-panorama.png",
+          "width": 1672,
+          "height": 941,
+          "sha256": "2104de5e44b9f51ec6abedf529425f59a84bdd2ad29337d36df6f49782bbf641"
+        }
+      ],
+      "background_join_min_alpha": 255,
+      "foreground_lane_max_alpha": 1,
+      "original_panorama_fallback": true,
+      "passed": true
+    }
+  ]
+}

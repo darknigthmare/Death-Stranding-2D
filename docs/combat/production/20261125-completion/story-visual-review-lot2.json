@@ -1,0 +1,228 @@
+{
+  "schema": 1,
+  "reviewed_at": "2026-11-25T14:52:41.204104+00:00",
+  "reviewer": "combat_state — revue indépendante de la génération",
+  "scope": "Dix PNG du lot 2 : Cliff ×3, MULE ×3, Die-Hardman ×3 et Fragile-intro-second.",
+  "method": "Briefs approuvés comparés à une inspection visuelle directe des dix PNG natifs via view_image. Priorité aux mains et accessoires de cliff-intro-insert, mule-intro-second et diehardman-ending-final. Aucun nouveau binaire, recadrage, retouche ou rééchantillonnage.",
+  "brief_source": {
+    "file": "docs/combat/production/20261125-completion/story-completion-briefs.json",
+    "sha256": "7f4aca2fdc837cfd426ce2ca07bb88391aef065c174bef51a7d9b3c1c1dcd82d"
+  },
+  "summary": {
+    "reviewed": 10,
+    "central_narrative_accepted": 10,
+    "clarification_requested": 0,
+    "certain_blocking_narrative_contradictions": 0,
+    "new_binaries": 0
+  },
+  "items": [
+    {
+      "id": "cliff-intro-insert",
+      "priority_review": true,
+      "observed": [
+        "Une main nue en manche militaire pousse le levier du récepteur vers le bas ; le pouce et le contact avec la commande sont lisibles.",
+        "La grille, le cadran sombre et le cordon appartiennent à un poste militaire usé, devant des sacs de sable.",
+        "Aucune note écrite, enfant ou onde magique ne matérialise la berceuse."
+      ],
+      "nonblocking_notes": [
+        "Les graduations ordinaires du cadran sont visibles ; elles ne constituent pas une information narrative ajoutée. Une image fixe ne prouve pas l’instant d’extinction ni la persistance d’une note sonore."
+      ],
+      "hands_and_props": "Aucune anomalie concrète de main ou de contact qui empêche de lire la coupure du poste.",
+      "file": "modes/echos-de-la-greve/assets/story-completion-20261125/cliff-intro-insert.png",
+      "width": 1672,
+      "height": 941,
+      "bytes": 2403463,
+      "sha256": "0dc7073eaa9ea5ba4b1c5e2ee76c8c6825e9d687e21a64443bb6f1b6126fbfeb",
+      "brief_id": "cliff-intro-insert",
+      "caption_fr": "Le bouton",
+      "narrative_status": "accepted"
+    },
+    {
+      "id": "mule-intro-second",
+      "priority_review": true,
+      "observed": [
+        "L’opérateur anonyme porte une capuche jaune et un masque ; son identité de MULE est conservée.",
+        "Ses deux mains soutiennent les côtés de la caisse fermée, légèrement décollée du plateau.",
+        "Sa tête s’incline contre le couvercle dans une posture d’écoute ; aucune autre personne n’est représentée dans la scène."
+      ],
+      "nonblocking_notes": [
+        "L’oreille reste cachée par la capuche et le masque. Le contact latéral de la tête rend l’écoute compréhensible ; l’absence d’oreille nue ne justifie pas une reprise. L’image fermée ne démontre pas seule le vide de la caisse, montré par l’insert suivant."
+      ],
+      "hands_and_props": "Deux prises distinctes et cohérentes sur la caisse ; aucun défaut de main/accessoire qui inverse le geste.",
+      "file": "modes/echos-de-la-greve/assets/story-completion-20261125/mule-intro-second.png",
+      "width": 1672,
+      "height": 941,
+      "bytes": 2430144,
+      "sha256": "b23536dfd55479bdbf6e216271804a96870dd47482069dbc798683707824f5a0",
+      "brief_id": "mule-intro-second",
+      "caption_fr": "À travers le couvercle",
+      "narrative_status": "accepted"
+    },
+    {
+      "id": "diehardman-ending-final",
+      "priority_review": true,
+      "observed": [
+        "Deux crochets sont nettement visibles à des hauteurs différentes : le supérieur est vide et une seule clé est suspendue au crochet inférieur.",
+        "Une main nue, au bout d’une manche de costume sombre et d’une manchette claire, accompagne la clé.",
+        "La porte ouverte donne sur un couloir vide ; aucun nouvel arrivant, aucune clé posée sur le comptoir."
+      ],
+      "nonblocking_notes": [
+        "La position finale au crochet inférieur est directement lisible ; le mouvement préalable de descente reste naturellement hors de l’image fixe."
+      ],
+      "hands_and_props": "Main nue et contact avec la clé lisibles ; le compte et la hauteur des accroches répondent précisément au brief.",
+      "file": "modes/echos-de-la-greve/assets/story-completion-20261125/diehardman-ending-final.png",
+      "width": 1672,
+      "height": 941,
+      "bytes": 2058210,
+      "sha256": "b11ce665d5c46acc9054fc4fe7de401ce29a078f5dc2e3ca2f8299a559993ff9",
+      "brief_id": "diehardman-ending-final",
+      "caption_fr": "La clé descendue",
+      "narrative_status": "accepted"
+    },
+    {
+      "id": "fragile-intro-second",
+      "priority_review": false,
+      "observed": [
+        "Fragile porte la coupe courte et la combinaison noire à col haut avec pointes aux épaules attendues par le brief.",
+        "Elle présente exactement deux feuilles distinctes côte à côte, chacune avec une tache au bord gauche.",
+        "Les papiers paraissent secs ; la pluie et le quai couvert sont visibles autour, sans troisième feuille."
+      ],
+      "nonblocking_notes": [
+        "Les feuilles sont maintenues dans les mains plutôt que déposées à plat : leur rapprochement et leur comparaison restent l’action centrale lisible."
+      ],
+      "file": "modes/echos-de-la-greve/assets/story-completion-20261125/fragile-intro-second.png",
+      "width": 1672,
+      "height": 941,
+      "bytes": 2190829,
+      "sha256": "45132d3fa92e494402c692810e93b38a91fd6b73ba662a3641404018366174fd",
+      "brief_id": "fragile-intro-second",
+      "caption_fr": "Côte à côte",
+      "narrative_status": "accepted"
+    },
+    {
+      "id": "cliff-intro-second",
+      "priority_review": false,
+      "observed": [
+        "Cliff se tient près du poste dans la tranchée humide et agit sur sa commande.",
+        "Les soldats secondaires sont disposés dans la profondeur, les têtes tournées vers la zone de la radio.",
+        "Aucune personne ne personnifie la voix ; la scène reste militaire."
+      ],
+      "nonblocking_notes": [
+        "Le plan montre la commande rotative, tandis que l’insert montre le levier de coupure. Ces deux gestes successifs sont compatibles ; leur rythme et la simultanéité des mouvements de tête ne sont pas vérifiables sur des images fixes."
+      ],
+      "file": "modes/echos-de-la-greve/assets/story-completion-20261125/cliff-intro-second.png",
+      "width": 1672,
+      "height": 941,
+      "bytes": 2591968,
+      "sha256": "37685b30fdf67cab40521f4d7e604d887119e6cc8b074b0a91ad2ee26affed61",
+      "brief_id": "cliff-intro-second",
+      "caption_fr": "Le récepteur éteint",
+      "narrative_status": "accepted"
+    },
+    {
+      "id": "cliff-ending-final",
+      "priority_review": false,
+      "observed": [
+        "Cliff est assis de profil dans l’abri, devant une cloison en bois opaque.",
+        "Le poste ne présente pas de témoin lumineux allumé ; les membres de la section restent à l’entrée.",
+        "La personne qui fredonne demeure invisible ; aucune réunion familiale n’est ajoutée."
+      ],
+      "nonblocking_notes": [
+        "L’immobilité des soldats et l’attitude d’écoute se lisent dans la pose ; le signe de rester, le silence de la radio et la quatrième note ne peuvent pas être prouvés par l’image seule."
+      ],
+      "file": "modes/echos-de-la-greve/assets/story-completion-20261125/cliff-ending-final.png",
+      "width": 1672,
+      "height": 941,
+      "bytes": 2372693,
+      "sha256": "03aa966c419fff4a06dc5eac23b4da1c5eb31e861f03239c1f0d195a6f1befd4",
+      "brief_id": "cliff-ending-final",
+      "caption_fr": "Entendre la suite",
+      "narrative_status": "accepted"
+    },
+    {
+      "id": "mule-intro-insert",
+      "priority_review": false,
+      "observed": [
+        "La caisse jaune/grise est ouverte et son fond est entièrement vide.",
+        "Couvercle, charnières et gant posé au bord sont visibles.",
+        "Aucun visage, nom ou éclairage surnaturel n’apparaît à l’intérieur."
+      ],
+      "nonblocking_notes": [],
+      "file": "modes/echos-de-la-greve/assets/story-completion-20261125/mule-intro-insert.png",
+      "width": 1672,
+      "height": 941,
+      "bytes": 2398422,
+      "sha256": "6b37a82cfc012fe1eb1404c34d21b49626beb386a6c8a052cdb8e2ea36787c7d",
+      "brief_id": "mule-intro-insert",
+      "caption_fr": "Une caisse vide",
+      "narrative_status": "accepted"
+    },
+    {
+      "id": "mule-ending-final",
+      "priority_review": false,
+      "observed": [
+        "Une main gantée tient le stylo au bas du registre ; l’autre stabilise le document.",
+        "Une étiquette détachée est posée au premier plan, tandis que la manche montre un emplacement sans étiquette.",
+        "La clôture se situe derrière l’opérateur et un chemin ouvert prolonge la scène, ce qui soutient la lecture d’un départ hors du camp."
+      ],
+      "nonblocking_notes": [
+        "Les lignes et signatures sont stylisées : aucun nouveau nom n’a pu être attribué avec certitude. Une zone de tableau reste largement vide, mais les intitulés ne permettent pas d’identifier sûrement la case propriétaire ; sa vacuité précise n’est donc pas certifiée. Ce manque de lecture n’est pas une preuve de contradiction."
+      ],
+      "file": "modes/echos-de-la-greve/assets/story-completion-20261125/mule-ending-final.png",
+      "width": 1672,
+      "height": 941,
+      "bytes": 2741193,
+      "sha256": "b3829a6b3dd5c89af399ede4dda7eea68de8a815fb876b915b1f7e85b9e9562c",
+      "brief_id": "mule-ending-final",
+      "caption_fr": "Le départ signé",
+      "narrative_status": "accepted"
+    },
+    {
+      "id": "diehardman-intro-second",
+      "priority_review": false,
+      "observed": [
+        "Die-Hardman porte le costume sombre et le masque noir du brief ; il tient le registre ouvert sous une lampe de bureau.",
+        "Son geste s’arrête près de la signature au bas de la page.",
+        "La porte métallique est fermée en arrière-plan ; aucune nouvelle déclaration ou personne n’est ajoutée."
+      ],
+      "nonblocking_notes": [
+        "La signature et les lignes manuscrites suggèrent un document administratif sans permettre d’attribuer un nom, une date ou une raison de fermeture supplémentaires. La reconnaissance intérieure reste portée par le texte de scène."
+      ],
+      "file": "modes/echos-de-la-greve/assets/story-completion-20261125/diehardman-intro-second.png",
+      "width": 1672,
+      "height": 941,
+      "bytes": 2150983,
+      "sha256": "cfc2a65f562d3a8452f1d605b7ed0f91f0f682a815bbd2cba490dae13c8e5e60",
+      "brief_id": "diehardman-intro-second",
+      "caption_fr": "Reconnaître l’ordre",
+      "narrative_status": "accepted"
+    },
+    {
+      "id": "diehardman-intro-insert",
+      "priority_review": false,
+      "observed": [
+        "Une main gantée en manche sombre retient la page du registre.",
+        "Un grand paraphe abstrait est visible en bas de la page, dans un cadrage serré sur le papier usé.",
+        "Aucune date ni raison de fermeture supplémentaire n’est lisible avec certitude."
+      ],
+      "nonblocking_notes": [
+        "Le paraphe n’est pas transcrit comme un nom : la revue ne transforme pas des formes cursives ambiguës en texte établi."
+      ],
+      "file": "modes/echos-de-la-greve/assets/story-completion-20261125/diehardman-intro-insert.png",
+      "width": 1672,
+      "height": 941,
+      "bytes": 2421585,
+      "sha256": "6141f83ade43a15ee5e31c7212a3fa683b9ad218e9ba2cdf2eb92d94dabeaede",
+      "brief_id": "diehardman-intro-insert",
+      "caption_fr": "La ligne de fermeture",
+      "narrative_status": "accepted"
+    }
+  ],
+  "limits": [
+    "La revue vérifie la cohérence centrale lisible, sans prétendre valider une anatomie parfaite à tous les grossissements.",
+    "Les sons, les pensées, l’avant/après et les mouvements synchronisés ne se déduisent pas avec certitude d’une image fixe.",
+    "Les signatures et intitulés ambigus ne sont pas transcrits en noms ou informations nouvelles.",
+    "La case propriétaire de mule-ending-final ne peut pas être identifiée avec certitude ; ce détail reste explicitement non vérifié, sans contradiction constatée.",
+    "La retouche de poignée Fragile relève du lot 1 et n’est pas clôturée par ce rapport. Les six scènes Mama/Heartman encore en production sont hors de ce périmètre."
+  ]
+}

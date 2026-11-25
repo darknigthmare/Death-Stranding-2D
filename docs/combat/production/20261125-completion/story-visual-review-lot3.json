@@ -1,0 +1,372 @@
+{
+  "schema": 1,
+  "reviewed_at": "2026-11-25T14:59:31.850459+00:00",
+  "frozen_at": "2026-11-25T14:59:31.850459+00:00",
+  "reviewer": "combat_state — revue indépendante de la génération",
+  "scope": "Six nouveaux plans Mama/Heartman et la révision v2 de Fragile-ending-final. Clôture des vingt-quatre fichiers narratifs actuels par consolidation des trois lots.",
+  "method": "Lecture des briefs approuvés et inspection visuelle directe des sept PNG natifs via view_image ; cinq références complémentaires inspectées. Aucun nouveau binaire ou changement de pixels. Vérification SHA256 des vingt-quatre fichiers actuels contre leur dernière revue applicable.",
+  "brief_source": {
+    "file": "docs/combat/production/20261125-completion/story-completion-briefs.json",
+    "sha256": "5fc0385b2ddf93fa64480f22cbb8b67be1c5c6c19a4a3fb3eff69d05012b190c"
+  },
+  "inspected_references": [
+    {
+      "file": "modes/echos-de-la-greve/assets/story/heartman-intro.webp",
+      "sha256": "eb81b22111b3e682d49e2563fca906ca1d5528746fb068bf6d05310b8b2b5ccc"
+    },
+    {
+      "file": "modes/echos-de-la-greve/assets/story/heartman-ending.webp",
+      "sha256": "a74c25a15e2a10ced2a6e7177bf8eb06e9de62825fc5d83df898a580ada250db"
+    },
+    {
+      "file": "modes/echos-de-la-greve/assets/story/mama-intro.webp",
+      "sha256": "953be956c511d359868b528dec84f54282659670f5c3f2b3df05d4b8f08e78e3"
+    },
+    {
+      "file": "modes/echos-de-la-greve/assets/fighters/heartman/portrait.png",
+      "sha256": "0b412e141daddf2e08c106d4c4fa7a4783ed6dcae37ecd2e04f2c7b2359cc5f2"
+    },
+    {
+      "file": "modes/echos-de-la-greve/assets/fighters/mama/atelier/portrait.png",
+      "sha256": "a0e1bd00d3bd96a0cf524ab2150bd217f2c2c170d90991fa395847d54e44f1f0"
+    }
+  ],
+  "summary": {
+    "reviewed_in_this_lot": 7,
+    "central_narrative_accepted_in_this_lot": 7,
+    "current_story_files": 24,
+    "current_story_files_hash_matched": 24,
+    "current_story_files_central_narrative_accepted": 24,
+    "reviewed_versions_across_three_lots": 25,
+    "certain_blocking_narrative_contradictions": 0,
+    "unresolved_targeted_corrections": [],
+    "new_binaries": 0
+  },
+  "closed_corrections": [
+    {
+      "id": "fragile-ending-final",
+      "status": "closed",
+      "superseded_sha256": "3390dfdd552af5f18677638b566080e769a0ad359d416c8c4bfe70c84d008329",
+      "accepted_sha256": "adf80a0f7908dc861ab1965bd985d415703cc026fcaecb7a5c497647206c3a19",
+      "previous_report": "story-visual-review-lot1.json",
+      "resolution": "Le crochet est maintenant occulté par la latte et visible sous elle ; le maintien n’est plus simplement suggéré par une poignée posée sur l’assise."
+    }
+  ],
+  "items": [
+    {
+      "id": "fragile-ending-final",
+      "revision": "v2",
+      "observed": [
+        "La latte du banc occulte maintenant une portion du manche et du crochet ; la courbe visible au-dessous rend le coincement compréhensible.",
+        "Une seule feuille reste protégée sous la toile ; l’humidité, la pluie et le toit ouvert conservent le contexte du quai.",
+        "Fragile demeure seule au fond, de dos, repartant à pied ; aucun saut spatial."
+      ],
+      "nonblocking_notes": [],
+      "supersedes": {
+        "review_report": "story-visual-review-lot1.json",
+        "sha256": "3390dfdd552af5f18677638b566080e769a0ad359d416c8c4bfe70c84d008329",
+        "previous_narrative_status": "clarification_requested",
+        "reason": "La nouvelle occultation du crochet par la latte résout le maintien ambigu signalé sur la première image."
+      },
+      "file": "modes/echos-de-la-greve/assets/story-completion-20261125/fragile-ending-final.png",
+      "width": 1672,
+      "height": 941,
+      "bytes": 2400122,
+      "sha256": "adf80a0f7908dc861ab1965bd985d415703cc026fcaecb7a5c497647206c3a19",
+      "caption_fr": "Le troisième bon",
+      "brief_id": "fragile-ending-final",
+      "narrative_status": "accepted"
+    },
+    {
+      "id": "mama-intro-second",
+      "observed": [
+        "Mama porte la queue de cheval, les lunettes, le débardeur d’atelier et le harnais jaune cohérents avec son portrait Atelier.",
+        "Sa main dessine au crayon une seule petite silhouette anonyme au centre du schéma de passerelle.",
+        "La maquette et ses deux extrémités fixées sont visibles à l’arrière-plan de l’établi ; aucun nouvel intervenant réel."
+      ],
+      "nonblocking_notes": [
+        "Le dessin est un repère de charge anonyme ; la revue ne lui attribue pas de nom ni d’identité."
+      ],
+      "file": "modes/echos-de-la-greve/assets/story-completion-20261125/mama-intro-second.png",
+      "width": 1672,
+      "height": 941,
+      "bytes": 2453052,
+      "sha256": "d7388c0c208ea5babec54b1bf06523600a4dc7f49b22a5a05cebc82347468b83",
+      "caption_fr": "Quelqu’un au centre",
+      "brief_id": "mama-intro-second",
+      "narrative_status": "accepted"
+    },
+    {
+      "id": "mama-intro-insert",
+      "observed": [
+        "Une passerelle miniature est fixée à ses deux extrémités, avec les deux zones d’ancrage et leurs serrages nettement visibles.",
+        "Le tablier présente un léger fléchissement central ; câbles, maquette, crayon et schéma donnent l’échelle d’un objet d’établi.",
+        "Aucun enfant, projectile ou personnage réel n’est ajouté à ce gros plan technique."
+      ],
+      "nonblocking_notes": [
+        "La revue constate les ancrages et le fléchissement ; elle ne certifie pas un calcul mécanique de la maquette."
+      ],
+      "file": "modes/echos-de-la-greve/assets/story-completion-20261125/mama-intro-insert.png",
+      "width": 1672,
+      "height": 941,
+      "bytes": 2530619,
+      "sha256": "8dda7245075756d816cca930a013be1b807fdc3abec88a6a779950eec08e400f",
+      "caption_fr": "Deux points d’attache",
+      "brief_id": "mama-intro-insert",
+      "narrative_status": "accepted"
+    },
+    {
+      "id": "mama-ending-final",
+      "observed": [
+        "Une main tient la bobine et l’autre tire le fil vers une seconde longueur préparée sur l’établi.",
+        "Deux ensembles de fil enroulé sont séparés et lisibles ; la maquette est placée dans un rangement ouvert à l’arrière-plan.",
+        "La tenue d’atelier et la lumière douce sont cohérentes ; les deux ombres du texte ne sont pas matérialisées en personnes."
+      ],
+      "nonblocking_notes": [
+        "La quantité de fil rend une seconde préparation visible ; sa longueur métrique exacte ne se déduit pas de l’image."
+      ],
+      "file": "modes/echos-de-la-greve/assets/story-completion-20261125/mama-ending-final.png",
+      "width": 1672,
+      "height": 941,
+      "bytes": 2480991,
+      "sha256": "b0d3a32b68ca5a734563fa6bc69bf0d6e3e3550587abb29858a4360fea6a2bea",
+      "caption_fr": "La deuxième traversée",
+      "brief_id": "mama-ending-final",
+      "narrative_status": "accepted"
+    },
+    {
+      "id": "heartman-intro-second",
+      "observed": [
+        "Heartman porte les lunettes, le harnais et le boîtier pectoral orange de son portrait courant du roster.",
+        "Le casque est sur ses oreilles ; une main le maintient, l’autre touche une commande à double chevron gauche, lisible comme retour au début.",
+        "Le laboratoire, le paysage et le moniteur reprennent le décor de référence ; la chaise à l’arrière-plan est vide."
+      ],
+      "nonblocking_notes": [
+        "La veste bleutée suit le portrait courant explicitement inspecté ; aucune variante nouvelle n’est déduite de sa seule couleur. Le bruit de chaise et l’ordre temporel du retour restent portés par le texte."
+      ],
+      "file": "modes/echos-de-la-greve/assets/story-completion-20261125/heartman-intro-second.png",
+      "width": 1672,
+      "height": 941,
+      "bytes": 2111596,
+      "sha256": "b20ae2f258e33fc385b7b82ccfc76f12714d688c68777f6e577b6f0941b8f4a7",
+      "caption_fr": "Revenir au début",
+      "brief_id": "heartman-intro-second",
+      "narrative_status": "accepted"
+    },
+    {
+      "id": "heartman-intro-insert",
+      "observed": [
+        "Le moniteur montre deux régions de signal séparées par une interruption centrale avec un court segment plat isolé.",
+        "Le casque est posé au bord du poste dans le même laboratoire ; aucune personne ne matérialise la lacune.",
+        "Aucune unité, valeur ou conclusion clinique lisible n’est ajoutée."
+      ],
+      "nonblocking_notes": [
+        "La zone centrale est graphiquement peu tracée plutôt qu’un aplat blanc ; elle rend une interruption lisible. Aucune durée exacte ne peut être mesurée sans échelle, ce qui ne justifie pas une reprise."
+      ],
+      "file": "modes/echos-de-la-greve/assets/story-completion-20261125/heartman-intro-insert.png",
+      "width": 1672,
+      "height": 941,
+      "bytes": 1838248,
+      "sha256": "bea1d2e7c551d6d88d3569baf39a467b291ded4d0df188997d2a8c2ecebab743",
+      "caption_fr": "La seconde blanche",
+      "brief_id": "heartman-intro-insert",
+      "narrative_status": "accepted"
+    },
+    {
+      "id": "heartman-ending-final",
+      "observed": [
+        "Exactement deux empreintes circulaires demeurent sur le bois : celle de gauche est plus pâle et moins continue que celle de droite.",
+        "Aucune tasse identifiable ne reste sur la table ; les deux tasses de la référence de conclusion ne sont plus présentes.",
+        "Le laboratoire et la lumière de fin de journée sont conservés, sans visiteur ni révélation de la personne attendue."
+      ],
+      "nonblocking_notes": [
+        "L’effacement et la chaleur sont suggérés par l’aspect des traces ; une température ou une durée réelle ne peut pas être vérifiée sur ce plan fixe."
+      ],
+      "file": "modes/echos-de-la-greve/assets/story-completion-20261125/heartman-ending-final.png",
+      "width": 1672,
+      "height": 941,
+      "bytes": 2008066,
+      "sha256": "2720f57ac7c3d11ef1c88399d649dd7186eea4b36775c694cf75702f0b260409",
+      "caption_fr": "Deux cercles",
+      "brief_id": "heartman-ending-final",
+      "narrative_status": "accepted"
+    }
+  ],
+  "active_story_reviews": [
+    {
+      "id": "cliff-ending-final",
+      "file": "modes/echos-de-la-greve/assets/story-completion-20261125/cliff-ending-final.png",
+      "sha256": "03aa966c419fff4a06dc5eac23b4da1c5eb31e861f03239c1f0d195a6f1befd4",
+      "review_report": "story-visual-review-lot2.json",
+      "narrative_status": "accepted"
+    },
+    {
+      "id": "cliff-intro-insert",
+      "file": "modes/echos-de-la-greve/assets/story-completion-20261125/cliff-intro-insert.png",
+      "sha256": "0dc7073eaa9ea5ba4b1c5e2ee76c8c6825e9d687e21a64443bb6f1b6126fbfeb",
+      "review_report": "story-visual-review-lot2.json",
+      "narrative_status": "accepted"
+    },
+    {
+      "id": "cliff-intro-second",
+      "file": "modes/echos-de-la-greve/assets/story-completion-20261125/cliff-intro-second.png",
+      "sha256": "37685b30fdf67cab40521f4d7e604d887119e6cc8b074b0a91ad2ee26affed61",
+      "review_report": "story-visual-review-lot2.json",
+      "narrative_status": "accepted"
+    },
+    {
+      "id": "diehardman-ending-final",
+      "file": "modes/echos-de-la-greve/assets/story-completion-20261125/diehardman-ending-final.png",
+      "sha256": "b11ce665d5c46acc9054fc4fe7de401ce29a078f5dc2e3ca2f8299a559993ff9",
+      "review_report": "story-visual-review-lot2.json",
+      "narrative_status": "accepted"
+    },
+    {
+      "id": "diehardman-intro-insert",
+      "file": "modes/echos-de-la-greve/assets/story-completion-20261125/diehardman-intro-insert.png",
+      "sha256": "6141f83ade43a15ee5e31c7212a3fa683b9ad218e9ba2cdf2eb92d94dabeaede",
+      "review_report": "story-visual-review-lot2.json",
+      "narrative_status": "accepted"
+    },
+    {
+      "id": "diehardman-intro-second",
+      "file": "modes/echos-de-la-greve/assets/story-completion-20261125/diehardman-intro-second.png",
+      "sha256": "cfc2a65f562d3a8452f1d605b7ed0f91f0f682a815bbd2cba490dae13c8e5e60",
+      "review_report": "story-visual-review-lot2.json",
+      "narrative_status": "accepted"
+    },
+    {
+      "id": "fragile-ending-final",
+      "file": "modes/echos-de-la-greve/assets/story-completion-20261125/fragile-ending-final.png",
+      "sha256": "adf80a0f7908dc861ab1965bd985d415703cc026fcaecb7a5c497647206c3a19",
+      "review_report": "story-visual-review-lot3.json",
+      "narrative_status": "accepted"
+    },
+    {
+      "id": "fragile-intro-insert",
+      "file": "modes/echos-de-la-greve/assets/story-completion-20261125/fragile-intro-insert.png",
+      "sha256": "bbf7b2be9d6147783ba630077467347a38e593845aa3cac12f550f3542f0a0de",
+      "review_report": "story-visual-review-lot1.json",
+      "narrative_status": "accepted"
+    },
+    {
+      "id": "fragile-intro-second",
+      "file": "modes/echos-de-la-greve/assets/story-completion-20261125/fragile-intro-second.png",
+      "sha256": "45132d3fa92e494402c692810e93b38a91fd6b73ba662a3641404018366174fd",
+      "review_report": "story-visual-review-lot2.json",
+      "narrative_status": "accepted"
+    },
+    {
+      "id": "heartman-ending-final",
+      "file": "modes/echos-de-la-greve/assets/story-completion-20261125/heartman-ending-final.png",
+      "sha256": "2720f57ac7c3d11ef1c88399d649dd7186eea4b36775c694cf75702f0b260409",
+      "review_report": "story-visual-review-lot3.json",
+      "narrative_status": "accepted"
+    },
+    {
+      "id": "heartman-intro-insert",
+      "file": "modes/echos-de-la-greve/assets/story-completion-20261125/heartman-intro-insert.png",
+      "sha256": "bea1d2e7c551d6d88d3569baf39a467b291ded4d0df188997d2a8c2ecebab743",
+      "review_report": "story-visual-review-lot3.json",
+      "narrative_status": "accepted"
+    },
+    {
+      "id": "heartman-intro-second",
+      "file": "modes/echos-de-la-greve/assets/story-completion-20261125/heartman-intro-second.png",
+      "sha256": "b20ae2f258e33fc385b7b82ccfc76f12714d688c68777f6e577b6f0941b8f4a7",
+      "review_report": "story-visual-review-lot3.json",
+      "narrative_status": "accepted"
+    },
+    {
+      "id": "higgs-ending-final",
+      "file": "modes/echos-de-la-greve/assets/story-completion-20261125/higgs-ending-final.png",
+      "sha256": "49a3a0d454f3bb86426e48f7161bad8d0b437452296d2629ed8ce371373c3222",
+      "review_report": "story-visual-review-lot1.json",
+      "narrative_status": "accepted"
+    },
+    {
+      "id": "higgs-intro-insert",
+      "file": "modes/echos-de-la-greve/assets/story-completion-20261125/higgs-intro-insert.png",
+      "sha256": "ed7cdbe4a34891aadb700dc482cc46d5bc48a85bee1aac66e3636bd577c0c5d2",
+      "review_report": "story-visual-review-lot1.json",
+      "narrative_status": "accepted"
+    },
+    {
+      "id": "higgs-intro-second",
+      "file": "modes/echos-de-la-greve/assets/story-completion-20261125/higgs-intro-second.png",
+      "sha256": "bb0edd47f0a977c72a3cf4778c3ec26813bde44f88ace1f5df2b0bc5e3ea3103",
+      "review_report": "story-visual-review-lot1.json",
+      "narrative_status": "accepted"
+    },
+    {
+      "id": "mama-ending-final",
+      "file": "modes/echos-de-la-greve/assets/story-completion-20261125/mama-ending-final.png",
+      "sha256": "b0d3a32b68ca5a734563fa6bc69bf0d6e3e3550587abb29858a4360fea6a2bea",
+      "review_report": "story-visual-review-lot3.json",
+      "narrative_status": "accepted"
+    },
+    {
+      "id": "mama-intro-insert",
+      "file": "modes/echos-de-la-greve/assets/story-completion-20261125/mama-intro-insert.png",
+      "sha256": "8dda7245075756d816cca930a013be1b807fdc3abec88a6a779950eec08e400f",
+      "review_report": "story-visual-review-lot3.json",
+      "narrative_status": "accepted"
+    },
+    {
+      "id": "mama-intro-second",
+      "file": "modes/echos-de-la-greve/assets/story-completion-20261125/mama-intro-second.png",
+      "sha256": "d7388c0c208ea5babec54b1bf06523600a4dc7f49b22a5a05cebc82347468b83",
+      "review_report": "story-visual-review-lot3.json",
+      "narrative_status": "accepted"
+    },
+    {
+      "id": "mule-ending-final",
+      "file": "modes/echos-de-la-greve/assets/story-completion-20261125/mule-ending-final.png",
+      "sha256": "b3829a6b3dd5c89af399ede4dda7eea68de8a815fb876b915b1f7e85b9e9562c",
+      "review_report": "story-visual-review-lot2.json",
+      "narrative_status": "accepted"
+    },
+    {
+      "id": "mule-intro-insert",
+      "file": "modes/echos-de-la-greve/assets/story-completion-20261125/mule-intro-insert.png",
+      "sha256": "6b37a82cfc012fe1eb1404c34d21b49626beb386a6c8a052cdb8e2ea36787c7d",
+      "review_report": "story-visual-review-lot2.json",
+      "narrative_status": "accepted"
+    },
+    {
+      "id": "mule-intro-second",
+      "file": "modes/echos-de-la-greve/assets/story-completion-20261125/mule-intro-second.png",
+      "sha256": "b23536dfd55479bdbf6e216271804a96870dd47482069dbc798683707824f5a0",
+      "review_report": "story-visual-review-lot2.json",
+      "narrative_status": "accepted"
+    },
+    {
+      "id": "sam-ending-final",
+      "file": "modes/echos-de-la-greve/assets/story-completion-20261125/sam-ending-final.png",
+      "sha256": "e057d2eee0de460c9247543cc0076554600d00b575ce59da158309e9879b294d",
+      "review_report": "story-visual-review-lot1.json",
+      "narrative_status": "accepted"
+    },
+    {
+      "id": "sam-intro-insert",
+      "file": "modes/echos-de-la-greve/assets/story-completion-20261125/sam-intro-insert.png",
+      "sha256": "408d19826750106552cdc606d890d6f0bd7dd0fd2d93ed74d4b9f612edcd498c",
+      "review_report": "story-visual-review-lot1.json",
+      "narrative_status": "accepted"
+    },
+    {
+      "id": "sam-intro-second",
+      "file": "modes/echos-de-la-greve/assets/story-completion-20261125/sam-intro-second.png",
+      "sha256": "936ba35de659d2f8418dc427f9291ddaff106784d325fcd0de12992fbd483a48",
+      "review_report": "story-visual-review-lot1.json",
+      "narrative_status": "accepted"
+    }
+  ],
+  "limits": [
+    "Les acceptations portent sur la cohérence narrative centrale ; les réserves secondaires documentées dans les lots 1 et 2 restent valables.",
+    "Le détail de la case propriétaire dans la conclusion MULE demeure non vérifiable à la lecture des intitulés ; la consolidation ne transforme pas ce détail en validation.",
+    "L’image fixe ne prouve ni un état sonore, ni une température, ni une durée exacte, ni l’ordre complet d’un mouvement.",
+    "Le lot 1 est conservé comme historique de la première empreinte Fragile. Seule sa décision sur cette ancienne image est remplacée par la clôture explicite ci-dessus.",
+    "Aucune vérification canonique externe, aucune image créée ou retouchée et aucun binaire supplémentaire de revue."
+  ]
+}

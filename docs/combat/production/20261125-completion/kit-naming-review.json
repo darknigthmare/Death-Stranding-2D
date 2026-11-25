@@ -1,0 +1,261 @@
+{
+  "date": "2026-11-25T14:54:44.326Z",
+  "method": "Independent data/source review. Actual content/assets evaluated and actual fight definitions read via in-memory inspection hook. No repository runtime changed; no combat execution, pixel validation or native browser claim.",
+  "checks": [
+    "Same eight fighter IDs in content and duel engine",
+    "Same eight finisher IDs and existing files",
+    "24 names and costs match engine actions and directional mapping",
+    "Eight current finisher names match engine and bible",
+    "App controls uses current.techniques from content",
+    "App result uses the winning content fighter finisher",
+    "Canvas finality reads the same current roster end label"
+  ],
+  "fighters": [
+    {
+      "id": "cliff",
+      "content_name": "Clifford Unger",
+      "engine_display_name": "Cliff Unger",
+      "display_alias_note": "Clifford Unger / Cliff Unger: full name and short name, same ID.",
+      "actions": [
+        {
+          "direction": "Neutre",
+          "engine_action": "cliff",
+          "name": "Écho de section",
+          "cost": 28
+        },
+        {
+          "direction": "Avant",
+          "engine_action": "post",
+          "name": "Poste avancé",
+          "cost": 18
+        },
+        {
+          "direction": "Arrière",
+          "engine_action": "recall",
+          "name": "Rappel de section",
+          "cost": 16
+        }
+      ],
+      "finisher": "Rappel de section",
+      "asset": "assets/finishers/cliff.webp",
+      "ending_title": "À l’écoute"
+    },
+    {
+      "id": "diehardman",
+      "content_name": "Die-Hardman",
+      "engine_display_name": "Die-Hardman",
+      "display_alias_note": null,
+      "actions": [
+        {
+          "direction": "Neutre",
+          "engine_action": "diehardman",
+          "name": "Ordre de maintien",
+          "cost": 28
+        },
+        {
+          "direction": "Avant",
+          "engine_action": "gate",
+          "name": "Ligne d’arrêt",
+          "cost": 18
+        },
+        {
+          "direction": "Arrière",
+          "engine_action": "relief",
+          "name": "Relève",
+          "cost": 16
+        }
+      ],
+      "finisher": "Levée de consigne",
+      "asset": "assets/finishers/diehardman.webp",
+      "ending_title": "À portée de main"
+    },
+    {
+      "id": "fragile",
+      "content_name": "Fragile",
+      "engine_display_name": "Fragile",
+      "display_alias_note": null,
+      "actions": [
+        {
+          "direction": "Neutre",
+          "engine_action": "fragile",
+          "name": "Pas de Grève",
+          "cost": 28
+        },
+        {
+          "direction": "Avant",
+          "engine_action": "fan",
+          "name": "Éventail de pluie",
+          "cost": 18
+        },
+        {
+          "direction": "Arrière",
+          "engine_action": "beacon",
+          "name": "Point de retour",
+          "cost": 16
+        }
+      ],
+      "finisher": "Dernier saut",
+      "asset": "assets/finishers/fragile.webp",
+      "ending_title": "À l’abri"
+    },
+    {
+      "id": "heartman",
+      "content_name": "Heartman",
+      "engine_display_name": "Heartman",
+      "display_alias_note": null,
+      "actions": [
+        {
+          "direction": "Neutre",
+          "engine_action": "heartman",
+          "name": "Impulsion témoin",
+          "cost": 28
+        },
+        {
+          "direction": "Avant",
+          "engine_action": "memory",
+          "name": "Mémoire de phase",
+          "cost": 18
+        },
+        {
+          "direction": "Arrière",
+          "engine_action": "syncope",
+          "name": "Syncope du signal",
+          "cost": 16
+        }
+      ],
+      "finisher": "Intervalle",
+      "asset": "assets/finishers/heartman.webp",
+      "ending_title": "Les deux cercles"
+    },
+    {
+      "id": "higgs",
+      "content_name": "Higgs Monaghan",
+      "engine_display_name": "Higgs Monaghan",
+      "display_alias_note": null,
+      "actions": [
+        {
+          "direction": "Neutre",
+          "engine_action": "higgs",
+          "name": "Marée noire",
+          "cost": 28
+        },
+        {
+          "direction": "Avant",
+          "engine_action": "mine",
+          "name": "Empreinte d’or",
+          "cost": 21
+        },
+        {
+          "direction": "Arrière",
+          "engine_action": "feint",
+          "name": "Faux départ",
+          "cost": 14
+        }
+      ],
+      "finisher": "Rideau de goudron",
+      "asset": "assets/finishers/higgs.webp",
+      "ending_title": "Le rappel"
+    },
+    {
+      "id": "mama",
+      "content_name": "Mama",
+      "engine_display_name": "Mama",
+      "display_alias_note": null,
+      "actions": [
+        {
+          "direction": "Neutre",
+          "engine_action": "mama",
+          "name": "Point d’ancrage",
+          "cost": 28
+        },
+        {
+          "direction": "Avant",
+          "engine_action": "deck",
+          "name": "Tablier",
+          "cost": 18
+        },
+        {
+          "direction": "Arrière",
+          "engine_action": "winch",
+          "name": "Treuil",
+          "cost": 16
+        }
+      ],
+      "finisher": "Travée de retour",
+      "asset": "assets/finishers/mama.webp",
+      "ending_title": "Une longueur de plus"
+    },
+    {
+      "id": "mule",
+      "content_name": "Porteur MULE",
+      "engine_display_name": "Porteur MULE",
+      "display_alias_note": null,
+      "actions": [
+        {
+          "direction": "Neutre",
+          "engine_action": "mule",
+          "name": "Balayage de capteur",
+          "cost": 28
+        },
+        {
+          "direction": "Avant",
+          "engine_action": "crate",
+          "name": "Consigne mobile",
+          "cost": 18
+        },
+        {
+          "direction": "Arrière",
+          "engine_action": "retrieve",
+          "name": "Saisie de lot",
+          "cost": 16
+        }
+      ],
+      "finisher": "Hors inventaire",
+      "asset": "assets/finishers/mule.webp",
+      "ending_title": "Registre des départs"
+    },
+    {
+      "id": "sam",
+      "content_name": "Sam Porter Bridges",
+      "engine_display_name": "Sam Porter Bridges",
+      "display_alias_note": null,
+      "actions": [
+        {
+          "direction": "Neutre",
+          "engine_action": "sam",
+          "name": "Bola de liaison",
+          "cost": 28
+        },
+        {
+          "direction": "Avant",
+          "engine_action": "brace",
+          "name": "Reprise d’appui",
+          "cost": 14
+        },
+        {
+          "direction": "Arrière",
+          "engine_action": "parry",
+          "name": "Parade au lien",
+          "cost": 18
+        }
+      ],
+      "finisher": "Cargaison sécurisée",
+      "asset": "assets/finishers/sam.webp",
+      "ending_title": "Accusé de réception"
+    }
+  ],
+  "issues": [],
+  "source_sha256": {
+    "content.js": "98498d43b085a15d34a6fb464d528d6d5554cf635401b2edcd7a83d0155b4949",
+    "assets.js": "ce3f436a4cefe4871e68bf13d25e3b90f3c07bb0b6917b71ddc3096dff063d6b",
+    "fight.js": "e8046d571919f68f625b9886f5521ebed32bdee44a23282700c6b51fcce439d4",
+    "app.js": "1b8b03f877f9ace54d4ebfde46fa9986b6bd9d542a931c58fa55598654a613db"
+  },
+  "non_blocking_notes": [
+    "Target specifications in Bible chapters 2–4 and 6 intentionally differ; chapter12.3 and12.5 keep target/current mapping.",
+    "No new kit, balance adjustment or animation validated by this review.",
+    "Historical techniques.cjs fixed arena count of11 reported to runtime owner; this source review does not claim that browser test ran."
+  ],
+  "initial_review_date": "2026-11-25T14:15:10.316Z",
+  "recheck": "The eight-kit matrix was rechecked after campaign/static-scenery integration. After the mobile campaign-pause patch, content/assets/fight hashes remain unchanged and both current-technique and winner-finality UI bindings were rechecked in app.js."
+}

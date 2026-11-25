@@ -1,0 +1,3 @@
+Ambiances · 20 profils, localisation, volume, sources bornées, pause/reprise, arrêt, fin silencieuse, replay, effets réduits, rollback complet et autoplay vérifiés.
+Interface · curseurs sélection/pause/commandes, volume transmis au duel, mise à jour et persistance après rechargement vérifiés.
+Réseau · préférences son/volume/effets/décor statique distinctes, reconstruction sans checkpoint, libération après focus/modificateur, connexion interrompue, erreur, onglet, résultat divergent, replay et sortie vérifiés sans pause de simulation.

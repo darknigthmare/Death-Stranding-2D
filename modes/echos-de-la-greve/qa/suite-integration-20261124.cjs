@@ -32,7 +32,7 @@ function runSuiteIntegration(options) {
   collect(assets);
   for(const file of allFiles)check(fileExists(file),'Catalog file missing: '+file);
   check(Object.keys(content.fighters).length===8,'The eight existing playable fighters remain available');
-  check(Object.keys(content.stages).length===17,'Seventeen current stage configurations');
+  check(Object.keys(content.stages).length===20,'Twenty current stage configurations');
   check(!assets.wardrobe.mama.atelier.poses,'Atelier must use native base PNGs');
   check(assets.wardrobe.mama.viaduc.poses.stance.endsWith(assets.wardrobe.mama.viaduc.nativePoses?'.png':'.webp'),'Viaduc keeps its own wardrobe source');
   report.catalog_paths=allFiles.size;

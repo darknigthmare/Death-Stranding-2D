@@ -18,12 +18,13 @@
   const storedAmbience=recall('localStorage','echos.v1.ambienceVolume');
   const audioOptions={sound:recall('localStorage','echos.v1.sound')!==false,
     ambienceVolume:typeof storedAmbience==='number' && Number.isFinite(storedAmbience) ? Math.max(0,Math.min(1,storedAmbience)) : .35,
-    reducedEffects:recall('localStorage','echos.v1.reducedEffects') ?? !!window.matchMedia?.('(prefers-reduced-motion: reduce)').matches};
+    reducedEffects:recall('localStorage','echos.v1.reducedEffects') ?? !!window.matchMedia?.('(prefers-reduced-motion: reduce)').matches,
+    staticScenery:recall('localStorage','echos.v1.staticScenery')===true};
   let audioBlurred=false,audioDisconnected=false;
   const audioBlocked=()=>audioBlurred || document.hidden || !!run && (audioDisconnected || !state?.live || !!state.result);
   function updateAudioState() {engine.setAudioSuspended(audioBlocked());}
   const audioControls=document.createElement('div');audioControls.className='row';
-  audioControls.innerHTML='<button id="roomSound" type="button"></button><label>Ambiance du décor <input id="roomAmbience" type="range" min="0" max="100" step="5" aria-label="Volume de l’ambiance"><output id="roomAmbienceValue"></output></label>';
+  audioControls.innerHTML='<button id="roomSound" type="button"></button><label>Ambiance du décor <input id="roomAmbience" type="range" min="0" max="100" step="5" aria-label="Volume de l’ambiance"><output id="roomAmbienceValue"></output></label><label>Décor <select id="roomScenery" aria-label="Animation du décor"><option value="animated">Animé</option><option value="static">Statique</option></select></label>';
   document.querySelector('header').append(audioControls);
   function updateAudioControls() {
     $('roomSound').textContent=audioOptions.sound?'Son activé':'Son coupé';
@@ -39,6 +40,12 @@
     audioOptions.ambienceVolume=Number($('roomAmbience').value)/100;
     remember('localStorage','echos.v1.ambienceVolume',audioOptions.ambienceVolume);
     engine.setAmbienceVolume(audioOptions.ambienceVolume);updateAudioControls();
+  };
+  $('roomScenery').value=audioOptions.staticScenery?'static':'animated';
+  $('roomScenery').onchange=()=>{
+    audioOptions.staticScenery=$('roomScenery').value==='static';
+    remember('localStorage','echos.v1.staticScenery',audioOptions.staticScenery);
+    engine.setStaticScenery(audioOptions.staticScenery);
   };
   // Opening a room involves asynchronous requests. Unlock audio from the local
   // gesture, never from a remote player's input or a silent rollback step.
@@ -95,7 +102,7 @@
   function startEngine(silent=false) {
     const cfg=run.config;
     engine.start({canvas:$('canvas'),p1:cfg.p1,p2:cfg.p2,stage:cfg.stage,mode:'local',clock:'network',seed:cfg.seed,
-      difficulty:'normal',roundsToWin:2,...audioOptions,audioSuspended:silent || audioBlocked(),onEnd:r=>{run.done={tick:run.tick+1,winner:r.winner,rounds:r.rounds.join('-')};}});
+      difficulty:'normal',roundsToWin:2,...audioOptions,preserveStaticScenery:silent,audioSuspended:silent || audioBlocked(),onEnd:r=>{run.done={tick:run.tick+1,winner:r.winner,rounds:r.rounds.join('-')};}});
     run.tick=0;run.done=null;run.points.clear();run.points.set(0,engine.network.checkpoint());
   }
   function rewind() {
@@ -252,9 +259,14 @@
     $('controls').append(button);
   }
   for (const type of ['keydown','keyup']) window.addEventListener(type,event=>{
-    if (!run || event.altKey || event.ctrlKey || event.metaKey || event.target?.matches?.('input,select,textarea')) return;
+    if (!run) return;
     const action=keyMap[event.key]||keyMap[event.key.toLowerCase()];
-    if(action){event.preventDefault();if(!event.repeat)submit(action,type==='keydown');}
+    if(!action)return;
+    // A local option can take focus while a movement key is still held.
+    // Always release that existing input, including after a modifier changes.
+    if(type==='keyup'){if(held.has(action))submit(action,false);return;}
+    if(event.altKey||event.ctrlKey||event.metaKey||event.target?.matches?.('input,select,textarea'))return;
+    event.preventDefault();if(!event.repeat)submit(action,true);
   });
   window.addEventListener('blur',()=>{audioBlurred=true;release();updateAudioState();});
   window.addEventListener('focus',()=>{audioBlurred=false;updateAudioState();});

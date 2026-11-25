@@ -1,0 +1,335 @@
+{
+  "date": "2026-11-25T14:29:21.082Z",
+  "method": "@napi-rs/canvas; native PNG pixels, no source modification",
+  "files": [
+    {
+      "id": "plate-gate-ds2",
+      "layer": "sky",
+      "file": "assets/stages/plate-gate-ds2-sky.png",
+      "width": 1672,
+      "height": 941,
+      "sha256": "51532d4c61d1858ce1c7ec1d180a47aed4598bd8d190378b72badae5aded5919",
+      "alphaMin": 255,
+      "alphaMax": 255,
+      "transparentFraction": 0,
+      "opaqueFraction": 1,
+      "visibleBounds": [
+        0,
+        0,
+        1672,
+        941
+      ]
+    },
+    {
+      "id": "plate-gate-ds2",
+      "layer": "distant",
+      "file": "assets/stages/plate-gate-ds2-distant.png",
+      "width": 1672,
+      "height": 941,
+      "sha256": "64caa390849eb882f70c150674bfa5ad341805f71887cbf62564e98059d5c0ae",
+      "alphaMin": 0,
+      "alphaMax": 255,
+      "transparentFraction": 0.34755541035953813,
+      "opaqueFraction": 0.0006222383802226075,
+      "visibleBounds": [
+        0,
+        0,
+        1672,
+        941
+      ],
+      "lowestCentralOpaqueRow": 940,
+      "suggestedBottomAnchorY": 1
+    },
+    {
+      "id": "plate-gate-ds2",
+      "layer": "midground",
+      "file": "assets/stages/plate-gate-ds2-midground.png",
+      "width": 1672,
+      "height": 941,
+      "sha256": "bbe9206a54a5ab8260808d92025cd2b0931fb26c9c8722576d053d0b9c1c876c",
+      "alphaMin": 0,
+      "alphaMax": 255,
+      "transparentFraction": 0.7907232456564075,
+      "opaqueFraction": 0.00011376983662905694,
+      "visibleBounds": [
+        0,
+        697,
+        1672,
+        244
+      ],
+      "lowestCentralOpaqueRow": 940,
+      "suggestedBottomAnchorY": 1
+    },
+    {
+      "id": "plate-gate-ds2",
+      "layer": "floor",
+      "file": "assets/stages/plate-gate-ds2-floor.png",
+      "width": 1672,
+      "height": 941,
+      "sha256": "fb738bbc9d9112f933a05811332c468cdb191678ff4574a028cac8fff57bcaa7",
+      "alphaMin": 0,
+      "alphaMax": 255,
+      "transparentFraction": 0.4826059267093441,
+      "opaqueFraction": 0.00002097432742323396,
+      "visibleBounds": [
+        0,
+        456,
+        1672,
+        485
+      ],
+      "centralSupport": {
+        "columns": 1337,
+        "min": 469,
+        "p10": 471,
+        "median": 471,
+        "p90": 472,
+        "max": 472
+      },
+      "suggestedAnchorY": 0.5005313496280552,
+      "nativeLineToScreen588": {
+        "sourceRow": 471,
+        "sourceHeight": 941
+      }
+    },
+    {
+      "id": "plate-gate-ds2",
+      "layer": "foreground",
+      "file": "assets/stages/plate-gate-ds2-foreground.png",
+      "width": 1672,
+      "height": 941,
+      "sha256": "d3b8f21536ddc2b254522e7f20974482ec7e1f8c7b26fb88f633db3265d6df18",
+      "alphaMin": 0,
+      "alphaMax": 255,
+      "transparentFraction": 0.9873601075919438,
+      "opaqueFraction": 0.0000012711713589838765,
+      "visibleBounds": [
+        0,
+        872,
+        1672,
+        61
+      ],
+      "centralTopVisibleRow": 916,
+      "projectedCentralTopY": 698.4688995215311
+    },
+    {
+      "id": "sandstorm-ds2",
+      "layer": "sky",
+      "file": "assets/stages/sandstorm-ds2-sky.png",
+      "width": 1672,
+      "height": 941,
+      "sha256": "8a144e3ff496cd741bf446a24e5669d2df6cb9b75622e444f413ad251d4e6d24",
+      "alphaMin": 255,
+      "alphaMax": 255,
+      "transparentFraction": 0,
+      "opaqueFraction": 1,
+      "visibleBounds": [
+        0,
+        0,
+        1672,
+        941
+      ]
+    },
+    {
+      "id": "sandstorm-ds2",
+      "layer": "distant",
+      "file": "assets/stages/sandstorm-ds2-distant.png",
+      "width": 1672,
+      "height": 941,
+      "sha256": "fb8925bad63c0b302be014ed26db1047e5c3015fe511258f2dc7eff88a688658",
+      "alphaMin": 0,
+      "alphaMax": 254,
+      "transparentFraction": 0.25025741220019426,
+      "opaqueFraction": 0,
+      "visibleBounds": [
+        0,
+        165,
+        1672,
+        776
+      ],
+      "lowestCentralOpaqueRow": 940,
+      "suggestedBottomAnchorY": 1
+    },
+    {
+      "id": "sandstorm-ds2",
+      "layer": "midground",
+      "file": "assets/stages/sandstorm-ds2-midground.png",
+      "width": 1672,
+      "height": 941,
+      "sha256": "a8e15d3bb5529353ac52a3153d344166854bd5bc576758196e2c1a7fb12dc963",
+      "alphaMin": 0,
+      "alphaMax": 255,
+      "transparentFraction": 0.7553376485363733,
+      "opaqueFraction": 0.00013156623565483121,
+      "visibleBounds": [
+        0,
+        546,
+        1672,
+        395
+      ],
+      "lowestCentralOpaqueRow": 940,
+      "suggestedBottomAnchorY": 1
+    },
+    {
+      "id": "sandstorm-ds2",
+      "layer": "floor",
+      "file": "assets/stages/sandstorm-ds2-floor.png",
+      "width": 1672,
+      "height": 941,
+      "sha256": "b9645bf76b7cd16eddd1b9d880cf63edf8619c7c4474e34e270fe3d3feeea593",
+      "alphaMin": 0,
+      "alphaMax": 254,
+      "transparentFraction": 0.4801792605850439,
+      "opaqueFraction": 0,
+      "visibleBounds": [
+        0,
+        456,
+        1672,
+        485
+      ],
+      "centralSupport": {
+        "columns": 1337,
+        "min": 458,
+        "p10": 458,
+        "median": 458,
+        "p90": 459,
+        "max": 459
+      },
+      "suggestedAnchorY": 0.4867162592986185,
+      "nativeLineToScreen588": {
+        "sourceRow": 458,
+        "sourceHeight": 941
+      }
+    },
+    {
+      "id": "sandstorm-ds2",
+      "layer": "foreground",
+      "file": "assets/stages/sandstorm-ds2-foreground.png",
+      "width": 1672,
+      "height": 941,
+      "sha256": "b3d841e80b71f32df9fae37a5c78bd3452f4c4cf70068f86fbe67d5a63f938a2",
+      "alphaMin": 0,
+      "alphaMax": 255,
+      "transparentFraction": 0.9879105247903839,
+      "opaqueFraction": 0.00001461847062831458,
+      "visibleBounds": [
+        0,
+        861,
+        1672,
+        80
+      ],
+      "centralTopVisibleRow": 922,
+      "projectedCentralTopY": 703.6363636363636
+    },
+    {
+      "id": "dunes-ds2",
+      "layer": "sky",
+      "file": "assets/stages/dunes-ds2-sky.png",
+      "width": 1672,
+      "height": 941,
+      "sha256": "5d2c7cd01b65e04a91ca2cc863fa438b9581eceffd46121bfa894b9951b6f7b2",
+      "alphaMin": 255,
+      "alphaMax": 255,
+      "transparentFraction": 0,
+      "opaqueFraction": 1,
+      "visibleBounds": [
+        0,
+        0,
+        1672,
+        941
+      ]
+    },
+    {
+      "id": "dunes-ds2",
+      "layer": "distant",
+      "file": "assets/stages/dunes-ds2-distant.png",
+      "width": 1672,
+      "height": 941,
+      "sha256": "d2d61c29698709434315cf0f2b9168cfd45d5ca717bc548ba1c6f92bbcd80bb6",
+      "alphaMin": 0,
+      "alphaMax": 255,
+      "transparentFraction": 0.24134459421667878,
+      "opaqueFraction": 0.00022817525893760582,
+      "visibleBounds": [
+        0,
+        174,
+        1672,
+        767
+      ],
+      "lowestCentralOpaqueRow": 940,
+      "suggestedBottomAnchorY": 1
+    },
+    {
+      "id": "dunes-ds2",
+      "layer": "midground",
+      "file": "assets/stages/dunes-ds2-midground.png",
+      "width": 1672,
+      "height": 941,
+      "sha256": "74e633a5a703da672a4a82763d7ae293394a5d3944e6393b0eb62dc25ab82092",
+      "alphaMin": 0,
+      "alphaMax": 255,
+      "transparentFraction": 0.7003620296030386,
+      "opaqueFraction": 0.00016207434827044426,
+      "visibleBounds": [
+        0,
+        625,
+        1672,
+        316
+      ],
+      "lowestCentralOpaqueRow": 940,
+      "suggestedBottomAnchorY": 1
+    },
+    {
+      "id": "dunes-ds2",
+      "layer": "floor",
+      "file": "assets/stages/dunes-ds2-floor.png",
+      "width": 1672,
+      "height": 941,
+      "sha256": "543aec7559d771024f6aeb47e1ba7619ae349e9448ccb7ca222287a33fee58e9",
+      "alphaMin": 0,
+      "alphaMax": 254,
+      "transparentFraction": 0.458805785355089,
+      "opaqueFraction": 0,
+      "visibleBounds": [
+        0,
+        434,
+        1672,
+        507
+      ],
+      "centralSupport": {
+        "columns": 1337,
+        "min": 435,
+        "p10": 435,
+        "median": 435,
+        "p90": 435,
+        "max": 436
+      },
+      "suggestedAnchorY": 0.4622741764080765,
+      "nativeLineToScreen588": {
+        "sourceRow": 435,
+        "sourceHeight": 941
+      }
+    },
+    {
+      "id": "dunes-ds2",
+      "layer": "foreground",
+      "file": "assets/stages/dunes-ds2-foreground.png",
+      "width": 1672,
+      "height": 941,
+      "sha256": "2d8ecdcb5cb14e9fd022df699750e325220c42894bee55e4b63cbe446dd33e92",
+      "alphaMin": 0,
+      "alphaMax": 255,
+      "transparentFraction": 0.9862465614814739,
+      "opaqueFraction": 6.355856794919382e-7,
+      "visibleBounds": [
+        0,
+        894,
+        1672,
+        47
+      ],
+      "centralTopVisibleRow": 916,
+      "projectedCentralTopY": 698.4688995215311
+    }
+  ],
+  "missing": [],
+  "complete": true
+}

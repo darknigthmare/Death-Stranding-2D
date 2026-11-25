@@ -210,7 +210,10 @@
     'south-knot-ruins':{filter:'lowpass',hz:1700,level:.055,cue:'drip',interval:8,x:.16},
     'timefall-farm':{filter:'lowpass',hz:1450,level:.05,cue:'gust',interval:12,x:.82},
     'mountain-knot-approach':{filter:'bandpass',hz:1020,level:.065,cue:'gust',interval:11,x:.15},
-    'magellan-ds2':{filter:'lowpass',hz:620,level:.035,hum:64,cue:'winch',interval:14,x:.84}
+    'magellan-ds2':{filter:'lowpass',hz:620,level:.035,hum:64,cue:'winch',interval:14,x:.84},
+    'plate-gate-ds2':{filter:'bandpass',hz:280,level:.035,hum:48,cue:'gust',interval:16,x:.24},
+    'sandstorm-ds2':{filter:'lowpass',hz:1850,level:.055,cue:'gust',interval:10,x:.82},
+    'dunes-ds2':{filter:'bandpass',hz:1180,level:.04,cue:'gust',interval:15,x:.18}
   };
   function releaseAmbientVoice(group,voice,stopSource=true) {
     if (voice.released) return;
@@ -342,7 +345,7 @@
   function snapshot() {
     const m=match; if (!m) return null;
     return {phase:m.phase, tick:m.tick, paused:m.paused, round:m.round, wins:m.wins.slice(), maxRounds:m.toWin, time:Math.ceil(m.remaining/60),
-      stage:m.stage, mode:m.mode, reducedEffects:m.reducedEffects, parcel:m.parcel, beat:m.beat, winner:m.winner, finisher:m.finisher, fighters:m.f.map(f=>({id:f.id,hp:Math.ceil(f.hp),balance:Math.ceil(f.balance),chiral:Math.floor(f.chiral),combo:f.combo,x:f.x,y:f.y,guard:f.guard,action:f.act?.key || '',stun:f.stun,move:f.lastMove,marker:f.marker ? {...f.marker} : null,scan:f.scan ? {...f.scan} : null})), training:{...m.training,...(m.dummyTape && m.training.timing ? {moves:m.f.map(trainingTiming)} : {})}};
+      stage:m.stage, mode:m.mode, reducedEffects:m.reducedEffects, staticScenery:m.staticScenery, parcel:m.parcel, beat:m.beat, winner:m.winner, finisher:m.finisher, fighters:m.f.map(f=>({id:f.id,hp:Math.ceil(f.hp),balance:Math.ceil(f.balance),chiral:Math.floor(f.chiral),combo:f.combo,x:f.x,y:f.y,guard:f.guard,action:f.act?.key || '',stun:f.stun,move:f.lastMove,marker:f.marker ? {...f.marker} : null,scan:f.scan ? {...f.scan} : null})), training:{...m.training,...(m.dummyTape && m.training.timing ? {moves:m.f.map(trainingTiming)} : {})}};
   }
   function validReplay(tape) {
     if (!tape || tape.version !== 1 || !Object.hasOwn(roster,tape.p1) || !Object.hasOwn(roster,tape.p2) ||
@@ -367,6 +370,10 @@
       const {p1,p2,stage,mode,difficulty,roundsToWin,seed}=o.replay;
       o={...o,p1,p2,stage,mode,difficulty,roundsToWin,seed};
     }
+    // A private-room reconstruction may restart simulation from tick zero.
+    // Keep its already-held local composition outside the rollback checkpoint.
+    const heldScenery=o.preserveStaticScenery===true&&o.clock==='network'&&o.staticScenery&&match?.networkClock&&
+      match.staticScenery&&match.stage===o.stage ? {...match.staticScene} : null;
     stop(); audioSuspended=!!o.audioSuspended;
     if (Number.isFinite(o.ambienceVolume)) ambienceVolume=clamp(o.ambienceVolume,0,1);
     const ctx=o.canvas.getContext('2d'); if (!ctx) throw new Error('Canvas 2D indisponible.');
@@ -377,7 +384,8 @@
       onEnd:typeof o.onEnd==='function'?o.onEnd:null,onStatus:typeof o.onStatus==='function'?o.onStatus:null,
       wins:[0,0], round:1, tick:0, beat:0, paused:false, phase:'intro', phaseTicks:72, remaining:75*60,
       f:ids.map((id,i)=>fighter(id,i?818:462,i?-1:1)), shots:[], sparks:[], hstop:0, shake:0, winner:0, finisher:false, reason:'',
-      camera:0, images:{}, reducedEffects:!!o.reducedEffects, training:{dummy:'idle',hitboxes:false,...o.training}, sudden:false, scene:makeScenery(stage), simRandom:randomSeed(seed), particlesRandom:randomSeed(782), now:null, lag:0};
+      camera:0, images:{}, reducedEffects:!!o.reducedEffects, staticScenery:!!o.staticScenery, staticScene:null, training:{dummy:'idle',hitboxes:false,...o.training}, sudden:false, scene:makeScenery(stage), simRandom:randomSeed(seed), particlesRandom:randomSeed(782), now:null, lag:0};
+    if(m.staticScenery)m.staticScene=heldScenery||captureScenery(m);
     if (m.mode==='training') {
       m.dummyTape={events:[],next:0};
       m.training.frames=0; m.training.position=0;
@@ -521,6 +529,16 @@
     // Keep a quiet, steady bed; reduced effects removes intermittent scenery cues.
     stopAmbience();syncAmbience();
     draw(match); notify(match,true);
+  }
+  function captureScenery(m) { return {camera:m.camera,tick:m.tick,phase:m.phase,phaseTicks:m.phaseTicks}; }
+  function setStaticScenery(on) {
+    const m=match;if(!m)return;
+    const next=!!on;
+    if(next===m.staticScenery)return;
+    m.staticScenery=next;m.staticScene=next?captureScenery(m):null;
+    // Only presentation is held. Combat clocks, camera simulation and useful
+    // fighter/projectile/telegraph animations continue with the same inputs.
+    draw(m);notify(m,true);
   }
   function input(player,action,down=true) {
     const m=match;
@@ -1078,7 +1096,8 @@
     ctx.fillText(value, x, y);
   }
 
-  function sceneryCamera(m) { return m.camera * (m.reducedEffects ? .2 : 1); }
+  function sceneryFrame(m) { return m.staticScenery ? m.staticScene : m; }
+  function sceneryCamera(m) { return sceneryFrame(m).camera * (m.reducedEffects ? .2 : 1); }
 
   function sceneryLayer(m, key, speed, defaults) {
     const image=m.scene[key];
@@ -1097,8 +1116,8 @@
 
   function ambientScenery(m) {
     if (m.reducedEffects) return;
-    const c=m.ctx, tick=m.tick, camera=sceneryCamera(m);
-    const between=['roundover','finish','cinema','ended'].includes(m.phase);
+    const c=m.ctx, frame=sceneryFrame(m), tick=frame.tick, camera=sceneryCamera(m);
+    const between=['roundover','finish','cinema','ended'].includes(frame.phase);
     const cycle=(ticks,offset=0)=>((tick+offset)%ticks)/ticks;
     const pulse=(ticks,offset=0)=>(1-Math.cos(cycle(ticks,offset)*TAU))*.5;
     c.save();
@@ -1129,7 +1148,7 @@
       for (let i=0;i<3;i++) oval(c,1044+i*13,407,2.2,1.4,i===Math.floor(cycle(180)*3)?'#9bbac1':'#526b71');
     } else if (m.stage==='battlefield') {
       // Distant memories fade during the result; they are never combat summons.
-      const fade=between ? clamp(m.phaseTicks/96,0,1) : .65+.2*pulse(480);
+      const fade=between ? clamp(frame.phaseTicks/96,0,1) : .65+.2*pulse(480);
       for (const [x,y] of [[140,357],[213,364],[1070,344]]) {
         c.globalAlpha=fade*.2;
         oval(c,x,y,4,5,'#a1a5a0');
@@ -1208,15 +1227,16 @@
   function weatherScenery(m) {
     const c=m.ctx, s=m.scene, theme=stages[m.stage];
     if (m.reducedEffects || !theme.weather) return;
+    const frame=sceneryFrame(m);
     const flakes = theme.weather === 'snow';
     const dust = theme.weather === 'dust';
     const embers = theme.weather === 'embers';
     c.beginPath();
     for (const drop of s.rain) {
-      const drift = flakes ? Math.sin(m.tick * .025 + drop.x) * 14 : 0;
-      const x = ((drop.x - m.camera * .38 - m.tick * .38 + drift) % 1536 + 1536) % 1536 - 128;
+      const drift = flakes ? Math.sin(frame.tick * .025 + drop.x) * 14 : 0;
+      const x = ((drop.x - frame.camera * .38 - frame.tick * .38 + drift) % 1536 + 1536) % 1536 - 128;
       const speed = dust || flakes ? drop.speed * .24 : drop.speed;
-      const y = (drop.y + m.tick * speed) % HEIGHT;
+      const y = (drop.y + frame.tick * speed) % HEIGHT;
       if (theme.weather === 'shelter' && x > WIDTH * .18 && x < WIDTH * .88) continue;
       c.moveTo(x, y);
       c.lineTo(x - (dust ? 3 : 1), y + (dust ? 0 : flakes ? 1 : drop.speed));
@@ -1714,5 +1734,5 @@
     }
   };
 
-  host.StrandFight = {start, stop, pause, input, setTraining, setSound, setAmbienceVolume, setAudioSuspended, setReducedEffects, snapshot, validReplay, network};
+  host.StrandFight = {start, stop, pause, input, setTraining, setSound, setAmbienceVolume, setAudioSuspended, setReducedEffects, setStaticScenery, snapshot, validReplay, network};
 })(window);

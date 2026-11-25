@@ -1,0 +1,392 @@
+{
+  "schema": "echos.reference-completion.v1",
+  "date": "2026-11-25",
+  "purpose": "Références de nouveaux sujets ou variantes absents des bases fixes précédemment livrées ; 13 sujets prioritaires et 1 complément conditionnel",
+  "scope_note": "Aucune génération, aucun nouveau personnage jouable ni certification 1:1 dans ce manifeste. Les images de joueurs sont publiées par PlayStation et créditées comme telles.",
+  "items": [
+    {
+      "id": "lucy-ds2",
+      "work": "DEATH STRANDING 2: ON THE BEACH",
+      "version": "DS2 ; date/édition de la publication indiquée dans la source",
+      "local_path": "/workspace/scratch/c34cb5872d3d/reference/completion-20261125/lucy.png",
+      "source_url": "https://blog.de.playstation.com/uploads/sites/13/2025/06/8d09e3db800700203ee865c13d0d438f7d4244d4.png",
+      "source_page": "https://blog.de.playstation.com/2025/06/24/death-stranding-2-on-the-beach-diese-schauspieler-und-synchronsprecher-sind-dabei/",
+      "source_kind": "Publication officielle PlayStation",
+      "credit": null,
+      "observation": "Cheveux bruns attachés avec mèche latérale ; haut gris clair à col en V ; cadrage poitrine, sourire.",
+      "framing": "Buste",
+      "unknown_or_hidden": "Jambes, chaussures, dos et silhouette complète non visibles.",
+      "proposed_project_role": "Portrait / présence narrative",
+      "production_status": "Référence inspectée ; image du projet à produire, pas de nouveau combattant décidé",
+      "priority": "P1",
+      "dimensions": [
+        3840,
+        2160
+      ],
+      "bytes": 2913289,
+      "sha256": "84ca45e2472a76bcdc53b77fab00bf5915a6d2d15102ecca19a595f10ead0b32",
+      "inspected_on": "2026-11-25",
+      "fidelity": "Sujet et parties visibles attestés ; toute vue nouvelle ou suppression d’occlusion relève de l’adaptation, sans certification 1:1"
+    },
+    {
+      "id": "doctor-ds2",
+      "work": "DEATH STRANDING 2: ON THE BEACH",
+      "version": "DS2 ; date/édition de la publication indiquée dans la source",
+      "local_path": "/workspace/scratch/c34cb5872d3d/reference/completion-20261125/doctor.png",
+      "source_url": "https://blog.de.playstation.com/uploads/sites/13/2025/06/6222e7e4deca44979de0eec0cb0424f5489a9718.png",
+      "source_page": "https://blog.de.playstation.com/2025/06/24/death-stranding-2-on-the-beach-diese-schauspieler-und-synchronsprecher-sind-dabei/",
+      "source_kind": "Publication officielle PlayStation",
+      "credit": null,
+      "observation": "Crâne rasé, lunettes rouges, tenue médicale claire, stéthoscope et gants bleus levés.",
+      "framing": "Buste et mains",
+      "unknown_or_hidden": "Bas du corps non visible ; ne pas inventer un kit de combat.",
+      "proposed_project_role": "Portrait / soutien médical documentaire",
+      "production_status": "Référence inspectée ; image du projet à produire, pas de nouveau combattant décidé",
+      "priority": "P1",
+      "dimensions": [
+        3840,
+        2160
+      ],
+      "bytes": 4023914,
+      "sha256": "80133fa8ee909e3e8c8ef00d2349c7362673d980968fe521aa84058ea3f80292",
+      "inspected_on": "2026-11-25",
+      "fidelity": "Sujet et parties visibles attestés ; toute vue nouvelle ou suppression d’occlusion relève de l’adaptation, sans certification 1:1"
+    },
+    {
+      "id": "heartman-ds2",
+      "work": "DEATH STRANDING 2: ON THE BEACH",
+      "version": "DS2 ; date/édition de la publication indiquée dans la source",
+      "local_path": "/workspace/scratch/c34cb5872d3d/reference/completion-20261125/heartman_ds2.png",
+      "source_url": "https://blog.de.playstation.com/uploads/sites/13/2025/06/7931e8db5ccffaa9bcfee080142740645a893ebc.png",
+      "source_page": "https://blog.de.playstation.com/2025/06/24/death-stranding-2-on-the-beach-diese-schauspieler-und-synchronsprecher-sind-dabei/",
+      "source_kind": "Publication officielle PlayStation",
+      "credit": null,
+      "observation": "Costume bleu et appareil jaune/ambre sur la poitrine devant une grande carte lumineuse orange et bleue.",
+      "framing": "De la tête aux cuisses",
+      "unknown_or_hidden": "Jambes complètes et chaussures non visibles ; ce costume ne remplace pas le Heartman DS1.",
+      "proposed_project_role": "Portrait / variante documentaire distincte du Heartman DS1 jouable",
+      "production_status": "Référence inspectée ; image du projet à produire, pas de nouveau combattant décidé",
+      "priority": "P1",
+      "dimensions": [
+        3840,
+        2160
+      ],
+      "bytes": 7649925,
+      "sha256": "286ec9413baecd24140c58e3798eed6fca46a25f935d0348b4e479f8e5a1eed4",
+      "inspected_on": "2026-11-25",
+      "fidelity": "Sujet et parties visibles attestés ; toute vue nouvelle ou suppression d’occlusion relève de l’adaptation, sans certification 1:1"
+    },
+    {
+      "id": "the-president-ds2",
+      "work": "DEATH STRANDING 2: ON THE BEACH",
+      "version": "DS2 ; date/édition de la publication indiquée dans la source",
+      "local_path": "/workspace/scratch/c34cb5872d3d/reference/completion-20261125/the_president.png",
+      "source_url": "https://blog.de.playstation.com/uploads/sites/13/2025/06/2381726888be8bd000b16dde1d706acf6c23d61e.png",
+      "source_page": "https://blog.de.playstation.com/2025/06/24/death-stranding-2-on-the-beach-diese-schauspieler-und-synchronsprecher-sind-dabei/",
+      "source_kind": "Publication officielle PlayStation",
+      "credit": null,
+      "observation": "Cheveux gris courts dégarnis, barbe grise courte, boucle d’oreille ronde ; veste sombre avec broche crabe, col montant noir.",
+      "framing": "Gros plan visage et haut du buste",
+      "unknown_or_hidden": "Silhouette complète non visible ; l’article nomme Alastair Duncan, pas Ma Dong-seok.",
+      "proposed_project_role": "Portrait / PNJ documentaire",
+      "production_status": "Référence inspectée ; image du projet à produire, pas de nouveau combattant décidé",
+      "priority": "P1",
+      "dimensions": [
+        3840,
+        2160
+      ],
+      "bytes": 3952075,
+      "sha256": "bbb791ecd62a2763327579d412043d9dbdb49a340afc87033607e175bfd359b4",
+      "inspected_on": "2026-11-25",
+      "fidelity": "Sujet et parties visibles attestés ; toute vue nouvelle ou suppression d’occlusion relève de l’adaptation, sans certification 1:1"
+    },
+    {
+      "id": "tomorrow-white-dress-ds2",
+      "work": "DEATH STRANDING 2: ON THE BEACH",
+      "version": "DS2 ; date/édition de la publication indiquée dans la source",
+      "local_path": "/workspace/scratch/c34cb5872d3d/reference/completion-20261125/tomorrow_pc.jpg",
+      "source_url": "https://gmedia.playstation.com/is/image/SIEPDC/death-stranding-2-pc-screenshot-10-05feb26?wid=900",
+      "source_page": "https://www.playstation.com/en-fi/games/death-stranding-2-on-the-beach/death-stranding-2-on-the-beach-pc/",
+      "source_kind": "Publication officielle PlayStation",
+      "credit": null,
+      "observation": "Robe blanche plissée sans manches, col montant ; paume sombre tournée vers le cadre, liens au poignet.",
+      "framing": "buste",
+      "unknown_or_hidden": "Bas de la robe et chaussures coupés ; ne pas remplacer la variante noire déjà livrée.",
+      "proposed_project_role": "Variante de tenue en portrait",
+      "production_status": "Référence inspectée ; image du projet à produire, pas de nouveau combattant décidé",
+      "priority": "P1",
+      "dimensions": [
+        900,
+        507
+      ],
+      "bytes": 44879,
+      "sha256": "322ef6f6b4c1aac6b891cd78ed2b34bdd17e0166110f36cbe99499537f062863",
+      "inspected_on": "2026-11-25",
+      "fidelity": "Sujet et parties visibles attestés ; toute vue nouvelle ou suppression d’occlusion relève de l’adaptation, sans certification 1:1"
+    },
+    {
+      "id": "sam-grey-promo-ds2",
+      "work": "DEATH STRANDING 2: ON THE BEACH",
+      "version": "DS2 ; date/édition de la publication indiquée dans la source",
+      "local_path": "/workspace/scratch/c34cb5872d3d/reference/completion-20261125/sam_early_grey.jpg",
+      "source_url": "https://gmedia.playstation.com/is/image/SIEPDC/death-stranding-2-screenshot-04-en-19jan24?wid=900",
+      "source_page": "https://www.playstation.com/en-us/games/death-stranding-2-on-the-beach/",
+      "source_kind": "Publication officielle PlayStation",
+      "credit": null,
+      "observation": "Cheveux longs gris, barbe grise, épaules et haut du torse nus.",
+      "framing": "portrait",
+      "unknown_or_hidden": "Image promotionnelle ancienne ; ne pas associer automatiquement cette tête à la tenue DRAWBRIDGE de 2026.",
+      "proposed_project_role": "Variante promotionnelle en portrait",
+      "production_status": "Référence inspectée ; image du projet à produire, pas de nouveau combattant décidé",
+      "priority": "P1",
+      "dimensions": [
+        900,
+        507
+      ],
+      "bytes": 41455,
+      "sha256": "6cfbd99b8f006ac87cf4a2f35799d8019d1eedfbdb2c0d89f7f24f911423c6dd",
+      "inspected_on": "2026-11-25",
+      "fidelity": "Sujet et parties visibles attestés ; toute vue nouvelle ou suppression d’occlusion relève de l’adaptation, sans certification 1:1"
+    },
+    {
+      "id": "fragile-early-outfit-ds2",
+      "work": "DEATH STRANDING 2: ON THE BEACH",
+      "version": "DS2 ; date/édition de la publication indiquée dans la source",
+      "local_path": "/workspace/scratch/c34cb5872d3d/reference/completion-20261125/fragile_early.jpg",
+      "source_url": "https://gmedia.playstation.com/is/image/SIEPDC/death-stranding-2-screenshot-02-en-19jan24?wid=900",
+      "source_page": "https://www.playstation.com/en-us/games/death-stranding-2-on-the-beach/",
+      "source_kind": "Publication officielle PlayStation",
+      "credit": null,
+      "observation": "Cheveux courts, haut clair et sangles visibles sous une lumière rouge sombre.",
+      "framing": "portrait",
+      "unknown_or_hidden": "Costume incomplet et éclairage rouge altérant les couleurs ; ne pas extrapoler les jambes.",
+      "proposed_project_role": "Variante promotionnelle en portrait",
+      "production_status": "Référence inspectée ; image du projet à produire, pas de nouveau combattant décidé",
+      "priority": "P1",
+      "dimensions": [
+        900,
+        507
+      ],
+      "bytes": 24001,
+      "sha256": "8f4da09681f6354ae0c32c6d2ea7c139fe141b94784c990d4a5d5953dec2c5f9",
+      "inspected_on": "2026-11-25",
+      "fidelity": "Sujet et parties visibles attestés ; toute vue nouvelle ou suppression d’occlusion relève de l’adaptation, sans certification 1:1"
+    },
+    {
+      "id": "dhv-magellan-isolated-ds2",
+      "work": "DEATH STRANDING 2: ON THE BEACH",
+      "version": "DS2 ; date/édition de la publication indiquée dans la source",
+      "local_path": "/workspace/scratch/c34cb5872d3d/reference/completion-20261125/magellan.jpg",
+      "source_url": "https://gmedia.playstation.com/is/image/SIEPDC/death-stranding-2-screenshot-05-en-10mar25?wid=900",
+      "source_page": "https://www.playstation.com/en-us/games/death-stranding-2-on-the-beach/",
+      "source_kind": "Publication officielle PlayStation",
+      "credit": null,
+      "observation": "Navire sombre très allongé, structures et mâts supérieurs, suspendu au-dessus d’une berge au couchant.",
+      "framing": "paysage",
+      "unknown_or_hidden": "Face opposée, intérieur et dessous partiellement occultés ; séparer le véhicule du panorama serait une adaptation.",
+      "proposed_project_role": "Véhicule autonome fixe",
+      "production_status": "Référence inspectée ; image du projet à produire, pas de nouveau combattant décidé",
+      "priority": "P1",
+      "dimensions": [
+        900,
+        507
+      ],
+      "bytes": 54113,
+      "sha256": "e555005b99698df69dc64eb970dcfd21ce4644ff0243fcb5b77275955e000cb5",
+      "inspected_on": "2026-11-25",
+      "fidelity": "Sujet et parties visibles attestés ; toute vue nouvelle ou suppression d’occlusion relève de l’adaptation, sans certification 1:1"
+    },
+    {
+      "id": "tri-cruiser-ds2",
+      "work": "DEATH STRANDING 2: ON THE BEACH",
+      "version": "DS2 ; date/édition de la publication indiquée dans la source",
+      "local_path": "/workspace/scratch/c34cb5872d3d/reference/completion-20261125/changes_5.jpg",
+      "source_url": "https://blog.de.playstation.com/uploads/sites/13/2025/07/4da6680f10d7bda85b7df2451a5f4e4ec995e60c.jpg",
+      "source_page": "https://blog.de.playstation.com/?p=192267",
+      "source_kind": "Publication officielle PlayStation",
+      "credit": null,
+      "observation": "Trois roues, carénage gris, arceaux lumineux bleus, position de conduite basse et caisse arrière.",
+      "framing": "Trois quarts latéral, Sam assis ; roue arrière proche du bord",
+      "unknown_or_hidden": "Côté opposé et surfaces sous le conducteur non vus. Identification Tri-Cruiser confirmée par le texte et la capture Traversal de PlayStation.",
+      "proposed_project_role": "Véhicule autonome fixe",
+      "production_status": "Référence inspectée ; image du projet à produire, pas de nouveau combattant décidé",
+      "priority": "P1",
+      "dimensions": [
+        3840,
+        2160
+      ],
+      "bytes": 726043,
+      "sha256": "3f13f4b9916ab608f9dde093e3b511595cb1841a107fc08434ef54d1326936b0",
+      "inspected_on": "2026-11-25",
+      "fidelity": "Sujet et parties visibles attestés ; toute vue nouvelle ou suppression d’occlusion relève de l’adaptation, sans certification 1:1"
+    },
+    {
+      "id": "truck-ds2",
+      "work": "DEATH STRANDING 2: ON THE BEACH",
+      "version": "DS2 ; date/édition de la publication indiquée dans la source",
+      "local_path": "/workspace/scratch/c34cb5872d3d/reference/completion-20261125/traversal_5.png",
+      "source_url": "https://live.staticflickr.com/65535/54645599035_0d0a87f511_o.png",
+      "source_page": "https://blog.playstation.com/2025/07/11/share-of-the-week-death-stranding-2-on-the-beach-traversal/",
+      "source_kind": "Capture de joueur sélectionnée et publiée par PlayStation",
+      "credit": "F1Str4nd",
+      "observation": "Camion tout-terrain à quatre grandes roues, châssis articulé, cabine haute gris sombre, détails et barres orange/jaune, éclairage bleu.",
+      "framing": "Trois quarts inférieur, véhicule complet en saut",
+      "unknown_or_hidden": "La légende dit truck ; désignation exacte Pickup Off-Roader non confirmée par une source primaire consultée. Ne pas inventer son intérieur.",
+      "proposed_project_role": "Véhicule autonome fixe",
+      "production_status": "Référence inspectée ; image du projet à produire, pas de nouveau combattant décidé",
+      "priority": "P1",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "bytes": 1475782,
+      "sha256": "37d4613bd2ced9e857ff89486d505dfa6e531293905d332ac4323d0850d5032f",
+      "inspected_on": "2026-11-25",
+      "fidelity": "Sujet et parties visibles attestés ; toute vue nouvelle ou suppression d’occlusion relève de l’adaptation, sans certification 1:1"
+    },
+    {
+      "id": "coffin-board-ds2",
+      "work": "DEATH STRANDING 2: ON THE BEACH",
+      "version": "DS2 ; date/édition de la publication indiquée dans la source",
+      "local_path": "/workspace/scratch/c34cb5872d3d/reference/completion-20261125/traversal_3.png",
+      "source_url": "https://live.staticflickr.com/65535/54645521033_0568ff8efa_o.png",
+      "source_page": "https://blog.playstation.com/2025/07/11/share-of-the-week-death-stranding-2-on-the-beach-traversal/",
+      "source_kind": "Capture de joueur sélectionnée et publiée par PlayStation",
+      "credit": "Chescone",
+      "observation": "Plateforme étroite sombre aux extrémités anguleuses, lueur bleue sous le plateau, Sam debout au-dessus de l’eau.",
+      "framing": "Vue latérale ; une partie du dessus cachée par les pieds",
+      "unknown_or_hidden": "Dessus complet caché par Sam ; la séparation en objet seul sera une adaptation.",
+      "proposed_project_role": "Équipement de déplacement autonome",
+      "production_status": "Référence inspectée ; image du projet à produire, pas de nouveau combattant décidé",
+      "priority": "P1",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "bytes": 1948607,
+      "sha256": "f116ab1efd8356f11e4e65158202f2edf7fc9c8c95537c091ad7c8b4ff8f25fd",
+      "inspected_on": "2026-11-25",
+      "fidelity": "Sujet et parties visibles attestés ; toute vue nouvelle ou suppression d’occlusion relève de l’adaptation, sans certification 1:1"
+    },
+    {
+      "id": "cargo-capsule-ds2",
+      "work": "DEATH STRANDING 2: ON THE BEACH",
+      "version": "DS2 ; date/édition de la publication indiquée dans la source",
+      "local_path": "/workspace/scratch/c34cb5872d3d/reference/completion-20261125/traversal_4.png",
+      "source_url": "https://live.staticflickr.com/65535/54645508544_8bb2bde5c0_o.png",
+      "source_page": "https://blog.playstation.com/2025/07/11/share-of-the-week-death-stranding-2-on-the-beach-traversal/",
+      "source_kind": "Capture de joueur sélectionnée et publiée par PlayStation",
+      "credit": "Milz_VP",
+      "observation": "Capsule verticale ouverte avec structure claire, fond sombre et ailes horizontales déployées ; Sam visible à l’intérieur.",
+      "framing": "Module complet de face, légère contre-plongée",
+      "unknown_or_hidden": "Ce cadre ne montre pas toute l’installation de catapulte ; ne pas nommer le module seul catapulte complète.",
+      "proposed_project_role": "Module lancé par la catapulte de fret, accessoire de transport",
+      "production_status": "Référence inspectée ; image du projet à produire, pas de nouveau combattant décidé",
+      "priority": "P1",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "bytes": 1241668,
+      "sha256": "533737a5f99e40ff811b0449f49d1628c08c9c05d93a693ebc3401c45907f340",
+      "inspected_on": "2026-11-25",
+      "fidelity": "Sujet et parties visibles attestés ; toute vue nouvelle ou suppression d’occlusion relève de l’adaptation, sans certification 1:1"
+    },
+    {
+      "id": "maser-handgun-ds2",
+      "work": "DEATH STRANDING 2: ON THE BEACH",
+      "version": "DS2 ; date/édition de la publication indiquée dans la source",
+      "local_path": "/workspace/scratch/c34cb5872d3d/reference/completion-20261125/maser-handgun-ds2-ui.jpg",
+      "source_url": "https://gmedia.playstation.com/is/content/SIEPDC/global_pdc/en/games/pdps/d/de/death-stranding-2/_guide/videos/death-stranding2-stealth-video-01-20jun25.mp4",
+      "source_page": "https://www.playstation.com/en-us/games/death-stranding-2-on-the-beach/death-stranding-2-on-the-beach-guide/",
+      "source_kind": "Capture extraite d’une vidéo officielle PlayStation",
+      "credit": null,
+      "observation": "Dans la roue officielle : intitulé Maser Handgun, profil compact gris sombre, poignée oblique et bloc de visée supérieur, repères roses/rouges.",
+      "framing": "Image extraite à environ 4,5 s ; petite vignette latérale dans interface 1920×1080",
+      "unknown_or_hidden": "Résolution du modèle limitée à la vignette ; petit matériel et côté opposé non vérifiables. La fonction électrique est décrite dans la même interface.",
+      "proposed_project_role": "Arme autonome fixe ; effet électrique à concevoir séparément",
+      "production_status": "Référence inspectée ; image du projet à produire, pas de nouveau combattant décidé",
+      "priority": "P1",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "bytes": 169917,
+      "sha256": "4f2122afac019e6cd2df468f6c1282a3e88fd5ceada74867f43131bb0ed101dc",
+      "inspected_on": "2026-11-25",
+      "fidelity": "Sujet et parties visibles attestés ; toute vue nouvelle ou suppression d’occlusion relève de l’adaptation, sans certification 1:1"
+    },
+    {
+      "id": "monorail-ds2",
+      "work": "DEATH STRANDING 2: ON THE BEACH",
+      "version": "DS2 ; date/édition de la publication indiquée dans la source",
+      "local_path": "/workspace/scratch/c34cb5872d3d/reference/completion-20261125/traversal_6.png",
+      "source_url": "https://live.staticflickr.com/65535/54645280156_cc569042cc_o.png",
+      "source_page": "https://blog.playstation.com/2025/07/11/share-of-the-week-death-stranding-2-on-the-beach-traversal/",
+      "source_kind": "Capture de joueur sélectionnée et publiée par PlayStation",
+      "credit": "MohdNazif",
+      "observation": "Rail et wagon de fret jaune suspendu ; Sam se tient à la structure du véhicule.",
+      "framing": "Vue rapprochée du wagon, partiellement coupé",
+      "unknown_or_hidden": "Pas de locomotive ni de rame complète visible.",
+      "proposed_project_role": "Véhicule / élément de décor fixe facultatif",
+      "production_status": "Référence inspectée ; image du projet à produire, pas de nouveau combattant décidé",
+      "priority": "P2",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "bytes": 1420308,
+      "sha256": "f30b738467cce8adf88829cf2c791048e536d3392dc1a4ee7feee240b05b24c1",
+      "inspected_on": "2026-11-25",
+      "fidelity": "Sujet et parties visibles attestés ; toute vue nouvelle ou suppression d’occlusion relève de l’adaptation, sans certification 1:1"
+    }
+  ],
+  "pending_visual_identification": [
+    {
+      "id": "watcher-ds2",
+      "work": "DS2",
+      "role": "Ennemi",
+      "status": "Existence et détection visuelle attestées ; aucune image identifiée avec confiance dans ce lot",
+      "source_page": "https://blog.playstation.com/2025/05/08/death-stranding-2-on-the-beach-hands-on-report/",
+      "dependency": "Trouver une image officielle explicitement identifiée, puis vérifier les parties visibles ; les silhouettes génériques de la vidéo BT ne suffisent pas."
+    },
+    {
+      "id": "armed-survivalist-ds2",
+      "work": "DS2",
+      "role": "Ennemi humain",
+      "status": "Groupe et armes létales attestés ; image individuelle identifiée manquante",
+      "source_page": "https://blog.playstation.com/2025/05/08/death-stranding-2-on-the-beach-hands-on-report/",
+      "dependency": "Identifier la faction d’un modèle précis. Les ennemis mécaniques rouges des captures ne prouvent pas cette faction."
+    },
+    {
+      "id": "blood-boomerang-ds2",
+      "work": "DS2",
+      "role": "Arme / projectile",
+      "status": "Arme explicitement citée par PlayStation Allemagne ; design visuel non inspecté",
+      "source_page": "https://blog.de.playstation.com/?p=192267",
+      "dependency": "Référence officielle de l’objet en entier avant génération à visée fidèle."
+    },
+    {
+      "id": "bt-holographic-grenade-ds2",
+      "work": "DS2",
+      "role": "Objet / effet",
+      "status": "Effet holographique décrit officiellement ; forme de la grenade non documentée ici",
+      "source_page": "https://blog.playstation.com/2025/05/08/death-stranding-2-on-the-beach-hands-on-report/",
+      "dependency": "Référence visuelle précise pour la grenade ; distinguer objet et projection."
+    }
+  ],
+  "supporting_references": [
+    {
+      "file": "/workspace/scratch/c34cb5872d3d/reference/completion-20261125/traversal_2.png",
+      "source_url": "https://live.staticflickr.com/65535/54645508569_5d975f14bf_o.png",
+      "source_page": "https://blog.playstation.com/2025/07/11/share-of-the-week-death-stranding-2-on-the-beach-traversal/",
+      "observation": "Tri-Cruiser vu du dessus, totalité des roues, légende PlayStation explicite ; crédit call_me_xavii."
+    },
+    {
+      "file": "/workspace/scratch/c34cb5872d3d/reference/completion-20261125/hands_on_1.jpg",
+      "source_url": "https://blog.playstation.com/uploads/2025/05/7a4cb82f1325ee7cde16654d1fc44f7d63d3412d.jpg",
+      "source_page": "https://blog.playstation.com/2025/05/08/death-stranding-2-on-the-beach-hands-on-report/",
+      "observation": "Autre vue studio du véhicule à trois roues avec Sam ; camp désertique en arrière-plan."
+    }
+  ]
+}

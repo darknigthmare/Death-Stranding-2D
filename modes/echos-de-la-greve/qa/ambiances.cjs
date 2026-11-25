@@ -202,9 +202,9 @@ function verifyUI(){
 }
 
 async function verifyNetworkUI(){
-  const nodes=new Map(),calls=[],timers=new Map(),frames=new Map(),events={},docEvents={};let serial=0,fail=false;
+  const nodes=new Map(),calls=[],requests=[],timers=new Map(),frames=new Map(),events={},docEvents={};let serial=0,fail=false;
   const tape={version:1,p1:'sam',p2:'higgs',stage:'shore',mode:'local',difficulty:1,roundsToWin:2,seed:42,ticks:1,events:[]};
-  const storage=new Map([['echos.v1.sound','false'],['echos.v1.ambienceVolume','0.6'],['echos.v1.reducedEffects','true'],
+  const storage=new Map([['echos.v1.sound','false'],['echos.v1.ambienceVolume','0.6'],['echos.v1.reducedEffects','true'],['echos.v1.staticScenery','true'],
     ['echos.private.record',JSON.stringify({version:'test',result:{winner:1,rounds:'2-0'},tape})]]);
   class Element {
     constructor(){this.value='';this.hidden=false;this.dataset={};}
@@ -216,7 +216,7 @@ async function verifyNetworkUI(){
   const get=id=>{if(!nodes.has(id))nodes.set(id,new Element());return nodes.get(id);};
   const document={hidden:false,getElementById:get,createElement:()=>new Element(),querySelector:()=>get('header'),addEventListener:(name,handler)=>{docEvents[name]=handler;}};
   const engine={start:options=>calls.push(['start',options]),stop:()=>calls.push(['stop']),setSound:value=>calls.push(['sound',value]),
-    setAmbienceVolume:value=>calls.push(['volume',value]),setAudioSuspended:value=>calls.push(['suspended',value]),validReplay:()=>true,
+    setAmbienceVolume:value=>calls.push(['volume',value]),setAudioSuspended:value=>calls.push(['suspended',value]),setStaticScenery:value=>calls.push(['staticScenery',value]),validReplay:()=>true,
     network:{checkpoint:()=>({}),restore:()=>calls.push(['restore']),advance:(inputs,silent)=>calls.push(['advance',inputs,silent]),draw:()=>calls.push(['draw'])}};
   const store={getItem:key=>storage.get(key)??null,setItem:(key,value)=>storage.set(key,value)};
   const window={StrandFight:engine,StrandRoomVersion:'test',localStorage:store,sessionStorage:{getItem:()=>null,setItem(){}},addEventListener:(name,handler)=>{events[name]=handler;},matchMedia:()=>({matches:false})};
@@ -229,6 +229,7 @@ async function verifyNetworkUI(){
     setTimeout:fn=>{timers.set(++serial,fn);return serial;},clearTimeout:id=>timers.delete(id),
     fetch:async(_url,options)=>{
       const request=JSON.parse(options.body);
+      requests.push(request);
       if(fail)throw new Error('Connection lost');
       return {ok:true,json:async()=>request.op==='create'?{player:1,room:'abc123456789'}:request.op==='leave'?{closed:true}:structuredClone(reply)};
     }};
@@ -238,10 +239,15 @@ async function verifyNetworkUI(){
   const frame=()=>{const [id,callback]=frames.entries().next().value;frames.delete(id);callback();};
   await get('create').onclick();await settle();
   const start=calls.find(c=>c[0]==='start')[1];
-  assert.equal(start.sound,false);assert.equal(start.ambienceVolume,.6);assert.equal(start.reducedEffects,true);
+  assert.equal(start.sound,false);assert.equal(start.ambienceVolume,.6);assert.equal(start.reducedEffects,true);assert.equal(start.staticScenery,true);
+  assert.equal(get('roomScenery').value,'static','Static scenery is restored independently of reduced effects');
+  get('roomScenery').value='animated';get('roomScenery').onchange();
+  assert.equal(storage.get('echos.v1.staticScenery'),'false');assert.equal(storage.get('echos.v1.reducedEffects'),'true');
+  assert.deepEqual(calls.at(-1),['staticScenery',false]);
   get('roomAmbience').value='25';get('roomAmbience').oninput();
   assert.equal(storage.get('echos.v1.ambienceVolume'),'0.25');assert.deepEqual(calls.at(-1),['volume',.25]);
   get('roomSound').onclick();assert.equal(storage.get('echos.v1.sound'),'true');assert.deepEqual(calls.at(-1),['sound',true]);
+  get('roomScenery').value='static';get('roomScenery').onchange();assert.equal(storage.get('echos.v1.staticScenery'),'true');
   reply.tick=100;await sync();frame();
   const beforeRewind=calls.length;reply.events=[[2,1,0,'left',true]];reply.total=1;
   await sync();frame();
@@ -249,10 +255,23 @@ async function verifyNetworkUI(){
   assert(rebuilt,'A late event older than retained checkpoints recreates the engine');
   assert.equal(rebuilt[1].audioSuspended,true,'The recreated match begins with audio suspended');
   assert.equal(rebuilt[1].ambienceVolume,.25,'A full rewind preserves local audio settings');
+  assert.equal(rebuilt[1].staticScenery,true,'A full rewind preserves the independent scenery preference');
+  assert.equal(rebuilt[1].preserveStaticScenery,true,'A full rewind requests the held local composition');
   assert.equal(corrected.filter(c=>c[0]==='advance').length,100);
   assert(corrected.filter(c=>c[0]==='advance').every(c=>c[2]===true),'Every recreated tick is silent');
   assert.deepEqual(corrected.slice(-2),[['suspended',false],['draw']],'Audio resumes only when the corrected frame is ready');
   reply.events=[];reply.cursor=1;
+  const key=(type,name,extra={})=>events[type]({key:name,repeat:false,target:get('canvas'),preventDefault(){},...extra});
+  const selector=get('roomScenery');selector.matches=pattern=>pattern.split(',').includes('select');
+  key('keydown','d');key('keyup','d',{target:selector});await sync();
+  assert.deepEqual(requests.at(-1).inputs.filter(event=>event[2]==='right').slice(-2).map(event=>event[3]),[true,false],
+    'A held movement releases after the scenery selector takes keyboard focus');
+  key('keydown','d');key('keyup','d',{ctrlKey:true});await sync();
+  assert.deepEqual(requests.at(-1).inputs.filter(event=>event[2]==='right').slice(-2).map(event=>event[3]),[true,false],
+    'A held movement releases when a modifier is pressed before keyup');
+  const pendingBefore=requests.at(-1).inputs.length;
+  key('keydown','d',{target:selector});key('keyup','d',{target:selector});await sync();
+  assert.equal(requests.at(-1).inputs.length,pendingBefore,'Typing in the selector never starts a combat input');
   reply.live=false;await sync();assert.deepEqual(calls.at(-1),['suspended',true]);
   reply.live=true;await sync();assert.deepEqual(calls.at(-1),['suspended',false]);
   events.blur();assert.deepEqual(calls.at(-1),['suspended',true]);events.focus();assert.deepEqual(calls.at(-1),['suspended',false]);
@@ -262,9 +281,9 @@ async function verifyNetworkUI(){
   fail=false;await sync();assert.deepEqual(calls.at(-1),['suspended',false]);
   reply.result={mismatch:true};await sync();assert.deepEqual(calls.at(-1),['suspended',true]);
   get('watch').onclick();await settle();
-  const replay=calls.findLast(c=>c[0]==='start')[1];assert(replay.replay);assert.equal(replay.sound,true);assert.equal(replay.ambienceVolume,.25);
+  const replay=calls.findLast(c=>c[0]==='start')[1];assert(replay.replay);assert.equal(replay.sound,true);assert.equal(replay.ambienceVolume,.25);assert.equal(replay.staticScenery,true);
   events.pagehide();assert.deepEqual(calls.at(-1),['stop']);
-  console.log('Réseau · préférences son/volume/effets, reconstruction sans checkpoint, connexion interrompue, erreur, onglet, résultat divergent, replay et sortie vérifiés sans pause de simulation.');
+  console.log('Réseau · préférences son/volume/effets/décor statique distinctes, reconstruction sans checkpoint, libération après focus/modificateur, connexion interrompue, erreur, onglet, résultat divergent, replay et sortie vérifiés sans pause de simulation.');
 }
 
-(async()=>{await verifyAudio();verifyUI();await verifyNetworkUI();})().catch(error=>{console.error(error);process.exitCode=1;});
+(async()=>{if(!process.argv.includes('--network-only')){await verifyAudio();verifyUI();}await verifyNetworkUI();})().catch(error=>{console.error(error);process.exitCode=1;});

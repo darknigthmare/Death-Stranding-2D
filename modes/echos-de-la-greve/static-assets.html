@@ -17,7 +17,7 @@
 <section class="static-intro" aria-labelledby="static-title">
 <div class="eyebrow">Bridges · Catalogue visuel</div>
 <h1 id="static-title">Silhouettes<br>et horizons.</h1>
-<p>Les visages qui accompagnent la traversée, les présences qui la hantent et les lieux qui en gardent la mémoire. Explorez chaque silhouette et chaque panorama dans son format original.</p>
+<p>Les visages qui accompagnent la traversée, les tenues, les véhicules et les lieux qui en gardent la mémoire. Explorez ces images fixes dans leur format original, avec l’œuvre et la version de chaque sujet.</p>
 </section>
 <section aria-label="Catalogue des images">
 <div class="static-toolbar">
@@ -32,9 +32,11 @@
 <div class="static-filters" role="group" aria-label="Filtrer par catégorie">
 <button type="button" data-category="all" aria-pressed="true">Tout</button>
 <button type="button" data-category="characters" aria-pressed="false">Personnages</button>
+<button type="button" data-category="costumes" aria-pressed="false">Tenues et variantes</button>
 <button type="button" data-category="enemies" aria-pressed="false">Ennemis</button>
 <button type="button" data-category="projectiles" aria-pressed="false">Projectiles</button>
-<button type="button" data-category="props" aria-pressed="false">Objets et véhicules</button>
+<button type="button" data-category="vehicles" aria-pressed="false">Véhicules</button>
+<button type="button" data-category="props" aria-pressed="false">Objets et équipements</button>
 <button type="button" data-category="stages" aria-pressed="false">Décors</button>
 </div>
 </div>
@@ -46,9 +48,9 @@
 <div class="static-return"><a class="secondary" href="index.html">Reprendre la traversée <span aria-hidden="true">↗</span></a></div>
 </main>
 <dialog class="static-viewer" id="static-viewer" aria-labelledby="viewer-title">
-<div class="viewer-head"><div><p class="kicker" id="viewer-category"></p><h2 id="viewer-title"></h2><p class="viewer-origin" id="viewer-origin"></p></div><form method="dialog"><button class="mini" type="submit" autofocus>Fermer <span aria-hidden="true">×</span></button></form></div>
+<div class="viewer-head"><div><p class="kicker" id="viewer-category"></p><h2 id="viewer-title"></h2><p class="viewer-origin" id="viewer-origin"></p><p class="viewer-representation" id="viewer-representation">Image fixe</p></div><form method="dialog"><button class="mini" type="submit" autofocus>Fermer <span aria-hidden="true">×</span></button></form></div>
 <div class="viewer-image" id="viewer-image-panel" tabindex="-1" aria-label="Image agrandie"><img id="viewer-image" alt=""></div>
-<div class="viewer-foot"><div><p id="viewer-dimensions"></p><p id="viewer-zoom-hint" hidden>Faites défiler pour explorer l’image.</p></div><div class="viewer-actions"><button class="secondary" id="viewer-zoom" type="button" aria-controls="viewer-image-panel" aria-pressed="false">Taille réelle</button><a class="primary" id="viewer-download" download>Télécharger le PNG <span aria-hidden="true">↓</span></a></div></div>
+<div class="viewer-foot"><div><p id="viewer-dimensions"></p><p id="viewer-zoom-hint" hidden>Faites défiler pour explorer l’image.</p><div class="static-documentation"><a id="viewer-bible" hidden>Dans la bible</a><a id="viewer-reference" hidden>Version et source</a></div></div><div class="viewer-actions"><button class="secondary" id="viewer-zoom" type="button" aria-controls="viewer-image-panel" aria-pressed="false">Taille réelle</button><a class="primary" id="viewer-download" download>Télécharger le PNG <span aria-hidden="true">↓</span></a></div></div>
 </dialog>
 <footer><span>ÉCHOS DE LA GRÈVE · SILHOUETTES ET HORIZONS</span><span>Un fan-game inspiré de Death Stranding</span></footer>
 <script src="static-assets-data.js"></script>

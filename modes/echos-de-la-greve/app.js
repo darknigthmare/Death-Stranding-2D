@@ -1,11 +1,13 @@
 (() => {
   'use strict';
   const {fighters, stages} = window.StrandContent;
-  const modes = {...window.StrandContent.modes,boss:'Boss Battle',bossrush:'Boss Rush'};
+  const modes = {...window.StrandContent.modes,boss:'Boss Battle',bossrush:'Boss Rush',campaign:'Campagne du simulateur'};
   const tournament = window.StrandTournament;
   const asset = window.StrandAssets || {};
   const engine = window.StrandFight;
   const bossEngine = window.StrandBoss;
+  const campaignContent = window.StrandCampaign;
+  const campaign = campaignContent?.createStore();
   const view = document.getElementById('view');
   const manual = document.getElementById('manual');
   const ids = Object.keys(fighters);
@@ -17,13 +19,14 @@
     challenges:'<path d="M6 4h12v4a6 6 0 0 1-12 0zm6 10v5m-4 2h8M6 6H3v2a4 4 0 0 0 4 4m11-6h3v2a4 4 0 0 1-4 4"/>',
     training:'<circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="3"/><path d="M12 1v4m0 14v4M1 12h4m14 0h4"/>',
     boss:'<path d="M4 20V9l4-5 4 4 4-4 4 5v11M7 13h3m4 0h3M9 18h6"/>',
-    bossrush:'<path d="M3 19V8l4-4 5 4 5-4 4 4v11M7 13h3m4 0h3M8 19h8m-4-3v6"/>'
+    bossrush:'<path d="M3 19V8l4-4 5 4 5-4 4 4v11M7 13h3m4 0h3M8 19h8m-4-3v6"/>',
+    campaign:'<circle cx="5" cy="5" r="2"/><circle cx="19" cy="6" r="2"/><circle cx="6" cy="19" r="2"/><circle cx="18" cy="18" r="2"/><path d="M7 5l10 1M5 7l1 10m2 2 8-1M8 17l9-9"/>'
   };
-  const config = {mode:'story', p1:'sam', p2:'higgs', stage:'shore', difficulty:'normal', opponent:'cpu', outfit1:'atelier', outfit2:'atelier', count:'4', humans:'1', challenge:'survival',boss:'lion',bossStage:'recommended'};
+  const config = {mode:'story', p1:'sam', p2:'higgs', stage:'shore', difficulty:'normal', opponent:'cpu', outfit1:'atelier', outfit2:'atelier', count:'4', humans:'1', challenge:'survival',boss:'lion',bossStage:'recommended',campaignDifficulty:campaign?.progress().run?.difficulty||'normal'};
   const held = new Map();
   let trial;
   const trialNames = {survival:'Survie', delivery:'Livraison sous pression'};
-  let screen = '', activeFight = null, paused = false, resumeAfterManual = false, arcadeStep = 0;
+  let screen = '', activeFight = null, paused = false, resumeAfterManual = false, arcadeStep = 0, scenePlayback = null;
   let training = {dummy:'idle',hitboxes:false};
   function activeEngine() { return activeFight?.kind==='boss' ? bossEngine : engine; }
   function read(key, fallback) {
@@ -38,6 +41,7 @@
   let ambienceVolume=typeof savedAmbience==='number' && Number.isFinite(savedAmbience) ? Math.max(0,Math.min(1,savedAmbience)) : .35;
   const motionPreference = window.matchMedia?.('(prefers-reduced-motion: reduce)');
   let reducedEffects = read('reducedEffects',!!motionPreference?.matches);
+  let staticScenery = read('staticScenery',false) === true;
   let cup = read('cup',null);
   if (cup?.version !== 1 || !Array.isArray(cup?.rounds) || !Array.isArray(cup?.entrants)) cup = null;
   const progress = read('chapters',{});
@@ -93,6 +97,7 @@
   }
   function stopFight() {
     releaseControls();
+    if (activeFight?.mode==='campaign') campaign?.suspend();
     if (activeFight) activeEngine()?.stop();
     if (activeFight?.kind==='training' && ['record','loop'].includes(training.dummy)) training.dummy='idle';
     activeFight = null; paused = false;
@@ -103,6 +108,7 @@
     copy.challenges='Survie ou livraison sous pression.';
     copy.boss='Quatre Échoués géants, camion et convoi MULE.';
     copy.bossrush='Six rencontres, une réserve de vie et une série à terminer.';
+    copy.campaign='Les Nœuds rompus · six chapitres et une intrigue commune.';
     const tiles = Object.keys(copy).map(key =>
       '<button class="tile" data-act="mode" data-mode="' + key + '"><span class="symbol"><svg aria-hidden="true" viewBox="0 0 24 24">' + icon[key] + '</svg></span>' +
       '<strong>' + modes[key] + '</strong><small>' + copy[key] + '</small>' + arrow + '</button>').join('');
@@ -110,7 +116,7 @@
       '<h1>Échos de<br>la Grève</h1><p>Choisis un combattant et suis son histoire jusqu’au duel avec son rival.</p>' +
       '<div class="actions">' + button('mode','Jouer l’histoire ' + arrow,'darkbtn','data-mode="story"') + '</div></div></section>' +
       '<section class="shelf"><div class="shelfhead"><h2>Modes de combat</h2></div><div class="tiles">' + tiles + '</div><div class="archives">' +
-      button('stageGallery','Parcourir les arènes','mini') + button('gallery','Galerie des scènes','mini') + '<a class="mini" href="duel-originel/index.html">Duel originel · Sam / Higgs</a><a class="mini" href="netplay.html">Salon privé en réseau</a>' +
+      button('stageGallery','Parcourir les arènes','mini') + button('gallery','Galerie des scènes','mini') + button('campaignGallery','Interludes des Nœuds rompus','mini') + '<a class="mini" href="duel-originel/index.html">Duel originel · Sam / Higgs</a><a class="mini" href="netplay.html">Salon privé en réseau</a>' +
       '<a class="mini" href="archives.html">Archives de Bridges</a><a class="mini" href="static-assets.html">Silhouettes et horizons</a><a class="mini campaignLink" href="../../JOUER.html">Retour à la campagne ↗</a></div></section>');
   }
   function stageFor(id) { return fighters[id].route[0][1]; }
@@ -167,6 +173,7 @@
       Object.fromEntries(Object.entries(outfits).map(([key, outfit]) => [key, outfit.name])));
   }
   function selection() {
+    if (config.mode==='campaign') { campaignSelection(); return; }
     if (config.mode==='boss') { bossSelection(); return; }
     if (config.mode==='bossrush') { rushSelection(); return; }
     stopFight();
@@ -251,7 +258,7 @@
       button('pause','Reprendre')+button('leave','Choisir une rencontre','secondary')+'</div></div><div class="combatNotes"><span>'+esc(boss.goal)+
       '</span><span id="signal" aria-live="polite"></span></div><div class="touchgroup">'+touchControls(1)+'</div></section>');
     bossEngine.start({canvas:document.getElementById('arena'),p1:match.p1,boss:match.boss,stage,difficulty:config.difficulty,outfit:config.outfit1,
-      sound,ambienceVolume,reducedEffects,resume:cp,onStatus(status){
+      sound,ambienceVolume,reducedEffects,staticScenery,resume:cp,onStatus(status){
         const signal=document.getElementById('signal');if(signal)signal.textContent=status.saved===false?'La progression reste disponible pour cette session.':status.message;
       },onEnd(result){if(activeFight===match)bossResult(match,result);}});
   }
@@ -311,7 +318,7 @@
       '<div id="pauseBox" class="pausebox" hidden><h2>En pause</h2><p>Votre série et la rencontre en cours sont conservées pour la reprise.</p>'+ambienceControl()+
       button('pause','Reprendre')+button('leave','Retour à Boss Rush','secondary')+'</div></div><div class="combatNotes"><span>'+esc(boss.goal)+
       '</span><span id="signal" aria-live="polite"></span></div><div class="touchgroup">'+touchControls(1)+'</div></section>');
-    bossEngine.rush.start({canvas:document.getElementById('arena'),sound,ambienceVolume,reducedEffects,onStatus(status){
+    bossEngine.rush.start({canvas:document.getElementById('arena'),sound,ambienceVolume,reducedEffects,staticScenery,onStatus(status){
       const signal=document.getElementById('signal');if(signal)signal.textContent=status.saved===false?'La série reste disponible pour cette session.':status.message;
     },onEnd(result){if(activeFight===match)rushResult(result);}});
   }
@@ -333,6 +340,125 @@
       '<div class="actions">'+(next?button('continueRush','Affronter '+esc(next.name)):button('retryRush','Recommencer la série'))+
       button('rushSelection','Choix de la série','secondary')+button('home','Accueil','secondary')+'</div></div></section>');
   }
+  function campaignSaveHint() {
+    return campaign.progress().saved ? 'Progression enregistrée dans ce navigateur. Une rencontre interrompue reprend au début du chapitre.' :
+      'Le stockage du navigateur est indisponible. Ta progression reste disponible pendant cette session ; elle sera perdue à la fermeture.';
+  }
+  function campaignSelection(notice='') {
+    stopFight();config.mode='campaign';
+    if(!campaign||!engine||!bossEngine){setScreen('error','<section class="shell">'+back()+'<h1>Campagne indisponible</h1><p>Un module nécessaire au parcours n’a pas pu être chargé.</p></section>');return;}
+    const state=campaign.progress(),run=state.run,finished=run?.phase==='complete',completed=run?.results.length||0;
+    const current=run?campaignContent.chapters[run.chapter]:null;
+    const resumeLabel=run?.phase==='ending'?'Voir la conclusion':run?.phase==='aftermath'?'Lire l’interlude du chapitre '+(run.chapter+1):
+      run?.phase==='prologue'?'Reprendre le prologue':'Reprendre le chapitre '+((run?.chapter||0)+1);
+    const cards=campaignContent.chapters.map((c,index)=>{
+      const done=index<completed,active=run&&!finished&&index===run.chapter;
+      const opponent=c.kind==='boss'?bossEngine.encounters[c.boss].name:fighters[c.p2].call;
+      return '<li class="campaignChapter'+(done?' completed':'')+(active?' current':'')+'"><span class="campaignNumber">'+String(index+1).padStart(2,'0')+
+        '</span><div><p class="kicker">'+esc(fighters[c.p1].call)+' · '+(c.kind==='boss'?'Grande rencontre':'Duel')+'</p><h2>'+esc(c.title)+
+        '</h2><p>'+esc(opponent)+' · '+esc(stages[c.stage])+'</p><small>'+esc(c.objective)+'</small></div><span class="campaignStatus">'+
+        (done?'Validé':active?'En cours':'À parcourir')+'</span></li>';
+    }).join('');
+    setScreen('campaign','<section class="shell campaignShell">'+back()+'<div class="pagehead"><div><div class="eyebrow">Campagne du simulateur</div><h1>'+campaignContent.title+
+      '</h1></div><p>Six liaisons rompues. Cinq points de vue. Une réponse à reconstruire ensemble.</p></div><p class="campaignFiction">'+esc(campaignContent.fiction)+
+      '</p>'+(notice||state.recovery?'<p class="brief" role="status">'+esc(notice||state.recovery)+'</p>':'')+
+      (run?'<div class="campaignResume"><div><strong>'+(finished?'Campagne terminée':completed+' / 6 chapitres validés')+'</strong><p>'+esc(campaignContent.difficulties[run.difficulty])+
+        (current&&!finished?' · '+esc(current.title):' · Les six liaisons sont rétablies.')+'</p></div>'+button(finished?'campaignConclusion':'campaignResume',finished?'Revoir la conclusion':resumeLabel)+'</div>':'')+
+      '<div class="campaignRules"><p><strong>Quatre duels et deux grandes rencontres.</strong> Les duels se gagnent en deux manches. Le point de vue et l’arène suivent le récit.</p>'+
+      '<p>La difficulté reste fixée pendant une partie. Vitalité, garde et énergie repartent à leur valeur de départ à chaque chapitre. Une défaite permet de recommencer le chapitre sans perdre les précédents.</p>'+
+      '<p>Quitter une rencontre ou fermer la page ramène au début de ce chapitre. Les interludes débloqués restent dans leur galerie, même après une nouvelle partie.</p></div>'+
+      '<div class="options">'+choose('campaignDifficulty','Difficulté d’une nouvelle partie',campaignContent.difficulties)+ambienceControl()+'</div><div class="actions">'+
+      button('campaignNew',run?'Nouvelle campagne':'Commencer les six chapitres',run?'secondary':'primary')+button('campaignGallery','Interludes · '+state.unlocked.length+' / '+campaignContent.scenes.length,'secondary')+
+      button('controls','Commandes','secondary')+'</div><p class="hint campaignSave" role="status">'+esc(campaignSaveHint())+'</p><ol class="campaignChapters">'+cards+'</ol></section>');
+  }
+  function campaignNew() {
+    stopFight();
+    const run=campaign?.progress().run;
+    if(run&&run.phase!=='complete'){
+      setScreen('campaignReplace','<section class="shell"><div class="result"><div class="eyebrow">Les Nœuds rompus</div><h1>Recommencer les six chapitres ?</h1>'+
+        '<p>La partie en cours sera remplacée. Les interludes déjà débloqués resteront disponibles. Les huit histoires et les autres modes conservent leurs sauvegardes.</p><div class="actions">'+
+        button('campaignResume','Garder et reprendre la partie')+button('campaignStart','Recommencer la campagne','secondary')+'</div></div></section>');return;
+    }
+    campaignStart();
+  }
+  function campaignStart() {
+    if(!campaign)return campaignSelection();
+    stopFight();config.mode='campaign';campaign.start(config.campaignDifficulty);campaignScene();
+  }
+  function campaignResume() {
+    if(!campaign?.progress().run)return campaignSelection();
+    stopFight();config.mode='campaign';campaign.resume();campaignScene();
+  }
+  function campaignScene(replayId=null) {
+    if(!campaign)return campaignSelection();
+    const state=campaign.progress(),run=state.run;
+    const fromGallery=typeof replayId==='string';
+    if(fromGallery&&!state.unlocked.includes(replayId))return campaignGallery();
+    const current=fromGallery?campaignContent.scenes.find(s=>s.id===replayId):campaign.currentScene();
+    if(!current)return campaignSelection();
+    const speaker=fighters[current.speaker]?.call||current.speaker;
+    const chapterIndex=campaignContent.chapters.findIndex(c=>c.before.id===current.id||c.after.id===current.id);
+    const label=chapterIndex>=0?'Chapitre '+(chapterIndex+1)+' / 6 · '+campaignContent.chapters[chapterIndex].title:
+      current.id==='prologue'?'Prologue':'Conclusion';
+    const action=fromGallery?'campaignGallery':run.phase==='briefing'?'campaignFight':run.phase==='complete'?'campaignSelection':'campaignAdvance';
+    const next=fromGallery?'Retour aux interludes':run.phase==='briefing'?'Entrer dans l’arène':run.phase==='prologue'?'Commencer le premier chapitre':
+      run.phase==='ending'?'Clore la campagne':run.phase==='complete'?'Retour à la campagne':run.chapter===5?'Voir la conclusion':'Chapitre suivant';
+    const portrait=asset.portraits?.[current.speaker];
+    setScreen('campaignScene','<section class="story-art campaignScene"'+backdrop(asset.stages?.[current.stage]||asset.hero)+'>'+
+      (portrait?'<img class="campaignPortrait" src="'+esc(portrait)+'" alt="">':'')+'<div class="story-copy"><div class="eyebrow">Les Nœuds rompus · '+esc(label)+
+      '</div><div class="speaker">'+esc(speaker)+'</div><h1>'+esc(current.title)+'</h1>'+current.paragraphs.map(p=>'<p>'+esc(p)+'</p>').join('')+
+      '<div class="actions">'+button(action,next+' '+arrow)+(!fromGallery?button('campaignSelection','Retour au parcours','secondary'):'')+'</div></div></section>'+
+      '<div class="routebar">Fiction du simulateur · Empreintes DS1 / Director’s Cut'+(fromGallery?' · Relecture sans effet sur la progression':' · '+esc(campaignSaveHint()))+'</div>');
+  }
+  function campaignAdvance() {
+    if(!campaign?.advance())return campaignSelection();
+    if(campaign.progress().run.phase==='complete')campaignSelection();else campaignScene();
+  }
+  function campaignGallery() {
+    stopFight();config.mode='campaign';
+    if(!campaign)return campaignSelection();
+    const state=campaign.progress();
+    const cards=campaignContent.scenes.map(s=>{
+      const unlocked=state.unlocked.includes(s.id),speaker=fighters[s.speaker]?.call||s.speaker;
+      return unlocked?'<button data-act="campaignReplay" data-scene="'+s.id+'">'+image(asset.stages?.[s.stage],s.title)+'<strong>'+esc(s.title)+
+        '</strong><small>'+esc(speaker)+'</small></button>':'<article class="campaignLocked"><span aria-hidden="true">◇</span><strong>Interlude à découvrir</strong><small>'+esc(speaker)+'</small></article>';
+    }).join('');
+    setScreen('campaignGallery','<section class="shell">'+button('campaignSelection','← Les Nœuds rompus','back')+'<div class="pagehead"><div><div class="eyebrow">Campagne du simulateur</div><h1>Les interludes</h1></div>'+
+      '<p>'+state.unlocked.length+' / '+campaignContent.scenes.length+' scènes débloquées. Les relire ne change pas la partie en cours.</p></div><div class="gallery campaignGallery">'+cards+
+      '</div><p class="hint campaignSave">Les illustrations réemploient les décors du simulateur ; le récit est une création de cette campagne.</p></section>');
+  }
+  function campaignFight() {
+    stopFight();
+    const entry=campaign?.beginEncounter();if(!entry)return campaignResume();
+    const c=entry.chapter;config.mode='campaign';config.p1=c.p1;
+    const match={mode:'campaign',kind:c.kind==='boss'?'boss':'cpu',p1:c.p1,p2:c.p2,boss:c.boss,stage:c.stage,difficulty:entry.difficulty,
+      campaignTicket:entry.ticket,chapter:c.id,title:'Les Nœuds rompus · '+(entry.index+1)+' / 6 · '+c.title};
+    if(c.kind==='duel'){fight(match);return;}
+    activeFight=match;
+    const boss=bossEngine.encounters[c.boss];
+    setScreen('fight','<section class="fightShell"><div class="fightbar"><div><div class="kicker">'+esc(match.title)+'</div><b>'+esc(stages[c.stage])+
+      '</b></div><div class="tools">'+button('controls','Commandes','mini')+button('pause','Pause','mini','id="pauseBtn"')+'</div></div><div class="screen">'+
+      '<canvas id="arena" aria-label="'+esc(fighters[c.p1].name+' affronte '+boss.name)+'"></canvas><div id="pauseBox" class="pausebox campaignPause" hidden><h2>En pause</h2>'+
+      '<p>Quitter ou fermer la page reprend ce chapitre depuis son début. Les chapitres précédents restent validés.</p>'+ambienceControl()+button('pause','Reprendre')+
+      button('leave','Retour à la campagne','secondary')+'</div></div><div class="combatNotes"><span>'+esc(boss.goal)+'</span><span id="signal" aria-live="polite"></span></div>'+
+      '<div class="touchgroup">'+touchControls(1)+'</div></section>');
+    bossEngine.start({canvas:document.getElementById('arena'),p1:c.p1,boss:c.boss,stage:c.stage,difficulty:entry.difficulty,outfit:'atelier',isolated:true,
+      sound,ambienceVolume,reducedEffects,staticScenery,onStatus(status){const signal=document.getElementById('signal');if(signal)signal.textContent=status.message||'';},
+      onEnd(result){if(activeFight===match)campaignOutcome(match,result);}});
+  }
+  function campaignOutcome(match,result) {
+    const summary=campaign.record(match.campaignTicket,result);stopFight();
+    if(!summary){campaignSelection('La rencontre a été interrompue. Reprends ce chapitre depuis son début.');return;}
+    const run=campaign.progress().run,c=campaignContent.chapters[run.chapter];
+    const detail=summary.rounds?summary.rounds.join(' – ')+' manches':summary.won?'Objectif de la grande rencontre atteint.':
+      ({cargo:'Le dépôt a été perdu.',time:'Le temps est écoulé.',health:'Le porteur est à terre.'})[summary.reason]||'La rencontre est perdue.';
+    setScreen('campaignResult','<section class="shell"><div class="result campaignResult"><div class="eyebrow">Les Nœuds rompus · Chapitre '+(run.chapter+1)+
+      '</div><h1>'+(summary.won?'La liaison se rouvre':'La liaison reste fermée')+'</h1><p>'+esc(c.title)+' · '+esc(fighters[c.p1].call)+'</p><p class="campaignResultDetail">'+esc(detail)+
+      '</p><p>'+(summary.won?'Le chapitre est validé. Découvre ce que cette victoire rend possible.':'Tu peux recommencer ce chapitre avec tes ressources de départ. Les victoires précédentes sont conservées.')+
+      '</p><p class="hint campaignSave" role="status">'+esc(campaignSaveHint())+'</p><div class="actions">'+
+      button(summary.won?'campaignInterlude':'campaignResume',summary.won?'Lire l’interlude':'Recommencer ce chapitre')+button('campaignSelection','Voir le parcours','secondary')+
+      button('home','Accueil','secondary')+'</div></div></section>');
+  }
   function openStory() {
     const index = chapter();
     if (index === 3 || !index) {
@@ -342,13 +468,41 @@
     if (index === 2) scene(config.p1,'rival'); else routeFight();
   }
   function unlock(id, part) { archive[id + '-' + part] = true; save('scenes',archive); }
-  function scene(id, part, fromGallery = false) {
-    const character = fighters[id], [title,body] = character.scenes[part];
-    if (!fromGallery) unlock(id,part);
+  function sceneFrames(id,part) {
+    const declared=asset.storyFrames?.[id]?.[part];
+    const frames=Array.isArray(declared)?declared.filter(frame=>frame&&typeof frame.src==='string'&&frame.src).map(frame=>({
+      src:frame.src,caption:typeof frame.caption==='string'?frame.caption:fighters[id].scenes[part][0],alt:typeof frame.alt==='string'?frame.alt:frame.caption
+    })):[];
+    return frames.length?frames:[{src:art(id,part),caption:fighters[id].scenes[part][0],alt:fighters[id].call+' · '+scenes[part]}];
+  }
+  function scene(id, part, fromGallery = false, frameIndex = 0) {
+    const character = fighters[id];
+    if(!character||!Object.hasOwn(scenes,part))return gallery();
+    const [title,body] = character.scenes[part],frames=sceneFrames(id,part),index=Math.max(0,Math.min(frames.length-1,Number.isInteger(frameIndex)?frameIndex:0)),frame=frames[index];
+    if (!fromGallery&&!archive[id+'-'+part]) unlock(id,part);
+    scenePlayback={id,part,fromGallery,index,total:frames.length};
     const next = fromGallery ? button('gallery','Retour à la galerie') : part === 'ending' ? button('home','Terminer le parcours') : button('routeFight','Entrer dans l’arène ' + arrow);
-    setScreen('scene','<section class="story-art"' + backdrop(art(id,part)) + '><div class="story-copy"><div class="eyebrow">' +
+    const navigation='<div class="sceneNavigation" role="group" aria-label="Illustrations de la scène"><p id="sceneFrameStatus" aria-live="polite" aria-atomic="true"><span class="sceneCount">Illustration '+(index+1)+' / '+frames.length+
+      '</span><span class="sceneCaption">'+esc(frame.caption)+'</span></p>'+(frames.length>1?'<div class="sceneButtons">'+button('previousSceneFrame','← Précédent','mini','aria-controls="scenePicture"'+(index===0?' disabled':''))+
+      button('nextSceneFrame','Suivant →','mini','aria-controls="scenePicture"'+(index===frames.length-1?' disabled':''))+'</div>':'')+'</div>';
+    setScreen('scene','<section class="story-art sceneSequence"><img id="scenePicture" class="scenePicture" src="'+esc(frame.src)+'" alt="'+esc(frame.alt||frame.caption)+'"><div class="story-copy"><div class="eyebrow">' +
       character.call + ' / ' + character.story + '</div><div class="speaker">' + scenes[part] + '</div><h1>' + title + '</h1><p>' + body +
-      '</p><div class="actions">' + next + '</div></div></section><div class="routebar">' + character.route.map(([opponent,place]) => fighters[opponent].call + ' · ' + stages[place]).join('　→　') + '</div>');
+      '</p>'+navigation+'<div class="actions">' + next + '</div></div></section><div class="routebar">' + character.route.map(([opponent,place]) => fighters[opponent].call + ' · ' + stages[place]).join('　→　') + '</div>');
+  }
+  function sceneStep(direction) {
+    if(screen!=='scene'||!scenePlayback)return;
+    const p=scenePlayback,index=Math.max(0,Math.min(p.total-1,p.index+direction));
+    if(index===p.index)return;
+    const frame=sceneFrames(p.id,p.part)[index],picture=document.getElementById('scenePicture'),status=document.getElementById('sceneFrameStatus');
+    if(!frame||!picture||!status)return;
+    scenePlayback={...p,index};
+    picture.setAttribute('src',frame.src);picture.setAttribute('alt',frame.alt||frame.caption);
+    status.querySelector('.sceneCount').textContent='Illustration '+(index+1)+' / '+p.total;
+    status.querySelector('.sceneCaption').textContent=frame.caption;
+    const previous=view.querySelector('[data-act="previousSceneFrame"]'),next=view.querySelector('[data-act="nextSceneFrame"]');
+    if(previous)previous.disabled=index===0;if(next)next.disabled=index===p.total-1;
+    const action=index===0?'nextSceneFrame':index===p.total-1?'previousSceneFrame':direction<0?'previousSceneFrame':'nextSceneFrame';
+    view.querySelector('[data-act="'+action+'"]')?.focus({preventScroll:true});
   }
   function gallery() {
     const unlocked = ids.flatMap(id => Object.keys(scenes).filter(part => archive[id + '-' + part]).map(part =>
@@ -405,6 +559,7 @@
   }
   function start() {
     switch (config.mode) {
+      case 'campaign': campaign.progress().run?campaignResume():campaignNew(); return;
       case 'boss': startBoss(); return;
       case 'bossrush': startRush(true); return;
       case 'story': openStory(); return;
@@ -546,7 +701,7 @@
     setScreen('fight','<section class="fightShell"><div class="fightbar"><div><div class="kicker">' + (watching ? 'Relecture · ' : '') + match.title +
       '</div><b>' + stages[match.stage] + '</b></div><div class="tools">' + (watching ? button('leave','Retour au tableau','mini') : button('controls','Commandes','mini')) + button('pause','Pause','mini','id="pauseBtn"') +
       '</div></div><div class="screen"><canvas id="arena" aria-label="Duel entre ' + esc(labels.join(' et ')) + '"></canvas>' +
-      '<div id="pauseBox" class="pausebox" hidden><h2>En pause</h2>' + ambienceControl() + button('pause','Reprendre') + button('leave',watching ? 'Retour au tableau' : 'Quitter le duel','secondary') +
+      '<div id="pauseBox" class="pausebox'+(match.mode==='campaign'?' campaignPause':'')+'" hidden><h2>En pause</h2>' + (match.mode==='campaign'?'<p>Quitter ou fermer la page reprend ce chapitre depuis son début. Les chapitres précédents restent validés.</p>':'') + ambienceControl() + button('pause','Reprendre') + button('leave',watching ? 'Retour au tableau' : match.mode==='campaign'?'Retour à la campagne':'Quitter le duel','secondary') +
       '</div></div><div class="combatNotes"><span>' + (watching ? labels.join('　 /　') : 'Commandes J1 · ' + labels[0] + '　 /　' + (local ? 'Commandes J2' : match.kind==='training' ? 'Mannequin' : 'IA') + ' · ' + labels[1]) + '</span>' +
       (match.kind === 'training' ? trainingTools() : '<span id="signal" aria-live="polite"></span>') + '</div><div class="touchgroup">' +
       (watching ? '' : touchControls(1) + (local ? touchControls(2) : match.kind==='training' ? '<div id="dummyControls" hidden>'+touchControls(2)+'</div>' : '')) + '</div></section>');
@@ -554,7 +709,7 @@
     let phase = null;
     engine.start({canvas,p1:match.p1,p2:match.p2,stage:match.stage,mode:match.kind,difficulty:match.difficulty,seed:match.seed,record:match.mode==='tournament' && !watching,replay:match.replay,roundsToWin:match.mode === 'challenges' ? 1 : 2,startingVitality:match.vitality,parcel:match.parcel,training,
       outfits:['versus','training'].includes(match.mode) ? [config.outfit1,config.outfit2] : undefined,
-      sound,ambienceVolume,reducedEffects,visuals:asset.fighters || {},onStatus(status) {
+      sound,ambienceVolume,reducedEffects,staticScenery,visuals:asset.fighters || {},onStatus(status) {
         if (match.kind==="training") updateTraining(status);
         if (!signal || status.phase === phase) return;
         phase = status.phase;
@@ -566,10 +721,13 @@
     if (!activeFight) return;
     paused = !!on;
     releaseControls(); activeEngine().pause(paused);
-    document.getElementById('pauseBox').hidden = !paused;
-    document.getElementById('pauseBtn').textContent = paused ? 'Reprendre' : 'Pause';
+    const box=document.getElementById('pauseBox'),control=document.getElementById('pauseBtn');
+    box.hidden = !paused;
+    control.textContent = paused ? 'Reprendre' : 'Pause';
+    if(activeFight.mode==='campaign')(paused?box.querySelector('[data-act="pause"]'):control)?.focus({preventScroll:true});
   }
   function outcome(match, result) {
+    if(match.mode==='campaign'){campaignOutcome(match,result);return;}
     stopFight();
     if (match.replay) {
       const recorded=cup.rounds.flat().find(item=>item.id===match.matchId);
@@ -623,11 +781,12 @@
   function controls() {
     resumeAfterManual = !!activeFight && !paused;
     if (resumeAfterManual) setPause(true);
-    const bossMode=activeFight?.kind==='boss' || (!activeFight && ['boss','bossrush'].includes(config.mode));
+    const campaignChapter=campaignContent?.chapters[campaign?.progress().run?.chapter||0];
+    const bossMode=activeFight?.kind==='boss' || (!activeFight && (['boss','bossrush'].includes(config.mode)||config.mode==='campaign'&&campaignChapter?.kind==='boss'));
     const table = '<table><thead><tr><th>Action</th><th>Joueur 1</th>'+(bossMode?'':'<th>Joueur 2</th>')+'</tr></thead><tbody>' +
       keys.map(([action,title,,,first,second]) => '<tr><td>' + (bossMode?({throw:'Prendre / poser / livrer · frappe d’appui',finish:'Charge chirale'})[action]||title:title) + '</td><td>' + first + '</td>'+(bossMode?'':'<td>' + second + '</td>')+'</tr>').join('') +
       '</tbody></table>';
-    const fighterIds = [activeFight?.p1 || config.p1];
+    const fighterIds = [activeFight?.p1 || (config.mode==='campaign'?campaignChapter?.p1:null) || config.p1];
     if (acceptsSecondPlayer() && !fighterIds.includes(activeFight.p2)) fighterIds.push(activeFight.p2);
     const moveLists = fighterIds.map(id => {
       const current = fighters[id];
@@ -656,6 +815,14 @@
     engine?.setReducedEffects?.(reducedEffects);
     bossEngine?.setReducedEffects?.(reducedEffects);
   }
+  function updateScenery() {
+    const control=document.getElementById('scenery');
+    if(control){control.setAttribute('aria-pressed',String(staticScenery));control.title=staticScenery?
+      'Décor entièrement fixe ; les combattants et les annonces restent animés':'Figer le décor sans arrêter les combattants ni les annonces';}
+    engine?.setStaticScenery?.(staticScenery);bossEngine?.setStaticScenery?.(staticScenery);
+  }
+  const sceneryControl=document.getElementById('scenery');
+  if(sceneryControl)sceneryControl.onclick=()=>{staticScenery=!staticScenery;save('staticScenery',staticScenery);updateScenery();};
   document.getElementById('effects').onclick = () => { reducedEffects = !reducedEffects; save('reducedEffects',reducedEffects); updateEffects(); };
   motionPreference?.addEventListener('change',event => {
     if (read('reducedEffects',null) === null) { reducedEffects = event.matches; updateEffects(); }
@@ -667,6 +834,9 @@
   document.getElementById('homeLink').onclick = () => { if (activeFight) setPause(true); else home(); };
   const actions = {
     startTrial, trialFight, retryTrial, home, gallery, stageGallery, selection, bracket, cupFight, cupReplay, routeFight, start, newCup, controls,
+    campaignSelection:()=>campaignSelection(),campaignNew,campaignStart,campaignResume,campaignAdvance,campaignFight,campaignGallery,
+    campaignInterlude:()=>campaignScene(),campaignConclusion:()=>campaignScene(),campaignReplay:el=>campaignScene(el.dataset.scene),
+    previousSceneFrame:()=>sceneStep(-1),nextSceneFrame:()=>sceneStep(1),
     startBoss:() => startBoss(), resumeBoss:() => startBoss(true), bossSelection,
     newRush:()=>startRush(true),continueRush:()=>startRush(),rushSelection,rushResult:()=>rushResult(),
     retryRush:()=>{const run=bossEngine.rush.progress().run;if(run){config.p1=run.p1;config.difficulty=run.difficulty;config.outfit1=run.outfit;}startRush(true);},
@@ -678,7 +848,7 @@
     restartStory:() => { progress[config.p1] = 0; save('chapters',progress); openStory(); },
     ending:() => scene(config.p1,'ending'), rival:() => scene(config.p1,'rival'),
     pause:() => setPause(!paused),
-    leave:() => { const mode = activeFight?.mode; stopFight(); if (mode === 'tournament') bracket(); else selection(); },
+    leave:() => { const mode = activeFight?.mode; stopFight(); if (mode === 'tournament') bracket(); else if(mode==='campaign')campaignSelection();else selection(); },
     resetTraining:() => {
       if (activeFight?.kind==='training') { releaseControls(); engine.setTraining({reset:true}); }
     }
@@ -716,6 +886,9 @@
   }
   function editable(target) { return target.matches?.('input,textarea,select,[contenteditable="true"]'); }
   window.addEventListener('keydown',event => {
+    if(screen==='scene'&&!manual.open&&!event.ctrlKey&&!event.altKey&&!event.metaKey&&!editable(event.target)&&['ArrowLeft','ArrowRight'].includes(event.key)){
+      event.preventDefault();if(!event.repeat)sceneStep(event.key==='ArrowLeft'?-1:1);return;
+    }
     if (screen !== 'fight' || manual.open || !activeFight || event.ctrlKey || event.altKey || event.metaKey) return;
     if (event.key === 'Escape') { event.preventDefault(); if (!event.repeat) setPause(!paused); return; }
     if (paused || activeFight.replay || editable(event.target)) return;
@@ -746,5 +919,5 @@
   window.addEventListener('pageshow',event => { if (event.persisted && screen === 'fight') home(); });
   engine?.setAmbienceVolume?.(ambienceVolume);
   bossEngine?.setAmbienceVolume?.(ambienceVolume);
-  updateSound(); updateEffects(); home();
+  updateSound(); updateEffects(); updateScenery(); home();
 })();

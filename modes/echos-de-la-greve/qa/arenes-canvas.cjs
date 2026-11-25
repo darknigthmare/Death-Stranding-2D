@@ -12,7 +12,7 @@ const requested = process.argv.find(a=>a.startsWith('--stages='))?.slice(9).spli
 const groups = ['skyplates','distants','midgrounds','floors','foregrounds'];
 const speeds = [.14,.27,.43,.62,.8];
 // These exterior joins previously exposed a strip of sky above the floor.
-const universeStages = new Set(['south-knot-ruins','timefall-farm','mountain-knot-approach','magellan-ds2']);
+const universeStages = new Set(['south-knot-ruins','timefall-farm','mountain-knot-approach','magellan-ds2','plate-gate-ds2','sandstorm-ds2','dunes-ds2']);
 const joinRegressions = new Set(['shore','terminal','battlefield','mountain-pass','mule-camp-dry','port-knot','incinerator',...universeStages]);
 const script = name => fs.readFileSync(path.join(root,name),'utf8');
 const catalog = {window:{},structuredClone};
@@ -52,7 +52,7 @@ const scenarioFighters = ['higgs','fragile'];
     const draws=[];
     const joinCanvas=createCanvas(1280,4),joinContext=joinCanvas.getContext('2d');
     const frontCanvas=createCanvas(1280,720),frontContext=frontCanvas.getContext('2d');
-    let joinAlphaMin=255,foregroundLaneAlphaMax=0;
+    let joinAlphaMin=255,foregroundLaneAlphaMax=0,compositeAlphaMin=255;
     const nativeCanvas=createCanvas(160,90);
     const nativeContext=nativeCanvas.getContext('2d');
     nativeContext.scale(.125,.125);
@@ -157,6 +157,10 @@ const scenarioFighters = ['higgs','fragile'];
             nativeCanvas.width=1280;nativeCanvas.height=720;
             const frame=[...pending.values()];pending.clear();
             for(const draw of frame)draw(time);
+            const rendered=nativeContext.getImageData(0,0,1280,720).data;
+            let alpha=255;for(let i=3;i<rendered.length;i+=4)alpha=Math.min(alpha,rendered[i]);
+            assert.equal(alpha,255,'The actual final composition is opaque, including source PNGs capped at alpha 254: '+label);
+            compositeAlphaMin=Math.min(compositeAlphaMin,alpha);
             const suffix=(mode==='local'&&!reducedEffects?'':'-'+mode+(reducedEffects?'-reduced':'-normal'))+(direction===1?'-right':'-left');
             const filename=id+suffix+'.webp';
             fs.writeFileSync(path.join(output,filename),nativeCanvas.toBuffer('image/webp',88));captures.push(filename);
@@ -175,7 +179,7 @@ const scenarioFighters = ['higgs','fragile'];
       assert(Math.abs(rect[2]/rect[3]-panorama.width/panorama.height)<.00001,'Panorama fallback preserves native ratio: '+id);
       engine.stop();unavailable.clear();
     }
-    results.push({stage:id,cases,captures,layers,
+    results.push({stage:id,cases,captures,layers,composite_min_alpha:compositeAlphaMin,
       source_images:[...stageFiles].map(file=>({file,width:decoded.get(file).width,height:decoded.get(file).height,
         sha256:createHash('sha256').update(fs.readFileSync(path.join(root,file))).digest('hex')})),
       ...(joinRegressions.has(id)?{background_join_min_alpha:joinAlphaMin}:{}),

@@ -35,6 +35,8 @@
 .static-origin{margin:0 0 13px;color:var(--acid);font-size:11px;line-height:1.6}
 .static-version{display:block;color:var(--mute)}
 .static-description{min-height:3.2em;color:var(--mute);font-size:13px;line-height:1.6}
+.static-documentation{display:flex;flex-wrap:wrap;gap:10px 16px;margin-top:12px;font-size:12px;line-height:1.6}
+.static-documentation a[hidden]{display:none}
 .static-cardfoot{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;padding-top:18px;margin-top:18px;border-top:1px solid var(--rule)}
 .static-cardfoot small{color:var(--mute);font:10px/1.5 var(--mono)}
 .static-cardfoot a{font-size:12px}
@@ -49,6 +51,7 @@
 .viewer-head .kicker{color:var(--acid);font-size:9px}
 .viewer-head h2{font-size:clamp(23px,3vw,34px);letter-spacing:-.04em;margin:5px 0 0;line-height:1.1}
 .viewer-origin{margin-top:8px;color:var(--mute);font-size:12px;line-height:1.5}
+.viewer-representation{margin-top:6px;color:var(--acid);font:10px/1.5 var(--mono)}
 .viewer-head form{flex-shrink:0}
 .viewer-image{display:flex;align-items:center;justify-content:center;height:min(62svh,780px);padding:18px;overflow:hidden;overscroll-behavior:contain}
 .viewer-image img{display:block;max-width:100%;max-height:100%;object-fit:contain}

@@ -1,8 +1,8 @@
 (() => {
   'use strict';
   const categoryNames = {
-    characters: 'Personnages', enemies: 'Ennemis',
-    projectiles: 'Projectiles', props: 'Objets et véhicules', stages: 'Décors · Panorama'
+    characters: 'Personnages', costumes: 'Tenues et variantes', enemies: 'Ennemis',
+    projectiles: 'Projectiles', vehicles: 'Véhicules', props: 'Objets et équipements', stages: 'Décors · Panorama'
   };
   const workNames = {
     'ds1-dc': 'Death Stranding / Director’s Cut',
@@ -46,6 +46,16 @@
     return categoryNames[item.category] + (item.kind ? ' · ' + item.kind : '');
   }
 
+  function documentationHref(value) {
+    return typeof value === 'string' && /^\.\.\/\.\.\/docs\/combat\/(?:BIBLE_COMBAT|UNIVERS_DS|REGISTRE_PRODUCTION)\.md(?:#[^\s]*)?$/.test(value) ? value : '';
+  }
+
+  function setDocumentationLink(node, href) {
+    node.hidden = !href;
+    if (href) node.href = href;
+    else node.removeAttribute('href');
+  }
+
   function refresh() {
     let total = 0;
     const available = cards.filter(record => !record.failed).length;
@@ -81,6 +91,9 @@
     document.getElementById('viewer-category').textContent = kind(item);
     document.getElementById('viewer-title').textContent = item.title;
     document.getElementById('viewer-origin').textContent = origin(item);
+    document.getElementById('viewer-representation').textContent = item.representation || 'Image fixe';
+    setDocumentationLink(document.getElementById('viewer-bible'), documentationHref(item.bible));
+    setDocumentationLink(document.getElementById('viewer-reference'), documentationHref(item.reference));
     viewerImage.src = item.src;
     viewerImage.alt = item.alt || item.title;
     document.getElementById('viewer-dimensions').textContent = dimensions(item);
@@ -124,6 +137,16 @@
     const provenance = element('p', 'static-origin', workNames[item.work] || 'Univers Death Stranding');
     if (item.version) provenance.append(element('span', 'static-version', item.version));
     caption.append(provenance, element('p', 'static-description', item.description));
+    const documentation = element('div', 'static-documentation');
+    for (const [field, label] of [['bible', 'Dans la bible'], ['reference', 'Version et source']]) {
+      const href = documentationHref(item[field]);
+      if (!href) continue;
+      const link = element('a', '', label);
+      link.href = href;
+      link.setAttribute('aria-label', label + ' · ' + item.title);
+      documentation.append(link);
+    }
+    if (documentation.children.length) caption.append(documentation);
     const foot = element('div', 'static-cardfoot');
     const size = element('small', '', dimensions(item));
     const link = element('a', '', 'PNG original ↓');
