@@ -67,6 +67,10 @@ jobs:
         run: |
           node outils/generer_catalogue_combat.cjs
           node outils/generer_catalogue_boss.cjs
+      - name: Generated files match the committed sources
+        if: always()
+        run: |
+          git diff --exit-code -- modes/echos-de-la-greve/original-kits-assets.js modes/echos-de-la-greve/original-bosses-assets.js modes/echos-de-la-greve/moves-data.js modes/echos-de-la-greve/boss-data.js docs/combat/data/actions-et-ia.json docs/combat/ACTIONS_ET_IA.md docs/combat/data/boss-et-rencontres.json docs/combat/BOSS_ET_RENCONTRES.md
       - name: Existing relay contracts
         if: always()
         run: |

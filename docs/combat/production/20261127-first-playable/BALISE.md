@@ -14,6 +14,8 @@ Les super, conclusion dédiée et trois costumes de la bible restent en producti
 
 ## Commandes et chiffres du catalogue
 
+Dans le tableau, L désigne l’attaque légère, F l’attaque forte et T la technique. Ce sont les actions logiques du catalogue, pas des lettres de clavier. Avec la configuration initiale de J1, la technique utilise H ; le menu Commandes affiche les touches personnalisées.
+
 Les directions 6 et 4 désignent l’avant et l’arrière par rapport à l’adversaire au moment de la commande. La direction choisie reste capturée même si le bouton est pressé pendant une récupération.
 
 | Commande | Technique | Coût | Démarrage | Activité | Récupération | Dégâts |
@@ -143,7 +145,7 @@ Le script exécute le code livré et injecte ses points d’observation uniqueme
 
 La régression des huit kits compare chaque état public au fight.js du commit 07c818cd3942c0e1925bb0cc32dfe73da19ff297, avec le nouveau module absent puis chargé : **6 400 ticks comparés**. Le checkout CI doit inclure cet historique, ou définir ORIGINAL_KITS_BASE_SOURCE vers son fight.js extrait. L’absence de référence fait échouer le test.
 
-Les premières recettes ont été exécutées dans un hôte V8 simulé : **26 groupes réussis**. Cette preuve couvre le comportement déterministe et les sélections de sources. Elle ne remplace pas l’exécution Node en CI, la mesure des images réelles, un rendu Canvas natif ni le contrôle visuel des poses livrées.
+Les **26 groupes** ont été exécutés avec succès sous Node dans la CI, sur les fichiers livrés, avec **6 400 états canoniques identiques** à la référence. Les huit raccords orientés de corde, les bords d’arène et l’absence de mutation de la simulation pendant le rendu font partie de cette recette. La mesure des 48 PNG, les planches des 30 poses Balise dans un Canvas natif et le parcours clavier d’ancrage/rappel dans Chromium complètent cette preuve. Les contextes Canvas simulés restent explicitement limités à la recette de mécanique ; les rapports et captures distincts sont réunis dans [VERIFICATION.md](VERIFICATION.md).
 
 ## Restant de cette fiche
 

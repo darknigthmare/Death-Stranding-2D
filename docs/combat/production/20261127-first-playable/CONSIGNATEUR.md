@@ -10,7 +10,7 @@ Statut fictionnel : création originale de l’extension fan **Les Lignes de Mar
 
 Le Consignateur est un humain robuste, équipé pour la rétention et la manutention des cargaisons. Il garde les colis par peur de les perdre, au détriment de leurs destinataires. L’objectif consiste à rouvrir le passage, désamorcer son péage et restituer son registre. Sa barre mesure sa **garde**, de 300 à 0. La rencontre se termine par une reddition au lien.
 
-Ce lot apporte **un boss original jouable sur les vingt conçus dans le catalogue**, sous réserve de réception et de validation de ses images. Ses trois phases et ses six états de pose, chacun dessiné dans les deux orientations, ne constituent pas des boss supplémentaires. Les six rencontres historiques du moteur restent présentes. Le menu Boss Battle peut donc exposer sept rencontres lorsque le registre d’art original complet est chargé ; le Boss Rush reste limité à ses six rencontres historiques.
+Ce lot apporte **un boss original jouable sur les vingt conçus dans le catalogue**, avec ses douze images directionnelles reçues, mesurées et contrôlées en scène. Ses trois phases et ses six états de pose, chacun dessiné dans les deux orientations, ne constituent pas des boss supplémentaires. Les six rencontres historiques du moteur restent présentes. Le menu Boss Battle peut donc exposer sept rencontres lorsque le registre d’art original complet est chargé ; le Boss Rush reste limité à ses six rencontres historiques.
 
 Les huit personnages canoniques du moteur Boss peuvent affronter cette rencontre. Balise n’est pas ajouté à ce moteur par ce lot : son intégration Duel ne prouve pas que ses trois signatures sont prises en charge ici.
 
@@ -117,13 +117,13 @@ window.StrandOriginalBossArt = {
 
 Chaque descripteur directionnel contient le chemin de son PNG, son rectangle `crop`, son point d’ancrage, sa ligne de base, son orientation native et son facteur de hauteur. Les éventuels registres de compatibilité restent des détails du chargeur ; la sélection du Consignateur utilise les descripteurs directionnels complets.
 
-Chaque pose existe dans deux orientations dessinées nativement. Le changement de direction sélectionne le PNG correspondant, sans inverser le bouclier et le bâton par une symétrie du rendu. La hauteur de référence debout est de 194 pixels dans le monde du jeu. Les poses agenouillées utilisent un facteur de hauteur de 0,65 dans le manifeste, à confirmer avec la scène de recette. Le boss agenouillé reste opaque : il est vivant. Les six états sont utilisés par la simulation et le rendu ; leurs douze images directionnelles ne sont pas présentées comme douze cycles d’animation complets.
+Chaque pose existe dans deux orientations dessinées nativement. Le changement de direction sélectionne le PNG correspondant, sans inverser le bouclier et le bâton par une symétrie du rendu. La hauteur de référence debout est de 194 pixels dans le monde du jeu. Les poses agenouillées utilisent un facteur de hauteur de 0,65 dans le manifeste, vérifié dans les captures de la scène. Le boss reste visible et vivant après l’agenouillement. Le bref clignotement d’impact peut encore diminuer son opacité avant de s’éteindre ; aucune disparition de mort n’est ajoutée. Les six états sont utilisés par la simulation et le rendu ; leurs douze images directionnelles ne sont pas présentées comme douze cycles d’animation complets.
 
 Les consoles actives, les consoles désactivées et le registre possèdent des images distinctes. Les objets restent lisibles avec des libellés et des indicateurs de reprise. Le moteur dispose également de formes de repli explicites pendant un chargement d’image ; celles-ci ne suffisent pas à activer le registre de production.
 
 Les PNG sources ne sont pas réécrits. Le rendu emploie leurs cadres alpha mesurés via `drawImage`.
 
-Le manifeste `consignateur-art-generation.json` contient les douze PNG natifs RGBA de 1 254 × 1 254 pixels, leurs SHA de blob, prompts, orientations et facteurs de hauteur. Quatorze appels de génération ont produit ces douze images retenues : la garde a reçu une passe de cadrage et un premier agenouillement droit avec halo a été remplacé par une passe de détourage. Aucun miroir binaire, changement de palette ou réécriture alpha par script n’a servi à produire ces variantes. La réception des images est complète ; les métadonnées et la composition dans le navigateur restent à vérifier par la recette CI.
+Le manifeste `consignateur-art-generation.json` contient les douze PNG natifs RGBA de 1 254 × 1 254 pixels, leurs SHA de blob, prompts, orientations et facteurs de hauteur. Quatorze appels de génération ont produit ces douze images retenues : la garde a reçu une passe de cadrage et un premier agenouillement droit avec halo a été remplacé par une passe de détourage. Aucun miroir binaire, changement de palette ou réécriture alpha par script n’a servi à produire ces variantes. La réception des douze images est complète : les métadonnées natives, les choix directionnels, les trois phases et la composition alpha ont été vérifiés dans la CI et dans les captures. Aucune frange rouge parasite ni halo gris n’a été observé dans les compositions retenues.
 
 ### Digue d’aval et ligne d’appui
 
@@ -141,7 +141,7 @@ node modes/echos-de-la-greve/qa/original-bosses.cjs
 
 La recette évalue les vraies sources du moteur et du module. Ses points d’inspection sont injectés uniquement dans l’environnement de test ; aucun endpoint permettant d’imposer une victoire n’est ajouté à l’application.
 
-La validation effectuée dans V8 a réussi sur les seize groupes de contrôles suivants :
+Les premières vérifications V8 ont été rejouées avec succès sous Node dans la CI, sur les sources et le registre d’art livrés. Les seize groupes couvrent notamment :
 
 | Couverture | Résultat |
 |---|---:|
@@ -152,7 +152,7 @@ La validation effectuée dans V8 a réussi sur les seize groupes de contrôles s
 | Sauvegardes volontairement incohérentes | 15 refus |
 | Transition tardive, échecs vitaux, du registre et du chrono, reprise et rechargement | Validés |
 | Modules absents ou art incomplet, six rencontres historiques, Boss Rush inchangé | Validés |
-| Alignement du sol et choix des six poses | Contrats de rendu validés |
+| Alignement du sol et choix des douze images directionnelles | Contrats de rendu validés |
 
 Les parcours publics utilisent uniquement les actions exposées par le moteur pour déplacer, sauter, frapper et interagir. Ils ne modifient pas l’état ni le résultat de combat. Ils reposent surtout sur les attaques communes ; la couverture des vingt-quatre signatures provient des recettes distinctes, dont les situations initiales sont préparées et explicitement nommées.
 
@@ -162,7 +162,9 @@ La reprise déterministe a été comparée sur les trois phases. Une revue indé
 
 ### Limites de cette recette
 
-Dans l’environnement V8 initial, les objets `Image` et le contexte Canvas sont des substituts explicites. Le contrat du registre d’art y utilise des géométries de fixture. Les tests vérifient le comportement réel du JavaScript, les choix de poses et les calculs de dessin, pas les pixels issus du navigateur. Le QA Node doit être rejoué avec le registre d’art reçu et le raccord directionnel final, puis complété par les captures du navigateur et les mesures des PNG avant certification visuelle. Les pixels colorés visibles sur certains bords dans l’aperçu de génération doivent être jugés dans une composition alpha réelle ; leur seule valeur RGB ne suffit pas à conclure à un défaut visible.
+La recette de mécanique sous Node utilise un contexte Canvas de test explicite. Elle vérifie le comportement réel du JavaScript et les contrats de dessin. Une recette séparée décode les PNG et exécute le vrai rendu avec `@napi-rs/canvas` : Sam remporte la rencontre normale au pas 2 710, avec 44 checkpoints valides et les trois objectifs accomplis. La planche des douze poses prépare seulement l’orientation d’états effectivement observés durant ce parcours. Les captures de l’agenouillement et de la reddition montrent des issues distinctes ; l’annonce finale confirme désormais le registre restitué et le passage rouvert.
+
+Les parcours dans Chromium vérifient les accès, le guide, la commande d’interaction, la vitesse 0,75×, la sauvegarde et la conservation de cette vitesse après reprise puis nouvelle tentative, en formats ordinateur et mobile. Ils ne constituent pas une partie jouée sur téléphone ou manette physiques. Les résultats, captures et empreintes des sources sont rassemblés dans [VERIFICATION.md](VERIFICATION.md).
 
 Le fichier `boss-data.js` historique contient une empreinte du moteur. Il doit être régénéré après toute modification de `boss.js`, puis la recette `qa/boss-compendium.cjs` doit être relancée. Son inspecteur historique ne charge pas les originaux : sa référence reste celle des six rencontres historiques. Le guide de cette rencontre vient de `StrandOriginalBosses.guide`.
 

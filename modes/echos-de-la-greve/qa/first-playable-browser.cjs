@@ -10,17 +10,72 @@ const out=path.resolve(process.env.LDM_QA_OUTPUT||path.join(repo,'docs/combat/pr
 const captures=path.join(out,'browser-renders'),checks=[],errors=[],httpErrors=[],failedRequests=[],flowErrors=[],pictures=[];
 fs.mkdirSync(captures,{recursive:true});
 const hash=bytes=>crypto.createHash('sha256').update(bytes).digest('hex');
-const files=['index.html','app.js','presentation.js','teams.html','teams.js','extension.html','extension.js','fight.js','boss.js','lessons.js','original-kits.js','original-kits-assets.js','original-bosses.js','original-bosses-assets.js','qa/first-playable-browser.cjs'];
+const files=['index.html','style.css','teams.css','app.js','presentation.js','teams.html','teams.js','extension.html','extension.js','fight.js','boss.js','lessons.js','original-kits.js','original-kits-assets.js','original-bosses.js','original-bosses-assets.js','qa/first-playable-browser.cjs'];
 const report={date:new Date().toISOString(),browser:true,hardware:false,passed:false,checks,errors,httpErrors,failedRequests,flowErrors,captures:pictures,sourceSha256:Object.fromEntries(files.map(file=>[file,hash(fs.readFileSync(path.join(mode,file)))]))};
 async function check(name,fn){try{const result=await fn();checks.push({name,passed:true,result});console.log('PASS '+name);return result;}catch(error){checks.push({name,passed:false,error:String(error.stack||error)});console.error('FAIL '+name+': '+error.message);throw error;}}
 async function capture(page,name,selector='#arena'){
- const raw=await page.locator(selector).screenshot({type:'png'}),im=await loadImage(raw),c=createCanvas(im.width,im.height);
+ const raw=selector?await page.locator(selector).screenshot({type:'png'}):await page.screenshot({type:'png',fullPage:false}),im=await loadImage(raw),c=createCanvas(im.width,im.height);
  c.getContext('2d').drawImage(im,0,0);const bytes=c.toBuffer('image/webp',92),file='browser-renders/'+name+'.webp';
- fs.writeFileSync(path.join(out,file),bytes);pictures.push({file,width:im.width,height:im.height,bytes:bytes.length,sha256:hash(bytes)});
+ fs.writeFileSync(path.join(out,file),bytes);pictures.push({file,width:im.width,height:im.height,bytes:bytes.length,sha256:hash(bytes),scope:selector?'element':'viewport',selector});
 }
 async function layout(page,label){
  const value=await page.evaluate(()=>({viewport:innerWidth,width:document.documentElement.scrollWidth,body:document.body.scrollWidth}));
  assert(value.width<=value.viewport+1,label+' overflow '+JSON.stringify(value));assert(value.body<=value.viewport+1,label+' body overflow');return value;
+}
+async function pausePanelAccess(page,name,engineName){
+ const panel=page.locator('#pauseBox');await panel.waitFor({state:'visible'});await panel.scrollIntoViewIfNeeded();
+ const read=()=>panel.evaluate(box=>{
+   const rectangle=element=>{const r=element.getBoundingClientRect();return {left:r.left,right:r.right,top:r.top,bottom:r.bottom,width:r.width,height:r.height};};
+   return {panel:rectangle(box),heading:rectangle(box.querySelector('h2')),scrollTop:box.scrollTop,
+     clientHeight:box.clientHeight,scrollHeight:box.scrollHeight,viewport:{width:innerWidth,height:innerHeight}};
+ });
+ const beginsAtTop=state=>{
+   assert.equal(state.scrollTop,0,'Pause must reopen at its beginning');
+   assert(state.panel.top>=-1&&state.panel.bottom<=state.viewport.height+1,'Pause panel outside viewport');
+   assert(state.heading.top>=state.panel.top-1&&state.heading.bottom<=state.panel.bottom+1,'Pause heading is clipped');
+ };
+ const initial=await read();beginsAtTop(initial);await capture(page,name+'-pause-top',null);
+ const controls=panel.locator('button,input:not([type="hidden"]),select'),reachable=[];
+ assert(await controls.count()>=2,'Pause commands missing');
+ for(let index=0;index<await controls.count();index++){
+   const control=controls.nth(index);await control.scrollIntoViewIfNeeded();
+   const proof=await control.evaluate(element=>{
+     const panel=document.getElementById('pauseBox'),r=element.getBoundingClientRect(),p=panel.getBoundingClientRect();
+     const hit=document.elementFromPoint(r.left+r.width/2,r.top+r.height/2);
+     return {tag:element.tagName,text:element.textContent?.trim()||element.getAttribute('aria-label')||element.type,
+       insidePanel:r.top>=p.top-1&&r.bottom<=p.bottom+1&&r.left>=p.left-1&&r.right<=p.right+1,
+       insideViewport:r.top>=-1&&r.bottom<=innerHeight+1&&r.left>=-1&&r.right<=innerWidth+1,
+       hit:hit===element||element.contains(hit),disabled:!!element.disabled,scrollTop:panel.scrollTop};
+   });
+   assert(proof.insidePanel&&proof.insideViewport,'Pause control clipped: '+JSON.stringify(proof));
+   assert(proof.hit&&!proof.disabled,'Pause control cannot receive input: '+JSON.stringify(proof));
+   await control.click({trial:true});reachable.push(proof);
+ }
+ await panel.evaluate(box=>{box.scrollTop=box.scrollHeight;});
+ const bottom=await read();await capture(page,name+'-pause-bottom',null);
+ // Use the real resume/pause buttons, then confirm that reopening restores the title.
+ await panel.locator('[data-act="pause"]').click();
+ await page.waitForFunction(name=>window[name].snapshot()?.paused===false,engineName);
+ await page.locator('#pauseBtn').click();await panel.waitFor({state:'visible'});await panel.scrollIntoViewIfNeeded();
+ const reopened=await read();beginsAtTop(reopened);
+ assert(await page.evaluate(name=>window[name].snapshot().paused,engineName),'Pause did not reopen');
+ return {initial,bottom,reopened,controls:reachable,reopenedAtBeginning:true,proofScope:'Real viewport captures at the top and bottom of the scrollable pause menu'};
+}
+async function relayPauseAccess(page,name){
+ const toolbar=page.locator('.teamArenaToolbar');await toolbar.scrollIntoViewIfNeeded();
+ const buttons=toolbar.locator('button'),reachable=[];
+ for(let index=0;index<await buttons.count();index++){
+   const button=buttons.nth(index);await button.scrollIntoViewIfNeeded();
+   const proof=await button.evaluate(element=>{
+     const r=element.getBoundingClientRect(),hit=document.elementFromPoint(r.left+r.width/2,r.top+r.height/2);
+     return {text:element.textContent.trim(),insideViewport:r.left>=-1&&r.right<=innerWidth+1&&r.top>=-1&&r.bottom<=innerHeight+1,
+       hit:hit===element||element.contains(hit),disabled:element.disabled};
+   });
+   assert(proof.insideViewport&&proof.hit&&!proof.disabled,'Relais pause command inaccessible: '+JSON.stringify(proof));
+   await button.click({trial:true});reachable.push(proof);
+ }
+ assert(await page.evaluate(()=>window.StrandFight.snapshot().paused),'Restored Relais must remain paused');
+ await capture(page,name+'-pause-toolbar',null);return {controls:reachable,layout:'Toolbar remains in normal document flow'};
 }
 async function preload(page,kind){
  await page.evaluate(async kind=>{
@@ -82,7 +137,9 @@ async function balise(page,base,label,full){
      return {anchor:before.marker.x,from:before.x,to:after.x,remainingChiral:after.chiral};
    });
  }else{
-   await page.locator('#pauseBtn').click();await capture(page,'balise-mobile-browser');
+   await page.locator('.screen').scrollIntoViewIfNeeded();await capture(page,'balise-mobile-browser',null);
+   await page.locator('#pauseBtn').click();
+   await check(label+' duel pause exposes its title and every control',()=>pausePanelAccess(page,'balise-'+label,'StrandFight'));
  }
  await page.goto(base+'/index.html',{waitUntil:'networkidle'});
  await check(label+' unsupported routes keep eight canonical kits',async()=>{
@@ -111,6 +168,7 @@ async function relay(page,base,label){
    await page.reload({waitUntil:'networkidle'});await page.locator('#teamResume').click();
    const restored=await page.evaluate(()=>window.StrandFight.snapshot());assert(restored.paused);assert.equal(restored.fighters[0].id,'balise');
    await preload(page,'balise');await capture(page,'balise-relay-'+label,'#teamCanvas');
+   if(label==='mobile')await check(label+' Relais pause toolbar keeps all commands reachable',()=>relayPauseAccess(page,'balise-relay-'+label));
    return {rules:stored.originalRules,active:'balise',paused:true,layout:await layout(page,label+' relay')};
  });
 }
@@ -134,7 +192,9 @@ async function boss(page,base,label){
  await check(label+' boss controls, speed, stage and resumed checkpoint are active',async()=>{
    const initial=await page.evaluate(()=>window.StrandBoss.snapshot());assert.equal(initial.bossId,'ldm-boss-consignateur');assert.equal(initial.stage,'ldm-stage-digue-aval');assert.equal(initial.original.speed,.75);
    assert.match(await page.locator('[data-p="1"][data-input="throw"]').innerText(),/Prise \/ interaction/);
-   await page.locator('#pauseBtn').click();await capture(page,'consignateur-'+label);
+   await page.locator('.screen').scrollIntoViewIfNeeded();await capture(page,'consignateur-'+label,label==='mobile'?null:'#arena');
+   await page.locator('#pauseBtn').click();
+   if(label==='mobile')await check(label+' Boss pause exposes its title and every control',()=>pausePanelAccess(page,'consignateur-'+label,'StrandBoss'));
    assert(await page.evaluate(()=>window.StrandBoss.snapshot().paused));
    await page.reload({waitUntil:'networkidle'});await page.locator('[data-act="resumeBoss"]').click();
    const resumed=await page.evaluate(()=>window.StrandBoss.snapshot());assert.equal(resumed.bossId,initial.bossId);assert.equal(resumed.original.speed,.75);assert(resumed.tick>=initial.tick);

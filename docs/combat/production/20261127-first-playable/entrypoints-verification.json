@@ -1,0 +1,45 @@
+{
+  "date": "2026-11-27T13:43:44.425Z",
+  "passed": true,
+  "groups": 4,
+  "checks": [
+    "All twenty real catalogue entry URLs open the right training selection and start that arena.",
+    "Unknown and ordinary arena query values do not invoke the expansion training route.",
+    "Versus admits 45 arenas; Boss Battle retains its 24 existing compatible arenas and recommended option.",
+    "The actual team controller admits 44 compatible arenas and starts an original panorama with four existing members."
+  ],
+  "trainingArenasStarted": [
+    "ldm-stage-digue-aval",
+    "ldm-stage-quai-refuges",
+    "ldm-stage-depot-amarres",
+    "ldm-stage-bassin-muet",
+    "ldm-stage-phare-couche",
+    "ldm-stage-serre-veille",
+    "ldm-stage-station-captage",
+    "ldm-stage-viaduc-ourlet",
+    "ldm-stage-relais-anemometre",
+    "ldm-stage-pente-cairns",
+    "ldm-stage-triage-noye",
+    "ldm-stage-gare-suspendue",
+    "ldm-stage-atelier-reservoir",
+    "ldm-stage-ecluse-noire",
+    "ldm-stage-archive-beton",
+    "ldm-stage-col-contrevent",
+    "ldm-stage-plateau-aiguilles",
+    "ldm-stage-radome-ebreche",
+    "ldm-stage-terrasse-veilleurs",
+    "ldm-stage-seuil-maree"
+  ],
+  "browser": false,
+  "method": "Shipped HTML script order and real app/team controllers, event-capable DOM fixture and actual fight engine; images and browser layout are covered separately.",
+  "sourceSha256": {
+    "app.js": "1bba691320fdd8a1fe185412c15c833baccae9e692fa9a5613424c3227d9b994",
+    "teams.js": "c7abbeec9ca28b93c36e49fba61eac974fb46f98685fe7bccb308bc80354522f",
+    "index.html": "a5c1c0c614bcc569e8904620a65bdeac2f895b6bc8729f5c45ceff5b5aee615f",
+    "teams.html": "84512d2d42931c3c18d7b55f54fb56d0a163c6b7285e7fd56d631b2f166d72a0",
+    "extension-data.js": "5776d8c46a4aae9985f754230628b7d7797387983794d905f08ae1a8c637f35b",
+    "extension-assets.js": "929fa7ce4b4589989e4b9d9c46c47db906d6d943c1397bdf35e5082ea0bec95e",
+    "extension-runtime.js": "696e8b3a1a8ca2a5b2a11eac7c52fcd9d98f18f15a3247584f150de2e1b2d90e",
+    "qa/original-entrypoints.cjs": "6da89586e4d64d608c25f1886c40740e50a22ad82d5f899cba6d500a00996b54"
+  }
+}

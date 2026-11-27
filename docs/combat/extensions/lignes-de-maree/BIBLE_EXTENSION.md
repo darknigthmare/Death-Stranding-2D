@@ -8,7 +8,7 @@
 
 Les Lignes de Marée ajoute une continuité originale au fan-game : dix spécialistes, vingt lieux reliés, vingt types d’ennemis et vingt rencontres majeures. Leur ambition visuelle est celle d’un spin-off cohérent avec Death Stranding. Ces créations ne sont ni des personnages officiels, ni des lieux retrouvés dans une œuvre existante. Le catalogue précise les futurs kits, les règles de rencontre et les besoins de production ; une fiche complète ou un PNG fixe ne suffit pas à rendre son contenu jouable.
 
-**État courant du 27 novembre : les 70 bases et les 20 arènes statiques sont complétées par le kit local de Balise et la rencontre du Consignateur. La nouvelle passe reçoit 48 PNG natifs : 30 poses Balise, 12 poses Consignateur, cinq objets. Neuf autres kits, vingt IA ennemies, dix-neuf rencontres boss, les missions et les cycles complets restent à produire. Le [bilan courant](../../production/20261127-first-playable/BILAN.md) distingue les actions effectivement jouables des cibles décrites ci-dessous.**
+**État courant du 27 novembre : les 70 bases et les 20 arènes statiques sont complétées par le kit local de Balise et la rencontre du Consignateur. La nouvelle passe reçoit 48 PNG natifs : 30 poses Balise, 12 poses Consignateur et six objets, dont cinq actifs et une variante conservée. Neuf autres kits, vingt IA ennemies, dix-neuf rencontres boss, les missions et les cycles complets restent à produire. Le [bilan courant](../../production/20261127-first-playable/BILAN.md) distingue les actions effectivement jouables des cibles décrites ci-dessous.**
 
 ## 1. Promesse et place dans le projet
 

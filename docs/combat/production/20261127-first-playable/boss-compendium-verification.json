@@ -1,0 +1,59 @@
+{
+  "executedAt": "2026-11-27T13:42:46.826Z",
+  "node": "v22.23.5",
+  "passed": true,
+  "checksPassed": 14,
+  "checks": [
+    "Generated files reproduce exactly and identify the separate Boss engine",
+    "HP, difficulty and announced durations are actual engine results for each encounter and wave",
+    "All eight pattern types emit their documented dangers and finish at the active-phase boundary",
+    "Thirty Boss actions execute once at E, clear at D and accept the next action at D+1",
+    "All eight kits start all six encounters; thirty actions and five variants have tested contact/utility paths",
+    "Facing, low guard, unblockables, counters, chip and invulnerability match the documented defense",
+    "Power, armor and exposure produce the advertised damage; phase two and stagger do not renew recovery",
+    "Danger rectangles and friendly projectile delay/last-TTL contacts use the documented volumes",
+    "Resources, missing markers, mirrored directions and action restrictions are engine-specific",
+    "Truck collection and convoy timing, shared resources and depot damage are distinct",
+    "Final-step victory and ordinary timeout follow the documented update order",
+    "Standalone checkpoint, Rush exact vitality and isolated campaign saves have separate boundaries",
+    "Guide renders native accessible sections for all encounter/context selections without changing saves or engine state",
+    "The six existing Boss simulations retain their exact states across the optional encounter integration"
+  ],
+  "counts": {
+    "hpProfiles": 21,
+    "telegraphs": 36,
+    "patternPhases": 16,
+    "actionTimings": 30,
+    "actionVariants": 5,
+    "kitEncounterStarts": 48,
+    "compatibilityCases": 210,
+    "defenseCases": 98,
+    "damageCases": 288,
+    "conditionalCases": 53,
+    "guideRenders": 18,
+    "canonicalRegressionTicks": 17280
+  },
+  "method": "Actual Boss closure functions through read-only in-memory hooks, prepared unit states, simulated Canvas/Image and storage. The 48 starts use the public engine. Rush result transitions use explicit prepared result fixtures, not six played victories. Pure guide HTML is inspected without a browser.",
+  "browser": false,
+  "nativeCanvas": false,
+  "hardware": false,
+  "syntheticUnitStates": true,
+  "limits": [
+    "No human balance or full-match strategy certification.",
+    "No pixel layout or physical controls validation.",
+    "App hooks are checked separately by the UI owner."
+  ],
+  "sourceSha256": {
+    "modes/echos-de-la-greve/boss.js": "9151eaffd51ea3117f806655bf6dbd7677aff612b837505cdfd53a1410eef550",
+    "modes/echos-de-la-greve/content.js": "fe6e129844908ad3a0fa97d9e59cace35b1fb4c4cc54ba095de401bcac189578",
+    "modes/echos-de-la-greve/campaign.js": "bf84ff01a0afc253c84f5087f040632895fe971f7f934abadd114c3f4311c08a",
+    "modes/echos-de-la-greve/boss-data.js": "20bd21ae6bd83c00e897f11b3093ee43d9fe6ba7a8a9103c0acdfe0e16373f03",
+    "modes/echos-de-la-greve/boss-guide.js": "ac0e1193327a82cef3bbfb0d5e7874fcdf1393f0a7b6a8447308356b3a89c4ee",
+    "modes/echos-de-la-greve/boss-guide.css": "eee55297eadfce8f8efee066caf7a822cfb69cda0f8e885bc178c3681c7711ff",
+    "outils/generer_catalogue_boss.cjs": "c5fd1dcb8f088d7270b5bb3755b4b2c2d9a9df65bffd91e10733793f7388e097",
+    "outils/lib/boss-engine.cjs": "f74d3caf4237c7bbbbfefdac803108691dcad467b958d2ceb32f4c18db57e1db",
+    "modes/echos-de-la-greve/qa/boss-compendium.cjs": "f587a00c487f4a05b5b4934d14ff79651ba09060c2563089dfd30bc48760d9b6",
+    "docs/combat/data/boss-et-rencontres.json": "8d4ff1eec72b442cc37284329732abcf31039eec692f4b0becba28201bed8b09",
+    "docs/combat/BOSS_ET_RENCONTRES.md": "7f50ad24f6b0f4d4543304b9ef9acde9f198e270ee1ca26ca6ebca909b774bd2"
+  }
+}

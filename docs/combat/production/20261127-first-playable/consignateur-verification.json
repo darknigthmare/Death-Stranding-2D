@@ -1,0 +1,141 @@
+{
+  "ok": true,
+  "scope": "Original Consignateur simulation; explicit canvas host mock",
+  "checks": [
+    "Optional registration requires received art; base encounters and Rush remain six",
+    "Catalog guard, stage, three timing pairs and explicit guide agree with runtime",
+    "Prepared boundary fixture: consoles and register gate damage; zero guard alone never wins",
+    "Prepared timeline fixtures: exact announcements and recoveries; moving outside markers avoids each attack",
+    "Prepared guard window: open side deals more damage, repeated hits cannot extend recovery",
+    "All 24 canonical signatures execute their real windup and retain valid checkpoint states",
+    "Prepared phase saves resume deterministically with the same attack, seed and objective flags",
+    "Prepared corrupt saves reject impossible phases, objectives, guard, seed, speed and retry anchors",
+    "Actual health failure restores phase resources and persists a restart without touching campaign inventory",
+    "Prepared freight and clock boundaries produce real failure and phase-three retry",
+    "Late phase entry after 18,000 total ticks remains saveable and retryable",
+    "Native Digue support row aligns to collision floor without distorting its aspect ratio",
+    "Twelve directional poses select their native images without a reflection",
+    "Standalone original records survive reload while isolated runs perform no save writes",
+    "Public-control runs win with all eight canonical fighters in normal and hard, with no state mutations",
+    "Public-control runs also complete the two other scenario speeds"
+  ],
+  "counts": {
+    "publicBattles": 18,
+    "signatureCases": 24,
+    "timingCases": 18,
+    "checkpointFrames": 822,
+    "corruptions": 15
+  },
+  "publicResults": [
+    {
+      "player": "sam",
+      "difficulty": "normal",
+      "ticks": 2710,
+      "vitality": 94
+    },
+    {
+      "player": "fragile",
+      "difficulty": "normal",
+      "ticks": 3078,
+      "vitality": 120
+    },
+    {
+      "player": "higgs",
+      "difficulty": "normal",
+      "ticks": 2710,
+      "vitality": 94
+    },
+    {
+      "player": "cliff",
+      "difficulty": "normal",
+      "ticks": 2710,
+      "vitality": 94
+    },
+    {
+      "player": "mule",
+      "difficulty": "normal",
+      "ticks": 2710,
+      "vitality": 94
+    },
+    {
+      "player": "diehardman",
+      "difficulty": "normal",
+      "ticks": 2710,
+      "vitality": 94
+    },
+    {
+      "player": "mama",
+      "difficulty": "normal",
+      "ticks": 3079,
+      "vitality": 94
+    },
+    {
+      "player": "heartman",
+      "difficulty": "normal",
+      "ticks": 3079,
+      "vitality": 94
+    },
+    {
+      "player": "sam",
+      "difficulty": "hard",
+      "ticks": 2710,
+      "vitality": 87
+    },
+    {
+      "player": "fragile",
+      "difficulty": "hard",
+      "ticks": 3078,
+      "vitality": 120
+    },
+    {
+      "player": "higgs",
+      "difficulty": "hard",
+      "ticks": 2710,
+      "vitality": 87
+    },
+    {
+      "player": "cliff",
+      "difficulty": "hard",
+      "ticks": 2710,
+      "vitality": 87
+    },
+    {
+      "player": "mule",
+      "difficulty": "hard",
+      "ticks": 2710,
+      "vitality": 87
+    },
+    {
+      "player": "diehardman",
+      "difficulty": "hard",
+      "ticks": 2710,
+      "vitality": 87
+    },
+    {
+      "player": "mama",
+      "difficulty": "hard",
+      "ticks": 3079,
+      "vitality": 87
+    },
+    {
+      "player": "heartman",
+      "difficulty": "hard",
+      "ticks": 3079,
+      "vitality": 87
+    },
+    {
+      "player": "sam",
+      "difficulty": "normal",
+      "speed": 0.75,
+      "ticks": 2532,
+      "vitality": 120
+    },
+    {
+      "player": "sam",
+      "difficulty": "normal",
+      "speed": 1.25,
+      "ticks": 2539,
+      "vitality": 94
+    }
+  ]
+}

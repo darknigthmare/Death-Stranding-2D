@@ -853,6 +853,7 @@
     releaseControls(); activeEngine().pause(paused);
     const box=document.getElementById('pauseBox'),control=document.getElementById('pauseBtn');
     box.hidden = !paused;
+    if(paused)box.scrollTop=0;
     control.textContent = paused ? 'Reprendre' : 'Pause';
     if(activeFight.mode==='campaign'||lessonRun)(paused?box.querySelector('[data-act="pause"]'):control)?.focus({preventScroll:true});
   }

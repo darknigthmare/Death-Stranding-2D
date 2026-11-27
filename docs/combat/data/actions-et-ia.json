@@ -4,7 +4,7 @@
   "engine": "StrandFight",
   "source": {
     "file": "modes/echos-de-la-greve/fight.js",
-    "sha256": "d47a5acc4ec3cd16353c4c0c941dca15271093b1abd932a32eaa854a234f0d7a",
+    "sha256": "6be07ea82a834d18cc0f72381fb1c5be44643ae104cc47556bc22cd04570cbc6",
     "content_sha256": "fe6e129844908ad3a0fa97d9e59cace35b1fb4c4cc54ba095de401bcac189578",
     "base": "2250b7c1b54b445637e0c9354133e6fecbc325de",
     "method": "Constantes réelles extraites via VM ; hook de lecture en mémoire, aucun fichier moteur modifié."

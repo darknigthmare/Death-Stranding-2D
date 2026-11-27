@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "id": "ldm-first-playable-art-20261127",
   "baseCommit": "07c818cd3942c0e1925bb0cc32dfe73da19ff297",
-  "status": "generated_pending_native_reception",
+  "status": "native_received_and_first_playable_reviewed",
   "assets": [
     {
       "id": "ropeHook-orange",
@@ -1175,8 +1175,9 @@
     }
   ],
   "counts": {
-    "files": 36,
+    "files": 48,
     "balisePoses": 30,
+    "consignateurPoses": 12,
     "props": 6,
     "activeProps": 5,
     "archivedPropVariants": 1
@@ -1203,15 +1204,22 @@
       "left",
       "right"
     ],
-    "bossPoses": "Separate consignateur-generation manifest owned by boss agent."
+    "bossPoses": [
+      "guard",
+      "shield-push",
+      "pole-strike",
+      "stagger",
+      "kneel",
+      "surrender"
+    ]
   },
   "integrationNotes": [
     "All PNG blobs are the unmodified native outputs of image_gen.imagegen; no raster edits, mirroring, compositing or pixel deformation were applied by code.",
     "Original Balise stance remains untouched. New playable stance-right is separate.",
     "Visual image review covered identity, face, clothing, gear placement, facing, whole figure and support. Left-facing images are independently generated opposite-side views.",
-    "Geometry and SHA-256 must be measured against native bytes in integration CI. Width/height here were read from PNG IHDR without mutation.",
-    "Integration reported alpha=0 at representative outside points and border alpha<=1 for the first eight Balise action poses; visual background appearance alone is not an alpha failure.",
-    "Height ratios are proposed posture-relative values, not inferred from canvas aspect ratio; integration preview can refine alignment and scale.",
+    "Geometry, native alpha and SHA-256 were measured by integration CI against the unmodified native bytes; see assets-reception.json.",
+    "All 48 native PNGs have border alpha <= 1/255 and valid measured crops; identity and composition are separately reviewed.",
+    "Posture-relative height ratios and source anchors have been reviewed in the native scene compositions; full animation transitions remain separate work.",
     "A single orange rope-loop variant is preserved without active runtimeKey; only grey/red loop uses ropeHook.",
     "This manifest claims distinct standalone key poses only; it does not claim full animation cycles or in-between frames."
   ],
@@ -1229,5 +1237,20 @@
       "facing": "right",
       "reason": "Large gray halo around subject; replaced by dedicated background-removal generation."
     }
-  ]
+  ],
+  "reception": {
+    "report": "assets-reception.json",
+    "nativeCanvasReport": "native-renders/first-playable-native.json",
+    "visualReview": "VISUAL_REVIEW.md",
+    "workflowRun": 46009213399,
+    "sourceCommit": "fb0e0dedf807e74c6e0862c5a354d27f963371fd",
+    "rgbaPng": 48,
+    "bytes": 58130961,
+    "alphaErrors": 0,
+    "borderAlphaMax": 1,
+    "ready": {
+      "balise": true,
+      "consignateur": true
+    }
+  }
 }

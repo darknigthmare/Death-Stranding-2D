@@ -1,0 +1,122 @@
+{
+  "date": "2026-11-27",
+  "suite": "first-playable-entrypoints",
+  "adapter": "Shipped input-host.cjs event DOM/Canvas simulation; native PNG existence/crop checks; not browser/visual acceptance",
+  "pages": {
+    "index.html": [
+      "content.js",
+      "asset-geometry-20261124.js",
+      "assets.js",
+      "extension-data.js",
+      "extension-assets.js",
+      "extension-runtime.js",
+      "presentation-assets.js",
+      "presentation.js",
+      "boss-geometry-20261124.js",
+      "boss-assets.js",
+      "tournament.js",
+      "original-kits-assets.js",
+      "original-kits.js",
+      "fight.js",
+      "original-bosses-assets.js",
+      "original-bosses.js",
+      "boss.js",
+      "boss-data.js",
+      "boss-guide.js",
+      "campaign.js",
+      "moves-data.js",
+      "relationships.js",
+      "input.js",
+      "lessons.js",
+      "app.js"
+    ],
+    "teams.html": [
+      "content.js",
+      "asset-geometry-20261124.js",
+      "assets.js",
+      "extension-data.js",
+      "extension-assets.js",
+      "extension-runtime.js",
+      "presentation-assets.js",
+      "presentation.js",
+      "original-kits-assets.js",
+      "original-kits.js",
+      "fight.js",
+      "input.js",
+      "teams.js"
+    ],
+    "extension.html": [
+      "extension-data.js",
+      "extension-assets.js",
+      "original-kits-assets.js",
+      "original-bosses-assets.js",
+      "extension.js"
+    ]
+  },
+  "requiredRasterFiles": 41,
+  "arenaLinks": 20,
+  "checks": [
+    {
+      "name": "HTML declares the complete dependency order on all three entry pages",
+      "passed": true
+    },
+    {
+      "name": "Real complete art enables Balise and Consignateur; every required native crop exists",
+      "passed": true
+    },
+    {
+      "name": "Catalogue Balise link opens real training selection and an actual Balise duel",
+      "passed": true
+    },
+    {
+      "name": "Commandes exposes Balise techniques and all six exact public frame rows",
+      "passed": true
+    },
+    {
+      "name": "Versus CPU and local J2 both expose nine kits and run Balise correctly",
+      "passed": true
+    },
+    {
+      "name": "After selecting Balise, every canonical mode restores eight eligible kits without crashing",
+      "passed": true
+    },
+    {
+      "name": "Guided dojo keeps eight kits and rejects a persisted Balise lesson resume",
+      "passed": true
+    },
+    {
+      "name": "Relais exposes nine real previews, validates duplicates, starts, saves and resumes Balise",
+      "passed": true
+    },
+    {
+      "name": "Catalogue Consignateur link selects the seventh boss, forces Digue and applies both scenario speeds",
+      "passed": true
+    },
+    {
+      "name": "Boss Rush remains exactly six canonical encounters and eight player choices",
+      "passed": true
+    },
+    {
+      "name": "Register loss renders the specific result and resumes the saved phase with its resources",
+      "passed": true
+    },
+    {
+      "name": "A saved kneeling Consignateur requires the real interaction before the non-lethal result",
+      "passed": true
+    },
+    {
+      "name": "All twenty catalogue arena links still select and start their actual training stage",
+      "passed": true
+    }
+  ],
+  "sourceSha256": {
+    "app.js": "1bba691320fdd8a1fe185412c15c833baccae9e692fa9a5613424c3227d9b994",
+    "presentation.js": "89719616a053b7be2af84b5c5771a1e4f63429748711ec3dfb9eca0dfb5a3e9a",
+    "lessons.js": "173883d53312043d57f6d28f2bd38795c831b95d9dcb784ca7894f115f9af159",
+    "teams.js": "c7abbeec9ca28b93c36e49fba61eac974fb46f98685fe7bccb308bc80354522f",
+    "fight.js": "6be07ea82a834d18cc0f72381fb1c5be44643ae104cc47556bc22cd04570cbc6",
+    "boss.js": "9151eaffd51ea3117f806655bf6dbd7677aff612b837505cdfd53a1410eef550",
+    "original-kits.js": "511625570ed50cea628bf4e865fa7f0471c7c270f307cbb51018b795a46063d9",
+    "original-bosses.js": "054d536557e62f496a04a12206be456ba1c43f030a2ad35a11387a48421e9a6d"
+  }
+}

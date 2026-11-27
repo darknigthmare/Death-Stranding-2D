@@ -62,7 +62,7 @@ Chaque direction utilise un dessin distinct. Le moteur ne retourne pas horizonta
 
 La réception compare les nouveaux dessins aux références originales déjà présentes et contrôle leur composition dans la scène. Elle ajoute des poses clés et deux appuis de marche ; elle ne fournit pas tous les cycles dessinés intermédiaires de la bible.
 
-**Les 539 rasters antérieurs et les 33 SVG historiques sont préservés.** Les actifs raster deviennent 587. Les planches et captures de vérification sont conservées dans le dossier documentaire et ne sont pas comptées comme actifs du jeu.
+**Les 539 rasters antérieurs et les 33 SVG historiques sont préservés.** Le dossier d’assets contient désormais 587 fichiers raster, y compris la variante de corde conservée hors jeu. Les planches et captures de vérification sont conservées dans le dossier documentaire et ne sont pas comptées comme actifs du jeu.
 
 ## Vérifications et traçabilité
 

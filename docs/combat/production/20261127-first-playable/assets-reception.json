@@ -16,6 +16,13 @@
       "transparentFraction": 0.805139,
       "opaqueFraction": 0.161986,
       "borderAlphaMax": 1,
+      "sampledAlpha": {
+        "50,750": 0,
+        "100,750": 0,
+        "50,400": 0,
+        "887,30": 0,
+        "1724,750": 0
+      },
       "crop": [
         55,
         124,
@@ -28,8 +35,7 @@
         1703,
         765
       ],
-      "id": "ropeHook",
-      "runtimeKey": "ropeHook"
+      "id": "ropeHook-orange"
     },
     {
       "path": "modes/echos-de-la-greve/assets/lignes-de-maree/playable/props/balise-anchor.png",
@@ -43,6 +49,13 @@
       "transparentFraction": 0.722133,
       "opaqueFraction": 0.259488,
       "borderAlphaMax": 1,
+      "sampledAlpha": {
+        "50,750": 0,
+        "100,750": 0,
+        "50,400": 0,
+        "887,30": 0,
+        "1724,750": 0
+      },
       "crop": [
         110,
         68,
@@ -70,6 +83,13 @@
       "transparentFraction": 0.584496,
       "opaqueFraction": 0.400386,
       "borderAlphaMax": 1,
+      "sampledAlpha": {
+        "50,750": 0,
+        "100,750": 0,
+        "50,400": 0,
+        "599,30": 0,
+        "1149,750": 0
+      },
       "crop": [
         201,
         76,
@@ -97,6 +117,13 @@
       "transparentFraction": 0.582894,
       "opaqueFraction": 0.404697,
       "borderAlphaMax": 1,
+      "sampledAlpha": {
+        "50,750": 0,
+        "100,750": 0,
+        "50,400": 0,
+        "599,30": 0,
+        "1149,750": 0
+      },
       "crop": [
         201,
         71,
@@ -124,6 +151,13 @@
       "transparentFraction": 0.481299,
       "opaqueFraction": 0.502434,
       "borderAlphaMax": 1,
+      "sampledAlpha": {
+        "50,750": 0,
+        "100,750": 0,
+        "50,400": 0,
+        "543,30": 0,
+        "1036,750": 0
+      },
       "crop": [
         173,
         53,
@@ -138,12 +172,1588 @@
       ],
       "id": "register",
       "runtimeKey": "register"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/lignes-de-maree/playable/balise/guard-right.png",
+      "sha256": "9d1aa654ebd2076e9227db493c465d01248ac248ec0519f5872deecdd7fa2ac6",
+      "bytes": 2011696,
+      "width": 1024,
+      "height": 1536,
+      "mode": "RGBA",
+      "alphaMin": 0,
+      "alphaMax": 254,
+      "transparentFraction": 0.641219,
+      "opaqueFraction": 0.336496,
+      "borderAlphaMax": 1,
+      "sampledAlpha": {
+        "50,750": 0,
+        "100,750": 0,
+        "50,400": 0,
+        "512,30": 248,
+        "974,750": 0
+      },
+      "crop": [
+        126,
+        21,
+        769,
+        1480
+      ],
+      "opaqueBBox": [
+        127,
+        25,
+        893,
+        1499
+      ],
+      "id": "balise-guard-right",
+      "subject": "balise",
+      "pose": "guard",
+      "facing": "right",
+      "heightRatio": 1
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/lignes-de-maree/playable/balise/guard-left.png",
+      "sha256": "bd329b970b8abe98522e639eca52228e1b6d9439a97f68fa6bc11a26a44afe72",
+      "bytes": 2045209,
+      "width": 1024,
+      "height": 1536,
+      "mode": "RGBA",
+      "alphaMin": 0,
+      "alphaMax": 254,
+      "transparentFraction": 0.645278,
+      "opaqueFraction": 0.330835,
+      "borderAlphaMax": 1,
+      "sampledAlpha": {
+        "50,750": 0,
+        "100,750": 0,
+        "50,400": 0,
+        "512,30": 0,
+        "974,750": 0
+      },
+      "crop": [
+        84,
+        17,
+        833,
+        1501
+      ],
+      "opaqueBBox": [
+        85,
+        21,
+        915,
+        1517
+      ],
+      "id": "balise-guard-left",
+      "subject": "balise",
+      "pose": "guard",
+      "facing": "left",
+      "heightRatio": 1
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/lignes-de-maree/playable/balise/crouch-right.png",
+      "sha256": "b0d5d5858f31c9bdd729da935848b0d25e46a8c629c577f26aceec730024f167",
+      "bytes": 2220186,
+      "width": 1024,
+      "height": 1536,
+      "mode": "RGBA",
+      "alphaMin": 0,
+      "alphaMax": 254,
+      "transparentFraction": 0.560179,
+      "opaqueFraction": 0.417572,
+      "borderAlphaMax": 1,
+      "sampledAlpha": {
+        "50,750": 0,
+        "100,750": 0,
+        "50,400": 0,
+        "512,30": 0,
+        "974,750": 0
+      },
+      "crop": [
+        46,
+        181,
+        931,
+        1251
+      ],
+      "opaqueBBox": [
+        47,
+        185,
+        976,
+        1431
+      ],
+      "id": "balise-crouch-right",
+      "subject": "balise",
+      "pose": "crouch",
+      "facing": "right",
+      "heightRatio": 0.68
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/lignes-de-maree/playable/balise/crouch-left.png",
+      "sha256": "b2d160274a6d5dcc6642afa67584819a563d606e11099f85ac0fb094775ffed4",
+      "bytes": 2158671,
+      "width": 1024,
+      "height": 1536,
+      "mode": "RGBA",
+      "alphaMin": 0,
+      "alphaMax": 254,
+      "transparentFraction": 0.559252,
+      "opaqueFraction": 0.414901,
+      "borderAlphaMax": 1,
+      "sampledAlpha": {
+        "50,750": 0,
+        "100,750": 0,
+        "50,400": 0,
+        "512,30": 0,
+        "974,750": 0
+      },
+      "crop": [
+        25,
+        157,
+        971,
+        1248
+      ],
+      "opaqueBBox": [
+        26,
+        164,
+        995,
+        1403
+      ],
+      "id": "balise-crouch-left",
+      "subject": "balise",
+      "pose": "crouch",
+      "facing": "left",
+      "heightRatio": 0.68
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/lignes-de-maree/playable/balise/light-right.png",
+      "sha256": "0f99e1a53ae87f68c937c11c77eb4561c55e7f3653156161b868be335e16010e",
+      "bytes": 2025681,
+      "width": 1024,
+      "height": 1536,
+      "mode": "RGBA",
+      "alphaMin": 0,
+      "alphaMax": 254,
+      "transparentFraction": 0.654847,
+      "opaqueFraction": 0.32174,
+      "borderAlphaMax": 1,
+      "sampledAlpha": {
+        "50,750": 0,
+        "100,750": 0,
+        "50,400": 0,
+        "512,30": 0,
+        "974,750": 0
+      },
+      "crop": [
+        28,
+        67,
+        969,
+        1420
+      ],
+      "opaqueBBox": [
+        29,
+        73,
+        995,
+        1485
+      ],
+      "id": "balise-light-right",
+      "subject": "balise",
+      "pose": "light",
+      "facing": "right",
+      "heightRatio": 1
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/lignes-de-maree/playable/balise/light-left.png",
+      "sha256": "5a979bb5010efe56da5c300e893ba76fbe96d4ca7aedb30065323c3cc19328db",
+      "bytes": 1929854,
+      "width": 1024,
+      "height": 1536,
+      "mode": "RGBA",
+      "alphaMin": 0,
+      "alphaMax": 254,
+      "transparentFraction": 0.678867,
+      "opaqueFraction": 0.299067,
+      "borderAlphaMax": 1,
+      "sampledAlpha": {
+        "50,750": 0,
+        "100,750": 0,
+        "50,400": 0,
+        "512,30": 0,
+        "974,750": 0
+      },
+      "crop": [
+        40,
+        64,
+        939,
+        1429
+      ],
+      "opaqueBBox": [
+        42,
+        69,
+        978,
+        1492
+      ],
+      "id": "balise-light-left",
+      "subject": "balise",
+      "pose": "light",
+      "facing": "left",
+      "heightRatio": 1
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/lignes-de-maree/playable/balise/heavy-right.png",
+      "sha256": "d71369e396d3c5cd09758f206b1749a3cdf47eecf3ffd4010a91494bc3cdf2a3",
+      "bytes": 1906435,
+      "width": 1024,
+      "height": 1536,
+      "mode": "RGBA",
+      "alphaMin": 0,
+      "alphaMax": 254,
+      "transparentFraction": 0.660093,
+      "opaqueFraction": 0.31928,
+      "borderAlphaMax": 1,
+      "sampledAlpha": {
+        "50,750": 0,
+        "100,750": 0,
+        "50,400": 0,
+        "512,30": 0,
+        "974,750": 0
+      },
+      "crop": [
+        22,
+        217,
+        969,
+        1177
+      ],
+      "opaqueBBox": [
+        24,
+        229,
+        990,
+        1393
+      ],
+      "id": "balise-heavy-right",
+      "subject": "balise",
+      "pose": "heavy",
+      "facing": "right",
+      "heightRatio": 0.91
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/lignes-de-maree/playable/balise/heavy-left.png",
+      "sha256": "f67bb8474a7e666c66ab6435042a46f9c34c43e374d91353c60c267e03abeb5b",
+      "bytes": 1052664,
+      "width": 1254,
+      "height": 1254,
+      "mode": "RGBA",
+      "alphaMin": 0,
+      "alphaMax": 255,
+      "transparentFraction": 0.733556,
+      "opaqueFraction": 0.250626,
+      "borderAlphaMax": 0,
+      "sampledAlpha": {
+        "50,750": 0,
+        "100,750": 0,
+        "50,400": 0,
+        "627,30": 0,
+        "1204,750": 0
+      },
+      "crop": [
+        194,
+        91,
+        931,
+        1100
+      ],
+      "opaqueBBox": [
+        196,
+        94,
+        1123,
+        1189
+      ],
+      "id": "balise-heavy-left",
+      "subject": "balise",
+      "pose": "heavy",
+      "facing": "left",
+      "heightRatio": 0.91
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/lignes-de-maree/playable/balise/stance-right.png",
+      "sha256": "9dc6dc32769cd41c94e9015960261b2c27f0a9b8bf1dc75792df05f9fd2af9ff",
+      "bytes": 829707,
+      "width": 1254,
+      "height": 1254,
+      "mode": "RGBA",
+      "alphaMin": 0,
+      "alphaMax": 255,
+      "transparentFraction": 0.794985,
+      "opaqueFraction": 0.18929,
+      "borderAlphaMax": 1,
+      "sampledAlpha": {
+        "50,750": 0,
+        "100,750": 0,
+        "50,400": 0,
+        "627,30": 0,
+        "1204,750": 0
+      },
+      "crop": [
+        369,
+        42,
+        519,
+        1176
+      ],
+      "opaqueBBox": [
+        371,
+        47,
+        886,
+        1215
+      ],
+      "id": "balise-stance-right",
+      "subject": "balise",
+      "pose": "stance",
+      "facing": "right",
+      "heightRatio": 1
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/lignes-de-maree/playable/balise/stance-left.png",
+      "sha256": "87fa0cef02cd419fc1c80aa99f7a50ce9daa5e7ca09a4ca2e093f96940053967",
+      "bytes": 713992,
+      "width": 1254,
+      "height": 1254,
+      "mode": "RGBA",
+      "alphaMin": 0,
+      "alphaMax": 255,
+      "transparentFraction": 0.819561,
+      "opaqueFraction": 0.165917,
+      "borderAlphaMax": 1,
+      "sampledAlpha": {
+        "50,750": 0,
+        "100,750": 0,
+        "50,400": 0,
+        "627,30": 0,
+        "1204,750": 0
+      },
+      "crop": [
+        398,
+        46,
+        457,
+        1159
+      ],
+      "opaqueBBox": [
+        399,
+        48,
+        854,
+        1204
+      ],
+      "id": "balise-stance-left",
+      "subject": "balise",
+      "pose": "stance",
+      "facing": "left",
+      "heightRatio": 1
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/lignes-de-maree/playable/balise/hurt-right.png",
+      "sha256": "2498e6b911ff5f35e88089c634defbd5f336506c2826316aaa8ae4122fb32f1b",
+      "bytes": 957095,
+      "width": 1254,
+      "height": 1254,
+      "mode": "RGBA",
+      "alphaMin": 0,
+      "alphaMax": 255,
+      "transparentFraction": 0.752762,
+      "opaqueFraction": 0.229388,
+      "borderAlphaMax": 1,
+      "sampledAlpha": {
+        "50,750": 0,
+        "100,750": 0,
+        "50,400": 0,
+        "627,30": 0,
+        "1204,750": 0
+      },
+      "crop": [
+        277,
+        33,
+        715,
+        1195
+      ],
+      "opaqueBBox": [
+        279,
+        42,
+        991,
+        1226
+      ],
+      "id": "balise-hurt-right",
+      "subject": "balise",
+      "pose": "hurt",
+      "facing": "right",
+      "heightRatio": 0.96
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/lignes-de-maree/playable/balise/hurt-left.png",
+      "sha256": "1bc0c12365a014cb677e08b4ef43747495371eb7bd3117c35e4e38786b85a018",
+      "bytes": 790773,
+      "width": 1254,
+      "height": 1254,
+      "mode": "RGBA",
+      "alphaMin": 0,
+      "alphaMax": 255,
+      "transparentFraction": 0.791583,
+      "opaqueFraction": 0.192745,
+      "borderAlphaMax": 1,
+      "sampledAlpha": {
+        "50,750": 0,
+        "100,750": 0,
+        "50,400": 0,
+        "627,30": 0,
+        "1204,750": 0
+      },
+      "crop": [
+        374,
+        66,
+        564,
+        1131
+      ],
+      "opaqueBBox": [
+        375,
+        69,
+        937,
+        1195
+      ],
+      "id": "balise-hurt-left",
+      "subject": "balise",
+      "pose": "hurt",
+      "facing": "left",
+      "heightRatio": 0.96
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/lignes-de-maree/playable/balise/tether-left.png",
+      "sha256": "dba35a330afc9793f29fd26da9962a197b41d65bb39a470160239c680f949165",
+      "bytes": 874354,
+      "width": 1254,
+      "height": 1254,
+      "mode": "RGBA",
+      "alphaMin": 0,
+      "alphaMax": 255,
+      "transparentFraction": 0.776669,
+      "opaqueFraction": 0.191267,
+      "borderAlphaMax": 1,
+      "sampledAlpha": {
+        "50,750": 0,
+        "100,750": 0,
+        "50,400": 0,
+        "627,30": 0,
+        "1204,750": 0
+      },
+      "crop": [
+        51,
+        132,
+        1131,
+        1022
+      ],
+      "opaqueBBox": [
+        55,
+        137,
+        1180,
+        1151
+      ],
+      "id": "balise-tether-left",
+      "subject": "balise",
+      "pose": "tether",
+      "facing": "left",
+      "heightRatio": 0.97
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/lignes-de-maree/playable/balise/anchor-left.png",
+      "sha256": "978a346f19511ad514777dfa392d7be6e070302465b3e3934a98a0fe4b0f3a80",
+      "bytes": 1227645,
+      "width": 1254,
+      "height": 1254,
+      "mode": "RGBA",
+      "alphaMin": 0,
+      "alphaMax": 255,
+      "transparentFraction": 0.660279,
+      "opaqueFraction": 0.317247,
+      "borderAlphaMax": 1,
+      "sampledAlpha": {
+        "50,750": 0,
+        "100,750": 0,
+        "50,400": 0,
+        "627,30": 0,
+        "1204,750": 0
+      },
+      "crop": [
+        87,
+        190,
+        1073,
+        929
+      ],
+      "opaqueBBox": [
+        89,
+        193,
+        1158,
+        1117
+      ],
+      "id": "balise-anchor-left",
+      "subject": "balise",
+      "pose": "anchor",
+      "facing": "left",
+      "heightRatio": 0.63
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/lignes-de-maree/playable/balise/reel-left.png",
+      "sha256": "19d599305bc6c377e537193b20186350ff37959bebc8b7cc34304f87c38c99e7",
+      "bytes": 919901,
+      "width": 1254,
+      "height": 1254,
+      "mode": "RGBA",
+      "alphaMin": 0,
+      "alphaMax": 255,
+      "transparentFraction": 0.762486,
+      "opaqueFraction": 0.219948,
+      "borderAlphaMax": 0,
+      "sampledAlpha": {
+        "50,750": 0,
+        "100,750": 0,
+        "50,400": 0,
+        "627,30": 0,
+        "1204,750": 0
+      },
+      "crop": [
+        166,
+        123,
+        931,
+        1056
+      ],
+      "opaqueBBox": [
+        168,
+        128,
+        1096,
+        1177
+      ],
+      "id": "balise-reel-left",
+      "subject": "balise",
+      "pose": "reel",
+      "facing": "left",
+      "heightRatio": 0.91
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/lignes-de-maree/playable/balise/tether-right.png",
+      "sha256": "2fb79a9c3ab1bf2bd1c8000fe0381cc173810149511e03e59bd9ebd92679a1bd",
+      "bytes": 916248,
+      "width": 1254,
+      "height": 1254,
+      "mode": "RGBA",
+      "alphaMin": 0,
+      "alphaMax": 255,
+      "transparentFraction": 0.775026,
+      "opaqueFraction": 0.199808,
+      "borderAlphaMax": 0,
+      "sampledAlpha": {
+        "50,750": 0,
+        "100,750": 0,
+        "50,400": 0,
+        "627,30": 0,
+        "1204,750": 0
+      },
+      "crop": [
+        96,
+        132,
+        1096,
+        1036
+      ],
+      "opaqueBBox": [
+        97,
+        135,
+        1190,
+        1167
+      ],
+      "id": "balise-tether-right",
+      "subject": "balise",
+      "pose": "tether",
+      "facing": "right",
+      "heightRatio": 0.97
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/lignes-de-maree/playable/balise/reel-right.png",
+      "sha256": "e4bba10f0584a98b8c5630db8712dce77cd3bdfc6f6bfdf91310abf9492b0146",
+      "bytes": 1150189,
+      "width": 1254,
+      "height": 1254,
+      "mode": "RGBA",
+      "alphaMin": 0,
+      "alphaMax": 255,
+      "transparentFraction": 0.707199,
+      "opaqueFraction": 0.272944,
+      "borderAlphaMax": 1,
+      "sampledAlpha": {
+        "50,750": 0,
+        "100,750": 0,
+        "50,400": 0,
+        "627,30": 0,
+        "1204,750": 0
+      },
+      "crop": [
+        130,
+        88,
+        994,
+        1119
+      ],
+      "opaqueBBox": [
+        132,
+        92,
+        1122,
+        1206
+      ],
+      "id": "balise-reel-right",
+      "subject": "balise",
+      "pose": "reel",
+      "facing": "right",
+      "heightRatio": 0.91
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/lignes-de-maree/playable/balise/jump-right.png",
+      "sha256": "ab4d5f384b1ea614fa846cbc4a75c3645299bec2e495e699de8efff47006583b",
+      "bytes": 1019747,
+      "width": 1254,
+      "height": 1254,
+      "mode": "RGBA",
+      "alphaMin": 0,
+      "alphaMax": 255,
+      "transparentFraction": 0.744039,
+      "opaqueFraction": 0.238731,
+      "borderAlphaMax": 1,
+      "sampledAlpha": {
+        "50,750": 0,
+        "100,750": 0,
+        "50,400": 0,
+        "627,30": 0,
+        "1204,750": 0
+      },
+      "crop": [
+        299,
+        67,
+        613,
+        1109
+      ],
+      "opaqueBBox": [
+        301,
+        70,
+        910,
+        1174
+      ],
+      "id": "balise-jump-right",
+      "subject": "balise",
+      "pose": "jump",
+      "facing": "right",
+      "heightRatio": 0.83
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/lignes-de-maree/playable/balise/anchor-right.png",
+      "sha256": "d13e4d9d22139a50a30575f44e01e7115474be467b82172ecdfe32d5380e32b9",
+      "bytes": 1721898,
+      "width": 1254,
+      "height": 1254,
+      "mode": "RGBA",
+      "alphaMin": 0,
+      "alphaMax": 255,
+      "transparentFraction": 0.54778,
+      "opaqueFraction": 0.427371,
+      "borderAlphaMax": 1,
+      "sampledAlpha": {
+        "50,750": 0,
+        "100,750": 0,
+        "50,400": 0,
+        "627,30": 0,
+        "1204,750": 0
+      },
+      "crop": [
+        47,
+        90,
+        1175,
+        1094
+      ],
+      "opaqueBBox": [
+        49,
+        98,
+        1221,
+        1182
+      ],
+      "id": "balise-anchor-right",
+      "subject": "balise",
+      "pose": "anchor",
+      "facing": "right",
+      "heightRatio": 0.63
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/lignes-de-maree/playable/balise/jump-left.png",
+      "sha256": "1e6349b59f608b991464b05b86884cc69631879d9f2fd9bb7df35a854f8ee971",
+      "bytes": 812277,
+      "width": 1254,
+      "height": 1254,
+      "mode": "RGBA",
+      "alphaMin": 0,
+      "alphaMax": 255,
+      "transparentFraction": 0.788232,
+      "opaqueFraction": 0.194713,
+      "borderAlphaMax": 1,
+      "sampledAlpha": {
+        "50,750": 0,
+        "100,750": 0,
+        "50,400": 0,
+        "627,30": 0,
+        "1204,750": 0
+      },
+      "crop": [
+        354,
+        87,
+        565,
+        1053
+      ],
+      "opaqueBBox": [
+        356,
+        92,
+        918,
+        1138
+      ],
+      "id": "balise-jump-left",
+      "subject": "balise",
+      "pose": "jump",
+      "facing": "left",
+      "heightRatio": 0.83
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/lignes-de-maree/playable/balise/walk2-left.png",
+      "sha256": "debc9cab13b50f53f0246a53bb115799a175e6f6e650c47cc77d390b480a6613",
+      "bytes": 707779,
+      "width": 1254,
+      "height": 1254,
+      "mode": "RGBA",
+      "alphaMin": 0,
+      "alphaMax": 255,
+      "transparentFraction": 0.817884,
+      "opaqueFraction": 0.167496,
+      "borderAlphaMax": 1,
+      "sampledAlpha": {
+        "50,750": 0,
+        "100,750": 0,
+        "50,400": 0,
+        "627,30": 0,
+        "1204,750": 0
+      },
+      "crop": [
+        275,
+        70,
+        732,
+        1110
+      ],
+      "opaqueBBox": [
+        276,
+        74,
+        1005,
+        1177
+      ],
+      "id": "balise-walk2-left",
+      "subject": "balise",
+      "pose": "walk2",
+      "facing": "left",
+      "heightRatio": 0.98
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/lignes-de-maree/playable/balise/walk1-left.png",
+      "sha256": "d16d73add0b47a94b2fdf8bc4d158b7760654905ba31ab363a4ec7a0f6d14f2c",
+      "bytes": 638007,
+      "width": 1254,
+      "height": 1254,
+      "mode": "RGBA",
+      "alphaMin": 0,
+      "alphaMax": 255,
+      "transparentFraction": 0.836902,
+      "opaqueFraction": 0.151317,
+      "borderAlphaMax": 0,
+      "sampledAlpha": {
+        "50,750": 0,
+        "100,750": 0,
+        "50,400": 0,
+        "627,30": 0,
+        "1204,750": 0
+      },
+      "crop": [
+        428,
+        58,
+        427,
+        1126
+      ],
+      "opaqueBBox": [
+        429,
+        62,
+        854,
+        1182
+      ],
+      "id": "balise-walk1-left",
+      "subject": "balise",
+      "pose": "walk1",
+      "facing": "left",
+      "heightRatio": 0.98
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/lignes-de-maree/playable/balise/walk1-right.png",
+      "sha256": "06a7c787780b7c101c19af18e91c1b63eadcd2c00ff25a78af136af1d84dfbc2",
+      "bytes": 689913,
+      "width": 1254,
+      "height": 1254,
+      "mode": "RGBA",
+      "alphaMin": 0,
+      "alphaMax": 255,
+      "transparentFraction": 0.828586,
+      "opaqueFraction": 0.157776,
+      "borderAlphaMax": 1,
+      "sampledAlpha": {
+        "50,750": 0,
+        "100,750": 0,
+        "50,400": 0,
+        "627,30": 0,
+        "1204,750": 0
+      },
+      "crop": [
+        379,
+        52,
+        408,
+        1141
+      ],
+      "opaqueBBox": [
+        381,
+        56,
+        786,
+        1191
+      ],
+      "id": "balise-walk1-right",
+      "subject": "balise",
+      "pose": "walk1",
+      "facing": "right",
+      "heightRatio": 0.98
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/lignes-de-maree/playable/balise/walk2-right.png",
+      "sha256": "c8dfa070e6d71bd18383714d26ce63b33548bc181c39bb2f8da241bd62b6ac3f",
+      "bytes": 837651,
+      "width": 1254,
+      "height": 1254,
+      "mode": "RGBA",
+      "alphaMin": 0,
+      "alphaMax": 255,
+      "transparentFraction": 0.795353,
+      "opaqueFraction": 0.187588,
+      "borderAlphaMax": 1,
+      "sampledAlpha": {
+        "50,750": 0,
+        "100,750": 0,
+        "50,400": 0,
+        "627,30": 0,
+        "1204,750": 0
+      },
+      "crop": [
+        175,
+        64,
+        869,
+        1120
+      ],
+      "opaqueBBox": [
+        177,
+        68,
+        1043,
+        1183
+      ],
+      "id": "balise-walk2-right",
+      "subject": "balise",
+      "pose": "walk2",
+      "facing": "right",
+      "heightRatio": 0.98
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/lignes-de-maree/playable/balise/fall-right.png",
+      "sha256": "afc041ce15b8b1741e1d12502bdd774dbd47c7e98c4764a96b25d86b5899e2f6",
+      "bytes": 1715356,
+      "width": 1536,
+      "height": 1024,
+      "mode": "RGBA",
+      "alphaMin": 0,
+      "alphaMax": 254,
+      "transparentFraction": 0.699399,
+      "opaqueFraction": 0.2837,
+      "borderAlphaMax": 1,
+      "sampledAlpha": {
+        "50,750": 0,
+        "100,750": 253,
+        "50,400": 0,
+        "768,30": 0,
+        "1486,750": 0
+      },
+      "crop": [
+        65,
+        227,
+        1425,
+        638
+      ],
+      "opaqueBBox": [
+        66,
+        232,
+        1488,
+        863
+      ],
+      "id": "balise-fall-right",
+      "subject": "balise",
+      "pose": "fall",
+      "facing": "right",
+      "heightRatio": 0.35
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/lignes-de-maree/playable/balise/fall-left.png",
+      "sha256": "d2fe0f47a65d0095a913021f5b89088437a8641655bf4032d6049a7e9d1ba89a",
+      "bytes": 1587529,
+      "width": 1536,
+      "height": 1024,
+      "mode": "RGBA",
+      "alphaMin": 0,
+      "alphaMax": 254,
+      "transparentFraction": 0.722733,
+      "opaqueFraction": 0.262662,
+      "borderAlphaMax": 1,
+      "sampledAlpha": {
+        "50,750": 0,
+        "100,750": 252,
+        "50,400": 0,
+        "768,30": 0,
+        "1486,750": 0
+      },
+      "crop": [
+        76,
+        203,
+        1362,
+        622
+      ],
+      "opaqueBBox": [
+        78,
+        207,
+        1436,
+        824
+      ],
+      "id": "balise-fall-left",
+      "subject": "balise",
+      "pose": "fall",
+      "facing": "left",
+      "heightRatio": 0.35
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/lignes-de-maree/playable/balise/taunt-left.png",
+      "sha256": "57543981a04e4dc5d54f285a88112c580b15d16edb2ff4ddfefa260a900a907a",
+      "bytes": 658359,
+      "width": 1254,
+      "height": 1254,
+      "mode": "RGBA",
+      "alphaMin": 0,
+      "alphaMax": 255,
+      "transparentFraction": 0.835862,
+      "opaqueFraction": 0.151418,
+      "borderAlphaMax": 0,
+      "sampledAlpha": {
+        "50,750": 0,
+        "100,750": 0,
+        "50,400": 0,
+        "627,30": 0,
+        "1204,750": 0
+      },
+      "crop": [
+        404,
+        59,
+        446,
+        1142
+      ],
+      "opaqueBBox": [
+        406,
+        62,
+        849,
+        1200
+      ],
+      "id": "balise-taunt-left",
+      "subject": "balise",
+      "pose": "taunt",
+      "facing": "left",
+      "heightRatio": 1
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/lignes-de-maree/playable/balise/victory-left.png",
+      "sha256": "b46782ad2a8edc3defc683af6b9eba3a2a6fd2368ca00f72e08107214b1ef0cb",
+      "bytes": 708780,
+      "width": 1254,
+      "height": 1254,
+      "mode": "RGBA",
+      "alphaMin": 0,
+      "alphaMax": 255,
+      "transparentFraction": 0.822991,
+      "opaqueFraction": 0.164586,
+      "borderAlphaMax": 0,
+      "sampledAlpha": {
+        "50,750": 0,
+        "100,750": 0,
+        "50,400": 0,
+        "627,30": 0,
+        "1204,750": 0
+      },
+      "crop": [
+        315,
+        51,
+        536,
+        1154
+      ],
+      "opaqueBBox": [
+        317,
+        53,
+        849,
+        1204
+      ],
+      "id": "balise-victory-left",
+      "subject": "balise",
+      "pose": "victory",
+      "facing": "left",
+      "heightRatio": 1
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/lignes-de-maree/playable/balise/taunt-right.png",
+      "sha256": "b84f95efbf681d54b42d7123012268bf83a6ffd326b17e0cd26c00d1d593a856",
+      "bytes": 774416,
+      "width": 1254,
+      "height": 1254,
+      "mode": "RGBA",
+      "alphaMin": 0,
+      "alphaMax": 255,
+      "transparentFraction": 0.800693,
+      "opaqueFraction": 0.183386,
+      "borderAlphaMax": 1,
+      "sampledAlpha": {
+        "50,750": 0,
+        "100,750": 0,
+        "50,400": 0,
+        "627,30": 0,
+        "1204,750": 0
+      },
+      "crop": [
+        372,
+        42,
+        468,
+        1172
+      ],
+      "opaqueBBox": [
+        374,
+        46,
+        838,
+        1212
+      ],
+      "id": "balise-taunt-right",
+      "subject": "balise",
+      "pose": "taunt",
+      "facing": "right",
+      "heightRatio": 1
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/lignes-de-maree/playable/balise/victory-right.png",
+      "sha256": "7006660ac622d149e1eb5b72c69c488d7dc7704fb00328061aa0ca0ef9cc3f78",
+      "bytes": 776286,
+      "width": 1254,
+      "height": 1254,
+      "mode": "RGBA",
+      "alphaMin": 0,
+      "alphaMax": 255,
+      "transparentFraction": 0.810479,
+      "opaqueFraction": 0.175287,
+      "borderAlphaMax": 0,
+      "sampledAlpha": {
+        "50,750": 0,
+        "100,750": 0,
+        "50,400": 0,
+        "627,30": 0,
+        "1204,750": 0
+      },
+      "crop": [
+        369,
+        65,
+        594,
+        1125
+      ],
+      "opaqueBBox": [
+        371,
+        69,
+        962,
+        1189
+      ],
+      "id": "balise-victory-right",
+      "subject": "balise",
+      "pose": "victory",
+      "facing": "right",
+      "heightRatio": 1
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/lignes-de-maree/playable/props/balise-rope-loop-grey-red.png",
+      "sha256": "6e7f1f064442534c0174da75477f308609d7f2ba699e424803088eb85334de1b",
+      "bytes": 838832,
+      "width": 1774,
+      "height": 887,
+      "mode": "RGBA",
+      "alphaMin": 0,
+      "alphaMax": 255,
+      "transparentFraction": 0.813197,
+      "opaqueFraction": 0.168794,
+      "borderAlphaMax": 0,
+      "sampledAlpha": {
+        "50,750": 0,
+        "100,750": 0,
+        "50,400": 0,
+        "887,30": 0,
+        "1724,750": 0
+      },
+      "crop": [
+        57,
+        127,
+        1651,
+        643
+      ],
+      "opaqueBBox": [
+        59,
+        129,
+        1706,
+        768
+      ],
+      "id": "ropeHook-grey-red",
+      "runtimeKey": "ropeHook"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/lignes-de-maree/playable/consignateur/guard-left.png",
+      "sha256": "2e5cc8e5a62c7ce390eea12eb4658545aa393a16e452150e66d13d6255207903",
+      "bytes": 857080,
+      "width": 1254,
+      "height": 1254,
+      "mode": "RGBA",
+      "alphaMin": 0,
+      "alphaMax": 255,
+      "transparentFraction": 0.789585,
+      "opaqueFraction": 0.195417,
+      "borderAlphaMax": 1,
+      "sampledAlpha": {
+        "50,750": 0,
+        "100,750": 0,
+        "50,400": 0,
+        "627,30": 0,
+        "1204,750": 0
+      },
+      "crop": [
+        309,
+        181,
+        605,
+        915
+      ],
+      "opaqueBBox": [
+        310,
+        183,
+        912,
+        1094
+      ],
+      "subject": "consignateur",
+      "pose": "guard",
+      "facing": "left",
+      "heightRatio": 1
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/lignes-de-maree/playable/consignateur/guard-right.png",
+      "sha256": "92d971bdeef9c8376da1282ccc98d2133d50ed12ba75d453be401ea3b722af01",
+      "bytes": 1279767,
+      "width": 1254,
+      "height": 1254,
+      "mode": "RGBA",
+      "alphaMin": 0,
+      "alphaMax": 255,
+      "transparentFraction": 0.681297,
+      "opaqueFraction": 0.289738,
+      "borderAlphaMax": 1,
+      "sampledAlpha": {
+        "50,750": 0,
+        "100,750": 0,
+        "50,400": 0,
+        "627,30": 0,
+        "1204,750": 0
+      },
+      "crop": [
+        197,
+        71,
+        846,
+        1123
+      ],
+      "opaqueBBox": [
+        198,
+        72,
+        1041,
+        1193
+      ],
+      "subject": "consignateur",
+      "pose": "guard",
+      "facing": "right",
+      "heightRatio": 1
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/lignes-de-maree/playable/consignateur/shield-push-left.png",
+      "sha256": "d2fdfb04faaf126494b86d6d579e94b9375744a7352961025c215cca73b7eece",
+      "bytes": 1204108,
+      "width": 1254,
+      "height": 1254,
+      "mode": "RGBA",
+      "alphaMin": 0,
+      "alphaMax": 255,
+      "transparentFraction": 0.700163,
+      "opaqueFraction": 0.278129,
+      "borderAlphaMax": 1,
+      "sampledAlpha": {
+        "50,750": 0,
+        "100,750": 0,
+        "50,400": 0,
+        "627,30": 0,
+        "1204,750": 0
+      },
+      "crop": [
+        70,
+        164,
+        1114,
+        969
+      ],
+      "opaqueBBox": [
+        73,
+        165,
+        1183,
+        1131
+      ],
+      "subject": "consignateur",
+      "pose": "shield-push",
+      "facing": "left",
+      "heightRatio": 1
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/lignes-de-maree/playable/consignateur/shield-push-right.png",
+      "sha256": "94bc858d3cd7359b8b840efa0d971ab8e5ef359ec4807b99c570f800829e26d5",
+      "bytes": 1226788,
+      "width": 1254,
+      "height": 1254,
+      "mode": "RGBA",
+      "alphaMin": 0,
+      "alphaMax": 255,
+      "transparentFraction": 0.697939,
+      "opaqueFraction": 0.281712,
+      "borderAlphaMax": 1,
+      "sampledAlpha": {
+        "50,750": 0,
+        "100,750": 0,
+        "50,400": 0,
+        "627,30": 0,
+        "1204,750": 0
+      },
+      "crop": [
+        80,
+        106,
+        1086,
+        1048
+      ],
+      "opaqueBBox": [
+        82,
+        107,
+        1164,
+        1152
+      ],
+      "subject": "consignateur",
+      "pose": "shield-push",
+      "facing": "right",
+      "heightRatio": 1
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/lignes-de-maree/playable/consignateur/pole-strike-left.png",
+      "sha256": "f80de810aa71a1143605544e4724f52669c81e7e306f4178ead780df112472c7",
+      "bytes": 1027347,
+      "width": 1254,
+      "height": 1254,
+      "mode": "RGBA",
+      "alphaMin": 0,
+      "alphaMax": 255,
+      "transparentFraction": 0.748886,
+      "opaqueFraction": 0.233043,
+      "borderAlphaMax": 1,
+      "sampledAlpha": {
+        "50,750": 0,
+        "100,750": 0,
+        "50,400": 0,
+        "627,30": 0,
+        "1204,750": 0
+      },
+      "crop": [
+        45,
+        138,
+        1154,
+        985
+      ],
+      "opaqueBBox": [
+        46,
+        140,
+        1197,
+        1121
+      ],
+      "subject": "consignateur",
+      "pose": "pole-strike",
+      "facing": "left",
+      "heightRatio": 1
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/lignes-de-maree/playable/consignateur/pole-strike-right.png",
+      "sha256": "1613a1521d001458f34216d886542be8557d1ed76cfbe0c438f6acc2d5697a4b",
+      "bytes": 1277144,
+      "width": 1254,
+      "height": 1254,
+      "mode": "RGBA",
+      "alphaMin": 0,
+      "alphaMax": 255,
+      "transparentFraction": 0.671531,
+      "opaqueFraction": 0.303817,
+      "borderAlphaMax": 1,
+      "sampledAlpha": {
+        "50,750": 0,
+        "100,750": 0,
+        "50,400": 0,
+        "627,30": 0,
+        "1204,750": 0
+      },
+      "crop": [
+        70,
+        63,
+        1122,
+        1127
+      ],
+      "opaqueBBox": [
+        71,
+        65,
+        1190,
+        1189
+      ],
+      "subject": "consignateur",
+      "pose": "pole-strike",
+      "facing": "right",
+      "heightRatio": 1
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/lignes-de-maree/playable/consignateur/stagger-left.png",
+      "sha256": "08e06e0f9f6ab633f8c8792fd0f5507ffd09174998d175ab661aee843b809db1",
+      "bytes": 1215180,
+      "width": 1254,
+      "height": 1254,
+      "mode": "RGBA",
+      "alphaMin": 0,
+      "alphaMax": 255,
+      "transparentFraction": 0.693485,
+      "opaqueFraction": 0.283462,
+      "borderAlphaMax": 1,
+      "sampledAlpha": {
+        "50,750": 0,
+        "100,750": 0,
+        "50,400": 0,
+        "627,30": 0,
+        "1204,750": 0
+      },
+      "crop": [
+        186,
+        87,
+        890,
+        1080
+      ],
+      "opaqueBBox": [
+        187,
+        88,
+        1075,
+        1165
+      ],
+      "subject": "consignateur",
+      "pose": "stagger",
+      "facing": "left",
+      "heightRatio": 1
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/lignes-de-maree/playable/consignateur/stagger-right.png",
+      "sha256": "f7711b7a3f94d9b9821e8a72b1dc6977eb2e440fc675fc1557e1891491ca7368",
+      "bytes": 1258464,
+      "width": 1254,
+      "height": 1254,
+      "mode": "RGBA",
+      "alphaMin": 0,
+      "alphaMax": 255,
+      "transparentFraction": 0.682041,
+      "opaqueFraction": 0.294777,
+      "borderAlphaMax": 1,
+      "sampledAlpha": {
+        "50,750": 0,
+        "100,750": 0,
+        "50,400": 0,
+        "627,30": 0,
+        "1204,750": 0
+      },
+      "crop": [
+        150,
+        38,
+        905,
+        1182
+      ],
+      "opaqueBBox": [
+        151,
+        39,
+        1053,
+        1218
+      ],
+      "subject": "consignateur",
+      "pose": "stagger",
+      "facing": "right",
+      "heightRatio": 1
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/lignes-de-maree/playable/consignateur/kneel-left.png",
+      "sha256": "398af7c5d832ad19a16404b63f9f98ccf78789534a8b813077e123e4159aed7e",
+      "bytes": 1321973,
+      "width": 1254,
+      "height": 1254,
+      "mode": "RGBA",
+      "alphaMin": 0,
+      "alphaMax": 255,
+      "transparentFraction": 0.671058,
+      "opaqueFraction": 0.31558,
+      "borderAlphaMax": 1,
+      "sampledAlpha": {
+        "50,750": 0,
+        "100,750": 0,
+        "50,400": 0,
+        "627,30": 0,
+        "1204,750": 0
+      },
+      "crop": [
+        186,
+        104,
+        797,
+        1031
+      ],
+      "opaqueBBox": [
+        187,
+        106,
+        982,
+        1133
+      ],
+      "subject": "consignateur",
+      "pose": "kneel",
+      "facing": "left",
+      "heightRatio": 0.65
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/lignes-de-maree/playable/consignateur/kneel-right.png",
+      "sha256": "c7c7c0ac78acafd4ab9d8da9570d589a95dff843efc9c7866cf5650d806d009c",
+      "bytes": 1504584,
+      "width": 1254,
+      "height": 1254,
+      "mode": "RGBA",
+      "alphaMin": 0,
+      "alphaMax": 255,
+      "transparentFraction": 0.633262,
+      "opaqueFraction": 0.350515,
+      "borderAlphaMax": 1,
+      "sampledAlpha": {
+        "50,750": 0,
+        "100,750": 0,
+        "50,400": 0,
+        "627,30": 0,
+        "1204,750": 0
+      },
+      "crop": [
+        164,
+        89,
+        814,
+        1090
+      ],
+      "opaqueBBox": [
+        166,
+        90,
+        977,
+        1178
+      ],
+      "subject": "consignateur",
+      "pose": "kneel",
+      "facing": "right",
+      "heightRatio": 0.65
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/lignes-de-maree/playable/consignateur/surrender-left.png",
+      "sha256": "aafe1414acdd24240a7854dd91af9000ee639650778dd5f8f6b18d256409780b",
+      "bytes": 1494405,
+      "width": 1254,
+      "height": 1254,
+      "mode": "RGBA",
+      "alphaMin": 0,
+      "alphaMax": 255,
+      "transparentFraction": 0.615983,
+      "opaqueFraction": 0.355759,
+      "borderAlphaMax": 1,
+      "sampledAlpha": {
+        "50,750": 0,
+        "100,750": 0,
+        "50,400": 0,
+        "627,30": 0,
+        "1204,750": 0
+      },
+      "crop": [
+        124,
+        87,
+        1000,
+        1083
+      ],
+      "opaqueBBox": [
+        126,
+        89,
+        1123,
+        1168
+      ],
+      "subject": "consignateur",
+      "pose": "surrender",
+      "facing": "left",
+      "heightRatio": 0.65
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/lignes-de-maree/playable/consignateur/surrender-right.png",
+      "sha256": "4598aca3b40de18da7e5d2bab42c3354ddf75143fe645c9373c3d92b09ac637a",
+      "bytes": 1215481,
+      "width": 1254,
+      "height": 1254,
+      "mode": "RGBA",
+      "alphaMin": 0,
+      "alphaMax": 255,
+      "transparentFraction": 0.701573,
+      "opaqueFraction": 0.278281,
+      "borderAlphaMax": 1,
+      "sampledAlpha": {
+        "50,750": 0,
+        "100,750": 0,
+        "50,400": 0,
+        "627,30": 0,
+        "1204,750": 0
+      },
+      "crop": [
+        184,
+        119,
+        877,
+        1023
+      ],
+      "opaqueBBox": [
+        185,
+        121,
+        1060,
+        1140
+      ],
+      "subject": "consignateur",
+      "pose": "surrender",
+      "facing": "right",
+      "heightRatio": 0.65
     }
   ],
   "errors": [],
   "ready": {
-    "balise": false,
-    "consignateur": false
+    "balise": true,
+    "consignateur": true
   },
   "scope": "Native file, alpha and crop reception. Pose identity and alignment also require visual review."
 }
