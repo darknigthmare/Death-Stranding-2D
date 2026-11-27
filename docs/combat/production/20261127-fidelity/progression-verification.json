@@ -1,0 +1,187 @@
+{
+  "date": "2026-11-27T08:32:30.783Z",
+  "baseCommit": "7e000d36f2eb0fa4578b545bfb3d8b334acd516a",
+  "catalogue": {
+    "memories": 8,
+    "fighters": 8,
+    "costumes": 2,
+    "stages": 25,
+    "modes": 9,
+    "future": 7
+  },
+  "groups": [
+    {
+      "name": "Catalogue: 59 dossiers, sept bases DS2, huit souvenirs et IDs uniques",
+      "status": "pass"
+    },
+    {
+      "name": "Nouveau profil: tous les contenus déjà disponibles restent ouverts",
+      "status": "pass"
+    },
+    {
+      "name": "Rétroactivité: chapitre final enregistré",
+      "status": "pass"
+    },
+    {
+      "name": "Rétroactivité: épilogue conservé après reprise d’histoire",
+      "status": "pass"
+    },
+    {
+      "name": "Valeurs de chapitre et scène incohérentes ignorées",
+      "status": "pass"
+    },
+    {
+      "name": "Voie alternative: quatre exercices avec le même combattant",
+      "status": "pass"
+    },
+    {
+      "name": "Le nouvel exercice de défi ne remplace aucun des quatre exercices historiques",
+      "status": "pass"
+    },
+    {
+      "name": "ET: exercice manquant ou validé avec un autre personnage",
+      "status": "pass"
+    },
+    {
+      "name": "OU: une histoire suffit sans exiger le dojo",
+      "status": "pass"
+    },
+    {
+      "name": "Idempotence: source, date et une seule écriture",
+      "status": "pass"
+    },
+    {
+      "name": "Acquisition permanente après nouvelle histoire",
+      "status": "pass"
+    },
+    {
+      "name": "Actualisation après une autre activité",
+      "status": "pass"
+    },
+    {
+      "name": "Aucune réécriture des sauvegardes combat et dojo",
+      "status": "pass"
+    },
+    {
+      "name": "Source corrompue: absence de nouveau droit, données préservées",
+      "status": "pass"
+    },
+    {
+      "name": "Registre corrompu préservé, acquis de session",
+      "status": "pass"
+    },
+    {
+      "name": "Version future: aucune migration destructive",
+      "status": "pass"
+    },
+    {
+      "name": "Entrées inconnues conservées sans devenir des droits actifs",
+      "status": "pass"
+    },
+    {
+      "name": "Écriture interrompue: récompense récupérable",
+      "status": "pass"
+    },
+    {
+      "name": "Deux onglets: fusion des acquisitions",
+      "status": "pass"
+    },
+    {
+      "name": "Préférence de masquage conservée séparément",
+      "status": "pass"
+    },
+    {
+      "name": "Identité secrète: champs publics neutres",
+      "status": "pass"
+    },
+    {
+      "name": "Installation nécessaire distincte du verrou",
+      "status": "pass"
+    },
+    {
+      "name": "Contexte incompatible conserve le droit",
+      "status": "pass"
+    },
+    {
+      "name": "Costume acquis avant disponibilité du personnage",
+      "status": "pass"
+    },
+    {
+      "name": "DS2 sans kit: aucune fausse condition",
+      "status": "pass"
+    },
+    {
+      "name": "Expiration et source permanente indépendante",
+      "status": "pass"
+    },
+    {
+      "name": "Service non confirmé et faux indicateur local ignorés",
+      "status": "pass"
+    },
+    {
+      "name": "Hors ligne: limites du justificatif et de la tolérance",
+      "status": "pass"
+    },
+    {
+      "name": "Annulation: pas de retrait avant la fin effective",
+      "status": "pass"
+    },
+    {
+      "name": "Retrait d’une source: seconde acquisition conservée",
+      "status": "pass"
+    },
+    {
+      "name": "Règles invalides et vides refusées",
+      "status": "pass"
+    },
+    {
+      "name": "DOM: grille initiale, conditions consultables et focus restauré",
+      "status": "pass"
+    },
+    {
+      "name": "DOM: actualisation depuis les sources réelles, récompense et texte",
+      "status": "pass"
+    },
+    {
+      "name": "DOM: actualisation autre onglet pendant un dialogue, focus encore utile",
+      "status": "pass"
+    },
+    {
+      "name": "DOM: masquage DS2 sans portrait ni fuite dans la recherche",
+      "status": "pass"
+    },
+    {
+      "name": "DOM: opt-in identités, recherche et contenus existants accessibles",
+      "status": "pass"
+    },
+    {
+      "name": "DOM: données corrompues affichées sans retirer les acquis",
+      "status": "pass"
+    },
+    {
+      "name": "DOM: préférence de confort reprise et sémantique accessible déclarée",
+      "status": "pass"
+    }
+  ],
+  "browser": {
+    "status": "not-run",
+    "reason": "Use --browser for real Chromium checks."
+  },
+  "dom": {
+    "status": "pass",
+    "groups": 7,
+    "scope": "Actual shipped controller in an explicit small DOM fixture. Not a native browser, layout, screen reader or hardware gamepad test."
+  },
+  "sourceSha256": {
+    "content.js": "fe6e129844908ad3a0fa97d9e59cace35b1fb4c4cc54ba095de401bcac189578",
+    "assets.js": "4f0ae5349872b9391d7586bc98baf0baa211e83e59c7b1e4234aaf22525ecb01",
+    "static-assets-data.js": "299e962b9ec49f666be161461bf8b490a193153edaa7e781d7c1534bc973af1d",
+    "progression-data.js": "620f6a07ee4ddc692206d62c622dec8455a4626bd49abddd9f75006edac7d545",
+    "progression.js": "8b34e7cc4f1d275852dbfb8049198b6d884d5623146c1c033a7c32bf95375503",
+    "progression.html": "aa44e9d353087a7faf07248d7b54a713cbb88376de6d0fa02b7a42a379251be6",
+    "progression.css": "215219e5293e1757adfbdbcec1dbb092c9e128278fc2117fa1892067dd13b4e5",
+    "app.js": "68db637d7ae1661f7005ed5f1c5bcc9944b5781be527103c82fac64ea92afafa",
+    "lessons.js": "2494f12c8bd3d807a5547ff6a6e87277191acd27b8daacfb556e39282092432b",
+    "qa/progression.cjs": "161d64d5d9f9bca53754bd46ec8edb87aa33fb005ed9fe651940743a888a1ae6"
+  }
+}

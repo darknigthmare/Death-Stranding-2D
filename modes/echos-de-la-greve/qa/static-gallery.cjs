@@ -197,6 +197,16 @@ check('Costume and vehicle filters keep separate fixed-art entries and expose th
 });
 
 const pngs = [];
+check('The fixed DS2 Maser discharge keeps its exact reference link and does not imply a playable attack.', () => {
+  const item=catalogue.items.find(entry=>entry.id==='maser-handgun-ds2-discharge');assert(item);
+  assert.equal(item.work,'ds2');assert.equal(item.category,'projectiles');assert.equal(item.width,2172);assert.equal(item.height,724);
+  assert.match(item.description,/10,0 secondes/);assert.match(item.description,/ni tir jouable ni séquence animée complète/);
+  const [referenceFile,referenceAnchor]=item.reference.split('#');
+  assert(fs.readFileSync(path.resolve(root,referenceFile),'utf8').includes('id="'+referenceAnchor+'"'),'Maser source anchor exists in the linked document');
+  const h=harness({items:[item,{...item,id:'invalid-reference',title:'Invalid reference',reference:'../../docs/combat/production/20261127-fidelity/private.md'}]});
+  h.cards[0].children[0].emit('click');assert.equal(h.nodes.get('viewer-reference').href,item.reference);assert.equal(h.nodes.get('viewer-reference').hidden,false);
+  h.nodes.get('static-viewer').close();h.cards[1].children[0].emit('click');assert.equal(h.nodes.get('viewer-reference').hidden,true);
+});
 check('Every real catalogue entry has a unique ID, a supported category and an original PNG header at its declared size.', () => {
   const ids = new Set();
   for (const item of catalogue.items) {

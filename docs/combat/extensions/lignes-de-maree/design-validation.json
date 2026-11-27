@@ -1,0 +1,27 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-11-27",
+  "kind": "design-data-validation",
+  "counts": {
+    "characters": 10,
+    "stages": 20,
+    "enemies": 20,
+    "bosses": 20,
+    "props": 20,
+    "gadgets": 10,
+    "vehicles": 4,
+    "projectiles": 12,
+    "missions": 20,
+    "bonusChallenges": 6,
+    "duos": 5
+  },
+  "totalEntities": 147,
+  "uniqueIds": 147,
+  "stagesReachable": 20,
+  "bidirectionalConnections": 24,
+  "charactersWithThreeSpecials": 10,
+  "bossesWithThreePhases": 20,
+  "errors": [],
+  "passed": true,
+  "scope": "Catalogue et références uniquement ; aucune assertion de test navigateur, image ou gameplay."
+}

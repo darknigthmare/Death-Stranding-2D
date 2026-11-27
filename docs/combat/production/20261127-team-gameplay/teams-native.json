@@ -1,0 +1,583 @@
+{
+  "date": "2026-11-27",
+  "passed": true,
+  "nativeCanvas": true,
+  "browser": false,
+  "htmlLayoutRendered": false,
+  "hardwareGamepadTested": false,
+  "fontFamilies": 250,
+  "method": "Actual StrandFight rendering at 1280 × 720, PNG/WebP decoded natively; ordinary logical inputs only; no fabricated fighter state for these captures.",
+  "cases": [
+    {
+      "image": "team-renders/two-teams-ready.webp",
+      "sha256": "deac366e159fc848b4ddaccaf702eeca80518e26416411eec5d9b6fc8d3aa5d7",
+      "snapshot": {
+        "phase": "fight",
+        "tick": 72,
+        "paused": false,
+        "round": 1,
+        "wins": [
+          0,
+          0
+        ],
+        "maxRounds": 1,
+        "time": 75,
+        "teams": [
+          {
+            "active": 0,
+            "cohesion": 50,
+            "assistCooldown": 0,
+            "tagCooldown": 0,
+            "busy": null,
+            "combo": 0,
+            "members": [
+              {
+                "id": "sam",
+                "hp": 100,
+                "chiral": 42,
+                "balance": 100,
+                "x": 462,
+                "y": 0,
+                "ko": false
+              },
+              {
+                "id": "fragile",
+                "hp": 100,
+                "chiral": 42,
+                "balance": 100,
+                "x": 462,
+                "y": 0,
+                "ko": false
+              }
+            ]
+          },
+          {
+            "active": 0,
+            "cohesion": 50,
+            "assistCooldown": 0,
+            "tagCooldown": 0,
+            "busy": null,
+            "combo": 0,
+            "members": [
+              {
+                "id": "higgs",
+                "hp": 100,
+                "chiral": 42,
+                "balance": 100,
+                "x": 818,
+                "y": 0,
+                "ko": false
+              },
+              {
+                "id": "mama",
+                "hp": 100,
+                "chiral": 42,
+                "balance": 100,
+                "x": 818,
+                "y": 0,
+                "ko": false
+              }
+            ]
+          }
+        ],
+        "sudden": false,
+        "stage": "terminal",
+        "mode": "local",
+        "reducedEffects": false,
+        "staticScenery": true,
+        "parcel": null,
+        "beat": 0,
+        "winner": 0,
+        "finisher": false,
+        "fighters": [
+          {
+            "id": "sam",
+            "hp": 100,
+            "balance": 100,
+            "chiral": 42,
+            "combo": 0,
+            "x": 462,
+            "y": 0,
+            "guard": false,
+            "action": "",
+            "stun": 0,
+            "move": "",
+            "marker": null,
+            "scan": null
+          },
+          {
+            "id": "higgs",
+            "hp": 100,
+            "balance": 100,
+            "chiral": 42,
+            "combo": 0,
+            "x": 818,
+            "y": 0,
+            "guard": false,
+            "action": "",
+            "stun": 0,
+            "move": "",
+            "marker": null,
+            "scan": null
+          }
+        ],
+        "training": {
+          "dummy": "idle",
+          "hitboxes": false
+        }
+      }
+    },
+    {
+      "image": "team-renders/both-supports-enter.webp",
+      "sha256": "24876477442da005ee33c0763e938d3d5b5176e3f6de318994037d2897557328",
+      "snapshot": {
+        "phase": "fight",
+        "tick": 82,
+        "paused": false,
+        "round": 1,
+        "wins": [
+          0,
+          0
+        ],
+        "maxRounds": 1,
+        "time": 75,
+        "teams": [
+          {
+            "active": 0,
+            "cohesion": 26,
+            "assistCooldown": 0,
+            "tagCooldown": 0,
+            "busy": {
+              "kind": "assist",
+              "frame": 10,
+              "member": 1
+            },
+            "combo": 0,
+            "members": [
+              {
+                "id": "sam",
+                "hp": 100,
+                "chiral": 42,
+                "balance": 100,
+                "x": 462,
+                "y": 0,
+                "ko": false
+              },
+              {
+                "id": "fragile",
+                "hp": 100,
+                "chiral": 42,
+                "balance": 100,
+                "x": 386,
+                "y": 0,
+                "ko": false
+              }
+            ]
+          },
+          {
+            "active": 0,
+            "cohesion": 26,
+            "assistCooldown": 0,
+            "tagCooldown": 0,
+            "busy": {
+              "kind": "assist",
+              "frame": 10,
+              "member": 1
+            },
+            "combo": 0,
+            "members": [
+              {
+                "id": "higgs",
+                "hp": 100,
+                "chiral": 42,
+                "balance": 100,
+                "x": 818,
+                "y": 0,
+                "ko": false
+              },
+              {
+                "id": "mama",
+                "hp": 100,
+                "chiral": 42,
+                "balance": 100,
+                "x": 894,
+                "y": 0,
+                "ko": false
+              }
+            ]
+          }
+        ],
+        "sudden": false,
+        "stage": "terminal",
+        "mode": "local",
+        "reducedEffects": false,
+        "staticScenery": true,
+        "parcel": null,
+        "beat": 10,
+        "winner": 0,
+        "finisher": false,
+        "fighters": [
+          {
+            "id": "sam",
+            "hp": 100,
+            "balance": 100,
+            "chiral": 42,
+            "combo": 0,
+            "x": 462,
+            "y": 0,
+            "guard": false,
+            "action": "",
+            "stun": 0,
+            "move": "",
+            "marker": null,
+            "scan": null
+          },
+          {
+            "id": "higgs",
+            "hp": 100,
+            "balance": 100,
+            "chiral": 42,
+            "combo": 0,
+            "x": 818,
+            "y": 0,
+            "guard": false,
+            "action": "",
+            "stun": 0,
+            "move": "",
+            "marker": null,
+            "scan": null
+          }
+        ],
+        "training": {
+          "dummy": "idle",
+          "hitboxes": false
+        }
+      }
+    },
+    {
+      "image": "team-renders/control-transferred.webp",
+      "sha256": "e94f1ec51abd80924c5ac9eba7b0d2a548a209fad0ee3fc42e161778c3dd585b",
+      "snapshot": {
+        "phase": "fight",
+        "tick": 87,
+        "paused": false,
+        "round": 1,
+        "wins": [
+          0,
+          0
+        ],
+        "maxRounds": 1,
+        "time": 75,
+        "teams": [
+          {
+            "active": 1,
+            "cohesion": 36.5,
+            "assistCooldown": 0,
+            "tagCooldown": 0,
+            "busy": {
+              "kind": "tag",
+              "frame": 15,
+              "member": 1
+            },
+            "combo": 0,
+            "members": [
+              {
+                "id": "sam",
+                "hp": 100,
+                "chiral": 42,
+                "balance": 100,
+                "x": 462,
+                "y": 0,
+                "ko": false
+              },
+              {
+                "id": "fragile",
+                "hp": 100,
+                "chiral": 42,
+                "balance": 100,
+                "x": 462,
+                "y": 0,
+                "ko": false
+              }
+            ]
+          },
+          {
+            "active": 0,
+            "cohesion": 51.5,
+            "assistCooldown": 0,
+            "tagCooldown": 0,
+            "busy": null,
+            "combo": 0,
+            "members": [
+              {
+                "id": "higgs",
+                "hp": 100,
+                "chiral": 42,
+                "balance": 100,
+                "x": 818,
+                "y": 0,
+                "ko": false
+              },
+              {
+                "id": "mama",
+                "hp": 100,
+                "chiral": 42,
+                "balance": 100,
+                "x": 818,
+                "y": 0,
+                "ko": false
+              }
+            ]
+          }
+        ],
+        "sudden": false,
+        "stage": "terminal",
+        "mode": "local",
+        "reducedEffects": false,
+        "staticScenery": true,
+        "parcel": null,
+        "beat": 15,
+        "winner": 0,
+        "finisher": false,
+        "fighters": [
+          {
+            "id": "fragile",
+            "hp": 100,
+            "balance": 100,
+            "chiral": 42,
+            "combo": 0,
+            "x": 462,
+            "y": 0,
+            "guard": false,
+            "action": "",
+            "stun": 0,
+            "move": "",
+            "marker": null,
+            "scan": null
+          },
+          {
+            "id": "higgs",
+            "hp": 100,
+            "balance": 100,
+            "chiral": 42,
+            "combo": 0,
+            "x": 818,
+            "y": 0,
+            "guard": false,
+            "action": "",
+            "stun": 0,
+            "move": "",
+            "marker": null,
+            "scan": null
+          }
+        ],
+        "training": {
+          "dummy": "idle",
+          "hitboxes": false
+        }
+      }
+    },
+    {
+      "image": "team-renders/supports-reduced-effects.webp",
+      "sha256": "39cf59f343c503ba7a50950fc94164b259a35fe8571b6335446ae2a748b9c477",
+      "snapshot": {
+        "phase": "fight",
+        "tick": 82,
+        "paused": false,
+        "round": 1,
+        "wins": [
+          0,
+          0
+        ],
+        "maxRounds": 1,
+        "time": 75,
+        "teams": [
+          {
+            "active": 0,
+            "cohesion": 26,
+            "assistCooldown": 0,
+            "tagCooldown": 0,
+            "busy": {
+              "kind": "assist",
+              "frame": 10,
+              "member": 1
+            },
+            "combo": 0,
+            "members": [
+              {
+                "id": "sam",
+                "hp": 100,
+                "chiral": 42,
+                "balance": 100,
+                "x": 462,
+                "y": 0,
+                "ko": false
+              },
+              {
+                "id": "fragile",
+                "hp": 100,
+                "chiral": 42,
+                "balance": 100,
+                "x": 386,
+                "y": 0,
+                "ko": false
+              }
+            ]
+          },
+          {
+            "active": 0,
+            "cohesion": 26,
+            "assistCooldown": 0,
+            "tagCooldown": 0,
+            "busy": {
+              "kind": "assist",
+              "frame": 10,
+              "member": 1
+            },
+            "combo": 0,
+            "members": [
+              {
+                "id": "higgs",
+                "hp": 100,
+                "chiral": 42,
+                "balance": 100,
+                "x": 818,
+                "y": 0,
+                "ko": false
+              },
+              {
+                "id": "mama",
+                "hp": 100,
+                "chiral": 42,
+                "balance": 100,
+                "x": 894,
+                "y": 0,
+                "ko": false
+              }
+            ]
+          }
+        ],
+        "sudden": false,
+        "stage": "terminal",
+        "mode": "local",
+        "reducedEffects": true,
+        "staticScenery": true,
+        "parcel": null,
+        "beat": 10,
+        "winner": 0,
+        "finisher": false,
+        "fighters": [
+          {
+            "id": "sam",
+            "hp": 100,
+            "balance": 100,
+            "chiral": 42,
+            "combo": 0,
+            "x": 462,
+            "y": 0,
+            "guard": false,
+            "action": "",
+            "stun": 0,
+            "move": "",
+            "marker": null,
+            "scan": null
+          },
+          {
+            "id": "higgs",
+            "hp": 100,
+            "balance": 100,
+            "chiral": 42,
+            "combo": 0,
+            "x": 818,
+            "y": 0,
+            "guard": false,
+            "action": "",
+            "stun": 0,
+            "move": "",
+            "marker": null,
+            "scan": null
+          }
+        ],
+        "training": {
+          "dummy": "idle",
+          "hitboxes": false
+        }
+      }
+    }
+  ],
+  "imageSources": {
+    "assets/fighters/sam-stance.webp": "9cc5ddecb03ec1ddf84b678211f4fa4a35c282d999cd3e776102cd2407a91c60",
+    "assets/fighters/sam-action.webp": "d959b3e4ae4d97a5f146ae0252c4bffcbfdf85537a5b79b31c1c8a2b398e74cb",
+    "assets/fighters/sam-step.webp": "42dddf61765bfdc0ddaaa09c7d816aabf99c35cfa74411151a303b2bc806c147",
+    "assets/fighters/sam-hit.webp": "7fa86e3ca0ac0a0ec014cd99851e0ff7923d9742c16d65eac77996419c1f0989",
+    "assets/fighters/sam/guard.png": "9ab6da9fcaab1d5cde6e39f475da7b233bf5829dd9a01f24814f2215e4eb2012",
+    "assets/fighters/sam/crouch.png": "f787d9b3ba24609e7b48ee904c673115824ccc3aa85873e75761f18c2c2813c3",
+    "assets/fighters/sam/rise.png": "1869e33970c12677fe53b5444a3dff6c5aa99a0dd9e0e8bcb5897b7acd29a4a3",
+    "assets/fighters/sam/apex.png": "6ef109a246650a795a91c845b9ab2b8ea64e250bebd2f5017cbf51b94291a3ac",
+    "assets/fighters/sam/fall.png": "8b3762a91937bbe24f9d1261b0b961f87d8ed8562e069e95d03cbb76fb92867f",
+    "assets/fighters/sam-jump.png": "b403e7aaa243239137f991b9e952ba98a7a7b8ea7e518e0c537c7afe683631c8",
+    "assets/fidelity-20261127/presentation/sam-taunt-entry.png": "410dbc7f6987d77abbf839a7f3c852eda4fd6481727fe5eb9bca743099284edb",
+    "assets/presentation-20261127/sam-taunt.png": "e27d85d0508104f14000b63b82d7001baecd9ddc0e72fb53056cfe23bcb6ffaf",
+    "assets/fidelity-20261127/presentation/sam-taunt-exit.png": "939fc4a9d24d57b6c5444b3d1e8eed71404fcba2d70aaecc65d5a7e5c88c799e",
+    "assets/finishers/sam.webp": "e64faec19512002bae21fe079a097baff1426f1fc9a2808743f9bb9f817634e8",
+    "assets/fighters/higgs/stance.png": "bef8d4aa14f693abf574639aadf5e986ab41acf2347c9c1a6277c986f73e4c6b",
+    "assets/fighters/higgs/action.png": "430a1a4933b85f1d2455b1a2659aeb4add108d00204b43a783c1dbd4148f771f",
+    "assets/fighters/higgs/step.png": "562ba84fdc1901b58b24d5f5c9ca55cf176896ddbf65b1b4f6d79bc153e6fd72",
+    "assets/fighters/higgs/hit.png": "066a55e99d37e4c0fd54d734a856fb2a98394a83e68935db4e2d082433a7090b",
+    "assets/fighters/higgs/guard.png": "0d86739bd460302353d1ec6e2f614068f8cb1f84d9c83260962b343411c70b36",
+    "assets/fighters/higgs/crouch.png": "fa1d8237b01f02f4081f7ab7a1c4908f898aa855e2fee6142a6d9ba43f7d2124",
+    "assets/fighters/higgs/rise.png": "a12c14b8fc16f97c012e13a4a2d6ee251fe143c99ba4122477fb0e0c2752a876",
+    "assets/fighters/higgs/apex.png": "a82ad43f4e1bff933f45449532f5e62ddf2a057418b5d51248925bd71f29e1b1",
+    "assets/fighters/higgs/fall.png": "9b29d90e591099f7e4d956b49aab4aa6d28b199df0200b62be58b51b926fac8a",
+    "assets/fighters/higgs/jump.png": "7c7c17863537877928b9622d68930b06a6f5ac3cea5f53c76236c4eb6ed373b5",
+    "assets/fidelity-20261127/presentation/higgs-taunt-entry.png": "953f72376ebc89feaffa9024af2a61c82e249c58e0a5526cebb87a5ee419ed28",
+    "assets/presentation-20261127/higgs-taunt.png": "7d53b3c5dc1b60660acc52f1491b18a0908265c9e0003be54fd43f562f7b3e55",
+    "assets/fidelity-20261127/presentation/higgs-taunt-exit.png": "b7d49ba184751313d3ed6b2865d303334b6002f1ac36265d4733a5e542828cb9",
+    "assets/finishers/higgs.webp": "7d630dcf5f53fe82c0a8797198f1f5f607c2171f7f8f39e06582635e33cf0c29",
+    "assets/fighters/fragile-stance.webp": "ee92f760ca2c7e68623b47261db0fed472346d7ef79353f5daeb8bf9e35bf917",
+    "assets/fighters/fragile-action.webp": "87536c921762e3c7e2abfbb1540dca4946effdf427340ce934a133366f7cf92d",
+    "assets/fighters/fragile-step.webp": "e9e1a14d33731b81df597acd5c72ebd3638f7781bc7fd1e9afc9ea0158153289",
+    "assets/fighters/fragile-hit.webp": "3fb2823cdafe76d237a065e456f6479c9116e5f4ccb9220096faee87f977551f",
+    "assets/fighters/fragile/guard.png": "4e74b9bc66e42b75d16f29973126963a540e9a53424cba900b2669d2b664bf25",
+    "assets/fighters/fragile/crouch.png": "6b347f10bb87ea36f328af36b4617ee7c71cdc5cc0b5863a9c263ac8c5cebe9b",
+    "assets/fighters/fragile/rise.png": "337a3f215a3b6142ae733b03ac49dc035286d4bde100be94fd18c2712fadad6a",
+    "assets/fighters/fragile/apex.png": "16db4ada4269572de58ff6af582bce5e940b8fd6a1bd24f1fd8495b23e7890ec",
+    "assets/fighters/fragile/fall.png": "399c93011ea1fb44ceab4962787db17e0181d30fac66f18fcf9bfea6f1a54ffb",
+    "assets/fighters/fragile-jump.png": "eaa3f2f511729a55ce50f3bb2e07b9ada3cf51895e74b578947ee739d69d5819",
+    "assets/fidelity-20261127/presentation/fragile-taunt-entry.png": "4f60c70ec027f4de7be6a0ddf260bcc4a0d8d18347b21e2fe6791ff956ce1a63",
+    "assets/presentation-20261127/fragile-taunt.png": "45f1d309f5d626bd2813f60c7fe2eb252fb477cacad6d666e9cb22ef3fcfd148",
+    "assets/fidelity-20261127/presentation/fragile-taunt-exit.png": "c3c4b428bfe7eb92fa0cd8f0bffbf4deaf52c70c082dee80cf1b306a8d84b38b",
+    "assets/finishers/fragile.webp": "c3d87c2b15b6fbd0a543ddab58bc9bce2f434a349070e8c1a622fb357309e40d",
+    "assets/fighters/mama/atelier/stance.png": "28307fe4c1462bbb8839f63d029b9e7e6e4051c0fb7a5a4dfc7ff35d13dc36e6",
+    "assets/fighters/mama/atelier/action.png": "4b1d7123737ae4768079c3f09b7379fa4a0c8d61646be120f9d4c0b171eb19aa",
+    "assets/fighters/mama/atelier/step.png": "c61b23bd2d502216453d9ae87e45e418ccd656600af8df9660c78239c4e96b15",
+    "assets/fighters/mama/atelier/hit.png": "adb012044b8c325110e3eee527fa90b2f3891cba0bb04a15ed979cc813f4a7e2",
+    "assets/fighters/mama/atelier/guard.png": "99c3724fdbd5e47349f63d021c1c0bad459adbff08a1f5f34dd61960318b0417",
+    "assets/fighters/mama/atelier/crouch.png": "0f6981404bbb950a29009f098d869c89952e8ba5f6037128a4eeb3aa178ea5f4",
+    "assets/fighters/mama/atelier/rise.png": "92e73749da44af6510db329a76da1ca6ff9df38c3d71bcda9fd0d1866e49f316",
+    "assets/fighters/mama/atelier/apex.png": "8745b93dfc7928551e1f03314e643dad9f249652ce841c46b2cd54391935bf01",
+    "assets/fighters/mama/atelier/fall.png": "8aece1b82055903f4ce41fa7345293582f813803741a8d30cf405eaadb97f390",
+    "assets/fidelity-20261127/presentation/mama-taunt-entry.png": "108291b1274e296e91836d6b444a5f031317bc9aa788469d77d81c0efc720de5",
+    "assets/presentation-20261127/mama-taunt.png": "1ba61c1a54c848b1f442a691cc45f00f85f6a2464b5290480a84bfa1572dc03c",
+    "assets/fidelity-20261127/presentation/mama-taunt-exit.png": "aaafef65d81e4038fadd1630b5eb4c152769e41df009502be6a5b49ad8394fe1",
+    "assets/finishers/mama.webp": "9e404e931e113d89c5726909fb7d8bf3da9a30f4d61280d7ee443885b3509b4b",
+    "assets/projectiles/sam.png": "43827e84f9d3a142b1f1becb2c19ca4a795b438f0c5c975f1740ae547ad30edf",
+    "assets/projectiles/higgs.png": "5daad21f052df501efb2e4d5845a26990319241d9230346bd912a052298662df",
+    "assets/stages/terminal.webp": "1dcfd0d560f05ac9801df009cfa954edbdae015b832833969fa830fea1d87dd2",
+    "assets/stages/terminal-sky.png": "f5fa6135390139add1e54e53fe170e87bdd9a0a222fed19d24eefffaf7576bf6",
+    "assets/stages/terminal-distant.png": "c150e8f099d7a90f49073bfe7b69343dac85dad2f614db9efba8ee9a4aeffe39",
+    "assets/stages/terminal-midground.png": "d09eb84105d65f1af2eea0fcd24b9f00dfb5fd8faebd6d432672bfba5606ee21",
+    "assets/stages/terminal-floor.png": "46a9fb79825de9336c9742b630af0153deaf351a4b36732de77d062527d2beb2",
+    "assets/stages/terminal-foreground.webp": "357058916d40964581f65245f90f0259092c074ada40aa61f7206d765a71eceb",
+    "assets/props/bridge-deck.png": "4b512c5cb087f246f6d4c4004570a06ce1683b769baff9098c455d1dc3fe65a5",
+    "assets/props/gold-imprint.png": "4972f5c23568ef4c408e6fb2015734e13089807af5fce6983641532c1fd73259"
+  },
+  "sourceSha256": {
+    "content.js": "fe6e129844908ad3a0fa97d9e59cace35b1fb4c4cc54ba095de401bcac189578",
+    "asset-geometry-20261124.js": "61f830dc5036774529b7ecaf51f4c80386ef7f94447c55e044584e850e081934",
+    "assets.js": "4f0ae5349872b9391d7586bc98baf0baa211e83e59c7b1e4234aaf22525ecb01",
+    "presentation-assets.js": "598f1508810280178133f94c9192d66bc2d04459592d9779a5af2e0bb7f68cc3",
+    "presentation.js": "c9b2d5df17e0e6ec7d51b3e7f38750ccbc4c94582cc767a06177a50f13e0e3ef",
+    "fight.js": "d616992432537129302a13c32d02dacc0dc87d5df681bf0fec877a4f9b65bc19"
+  }
+}

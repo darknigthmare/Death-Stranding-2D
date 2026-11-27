@@ -1,0 +1,451 @@
+{
+  "date": "2026-11-27T08:19:59.049Z",
+  "scope": "Shipped gallery controller in a simulated DOM; actual catalogue PNG headers/dimensions and Archives markup",
+  "native_browser_rendering": false,
+  "layout_verified": false,
+  "native_keyboard_verified": false,
+  "image_pixels_decoded": false,
+  "archive_images": 16,
+  "categories": [
+    "all",
+    "characters",
+    "costumes",
+    "enemies",
+    "projectiles",
+    "vehicles",
+    "props",
+    "stages"
+  ],
+  "checks_passed": 18,
+  "checks": [
+    "The HTML exposes all categories, labeled work/background selectors and native button/dialog controls.",
+    "Work and category filters intersect in either order and preserve accessible pressed states.",
+    "Empty intersections offer a reset that restores both filters, the total and a visible focus target.",
+    "Works and versions are presented as text in both cards and viewer; image proportions use native dimensions.",
+    "Viewer and card downloads point to the same original PNG and retain a descriptive accessible name.",
+    "Zoom toggles fitted/original state, scroll accessibility, helper text and scroll origin.",
+    "Closing clears the displayed source, resets zoom and returns focus to the opener or a visible fallback.",
+    "Backdrop hit testing closes outside the dialog while an inside click preserves it.",
+    "Missing images leave both filtered and total counts; absent catalogues have a safe empty state.",
+    "The background selector and non-dialog fallback preserve their supported behavior.",
+    "Costume and vehicle filters keep separate fixed-art entries and expose their qualified documentation.",
+    "The fixed DS2 Maser discharge keeps its exact reference link and does not imply a playable attack.",
+    "Every real catalogue entry has a unique ID, a supported category and an original PNG header at its declared size.",
+    "New version links resolve to their exact documentation file and heading or explicit ID.",
+    "New domain catalogue cards retain the simulator distinction and resolve both documentation anchors.",
+    "Extension cards preserve source boundaries and resolve both documentation anchors.",
+    "The four added Archives portraits retain the same work/version, image and measured dimensions as the catalogue.",
+    "All work/category combinations match the real catalogue without a hard-coded item total."
+  ],
+  "actual_catalogue_total": 66,
+  "work_counts": {
+    "ds1-dc": 32,
+    "ds2": 33,
+    "project-simulation": 1
+  },
+  "entries_without_work_or_version": [],
+  "original_pngs": [
+    {
+      "id": "lockne-portrait",
+      "work": "ds1-dc",
+      "width": 1189,
+      "height": 1323
+    },
+    {
+      "id": "lockne-body",
+      "work": "ds1-dc",
+      "width": 1024,
+      "height": 1536
+    },
+    {
+      "id": "deadman-body",
+      "work": "ds1-dc",
+      "width": 1024,
+      "height": 1536
+    },
+    {
+      "id": "amelie-body",
+      "work": "ds1-dc",
+      "width": 1024,
+      "height": 1536
+    },
+    {
+      "id": "bridget-body",
+      "work": "ds1-dc",
+      "width": 1536,
+      "height": 1024
+    },
+    {
+      "id": "bt-gazer",
+      "work": "ds1-dc",
+      "width": 1024,
+      "height": 1536
+    },
+    {
+      "id": "cliff-skeleton-nethelmet",
+      "work": "ds1-dc",
+      "width": 1024,
+      "height": 1536
+    },
+    {
+      "id": "mule-eastern-gray",
+      "work": "ds1-dc",
+      "width": 1024,
+      "height": 1536
+    },
+    {
+      "id": "hematic-grenade",
+      "work": "ds1-dc",
+      "width": 1024,
+      "height": 1536
+    },
+    {
+      "id": "ex-grenade-0",
+      "work": "ds1-dc",
+      "width": 724,
+      "height": 2172
+    },
+    {
+      "id": "ex-grenade-1",
+      "work": "ds1-dc",
+      "width": 724,
+      "height": 2172
+    },
+    {
+      "id": "ex-grenade-2",
+      "work": "ds1-dc",
+      "width": 724,
+      "height": 2172
+    },
+    {
+      "id": "south-knot-ruins-panorama",
+      "work": "ds1-dc",
+      "width": 1672,
+      "height": 941
+    },
+    {
+      "id": "timefall-farm-panorama",
+      "work": "ds1-dc",
+      "width": 1672,
+      "height": 941
+    },
+    {
+      "id": "mountain-knot-city-panorama",
+      "work": "ds1-dc",
+      "width": 1672,
+      "height": 941
+    },
+    {
+      "id": "sam-ds2-drawbridge-portrait",
+      "work": "ds2",
+      "width": 1536,
+      "height": 1024
+    },
+    {
+      "id": "fragile-ds2-portrait",
+      "work": "ds2",
+      "width": 1104,
+      "height": 1425
+    },
+    {
+      "id": "higgs-ds2-portrait",
+      "work": "ds2",
+      "width": 1310,
+      "height": 1200
+    },
+    {
+      "id": "dollman-ds2-body",
+      "work": "ds2",
+      "width": 941,
+      "height": 1672
+    },
+    {
+      "id": "tomorrow-ds2-portrait",
+      "work": "ds2",
+      "width": 1156,
+      "height": 1361
+    },
+    {
+      "id": "rainy-ds2-portrait",
+      "work": "ds2",
+      "width": 1199,
+      "height": 1312
+    },
+    {
+      "id": "tarman-ds2-portrait",
+      "work": "ds2",
+      "width": 1139,
+      "height": 1381
+    },
+    {
+      "id": "neil-ds2-portrait",
+      "work": "ds2",
+      "width": 1312,
+      "height": 1199
+    },
+    {
+      "id": "red-samurai-ds2-body",
+      "work": "ds2",
+      "width": 1024,
+      "height": 1536
+    },
+    {
+      "id": "chiral-cat-ds2-body",
+      "work": "ds2",
+      "width": 1254,
+      "height": 1254
+    },
+    {
+      "id": "higgs-ds2-guitar",
+      "work": "ds2",
+      "width": 2172,
+      "height": 724
+    },
+    {
+      "id": "magellan-ds2-panorama",
+      "work": "ds2",
+      "width": 1672,
+      "height": 941
+    },
+    {
+      "id": "plate-gate-ds2-panorama",
+      "work": "ds2",
+      "width": 1672,
+      "height": 941
+    },
+    {
+      "id": "sandstorm-ds2-panorama",
+      "work": "ds2",
+      "width": 1672,
+      "height": 941
+    },
+    {
+      "id": "lucy-ds2",
+      "work": "ds2",
+      "width": 1439,
+      "height": 1093
+    },
+    {
+      "id": "doctor-ds2",
+      "work": "ds2",
+      "width": 1520,
+      "height": 1034
+    },
+    {
+      "id": "heartman-ds2",
+      "work": "ds2",
+      "width": 1484,
+      "height": 1060
+    },
+    {
+      "id": "the-president-ds2",
+      "work": "ds2",
+      "width": 1453,
+      "height": 1083
+    },
+    {
+      "id": "tomorrow-white-dress-ds2",
+      "work": "ds2",
+      "width": 1752,
+      "height": 897
+    },
+    {
+      "id": "sam-grey-promo-ds2",
+      "work": "ds2",
+      "width": 1312,
+      "height": 1199
+    },
+    {
+      "id": "fragile-early-outfit-ds2",
+      "work": "ds2",
+      "width": 1402,
+      "height": 1122
+    },
+    {
+      "id": "dhv-magellan-isolated-ds2",
+      "work": "ds2",
+      "width": 1774,
+      "height": 887
+    },
+    {
+      "id": "tri-cruiser-ds2",
+      "work": "ds2",
+      "width": 1774,
+      "height": 887
+    },
+    {
+      "id": "truck-ds2",
+      "work": "ds2",
+      "width": 1536,
+      "height": 1024
+    },
+    {
+      "id": "coffin-board-ds2",
+      "work": "ds2",
+      "width": 2172,
+      "height": 724
+    },
+    {
+      "id": "cargo-capsule-ds2",
+      "work": "ds2",
+      "width": 1672,
+      "height": 941
+    },
+    {
+      "id": "maser-handgun-ds2",
+      "work": "ds2",
+      "width": 1536,
+      "height": 1024
+    },
+    {
+      "id": "dunes-ds2-panorama",
+      "work": "ds2",
+      "width": 1672,
+      "height": 941
+    },
+    {
+      "id": "maser-gun-dc",
+      "work": "ds1-dc",
+      "width": 1536,
+      "height": 1024
+    },
+    {
+      "id": "cargo-catapult-dc",
+      "work": "ds1-dc",
+      "width": 1254,
+      "height": 1254
+    },
+    {
+      "id": "roadster-dc",
+      "work": "ds1-dc",
+      "width": 1536,
+      "height": 1024
+    },
+    {
+      "id": "buddy-bot-dc",
+      "work": "ds1-dc",
+      "width": 1024,
+      "height": 1536
+    },
+    {
+      "id": "jump-ramp-dc",
+      "work": "ds1-dc",
+      "width": 1536,
+      "height": 1024
+    },
+    {
+      "id": "chiral-bridge-dc",
+      "work": "ds1-dc",
+      "width": 1536,
+      "height": 1024
+    },
+    {
+      "id": "firing-range-dc-panorama",
+      "work": "ds1-dc",
+      "width": 1672,
+      "height": 941
+    },
+    {
+      "id": "monorail-yamato-ds2",
+      "work": "ds2",
+      "width": 1536,
+      "height": 1024
+    },
+    {
+      "id": "terminal-hangar-panorama",
+      "work": "project-simulation",
+      "width": 1672,
+      "height": 941
+    },
+    {
+      "id": "pizza-chef-ds2",
+      "work": "ds2",
+      "width": 1312,
+      "height": 1199
+    },
+    {
+      "id": "sam-cyberpunk-dc",
+      "work": "ds1-dc",
+      "width": 1177,
+      "height": 1336
+    },
+    {
+      "id": "gravity-gloves-half-life-dc",
+      "work": "ds1-dc",
+      "width": 1536,
+      "height": 1024
+    },
+    {
+      "id": "reverse-trike-cyberpunk-dc",
+      "work": "ds1-dc",
+      "width": 1774,
+      "height": 887
+    },
+    {
+      "id": "lambda-truck-half-life-dc",
+      "work": "ds1-dc",
+      "width": 1536,
+      "height": 1024
+    },
+    {
+      "id": "reverse-trike-ds1",
+      "work": "ds1-dc",
+      "width": 1672,
+      "height": 941
+    },
+    {
+      "id": "mule-sensor-pole-ds1",
+      "work": "ds1-dc",
+      "width": 1024,
+      "height": 1536
+    },
+    {
+      "id": "atlas-trauma-hologram-dc",
+      "work": "ds1-dc",
+      "width": 1774,
+      "height": 887
+    },
+    {
+      "id": "sam-ludens-silver-ds1",
+      "work": "ds1-dc",
+      "width": 1312,
+      "height": 1199
+    },
+    {
+      "id": "speed-skeleton-silver-ds1",
+      "work": "ds1-dc",
+      "width": 1024,
+      "height": 1536
+    },
+    {
+      "id": "armour-plate-silver-ds1",
+      "work": "ds1-dc",
+      "width": 1448,
+      "height": 1086
+    },
+    {
+      "id": "night-viaduct-ds2-panorama",
+      "work": "ds2",
+      "width": 1672,
+      "height": 941
+    },
+    {
+      "id": "red-ravine-ds2-panorama",
+      "work": "ds2",
+      "width": 1672,
+      "height": 941
+    },
+    {
+      "id": "maser-handgun-ds2-discharge",
+      "work": "ds2",
+      "width": 2172,
+      "height": 724
+    }
+  ],
+  "source_sha256": {
+    "static-assets.html": "88f085069cb59883b476b240193f7cf3ed412e2294de75f3feec5c38f6191d2b",
+    "static-assets.css": "33edc8e4f966bfcc6aaa8a65fdb60d91f0bc69312ecfefdcecb134917565649a",
+    "static-assets.js": "28ec2c78f62f635e633f3acaf0c6c2463809830c862a0d2f92d973e3f9cdb2a4",
+    "static-assets-data.js": "299e962b9ec49f666be161461bf8b490a193153edaa7e781d7c1534bc973af1d"
+  }
+}

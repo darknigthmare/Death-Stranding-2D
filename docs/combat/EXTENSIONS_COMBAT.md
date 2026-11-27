@@ -4,9 +4,11 @@
 
 [Bible](BIBLE_COMBAT.md#extensions-guides-20261127) · [Production](REGISTRE_PRODUCTION.md#extensions-guides-20261127) · [Œuvres et versions](UNIVERS_DS.md) · [Provenance des trois fichiers](references/combat-guides-provenance.json).
 
-Ce document applique les deux extensions demandées aux contenus existants. Il complète les trente lignes `EDG-G00` à `EDG-G29` de la bible avec **38 décisions `EDG-G30` à `EDG-G67`**. Une rubrique retenue est une décision de conception ; elle ne devient une fonctionnalité livrée qu’avec son raccordement et une preuve. Les fiches d’équipe, de bonus et d’exploration ci-dessous sont des cibles de réalisation. Les taunts, les présentations de sélection et les Dossiers de liaison possèdent leurs bilans de réalisation séparés : [Présentation](production/20261127-extensions/PRESENTATION.md) et [Progression](production/20261127-extensions/PROGRESSION.md).
+Ce document applique les deux extensions demandées aux contenus existants. Il complète les trente lignes `EDG-G00` à `EDG-G29` de la bible avec **38 décisions `EDG-G30` à `EDG-G67`**. Une rubrique retenue est une décision de conception ; elle ne devient une fonctionnalité livrée qu’avec son raccordement et une preuve. Les fiches de bonus et d’exploration ci-dessous sont des cibles de réalisation. Le profil local d’équipe est désormais raccordé dans [Relais de liaison](production/20261127-team-gameplay/RELAIS_DE_LIAISON.md) ; les supers et scènes collectives restent à produire. Les taunts, les présentations de sélection et les Dossiers de liaison possèdent leurs bilans de réalisation séparés : [Présentation](production/20261127-extensions/PRESENTATION.md) et [Progression](production/20261127-extensions/PROGRESSION.md).
 
 Les huit identifiants jouables `sam`, `fragile`, `higgs`, `cliff`, `mule`, `diehardman`, `mama`, `heartman` restent ceux de DS1/DC. Les images DS2, les romans, les adaptations et les projets annoncés restent dans le périmètre sans hériter automatiquement de ces huit kits. Toute nouvelle tenue ou capacité exige la version et le plan de référence correspondants. **Les noms de taunts, duos, bonus, souvenirs et « Ruptures de lien » de ce document sont des créations du simulateur.** Ils ne constituent ni des citations ni des événements officiels de Death Stranding.
+
+Le [complément de fidélité](production/20261127-fidelity/BILAN.md) raccorde les poses d’entrée/sortie de sept kits, les trois poses de Mama Viaduc et un neuvième exercice consacré à la vulnérabilité du geste. Il précise aussi la correction de continuité Heartman et les corrections visuelles non reçues. Les règles chiffrées du geste et les conditions des huit souvenirs restent celles de cette extension.
 
 ## 1. Sources exactes et contrôle du guide déjà intégré
 
@@ -36,20 +38,20 @@ Le manifeste conserve identifiants Drive, dates, tailles et empreintes. Les date
 | EDG-G30 · portée | Retenue · P0 | Ce document prolonge la bible et le registre ; DS1/DC et DS2 ont des fiches/version séparées. Source originale et état de livraison sont conservés. |
 | EDG-G31 · taunts | Retenue · P1 | Huit gestes de personnalité, sans bonus de jauge ni nouveau pouvoir. Cycle vulnérable documenté au [§3](#personnalite) ; preuve du runtime dans Présentation. |
 | EDG-G32 · sélection/désélection | Retenue · P1 | Aperçu, confirmation, attente, sortie et remplacement explicites ; adaptation de chaque silhouette, interruption propre et mouvement réduit. Réemploi de poses distingué d’une séquence dessinée complète. |
-| EDG-G33 · profils d’équipe | Adaptée · P2 | Profil cible « Relais de liaison » : deux empreintes, actif/réserve, vie séparée, défaite aux deux KO. Assistance et véritable transfert de contrôle restent distincts ; pas de tag livré par ce lot. |
+| EDG-G33 · profils d’équipe | Adaptée · P2 | Profil local « Relais de liaison » livré : deux membres, actif/réserve, vie séparée, défaite aux deux KO ; assistance et transfert de contrôle distincts. [Règles et recette](production/20261127-team-gameplay/RELAIS_DE_LIAISON.md). |
 | EDG-G34 · commandes/jauges | Retenue · P0/P2 | Taunt remappable pour le duel local ; assist, relais, duo et rupture collective ont des actions cibles distinctes et une jauge de Cohésion séparée du Chiral (§4). Aucune touche fantôme annoncée dans le jeu. |
 | EDG-G35 · assistance | Adaptée · P2 | Une intervention du partenaire, annoncée et punissable ; kit de soutien borné pour les huit combattants. Les soldats de Cliff restent ses entités natives. |
 | EDG-G36 · tag | Adaptée · P2 | Relais réel avec transfert du HUD et du contrôle ; coûts, KO, effets persistants et historique de combo définis. Les duels existants restent à un combattant par joueur. |
 | EDG-G37 · supers d’équipe | Adaptée · P2 | Huit dossiers de paires prioritaires avec contribution distincte des deux kits, confirmation préalable et retour au jeu ; chorégraphies non produites (§4). |
 | EDG-G38 · fins collectives/dramatiques | Adaptée · P2 | Ruptures de lien collectives du simulateur, sans exécution canonique des personnages ; priorité de conclusion, versions, lieu, partenaire vivant et solution de remplacement explicites. |
 | EDG-G39 · clashes/QTE | Adaptée · P2 | Groupes limités de contacts physiques ou de manifestations compatibles ; QTE facultatif en histoire/spectacle, résolution commune sans QTE pour compétition. Pas de laser ou de pouvoir attribué par analogie (§5). |
-| EDG-G40 · entités/objets placés | Retenue · P0/P2 | Caisse MULE, balise de Fragile, empreinte de Higgs, poste de Cliff, ancrage de Mama et mémoire de Heartman gardent leur propriétaire ; plusieurs sont déjà des objets du duel, leurs règles d’équipe restent à implémenter. |
+| EDG-G40 · entités/objets placés | Retenue · P0/P2 | Caisse MULE, balise de Fragile, empreinte de Higgs, poste de Cliff, ancrage de Mama et mémoire de Heartman gardent leur propriétaire ; leurs règles de réserve, K.-O., attribution et expiration sont maintenant implémentées dans le relais local. |
 | EDG-G41 · projectiles persistants | Retenue · P0/P2 | Identité stable, expiration et historique de combo commun ; pas de transfert magique de propriété au tag. Tableau des réactions à KO, réserve, transition et fin de manche (§5). |
 | EDG-G42 · bonus | Adaptée · P2 | Dix familles recontextualisées : fret d’entraînement, MULEs simulés, tir DC, parade, parcours, protection, terminal, entité, coordination et livraison de précision. Toutes restent des fiches de projet (§6). |
 | EDG-G43 · espace de déblocage | Adaptée · P1/P2 | Dossiers de liaison : collection consultable dans l’interface ; parcours d’archives connecté conçu pour la suite. Aucun nouveau lieu physique officiel, hub 3D ni arbre RPG déclaré livré. |
 | EDG-G44 · relations | Retenue · P1/P2 | Huit paires prioritaires prolongent les 28 relations déjà documentées. Campagne, versus hypothétique, versions DS2 et rencontres de mémoires restent distincts (§4). |
 | EDG-G45 · production d’assets | Retenue · P0/P1 | Une source autonome par sujet ; pose de taunt, transition de sélection, animation et storyboard collectif sont des unités différentes. Cadrage et asymétries suivis par version (§9). |
-| EDG-G46 · UX/accessibilité/réseau | Retenue avec périmètre · P0/P1 | Taunt et présentation dans le duel local, textes de commande et effets réduits ; salon privé, Boss et Duel originel non étendus implicitement. Les équipes exigent une sérialisation future dédiée. |
+| EDG-G46 · UX/accessibilité/réseau | Retenue avec périmètre · P0/P1 | Taunt et présentation dans le duel local, textes de commande et effets réduits ; salon privé, Boss et Duel originel non étendus implicitement. Le relais local possède une reprise validée dédiée ; sa synchronisation réseau reste à réaliser. |
 | EDG-G47 · validation/statistiques | Retenue · P0 | Les 18 cas de l’extension 01 restent dans la matrice de recette (§9), avec résultats du lot distingués des essais futurs. Une pose ou une fiche ne compte pas comme animation livrée. |
 | EDG-G48 · dix fiches | Retenue · P0/P1 | A/B : huit fiches personnalité ; C/D/E : équipe et paires ; F/G : clash/entités ; H/I/J : bonus, parcours et règles d’accès. Toutes renvoient aux IDs existants. |
 | EDG-G49 · application/références | Retenue · P0 | Sources intégrales et manifeste ; références Death Stranding qualifiées au §10. Les inspirations MK, Tekken, FighterZ ou Naruto ne définissent pas le canon DS. |
@@ -80,6 +82,8 @@ Le manifeste conserve identifiants Drive, dates, tailles et empreintes. Les date
 Le taunt local est un **geste de présentation vulnérable**, pas une technique offensive. Son contrat est de **54 pas à 60 Hz : 10 d’entrée, 28 de tenue, 16 de sortie**. Il démarre au sol, au neutre, hors garde, accroupissement, déplacement rapide, réception de coups ou attaque. Une touche maintenue ne le relance pas en boucle. Pendant son engagement, les commandes de combat ne permettent pas une annulation gratuite. Un impact, un KO, un changement de manche ou une transition interrompt le geste. Il n’ajoute ni dégâts, ni invulnérabilité, ni ressource ; la régénération ordinaire du duel ne devient pas un bonus de taunt. Le rapport Présentation fait foi pour les commandes et exclusions exactes de la version réalisée.
 
 Chaque fiche ci-dessous remplit les modèles A et B de l’extension 01. La **gestuelle détaillée est la direction d’animation cible** ; sa restitution initiale peut employer une pose existante ou un PNG neuf accompagné d’un mouvement de présentation. Cela ne produit pas les dessins intermédiaires d’une animation complète. Les voix restent des besoins de production séparés ; aucune voix officielle n’est livrée par un libellé de taunt.
+
+Le complément du 27 novembre branche trois poses clés sur les phases réelles pour Sam, Fragile, Higgs DS1, Cliff, le MULE, Mama Atelier, Mama Viaduc et Heartman. Il résout le costume avant la pose et garde une posture de la même tenue si une image manque. Le hold Heartman est remplacé pour correspondre au poignet de sa posture active ; cette continuité interne ne certifie pas le côté anatomique de l’équipement canonique. Die-Hardman conserve son rendu antérieur après le refus de génération de la correction. Les [preuves de présentation](production/20261127-fidelity/FIDELITY_PRESENTATION.md) distinguent poses reçues, phases mesurées, replays, rendu et simulation.
 
 Pour les huit fiches, les critères communs sont : un seul sujet dans chaque source autonome, mains et équipement du bon côté, silhouette lisible à taille de combat, pied d’appui stable, absence de collision offensive, interruption immédiate par un événement prioritaire et retour à une garde exploitable. En sélection, l’aperçu répond immédiatement ; la sortie complète peut être abrégée, nettoie les effets de l’ancien choix et ne retarde pas le nouveau. Le mouvement réduit conserve pose, état de sélection et libellé, sans exiger une translation ou un flash.
 
@@ -363,18 +367,18 @@ Les besoins à produire ensuite restent identifiés : dessins intermédiaires de
 | --- | --- | --- |
 | E1-01 | Navigation rapide, confirmation, désélection ; aucun effet d’ancien aperçu restant | Lot présentation, preuve dédiée. |
 | E1-02 | Taunt interrompu, vulnérabilité et retour au contrôle | Lot présentation, preuve dédiée. |
-| E1-03 | Assistance et relais simultanés : partenaire engagé une seule fois | Futur mode équipe. |
-| E1-04 | Deux dépenses de la dernière portion de Cohésion | Futur mode équipe. |
-| E1-05 | Soutien touché/KO pendant l’arrivée | Futur mode équipe. |
+| E1-03 | Assistance et relais simultanés : partenaire engagé une seule fois | Relais local : engagement unique et appels simultanés vérifiés. |
+| E1-04 | Deux dépenses de la dernière portion de Cohésion | Relais local : débit atomique, refus sans dépense vérifiés. |
+| E1-05 | Soutien touché/KO pendant l’arrivée | Relais local : corps touchable, interruption et K.-O. vérifiés. |
 | E1-06 | Duo demandé pendant sortie d’assistance | Futur mode équipe. |
 | E1-07 | Super initiale touchée, gardée, manquée ou interrompue | Futur mode équipe. |
 | E1-08 | Fin dramatique incompatible : remplacement et résultat inchangé | Futures scènes collectives. |
 | E1-09 | Clash avec projectile tiers, piège et assistance | Futur clash. |
 | E1-10 | Réussite, échec, égalité, absence, déconnexion QTE | Futur clash et éventuel réseau. |
-| E1-11 | Objet du propriétaire en réserve ou KO | Future équipe ; objets actuels restent suivis par leurs recettes. |
+| E1-11 | Objet du propriétaire en réserve ou KO | Relais local : propriété, retrait/rappel et expiration vérifiés. |
 | E1-12 | Transition avec objet posé et historique de combo | Future équipe/transitions. |
 | E1-13 | Réflexion : attribution des dégâts, ressource et fin | Future mécanique de réflexion, si retenue pour un kit. |
-| E1-14 | Boucles piège/relais/assistance ; limites de combo partagées | Futur équilibrage d’équipe. |
+| E1-14 | Boucles piège/relais/assistance ; limites de combo partagées | Historique et réduction partagés vérifiés ; équilibrage humain et recherche exhaustive de boucles restent ouverts. |
 | E1-15 | Horde au plafond : entrées, performances et issues sûres | Futur bonus horde. |
 | E1-16 | Bonus gagné/raté/abandonné : bonne route et bonne récompense | Futurs bonus. |
 | E1-17 | Déblocage, enregistrement, rechargement sans doublon | Lot Dossiers, preuve dédiée. |
@@ -413,7 +417,7 @@ Une ligne « preuve dédiée » indique où lire le résultat réel ; elle ne d�
 
 1. Stabiliser les gestes locaux, l’interruption et la présentation, puis la progression des souvenirs sans retirer d’accès existant.
 2. Produire et comparer les poses manquantes par personnage/version ; compléter les dessins intermédiaires seulement quand les cycles sont prêts.
-3. Réaliser le profil local à deux membres, son HUD, ses coûts et sa propriété d’entités ; éprouver assistance/relais avant toute super.
+3. Le profil local à deux membres, son HUD, ses coûts et sa propriété d’entités sont livrés et éprouvés dans [Relais de liaison](production/20261127-team-gameplay/RELAIS_DE_LIAISON.md). Conserver ces règles pendant la production des cycles et des supers.
 4. Produire une paire prioritaire, une conclusion compatible et un bonus, puis étendre selon les preuves de fonctionnement.
 5. Ouvrir les kits DS2 après références et fiches dédiées ; conserver les œuvres moins documentées dans l’inventaire.
 6. Raccorder un fournisseur de soutien seulement avec un backend et une offre concrète vérifiés ; le lot actuel ne dépend pas de cette étape.

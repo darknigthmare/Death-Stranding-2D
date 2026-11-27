@@ -11,7 +11,8 @@
     {id:'punish',title:'Punir un coup dans le vide',summary:'Attends la récupération du lourd et réponds avec un léger.',steps:['Place-toi à 150–175 pixels. Le mannequin lance un Lourd ; laisse-le manquer sans bloquer ni subir de dégât.','Dès sa récupération, avance avec {forward} et touche avec Léger {light} avant qu’il retrouve le repos.'],note:'Observe « Récupération » : cette fenêtre est courte. Si elle se referme, replace-toi et attends le prochain lourd.'},
     {id:'resource',title:'Dépenser puis récupérer',summary:'Déclenche une signature neutre et surveille la jauge chirale.',steps:['Relâche les directions et lance Signature {special}. La dépense de la technique doit apparaître dans la jauge.','Laisse la jauge remonter à 60, sans lancer d’autre attaque.'],note:'Le dojo recharge la jauge plus vite que les duels. Cette vitesse d’exercice ne décrit pas celle d’un match.'},
     {id:'signatures',title:'Les trois signatures',summary:'Exécute les variantes neutre, avant et arrière de ton combattant.',steps:['Neutre : relâche les directions, puis Signature {special}.','Avant : maintiens {forward} et appuie sur Signature {special}.','Arrière : maintiens {back} et appuie sur Signature {special}.'],note:'Avant désigne le mannequin, même après un changement de côté. Attends la fin du coup avant la variante suivante. Les préparations propres au combattant restent nécessaires.'},
-    {id:'combo',title:'Confirmer puis enchaîner',summary:'Sur un léger qui touche, enchaîne immédiatement le lourd.',steps:['Approche et touche avec Léger {light}.','Pendant la récupération du léger confirmé, appuie sur Lourd {heavy}. Les deux impacts doivent appartenir au même enchaînement.'],note:'Le lourd doit commencer avant la fin naturelle du léger. Un lourd après le retour au repos ne valide pas cet exercice.'}
+    {id:'combo',title:'Confirmer puis enchaîner',summary:'Sur un léger qui touche, enchaîne immédiatement le lourd.',steps:['Approche et touche avec Léger {light}.','Pendant la récupération du léger confirmé, appuie sur Lourd {heavy}. Les deux impacts doivent appartenir au même enchaînement.'],note:'Le lourd doit commencer avant la fin naturelle du léger. Un lourd après le retour au repos ne valide pas cet exercice.'},
+    {id:'taunt',title:'Le geste expose',summary:'Termine ton geste à distance, puis interromps celui du mannequin.',steps:['À au moins 250 pixels, lance Geste de défi {taunt}. Laisse les 54 pas se terminer en restant à distance.','Le mannequin se rapproche et provoque. Pendant son geste, touche avec Léger {light} pour l’interrompre. Attends la fin de tes autres techniques avant cet essai.'],note:'Le geste dure 0,9 seconde et reste vulnérable en entrée, en tenue et en sortie. Il ne donne aucun bonus offensif. Une frappe après la fin du geste ne valide pas l’interruption.'}
   ];
   const ids=lessons.map(lesson=>lesson.id),fighters=()=>Object.keys(host.StrandContent?.fighters||{});
   const copy=value=>JSON.parse(JSON.stringify(value));
@@ -44,14 +45,14 @@
     const steps=definition.steps.slice(),techniques=sheet.techniques;
     if(id==='signatures')techniques.forEach((move,index)=>{steps[index]+=' '+move.name+' · coût '+move.cost+'.';});
     const state={id,fighter,phase:'active',step:0,steps,feedback:'Prends place dans le dojo.',metric:'',ticks:0,evidence:[]};
-    let previous=null,lastTick=-1,firstTick=null,held=0,blocks=0,lastAttack=-120,attack=null,whiff=null,resource=null,signature=null,combo=false;
+    let previous=null,lastTick=-1,firstTick=null,held=0,blocks=0,lastAttack=-120,attack=null,whiff=null,resource=null,signature=null,combo=false,tauntRun=null;
     const bot={};
     const goal=details=>{state.evidence.push({goal:state.step+1,tick:lastTick,...details});state.step++;
       if(state.step>=steps.length){state.phase='success';state.feedback='Exercice validé. Tu peux poursuivre ou le refaire avec un autre combattant.';}};
     const fail=text=>{state.phase='retry';state.feedback=text;};
     function controls(wanted={}) {
       const commands=[];
-      for(const action of ['left','right','down','light','heavy'])if(!!bot[action]!==!!wanted[action]){bot[action]=!!wanted[action];commands.push([2,action,!!wanted[action]]);}
+      for(const action of ['left','right','down','light','heavy','taunt'])if(!!bot[action]!==!!wanted[action]){bot[action]=!!wanted[action];commands.push([2,action,!!wanted[action]]);}
       return commands;
     }
     function observe(status) {
@@ -116,6 +117,35 @@
         if(state.step===2&&['mama','mule','cliff'].includes(fighter))state.feedback+=' Si le marqueur a disparu, repose '+(fighter==='mama'?'l’ancrage avec la signature neutre.':fighter==='mule'?'la caisse avec Avant + Signature.':'le poste avec Avant + Signature.');
         if(signature?.key===move.engineAction&&signature.prepared&&self.action===move.engineAction&&ownTiming?.frame>=move.startup){
           goal({kind:'signature-active',engineAction:move.engineAction,frame:ownTiming.frame,cost:move.cost});signature=null;
+        }
+      } else if(id==='taunt') {
+        if(state.step===0){
+          state.feedback=gap<250?'Recule à au moins 250 px avant de lancer le geste.':'Lance Geste de défi et laisse son cycle entier se terminer.';
+          if(self.taunt&&!before?.taunt&&gap>=250)tauntRun={startTick:lastTick-self.taunt.frame,total:host.StrandFight.tauntRules.total,minGap:gap,hp:self.hp,phases:[]};
+          if(tauntRun){
+            tauntRun.minGap=Math.min(tauntRun.minGap,gap);
+            if(ownDamage||gap<250||self.y!==0||self.action){tauntRun=null;state.feedback='Le cycle à distance n’est pas complet. Replace-toi et recommence le geste.';}
+            else if(self.taunt){
+              if(!tauntRun.phases.includes(self.taunt.phase))tauntRun.phases.push(self.taunt.phase);
+              state.metric+=' · Geste '+Math.min(self.taunt.frame,tauntRun.total)+' / '+tauntRun.total+' pas';
+              state.feedback='Le geste t’expose : attends la fin de sa sortie.';
+            } else if(before?.taunt&&before.taunt.frame===tauntRun.total-1&&lastTick-tauntRun.startTick>=tauntRun.total&&self.hp===tauntRun.hp){
+              goal({kind:'taunt-complete',duration:tauntRun.total,minGap:Math.round(tauntRun.minGap),phases:tauntRun.phases});tauntRun=null;
+            } else tauntRun=null;
+          }
+        } else {
+          state.feedback=foe.taunt?'Le mannequin est vulnérable : touche au léger pendant son geste.':'Attends sa provocation. Une frappe après le geste ne compte pas.';
+          const lingering=!!(before?.marker||self.marker||previous?.training.moves?.[0]?.projectile||ownTiming?.projectile);
+          const activeLight=self.action==='light'&&self.move==='light'&&ownTiming?.phase==='Activité'&&!lingering;
+          // Both fighters advance before contacts: the last previous frame can
+          // already have ended naturally when this hit actually lands.
+          if(enemyDamage&&enemyBefore?.taunt&&enemyBefore.taunt.frame<host.StrandFight.tauntRules.total-1&&!foe.taunt&&activeLight)
+            goal({kind:'taunt-interrupted',opponentPhase:enemyBefore.taunt.phase,opponentFrame:enemyBefore.taunt.frame,damage:enemyBefore.hp-foe.hp});
+          else if(enemyDamage)state.feedback=!activeLight?'Attends la fin de tes autres techniques, puis interromps le prochain geste avec un coup léger.':'La frappe est arrivée hors du geste. Attends la prochaine provocation.';
+          if(state.phase==='active'&&!foe.action&&!foe.stun&&!foe.taunt){
+            if(gap>78)wanted[toward]=true;
+            else if(lastTick-lastAttack>=90){wanted.taunt=true;lastAttack=lastTick;}
+          }
         }
       } else if(id==='combo') {
         if(enemyDamage&&self.move==='light'){state.step=1;state.evidence=[{goal:1,tick:lastTick,kind:'light-hit',combo:self.combo}];combo=false;}

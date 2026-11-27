@@ -1,0 +1,691 @@
+{
+  "schema_version": 1,
+  "date": "2026-11-27T08:36:27.157Z",
+  "passed": true,
+  "browser": false,
+  "realHTTP": true,
+  "gameVersion": "68f4568040d0e8490b17",
+  "plannedPresentationImages": 18,
+  "receivedPresentationImages": 18,
+  "receivedStaticImages": 1,
+  "requiredCaptureChecks": 63,
+  "versionFixture": {
+    "passed": true,
+    "checks": [
+      "New fidelity folder is versioned recursively",
+      "Changing native image bytes changes version",
+      "Symbolic paths, hidden files and SVG source formats stay excluded"
+    ]
+  },
+  "resourceChecks": [
+    {
+      "path": "/app.js",
+      "status": 200,
+      "bytes": 91259,
+      "sha256": "68db637d7ae1661f7005ed5f1c5bcc9944b5781be527103c82fac64ea92afafa"
+    },
+    {
+      "path": "/lessons.js",
+      "status": 200,
+      "bytes": 18011,
+      "sha256": "2494f12c8bd3d807a5547ff6a6e87277191acd27b8daacfb556e39282092432b"
+    },
+    {
+      "path": "/assets.js",
+      "status": 200,
+      "bytes": 11162,
+      "sha256": "4f0ae5349872b9391d7586bc98baf0baa211e83e59c7b1e4234aaf22525ecb01"
+    },
+    {
+      "path": "/presentation-assets.js",
+      "status": 200,
+      "bytes": 6965,
+      "sha256": "598f1508810280178133f94c9192d66bc2d04459592d9779a5af2e0bb7f68cc3"
+    },
+    {
+      "path": "/static-assets.js",
+      "status": 200,
+      "bytes": 9731,
+      "sha256": "28ec2c78f62f635e633f3acaf0c6c2463809830c862a0d2f92d973e3f9cdb2a4"
+    },
+    {
+      "path": "/static-assets-data.js",
+      "status": 200,
+      "bytes": 42965,
+      "sha256": "299e962b9ec49f666be161461bf8b490a193153edaa7e781d7c1534bc973af1d"
+    },
+    {
+      "path": "/assets/fidelity-20261127/presentation/sam-taunt-entry.png",
+      "status": 200,
+      "bytes": 1821801,
+      "sha256": "410dbc7f6987d77abbf839a7f3c852eda4fd6481727fe5eb9bca743099284edb"
+    },
+    {
+      "path": "/assets/fidelity-20261127/presentation/sam-taunt-exit.png",
+      "status": 200,
+      "bytes": 1845772,
+      "sha256": "939fc4a9d24d57b6c5444b3d1e8eed71404fcba2d70aaecc65d5a7e5c88c799e"
+    },
+    {
+      "path": "/assets/fidelity-20261127/presentation/fragile-taunt-entry.png",
+      "status": 200,
+      "bytes": 1193689,
+      "sha256": "4f60c70ec027f4de7be6a0ddf260bcc4a0d8d18347b21e2fe6791ff956ce1a63"
+    },
+    {
+      "path": "/assets/fidelity-20261127/presentation/fragile-taunt-exit.png",
+      "status": 200,
+      "bytes": 1241960,
+      "sha256": "c3c4b428bfe7eb92fa0cd8f0bffbf4deaf52c70c082dee80cf1b306a8d84b38b"
+    },
+    {
+      "path": "/assets/fidelity-20261127/presentation/higgs-taunt-entry.png",
+      "status": 200,
+      "bytes": 1726743,
+      "sha256": "953f72376ebc89feaffa9024af2a61c82e249c58e0a5526cebb87a5ee419ed28"
+    },
+    {
+      "path": "/assets/fidelity-20261127/presentation/higgs-taunt-exit.png",
+      "status": 200,
+      "bytes": 1755854,
+      "sha256": "b7d49ba184751313d3ed6b2865d303334b6002f1ac36265d4733a5e542828cb9"
+    },
+    {
+      "path": "/assets/fidelity-20261127/presentation/cliff-taunt-entry.png",
+      "status": 200,
+      "bytes": 1857238,
+      "sha256": "83d43e980d15335582600b2eabb315873697a1beaf1262df896ec7c502903e77"
+    },
+    {
+      "path": "/assets/fidelity-20261127/presentation/cliff-taunt-exit.png",
+      "status": 200,
+      "bytes": 1885490,
+      "sha256": "0a5df0442c98d082ce2756dd43ff2c46adc37e58bea49081f4851fd2656520cf"
+    },
+    {
+      "path": "/assets/fidelity-20261127/presentation/mule-taunt-entry.png",
+      "status": 200,
+      "bytes": 1915537,
+      "sha256": "b5c414e36129d889d427e1c4f90a6001f8a94ed8e9f36c6eeb09fe485ded9337"
+    },
+    {
+      "path": "/assets/fidelity-20261127/presentation/mule-taunt-exit.png",
+      "status": 200,
+      "bytes": 1987912,
+      "sha256": "8ed70fc153be63f2208f4c3e7c09106d6088dc075b5397725b70df385c0db0bf"
+    },
+    {
+      "path": "/assets/fidelity-20261127/presentation/mama-taunt-entry.png",
+      "status": 200,
+      "bytes": 1756805,
+      "sha256": "108291b1274e296e91836d6b444a5f031317bc9aa788469d77d81c0efc720de5"
+    },
+    {
+      "path": "/assets/fidelity-20261127/presentation/mama-taunt-exit.png",
+      "status": 200,
+      "bytes": 1691308,
+      "sha256": "aaafef65d81e4038fadd1630b5eb4c152769e41df009502be6a5b49ad8394fe1"
+    },
+    {
+      "path": "/assets/fidelity-20261127/presentation/heartman-taunt-entry.png",
+      "status": 200,
+      "bytes": 1434855,
+      "sha256": "a92d929fe4ef1c78cae5616aff90eeab11695b4176aed852f2b50ebcd6b23e99"
+    },
+    {
+      "path": "/assets/fidelity-20261127/presentation/heartman-taunt-exit.png",
+      "status": 200,
+      "bytes": 1490448,
+      "sha256": "05dca8478de957022efa7ccafa4f49dc903cc65265140245e60cfd1e35cde373"
+    },
+    {
+      "path": "/assets/fidelity-20261127/presentation/mama-viaduc-taunt.png",
+      "status": 200,
+      "bytes": 1838744,
+      "sha256": "c9a761e9e3f6b492c8f71600114c3464ba300deae33f739bc5c3738cc04bdc48"
+    },
+    {
+      "path": "/assets/fidelity-20261127/presentation/mama-viaduc-taunt-entry.png",
+      "status": 200,
+      "bytes": 1905783,
+      "sha256": "90feabe3024e7e0fb84281dca95503c124b1c0d9be6f7a069ac73e568d8d7ff3"
+    },
+    {
+      "path": "/assets/fidelity-20261127/presentation/mama-viaduc-taunt-exit.png",
+      "status": 200,
+      "bytes": 1854147,
+      "sha256": "092bbf75270ecb9bd2edd404ef85d9d475567d94406c0225fd52af23b067a3a5"
+    },
+    {
+      "path": "/assets/fidelity-20261127/presentation/heartman-taunt.png",
+      "status": 200,
+      "bytes": 1475747,
+      "sha256": "379d9b8b19a9f01db7c55dcd0d93a12252c0ee979a38d96daff662361c7b7e98"
+    },
+    {
+      "path": "/assets/fidelity-20261127/static/maser-handgun-ds2-discharge.png",
+      "status": 200,
+      "bytes": 399006,
+      "sha256": "88e1868944d82c8b482acac128e0cb8edc4b2b5fb9167b74adbb067c447a3e74"
+    },
+    {
+      "path": "/assets/presentation-20261127/diehardman-taunt.png",
+      "status": 200,
+      "bytes": 1157045,
+      "sha256": "9ea21779b4f269b26c7b89884e3e7e9b0b3d52f3a8916fcc0a1c99121bf2d5fe"
+    },
+    {
+      "path": "/modes/echos-de-la-greve/app.js",
+      "status": 200,
+      "bytes": 91259,
+      "sha256": "68db637d7ae1661f7005ed5f1c5bcc9944b5781be527103c82fac64ea92afafa"
+    },
+    {
+      "path": "/modes/echos-de-la-greve/lessons.js",
+      "status": 200,
+      "bytes": 18011,
+      "sha256": "2494f12c8bd3d807a5547ff6a6e87277191acd27b8daacfb556e39282092432b"
+    },
+    {
+      "path": "/modes/echos-de-la-greve/assets.js",
+      "status": 200,
+      "bytes": 11162,
+      "sha256": "4f0ae5349872b9391d7586bc98baf0baa211e83e59c7b1e4234aaf22525ecb01"
+    },
+    {
+      "path": "/modes/echos-de-la-greve/presentation-assets.js",
+      "status": 200,
+      "bytes": 6965,
+      "sha256": "598f1508810280178133f94c9192d66bc2d04459592d9779a5af2e0bb7f68cc3"
+    },
+    {
+      "path": "/modes/echos-de-la-greve/static-assets.js",
+      "status": 200,
+      "bytes": 9731,
+      "sha256": "28ec2c78f62f635e633f3acaf0c6c2463809830c862a0d2f92d973e3f9cdb2a4"
+    },
+    {
+      "path": "/modes/echos-de-la-greve/static-assets-data.js",
+      "status": 200,
+      "bytes": 42965,
+      "sha256": "299e962b9ec49f666be161461bf8b490a193153edaa7e781d7c1534bc973af1d"
+    },
+    {
+      "path": "/modes/echos-de-la-greve/assets/fidelity-20261127/presentation/sam-taunt-entry.png",
+      "status": 200,
+      "bytes": 1821801,
+      "sha256": "410dbc7f6987d77abbf839a7f3c852eda4fd6481727fe5eb9bca743099284edb"
+    },
+    {
+      "path": "/modes/echos-de-la-greve/assets/fidelity-20261127/presentation/sam-taunt-exit.png",
+      "status": 200,
+      "bytes": 1845772,
+      "sha256": "939fc4a9d24d57b6c5444b3d1e8eed71404fcba2d70aaecc65d5a7e5c88c799e"
+    },
+    {
+      "path": "/modes/echos-de-la-greve/assets/fidelity-20261127/presentation/fragile-taunt-entry.png",
+      "status": 200,
+      "bytes": 1193689,
+      "sha256": "4f60c70ec027f4de7be6a0ddf260bcc4a0d8d18347b21e2fe6791ff956ce1a63"
+    },
+    {
+      "path": "/modes/echos-de-la-greve/assets/fidelity-20261127/presentation/fragile-taunt-exit.png",
+      "status": 200,
+      "bytes": 1241960,
+      "sha256": "c3c4b428bfe7eb92fa0cd8f0bffbf4deaf52c70c082dee80cf1b306a8d84b38b"
+    },
+    {
+      "path": "/modes/echos-de-la-greve/assets/fidelity-20261127/presentation/higgs-taunt-entry.png",
+      "status": 200,
+      "bytes": 1726743,
+      "sha256": "953f72376ebc89feaffa9024af2a61c82e249c58e0a5526cebb87a5ee419ed28"
+    },
+    {
+      "path": "/modes/echos-de-la-greve/assets/fidelity-20261127/presentation/higgs-taunt-exit.png",
+      "status": 200,
+      "bytes": 1755854,
+      "sha256": "b7d49ba184751313d3ed6b2865d303334b6002f1ac36265d4733a5e542828cb9"
+    },
+    {
+      "path": "/modes/echos-de-la-greve/assets/fidelity-20261127/presentation/cliff-taunt-entry.png",
+      "status": 200,
+      "bytes": 1857238,
+      "sha256": "83d43e980d15335582600b2eabb315873697a1beaf1262df896ec7c502903e77"
+    },
+    {
+      "path": "/modes/echos-de-la-greve/assets/fidelity-20261127/presentation/cliff-taunt-exit.png",
+      "status": 200,
+      "bytes": 1885490,
+      "sha256": "0a5df0442c98d082ce2756dd43ff2c46adc37e58bea49081f4851fd2656520cf"
+    },
+    {
+      "path": "/modes/echos-de-la-greve/assets/fidelity-20261127/presentation/mule-taunt-entry.png",
+      "status": 200,
+      "bytes": 1915537,
+      "sha256": "b5c414e36129d889d427e1c4f90a6001f8a94ed8e9f36c6eeb09fe485ded9337"
+    },
+    {
+      "path": "/modes/echos-de-la-greve/assets/fidelity-20261127/presentation/mule-taunt-exit.png",
+      "status": 200,
+      "bytes": 1987912,
+      "sha256": "8ed70fc153be63f2208f4c3e7c09106d6088dc075b5397725b70df385c0db0bf"
+    },
+    {
+      "path": "/modes/echos-de-la-greve/assets/fidelity-20261127/presentation/mama-taunt-entry.png",
+      "status": 200,
+      "bytes": 1756805,
+      "sha256": "108291b1274e296e91836d6b444a5f031317bc9aa788469d77d81c0efc720de5"
+    },
+    {
+      "path": "/modes/echos-de-la-greve/assets/fidelity-20261127/presentation/mama-taunt-exit.png",
+      "status": 200,
+      "bytes": 1691308,
+      "sha256": "aaafef65d81e4038fadd1630b5eb4c152769e41df009502be6a5b49ad8394fe1"
+    },
+    {
+      "path": "/modes/echos-de-la-greve/assets/fidelity-20261127/presentation/heartman-taunt-entry.png",
+      "status": 200,
+      "bytes": 1434855,
+      "sha256": "a92d929fe4ef1c78cae5616aff90eeab11695b4176aed852f2b50ebcd6b23e99"
+    },
+    {
+      "path": "/modes/echos-de-la-greve/assets/fidelity-20261127/presentation/heartman-taunt-exit.png",
+      "status": 200,
+      "bytes": 1490448,
+      "sha256": "05dca8478de957022efa7ccafa4f49dc903cc65265140245e60cfd1e35cde373"
+    },
+    {
+      "path": "/modes/echos-de-la-greve/assets/fidelity-20261127/presentation/mama-viaduc-taunt.png",
+      "status": 200,
+      "bytes": 1838744,
+      "sha256": "c9a761e9e3f6b492c8f71600114c3464ba300deae33f739bc5c3738cc04bdc48"
+    },
+    {
+      "path": "/modes/echos-de-la-greve/assets/fidelity-20261127/presentation/mama-viaduc-taunt-entry.png",
+      "status": 200,
+      "bytes": 1905783,
+      "sha256": "90feabe3024e7e0fb84281dca95503c124b1c0d9be6f7a069ac73e568d8d7ff3"
+    },
+    {
+      "path": "/modes/echos-de-la-greve/assets/fidelity-20261127/presentation/mama-viaduc-taunt-exit.png",
+      "status": 200,
+      "bytes": 1854147,
+      "sha256": "092bbf75270ecb9bd2edd404ef85d9d475567d94406c0225fd52af23b067a3a5"
+    },
+    {
+      "path": "/modes/echos-de-la-greve/assets/fidelity-20261127/presentation/heartman-taunt.png",
+      "status": 200,
+      "bytes": 1475747,
+      "sha256": "379d9b8b19a9f01db7c55dcd0d93a12252c0ee979a38d96daff662361c7b7e98"
+    },
+    {
+      "path": "/modes/echos-de-la-greve/assets/fidelity-20261127/static/maser-handgun-ds2-discharge.png",
+      "status": 200,
+      "bytes": 399006,
+      "sha256": "88e1868944d82c8b482acac128e0cb8edc4b2b5fb9167b74adbb067c447a3e74"
+    },
+    {
+      "path": "/modes/echos-de-la-greve/assets/presentation-20261127/diehardman-taunt.png",
+      "status": 200,
+      "bytes": 1157045,
+      "sha256": "9ea21779b4f269b26c7b89884e3e7e9b0b3d52f3a8916fcc0a1c99121bf2d5fe"
+    }
+  ],
+  "documents": [
+    {
+      "path": "docs/combat/production/20261127-fidelity/BILAN.md",
+      "sha256": "f36dc0f8a026d21b069c7d9c0e4a754af318f66cd8ce8889a1bbbda79e33a87c"
+    },
+    {
+      "path": "docs/combat/production/20261127-fidelity/ASSETS.md",
+      "sha256": "8068c5b16dd2d1bb1965511b49622b3b3db9a6d3a15a2a44775ac2e50205b52a"
+    },
+    {
+      "path": "docs/combat/production/20261127-fidelity/REVUE_VISUELLE.md",
+      "sha256": "6a281d6a2eefbf403fa206a34bd04d63fc956cf8836604b279fb6956d0c34d83"
+    },
+    {
+      "path": "docs/combat/production/20261127-fidelity/AUDIT_SOURCES.md",
+      "sha256": "36afa884e3d8340a4476e1941daae6340f7d733a38cf2a7cbe1af92cdd5878de"
+    },
+    {
+      "path": "docs/combat/production/20261127-fidelity/MANQUANTS_DS2.md",
+      "sha256": "61c31ce9a2640f915a0f7f017f2044d760996dda97039428ac3d6d4df90d2390"
+    },
+    {
+      "path": "docs/combat/production/20261127-fidelity/FIDELITY_PRESENTATION.md",
+      "sha256": "af914da3c9dbf118307451d04faf2503ab6f7a6cf5401e8697883604ef25ddbd"
+    },
+    {
+      "path": "docs/combat/production/20261127-fidelity/diehardman-generation.json",
+      "sha256": "fe73e8eaa756770ae56e3d92702e75d626c96eba1a9b304d5ef3977be9dc48c5"
+    },
+    {
+      "path": "docs/combat/production/20261127-fidelity/static-generation.json",
+      "sha256": "b614463d8b252d72c7085e47829aa0354872f4493d5256bd7fa307f727c1b39b"
+    },
+    {
+      "path": "docs/combat/production/20261127-fidelity/reference-research.json",
+      "sha256": "18c8fdd07ede6f02e3f90a853a952655a9c64163c0158b1df341b0182e843fa8"
+    },
+    {
+      "path": "docs/combat/production/20261127-fidelity/presentation-generation.json",
+      "sha256": "be7691fd0e51d300a60cfdfce851cc1821c5eb557391f763adc91be07cfa4c97"
+    },
+    {
+      "path": "docs/combat/production/20261127-fidelity/native-inventory.json",
+      "sha256": "f86fc2de08110fd262ac5b7ceb1ff20ca17445ac2b7d5bd28062464b4327230b"
+    },
+    {
+      "path": "docs/combat/production/20261127-fidelity/geometry-measurements.json",
+      "sha256": "fff66fc68ef8f377337fd1d9cc6fbad7545752d932e97f8ee39eb642b931f315"
+    },
+    {
+      "path": "docs/combat/production/20261127-fidelity/preexisting-image-inventory.json",
+      "sha256": "02100dd7d9d91cb577fb1f85fb839487efa3c91d15a3c96039e0b91786d87dba"
+    },
+    {
+      "path": "docs/combat/production/20261127-fidelity/inventory-verification.json",
+      "sha256": "eef537ee66b42139c27e884523bb9a4f0923b4e266ad95f61b1fe01f6f150b48"
+    },
+    {
+      "path": "docs/combat/production/20261127-fidelity/presentation-native.json",
+      "sha256": "29d448932301ec3db4c61174e940e3419bf2358241b6fe7e6e8b29540b853c6b"
+    },
+    {
+      "path": "docs/combat/production/20261127-fidelity/presentation-verification.json",
+      "sha256": "4532baadc5b997dbf335282d32f5fc4d1a0ee5d8625109bfdcb96232c08002b6"
+    },
+    {
+      "path": "docs/combat/production/20261127-fidelity/regression-verification.json",
+      "sha256": "3ede213d5a66fe9145be2fd21cf82d51167a42e4eddb1b1e2e933934ba89cc09"
+    },
+    {
+      "path": "docs/combat/production/20261127-fidelity/lessons-verification.json",
+      "sha256": "f1710392d1f4b7d2f63d3ee007c2cbc49bca3cb4b59eb550907329fcdc672b66"
+    },
+    {
+      "path": "docs/combat/production/20261127-fidelity/lessons-native-verification.json",
+      "sha256": "abfac238871677601ec212b3ced94ed543d3e7fec8a324f40bcc36c7c139d9c0"
+    },
+    {
+      "path": "docs/combat/production/20261127-fidelity/progression-verification.json",
+      "sha256": "6a03bc7710d5406691109710c9fead8b838f84ec7a8f66d7c84466a14ad108e3"
+    },
+    {
+      "path": "docs/combat/production/20261127-fidelity/static-gallery-verification.json",
+      "sha256": "8d133ec26943f7d579b95aeea62cc48c8ebe15af6ec23060bc2796440d40bd69"
+    },
+    {
+      "path": "docs/combat/production/20261127-fidelity/commandes-verification.json",
+      "sha256": "a0249ba2ec5ad35b32af3d935d2f63137b793206deb49ea863d37b169e04f68a"
+    },
+    {
+      "path": "docs/combat/production/20261127-fidelity/presentation-renders/sam-entry-left.webp",
+      "sha256": "23edfcf7d2d0a046f4034bf78cc4edaf7978313f83aeea6940023e561fb018f7"
+    },
+    {
+      "path": "docs/combat/production/20261127-fidelity/presentation-renders/sam-entry-right.webp",
+      "sha256": "0f96e924139d6396720491079a87fb7e2df380baf372385e8649c15399623545"
+    },
+    {
+      "path": "docs/combat/production/20261127-fidelity/presentation-renders/sam-hold-left.webp",
+      "sha256": "7b0b637ff5eea8437ea09f33dcbf0f47f80fbd9e2a66c7e60e729c8b2b151ac1"
+    },
+    {
+      "path": "docs/combat/production/20261127-fidelity/presentation-renders/sam-hold-right.webp",
+      "sha256": "c104c1b3f0c9ed895c249e8f91f0206adf103ab3b3775bac8b8e967374ee49c3"
+    },
+    {
+      "path": "docs/combat/production/20261127-fidelity/presentation-renders/sam-exit-left.webp",
+      "sha256": "180ce3472de868338f02e308a327f969625e1b7a35ad321906257f8b3ecdf81d"
+    },
+    {
+      "path": "docs/combat/production/20261127-fidelity/presentation-renders/sam-exit-right.webp",
+      "sha256": "8f922c72c02394f1bef6d4ca5f1228c367673acb52d0af3bf62b1b5400dee999"
+    },
+    {
+      "path": "docs/combat/production/20261127-fidelity/presentation-renders/fragile-entry-left.webp",
+      "sha256": "f63e32cccf9bef63736ec5ee5d64ad0af20cdf380f52398e50101d18aef53c72"
+    },
+    {
+      "path": "docs/combat/production/20261127-fidelity/presentation-renders/fragile-entry-right.webp",
+      "sha256": "b8da5a066ea0ddfc2b26636fa60d5fd8e28cf2c8539cf1288b7d35680f50e76e"
+    },
+    {
+      "path": "docs/combat/production/20261127-fidelity/presentation-renders/fragile-hold-left.webp",
+      "sha256": "ed0e1694a3db1ae9f8f1bca654322e82b1625bd9160c8d673164c8f31ea5d134"
+    },
+    {
+      "path": "docs/combat/production/20261127-fidelity/presentation-renders/fragile-hold-right.webp",
+      "sha256": "3a06d5865c1b5e529501f7afa3810749e146c53f4bbddd0e6e4902e4c2788e6a"
+    },
+    {
+      "path": "docs/combat/production/20261127-fidelity/presentation-renders/fragile-exit-left.webp",
+      "sha256": "82b474ebcd15201b4cb4d2295ca4c7bd47b3e912cdaca9f40f5995440b76979c"
+    },
+    {
+      "path": "docs/combat/production/20261127-fidelity/presentation-renders/fragile-exit-right.webp",
+      "sha256": "7e25961b0a01bd6759cc88d296a97b37534bb0995259cdaf6ad8c2bf12511ede"
+    },
+    {
+      "path": "docs/combat/production/20261127-fidelity/presentation-renders/higgs-entry-left.webp",
+      "sha256": "1fe6b58f81adf4dc9607be65b90353a5364ebc4cd8f3d8d1bc04b5c7f250d574"
+    },
+    {
+      "path": "docs/combat/production/20261127-fidelity/presentation-renders/higgs-entry-right.webp",
+      "sha256": "95de0a6f598aa3269d86f8b588a4019f55b3fbbce965e3505bcacb93a3a840ee"
+    },
+    {
+      "path": "docs/combat/production/20261127-fidelity/presentation-renders/higgs-hold-left.webp",
+      "sha256": "0cea48923b8f43f2f57528c5a0f0951798e931b7b02adf7e2017f6db847e63bc"
+    },
+    {
+      "path": "docs/combat/production/20261127-fidelity/presentation-renders/higgs-hold-right.webp",
+      "sha256": "b5afab04e733103fdd1eee132e2968a19b5eecd4b039fdadff656a029194163e"
+    },
+    {
+      "path": "docs/combat/production/20261127-fidelity/presentation-renders/higgs-exit-left.webp",
+      "sha256": "ab9631e88ab8fc9cf9a919557f24f00247b1338a0c65e113bfc74d5045c847b1"
+    },
+    {
+      "path": "docs/combat/production/20261127-fidelity/presentation-renders/higgs-exit-right.webp",
+      "sha256": "3504e0c4537b02524693338a34f43ab097f3a287b9feea88c291c2aa57dbaddb"
+    },
+    {
+      "path": "docs/combat/production/20261127-fidelity/presentation-renders/cliff-entry-left.webp",
+      "sha256": "6a933a13e02e6b6a2964078857dde4039b8dfebd0d638ba890c76f0c24c1f425"
+    },
+    {
+      "path": "docs/combat/production/20261127-fidelity/presentation-renders/cliff-entry-right.webp",
+      "sha256": "c479acf977992a02305d36e81e9f74e79803a7ba8671824c247fd44bcb1bf58a"
+    },
+    {
+      "path": "docs/combat/production/20261127-fidelity/presentation-renders/cliff-hold-left.webp",
+      "sha256": "6dff1081fb690b1d469bfaec09601387092aba2fba53b2f4c15320b08c2e1b85"
+    },
+    {
+      "path": "docs/combat/production/20261127-fidelity/presentation-renders/cliff-hold-right.webp",
+      "sha256": "36d10a02d217550150f5c5233e61dfaff380b920ad100550a031e54d218976a6"
+    },
+    {
+      "path": "docs/combat/production/20261127-fidelity/presentation-renders/cliff-exit-left.webp",
+      "sha256": "c4243bfcf8eb557c04f9975c2c1c1bb24197b040314af24996fe788e47e2a555"
+    },
+    {
+      "path": "docs/combat/production/20261127-fidelity/presentation-renders/cliff-exit-right.webp",
+      "sha256": "55911bb449b6d4943aee47e081ace674534d09106f9e7685e2f4272001aaa3ee"
+    },
+    {
+      "path": "docs/combat/production/20261127-fidelity/presentation-renders/mule-entry-left.webp",
+      "sha256": "653e2512ded941dc1cba7f5002a370f0e01452695631cd3486d3a689392fd2be"
+    },
+    {
+      "path": "docs/combat/production/20261127-fidelity/presentation-renders/mule-entry-right.webp",
+      "sha256": "a09276f8c0f7634cef87598f5639bc0d6bffe5b8cb3ddf03cc9f815f697d86ac"
+    },
+    {
+      "path": "docs/combat/production/20261127-fidelity/presentation-renders/mule-hold-left.webp",
+      "sha256": "901957c0282a3bc19ffc1d38d77b32269caa8db3572d75da121fa7b8a88e50a6"
+    },
+    {
+      "path": "docs/combat/production/20261127-fidelity/presentation-renders/mule-hold-right.webp",
+      "sha256": "223dc329982480f4dc540107b2fd6a28becfc735e998f1b7f3aa064b60570f95"
+    },
+    {
+      "path": "docs/combat/production/20261127-fidelity/presentation-renders/mule-exit-left.webp",
+      "sha256": "503382f118d497565c93ea771442f970a4b096ff40debf99e035b8f865460731"
+    },
+    {
+      "path": "docs/combat/production/20261127-fidelity/presentation-renders/mule-exit-right.webp",
+      "sha256": "d9325292a4daa4677634499325666e8efba1dda4484589773c72a9381d986f68"
+    },
+    {
+      "path": "docs/combat/production/20261127-fidelity/presentation-renders/diehardman-entry-left.webp",
+      "sha256": "62fb48d484eec5b39558fda2d67ba3a0c72ae376de131de9ed26feb9c8ad4677"
+    },
+    {
+      "path": "docs/combat/production/20261127-fidelity/presentation-renders/diehardman-entry-right.webp",
+      "sha256": "52c274323ab999546ce3af74df48f33444c46fc5572d3db1499b9874ec5c1a58"
+    },
+    {
+      "path": "docs/combat/production/20261127-fidelity/presentation-renders/diehardman-hold-left.webp",
+      "sha256": "930f166b4107a80272b446c2aac984e0233f74fbb8725658fc269357bc1cc8a1"
+    },
+    {
+      "path": "docs/combat/production/20261127-fidelity/presentation-renders/diehardman-hold-right.webp",
+      "sha256": "8f3a123b634e3c53c0d33a5be5771e02b2543f852aa26f563275548ef902e3c5"
+    },
+    {
+      "path": "docs/combat/production/20261127-fidelity/presentation-renders/diehardman-exit-left.webp",
+      "sha256": "da86f36bc1ee6db28fd5a543c77a0a194a67ab3fa4e075145bda10434e9d6cf4"
+    },
+    {
+      "path": "docs/combat/production/20261127-fidelity/presentation-renders/diehardman-exit-right.webp",
+      "sha256": "2a6f8e650c5a34e2413944a97c2e45e9a690b21f22505ff2230518b3f7371234"
+    },
+    {
+      "path": "docs/combat/production/20261127-fidelity/presentation-renders/mama-entry-left.webp",
+      "sha256": "3d43c7c5fb0d77f602b02a3c16b98ea4595efbd23f22395211356a5b8df9a715"
+    },
+    {
+      "path": "docs/combat/production/20261127-fidelity/presentation-renders/mama-entry-right.webp",
+      "sha256": "928cfb6b13bc231db7b10947e25d528769948db48052f152a9e523b0533ecbec"
+    },
+    {
+      "path": "docs/combat/production/20261127-fidelity/presentation-renders/mama-hold-left.webp",
+      "sha256": "b2e97987044c26e938291e43e5ed5de6cbf84644f0545667c41be429bd9f6f6d"
+    },
+    {
+      "path": "docs/combat/production/20261127-fidelity/presentation-renders/mama-hold-right.webp",
+      "sha256": "d9aa6c73f998b193a398c06535283f7a17d1b656d7f7c5b71c1d3ae4b1a49ea5"
+    },
+    {
+      "path": "docs/combat/production/20261127-fidelity/presentation-renders/mama-exit-left.webp",
+      "sha256": "53ffb1fde9fa67990714c0fe4ac56e4532994f947837a83a710e9d30a63c7138"
+    },
+    {
+      "path": "docs/combat/production/20261127-fidelity/presentation-renders/mama-exit-right.webp",
+      "sha256": "0ee906e2d783f9106e8f3ea058b3c547459ecbf5560e1ad10887229b6307cfcd"
+    },
+    {
+      "path": "docs/combat/production/20261127-fidelity/presentation-renders/heartman-entry-left.webp",
+      "sha256": "218c259260bc530c106ad81f4945653cba8605d7078dc794ef84cf164a61d365"
+    },
+    {
+      "path": "docs/combat/production/20261127-fidelity/presentation-renders/heartman-entry-right.webp",
+      "sha256": "3b713dba50a3bf15a215d5b420de622fc20e1f0e5abfb8b2c39ba3c0c7c0ce75"
+    },
+    {
+      "path": "docs/combat/production/20261127-fidelity/presentation-renders/heartman-hold-left.webp",
+      "sha256": "d1655c0fd9e36d51d8a52b2b0e33a55533ec2f091d534680fa6ae57afe41b051"
+    },
+    {
+      "path": "docs/combat/production/20261127-fidelity/presentation-renders/heartman-hold-right.webp",
+      "sha256": "3cbf36d8943b28e3e8b57ed6f4f2cc3b029132f0e1b74ad6d0772e91bfe3d831"
+    },
+    {
+      "path": "docs/combat/production/20261127-fidelity/presentation-renders/heartman-exit-left.webp",
+      "sha256": "b942f791791abbcebfdc021a48a417f0b96a9cb204a134a4a35d471e7aa86df9"
+    },
+    {
+      "path": "docs/combat/production/20261127-fidelity/presentation-renders/heartman-exit-right.webp",
+      "sha256": "27abf6fa195ff884ed0dd03c87b2dca6ed38c7ad0dc8b73280912f0a273ba8ac"
+    },
+    {
+      "path": "docs/combat/production/20261127-fidelity/presentation-renders/mama-viaduc-entry-left.webp",
+      "sha256": "0dcabd8eafaf68bd979589feaa35dc82826fc387f1e750b239e0691056e7ed02"
+    },
+    {
+      "path": "docs/combat/production/20261127-fidelity/presentation-renders/mama-viaduc-entry-right.webp",
+      "sha256": "a668997d986aa9680bff126bb09b2a1355f93d7c8f4a6b4ad8c0fd4f0b91129e"
+    },
+    {
+      "path": "docs/combat/production/20261127-fidelity/presentation-renders/mama-viaduc-hold-left.webp",
+      "sha256": "074fd4a2300b0e4f835426c775e5c8d29a420d7620e1a90326e17a65c5c6e67d"
+    },
+    {
+      "path": "docs/combat/production/20261127-fidelity/presentation-renders/mama-viaduc-hold-right.webp",
+      "sha256": "353848381c7a6e04974193ebfa2328553d1aaa15ed210ad24215451183ee0b5b"
+    },
+    {
+      "path": "docs/combat/production/20261127-fidelity/presentation-renders/mama-viaduc-exit-left.webp",
+      "sha256": "30732d27ce532601371e1d203c22da9a3b9c59f9609aa73c40fa22f6c464937a"
+    },
+    {
+      "path": "docs/combat/production/20261127-fidelity/presentation-renders/mama-viaduc-exit-right.webp",
+      "sha256": "18cd70f4fdbc5491059a27a501d2c7598c7855336d46987eec6fc7dd8ba94a07"
+    },
+    {
+      "path": "docs/combat/production/20261127-fidelity/presentation-renders/mama-viaduc-reduced-entry-right.webp",
+      "sha256": "d5e1c57f54c7937df888194cb152fb9c117ee8236e04bff8f65fd118dfff710c"
+    },
+    {
+      "path": "docs/combat/production/20261127-fidelity/presentation-renders/mama-viaduc-reduced-hold-right.webp",
+      "sha256": "99d330d6c2fd6a044f51a8b4df6bd814a31188db286104ed3245e3f664a6adff"
+    },
+    {
+      "path": "docs/combat/production/20261127-fidelity/presentation-renders/mama-viaduc-reduced-exit-right.webp",
+      "sha256": "e98f67de6296f33fa085655c6d0101d24850921fbe86752d5ab72883739df611"
+    },
+    {
+      "path": "docs/combat/production/20261127-fidelity/presentation-renders/mama-viaduc-unavailable-hold-right.webp",
+      "sha256": "d9a80f6174b479047ecbf9d81a68b4408e0292bf58da803a5cb2aecac5d499b5"
+    },
+    {
+      "path": "docs/combat/production/20261127-fidelity/dojo-renders/guard-high.webp",
+      "sha256": "76f76b69c054d8feb5cbccc8ea50f8d516f5c46f967e4354a893fb970deb8d8b"
+    },
+    {
+      "path": "docs/combat/production/20261127-fidelity/dojo-renders/punish.webp",
+      "sha256": "39b09e91285496c0e040217e7541bc56c8dd71529e2d78007f2bdc166bdc9fd1"
+    },
+    {
+      "path": "docs/combat/production/20261127-fidelity/dojo-renders/taunt-distance.webp",
+      "sha256": "7b4f82b733cae0b7e8b9aa39b3d9a9e63a95eedd5a46066fe045ae551e4ff607"
+    },
+    {
+      "path": "docs/combat/production/20261127-fidelity/dojo-renders/taunt-opponent.webp",
+      "sha256": "d36aaaa5f4a14221512f25128f569edc42a12a83a727633380976ee4014c4833"
+    },
+    {
+      "path": "docs/combat/production/20261127-fidelity/dojo-renders/taunt-interrupted.webp",
+      "sha256": "d0aac11472d7f3216ce2047eb5bde72ed6aec416cc6d19ecddc0591825af6347"
+    }
+  ],
+  "publicRoutesWithoutFileAtRun": [
+    "FIDELITE.md",
+    "moves-domain-verification.json",
+    "relay-verification.json"
+  ],
+  "sourceSha256": {
+    "app.js": "68db637d7ae1661f7005ed5f1c5bcc9944b5781be527103c82fac64ea92afafa",
+    "lessons.js": "2494f12c8bd3d807a5547ff6a6e87277191acd27b8daacfb556e39282092432b",
+    "assets.js": "4f0ae5349872b9391d7586bc98baf0baa211e83e59c7b1e4234aaf22525ecb01",
+    "presentation-assets.js": "598f1508810280178133f94c9192d66bc2d04459592d9779a5af2e0bb7f68cc3",
+    "static-assets.js": "28ec2c78f62f635e633f3acaf0c6c2463809830c862a0d2f92d973e3f9cdb2a4",
+    "static-assets-data.js": "299e962b9ec49f666be161461bf8b490a193153edaa7e781d7c1534bc973af1d",
+    "netplay-server.cjs": "311f44155ed0aa034266124bdbbdd77dd766d673bc7d3009443c7976f4fb9864",
+    "qa/fidelity-inventory-20261127.cjs": "ed24fdea1b300ca6188e7ed0f07b293de4dbc3dfbf597dc32b8fc2f0b8f9c621"
+  }
+}

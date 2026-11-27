@@ -91,6 +91,7 @@
   // Version 2 adds codes 40–43 for taunt without shifting any existing code.
   const tauntRules = Object.freeze({entry:10,hold:28,exit:16,total:54});
   const tauntPhase = frame => frame < tauntRules.entry ? 'entry' : frame < tauntRules.entry + tauntRules.hold ? 'hold' : 'exit';
+  const tauntPoses = Object.freeze({entry:'tauntEntry',hold:'taunt',exit:'tauntExit'});
   let match, raf = 0, serial = 0, audio, noiseBuffer, sound = true;
   let ambienceVolume=.35, ambience=null, ambienceBuffer, audioSuspended=false, resumePending=false;
   const voices=new Set();
@@ -337,6 +338,141 @@
     return {id, spec:roster[id], x, y:0, vx:0, vy:0, face, hp:100, balance:100, chiral:42, keys:{}, taps:{}, queue:[], act:null, marker:null,
       stun:0, blockStun:0, dash:0, drift:0, crouch:false, guard:false, flash:0, postHit:0, walk:0, combo:0, comboTTL:0, aiWait:0, grounded:true, lastMove:'', notice:'', noticeTTL:0};
   }
+  // Opt-in local team rules. Ordinary duels keep their original simulation and
+  // replay encoding. A team member is a persistent fighter, never a fresh HP bar.
+  const teamRules=Object.freeze({capacity:100,start:50,gain:.1,assistCost:25,tagCost:15,assistCooldown:360,tagCooldown:240,assistEntry:18,assistDuration:60,tagTransfer:15,tagDuration:30});
+  const assistanceNames={sam:'Liaison de couverture',fragile:'Quai de passage',higgs:'Empreinte de repli',cliff:'Couverture de section',mule:'Livraison interceptée',diehardman:'Consigne de couverture',mama:'Travée d’essai',heartman:'Mesure croisée'};
+  function validTeamSelection(value) {
+    return Array.isArray(value)&&value.length===2&&value.every(ids=>Array.isArray(ids)&&ids.length===2&&ids[0]!==ids[1]&&ids.every(id=>Object.hasOwn(roster,id)));
+  }
+  function freshTeams(ids) {
+    return ids.map((pair,side)=>({active:0,cohesion:teamRules.start,assistCooldown:0,tagCooldown:0,busy:null,combo:0,comboTTL:0,
+      members:pair.map((id,slot)=>({...fighter(id,side?818:462,side?-1:1),teamSide:side,teamSlot:slot}))}));
+  }
+  function syncTeamActors(m) {
+    m.f=m.teams.map(team=>team.members[team.active]);
+    m.ids=m.f.map(f=>f.id);
+    if(m.teamFrames)m.fighterFrames=m.f.map(f=>m.teamFrames[f.teamSide][f.teamSlot]);
+  }
+  function teamSnapshot(m) {
+    return m.teams.map(team=>({active:team.active,cohesion:Math.floor(team.cohesion*10)/10,assistCooldown:team.assistCooldown,tagCooldown:team.tagCooldown,
+      busy:team.busy?{kind:team.busy.kind,frame:team.busy.frame,member:team.busy.member}:null,combo:team.combo,
+      members:team.members.map(f=>({id:f.id,hp:Math.ceil(f.hp),chiral:Math.floor(f.chiral),balance:Math.ceil(f.balance),x:f.x,y:f.y,ko:f.hp<=0}))}));
+  }
+  function teamNotice(m,side,text) {const f=m.f[side];f.notice=text;f.noticeTTL=70;}
+  function requestTeamAction(m,side,kind) {
+    const team=m.teams[side],active=m.f[side],reserve=team.members[1-team.active];
+    if(m.phase!=='fight'||team.busy||active.hp<=0||reserve.hp<=0||reserve.stun||reserve.blockStun)return false;
+    if(active.stun||active.blockStun||active.taunt||active.dash||!active.grounded)return false;
+    if(kind==='tag'&&(active.act||active.guard||active.keys.guard||active.keys.down))return false;
+    const cost=kind==='assist'?teamRules.assistCost:teamRules.tagCost;
+    if(team[kind==='assist'?'assistCooldown':'tagCooldown']>0){teamNotice(m,side,'PARTENAIRE EN RÉCUPÉRATION');return false;}
+    if(team.cohesion<cost){teamNotice(m,side,'COHÉSION INSUFFISANTE');return false;}
+    team.cohesion-=cost;
+    team.busy={kind,frame:0,member:1-team.active,interrupted:false,emitted:false,transferred:false};
+    clearFighterControls(reserve);reserve.act=null;delete reserve.taunt;
+    reserve.x=clamp(active.x-active.face*76,48,WIDTH-48);reserve.y=0;reserve.vx=0;reserve.vy=0;reserve.grounded=true;reserve.face=active.face;
+    if(kind==='tag'){clearFighterControls(active);active.teamLock=true;teamNotice(m,side,'RELAIS · ENTRÉE ANNONCÉE');}
+    else teamNotice(m,side,assistanceNames[reserve.id].toUpperCase());
+    notify(m,true);return true;
+  }
+  function leaveTeamField(f) {
+    clearFighterControls(f);f.act=null;delete f.taunt;delete f.teamLock;
+    // These objects are recalled on reserve entry; their paid cost is never
+    // refunded. Inert crate/beacon/memory retain their own expiry clock.
+    if(['post','anchor'].includes(f.marker?.kind))f.marker=null;
+    if(f.marker?.kind==='crate')f.marker.travel=null;
+  }
+  function transferTeam(m,side,automatic=false) {
+    const team=m.teams[side],outgoing=m.f[side],incoming=team.members[1-team.active];
+    if(incoming.hp<=0)return false;
+    const x=outgoing.x,face=outgoing.face;
+    leaveTeamField(outgoing);team.active=1-team.active;syncTeamActors(m);
+    clearFighterControls(incoming);incoming.act=null;delete incoming.taunt;
+    incoming.x=x;incoming.y=0;incoming.vx=0;incoming.vy=0;incoming.grounded=true;incoming.face=face;
+    incoming.combo=team.combo;incoming.comboTTL=team.comboTTL;
+    if(automatic){team.busy=null;incoming.notice='RELAIS APRÈS K.-O.';incoming.noticeTTL=70;}
+    else {team.busy.transferred=true;incoming.teamLock=true;}
+    return true;
+  }
+  function finishTeamBusy(team) {
+    const busy=team.busy;if(!busy)return;
+    if(busy.kind==='assist'){const f=team.members[busy.member];clearFighterControls(f);f.act=null;team.assistCooldown=teamRules.assistCooldown;}
+    else {team.tagCooldown=teamRules.tagCooldown;team.members.forEach(f=>delete f.teamLock);}
+    team.busy=null;
+  }
+  function teamSupport(m,side) {
+    const team=m.teams?.[side];return team?.busy?.kind==='assist'?team.members[team.busy.member]:null;
+  }
+  function advanceTeams(m) {
+    m.teams.forEach((team,side)=>{
+      team.cohesion=clamp(team.cohesion+teamRules.gain,0,100);
+      team.assistCooldown=Math.max(0,team.assistCooldown-1);team.tagCooldown=Math.max(0,team.tagCooldown-1);
+      if(team.comboTTL>0&&!--team.comboTTL)team.combo=0;
+      const reserve=team.members[1-team.active];
+      for(const key of ['stun','blockStun','flash','postHit','noticeTTL'])reserve[key]=Math.max(0,(reserve[key]||0)-1);
+      if(reserve.marker&&--reserve.marker.ttl<=0)reserve.marker=null;
+      if(reserve.scan&&--reserve.scan.ttl<=0)reserve.scan=null;
+      const busy=team.busy;
+      if(!busy)return;
+      busy.frame++;
+      if(busy.kind==='tag'){
+        if(m.f[side].stun||m.f[side].hp<=0){finishTeamBusy(team);return;}
+        if(busy.frame===teamRules.tagTransfer)transferTeam(m,side);
+        if(busy.frame>=teamRules.tagDuration)finishTeamBusy(team);
+        return;
+      }
+      const support=team.members[busy.member],foe=m.f[1-side];
+      support.face=Math.sign(foe.x-support.x)||support.face;
+      support.x=clamp(support.x+support.vx,48,WIDTH-48);support.vx*=.78;
+      if(support.y>0||support.vy!==0||!support.grounded){support.y+=support.vy;support.vy-=.77;if(support.y<=0){support.y=0;support.vy=0;support.grounded=true;}}
+      if(support.stun||support.hp<=0){busy.interrupted=true;support.act=null;}
+      if(!busy.interrupted){
+        // Existing key poses illustrate the announced intervention. They are
+        // not declared to be new frame-by-frame assistance animations.
+        support.act=busy.frame>=18&&busy.frame<38?{key:'heavy',t:14+busy.frame-18,hit:false}:null;
+        if(busy.frame===teamRules.assistEntry){
+          busy.emitted=true;
+          const kind={sam:'sam',fragile:null,higgs:'higgs',cliff:'cliff',mule:'crate',diehardman:'gate',mama:'deck',heartman:'heartman'}[support.id];
+          if(kind){
+            const atTarget=['higgs','gate'].includes(kind),vx=kind==='higgs'||kind==='gate'?0:support.face*9;
+            makeShot(m,side,kind,atTarget?clamp(support.x+support.face*135,48,WIDTH-48):support.x+support.face*33,
+              FLOOR-(kind==='crate'?18:kind==='higgs'?49:kind==='gate'?72:85),vx,kind==='higgs'?6:kind==='gate'?6:52,support);
+          }
+        }
+      }
+      if(busy.frame>=teamRules.assistDuration)finishTeamBusy(team);
+    });
+  }
+  function resolveTeamRound(m,lifeBefore) {
+    m.teams.forEach(team=>team.members.forEach(f=>{if(f.hp<=0)f.marker=null;}));
+    const totals=m.teams.map(team=>team.members.reduce((sum,f)=>sum+f.hp,0));
+    // No dead member is revived to break an exact simultaneous double KO.
+    if(!totals[0]&&!totals[1]){m.winner=0;m.reason='doubleko';m.shots=[];finishMatch(m);return;}
+    if(!totals[0]||!totals[1]){
+      const winner=totals[0]>0?0:1;
+      // An equal-frame trade may KO the active winner while its reserve still
+      // lives. The survivor, rather than the defeated actor, receives control
+      // and the individual finishing invitation.
+      if(m.f[winner].hp<=0){finishTeamBusy(m.teams[winner]);transferTeam(m,winner,true);}
+      winRound(m,winner,'ko');return;
+    }
+    m.teams.forEach((team,side)=>{if(m.f[side].hp<=0){finishTeamBusy(team);m.f[side].marker=null;transferTeam(m,side,true);}});
+    if(m.sudden){
+      const damage=totals.map((total,i)=>lifeBefore[i]-total);
+      if(damage[0]!==damage[1])winRound(m,damage[0]<damage[1]?0:1,'sudden');
+      return;
+    }
+    m.remaining=Math.max(0,m.remaining-1);
+    if(m.remaining)return;
+    if(totals[0]!==totals[1]){winRound(m,totals[0]>totals[1]?0:1,'time');return;}
+    m.sudden=true;m.shots=[];
+    m.teams.forEach((team,side)=>{
+      finishTeamBusy(team);
+      team.members.forEach(f=>{f.act=null;f.marker=null;f.stun=0;f.blockStun=0;f.vx=0;f.vy=0;f.y=0;f.grounded=true;clearFighterControls(f);delete f.taunt;});
+      m.f[side].x=side?818:462;m.f[side].notice='PROCHAIN AVANTAGE NET DÉCISIF';m.f[side].noticeTTL=100;
+    });
+  }
   function notify(m, force=false) {
     if (m.onStatus && (force || m.tick%12===0 || m.dummyTape && (m.training.timing || m.training.dummy==='record' && m.training.frames===1))) m.onStatus(snapshot());
   }
@@ -352,6 +488,7 @@
   function snapshot() {
     const m=match; if (!m) return null;
     return {phase:m.phase, tick:m.tick, paused:m.paused, round:m.round, wins:m.wins.slice(), maxRounds:m.toWin, time:Math.ceil(m.remaining/60),
+      ...(m.teams?{teams:teamSnapshot(m),sudden:m.sudden}:{}),
       stage:m.stage, ...(m.link ? {link:{...m.link,from:stageLinks[m.stage].source,to:stageLinks[m.stage].destination,limit:stageLinks[m.stage].limit,
         ticksRemaining:m.phase==='transition'?m.phaseTicks:0}} : {}),
       mode:m.mode, reducedEffects:m.reducedEffects, staticScenery:m.staticScenery, parcel:m.parcel, beat:m.beat, winner:m.winner, finisher:m.finisher, fighters:m.f.map(f=>({id:f.id,hp:Math.ceil(f.hp),balance:Math.ceil(f.balance),chiral:Math.floor(f.chiral),combo:f.combo,x:f.x,y:f.y,guard:f.guard,action:f.act?.key || '',stun:f.stun,move:f.lastMove,marker:f.marker ? {...f.marker} : null,scan:f.scan ? {...f.scan} : null,...(f.taunt?{taunt:{...f.taunt,phase:tauntPhase(f.taunt.frame)}}:{})})), training:{...m.training,...(m.dummyTape && m.training.timing ? {moves:m.f.map(trainingTiming)} : {})}};
@@ -376,6 +513,7 @@
   }
   function start(o) {
     if (!o || !o.canvas || typeof o.canvas.getContext!=='function') throw new TypeError('StrandFight.start requires a canvas.');
+    if(o.teams&&(!validTeamSelection(o.teams)||o.replay||o.clock==='network'||o.mode==='training'||stageLinks[o.stage]))throw new Error('Équipes locales incompatibles : deux kits distincts par camp et une arène fixe sont requis.');
     if (o.replay) {
       if (!validReplay(o.replay)) throw new Error('Enregistrement de duel incompatible.');
       const {p1,p2,stage,mode,difficulty,roundsToWin,seed}=o.replay;
@@ -388,7 +526,7 @@
     stop(); audioSuspended=!!o.audioSuspended;
     if (Number.isFinite(o.ambienceVolume)) ambienceVolume=clamp(o.ambienceVolume,0,1);
     const ctx=o.canvas.getContext('2d'); if (!ctx) throw new Error('Canvas 2D indisponible.');
-    const stage=stages[o.stage]?o.stage:'shore', ids=[fighterId(o.p1,'sam'),fighterId(o.p2,'higgs')];
+    const stage=stages[o.stage]?o.stage:'shore', ids=o.teams?o.teams.map(pair=>pair[0]):[fighterId(o.p1,'sam'),fighterId(o.p2,'higgs')];
     const difficulty=({easy:0,facile:0,normal:1,medium:1,hard:2,difficile:2})[o.difficulty] ?? (Number.isInteger(o.difficulty)?clamp(o.difficulty,0,2):1);
     const seed=Number.isInteger(o.seed) ? o.seed>>>0 : 0x63cee17;
     const m={canvas:o.canvas,ctx,stage,ids,difficulty,mode:['cpu','local','training'].includes(o.mode)?o.mode:'cpu',toWin:clamp(Math.floor(Number(o.roundsToWin)||2),1,5),
@@ -397,6 +535,7 @@
       f:ids.map((id,i)=>fighter(id,i?818:462,i?-1:1)), shots:[], sparks:[], hstop:0, shake:0, winner:0, finisher:false, reason:'',
       camera:0, images:{}, reducedEffects:!!o.reducedEffects, staticScenery:!!o.staticScenery, staticScene:null, training:{dummy:'idle',hitboxes:false,...o.training}, sudden:false, scene:makeScenery(stage), simRandom:randomSeed(seed), particlesRandom:randomSeed(782), now:null, lag:0};
     if (Object.hasOwn(stageLinks,stage)) m.link=freshLink(stageLinks[stage]);
+    if(o.teams){m.teamSelection=structuredClone(o.teams);m.teams=freshTeams(o.teams);syncTeamActors(m);}
     if(m.staticScenery)m.staticScene=heldScenery||captureScenery(m);
     if (m.mode==='training') {
       m.dummyTape={events:[],next:0};
@@ -406,7 +545,7 @@
     m.networkClock=o.clock==='network' && m.mode==='local' && !o.replay;
     m.playback=o.replay || null;
     m.eventIndex=0;
-    m.recording=o.record && !m.playback && m.mode!=='training' ? {
+    m.recording=o.record && !m.teams && !m.playback && m.mode!=='training' ? {
       version:1,p1:ids[0],p2:ids[1],stage,...(m.link?{stageRules:stageLinks[stage].replayTag}:{}),mode:m.mode,difficulty,seed,roundsToWin:m.toWin,events:[]
     } : null;
     if (Number.isFinite(o.startingVitality)) m.f[0].hp=clamp(Math.round(o.startingVitality),1,100);
@@ -419,7 +558,7 @@
       image.src = src;
       return image;
     };
-    m.fighterFrames = ids.map((id, side) => {
+    const loadFighterFrames=(id,side)=>{
       const base = {};
       base.stance = load((o.visuals || {})[id] || art.fighters?.[id]);
       base.action = load(art.actions?.[id]);
@@ -431,21 +570,30 @@
       else for (const phase of ['rise','apex','fall']) base[phase] ||= load(jump?.[phase]);
       const options = art.wardrobe?.[id];
       const kit = options?.[o.outfits?.[side]] || options?.atelier;
-      // Gesture PNGs depict the base costume. A known alternate costume keeps
-      // its own stance until a matching gesture is produced for that costume.
+      // Resolve the complete costume first; missing/undecoded phases keep its
+      // own stance. Image availability never changes the simulation counter.
       const alternate=options?.[o.outfits?.[side]] && o.outfits[side]!=='atelier';
-      const tauntArt = alternate ? null : host.StrandPresentationAssets?.[id]?.taunt;
-      base.taunt = load(tauntArt?.src);
+      const source=host.StrandPresentationAssets?.[id];
+      const tauntArt = host.StrandPresentation?.gestureAssets ? host.StrandPresentation.gestureAssets(id,o.outfits?.[side]) :
+        alternate ? source?.outfits?.[o.outfits[side]] : source;
+      const tauntGeometry={};
+      for(const pose of Object.values(tauntPoses)){
+        base[pose]=load(tauntArt?.[pose]?.src);
+        tauntGeometry[pose]=tauntArt?.[pose] || null;
+      }
       const tailored = {};
       for (const [pose, file] of Object.entries(kit?.poses || {})) tailored[pose] = load(file);
       if (m.mode !== 'training') m.images[id + 'Finale'] = load(art.finishers?.[id]);
-      return {base, tailored, tauntGeometry:tauntArt || null, geometry:{...spriteGeometry[id], ...art.geometry?.[id], ...kit?.geometry},
+      return {base, tailored, tauntGeometry, geometry:{...spriteGeometry[id], ...art.geometry?.[id], ...kit?.geometry},
         generatedPoses:art.poses?.[id] || {}, poseGeometry:art.generatedGeometry?.fighters?.[id] || {},
         tailoredPoseGeometry:kit?.nativePoses ? kit.poseGeometry || {} : null};
-    });
+    };
+    m.fighterFrames=ids.map(loadFighterFrames);
+    if(m.teams){m.teamFrames=m.teamSelection.map((pair,side)=>pair.map(id=>loadFighterFrames(id,side)));syncTeamActors(m);}
+    const allIds=m.teams?m.teamSelection.flat():ids;
     const projectileOwners = {sam:'sam',higgs:'higgs',cliff:'cliff',recall:'cliff',gate:'diehardman',heartman:'heartman',memory:'heartman'};
     m.projectileImages = Object.fromEntries(Object.entries(art.projectiles || {})
-      .filter(([kind]) => ids.includes(projectileOwners[kind])).map(([kind,file]) => [kind,load(file)]));
+      .filter(([kind]) => allIds.includes(projectileOwners[kind])).map(([kind,file]) => [kind,load(file)]));
     m.projectileGeometry = art.generatedGeometry?.projectiles || {};
     // Keep the complete panorama available while a layered stage decodes, or
     // when a file is missing in an older/offline copy of the game.
@@ -459,14 +607,14 @@
       m.linkScenes=Object.fromEntries([rule.source,rule.destination].map(id=>[id,sceneArt(makeScenery(id),id)]));
       m.scene=m.linkScenes[m.link.zone];
     } else sceneArt(m.scene,stage);
-    if (ids.includes('mule')) m.images.cargo = load(art.props?.cargo);
+    if (allIds.includes('mule')) m.images.cargo = load(art.props?.cargo);
     if (m.parcel) {
       m.images.closedParcel = load(art.props?.closedParcel || art.props?.cargo);
       m.images.openParcel = load(art.props?.openParcel);
     }
-    if (ids.includes('mama')) m.images.bridgeDeck = load(art.props?.bridgeDeck);
-    if (ids.includes('higgs')) m.images.goldImprint = load(art.props?.goldImprint);
-    if (ids.includes('heartman')) m.images.heartmanMonitor = load(art.props?.heartmanMonitor);
+    if (allIds.includes('mama')) m.images.bridgeDeck = load(art.props?.bridgeDeck);
+    if (allIds.includes('higgs')) m.images.goldImprint = load(art.props?.goldImprint);
+    if (allIds.includes('heartman')) m.images.heartmanMonitor = load(art.props?.heartmanMonitor);
     if (typeof o.sound==='boolean') setSound(o.sound);
     o.canvas.width=WIDTH; o.canvas.height=HEIGHT; wakeAudio(); draw(m); notify(m,true);
     function frame(t) {
@@ -484,7 +632,7 @@
   }
   function stop() { if (raf) host.cancelAnimationFrame(raf); raf=0; serial++; match=null;stopAudio(); }
   function clearFighterControls(f) { f.queue=[]; f.keys={}; f.taps={}; f.guard=false; }
-  function clearControls(m) { m.f.forEach(clearFighterControls); }
+  function clearControls(m) { (m.teams?m.teams.flatMap(team=>team.members):m.f).forEach(clearFighterControls);if(m.teams)m.teams.forEach(team=>{team.assistHeld=false;team.tagHeld=false;}); }
   function pause(on=true) {
     const m=match;
     if (!m) return;
@@ -563,7 +711,14 @@
   function input(player,action,down=true) {
     const m=match;
     if (!m || m.phase==='ended' || m.paused || m.playback || ![1,2].includes(player) ||
-        !(keyActions.includes(action) || action==='taunt') || action==='taunt' && m.networkClock) return;
+        !(keyActions.includes(action) || action==='taunt' || m.teams&&['assist','tag'].includes(action)) || action==='taunt' && m.networkClock) return;
+    if(m.teams&&['assist','tag'].includes(action)){
+      const team=m.teams[player-1];
+      if(player===2&&m.mode!=='local')return;
+      const held=!!team[action+'Held'];team[action+'Held']=!!down;
+      if(down&&!held)requestTeamAction(m,player-1,action);
+      return;
+    }
     if (player===2 && m.dummyTape) {
       if (m.training.dummy!=='record' || m.phase!=='fight' || !!m.f[1].keys[action]===!!down) return;
       m.dummyTape.events.push([m.training.frames,action,!!down]);
@@ -587,6 +742,7 @@
     f.keys[action]=!!down;
   }
   function pushInput(m,f,action) {
+    if(f.teamLock)return;
     // A presentation gesture is an exposed commitment, never an attack cancel.
     // Held directions may resume afterwards; attacks pressed during it are not buffered.
     if(f.taunt)return;
@@ -634,7 +790,7 @@
   }
   function actOnQueue(m,f,foe) {
     f.queue=f.queue.filter(q=>q.until>=m.tick);
-    if (!f.queue.length || f.stun || f.blockStun || f.dash || f.taunt) return;
+    if (!f.queue.length || f.stun || f.blockStun || f.dash || f.taunt || f.teamLock) return;
     const q=f.queue[0]; const a=f.act;
     if (a) {
       const canLink=a.hitConfirmed && a.t>=moves[a.key].start+moves[a.key].active && (
@@ -651,6 +807,9 @@
     beginAttack(m,f,foe,key,q.beat);
   }
   function cpu(m,f,foe) {
+    // AI movement must obey the same committed tag window as physical input.
+    // In particular its direct dash assignment must not bypass pushInput.
+    if(f.teamLock)return;
     if (m.mode==='training' && m.training.dummy!=='cpu') {
       if (m.training.dummy==='idle' || m.training.dummy==='guard') f.keys={guard:m.training.dummy==='guard'};
       return;
@@ -721,7 +880,8 @@
   }
   function updateFighter(m,f,o,index) {
     f.flash=Math.max(0,f.flash-1);f.postHit=Math.max(0,f.postHit-1);
-    if (f.comboTTL>0 && --f.comboTTL===0) f.combo=0;
+    if(m.teams){f.combo=m.teams[index].combo;f.comboTTL=m.teams[index].comboTTL;}
+    else if (f.comboTTL>0 && --f.comboTTL===0) f.combo=0;
     if(f.noticeTTL>0) f.noticeTTL--;
     if (f.marker && f.marker.travel !== 'retrieve' && --f.marker.ttl <= 0) f.marker=null;
     if (f.scan && --f.scan.ttl <= 0) f.scan = null;
@@ -729,11 +889,11 @@
     if(f.taunt && ++f.taunt.frame>=tauntRules.total)delete f.taunt;
     if (!f.act && !f.stun && !f.dash && !f.taunt) f.face=o.x>=f.x?1:-1;
     actOnQueue(m,f,o);
-    f.guard=!!f.keys.guard && f.grounded && !f.act && !f.stun && !f.dash && !f.taunt;
-    f.crouch=!!f.keys.down && f.grounded && !f.dash && !f.stun && !f.taunt;
+    f.guard=!!f.keys.guard && f.grounded && !f.act && !f.stun && !f.dash && !f.taunt && !f.teamLock;
+    f.crouch=!!f.keys.down && f.grounded && !f.dash && !f.stun && !f.taunt && !f.teamLock;
     const walk=Number(!!f.keys.right)-Number(!!f.keys.left);
     if (f.dash>0) {f.x+=f.drift*(2+f.dash*.74);f.dash--;}
-    else if (!f.stun && !f.blockStun && !f.act && !f.guard && !f.crouch && !f.taunt) {
+    else if (!f.stun && !f.blockStun && !f.act && !f.guard && !f.crouch && !f.taunt && !f.teamLock) {
       const delta=walk*f.spec.speed*(f.grounded?1:.78);f.x+=delta;f.walk+=Math.abs(delta)*.065;
     }
     if (f.act) {
@@ -841,8 +1001,9 @@
     if (action.key === 'feint' && action.t >= move.start && action.t < move.start + move.active)
       f.x -= f.face * 5.25;
   }
-  function makeShot(m,owner,kind,x,y,vx,ttl) {
-    m.shots.push({owner,kind,x,y,vx,ttl,age:0});
+  function makeShot(m,owner,kind,x,y,vx,ttl,emitter=m.f[owner]) {
+    if(m.teams&&m.shots.filter(shot=>shot.owner===owner).length>=3)return false;
+    m.shots.push({owner,kind,x,y,vx,ttl,age:0,...(m.teams?{member:emitter.teamSlot}:{})});
     if (m.dummyTape) m.f[owner].emission=ttl;
   }
   function hurt(f) {
@@ -888,7 +1049,9 @@
   }
   function hit(m,attacker,victim,kind,d,face) {
     const grab=!!d.grab, blocked=victim.guard && !grab && ((kind!=='sweep' && d.level!=='low') || victim.crouch) && (kind!=='air' || !victim.crouch);
-    const damage=Math.round(d.damage*attacker.spec.power);
+    const team=m.teams?.[attacker.teamSide];
+    const scaling=team?Math.max(.45,1-Math.max(0,team.combo-1)*.08):1;
+    const damage=Math.round(d.damage*attacker.spec.power*scaling);
     if (!blocked && m.parcel === 'intact' && victim === m.f[0]) {
       m.parcel='broken'; victim.notice='SCELLÉ ROMPU'; victim.noticeTTL=75;
     }
@@ -901,6 +1064,8 @@
       if(victim.taunt){victim.notice='';victim.noticeTTL=0;}
       delete victim.taunt;
       victim.stun=Math.max(victim.stun,d.stun);victim.act=null;victim.dash=0;victim.flash=7;victim.guard=false;attacker.combo++;attacker.comboTTL=d.stun+18;
+      if(team){team.combo++;team.comboTTL=d.stun+18;team.members.forEach(f=>{f.combo=team.combo;f.comboTTL=team.comboTTL;});}
+      if(m.teams){const defending=m.teams[victim.teamSide];if(defending.busy?.kind==='tag'&&victim===m.f[victim.teamSide])finishTeamBusy(defending);if(defending.busy?.kind==='assist'&&victim===teamSupport(m,victim.teamSide))defending.busy.interrupted=true;}
       if (d.launch) {victim.vy=d.launch;victim.grounded=false;}
       tone(d.damage>8?103:160,.11,'triangle',.065,38);
     }
@@ -913,6 +1078,7 @@
     return !blocked;
   }
   function contacts(m) {
+    if(m.teams)return teamContacts(m);
     const bodies=m.f.map(hurt), events=[];
     let passage=null;
     m.f.forEach((f,i)=>{
@@ -988,6 +1154,60 @@
     }
     return passage;
   }
+  function teamContacts(m) {
+    const events=[],targets=side=>[m.f[side],teamSupport(m,side)].filter(f=>f&&f.hp>0);
+    const add=(attacker,victim,kind,d,face,a)=>events.push({attacker,victim,kind,d,face,a});
+    m.f.forEach((f,side)=>{
+      const box=strike(f),action=f.act;
+      if(box)for(const victim of targets(1-side))if(!immune(victim)&&intersects(box,hurt(victim))&&!(action.key==='grab'&&(!victim.grounded||victim.stun))){
+        action.hit=true;add(f,victim,action.key,moves[action.key],f.face,action);
+      }
+      const support=teamSupport(m,side),busy=m.teams[side].busy;
+      if(support?.id==='fragile'&&busy&&!busy.interrupted&&!busy.hit&&busy.frame>=18&&busy.frame<22){
+        const edge=support.x+support.face*108,box={l:Math.min(support.x,edge),r:Math.max(support.x,edge),t:FLOOR-139,b:FLOOR-21};
+        for(const victim of targets(1-side))if(!immune(victim)&&intersects(box,hurt(victim))){busy.hit=true;add(support,victim,'fragile',moves.fragile,support.face);}
+      }
+    });
+    for(const shot of m.shots){
+      shot.age++;shot.x+=shot.vx;shot.ttl--;if(shot.kind==='recall')shot.y-=16;
+      const rx=shot.kind==='higgs'?43:shot.kind==='recall'?46:shot.kind==='memory'?66:shot.kind==='gate'?18:shot.kind==='crate'?21:13;
+      const ry=shot.kind==='higgs'?51:shot.kind==='gate'?72:shot.kind==='memory'?45:shot.kind==='crate'?18:9;
+      const box={l:shot.x-rx,r:shot.x+rx,t:shot.y-ry,b:shot.y+ry};
+      const victim=targets(1-shot.owner).filter(f=>!immune(f)&&intersects(box,hurt(f))).sort((a,b)=>Math.abs(a.x-shot.x)-Math.abs(b.x-shot.x))[0];
+      if(victim){const attacker=m.teams[shot.owner].members[shot.member];add(attacker,victim,shot.kind,shotHit[shot.kind],shot.vx?Math.sign(shot.vx):Math.sign(victim.x-attacker.x)||1);shot.ttl=0;}
+    }
+    m.teams.forEach((team,side)=>team.members.forEach(f=>{
+      if(f.hp<=0){f.marker=null;return;}
+      const active=f===m.f[side],mark=f.marker,opponents=targets(1-side);
+      if(active&&f.act?.key==='mule'){
+        const action=f.act,wave=action.t-moves.mule.start;
+        if(wave>=0&&wave<moves.mule.active&&!action.hit){
+          const opponent=opponents[0],distance=Math.abs(opponent.x-f.x),radius=(wave+1)*38;
+          if(distance>=radius-61&&distance<=radius+22&&!immune(opponent)){action.hit=true;if(!opponent.guard)f.scan={x:opponent.x,ttl:120};}
+        }
+      }
+      if(active&&mark?.kind==='crate'&&mark.travel){
+        const from=mark.x,recalling=mark.travel==='retrieve',to=recalling?f.x:mark.endX;
+        mark.x+=clamp(to-from,recalling?-14:-10,recalling?14:10);
+        const box={l:Math.min(from,mark.x)-cargoWidth/2,r:Math.max(from,mark.x)+cargoWidth/2,t:FLOOR-cargoHeight,b:FLOOR};
+        if(!mark.hit)for(const victim of opponents)if(!immune(victim)&&intersects(box,hurt(victim))){mark.hit=true;add(f,victim,mark.travel,shotHit[mark.travel],Math.sign(to-from)||f.face);}
+        if(mark.x===to){if(recalling)f.marker=null;else mark.travel=null;}
+      }
+      if(mark?.kind==='mine'&&mark.ttl<=130){
+        const box={l:mark.x-22,r:mark.x+22,t:FLOOR-23,b:FLOOR+1};
+        for(const victim of opponents)if(!immune(victim)&&intersects(box,hurt(victim))){add(f,victim,'mine',shotHit.mine,Math.sign(victim.x-mark.x)||f.face);f.marker=null;}
+      }
+    }));
+    m.shots=m.shots.filter(s=>s.ttl>0&&s.x>-60&&s.x<WIDTH+60);
+    // Gather all contacts before applying damage. Active/support trades have
+    // the same tick semantics on both sides; a late KO cannot erase a hit.
+    for(const event of events){
+      if(intercept(m,event.victim,event.attacker,event.kind,!!event.a))continue;
+      const ok=hit(m,event.attacker,event.victim,event.kind,event.d,event.face);
+      if(event.a)event.a.hitConfirmed=ok;
+    }
+    return null;
+  }
   function freshLink(rule) {
     return {id:rule.id,version:rule.version,zone:rule.source,used:0,side:0,attacker:0};
   }
@@ -1026,12 +1246,12 @@
   function resetRound(m) {
     m.round++;m.beat=0;m.winner=0;m.phase='intro';m.phaseTicks=66;m.remaining=75*60;m.sudden=false;m.hstop=0;m.shots=[];m.sparks=[];
     if (m.link) {m.link=freshLink(stageLinks[m.stage]);m.scene=m.linkScenes[m.link.zone];}
-    m.f=m.ids.map((id,i)=>fighter(id,i?818:462,i?-1:1));notify(m,true);
+    if(m.teams){m.teams=freshTeams(m.teamSelection);syncTeamActors(m);}else m.f=m.ids.map((id,i)=>fighter(id,i?818:462,i?-1:1));notify(m,true);
   }
   function winRound(m,index,reason) {
     m.winner=index+1;m.wins[index]++;m.reason=reason;
     m.phase=m.wins[index]>=m.toWin && reason==='ko'?'finish':'roundover';m.phaseTicks=m.phase==='finish'?135:96;
-    m.shots=[];clearControls(m);m.f.forEach(f=>{delete f.taunt;f.marker=null;f.scan=null;f.act=null;f.stun=0;f.crouch=false;});tone(145,.35,'sine',.045,71);notify(m,true);
+    m.shots=[];clearControls(m);if(m.teams)m.teams.forEach(finishTeamBusy);(m.teams?m.teams.flatMap(team=>team.members):m.f).forEach(f=>{delete f.taunt;f.marker=null;f.scan=null;f.act=null;f.stun=0;f.crouch=false;});tone(145,.35,'sine',.045,71);notify(m,true);
   }
   function activateFinish(m) {
     if(m.phase!=='finish')return;
@@ -1043,6 +1263,7 @@
     m.phase='ended';if (!m.silentResimulation) stopAudio();notify(m,true);
     if (m.onEnd) {
       const result={vitality:Math.ceil(m.f[0].hp),parcel:m.parcel,winner:m.winner,loser:3-m.winner,rounds:m.wins.slice(),reason:m.reason,finisher:m.finisher,stage:m.stage,fighters:m.ids.slice()};
+      if(m.teams){result.teams=teamSnapshot(m);if(!m.winner)result.loser=0;}
       if (m.link) result.link={...m.link};
       if (m.recording) result.replay={...m.recording,events:m.recording.events.slice(),ticks:m.tick};
       if (m.playback && m.tick!==m.playback.ticks) result.replayMismatch=true;
@@ -1086,6 +1307,11 @@
     }
     if (m.hstop>0) {m.hstop--;return;}
     m.beat = (m.beat + 1) % 60;
+    const teamLifeBefore=m.teams?.map(team=>team.members.reduce((sum,f)=>sum+f.hp,0));
+    if(m.teams){
+      advanceTeams(m);
+      if(m.mode==='cpu'&&m.tick%30===0){const team=m.teams[1];if(m.f[1].hp<35&&team.members[1-team.active].hp>m.f[1].hp)requestTeamAction(m,1,'tag');else if(Math.abs(m.f[0].x-m.f[1].x)<350)requestTeamAction(m,1,'assist');}
+    }
     if (m.mode!=='local') cpu(m,m.f[1],m.f[0]);
     const [a,b]=m.f;updateFighter(m,a,b,0);updateFighter(m,b,a,1);
     const delta=b.x-a.x, overlap=44-Math.abs(delta);
@@ -1095,6 +1321,7 @@
     const passage=contacts(m),knockedOut=a.hp<=0 || b.hp<=0;
     m.camera=mix(m.camera,clamp(((a.x+b.x)/2-WIDTH/2)/3,-96,96),.035);
     let expired=false;
+    if(m.teams){resolveTeamRound(m,teamLifeBefore);notify(m);return;}
     if(m.mode==='training') {
       for(const f of m.f) if(f.hp<=0){f.hp=100;f.balance=100;f.chiral=100;f.notice='VITALITÉ RÉTABLIE';f.noticeTTL=70;}
     } else {
@@ -1343,8 +1570,10 @@
     if (ready(background)) {
       // Cover the viewport plus camera overscan without distorting the panorama.
       const ratio=background.naturalWidth/background.naturalHeight;
-      const width=Math.max(WIDTH+56,(HEIGHT+24)*ratio), height=width/ratio;
-      c.drawImage(background,(WIDTH-width)/2-sceneryCamera(m)*.14,(HEIGHT-height)/2,width,height);
+      const floorY=!layered&&Number.isFinite(s.geometry?.legacy?.floorY)&&s.geometry.legacy.floorY>.05&&s.geometry.legacy.floorY<.98?s.geometry.legacy.floorY:null;
+      const height=floorY===null?Math.max((WIDTH+56)/ratio,HEIGHT+24):Math.max((WIDTH+56)/ratio,(FLOOR+12)/floorY,(HEIGHT-FLOOR+12)/(1-floorY));
+      const width=height*ratio,y=floorY===null?(HEIGHT-height)/2:FLOOR-height*floorY;
+      c.drawImage(background,(WIDTH-width)/2-sceneryCamera(m)*.14,y,width,height);
     }
     if (layered) sceneryLayer(m,'distant',.27,{margin:48,base:552,anchorY:.96,alpha:1});
     sceneryLayer(m,'middle',.43,{margin:48,base:FLOOR-12,anchorY:.97,alpha:.92});
@@ -1389,8 +1618,11 @@
   function drawFighter(m, f, index) {
     const c = m.ctx, feet = FLOOR - f.y;
     const act = f.act;
-    const {base, tailored, geometry, generatedPoses, poseGeometry, tailoredPoseGeometry, tauntGeometry} = m.fighterFrames[index];
-    const frameFor = pose => ready(tailored[pose]) ? tailored[pose] : base[pose];
+    const {base, tailored, geometry, generatedPoses, poseGeometry, tailoredPoseGeometry, tauntGeometry} = m.teams?m.teamFrames[f.teamSide][f.teamSlot]:m.fighterFrames[index];
+    // An unavailable outfit gesture waits on its own stance (or the neutral
+    // loading silhouette), including when that stance has not decoded yet.
+    const frameFor = pose => f.taunt && pose==='stance' && tailored.stance ? tailored.stance :
+      ready(tailored[pose]) ? tailored[pose] : base[pose];
     const movement = m.phase === 'fight' && f.grounded && !f.act && !f.taunt && !f.guard && !f.stun &&
       !f.blockStun && !f.crouch && (f.dash || !!f.keys.left !== !!f.keys.right);
     const phase = act ? act.t / (moves[act.key].start + moves[act.key].active + moves[act.key].recover) : 0;
@@ -1398,7 +1630,12 @@
     const performing = act && act.t >= moves[act.key].start * .61 && phase < .85;
     let pose = 'stance';
     if (f.stun > 0) pose = 'hit';
-    else if (f.taunt && tauntPhase(f.taunt.frame)==='hold' && ready(base.taunt)) pose = 'taunt';
+    else if (f.taunt) {
+      const phasePose=tauntPoses[tauntPhase(f.taunt.frame)];
+      // Reduced effects retain the established stance/hold/stance sequence;
+      // the two new decorative drawings do not add motion to that setting.
+      if((!m.reducedEffects || phasePose==='taunt') && ready(base[phasePose]))pose=phasePose;
+    }
     else if (performing) pose = 'action';
     else if (!f.grounded) {
       const phase = f.vy > 4 ? 'rise' : f.vy < -4 ? 'fall' : 'apex';
@@ -1410,9 +1647,9 @@
     const image = frameFor(pose);
     // Select geometry from the actual ready source: an unavailable outfit pose
     // falls back to the base image with that base image's own measured crop.
-    const nativeGeometry = pose==='taunt' ? tauntGeometry : image === tailored[pose]
+    const nativeGeometry = tauntGeometry[pose] || (image === tailored[pose]
       ? (tailoredPoseGeometry ? tailoredPoseGeometry[pose] || {} : null)
-      : (generatedPoses[pose] && image === base[pose] ? poseGeometry[pose] || {} : null);
+      : (generatedPoses[pose] && image === base[pose] ? poseGeometry[pose] || {} : null));
     const lost = m.winner && m.winner !== index + 1 && ['finish','cinema','roundover','ended'].includes(m.phase);
     const compression = pose === 'crouch' || pose === 'guard' ? 1 :
       f.crouch ? .69 : f.guard ? .93 : lost ? .84 : 1;
@@ -1514,7 +1751,8 @@
 
   function effects(m) {
     const c = m.ctx;
-    for (const f of m.f) {
+    const effectFighters=m.teams?m.teams.flatMap(team=>team.members.filter((f,slot)=>slot===team.active||['mine','crate'].includes(f.marker?.kind))):m.f;
+    for (const f of effectFighters) {
       if (f.id === 'heartman') {
         const lit = onMonitorBeat(m.beat);
         const y = FLOOR-f.y+12;
@@ -1602,7 +1840,10 @@
     }
     for (const s of m.shots) {
       if (drawProjectileSprite(m,s)) continue;
-      if (s.kind === 'gate') {
+      if(s.kind==='crate'){
+        if(ready(m.images.cargo))c.drawImage(m.images.cargo,s.x-21,s.y-12,42,21);
+        else {c.fillStyle='#414549';c.fillRect(s.x-21,s.y-12,42,21);line(c,s.x-10,s.y-12,s.x-10,s.y+9,AMBER,3);}
+      } else if (s.kind === 'gate') {
         c.fillStyle='rgba(168,214,181,.18)'; c.fillRect(s.x-15,FLOOR-143,30,143);
         c.strokeStyle='#cae6ca'; c.lineWidth=2; c.strokeRect(s.x-15,FLOOR-143,30,143);
         line(c,s.x-15,FLOOR-128,s.x+15,FLOOR-110,ICE,2);
@@ -1668,22 +1909,37 @@
       for (let r=0; r<m.toWin && m.mode!=='training'; r++) oval(c,edge+(right?-1:1)*(6+r*18),94,4,4,r<m.wins[i]?'#f8cd87':'#606f72');
     });
     if (m.parcel) label(c,m.parcel==='intact'?'COLIS SCELLÉ':'SCELLÉ ROMPU',WIDTH/2,106,12,m.parcel==='intact'?ICE:AMBER,'center');
-    const display = m.mode==='training'?'∞':String(Math.ceil(m.remaining/60)).padStart(2,'0');
+    const display = m.mode==='training'?'∞':m.teams&&m.sudden?'DÉC.':String(Math.ceil(m.remaining/60)).padStart(2,'0');
     label(c,display,WIDTH/2,61,46,'#f7f6ed','center');
     label(c,m.mode==='training'?'DOJO':'MANCHE '+m.round,WIDTH/2,83,12,'#c5d6d3','center');
     let caption='', sub='';
     if(m.phase==='intro'){caption='MANCHE '+m.round;sub=m.link?'RECONSTITUTION · LOURD / PROJECTION AU BORD → HANGAR · 1 PASSAGE / MANCHE':stages[m.stage].title;}
     if(m.phase==='transition'){caption='PASSAGE VERS LE HANGAR';sub='RECONSTITUTION DU SIMULATEUR · REPRISE DANS '+(m.phaseTicks/60).toFixed(1)+' s';}
-    if(m.phase==='roundover'){caption=m.reason==='time'?'TEMPS ÉCOULÉ':'K.-O.';sub=m.f[m.winner-1].spec.short;}
+    if(m.phase==='roundover'){caption=m.reason==='time'?'TEMPS ÉCOULÉ':m.reason==='sudden'?'AVANTAGE DÉCISIF':'K.-O.';sub=m.f[m.winner-1].spec.short;}
     if(m.phase==='finish'){caption='RUPTURE';sub=m.f[m.winner-1].spec.short+' · COMMANDE DE FINITION';}
     if(m.phase==='cinema'){caption=m.f[m.winner-1].spec.end.toUpperCase();sub='ÉCHO DISSIPÉ';}
     if(m.paused){caption='PAUSE';sub='';}
+    if(m.teams&&m.phase==='ended'&&!m.winner){caption='ÉGALITÉ';sub='DOUBLE K.-O. SIMULTANÉ · AUCUNE RÉSURRECTION';}
     if(m.link) label(c,m.link.zone===stageLinks[m.stage].destination?'HANGAR · LIAISON UTILISÉE (1/1)':'QUAI → HANGAR · LOURD / PROJECTION VERS LE BORD',WIDTH/2,128,12,'#e2ca9d','center');
     if(caption) {
       c.fillStyle='rgba(4,13,17,.80)';c.fillRect(0,HEIGHT*.29,WIDTH,100);
       label(c,caption,WIDTH/2,HEIGHT*.29+49,34,'#f1f2e9','center');
       label(c,sub,WIDTH/2,HEIGHT*.29+78,14,'#dec194','center');
     }
+  }
+  function teamHud(m) {
+    const c=m.ctx;
+    m.teams.forEach((team,side)=>{
+      const x=side?WIDTH-528:50,edge=side?x+478:x,align=side?'right':'left',reserve=team.members[1-team.active];
+      c.fillStyle='rgba(5,17,22,.91)';c.fillRect(x-12,HEIGHT-109,502,91);
+      label(c,'RÉSERVE · '+reserve.spec.short+(reserve.hp<=0?' · K.-O.':''),edge,HEIGHT-85,16,'#dce7df',align);
+      meter(c,x,HEIGHT-74,478,6,reserve.hp,'#829caa',side===1);
+      label(c,'COHÉSION '+Math.floor(team.cohesion)+' / 100',edge,HEIGHT-44,16,'#f0c881',align);
+      meter(c,x,HEIGHT-35,478,5,team.cohesion,'#e5ba76',side===1);
+      const ready=reserve.hp<=0?'PARTENAIRE K.-O.':team.busy?team.busy.kind==='tag'?'RELAIS EN COURS':'ASSISTANCE EN COURS':
+        'APPUI '+(team.assistCooldown?(team.assistCooldown/60).toFixed(1)+' s':'PRÊT')+' · RELAIS '+(team.tagCooldown?(team.tagCooldown/60).toFixed(1)+' s':'PRÊT');
+      label(c,ready,edge,HEIGHT-117,12,'#cbdad6',align);
+    });
   }
 
   function finisherScene(m) {
@@ -1790,6 +2046,8 @@
         label(c,'PASSAGE',x+edge/2,FLOOR-13,10,'#f0ce91','center');
       }
     }
+    if(m.teams)m.teams.forEach((team,side)=>{const support=teamSupport(m,side);if(support)drawFighter(m,support,side);
+      if(team.busy?.kind==='tag'){const f=m.f[side];line(c,f.x-28,FLOOR+5,f.x+28,FLOOR+5,AMBER,4);label(c,'RELAIS',f.x,FLOOR-f.spec.h-18,13,AMBER,'center');}});
     drawFighter(m,m.f[0],0);
     drawFighter(m,m.f[1],1);
     effects(m);
@@ -1797,6 +2055,7 @@
     c.restore();
     foreground(m);
     hud(m);
+    if(m.teams)teamHud(m);
     if (m.phase === 'cinema' && !m.paused) finisherArtwork(m);
     c.restore();
   }
@@ -1837,5 +2096,64 @@
     }
   };
 
-  host.StrandFight = {start, stop, pause, input, setTraining, setSound, setAmbienceVolume, setAudioSuspended, setReducedEffects, setStaticScenery, snapshot, validReplay, network, tauntRules};
+  const teamStateFields=['wins','round','tick','beat','phase','phaseTicks','remaining','shots','sparks','hstop','shake','winner','finisher','reason','camera','sudden','parcel','teams'];
+  const finiteBetween=(value,min,max)=>Number.isFinite(value)&&value>=min&&value<=max;
+  function validTeamPoint(point) {
+    if(!point||point.version!==1||point.rules!=='relay-1'||!validTeamSelection(point.selection)||!Object.hasOwn(stages,point.stage)||stageLinks[point.stage]||!['cpu','local'].includes(point.mode))return false;
+    const s=point.state;if(!s||!Array.isArray(s.teams)||s.teams.length!==2||!['intro','fight','finish','cinema','roundover','ended'].includes(s.phase))return false;
+    if(!Number.isSafeInteger(s.tick)||s.tick<0||!finiteBetween(s.remaining,0,4500)||!finiteBetween(s.hstop,0,100)||!finiteBetween(s.phaseTicks,-1,200)||![0,1,2].includes(s.winner)||!Array.isArray(s.wins)||s.wins.length!==2||!s.wins.every(v=>Number.isInteger(v)&&v>=0&&v<=5))return false;
+    if(!Number.isInteger(s.round)||s.round<1||s.round>10||!finiteBetween(s.beat,0,59)||!finiteBetween(s.shake,0,100)||!finiteBetween(s.camera,-2000,2000)||typeof s.sudden!=='boolean'||typeof s.finisher!=='boolean')return false;
+    // These phases dereference the winning actor during drawing. Reject an
+    // inconsistent save before replacing any live state, not after drawing it.
+    if(['finish','cinema','roundover'].includes(s.phase)&&(![1,2].includes(s.winner)||s.wins[s.winner-1]<1))return false;
+    if(['intro','fight'].includes(s.phase)&&s.winner!==0)return false;
+    if(['finish','cinema'].includes(s.phase)&&(s.wins[s.winner-1]<point.toWin||s.reason!=='ko'))return false;
+    if(s.phase==='cinema'&&!s.finisher||s.phase==='finish'&&s.finisher)return false;
+    const memberOK=(f,side,slot)=>f&&f.id===point.selection[side][slot]&&f.teamSide===side&&f.teamSlot===slot&&
+      ['hp','balance','chiral'].every(key=>finiteBetween(f[key],0,100))&&finiteBetween(f.x,-60,WIDTH+60)&&finiteBetween(f.y,0,2000)&&[-1,1].includes(f.face)&&
+      ['vx','vy','walk'].every(key=>finiteBetween(f[key],-1e5,1e5))&&['stun','blockStun','dash','postHit','combo','comboTTL','aiWait','noticeTTL'].every(key=>finiteBetween(f[key],0,1e5))&&
+      Array.isArray(f.queue)&&f.queue.length<=20&&f.queue.every(q=>['up','light','heavy','special','throw'].includes(q.action)&&finiteBetween(q.until,0,Number.MAX_SAFE_INTEGER)&&Object.hasOwn(moves,q.special))&&
+      f.keys&&typeof f.keys==='object'&&Object.values(f.keys).every(v=>typeof v==='boolean')&&
+      (!f.act||Object.hasOwn(moves,f.act.key)&&finiteBetween(f.act.t,0,1000)&&
+        (f.act.key!=='higgs'||finiteBetween(f.act.target,-60,WIDTH+60))&&
+        (f.act.key!=='winch'||(f.act.t<moves.winch.start?
+          f.marker?.kind==='anchor'&&f.marker.ttl>moves.winch.start-f.act.t:
+          finiteBetween(f.act.destination,-60,WIDTH+60))))&&
+      (!f.marker||['anchor','memory','beacon','mine','post','crate','seal'].includes(f.marker.kind)&&finiteBetween(f.marker.ttl,0,10000)&&
+        (f.marker.kind==='seal'||finiteBetween(f.marker.x,-60,WIDTH+60))&&
+        (f.marker.kind!=='crate'||(f.marker.travel==null||['crate','retrieve'].includes(f.marker.travel))&&
+          (f.marker.travel!=='crate'||finiteBetween(f.marker.endX,-60,WIDTH+60))))&&
+      (!f.scan||finiteBetween(f.scan.x,-60,WIDTH+60)&&finiteBetween(f.scan.ttl,0,10000))&&
+      (!f.taunt||finiteBetween(f.taunt.frame,0,teamRules.assistDuration))&&
+      (f.teamLock===undefined||typeof f.teamLock==='boolean');
+    if(!s.teams.every((team,side)=>team&&[0,1].includes(team.active)&&finiteBetween(team.cohesion,0,100)&&
+      finiteBetween(team.assistCooldown,0,360)&&finiteBetween(team.tagCooldown,0,240)&&finiteBetween(team.combo,0,1e5)&&finiteBetween(team.comboTTL,0,1e5)&&
+      Array.isArray(team.members)&&team.members.length===2&&team.members.every((f,slot)=>memberOK(f,side,slot))&&
+      (!team.busy||['assist','tag'].includes(team.busy.kind)&&[0,1].includes(team.busy.member)&&finiteBetween(team.busy.frame,0,60)&&typeof team.busy.interrupted==='boolean'&&typeof team.busy.transferred==='boolean'&&
+        (team.busy.kind==='assist'?team.busy.member!==team.active:team.busy.transferred?team.busy.member===team.active:team.busy.member!==team.active))))return false;
+    // A team lock has exactly one owner and exists only during a live tag.
+    // An orphaned persisted flag otherwise freezes movement and attacks forever.
+    if(!s.teams.every(team=>team.members.every((f,slot)=>!!f.teamLock===(s.phase==='fight'&&team.busy?.kind==='tag'&&slot===team.active))))return false;
+    if(!Array.isArray(s.shots)||s.shots.length>6||!s.shots.every(shot=>[0,1].includes(shot.owner)&&[0,1].includes(shot.member)&&Object.hasOwn(shotHit,shot.kind)&&['x','y','vx','ttl','age'].every(key=>finiteBetween(shot[key],-1e5,1e5))))return false;
+    if(!Array.isArray(s.sparks)||s.sparks.length>2000||!s.sparks.every(p=>['x','y','vx','vy','ttl'].every(key=>finiteBetween(p[key],-1e6,1e6))))return false;
+    return [point.simulation,point.particles].every(n=>Number.isInteger(n)&&n>=0&&n<=0xffffffff)&&Number.isInteger(point.toWin)&&point.toWin>=1&&point.toWin<=5&&[0,1,2].includes(point.difficulty);
+  }
+  const team={
+    rules:teamRules,names:assistanceNames,validSelection:validTeamSelection,validCheckpoint:validTeamPoint,
+    checkpoint(){
+      const m=match;if(!m?.teams)return null;
+      const state={};for(const key of teamStateFields)state[key]=m[key];
+      return structuredClone({version:1,rules:'relay-1',selection:m.teamSelection,stage:m.stage,mode:m.mode,toWin:m.toWin,difficulty:m.difficulty,state,particles:m.particlesRandom.state(),simulation:m.simRandom.state()});
+    },
+    restore(point){
+      const m=match;
+      if(!m?.teams||!validTeamPoint(point)||point.stage!==m.stage||point.mode!==m.mode||JSON.stringify(point.selection)!==JSON.stringify(m.teamSelection)||point.toWin!==m.toWin||point.difficulty!==m.difficulty)return false;
+      const next=structuredClone(point.state);for(const key of teamStateFields)m[key]=next[key];
+      m.teams.forEach(t=>t.members.forEach(f=>{f.spec=roster[f.id];}));
+      syncTeamActors(m);clearControls(m);m.particlesRandom.restore(point.particles);m.simRandom.restore(point.simulation);
+      m.paused=true;m.now=null;m.lag=0;stopAudio();draw(m);notify(m,true);return true;
+    }
+  };
+
+  host.StrandFight = {start, stop, pause, input, setTraining, setSound, setAmbienceVolume, setAudioSuspended, setReducedEffects, setStaticScenery, snapshot, validReplay, network, tauntRules,team};
 })(window);

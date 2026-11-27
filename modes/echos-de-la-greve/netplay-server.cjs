@@ -34,7 +34,7 @@ function assetFiles(baseRoot = root) {
   }
   for (const folder of ['fighters','finishers','props','projectiles','stages','story','bosses','static-20261125','static-universe-20261125',
     'static-completion-20261125','story-completion-20261125','static-domains-20261125','static-extension-20261125',
-    'presentation-20261127']) visit('assets/' + folder);
+    'presentation-20261127','fidelity-20261127','lignes-de-maree']) visit('assets/' + folder);
   return files.sort();
 }
 function gameVersion(baseRoot = root, assets = assetFiles(baseRoot)) {
@@ -43,6 +43,7 @@ function gameVersion(baseRoot = root, assets = assetFiles(baseRoot)) {
     'app.js','campaign.js','campaign.css','static-assets.html','static-assets.css','static-assets.js','static-assets-data.js','archives.html',
     'input.js','input.css','moves-data.js','relationships.js','lessons.js','lessons.css','boss-data.js','boss-guide.js','boss-guide.css',
     'presentation.js','presentation.css','presentation-assets.js','progression.html','progression.js','progression.css','progression-data.js',
+    'teams.html','teams.js','teams.css','extension.html','extension.css','extension.js','extension-data.js','extension-assets.js','extension-runtime.js',
     'netplay.js','netplay-server.cjs']) {
     hash.update(file);
     hash.update(fs.readFileSync(path.join(baseRoot,file)));
@@ -141,6 +142,7 @@ const statics = new Set(['index.html','style.css','app.js','fight.js','content.j
   'boss.js','boss-assets.js','boss-geometry-20261124.js','campaign.js','campaign.css','archives.html','input.js','input.css','moves-data.js','relationships.js',
   'static-assets.html','static-assets.css','static-assets.js','static-assets-data.js','lessons.js','lessons.css','boss-data.js','boss-guide.js','boss-guide.css',
   'presentation.js','presentation.css','presentation-assets.js','progression.html','progression.js','progression.css','progression-data.js',
+  'teams.html','teams.js','teams.css','extension.html','extension.css','extension.js','extension-data.js','extension-assets.js','extension-runtime.js',
   'duel-originel/index.html','duel-originel/style.css','duel-originel/interface.js','duel-originel/moteur.js','duel-originel/scene.js']);
 const documents = new Set(['docs/combat/BIBLE_COMBAT.md','docs/combat/UNIVERS_DS.md','docs/combat/REGISTRE_PRODUCTION.md',
   'docs/combat/ACTIONS_ET_IA.md','docs/combat/RELATIONS_SIMULATEUR.md','docs/combat/BOSS_ET_RENCONTRES.md',
@@ -153,6 +155,20 @@ const documents = new Set(['docs/combat/BIBLE_COMBAT.md','docs/combat/UNIVERS_DS
   'docs/combat/production/20261127-extensions/PRESENTATION.md',
   'docs/combat/production/20261127-extensions/PROGRESSION.md',
   'docs/combat/production/20261127-extensions/ASSETS.md']);
+for(const file of ['BIBLE_EXTENSION.md','catalog.json','SOURCES.md','PRODUCTION.md','generation-briefs.json','design-validation.json'])documents.add('docs/combat/extensions/lignes-de-maree/'+file);
+// Public proof files are restricted to these two delivered production directories.
+function addProductionDocuments(relative) {
+  const folder=path.join(root,'../..',relative);
+  if(!fs.existsSync(folder))return;
+  for(const entry of fs.readdirSync(folder,{withFileTypes:true})) {
+    if(entry.name.startsWith('.')||entry.isSymbolicLink())continue;
+    const name=relative+'/'+entry.name;
+    if(entry.isDirectory())addProductionDocuments(name);
+    else if(/\.(?:md|json|png|webp|txt)$/.test(entry.name))documents.add(name);
+  }
+}
+addProductionDocuments('docs/combat/production/20261127-lignes-de-maree');
+addProductionDocuments('docs/combat/production/20261127-team-gameplay');
 const proofRoot='docs/combat/production/20261127-extensions/';
 for(const file of ['native-inventory.json','generation-provenance.json','inventory-verification.json',
   'preexisting-image-inventory.json','presentation-native.json','presentation-verification.json',
@@ -160,6 +176,19 @@ for(const file of ['native-inventory.json','generation-provenance.json','invento
   'lessons-verification.json','regression-verification.json','relay-verification.json'])documents.add(proofRoot+file);
 for(const id of Object.keys(fighters))for(const facing of ['left','right'])documents.add(proofRoot+'presentation-renders/'+id+'-'+facing+'.webp');
 documents.add(proofRoot+'presentation-renders/mama-viaduc-preserved.webp');
+const fidelityRoot='docs/combat/production/20261127-fidelity/';
+for(const file of ['BILAN.md','ASSETS.md','REVUE_VISUELLE.md','AUDIT_SOURCES.md','MANQUANTS_DS2.md','FIDELITE.md','FIDELITY_PRESENTATION.md',
+  'diehardman-generation.json','static-generation.json','reference-research.json','presentation-generation.json','native-inventory.json','geometry-measurements.json',
+  'preexisting-image-inventory.json','inventory-verification.json','fidelity-http-verification.json',
+  'presentation-native.json','presentation-verification.json','regression-verification.json',
+  'lessons-verification.json','lessons-native-verification.json','progression-verification.json','static-gallery-verification.json',
+  'commandes-verification.json','moves-domain-verification.json','relay-verification.json'])documents.add(fidelityRoot+file);
+for(const id of [...Object.keys(fighters),'mama-viaduc'])for(const phase of ['entry','hold','exit'])for(const facing of ['left','right'])
+  documents.add(fidelityRoot+'presentation-renders/'+id+'-'+phase+'-'+facing+'.webp');
+for(const phase of ['entry','hold','exit'])documents.add(fidelityRoot+'presentation-renders/mama-viaduc-reduced-'+phase+'-right.webp');
+documents.add(fidelityRoot+'presentation-renders/mama-viaduc-unavailable-hold-right.webp');
+for(const file of ['guard-high','punish','taunt-distance','taunt-opponent','taunt-interrupted'])
+  documents.add(fidelityRoot+'dojo-renders/'+file+'.webp');
 const types = {'.html':'text/html; charset=utf-8','.css':'text/css','.js':'text/javascript','.webp':'image/webp','.png':'image/png',
   '.md':'text/plain; charset=utf-8','.txt':'text/plain; charset=utf-8','.json':'application/json; charset=utf-8'};
 function openRelay(clock) {
@@ -217,4 +246,4 @@ if (require.main === module) {
   const host = process.env.HOST || '127.0.0.1';
   server.listen(Number(process.env.PORT || 8080),host,() => console.log('Salon privé · http://'+host+':'+server.address().port+'/netplay.html'));
 }
-module.exports = {openRelay,roomService,gameVersion};
+module.exports = {openRelay,roomService,gameVersion,assetFiles};

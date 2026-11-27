@@ -1,0 +1,53 @@
+{
+  "date": "2026-11-27",
+  "base": "7e000d36f2eb0fa4578b545bfb3d8b334acd516a",
+  "status": "blocked-no-output",
+  "referencePages": [
+    "https://www.kojimaproductions.jp/en/interview-with-TommieEarlJenkins",
+    "https://blog.de.playstation.com/2021/10/19/death-stranding-das-sind-die-charaktere/"
+  ],
+  "assets": [],
+  "attempts": [
+    {
+      "id": "diehardman-stance",
+      "prompt": "Create one native transparent PNG character sprite for a 2D fighting-game adaptation. It depicts Die-Hardman from DEATH STRANDING 1 / Director's Cut, masked commanding officer, full body from scalp to both boot soles, facing screen right in a restrained ready stance, three-quarter side view. Match the character's identity and outfit strictly to the supplied OFFICIAL references, not a generic businessman.\nREFERENCE 1 (official Kojima illustration and game close-up): costume anatomy. Black formal long open Bridges officer coat ending above the knees, gray buttoned waistcoat, gray high standing shirt collar, broad charcoal satin ascot, subtle burgundy/red and dark blue cords at chest, dark trousers with narrow side stripe, black sturdy lace-up boots, black fitted gloves, small right wrist cuff device. Follow the concept silhouette but use the mature closely shaved/bald scalp and skin visible in the game reference, no gray hair.\nREFERENCE 2 (official in-game mask close-up): exact recognizable dark woven-carbon human skull face mask, rounded forehead, large oval eye sockets with his actual brown eyes and brown skin visible, sculpted skull nasal opening and individual teeth, lower skull jaw, round brass fastener on cheek, dark slim fastening straps around scalp, very small white LUDENS forehead label with serial above. The mask is not a robot visor, not an iron helmet, not gold, no angular horizontal slit, no mouth grille. Keep believable small close facial hair visible below mask if shown.\nPOSE: balanced calm fighting ready stance, both knees softly bent, left boot toward screen right, both gloved hands held ready at mid torso without hiding mask, rear hand near chest, planted feet, coat hanging naturally. No attack and no weapon. One figure only. Match sober detailed semi-realistic painted game-sprite rendering, natural neutral light, clear readable silhouette and clothing texture. Full hands, feet, head and coat completely inside image with 5 percent padding. Transparent alpha background including all space around and between limbs. No checkerboard, no backdrop, no floor, no cast shadow, no glow, no smoke, no UI, no border, no extra figures, no caption. Output the final sprite only.",
+      "referencePaths": [
+        "/workspace/scratch/7afabe13c643/official-references/diehardman-kojima-202205.jpg",
+        "/workspace/scratch/7afabe13c643/official-references/diehardman-official.jpg"
+      ],
+      "transparentBackground": true,
+      "result": "refused",
+      "error": {
+        "code": "moderation_blocked",
+        "stage": "output",
+        "categories": [
+          "other"
+        ],
+        "requestId": "4bffa5af-c38d-438e-ad7f-c5459534d593"
+      },
+      "receivedFile": false,
+      "retry": false
+    }
+  ],
+  "suspendedPlans": [
+    "stance",
+    "action",
+    "step",
+    "hit",
+    "guard",
+    "crouch",
+    "rise",
+    "apex",
+    "fall",
+    "jump",
+    "portrait",
+    "finisher",
+    "taunt-entry",
+    "taunt",
+    "taunt-exit",
+    "story-intro",
+    "story-ending",
+    "story-intro-second"
+  ],
+  "decision": "No replacement image received; retain all current runtime paths and document fidelity gaps. Suspended plans are not assets or completed corrections."
+}

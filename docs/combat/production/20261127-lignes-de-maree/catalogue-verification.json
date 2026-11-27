@@ -1,0 +1,22 @@
+{
+  "date": "2026-11-27T11:24:02.049Z",
+  "passed": true,
+  "groups": 10,
+  "checks": [
+    "All requested original entities are present once, with complete design and explicit origin.",
+    "All four chapters and twenty connected locations have real, reciprocal links.",
+    "Character routes, rivalries, bosses and unique special effects point to defined content.",
+    "Every received image belongs to its actual entity and retains native bytes.",
+    "Only received measured panoramas enter arena selection; canonical fighters are preserved.",
+    "The default catalogue shows ten characters and every dossier opens with the right name and status.",
+    "Category and accent-insensitive search intersect; resetting restores all ten characters.",
+    "Received-only filter never turns planned content into a playable kit.",
+    "Stage dossiers provide a working local entry; enemy dossiers provide no false play button.",
+    "Deep links open known entities, ignore unknown and malformed fragments, and display lore text."
+  ],
+  "entities": 147,
+  "received": 70,
+  "staticArenas": 20,
+  "interface": "DOM fixture exercising shipped controller; not browser layout",
+  "browserVerified": false
+}

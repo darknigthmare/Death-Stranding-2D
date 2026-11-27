@@ -1,0 +1,941 @@
+{
+  "schema_version": 1,
+  "date": "2026-11-27T08:29:54.391Z",
+  "alphaThreshold": 8,
+  "marginPixels": 2,
+  "method": "Full native RGBA decode. Runtime crops compared with measured alpha bounds; foot-anchor pixels and height ratios recorded separately from unmodified image bytes.",
+  "measurements": [
+    {
+      "path": "modes/echos-de-la-greve/assets/fidelity-20261127/presentation/sam-taunt-entry.png",
+      "sha256": "410dbc7f6987d77abbf839a7f3c852eda4fd6481727fe5eb9bca743099284edb",
+      "width": 854,
+      "height": 1840,
+      "alpha_bbox_gt_8": [
+        5,
+        0,
+        849,
+        1829
+      ],
+      "edgeContact": {
+        "left": false,
+        "top": true,
+        "right": false,
+        "bottom": false
+      },
+      "geometry": {
+        "src": "assets/fidelity-20261127/presentation/sam-taunt-entry.png",
+        "crop": [
+          3,
+          0,
+          848,
+          1831
+        ],
+        "anchorX": 0.522406,
+        "baselineY": 0.998908,
+        "heightRatio": 1,
+        "sourceAnchorPixels": {
+          "x": 446.000288,
+          "y": 1829.000548
+        }
+      },
+      "supportBand": {
+        "top": 1783,
+        "bottom": 1829,
+        "spans": [
+          [
+            43,
+            250
+          ],
+          [
+            541,
+            849
+          ]
+        ],
+        "centerX": 446,
+        "supportY": 1829
+      },
+      "anchorReview": "Source support region inspected before the runtime anchor was accepted."
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/fidelity-20261127/presentation/sam-taunt-exit.png",
+      "sha256": "939fc4a9d24d57b6c5444b3d1e8eed71404fcba2d70aaecc65d5a7e5c88c799e",
+      "width": 854,
+      "height": 1840,
+      "alpha_bbox_gt_8": [
+        6,
+        5,
+        844,
+        1826
+      ],
+      "edgeContact": {
+        "left": false,
+        "top": false,
+        "right": false,
+        "bottom": false
+      },
+      "geometry": {
+        "src": "assets/fidelity-20261127/presentation/sam-taunt-exit.png",
+        "crop": [
+          4,
+          3,
+          842,
+          1825
+        ],
+        "anchorX": 0.521971,
+        "baselineY": 0.998904,
+        "heightRatio": 1,
+        "sourceAnchorPixels": {
+          "x": 443.499582,
+          "y": 1825.9998
+        }
+      },
+      "supportBand": {
+        "top": 1780,
+        "bottom": 1826,
+        "spans": [
+          [
+            43,
+            249
+          ],
+          [
+            537,
+            844
+          ]
+        ],
+        "centerX": 443.5,
+        "supportY": 1826
+      },
+      "anchorReview": "Source support region inspected before the runtime anchor was accepted."
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/fidelity-20261127/presentation/fragile-taunt-entry.png",
+      "sha256": "4f60c70ec027f4de7be6a0ddf260bcc4a0d8d18347b21e2fe6791ff956ce1a63",
+      "width": 971,
+      "height": 1620,
+      "alpha_bbox_gt_8": [
+        148,
+        0,
+        839,
+        1580
+      ],
+      "edgeContact": {
+        "left": false,
+        "top": true,
+        "right": false,
+        "bottom": false
+      },
+      "geometry": {
+        "src": "assets/fidelity-20261127/presentation/fragile-taunt-entry.png",
+        "crop": [
+          146,
+          0,
+          695,
+          1582
+        ],
+        "anchorX": 0.570504,
+        "baselineY": 0.998736,
+        "heightRatio": 1,
+        "sourceAnchorPixels": {
+          "x": 542.50028,
+          "y": 1580.000352
+        }
+      },
+      "supportBand": {
+        "top": 1540,
+        "bottom": 1580,
+        "spans": [
+          [
+            187,
+            199
+          ],
+          [
+            279,
+            453
+          ],
+          [
+            599,
+            839
+          ]
+        ],
+        "centerX": 513,
+        "supportY": 1580
+      },
+      "anchorReview": "Horizontal support uses the two boot-contact spans; the narrow umbrella tip is excluded."
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/fidelity-20261127/presentation/fragile-taunt-exit.png",
+      "sha256": "c3c4b428bfe7eb92fa0cd8f0bffbf4deaf52c70c082dee80cf1b306a8d84b38b",
+      "width": 971,
+      "height": 1619,
+      "alpha_bbox_gt_8": [
+        147,
+        2,
+        841,
+        1579
+      ],
+      "edgeContact": {
+        "left": false,
+        "top": false,
+        "right": false,
+        "bottom": false
+      },
+      "geometry": {
+        "src": "assets/fidelity-20261127/presentation/fragile-taunt-exit.png",
+        "crop": [
+          145,
+          0,
+          698,
+          1581
+        ],
+        "anchorX": 0.570559,
+        "baselineY": 0.998735,
+        "heightRatio": 1,
+        "sourceAnchorPixels": {
+          "x": 543.250182,
+          "y": 1579.000035
+        }
+      },
+      "supportBand": {
+        "top": 1539,
+        "bottom": 1579,
+        "spans": [
+          [
+            187,
+            199
+          ],
+          [
+            278,
+            453
+          ],
+          [
+            601,
+            841
+          ]
+        ],
+        "centerX": 514,
+        "supportY": 1579
+      },
+      "anchorReview": "Horizontal support uses the two boot-contact spans; the narrow umbrella tip is excluded."
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/fidelity-20261127/presentation/higgs-taunt-entry.png",
+      "sha256": "953f72376ebc89feaffa9024af2a61c82e249c58e0a5526cebb87a5ee419ed28",
+      "width": 900,
+      "height": 1747,
+      "alpha_bbox_gt_8": [
+        34,
+        18,
+        837,
+        1679
+      ],
+      "edgeContact": {
+        "left": false,
+        "top": false,
+        "right": false,
+        "bottom": false
+      },
+      "geometry": {
+        "src": "assets/fidelity-20261127/presentation/higgs-taunt-entry.png",
+        "crop": [
+          32,
+          16,
+          807,
+          1665
+        ],
+        "anchorX": 0.619579,
+        "baselineY": 0.998799,
+        "heightRatio": 1,
+        "sourceAnchorPixels": {
+          "x": 532.000253,
+          "y": 1679.000335
+        }
+      },
+      "supportBand": {
+        "top": 1637,
+        "bottom": 1679,
+        "spans": [
+          [
+            312,
+            752
+          ]
+        ],
+        "centerX": 532,
+        "supportY": 1679
+      },
+      "anchorReview": "Source support region inspected before the runtime anchor was accepted."
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/fidelity-20261127/presentation/higgs-taunt-exit.png",
+      "sha256": "b7d49ba184751313d3ed6b2865d303334b6002f1ac36265d4733a5e542828cb9",
+      "width": 900,
+      "height": 1747,
+      "alpha_bbox_gt_8": [
+        5,
+        12,
+        732,
+        1679
+      ],
+      "edgeContact": {
+        "left": false,
+        "top": false,
+        "right": false,
+        "bottom": false
+      },
+      "geometry": {
+        "src": "assets/fidelity-20261127/presentation/higgs-taunt-exit.png",
+        "crop": [
+          3,
+          10,
+          731,
+          1671
+        ],
+        "anchorX": 0.694254,
+        "baselineY": 0.998803,
+        "heightRatio": 1,
+        "sourceAnchorPixels": {
+          "x": 510.499674,
+          "y": 1678.999813
+        }
+      },
+      "supportBand": {
+        "top": 1637,
+        "bottom": 1679,
+        "spans": [
+          [
+            289,
+            732
+          ]
+        ],
+        "centerX": 510.5,
+        "supportY": 1679
+      },
+      "anchorReview": "Source support region inspected before the runtime anchor was accepted."
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/fidelity-20261127/presentation/cliff-taunt-entry.png",
+      "sha256": "83d43e980d15335582600b2eabb315873697a1beaf1262df896ec7c502903e77",
+      "width": 848,
+      "height": 1855,
+      "alpha_bbox_gt_8": [
+        41,
+        2,
+        809,
+        1840
+      ],
+      "edgeContact": {
+        "left": false,
+        "top": false,
+        "right": false,
+        "bottom": false
+      },
+      "geometry": {
+        "src": "assets/fidelity-20261127/presentation/cliff-taunt-entry.png",
+        "crop": [
+          39,
+          0,
+          772,
+          1842
+        ],
+        "anchorX": 0.5,
+        "baselineY": 0.998914,
+        "heightRatio": 1,
+        "sourceAnchorPixels": {
+          "x": 425,
+          "y": 1839.999588
+        }
+      },
+      "supportBand": {
+        "top": 1794,
+        "bottom": 1840,
+        "spans": [
+          [
+            41,
+            236
+          ],
+          [
+            517,
+            809
+          ]
+        ],
+        "centerX": 425,
+        "supportY": 1840
+      },
+      "anchorReview": "Source support region inspected before the runtime anchor was accepted."
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/fidelity-20261127/presentation/cliff-taunt-exit.png",
+      "sha256": "0a5df0442c98d082ce2756dd43ff2c46adc37e58bea49081f4851fd2656520cf",
+      "width": 848,
+      "height": 1855,
+      "alpha_bbox_gt_8": [
+        40,
+        0,
+        805,
+        1847
+      ],
+      "edgeContact": {
+        "left": false,
+        "top": true,
+        "right": false,
+        "bottom": false
+      },
+      "geometry": {
+        "src": "assets/fidelity-20261127/presentation/cliff-taunt-exit.png",
+        "crop": [
+          38,
+          0,
+          769,
+          1849
+        ],
+        "anchorX": 0.5,
+        "baselineY": 0.998918,
+        "heightRatio": 1,
+        "sourceAnchorPixels": {
+          "x": 422.5,
+          "y": 1846.999382
+        }
+      },
+      "supportBand": {
+        "top": 1800,
+        "bottom": 1847,
+        "spans": [
+          [
+            40,
+            235
+          ],
+          [
+            513,
+            805
+          ]
+        ],
+        "centerX": 422.5,
+        "supportY": 1847
+      },
+      "anchorReview": "Source support region inspected before the runtime anchor was accepted."
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/fidelity-20261127/presentation/mule-taunt-entry.png",
+      "sha256": "b5c414e36129d889d427e1c4f90a6001f8a94ed8e9f36c6eeb09fe485ded9337",
+      "width": 776,
+      "height": 2025,
+      "alpha_bbox_gt_8": [
+        7,
+        23,
+        758,
+        1972
+      ],
+      "edgeContact": {
+        "left": false,
+        "top": false,
+        "right": false,
+        "bottom": false
+      },
+      "geometry": {
+        "src": "assets/fidelity-20261127/presentation/mule-taunt-entry.png",
+        "crop": [
+          5,
+          21,
+          755,
+          1953
+        ],
+        "anchorX": 0.57947,
+        "baselineY": 0.998976,
+        "heightRatio": 1,
+        "sourceAnchorPixels": {
+          "x": 442.49985,
+          "y": 1972.000128
+        }
+      },
+      "supportBand": {
+        "top": 1923,
+        "bottom": 1972,
+        "spans": [
+          [
+            172,
+            417
+          ],
+          [
+            418,
+            419
+          ],
+          [
+            420,
+            713
+          ]
+        ],
+        "centerX": 442.5,
+        "supportY": 1972
+      },
+      "anchorReview": "Source support region inspected before the runtime anchor was accepted."
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/fidelity-20261127/presentation/mule-taunt-exit.png",
+      "sha256": "8ed70fc153be63f2208f4c3e7c09106d6088dc075b5397725b70df385c0db0bf",
+      "width": 776,
+      "height": 2025,
+      "alpha_bbox_gt_8": [
+        6,
+        19,
+        772,
+        1970
+      ],
+      "edgeContact": {
+        "left": false,
+        "top": false,
+        "right": false,
+        "bottom": false
+      },
+      "geometry": {
+        "src": "assets/fidelity-20261127/presentation/mule-taunt-exit.png",
+        "crop": [
+          4,
+          17,
+          770,
+          1955
+        ],
+        "anchorX": 0.571429,
+        "baselineY": 0.998977,
+        "heightRatio": 1,
+        "sourceAnchorPixels": {
+          "x": 444.00033,
+          "y": 1970.000035
+        }
+      },
+      "supportBand": {
+        "top": 1921,
+        "bottom": 1970,
+        "spans": [
+          [
+            171,
+            416
+          ],
+          [
+            417,
+            717
+          ]
+        ],
+        "centerX": 444,
+        "supportY": 1970
+      },
+      "anchorReview": "Source support region inspected before the runtime anchor was accepted."
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/fidelity-20261127/presentation/mama-taunt-entry.png",
+      "sha256": "108291b1274e296e91836d6b444a5f031317bc9aa788469d77d81c0efc720de5",
+      "width": 1024,
+      "height": 1536,
+      "alpha_bbox_gt_8": [
+        224,
+        18,
+        696,
+        1522
+      ],
+      "edgeContact": {
+        "left": false,
+        "top": false,
+        "right": false,
+        "bottom": false
+      },
+      "geometry": {
+        "src": "assets/fidelity-20261127/presentation/mama-taunt-entry.png",
+        "crop": [
+          222,
+          16,
+          476,
+          1508
+        ],
+        "anchorX": 0.576681,
+        "baselineY": 0.998674,
+        "heightRatio": 1,
+        "sourceAnchorPixels": {
+          "x": 496.500156,
+          "y": 1522.000392
+        }
+      },
+      "supportBand": {
+        "top": 1484,
+        "bottom": 1522,
+        "spans": [
+          [
+            297,
+            466
+          ],
+          [
+            482,
+            696
+          ]
+        ],
+        "centerX": 496.5,
+        "supportY": 1522
+      },
+      "anchorReview": "Source support region inspected before the runtime anchor was accepted."
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/fidelity-20261127/presentation/mama-taunt-exit.png",
+      "sha256": "aaafef65d81e4038fadd1630b5eb4c152769e41df009502be6a5b49ad8394fe1",
+      "width": 1024,
+      "height": 1536,
+      "alpha_bbox_gt_8": [
+        229,
+        18,
+        696,
+        1521
+      ],
+      "edgeContact": {
+        "left": false,
+        "top": false,
+        "right": false,
+        "bottom": false
+      },
+      "geometry": {
+        "src": "assets/fidelity-20261127/presentation/mama-taunt-exit.png",
+        "crop": [
+          227,
+          16,
+          471,
+          1507
+        ],
+        "anchorX": 0.573248,
+        "baselineY": 0.998673,
+        "heightRatio": 1,
+        "sourceAnchorPixels": {
+          "x": 496.999808,
+          "y": 1521.000211
+        }
+      },
+      "supportBand": {
+        "top": 1483,
+        "bottom": 1521,
+        "spans": [
+          [
+            298,
+            467
+          ],
+          [
+            483,
+            696
+          ]
+        ],
+        "centerX": 497,
+        "supportY": 1521
+      },
+      "anchorReview": "Source support region inspected before the runtime anchor was accepted."
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/fidelity-20261127/presentation/heartman-taunt-entry.png",
+      "sha256": "a92d929fe4ef1c78cae5616aff90eeab11695b4176aed852f2b50ebcd6b23e99",
+      "width": 725,
+      "height": 2170,
+      "alpha_bbox_gt_8": [
+        102,
+        14,
+        589,
+        2130
+      ],
+      "edgeContact": {
+        "left": false,
+        "top": false,
+        "right": false,
+        "bottom": false
+      },
+      "geometry": {
+        "src": "assets/fidelity-20261127/presentation/heartman-taunt-entry.png",
+        "crop": [
+          100,
+          12,
+          491,
+          2120
+        ],
+        "anchorX": 0.511202,
+        "baselineY": 0.999057,
+        "heightRatio": 1,
+        "sourceAnchorPixels": {
+          "x": 351.000182,
+          "y": 2130.00084
+        }
+      },
+      "supportBand": {
+        "top": 2077,
+        "bottom": 2130,
+        "spans": [
+          [
+            124,
+            578
+          ]
+        ],
+        "centerX": 351,
+        "supportY": 2130
+      },
+      "anchorReview": "Source support region inspected before the runtime anchor was accepted."
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/fidelity-20261127/presentation/heartman-taunt-exit.png",
+      "sha256": "05dca8478de957022efa7ccafa4f49dc903cc65265140245e60cfd1e35cde373",
+      "width": 724,
+      "height": 2172,
+      "alpha_bbox_gt_8": [
+        103,
+        16,
+        591,
+        2132
+      ],
+      "edgeContact": {
+        "left": false,
+        "top": false,
+        "right": false,
+        "bottom": false
+      },
+      "geometry": {
+        "src": "assets/fidelity-20261127/presentation/heartman-taunt-exit.png",
+        "crop": [
+          101,
+          14,
+          492,
+          2120
+        ],
+        "anchorX": 0.514228,
+        "baselineY": 0.999057,
+        "heightRatio": 1,
+        "sourceAnchorPixels": {
+          "x": 354.000176,
+          "y": 2132.00084
+        }
+      },
+      "supportBand": {
+        "top": 2079,
+        "bottom": 2132,
+        "spans": [
+          [
+            125,
+            583
+          ]
+        ],
+        "centerX": 354,
+        "supportY": 2132
+      },
+      "anchorReview": "Source support region inspected before the runtime anchor was accepted."
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/fidelity-20261127/presentation/mama-viaduc-taunt.png",
+      "sha256": "c9a761e9e3f6b492c8f71600114c3464ba300deae33f739bc5c3738cc04bdc48",
+      "width": 1024,
+      "height": 1536,
+      "alpha_bbox_gt_8": [
+        183,
+        25,
+        862,
+        1509
+      ],
+      "edgeContact": {
+        "left": false,
+        "top": false,
+        "right": false,
+        "bottom": false
+      },
+      "geometry": {
+        "src": "assets/fidelity-20261127/presentation/mama-viaduc-taunt.png",
+        "crop": [
+          181,
+          23,
+          683,
+          1488
+        ],
+        "anchorX": 0.477306,
+        "baselineY": 0.998656,
+        "heightRatio": 1,
+        "sourceAnchorPixels": {
+          "x": 506.999998,
+          "y": 1509.000128
+        }
+      },
+      "supportBand": {
+        "top": 1471,
+        "bottom": 1509,
+        "spans": [
+          [
+            183,
+            366
+          ],
+          [
+            618,
+            831
+          ]
+        ],
+        "centerX": 507,
+        "supportY": 1509
+      },
+      "anchorReview": "Source support region inspected before the runtime anchor was accepted."
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/fidelity-20261127/presentation/mama-viaduc-taunt-entry.png",
+      "sha256": "90feabe3024e7e0fb84281dca95503c124b1c0d9be6f7a069ac73e568d8d7ff3",
+      "width": 1024,
+      "height": 1536,
+      "alpha_bbox_gt_8": [
+        184,
+        24,
+        863,
+        1511
+      ],
+      "edgeContact": {
+        "left": false,
+        "top": false,
+        "right": false,
+        "bottom": false
+      },
+      "geometry": {
+        "src": "assets/fidelity-20261127/presentation/mama-viaduc-taunt-entry.png",
+        "crop": [
+          182,
+          22,
+          683,
+          1491
+        ],
+        "anchorX": 0.479502,
+        "baselineY": 0.998659,
+        "heightRatio": 1,
+        "sourceAnchorPixels": {
+          "x": 509.499866,
+          "y": 1511.000569
+        }
+      },
+      "supportBand": {
+        "top": 1473,
+        "bottom": 1511,
+        "spans": [
+          [
+            184,
+            373
+          ],
+          [
+            614,
+            835
+          ]
+        ],
+        "centerX": 509.5,
+        "supportY": 1511
+      },
+      "anchorReview": "Source support region inspected before the runtime anchor was accepted."
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/fidelity-20261127/presentation/mama-viaduc-taunt-exit.png",
+      "sha256": "092bbf75270ecb9bd2edd404ef85d9d475567d94406c0225fd52af23b067a3a5",
+      "width": 1024,
+      "height": 1536,
+      "alpha_bbox_gt_8": [
+        183,
+        25,
+        863,
+        1510
+      ],
+      "edgeContact": {
+        "left": false,
+        "top": false,
+        "right": false,
+        "bottom": false
+      },
+      "geometry": {
+        "src": "assets/fidelity-20261127/presentation/mama-viaduc-taunt-exit.png",
+        "crop": [
+          181,
+          23,
+          684,
+          1489
+        ],
+        "anchorX": 0.477339,
+        "baselineY": 0.998657,
+        "heightRatio": 1,
+        "sourceAnchorPixels": {
+          "x": 507.499876,
+          "y": 1510.000273
+        }
+      },
+      "supportBand": {
+        "top": 1472,
+        "bottom": 1510,
+        "spans": [
+          [
+            183,
+            368
+          ],
+          [
+            617,
+            832
+          ]
+        ],
+        "centerX": 507.5,
+        "supportY": 1510
+      },
+      "anchorReview": "Source support region inspected before the runtime anchor was accepted."
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/fidelity-20261127/presentation/heartman-taunt.png",
+      "sha256": "379d9b8b19a9f01db7c55dcd0d93a12252c0ee979a38d96daff662361c7b7e98",
+      "width": 724,
+      "height": 2172,
+      "alpha_bbox_gt_8": [
+        107,
+        27,
+        656,
+        2130
+      ],
+      "edgeContact": {
+        "left": false,
+        "top": false,
+        "right": false,
+        "bottom": false
+      },
+      "geometry": {
+        "src": "assets/fidelity-20261127/presentation/heartman-taunt.png",
+        "crop": [
+          105,
+          25,
+          553,
+          2107
+        ],
+        "anchorX": 0.439421,
+        "baselineY": 0.999051,
+        "heightRatio": 1,
+        "sourceAnchorPixels": {
+          "x": 347.999813,
+          "y": 2130.000457
+        }
+      },
+      "supportBand": {
+        "top": 2077,
+        "bottom": 2130,
+        "spans": [
+          [
+            125,
+            571
+          ]
+        ],
+        "centerX": 348,
+        "supportY": 2130
+      },
+      "anchorReview": "Source support region inspected before the runtime anchor was accepted."
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/fidelity-20261127/static/maser-handgun-ds2-discharge.png",
+      "sha256": "88e1868944d82c8b482acac128e0cb8edc4b2b5fb9167b74adbb067c447a3e74",
+      "width": 2172,
+      "height": 724,
+      "alpha_bbox_gt_8": [
+        192,
+        236,
+        1993,
+        513
+      ],
+      "edgeContact": {
+        "left": false,
+        "top": false,
+        "right": false,
+        "bottom": false
+      },
+      "geometry": null,
+      "supportBand": null,
+      "anchorReview": "Not applicable: fixed effect shown as the whole native image; no fighter anchor or attack registered."
+    }
+  ],
+  "visualReview": "See REVUE_VISUELLE.md and the real renderer proof presentation-native.json; this inventory does not certify official animation or complete lore fidelity."
+}

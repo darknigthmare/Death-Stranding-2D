@@ -1,0 +1,897 @@
+[
+  {
+    "fighter": "sam",
+    "outfit": "default",
+    "phase": "entry",
+    "key": "tauntEntry",
+    "path": "modes/echos-de-la-greve/assets/fidelity-20261127/presentation/sam-taunt-entry.png",
+    "width": 854,
+    "height": 1840,
+    "bytes": 1821801,
+    "sha256": "410dbc7f6987d77abbf839a7f3c852eda4fd6481727fe5eb9bca743099284edb",
+    "git_blob_sha": "09e3527ceb2342af0289f22ab73d7e79467ec93a",
+    "alpha_0_fraction": 0.4724951634253131,
+    "alpha_ge_128_fraction": 0.5047162967111292,
+    "alpha_gt_8_pixels": 800962,
+    "alpha_bbox_gt_8": [
+      5,
+      0,
+      849,
+      1829
+    ],
+    "edgeContact": {
+      "left": false,
+      "top": true,
+      "right": false,
+      "bottom": false
+    },
+    "native_unchanged": true,
+    "kind": "single_native_entry_pose",
+    "geometry": {
+      "src": "assets/fidelity-20261127/presentation/sam-taunt-entry.png",
+      "crop": [
+        3,
+        0,
+        848,
+        1831
+      ],
+      "anchorX": 0.522406,
+      "baselineY": 0.998908,
+      "heightRatio": 1,
+      "sourceAnchorPixels": {
+        "x": 446.000288,
+        "y": 1829.000548
+      }
+    },
+    "generation_file": "exec-63e00133-32cf-4fc0-b769-78b1ef7e6ff8.png",
+    "native_source_rechecked": true,
+    "sourceReferenceKind": "Existing DS1/DC project sprite; original simulator gesture"
+  },
+  {
+    "fighter": "sam",
+    "outfit": "default",
+    "phase": "exit",
+    "key": "tauntExit",
+    "path": "modes/echos-de-la-greve/assets/fidelity-20261127/presentation/sam-taunt-exit.png",
+    "width": 854,
+    "height": 1840,
+    "bytes": 1845772,
+    "sha256": "939fc4a9d24d57b6c5444b3d1e8eed71404fcba2d70aaecc65d5a7e5c88c799e",
+    "git_blob_sha": "d111a45f908e8395e8292364bbaf1e302b807bba",
+    "alpha_0_fraction": 0.4828842531310457,
+    "alpha_ge_128_fraction": 0.5001648253741982,
+    "alpha_gt_8_pixels": 793108,
+    "alpha_bbox_gt_8": [
+      6,
+      5,
+      844,
+      1826
+    ],
+    "edgeContact": {
+      "left": false,
+      "top": false,
+      "right": false,
+      "bottom": false
+    },
+    "native_unchanged": true,
+    "kind": "single_native_exit_pose",
+    "geometry": {
+      "src": "assets/fidelity-20261127/presentation/sam-taunt-exit.png",
+      "crop": [
+        4,
+        3,
+        842,
+        1825
+      ],
+      "anchorX": 0.521971,
+      "baselineY": 0.998904,
+      "heightRatio": 1,
+      "sourceAnchorPixels": {
+        "x": 443.499582,
+        "y": 1825.9998
+      }
+    },
+    "generation_file": "exec-0d9084a6-583b-4b84-996e-cbd4dce3123c.png",
+    "native_source_rechecked": true,
+    "sourceReferenceKind": "Existing DS1/DC project sprite; original simulator gesture"
+  },
+  {
+    "fighter": "fragile",
+    "outfit": "default",
+    "phase": "entry",
+    "key": "tauntEntry",
+    "path": "modes/echos-de-la-greve/assets/fidelity-20261127/presentation/fragile-taunt-entry.png",
+    "width": 971,
+    "height": 1620,
+    "bytes": 1193689,
+    "sha256": "4f60c70ec027f4de7be6a0ddf260bcc4a0d8d18347b21e2fe6791ff956ce1a63",
+    "git_blob_sha": "692ca3a06c817d421fbf5242a1a6cf8ab8a06ac1",
+    "alpha_0_fraction": 0.6643030603552402,
+    "alpha_ge_128_fraction": 0.31108250371896096,
+    "alpha_gt_8_pixels": 499094,
+    "alpha_bbox_gt_8": [
+      148,
+      0,
+      839,
+      1580
+    ],
+    "edgeContact": {
+      "left": false,
+      "top": true,
+      "right": false,
+      "bottom": false
+    },
+    "native_unchanged": true,
+    "kind": "single_native_entry_pose",
+    "geometry": {
+      "src": "assets/fidelity-20261127/presentation/fragile-taunt-entry.png",
+      "crop": [
+        146,
+        0,
+        695,
+        1582
+      ],
+      "anchorX": 0.570504,
+      "baselineY": 0.998736,
+      "heightRatio": 1,
+      "sourceAnchorPixels": {
+        "x": 542.50028,
+        "y": 1580.000352
+      }
+    },
+    "generation_file": "exec-0993a01b-2009-4a62-8434-f8d1d682b0f4.png",
+    "native_source_rechecked": true,
+    "sourceReferenceKind": "Existing DS1/DC project sprite; original simulator gesture"
+  },
+  {
+    "fighter": "fragile",
+    "outfit": "default",
+    "phase": "exit",
+    "key": "tauntExit",
+    "path": "modes/echos-de-la-greve/assets/fidelity-20261127/presentation/fragile-taunt-exit.png",
+    "width": 971,
+    "height": 1619,
+    "bytes": 1241960,
+    "sha256": "c3c4b428bfe7eb92fa0cd8f0bffbf4deaf52c70c082dee80cf1b306a8d84b38b",
+    "git_blob_sha": "137d581cffb6d1d670c232e3bfe1c828893d28ed",
+    "alpha_0_fraction": 0.658134065795659,
+    "alpha_ge_128_fraction": 0.3177655403870999,
+    "alpha_gt_8_pixels": 509485,
+    "alpha_bbox_gt_8": [
+      147,
+      2,
+      841,
+      1579
+    ],
+    "edgeContact": {
+      "left": false,
+      "top": false,
+      "right": false,
+      "bottom": false
+    },
+    "native_unchanged": true,
+    "kind": "single_native_exit_pose",
+    "geometry": {
+      "src": "assets/fidelity-20261127/presentation/fragile-taunt-exit.png",
+      "crop": [
+        145,
+        0,
+        698,
+        1581
+      ],
+      "anchorX": 0.570559,
+      "baselineY": 0.998735,
+      "heightRatio": 1,
+      "sourceAnchorPixels": {
+        "x": 543.250182,
+        "y": 1579.000035
+      }
+    },
+    "generation_file": "exec-cbe5d4f6-446f-4706-86b0-c5946d1922e0.png",
+    "native_source_rechecked": true,
+    "sourceReferenceKind": "Existing DS1/DC project sprite; original simulator gesture"
+  },
+  {
+    "fighter": "higgs",
+    "outfit": "default",
+    "phase": "entry",
+    "key": "tauntEntry",
+    "path": "modes/echos-de-la-greve/assets/fidelity-20261127/presentation/higgs-taunt-entry.png",
+    "width": 900,
+    "height": 1747,
+    "bytes": 1726743,
+    "sha256": "953f72376ebc89feaffa9024af2a61c82e249c58e0a5526cebb87a5ee419ed28",
+    "git_blob_sha": "a7a5efc49dabe26972330915def21a1c138d22e5",
+    "alpha_0_fraction": 0.4768536538828468,
+    "alpha_ge_128_fraction": 0.5095414361127011,
+    "alpha_gt_8_pixels": 806568,
+    "alpha_bbox_gt_8": [
+      34,
+      18,
+      837,
+      1679
+    ],
+    "edgeContact": {
+      "left": false,
+      "top": false,
+      "right": false,
+      "bottom": false
+    },
+    "native_unchanged": true,
+    "kind": "single_native_entry_pose",
+    "geometry": {
+      "src": "assets/fidelity-20261127/presentation/higgs-taunt-entry.png",
+      "crop": [
+        32,
+        16,
+        807,
+        1665
+      ],
+      "anchorX": 0.619579,
+      "baselineY": 0.998799,
+      "heightRatio": 1,
+      "sourceAnchorPixels": {
+        "x": 532.000253,
+        "y": 1679.000335
+      }
+    },
+    "generation_file": "exec-b5725408-b543-4441-ac6e-e3d2f0b04854.png",
+    "native_source_rechecked": true,
+    "sourceReferenceKind": "Existing DS1/DC project sprite; original simulator gesture"
+  },
+  {
+    "fighter": "higgs",
+    "outfit": "default",
+    "phase": "exit",
+    "key": "tauntExit",
+    "path": "modes/echos-de-la-greve/assets/fidelity-20261127/presentation/higgs-taunt-exit.png",
+    "width": 900,
+    "height": 1747,
+    "bytes": 1755854,
+    "sha256": "b7d49ba184751313d3ed6b2865d303334b6002f1ac36265d4733a5e542828cb9",
+    "git_blob_sha": "bb25dcee9d5a1697f1cef9737be9cc4412a04957",
+    "alpha_0_fraction": 0.4685225465878013,
+    "alpha_ge_128_fraction": 0.5197239712523055,
+    "alpha_gt_8_pixels": 821887,
+    "alpha_bbox_gt_8": [
+      5,
+      12,
+      732,
+      1679
+    ],
+    "edgeContact": {
+      "left": false,
+      "top": false,
+      "right": false,
+      "bottom": false
+    },
+    "native_unchanged": true,
+    "kind": "single_native_exit_pose",
+    "geometry": {
+      "src": "assets/fidelity-20261127/presentation/higgs-taunt-exit.png",
+      "crop": [
+        3,
+        10,
+        731,
+        1671
+      ],
+      "anchorX": 0.694254,
+      "baselineY": 0.998803,
+      "heightRatio": 1,
+      "sourceAnchorPixels": {
+        "x": 510.499674,
+        "y": 1678.999813
+      }
+    },
+    "generation_file": "exec-339e4822-dab6-4dfb-b5d4-e3dee3681181.png",
+    "native_source_rechecked": true,
+    "sourceReferenceKind": "Existing DS1/DC project sprite; original simulator gesture"
+  },
+  {
+    "fighter": "cliff",
+    "outfit": "default",
+    "phase": "entry",
+    "key": "tauntEntry",
+    "path": "modes/echos-de-la-greve/assets/fidelity-20261127/presentation/cliff-taunt-entry.png",
+    "width": 848,
+    "height": 1855,
+    "bytes": 1857238,
+    "sha256": "83d43e980d15335582600b2eabb315873697a1beaf1262df896ec7c502903e77",
+    "git_blob_sha": "710c99413eee4ec6f42dab4cf34831be9cba3889",
+    "alpha_0_fraction": 0.5043724253674414,
+    "alpha_ge_128_fraction": 0.4732587855362864,
+    "alpha_gt_8_pixels": 752414,
+    "alpha_bbox_gt_8": [
+      41,
+      2,
+      809,
+      1840
+    ],
+    "edgeContact": {
+      "left": false,
+      "top": false,
+      "right": false,
+      "bottom": false
+    },
+    "native_unchanged": true,
+    "kind": "single_native_entry_pose",
+    "geometry": {
+      "src": "assets/fidelity-20261127/presentation/cliff-taunt-entry.png",
+      "crop": [
+        39,
+        0,
+        772,
+        1842
+      ],
+      "anchorX": 0.5,
+      "baselineY": 0.998914,
+      "heightRatio": 1,
+      "sourceAnchorPixels": {
+        "x": 425,
+        "y": 1839.999588
+      }
+    },
+    "generation_file": "exec-bf52ded9-d1d4-417b-bdd4-45b4093c37d2.png",
+    "native_source_rechecked": true,
+    "sourceReferenceKind": "Existing DS1/DC project sprite; original simulator gesture"
+  },
+  {
+    "fighter": "cliff",
+    "outfit": "default",
+    "phase": "exit",
+    "key": "tauntExit",
+    "path": "modes/echos-de-la-greve/assets/fidelity-20261127/presentation/cliff-taunt-exit.png",
+    "width": 848,
+    "height": 1855,
+    "bytes": 1885490,
+    "sha256": "0a5df0442c98d082ce2756dd43ff2c46adc37e58bea49081f4851fd2656520cf",
+    "git_blob_sha": "f9640f5cc1a2e24c99d50c537b80bdc440350a2f",
+    "alpha_0_fraction": 0.5066266592076489,
+    "alpha_ge_128_fraction": 0.47679079997965723,
+    "alpha_gt_8_pixels": 757797,
+    "alpha_bbox_gt_8": [
+      40,
+      0,
+      805,
+      1847
+    ],
+    "edgeContact": {
+      "left": false,
+      "top": true,
+      "right": false,
+      "bottom": false
+    },
+    "native_unchanged": true,
+    "kind": "single_native_exit_pose",
+    "geometry": {
+      "src": "assets/fidelity-20261127/presentation/cliff-taunt-exit.png",
+      "crop": [
+        38,
+        0,
+        769,
+        1849
+      ],
+      "anchorX": 0.5,
+      "baselineY": 0.998918,
+      "heightRatio": 1,
+      "sourceAnchorPixels": {
+        "x": 422.5,
+        "y": 1846.999382
+      }
+    },
+    "generation_file": "exec-8cdac440-e1c5-42e1-b6d3-9b09eb28fbae.png",
+    "native_source_rechecked": true,
+    "sourceReferenceKind": "Existing DS1/DC project sprite; original simulator gesture"
+  },
+  {
+    "fighter": "mule",
+    "outfit": "default",
+    "phase": "entry",
+    "key": "tauntEntry",
+    "path": "modes/echos-de-la-greve/assets/fidelity-20261127/presentation/mule-taunt-entry.png",
+    "width": 776,
+    "height": 2025,
+    "bytes": 1915537,
+    "sha256": "b5c414e36129d889d427e1c4f90a6001f8a94ed8e9f36c6eeb09fe485ded9337",
+    "git_blob_sha": "f1fc1c862735f7c83ac02edc442ec15a1dba2a0d",
+    "alpha_0_fraction": 0.4701648211785669,
+    "alpha_ge_128_fraction": 0.513580883288787,
+    "alpha_gt_8_pixels": 814480,
+    "alpha_bbox_gt_8": [
+      7,
+      23,
+      758,
+      1972
+    ],
+    "edgeContact": {
+      "left": false,
+      "top": false,
+      "right": false,
+      "bottom": false
+    },
+    "native_unchanged": true,
+    "kind": "single_native_entry_pose",
+    "geometry": {
+      "src": "assets/fidelity-20261127/presentation/mule-taunt-entry.png",
+      "crop": [
+        5,
+        21,
+        755,
+        1953
+      ],
+      "anchorX": 0.57947,
+      "baselineY": 0.998976,
+      "heightRatio": 1,
+      "sourceAnchorPixels": {
+        "x": 442.49985,
+        "y": 1972.000128
+      }
+    },
+    "generation_file": "exec-e4555061-3c13-4e74-9741-0874cfd80ef4.png",
+    "native_source_rechecked": true,
+    "sourceReferenceKind": "Existing DS1/DC project sprite; original simulator gesture"
+  },
+  {
+    "fighter": "mule",
+    "outfit": "default",
+    "phase": "exit",
+    "key": "tauntExit",
+    "path": "modes/echos-de-la-greve/assets/fidelity-20261127/presentation/mule-taunt-exit.png",
+    "width": 776,
+    "height": 2025,
+    "bytes": 1987912,
+    "sha256": "8ed70fc153be63f2208f4c3e7c09106d6088dc075b5397725b70df385c0db0bf",
+    "git_blob_sha": "173fc828d50e6717418e0b458909ee6dedd4bbe7",
+    "alpha_0_fraction": 0.466107929235077,
+    "alpha_ge_128_fraction": 0.5144858088328879,
+    "alpha_gt_8_pixels": 815817,
+    "alpha_bbox_gt_8": [
+      6,
+      19,
+      772,
+      1970
+    ],
+    "edgeContact": {
+      "left": false,
+      "top": false,
+      "right": false,
+      "bottom": false
+    },
+    "native_unchanged": true,
+    "kind": "single_native_exit_pose",
+    "geometry": {
+      "src": "assets/fidelity-20261127/presentation/mule-taunt-exit.png",
+      "crop": [
+        4,
+        17,
+        770,
+        1955
+      ],
+      "anchorX": 0.571429,
+      "baselineY": 0.998977,
+      "heightRatio": 1,
+      "sourceAnchorPixels": {
+        "x": 444.00033,
+        "y": 1970.000035
+      }
+    },
+    "generation_file": "exec-779fc4ef-2993-460e-b225-6ec5fe3442b3.png",
+    "native_source_rechecked": true,
+    "sourceReferenceKind": "Existing DS1/DC project sprite; original simulator gesture"
+  },
+  {
+    "fighter": "mama",
+    "outfit": "atelier",
+    "phase": "entry",
+    "key": "tauntEntry",
+    "path": "modes/echos-de-la-greve/assets/fidelity-20261127/presentation/mama-taunt-entry.png",
+    "width": 1024,
+    "height": 1536,
+    "bytes": 1756805,
+    "sha256": "108291b1274e296e91836d6b444a5f031317bc9aa788469d77d81c0efc720de5",
+    "git_blob_sha": "d2d85c39a9ddbba05a6a1ff561288f2e2d15cb75",
+    "alpha_0_fraction": 0.7274583180745443,
+    "alpha_ge_128_fraction": 0.255279541015625,
+    "alpha_gt_8_pixels": 408241,
+    "alpha_bbox_gt_8": [
+      224,
+      18,
+      696,
+      1522
+    ],
+    "edgeContact": {
+      "left": false,
+      "top": false,
+      "right": false,
+      "bottom": false
+    },
+    "native_unchanged": true,
+    "kind": "single_native_entry_pose",
+    "geometry": {
+      "src": "assets/fidelity-20261127/presentation/mama-taunt-entry.png",
+      "crop": [
+        222,
+        16,
+        476,
+        1508
+      ],
+      "anchorX": 0.576681,
+      "baselineY": 0.998674,
+      "heightRatio": 1,
+      "sourceAnchorPixels": {
+        "x": 496.500156,
+        "y": 1522.000392
+      }
+    },
+    "generation_file": "exec-e0aa8696-89a0-49ed-bbf2-82552b036d6c.png",
+    "native_source_rechecked": true,
+    "sourceReferenceKind": "Existing DS1/DC project sprite; original simulator gesture"
+  },
+  {
+    "fighter": "mama",
+    "outfit": "atelier",
+    "phase": "exit",
+    "key": "tauntExit",
+    "path": "modes/echos-de-la-greve/assets/fidelity-20261127/presentation/mama-taunt-exit.png",
+    "width": 1024,
+    "height": 1536,
+    "bytes": 1691308,
+    "sha256": "aaafef65d81e4038fadd1630b5eb4c152769e41df009502be6a5b49ad8394fe1",
+    "git_blob_sha": "c1b8836f445a3e86f477cb51808672733334d972",
+    "alpha_0_fraction": 0.7350578308105469,
+    "alpha_ge_128_fraction": 0.2486750284830729,
+    "alpha_gt_8_pixels": 397925,
+    "alpha_bbox_gt_8": [
+      229,
+      18,
+      696,
+      1521
+    ],
+    "edgeContact": {
+      "left": false,
+      "top": false,
+      "right": false,
+      "bottom": false
+    },
+    "native_unchanged": true,
+    "kind": "single_native_exit_pose",
+    "geometry": {
+      "src": "assets/fidelity-20261127/presentation/mama-taunt-exit.png",
+      "crop": [
+        227,
+        16,
+        471,
+        1507
+      ],
+      "anchorX": 0.573248,
+      "baselineY": 0.998673,
+      "heightRatio": 1,
+      "sourceAnchorPixels": {
+        "x": 496.999808,
+        "y": 1521.000211
+      }
+    },
+    "generation_file": "exec-5ace05b9-95ad-4753-bd5c-7a5190769109.png",
+    "native_source_rechecked": true,
+    "sourceReferenceKind": "Existing DS1/DC project sprite; original simulator gesture"
+  },
+  {
+    "fighter": "heartman",
+    "outfit": "default",
+    "phase": "entry",
+    "key": "tauntEntry",
+    "path": "modes/echos-de-la-greve/assets/fidelity-20261127/presentation/heartman-taunt-entry.png",
+    "width": 725,
+    "height": 2170,
+    "bytes": 1434855,
+    "sha256": "a92d929fe4ef1c78cae5616aff90eeab11695b4176aed852f2b50ebcd6b23e99",
+    "git_blob_sha": "c13c8edfc8af191cb1857e1e7a3e93c17c15a1a1",
+    "alpha_0_fraction": 0.5457003019227713,
+    "alpha_ge_128_fraction": 0.44263276656602574,
+    "alpha_gt_8_pixels": 701168,
+    "alpha_bbox_gt_8": [
+      102,
+      14,
+      589,
+      2130
+    ],
+    "edgeContact": {
+      "left": false,
+      "top": false,
+      "right": false,
+      "bottom": false
+    },
+    "native_unchanged": true,
+    "kind": "single_native_entry_pose",
+    "geometry": {
+      "src": "assets/fidelity-20261127/presentation/heartman-taunt-entry.png",
+      "crop": [
+        100,
+        12,
+        491,
+        2120
+      ],
+      "anchorX": 0.511202,
+      "baselineY": 0.999057,
+      "heightRatio": 1,
+      "sourceAnchorPixels": {
+        "x": 351.000182,
+        "y": 2130.00084
+      }
+    },
+    "generation_file": "exec-eac86153-aaf1-4f73-83c4-3cbb295fd7da.png",
+    "native_source_rechecked": true,
+    "sourceReferenceKind": "Existing DS1/DC project sprite; original simulator gesture"
+  },
+  {
+    "fighter": "heartman",
+    "outfit": "default",
+    "phase": "exit",
+    "key": "tauntExit",
+    "path": "modes/echos-de-la-greve/assets/fidelity-20261127/presentation/heartman-taunt-exit.png",
+    "width": 724,
+    "height": 2172,
+    "bytes": 1490448,
+    "sha256": "05dca8478de957022efa7ccafa4f49dc903cc65265140245e60cfd1e35cde373",
+    "git_blob_sha": "c7972c7235636397cce1233e6e0e07a0e60778c4",
+    "alpha_0_fraction": 0.5360483247357122,
+    "alpha_ge_128_fraction": 0.45212549474476765,
+    "alpha_gt_8_pixels": 716457,
+    "alpha_bbox_gt_8": [
+      103,
+      16,
+      591,
+      2132
+    ],
+    "edgeContact": {
+      "left": false,
+      "top": false,
+      "right": false,
+      "bottom": false
+    },
+    "native_unchanged": true,
+    "kind": "single_native_exit_pose",
+    "geometry": {
+      "src": "assets/fidelity-20261127/presentation/heartman-taunt-exit.png",
+      "crop": [
+        101,
+        14,
+        492,
+        2120
+      ],
+      "anchorX": 0.514228,
+      "baselineY": 0.999057,
+      "heightRatio": 1,
+      "sourceAnchorPixels": {
+        "x": 354.000176,
+        "y": 2132.00084
+      }
+    },
+    "generation_file": "exec-12cdca1f-3fe4-4efa-a7fe-ac8e68ed1ff0.png",
+    "native_source_rechecked": true,
+    "sourceReferenceKind": "Existing DS1/DC project sprite; original simulator gesture"
+  },
+  {
+    "fighter": "mama",
+    "outfit": "viaduc",
+    "phase": "hold",
+    "key": "taunt",
+    "path": "modes/echos-de-la-greve/assets/fidelity-20261127/presentation/mama-viaduc-taunt.png",
+    "width": 1024,
+    "height": 1536,
+    "bytes": 1838744,
+    "sha256": "c9a761e9e3f6b492c8f71600114c3464ba300deae33f739bc5c3738cc04bdc48",
+    "git_blob_sha": "8522a868874ea4b15e56389c4761dbcf5b8b1b93",
+    "alpha_0_fraction": 0.7203648885091146,
+    "alpha_ge_128_fraction": 0.2609564463297526,
+    "alpha_gt_8_pixels": 417156,
+    "alpha_bbox_gt_8": [
+      183,
+      25,
+      862,
+      1509
+    ],
+    "edgeContact": {
+      "left": false,
+      "top": false,
+      "right": false,
+      "bottom": false
+    },
+    "native_unchanged": true,
+    "kind": "single_native_hold_pose",
+    "geometry": {
+      "src": "assets/fidelity-20261127/presentation/mama-viaduc-taunt.png",
+      "crop": [
+        181,
+        23,
+        683,
+        1488
+      ],
+      "anchorX": 0.477306,
+      "baselineY": 0.998656,
+      "heightRatio": 1,
+      "sourceAnchorPixels": {
+        "x": 506.999998,
+        "y": 1509.000128
+      }
+    },
+    "generation_file": "exec-d3bddf63-d418-4637-ab46-8c67a8d898fb.png",
+    "native_source_rechecked": true,
+    "sourceReferenceKind": "Existing project reconstruction; no official Viaduc costume claim"
+  },
+  {
+    "fighter": "mama",
+    "outfit": "viaduc",
+    "phase": "entry",
+    "key": "tauntEntry",
+    "path": "modes/echos-de-la-greve/assets/fidelity-20261127/presentation/mama-viaduc-taunt-entry.png",
+    "width": 1024,
+    "height": 1536,
+    "bytes": 1905783,
+    "sha256": "90feabe3024e7e0fb84281dca95503c124b1c0d9be6f7a069ac73e568d8d7ff3",
+    "git_blob_sha": "7818f49cb2daacc9746e5bd698b5fe4e7eea58c6",
+    "alpha_0_fraction": 0.7241497039794922,
+    "alpha_ge_128_fraction": 0.2557061513264974,
+    "alpha_gt_8_pixels": 408361,
+    "alpha_bbox_gt_8": [
+      184,
+      24,
+      863,
+      1511
+    ],
+    "edgeContact": {
+      "left": false,
+      "top": false,
+      "right": false,
+      "bottom": false
+    },
+    "native_unchanged": true,
+    "kind": "single_native_entry_pose",
+    "geometry": {
+      "src": "assets/fidelity-20261127/presentation/mama-viaduc-taunt-entry.png",
+      "crop": [
+        182,
+        22,
+        683,
+        1491
+      ],
+      "anchorX": 0.479502,
+      "baselineY": 0.998659,
+      "heightRatio": 1,
+      "sourceAnchorPixels": {
+        "x": 509.499866,
+        "y": 1511.000569
+      }
+    },
+    "generation_file": "exec-c1527aaf-980a-4919-9c65-ab6e35f2471c.png",
+    "native_source_rechecked": true,
+    "sourceReferenceKind": "Existing project reconstruction; no official Viaduc costume claim"
+  },
+  {
+    "fighter": "mama",
+    "outfit": "viaduc",
+    "phase": "exit",
+    "key": "tauntExit",
+    "path": "modes/echos-de-la-greve/assets/fidelity-20261127/presentation/mama-viaduc-taunt-exit.png",
+    "width": 1024,
+    "height": 1536,
+    "bytes": 1854147,
+    "sha256": "092bbf75270ecb9bd2edd404ef85d9d475567d94406c0225fd52af23b067a3a5",
+    "git_blob_sha": "142699d904f4c98172b498f2ef8f20ee251d1643",
+    "alpha_0_fraction": 0.7297223409016927,
+    "alpha_ge_128_fraction": 0.2522500356038411,
+    "alpha_gt_8_pixels": 402902,
+    "alpha_bbox_gt_8": [
+      183,
+      25,
+      863,
+      1510
+    ],
+    "edgeContact": {
+      "left": false,
+      "top": false,
+      "right": false,
+      "bottom": false
+    },
+    "native_unchanged": true,
+    "kind": "single_native_exit_pose",
+    "geometry": {
+      "src": "assets/fidelity-20261127/presentation/mama-viaduc-taunt-exit.png",
+      "crop": [
+        181,
+        23,
+        684,
+        1489
+      ],
+      "anchorX": 0.477339,
+      "baselineY": 0.998657,
+      "heightRatio": 1,
+      "sourceAnchorPixels": {
+        "x": 507.499876,
+        "y": 1510.000273
+      }
+    },
+    "generation_file": "exec-1f12d091-52f4-40f5-a040-b20916aa4c40.png",
+    "native_source_rechecked": true,
+    "sourceReferenceKind": "Existing project reconstruction; no official Viaduc costume claim"
+  },
+  {
+    "fighter": "heartman",
+    "outfit": "default",
+    "phase": "hold",
+    "key": "taunt",
+    "path": "modes/echos-de-la-greve/assets/fidelity-20261127/presentation/heartman-taunt.png",
+    "width": 724,
+    "height": 2172,
+    "bytes": 1475747,
+    "sha256": "379d9b8b19a9f01db7c55dcd0d93a12252c0ee979a38d96daff662361c7b7e98",
+    "git_blob_sha": "cfe073aa8891c6e5b075899c74b3c3560ee333bd",
+    "alpha_0_fraction": 0.5507749305576752,
+    "alpha_ge_128_fraction": 0.4302416236785609,
+    "alpha_gt_8_pixels": 682287,
+    "alpha_bbox_gt_8": [
+      107,
+      27,
+      656,
+      2130
+    ],
+    "edgeContact": {
+      "left": false,
+      "top": false,
+      "right": false,
+      "bottom": false
+    },
+    "native_unchanged": true,
+    "kind": "single_native_hold_pose",
+    "geometry": {
+      "src": "assets/fidelity-20261127/presentation/heartman-taunt.png",
+      "crop": [
+        105,
+        25,
+        553,
+        2107
+      ],
+      "anchorX": 0.439421,
+      "baselineY": 0.999051,
+      "heightRatio": 1,
+      "sourceAnchorPixels": {
+        "x": 347.999813,
+        "y": 2130.000457
+      }
+    },
+    "generation_file": "exec-d464ed43-df55-48b1-aca5-635eca1c4ef8.png",
+    "native_source_rechecked": true,
+    "sourceReferenceKind": "Existing DS1/DC project sprite; original simulator gesture"
+  },
+  {
+    "id": "maser-handgun-ds2-discharge",
+    "kind": "fixed_reference_vfx",
+    "work": "ds2",
+    "path": "modes/echos-de-la-greve/assets/fidelity-20261127/static/maser-handgun-ds2-discharge.png",
+    "width": 2172,
+    "height": 724,
+    "bytes": 399006,
+    "sha256": "88e1868944d82c8b482acac128e0cb8edc4b2b5fb9167b74adbb067c447a3e74",
+    "git_blob_sha": "daab6705c0932f96b27c26b1c16be5399332846d",
+    "alpha_0_fraction": 0.8859301710367001,
+    "alpha_ge_128_fraction": 0.013520903920311753,
+    "alpha_gt_8_pixels": 80920,
+    "alpha_bbox_gt_8": [
+      192,
+      236,
+      1993,
+      513
+    ],
+    "edgeContact": {
+      "left": false,
+      "top": false,
+      "right": false,
+      "bottom": false
+    },
+    "native_unchanged": true,
+    "geometry": null,
+    "generation_file": "exec-c2d07701-2f80-461d-937f-67f21070bdb3.png",
+    "native_source_rechecked": true,
+    "sourceReferenceKind": "Official DS2 guide at 10.0 seconds; fixed adapted effect, no animation or playable attack"
+  }
+]

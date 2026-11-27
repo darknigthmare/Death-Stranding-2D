@@ -4,7 +4,11 @@
 
 **Édition de conception du 18 novembre 2026, mise à jour du 27 novembre 2026 · Périmètre : l’ensemble de l’univers Death Stranding.**
 
-**Mise à jour du 27 novembre : les deux extensions originales du Guide Combat Games sont intégrées et adaptées dans [EXTENSIONS_COMBAT.md](EXTENSIONS_COMBAT.md). Les 38 rubriques EDG-G30–G67 complètent les 30 rubriques déjà associées. Huit fiches de personnalité, les règles d’équipes, les bonus, les Dossiers de liaison et les accès futurs sont distingués de leur réalisation effective. Le [§20](#extensions-guides-20261127) relie les sources, les nouveaux gestes de présentation et les huit souvenirs aux bilans du lot ; tag, duos et service de soutien restent des conceptions non raccordées.**
+**Nouvelle réalisation du 27 novembre : le [Relais de liaison](#relais-lignes-maree-20261127) ajoute le profil local à deux membres, appui, relais, Cohésion, K.-O. et reprise. L’extension originale [Les Lignes de Marée](extensions/lignes-de-maree/BIBLE_EXTENSION.md) reçoit 147 fiches, 70 bases visuelles et 20 arènes statiques jouables. Les kits, IA, missions et cycles originaux restent des cibles distinctes.**
+
+**Complément du 27 novembre : les phases visuelles du geste, la variante Mama Viaduc et le neuvième exercice « Le geste expose » sont reliés au [§21](#fidelity-20261127). Une référence fixe de décharge du Maser Handgun DS2 rejoint la galerie. Le [bilan de fidélité](production/20261127-fidelity/BILAN.md) distingue les fichiers reçus, leur contrôle et les corrections Die-Hardman/Higgs DS2 restées sans image après refus de génération.**
+
+**Mise à jour du 27 novembre : les deux extensions originales du Guide Combat Games sont intégrées et adaptées dans [EXTENSIONS_COMBAT.md](EXTENSIONS_COMBAT.md). Les 38 rubriques EDG-G30–G67 complètent les 30 rubriques déjà associées. Huit fiches de personnalité, les règles d’équipes, les bonus, les Dossiers de liaison et les accès futurs sont distingués de leur réalisation effective. Le [§20](#extensions-guides-20261127) relie les sources, les nouveaux gestes de présentation et les huit souvenirs aux bilans du lot ; le tag était alors non raccordé et possède désormais sa réalisation au §22 ; duos et service de soutien restent conçus.**
 
 **Mise à jour du 25 novembre 2026 : Guide Combat Games v1.0 associé ; lots univers, complément, domaines et extension livrés sur leurs périmètres documentés. Le lot extension ajoute huit exercices guidés, le compendium des six Boss et vingt-huit PNG fixes pour onze bases et trois arènes. Les recettes et l’inventaire sont confirmés au [§19](#lot-extension-20261125) ; le Strider reste non livré après refus de génération. Les §13–18 conservent les instantanés de leurs lots. La livraison ne prétend pas couvrir exhaustivement l’univers.**
 
@@ -95,6 +99,8 @@ Les directions suivent la position adverse. La touche de signature est **H pour 
 18. [Actions, relations, commandes et première liaison](#lot-domaines-20261125)
 19. [Exercices, compendium Boss et extension visuelle](#lot-extension-20261125)
 20. [Extensions du guide, personnalité et Dossiers de liaison](#extensions-guides-20261127)
+21. [Compléments de fidélité, phases et apprentissage](#fidelity-20261127)
+22. [Relais de liaison et Les Lignes de Marée](#relais-lignes-maree-20261127)
 
 Registres associés : [œuvres, versions et sources de l’univers Death Stranding](UNIVERS_DS.md) · [production par domaine et dépendances](REGISTRE_PRODUCTION.md).
 
@@ -1212,3 +1218,72 @@ Les [dix bonus conçus et le parcours d’archives](EXTENSIONS_COMBAT.md#bonus-a
 Le [bilan du lot](production/20261127-extensions/BILAN.md), les bilans Présentation/Progression/Assets et la [matrice de 40 cas](EXTENSIONS_COMBAT.md#production-qa) séparent contrôle documentaire, tests de données, simulation et inspection visuelle. Les nouveaux gestes n’activent pas automatiquement le salon privé, le moteur Boss ou le Duel originel. Les chiffres d’arènes et de galerie des §16–19 restent les instantanés de leurs lots, pas un pourcentage de réalisation de l’univers.
 
 Les suites concrètes sont : vérifier les poses de chaque version, compléter les dessins intermédiaires et sons, réaliser le mode équipe et ses règles d’entités, puis une paire, un bonus et une scène collective avant leur extension. Les futurs kits DS2 et les autres œuvres restent dans le périmètre du registre ; leurs références précises et leurs comportements doivent être produits et testés individuellement.
+
+<a id="fidelity-20261127"></a>
+## 21. Compléments de fidélité, phases et apprentissage — 27 novembre 2026
+
+### 21.1. Trois phases visuelles et continuité des tenues
+
+Le [lot de fidélité](production/20261127-fidelity/BILAN.md) complète la préparation et le retour du geste pour Sam, Fragile, Higgs DS1, Cliff, le MULE, Mama Atelier et Heartman. Mama Viaduc reçoit ses trois poses propres. Le hold de Heartman est remplacé par une nouvelle image pour garder son dispositif au même poignet que dans sa posture active ; l’ancien PNG est conservé. Cette correction établit la continuité entre les images du projet, pas le côté anatomique canonique d’un équipement insuffisamment montré par la source officielle consultée.
+
+Le rendu lit désormais la phase réelle du geste : entrée, tenue, sortie. Il résout d’abord la tenue sélectionnée, puis la pose. Une image absente ou en cours de décodage revient à la posture de la même tenue ; Mama Viaduc ne montre pas brièvement Mama Atelier. Le mouvement réduit conserve une posture stable autour de la tenue du geste. Ces changements visuels gardent les **54 pas, soit 10/28/16**, la vulnérabilité, les interruptions et les commandes existantes.
+
+Les **18 PNG de présentation** sont des poses clés autonomes, copiées depuis les originaux reçus sans transformation. Il ne s’agit pas d’un cycle dessiné à chaque image. Die-Hardman garde son rendu existant et ses replis : sa correction complète n’a pas été reçue. Les [mesures et limites](production/20261127-fidelity/ASSETS.md), la [recette de présentation](production/20261127-fidelity/FIDELITY_PRESENTATION.md) et les [inspections](production/20261127-fidelity/REVUE_VISUELLE.md) donnent le périmètre exact.
+
+### 21.2. Neuvième exercice : Le geste expose
+
+Le parcours du dojo ajoute un exercice fondé sur deux situations du moteur réel. Le joueur doit d’abord effectuer tout le geste au sol à une distance d’au moins **250 pixels**, sans perdre de vie ni attaquer. Il doit ensuite toucher le partenaire avec un **coup léger pendant son geste**. Le partenaire s’approche puis utilise la commande ordinaire de taunt ; sa vie et ses états ne sont pas modifiés artificiellement pour attribuer une réussite.
+
+Un geste trop proche, un coup après sa fin et une attaque lourde ne satisfont pas l’objectif correspondant. Les touches affichées suivent le profil de commandes ; le test comprend une touche de geste remappée. Les huit exercices existants conservent leurs identifiants et leur sauvegarde. Les huit souvenirs des Dossiers de liaison gardent exactement leur voie **histoire terminée OU quatre exercices historiques avec le même combattant** : le nouvel exercice n’est ni un prérequis supplémentaire ni un substitut à l’un de ces quatre exercices.
+
+### 21.3. Décharge du Maser Handgun DS2 et inventaire
+
+La vidéo de discrétion du [guide PlayStation DS2](https://www.playstation.com/en-us/games/death-stranding-2-on-the-beach/death-stranding-2-on-the-beach-guide/) fournit une vue de la décharge vers **10,0 secondes**. Le [PNG fixe correspondant](production/20261127-fidelity/ASSETS.md#maser) reprend ses filaments clairs et son départ lumineux dans une adaptation transparente pour la galerie. La charge et l’impact sont documentés séparément. Cette référence n’implémente pas un tir, une portée, une durée d’étourdissement ou une nouvelle arme du duel.
+
+Le lot reçoit **19 PNG natifs au total : 18 poses et un effet fixe**. La galerie passe de **65 à 66 cartes**, dont **33 DS2**. L’[inventaire vérifié](production/20261127-fidelity/inventory-verification.json) conserve les 450 images raster antérieures ; il distingue 469 PNG/WebP conservés et 413 chemins d’images actifs uniques. Les PNG récents conservés atteignent 284, dont 283 actifs : l’ancien hold Heartman reste dans les sources mais n’est plus sélectionné. Ces unités ne mesurent pas l’exhaustivité de l’univers.
+
+### 21.4. Vérification et écarts encore ouverts
+
+La [synthèse de recette](production/20261127-fidelity/regression-verification.json) relie les contrôles de présentation, du dojo, des commandes, des Dossiers, de galerie, de fichiers et de service HTTP. La simulation est comparée à `7e000d3` ; le catalogue des actions est régénéré avec l’empreinte actuelle du moteur sans modifier ses valeurs. Les rendus Canvas décodent les vraies images ; ils restent distincts d’un essai dans Chromium ou avec une manette physique.
+
+L’audit de Die-Hardman porte désormais sur le masque **et le costume** des onze poses actives, de la fatalité, de trois plans narratifs et des trois poses de présentation prévues. Le contrôle automatique de génération a refusé la première image ; aucune de ces dix-huit corrections n’est déclarée livrée. Une tentative distincte de silhouette Higgs DS2 a également été refusée. Les demandes, références et résultats sont conservés dans les manifestes, sans fichier de substitution.
+
+L’[état des manquants DS2](production/20261127-fidelity/MANQUANTS_DS2.md) et le [registre](REGISTRE_PRODUCTION.md#fidelity-20261127) conservent les autres besoins : vues de référence insuffisantes, kits DS2, animations intermédiaires, sons, asymétries lors du miroir, équipes/assistances, duos et bonus. La fidélité 1:1 reste un objectif vérifiable sujet par sujet ; ce lot ne lui attribue pas un statut global de réalisation.
+
+
+<a id="relais-lignes-maree-20261127"></a>
+## 22. Relais de liaison et Les Lignes de Marée — 27 novembre 2026
+
+### 22.1. Le profil équipe est jouable
+
+**Relais de liaison** ajoute le dixième mode local de l’accueil : deux membres par camp, parmi les huit kits existants, contre une équipe IA ou une deuxième personne. L’actif et la réserve ont chacun leurs PV, Chiral et équilibre. La Cohésion commence à 50, monte à 100 et gagne 6 unités par seconde active. Un appui coûte 25 ; un transfert volontaire, 15. Un partenaire visible peut être blessé ou interrompu. Le survivant entre après un K.-O. sans paiement, sans guérison et sans résurrection. Les 75 secondes se départagent par la somme des PV ; un double K.-O. final donne une égalité.
+
+Les commandes remappables Finalité et Geste deviennent Appui et Relais pendant le combat. L’interface montre les quatre vitalités, les réserves et les récupérations. La reprise `echos.teams.v1` vérifie propriétaires, ressources et états avant de revenir en pause. Les projectiles gardent leur membre émetteur après un relais ; les objets posés ont une politique de réserve, de K.-O. et d’expiration. La liaison quai-hangar est exclue de ce profil.
+
+Le [contrat livré](production/20261127-team-gameplay/RELAIS_DE_LIAISON.md), les [25 groupes de recette](production/20261127-team-gameplay/teams-verification.json) et la [revue indépendante](production/20261127-team-gameplay/INDEPENDENT_REVIEW.md) précisent durées, limites et corrections. Quatre captures du vrai Canvas vérifient les corps et les états d’équipe. Les entrées utilisent les poses déjà intégrées : aucun cycle dessiné de tag n’est annoncé. Supers duos, Ruptures collectives, scènes dramatiques, clashes/QTE, réseau et équipes contre Boss restent ouverts.
+
+### 22.2. Une extension originale complète en conception
+
+La [bible des Lignes de Marée](extensions/lignes-de-maree/BIBLE_EXTENSION.md) organise **147 fiches** dans une région côtière fictive, à une date volontairement non fixée. Dix spécialistes cherchent à remettre en circulation des cargaisons, des ressources et le droit de passage. Le récit ne modifie pas les événements officiels et ne crée ni nouvelle extinction, ni pouvoir DOOMS gratuit, ni propriété hématique universelle. Les [sources](extensions/lignes-de-maree/SOURCES.md) établissent les contraintes ; noms, lieux, personnages, règles chiffrées et intrigues restent des créations du projet.
+
+| Domaine | Conception reçue | Réalisation reçue |
+| --- | ---: | --- |
+| Personnages originaux | 10 fiches, 30 spéciales, 30 costumes conçus, 10 parcours | 10 postures de base ; aucun nouveau kit jouable |
+| Stages | 20 lieux, 4 secteurs, 24 liaisons réciproques | 20 panoramas et arènes statiques locales |
+| Ennemis | 20 comportements, signaux et contres | 20 silhouettes de base ; IA à produire |
+| Boss | 20 rencontres de trois phases | 20 bases visuelles ; rencontres à produire |
+| Accessoires / gadgets / véhicules | 20 / 10 / 4 fiches | Bases et mécanique propres à produire |
+| Projectiles / pièces mobiles | 12 fiches | Fichiers détachés et comportements à produire |
+| Missions / bonus / duos | 20 / 6 / 5 fiches | Déroulement écrit ; scénarios runtime à produire |
+
+### 22.3. Réception visuelle et accès au jeu
+
+Les **70 PNG natifs**, un sujet ou un panorama par fichier, sont conservés sans retouche ni redimensionnement de source. Le [catalogue interactif](../../modes/echos-de-la-greve/extension.html) filtre les 147 dossiers, affiche leur art réel et leurs liens, et distingue « Base visuelle reçue » de « Arène statique jouable ». Il n’ajoute pas de combattant à partir d’une image seule.
+
+Les vingt panoramas sont intégrés au choix local et au relais. La mesure `floorY` conserve leur ratio et aligne la dalle visible avec le sol du moteur, y compris aux limites de caméra. Les arènes déjà intégrées conservent leur ancien rendu. Les **45 configurations locales** comprennent les 25 précédentes et ces 20 ajouts ; 44 sont compatibles avec Relais de liaison. Une arène statique ne comprend pas encore ses cinq plans autonomes, sa météo propre, son objectif de mission ni sa transition de campagne.
+
+Le [bilan courant](production/20261127-lignes-de-maree/BILAN.md), l’[inventaire natif](production/20261127-lignes-de-maree/assets-manifest.json), la [recette du catalogue](production/20261127-lignes-de-maree/catalogue-verification.json) et la [recette de livraison](production/20261127-lignes-de-maree/delivery-verification.json) fixent les unités réelles. Les 450 rasters et 33 SVG de base, puis les 19 PNG de fidélité, sont préservés : **539 rasters dans les assets**, hors candidats écartés et captures.
+
+### 22.4. Manquants conservés dans le suivi
+
+La réalisation suivante exige les cycles des dix originaux, leurs collisions et techniques, les vingt IA et vingt rencontres, les vingt missions, les cent couches de décor, les objets séparés et les cinq duos. Les corrections canoniques refusées par le service de génération dans le complément précédent restent non reçues ; aucune création originale ne les remplace. Les manquants DS2 et des autres œuvres restent suivis dans le registre. La recette actuelle distingue moteur réel, Canvas natif, DOM simulé et HTTP ; elle ne certifie pas une session de navigateur ni de manette physique.

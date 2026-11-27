@@ -1,11 +1,14 @@
 'use strict';
-/* node modes/echos-de-la-greve/qa/progression.cjs [--browser] */
+/* node modes/echos-de-la-greve/qa/progression.cjs [--browser] [--output=<directory>] */
 const fs=require('node:fs'),path=require('node:path'),vm=require('node:vm'),assert=require('node:assert/strict');
-const base=path.resolve(__dirname,'..'),repo=path.resolve(base,'../..'),output=path.join(repo,'docs/combat/production/20261127-extensions');
+const {execFileSync}=require('node:child_process'),{createHash}=require('node:crypto');
+const base=path.resolve(__dirname,'..'),repo=path.resolve(base,'../..');
+const output=path.resolve(process.argv.find(arg=>arg.startsWith('--output='))?.slice(9)||path.join(repo,'docs/combat/production/20261127-extensions'));
 const host={},context=vm.createContext({window:host,globalThis:host,console});
 for(const file of ['content.js','assets.js','static-assets-data.js','progression-data.js','progression.js'])vm.runInContext(fs.readFileSync(path.join(base,file),'utf8'),context,{filename:file});
 const api=host.StrandProgression,catalogue=host.StrandProgressionData.build(host.StrandContent,host.StrandAssets,host.StrandStaticCatalogue),fighterIds=Object.keys(host.StrandContent.fighters),memories=catalogue.filter(item=>item.category==='memories');
-const report={date:'2026-11-27',baseCommit:'1f7a9cd615b6c60301c29cd59c93515988591e2d',catalogue:{},groups:[],browser:{status:'not-run',reason:'Use --browser for real Chromium checks.'}};
+const report={date:new Date().toISOString(),baseCommit:execFileSync('git',['rev-parse','HEAD'],{cwd:repo}).toString().trim(),
+  catalogue:{},groups:[],browser:{status:'not-run',reason:'Use --browser for real Chromium checks.'}};
 function storage(initial={}) {const values=new Map(Object.entries(initial).map(([key,value])=>[key,typeof value==='string'?value:JSON.stringify(value)]));return {writes:[],values,getItem:key=>values.get(key)||null,setItem(key,value){values.set(key,value);this.writes.push(key);},removeItem:key=>values.delete(key)};}
 function store(source,now=1000){return api.createStore({storage:source,catalogue,fighterIds,now:()=>now});}
 function group(name,check){check();report.groups.push({name,status:'pass'});console.log('PASS '+name);}
@@ -13,12 +16,17 @@ function stateFor(source){return store(source).snapshot();}
 function lessonFacts(fighter,ids=['distance','guard-high','signatures','combo']){return {version:1,completed:Object.fromEntries(ids.map(id=>[id,{runs:1,fighters:[fighter]}])),resume:{id:'distance',fighter}};}
 const sam=memories.find(item=>item.fighter==='sam');
 for(const [key] of Object.entries(host.StrandProgressionData.categories))report.catalogue[key]=catalogue.filter(item=>item.category===key).length;
-group('Catalogue: huit souvenirs, aucune image absente et IDs uniques',()=>{assert.equal(memories.length,8);assert.equal(new Set(catalogue.map(item=>item.id)).size,catalogue.length);for(const item of catalogue)if(item.preview)assert.ok(fs.existsSync(path.join(base,item.preview)),item.preview);});
+group('Catalogue: 59 dossiers, sept bases DS2, huit souvenirs et IDs uniques',()=>{assert.equal(catalogue.length,59);assert.equal(catalogue.filter(item=>item.category==='future').length,7);assert.equal(memories.length,8);assert.equal(new Set(catalogue.map(item=>item.id)).size,catalogue.length);for(const item of catalogue)if(item.preview)assert.ok(fs.existsSync(path.join(base,item.preview)),item.preview);});
 group('Nouveau profil: tous les contenus déjà disponibles restent ouverts',()=>{const state=stateFor(storage());for(const item of catalogue.filter(item=>item.included))assert.equal(api.resolve(item,state).usable,true,item.id);assert.equal(Object.keys(state.grants).length,0);for(const item of memories)assert.equal(api.resolve(item,state).label,'Archive scellée');});
 group('Rétroactivité: chapitre final enregistré',()=>{const state=stateFor(storage({'echos.v1.chapters':{sam:3}}));assert.ok(state.grants['memory-sam']);assert.equal(Object.keys(state.grants).length,1);});
 group('Rétroactivité: épilogue conservé après reprise d’histoire',()=>{const state=stateFor(storage({'echos.v1.chapters':{sam:0},'echos.v1.scenes':{'sam-ending':true}}));assert.ok(state.grants['memory-sam']);});
 group('Valeurs de chapitre et scène incohérentes ignorées',()=>{const state=stateFor(storage({'echos.v1.chapters':{sam:'3',fragile:4,higgs:-1},'echos.v1.scenes':{'cliff-ending':'true'}}));assert.equal(Object.keys(state.grants).length,0);});
 group('Voie alternative: quatre exercices avec le même combattant',()=>{const state=stateFor(storage({'echos.lessons.v1':lessonFacts('sam')}));assert.ok(state.grants['memory-sam']);assert.equal(Object.keys(state.grants).length,1);});
+group('Le nouvel exercice de défi ne remplace aucun des quatre exercices historiques',()=>{for(const fighter of fighterIds){
+  assert.equal(Object.keys(stateFor(storage({'echos.lessons.v1':lessonFacts(fighter,['taunt'])})).grants).length,0);
+  assert.equal(Object.keys(stateFor(storage({'echos.lessons.v1':lessonFacts(fighter,['distance','guard-high','signatures','taunt'])})).grants).length,0);
+  const historical=stateFor(storage({'echos.lessons.v1':lessonFacts(fighter)}));assert.ok(historical.grants['memory-'+fighter]);assert.equal(Object.keys(historical.grants).length,1);
+}});
 group('ET: exercice manquant ou validé avec un autre personnage',()=>{const data=lessonFacts('sam',['distance','guard-high','signatures']);data.completed.combo={runs:1,fighters:['fragile']};assert.equal(Object.keys(stateFor(storage({'echos.lessons.v1':data})).grants).length,0);});
 group('OU: une histoire suffit sans exiger le dojo',()=>{const result=api.evaluateCondition(sam.condition,{routes:{sam:true},lessons:{}});assert.equal(result.met,true);assert.equal(result.children[1].met,false);});
 group('Idempotence: source, date et une seule écriture',()=>{const source=storage({'echos.v1.chapters':{sam:3}}),instance=store(source,1234);assert.equal(source.writes.length,1);for(let i=0;i<5;i++)instance.refresh();assert.equal(source.writes.length,1);assert.equal(instance.snapshot().grants['memory-sam'].acquiredAt,1234);assert.equal(instance.snapshot().grants['memory-sam'].source,'rule:memory-sam:v1');assert.equal(instance.snapshot().newlyGranted.length,0);});
@@ -107,5 +115,5 @@ async function browserChecks() {
   } finally {if(browser)await browser.close();await new Promise(resolve=>server.close(resolve));}
 }
 fs.mkdirSync(output,{recursive:true});
-function writeReport(){fs.writeFileSync(path.join(output,'progression-verification.json'),JSON.stringify(report,null,2)+'\n');console.log(JSON.stringify({groups:report.groups.length,catalogue:report.catalogue,browser:report.browser.status}));}
+function writeReport(){report.sourceSha256=Object.fromEntries(['content.js','assets.js','static-assets-data.js','progression-data.js','progression.js','progression.html','progression.css','app.js','lessons.js','qa/progression.cjs'].map(file=>[file,createHash('sha256').update(fs.readFileSync(path.join(base,file))).digest('hex')]));fs.writeFileSync(path.join(output,'progression-verification.json'),JSON.stringify(report,null,2)+'\n');console.log(JSON.stringify({groups:report.groups.length,catalogue:report.catalogue,browser:report.browser.status}));}
 browserChecks().then(writeReport).catch(error=>{report.browser={status:'blocked',reason:String(error.message).split('Call log:')[0].slice(0,2500),scope:'Browser launch failed; no browser interaction or screenshot claimed.'};writeReport();console.error(error.message);process.exitCode=1;});

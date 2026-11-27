@@ -1,0 +1,2428 @@
+{
+  "schema_version": 1,
+  "base_commit": "7e000d36f2eb0fa4578b545bfb3d8b334acd516a",
+  "count": 450,
+  "png": 323,
+  "webp": 127,
+  "svgCount": 33,
+  "images": [
+    {
+      "path": "modes/echos-de-la-greve/assets/bosses/giant/attack.png",
+      "bytes": 1107653,
+      "git_blob_sha": "d61440f5eabb796d635900b3316b0940db2f2014"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/bosses/giant/idle.png",
+      "bytes": 1427523,
+      "git_blob_sha": "633ba22649da37a51fc71c13eb9084c3510225fa"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/bosses/giant/stagger.png",
+      "bytes": 1858223,
+      "git_blob_sha": "f6c2a421b1c71966b65a68c52e7a10476edc1504"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/bosses/lion/attack.png",
+      "bytes": 1647048,
+      "git_blob_sha": "dc5d36db0c73e058261568d8bd0fc2f148e37d2e"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/bosses/lion/idle.png",
+      "bytes": 1537458,
+      "git_blob_sha": "23b8dfdb135bfa9f4327fce2138252fe5ec45f1a"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/bosses/lion/stagger.png",
+      "bytes": 1346988,
+      "git_blob_sha": "282140d371698c56ed4bcff72a619013263d13b6"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/bosses/mule-truck/damaged.png",
+      "bytes": 1999214,
+      "git_blob_sha": "c3aaae47588a7c937d8406fa3d4f231e728d89f9"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/bosses/mule-truck/idle.png",
+      "bytes": 1854409,
+      "git_blob_sha": "a7d96fc8d462fc37540db869376473d25746a4bd"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/bosses/squid/attack.png",
+      "bytes": 1385258,
+      "git_blob_sha": "d66e2078f20949f2bd7385248ad5db1a43f605e2"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/bosses/squid/idle.png",
+      "bytes": 1280064,
+      "git_blob_sha": "940cd94a62b80175afebfc3c4891e86dd3de56af"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/bosses/squid/stagger.png",
+      "bytes": 1387721,
+      "git_blob_sha": "cc5253f4c9b7627893397eba167bdd4bbc738ef8"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/bosses/whale/attack.png",
+      "bytes": 1466230,
+      "git_blob_sha": "8bbfea3d509951cfba80033deca765ff1c419494"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/bosses/whale/idle.png",
+      "bytes": 1497304,
+      "git_blob_sha": "95d50b9170496fec2c79eb7e603d5c8fb409d194"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/bosses/whale/stagger.png",
+      "bytes": 1370051,
+      "git_blob_sha": "7cfdd13cda1d7ae8916a8f535024fb5b1099a38c"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/fighters/cliff-action.webp",
+      "bytes": 231448,
+      "git_blob_sha": "148e1a73aa73007117f472a115d4f360646a273f"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/fighters/cliff-hit.webp",
+      "bytes": 162268,
+      "git_blob_sha": "4f893ea62cc6b588eb430691703d7e0ed0b0437c"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/fighters/cliff-jump.png",
+      "bytes": 2159513,
+      "git_blob_sha": "ea5fcb0e0938349f0bbf2bbb42ccf167846a07e8"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/fighters/cliff-portrait.webp",
+      "bytes": 392910,
+      "git_blob_sha": "137106e090db80a598ecd0031180bdb7846151b5"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/fighters/cliff-stance.webp",
+      "bytes": 233026,
+      "git_blob_sha": "e69b2444fa5f7fb232a28aaae021dc883cfac23b"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/fighters/cliff-step.webp",
+      "bytes": 161544,
+      "git_blob_sha": "5be69373a7afa9e702760ae076f07a8a84e677b0"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/fighters/cliff/apex.png",
+      "bytes": 2180940,
+      "git_blob_sha": "b19f9dd592195934d64013c154e32bc00e935c2f"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/fighters/cliff/crouch.png",
+      "bytes": 1734522,
+      "git_blob_sha": "bfeb90090afbf68a731c77107dfbd15335c0fcd6"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/fighters/cliff/fall.png",
+      "bytes": 2088554,
+      "git_blob_sha": "320fda5d0004eb9d05caff25078aed0c39be5ebf"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/fighters/cliff/guard.png",
+      "bytes": 2124158,
+      "git_blob_sha": "9c8056255505168add427d13c2fd74b661cc6581"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/fighters/cliff/rise.png",
+      "bytes": 2032377,
+      "git_blob_sha": "d656e0b24e3c8c693ddebebf5bf220c8adbb0e87"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/fighters/diehardman-action.webp",
+      "bytes": 53002,
+      "git_blob_sha": "aa277493dab144fab03fd9c7967bb547f26f6a81"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/fighters/diehardman-hit.webp",
+      "bytes": 52950,
+      "git_blob_sha": "978ba3f37a49e1150c5d5f04e649d87cf6b5ad37"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/fighters/diehardman-jump.png",
+      "bytes": 774830,
+      "git_blob_sha": "f2d56718c615689e993c1757f8d4feb388e875f0"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/fighters/diehardman-portrait.webp",
+      "bytes": 44386,
+      "git_blob_sha": "1e6f9a9328c31a160ebe379a925150f6e88e30ad"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/fighters/diehardman-stance.webp",
+      "bytes": 47898,
+      "git_blob_sha": "3370ae9aedb9c8fe305ca0e11d7e5b0370520be6"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/fighters/diehardman-step.webp",
+      "bytes": 51126,
+      "git_blob_sha": "0f5b319ae0daa9407537fc48356a04157d64af74"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/fighters/diehardman/action.png",
+      "bytes": 850971,
+      "git_blob_sha": "9f5842c94971e7ca4015984850079a3017f9a2d2"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/fighters/diehardman/apex.png",
+      "bytes": 1344753,
+      "git_blob_sha": "7b7f9e74ee0e9791d08df7bc294f32925517f2e1"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/fighters/diehardman/crouch.png",
+      "bytes": 1264064,
+      "git_blob_sha": "076a4ca33d7ef1cf17124f4275e5161d26cbae8a"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/fighters/diehardman/fall.png",
+      "bytes": 1029543,
+      "git_blob_sha": "0acc16b281488e818c70dd1fdb8dfed5a3f86412"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/fighters/diehardman/guard.png",
+      "bytes": 1263762,
+      "git_blob_sha": "c433fa3071867125567e239313a65018422bf207"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/fighters/diehardman/hit.png",
+      "bytes": 1666818,
+      "git_blob_sha": "1cac2ab81957a5f414ad42d2f69dd8e9a1682052"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/fighters/diehardman/jump.png",
+      "bytes": 994131,
+      "git_blob_sha": "ebd218a86170347ee1463256d5908444ee2acf7e"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/fighters/diehardman/portrait.png",
+      "bytes": 1570229,
+      "git_blob_sha": "736b1bd97c7fcb40c37d16ae9788818ca716545b"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/fighters/diehardman/rise.png",
+      "bytes": 1213590,
+      "git_blob_sha": "816160cee1bdcc2f47ec4786aefadb35b2910bc1"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/fighters/diehardman/stance.png",
+      "bytes": 1189390,
+      "git_blob_sha": "3cea540971a204cfcadfe3fa50ad3e7c95104c66"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/fighters/diehardman/step.png",
+      "bytes": 1582454,
+      "git_blob_sha": "2df09a820ee6f18cbf3897d4c3821d6cd5c139da"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/fighters/fragile-action.webp",
+      "bytes": 253700,
+      "git_blob_sha": "a0e6d4cb47cc6b4a32976e16d643cd6ca6d971ac"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/fighters/fragile-hit.webp",
+      "bytes": 235988,
+      "git_blob_sha": "ded0a3327e7a1bdbc79246c0260eaff83820a33e"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/fighters/fragile-jump.png",
+      "bytes": 1762913,
+      "git_blob_sha": "14c5d4861d73f79aa578395b7aedfe272da9ae15"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/fighters/fragile-portrait.webp",
+      "bytes": 298834,
+      "git_blob_sha": "11fa38f619dffcf7f8756c51b217fbcd3a38bfb2"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/fighters/fragile-stance.webp",
+      "bytes": 210680,
+      "git_blob_sha": "1cf14d55a47036a789cec79b88743e6181d9f7ea"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/fighters/fragile-step.webp",
+      "bytes": 245254,
+      "git_blob_sha": "3acd4338f4aebcc6ab5a11cec76f2da25ebf8d2d"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/fighters/fragile/apex.png",
+      "bytes": 1490708,
+      "git_blob_sha": "163bb6b14305918f1f10050e1c621d106029ad1f"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/fighters/fragile/crouch.png",
+      "bytes": 2065682,
+      "git_blob_sha": "6b5e63853ddf4067d7ca1afcd464b032398fb999"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/fighters/fragile/fall.png",
+      "bytes": 1260820,
+      "git_blob_sha": "132c53a642c6a8ea8f1f5aae1e8cced56bca10fc"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/fighters/fragile/guard.png",
+      "bytes": 1428570,
+      "git_blob_sha": "ad29f318aba003df3f4aa5d4a9d75ac02bef5809"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/fighters/fragile/rise.png",
+      "bytes": 1826975,
+      "git_blob_sha": "a0d21e1af54a4906c6f2a6e2a5090c73463b01c9"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/fighters/heartman-action.webp",
+      "bytes": 30970,
+      "git_blob_sha": "a25bd4acbb7f834743e94d4139514cd9d9f64193"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/fighters/heartman-hit.webp",
+      "bytes": 46162,
+      "git_blob_sha": "46d8c468b76d990e5e27794f602a69424535a4d3"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/fighters/heartman-jump.png",
+      "bytes": 1685385,
+      "git_blob_sha": "782697a64f78e8b351af30227b5ace32b2179de9"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/fighters/heartman-portrait.webp",
+      "bytes": 63210,
+      "git_blob_sha": "21ddb6d09a9bc59fd7b9f4095b91ba793b988b70"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/fighters/heartman-stance.webp",
+      "bytes": 25652,
+      "git_blob_sha": "57346d90058a8a2372c13abdb9513f2db74de42e"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/fighters/heartman-step.webp",
+      "bytes": 38740,
+      "git_blob_sha": "db51d77b83fdc3c847bde81e95cf607de4d00a78"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/fighters/heartman/action.png",
+      "bytes": 1575223,
+      "git_blob_sha": "ce06e9f4e137a1da353e229e41b3d2d961e9e55a"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/fighters/heartman/apex.png",
+      "bytes": 1788201,
+      "git_blob_sha": "45b5cf921cd6eb6fabe0b2ed0aa33718e7c24c52"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/fighters/heartman/crouch.png",
+      "bytes": 1212008,
+      "git_blob_sha": "b54942c05e6341419f69361b7f66890a6ee3ba2c"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/fighters/heartman/fall.png",
+      "bytes": 1675765,
+      "git_blob_sha": "fb34f9d0111afb888295730e6f4293e7f830ce21"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/fighters/heartman/guard.png",
+      "bytes": 1745097,
+      "git_blob_sha": "f3b56af5d243705f92bd6e4cde7a403a8e367e8e"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/fighters/heartman/hit.png",
+      "bytes": 1654098,
+      "git_blob_sha": "0fd571f9ee94b75f2896d851838abf9bd55696b1"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/fighters/heartman/portrait.png",
+      "bytes": 1638232,
+      "git_blob_sha": "655785359d37b5d2ac597c197fd38ab6dec2f916"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/fighters/heartman/rise.png",
+      "bytes": 1602893,
+      "git_blob_sha": "493e9f9c6efdac5e00cedefb25234450b0b21282"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/fighters/heartman/stance.png",
+      "bytes": 1713298,
+      "git_blob_sha": "e89cd5359408a30506e14a63f952bb6f2a3f7960"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/fighters/heartman/step.png",
+      "bytes": 1822480,
+      "git_blob_sha": "51f196343ed8ba837d88d3659a3448423926f42a"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/fighters/higgs-action.webp",
+      "bytes": 259330,
+      "git_blob_sha": "13e4da79d6eace65fde43c55b9903186987ecf83"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/fighters/higgs-hit.webp",
+      "bytes": 222228,
+      "git_blob_sha": "4207cd5644a4decb777c3771eff8d5b3a8ee15db"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/fighters/higgs-jump.png",
+      "bytes": 1397219,
+      "git_blob_sha": "d9cd39a914f4aefa2b42d8cb7ea111bb91406fd1"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/fighters/higgs-portrait.webp",
+      "bytes": 309502,
+      "git_blob_sha": "0cf6eeb389bd0241838cb17d6115aad5b7b5d2a7"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/fighters/higgs-stance.webp",
+      "bytes": 163026,
+      "git_blob_sha": "addfad135cabd56881e45e553635130ef493af74"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/fighters/higgs-step.webp",
+      "bytes": 203886,
+      "git_blob_sha": "e22c0c6ceef3932715c453c2ca5c477ece388db9"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/fighters/higgs/action.png",
+      "bytes": 2017810,
+      "git_blob_sha": "92ed479ccfd0788cc015663fb0b4e50a2137b1ae"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/fighters/higgs/apex.png",
+      "bytes": 1553540,
+      "git_blob_sha": "0cfdf3941a3ccc29ebb41b9c5fcdda6cc78ca3d7"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/fighters/higgs/crouch.png",
+      "bytes": 2258989,
+      "git_blob_sha": "dd9f6d3bbb6be8634866a9df194ee8137a212a4b"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/fighters/higgs/fall.png",
+      "bytes": 1541669,
+      "git_blob_sha": "abd96f7d45cdad6e210720b3fffa038d2e8de45f"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/fighters/higgs/guard.png",
+      "bytes": 1804744,
+      "git_blob_sha": "fd00384b28864b3ea5917a4143c486496c2fabf7"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/fighters/higgs/hit.png",
+      "bytes": 1738676,
+      "git_blob_sha": "64cbea2c7484345afdad2f14aa592fc4c4fbf90e"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/fighters/higgs/jump.png",
+      "bytes": 1609351,
+      "git_blob_sha": "7aee67aa18fe97dfe2dec53de343b78274143f9f"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/fighters/higgs/portrait.png",
+      "bytes": 2119285,
+      "git_blob_sha": "9e9ff7c2333737cc3ab2b87ee07d167f384da2ea"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/fighters/higgs/rise.png",
+      "bytes": 1527304,
+      "git_blob_sha": "a8aeb74f5d967d5c5d421c68bc677ca2430973f8"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/fighters/higgs/stance.png",
+      "bytes": 1945551,
+      "git_blob_sha": "d32f4982688271f140a947f8c66b55edcacedccc"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/fighters/higgs/step.png",
+      "bytes": 1398510,
+      "git_blob_sha": "c5a5ba4d5da4c96337232f4e2ddc1c1979868960"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/fighters/mama-action.webp",
+      "bytes": 58356,
+      "git_blob_sha": "3e51937bdf33816a4c236efb7618fcc8522c29da"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/fighters/mama-hit.webp",
+      "bytes": 49792,
+      "git_blob_sha": "3b3cf03a4ff88f9a9cef57401b34dc989fdac37c"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/fighters/mama-portrait.webp",
+      "bytes": 67310,
+      "git_blob_sha": "bf2f84dfebfdf0600d1391219590b0268c441eb9"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/fighters/mama-stance.webp",
+      "bytes": 54434,
+      "git_blob_sha": "cddd535d6d099584bb3df95e5c4b0575f1b49962"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/fighters/mama-step.webp",
+      "bytes": 55486,
+      "git_blob_sha": "7e4c7d479a0457c5b85682635e122fe583129b57"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/fighters/mama/atelier/action.png",
+      "bytes": 1886645,
+      "git_blob_sha": "0cd1c76c4d3ace9f6774973c8aadea6d112d006b"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/fighters/mama/atelier/apex.png",
+      "bytes": 1971858,
+      "git_blob_sha": "ec500fa140f8556c7c272ab88d1d8cfccedf7780"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/fighters/mama/atelier/apex.webp",
+      "bytes": 110082,
+      "git_blob_sha": "56d0f7509359ab41ab7c87b10240322bc575dfa3"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/fighters/mama/atelier/crouch.png",
+      "bytes": 1302188,
+      "git_blob_sha": "4dd7ffdcc2fab038476851fefb50dd9a379ee1c8"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/fighters/mama/atelier/crouch.webp",
+      "bytes": 107954,
+      "git_blob_sha": "9dbf73564dbc477883b1432383b3dfd642b0320c"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/fighters/mama/atelier/fall.png",
+      "bytes": 1836803,
+      "git_blob_sha": "1e3fabc15f73aad34e287de56b5320cc66fefa6e"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/fighters/mama/atelier/fall.webp",
+      "bytes": 120282,
+      "git_blob_sha": "83be7268545daa20ece5b183638f6f518345a66f"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/fighters/mama/atelier/guard.png",
+      "bytes": 1905530,
+      "git_blob_sha": "7369799431bc2d04f2384f11e8ed9556d2303196"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/fighters/mama/atelier/guard.webp",
+      "bytes": 114432,
+      "git_blob_sha": "0f740ec5628393684b5a2840e7c6c216c5d84d5c"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/fighters/mama/atelier/hit.png",
+      "bytes": 1862100,
+      "git_blob_sha": "75c293ff5e7f371175b30f4b92d0f6bb666495b2"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/fighters/mama/atelier/portrait.png",
+      "bytes": 1617366,
+      "git_blob_sha": "03fa02f38025fc71878533604de2f9faedbb0b7f"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/fighters/mama/atelier/rise.png",
+      "bytes": 1676600,
+      "git_blob_sha": "d78412e1def9f1d66e8293b03459138afc262674"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/fighters/mama/atelier/rise.webp",
+      "bytes": 112372,
+      "git_blob_sha": "c05872bba3c0da74a1c096b46bff239c0cd4ce2f"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/fighters/mama/atelier/stance.png",
+      "bytes": 1572939,
+      "git_blob_sha": "8b92ccd30c0ebc981ca3d0bb1e641d11b3a19435"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/fighters/mama/atelier/step.png",
+      "bytes": 1896873,
+      "git_blob_sha": "57c0ef096b8f038a7ca497cdc701f4f9502adbbc"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/fighters/mama/parts/boot.webp",
+      "bytes": 5032,
+      "git_blob_sha": "b939fd551df4dfdf8b706083f05bbe87fae8a26f"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/fighters/mama/parts/cuff.webp",
+      "bytes": 1864,
+      "git_blob_sha": "b8e8ad69168d6eb8a131991840be9e304eff6b52"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/fighters/mama/parts/forearm.webp",
+      "bytes": 4332,
+      "git_blob_sha": "8ae7bec26d12db1bbb9920cedc78c459bd64883a"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/fighters/mama/parts/gauntlet.webp",
+      "bytes": 4748,
+      "git_blob_sha": "9f3d06eeff99275c14a9c99a283d9da282132904"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/fighters/mama/parts/hand.webp",
+      "bytes": 2872,
+      "git_blob_sha": "ee6c5b29a9ad17dab3c3b8cfa81dffe4606cdd8d"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/fighters/mama/parts/harness.webp",
+      "bytes": 17870,
+      "git_blob_sha": "321fe2523845bfba59b5ca2310a2bab3806b56ed"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/fighters/mama/parts/head.webp",
+      "bytes": 16002,
+      "git_blob_sha": "f6d8af2678798ba7aecfb12434297afc726589f3"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/fighters/mama/parts/helmet.webp",
+      "bytes": 10436,
+      "git_blob_sha": "e49e19c99b34427d8f7842b50b6feb0a2211fdb7"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/fighters/mama/parts/kneepad.webp",
+      "bytes": 6642,
+      "git_blob_sha": "2deaf9e972dc0060d1aab920e339ed0d319f649f"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/fighters/mama/parts/pauldron.webp",
+      "bytes": 5722,
+      "git_blob_sha": "3ba588e2c2b01ede4db187eae56e54513182e56b"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/fighters/mama/parts/reel.webp",
+      "bytes": 9962,
+      "git_blob_sha": "f2d73d8eadeaffdd89ee19a45e875c68ef0fd093"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/fighters/mama/parts/remote.webp",
+      "bytes": 4516,
+      "git_blob_sha": "c8d1a4a6cbff5b0bb1f277ef521707074dd93e1b"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/fighters/mama/parts/shin.webp",
+      "bytes": 10612,
+      "git_blob_sha": "392949d5a808086f3a9a595b7a43bbda4c718eae"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/fighters/mama/parts/thigh.webp",
+      "bytes": 13170,
+      "git_blob_sha": "cf4082729288b920754d2180a1404b734d74fb49"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/fighters/mama/parts/torso.webp",
+      "bytes": 29916,
+      "git_blob_sha": "5f2de075cf73d0454f5d1b801d7581e46d1681a7"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/fighters/mama/parts/upperArm.webp",
+      "bytes": 5400,
+      "git_blob_sha": "dcea54b25e995490c475d564d315a4667e79ae55"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/fighters/mama/viaduc/action.png",
+      "bytes": 1823960,
+      "git_blob_sha": "d2fa73012ef5c88fe7c4825c22cb96df85b67a12"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/fighters/mama/viaduc/action.webp",
+      "bytes": 135558,
+      "git_blob_sha": "f32ce577009bc2b9667ec61f5a15de8fc7068ffa"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/fighters/mama/viaduc/apex.png",
+      "bytes": 2174873,
+      "git_blob_sha": "d7804c27ffab0fd194b4c7398c1c4a95ca9c5637"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/fighters/mama/viaduc/apex.webp",
+      "bytes": 127314,
+      "git_blob_sha": "122e413b663365ff1c5ea06c3ca65fe5151427e9"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/fighters/mama/viaduc/crouch.png",
+      "bytes": 2129349,
+      "git_blob_sha": "9ca8a67a49de2de1614ffedf9b63b9d38f1a19aa"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/fighters/mama/viaduc/crouch.webp",
+      "bytes": 123656,
+      "git_blob_sha": "76a5bd67d087cc698c972a79fbd1bd00ee6d2a82"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/fighters/mama/viaduc/fall.png",
+      "bytes": 1869357,
+      "git_blob_sha": "0d213432a396f062ab235a433c9b88e6fee6870a"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/fighters/mama/viaduc/fall.webp",
+      "bytes": 135826,
+      "git_blob_sha": "173c29ef46f876e6251c1abdfc5341cdc5b9e295"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/fighters/mama/viaduc/guard.png",
+      "bytes": 1963426,
+      "git_blob_sha": "73ceb5f4828cc2579a6e4058a6fb4db5bd8db823"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/fighters/mama/viaduc/guard.webp",
+      "bytes": 131862,
+      "git_blob_sha": "512920823ac401f25def4b41abb0b5d79db4ef75"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/fighters/mama/viaduc/hit.png",
+      "bytes": 2056608,
+      "git_blob_sha": "541111f4608671869740554d65ced4e420b47c98"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/fighters/mama/viaduc/hit.webp",
+      "bytes": 128364,
+      "git_blob_sha": "2d5af1c9bad2b314f552e7561d7606a99ad6607c"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/fighters/mama/viaduc/portrait.png",
+      "bytes": 1598683,
+      "git_blob_sha": "4580ff24e531a65d5218f1bc9ce55b979f0a369d"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/fighters/mama/viaduc/portrait.webp",
+      "bytes": 119272,
+      "git_blob_sha": "8cf67cedf096984daf2cd491ce1022fcb4393f6e"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/fighters/mama/viaduc/rise.png",
+      "bytes": 1826467,
+      "git_blob_sha": "4220bd171910ec118e645640c2f706f9a9bbc79c"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/fighters/mama/viaduc/rise.webp",
+      "bytes": 128456,
+      "git_blob_sha": "72d87444e42af0c3cc7c25b7ab358c8491fafe80"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/fighters/mama/viaduc/stance.png",
+      "bytes": 1804335,
+      "git_blob_sha": "378bdbad3745b52e819ca88082ed373d8a70b28d"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/fighters/mama/viaduc/stance.webp",
+      "bytes": 135502,
+      "git_blob_sha": "41d5a22d95c4afcfac21d8f9b3dec2f8fd472713"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/fighters/mama/viaduc/step.png",
+      "bytes": 1880229,
+      "git_blob_sha": "3fe8f5373abc8205bcaf9ad6b0cb59d85e319db1"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/fighters/mama/viaduc/step.webp",
+      "bytes": 137594,
+      "git_blob_sha": "6da4475ca87385d4ef396d54362d5ac94c0860f5"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/fighters/mule-action.webp",
+      "bytes": 326604,
+      "git_blob_sha": "1157376193a49b60cd4677dedd25e2ce766a96fd"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/fighters/mule-hit.webp",
+      "bytes": 350688,
+      "git_blob_sha": "e8661ef057231deb4bd9df82494eff03594573a4"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/fighters/mule-jump.png",
+      "bytes": 2364305,
+      "git_blob_sha": "4ae4be191236a493a6a4d9b53910bfaffc9b1495"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/fighters/mule-portrait.webp",
+      "bytes": 595356,
+      "git_blob_sha": "0d7b26aec5447b91e2888aa722cb1255178ab953"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/fighters/mule-stance.webp",
+      "bytes": 405824,
+      "git_blob_sha": "5444e10eaf0ad273f345bd7dfbcdbcee094f6d0a"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/fighters/mule-step.webp",
+      "bytes": 294962,
+      "git_blob_sha": "711d09dbb8456b70c80e6664748476e1f20e8b79"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/fighters/mule/apex.png",
+      "bytes": 2273159,
+      "git_blob_sha": "176caa016e060052ff35e232726ef155fa657a51"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/fighters/mule/crouch.png",
+      "bytes": 1958872,
+      "git_blob_sha": "cfc08d6b514034dfe3136c83ecf6e5411d08d345"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/fighters/mule/fall.png",
+      "bytes": 2244087,
+      "git_blob_sha": "633f11d5bc6612bdb7b2f4f10f2942bc3c0cf204"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/fighters/mule/guard.png",
+      "bytes": 1403165,
+      "git_blob_sha": "63ec1122d0588ddc164f9adc51c9c79b378eb06b"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/fighters/mule/rise.png",
+      "bytes": 2091425,
+      "git_blob_sha": "19578f79aaa74b9e8d62f2ffce6c4fcbd9249ac4"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/fighters/sam-action.webp",
+      "bytes": 301386,
+      "git_blob_sha": "d2c7501ff9c04d84ab4c767af4373979d52d02e3"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/fighters/sam-hit.webp",
+      "bytes": 210054,
+      "git_blob_sha": "802bb1604c1580e63eb6c63c43441bd7411e7733"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/fighters/sam-jump.png",
+      "bytes": 2178904,
+      "git_blob_sha": "a59783af85c70d1bb5144188b2fbc0966c3991ee"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/fighters/sam-portrait.webp",
+      "bytes": 357088,
+      "git_blob_sha": "0927124eaa9e924b1b4295f15de552b0e246637e"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/fighters/sam-stance.webp",
+      "bytes": 310066,
+      "git_blob_sha": "40e55af970ffc1e48a2520cf1911fc0953b6070f"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/fighters/sam-step.webp",
+      "bytes": 212574,
+      "git_blob_sha": "df4aed1edcec5c389f2c6476a28be3ee9b7a61b8"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/fighters/sam/apex.png",
+      "bytes": 1586608,
+      "git_blob_sha": "6f53459f13ff31774800e54296b72f59b4b186a3"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/fighters/sam/crouch.png",
+      "bytes": 1683247,
+      "git_blob_sha": "fc51c0a8e7ab8ab79c757f648debf20c0f6a1b4f"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/fighters/sam/fall.png",
+      "bytes": 2076685,
+      "git_blob_sha": "1b142adb6c5c9f7f34004af0dc0cf2c3e6a54e69"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/fighters/sam/guard.png",
+      "bytes": 2059493,
+      "git_blob_sha": "9d434c9da4f45e285b721d05e7c3f4e3eed8ed41"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/fighters/sam/rise.png",
+      "bytes": 2011523,
+      "git_blob_sha": "cd333df000a66338d8568bc267856ee8e0f269e4"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/fighters/support/amelie-portrait.png",
+      "bytes": 1875494,
+      "git_blob_sha": "73fd9a93f38beacbb8dfe207ea66712b289902ed"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/fighters/support/bridget-portrait.png",
+      "bytes": 1674975,
+      "git_blob_sha": "0b61865954a6b2248800223305124e1f461bf216"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/fighters/support/deadman-portrait.png",
+      "bytes": 1698217,
+      "git_blob_sha": "a19ffb6aa74cd463b1ed0c4e7b01b32c47a50249"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/finishers/cliff.webp",
+      "bytes": 227130,
+      "git_blob_sha": "9d30645fd816ed7ae1d74415cfcee5df0e02b7d1"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/finishers/diehardman.webp",
+      "bytes": 182170,
+      "git_blob_sha": "64fbfbcbbc90c2407afd332178f42b3a219f1520"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/finishers/fragile.webp",
+      "bytes": 307214,
+      "git_blob_sha": "19947d8d877a742459787339a555c36369a0ada3"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/finishers/heartman.webp",
+      "bytes": 68958,
+      "git_blob_sha": "fe1b990166dcf3703ae3b14d05634c0521bfd621"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/finishers/higgs.webp",
+      "bytes": 289780,
+      "git_blob_sha": "c1e0f373bd7f875e5bcca5add6207360e58938d8"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/finishers/mama.webp",
+      "bytes": 349366,
+      "git_blob_sha": "a53ff14f2b6cbc9783f2fbbe6131646eaf859225"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/finishers/mule.webp",
+      "bytes": 419778,
+      "git_blob_sha": "5de31254d34c94abf71f0c3ae2b1a4cc285888f9"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/finishers/sam.webp",
+      "bytes": 349760,
+      "git_blob_sha": "521e2e3cb6d3e62c7f981b68e31f3ba1196fb611"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/presentation-20261127/cliff-taunt.png",
+      "bytes": 1813780,
+      "git_blob_sha": "74282328d5ac27cfc3dbf4ac96df22974b70e1c7"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/presentation-20261127/diehardman-taunt.png",
+      "bytes": 1157045,
+      "git_blob_sha": "70d138ffd3db2cdc33a3ea507261753671d5d3d4"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/presentation-20261127/fragile-taunt.png",
+      "bytes": 1230300,
+      "git_blob_sha": "32ccd3bfc6d74b7a9d98d60daee2454f2b9cdfa2"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/presentation-20261127/heartman-taunt.png",
+      "bytes": 1663538,
+      "git_blob_sha": "9a354977fca37d59c821f12013c2205c121c5b21"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/presentation-20261127/higgs-taunt.png",
+      "bytes": 1824960,
+      "git_blob_sha": "94c5757972db35178123a231ad755b4168b5295b"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/presentation-20261127/mama-taunt.png",
+      "bytes": 1708774,
+      "git_blob_sha": "bd702eead2cbb3a28ac3b6a14f353ac92266fd07"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/presentation-20261127/mule-taunt.png",
+      "bytes": 2054759,
+      "git_blob_sha": "106422fbfeda87745b741c5a5a447738c479d45f"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/presentation-20261127/sam-taunt.png",
+      "bytes": 1854687,
+      "git_blob_sha": "8b2a39fe7f4f79e5d8a2d88bf8421210b84df59a"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/projectiles/boss-chiral-ring.png",
+      "bytes": 1506755,
+      "git_blob_sha": "82fcd5093f4fc97714a7795d32b85868eb2784fd"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/projectiles/boss-mule-bolt.png",
+      "bytes": 588287,
+      "git_blob_sha": "9980759642ecf3a4072efa063d09ae8123c9a5f8"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/projectiles/boss-tar-orb.png",
+      "bytes": 966931,
+      "git_blob_sha": "6a0abbc0a900bbb89fdea9f59ca8f41d72f1fcd6"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/projectiles/boss-tar-spike.png",
+      "bytes": 1536140,
+      "git_blob_sha": "ec1995537530f7fafea3585fccfaafc46d6cc8f2"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/projectiles/cliff.png",
+      "bytes": 401259,
+      "git_blob_sha": "bd1abfb361d9ae3eaced7e6dc710696626480fa9"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/projectiles/gate.png",
+      "bytes": 1432283,
+      "git_blob_sha": "09f99a25e54e0079dfaf6eb934e20290f03617fa"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/projectiles/heartman.png",
+      "bytes": 515451,
+      "git_blob_sha": "17210a3374d3dfde9a304c631e41eab1df89c107"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/projectiles/higgs.png",
+      "bytes": 1364731,
+      "git_blob_sha": "8f27a54cb89c3f2b812f4429beb2a5697c8afe23"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/projectiles/memory.png",
+      "bytes": 534569,
+      "git_blob_sha": "6d05f3e94855982ec9ebbca9c8c080f7488d6087"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/projectiles/recall.png",
+      "bytes": 841474,
+      "git_blob_sha": "00452bfdfd31ce2ca7ecf5552492427b65feed0c"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/projectiles/sam.png",
+      "bytes": 568725,
+      "git_blob_sha": "483112f8a1c8878769a2e6e6d587d9970e54f736"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/props/bridge-deck.png",
+      "bytes": 973921,
+      "git_blob_sha": "fd0d16c95d952c56d03ec5b529549fc301de4cdb"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/props/courier-parcel-closed.png",
+      "bytes": 2699841,
+      "git_blob_sha": "b0dbc6aa369dd800cac5189e3352a1e34806d500"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/props/courier-parcel-open.png",
+      "bytes": 1738487,
+      "git_blob_sha": "56d0ce50e09703cb3dfe9850dc636ede3fb63cba"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/props/gold-imprint.png",
+      "bytes": 1047100,
+      "git_blob_sha": "600c058e900474197f5b8060639923d83a14df93"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/props/heartman-monitor.png",
+      "bytes": 2292748,
+      "git_blob_sha": "1ca6624c0c236d55fdc98a0914627a497c22f552"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/props/mule-cargo.webp",
+      "bytes": 491712,
+      "git_blob_sha": "c2b7596a7212572df6b8a2fbc3d4ecfb45733cc9"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/stages/battlefield-distant.png",
+      "bytes": 706636,
+      "git_blob_sha": "b2f73dc3f5bfa120ca093f321d3be3680c3da679"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/stages/battlefield-floor.png",
+      "bytes": 1851095,
+      "git_blob_sha": "5c55fcd7ae8c0f3e78bf0f6891df442ab7220570"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/stages/battlefield-foreground.webp",
+      "bytes": 108118,
+      "git_blob_sha": "6b0e420bf858c30bff8e100f8be4a898411650a4"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/stages/battlefield-midground.png",
+      "bytes": 785605,
+      "git_blob_sha": "da4bc93b95319af0e8f3de2fff55521bf4d22393"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/stages/battlefield-sky.png",
+      "bytes": 1679252,
+      "git_blob_sha": "5318d7c2016e601be9cd258fb2d9ce6dcedb981b"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/stages/battlefield.webp",
+      "bytes": 287318,
+      "git_blob_sha": "65ac3d30218af5fe756b6146590ed7f8f401b39d"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/stages/dunes-ds2-distant.png",
+      "bytes": 1776023,
+      "git_blob_sha": "c2b6fdb13b809041117c3ab65104ed2d05be6bc8"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/stages/dunes-ds2-floor.png",
+      "bytes": 1471746,
+      "git_blob_sha": "8a2c88da8d6f878ae655691c4f59bfac8aace98f"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/stages/dunes-ds2-foreground.png",
+      "bytes": 104522,
+      "git_blob_sha": "6987a8e0dd4a4d6a659981f9a7343bb1eacded51"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/stages/dunes-ds2-midground.png",
+      "bytes": 814548,
+      "git_blob_sha": "9bc97b3f07158b1c374bb6a466b00db71ab9f192"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/stages/dunes-ds2-sky.png",
+      "bytes": 1540440,
+      "git_blob_sha": "b248844b72c4fd0584f3158d25d00e891c71c588"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/stages/firing-range-dc-distant.png",
+      "bytes": 1041614,
+      "git_blob_sha": "27ec47bafc132229c5750e5009067e4b448ffe88"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/stages/firing-range-dc-floor.png",
+      "bytes": 1608287,
+      "git_blob_sha": "6a0a140e466a4bb343304e8bd0348c8031ba1825"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/stages/firing-range-dc-foreground.png",
+      "bytes": 100908,
+      "git_blob_sha": "a71a9641a1b4669535c96ab82ddf35d25804a495"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/stages/firing-range-dc-midground.png",
+      "bytes": 658190,
+      "git_blob_sha": "9ce27faf0a1c4d9854e3ac81a1de413647ff3684"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/stages/firing-range-dc-sky.png",
+      "bytes": 1665014,
+      "git_blob_sha": "edb8a0bfdbc49a6cad40bc929cbedcf06b150d55"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/stages/heartman-lab-distant.png",
+      "bytes": 1344606,
+      "git_blob_sha": "1cee73233915c0321686cf191b2063bf283c8112"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/stages/heartman-lab-floor.png",
+      "bytes": 1822402,
+      "git_blob_sha": "577b7562888acc6ceb2c60d775533190c54a877d"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/stages/heartman-lab-foreground.webp",
+      "bytes": 93684,
+      "git_blob_sha": "318fd8dfdb12baab5bc6261e707cdff03a508fd8"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/stages/heartman-lab-midground.png",
+      "bytes": 374117,
+      "git_blob_sha": "07d41b4487c23a595b75dc69549e99ea2e62b9fa"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/stages/heartman-lab-sky.png",
+      "bytes": 2481182,
+      "git_blob_sha": "46b9f9750c1bc613a42289bd0f4c23b39f302e39"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/stages/heartman-lab.webp",
+      "bytes": 305512,
+      "git_blob_sha": "52d4ecd4246620bb7334c628ed3f6dbbc7f744b2"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/stages/incinerator-distant.png",
+      "bytes": 1296621,
+      "git_blob_sha": "9eb4a949ee4c4c5fa0b1d9798967c9261fb88fe1"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/stages/incinerator-floor.png",
+      "bytes": 2420768,
+      "git_blob_sha": "865b90a42235a49a4af20ed315fea3cd40290bb0"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/stages/incinerator-foreground.png",
+      "bytes": 153111,
+      "git_blob_sha": "cbfeb0c96ed7066f4c74c723dedda6d5f044e169"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/stages/incinerator-midground.png",
+      "bytes": 894376,
+      "git_blob_sha": "d2afe04f3ea07ef8cbdd705b60535adaad1cafae"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/stages/incinerator-sky.png",
+      "bytes": 1773518,
+      "git_blob_sha": "70b32727b43656cf2919a365e4bfabb3c919f8f8"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/stages/incinerator.png",
+      "bytes": 2284761,
+      "git_blob_sha": "8b193db54a85597038098a631bacc2db12aff0a7"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/stages/magellan-ds2-distant.png",
+      "bytes": 370358,
+      "git_blob_sha": "9f7b72fe6f933a4013ebf9b516a2c8e6c1945686"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/stages/magellan-ds2-floor.png",
+      "bytes": 2048430,
+      "git_blob_sha": "2972969d59116859cb91464ecf68f4801c0cdaa0"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/stages/magellan-ds2-foreground.png",
+      "bytes": 188208,
+      "git_blob_sha": "5c0b1e1e35495ee9b66ac8fbc131e6d677f78931"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/stages/magellan-ds2-midground.png",
+      "bytes": 1431026,
+      "git_blob_sha": "457f7dc584e7e488be3fd76ab308a6e6914581c2"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/stages/magellan-ds2-sky.png",
+      "bytes": 1721695,
+      "git_blob_sha": "0dc044faad655cfeca427748e5d07c6ef2990120"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/stages/mama-workshop-distant.png",
+      "bytes": 1353534,
+      "git_blob_sha": "18cf5e1905a5a4e509bf82d11487b3be23bd0c5b"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/stages/mama-workshop-floor.png",
+      "bytes": 2178307,
+      "git_blob_sha": "3b8fde2ec1a10743cdeff82140a465371e42672b"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/stages/mama-workshop-foreground.webp",
+      "bytes": 121076,
+      "git_blob_sha": "ccac9466d73f0be3d8e0317e4571eb8579f2266e"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/stages/mama-workshop-midground.png",
+      "bytes": 665711,
+      "git_blob_sha": "d9bcd4f77db6ebeb7155d555b619ef4c6e809a4d"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/stages/mama-workshop-sky.png",
+      "bytes": 2527086,
+      "git_blob_sha": "39637d8d31ccb290c1c2add65d896df82943d30d"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/stages/mama-workshop.webp",
+      "bytes": 292540,
+      "git_blob_sha": "80cb14c7d91f0b7985c89d6c2faa1e541ad27779"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/stages/mountain-knot-approach-distant.png",
+      "bytes": 1575419,
+      "git_blob_sha": "a02a00b94f2e66022d634af2597e7857df4235e0"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/stages/mountain-knot-approach-floor.png",
+      "bytes": 2169060,
+      "git_blob_sha": "6610e064566c42a30aebc1ff170d79405c2ac26e"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/stages/mountain-knot-approach-foreground.png",
+      "bytes": 144310,
+      "git_blob_sha": "47658c261e212b99e221a092c702c2b3e3bc34f1"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/stages/mountain-knot-approach-midground.png",
+      "bytes": 1055333,
+      "git_blob_sha": "78109f66ef529672474575758dff99052257c22d"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/stages/mountain-knot-approach-sky.png",
+      "bytes": 1602065,
+      "git_blob_sha": "a05a8e4cbb6a8d5f1da87715bf21bffc2fb66d00"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/stages/mountain-pass-distant.png",
+      "bytes": 1726670,
+      "git_blob_sha": "cb90d4b4e701f15ba2c85f6030c03ecc4dd8b3f3"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/stages/mountain-pass-floor.png",
+      "bytes": 2070681,
+      "git_blob_sha": "16be19629ad931f0ff3a653ce2a98fe92a0ef638"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/stages/mountain-pass-foreground.webp",
+      "bytes": 108790,
+      "git_blob_sha": "1586887b4c92788d21531573dff7827f6b23a07d"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/stages/mountain-pass-midground.png",
+      "bytes": 330281,
+      "git_blob_sha": "26e3975f81198e2be23262973f4ccbd536b5e27e"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/stages/mountain-pass-sky.png",
+      "bytes": 1572985,
+      "git_blob_sha": "74479bad677811918070176dcb11f0ff916e216c"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/stages/mountain-pass.webp",
+      "bytes": 256908,
+      "git_blob_sha": "c858308b93e414dfc9baefeab7ecbe9abb8c2eec"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/stages/mule-camp-distant.png",
+      "bytes": 1626774,
+      "git_blob_sha": "a1d08c5677ce19902872851b51005de9bc6ed4e3"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/stages/mule-camp-dry-distant.png",
+      "bytes": 1783192,
+      "git_blob_sha": "25fba7304cb941122df61ff58d4f7983ecda231d"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/stages/mule-camp-dry-floor.png",
+      "bytes": 2305089,
+      "git_blob_sha": "6ad4667e0abc58b28c80b9ed0dcf37f6b5e3713e"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/stages/mule-camp-dry-foreground.png",
+      "bytes": 464237,
+      "git_blob_sha": "f760cdafb2281c307efa407c1c62fa42ff6a32e7"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/stages/mule-camp-dry-midground.png",
+      "bytes": 558723,
+      "git_blob_sha": "756c49d2d3ef5e381f3d654e6c444dfa03462d6e"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/stages/mule-camp-dry-sky.png",
+      "bytes": 1538420,
+      "git_blob_sha": "a2f1d231bcfe7d88b7c5a31ec73db30e16ff1e88"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/stages/mule-camp-dry.png",
+      "bytes": 3036520,
+      "git_blob_sha": "23714f82d8b3e3cd3d1971aa1b589bfbce853a1a"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/stages/mule-camp-floor.png",
+      "bytes": 2103001,
+      "git_blob_sha": "9b206ea75952646fe4e1f9b45ae60b6cbea7958a"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/stages/mule-camp-foreground.webp",
+      "bytes": 100510,
+      "git_blob_sha": "d96e81570870406910c8766fd4a00ff7024bb903"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/stages/mule-camp-midground.png",
+      "bytes": 541397,
+      "git_blob_sha": "8ec003abb28c1d65bf96abe3070884c5c60e38e7"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/stages/mule-camp-sky.png",
+      "bytes": 1604660,
+      "git_blob_sha": "dac10e62853a0c19eef877a62c4b374685fb47e7"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/stages/mule-camp.webp",
+      "bytes": 371714,
+      "git_blob_sha": "9154d3eeb4163fffcfc1ce5ead72432888282b51"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/stages/night-viaduct-ds2-distant.png",
+      "bytes": 722218,
+      "git_blob_sha": "d312a04ea9bc5891eadbfb965a6022173de9d2ea"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/stages/night-viaduct-ds2-floor.png",
+      "bytes": 1408716,
+      "git_blob_sha": "97c6f5299bc56262d3ee85b451bd23970f05ca95"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/stages/night-viaduct-ds2-foreground.png",
+      "bytes": 180218,
+      "git_blob_sha": "737591f40a9b5015cf92ef67f758f8d2d92872d5"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/stages/night-viaduct-ds2-midground.png",
+      "bytes": 407457,
+      "git_blob_sha": "7835467a6372a68ac4fab6e974cc1461c80c9770"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/stages/night-viaduct-ds2-sky.png",
+      "bytes": 1490274,
+      "git_blob_sha": "31e760e2fd1678c61e75f99d4e98285ccd75546b"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/stages/plate-gate-ds2-distant.png",
+      "bytes": 1697556,
+      "git_blob_sha": "3d0546a53812d80d30ab3ef89cfe9c58473be2ea"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/stages/plate-gate-ds2-floor.png",
+      "bytes": 1869795,
+      "git_blob_sha": "b4418d6102e6b6b9811bf75db57aa78a98de2b8f"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/stages/plate-gate-ds2-foreground.png",
+      "bytes": 110053,
+      "git_blob_sha": "e34a32411da6eeff465cd8aecadd5b382641d4da"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/stages/plate-gate-ds2-midground.png",
+      "bytes": 795243,
+      "git_blob_sha": "f4b02d691d2a2b580da295b037935bc8e26aaad5"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/stages/plate-gate-ds2-sky.png",
+      "bytes": 1524978,
+      "git_blob_sha": "5d87d6b03657c6d81f07541570a56c312c757258"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/stages/port-knot-distant.png",
+      "bytes": 1697319,
+      "git_blob_sha": "f6d549425ad355aef270dec9e19f86d9ee8c56c8"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/stages/port-knot-floor.png",
+      "bytes": 2064194,
+      "git_blob_sha": "e2a636039c30d6d059b42c72f2d9393a7bd7e4c8"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/stages/port-knot-foreground.png",
+      "bytes": 117315,
+      "git_blob_sha": "f13856a269b356a5231d6636d6143467e05bb13f"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/stages/port-knot-midground.png",
+      "bytes": 1564066,
+      "git_blob_sha": "d0059a44b8462edf138b965d9e78c74b8da728a3"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/stages/port-knot-sky.png",
+      "bytes": 1681106,
+      "git_blob_sha": "9e5aa136c9e22d01d02bf27609eb8cbaa1c6d686"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/stages/port-knot.png",
+      "bytes": 2342107,
+      "git_blob_sha": "ae6e71dd21e832b37bab498b5fc1d1124a66e9a9"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/stages/red-ravine-ds2-distant.png",
+      "bytes": 1027220,
+      "git_blob_sha": "83a80f5e5d8651dc5744bdda10200a8bfe79e6d9"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/stages/red-ravine-ds2-floor.png",
+      "bytes": 1608077,
+      "git_blob_sha": "2d3ef0450fdfb1194485dcadf38d1068622569b4"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/stages/red-ravine-ds2-foreground.png",
+      "bytes": 203643,
+      "git_blob_sha": "a11aa50addcb54f7c965849a037e0e81dc3139ed"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/stages/red-ravine-ds2-midground.png",
+      "bytes": 1654201,
+      "git_blob_sha": "e38a425c81bd21a2698de6898a3962350d053084"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/stages/red-ravine-ds2-sky.png",
+      "bytes": 1624142,
+      "git_blob_sha": "b70a9c351490ab8c8ec88df9324fb9d0a0d5ac0e"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/stages/ruined-factory-distant.png",
+      "bytes": 1692111,
+      "git_blob_sha": "20831461f7915c69aa8d5ea719428cfbd7958dc2"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/stages/ruined-factory-floor.png",
+      "bytes": 2158938,
+      "git_blob_sha": "0baa215298583bae8603b22e5c4d2b64d678cf7c"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/stages/ruined-factory-foreground.webp",
+      "bytes": 75290,
+      "git_blob_sha": "471d5ef4df617174aca95b3e30ab21a08fecc6d2"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/stages/ruined-factory-midground.png",
+      "bytes": 620159,
+      "git_blob_sha": "03cae36973cea6f90fd22ef891e65cf7395438c9"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/stages/ruined-factory-sky.png",
+      "bytes": 1864951,
+      "git_blob_sha": "97882ed324014409bb54b0a9fbe851bf6799abf9"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/stages/ruined-factory.webp",
+      "bytes": 285850,
+      "git_blob_sha": "d34a4083fe3643143c7f91d21a455e45e3dd9385"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/stages/sandstorm-ds2-distant.png",
+      "bytes": 1873729,
+      "git_blob_sha": "3dcb873ca4705a25ea07fb92fb66c8e419b6427b"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/stages/sandstorm-ds2-floor.png",
+      "bytes": 1773816,
+      "git_blob_sha": "af025a745ae163ec95be8dc4ec663a3a0aa7e9c5"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/stages/sandstorm-ds2-foreground.png",
+      "bytes": 106747,
+      "git_blob_sha": "eeb254e7511cc889f49f7177ebdf953062156358"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/stages/sandstorm-ds2-midground.png",
+      "bytes": 927029,
+      "git_blob_sha": "ed04537206fd5039c6620132d9bd2775b3496f51"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/stages/sandstorm-ds2-sky.png",
+      "bytes": 1807115,
+      "git_blob_sha": "d3f464775bc65550097cee72986a597fbecf0d7c"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/stages/shore-alt.webp",
+      "bytes": 230570,
+      "git_blob_sha": "c90d6f24e2da598444177962e4fbcfbfd159ffc8"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/stages/shore-distant.png",
+      "bytes": 583598,
+      "git_blob_sha": "392fb15ac15bc2445460652a4d8b7d984eefb821"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/stages/shore-floor.png",
+      "bytes": 2018784,
+      "git_blob_sha": "fba82623296c4f6b3c25070a3a48b2db41a27ea1"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/stages/shore-foreground.webp",
+      "bytes": 122134,
+      "git_blob_sha": "941788e8caef5f0e0296db1ce7dd86d8e8114fb1"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/stages/shore-midground.png",
+      "bytes": 705276,
+      "git_blob_sha": "3e8da41813a5fb2fd88ef93824e95a138d571e88"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/stages/shore-sky.png",
+      "bytes": 1616706,
+      "git_blob_sha": "31a08bb4cd0cf44d1bd39a6c62681bc5d482ce2d"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/stages/shore.webp",
+      "bytes": 222276,
+      "git_blob_sha": "10eb621bcc62ddf0382db1e18b0d7f4900c927b0"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/stages/south-knot-ruins-distant.png",
+      "bytes": 716456,
+      "git_blob_sha": "0b5512ed8728d84ab232955b987a51546c20248b"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/stages/south-knot-ruins-floor.png",
+      "bytes": 2057364,
+      "git_blob_sha": "cc9c0c18b7471236df95c25a794f43dfda6b1a95"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/stages/south-knot-ruins-foreground.png",
+      "bytes": 139861,
+      "git_blob_sha": "473197ad5f8273d3e25fbb57f72773824e9a7d8a"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/stages/south-knot-ruins-midground.png",
+      "bytes": 2056961,
+      "git_blob_sha": "58e78d3be096945d8e92132ff25bf110e4eef2b6"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/stages/south-knot-ruins-sky.png",
+      "bytes": 1615781,
+      "git_blob_sha": "894c401adb701c2b43b9334571425c93aac9dd6f"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/stages/tar-basin-distant.png",
+      "bytes": 1449568,
+      "git_blob_sha": "a7a0b518a6aca734104d63a55e4057521fb1948f"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/stages/tar-basin-floor.png",
+      "bytes": 2215733,
+      "git_blob_sha": "2a360d57f14d39897f49cdb3efeb91d9d48f46b4"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/stages/tar-basin-foreground.webp",
+      "bytes": 153794,
+      "git_blob_sha": "85b437e268e4acac9e51f1d164fb82b9e8e05449"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/stages/tar-basin-midground.png",
+      "bytes": 380441,
+      "git_blob_sha": "5dbcdd7fbce2e9a385b93bc1ff0f017460f81322"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/stages/tar-basin-sky.png",
+      "bytes": 1565578,
+      "git_blob_sha": "ae965c78ea7b92c8b3cdad54d377adebde496305"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/stages/tar-basin.webp",
+      "bytes": 302484,
+      "git_blob_sha": "4da3c56c8de52a7030ccd0c61411e7c355e1c296"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/stages/terminal-distant.png",
+      "bytes": 1878672,
+      "git_blob_sha": "91827e06a257017a405dde6c0229321211f258d5"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/stages/terminal-floor.png",
+      "bytes": 1976165,
+      "git_blob_sha": "27fe486e87b29c7fac138b5a2466c0f6be2b8ffa"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/stages/terminal-foreground.webp",
+      "bytes": 63018,
+      "git_blob_sha": "d035f6792c491c71fbde2735b77e9618af712587"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/stages/terminal-hangar-distant.png",
+      "bytes": 1447453,
+      "git_blob_sha": "37cc5eec8771994280ace0d29a6b25a909e1553a"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/stages/terminal-hangar-floor.png",
+      "bytes": 1583995,
+      "git_blob_sha": "772fa5b449953b04c9b946f44a60253bece742e8"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/stages/terminal-hangar-foreground.png",
+      "bytes": 100047,
+      "git_blob_sha": "450479cfb902f7298e5a5499a0c31dbe09c8253a"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/stages/terminal-hangar-midground.png",
+      "bytes": 1249098,
+      "git_blob_sha": "4eee3354eec2614dc2c24327c5c41fe91fa54ae4"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/stages/terminal-hangar-sky.png",
+      "bytes": 2092897,
+      "git_blob_sha": "c1c5a707554e112732e4e8ef62accaf7df49c8cb"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/stages/terminal-midground.png",
+      "bytes": 729543,
+      "git_blob_sha": "9f9c151a0c084eb52f3258bd5b0b852c13fd38f3"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/stages/terminal-sky.png",
+      "bytes": 1630173,
+      "git_blob_sha": "a8c20ed60f15d29ddb8069ebe8dc745f1c2b664c"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/stages/terminal.webp",
+      "bytes": 347308,
+      "git_blob_sha": "22ea16c87b0380e31be9d95a0f42889cf290407f"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/stages/timefall-farm-distant.png",
+      "bytes": 1518013,
+      "git_blob_sha": "65a8cef581b8815edef1ddaf27971acd1e915e66"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/stages/timefall-farm-floor.png",
+      "bytes": 2156921,
+      "git_blob_sha": "d3b27aa0bdf493cb5867b19e2dbdb83a14766001"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/stages/timefall-farm-foreground.png",
+      "bytes": 151558,
+      "git_blob_sha": "e901797d11b1c94fa61d6925294a873ba74a9d34"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/stages/timefall-farm-midground.png",
+      "bytes": 1148780,
+      "git_blob_sha": "67822b76d844f3ce3855b1f4e5df861ddbc006e8"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/stages/timefall-farm-sky.png",
+      "bytes": 1561540,
+      "git_blob_sha": "4b742aaefce5cc0d8bf7be23080fc6fb98c4f925"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/stages/timefall-shelter-distant.png",
+      "bytes": 1728775,
+      "git_blob_sha": "c5c0ed7a5cf7295367b6ae623432573c959b7626"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/stages/timefall-shelter-floor.png",
+      "bytes": 2471648,
+      "git_blob_sha": "40a5d7a673539bd2b301b463d15d62bbe9889697"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/stages/timefall-shelter-foreground.webp",
+      "bytes": 107120,
+      "git_blob_sha": "132d4130d3a5d3cefa5dfa59411485f2db81c23b"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/stages/timefall-shelter-midground.png",
+      "bytes": 587909,
+      "git_blob_sha": "ec25626b9f2893b08d491b1b71de868a2bab2062"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/stages/timefall-shelter-sky.png",
+      "bytes": 1548764,
+      "git_blob_sha": "a274dcca4bf95832bd144353947bf4594197009e"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/stages/timefall-shelter.webp",
+      "bytes": 375692,
+      "git_blob_sha": "d751d1d5efb8abfd9c23e59e5fa44bfded8819b4"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/static-20261125/amelie-body.png",
+      "bytes": 1388885,
+      "git_blob_sha": "65fc0fbe7d651c4cceeff71422c878dc297099e2"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/static-20261125/bridget-body.png",
+      "bytes": 1946859,
+      "git_blob_sha": "598308f94abf4600c81a2c84627e1757335b6d73"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/static-20261125/bt-gazer.png",
+      "bytes": 1502779,
+      "git_blob_sha": "56c96429b7b86c920a666bb2a52fe5e559781050"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/static-20261125/cliff-skeleton-nethelmet.png",
+      "bytes": 2101843,
+      "git_blob_sha": "90c5ef4d27b276ba8a32ffb2e04677db84f92639"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/static-20261125/deadman-body.png",
+      "bytes": 1500837,
+      "git_blob_sha": "e4dcc3a316009f7502c308385705e15fc303a4c3"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/static-20261125/ex-grenade-0.png",
+      "bytes": 493532,
+      "git_blob_sha": "9c2922444320cbeb1f8d33798d5f28a76391df61"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/static-20261125/ex-grenade-1.png",
+      "bytes": 523451,
+      "git_blob_sha": "ce086b1e42f9fe55ae69d2a8c9929526be3f5a76"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/static-20261125/ex-grenade-2.png",
+      "bytes": 513619,
+      "git_blob_sha": "5e38fde3753c5b1d5365d41b4ac9e6e460609695"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/static-20261125/hematic-grenade.png",
+      "bytes": 1753434,
+      "git_blob_sha": "562c1aa18696d4189ac525cd1e869620cd72fccd"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/static-20261125/lockne-body.png",
+      "bytes": 1300154,
+      "git_blob_sha": "ccbe017d1b78580c8f1198af475737008512f475"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/static-20261125/lockne-portrait.png",
+      "bytes": 1965582,
+      "git_blob_sha": "ef0f5943cab1d50db5ee6447db31c458a96386ce"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/static-20261125/mountain-knot-city-panorama.png",
+      "bytes": 2451968,
+      "git_blob_sha": "4e7b287edf28be3bac82dafa392b05e9932dd9d4"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/static-20261125/mule-eastern-gray.png",
+      "bytes": 1877743,
+      "git_blob_sha": "352fc8dfb309f86dccc10ef3254e4402aea521cc"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/static-20261125/south-knot-ruins-panorama.png",
+      "bytes": 2720821,
+      "git_blob_sha": "1f991dfff491f313b1adfecaf186075b4ffff37c"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/static-20261125/timefall-farm-panorama.png",
+      "bytes": 2513302,
+      "git_blob_sha": "bc7de380f6099b5400b84f6d8a6273cd151d0826"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/static-completion-20261125/cargo-capsule-ds2.png",
+      "bytes": 747041,
+      "git_blob_sha": "cd4d22b4a855eaf5524aee0f7fd3ce62127908d7"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/static-completion-20261125/coffin-board-ds2.png",
+      "bytes": 1393550,
+      "git_blob_sha": "a0f1ae6c9f8f39bc0b0cf515f58b242cac31a12c"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/static-completion-20261125/dhv-magellan-isolated-ds2.png",
+      "bytes": 1284715,
+      "git_blob_sha": "e71be19c153c33d3aa757e9221d7226644c322b1"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/static-completion-20261125/doctor-ds2.png",
+      "bytes": 1717670,
+      "git_blob_sha": "da4c3d1a19a73316cab364cd29d7ad8b7a008e04"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/static-completion-20261125/dunes-ds2-panorama.png",
+      "bytes": 1790564,
+      "git_blob_sha": "97f865bd8293a5e565d067e90ea9c7bb53e3fab2"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/static-completion-20261125/fragile-early-outfit-ds2.png",
+      "bytes": 1415589,
+      "git_blob_sha": "9ea7ae310c3e1c115fba661f183bd1ced55db043"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/static-completion-20261125/heartman-ds2.png",
+      "bytes": 1049799,
+      "git_blob_sha": "a34a56b163efb873d0f4cd86e5658430cb2a82d8"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/static-completion-20261125/lucy-ds2.png",
+      "bytes": 1354246,
+      "git_blob_sha": "9dc1bfe3bd4427df59eb52e6c8ed86589631c643"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/static-completion-20261125/maser-handgun-ds2.png",
+      "bytes": 1581074,
+      "git_blob_sha": "8acde16b0aba6ce6275891d0cbfd7cf41c76fad1"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/static-completion-20261125/sam-grey-promo-ds2.png",
+      "bytes": 1864191,
+      "git_blob_sha": "950bca353d8c8bcc8439656f096059a4e8704cc5"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/static-completion-20261125/the-president-ds2.png",
+      "bytes": 1515117,
+      "git_blob_sha": "fc69660c9ab62ccfef988ad2e7d93169cbd45547"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/static-completion-20261125/tomorrow-white-dress-ds2.png",
+      "bytes": 1152595,
+      "git_blob_sha": "b5ff03455dffe42494af05ddaf71036879b4e935"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/static-completion-20261125/tri-cruiser-ds2.png",
+      "bytes": 1621377,
+      "git_blob_sha": "5a8d0075e6d380d8b505345b9ca006ab4a4338b0"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/static-completion-20261125/truck-ds2.png",
+      "bytes": 2064428,
+      "git_blob_sha": "2dcc7ba6e016e51b6771d0f3ed5f787551f9e6bc"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/static-domains-20261125/buddy-bot-dc.png",
+      "bytes": 2048958,
+      "git_blob_sha": "54cd29ee5d015fb013018f8d494f808c4fe17e0b"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/static-domains-20261125/cargo-catapult-dc.png",
+      "bytes": 1161454,
+      "git_blob_sha": "2ec446fa04ef316c04ec686db98676ea7872eaf3"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/static-domains-20261125/chiral-bridge-dc.png",
+      "bytes": 1285897,
+      "git_blob_sha": "6557e66c9460205d7ba07ecf81407d684791bb24"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/static-domains-20261125/firing-range-dc-panorama.png",
+      "bytes": 2393212,
+      "git_blob_sha": "7e5ee02a562e905d11339bac9938eae62aff5bc4"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/static-domains-20261125/jump-ramp-dc.png",
+      "bytes": 1497380,
+      "git_blob_sha": "7fff3df1ce1043a561bb084a8151820996c9d7a5"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/static-domains-20261125/maser-gun-dc.png",
+      "bytes": 1548996,
+      "git_blob_sha": "1f58b8c44b23b2df13d3824302cd5ae11854ae3d"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/static-domains-20261125/monorail-yamato-ds2.png",
+      "bytes": 1901355,
+      "git_blob_sha": "0dd6055107822e17ab77d0d3c15ccd996abd9844"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/static-domains-20261125/roadster-dc.png",
+      "bytes": 1635720,
+      "git_blob_sha": "8c6ad648a537209839202d4ea2590ff2b741b628"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/static-domains-20261125/terminal-hangar-panorama.png",
+      "bytes": 2377248,
+      "git_blob_sha": "bc49de2e8759a63af8bc18640dd118d5ebcfe651"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/static-extension-20261125/armour-plate-silver-ds1.png",
+      "bytes": 1462615,
+      "git_blob_sha": "fd719f0ec1eb0896e2b1aabd1429d12b633831cb"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/static-extension-20261125/atlas-trauma-hologram-dc.png",
+      "bytes": 1229929,
+      "git_blob_sha": "2b4143237f2135c8bd31ae175a0148ce8db5ef1d"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/static-extension-20261125/gravity-gloves-half-life-dc.png",
+      "bytes": 1848175,
+      "git_blob_sha": "8f9c663402367d31b5eb6901f1056d4c7383b91b"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/static-extension-20261125/lambda-truck-half-life-dc.png",
+      "bytes": 2479325,
+      "git_blob_sha": "e8cf82ec48559564b40904dcdcaf3da9fbde71d1"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/static-extension-20261125/mule-sensor-pole-ds1.png",
+      "bytes": 1469054,
+      "git_blob_sha": "4d7ffa560740a85418dd38b8610c53173209c034"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/static-extension-20261125/night-viaduct-ds2-panorama.png",
+      "bytes": 1828848,
+      "git_blob_sha": "d4e748ab19bde2474a3161ecb1d09b0e9e9a39aa"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/static-extension-20261125/pizza-chef-ds2.png",
+      "bytes": 1746483,
+      "git_blob_sha": "146affcad06e1962ed3d1144f7c8caa499013a16"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/static-extension-20261125/red-ravine-ds2-panorama.png",
+      "bytes": 2195999,
+      "git_blob_sha": "032e80beaa60c9f70968aa5e6a7d49410c52c266"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/static-extension-20261125/reverse-trike-cyberpunk-dc.png",
+      "bytes": 1777126,
+      "git_blob_sha": "48601d41b2424c05424d240c6a0dc60222059a00"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/static-extension-20261125/reverse-trike-ds1.png",
+      "bytes": 1424703,
+      "git_blob_sha": "25c98c88c010388ff03f6fac96762d07e1cf0f67"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/static-extension-20261125/sam-cyberpunk-dc.png",
+      "bytes": 1701884,
+      "git_blob_sha": "ab40a89fba529c299b6c2bc9c2b72fefb2744bea"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/static-extension-20261125/sam-ludens-silver-ds1.png",
+      "bytes": 1775175,
+      "git_blob_sha": "eba26e06c308d42be820d79bd7e60545377aaf08"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/static-extension-20261125/speed-skeleton-silver-ds1.png",
+      "bytes": 1725939,
+      "git_blob_sha": "9d29d9af9f01f0dfeb467c563eab2bd956154dd8"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/static-universe-20261125/chiral-cat-ds2-body.png",
+      "bytes": 1254658,
+      "git_blob_sha": "92d115a8230096c0567919874671f84068de7923"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/static-universe-20261125/dollman-ds2-body.png",
+      "bytes": 1431312,
+      "git_blob_sha": "76f6d1ebd088f3a7fea97a72e524bcf552e6d8e7"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/static-universe-20261125/fragile-ds2-portrait.png",
+      "bytes": 2260707,
+      "git_blob_sha": "738a0c556d1330829e002bfa997ea49381518d38"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/static-universe-20261125/higgs-ds2-guitar.png",
+      "bytes": 1035732,
+      "git_blob_sha": "49802ba3e72bf84ca482999c8026c3da6fc15cfd"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/static-universe-20261125/higgs-ds2-portrait.png",
+      "bytes": 2138174,
+      "git_blob_sha": "3145679f30ffd02486db92b8b8b8b5a0f1f2859b"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/static-universe-20261125/magellan-ds2-panorama.png",
+      "bytes": 2435534,
+      "git_blob_sha": "fc9f65a267fe4a139b287c2b51b0b82aa7ddfc0d"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/static-universe-20261125/neil-ds2-portrait.png",
+      "bytes": 2159228,
+      "git_blob_sha": "43392e22313fa2b3839573c86580b405851a6272"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/static-universe-20261125/plate-gate-ds2-panorama.png",
+      "bytes": 1977389,
+      "git_blob_sha": "ef2dc084f4e2fbedad3446f0ecee20fa6c35a253"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/static-universe-20261125/rainy-ds2-portrait.png",
+      "bytes": 1812581,
+      "git_blob_sha": "9a88af7d810afad1a7a20755a62ed0938be4b836"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/static-universe-20261125/red-samurai-ds2-body.png",
+      "bytes": 2314640,
+      "git_blob_sha": "f58181b8d7da96bf14444937f19917d79b22a0e2"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/static-universe-20261125/sam-ds2-drawbridge-portrait.png",
+      "bytes": 2231925,
+      "git_blob_sha": "844d8201970b9215f5b92b11f9fbd5016c14187d"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/static-universe-20261125/sandstorm-ds2-panorama.png",
+      "bytes": 2216650,
+      "git_blob_sha": "0c6a7b317f26b08d5526ea8438211a7d179568a9"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/static-universe-20261125/tarman-ds2-portrait.png",
+      "bytes": 2150150,
+      "git_blob_sha": "a9b90411e6a4f42490eb8292de063d7377473495"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/static-universe-20261125/tomorrow-ds2-portrait.png",
+      "bytes": 2729741,
+      "git_blob_sha": "ce020a9eb07339ad0a686c7faffa210093478e23"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/story-completion-20261125/cliff-ending-final.png",
+      "bytes": 2372693,
+      "git_blob_sha": "158d1a72b4faa3887a4cde9463d2b61bf0ef1e21"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/story-completion-20261125/cliff-intro-insert.png",
+      "bytes": 2403463,
+      "git_blob_sha": "40bfbce84b4c74edc9c3c0738c3a9da2b515c78d"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/story-completion-20261125/cliff-intro-second.png",
+      "bytes": 2591968,
+      "git_blob_sha": "d95384ac3bd87b4f90b80c18cc02affd9e942ac3"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/story-completion-20261125/diehardman-ending-final.png",
+      "bytes": 2058210,
+      "git_blob_sha": "5792ab68ce2b9ea31148e7693ed44f92bc31e9dd"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/story-completion-20261125/diehardman-intro-insert.png",
+      "bytes": 2421585,
+      "git_blob_sha": "e806bd8fd5e1f2499553212325c82b64c0c83de3"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/story-completion-20261125/diehardman-intro-second.png",
+      "bytes": 2150983,
+      "git_blob_sha": "c4d2babf089130f540d4a22bd8901d5fdc5dfc06"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/story-completion-20261125/fragile-ending-final.png",
+      "bytes": 2400122,
+      "git_blob_sha": "20f0f303f42b91c171667f5216f62d49d90c084c"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/story-completion-20261125/fragile-intro-insert.png",
+      "bytes": 2341359,
+      "git_blob_sha": "1050d04378f00b17a334a75f7fe6c4bb8a7c39b2"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/story-completion-20261125/fragile-intro-second.png",
+      "bytes": 2190829,
+      "git_blob_sha": "2645726f1c35b1f4a8047256eafc26bc49227a68"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/story-completion-20261125/heartman-ending-final.png",
+      "bytes": 2008066,
+      "git_blob_sha": "62ae461cc816166d758c509753c543dc9e45376d"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/story-completion-20261125/heartman-intro-insert.png",
+      "bytes": 1838248,
+      "git_blob_sha": "a3e7d54df43939383b9d726978f5a55ff456bd07"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/story-completion-20261125/heartman-intro-second.png",
+      "bytes": 2111596,
+      "git_blob_sha": "b88c1351b7b295b388a833fbdf9157f4570aab5b"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/story-completion-20261125/higgs-ending-final.png",
+      "bytes": 2247903,
+      "git_blob_sha": "1ba443c74f7f6280071671a2a46f3554d2010faf"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/story-completion-20261125/higgs-intro-insert.png",
+      "bytes": 2258298,
+      "git_blob_sha": "f56090b16b38ec28b0c2b540521916c10238ea91"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/story-completion-20261125/higgs-intro-second.png",
+      "bytes": 2331372,
+      "git_blob_sha": "7b64d1101f31122987380b2ab30e0ede96f70835"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/story-completion-20261125/mama-ending-final.png",
+      "bytes": 2480991,
+      "git_blob_sha": "35ba00ab01529fdb76d84aed9e06d4e8698ff14f"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/story-completion-20261125/mama-intro-insert.png",
+      "bytes": 2530619,
+      "git_blob_sha": "48aca1027eca93a12f9f94ac7059dfa672a1de3c"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/story-completion-20261125/mama-intro-second.png",
+      "bytes": 2453052,
+      "git_blob_sha": "d7666e4a332dc83403adc48d1a13309fd53502e7"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/story-completion-20261125/mule-ending-final.png",
+      "bytes": 2741193,
+      "git_blob_sha": "60a29cadaac29456b76062703ea26e3be9fc47d4"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/story-completion-20261125/mule-intro-insert.png",
+      "bytes": 2398422,
+      "git_blob_sha": "9a5ed47fd970b2513c18880546c1bf192a2714d3"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/story-completion-20261125/mule-intro-second.png",
+      "bytes": 2430144,
+      "git_blob_sha": "2483c25193ca0a977e994bc90527b3d2f3506a34"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/story-completion-20261125/sam-ending-final.png",
+      "bytes": 2584089,
+      "git_blob_sha": "d15b4d71c9c3dd39dd9d7decee74300fef9a6237"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/story-completion-20261125/sam-intro-insert.png",
+      "bytes": 2266642,
+      "git_blob_sha": "f16a37dcef1188c835e62b0854f72414675929d1"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/story-completion-20261125/sam-intro-second.png",
+      "bytes": 2409025,
+      "git_blob_sha": "f240d335bf482da31f932122ee22dfef8544d157"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/story/cliff-ending.webp",
+      "bytes": 174744,
+      "git_blob_sha": "b664d57b8e18e708e672e2cb5da4036ba3c2f2ec"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/story/cliff-intro.webp",
+      "bytes": 303834,
+      "git_blob_sha": "0e572811977506fbaa6a261e71b5cc01ba5d346a"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/story/cliff-rival.webp",
+      "bytes": 165474,
+      "git_blob_sha": "ccc1d96eed84b83aff3e4cb311ebe641a9b5382b"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/story/diehardman-ending.webp",
+      "bytes": 214706,
+      "git_blob_sha": "9242875f164fd988f3df308f560e9905ebaba37b"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/story/diehardman-intro.webp",
+      "bytes": 175198,
+      "git_blob_sha": "7e845428693e5c0db9f47f36f8028724e4f336f8"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/story/diehardman-rival.png",
+      "bytes": 1883891,
+      "git_blob_sha": "b050a382c62c9fe12ddaf028b066c3004829cab3"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/story/diehardman-rival.webp",
+      "bytes": 59276,
+      "git_blob_sha": "588e718771093a0aa22905aeb2eacbaebd169bd9"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/story/fragile-ending.webp",
+      "bytes": 157766,
+      "git_blob_sha": "430d6c4aafbb23b7423e5510725f5bcca18a8572"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/story/fragile-intro.webp",
+      "bytes": 160838,
+      "git_blob_sha": "698182704b124fd376d1f266b5c7d6790386252a"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/story/fragile-rival.webp",
+      "bytes": 183766,
+      "git_blob_sha": "b0fba82d624f9c8cb66b9d55bae3b819669ed79a"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/story/heartman-ending.webp",
+      "bytes": 97402,
+      "git_blob_sha": "7e3f26a89cc8b668ffbf2ccd8ba8ff5ca0ec3808"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/story/heartman-intro.webp",
+      "bytes": 99538,
+      "git_blob_sha": "7d20a73942b6de10bad20ca2d4bd9a246ababb3f"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/story/heartman-rival.webp",
+      "bytes": 88050,
+      "git_blob_sha": "f54e783b3176a3e0f78491b4c747c8476a4c3afd"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/story/higgs-ending.webp",
+      "bytes": 279284,
+      "git_blob_sha": "9ab874f08a2acdccab01ea51884bd345482dd9a0"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/story/higgs-intro.webp",
+      "bytes": 245818,
+      "git_blob_sha": "8b84b48175b6fe07649eef1a14d0b0bad1951441"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/story/higgs-rival.webp",
+      "bytes": 367088,
+      "git_blob_sha": "542faf282357f6c95292ceba4e1eaddcbb458bb2"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/story/mama-ending.webp",
+      "bytes": 463476,
+      "git_blob_sha": "948bb1188c3d423b28f659c1c9b1dfa86243569b"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/story/mama-intro.webp",
+      "bytes": 469992,
+      "git_blob_sha": "bc6a4f7d7a6e56f4026721d442d3f737ffbc5ed5"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/story/mama-rival.webp",
+      "bytes": 461100,
+      "git_blob_sha": "980ea5d48113237d1a8304d236916f6fbe1529f7"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/story/mule-ending.webp",
+      "bytes": 482040,
+      "git_blob_sha": "1aca3638eb59bcb59983215d0ce35a36e4bcb1f0"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/story/mule-intro.webp",
+      "bytes": 376732,
+      "git_blob_sha": "5a0d53ad121b73dcdf1daa910cd3b3aade6fb51e"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/story/mule-rival.webp",
+      "bytes": 495272,
+      "git_blob_sha": "de7638a131f9b35c9780223edf07f56be2a827ce"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/story/sam-ending.webp",
+      "bytes": 382336,
+      "git_blob_sha": "f5ca308bab8e4655cafc22e85a3446134e62ac0d"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/story/sam-higgs-rival.webp",
+      "bytes": 407394,
+      "git_blob_sha": "077ba1d55df6ba3445fb5252ee8adff82ffc5daf"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/story/sam-intro-shore.webp",
+      "bytes": 326992,
+      "git_blob_sha": "5b0f81103254a8f9621e87393515c49cbf53136b"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/story/sam-intro.webp",
+      "bytes": 225826,
+      "git_blob_sha": "9d157da9577f1fdfaeab4070efbca2d2a98c9ed1"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/story/shore-prologue.webp",
+      "bytes": 215134,
+      "git_blob_sha": "353d42f35c3f8dfd88d36b8e3b12c77e0521098d"
+    }
+  ],
+  "vectors": [
+    {
+      "path": "modes/echos-de-la-greve/assets/fighters/source/diehardman.svg",
+      "bytes": 192293,
+      "git_blob_sha": "41573eb72eb86785cad0074eef74a6a6b09aab3b"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/fighters/source/mama-reconstruction/atelier/apex.svg",
+      "bytes": 24339,
+      "git_blob_sha": "5b2cc1a187c03740a781c8ee77a68d23b20a33f0"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/fighters/source/mama-reconstruction/atelier/crouch.svg",
+      "bytes": 24340,
+      "git_blob_sha": "22d5835aadf111b8a761d3f7da955518cc81513c"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/fighters/source/mama-reconstruction/atelier/fall.svg",
+      "bytes": 24346,
+      "git_blob_sha": "958d59f70e259a37d4d6c9aa29bce35b0a37864b"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/fighters/source/mama-reconstruction/atelier/guard.svg",
+      "bytes": 24355,
+      "git_blob_sha": "9bf90cfba0f942f64c66d24958b7b6c3611bb149"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/fighters/source/mama-reconstruction/atelier/rise.svg",
+      "bytes": 24332,
+      "git_blob_sha": "6f5449fb680e401bb0151ec91e5a775081547b20"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/fighters/source/mama-reconstruction/parts/boot.svg",
+      "bytes": 21944,
+      "git_blob_sha": "d2b6c0e22d9f71e9e0eb6f5fe88e2197d5d8853e"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/fighters/source/mama-reconstruction/parts/cuff.svg",
+      "bytes": 21958,
+      "git_blob_sha": "0bcddf975e432fa1e07074ea3625086fd5ab3764"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/fighters/source/mama-reconstruction/parts/forearm.svg",
+      "bytes": 21948,
+      "git_blob_sha": "8d36fc451c824deffef44be2dc1c9f77f6eba71f"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/fighters/source/mama-reconstruction/parts/gauntlet.svg",
+      "bytes": 21936,
+      "git_blob_sha": "83d5aa45209752bf1d2578dcd598022997d385c4"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/fighters/source/mama-reconstruction/parts/hand.svg",
+      "bytes": 21958,
+      "git_blob_sha": "bf60ae5a1e733e59dee032e87de321e52193b928"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/fighters/source/mama-reconstruction/parts/harness.svg",
+      "bytes": 21950,
+      "git_blob_sha": "1cc24238cc461b24788b1e1eb9f998c8bbb9b5a0"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/fighters/source/mama-reconstruction/parts/head.svg",
+      "bytes": 21944,
+      "git_blob_sha": "d1ac02cf1f79cddebee52f2d898ec38a9e28fe79"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/fighters/source/mama-reconstruction/parts/helmet.svg",
+      "bytes": 21933,
+      "git_blob_sha": "b736b0b7a04fc1e188c6934fc8b1dea475f10e92"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/fighters/source/mama-reconstruction/parts/kneepad.svg",
+      "bytes": 21965,
+      "git_blob_sha": "3b80df73a208fc3f15971c7a315615403d539161"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/fighters/source/mama-reconstruction/parts/pauldron.svg",
+      "bytes": 21950,
+      "git_blob_sha": "e99867ed7cd972405b0277bcf8ba8fe22fb6037e"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/fighters/source/mama-reconstruction/parts/reel.svg",
+      "bytes": 21945,
+      "git_blob_sha": "da90a9de394c458056905b01ecaf5d49ca561c9f"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/fighters/source/mama-reconstruction/parts/remote.svg",
+      "bytes": 21963,
+      "git_blob_sha": "7897c5c1c995f2111659eb7142e3311fe93e543a"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/fighters/source/mama-reconstruction/parts/shin.svg",
+      "bytes": 21944,
+      "git_blob_sha": "a18db04fa165ab31ff220530a060cfcbbd0c9ffe"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/fighters/source/mama-reconstruction/parts/thigh.svg",
+      "bytes": 21914,
+      "git_blob_sha": "4c749321bf022957c88b7653ca6df36f84007551"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/fighters/source/mama-reconstruction/parts/torso.svg",
+      "bytes": 21947,
+      "git_blob_sha": "1a4c9b1d4d294885230aa6a265c0c6387f31cd6f"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/fighters/source/mama-reconstruction/parts/upperArm.svg",
+      "bytes": 21951,
+      "git_blob_sha": "8580bcc960370b10df5f91fb7a49f9d7209c5092"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/fighters/source/mama-reconstruction/viaduc/action.svg",
+      "bytes": 25500,
+      "git_blob_sha": "6f3cfbb105d8cbf11e63993b8387b2dd4adae4b0"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/fighters/source/mama-reconstruction/viaduc/apex.svg",
+      "bytes": 25017,
+      "git_blob_sha": "c6a7da9751f96049fd795cfb491eaf41312b5fdd"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/fighters/source/mama-reconstruction/viaduc/crouch.svg",
+      "bytes": 25023,
+      "git_blob_sha": "f2298de11f9393050b26ad191167bceac5f3dde4"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/fighters/source/mama-reconstruction/viaduc/fall.svg",
+      "bytes": 25022,
+      "git_blob_sha": "3e3484d06b3a07dfc771556c3e629a9bbe30a68c"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/fighters/source/mama-reconstruction/viaduc/guard.svg",
+      "bytes": 25036,
+      "git_blob_sha": "73d917f78e91e804c20b59edcf3d6224f8b0c441"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/fighters/source/mama-reconstruction/viaduc/hit.svg",
+      "bytes": 25418,
+      "git_blob_sha": "540c613b7775f753e54a9553c215a3032af34584"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/fighters/source/mama-reconstruction/viaduc/portrait.svg",
+      "bytes": 25503,
+      "git_blob_sha": "784fd01f49ac6eec88d197ac850ba9b280f1a785"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/fighters/source/mama-reconstruction/viaduc/rise.svg",
+      "bytes": 25011,
+      "git_blob_sha": "34cc243bf80089b04997555271afad699dc1854c"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/fighters/source/mama-reconstruction/viaduc/stance.svg",
+      "bytes": 25505,
+      "git_blob_sha": "a8fdc202cade3d430df8aca5e766274902378629"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/fighters/source/mama-reconstruction/viaduc/step.svg",
+      "bytes": 25499,
+      "git_blob_sha": "6523afec690c03a6bab643246cffd9e20dc293d5"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/fighters/source/mama.svg",
+      "bytes": 31547,
+      "git_blob_sha": "e8b5d58534862c988d990b595dd9cd17c95130cd"
+    }
+  ],
+  "modified": []
+}

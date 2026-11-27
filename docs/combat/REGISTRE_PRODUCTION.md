@@ -2,7 +2,9 @@
 
 **Projet : Death Stranding 2D · périmètre : tout l’univers Death Stranding.**
 
-**Mise à jour : 27 novembre 2026 · les deux extensions originales du guide sont intégrées avec 38 rubriques complémentaires, huit fiches de personnalité et les Dossiers de liaison. Réalisation et limites dans le [nouveau suivi](#extensions-guides-20261127). Instantané conservé du lot du 25 novembre : huit exercices guidés, compendium des six Boss, vingt-huit PNG fixes, 65 cartes, 257 PNG récents, 387 chemins d’images ; 22 lieux, 23 zones, 25 configurations, 120 calques distincts et 125 liaisons. Huit combattants, neuf modes et six Boss conservés. Les totaux d’images du nouveau lot sont suivis séparément.**
+**Mise à jour courante : [Relais de liaison et Les Lignes de Marée](#relais-lignes-maree-20261127) : huit kits jouables, dix modes, six rencontres Boss existantes et 45 configurations locales. L’extension reçoit 70 bases visuelles et 147 fiches ; les nouveaux kits et rencontres restent en production.**
+
+**Instantané du complément précédent : 27 novembre 2026 · le [complément de fidélité](#fidelity-20261127) ajoute les phases de présentation, les poses de la tenue Mama Viaduc, une correction de continuité Heartman, le neuvième exercice et une référence de décharge DS2. Les deux extensions originales du guide restent intégrées avec 38 rubriques complémentaires et les Dossiers de liaison. Huit combattants, neuf modes, six Boss et vingt-cinq configurations d’arène sont conservés. Les comptes des lots antérieurs ci-dessous restent leurs instantanés historiques ; les comptes courants et les refus de génération sont explicités au §12.**
 
 [Bible de combat](BIBLE_COMBAT.md) · [Œuvres, versions et sources](UNIVERS_DS.md) · [Guide intégral](references/Combat_Games_Guide_General_v1.0.txt) · [Références du complément](production/20261125-completion/reference-research.json) · [24 briefs de plans](production/20261125-completion/story-completion-briefs.json) · [Actions et IA](ACTIONS_ET_IA.md) · [Relations](RELATIONS_SIMULATEUR.md) · [Lot domaines](BIBLE_COMBAT.md#lot-domaines-20261125) · [Bilan et preuves](production/20261125-domains/LOT_DOMAINES_20261125.md) · [Lot extension](BIBLE_COMBAT.md#lot-extension-20261125) · [Références de l’extension](production/20261125-extension/reference-research.json).
 
@@ -349,3 +351,48 @@ Une réserve visuelle précise demeure sur l’ancienne posture de Die-Hardman :
 ### Priorités après ce lot
 
 Consolider les gestes et états d’accès effectivement branchés ; corriger les apparences historiquement non conformes identifiées ; produire les dessins intermédiaires et sons ; implémenter le profil équipe puis une paire et un bonus ; ouvrir les kits DS2 avec des fiches et références propres. La connexion d’un fournisseur de soutien est un chantier séparé dont les prérequis ne conditionnent aucun accès actuel.
+
+<a id="fidelity-20261127"></a>
+## 12. Phases, dojo et audit de fidélité — 27 novembre 2026
+
+Le [bilan du complément](production/20261127-fidelity/BILAN.md) et son [inventaire](production/20261127-fidelity/inventory-verification.json) font foi pour ce lot. **19 nouveaux PNG natifs** sont reçus : 18 poses de présentation et une décharge fixe du Maser Handgun DS2. Les **450 rasters antérieurs** restent inchangés, pour 469 conservés. Le runtime référence 413 chemins d’images uniques ; les PNG récents sont 284 conservés et 283 actifs, car le hold historique de Heartman est supplanté sans suppression. La galerie compte **66 cartes : 32 DS1/DC, 33 DS2, une reconstitution du projet**. Le dojo compte neuf exercices. Les 59 Dossiers, huit souvenirs et sept kits DS2 en préparation conservent leurs périmètres.
+
+| ID de production | Référence / version | Réalisation vérifiable | Manque ou limite conservé |
+| --- | --- | --- | --- |
+| `UI:taunt-phases` | Sept kits DS1/DC déjà actifs | Quatorze poses d’entrée/sortie ; rendu attaché aux phases 10/28/16 du geste, avec repli sur la posture de la tenue choisie. | Poses clés seulement ; interpolation dessinée, son et contrôle canonique de chaque détail restent ouverts. Die-Hardman exclu des nouvelles phases reçues. |
+| `COSTUME:mama-viaduc-taunt` | Tenue Viaduc du projet | Entrée, tenue et sortie propres ; aperçu de sélection et repli restent dans le même costume. | Le cycle ne certifie pas l’ensemble des anciennes images de Mama. |
+| `CONTINUITY:heartman-taunt` | Posture active de Heartman | Nouveau hold gardant le dispositif au même poignet que la posture de référence ; ancien PNG conservé. | Correction interne documentée, côté anatomique canonique non certifié. |
+| `LESSON:taunt` | Geste local du simulateur | Neuvième exercice : cycle complet à distance puis interruption légère du partenaire. Vérifié avec les huit combattants et des cas négatifs. | Ce geste et les seuils pédagogiques sont des règles du simulateur. |
+| `ACCESS:memory-taunt-regression` | Huit souvenirs existants | Le nouvel exercice ne remplace ni n’ajoute aucun des quatre objectifs historiques ; attribution permanente inchangée. | Aucun nouveau droit distant ou fournisseur de soutien connecté. |
+| `ASSET:maser-handgun-ds2-discharge` | S28, vidéo officielle, vue à 10,0 s | PNG transparent fixe, nouvelle carte DS2, lien vers sa référence et ses limites. | Ni séquence animée complète, ni kit, ni dégâts, portée ou durée canonique d’étourdissement. |
+| `CHAR:diehardman-fidelity` | Source Kojima / planche officielle et gros plan PlayStation | Audit étendu au masque et au costume ; onze poses actives, une fatalité, trois plans narratifs et trois poses de présentation à corriger. | Première génération refusée automatiquement ; dix-huit corrections non reçues, anciens actifs toujours utilisés. |
+| `CHAR:higgs-ds2-body` | Captures officielles DS2 ; statue sous licence qualifiée séparément | Références comparées, silhouette entière demandée et résultat consigné. | Génération refusée automatiquement ; aucune nouvelle carte ni kit Higgs DS2. |
+| `QA:fidelity-20261127` | Moteur réel, sources natives et HTTP local | Recettes dédiées, contrôles de sauvegarde, empreintes, rendus Canvas et provenance des guides. | Aucun résultat de navigateur graphique ou de manette physique attribué à ces tests. |
+
+Les [écarts DS2](production/20261127-fidelity/MANQUANTS_DS2.md), l’[audit des sources](production/20261127-fidelity/AUDIT_SOURCES.md) et la [revue visuelle](production/20261127-fidelity/REVUE_VISUELLE.md) donnent les réserves par sujet. Les paires, assistances, clashes, bonus et parcours d’archives décrits au §11 restent à réaliser. Les refus de ce lot ne modifient pas le statut historique de la mitrailleuse MP DS2 et du Strider, déjà non livrés.
+
+
+<a id="relais-lignes-maree-20261127"></a>
+## 13. Relais de liaison et méga-extension originale — état courant du 27 novembre 2026
+
+Le [bilan des Lignes de Marée](production/20261127-lignes-de-maree/BILAN.md) et le [contrat du relais](production/20261127-team-gameplay/RELAIS_DE_LIAISON.md) actualisent les instantanés des §11–12. Le tag et les assistances y étaient encore futurs ; leur profil local est maintenant implémenté. Les réserves qui concernent supers, animation, réseau, Boss et fidélité canonique demeurent.
+
+| ID | Réalisation reçue | Manquant restant |
+| --- | --- | --- |
+| `TEAM:liaison-two` | Deux membres/camp, IA ou deux joueurs locaux, HUD, Cohésion, appui à 25, relais à 15, interruption, auto-relais K.-O., reprise dédiée. | Cycles dessinés spécifiques, réseau, profil contre Boss, transition d’arène. |
+| `SYSTEM:entity-team-policy` | Projectiles attribués au membre, plafond partagé, état des objets en réserve/K.-O., expiration et combo partagé. | Réflexion de projectile et politique de transition d’équipe non implémentées. |
+| `QA:team-independent` | 25 groupes de recette + 6 de revue indépendante ; quatre captures natives ; corrections des sauvegardes incohérentes et du survivant après échange final. | Recette navigateur, manette matérielle et équilibrage humain. |
+| `OC:LDM-design` | 147 fiches, dix parcours, vingt rencontres à trois phases, vingt missions, quatre secteurs et 24 liaisons. | Valeurs à équilibrer après implémentation ; récit de campagne non déroulé par le moteur. |
+| `OC:LDM-character-bases` | Dix PNG de posture, détails et asymétries consignés. | Kits, collisions, cycles, trente costumes, trente scènes personnelles, dix conclusions. |
+| `OC:LDM-stages` | Vingt panoramas, vingt mesures de sol et vingt arènes statiques locales. | Cent plans, météo propre, transitions de campagne et objectifs. |
+| `OC:LDM-enemies` | Vingt bases : dix humains, quatre automates, six Échoués ; comportements écrits. | IA, mouvements, télégraphes animés et éléments séparés. |
+| `OC:LDM-bosses` | Vingt bases acceptées après revue ; trois candidats remplacés conservés dans la provenance. | Trois phases runtime par rencontre, parties mobiles, objectifs, reprise de rencontre. |
+| `OC:LDM-associated` | Vingt props, dix gadgets, quatre véhicules, douze projectiles, six bonus, cinq duos conçus. | Graphismes autonomes et systèmes correspondants. |
+| `UI:LDM-dossiers` | Catalogue local des 147 fiches, filtres, recherche, sources, liens entre dossiers et essai des arènes. | La consultation ne débloque pas de kit, ennemi ou boss absent. |
+| `QA:LDM-delivery` | Empreintes, 70 fichiers natifs, géométrie, rendu réel, catalogue, conservation et service HTTP contrôlés dans les rapports. | Aucune certification globale « 1:1 » ni recette de navigateur matériel. |
+
+**Comptes courants :** huit combattants canoniques jouables ; dix modes ; six Boss historiques ; 45 configurations locales, dont 20 originales statiques ; 44 arènes pour le relais. L’extension ajoute 10 personnages, 20 ennemis et 20 boss en conception et bases visuelles, sans les compter parmi les kits/rencontres jouables. Les actifs raster sont **539 = 450 antérieurs + 19 de fidélité + 70 originaux** ; 33 SVG historiques sont préservés. Les candidats de génération et captures de QA n’entrent pas dans ces 539.
+
+### Prochaine unité complète de production
+
+Un premier kit original doit recevoir ses poses, trois techniques, objets détachés, commandes, collisions, comportement IA, reprise et recette dans les deux directions avant sélection. L’extension peut ensuite accueillir sa première mission et sa première rencontre boss. Les autres unités suivent le même seuil de disponibilité ; une quantité de fiches ou de PNG ne permet pas d’annoncer ces systèmes livrés. Les paires, bonus, kits DS2, asymétries et corrections de fidélité restent reliés aux besoins des chapitres précédents.

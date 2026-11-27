@@ -1,0 +1,280 @@
+{
+  "date": "2026-11-27",
+  "scope": "10 character base sprites and 20 enemy base sprites; no animation/runtime certification",
+  "count": 30,
+  "bytes": 58788256,
+  "uniqueHashes": 30,
+  "allPassed": true,
+  "checks": [
+    {
+      "id": "ldm-char-balise",
+      "path": "modes/echos-de-la-greve/assets/lignes-de-maree/characters/balise-stance.png",
+      "decode": true,
+      "rgba": true,
+      "hasTransparency": true,
+      "nativeSha256Matches": true,
+      "sourceBytesEqual": true
+    },
+    {
+      "id": "ldm-char-lest",
+      "path": "modes/echos-de-la-greve/assets/lignes-de-maree/characters/lest-stance.png",
+      "decode": true,
+      "rgba": true,
+      "hasTransparency": true,
+      "nativeSha256Matches": true,
+      "sourceBytesEqual": true
+    },
+    {
+      "id": "ldm-char-suture",
+      "path": "modes/echos-de-la-greve/assets/lignes-de-maree/characters/suture-stance.png",
+      "decode": true,
+      "rgba": true,
+      "hasTransparency": true,
+      "nativeSha256Matches": true,
+      "sourceBytesEqual": true
+    },
+    {
+      "id": "ldm-char-relais",
+      "path": "modes/echos-de-la-greve/assets/lignes-de-maree/characters/relais-stance.png",
+      "decode": true,
+      "rgba": true,
+      "hasTransparency": true,
+      "nativeSha256Matches": true,
+      "sourceBytesEqual": true
+    },
+    {
+      "id": "ldm-char-isobare",
+      "path": "modes/echos-de-la-greve/assets/lignes-de-maree/characters/isobare-stance.png",
+      "decode": true,
+      "rgba": true,
+      "hasTransparency": true,
+      "nativeSha256Matches": true,
+      "sourceBytesEqual": true
+    },
+    {
+      "id": "ldm-char-contrevoie",
+      "path": "modes/echos-de-la-greve/assets/lignes-de-maree/characters/contrevoie-stance.png",
+      "decode": true,
+      "rgba": true,
+      "hasTransparency": true,
+      "nativeSha256Matches": true,
+      "sourceBytesEqual": true
+    },
+    {
+      "id": "ldm-char-vigie",
+      "path": "modes/echos-de-la-greve/assets/lignes-de-maree/characters/vigie-stance.png",
+      "decode": true,
+      "rgba": true,
+      "hasTransparency": true,
+      "nativeSha256Matches": true,
+      "sourceBytesEqual": true
+    },
+    {
+      "id": "ldm-char-ecluse",
+      "path": "modes/echos-de-la-greve/assets/lignes-de-maree/characters/ecluse-stance.png",
+      "decode": true,
+      "rgba": true,
+      "hasTransparency": true,
+      "nativeSha256Matches": true,
+      "sourceBytesEqual": true
+    },
+    {
+      "id": "ldm-char-sillage",
+      "path": "modes/echos-de-la-greve/assets/lignes-de-maree/characters/sillage-stance.png",
+      "decode": true,
+      "rgba": true,
+      "hasTransparency": true,
+      "nativeSha256Matches": true,
+      "sourceBytesEqual": true
+    },
+    {
+      "id": "ldm-char-archive",
+      "path": "modes/echos-de-la-greve/assets/lignes-de-maree/characters/archive-stance.png",
+      "decode": true,
+      "rgba": true,
+      "hasTransparency": true,
+      "nativeSha256Matches": true,
+      "sourceBytesEqual": true
+    },
+    {
+      "id": "ldm-enemy-guetteur-cargo",
+      "path": "modes/echos-de-la-greve/assets/lignes-de-maree/enemies/guetteur-cargo-base.png",
+      "decode": true,
+      "rgba": true,
+      "hasTransparency": true,
+      "nativeSha256Matches": true,
+      "sourceBytesEqual": true
+    },
+    {
+      "id": "ldm-enemy-lieur-de-quai",
+      "path": "modes/echos-de-la-greve/assets/lignes-de-maree/enemies/lieur-de-quai-base.png",
+      "decode": true,
+      "rgba": true,
+      "hasTransparency": true,
+      "nativeSha256Matches": true,
+      "sourceBytesEqual": true
+    },
+    {
+      "id": "ldm-enemy-porteur-belier",
+      "path": "modes/echos-de-la-greve/assets/lignes-de-maree/enemies/porteur-belier-base.png",
+      "decode": true,
+      "rgba": true,
+      "hasTransparency": true,
+      "nativeSha256Matches": true,
+      "sourceBytesEqual": true
+    },
+    {
+      "id": "ldm-enemy-courrier-leurre",
+      "path": "modes/echos-de-la-greve/assets/lignes-de-maree/enemies/courrier-leurre-base.png",
+      "decode": true,
+      "rgba": true,
+      "hasTransparency": true,
+      "nativeSha256Matches": true,
+      "sourceBytesEqual": true
+    },
+    {
+      "id": "ldm-enemy-vigile-isolant",
+      "path": "modes/echos-de-la-greve/assets/lignes-de-maree/enemies/vigile-isolant-base.png",
+      "decode": true,
+      "rgba": true,
+      "hasTransparency": true,
+      "nativeSha256Matches": true,
+      "sourceBytesEqual": true
+    },
+    {
+      "id": "ldm-enemy-lanceur-filet",
+      "path": "modes/echos-de-la-greve/assets/lignes-de-maree/enemies/lanceur-filet-base.png",
+      "decode": true,
+      "rgba": true,
+      "hasTransparency": true,
+      "nativeSha256Matches": true,
+      "sourceBytesEqual": true
+    },
+    {
+      "id": "ldm-enemy-poseur-capteur",
+      "path": "modes/echos-de-la-greve/assets/lignes-de-maree/enemies/poseur-capteur-base.png",
+      "decode": true,
+      "rgba": true,
+      "hasTransparency": true,
+      "nativeSha256Matches": true,
+      "sourceBytesEqual": true
+    },
+    {
+      "id": "ldm-enemy-racleur-depot",
+      "path": "modes/echos-de-la-greve/assets/lignes-de-maree/enemies/racleur-depot-base.png",
+      "decode": true,
+      "rgba": true,
+      "hasTransparency": true,
+      "nativeSha256Matches": true,
+      "sourceBytesEqual": true
+    },
+    {
+      "id": "ldm-enemy-arbitre-convoi",
+      "path": "modes/echos-de-la-greve/assets/lignes-de-maree/enemies/arbitre-convoi-base.png",
+      "decode": true,
+      "rgba": true,
+      "hasTransparency": true,
+      "nativeSha256Matches": true,
+      "sourceBytesEqual": true
+    },
+    {
+      "id": "ldm-enemy-mecanicien-fermeur",
+      "path": "modes/echos-de-la-greve/assets/lignes-de-maree/enemies/mecanicien-fermeur-base.png",
+      "decode": true,
+      "rgba": true,
+      "hasTransparency": true,
+      "nativeSha256Matches": true,
+      "sourceBytesEqual": true
+    },
+    {
+      "id": "ldm-enemy-patrouilleur-chenille",
+      "path": "modes/echos-de-la-greve/assets/lignes-de-maree/enemies/patrouilleur-chenille-base.png",
+      "decode": true,
+      "rgba": true,
+      "hasTransparency": true,
+      "nativeSha256Matches": true,
+      "sourceBytesEqual": true
+    },
+    {
+      "id": "ldm-enemy-drone-cordier",
+      "path": "modes/echos-de-la-greve/assets/lignes-de-maree/enemies/drone-cordier-base.png",
+      "decode": true,
+      "rgba": true,
+      "hasTransparency": true,
+      "nativeSha256Matches": true,
+      "sourceBytesEqual": true
+    },
+    {
+      "id": "ldm-enemy-chariot-verrou",
+      "path": "modes/echos-de-la-greve/assets/lignes-de-maree/enemies/chariot-verrou-base.png",
+      "decode": true,
+      "rgba": true,
+      "hasTransparency": true,
+      "nativeSha256Matches": true,
+      "sourceBytesEqual": true
+    },
+    {
+      "id": "ldm-enemy-borne-traqueuse",
+      "path": "modes/echos-de-la-greve/assets/lignes-de-maree/enemies/borne-traqueuse-base.png",
+      "decode": true,
+      "rgba": true,
+      "hasTransparency": true,
+      "nativeSha256Matches": true,
+      "sourceBytesEqual": true
+    },
+    {
+      "id": "ldm-enemy-echoue-ancre",
+      "path": "modes/echos-de-la-greve/assets/lignes-de-maree/enemies/echoue-ancre-base.png",
+      "decode": true,
+      "rgba": true,
+      "hasTransparency": true,
+      "nativeSha256Matches": true,
+      "sourceBytesEqual": true
+    },
+    {
+      "id": "ldm-enemy-echoue-rampe",
+      "path": "modes/echos-de-la-greve/assets/lignes-de-maree/enemies/echoue-rampe-base.png",
+      "decode": true,
+      "rgba": true,
+      "hasTransparency": true,
+      "nativeSha256Matches": true,
+      "sourceBytesEqual": true
+    },
+    {
+      "id": "ldm-enemy-echoue-derive",
+      "path": "modes/echos-de-la-greve/assets/lignes-de-maree/enemies/echoue-derive-base.png",
+      "decode": true,
+      "rgba": true,
+      "hasTransparency": true,
+      "nativeSha256Matches": true,
+      "sourceBytesEqual": true
+    },
+    {
+      "id": "ldm-enemy-empreinte-releve",
+      "path": "modes/echos-de-la-greve/assets/lignes-de-maree/enemies/empreinte-releve-base.png",
+      "decode": true,
+      "rgba": true,
+      "hasTransparency": true,
+      "nativeSha256Matches": true,
+      "sourceBytesEqual": true
+    },
+    {
+      "id": "ldm-enemy-echoue-guetteur",
+      "path": "modes/echos-de-la-greve/assets/lignes-de-maree/enemies/echoue-guetteur-base.png",
+      "decode": true,
+      "rgba": true,
+      "hasTransparency": true,
+      "nativeSha256Matches": true,
+      "sourceBytesEqual": true
+    },
+    {
+      "id": "ldm-enemy-echoue-enserreur",
+      "path": "modes/echos-de-la-greve/assets/lignes-de-maree/enemies/echoue-enserreur-base.png",
+      "decode": true,
+      "rgba": true,
+      "hasTransparency": true,
+      "nativeSha256Matches": true,
+      "sourceBytesEqual": true
+    }
+  ]
+}
