@@ -4,7 +4,9 @@
 
 **Édition de conception du 18 novembre 2026, mise à jour du 27 novembre 2026 · Périmètre : l’ensemble de l’univers Death Stranding.**
 
-**Nouvelle réalisation du 27 novembre : le [Relais de liaison](#relais-lignes-maree-20261127) ajoute le profil local à deux membres, appui, relais, Cohésion, K.-O. et reprise. L’extension originale [Les Lignes de Marée](extensions/lignes-de-maree/BIBLE_EXTENSION.md) reçoit 147 fiches, 70 bases visuelles et 20 arènes statiques jouables. Les kits, IA, missions et cycles originaux restent des cibles distinctes.**
+**Livraison courante : [premier kit et première rencontre des Lignes de Marée](#ldm-premier-jouable-20261127) — Balise en duel/dojo libre/relais, Consignateur en Boss Battle, 48 images natives directionnelles et objets séparés.**
+
+**Instantané précédent du 27 novembre : le [Relais de liaison](#relais-lignes-maree-20261127) ajoute le profil local à deux membres, appui, relais, Cohésion, K.-O. et reprise. L’extension originale [Les Lignes de Marée](extensions/lignes-de-maree/BIBLE_EXTENSION.md) reçoit 147 fiches, 70 bases visuelles et 20 arènes statiques jouables. Les kits, IA, missions et cycles originaux restent des cibles distinctes.**
 
 **Complément du 27 novembre : les phases visuelles du geste, la variante Mama Viaduc et le neuvième exercice « Le geste expose » sont reliés au [§21](#fidelity-20261127). Une référence fixe de décharge du Maser Handgun DS2 rejoint la galerie. Le [bilan de fidélité](production/20261127-fidelity/BILAN.md) distingue les fichiers reçus, leur contrôle et les corrections Die-Hardman/Higgs DS2 restées sans image après refus de génération.**
 
@@ -1287,3 +1289,25 @@ Le [bilan courant](production/20261127-lignes-de-maree/BILAN.md), l’[inventair
 ### 22.4. Manquants conservés dans le suivi
 
 La réalisation suivante exige les cycles des dix originaux, leurs collisions et techniques, les vingt IA et vingt rencontres, les vingt missions, les cent couches de décor, les objets séparés et les cinq duos. Les corrections canoniques refusées par le service de génération dans le complément précédent restent non reçues ; aucune création originale ne les remplace. Les manquants DS2 et des autres œuvres restent suivis dans le registre. La recette actuelle distingue moteur réel, Canvas natif, DOM simulé et HTTP ; elle ne certifie pas une session de navigateur ni de manette physique.
+
+
+<a id="ldm-premier-jouable-20261127"></a>
+## Premier kit et première rencontre des Lignes de Marée — 27 novembre 2026
+
+**Balise est jouable en Versus local, Entraînement libre et Relais de liaison. Le Consignateur est la septième rencontre de Boss Battle.** Les huit kits canoniques et les six rencontres historiques restent disponibles dans leurs modes ; Boss Rush conserve ses six étapes.
+
+Balise utilise ses trois normales et ses trois techniques du catalogue. La boucle coûte 28 Chiral, se lance après 18 pas et reste gardable ou évitable en sautant. L’ancre coûte 18, apparaît après 24 pas, reste quatre secondes et peut être détruite. Le rappel coûte 16, consomme l’ancre et déplace physiquement Balise, au maximum 11 pixels par pas pendant six pas : ni invulnérabilité ni traversée du rival. Son appui « Ligne de vie » coûte 25 Cohésion, annonce 24 pas, agit cinq pas puis sort pendant 26 pas. L’objet et les ressources restent attribués au bon membre ; les sauvegardes et replays portent les règles `balise-1`.
+
+Le Consignateur conserve une garde de 300. La première phase ouvre la garde jusqu’à 198 ; la deuxième exige deux consoles et atteint 99 ; la troisième demande le registre avant zéro, puis une interaction de reddition. L’issue est non létale. Les annonces et reprises suivent les durées 60/48, 72/42 et 90/60 à vitesse normale. Trois vitesses sont proposées : 75 %, 100 % et 125 %. Une défaite reprend le début de la phase avec ses ressources, objectifs, chronomètre et graine ; les conditions de reprise sont validées avant affichage.
+
+### Production visuelle et accès
+
+La passe reçoit **48 PNG natifs autonomes : 30 poses Balise, 12 poses Consignateur et six objets, dont cinq raccordés au jeu et une variante de corde conservée**. Chaque personnage utilise des dessins gauche et droite distincts afin de conserver ses côtés anatomiques. Les props actifs sont la boucle grise mouchetée rouge, l’ancrage, les deux états de console et le registre ; la boucle orange initiale reste conservée comme variante. Les 539 rasters précédents et 33 SVG historiques restent identiques ; le dossier d’assets contient désormais **587 rasters**. Les captures de contrôle restent séparées.
+
+Depuis le catalogue des Lignes de Marée, le dossier Balise ouvre directement son dojo et le dossier Consignateur ouvre sa rencontre. Le grand aperçu, les commandes, les filtres de modes, les vitesses et les reprises sont raccordés. Le kit est ouvert directement pour cette première livraison ; son déblocage par mission ou exercice original reste à réaliser. Les exercices guidés historiques conservent leurs huit personnages.
+
+### Portée et reste à produire
+
+Ces images sont des **poses clés**, avec déplacements et transitions calculés par les moteurs. Elles ne constituent pas les cycles dessinés complets demandés par la bible. Les campagnes de Balise, costumes, super, conclusion et duo restent ouverts. Les **neuf autres kits originaux, vingt IA ennemies et dix-neuf autres rencontres boss** restent à implémenter. Les vingt missions, cinq duos, six bonus, véhicules/gadgets et cent plans de décor conservent leurs dépendances de production. Les corrections canoniques précédemment non reçues restent dans leur registre.
+
+Le [bilan de la passe](production/20261127-first-playable/BILAN.md), la [recette de Balise](production/20261127-first-playable/BALISE.md), la [rencontre du Consignateur](production/20261127-first-playable/CONSIGNATEUR.md) et les [vérifications](production/20261127-first-playable/VERIFICATION.md) distinguent simulation, contrôles DOM, Canvas natif et navigateur réel. La fidélité des nouvelles poses est évaluée contre leurs références originales ; aucune certification globale 1:1 de l’ensemble de l’univers n’est déclarée.

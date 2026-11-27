@@ -4,7 +4,13 @@
 
 ## Réception de la passe
 
-Les 10 postures, 20 panoramas, 20 bases ennemies et 20 bases boss sont reçus : **70 PNG natifs, 145 362 802 octets**. Les vingt panoramas mesurés deviennent des arènes statiques locales. Le [bilan](../../production/20261127-lignes-de-maree/BILAN.md) et l’[inventaire](../../production/20261127-lignes-de-maree/assets-manifest.json) établissent ces comptes. Les unités ci-dessous restent séparées : seules les quatre premières bases sont graphiquement reçues.
+Les 10 postures, 20 panoramas, 20 bases ennemies et 20 bases boss sont reçus : **70 PNG natifs, 145 362 802 octets**. Les vingt panoramas mesurés deviennent des arènes statiques locales. Le [bilan](../../production/20261127-lignes-de-maree/BILAN.md) et l’[inventaire](../../production/20261127-lignes-de-maree/assets-manifest.json) établissent ces comptes. Cette première réception couvre les quatre catégories de bases. Le complément jouable ci-dessous ajoute les poses et objets du premier kit et de la première rencontre.
+
+## Premier contenu original jouable
+
+Balise est raccordée au duel local, au dojo libre et au Relais ; le Consignateur à Boss Battle, avec huit combattants compatibles et trois phases complètes. La réception ajoute **48 PNG natifs** : trente poses Balise, douze poses Consignateur et six props, dont cinq utilisés et une variante conservée. Les deux directions sont dessinées séparément. Ces poses clés ne remplacent pas les cycles complets, scènes, costumes, supers ou conclusions listés ci-dessous.
+
+Le déblocage narratif de Balise reste prévu ; ce premier kit est ouvert directement dans les trois modes compatibles. Son entrée dans les exercices guidés, les routes de récit, le tournoi, les défis, le Boss et le réseau reste filtrée. [Réception et limites](../../production/20261127-first-playable/BILAN.md) · [Vérification](../../production/20261127-first-playable/VERIFICATION.md).
 
 ## Unités
 
@@ -42,6 +48,8 @@ Les 10 postures, 20 panoramas, 20 bases ennemies et 20 bases boss sont reçus : 
 | production.art | base_received / stance_received / panorama_received | Un visuel fixe reçu ; animations et couches restent séparées. |
 | production.runtime | planned | Aucun kit ou rencontre jouable déclaré par le catalogue. |
 | production.runtime | static_arena | Panorama reçu, sol mesuré, arène locale ; ni mission ni cinq plans de parallaxe. |
+| production.runtime | local_kit / boss_encounter | Kit ou rencontre raccordé, avec un périmètre de modes explicite. |
+| production.art | directional_keyposes_received | Poses clés natives dans les deux directions ; pas des cycles dessinés complets. |
 | consultation UI | disponible selon passe | Affichage d’un dossier ; ne change pas runtime en playable. |
 
 La présence d’un asset dans la galerie ne suffit pas à débloquer sa sélection en combat. Les statuts de la passe peuvent être enrichis après contrôle des fichiers réels. Le registre final doit conserver les anciennes images et ne pas les remplacer par ces créations originales.

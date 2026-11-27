@@ -8,7 +8,7 @@ window.StrandOriginalExtension = {
   "date": "2026-11-27",
   "canonStatus": "original-fan-extension",
   "summary": "Dix spécialistes doivent remettre en circulation un corridor côtier de vingt lieux, où conserver les cargaisons est devenu un moyen de retenir leurs destinataires.",
-  "status": "design_catalog_with_received_bases_and_static_arenas",
+  "status": "design_catalog_with_received_bases_static_arenas_and_first_playable",
   "sources": [
     {
       "id": "kpp-ds-tips",
@@ -167,7 +167,7 @@ window.StrandOriginalExtension = {
       },
       "gameplay": {
         "role": "Ancrage / interception",
-        "ruleset": "Prototype à 60 Hz, valeurs de conception à ajuster après implémentation ; non reliées automatiquement au moteur existant.",
+        "ruleset": "Kit local balise-1 à 60 Hz. Normales, trois techniques et appui raccordés ; super et conclusion restent des cibles de conception.",
         "hp": 100,
         "walkMultiplier": 1,
         "resource": {
@@ -327,8 +327,9 @@ window.StrandOriginalExtension = {
       ],
       "production": {
         "design": "complete",
-        "art": "stance_received",
-        "runtime": "planned"
+        "art": "directional_keyposes_received",
+        "runtime": "local_kit",
+        "scope": "Duel local, entraînement libre et Relais de liaison ; 30 poses clés dans les deux directions, trois normales, trois spéciales et un appui. Cycles complets, super, conclusion, costumes, campagne et déblocage scénarisé restent à produire."
       },
       "sources": [
         "kpp-ds-tips",
@@ -336,7 +337,7 @@ window.StrandOriginalExtension = {
         "project-bible",
         "project-extensions"
       ],
-      "playable": false,
+      "playable": true,
       "assetRequirements": [
         "stance",
         "garde",
@@ -359,7 +360,7 @@ window.StrandOriginalExtension = {
       ],
       "unlock": {
         "kind": "planned-achievement",
-        "rule": "Terminer sa mission de rencontre OU l’exercice de découverte correspondant ; effectif uniquement lorsque le kit est livré.",
+        "rule": "Déblocage scénarisé prévu : terminer sa mission de rencontre ou un exercice de découverte dédié. Dans cette première livraison, Balise est accessible directement en duel local, entraînement libre et Relais de liaison.",
         "requiresRuntimeReady": true,
         "paid": false,
         "existingRosterUnaffected": true
@@ -5369,8 +5370,9 @@ window.StrandOriginalExtension = {
       },
       "production": {
         "design": "complete",
-        "art": "base_received",
-        "runtime": "planned"
+        "art": "directional_keyposes_received",
+        "runtime": "boss_encounter",
+        "scope": "Rencontre autonome à trois phases sur la Digue d’aval, avec les huit kits canoniques, reprise de phase et 12 poses directionnelles. Hors Boss Rush ; récompenses et campagne restent à raccorder."
       },
       "sources": [
         "kpp-ds-tips",
@@ -5380,7 +5382,8 @@ window.StrandOriginalExtension = {
       ],
       "kind": "humain",
       "encounterTitle": "Le péage des cargaisons",
-      "stageId": "ldm-stage-digue-aval"
+      "stageId": "ldm-stage-digue-aval",
+      "playable": true
     },
     {
       "id": "ldm-boss-remorque-ressac",

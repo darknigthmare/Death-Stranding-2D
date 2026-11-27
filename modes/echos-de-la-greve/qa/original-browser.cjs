@@ -75,7 +75,7 @@ async function teams(page,base,label,fullInteractions){
     for(let i=0;i<4;i++)assert.equal(await members.nth(i).locator('option').count(),kits);
     const arenas=await page.locator('#teamStage option').count();assert.equal(arenas,44);
     assert.equal(await page.locator('#teamOpponent option').count(),2);
-    return {selectors:4,kitsPerSelector:8,modes:2,arenas};
+    return {selectors:4,kitsPerSelector:kits,modes:2,arenas};
   });
   await layout(page,label+' setup');await loadedVisibleImages(page);await capture(page,label+'-setup',page.locator('#teamSetup'));
   await check(label+' ordinary selection and 2v2 launch',async()=>{

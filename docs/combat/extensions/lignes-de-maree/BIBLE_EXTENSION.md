@@ -8,7 +8,7 @@
 
 Les Lignes de Marée ajoute une continuité originale au fan-game : dix spécialistes, vingt lieux reliés, vingt types d’ennemis et vingt rencontres majeures. Leur ambition visuelle est celle d’un spin-off cohérent avec Death Stranding. Ces créations ne sont ni des personnages officiels, ni des lieux retrouvés dans une œuvre existante. Le catalogue précise les futurs kits, les règles de rencontre et les besoins de production ; une fiche complète ou un PNG fixe ne suffit pas à rendre son contenu jouable.
 
-**État de réception du 27 novembre : 70 bases visuelles reçues, dont les 20 panoramas raccordés comme arènes statiques. Les 10 kits originaux, 20 IA ennemies, 20 rencontres boss et missions restent en conception prête à implémenter. Le [bilan de la passe](../../production/20261127-lignes-de-maree/BILAN.md) et les statuts de `catalog.json` précisent cette frontière.**
+**État courant du 27 novembre : les 70 bases et les 20 arènes statiques sont complétées par le kit local de Balise et la rencontre du Consignateur. La nouvelle passe reçoit 48 PNG natifs : 30 poses Balise, 12 poses Consignateur, cinq objets. Neuf autres kits, vingt IA ennemies, dix-neuf rencontres boss, les missions et les cycles complets restent à produire. Le [bilan courant](../../production/20261127-first-playable/BILAN.md) distingue les actions effectivement jouables des cibles décrites ci-dessous.**
 
 ## 1. Promesse et place dans le projet
 
@@ -1416,3 +1416,25 @@ Le fichier `catalog.json` est la source structurée de conception. Le client peu
 La production vérifie des fichiers réels, leurs dimensions, leurs empreintes et leur lecture ; elle ne compte pas les briefs comme des images. Les nouvelles bases doivent ensuite recevoir les poses manquantes, les projectiles séparés et les couches de décor. L’acceptation visuelle compare les côtés anatomiques à la fiche, conserve les proportions natives et vérifie le pied d’appui.
 
 Le [plan de production](PRODUCTION.md) donne les unités et dépendances. Le [contrôle de conception](design-validation.json) vérifie le catalogue et ses références ; il ne remplace pas une partie en navigateur ni une revue visuelle des PNG. Les états runtime publiés par le rapport de la passe font foi pour ce qui est réellement jouable.
+
+
+<a id="ldm-premier-jouable-20261127"></a>
+## Premier kit et première rencontre des Lignes de Marée — 27 novembre 2026
+
+**Balise est jouable en Versus local, Entraînement libre et Relais de liaison. Le Consignateur est la septième rencontre de Boss Battle.** Les huit kits canoniques et les six rencontres historiques restent disponibles dans leurs modes ; Boss Rush conserve ses six étapes.
+
+Balise utilise ses trois normales et ses trois techniques du catalogue. La boucle coûte 28 Chiral, se lance après 18 pas et reste gardable ou évitable en sautant. L’ancre coûte 18, apparaît après 24 pas, reste quatre secondes et peut être détruite. Le rappel coûte 16, consomme l’ancre et déplace physiquement Balise, au maximum 11 pixels par pas pendant six pas : ni invulnérabilité ni traversée du rival. Son appui « Ligne de vie » coûte 25 Cohésion, annonce 24 pas, agit cinq pas puis sort pendant 26 pas. L’objet et les ressources restent attribués au bon membre ; les sauvegardes et replays portent les règles `balise-1`.
+
+Le Consignateur conserve une garde de 300. La première phase ouvre la garde jusqu’à 198 ; la deuxième exige deux consoles et atteint 99 ; la troisième demande le registre avant zéro, puis une interaction de reddition. L’issue est non létale. Les annonces et reprises suivent les durées 60/48, 72/42 et 90/60 à vitesse normale. Trois vitesses sont proposées : 75 %, 100 % et 125 %. Une défaite reprend le début de la phase avec ses ressources, objectifs, chronomètre et graine ; les conditions de reprise sont validées avant affichage.
+
+### Production visuelle et accès
+
+La passe reçoit **48 PNG natifs autonomes : 30 poses Balise, 12 poses Consignateur et six objets, dont cinq raccordés au jeu et une variante de corde conservée**. Chaque personnage utilise des dessins gauche et droite distincts afin de conserver ses côtés anatomiques. Les props actifs sont la boucle grise mouchetée rouge, l’ancrage, les deux états de console et le registre ; la boucle orange initiale reste conservée comme variante. Les 539 rasters précédents et 33 SVG historiques restent identiques ; le dossier d’assets contient désormais **587 rasters**. Les captures de contrôle restent séparées.
+
+Depuis le catalogue des Lignes de Marée, le dossier Balise ouvre directement son dojo et le dossier Consignateur ouvre sa rencontre. Le grand aperçu, les commandes, les filtres de modes, les vitesses et les reprises sont raccordés. Le kit est ouvert directement pour cette première livraison ; son déblocage par mission ou exercice original reste à réaliser. Les exercices guidés historiques conservent leurs huit personnages.
+
+### Portée et reste à produire
+
+Ces images sont des **poses clés**, avec déplacements et transitions calculés par les moteurs. Elles ne constituent pas les cycles dessinés complets demandés par la bible. Les campagnes de Balise, costumes, super, conclusion et duo restent ouverts. Les **neuf autres kits originaux, vingt IA ennemies et dix-neuf autres rencontres boss** restent à implémenter. Les vingt missions, cinq duos, six bonus, véhicules/gadgets et cent plans de décor conservent leurs dépendances de production. Les corrections canoniques précédemment non reçues restent dans leur registre.
+
+Le [bilan de la passe](../../production/20261127-first-playable/BILAN.md), la [recette de Balise](../../production/20261127-first-playable/BALISE.md), la [rencontre du Consignateur](../../production/20261127-first-playable/CONSIGNATEUR.md) et les [vérifications](../../production/20261127-first-playable/VERIFICATION.md) distinguent simulation, contrôles DOM, Canvas natif et navigateur réel. La fidélité des nouvelles poses est évaluée contre leurs références originales ; aucune certification globale 1:1 de l’ensemble de l’univers n’est déclarée.

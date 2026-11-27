@@ -1057,7 +1057,9 @@
     let pose=decided?(m.winner===index+1?'victory':'fall'):f.stun?'hurt':f.taunt?'taunt':
       (f.guard||f.blockStun)?'guard':
       a?({balise:'tether',baliseAnchor:'anchor',baliseReel:'reel',baliseAssist:'tether',baliseLight:'light',baliseHeavy:'heavy',baliseLift:'heavy',sweep:'light',air:'light',grab:'heavy'}[a.key]||'stance'):
-      !f.grounded?(f.vy<0?'fall':'jump'):f.crouch?'crouch':movement?(Math.sin(f.walk)>=0?'walk1':'walk2'):'stance';
+      !f.grounded?'jump':f.crouch?'crouch':movement?(Math.sin(f.walk)>=0?'walk1':'walk2'):'stance';
+    // The received fall drawings show a grounded, living defeat. The compact
+    // jump pose is used for both ascent and descent; velocity does not topple the body.
     const requested=frames.original?.[pose]?.[face],fallback=frames.original?.stance?.[face];
     const descriptor=ready(requested?.image)?requested:fallback;
     oval(c,f.x,FLOOR+1,Math.max(11,29-f.y*.08),4.3,'rgba(4,11,14,.54)');

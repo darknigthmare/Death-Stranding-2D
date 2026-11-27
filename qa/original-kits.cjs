@@ -248,6 +248,20 @@ function runOriginalTests(buildHarness,fightSource,kitSource,contentSource,baseS
     const h=build();let rejected=false;try{h.start({clock:'network'});}catch{rejected=true;}check(rejected,'untagged clock accepted');
     h.start({clock:'network',originalRules:'balise-1'});check(h.api.network.checkpoint()!==null,'tagged deterministic recipe rejected');
   });
+  test('Ordinary jump descent keeps the aerial drawing; grounded defeat uses the living fall',()=>{
+    const h=build(),m=h.start(),f=m.f[0];
+    for(const face of [1,-1])for(const vy of [8,-8]){
+      f.face=face;f.y=80;f.vy=vy;f.grounded=false;f.act=null;f.stun=0;f.guard=false;h.draws.length=0;
+      h.hooks.drawOriginalFighter(m,f,0);
+      const side=face>0?'right':'left';
+      check(h.draws.some(args=>args[0].src==='assets/test/balise-jump-'+side+'.png'),'airborne drawing lost '+side+' '+vy);
+      check(!h.draws.some(args=>args[0].src==='assets/test/balise-fall-'+side+'.png'),'horizontal defeat drawing used in normal air');
+    }
+    m.phase='roundover';m.winner=2;f.hp=0;f.y=0;f.vy=0;f.grounded=true;
+    for(const face of [1,-1]){f.face=face;h.draws.length=0;h.hooks.drawOriginalFighter(m,f,0);
+      check(h.draws.some(args=>args[0].src==='assets/test/balise-fall-'+(face>0?'right':'left')+'.png'),'grounded defeat drawing missing');
+    }
+  });
   if(baseSource)test('Eight canonical kits retain identical deterministic state with module absent or loaded',()=>{
     const oldBuild=()=>buildHarness(baseSource,kitSource,contentSource,{kit:false}),newBuild=()=>build({kit:false});
     for(const kit of [false,true])for(const id of ['sam','fragile','higgs','cliff','mule','diehardman','mama','heartman']){

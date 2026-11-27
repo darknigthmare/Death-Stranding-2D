@@ -3,7 +3,7 @@ name: LDM first playable verification
 on:
   pull_request:
     branches: [main]
-    types: [opened, synchronize, reopened, ready_for_review]
+    types: [opened, synchronize, reopened]
 
 permissions:
   contents: read
@@ -20,7 +20,7 @@ jobs:
           SOURCE_SHA: ${{ github.event.pull_request.head.sha }}
         shell: python
         run: |
-          import os, urllib.request, json, runpy
+          import os, urllib.request, json, runpy, sys
           from pathlib import Path
           base = "https://raw.githubusercontent.com/darknigthmare/Death-Stranding-2D/" + os.environ["SOURCE_SHA"] + "/"
           manifest_path = "docs/combat/production/20261127-first-playable/art-generation.json"
@@ -34,6 +34,7 @@ jobs:
           for item in manifest["assets"]:
               receive(item["path"])
           script = receive("outils/recevoir_premier_jouable.py")
+          sys.argv = [str(script), "--require-complete"]
           runpy.run_path(str(script), run_name="__main__")
   verification:
     runs-on: ubuntu-24.04
@@ -60,7 +61,7 @@ jobs:
           npm install --prefix "$RUNNER_TEMP/ldm-deps" --no-audit --no-fund @napi-rs/canvas@0.1.80 playwright@1.58.0
           "$RUNNER_TEMP/ldm-deps/node_modules/.bin/playwright" install --with-deps chromium
       - name: Native art reception
-        run: python outils/recevoir_premier_jouable.py
+        run: python outils/recevoir_premier_jouable.py --require-complete
       - name: Regenerate canonical reference catalogues
         if: always()
         run: |
@@ -77,11 +78,25 @@ jobs:
       - name: Balise mechanics and canonical regression
         if: always()
         run: node qa/original-kits.cjs > "$LDM_QA_OUTPUT/balise-verification.json"
+      - name: Consignateur objectives and public victories
+        if: always()
+        run: node modes/echos-de-la-greve/qa/original-bosses.cjs > "$LDM_QA_OUTPUT/consignateur-verification.json"
+      - name: First playable integration and delivery
+        if: always()
+        run: |
+          node modes/echos-de-la-greve/qa/first-playable-entrypoints.cjs --output="$LDM_QA_OUTPUT/first-playable-entrypoints-verification.json"
+          node modes/echos-de-la-greve/qa/first-playable-delivery.cjs
+      - name: Native Canvas gameplay and pose reception
+        if: always()
+        run: node modes/echos-de-la-greve/qa/first-playable-canvas.cjs
+      - name: Actual Chromium first playable flows
+        if: always()
+        run: node modes/echos-de-la-greve/qa/first-playable-browser.cjs
       - name: Presentation and exercises
         if: always()
         run: |
-          node modes/echos-de-la-greve/qa/presentation.cjs
-          node modes/echos-de-la-greve/qa/lessons.cjs
+          node modes/echos-de-la-greve/qa/presentation.cjs --output="$LDM_QA_OUTPUT/presentation-verification.json"
+          node modes/echos-de-la-greve/qa/lessons.cjs --output="$LDM_QA_OUTPUT/lessons-verification.json"
           node modes/echos-de-la-greve/qa/original-entrypoints.cjs
       - name: Actual Chromium catalogue and relay
         if: always()
@@ -102,7 +117,7 @@ jobs:
               "docs/combat/ACTIONS_ET_IA.md",
               "docs/combat/data/boss-et-rencontres.json",
               "docs/combat/BOSS_ET_RENCONTRES.md"]]
-          files.extend(path for path in root.rglob("*") if path.is_file() and path.suffix in (".json", ".webp", ".png") and path.name != "art-generation.json")
+          files.extend(path for path in root.rglob("*") if path.is_file() and path.suffix in (".json", ".webp", ".png") and not path.name.endswith("art-generation.json"))
           for path in files:
               if not path.is_file():
                   continue

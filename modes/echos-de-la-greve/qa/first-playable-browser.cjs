@@ -7,11 +7,11 @@ const {createCanvas,loadImage}=require('@napi-rs/canvas');
 const {openRelay}=require('../netplay-server.cjs');
 const mode=path.resolve(__dirname,'..'),repo=path.resolve(mode,'../..');
 const out=path.resolve(process.env.LDM_QA_OUTPUT||path.join(repo,'docs/combat/production/20261127-first-playable'));
-const captures=path.join(out,'browser-renders'),checks=[],errors=[],failedRequests=[],pictures=[];
+const captures=path.join(out,'browser-renders'),checks=[],errors=[],httpErrors=[],failedRequests=[],pictures=[];
 fs.mkdirSync(captures,{recursive:true});
 const hash=bytes=>crypto.createHash('sha256').update(bytes).digest('hex');
 const files=['index.html','app.js','presentation.js','teams.html','teams.js','extension.html','extension.js','fight.js','boss.js','lessons.js','original-kits.js','original-kits-assets.js','original-bosses.js','original-bosses-assets.js','qa/first-playable-browser.cjs'];
-const report={date:new Date().toISOString(),browser:true,hardware:false,passed:false,checks,errors,failedRequests,captures:pictures,sourceSha256:Object.fromEntries(files.map(file=>[file,hash(fs.readFileSync(path.join(mode,file)))]))};
+const report={date:new Date().toISOString(),browser:true,hardware:false,passed:false,checks,errors,httpErrors,failedRequests,captures:pictures,sourceSha256:Object.fromEntries(files.map(file=>[file,hash(fs.readFileSync(path.join(mode,file)))]))};
 async function check(name,fn){try{const result=await fn();checks.push({name,passed:true,result});console.log('PASS '+name);return result;}catch(error){checks.push({name,passed:false,error:String(error.stack||error)});console.error('FAIL '+name+': '+error.message);throw error;}}
 async function capture(page,name,selector='#arena'){
  const raw=await page.locator(selector).screenshot({type:'png'}),im=await loadImage(raw),c=createCanvas(im.width,im.height);
@@ -26,12 +26,14 @@ async function preload(page,kind){
  await page.evaluate(async kind=>{
    const paths=kind==='balise'?Object.values(window.StrandOriginalKitsAssets.kits.balise.poses).flatMap(faces=>Object.values(faces).map(d=>d.src)):
      Object.values(window.StrandOriginalBossArt.directionalPoses.consignateur).flatMap(faces=>Object.values(faces).map(d=>d.src));
-   await Promise.all(paths.map(src=>new Promise((resolve,reject)=>{const image=new Image();image.onload=resolve;image.onerror=()=>reject(new Error(src));image.src=src;})));
+   paths.push(window.StrandAssets.stages['ldm-stage-digue-aval']);
+   paths.push(...(kind==='balise'?Object.values(window.StrandOriginalKitsAssets.kits.balise.props).map(d=>d.src):Object.values(window.StrandOriginalBossArt.props)));
+   await Promise.all([...new Set(paths)].map(src=>new Promise((resolve,reject)=>{const image=new Image();image.onload=resolve;image.onerror=()=>reject(new Error(src));image.src=src;})));
  },kind);
 }
 async function heldSpecial(page,direction,key){
  await page.keyboard.down(direction);await page.keyboard.down('h');
- try{await page.waitForFunction(key=>window.StrandFight.snapshot()?.fighters?.[0]?.act?.key===key,key,{timeout:4000});}
+ try{await page.waitForFunction(key=>window.StrandFight.snapshot()?.fighters?.[0]?.action===key,key,{timeout:4000});}
  finally{await page.keyboard.up('h');await page.keyboard.up(direction);}
 }
 async function balise(page,base,label,full){
@@ -68,8 +70,8 @@ async function balise(page,base,label,full){
      await page.locator('#pauseBtn').click();
      const before=await page.evaluate(()=>window.StrandFight.snapshot().fighters[0]);
      assert(before.marker.ttl>0);await capture(page,'balise-anchor-browser');
-     await page.locator('#pauseBtn').click();await page.waitForFunction(()=>!window.StrandFight.snapshot().fighters[0].act);
-     await heldSpecial(page,'a','baliseReel');await page.waitForFunction(()=>!window.StrandFight.snapshot().fighters[0].act);
+     await page.locator('#pauseBtn').click();await page.waitForFunction(()=>!window.StrandFight.snapshot().fighters[0].action);
+     await heldSpecial(page,'a','baliseReel');await page.waitForFunction(()=>!window.StrandFight.snapshot().fighters[0].action);
      const after=await page.evaluate(()=>window.StrandFight.snapshot().fighters[0]);
      assert.equal(after.marker,null);assert(after.x>before.x&&after.x<=before.marker.x+1);
      return {anchor:before.marker.x,from:before.x,to:after.x,remainingChiral:after.chiral};
@@ -117,16 +119,25 @@ async function boss(page,base,label){
    assert.equal(await page.locator('[data-option="bossStage"] option').count(),1);
    assert.match(await page.locator('.originalBossGuide').innerText(),/trois phases/i);
    await page.locator('[data-option="scenarioSpeed"]').selectOption('0.75');
+   await page.locator('#controlsLink').click();
+   assert.match(await page.locator('#keys').innerText(),/Prise \/ interaction · consoles, registre et reddition/);
+   assert.doesNotMatch(await page.locator('#keys').innerText(),/le dépôt est à gauche/);
+   await page.locator('#manual form[method="dialog"] button').click();
    return {encounters:7,canonicalKits:8,stageOptions:1,layout:await layout(page,label+' boss selection')};
  });
  await page.locator('[data-act="startBoss"]').click();await page.waitForFunction(()=>window.StrandBoss.snapshot()?.phase==='active');await preload(page,'boss');
  await check(label+' boss controls, speed, stage and resumed checkpoint are active',async()=>{
    const initial=await page.evaluate(()=>window.StrandBoss.snapshot());assert.equal(initial.bossId,'ldm-boss-consignateur');assert.equal(initial.stage,'ldm-stage-digue-aval');assert.equal(initial.original.speed,.75);
+   assert.match(await page.locator('[data-p="1"][data-input="throw"]').innerText(),/Prise \/ interaction/);
    await page.locator('#pauseBtn').click();await capture(page,'consignateur-'+label);
    assert(await page.evaluate(()=>window.StrandBoss.snapshot().paused));
    await page.reload({waitUntil:'networkidle'});await page.locator('[data-act="resumeBoss"]').click();
    const resumed=await page.evaluate(()=>window.StrandBoss.snapshot());assert.equal(resumed.bossId,initial.bossId);assert.equal(resumed.original.speed,.75);assert(resumed.tick>=initial.tick);
-   return {speed:resumed.original.speed,phase:resumed.original.phase,checkpoint:true,layout:await layout(page,label+' boss arena')};
+   await page.locator('#pauseBtn').click();await page.locator('[data-act="leave"]').click();
+   assert.equal(await page.locator('[data-option="scenarioSpeed"]').inputValue(),'0.75');
+   await page.locator('[data-act="startBoss"]').click();await page.waitForFunction(()=>window.StrandBoss.snapshot()?.phase==='active');
+   const restarted=await page.evaluate(()=>window.StrandBoss.snapshot());assert.equal(restarted.bossId,'ldm-boss-consignateur');assert.equal(restarted.original.speed,.75);
+   return {speed:resumed.original.speed,phase:resumed.original.phase,checkpoint:true,nextAttemptSpeed:restarted.original.speed,layout:await layout(page,label+' boss arena')};
  });
 }
 (async()=>{
@@ -138,10 +149,12 @@ async function boss(page,base,label){
    for(const [label,viewport,full] of [['desktop',{width:1280,height:900},true],['mobile',{width:390,height:844},false]]){
      const context=await browser.newContext({viewport,deviceScaleFactor:1,isMobile:!full,hasTouch:!full});const page=await context.newPage();page.setDefaultTimeout(20000);
      page.on('pageerror',error=>errors.push({page:label,message:String(error)}));
+     page.on('response',response=>{if(response.status()>=400&&!new URL(response.url()).pathname.endsWith('/favicon.ico'))httpErrors.push({page:label,url:response.url(),status:response.status()});});
      page.on('requestfailed',request=>failedRequests.push({page:label,url:request.url(),error:request.failure()?.errorText}));
      await balise(page,base,label,full);await relay(page,base,label);await boss(page,base,label);await context.close();
    }
    await check('No uncaught error in the actual original-content pages',async()=>{assert.equal(errors.length,0);return errors;});
+   await check('All requested game resources return successfully',async()=>{assert.equal(httpErrors.length,0,JSON.stringify(httpErrors));return httpErrors;});
    report.passed=true;
  }catch(error){report.fatalError=String(error.stack||error);process.exitCode=1;}
  finally{if(browser)await browser.close();if(server)await new Promise(resolve=>server.close(resolve));report.finishedAt=new Date().toISOString();fs.writeFileSync(path.join(out,'first-playable-browser-verification.json'),JSON.stringify(report,null,2)+'\n');}

@@ -295,7 +295,7 @@
     const cp=resume?bossEngine?.progress().checkpoint:null;
     if(resume&&!cp){bossSelection();return;}
     stopFight();
-    if(cp){config.p1=cp.state.p1;config.boss=cp.state.bossId;config.difficulty=cp.state.difficulty;config.outfit1=cp.state.outfit;config.bossStage=cp.state.stage;}
+    if(cp){config.p1=cp.state.p1;config.boss=cp.state.bossId;config.difficulty=cp.state.difficulty;config.outfit1=cp.state.outfit;config.bossStage=cp.state.stage;if(isOriginalBoss(config.boss))config.scenarioSpeed=String(cp.state.original?.speed??1);}
     config.mode='boss';
     const boss=bossEngine.encounters[config.boss],stage=cp?.state.stage || (config.bossStage==='recommended'?boss.stage:config.bossStage);
     const match={mode:'boss',kind:'boss',p1:config.p1,boss:config.boss,stage};activeFight=match;
@@ -703,7 +703,7 @@
   function touchControls(player) {
     function control(item) {
       const {id:action,title,short:label} = item;
-      const bossLabel=activeFight?.kind==='boss'?({throw:bossEngine.encounters[activeFight.boss]?.cargo?'Colis':'Appui',finish:'Chiral'})[action]:null;
+      const bossLabel=activeFight?.kind==='boss'?({throw:isOriginalBoss(activeFight.boss)?'Prise / interaction':bossEngine.encounters[activeFight.boss]?.cargo?'Colis':'Appui',finish:'Chiral'})[action]:null;
       const hint='J'+player+' · '+(bossLabel||title)+' · clavier '+inputSettings.label(player,action);
       return '<button type="button" aria-label="'+esc(hint)+'" title="'+esc(hint)+'" data-input-title="'+esc(bossLabel||title)+'" data-p="' + player + '" data-input="' + action + '">' + (bossLabel || label) + '</button>';
     }
@@ -915,8 +915,12 @@
     if (resumeAfterManual) setPause(true);
     const campaignChapter=campaignContent?.chapters[campaign?.progress().run?.chapter||0];
     const bossMode=activeFight?.kind==='boss' || (!activeFight && (['boss','bossrush'].includes(config.mode)||config.mode==='campaign'&&campaignChapter?.kind==='boss'));
+    const originalBossMode=bossMode&&isOriginalBoss(activeFight?.kind==='boss'?activeFight.boss:config.mode==='boss'?config.boss:null);
+    const bossInteractionHint=originalBossMode?
+      'La commande Prise / interaction ('+keyText(1,'throw')+') désamorce les deux consoles et restitue le registre pendant les reprises. À zéro de garde, approche-toi du Consignateur et utilise cette même commande pour obtenir sa reddition au lien.':
+      'La commande colis / appui ('+keyText(1,'throw')+') prend, pose ou livre un colis ; le dépôt est à gauche. Les grandes cibles résistent à la projection et au soulèvement.';
     const table = '<table><thead><tr><th>Action</th><th>Joueur 1</th>'+(bossMode?'':'<th>Joueur 2</th>')+'</tr></thead><tbody>' +
-      keys.filter(item=>!bossMode||item.id!=='taunt').map(({id:action,title}) => '<tr><td>' + (bossMode?({throw:'Prendre / poser / livrer · frappe d’appui',finish:'Charge chirale'})[action]||title:title) + '</td><td>' + keyText(1,action) + '</td>'+(bossMode?'':'<td>' + keyText(2,action) + '</td>')+'</tr>').join('') +
+      keys.filter(item=>!bossMode||item.id!=='taunt').map(({id:action,title}) => '<tr><td>' + (bossMode?({throw:originalBossMode?'Prise / interaction · consoles, registre et reddition':'Prendre / poser / livrer · frappe d’appui',finish:'Charge chirale'})[action]||title:title) + '</td><td>' + keyText(1,action) + '</td>'+(bossMode?'':'<td>' + keyText(2,action) + '</td>')+'</tr>').join('') +
       '</tbody></table>';
     const fighterIds = [activeFight?.p1 || (config.mode==='campaign'?campaignChapter?.p1:null) || config.p1];
     if (acceptsSecondPlayer() && !fighterIds.includes(activeFight.p2)) fighterIds.push(activeFight.p2);
@@ -936,7 +940,7 @@
         '<table><thead><tr><th>Direction</th><th>Technique</th><th>Coût chiral</th></tr></thead><tbody>' + rows + '</tbody></table>'+(!bossMode?details+originalFrames:'');
     }).join('');
     document.getElementById('keys').innerHTML = '<div class="options">'+ambienceControl()+'</div><div class="commandSheet">'+table+'</div>' +
-      (bossMode ? '<p class="hint">Les grandes rencontres se jouent avec J1. Les directions déplacent, font sauter et accroupir le porteur. Combine bas et garde contre les tirs bas. Les zones pointillées annoncent les attaques à esquiver : sors de la zone ou saute selon le signal. Léger et lourd frappent ; Signature utilise la technique directionnelle. Charge chirale ('+keyText(1,'finish')+') libère 70 points de jauge. La commande colis / appui ('+keyText(1,'throw')+') prend, pose ou livre un colis ; le dépôt est à gauche. Les grandes cibles résistent à la projection et au soulèvement. Échap met en pause. Les dégâts, durées et effets de projection des techniques ci-dessous sont adaptés aux grandes rencontres.</p>' :
+      (bossMode ? '<p class="hint">Les grandes rencontres se jouent avec J1. Les directions déplacent, font sauter et accroupir le porteur. Combine bas et garde contre les tirs bas. Les zones pointillées annoncent les attaques à esquiver : sors de la zone ou saute selon le signal. Léger et lourd frappent ; Signature utilise la technique directionnelle. Charge chirale ('+keyText(1,'finish')+') libère 70 points de jauge. '+bossInteractionHint+' Échap met en pause. Les dégâts, durées et effets de projection des techniques ci-dessous sont adaptés aux grandes rencontres.</p>' :
       '<p class="hint">Appuie deux fois dans une direction pour une ruée. Combine bas et léger pour balayer, bas et lourd pour soulever. Sur impact, enchaîne léger, lourd et signature. La finalité s’ouvre au dernier K.-O. Échap met le duel en pause.</p><p class="hint">Geste de défi : '+keyText(1,'taunt')+' pour J1, '+keyText(2,'taunt')+' pour J2, ou L3. Depuis la position neutre au sol, tu t’exposes pendant 0,9 s : entrée, tenue, sortie. Aucun dégât, bonus ou protection. Un impact interrompt le geste ; les attaques ne peuvent pas l’annuler.</p>') +
       '<p class="hint">Maintiens la direction au moment de la signature ('+keyText(1,'special')+' pour J1'+(bossMode?'':', '+keyText(2,'special')+' pour J2')+'). « Avant » pointe toujours vers l’adversaire.</p>' + moveLists+'<div id="inputEditor"></div>';
     inputEditor=input.mountEditor(document.getElementById('inputEditor'),{settings:inputSettings,controller:inputController});
