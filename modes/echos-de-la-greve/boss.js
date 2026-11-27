@@ -92,7 +92,7 @@
       new Set(boxes.map(q=>q.id)).size===boxes.length&&boxes.filter(q=>q.state==='delivered').length===s.cargo.delivered&&
       (s.cargo.carrying===null?boxes.every(q=>q.state!=='carried'):boxes.filter(q=>q.state==='carried').length===1&&boxes.some(q=>q.state==='carried'&&q.id===s.cargo.carrying));
     return !!(['easy','normal','hard'].includes(s.difficulty)&&
-      ['intro','active','collect'].includes(s.phase)&&Number.isInteger(s.tick)&&s.tick>=0&&s.tick<=18000&&
+      ['intro','active','collect'].includes(s.phase)&&Number.isInteger(s.tick)&&s.tick>=0&&s.tick<=(originalFor(s)?d.seconds*60+225:18000)&&
       Number.isInteger(s.remaining)&&s.remaining>0&&s.remaining<=d.seconds*60&&scalar(s.phaseTicks,0,75)&&scalar(s.waveDelay,0,180)&&
       typeof s.message==='string'&&scalar(s.messageTicks,0,300)&&
       p&&p.hp>0&&p.hp<=120&&p.x>=32&&p.x<=W-32&&p.y>=0&&p.y<=360&&Math.abs(p.vy)<=30&&
@@ -292,13 +292,14 @@
     const score=won?Math.max(100,Math.round(12000+s.stats.damageDealt*9+s.p.hp*25+(d.cargo?s.cargo.integrity*12:0)-elapsed*1.5)):0;
     const result={won,reason,score,bossId:s.bossId,p1:s.p1,difficulty:s.difficulty,stage:s.stage,elapsed,
       vitality:Math.ceil(s.p.hp),cargo:s.cargo.delivered,cargoGoal:s.cargo.goal,integrity:s.cargo.integrity,waves:s.wave,stats:clone(s.stats)};
-    if(originalFor(s)){result.original=originalFor(s).result(s);result.retryAvailable=!won;}
+    const restart=!won&&originalFor(s)?retryCheckpoint(s):null;
+    if(originalFor(s)){result.original=originalFor(s).result(s);result.retryAvailable=!!restart;result.original.retryAvailable=!!restart;}
     if(current.isolated){result.saved=null;result.isolated=true;}
     else if(current.rush)result.saved=finishRush(result,s.p.hp);
     else{
       const p=progress(),key=[s.p1,s.bossId,s.difficulty].join(':'),r=p.records[key]||{attempts:0,wins:0,best:0,fastest:null};
       r.attempts++;if(won){r.wins++;r.best=Math.max(r.best||0,score);r.fastest=r.fastest===null?elapsed:Math.min(r.fastest,elapsed);}
-      p.records[key]=r;p.recent.unshift(result);p.recent=p.recent.slice(0,12);p.checkpoint=!won&&originalFor(s)?retryCheckpoint(s):null;result.saved=writeProgress(p);
+      p.records[key]=r;p.recent.unshift(result);p.recent=p.recent.slice(0,12);p.checkpoint=restart;result.saved=writeProgress(p);
     }
     s.result=result;current.saved=result.saved;stopAudio();notify(true);current?.onEnd?.(clone(result));
   }
@@ -693,7 +694,7 @@
     text(c,String(Math.max(0,Math.ceil(s.remaining/60))).padStart(3,'0'),464,60,33,'#f1f0dc','center');
     const objective=originalFor(s)?originalFor(s).objective(s):s.cargo.goal?'COLIS '+s.cargo.delivered+' / '+s.cargo.goal+' · INTÉGRITÉ '+s.cargo.integrity+' %'+(s.cargo.carrying!==null?' · COLIS PORTÉ':''):
       'ATTAQUES ANNONCÉES → ESQUIVE → NOYAU EXPOSÉ';
-    text(c,objective,30,657,16,'#daedb8');text(c,'Léger · Lourd · Signature · Garde · Saut'+(s.cargo.goal?' · Colis':' · Appui')+' · Charge chirale'+(d.nonLethal?' · T : console / registre / lien':''),30,687,13,'#bcd1d2');
+    text(c,objective,30,657,16,'#daedb8');text(c,'Léger · Lourd · Signature · Garde · Saut'+(s.cargo.goal?' · Colis':' · Appui')+' · Charge chirale'+(d.nonLethal?' · Prise / interaction : objectifs / lien':''),30,687,13,'#bcd1d2');
     if(s.messageTicks>0&&!['tell'].includes(b.phase)){
       c.fillStyle='#07141bcf';c.fillRect(120,125,1040,55);wrappedText(c,s.message,640,147,1005,15,'#e5eed4');
     }

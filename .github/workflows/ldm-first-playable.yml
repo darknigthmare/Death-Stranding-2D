@@ -9,19 +9,49 @@ permissions:
   contents: read
 
 jobs:
+  native-art:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 8
+    steps:
+      - name: Native alpha measurement dependency
+        run: python -m pip install --disable-pip-version-check Pillow==11.3.0
+      - name: Measure current original batch
+        env:
+          SOURCE_SHA: ${{ github.event.pull_request.head.sha }}
+        shell: python
+        run: |
+          import os, urllib.request, json, runpy
+          from pathlib import Path
+          base = "https://raw.githubusercontent.com/darknigthmare/Death-Stranding-2D/" + os.environ["SOURCE_SHA"] + "/"
+          manifest_path = "docs/combat/production/20261127-first-playable/art-generation.json"
+          def receive(name):
+              path = Path(name)
+              path.parent.mkdir(parents=True, exist_ok=True)
+              with urllib.request.urlopen(base + name, timeout=60) as response:
+                  path.write_bytes(response.read())
+              return path
+          manifest = json.loads(receive(manifest_path).read_text())
+          for item in manifest["assets"]:
+              receive(item["path"])
+          script = receive("outils/recevoir_premier_jouable.py")
+          runpy.run_path(str(script), run_name="__main__")
   verification:
     runs-on: ubuntu-24.04
     timeout-minutes: 30
-    env:
-      NODE_PATH: ${{ runner.temp }}/ldm-deps/node_modules
-      PLAYWRIGHT_BROWSERS_PATH: ${{ runner.temp }}/ldm-browsers
-      LDM_QA_OUTPUT: ${{ github.workspace }}/docs/combat/production/20261127-first-playable
     steps:
       - uses: actions/checkout@v4
         with:
           ref: ${{ github.event.pull_request.head.sha }}
           persist-credentials: false
           fetch-depth: 0
+      - name: Set runtime paths
+        shell: python
+        run: |
+          import os
+          with open(os.environ["GITHUB_ENV"], "a") as target:
+              print("NODE_PATH=" + os.environ["RUNNER_TEMP"] + "/ldm-deps/node_modules", file=target)
+              print("PLAYWRIGHT_BROWSERS_PATH=" + os.environ["RUNNER_TEMP"] + "/ldm-browsers", file=target)
+              print("LDM_QA_OUTPUT=" + os.environ["GITHUB_WORKSPACE"] + "/docs/combat/production/20261127-first-playable", file=target)
       - name: Install bounded verification dependencies
         run: |
           node --version

@@ -27,9 +27,9 @@
     const m=s.original,b=s.boss;
     if(m.surrendered)return 'PASSAGE ROUVERT · REGISTRE RESTITUÉ · AUCUNE MORT';
     if(m.phase===1)return 'GARDE '+Math.ceil(b.hp)+' / 300 · PUNIR LA POUSSÉE MANQUÉE';
-    if(m.phase===2)return 'CONSOLES '+m.consoles.filter(Boolean).length+' / 2 · T PENDANT UNE REPRISE';
-    if(m.register!=='retrieved')return 'REGISTRE '+m.freightIntegrity+' % · T POUR LE RESTITUER PENDANT UNE REPRISE';
-    return b.hp>0?'REGISTRE RESTITUÉ · FAIRE TOMBER LA GARDE':'GARDE À ZÉRO · APPROCHEZ-VOUS ET T POUR LA REDDITION AU LIEN';
+    if(m.phase===2)return 'CONSOLES '+m.consoles.filter(Boolean).length+' / 2 · Prise / interaction PENDANT UNE REPRISE';
+    if(m.register!=='retrieved')return 'REGISTRE '+m.freightIntegrity+' % · Prise / interaction POUR LE RESTITUER PENDANT UNE REPRISE';
+    return b.hp>0?'REGISTRE RESTITUÉ · FAIRE TOMBER LA GARDE':'GARDE À ZÉRO · APPROCHEZ-VOUS ET Prise / interaction POUR LA REDDITION AU LIEN';
   }
   function rememberPhase(s){
     const m=s.original,p=s.p;
@@ -48,8 +48,8 @@
     b.phase='approach';b.timer=duration(s,48);b.attack=null;b.stagger=0;b.exposed=0;
     s.hazards=[];s.shots=[];s.p.act=null;s.p.stun=0;s.p.invuln=Math.max(s.p.invuln,24);
     if(next===3){m.register='ground';m.registerX=REGISTER_X;}
-    api.message(s,next===2?'Phase 2 · deux consoles de péage. T près d’une console pendant sa reprise.':
-      'Phase 3 · le registre est libéré. Récupérez-le avec T pendant sa reprise, puis faites tomber sa garde.',220);
+    api.message(s,next===2?'Phase 2 · deux consoles de péage. Prise / interaction près d’une console pendant sa reprise.':
+      'Phase 3 · le registre est libéré. Récupérez-le avec Prise / interaction pendant sa reprise, puis faites tomber sa garde.',220);
     api.tone(next===2?430:560,.16);rememberPhase(s);api.savePhase(s);
   }
   function damage(s,amount,power,impactX,api){
@@ -69,7 +69,7 @@
     if(m.phase===2&&b.hp<=99&&both(m)){enterPhase(s,3,api);return true;}
     if(b.hp===0){
       b.phase='defeated';b.timer=0;b.attack=null;s.hazards=[];s.shots=[];s.p.act=null;
-      api.message(s,'Il s’agenouille. Approchez-vous et appuyez sur T pour obtenir sa reddition au lien.',240);
+      api.message(s,'Il s’agenouille. Approchez-vous et appuyez sur Prise / interaction pour obtenir sa reddition au lien.',240);
       api.tone(350,.16);
     }
     return true;
@@ -129,8 +129,8 @@
       if(!b.attack.hit)s.stats.avoided++;
       b.attack=null;b.phase='recover';b.timer=duration(s,PHASES[m.phase-1].recover);b.stagger=0;
       api.message(s,m.phase===1?'Poussée terminée · côté découvert !':
-        m.phase===2?'Reprise · T près d’une console pour la désamorcer.':
-        m.register==='ground'?'Reprise · T près du registre pour le restituer.':'Reprise · faites tomber sa garde.',b.timer);
+        m.phase===2?'Reprise · Prise / interaction près d’une console pour la désamorcer.':
+        m.register==='ground'?'Reprise · Prise / interaction près du registre pour le restituer.':'Reprise · faites tomber sa garde.',b.timer);
       api.tone(520,.08);
     }else if(b.phase==='recover'){b.cycle++;b.phase='approach';b.timer=duration(s,42);}
   }
@@ -150,10 +150,10 @@
     if(m.phase===3&&m.register==='ground'&&Math.abs(p.x-m.registerX)<=80){
       if(b.phase!=='recover'){api.message(s,'Le passage reste retenu · attendez sa reprise pour récupérer le registre.',100);return true;}
       m.register='retrieved';api.effect(s,m.registerX,api.floor-30,'guard');api.tone(720,.13);
-      api.message(s,'Registre restitué. Faites tomber sa garde, puis approchez-vous avec le lien (T).',180);api.savePhase(s);return true;
+      api.message(s,'Registre restitué. Faites tomber sa garde, puis approchez-vous avec le lien (Prise / interaction).',180);api.savePhase(s);return true;
     }
     if(m.phase===3&&b.hp===0){
-      if(Math.abs(p.x-b.x)>100){api.message(s,'Approchez-vous du Consignateur agenouillé, puis T pour la reddition.',120);return true;}
+      if(Math.abs(p.x-b.x)>100){api.message(s,'Approchez-vous du Consignateur agenouillé, puis Prise / interaction pour la reddition.',120);return true;}
       if(m.register!=='retrieved'||!both(m))return true;
       m.surrendered=true;b.phase='defeated';api.tone(740,.2);api.finish(s,true,'surrender');return true;
     }
@@ -203,7 +203,7 @@
     if(!a||a.phase!==m.phase||a.guard!==THRESHOLDS[m.phase-1]||!validFlags(a.objectiveFlags,m.phase,true)||
       !scalar(a.bossX,90,1190)||!scalar(a.playerX,32,1248)||!scalar(a.playerHp,1,120)||
       !scalar(a.energy,0,100)||!scalar(a.guardMeter,0,100)||!integer(a.seed,0,16777215)||
-      !integer(a.tick,0,18000)||!integer(a.remaining,1,18000)||!integer(a.nextId,1,100000))return false;
+      !integer(a.tick,0,18225)||!integer(a.remaining,1,18000)||!integer(a.nextId,1,100000))return false;
     const marker=a.marker;
     if(marker!==null&&(!marker||!['beacon','post','crate','anchor','memory'].includes(marker.kind)||
       !scalar(marker.x,0,1280)||!integer(marker.ttl,1,400)))return false;
@@ -219,7 +219,7 @@
         c.fillStyle=disabled?'#53605a':'#c2a65e';c.fillRect(x-19,floor-73,38,73);
         c.fillStyle=disabled?'#b7c8c0':'#182b33';c.fillRect(x-14,floor-64,28,25);
       }
-      paint.text(c,disabled?'DÉSACTIVÉE':m.phase===2?'T · CONSOLE '+(index+1):'PÉAGE '+(index+1),x,floor+25,12,disabled?'#bcebc5':'#ffe2a0','center');
+      paint.text(c,disabled?'DÉSACTIVÉE':m.phase===2?'INTERAGIR · CONSOLE '+(index+1):'PÉAGE '+(index+1),x,floor+25,12,disabled?'#bcebc5':'#ffe2a0','center');
       if(!disabled&&m.phase===2&&s.boss.phase==='recover'){
         c.strokeStyle='#d5f3a4';c.lineWidth=3;c.strokeRect(x-29,floor-92,58,100);
       }
@@ -228,18 +228,18 @@
       if(!paint.sprite(c,images.register,m.registerX,floor,48,geometries.register||{},'height')){
         c.fillStyle='#c8b47d';c.fillRect(m.registerX-24,floor-25,48,25);c.strokeStyle='#293c40';c.strokeRect(m.registerX-24,floor-25,48,25);
       }
-      paint.text(c,'T · REGISTRE '+m.freightIntegrity+' %',m.registerX,floor-38,12,'#e7f1b7','center');
+      paint.text(c,'INTERAGIR · REGISTRE '+m.freightIntegrity+' %',m.registerX,floor-38,12,'#e7f1b7','center');
     }
-    if(s.boss.hp===0&&!m.surrendered)paint.text(c,'T · LIEN / REDDITION',s.boss.x,floor-150,13,'#d6f2bb','center');
+    if(s.boss.hp===0&&!m.surrendered)paint.text(c,'INTERACTION · LIEN / REDDITION',s.boss.x,floor-150,13,'#d6f2bb','center');
   }
   const guide=Object.freeze({id:ID,title:'Le péage des cargaisons',
     summary:'Un consignateur humain retient les colis pour les protéger. Rouvrez le passage en lui faisant restituer le registre et accepter le lien.',
-    commands:Object.freeze([{key:'T',label:'Interagir',detail:'Près d’une console ou du registre pendant une reprise ; près du Consignateur à garde zéro pour sa reddition.'},
+    commands:Object.freeze([{key:'Prise / interaction',action:'throw',label:'Interagir',detail:'Près d’une console ou du registre pendant une reprise ; près du Consignateur à garde zéro pour sa reddition.'},
       {key:'Saut / déplacement',label:'Esquiver',detail:'Les cadres au sol annoncent les zones de poussée, de perche et de retenue. Les sons signalent annonce, impact et reprise.'},
       {key:'Léger / lourd / signature',label:'Réduire la garde',detail:'Les huit kits canoniques sont compatibles. Les frappes du côté découvert pendant une reprise sont les plus efficaces.'}]),
     phases:Object.freeze(PHASES.map((phase,i)=>Object.freeze({index:phase.index,guard:['300 → 198','198 → 99','99 → 0'][i],
       attack:phase.name,telegraphFrames:phase.tell,recoveryFrames:phase.recover,
-      objective:['Punir la poussée manquée.','Désamorcer les deux consoles pendant les reprises.','Restituer le registre, faire tomber la garde, puis T pour la reddition.'][i],
+      objective:['Punir la poussée manquée.','Désamorcer les deux consoles pendant les reprises.','Restituer le registre, faire tomber la garde, puis Prise / interaction pour la reddition.'][i],
       counter:phase.advice}))),
     victory:'Deux consoles désamorcées, registre restitué, garde zéro puis interaction au lien : aucune mort.',
     failure:'Vitalité à zéro, registre tombé à zéro d’intégrité ou temps écoulé. Reprise au début de la phase.',
