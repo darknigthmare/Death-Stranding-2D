@@ -1,0 +1,573 @@
+{
+  "date": "2026-11-27T13:59:13.663Z",
+  "browser": true,
+  "hardware": false,
+  "passed": true,
+  "checks": [
+    {
+      "name": "desktop original dossier exposes the actual playable link",
+      "passed": true,
+      "result": {
+        "kits": 9,
+        "preview": true,
+        "layout": {
+          "viewport": 1280,
+          "width": 1280,
+          "body": 1280
+        }
+      }
+    },
+    {
+      "name": "desktop commands include the original move sheet",
+      "passed": true,
+      "result": {
+        "sixMoves": true
+      }
+    },
+    {
+      "name": "desktop the shipped training engine starts Balise on Digue",
+      "passed": true,
+      "result": {
+        "fighter": "balise",
+        "stage": "ldm-stage-digue-aval",
+        "layout": {
+          "viewport": 1280,
+          "width": 1280,
+          "body": 1280
+        }
+      }
+    },
+    {
+      "name": "desktop browser keyboard places and recalls a real anchor",
+      "passed": true,
+      "result": {
+        "anchor": 528,
+        "from": 462,
+        "to": 528,
+        "remainingChiral": 36
+      }
+    },
+    {
+      "name": "desktop unsupported routes keep eight canonical kits",
+      "passed": true,
+      "result": {
+        "modes": 6,
+        "canonicalKits": 8
+      }
+    },
+    {
+      "name": "desktop Balise assistance, tag and persistent resume use actual UI",
+      "passed": true,
+      "result": {
+        "rules": "balise-1",
+        "active": "balise",
+        "paused": true,
+        "layout": {
+          "viewport": 1280,
+          "width": 1280,
+          "body": 1280
+        }
+      }
+    },
+    {
+      "name": "desktop original boss dossier and menu expose seven encounters",
+      "passed": true,
+      "result": {
+        "encounters": 7,
+        "canonicalKits": 8,
+        "stageOptions": 1,
+        "layout": {
+          "viewport": 1280,
+          "width": 1280,
+          "body": 1280
+        }
+      }
+    },
+    {
+      "name": "desktop boss controls, speed, stage and resumed checkpoint are active",
+      "passed": true,
+      "result": {
+        "speed": 0.75,
+        "phase": 1,
+        "checkpoint": true,
+        "nextAttemptSpeed": 0.75,
+        "layout": {
+          "viewport": 1280,
+          "width": 1280,
+          "body": 1280
+        }
+      }
+    },
+    {
+      "name": "mobile original dossier exposes the actual playable link",
+      "passed": true,
+      "result": {
+        "kits": 9,
+        "preview": true,
+        "layout": {
+          "viewport": 390,
+          "width": 390,
+          "body": 390
+        }
+      }
+    },
+    {
+      "name": "mobile commands include the original move sheet",
+      "passed": true,
+      "result": {
+        "sixMoves": true
+      }
+    },
+    {
+      "name": "mobile the shipped training engine starts Balise on Digue",
+      "passed": true,
+      "result": {
+        "fighter": "balise",
+        "stage": "ldm-stage-digue-aval",
+        "layout": {
+          "viewport": 390,
+          "width": 390,
+          "body": 390
+        }
+      }
+    },
+    {
+      "name": "mobile duel pause exposes its title and every control",
+      "passed": true,
+      "result": {
+        "initial": {
+          "panel": {
+            "left": 9,
+            "right": 381,
+            "top": 223.59375,
+            "bottom": 432.84375,
+            "width": 372,
+            "height": 209.25
+          },
+          "heading": {
+            "left": 110.03125,
+            "right": 279.96875,
+            "top": 235.59375,
+            "bottom": 294.390625,
+            "width": 169.9375,
+            "height": 58.796875
+          },
+          "scrollTop": 0,
+          "clientHeight": 209,
+          "scrollHeight": 266,
+          "viewport": {
+            "width": 390,
+            "height": 844
+          }
+        },
+        "bottom": {
+          "panel": {
+            "left": 9,
+            "right": 381,
+            "top": 223.59375,
+            "bottom": 432.84375,
+            "width": 372,
+            "height": 209.25
+          },
+          "heading": {
+            "left": 110.03125,
+            "right": 279.96875,
+            "top": 178.59375,
+            "bottom": 237.390625,
+            "width": 169.9375,
+            "height": 58.796875
+          },
+          "scrollTop": 57,
+          "clientHeight": 209,
+          "scrollHeight": 266,
+          "viewport": {
+            "width": 390,
+            "height": 844
+          }
+        },
+        "reopened": {
+          "panel": {
+            "left": 9,
+            "right": 381,
+            "top": 223.59375,
+            "bottom": 432.84375,
+            "width": 372,
+            "height": 209.25
+          },
+          "heading": {
+            "left": 110.03125,
+            "right": 279.96875,
+            "top": 235.59375,
+            "bottom": 294.390625,
+            "width": 169.9375,
+            "height": 58.796875
+          },
+          "scrollTop": 0,
+          "clientHeight": 209,
+          "scrollHeight": 266,
+          "viewport": {
+            "width": 390,
+            "height": 844
+          }
+        },
+        "controls": [
+          {
+            "tag": "INPUT",
+            "text": "Volume de l’ambiance",
+            "insidePanel": true,
+            "insideViewport": true,
+            "hit": true,
+            "disabled": false,
+            "scrollTop": 0
+          },
+          {
+            "tag": "BUTTON",
+            "text": "Reprendre",
+            "insidePanel": true,
+            "insideViewport": true,
+            "hit": true,
+            "disabled": false,
+            "scrollTop": 0
+          },
+          {
+            "tag": "BUTTON",
+            "text": "Quitter le duel",
+            "insidePanel": true,
+            "insideViewport": true,
+            "hit": true,
+            "disabled": false,
+            "scrollTop": 57
+          }
+        ],
+        "reopenedAtBeginning": true,
+        "proofScope": "Real viewport captures at the top and bottom of the scrollable pause menu"
+      }
+    },
+    {
+      "name": "mobile unsupported routes keep eight canonical kits",
+      "passed": true,
+      "result": {
+        "modes": 6,
+        "canonicalKits": 8
+      }
+    },
+    {
+      "name": "mobile Relais pause toolbar keeps all commands reachable",
+      "passed": true,
+      "result": {
+        "controls": [
+          {
+            "text": "Reprendre",
+            "insideViewport": true,
+            "hit": true,
+            "disabled": false
+          },
+          {
+            "text": "Enregistrer et quitter",
+            "insideViewport": true,
+            "hit": true,
+            "disabled": false
+          },
+          {
+            "text": "Retour à la composition",
+            "insideViewport": true,
+            "hit": true,
+            "disabled": false
+          }
+        ],
+        "layout": "Toolbar remains in normal document flow"
+      }
+    },
+    {
+      "name": "mobile Balise assistance, tag and persistent resume use actual UI",
+      "passed": true,
+      "result": {
+        "rules": "balise-1",
+        "active": "balise",
+        "paused": true,
+        "layout": {
+          "viewport": 390,
+          "width": 390,
+          "body": 390
+        }
+      }
+    },
+    {
+      "name": "mobile original boss dossier and menu expose seven encounters",
+      "passed": true,
+      "result": {
+        "encounters": 7,
+        "canonicalKits": 8,
+        "stageOptions": 1,
+        "layout": {
+          "viewport": 390,
+          "width": 390,
+          "body": 390
+        }
+      }
+    },
+    {
+      "name": "mobile Boss pause exposes its title and every control",
+      "passed": true,
+      "result": {
+        "initial": {
+          "panel": {
+            "left": 9,
+            "right": 381,
+            "top": 223.59375,
+            "bottom": 432.84375,
+            "width": 372,
+            "height": 209.25
+          },
+          "heading": {
+            "left": 110.03125,
+            "right": 279.96875,
+            "top": 235.59375,
+            "bottom": 294.390625,
+            "width": 169.9375,
+            "height": 58.796875
+          },
+          "scrollTop": 0,
+          "clientHeight": 209,
+          "scrollHeight": 297,
+          "viewport": {
+            "width": 390,
+            "height": 844
+          }
+        },
+        "bottom": {
+          "panel": {
+            "left": 9,
+            "right": 381,
+            "top": 223.59375,
+            "bottom": 432.84375,
+            "width": 372,
+            "height": 209.25
+          },
+          "heading": {
+            "left": 110.03125,
+            "right": 279.96875,
+            "top": 147.59375,
+            "bottom": 206.390625,
+            "width": 169.9375,
+            "height": 58.796875
+          },
+          "scrollTop": 88,
+          "clientHeight": 209,
+          "scrollHeight": 297,
+          "viewport": {
+            "width": 390,
+            "height": 844
+          }
+        },
+        "reopened": {
+          "panel": {
+            "left": 9,
+            "right": 381,
+            "top": 223.59375,
+            "bottom": 432.84375,
+            "width": 372,
+            "height": 209.25
+          },
+          "heading": {
+            "left": 110.03125,
+            "right": 279.96875,
+            "top": 235.59375,
+            "bottom": 294.390625,
+            "width": 169.9375,
+            "height": 58.796875
+          },
+          "scrollTop": 0,
+          "clientHeight": 209,
+          "scrollHeight": 297,
+          "viewport": {
+            "width": 390,
+            "height": 844
+          }
+        },
+        "controls": [
+          {
+            "tag": "INPUT",
+            "text": "Volume de l’ambiance",
+            "insidePanel": true,
+            "insideViewport": true,
+            "hit": true,
+            "disabled": false,
+            "scrollTop": 0
+          },
+          {
+            "tag": "BUTTON",
+            "text": "Reprendre",
+            "insidePanel": true,
+            "insideViewport": true,
+            "hit": true,
+            "disabled": false,
+            "scrollTop": 20
+          },
+          {
+            "tag": "BUTTON",
+            "text": "Choisir une rencontre",
+            "insidePanel": true,
+            "insideViewport": true,
+            "hit": true,
+            "disabled": false,
+            "scrollTop": 88
+          }
+        ],
+        "reopenedAtBeginning": true,
+        "proofScope": "Real viewport captures at the top and bottom of the scrollable pause menu"
+      }
+    },
+    {
+      "name": "mobile boss controls, speed, stage and resumed checkpoint are active",
+      "passed": true,
+      "result": {
+        "speed": 0.75,
+        "phase": 1,
+        "checkpoint": true,
+        "nextAttemptSpeed": 0.75,
+        "layout": {
+          "viewport": 390,
+          "width": 390,
+          "body": 390
+        }
+      }
+    },
+    {
+      "name": "No uncaught error in the actual original-content pages",
+      "passed": true,
+      "result": []
+    },
+    {
+      "name": "All requested game resources return successfully",
+      "passed": true,
+      "result": []
+    }
+  ],
+  "errors": [],
+  "httpErrors": [],
+  "failedRequests": [],
+  "flowErrors": [],
+  "captures": [
+    {
+      "file": "browser-renders/balise-anchor-browser.webp",
+      "width": 1228,
+      "height": 666,
+      "bytes": 26788,
+      "sha256": "319a808aa431c8402756f9ec837a2f3d92355769aeec574957b53d2a84b65c90",
+      "scope": "element",
+      "selector": "#arena"
+    },
+    {
+      "file": "browser-renders/balise-relay-desktop.webp",
+      "width": 1224,
+      "height": 666,
+      "bytes": 91568,
+      "sha256": "83db7906563826fdc207530a7f0dfb8f9aaedda24bf0fc9474d07ab50c19bb13",
+      "scope": "element",
+      "selector": "#teamCanvas"
+    },
+    {
+      "file": "browser-renders/consignateur-desktop.webp",
+      "width": 1228,
+      "height": 666,
+      "bytes": 92740,
+      "sha256": "a38e2d05a6de593adc4a005e06e0750c0d9d6062dcba3a1f763a753fd1b9a60e",
+      "scope": "element",
+      "selector": "#arena"
+    },
+    {
+      "file": "browser-renders/balise-mobile-browser.webp",
+      "width": 390,
+      "height": 844,
+      "bytes": 41638,
+      "sha256": "59f3c678c71ce73b508c35f330dbc644f7e4dd04684b7a0130f619469956de63",
+      "scope": "viewport",
+      "selector": null
+    },
+    {
+      "file": "browser-renders/balise-mobile-pause-top.webp",
+      "width": 390,
+      "height": 844,
+      "bytes": 30714,
+      "sha256": "9643e263d4f51a515f62dbbc41850fbc010028b4c6aee2e1b4f70d3f11b54a3d",
+      "scope": "viewport",
+      "selector": null
+    },
+    {
+      "file": "browser-renders/balise-mobile-pause-bottom.webp",
+      "width": 390,
+      "height": 844,
+      "bytes": 29852,
+      "sha256": "124e7a904b6d79da8f48fcc959d7ac92c3f332c9dba85a790bc031241e1759fc",
+      "scope": "viewport",
+      "selector": null
+    },
+    {
+      "file": "browser-renders/balise-relay-mobile.webp",
+      "width": 362,
+      "height": 205,
+      "bytes": 18458,
+      "sha256": "5f1dfec766e4d4902a98cdc7069164af0f87bfc1fcc319b167f82f10886b3fa8",
+      "scope": "element",
+      "selector": "#teamCanvas"
+    },
+    {
+      "file": "browser-renders/balise-relay-mobile-pause-toolbar.webp",
+      "width": 390,
+      "height": 844,
+      "bytes": 56998,
+      "sha256": "62e30dac194572db9a4ff47eb56d3cca72ad2ea9c31f58730b004b1fbee1969f",
+      "scope": "viewport",
+      "selector": null
+    },
+    {
+      "file": "browser-renders/consignateur-mobile.webp",
+      "width": 390,
+      "height": 844,
+      "bytes": 41902,
+      "sha256": "d0e37e4f52926790262976dbe4866d7739aab37e8821a54a8bd01fb5cf834e2b",
+      "scope": "viewport",
+      "selector": null
+    },
+    {
+      "file": "browser-renders/consignateur-mobile-pause-top.webp",
+      "width": 390,
+      "height": 844,
+      "bytes": 34406,
+      "sha256": "acdf0ebe00715416f37ede50f0d8ebbc077740d369454fcaaf456ab72278dc24",
+      "scope": "viewport",
+      "selector": null
+    },
+    {
+      "file": "browser-renders/consignateur-mobile-pause-bottom.webp",
+      "width": 390,
+      "height": 844,
+      "bytes": 33122,
+      "sha256": "5157762d9c2415a6298bc3f76964c57c4d7d493f76722b8f04a7d8a7589780ea",
+      "scope": "viewport",
+      "selector": null
+    }
+  ],
+  "sourceSha256": {
+    "index.html": "a5c1c0c614bcc569e8904620a65bdeac2f895b6bc8729f5c45ceff5b5aee615f",
+    "style.css": "072a005bd32d8ae1cec41ad9351a5970206176efbe606aca6a323cb324712481",
+    "teams.css": "bdcf0d0238c4279c71bf7b9dc3679ea2764d79f532c2dc6aa184e1ceb60fd01a",
+    "app.js": "5d5d84c37cbf5d7a4b2f1075904429340075467a4aab522d027e0e3c18dee411",
+    "presentation.js": "89719616a053b7be2af84b5c5771a1e4f63429748711ec3dfb9eca0dfb5a3e9a",
+    "teams.html": "84512d2d42931c3c18d7b55f54fb56d0a163c6b7285e7fd56d631b2f166d72a0",
+    "teams.js": "c7abbeec9ca28b93c36e49fba61eac974fb46f98685fe7bccb308bc80354522f",
+    "extension.html": "41139eccb20cd9e4a1be314730ba2d1282bcf33d2b5751394080b99ed08b592a",
+    "extension.js": "e365b146da1428b41b2f83c994ada99b5763f7e66055f323c24c7d0b09d0e479",
+    "fight.js": "6be07ea82a834d18cc0f72381fb1c5be44643ae104cc47556bc22cd04570cbc6",
+    "boss.js": "9151eaffd51ea3117f806655bf6dbd7677aff612b837505cdfd53a1410eef550",
+    "lessons.js": "173883d53312043d57f6d28f2bd38795c831b95d9dcb784ca7894f115f9af159",
+    "original-kits.js": "511625570ed50cea628bf4e865fa7f0471c7c270f307cbb51018b795a46063d9",
+    "original-kits-assets.js": "cb4ec2d4051fe44a961b849df83ce7dbd01765ac0a4c15f0851307ebd31b1527",
+    "original-bosses.js": "054d536557e62f496a04a12206be456ba1c43f030a2ad35a11387a48421e9a6d",
+    "original-bosses-assets.js": "938aeac4aaae19db31458a7b8de26219ab4ba2c0865e7955973da1fc40aa54f5",
+    "qa/first-playable-browser.cjs": "a07e67a76032e546f98d6224833ac4f3310c9a631e95b9f1072af71aeba4c7d1"
+  },
+  "browserVersion": "145.0.7632.6",
+  "finishedAt": "2026-11-27T13:59:45.922Z"
+}

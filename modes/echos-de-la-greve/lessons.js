@@ -14,7 +14,7 @@
     {id:'combo',title:'Confirmer puis enchaîner',summary:'Sur un léger qui touche, enchaîne immédiatement le lourd.',steps:['Approche et touche avec Léger {light}.','Pendant la récupération du léger confirmé, appuie sur Lourd {heavy}. Les deux impacts doivent appartenir au même enchaînement.'],note:'Le lourd doit commencer avant la fin naturelle du léger. Un lourd après le retour au repos ne valide pas cet exercice.'},
     {id:'taunt',title:'Le geste expose',summary:'Termine ton geste à distance, puis interromps celui du mannequin.',steps:['À au moins 250 pixels, lance Geste de défi {taunt}. Laisse les 54 pas se terminer en restant à distance.','Le mannequin se rapproche et provoque. Pendant son geste, touche avec Léger {light} pour l’interrompre. Attends la fin de tes autres techniques avant cet essai.'],note:'Le geste dure 0,9 seconde et reste vulnérable en entrée, en tenue et en sortie. Il ne donne aucun bonus offensif. Une frappe après la fin du geste ne valide pas l’interruption.'}
   ];
-  const ids=lessons.map(lesson=>lesson.id),fighters=()=>Object.keys(host.StrandContent?.fighters||{});
+  const ids=lessons.map(lesson=>lesson.id),fighters=()=>host.StrandOriginalKits?.canonicalCharacterIds||Object.keys(host.StrandContent?.fighters||{});
   const copy=value=>JSON.parse(JSON.stringify(value));
   const get=id=>lessons.find(lesson=>lesson.id===id)||null;
   function valid(value) {
@@ -41,7 +41,7 @@
   }
   function createSession(id,fighter) {
     const definition=get(id),sheet=host.StrandMovesData?.forFighter(fighter);
-    if(!definition||!sheet?.techniques?.length)throw new Error('Exercice ou fiche de combattant indisponible.');
+    if(!fighters().includes(fighter)||!definition||!sheet?.techniques?.length)throw new Error('Exercice ou fiche de combattant indisponible.');
     const steps=definition.steps.slice(),techniques=sheet.techniques;
     if(id==='signatures')techniques.forEach((move,index)=>{steps[index]+=' '+move.name+' · coût '+move.cost+'.';});
     const state={id,fighter,phase:'active',step:0,steps,feedback:'Prends place dans le dojo.',metric:'',ticks:0,evidence:[]};

@@ -1,0 +1,270 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-11-27",
+  "subject": "consignateur",
+  "status": "generation_complete_pending_ci_geometry_and_composite",
+  "received": 12,
+  "target": 12,
+  "reference": {
+    "path": "modes/echos-de-la-greve/assets/lignes-de-maree/bosses/consignateur-base.png",
+    "sha256": "8c9ff0c1b48582881120c641a84e500f2dd33e1237500712c656ca66f392c377"
+  },
+  "generationTool": "image_gen.imagegen",
+  "selectedImages": 12,
+  "generationCalls": 14,
+  "sourceTransforms": "No source-image editing outside imagegen; no binary mirroring, palette swaps or alpha rewriting. Six native redraws per facing.",
+  "rejectedPasses": [
+    {
+      "pose": "kneel",
+      "facing": "right",
+      "reason": "Large gray halo around subject; replaced by dedicated background-removal generation."
+    }
+  ],
+  "integration": {
+    "poses": [
+      "guard",
+      "shield-push",
+      "pole-strike",
+      "stagger",
+      "kneel",
+      "surrender"
+    ],
+    "facings": [
+      "left",
+      "right"
+    ],
+    "standingHeightRatio": 1,
+    "kneelingHeightRatio": 0.65,
+    "registry": "StrandOriginalBossArt.directionalPoses.consignateur[pose][left/right]"
+  },
+  "assets": [
+    {
+      "subject": "consignateur",
+      "pose": "guard",
+      "facing": "left",
+      "heightRatio": 1,
+      "path": "modes/echos-de-la-greve/assets/lignes-de-maree/playable/consignateur/guard-left.png",
+      "blobSha": "866ce3dabb0a9a8f309256231401789904f35d5b",
+      "width": 1254,
+      "height": 1254,
+      "bytes": 857080,
+      "colorType": 6,
+      "prompt": "Edit the attached canonical design reference into ONE production full-body combat sprite of Le Consignateur. Preserve exactly this older rugged man's identity, gray stubble, lined exposed face, dark graphite rainproof hood and porter suit, ochre/mustard armbands and thigh stripes, worn yellow harness straps, heavy sealed rectangular cargo frame tightly strapped to his back, antenna, rugged boots, compact scratched polygonal polymer shield and blunt industrial restraint baton. He is a grounded human logistical strongman, not supernatural armor. Native orientation LEFT: nose, chest and toes directed toward the LEFT image edge; cargo frame behind him toward the RIGHT. Redraw this orientation with coherent anatomy and the same equipment, rather than placing a second view. Pose GUARD: stable slightly bent knees, one boot a little forward, polymer shield raised defensively in front of his chest, baton held low and ready in his other hand, head looking left at an opponent. Clean game sprite with the same realistic weathered material rendering and restrained gray/mustard palette as the reference. Entire person, both boots, all antenna tips, shield, cargo frame and baton must fit inside a square 1536 by 1536 transparent canvas with at least 10 percent fully transparent margin on every side. Remove the reference's black and gray photographic background and every surrounding gray halo completely. The entire area outside the person and equipment is fully transparent RGBA, including gaps between limbs and equipment. Clean antialiased silhouette, no glow, no ground plane, no cast floor shadow, no background vignette, no fog, no colored edge fringe. Exactly one character in one pose. No text, logo, UI, duplicate panels or scenery.\n\nCleanup pass: Production cleanup of the attached game sprite. Preserve the exact same single older male porter character, left-facing defensive guard pose, face, hood, graphite/mustard outfit, all straps, cargo case, antenna, shield, baton, boots and realistic texture. Do not redesign anything. Place the entire unchanged figure smaller at the center of a square canvas: its highest antenna tip and its lowest boot must BOTH have at least 130 pixels of completely transparent clearance in a 1280 by 1280 canvas. Fit the complete silhouette inside the central 80 percent of the image. Clean every silhouette edge, especially the left thigh, boots and antenna: remove every red/orange stray fringe pixel, all colored edge contamination, gray halo and any outside haze. Keep only the physical character and equipment. Fully transparent RGBA background and transparent gaps, no ground, no floor shadow, no glow. One clean isolated character sprite, no lettering. All original physical accessories must remain fully visible.",
+      "visualVerdict": "Identity, full figure, left orientation and distinct pose verified. Fine red edge chroma visible near some mustard fabric; requires pixel/alpha and game capture review.",
+      "geometryStatus": "pending_ci_alpha_measurement",
+      "dimensions": {
+        "width": 1254,
+        "height": 1254
+      }
+    },
+    {
+      "subject": "consignateur",
+      "pose": "guard",
+      "facing": "right",
+      "heightRatio": 1,
+      "path": "modes/echos-de-la-greve/assets/lignes-de-maree/playable/consignateur/guard-right.png",
+      "blobSha": "17ee3297afab178942b50882e6a3dbb9baec979a",
+      "width": 1254,
+      "height": 1254,
+      "bytes": 1279767,
+      "colorType": 6,
+      "dimensions": {
+        "width": 1254,
+        "height": 1254
+      },
+      "prompt": "Edit the attached single transparent character reference into ONE new action sprite of the EXACT SAME Le Consignateur. Keep the older rugged man's recognizable exposed lined face and gray stubble, graphite hooded rainproof porter suit, mustard armbands and thigh panels, same yellow harness straps, identical heavy sealed rectangular cargo frame with pipe frame and antenna, weathered boots, compact polygonal dark polymer shield and industrial blunt restraint baton. The figure must face RIGHT natively, with his nose and toes towards the right image edge and the cargo case behind him to the left. Keep human proportions, realistic restrained graphite/mustard materials and coherent functional straps. One complete human in one pose only. Compose on a SQUARE transparent 1280 by 1280 canvas. The entire figure and every antenna, baton and boot must remain inside the central 80 percent of the canvas, with comfortable clear margins. Fully transparent RGBA background and transparent gaps around equipment. Clean naturally antialiased outline with no colored contamination or halo; no glow, no cast floor shadow, no ground, no haze, no text, no motion trail, no scenery.  Important anatomical continuity: the shield belongs to his LEFT anatomical arm, and the baton belongs to his RIGHT anatomical hand. When he faces right, show a newly drawn opposite-side view preserving those same physical arms and asymmetric equipment, not a horizontally mirrored copy. Pose GUARD: steady defensive stance, knees slightly bent, one boot forward. His LEFT anatomical arm raises the compact polymer shield at chest height towards the opponent; his RIGHT anatomical hand holds the blunt baton low and ready. Alert exposed older face.",
+      "visualVerdict": "Identity, complete figure, orientation and distinct pose verified. Fine edge chroma must be judged in an actual alpha-composited game capture.",
+      "geometryStatus": "pending_ci_alpha_measurement"
+    },
+    {
+      "subject": "consignateur",
+      "pose": "shield-push",
+      "facing": "left",
+      "heightRatio": 1,
+      "path": "modes/echos-de-la-greve/assets/lignes-de-maree/playable/consignateur/shield-push-left.png",
+      "blobSha": "79f1414db1c12d2cbdc00f1451d42ddc0c2a67ac",
+      "width": 1254,
+      "height": 1254,
+      "bytes": 1204108,
+      "colorType": 6,
+      "prompt": "Edit the attached single transparent character reference into ONE new action sprite of the EXACT SAME Le Consignateur. Keep the older rugged man's recognizable exposed lined face and gray stubble, graphite hooded rainproof porter suit, mustard armbands and thigh panels, same yellow harness straps, identical heavy sealed rectangular cargo frame with pipe frame and antenna, weathered boots, compact polygonal dark polymer shield and industrial blunt restraint baton. The figure must face LEFT natively, with his nose and toes towards the left image edge and the cargo case behind him to the right. Keep human proportions, realistic restrained graphite/mustard materials and coherent functional straps. One complete human in one pose only. Compose on a SQUARE transparent 1280 by 1280 canvas. The entire figure and every antenna, baton and boot must remain inside the central 80 percent of the canvas, with comfortable clear margins. Fully transparent RGBA background and transparent gaps around equipment. Clean naturally antialiased outline with no colored contamination or halo; no glow, no cast floor shadow, no ground, no haze, no text, no motion trail, no scenery. Pose SHIELD PUSH: a forceful forward leftward lunge in grounded side view, left/front knee bent and back right boot bracing, torso angled forward, shield arm driving the shield horizontally towards the LEFT ahead of his body as a nonlethal shove. His other hand keeps the blunt baton tucked low behind the shield action. The whole cargo frame travels naturally with his torso. Readable extended shield silhouette and clear planted feet. This is the attack pose, distinct from the upright guard.",
+      "visualVerdict": "Identity, full figure, left orientation and distinct pose verified. Fine red edge chroma visible near some mustard fabric; requires pixel/alpha and game capture review.",
+      "geometryStatus": "pending_ci_alpha_measurement",
+      "dimensions": {
+        "width": 1254,
+        "height": 1254
+      }
+    },
+    {
+      "subject": "consignateur",
+      "pose": "shield-push",
+      "facing": "right",
+      "heightRatio": 1,
+      "path": "modes/echos-de-la-greve/assets/lignes-de-maree/playable/consignateur/shield-push-right.png",
+      "blobSha": "c88ee40080a5c12855e013726eb7b48f75f5adc0",
+      "width": 1254,
+      "height": 1254,
+      "bytes": 1226788,
+      "colorType": 6,
+      "dimensions": {
+        "width": 1254,
+        "height": 1254
+      },
+      "prompt": "Edit the attached single transparent character reference into ONE new action sprite of the EXACT SAME Le Consignateur. Keep the older rugged man's recognizable exposed lined face and gray stubble, graphite hooded rainproof porter suit, mustard armbands and thigh panels, same yellow harness straps, identical heavy sealed rectangular cargo frame with pipe frame and antenna, weathered boots, compact polygonal dark polymer shield and industrial blunt restraint baton. The figure must face RIGHT natively, with his nose and toes towards the right image edge and the cargo case behind him to the left. Keep human proportions, realistic restrained graphite/mustard materials and coherent functional straps. One complete human in one pose only. Compose on a SQUARE transparent 1280 by 1280 canvas. The entire figure and every antenna, baton and boot must remain inside the central 80 percent of the canvas, with comfortable clear margins. Fully transparent RGBA background and transparent gaps around equipment. Clean naturally antialiased outline with no colored contamination or halo; no glow, no cast floor shadow, no ground, no haze, no text, no motion trail, no scenery.  Important anatomical continuity: the shield belongs to his LEFT anatomical arm, and the baton belongs to his RIGHT anatomical hand. When he faces right, show a newly drawn opposite-side view preserving those same physical arms and asymmetric equipment, not a horizontally mirrored copy. Pose SHIELD PUSH: forceful grounded forward lunge towards RIGHT, front knee bent, rear boot bracing. His LEFT anatomical arm thrusts the compact shield well ahead of his chest towards RIGHT. His RIGHT anatomical hand keeps the baton tucked low. The cargo frame tilts naturally with his torso. Readable nonlethal shield shove.",
+      "visualVerdict": "Identity, complete figure, orientation and distinct pose verified. Fine edge chroma must be judged in an actual alpha-composited game capture.",
+      "geometryStatus": "pending_ci_alpha_measurement"
+    },
+    {
+      "subject": "consignateur",
+      "pose": "pole-strike",
+      "facing": "left",
+      "heightRatio": 1,
+      "path": "modes/echos-de-la-greve/assets/lignes-de-maree/playable/consignateur/pole-strike-left.png",
+      "blobSha": "e061c27849fb7a0b169d0ec8c53d427d0933db49",
+      "width": 1254,
+      "height": 1254,
+      "bytes": 1027347,
+      "colorType": 6,
+      "prompt": "Edit the attached single transparent character reference into ONE new action sprite of the EXACT SAME Le Consignateur. Keep the older rugged man's recognizable exposed lined face and gray stubble, graphite hooded rainproof porter suit, mustard armbands and thigh panels, same yellow harness straps, identical heavy sealed rectangular cargo frame with pipe frame and antenna, weathered boots, compact polygonal dark polymer shield and industrial blunt restraint baton. The figure must face LEFT natively, with his nose and toes towards the left image edge and the cargo case behind him to the right. Keep human proportions, realistic restrained graphite/mustard materials and coherent functional straps. One complete human in one pose only. Compose on a SQUARE transparent 1280 by 1280 canvas. The entire figure and every antenna, baton and boot must remain inside the central 80 percent of the canvas, with comfortable clear margins. Fully transparent RGBA background and transparent gaps around equipment. Clean naturally antialiased outline with no colored contamination or halo; no glow, no cast floor shadow, no ground, no haze, no text, no motion trail, no scenery. Pose RESTRAINT POLE STRIKE: controlled nonlethal interception to the LEFT. He extends his baton-holding arm and the blunt restraint baton horizontally leftward at waist/chest height, reaching well forward with the entire baton visible. His other forearm keeps the compact shield close to his chest. Front left leg bent, rear right boot firmly braced, torso twisting forward while the same cargo frame remains strapped to his back. Clear horizontal striking silhouette distinct from a shield shove. Do not add a spear blade or firearm.",
+      "visualVerdict": "Identity, full figure, left orientation and distinct pose verified. Fine red edge chroma visible near some mustard fabric; requires pixel/alpha and game capture review.",
+      "geometryStatus": "pending_ci_alpha_measurement",
+      "dimensions": {
+        "width": 1254,
+        "height": 1254
+      }
+    },
+    {
+      "subject": "consignateur",
+      "pose": "pole-strike",
+      "facing": "right",
+      "heightRatio": 1,
+      "path": "modes/echos-de-la-greve/assets/lignes-de-maree/playable/consignateur/pole-strike-right.png",
+      "blobSha": "45ab8040d33d71d678b4864706b3e866f8755aec",
+      "width": 1254,
+      "height": 1254,
+      "bytes": 1277144,
+      "colorType": 6,
+      "dimensions": {
+        "width": 1254,
+        "height": 1254
+      },
+      "prompt": "Edit the attached single transparent character reference into ONE new action sprite of the EXACT SAME Le Consignateur. Keep the older rugged man's recognizable exposed lined face and gray stubble, graphite hooded rainproof porter suit, mustard armbands and thigh panels, same yellow harness straps, identical heavy sealed rectangular cargo frame with pipe frame and antenna, weathered boots, compact polygonal dark polymer shield and industrial blunt restraint baton. The figure must face RIGHT natively, with his nose and toes towards the right image edge and the cargo case behind him to the left. Keep human proportions, realistic restrained graphite/mustard materials and coherent functional straps. One complete human in one pose only. Compose on a SQUARE transparent 1280 by 1280 canvas. The entire figure and every antenna, baton and boot must remain inside the central 80 percent of the canvas, with comfortable clear margins. Fully transparent RGBA background and transparent gaps around equipment. Clean naturally antialiased outline with no colored contamination or halo; no glow, no cast floor shadow, no ground, no haze, no text, no motion trail, no scenery.  Important anatomical continuity: the shield belongs to his LEFT anatomical arm, and the baton belongs to his RIGHT anatomical hand. When he faces right, show a newly drawn opposite-side view preserving those same physical arms and asymmetric equipment, not a horizontally mirrored copy. Pose RESTRAINT POLE STRIKE: controlled nonlethal interception towards RIGHT. His RIGHT anatomical arm and blunt industrial restraint baton extend horizontally towards RIGHT at waist/chest height, with the complete blunt tip visible. His LEFT anatomical arm keeps the compact shield close to his chest. Front knee bent and rear boot braced. No spear blade, no firearm.",
+      "visualVerdict": "Identity, complete figure, orientation and distinct pose verified. Fine edge chroma must be judged in an actual alpha-composited game capture.",
+      "geometryStatus": "pending_ci_alpha_measurement"
+    },
+    {
+      "subject": "consignateur",
+      "pose": "stagger",
+      "facing": "left",
+      "heightRatio": 1,
+      "path": "modes/echos-de-la-greve/assets/lignes-de-maree/playable/consignateur/stagger-left.png",
+      "blobSha": "28960bfcc5f938f782114bdb706240add43ff87a",
+      "width": 1254,
+      "height": 1254,
+      "bytes": 1215180,
+      "colorType": 6,
+      "prompt": "Edit the attached single transparent character reference into ONE new action sprite of the EXACT SAME Le Consignateur. Keep the older rugged man's recognizable exposed lined face and gray stubble, graphite hooded rainproof porter suit, mustard armbands and thigh panels, same yellow harness straps, identical heavy sealed rectangular cargo frame with pipe frame and antenna, weathered boots, compact polygonal dark polymer shield and industrial blunt restraint baton. The figure must face LEFT natively, with his nose and toes towards the left image edge and the cargo case behind him to the right. Keep human proportions, realistic restrained graphite/mustard materials and coherent functional straps. One complete human in one pose only. Compose on a SQUARE transparent 1280 by 1280 canvas. The entire figure and every antenna, baton and boot must remain inside the central 80 percent of the canvas, with comfortable clear margins. Fully transparent RGBA background and transparent gaps around equipment. Clean naturally antialiased outline with no colored contamination or halo; no glow, no cast floor shadow, no ground, no haze, no text, no motion trail, no scenery. Pose STAGGER / RECOVERY: he has just missed a heavy shield shove and is catching his balance. Still facing LEFT, bent at the waist and knees, shoulders slightly slumped and head lowered but alert, compact shield lowered away from his chest exposing his flank, baton hanging low in his other hand, both boots visibly supporting his weight. Same massive cargo frame on his back. A readable vulnerable recovery stance, alive and conscious, no wounds, no gore, no dramatic effects.",
+      "visualVerdict": "Identity, full figure, left orientation and distinct pose verified. Fine red edge chroma visible near some mustard fabric; requires pixel/alpha and game capture review.",
+      "geometryStatus": "pending_ci_alpha_measurement",
+      "dimensions": {
+        "width": 1254,
+        "height": 1254
+      }
+    },
+    {
+      "subject": "consignateur",
+      "pose": "stagger",
+      "facing": "right",
+      "heightRatio": 1,
+      "path": "modes/echos-de-la-greve/assets/lignes-de-maree/playable/consignateur/stagger-right.png",
+      "blobSha": "8d8eeb50778eb6f413d67e1ce5c91caa7480918b",
+      "width": 1254,
+      "height": 1254,
+      "bytes": 1258464,
+      "colorType": 6,
+      "dimensions": {
+        "width": 1254,
+        "height": 1254
+      },
+      "prompt": "Edit the attached single transparent character reference into ONE new action sprite of the EXACT SAME Le Consignateur. Keep the older rugged man's recognizable exposed lined face and gray stubble, graphite hooded rainproof porter suit, mustard armbands and thigh panels, same yellow harness straps, identical heavy sealed rectangular cargo frame with pipe frame and antenna, weathered boots, compact polygonal dark polymer shield and industrial blunt restraint baton. The figure must face RIGHT natively, with his nose and toes towards the right image edge and the cargo case behind him to the left. Keep human proportions, realistic restrained graphite/mustard materials and coherent functional straps. One complete human in one pose only. Compose on a SQUARE transparent 1280 by 1280 canvas. The entire figure and every antenna, baton and boot must remain inside the central 80 percent of the canvas, with comfortable clear margins. Fully transparent RGBA background and transparent gaps around equipment. Clean naturally antialiased outline with no colored contamination or halo; no glow, no cast floor shadow, no ground, no haze, no text, no motion trail, no scenery.  Important anatomical continuity: the shield belongs to his LEFT anatomical arm, and the baton belongs to his RIGHT anatomical hand. When he faces right, show a newly drawn opposite-side view preserving those same physical arms and asymmetric equipment, not a horizontally mirrored copy. Pose STAGGER / RECOVERY: facing RIGHT, catching his balance after a missed shove. Torso and knees bent, head lowered but alert, LEFT anatomical arm lowers the shield away from his chest to expose his flank; RIGHT hand holds the same baton low. Both boots firmly support his weight. Alive, conscious, no wound or gore.",
+      "visualVerdict": "Identity, complete figure, orientation and distinct pose verified. Fine edge chroma must be judged in an actual alpha-composited game capture.",
+      "geometryStatus": "pending_ci_alpha_measurement"
+    },
+    {
+      "subject": "consignateur",
+      "pose": "kneel",
+      "facing": "left",
+      "heightRatio": 0.65,
+      "path": "modes/echos-de-la-greve/assets/lignes-de-maree/playable/consignateur/kneel-left.png",
+      "blobSha": "36e373ee9be9798e76e1723d89c3435e4186d3a9",
+      "width": 1254,
+      "height": 1254,
+      "bytes": 1321973,
+      "colorType": 6,
+      "dimensions": {
+        "width": 1254,
+        "height": 1254
+      },
+      "prompt": "Edit the attached single transparent character reference into ONE new action sprite of the EXACT SAME Le Consignateur. Keep the older rugged man's recognizable exposed lined face and gray stubble, graphite hooded rainproof porter suit, mustard armbands and thigh panels, same yellow harness straps, identical heavy sealed rectangular cargo frame with pipe frame and antenna, weathered boots, compact polygonal dark polymer shield and industrial blunt restraint baton. The figure must face LEFT natively, with his nose and toes towards the left image edge and the cargo case behind him to the right. Keep human proportions, realistic restrained graphite/mustard materials and coherent functional straps. One complete human in one pose only. Compose on a SQUARE transparent 1280 by 1280 canvas. The entire figure and every antenna, baton and boot must remain inside the central 80 percent of the canvas, with comfortable clear margins. Fully transparent RGBA background and transparent gaps around equipment. Clean naturally antialiased outline with no colored contamination or halo; no glow, no cast floor shadow, no ground, no haze, no text, no motion trail, no scenery.  Important anatomical continuity: the shield belongs to his LEFT anatomical arm, and the baton belongs to his RIGHT anatomical hand. When he faces right, show a newly drawn opposite-side view preserving those same physical arms and asymmetric equipment, not a horizontally mirrored copy. Pose KNEEL / GUARD BROKEN: facing LEFT, alive and conscious, one knee resting on an implied floor and his other boot planted ahead. Shoulders lowered, head slightly bowed, tired but alert face. His LEFT anatomical hand holds the shield lowered beside the grounded knee; his RIGHT anatomical hand rests the blunt baton downward beside him. Same heavy cargo frame remains strapped to his back, with the antenna fully visible. Compact kneeling silhouette clearly lower than standing, no collapse, no wound, no death.",
+      "visualVerdict": "Identity, complete figure, orientation and distinct pose verified. Fine edge chroma must be judged in an actual alpha-composited game capture.",
+      "geometryStatus": "pending_ci_alpha_measurement"
+    },
+    {
+      "subject": "consignateur",
+      "pose": "kneel",
+      "facing": "right",
+      "heightRatio": 0.65,
+      "path": "modes/echos-de-la-greve/assets/lignes-de-maree/playable/consignateur/kneel-right.png",
+      "blobSha": "b68c51184a489b1a5a7f13e07e8470a4f1147f12",
+      "width": 1254,
+      "height": 1254,
+      "bytes": 1504584,
+      "colorType": 6,
+      "dimensions": {
+        "width": 1254,
+        "height": 1254
+      },
+      "prompt": "Edit the attached single transparent character reference into ONE new action sprite of the EXACT SAME Le Consignateur. Keep the older rugged man's recognizable exposed lined face and gray stubble, graphite hooded rainproof porter suit, mustard armbands and thigh panels, same yellow harness straps, identical heavy sealed rectangular cargo frame with pipe frame and antenna, weathered boots, compact polygonal dark polymer shield and industrial blunt restraint baton. The figure must face RIGHT natively, with his nose and toes towards the right image edge and the cargo case behind him to the left. Keep human proportions, realistic restrained graphite/mustard materials and coherent functional straps. One complete human in one pose only. Compose on a SQUARE transparent 1280 by 1280 canvas. The entire figure and every antenna, baton and boot must remain inside the central 80 percent of the canvas, with comfortable clear margins. Fully transparent RGBA background and transparent gaps around equipment. Clean naturally antialiased outline with no colored contamination or halo; no glow, no cast floor shadow, no ground, no haze, no text, no motion trail, no scenery.  Important anatomical continuity: the shield belongs to his LEFT anatomical arm, and the baton belongs to his RIGHT anatomical hand. When he faces right, show a newly drawn opposite-side view preserving those same physical arms and asymmetric equipment, not a horizontally mirrored copy. Pose KNEEL / GUARD BROKEN: facing RIGHT, alive and conscious, one knee resting on an implied floor and his other boot planted ahead. Shoulders lowered, head slightly bowed, tired but alert face. His LEFT anatomical hand holds the shield lowered beside the grounded knee; his RIGHT anatomical hand rests the blunt baton downward beside him. Same heavy cargo frame remains strapped to his back, with the antenna fully visible. Compact kneeling silhouette clearly lower than standing, no collapse, no wound, no death.\n\nHalo-removal pass: Remove the entire gray and white background and halo from the attached kneeling character. Produce a clean isolated RGBA transparent game sprite. Preserve the EXACT same full man, right-facing kneeling pose, face, anatomy, graphite/mustard outfit, left-arm compact shield, right-hand blunt baton, straps, cargo frame, boots and antenna. Keep the same equipment and same pose; do not redesign. Place the complete figure at the center of a SQUARE 1280 by 1280 canvas with comfortable entirely transparent empty margins around every part. Absolutely EVERYTHING outside the physical silhouette, including the light gray cloud, white vignette, floor haze, mottled border and gray behind the antenna, must become fully transparent. Also clear the openings between limbs and equipment. The only visible pixels should be the man and his carried equipment. No backdrop of any shade or texture, no glow, no halo, no contact shadow, no fog. This is a strict background-removal/cutout request for game production, not a portrait with studio lighting background.",
+      "visualVerdict": "Identity, complete figure, right-facing kneel and explicit halo-removal pass verified. Ready for alpha measurement and in-game composite review.",
+      "geometryStatus": "pending_ci_alpha_measurement"
+    },
+    {
+      "subject": "consignateur",
+      "pose": "surrender",
+      "facing": "left",
+      "heightRatio": 0.65,
+      "path": "modes/echos-de-la-greve/assets/lignes-de-maree/playable/consignateur/surrender-left.png",
+      "blobSha": "3952330b6fd086f8af4a289c395ce5277aa37f57",
+      "width": 1254,
+      "height": 1254,
+      "bytes": 1494405,
+      "colorType": 6,
+      "dimensions": {
+        "width": 1254,
+        "height": 1254
+      },
+      "prompt": "Edit the attached single transparent character reference into ONE new action sprite of the EXACT SAME Le Consignateur. Keep the older rugged man's recognizable exposed lined face and gray stubble, graphite hooded rainproof porter suit, mustard armbands and thigh panels, same yellow harness straps, identical heavy sealed rectangular cargo frame with pipe frame and antenna, weathered boots, compact polygonal dark polymer shield and industrial blunt restraint baton. The figure must face LEFT natively, with his nose and toes towards the left image edge and the cargo case behind him to the right. Keep human proportions, realistic restrained graphite/mustard materials and coherent functional straps. One complete human in one pose only. Compose on a SQUARE transparent 1280 by 1280 canvas. The entire figure and every antenna, baton and boot must remain inside the central 80 percent of the canvas, with comfortable clear margins. Fully transparent RGBA background and transparent gaps around equipment. Clean naturally antialiased outline with no colored contamination or halo; no glow, no cast floor shadow, no ground, no haze, no text, no motion trail, no scenery.  Important anatomical continuity: the shield belongs to his LEFT anatomical arm, and the baton belongs to his RIGHT anatomical hand. When he faces right, show a newly drawn opposite-side view preserving those same physical arms and asymmetric equipment, not a horizontally mirrored copy. Pose SURRENDER / STRAND ACCEPTED: facing LEFT, kneeling peacefully on one knee with his other foot planted, head raised slightly towards the approaching porter. Both open palms are raised in front of his chest in a calm, unmistakable gesture of yielding. His SAME compact shield and SAME blunt baton have been laid safely on the implied ground immediately beside his knees, still fully visible within the image. Keep the exact same cargo frame strapped to his back and all his kit. Alive, unharmed and cooperative. Distinct from the slumped kneel pose. No handcuffs, no wounds, no magical effect.",
+      "visualVerdict": "Identity, complete figure, orientation and distinct pose verified. Fine edge chroma must be judged in an actual alpha-composited game capture.",
+      "geometryStatus": "pending_ci_alpha_measurement"
+    },
+    {
+      "subject": "consignateur",
+      "pose": "surrender",
+      "facing": "right",
+      "heightRatio": 0.65,
+      "path": "modes/echos-de-la-greve/assets/lignes-de-maree/playable/consignateur/surrender-right.png",
+      "blobSha": "b4387be240c803e7cd146bc5a8b4ab34349a6ae6",
+      "width": 1254,
+      "height": 1254,
+      "bytes": 1215481,
+      "colorType": 6,
+      "dimensions": {
+        "width": 1254,
+        "height": 1254
+      },
+      "prompt": "Edit the attached single transparent character reference into ONE new action sprite of the EXACT SAME Le Consignateur. Keep the older rugged man's recognizable exposed lined face and gray stubble, graphite hooded rainproof porter suit, mustard armbands and thigh panels, same yellow harness straps, identical heavy sealed rectangular cargo frame with pipe frame and antenna, weathered boots, compact polygonal dark polymer shield and industrial blunt restraint baton. The figure must face RIGHT natively, with his nose and toes towards the right image edge and the cargo case behind him to the left. Keep human proportions, realistic restrained graphite/mustard materials and coherent functional straps. One complete human in one pose only. Compose on a SQUARE transparent 1280 by 1280 canvas. The entire figure and every antenna, baton and boot must remain inside the central 80 percent of the canvas, with comfortable clear margins. Fully transparent RGBA background and transparent gaps around equipment. Clean naturally antialiased outline with no colored contamination or halo; no glow, no cast floor shadow, no ground, no haze, no text, no motion trail, no scenery.  Important anatomical continuity: the shield belongs to his LEFT anatomical arm, and the baton belongs to his RIGHT anatomical hand. When he faces right, show a newly drawn opposite-side view preserving those same physical arms and asymmetric equipment, not a horizontally mirrored copy. Pose SURRENDER / STRAND ACCEPTED: facing RIGHT, kneeling peacefully on one knee with his other foot planted, head raised slightly towards the approaching porter. Both open palms are raised in front of his chest in a calm, unmistakable gesture of yielding. His SAME compact shield and SAME blunt baton have been laid safely on the implied ground immediately beside his knees, still fully visible within the image. Keep the exact same cargo frame strapped to his back and all his kit. Alive, unharmed and cooperative. Distinct from the slumped kneel pose. No handcuffs, no wounds, no magical effect.",
+      "visualVerdict": "Identity, complete figure, orientation and distinct pose verified. Fine edge chroma must be judged in an actual alpha-composited game capture.",
+      "geometryStatus": "pending_ci_alpha_measurement"
+    }
+  ]
+}

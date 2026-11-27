@@ -18,6 +18,10 @@
     mama:{name:'Mama', short:'MAMA', suit:'#495c66', cloth:'#617788', trim:'#80d9d4', metal:'#b6c4cd', skin:'#bc9a81', h:170, speed:4.4, power:.96, move:'Point d’ancrage', end:'Travée de retour'},
     heartman:{name:'Heartman', short:'HEARTMAN', suit:'#343f48', cloth:'#485869', trim:'#df9687', metal:'#a6b6bd', skin:'#c3a68e', h:176, speed:4.15, power:.96, move:'Impulsion témoin', end:'Intervalle'}
   };
+  const originalKits=host.StrandOriginalKits?.enabled?host.StrandOriginalKits:null;
+  Object.assign(roster,originalKits?.roster || {});
+  const originalIds=originalKits?.originalCharacterIds || [];
+  const originalRulesFor=ids=>ids.some(id=>originalIds.includes(id))?originalKits.rules:null;
   // An anchor is the horizontal midpoint between supporting feet in the source crop.
   const spriteGeometry = {
     sam: {stanceAnchor:.50, actionAnchor:.40, actionScale:.87, motionFrames:4, stepScale:1.12, hitScale:1.12},
@@ -69,12 +73,15 @@
     memory:{name:'Mémoire de phase', start:14, active:1, recover:17, cost:18},
     syncope:{name:'Syncope du signal', start:10, active:6, recover:24, cost:16}
   };
+  Object.assign(moves,originalKits?.moves || {});
+  const moveBase=key=>moves[key]?.baseKey || key;
   const directional = {
     sam:{forward:'brace',back:'parry'}, fragile:{forward:'fan',back:'beacon'},
     higgs:{forward:'mine',back:'feint'}, cliff:{forward:'post',back:'recall'},
     mule:{forward:'crate',back:'retrieve'}, diehardman:{forward:'gate',back:'relief'},
     mama:{forward:'deck',back:'winch'}, heartman:{forward:'memory',back:'syncope'}
   };
+  Object.assign(directional,originalKits?.directional || {});
   const shotHit = {
     sam:{damage:10,balance:17,stun:26,push:3},
     higgs:{damage:14,balance:21,stun:23,push:6,launch:6},
@@ -342,6 +349,7 @@
   // replay encoding. A team member is a persistent fighter, never a fresh HP bar.
   const teamRules=Object.freeze({capacity:100,start:50,gain:.1,assistCost:25,tagCost:15,assistCooldown:360,tagCooldown:240,assistEntry:18,assistDuration:60,tagTransfer:15,tagDuration:30});
   const assistanceNames={sam:'Liaison de couverture',fragile:'Quai de passage',higgs:'Empreinte de repli',cliff:'Couverture de section',mule:'Livraison interceptée',diehardman:'Consigne de couverture',mama:'Travée d’essai',heartman:'Mesure croisée'};
+  Object.assign(assistanceNames,Object.fromEntries(Object.entries(originalKits?.assists || {}).map(([id,profile])=>[id,profile.name])));
   function validTeamSelection(value) {
     return Array.isArray(value)&&value.length===2&&value.every(ids=>Array.isArray(ids)&&ids.length===2&&ids[0]!==ids[1]&&ids.every(id=>Object.hasOwn(roster,id)));
   }
@@ -380,7 +388,7 @@
     clearFighterControls(f);f.act=null;delete f.taunt;delete f.teamLock;
     // These objects are recalled on reserve entry; their paid cost is never
     // refunded. Inert crate/beacon/memory retain their own expiry clock.
-    if(['post','anchor'].includes(f.marker?.kind))f.marker=null;
+    if(['post','anchor','baliseAnchor'].includes(f.marker?.kind))f.marker=null;
     if(f.marker?.kind==='crate')f.marker.travel=null;
   }
   function transferTeam(m,side,automatic=false) {
@@ -427,7 +435,12 @@
       support.x=clamp(support.x+support.vx,48,WIDTH-48);support.vx*=.78;
       if(support.y>0||support.vy!==0||!support.grounded){support.y+=support.vy;support.vy-=.77;if(support.y<=0){support.y=0;support.vy=0;support.grounded=true;}}
       if(support.stun||support.hp<=0){busy.interrupted=true;support.act=null;}
-      if(!busy.interrupted){
+      const originalAssist=originalKits?.assists[support.id];
+      if(!busy.interrupted && originalAssist){
+        support.act={key:originalAssist.key,t:busy.frame,hit:!!busy.hit};
+        if(busy.frame===originalAssist.entry)busy.emitted=true;
+      }
+      if(!busy.interrupted && !originalAssist){
         // Existing key poses illustrate the announced intervention. They are
         // not declared to be new frame-by-frame assistance animations.
         support.act=busy.frame>=18&&busy.frame<38?{key:'heavy',t:14+busy.frame-18,hit:false}:null;
@@ -441,7 +454,7 @@
           }
         }
       }
-      if(busy.frame>=teamRules.assistDuration)finishTeamBusy(team);
+      if(busy.frame>=(originalAssist?.duration || teamRules.assistDuration))finishTeamBusy(team);
     });
   }
   function resolveTeamRound(m,lifeBefore) {
@@ -500,7 +513,8 @@
         !Number.isInteger(tape.difficulty) || tape.difficulty<0 || tape.difficulty>2 ||
         !Number.isInteger(tape.roundsToWin) || tape.roundsToWin<1 || tape.roundsToWin>5 ||
         !Number.isSafeInteger(tape.ticks) || tape.ticks<1 || !Array.isArray(tape.events) ||
-        (tape.stageRules ?? null)!==(stageLinks[tape.stage]?.replayTag ?? null)) return false;
+        (tape.stageRules ?? null)!==(stageLinks[tape.stage]?.replayTag ?? null) ||
+        (tape.originalRules ?? null)!==originalRulesFor([tape.p1,tape.p2])) return false;
     let previous=0;
     return tape.events.every(event=>{
       if (!Array.isArray(event) || event.length!==2) return false;
@@ -527,6 +541,8 @@
     if (Number.isFinite(o.ambienceVolume)) ambienceVolume=clamp(o.ambienceVolume,0,1);
     const ctx=o.canvas.getContext('2d'); if (!ctx) throw new Error('Canvas 2D indisponible.');
     const stage=stages[o.stage]?o.stage:'shore', ids=o.teams?o.teams.map(pair=>pair[0]):[fighterId(o.p1,'sam'),fighterId(o.p2,'higgs')];
+    if(o.clock==='network' && originalRulesFor(ids) && o.originalRules!==originalKits.rules)
+      throw new Error('Kit original local : la simulation déterministe exige son identifiant de règles explicite.');
     const difficulty=({easy:0,facile:0,normal:1,medium:1,hard:2,difficile:2})[o.difficulty] ?? (Number.isInteger(o.difficulty)?clamp(o.difficulty,0,2):1);
     const seed=Number.isInteger(o.seed) ? o.seed>>>0 : 0x63cee17;
     const m={canvas:o.canvas,ctx,stage,ids,difficulty,mode:['cpu','local','training'].includes(o.mode)?o.mode:'cpu',toWin:clamp(Math.floor(Number(o.roundsToWin)||2),1,5),
@@ -546,7 +562,7 @@
     m.playback=o.replay || null;
     m.eventIndex=0;
     m.recording=o.record && !m.teams && !m.playback && m.mode!=='training' ? {
-      version:1,p1:ids[0],p2:ids[1],stage,...(m.link?{stageRules:stageLinks[stage].replayTag}:{}),mode:m.mode,difficulty,seed,roundsToWin:m.toWin,events:[]
+      version:1,p1:ids[0],p2:ids[1],stage,...(originalRulesFor(ids)?{originalRules:originalKits.rules}:{}),...(m.link?{stageRules:stageLinks[stage].replayTag}:{}),mode:m.mode,difficulty,seed,roundsToWin:m.toWin,events:[]
     } : null;
     if (Number.isFinite(o.startingVitality)) m.f[0].hp=clamp(Math.round(o.startingVitality),1,100);
     m.parcel = o.parcel ? 'intact' : null;
@@ -584,13 +600,18 @@
       const tailored = {};
       for (const [pose, file] of Object.entries(kit?.poses || {})) tailored[pose] = load(file);
       if (m.mode !== 'training') m.images[id + 'Finale'] = load(art.finishers?.[id]);
-      return {base, tailored, tauntGeometry, geometry:{...spriteGeometry[id], ...art.geometry?.[id], ...kit?.geometry},
+      const originalSource=originalKits?.art[id];
+      const original=originalSource?Object.fromEntries(Object.entries(originalSource.poses).map(([pose,faces])=>[pose,
+        Object.fromEntries(Object.entries(faces).map(([face,descriptor])=>[face,{...descriptor,image:load(descriptor.src)}]))])):null;
+      return {base, tailored, original, tauntGeometry, geometry:{...spriteGeometry[id], ...art.geometry?.[id], ...kit?.geometry},
         generatedPoses:art.poses?.[id] || {}, poseGeometry:art.generatedGeometry?.fighters?.[id] || {},
         tailoredPoseGeometry:kit?.nativePoses ? kit.poseGeometry || {} : null};
     };
     m.fighterFrames=ids.map(loadFighterFrames);
     if(m.teams){m.teamFrames=m.teamSelection.map((pair,side)=>pair.map(id=>loadFighterFrames(id,side)));syncTeamActors(m);}
     const allIds=m.teams?m.teamSelection.flat():ids;
+    m.originalProps=Object.fromEntries(allIds.filter(id=>originalKits?.art[id]).map(id=>[id,
+      Object.fromEntries(Object.entries(originalKits.art[id].props).map(([name,descriptor])=>[name,{...descriptor,image:load(descriptor.src)}]))]));
     const projectileOwners = {sam:'sam',higgs:'higgs',cliff:'cliff',recall:'cliff',gate:'diehardman',heartman:'heartman',memory:'heartman'};
     m.projectileImages = Object.fromEntries(Object.entries(art.projectiles || {})
       .filter(([kind]) => allIds.includes(projectileOwners[kind])).map(([kind,file]) => [kind,load(file)]));
@@ -767,6 +788,10 @@
   }
   const onMonitorBeat = beat => beat <= 3 || beat >= 57;
   function beginAttack(m,f,foe,key,beatAtInput) {
+    key=originalKits?.normalKeys[f.id]?.[key] || key;
+    if(key==='baliseReel' && (!originalAnchorOwned(f,f.marker,m.f.indexOf(f)) || Math.abs(f.marker.x-f.x)<2)){
+      f.notice=originalAnchorOwned(f,f.marker,m.f.indexOf(f))?'ANCRAGE DÉJÀ ATTEINT':'AUCUN ANCRAGE';f.noticeTTL=36;return;
+    }
     if (key === 'winch' && f.marker?.kind !== 'anchor') {
       f.notice='AUCUN ANCRAGE'; f.noticeTTL=30; return;
     }
@@ -778,6 +803,7 @@
     if (a.cost) {f.chiral-=a.cost;f.notice=(a.name || f.spec.move).toUpperCase();f.noticeTTL=50;signatureSound(f.id);}
     if (key === 'retrieve') f.marker.ttl = Math.max(f.marker.ttl, a.start + 1);
     f.face=foe.x>=f.x?1:-1; f.act={key,t:0,hit:false,target:clamp(foe.x,48,WIDTH-48),hitConfirmed:false};f.lastMove=key;
+    if(key==='baliseAnchor')f.act.anchorX=clamp(f.x+f.face*originalKits.geometry.anchorDistance,48,WIDTH-48);
     if (m.dummyTape) f.emission=0;
     if (key === 'relief' && f.marker?.kind === 'seal') {
       f.act.extended = true;
@@ -794,7 +820,7 @@
     const q=f.queue[0]; const a=f.act;
     if (a) {
       const canLink=a.hitConfirmed && a.t>=moves[a.key].start+moves[a.key].active && (
-        (a.key==='light' && ['heavy','special'].includes(q.action)) || (['heavy','lift','sweep'].includes(a.key) && q.action==='special'));
+        (moveBase(a.key)==='light' && ['heavy','special'].includes(q.action)) || (['heavy','lift','sweep'].includes(moveBase(a.key)) && q.action==='special'));
       if (!canLink) return;
     }
     f.queue.shift();
@@ -901,9 +927,10 @@
       if (a.key==='fragile' && a.t===8) {
         burst(m,f.x,FLOOR-78,ICE,18);f.x+=f.face*Math.min(158,Math.max(0,Math.abs(o.x-f.x)-52));burst(m,f.x,FLOOR-72,ICE,18);
       }
+      if(originalIds.includes(f.id))stepOriginal(m,f,index,a,d);
       if (directional[f.id].forward === a.key || directional[f.id].back === a.key)
         stepDirectional(m, f, index, a, d);
-      if (a.key==='heavy' && a.t===d.start-3) f.x+=f.face*(f.id === 'diehardman' ? 6 : 12);
+      if (moveBase(a.key)==='heavy' && a.t===d.start-3) f.x+=f.face*(f.id === 'diehardman' ? 6 : 12);
       if (a.key === 'mama' && a.t === d.start) {
         f.marker = {kind:'anchor', x:clamp(f.x + f.face * 130, 48, WIDTH-48), ttl:200};
         tone(530,.1,'sine',.025,720);
@@ -918,7 +945,7 @@
         const remaining = d.start + d.active - a.t;
         f.x += (a.destination - f.x) / remaining;
       }
-      if (a.key === 'heavy' && a.t === d.start && f.marker?.kind === 'crate' && !f.marker.travel) {
+      if (moveBase(a.key) === 'heavy' && a.t === d.start && f.marker?.kind === 'crate' && !f.marker.travel) {
         const reach = (f.marker.x - f.x) * f.face;
         if (reach >= -12 && reach <= d.reach) {
           Object.assign(f.marker, {travel:'crate', endX:clamp(f.marker.x + 112 * f.face, 48, WIDTH-48), hit:false});
@@ -927,7 +954,7 @@
       if (a.key==='sam' && a.t===d.start) makeShot(m,index,'sam',f.x+f.face*37,FLOOR-f.y-87,f.face*12,76);
       if (a.key==='higgs' && a.t===d.start) makeShot(m,index,'higgs',a.target,FLOOR-49,0,6);
       if (a.key==='cliff' && [d.start,d.start+8].includes(a.t)) makeShot(m,index,'cliff',f.x+f.face*36,FLOOR-f.y-(a.t===d.start?97:53),f.face*13,62);
-      if (a.t>d.start+d.active+d.recover) f.act=null;
+      if (a.t>d.start+d.active+d.recover || originalKits?.moves[a.key] && a.t>=d.start+d.active+d.recover) f.act=null;
     }
     f.x=clamp(f.x+f.vx,48,WIDTH-48);f.vx*=.78;
     if (f.y>0 || f.vy!==0 || !f.grounded) {
@@ -936,6 +963,169 @@
     }
     f.chiral=clamp(f.chiral+(m.mode==='training'?.34:.025),0,100);
     if (!f.postHit && !f.guard && !f.stun && !f.act && !f.taunt) f.balance=clamp(f.balance+.28,0,100);
+  }
+
+  function originalAnchorOwned(f,marker,side=f.teamSide) {
+    return marker?.kind==='baliseAnchor' && marker.ttl>0 && marker.ownerId===f.id &&
+      [0,1].includes(marker.ownerSide) && (side===undefined || marker.ownerSide===side) &&
+      marker.ownerMember===(f.teamSlot ?? null);
+  }
+  function originalOpponents(m,side) {
+    return [m.f[1-side],teamSupport(m,1-side)].filter(f=>f&&f.hp>0);
+  }
+  function stepOriginal(m,f,side,action,data) {
+    if(action.key==='baliseAnchor' && action.t===data.start) {
+      const x=action.anchorX,blocked=originalOpponents(m,side).some(foe=>foe.grounded&&Math.abs(foe.x-x)<22+originalKits.geometry.anchorRadius);
+      if(blocked){f.notice='ZONE D’ANCRAGE OCCUPÉE';f.noticeTTL=36;return;}
+      f.marker={kind:'baliseAnchor',x,ttl:originalKits.geometry.anchorTTL,ownerId:f.id,ownerSide:side,ownerMember:f.teamSlot ?? null};
+      tone(310,.09,'triangle',.025,430);
+    }
+    if(action.key!=='baliseReel')return;
+    if(action.t===data.start) {
+      if(!originalAnchorOwned(f,f.marker,side)){action.failed=true;f.notice='ANCRAGE PERDU';f.noticeTTL=36;return;}
+      action.destination=f.marker.x;f.marker=null;
+    }
+    if(action.failed || action.destination===undefined || action.t<data.start || action.t>=data.start+data.active)return;
+    // Swept movement, bounded per tick. A hurtbox in the path stops the reel;
+    // the ordinary overlap correction never has to push a fighter through it.
+    const delta=clamp(action.destination-f.x,-originalKits.geometry.reelSpeed,originalKits.geometry.reelSpeed);
+    const direction=Math.sign(delta);let next=clamp(f.x+delta,48,WIDTH-48);
+    if(direction)for(const foe of originalOpponents(m,side)){
+      const ours=hurt(f),theirs=hurt(foe),vertical=ours.t<theirs.b&&ours.b>theirs.t;
+      const ahead=(foe.x-f.x)*direction;
+      if(vertical&&ahead>=0&&ahead<Math.abs(next-f.x)+44)
+        next=direction>0?Math.min(next,Math.max(f.x,foe.x-44)):Math.max(next,Math.min(f.x,foe.x+44));
+    }
+    f.x=next;
+  }
+  function originalObjectContacts(m) {
+    const actors=m.teams?m.teams.flatMap(team=>team.members):m.f;
+    for(const owner of actors) {
+      const marker=owner.marker;if(marker?.kind!=='baliseAnchor')continue;
+      const side=m.teams?owner.teamSide:m.f.indexOf(owner);
+      const box={l:marker.x-12,r:marker.x+12,t:FLOOR-30,b:FLOOR+1};
+      const opponents=originalOpponents(m,side);
+      const protectedByBody=attackerX=>[m.f[side],teamSupport(m,side)].filter(Boolean).some(body=>
+        body.hp>0&&body.grounded&&Math.sign(body.x-attackerX)===Math.sign(marker.x-attackerX)&&
+        Math.abs(body.x-attackerX)+22<Math.abs(marker.x-attackerX));
+      let broken=false;
+      for(const foe of opponents){
+        const strikeBox=strike(foe);
+        if(!strikeBox||protectedByBody(foe.x)||!intersects(strikeBox,box)||moves[foe.act.key].grab)continue;
+        foe.act.hit=true;
+        if(m.teams&&foe===teamSupport(m,1-side))m.teams[1-side].busy.hit=true;
+        broken=true;break;
+      }
+      if(!broken)for(const shot of m.shots){
+        if(shot.owner===side||shot.ttl<=0||protectedByBody(shot.x))continue;
+        const rx=shot.kind==='higgs'?43:shot.kind==='recall'?46:shot.kind==='memory'?66:shot.kind==='gate'?18:shot.kind==='crate'?21:13;
+        const ry=shot.kind==='higgs'?51:shot.kind==='gate'?72:shot.kind==='memory'?45:shot.kind==='crate'?18:9;
+        const to=shot.x+shot.vx,shotBox={l:Math.min(shot.x,to)-rx,r:Math.max(shot.x,to)+rx,t:shot.y-ry,b:shot.y+ry};
+        if(intersects(shotBox,box)){shot.ttl=0;broken=true;break;}
+      }
+      if(broken){owner.marker=null;owner.notice='ANCRAGE ROMPU';owner.noticeTTL=40;burst(m,marker.x,FLOOR-9,AMBER,7);}
+    }
+    m.shots=m.shots.filter(shot=>shot.ttl>0);
+  }
+  function validOriginalState(f,side,slot) {
+    if(!originalKits)return true;
+    const isMove=key=>Object.hasOwn(originalKits.moves,key);
+    if(f.id!=='balise')return !isMove(f.act?.key)&&f.marker?.kind!=='baliseAnchor'&&f.queue.every(q=>!isMove(q.special));
+    if(f.queue.some(q=>!['balise','baliseAnchor','baliseReel'].includes(q.special)))return false;
+    if(f.marker && (!originalAnchorOwned(f,f.marker,side)||f.marker.ownerMember!==slot||
+      !Number.isInteger(f.marker.ttl)||f.marker.ttl>originalKits.geometry.anchorTTL||!finiteBetween(f.marker.x,48,WIDTH-48)))return false;
+    if(!f.act)return true;
+    const a=f.act,d=moves[a.key];
+    if(!isMove(a.key)&&!['light','heavy','lift','sweep','air','grab'].includes(a.key))return false;
+    if(!Number.isInteger(a.t)||a.t>d.start+d.active+d.recover)return false;
+    if(a.key==='baliseAnchor'&&!finiteBetween(a.anchorX,48,WIDTH-48))return false;
+    if(a.key==='baliseReel'&&a.t>=d.start&&!(a.failed===true||finiteBetween(a.destination,48,WIDTH-48)))return false;
+    return true;
+  }
+
+  function drawOriginalProp(m,id,name,x,y,height) {
+    const descriptor=m.originalProps[id]?.[name];if(!descriptor||!ready(descriptor.image))return false;
+    const crop=nativeCrop(descriptor.image,descriptor),width=height*crop[2]/crop[3];
+    m.ctx.drawImage(descriptor.image,...crop,x-width*descriptor.anchorX,y-height*descriptor.baselineY,width,height);
+    return true;
+  }
+  function originalSpritePlacement(f,descriptor) {
+    if(!ready(descriptor?.image))return null;
+    const crop=nativeCrop(descriptor.image,descriptor),height=f.spec.h*descriptor.heightRatio,width=height*crop[2]/crop[3];
+    return {crop,width,height,x:f.x-width*descriptor.anchorX,y:FLOOR-f.y-height*descriptor.baselineY};
+  }
+  function originalRopePoint(placement,point) {
+    if(!placement||!point)return null;
+    return {x:placement.x+placement.width*point.x,y:placement.y+placement.height*point.y};
+  }
+  function drawOriginalRope(c,from,to,material,slack=0) {
+    if(!from||!material||![from.x,from.y,to.x,to.y].every(Number.isFinite))return false;
+    const distance=Math.hypot(to.x-from.x,to.y-from.y);if(distance<.5)return false;
+    c.save();c.lineCap='round';c.lineJoin='round';c.setLineDash([]);
+    c.beginPath();c.moveTo(from.x,from.y);
+    c.quadraticCurveTo((from.x+to.x)/2,(from.y+to.y)/2+Math.min(slack,distance*.12),to.x,to.y);
+    c.strokeStyle=material.edge;c.lineWidth=material.width+.45;c.stroke();
+    c.strokeStyle=material.body;c.lineWidth=material.width;c.stroke();
+    c.strokeStyle=material.fiber;c.lineWidth=material.fiberWidth;c.stroke();
+    c.setLineDash([material.fleckLength,material.fleckGap]);c.lineDashOffset=0;
+    c.strokeStyle=material.fleck;c.lineWidth=material.width*.85;c.stroke();c.restore();
+    return true;
+  }
+  function drawOriginalFighter(m,f,index) {
+    const c=m.ctx,frames=m.teams?m.teamFrames[f.teamSide][f.teamSlot]:m.fighterFrames[index];
+    const feet=FLOOR-f.y,face=f.face>0?'right':'left',a=f.act;
+    const decided=['finish','cinema','roundover','ended'].includes(m.phase)&&m.winner;
+    const movement=m.phase==='fight'&&f.grounded&&!a&&!f.taunt&&!f.guard&&!f.stun&&!f.blockStun&&!f.crouch&&(f.dash||!!f.keys.left!==!!f.keys.right);
+    let pose=decided?(m.winner===index+1?'victory':'fall'):f.stun?'hurt':f.taunt?'taunt':
+      (f.guard||f.blockStun)?'guard':
+      a?({balise:'tether',baliseAnchor:'anchor',baliseReel:'reel',baliseAssist:'tether',baliseLight:'light',baliseHeavy:'heavy',baliseLift:'heavy',sweep:'light',air:'light',grab:'heavy'}[a.key]||'stance'):
+      !f.grounded?'jump':f.crouch?'crouch':movement?(Math.sin(f.walk)>=0?'walk1':'walk2'):'stance';
+    // The received fall drawings show a grounded, living defeat. The compact
+    // jump pose is used for both ascent and descent; velocity does not topple the body.
+    const requested=frames.original?.[pose]?.[face],fallback=frames.original?.stance?.[face];
+    const descriptor=ready(requested?.image)?requested:fallback,placement=originalSpritePlacement(f,descriptor);
+    const rope=originalKits.visuals?.[f.id]?.rope;
+    // A fallback/hurt pose has no cord join; do not draw a detached line from the torso.
+    const ropePoint=descriptor===requested?originalRopePoint(placement,rope?.attachments?.[pose]?.[face]):null;
+    oval(c,f.x,FLOOR+1,Math.max(11,29-f.y*.08),4.3,'rgba(4,11,14,.54)');
+    if(m.mode==='training'&&m.training.hitboxes){
+      const edge=clamp(f.x+f.face*moves.balise.reach,0,WIDTH);
+      c.save();c.setLineDash([4,4]);line(c,f.x,FLOOR+17,edge,FLOOR+17,'#e9b675',1);c.restore();
+      label(c,'T · 2,4 CORPS',edge,FLOOR+32,9,'#e9b675','center');
+    }
+    if(a?.key==='baliseAnchor'&&a.t<moves.baliseAnchor.start){
+      const x=a.anchorX;c.save();c.globalAlpha=.35+a.t/48;
+      oval(c,x,FLOOR-2,12,3,'#f1a05c');drawOriginalRope(c,ropePoint,{x,y:FLOOR-8},rope?.material,2);c.restore();
+    }
+    if(a&&['balise','baliseAssist'].includes(a.key)){
+      const data=moves[a.key],out=a.t>=data.start&&a.t<data.start+data.active;
+      const reach=out?data.reach:Math.max(18,data.reach*(1-Math.max(0,a.t-data.start-data.active)/data.recover))*(a.t<data.start?.18:1);
+      const x=clamp(f.x+f.face*reach,0,WIDTH);
+      // The source PNG already contains the hand-to-loop segment. Extend only
+      // beyond that visible end, including at a stage edge or during retraction.
+      if(ropePoint&&(x-ropePoint.x)*f.face>0){
+        drawOriginalRope(c,ropePoint,{x,y:feet-31},rope?.material,out?1.5:4);
+        drawOriginalProp(m,f.id,'ropeHook',x,feet-27,14);
+      }
+    }
+    if(a?.key==='baliseReel'){
+      const destination=a.destination ?? f.marker?.x;
+      if(Number.isFinite(destination))drawOriginalRope(c,ropePoint,{x:destination,y:FLOOR-8},rope?.material);
+    }
+    if(placement){
+      const {crop,x,y,width,height}=placement;
+      c.save();
+      if(f.flash>1&&f.flash%4<2)c.filter='brightness(1.5)';
+      // True left/right source drawings preserve the anatomical equipment side.
+      c.drawImage(descriptor.image,...crop,x,y,width,height);
+      c.restore();
+    }else{
+      c.fillStyle=f.spec.suit;c.fillRect(f.x-14,feet-f.spec.h+26,28,f.spec.h*.58);
+      oval(c,f.x,feet-f.spec.h+16,12,16,f.spec.skin);
+    }
+    if(f.guard){c.strokeStyle=f.blockStun?'#f9e0bd':'#d8a268';c.lineWidth=1.5;c.beginPath();c.ellipse(f.x+f.face*12,feet-88,32,65,0,f.face>0?-1.13:2.01,f.face>0?1.13:4.27);c.stroke();}
+    if(f.noticeTTL>0)label(c,f.notice,f.x,feet-f.spec.h-12,10,'#fff0b6','center');
+    if(f.combo>1&&f.comboTTL)label(c,f.combo+' COUPS',f.x,feet-f.spec.h-27,13,'white','center');
   }
   function stepDirectional(m, f, owner, action, move) {
     if (action.t === move.start) {
@@ -1019,6 +1209,7 @@
   const intersects=(a,b)=>a.l<b.r && a.r>b.l && a.t<b.b && a.b>b.t;
   function immune(f) {return f.dash>=4 && f.dash<=8 || (f.act?.key==='syncope' && f.act.t>=10 && f.act.t<16) || (f.act?.key==='fragile' && f.act.t>=6 && f.act.t<=10);}
   function intercept(m, defender, attacker, kind, melee) {
+    kind=moveBase(kind);
     const defense = defender.act;
     if (!melee || !defense || defense.hit || !['brace','parry','diehardman'].includes(defense.key)) return false;
     const move = moves[defense.key];
@@ -1058,7 +1249,7 @@
     victim.hp=clamp(victim.hp-(blocked?0:damage),0,100);
     victim.balance=clamp(victim.balance-d.balance*(blocked?1.25:.76),0,100);victim.postHit=58;
     attacker.chiral=clamp(attacker.chiral+(blocked?2:4),0,100);victim.chiral=clamp(victim.chiral+(blocked?2:3),0,100);
-    victim.vx+=face*d.push*(blocked?.44:1);let shattered=false;
+    victim.vx+=face*(d.rope && blocked?0:d.push)*(blocked?.44:1);let shattered=false;
     if (blocked) {victim.blockStun=Math.max(victim.blockStun,9);tone(330,.075,'square',.019,110);}
     else {
       if(victim.taunt){victim.notice='';victim.noticeTTL=0;}
@@ -1079,11 +1270,12 @@
   }
   function contacts(m) {
     if(m.teams)return teamContacts(m);
+    if(originalKits)originalObjectContacts(m);
     const bodies=m.f.map(hurt), events=[];
     let passage=null;
     m.f.forEach((f,i)=>{
       const rect=strike(f), o=m.f[1-i], a=f.act;
-      if (rect && !immune(o) && intersects(rect,bodies[1-i]) && !(a.key==='grab' && (!o.grounded || o.stun))) {
+      if (rect && !immune(o) && (!moves[a.key].groundedOnly || o.grounded) && intersects(rect,bodies[1-i]) && !(a.key==='grab' && (!o.grounded || o.stun))) {
         a.hit=true;events.push({i,d:moves[a.key],a,kind:a.key,face:f.face});
       }
     });
@@ -1147,7 +1339,7 @@
       // Resolve every contact (including a simultaneous trade) before the
       // passage is considered. A block, projectile or ordinary light hit never
       // activates it, and an impact must point outwards from the fighting lane.
-      if (ok && !passage && m.link && !m.link.used && e.a && ['heavy','grab'].includes(e.kind) && attacker.grounded && defender.grounded) {
+      if (ok && !passage && m.link && !m.link.used && e.a && ['heavy','grab'].includes(moveBase(e.kind)) && attacker.grounded && defender.grounded) {
         const rule=stageLinks[m.stage],side=defender.x<=48+rule.edge ? -1 : defender.x>=WIDTH-48-rule.edge ? 1 : 0;
         if (side && e.face===side && side*(defender.x-attacker.x)>0) passage={side,attacker:e.i+1};
       }
@@ -1155,14 +1347,21 @@
     return passage;
   }
   function teamContacts(m) {
+    if(originalKits)originalObjectContacts(m);
     const events=[],targets=side=>[m.f[side],teamSupport(m,side)].filter(f=>f&&f.hp>0);
     const add=(attacker,victim,kind,d,face,a)=>events.push({attacker,victim,kind,d,face,a});
     m.f.forEach((f,side)=>{
       const box=strike(f),action=f.act;
-      if(box)for(const victim of targets(1-side))if(!immune(victim)&&intersects(box,hurt(victim))&&!(action.key==='grab'&&(!victim.grounded||victim.stun))){
+      if(box)for(const victim of targets(1-side))if(!immune(victim)&&(!moves[action.key].groundedOnly||victim.grounded)&&intersects(box,hurt(victim))&&!(action.key==='grab'&&(!victim.grounded||victim.stun))){
         action.hit=true;add(f,victim,action.key,moves[action.key],f.face,action);
       }
       const support=teamSupport(m,side),busy=m.teams[side].busy;
+      const originalAssist=originalKits?.assists[support?.id];
+      if(originalAssist&&busy&&!busy.interrupted&&!busy.hit&&busy.frame>=originalAssist.entry&&busy.frame<originalAssist.entry+originalAssist.active){
+        const box=strike(support),data=moves[originalAssist.key];
+        const victim=targets(1-side).filter(v=>!immune(v)&&(!data.groundedOnly||v.grounded)&&box&&intersects(box,hurt(v))).sort((a,b)=>Math.abs(a.x-support.x)-Math.abs(b.x-support.x))[0];
+        if(victim){busy.hit=true;support.act.hit=true;add(support,victim,originalAssist.key,data,support.face);}
+      }
       if(support?.id==='fragile'&&busy&&!busy.interrupted&&!busy.hit&&busy.frame>=18&&busy.frame<22){
         const edge=support.x+support.face*108,box={l:Math.min(support.x,edge),r:Math.max(support.x,edge),t:FLOOR-139,b:FLOOR-21};
         for(const victim of targets(1-side))if(!immune(victim)&&intersects(box,hurt(victim))){busy.hit=true;add(support,victim,'fragile',moves.fragile,support.face);}
@@ -1250,7 +1449,7 @@
   }
   function winRound(m,index,reason) {
     m.winner=index+1;m.wins[index]++;m.reason=reason;
-    m.phase=m.wins[index]>=m.toWin && reason==='ko'?'finish':'roundover';m.phaseTicks=m.phase==='finish'?135:96;
+    m.phase=m.wins[index]>=m.toWin && reason==='ko' && !originalIds.includes(m.f[index].id)?'finish':'roundover';m.phaseTicks=m.phase==='finish'?135:96;
     m.shots=[];clearControls(m);if(m.teams)m.teams.forEach(finishTeamBusy);(m.teams?m.teams.flatMap(team=>team.members):m.f).forEach(f=>{delete f.taunt;f.marker=null;f.scan=null;f.act=null;f.stun=0;f.crouch=false;});tone(145,.35,'sine',.045,71);notify(m,true);
   }
   function activateFinish(m) {
@@ -1616,6 +1815,7 @@
   }
 
   function drawFighter(m, f, index) {
+    if(originalIds.includes(f.id)){drawOriginalFighter(m,f,index);return;}
     const c = m.ctx, feet = FLOOR - f.y;
     const act = f.act;
     const {base, tailored, geometry, generatedPoses, poseGeometry, tailoredPoseGeometry, tauntGeometry} = m.teams?m.teamFrames[f.teamSide][f.teamSlot]:m.fighterFrames[index];
@@ -1798,6 +1998,11 @@
         const sx=f.x-f.face*30, sy=FLOOR-f.y-126;
         c.strokeStyle='#d7f3d2'; c.lineWidth=2; c.strokeRect(sx-6,sy-6,12,12);
         line(c,sx-6,sy+10,sx-6+12*ttl/120,sy+10,'#d7f3d2',2);
+      } else if (kind === 'baliseAnchor') {
+        if(!drawOriginalProp(m,f.id,'anchor',x,FLOOR,30)){
+          oval(c,x,FLOOR-8,9,6,'#e9aa70');line(c,x,FLOOR-5,x,FLOOR-25,'#f2bd85',2);
+        }
+        line(c,x-12,FLOOR+5,x-12+24*ttl/originalKits.geometry.anchorTTL,FLOOR+5,'#efaa6c',2);
       } else if (kind === 'anchor') {
         oval(c,x,FLOOR-2,16,3,'#75cfc7');
         line(c,x-9,FLOOR-2,x,FLOOR-30,'#91ede0',2);
@@ -2099,7 +2304,7 @@
   const teamStateFields=['wins','round','tick','beat','phase','phaseTicks','remaining','shots','sparks','hstop','shake','winner','finisher','reason','camera','sudden','parcel','teams'];
   const finiteBetween=(value,min,max)=>Number.isFinite(value)&&value>=min&&value<=max;
   function validTeamPoint(point) {
-    if(!point||point.version!==1||point.rules!=='relay-1'||!validTeamSelection(point.selection)||!Object.hasOwn(stages,point.stage)||stageLinks[point.stage]||!['cpu','local'].includes(point.mode))return false;
+    if(!point||point.version!==1||point.rules!=='relay-1'||!validTeamSelection(point.selection)||!Object.hasOwn(stages,point.stage)||stageLinks[point.stage]||!['cpu','local'].includes(point.mode)||(point.originalRules??null)!==originalRulesFor(point.selection.flat()))return false;
     const s=point.state;if(!s||!Array.isArray(s.teams)||s.teams.length!==2||!['intro','fight','finish','cinema','roundover','ended'].includes(s.phase))return false;
     if(!Number.isSafeInteger(s.tick)||s.tick<0||!finiteBetween(s.remaining,0,4500)||!finiteBetween(s.hstop,0,100)||!finiteBetween(s.phaseTicks,-1,200)||![0,1,2].includes(s.winner)||!Array.isArray(s.wins)||s.wins.length!==2||!s.wins.every(v=>Number.isInteger(v)&&v>=0&&v<=5))return false;
     if(!Number.isInteger(s.round)||s.round<1||s.round>10||!finiteBetween(s.beat,0,59)||!finiteBetween(s.shake,0,100)||!finiteBetween(s.camera,-2000,2000)||typeof s.sudden!=='boolean'||typeof s.finisher!=='boolean')return false;
@@ -2119,13 +2324,13 @@
         (f.act.key!=='winch'||(f.act.t<moves.winch.start?
           f.marker?.kind==='anchor'&&f.marker.ttl>moves.winch.start-f.act.t:
           finiteBetween(f.act.destination,-60,WIDTH+60))))&&
-      (!f.marker||['anchor','memory','beacon','mine','post','crate','seal'].includes(f.marker.kind)&&finiteBetween(f.marker.ttl,0,10000)&&
+      (!f.marker||['anchor','memory','beacon','mine','post','crate','seal',...(originalKits?['baliseAnchor']:[])].includes(f.marker.kind)&&finiteBetween(f.marker.ttl,0,10000)&&
         (f.marker.kind==='seal'||finiteBetween(f.marker.x,-60,WIDTH+60))&&
         (f.marker.kind!=='crate'||(f.marker.travel==null||['crate','retrieve'].includes(f.marker.travel))&&
           (f.marker.travel!=='crate'||finiteBetween(f.marker.endX,-60,WIDTH+60))))&&
       (!f.scan||finiteBetween(f.scan.x,-60,WIDTH+60)&&finiteBetween(f.scan.ttl,0,10000))&&
       (!f.taunt||finiteBetween(f.taunt.frame,0,teamRules.assistDuration))&&
-      (f.teamLock===undefined||typeof f.teamLock==='boolean');
+      (f.teamLock===undefined||typeof f.teamLock==='boolean') && validOriginalState(f,side,slot);
     if(!s.teams.every((team,side)=>team&&[0,1].includes(team.active)&&finiteBetween(team.cohesion,0,100)&&
       finiteBetween(team.assistCooldown,0,360)&&finiteBetween(team.tagCooldown,0,240)&&finiteBetween(team.combo,0,1e5)&&finiteBetween(team.comboTTL,0,1e5)&&
       Array.isArray(team.members)&&team.members.length===2&&team.members.every((f,slot)=>memberOK(f,side,slot))&&
@@ -2143,7 +2348,7 @@
     checkpoint(){
       const m=match;if(!m?.teams)return null;
       const state={};for(const key of teamStateFields)state[key]=m[key];
-      return structuredClone({version:1,rules:'relay-1',selection:m.teamSelection,stage:m.stage,mode:m.mode,toWin:m.toWin,difficulty:m.difficulty,state,particles:m.particlesRandom.state(),simulation:m.simRandom.state()});
+      return structuredClone({version:1,rules:'relay-1',...(originalRulesFor(m.teamSelection.flat())?{originalRules:originalKits.rules}:{}),selection:m.teamSelection,stage:m.stage,mode:m.mode,toWin:m.toWin,difficulty:m.difficulty,state,particles:m.particlesRandom.state(),simulation:m.simRandom.state()});
     },
     restore(point){
       const m=match;
@@ -2155,5 +2360,5 @@
     }
   };
 
-  host.StrandFight = {start, stop, pause, input, setTraining, setSound, setAmbienceVolume, setAudioSuspended, setReducedEffects, setStaticScenery, snapshot, validReplay, network, tauntRules,team};
+  host.StrandFight = {start, stop, pause, input, setTraining, setSound, setAmbienceVolume, setAudioSuspended, setReducedEffects, setStaticScenery, snapshot, validReplay, network, tauntRules,team,originalCharacterIds:originalIds.slice(),compatibleLocalOnly:!!originalKits,originalRules:originalKits?.rules || null};
 })(window);

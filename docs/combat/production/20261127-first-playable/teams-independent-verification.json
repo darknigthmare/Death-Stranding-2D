@@ -1,0 +1,33 @@
+{
+  "date": "2026-11-27",
+  "reviewer": "independent-original-extension-agent",
+  "scope": "Real team simulation, boundary saves and simultaneous trades; explicit DOM/Canvas adapter, not native browser",
+  "checks": [
+    {
+      "name": "Malformed winner phases are rejected atomically instead of throwing while drawing",
+      "passed": true
+    },
+    {
+      "name": "A corrupted orphan lock cannot silently immobilize an active or reserve member",
+      "passed": true
+    },
+    {
+      "name": "Malformed placed objects cannot produce NaN coordinates or a missing-anchor crash after resume",
+      "passed": true
+    },
+    {
+      "name": "Valid tag checkpoints preserve their lock before and after transfer",
+      "passed": true
+    },
+    {
+      "name": "AI respects the same tag commitment as a player and cannot inject a dash",
+      "passed": true
+    },
+    {
+      "name": "An equal-frame final trade awards control and the finisher to the living reserve on either side",
+      "passed": true
+    }
+  ],
+  "passed": true,
+  "engineSha256": "6be07ea82a834d18cc0f72381fb1c5be44643ae104cc47556bc22cd04570cbc6"
+}

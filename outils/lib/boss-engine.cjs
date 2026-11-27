@@ -3,8 +3,9 @@
 const fs=require('node:fs'),path=require('node:path'),vm=require('node:vm');
 const repo=path.resolve(__dirname,'../..'),mode=path.join(repo,'modes/echos-de-la-greve');
 const clone=value=>JSON.parse(JSON.stringify(value));
-function inspectEngine(){
+function inspectEngine(options={}){
   const sources=Object.fromEntries(['boss.js','content.js','assets.js','campaign.js'].map(file=>[file,fs.readFileSync(path.join(mode,file),'utf8')]));
+  if(typeof options.bossSource==='string')sources['boss.js']=options.bossSource;
   const storage=new Map(),storageCalls=[];
   const host={localStorage:{getItem(key){storageCalls.push(['get',key]);return storage.get(key)||null;},setItem(key,value){storageCalls.push(['set',key]);storage.set(key,value);}},requestAnimationFrame:()=>1,cancelAnimationFrame(){}};
   const context={window:host,Image:class{constructor(){this.complete=false;this.naturalWidth=0;this.naturalHeight=0;}},structuredClone};

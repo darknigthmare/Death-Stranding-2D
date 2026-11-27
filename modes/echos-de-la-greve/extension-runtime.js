@@ -16,5 +16,5 @@
       registered.push(stage.id);
     }
   }
-  host.StrandExtensionRuntime=Object.freeze({version:1,stages:Object.freeze(registered),characters:0,enemies:0,bosses:0});
+  host.StrandExtensionRuntime=Object.freeze({version:1,stages:Object.freeze(registered),get characters(){return host.StrandOriginalKits?.originalCharacterIds?.length||0;},enemies:0,get bosses(){return Object.keys(host.StrandOriginalBosses?.encounters||{}).length;}});
 })(window);

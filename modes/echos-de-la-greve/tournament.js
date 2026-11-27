@@ -19,15 +19,20 @@
   function create(config) {
     const roll = random(config.seed);
     const entrants = [];
-    const chosen = [config.p1, config.p2].slice(0, config.humans);
-    const allFighters = Object.keys(window.StrandContent.fighters);
+    // Original kits are admitted only to their explicit local modes. Keep the
+    // tournament draw canonical even when the shared content registry has more kits.
+    const allFighters = (window.StrandOriginalKits?.canonicalCharacterIds || Object.keys(window.StrandContent.fighters))
+      .filter(id => Object.hasOwn(window.StrandContent.fighters, id));
+    const selected = [config.p1, config.p2].map((id, index) => allFighters.includes(id) ? id :
+      index === 1 && allFighters.includes('higgs') ? 'higgs' : allFighters[0]);
+    const chosen = selected.slice(0, config.humans);
     const fighters = [
       ...shuffle(allFighters.filter(id => !chosen.includes(id)), roll),
       ...shuffle(allFighters.filter(id => chosen.includes(id)), roll)
     ];
     for (let i = 0; i < config.count; i++) {
       const human = i < config.humans;
-      const fighter = human ? [config.p1, config.p2][i] : fighters[(i - config.humans) % fighters.length];
+      const fighter = human ? selected[i] : fighters[(i - config.humans) % fighters.length];
       entrants.push({id:i, fighter, label:human ? 'J' + (i + 1) : 'IA ' + (i - config.humans + 1), human});
     }
     const draw = shuffle(entrants.map(entrant => entrant.id), roll);

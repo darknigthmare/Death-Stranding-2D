@@ -44,6 +44,7 @@ function gameVersion(baseRoot = root, assets = assetFiles(baseRoot)) {
     'input.js','input.css','moves-data.js','relationships.js','lessons.js','lessons.css','boss-data.js','boss-guide.js','boss-guide.css',
     'presentation.js','presentation.css','presentation-assets.js','progression.html','progression.js','progression.css','progression-data.js',
     'teams.html','teams.js','teams.css','extension.html','extension.css','extension.js','extension-data.js','extension-assets.js','extension-runtime.js',
+    'original-kits-assets.js','original-kits.js','original-bosses-assets.js','original-bosses.js',
     'netplay.js','netplay-server.cjs']) {
     hash.update(file);
     hash.update(fs.readFileSync(path.join(baseRoot,file)));
@@ -143,6 +144,7 @@ const statics = new Set(['index.html','style.css','app.js','fight.js','content.j
   'static-assets.html','static-assets.css','static-assets.js','static-assets-data.js','lessons.js','lessons.css','boss-data.js','boss-guide.js','boss-guide.css',
   'presentation.js','presentation.css','presentation-assets.js','progression.html','progression.js','progression.css','progression-data.js',
   'teams.html','teams.js','teams.css','extension.html','extension.css','extension.js','extension-data.js','extension-assets.js','extension-runtime.js',
+    'original-kits-assets.js','original-kits.js','original-bosses-assets.js','original-bosses.js',
   'duel-originel/index.html','duel-originel/style.css','duel-originel/interface.js','duel-originel/moteur.js','duel-originel/scene.js']);
 const documents = new Set(['docs/combat/BIBLE_COMBAT.md','docs/combat/UNIVERS_DS.md','docs/combat/REGISTRE_PRODUCTION.md',
   'docs/combat/ACTIONS_ET_IA.md','docs/combat/RELATIONS_SIMULATEUR.md','docs/combat/BOSS_ET_RENCONTRES.md',
@@ -168,6 +170,7 @@ function addProductionDocuments(relative) {
   }
 }
 addProductionDocuments('docs/combat/production/20261127-lignes-de-maree');
+addProductionDocuments('docs/combat/production/20261127-first-playable');
 addProductionDocuments('docs/combat/production/20261127-team-gameplay');
 const proofRoot='docs/combat/production/20261127-extensions/';
 for(const file of ['native-inventory.json','generation-provenance.json','inventory-verification.json',

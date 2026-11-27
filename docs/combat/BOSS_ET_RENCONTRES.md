@@ -400,7 +400,7 @@ Clé propre : `echos.campaign.v1`. Règles : `les-noeuds-rompus-20261125-v1`.
 
 ## Provenance, reproduction et portée
 
-Source principale SHA-256 : `59eaab71a30a97663c4d9d8cd087e5022ffccc2e2dbe817dd468c341a43ae806`. L’extracteur ne modifie jamais le moteur ; il ajoute un accès de lecture dans une copie en mémoire. Les noms viennent du contenu du projet, les valeurs et effets viennent du moteur Boss. Les notes de condition sont écrites explicitement et confrontées à la recette ciblée.
+Source principale SHA-256 : `9151eaffd51ea3117f806655bf6dbd7677aff612b837505cdfd53a1410eef550`. L’extracteur ne modifie jamais le moteur ; il ajoute un accès de lecture dans une copie en mémoire. Les noms viennent du contenu du projet, les valeurs et effets viennent du moteur Boss. Les notes de condition sont écrites explicitement et confrontées à la recette ciblée.
 
 ```sh
 node outils/generer_catalogue_boss.cjs

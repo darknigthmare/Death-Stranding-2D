@@ -2,7 +2,7 @@
 
 **Projet : Death Stranding 2D · périmètre : tout l’univers Death Stranding.**
 
-**Mise à jour courante : [Relais de liaison et Les Lignes de Marée](#relais-lignes-maree-20261127) : huit kits jouables, dix modes, six rencontres Boss existantes et 45 configurations locales. L’extension reçoit 70 bases visuelles et 147 fiches ; les nouveaux kits et rencontres restent en production.**
+**Mise à jour courante : [premier kit et première rencontre](#ldm-premier-jouable-20261127) — 9 combattants en duel/dojo libre/relais, 7 rencontres Boss Battle, 6 étapes Boss Rush et 45 configurations locales. Balise et le Consignateur disposent de leurs actions, poses directionnelles, objets et reprises.**
 
 **Instantané du complément précédent : 27 novembre 2026 · le [complément de fidélité](#fidelity-20261127) ajoute les phases de présentation, les poses de la tenue Mama Viaduc, une correction de continuité Heartman, le neuvième exercice et une référence de décharge DS2. Les deux extensions originales du guide restent intégrées avec 38 rubriques complémentaires et les Dossiers de liaison. Huit combattants, neuf modes, six Boss et vingt-cinq configurations d’arène sont conservés. Les comptes des lots antérieurs ci-dessous restent leurs instantanés historiques ; les comptes courants et les refus de génération sont explicités au §12.**
 
@@ -373,7 +373,7 @@ Les [écarts DS2](production/20261127-fidelity/MANQUANTS_DS2.md), l’[audit des
 
 
 <a id="relais-lignes-maree-20261127"></a>
-## 13. Relais de liaison et méga-extension originale — état courant du 27 novembre 2026
+## 13. Relais de liaison et méga-extension originale — instantané avant le premier kit
 
 Le [bilan des Lignes de Marée](production/20261127-lignes-de-maree/BILAN.md) et le [contrat du relais](production/20261127-team-gameplay/RELAIS_DE_LIAISON.md) actualisent les instantanés des §11–12. Le tag et les assistances y étaient encore futurs ; leur profil local est maintenant implémenté. Les réserves qui concernent supers, animation, réseau, Boss et fidélité canonique demeurent.
 
@@ -391,8 +391,31 @@ Le [bilan des Lignes de Marée](production/20261127-lignes-de-maree/BILAN.md) et
 | `UI:LDM-dossiers` | Catalogue local des 147 fiches, filtres, recherche, sources, liens entre dossiers et essai des arènes. | La consultation ne débloque pas de kit, ennemi ou boss absent. |
 | `QA:LDM-delivery` | Empreintes, 70 fichiers natifs, géométrie, rendu réel, catalogue, conservation et service HTTP contrôlés dans les rapports. | Aucune certification globale « 1:1 » ni recette de navigateur matériel. |
 
-**Comptes courants :** huit combattants canoniques jouables ; dix modes ; six Boss historiques ; 45 configurations locales, dont 20 originales statiques ; 44 arènes pour le relais. L’extension ajoute 10 personnages, 20 ennemis et 20 boss en conception et bases visuelles, sans les compter parmi les kits/rencontres jouables. Les actifs raster sont **539 = 450 antérieurs + 19 de fidélité + 70 originaux** ; 33 SVG historiques sont préservés. Les candidats de génération et captures de QA n’entrent pas dans ces 539.
+**Comptes de cet instantané :** huit combattants canoniques jouables ; dix modes ; six Boss historiques ; 45 configurations locales, dont 20 originales statiques ; 44 arènes pour le relais. L’extension ajoute 10 personnages, 20 ennemis et 20 boss en conception et bases visuelles, sans les compter parmi les kits/rencontres jouables. Les actifs raster sont **539 = 450 antérieurs + 19 de fidélité + 70 originaux** ; 33 SVG historiques sont préservés. Les candidats de génération et captures de QA n’entrent pas dans ces 539.
 
-### Prochaine unité complète de production
+### Unité suivante prévue à cet instantané
 
 Un premier kit original doit recevoir ses poses, trois techniques, objets détachés, commandes, collisions, comportement IA, reprise et recette dans les deux directions avant sélection. L’extension peut ensuite accueillir sa première mission et sa première rencontre boss. Les autres unités suivent le même seuil de disponibilité ; une quantité de fiches ou de PNG ne permet pas d’annoncer ces systèmes livrés. Les paires, bonus, kits DS2, asymétries et corrections de fidélité restent reliés aux besoins des chapitres précédents.
+
+
+<a id="ldm-premier-jouable-20261127"></a>
+## 14. Premier kit et première rencontre des Lignes de Marée — 27 novembre 2026
+
+**Balise est jouable en Versus local, Entraînement libre et Relais de liaison. Le Consignateur est la septième rencontre de Boss Battle.** Les huit kits canoniques et les six rencontres historiques restent disponibles dans leurs modes ; Boss Rush conserve ses six étapes.
+
+Balise utilise ses trois normales et ses trois techniques du catalogue. La boucle coûte 28 Chiral, se lance après 18 pas et reste gardable ou évitable en sautant. L’ancre coûte 18, apparaît après 24 pas, reste quatre secondes et peut être détruite. Le rappel coûte 16, consomme l’ancre et déplace physiquement Balise, au maximum 11 pixels par pas pendant six pas : ni invulnérabilité ni traversée du rival. Son appui « Ligne de vie » coûte 25 Cohésion, annonce 24 pas, agit cinq pas puis sort pendant 26 pas. L’objet et les ressources restent attribués au bon membre ; les sauvegardes et replays portent les règles `balise-1`.
+
+Le Consignateur conserve une garde de 300. La première phase ouvre la garde jusqu’à 198 ; la deuxième exige deux consoles et atteint 99 ; la troisième demande le registre avant zéro, puis une interaction de reddition. L’issue est non létale. Les annonces et reprises suivent les durées 60/48, 72/42 et 90/60 à vitesse normale. Trois vitesses sont proposées : 75 %, 100 % et 125 %. Une défaite reprend le début de la phase avec ses ressources, objectifs, chronomètre et graine ; les conditions de reprise sont validées avant affichage.
+
+### Production visuelle et accès
+
+La passe reçoit **48 PNG natifs autonomes : 30 poses Balise, 12 poses Consignateur et six objets, dont cinq raccordés au jeu et une variante de corde conservée**. Chaque personnage utilise des dessins gauche et droite distincts afin de conserver ses côtés anatomiques. Les props actifs sont la boucle grise mouchetée rouge, l’ancrage, les deux états de console et le registre ; la boucle orange initiale reste conservée comme variante. Les 539 rasters précédents et 33 SVG historiques restent identiques ; le dossier d’assets contient désormais **587 rasters**. Les captures de contrôle restent séparées.
+
+Depuis le catalogue des Lignes de Marée, le dossier Balise ouvre directement son dojo et le dossier Consignateur ouvre sa rencontre. Le grand aperçu, les commandes, les filtres de modes, les vitesses et les reprises sont raccordés. Le kit est ouvert directement pour cette première livraison ; son déblocage par mission ou exercice original reste à réaliser. Les exercices guidés historiques conservent leurs huit personnages.
+
+### Portée et reste à produire
+
+Ces images sont des **poses clés**, avec déplacements et transitions calculés par les moteurs. Elles ne constituent pas les cycles dessinés complets demandés par la bible. Les campagnes de Balise, costumes, super, conclusion et duo restent ouverts. Les **neuf autres kits originaux, vingt IA ennemies et dix-neuf autres rencontres boss** restent à implémenter. Les vingt missions, cinq duos, six bonus, véhicules/gadgets et cent plans de décor conservent leurs dépendances de production. Les corrections canoniques précédemment non reçues restent dans leur registre.
+
+Le [bilan de la passe](production/20261127-first-playable/BILAN.md), la [recette de Balise](production/20261127-first-playable/BALISE.md), la [rencontre du Consignateur](production/20261127-first-playable/CONSIGNATEUR.md) et les [vérifications](production/20261127-first-playable/VERIFICATION.md) distinguent simulation, contrôles DOM, Canvas natif et navigateur réel. La fidélité des nouvelles poses est évaluée contre leurs références originales ; aucune certification globale 1:1 de l’ensemble de l’univers n’est déclarée.
+

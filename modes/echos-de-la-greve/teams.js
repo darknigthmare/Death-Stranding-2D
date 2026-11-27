@@ -2,7 +2,7 @@
 (() => {
   'use strict';
   const engine=window.StrandFight,input=window.StrandInput,content=window.StrandContent,art=window.StrandAssets;
-  const ids=['sam','fragile','higgs','cliff','mule','diehardman','mama','heartman'];
+  const ids=['sam','fragile','higgs','cliff','mule','diehardman','mama','heartman'].concat(window.StrandOriginalKits?.originalCharacterIds||[]);
   const $=id=>document.getElementById(id),esc=value=>String(value).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
   const saveKey='echos.teams.v1',settings=input.createSettings();
   let running=false,paused=false,sound=true,reduced=!!window.matchMedia?.('(prefers-reduced-motion: reduce)').matches,controller,editor=null,savedPoint=null,lastConfig=null;

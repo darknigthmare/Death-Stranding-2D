@@ -1,0 +1,1332 @@
+{
+  "date": "2026-11-27T13:59:53.785Z",
+  "passed": true,
+  "method": "Modules réels et entrées normales ; DOM/Canvas simulés, aucune victoire ni modification de combattant injectée.",
+  "browser": false,
+  "nativeCanvas": false,
+  "hardwareGamepadTested": false,
+  "checks": [
+    {
+      "name": "All nine exercises complete through real engine inputs with measured objectives",
+      "passed": true
+    },
+    {
+      "name": "Three active directional signatures are required for each of the eight fighters",
+      "passed": true
+    },
+    {
+      "name": "Punishment and confirmed cancel remain achievable with all eight movement/power profiles",
+      "passed": true
+    },
+    {
+      "name": "No-input and wrong-guard attempts cannot validate; failure can be retried",
+      "passed": true
+    },
+    {
+      "name": "Objective boundaries reject a late punish and a fresh attack during recovery of resources",
+      "passed": true
+    },
+    {
+      "name": "Taunt lesson requires a complete cycle and an actual interruption for all eight fighters",
+      "passed": true
+    },
+    {
+      "name": "Taunt lesson rejects an unsafe distance, a late hit and the wrong attack",
+      "passed": true
+    },
+    {
+      "name": "Taunt interruption distinguishes the last vulnerable contact from natural completion on the next tick",
+      "passed": true
+    },
+    {
+      "name": "A lingering mine hitting while a light starts cannot validate a light interruption",
+      "passed": true
+    },
+    {
+      "name": "Progress is isolated, validates stored values and survives an unavailable store",
+      "passed": true
+    },
+    {
+      "name": "Actual application completes the full course with remapped keys, visible feedback and isolated progress",
+      "passed": true
+    },
+    {
+      "name": "Actual application pauses, retries, resumes at the beginning, and preserves free dojo controls",
+      "passed": true
+    },
+    {
+      "name": "Touch and a synthetic standard gamepad drive the same measured lesson",
+      "passed": true
+    },
+    {
+      "name": "Boss compendium surfaces: real app selection, saved Rush and campaign briefing fixtures",
+      "passed": true
+    }
+  ],
+  "runs": [
+    {
+      "id": "distance",
+      "fighter": "sam",
+      "frames": 206,
+      "evidence": [
+        {
+          "goal": 1,
+          "tick": 148,
+          "gap": 88,
+          "stableTicks": 15
+        },
+        {
+          "goal": 2,
+          "tick": 204,
+          "gap": 268,
+          "stableTicks": 15
+        }
+      ]
+    },
+    {
+      "id": "reach",
+      "fighter": "sam",
+      "frames": 159,
+      "evidence": [
+        {
+          "goal": 1,
+          "tick": 91,
+          "kind": "light-whiff",
+          "startGap": 356,
+          "opponentHp": 100
+        },
+        {
+          "goal": 2,
+          "tick": 157,
+          "kind": "light-hit",
+          "damage": 5,
+          "gap": 88
+        }
+      ]
+    },
+    {
+      "id": "guard-high",
+      "fighter": "sam",
+      "frames": 370,
+      "evidence": [
+        {
+          "goal": 1,
+          "tick": 368,
+          "blocks": 3,
+          "kind": "light",
+          "vitality": 100
+        }
+      ]
+    },
+    {
+      "id": "guard-low",
+      "fighter": "sam",
+      "frames": 373,
+      "evidence": [
+        {
+          "goal": 1,
+          "tick": 371,
+          "blocks": 3,
+          "kind": "sweep",
+          "vitality": 100
+        }
+      ]
+    },
+    {
+      "id": "punish",
+      "fighter": "sam",
+      "frames": 152,
+      "evidence": [
+        {
+          "goal": 1,
+          "tick": 132,
+          "kind": "heavy-whiff",
+          "gap": 155
+        },
+        {
+          "goal": 2,
+          "tick": 150,
+          "kind": "recovery-punish",
+          "damage": 5,
+          "opponentPhaseBeforeImpact": "Récupération"
+        }
+      ]
+    },
+    {
+      "id": "resource",
+      "fighter": "sam",
+      "frames": 204,
+      "evidence": [
+        {
+          "goal": 1,
+          "tick": 73,
+          "kind": "chiral-spent",
+          "observedDrop": 28,
+          "cost": 28
+        },
+        {
+          "goal": 2,
+          "tick": 202,
+          "kind": "chiral-recovered",
+          "from": 14,
+          "to": 60
+        }
+      ]
+    },
+    {
+      "id": "signatures",
+      "fighter": "sam",
+      "frames": 158,
+      "evidence": [
+        {
+          "goal": 1,
+          "tick": 88,
+          "kind": "signature-active",
+          "engineAction": "sam",
+          "frame": 16,
+          "cost": 28
+        },
+        {
+          "goal": 2,
+          "tick": 127,
+          "kind": "signature-active",
+          "engineAction": "brace",
+          "frame": 8,
+          "cost": 14
+        },
+        {
+          "goal": 3,
+          "tick": 156,
+          "kind": "signature-active",
+          "engineAction": "parry",
+          "frame": 4,
+          "cost": 18
+        }
+      ]
+    },
+    {
+      "id": "combo",
+      "fighter": "sam",
+      "frames": 166,
+      "evidence": [
+        {
+          "goal": 1,
+          "tick": 144,
+          "kind": "light-hit",
+          "combo": 1
+        },
+        {
+          "goal": 2,
+          "tick": 164,
+          "kind": "confirmed-cancel",
+          "combo": 2,
+          "damage": 12
+        }
+      ]
+    },
+    {
+      "id": "taunt",
+      "fighter": "sam",
+      "frames": 213,
+      "evidence": [
+        {
+          "goal": 1,
+          "tick": 126,
+          "kind": "taunt-complete",
+          "duration": 54,
+          "minGap": 356,
+          "phases": [
+            "entry",
+            "hold",
+            "exit"
+          ]
+        },
+        {
+          "goal": 2,
+          "tick": 211,
+          "kind": "taunt-interrupted",
+          "opponentPhase": "hold",
+          "opponentFrame": 14,
+          "damage": 5
+        }
+      ]
+    },
+    {
+      "id": "signatures",
+      "fighter": "sam",
+      "frames": 158,
+      "evidence": [
+        {
+          "goal": 1,
+          "tick": 88,
+          "kind": "signature-active",
+          "engineAction": "sam",
+          "frame": 16,
+          "cost": 28
+        },
+        {
+          "goal": 2,
+          "tick": 127,
+          "kind": "signature-active",
+          "engineAction": "brace",
+          "frame": 8,
+          "cost": 14
+        },
+        {
+          "goal": 3,
+          "tick": 156,
+          "kind": "signature-active",
+          "engineAction": "parry",
+          "frame": 4,
+          "cost": 18
+        }
+      ]
+    },
+    {
+      "id": "signatures",
+      "fighter": "fragile",
+      "frames": 160,
+      "evidence": [
+        {
+          "goal": 1,
+          "tick": 84,
+          "kind": "signature-active",
+          "engineAction": "fragile",
+          "frame": 12,
+          "cost": 28
+        },
+        {
+          "goal": 2,
+          "tick": 118,
+          "kind": "signature-active",
+          "engineAction": "fan",
+          "frame": 11,
+          "cost": 18
+        },
+        {
+          "goal": 3,
+          "tick": 158,
+          "kind": "signature-active",
+          "engineAction": "beacon",
+          "frame": 15,
+          "cost": 16
+        }
+      ]
+    },
+    {
+      "id": "signatures",
+      "fighter": "higgs",
+      "frames": 176,
+      "evidence": [
+        {
+          "goal": 1,
+          "tick": 97,
+          "kind": "signature-active",
+          "engineAction": "higgs",
+          "frame": 25,
+          "cost": 28
+        },
+        {
+          "goal": 2,
+          "tick": 147,
+          "kind": "signature-active",
+          "engineAction": "mine",
+          "frame": 18,
+          "cost": 21
+        },
+        {
+          "goal": 3,
+          "tick": 174,
+          "kind": "signature-active",
+          "engineAction": "feint",
+          "frame": 9,
+          "cost": 14
+        }
+      ]
+    },
+    {
+      "id": "signatures",
+      "fighter": "cliff",
+      "frames": 176,
+      "evidence": [
+        {
+          "goal": 1,
+          "tick": 89,
+          "kind": "signature-active",
+          "engineAction": "cliff",
+          "frame": 17,
+          "cost": 28
+        },
+        {
+          "goal": 2,
+          "tick": 145,
+          "kind": "signature-active",
+          "engineAction": "post",
+          "frame": 19,
+          "cost": 18
+        },
+        {
+          "goal": 3,
+          "tick": 174,
+          "kind": "signature-active",
+          "engineAction": "recall",
+          "frame": 12,
+          "cost": 16
+        }
+      ]
+    },
+    {
+      "id": "signatures",
+      "fighter": "mule",
+      "frames": 171,
+      "evidence": [
+        {
+          "goal": 1,
+          "tick": 90,
+          "kind": "signature-active",
+          "engineAction": "mule",
+          "frame": 18,
+          "cost": 28
+        },
+        {
+          "goal": 2,
+          "tick": 136,
+          "kind": "signature-active",
+          "engineAction": "crate",
+          "frame": 16,
+          "cost": 18
+        },
+        {
+          "goal": 3,
+          "tick": 169,
+          "kind": "signature-active",
+          "engineAction": "retrieve",
+          "frame": 13,
+          "cost": 16
+        }
+      ]
+    },
+    {
+      "id": "signatures",
+      "fighter": "diehardman",
+      "frames": 166,
+      "evidence": [
+        {
+          "goal": 1,
+          "tick": 83,
+          "kind": "signature-active",
+          "engineAction": "diehardman",
+          "frame": 11,
+          "cost": 28
+        },
+        {
+          "goal": 2,
+          "tick": 127,
+          "kind": "signature-active",
+          "engineAction": "gate",
+          "frame": 17,
+          "cost": 18
+        },
+        {
+          "goal": 3,
+          "tick": 164,
+          "kind": "signature-active",
+          "engineAction": "relief",
+          "frame": 8,
+          "cost": 16
+        }
+      ]
+    },
+    {
+      "id": "signatures",
+      "fighter": "mama",
+      "frames": 170,
+      "evidence": [
+        {
+          "goal": 1,
+          "tick": 90,
+          "kind": "signature-active",
+          "engineAction": "mama",
+          "frame": 18,
+          "cost": 28
+        },
+        {
+          "goal": 2,
+          "tick": 124,
+          "kind": "signature-active",
+          "engineAction": "deck",
+          "frame": 16,
+          "cost": 18
+        },
+        {
+          "goal": 3,
+          "tick": 168,
+          "kind": "signature-active",
+          "engineAction": "winch",
+          "frame": 12,
+          "cost": 16
+        }
+      ]
+    },
+    {
+      "id": "signatures",
+      "fighter": "heartman",
+      "frames": 167,
+      "evidence": [
+        {
+          "goal": 1,
+          "tick": 87,
+          "kind": "signature-active",
+          "engineAction": "heartman",
+          "frame": 15,
+          "cost": 28
+        },
+        {
+          "goal": 2,
+          "tick": 136,
+          "kind": "signature-active",
+          "engineAction": "memory",
+          "frame": 14,
+          "cost": 18
+        },
+        {
+          "goal": 3,
+          "tick": 165,
+          "kind": "signature-active",
+          "engineAction": "syncope",
+          "frame": 10,
+          "cost": 16
+        }
+      ]
+    },
+    {
+      "id": "punish",
+      "fighter": "sam",
+      "frames": 152,
+      "evidence": [
+        {
+          "goal": 1,
+          "tick": 132,
+          "kind": "heavy-whiff",
+          "gap": 155
+        },
+        {
+          "goal": 2,
+          "tick": 150,
+          "kind": "recovery-punish",
+          "damage": 5,
+          "opponentPhaseBeforeImpact": "Récupération"
+        }
+      ]
+    },
+    {
+      "id": "combo",
+      "fighter": "sam",
+      "frames": 166,
+      "evidence": [
+        {
+          "goal": 1,
+          "tick": 144,
+          "kind": "light-hit",
+          "combo": 1
+        },
+        {
+          "goal": 2,
+          "tick": 164,
+          "kind": "confirmed-cancel",
+          "combo": 2,
+          "damage": 12
+        }
+      ]
+    },
+    {
+      "id": "punish",
+      "fighter": "fragile",
+      "frames": 145,
+      "evidence": [
+        {
+          "goal": 1,
+          "tick": 127,
+          "kind": "heavy-whiff",
+          "gap": 156
+        },
+        {
+          "goal": 2,
+          "tick": 143,
+          "kind": "recovery-punish",
+          "damage": 5,
+          "opponentPhaseBeforeImpact": "Récupération"
+        }
+      ]
+    },
+    {
+      "id": "combo",
+      "fighter": "fragile",
+      "frames": 158,
+      "evidence": [
+        {
+          "goal": 1,
+          "tick": 136,
+          "kind": "light-hit",
+          "combo": 1
+        },
+        {
+          "goal": 2,
+          "tick": 156,
+          "kind": "confirmed-cancel",
+          "combo": 2,
+          "damage": 11
+        }
+      ]
+    },
+    {
+      "id": "punish",
+      "fighter": "higgs",
+      "frames": 156,
+      "evidence": [
+        {
+          "goal": 1,
+          "tick": 135,
+          "kind": "heavy-whiff",
+          "gap": 158
+        },
+        {
+          "goal": 2,
+          "tick": 154,
+          "kind": "recovery-punish",
+          "damage": 5,
+          "opponentPhaseBeforeImpact": "Récupération"
+        }
+      ]
+    },
+    {
+      "id": "combo",
+      "fighter": "higgs",
+      "frames": 171,
+      "evidence": [
+        {
+          "goal": 1,
+          "tick": 149,
+          "kind": "light-hit",
+          "combo": 1
+        },
+        {
+          "goal": 2,
+          "tick": 169,
+          "kind": "confirmed-cancel",
+          "combo": 2,
+          "damage": 13
+        }
+      ]
+    },
+    {
+      "id": "punish",
+      "fighter": "cliff",
+      "frames": 154,
+      "evidence": [
+        {
+          "goal": 1,
+          "tick": 134,
+          "kind": "heavy-whiff",
+          "gap": 155
+        },
+        {
+          "goal": 2,
+          "tick": 152,
+          "kind": "recovery-punish",
+          "damage": 5,
+          "opponentPhaseBeforeImpact": "Récupération"
+        }
+      ]
+    },
+    {
+      "id": "combo",
+      "fighter": "cliff",
+      "frames": 169,
+      "evidence": [
+        {
+          "goal": 1,
+          "tick": 147,
+          "kind": "light-hit",
+          "combo": 1
+        },
+        {
+          "goal": 2,
+          "tick": 167,
+          "kind": "confirmed-cancel",
+          "combo": 2,
+          "damage": 12
+        }
+      ]
+    },
+    {
+      "id": "punish",
+      "fighter": "mule",
+      "frames": 153,
+      "evidence": [
+        {
+          "goal": 1,
+          "tick": 133,
+          "kind": "heavy-whiff",
+          "gap": 157
+        },
+        {
+          "goal": 2,
+          "tick": 151,
+          "kind": "recovery-punish",
+          "damage": 5,
+          "opponentPhaseBeforeImpact": "Récupération"
+        }
+      ]
+    },
+    {
+      "id": "combo",
+      "fighter": "mule",
+      "frames": 168,
+      "evidence": [
+        {
+          "goal": 1,
+          "tick": 146,
+          "kind": "light-hit",
+          "combo": 1
+        },
+        {
+          "goal": 2,
+          "tick": 166,
+          "kind": "confirmed-cancel",
+          "combo": 2,
+          "damage": 12
+        }
+      ]
+    },
+    {
+      "id": "punish",
+      "fighter": "diehardman",
+      "frames": 156,
+      "evidence": [
+        {
+          "goal": 1,
+          "tick": 135,
+          "kind": "heavy-whiff",
+          "gap": 155
+        },
+        {
+          "goal": 2,
+          "tick": 154,
+          "kind": "recovery-punish",
+          "damage": 5,
+          "opponentPhaseBeforeImpact": "Récupération"
+        }
+      ]
+    },
+    {
+      "id": "combo",
+      "fighter": "diehardman",
+      "frames": 170,
+      "evidence": [
+        {
+          "goal": 1,
+          "tick": 148,
+          "kind": "light-hit",
+          "combo": 1
+        },
+        {
+          "goal": 2,
+          "tick": 168,
+          "kind": "confirmed-cancel",
+          "combo": 2,
+          "damage": 12
+        }
+      ]
+    },
+    {
+      "id": "punish",
+      "fighter": "mama",
+      "frames": 152,
+      "evidence": [
+        {
+          "goal": 1,
+          "tick": 132,
+          "kind": "heavy-whiff",
+          "gap": 155
+        },
+        {
+          "goal": 2,
+          "tick": 150,
+          "kind": "recovery-punish",
+          "damage": 5,
+          "opponentPhaseBeforeImpact": "Récupération"
+        }
+      ]
+    },
+    {
+      "id": "combo",
+      "fighter": "mama",
+      "frames": 166,
+      "evidence": [
+        {
+          "goal": 1,
+          "tick": 144,
+          "kind": "light-hit",
+          "combo": 1
+        },
+        {
+          "goal": 2,
+          "tick": 164,
+          "kind": "confirmed-cancel",
+          "combo": 2,
+          "damage": 12
+        }
+      ]
+    },
+    {
+      "id": "punish",
+      "fighter": "heartman",
+      "frames": 155,
+      "evidence": [
+        {
+          "goal": 1,
+          "tick": 134,
+          "kind": "heavy-whiff",
+          "gap": 157
+        },
+        {
+          "goal": 2,
+          "tick": 153,
+          "kind": "recovery-punish",
+          "damage": 5,
+          "opponentPhaseBeforeImpact": "Récupération"
+        }
+      ]
+    },
+    {
+      "id": "combo",
+      "fighter": "heartman",
+      "frames": 170,
+      "evidence": [
+        {
+          "goal": 1,
+          "tick": 148,
+          "kind": "light-hit",
+          "combo": 1
+        },
+        {
+          "goal": 2,
+          "tick": 168,
+          "kind": "confirmed-cancel",
+          "combo": 2,
+          "damage": 12
+        }
+      ]
+    },
+    {
+      "id": "taunt",
+      "fighter": "sam",
+      "frames": 213,
+      "evidence": [
+        {
+          "goal": 1,
+          "tick": 126,
+          "kind": "taunt-complete",
+          "duration": 54,
+          "minGap": 356,
+          "phases": [
+            "entry",
+            "hold",
+            "exit"
+          ]
+        },
+        {
+          "goal": 2,
+          "tick": 211,
+          "kind": "taunt-interrupted",
+          "opponentPhase": "hold",
+          "opponentFrame": 14,
+          "damage": 5
+        }
+      ]
+    },
+    {
+      "id": "taunt",
+      "fighter": "fragile",
+      "frames": 213,
+      "evidence": [
+        {
+          "goal": 1,
+          "tick": 126,
+          "kind": "taunt-complete",
+          "duration": 54,
+          "minGap": 356,
+          "phases": [
+            "entry",
+            "hold",
+            "exit"
+          ]
+        },
+        {
+          "goal": 2,
+          "tick": 211,
+          "kind": "taunt-interrupted",
+          "opponentPhase": "hold",
+          "opponentFrame": 14,
+          "damage": 5
+        }
+      ]
+    },
+    {
+      "id": "taunt",
+      "fighter": "higgs",
+      "frames": 208,
+      "evidence": [
+        {
+          "goal": 1,
+          "tick": 126,
+          "kind": "taunt-complete",
+          "duration": 54,
+          "minGap": 356,
+          "phases": [
+            "entry",
+            "hold",
+            "exit"
+          ]
+        },
+        {
+          "goal": 2,
+          "tick": 206,
+          "kind": "taunt-interrupted",
+          "opponentPhase": "hold",
+          "opponentFrame": 14,
+          "damage": 5
+        }
+      ]
+    },
+    {
+      "id": "taunt",
+      "fighter": "cliff",
+      "frames": 213,
+      "evidence": [
+        {
+          "goal": 1,
+          "tick": 126,
+          "kind": "taunt-complete",
+          "duration": 54,
+          "minGap": 356,
+          "phases": [
+            "entry",
+            "hold",
+            "exit"
+          ]
+        },
+        {
+          "goal": 2,
+          "tick": 211,
+          "kind": "taunt-interrupted",
+          "opponentPhase": "hold",
+          "opponentFrame": 14,
+          "damage": 5
+        }
+      ]
+    },
+    {
+      "id": "taunt",
+      "fighter": "mule",
+      "frames": 213,
+      "evidence": [
+        {
+          "goal": 1,
+          "tick": 126,
+          "kind": "taunt-complete",
+          "duration": 54,
+          "minGap": 356,
+          "phases": [
+            "entry",
+            "hold",
+            "exit"
+          ]
+        },
+        {
+          "goal": 2,
+          "tick": 211,
+          "kind": "taunt-interrupted",
+          "opponentPhase": "hold",
+          "opponentFrame": 14,
+          "damage": 5
+        }
+      ]
+    },
+    {
+      "id": "taunt",
+      "fighter": "diehardman",
+      "frames": 213,
+      "evidence": [
+        {
+          "goal": 1,
+          "tick": 126,
+          "kind": "taunt-complete",
+          "duration": 54,
+          "minGap": 356,
+          "phases": [
+            "entry",
+            "hold",
+            "exit"
+          ]
+        },
+        {
+          "goal": 2,
+          "tick": 211,
+          "kind": "taunt-interrupted",
+          "opponentPhase": "hold",
+          "opponentFrame": 14,
+          "damage": 5
+        }
+      ]
+    },
+    {
+      "id": "taunt",
+      "fighter": "mama",
+      "frames": 213,
+      "evidence": [
+        {
+          "goal": 1,
+          "tick": 126,
+          "kind": "taunt-complete",
+          "duration": 54,
+          "minGap": 356,
+          "phases": [
+            "entry",
+            "hold",
+            "exit"
+          ]
+        },
+        {
+          "goal": 2,
+          "tick": 211,
+          "kind": "taunt-interrupted",
+          "opponentPhase": "hold",
+          "opponentFrame": 14,
+          "damage": 5
+        }
+      ]
+    },
+    {
+      "id": "taunt",
+      "fighter": "heartman",
+      "frames": 213,
+      "evidence": [
+        {
+          "goal": 1,
+          "tick": 126,
+          "kind": "taunt-complete",
+          "duration": 54,
+          "minGap": 356,
+          "phases": [
+            "entry",
+            "hold",
+            "exit"
+          ]
+        },
+        {
+          "goal": 2,
+          "tick": 211,
+          "kind": "taunt-interrupted",
+          "opponentPhase": "hold",
+          "opponentFrame": 14,
+          "damage": 5
+        }
+      ]
+    },
+    {
+      "id": "taunt",
+      "fighter": "sam",
+      "case": "interruption-boundary",
+      "inputFrame": 48,
+      "frames": 251,
+      "phase": "success",
+      "evidence": [
+        {
+          "goal": 1,
+          "tick": 126,
+          "kind": "taunt-complete",
+          "duration": 54,
+          "minGap": 356,
+          "phases": [
+            "entry",
+            "hold",
+            "exit"
+          ]
+        },
+        {
+          "goal": 2,
+          "tick": 249,
+          "kind": "taunt-interrupted",
+          "opponentPhase": "exit",
+          "opponentFrame": 52,
+          "damage": 5
+        }
+      ]
+    },
+    {
+      "id": "taunt",
+      "fighter": "sam",
+      "case": "interruption-boundary",
+      "inputFrame": 49,
+      "frames": 651,
+      "phase": "active",
+      "evidence": [
+        {
+          "goal": 1,
+          "tick": 126,
+          "kind": "taunt-complete",
+          "duration": 54,
+          "minGap": 356,
+          "phases": [
+            "entry",
+            "hold",
+            "exit"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "taunt",
+      "fighter": "higgs",
+      "case": "lingering-mine-light-startup",
+      "frames": 651,
+      "phase": "active",
+      "evidence": [
+        {
+          "goal": 1,
+          "tick": 126,
+          "kind": "taunt-complete",
+          "duration": 54,
+          "minGap": 356,
+          "phases": [
+            "entry",
+            "hold",
+            "exit"
+          ]
+        }
+      ],
+      "damageDuringLightStartup": true
+    },
+    {
+      "id": "distance",
+      "fighter": "sam",
+      "surface": "actual-app-remapped-keyboard",
+      "frames": 206,
+      "evidence": [
+        {
+          "goal": 1,
+          "tick": 148,
+          "gap": 88,
+          "stableTicks": 15
+        },
+        {
+          "goal": 2,
+          "tick": 204,
+          "gap": 268,
+          "stableTicks": 15
+        }
+      ]
+    },
+    {
+      "id": "reach",
+      "fighter": "sam",
+      "surface": "actual-app-remapped-keyboard",
+      "frames": 159,
+      "evidence": [
+        {
+          "goal": 1,
+          "tick": 91,
+          "kind": "light-whiff",
+          "startGap": 356,
+          "opponentHp": 100
+        },
+        {
+          "goal": 2,
+          "tick": 157,
+          "kind": "light-hit",
+          "damage": 5,
+          "gap": 88
+        }
+      ]
+    },
+    {
+      "id": "guard-high",
+      "fighter": "sam",
+      "surface": "actual-app-remapped-keyboard",
+      "frames": 370,
+      "evidence": [
+        {
+          "goal": 1,
+          "tick": 368,
+          "blocks": 3,
+          "kind": "light",
+          "vitality": 100
+        }
+      ]
+    },
+    {
+      "id": "guard-low",
+      "fighter": "sam",
+      "surface": "actual-app-remapped-keyboard",
+      "frames": 373,
+      "evidence": [
+        {
+          "goal": 1,
+          "tick": 371,
+          "blocks": 3,
+          "kind": "sweep",
+          "vitality": 100
+        }
+      ]
+    },
+    {
+      "id": "punish",
+      "fighter": "sam",
+      "surface": "actual-app-remapped-keyboard",
+      "frames": 152,
+      "evidence": [
+        {
+          "goal": 1,
+          "tick": 132,
+          "kind": "heavy-whiff",
+          "gap": 155
+        },
+        {
+          "goal": 2,
+          "tick": 150,
+          "kind": "recovery-punish",
+          "damage": 5,
+          "opponentPhaseBeforeImpact": "Récupération"
+        }
+      ]
+    },
+    {
+      "id": "resource",
+      "fighter": "sam",
+      "surface": "actual-app-remapped-keyboard",
+      "frames": 204,
+      "evidence": [
+        {
+          "goal": 1,
+          "tick": 73,
+          "kind": "chiral-spent",
+          "observedDrop": 28,
+          "cost": 28
+        },
+        {
+          "goal": 2,
+          "tick": 202,
+          "kind": "chiral-recovered",
+          "from": 14,
+          "to": 60
+        }
+      ]
+    },
+    {
+      "id": "signatures",
+      "fighter": "sam",
+      "surface": "actual-app-remapped-keyboard",
+      "frames": 158,
+      "evidence": [
+        {
+          "goal": 1,
+          "tick": 88,
+          "kind": "signature-active",
+          "engineAction": "sam",
+          "frame": 16,
+          "cost": 28
+        },
+        {
+          "goal": 2,
+          "tick": 127,
+          "kind": "signature-active",
+          "engineAction": "brace",
+          "frame": 8,
+          "cost": 14
+        },
+        {
+          "goal": 3,
+          "tick": 156,
+          "kind": "signature-active",
+          "engineAction": "parry",
+          "frame": 4,
+          "cost": 18
+        }
+      ]
+    },
+    {
+      "id": "combo",
+      "fighter": "sam",
+      "surface": "actual-app-remapped-keyboard",
+      "frames": 166,
+      "evidence": [
+        {
+          "goal": 1,
+          "tick": 144,
+          "kind": "light-hit",
+          "combo": 1
+        },
+        {
+          "goal": 2,
+          "tick": 164,
+          "kind": "confirmed-cancel",
+          "combo": 2,
+          "damage": 12
+        }
+      ]
+    },
+    {
+      "id": "taunt",
+      "fighter": "sam",
+      "surface": "actual-app-remapped-keyboard",
+      "frames": 213,
+      "evidence": [
+        {
+          "goal": 1,
+          "tick": 126,
+          "kind": "taunt-complete",
+          "duration": 54,
+          "minGap": 356,
+          "phases": [
+            "entry",
+            "hold",
+            "exit"
+          ]
+        },
+        {
+          "goal": 2,
+          "tick": 211,
+          "kind": "taunt-interrupted",
+          "opponentPhase": "hold",
+          "opponentFrame": 14,
+          "damage": 5
+        }
+      ]
+    }
+  ],
+  "sourceSha256": {
+    "content.js": "fe6e129844908ad3a0fa97d9e59cace35b1fb4c4cc54ba095de401bcac189578",
+    "asset-geometry-20261124.js": "61f830dc5036774529b7ecaf51f4c80386ef7f94447c55e044584e850e081934",
+    "assets.js": "4f0ae5349872b9391d7586bc98baf0baa211e83e59c7b1e4234aaf22525ecb01",
+    "boss-geometry-20261124.js": "55655afb8a1b05027b521bda46a49c9ad1f1b202ae307fdca67aa3690657a928",
+    "boss-assets.js": "2b3c644b456cb2de1180ef618b16b43eb26b761d4dc7e1187298420b8176bbe7",
+    "tournament.js": "c3085ed52988efff57946d4fadaae51614de77bfbb2de947a1216e159bdc2bd0",
+    "fight.js": "6be07ea82a834d18cc0f72381fb1c5be44643ae104cc47556bc22cd04570cbc6",
+    "boss.js": "9151eaffd51ea3117f806655bf6dbd7677aff612b837505cdfd53a1410eef550",
+    "campaign.js": "bf84ff01a0afc253c84f5087f040632895fe971f7f934abadd114c3f4311c08a",
+    "moves-data.js": "c413bbdc2ce5de4911faab8b028e4825f96fde3e7192863f89fd4a35e9100320",
+    "relationships.js": "ad55b68c477b42d8e833dbe242dab055cfac19e596c7a143d3c781a23907f775",
+    "input.js": "0f6d59d605c82f69b7193d171e0b222c41823e9d01ec3c2ed98453052c853c26",
+    "lessons.js": "173883d53312043d57f6d28f2bd38795c831b95d9dcb784ca7894f115f9af159",
+    "app.js": "5d5d84c37cbf5d7a4b2f1075904429340075467a4aab522d027e0e3c18dee411",
+    "index.html": "a5c1c0c614bcc569e8904620a65bdeac2f895b6bc8729f5c45ceff5b5aee615f",
+    "lessons.css": "dea91c67a2cd13cb1c8e1ee6171a61c70a16fa29c2eb79db128d0af0edea2b03",
+    "qa/lessons.cjs": "e57aae2680887c79d8ee86b9d96be42ad8120ed4e9da5ec1ce8834d6dabd0171",
+    "qa/input-host.cjs": "03939e6dab80bd91aa63372a611fb64a0f99b5cc464f4c4d5543db52d597695b",
+    "boss-data.js": "20bd21ae6bd83c00e897f11b3093ee43d9fe6ba7a8a9103c0acdfe0e16373f03",
+    "boss-guide.js": "ac0e1193327a82cef3bbfb0d5e7874fcdf1393f0a7b6a8447308356b3a89c4ee",
+    "boss-guide.css": "eee55297eadfce8f8efee066caf7a822cfb69cda0f8e885bc178c3681c7711ff"
+  }
+}

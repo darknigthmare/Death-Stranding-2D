@@ -17,7 +17,12 @@
   let lessonRun = null, lessonFighter = lessonStore?.progress().resume.fighter || 'sam';
   const view = document.getElementById('view');
   const manual = document.getElementById('manual');
-  const ids = Object.keys(fighters);
+  const localIds = Object.keys(fighters);
+  const originalIds = window.StrandOriginalKits?.originalCharacterIds || [];
+  const ids = localIds.filter(id => !originalIds.includes(id));
+  const selectableIds = () => ['versus','training'].includes(config.mode) ? localIds : ids;
+  const originalBossId = 'ldm-boss-consignateur';
+  const isOriginalBoss = id => id === originalBossId && !!bossEngine?.encounters?.[id];
   const scenes = {intro:'Introduction', rival:'Rivalité', ending:'Épilogue'};
   const icon = {
     arcade:'<path d="M4 17h16v4H4zM9 16l3-8"/><circle cx="13" cy="5" r="2.5"/>',
@@ -29,7 +34,7 @@
     bossrush:'<path d="M3 19V8l4-4 5 4 5-4 4 4v11M7 13h3m4 0h3M8 19h8m-4-3v6"/>',
     campaign:'<circle cx="5" cy="5" r="2"/><circle cx="19" cy="6" r="2"/><circle cx="6" cy="19" r="2"/><circle cx="18" cy="18" r="2"/><path d="M7 5l10 1M5 7l1 10m2 2 8-1M8 17l9-9"/>'
   };
-  const config = {mode:'story', p1:'sam', p2:'higgs', stage:'shore', difficulty:'normal', opponent:'cpu', outfit1:'atelier', outfit2:'atelier', count:'4', humans:'1', challenge:'survival',boss:'lion',bossStage:'recommended',campaignDifficulty:campaign?.progress().run?.difficulty||'normal'};
+  const config = {mode:'story', p1:'sam', p2:'higgs', stage:'shore', difficulty:'normal', opponent:'cpu', outfit1:'atelier', outfit2:'atelier', count:'4', humans:'1', challenge:'survival',boss:'lion',bossStage:'recommended',scenarioSpeed:'1',campaignDifficulty:campaign?.progress().run?.difficulty||'normal'};
   let trial;
   const trialNames = {survival:'Survie', delivery:'Livraison sous pression'};
   let screen = '', activeFight = null, paused = false, resumeAfterManual = false, arcadeStep = 0, scenePlayback = null;
@@ -129,7 +134,7 @@
     stopFight();
     const copy = {arcade:'Trois adversaires jusqu’au rival.', versus:'Duel contre l’IA ou à deux en local.', tournament:'Tableau à élimination directe.', training:'Dojo libre et parcours d’exercices dirigés.'};
     copy.challenges='Survie ou livraison sous pression.';
-    copy.boss='Quatre Échoués géants, camion et convoi MULE.';
+    copy.boss=isOriginalBoss(originalBossId)?'Sept rencontres : Échoués, convois et Consignateur.':'Quatre Échoués géants, camion et convoi MULE.';
     copy.bossrush='Six rencontres, une réserve de vie et une série à terminer.';
     copy.campaign='Les Nœuds rompus · six chapitres et une intrigue commune.';
     const tiles = Object.keys(copy).map(key =>
@@ -145,7 +150,7 @@
       button('stageGallery','Parcourir les arènes','mini') + button('gallery','Galerie des scènes','mini') + button('campaignGallery','Interludes des Nœuds rompus','mini') + '<a class="mini" href="duel-originel/index.html">Duel originel · Sam / Higgs</a><a class="mini" href="netplay.html">Salon privé en réseau</a>' +
       '<a class="mini" href="archives.html">Archives de Bridges</a><a class="mini" href="static-assets.html">Silhouettes et horizons</a><a class="mini" href="progression.html">Dossiers de liaison</a><a class="mini campaignLink" href="../../JOUER.html">Retour à la campagne ↗</a></div></section>');
   }
-  function stageFor(id) { return fighters[id].route[0][1]; }
+  function stageFor(id) { return fighters[id]?.route?.[0]?.[1] || (originalIds.includes(id) ? 'ldm-stage-digue-aval' : 'shore'); }
   function stagePreview(id) {
     if (!asset.stages?.[id]) return '';
     const geometry = asset.stageGeometry?.[id] || {};
@@ -189,7 +194,7 @@
     return scene[id + '-' + part] ||
       (part === 'rival' && ['sam','higgs'].includes(id) ? scene['sam-higgs-rival'] : null) || asset.stages?.[fallback] || asset.hero;
   }
-  function nameMap() { return Object.fromEntries(ids.map(id => [id, fighters[id].name])); }
+  function nameMap() { return Object.fromEntries(selectableIds().map(id => [id, fighters[id].name])); }
   function chapter() { const n = progress[config.p1]; return Number.isInteger(n) && n >= 0 && n <= 3 ? n : 0; }
   function outfitField(slot, id) {
     const outfits = asset.wardrobe?.[id];
@@ -199,13 +204,16 @@
       Object.fromEntries(Object.entries(outfits).map(([key, outfit]) => [key, outfit.name])));
   }
   function selection() {
+    const available=selectableIds();
+    if(!available.includes(config.p1))config.p1=available[0];
+    if(!available.includes(config.p2))config.p2=available.includes('higgs')?'higgs':available[0];
     if (config.mode==='campaign') { campaignSelection(); return; }
     if (config.mode==='boss') { bossSelection(); return; }
     if (config.mode==='bossrush') { rushSelection(); return; }
     stopFight();
     const {mode,p1} = config;
     const character = fighters[p1];
-    const cards = ids.map(id => {
+    const cards = selectableIds().map(id => {
       const f = fighters[id];
       const preview = id === p1 && ['versus','training'].includes(mode) ? asset.wardrobe?.[id]?.[config.outfit1] : null;
       const portrait = preview?.portrait || asset.portraits?.[id], stance = asset.fighters?.[id];
@@ -228,7 +236,7 @@
     }
     if (isSolo) fields += choose('difficulty','Difficulté',{easy:'Débutant',normal:'Porteur',hard:'Vétéran'});
     fields += ambienceControl();
-    const route = character.route.map(([rival,place]) => fighters[rival].call + ' · ' + stages[place]).join('　→　');
+    const route = ['story','arcade'].includes(mode) ? character.route.map(([rival,place]) => fighters[rival].call + ' · ' + stages[place]).join('　→　') : '';
     const startLabel = mode === 'story' && chapter() > 0 && chapter() < 3 ? 'Reprendre le duel ' + (chapter() + 1) :
       ({challenges:'Lancer l’épreuve',story:'Ouvrir l’histoire',arcade:'Lancer le parcours',tournament:cup ? 'Créer un nouveau tableau' : 'Tirer le tableau',versus:'Lancer le duel',training:'Entrer dans l’arène'})[mode];
     setScreen('select','<section class="shell">' + back() + '<div class="pagehead"><div><div class="eyebrow">' + modes[mode] +
@@ -242,26 +250,36 @@
       button('start',startLabel + ' ' + arrow,mode === 'tournament' && cup ? 'secondary' : 'primary') +
       (mode === 'story' && chapter() > 0 && chapter() < 3 ? button('restartStory','Recommencer l’histoire','secondary') : '') + '</div></section>');
   }
-  function bossGuide(options) { return window.StrandBossGuide?.render(options) || ''; }
+  function bossGuide(options) {
+    const guide=isOriginalBoss(options.boss)&&window.StrandOriginalBosses?.guide;
+    if(!guide)return window.StrandBossGuide?.render(options)||'';
+    return '<section class="bossGuide originalBossGuide"><h2>'+esc(guide.title)+'</h2><p>'+esc(guide.summary)+'</p><h3>Actions d’objectif</h3><ul>'+
+      (guide.commands||[]).map(command=>'<li><strong>'+esc(command.label)+(command.action==='throw'||command.key==='T'?' · '+keyText(1,'throw'):'')+'</strong> · '+esc(command.detail)+'</li>').join('')+'</ul><h3>Les trois phases</h3><ol>'+
+      (guide.phases||[]).map(phase=>'<li><strong>'+esc(phase.objective)+'</strong><p>'+esc(phase.attack)+' · '+esc(phase.counter)+'</p></li>').join('')+
+      '</ol><p>'+esc(guide.victory)+'</p><p class="hint">'+esc(guide.checkpoint)+'</p><p class="hint">'+esc(guide.compatibility)+'</p></section>';
+  }
   function bossSelection() {
     stopFight();
     if (!bossEngine) { setScreen('error','<section class="shell">'+back()+'<h1>Boss Battle indisponible</h1><p class="hint">Le module de grandes rencontres n’a pas pu être chargé.</p></section>'); return; }
     config.mode='boss';
+    if(!ids.includes(config.p1))config.p1=ids[0];
+    if(!bossEngine.encounters[config.boss])config.boss='lion';
     const bosses=bossEngine.encounters, selected=bosses[config.boss] || bosses.lion, history=bossEngine.progress();
     const record=history.records[[config.p1,config.boss,config.difficulty].join(':')];
     const cards=Object.entries(bosses).map(([id,b])=>
       '<button class="bossCard" data-act="pickBoss" data-boss="'+id+'" aria-pressed="'+(id===config.boss)+'"'+
-      backdrop(window.StrandBossAssets?.sprites?.[b.type]?.idle)+'><span class="bossCardNumber">'+String(Object.keys(bosses).indexOf(id)+1).padStart(2,'0')+
-      '</span><strong>'+esc(b.name)+'</strong><small>'+(b.waves?'2 vagues · fret à protéger':b.cargo?'Interception · 2 colis':'Échoué géant · 2 phases')+'</small></button>').join('');
+      backdrop(isOriginalBoss(id)?window.StrandOriginalBossArt?.sprites?.consignateur?.guard:window.StrandBossAssets?.sprites?.[b.type]?.idle)+'><span class="bossCardNumber">'+String(Object.keys(bosses).indexOf(id)+1).padStart(2,'0')+
+      '</span><strong>'+esc(b.name)+'</strong><small>'+(isOriginalBoss(id)?'Péage · 3 phases · issue non létale':b.waves?'2 vagues · fret à protéger':b.cargo?'Interception · 2 colis':'Échoué géant · 2 phases')+'</small></button>').join('');
     const fighterCards=ids.map(id=>'<button class="char portrait" data-act="pick" data-id="'+id+'" aria-pressed="'+(id===config.p1)+'">'+
       image(asset.wardrobe?.[id]?.[config.outfit1]?.portrait || asset.portraits?.[id])+'<span class="charlabel"><strong>'+esc(fighters[id].call)+
       '</strong><small>'+esc(fighters[id].role)+'</small></span></button>').join('');
-    const bossStages=Object.fromEntries(Object.entries(stages).filter(([id])=>!window.StrandContent.stageLinks?.[id]&&!window.StrandExtensionRuntime?.stages.includes(id)));
+    const bossStages=isOriginalBoss(config.boss)?{}:Object.fromEntries(Object.entries(stages).filter(([id])=>!window.StrandContent.stageLinks?.[id]&&!window.StrandExtensionRuntime?.stages.includes(id)));
     if(config.bossStage!=='recommended'&&!Object.hasOwn(bossStages,config.bossStage))config.bossStage='recommended';
     const field=outfitField(1,config.p1)+choose('difficulty','Difficulté',{easy:'Débutant',normal:'Porteur',hard:'Vétéran'})+
-      choose('bossStage','Arène',{recommended:'Lieu conseillé · '+stages[selected.stage],...bossStages})+ambienceControl();
+      choose('bossStage','Arène',{recommended:'Lieu conseillé · '+stages[selected.stage],...bossStages})+
+      (isOriginalBoss(config.boss)?choose('scenarioSpeed','Vitesse de la rencontre',{'0.75':'75 % · lecture posée','1':'100 % · rythme standard','1.25':'125 % · rythme soutenu'}):'')+ambienceControl();
     const cp=history.checkpoint;
-    const resume=cp?'<div class="bossResume"><div><strong>Rencontre en cours</strong><p>'+esc(bosses[cp.state.bossId].name)+' · '+esc(fighters[cp.state.p1].call)+
+    const resume=cp&&bosses[cp.state.bossId]&&fighters[cp.state.p1]?'<div class="bossResume"><div><strong>Rencontre en cours</strong><p>'+esc(bosses[cp.state.bossId].name)+' · '+esc(fighters[cp.state.p1].call)+
       ' · '+Math.ceil(cp.state.p.hp)+' PV · '+Math.ceil(cp.state.remaining/60)+' s restantes</p></div>'+button('resumeBoss','Reprendre la rencontre','secondary')+'</div>':'';
     const recordLine=record?'<p class="montage">Ce combattant · '+record.wins+' victoire'+(record.wins>1?'s':'')+' / '+record.attempts+
       ' tentative'+(record.attempts>1?'s':'')+(record.best?' · Meilleur score '+record.best.toLocaleString('fr-FR'):'')+'</p>':'';
@@ -277,7 +295,7 @@
     const cp=resume?bossEngine?.progress().checkpoint:null;
     if(resume&&!cp){bossSelection();return;}
     stopFight();
-    if(cp){config.p1=cp.state.p1;config.boss=cp.state.bossId;config.difficulty=cp.state.difficulty;config.outfit1=cp.state.outfit;config.bossStage=cp.state.stage;}
+    if(cp){config.p1=cp.state.p1;config.boss=cp.state.bossId;config.difficulty=cp.state.difficulty;config.outfit1=cp.state.outfit;config.bossStage=cp.state.stage;if(isOriginalBoss(config.boss))config.scenarioSpeed=String(cp.state.original?.speed??1);}
     config.mode='boss';
     const boss=bossEngine.encounters[config.boss],stage=cp?.state.stage || (config.bossStage==='recommended'?boss.stage:config.bossStage);
     const match={mode:'boss',kind:'boss',p1:config.p1,boss:config.boss,stage};activeFight=match;
@@ -285,32 +303,34 @@
       '</div><b>'+esc(stages[stage])+'</b></div><div class="tools">'+button('controls','Commandes','mini')+button('pause','Pause','mini','id="pauseBtn"')+
       '</div></div><div class="screen"><canvas id="arena" tabindex="0" aria-label="'+esc(fighters[match.p1].name+' affronte '+boss.name)+'"></canvas>'+
       '<div id="pauseBox" class="pausebox" hidden><h2>En pause</h2><p>Votre rencontre est conservée pour la reprise.</p>'+ambienceControl()+
-      button('pause','Reprendre')+button('leave','Choisir une rencontre','secondary')+'</div></div><div class="combatNotes"><span>'+esc(boss.goal)+
+      button('pause','Reprendre')+button('leave','Choisir une rencontre','secondary')+'</div></div><div class="combatNotes"><span>'+esc(boss.goal)+(isOriginalBoss(match.boss)?' · Prise / interaction : '+keyText(1,'throw'):'')+
       '</span><span id="signal" aria-live="polite"></span></div><div class="touchgroup">'+touchControls(1)+'</div></section>');
     bossEngine.start({canvas:document.getElementById('arena'),p1:match.p1,boss:match.boss,stage,difficulty:config.difficulty,outfit:config.outfit1,
-      sound,ambienceVolume,reducedEffects,staticScenery,resume:cp,onStatus(status){
+      sound,ambienceVolume,reducedEffects,staticScenery,scenarioSpeed:Number(config.scenarioSpeed),resume:cp,onStatus(status){
         const signal=document.getElementById('signal');if(signal)signal.textContent=status.saved===false?'La progression reste disponible pour cette session.':status.message;
       },onEnd(result){if(activeFight===match)bossResult(match,result);}});
   }
   function bossResult(match,result) {
     stopFight();
-    const boss=bossEngine.encounters[match.boss],title=result.won?(result.cargoGoal?'Cargaison sécurisée':'Grande présence vaincue'):
-      ({cargo:'Cargaison perdue',time:'Temps écoulé',health:'Porteur à terre'})[result.reason] || 'Rencontre interrompue';
+    const boss=bossEngine.encounters[match.boss],title=result.won?(isOriginalBoss(match.boss)?'Passage rouvert · reddition acceptée':result.cargoGoal?'Cargaison sécurisée':'Grande présence vaincue'):
+      ({cargo:'Cargaison perdue',freight:'Registre endommagé',objective:'Registre endommagé',time:'Temps écoulé',health:'Porteur à terre'})[result.reason] || 'Rencontre interrompue';
     const seconds=(result.elapsed/60).toFixed(1).replace('.',',');
     const rows=[['Résultat',result.won?'Victoire':'Défaite'],['Temps joué',seconds+' s'],['Vitalité',result.vitality+' / 120'],['Score',result.score.toLocaleString('fr-FR')],
       ['Dégâts infligés',result.stats.damageDealt],['Impacts gardés / contrés',result.stats.guarded],['Attaques évitées',result.stats.avoided]];
     if(result.cargoGoal)rows.push(['Colis livrés',result.cargo+' / '+result.cargoGoal],['Intégrité',result.integrity+' %']);
     if(boss.waves)rows.push(['Vagues atteintes',result.waves+' / '+boss.waves]);
+    if(result.original){const flags=result.original.objectiveFlags;rows.push(['Phase atteinte',result.original.phase+' / 3'],['Consoles désactivées',(flags?.consoles?.filter(Boolean).length||0)+' / 2'],['Registre',flags?.register==='retrieved'?'Restitué':'À récupérer'],['Issue',flags?.surrendered?'Reddition non létale':'Passage encore fermé']);}
     setScreen('result','<section class="shell"><div class="result bossResult"><div class="eyebrow">Boss Battle · '+esc(boss.name)+
       '</div><h1>'+title+'</h1><p>'+esc(fighters[match.p1].call)+' · '+esc(stages[match.stage])+'</p><dl class="bossStats">'+
       rows.map(([label,value])=>'<div><dt>'+esc(label)+'</dt><dd>'+esc(value)+'</dd></div>').join('')+'</dl>'+
       '<p class="hint">'+(result.saved?'Bilan et records enregistrés.':'Le stockage du navigateur est indisponible ; ce bilan reste visible pendant cette session.')+'</p>'+
-      '<div class="actions">'+button('startBoss','Revanche')+button('bossSelection','Changer de rencontre','secondary')+button('home','Accueil','secondary')+'</div></div></section>');
+      '<div class="actions">'+(result.retryAvailable&&isOriginalBoss(match.boss)&&bossEngine.progress().checkpoint?button('resumeBoss','Reprendre cette phase'):'')+button('startBoss','Recommencer la rencontre',result.retryAvailable?'secondary':'primary')+button('bossSelection','Changer de rencontre','secondary')+button('home','Accueil','secondary')+'</div></div></section>');
   }
   function rushSelection() {
     stopFight();
     if(!bossEngine?.rush){setScreen('error','<section class="shell">'+back()+'<h1>Boss Rush indisponible</h1><p>Le module des grandes rencontres n’a pas pu être chargé.</p></section>');return;}
     config.mode='bossrush';
+    if(!ids.includes(config.p1))config.p1=ids[0];
     const history=bossEngine.rush.progress(),run=history.run,order=bossEngine.rush.order;
     const record=history.records[[config.p1,config.difficulty].join(':')],ongoing=run&&['ready','active'].includes(run.status);
     const fighterCards=ids.map(id=>'<button class="char portrait" data-act="pick" data-id="'+id+'" aria-pressed="'+(id===config.p1)+'">'+
@@ -683,7 +703,7 @@
   function touchControls(player) {
     function control(item) {
       const {id:action,title,short:label} = item;
-      const bossLabel=activeFight?.kind==='boss'?({throw:bossEngine.encounters[activeFight.boss]?.cargo?'Colis':'Appui',finish:'Chiral'})[action]:null;
+      const bossLabel=activeFight?.kind==='boss'?({throw:isOriginalBoss(activeFight.boss)?'Prise / interaction':bossEngine.encounters[activeFight.boss]?.cargo?'Colis':'Appui',finish:'Chiral'})[action]:null;
       const hint='J'+player+' · '+(bossLabel||title)+' · clavier '+inputSettings.label(player,action);
       return '<button type="button" aria-label="'+esc(hint)+'" title="'+esc(hint)+'" data-input-title="'+esc(bossLabel||title)+'" data-p="' + player + '" data-input="' + action + '">' + (bossLabel || label) + '</button>';
     }
@@ -709,7 +729,7 @@
       '<p class="hint" role="status">'+esc(state.notice||(state.saved?'Progression des exercices enregistrée dans ce navigateur.':'Progression disponible pendant cette session.'))+'</p><ol class="lessonList">'+cards+'</ol></section>');
   }
   function startLesson(id,selectedFighter=lessonFighter) {
-    if(!lessonContent?.get(id)||!fighters[selectedFighter])return lessonSelection();
+    if(!lessonContent?.get(id)||!ids.includes(selectedFighter))return lessonSelection();
     stopFight();lessonFighter=selectedFighter;config.mode='training';config.p1=selectedFighter;
     lessonStore.begin(id,selectedFighter);
     fight({mode:'training',kind:'training',lesson:id,p1:selectedFighter,p2:selectedFighter==='higgs'?'sam':'higgs',
@@ -833,6 +853,7 @@
     releaseControls(); activeEngine().pause(paused);
     const box=document.getElementById('pauseBox'),control=document.getElementById('pauseBtn');
     box.hidden = !paused;
+    if(paused)box.scrollTop=0;
     control.textContent = paused ? 'Reprendre' : 'Pause';
     if(activeFight.mode==='campaign'||lessonRun)(paused?box.querySelector('[data-act="pause"]'):control)?.focus({preventScroll:true});
   }
@@ -895,8 +916,12 @@
     if (resumeAfterManual) setPause(true);
     const campaignChapter=campaignContent?.chapters[campaign?.progress().run?.chapter||0];
     const bossMode=activeFight?.kind==='boss' || (!activeFight && (['boss','bossrush'].includes(config.mode)||config.mode==='campaign'&&campaignChapter?.kind==='boss'));
+    const originalBossMode=bossMode&&isOriginalBoss(activeFight?.kind==='boss'?activeFight.boss:config.mode==='boss'?config.boss:null);
+    const bossInteractionHint=originalBossMode?
+      'La commande Prise / interaction ('+keyText(1,'throw')+') désamorce les deux consoles et restitue le registre pendant les reprises. À zéro de garde, approche-toi du Consignateur et utilise cette même commande pour obtenir sa reddition au lien.':
+      'La commande colis / appui ('+keyText(1,'throw')+') prend, pose ou livre un colis ; le dépôt est à gauche. Les grandes cibles résistent à la projection et au soulèvement.';
     const table = '<table><thead><tr><th>Action</th><th>Joueur 1</th>'+(bossMode?'':'<th>Joueur 2</th>')+'</tr></thead><tbody>' +
-      keys.filter(item=>!bossMode||item.id!=='taunt').map(({id:action,title}) => '<tr><td>' + (bossMode?({throw:'Prendre / poser / livrer · frappe d’appui',finish:'Charge chirale'})[action]||title:title) + '</td><td>' + keyText(1,action) + '</td>'+(bossMode?'':'<td>' + keyText(2,action) + '</td>')+'</tr>').join('') +
+      keys.filter(item=>!bossMode||item.id!=='taunt').map(({id:action,title}) => '<tr><td>' + (bossMode?({throw:originalBossMode?'Prise / interaction · consoles, registre et reddition':'Prendre / poser / livrer · frappe d’appui',finish:'Charge chirale'})[action]||title:title) + '</td><td>' + keyText(1,action) + '</td>'+(bossMode?'':'<td>' + keyText(2,action) + '</td>')+'</tr>').join('') +
       '</tbody></table>';
     const fighterIds = [activeFight?.p1 || (config.mode==='campaign'?campaignChapter?.p1:null) || config.p1];
     if (acceptsSecondPlayer() && !fighterIds.includes(activeFight.p2)) fighterIds.push(activeFight.p2);
@@ -905,6 +930,7 @@
       const rows = current.techniques.map(([direction, name, cost, effect]) =>
         '<tr><td>' + direction + '</td><td><strong>' + name + '</strong><br>' + effect + '</td><td>' + cost + '</td></tr>').join('');
       const sheet=window.StrandMovesData?.forFighter(id);
+      const originalFrames=current.frameData?'<details class="moveDetails"><summary>Coups de Balise · pas de simulation à 60 Hz</summary><p>Neutre, avant et arrière utilisent la commande Signature ('+keyText(1,'special')+'). Les directions sont relatives à l’adversaire.</p><table><thead><tr><th>Action</th><th>Démarrage / activité / reprise</th><th>Coût</th><th>Dégâts</th></tr></thead><tbody>'+current.frameData.map(move=>'<tr><td>'+esc(move.name)+'</td><td>'+[move.start,move.active,move.recover].join(' / ')+'</td><td>'+move.cost+'</td><td>'+move.damage+'</td></tr>').join('')+'</tbody></table><p>Un ancrage dure quatre secondes. La garde et le saut répondent à la boucle ; les frappes basses peuvent détruire l’ancrage.</p></details>':'';
       const details=sheet?'<details class="moveDetails"><summary>Données du duel · '+esc(current.call)+'</summary><p>'+esc(sheet.summary)+'</p><p class="hint">'+esc(sheet.version)+' · '+esc(window.StrandMovesData.units||'Pas de simulation à 60 Hz')+'</p>'+
         [...sheet.common,...sheet.techniques].map(move=>'<article><h4>'+esc(move.name)+'</h4><p>'+esc(move.command)+'</p><dl>'+[
           ['Démarrage / activité / récupération',[move.startup,move.active,move.recovery].map(value=>value??'—').join(' / ')],['Coût',move.cost??'—'],
@@ -912,10 +938,10 @@
         ].map(([label,value])=>'<dt>'+esc(label)+'</dt><dd>'+esc(value??'—')+'</dd>').join('')+'</dl>'+(move.notes?.length?'<ul>'+move.notes.map(note=>'<li>'+esc(note)+'</li>').join('')+'</ul>':'')+'</article>').join('')+
         '<h4>Adversaire piloté par l’IA</h4><p>'+esc(sheet.ai?.summary||'')+'</p><ul>'+(sheet.ai?.notes||[]).concat(sheet.rules||[]).map(note=>'<li>'+esc(note)+'</li>').join('')+'</ul></details>':'';
       return '<h3>Techniques de ' + current.call + '</h3>' +
-        '<table><thead><tr><th>Direction</th><th>Technique</th><th>Coût chiral</th></tr></thead><tbody>' + rows + '</tbody></table>'+(!bossMode?details:'');
+        '<table><thead><tr><th>Direction</th><th>Technique</th><th>Coût chiral</th></tr></thead><tbody>' + rows + '</tbody></table>'+(!bossMode?details+originalFrames:'');
     }).join('');
     document.getElementById('keys').innerHTML = '<div class="options">'+ambienceControl()+'</div><div class="commandSheet">'+table+'</div>' +
-      (bossMode ? '<p class="hint">Les grandes rencontres se jouent avec J1. Les directions déplacent, font sauter et accroupir le porteur. Combine bas et garde contre les tirs bas. Les zones pointillées annoncent les attaques à esquiver : sors de la zone ou saute selon le signal. Léger et lourd frappent ; Signature utilise la technique directionnelle. Charge chirale ('+keyText(1,'finish')+') libère 70 points de jauge. La commande colis / appui ('+keyText(1,'throw')+') prend, pose ou livre un colis ; le dépôt est à gauche. Les grandes cibles résistent à la projection et au soulèvement. Échap met en pause. Les dégâts, durées et effets de projection des techniques ci-dessous sont adaptés aux grandes rencontres.</p>' :
+      (bossMode ? '<p class="hint">Les grandes rencontres se jouent avec J1. Les directions déplacent, font sauter et accroupir le porteur. Combine bas et garde contre les tirs bas. Les zones pointillées annoncent les attaques à esquiver : sors de la zone ou saute selon le signal. Léger et lourd frappent ; Signature utilise la technique directionnelle. Charge chirale ('+keyText(1,'finish')+') libère 70 points de jauge. '+bossInteractionHint+' Échap met en pause. Les dégâts, durées et effets de projection des techniques ci-dessous sont adaptés aux grandes rencontres.</p>' :
       '<p class="hint">Appuie deux fois dans une direction pour une ruée. Combine bas et léger pour balayer, bas et lourd pour soulever. Sur impact, enchaîne léger, lourd et signature. La finalité s’ouvre au dernier K.-O. Échap met le duel en pause.</p><p class="hint">Geste de défi : '+keyText(1,'taunt')+' pour J1, '+keyText(2,'taunt')+' pour J2, ou L3. Depuis la position neutre au sol, tu t’exposes pendant 0,9 s : entrée, tenue, sortie. Aucun dégât, bonus ou protection. Un impact interrompt le geste ; les attaques ne peuvent pas l’annuler.</p>') +
       '<p class="hint">Maintiens la direction au moment de la signature ('+keyText(1,'special')+' pour J1'+(bossMode?'':', '+keyText(2,'special')+' pour J2')+'). « Avant » pointe toujours vers l’adversaire.</p>' + moveLists+'<div id="inputEditor"></div>';
     inputEditor=input.mountEditor(document.getElementById('inputEditor'),{settings:inputSettings,controller:inputController});
@@ -1049,8 +1075,13 @@
   engine?.setAmbienceVolume?.(ambienceVolume);
   bossEngine?.setAmbienceVolume?.(ambienceVolume);
   updateSound(); updateEffects(); updateScenery(); home();
-  const initialStage=typeof URLSearchParams==='function'?new URLSearchParams(window.location?.search||'').get('ldmStage'):null;
-  if(initialStage&&window.StrandExtensionRuntime?.stages.includes(initialStage)&&Object.hasOwn(stages,initialStage)){
+  const initialQuery=typeof URLSearchParams==='function'?new URLSearchParams(window.location?.search||''):null;
+  const initialStage=initialQuery?.get('ldmStage'),initialFighter=initialQuery?.get('ldmFighter'),initialBoss=initialQuery?.get('ldmBoss');
+  if(isOriginalBoss(initialBoss)){
+    config.boss=initialBoss;config.bossStage='recommended';config.mode='boss';selection();
+  }else if(initialFighter&&originalIds.includes(initialFighter)){
+    config.p1=initialFighter;config.stage='ldm-stage-digue-aval';config.mode='training';selection();
+  }else if(initialStage&&window.StrandExtensionRuntime?.stages.includes(initialStage)&&Object.hasOwn(stages,initialStage)){
     config.stage=initialStage;config.mode='training';selection();
   }
 })();

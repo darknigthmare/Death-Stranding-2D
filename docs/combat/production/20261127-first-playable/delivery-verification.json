@@ -1,0 +1,1917 @@
+{
+  "date": "2026-11-27",
+  "passed": true,
+  "reference": "07c818cd3942c0e1925bb0cc32dfe73da19ff297",
+  "checks": [
+    {
+      "name": "Preserve the 539 reference rasters and 33 reference SVG byte for byte",
+      "passed": true,
+      "reference": "07c818cd3942c0e1925bb0cc32dfe73da19ff297",
+      "rasterScope": "modes/echos-de-la-greve/assets/",
+      "svgScope": "Entire repository",
+      "rasters": 539,
+      "svg": 33,
+      "compared": 572
+    },
+    {
+      "name": "Complete measured manifests: 30 Balise, 12 Consignateur and five active props",
+      "passed": true,
+      "activePng": 47,
+      "balisePoses": 30,
+      "consignateurPoses": 12,
+      "activeProps": 5
+    },
+    {
+      "name": "48 added PNGs: 47 active sources and one preserved orange rope variant",
+      "passed": true,
+      "addedRuntimePng": 48,
+      "active": 47,
+      "unusedVariants": [
+        {
+          "label": "Preserved orange rope variant",
+          "src": "assets/lignes-de-maree/playable/props/balise-rope-loop.png",
+          "repoPath": "modes/echos-de-la-greve/assets/lignes-de-maree/playable/props/balise-rope-loop.png",
+          "sha256": "248eba9f1b39ce2527ba4f01379d1c5888439fe34a8ee70399d6896c6d322202",
+          "gitBlob": "0e8af285c1ac3e5a8c15b671767720cdc1d29b89",
+          "width": 1774,
+          "height": 887,
+          "bytes": 798158,
+          "crop": null,
+          "nativeFacing": null,
+          "pngColorType": 6
+        }
+      ],
+      "newDocumentaryMedia": [
+        "docs/combat/production/20261127-first-playable/native-renders/balise-anchor.webp",
+        "docs/combat/production/20261127-first-playable/native-renders/balise-poses-left.webp",
+        "docs/combat/production/20261127-first-playable/native-renders/balise-poses-right.webp",
+        "docs/combat/production/20261127-first-playable/native-renders/balise-tether.webp",
+        "docs/combat/production/20261127-first-playable/native-renders/consignateur-console-disabled.webp",
+        "docs/combat/production/20261127-first-playable/native-renders/consignateur-kneel.webp",
+        "docs/combat/production/20261127-first-playable/native-renders/consignateur-phase-1.webp",
+        "docs/combat/production/20261127-first-playable/native-renders/consignateur-phase-2.webp",
+        "docs/combat/production/20261127-first-playable/native-renders/consignateur-phase-3.webp",
+        "docs/combat/production/20261127-first-playable/native-renders/consignateur-poses-directions.webp",
+        "docs/combat/production/20261127-first-playable/native-renders/consignateur-register.webp",
+        "docs/combat/production/20261127-first-playable/native-renders/consignateur-surrender.webp"
+      ]
+    },
+    {
+      "name": "The 48 generation records identify the exact delivered image bytes",
+      "passed": true,
+      "file": "docs/combat/production/20261127-first-playable/art-generation.json",
+      "entries": 48,
+      "activeSources": 47,
+      "archivedVariants": 1,
+      "gitBlobsMatched": 48,
+      "rgbaPng": 48
+    },
+    {
+      "name": "Canonical catalogue, generated data and active original statuses agree",
+      "passed": true,
+      "characters": 10,
+      "bosses": 20,
+      "enemies": 20,
+      "staticArenas": 20,
+      "playableOriginalCharacters": [
+        "ldm-char-balise"
+      ],
+      "playableOriginalBosses": [
+        "ldm-boss-consignateur"
+      ],
+      "playableOriginalEnemies": 0
+    },
+    {
+      "name": "Admission remains limited to the delivered local modes",
+      "passed": true,
+      "selections": {
+        "versus": [
+          "sam",
+          "fragile",
+          "higgs",
+          "cliff",
+          "mule",
+          "diehardman",
+          "mama",
+          "heartman",
+          "balise"
+        ],
+        "training": [
+          "sam",
+          "fragile",
+          "higgs",
+          "cliff",
+          "mule",
+          "diehardman",
+          "mama",
+          "heartman",
+          "balise"
+        ],
+        "story": [
+          "sam",
+          "fragile",
+          "higgs",
+          "cliff",
+          "mule",
+          "diehardman",
+          "mama",
+          "heartman"
+        ],
+        "arcade": [
+          "sam",
+          "fragile",
+          "higgs",
+          "cliff",
+          "mule",
+          "diehardman",
+          "mama",
+          "heartman"
+        ],
+        "tournament": [
+          "sam",
+          "fragile",
+          "higgs",
+          "cliff",
+          "mule",
+          "diehardman",
+          "mama",
+          "heartman"
+        ],
+        "challenges": [
+          "sam",
+          "fragile",
+          "higgs",
+          "cliff",
+          "mule",
+          "diehardman",
+          "mama",
+          "heartman"
+        ],
+        "boss": [
+          "sam",
+          "fragile",
+          "higgs",
+          "cliff",
+          "mule",
+          "diehardman",
+          "mama",
+          "heartman"
+        ],
+        "bossrush": [
+          "sam",
+          "fragile",
+          "higgs",
+          "cliff",
+          "mule",
+          "diehardman",
+          "mama",
+          "heartman"
+        ],
+        "campaign": [
+          "sam",
+          "fragile",
+          "higgs",
+          "cliff",
+          "mule",
+          "diehardman",
+          "mama",
+          "heartman"
+        ]
+      },
+      "teams": [
+        "sam",
+        "fragile",
+        "higgs",
+        "cliff",
+        "mule",
+        "diehardman",
+        "mama",
+        "heartman",
+        "balise"
+      ],
+      "tournamentDraws": 384,
+      "invalidTournamentInputsNormalized": 384,
+      "bossEncounters": 7,
+      "rushEncounters": 6,
+      "observation": "Selection expressions are evaluated from their actual source; full UI interactions belong to first-playable-entrypoints.cjs."
+    },
+    {
+      "name": "Actual repository relay serves all modules and received PNGs and rejects original network selections",
+      "passed": true,
+      "getRequests": 104
+    }
+  ],
+  "baseline": {
+    "reference": "07c818cd3942c0e1925bb0cc32dfe73da19ff297",
+    "rasterScope": "modes/echos-de-la-greve/assets/",
+    "svgScope": "Entire repository",
+    "rasters": 539,
+    "svg": 33,
+    "compared": 572
+  },
+  "manifest": {
+    "activePng": 47,
+    "balisePoses": 30,
+    "consignateurPoses": 12,
+    "activeProps": 5
+  },
+  "inventory": {
+    "addedRuntimePng": 48,
+    "active": 47,
+    "unusedVariants": [
+      {
+        "label": "Preserved orange rope variant",
+        "src": "assets/lignes-de-maree/playable/props/balise-rope-loop.png",
+        "repoPath": "modes/echos-de-la-greve/assets/lignes-de-maree/playable/props/balise-rope-loop.png",
+        "sha256": "248eba9f1b39ce2527ba4f01379d1c5888439fe34a8ee70399d6896c6d322202",
+        "gitBlob": "0e8af285c1ac3e5a8c15b671767720cdc1d29b89",
+        "width": 1774,
+        "height": 887,
+        "bytes": 798158,
+        "crop": null,
+        "nativeFacing": null,
+        "pngColorType": 6
+      }
+    ],
+    "newDocumentaryMedia": [
+      "docs/combat/production/20261127-first-playable/native-renders/balise-anchor.webp",
+      "docs/combat/production/20261127-first-playable/native-renders/balise-poses-left.webp",
+      "docs/combat/production/20261127-first-playable/native-renders/balise-poses-right.webp",
+      "docs/combat/production/20261127-first-playable/native-renders/balise-tether.webp",
+      "docs/combat/production/20261127-first-playable/native-renders/consignateur-console-disabled.webp",
+      "docs/combat/production/20261127-first-playable/native-renders/consignateur-kneel.webp",
+      "docs/combat/production/20261127-first-playable/native-renders/consignateur-phase-1.webp",
+      "docs/combat/production/20261127-first-playable/native-renders/consignateur-phase-2.webp",
+      "docs/combat/production/20261127-first-playable/native-renders/consignateur-phase-3.webp",
+      "docs/combat/production/20261127-first-playable/native-renders/consignateur-poses-directions.webp",
+      "docs/combat/production/20261127-first-playable/native-renders/consignateur-register.webp",
+      "docs/combat/production/20261127-first-playable/native-renders/consignateur-surrender.webp"
+    ]
+  },
+  "provenance": {
+    "file": "docs/combat/production/20261127-first-playable/art-generation.json",
+    "entries": 48,
+    "activeSources": 47,
+    "archivedVariants": 1,
+    "gitBlobsMatched": 48,
+    "rgbaPng": 48
+  },
+  "catalogue": {
+    "characters": 10,
+    "bosses": 20,
+    "enemies": 20,
+    "staticArenas": 20,
+    "playableOriginalCharacters": [
+      "ldm-char-balise"
+    ],
+    "playableOriginalBosses": [
+      "ldm-boss-consignateur"
+    ],
+    "playableOriginalEnemies": 0
+  },
+  "modes": {
+    "selections": {
+      "versus": [
+        "sam",
+        "fragile",
+        "higgs",
+        "cliff",
+        "mule",
+        "diehardman",
+        "mama",
+        "heartman",
+        "balise"
+      ],
+      "training": [
+        "sam",
+        "fragile",
+        "higgs",
+        "cliff",
+        "mule",
+        "diehardman",
+        "mama",
+        "heartman",
+        "balise"
+      ],
+      "story": [
+        "sam",
+        "fragile",
+        "higgs",
+        "cliff",
+        "mule",
+        "diehardman",
+        "mama",
+        "heartman"
+      ],
+      "arcade": [
+        "sam",
+        "fragile",
+        "higgs",
+        "cliff",
+        "mule",
+        "diehardman",
+        "mama",
+        "heartman"
+      ],
+      "tournament": [
+        "sam",
+        "fragile",
+        "higgs",
+        "cliff",
+        "mule",
+        "diehardman",
+        "mama",
+        "heartman"
+      ],
+      "challenges": [
+        "sam",
+        "fragile",
+        "higgs",
+        "cliff",
+        "mule",
+        "diehardman",
+        "mama",
+        "heartman"
+      ],
+      "boss": [
+        "sam",
+        "fragile",
+        "higgs",
+        "cliff",
+        "mule",
+        "diehardman",
+        "mama",
+        "heartman"
+      ],
+      "bossrush": [
+        "sam",
+        "fragile",
+        "higgs",
+        "cliff",
+        "mule",
+        "diehardman",
+        "mama",
+        "heartman"
+      ],
+      "campaign": [
+        "sam",
+        "fragile",
+        "higgs",
+        "cliff",
+        "mule",
+        "diehardman",
+        "mama",
+        "heartman"
+      ]
+    },
+    "teams": [
+      "sam",
+      "fragile",
+      "higgs",
+      "cliff",
+      "mule",
+      "diehardman",
+      "mama",
+      "heartman",
+      "balise"
+    ],
+    "tournamentDraws": 384,
+    "invalidTournamentInputsNormalized": 384,
+    "bossEncounters": 7,
+    "rushEncounters": 6,
+    "observation": "Selection expressions are evaluated from their actual source; full UI interactions belong to first-playable-entrypoints.cjs."
+  },
+  "http": {
+    "server": "Shipped netplay-server.cjs openRelay(), real 127.0.0.1 socket",
+    "version": "ee31cded9509c9ada3c2",
+    "requests": [
+      {
+        "url": "/original-kits-assets.js",
+        "status": 200,
+        "bytes": 11546,
+        "sha256": "cb4ec2d4051fe44a961b849df83ce7dbd01765ac0a4c15f0851307ebd31b1527"
+      },
+      {
+        "url": "/modes/echos-de-la-greve/original-kits-assets.js",
+        "status": 200,
+        "bytes": 11546,
+        "sha256": "cb4ec2d4051fe44a961b849df83ce7dbd01765ac0a4c15f0851307ebd31b1527"
+      },
+      {
+        "url": "/original-kits.js",
+        "status": 200,
+        "bytes": 6390,
+        "sha256": "511625570ed50cea628bf4e865fa7f0471c7c270f307cbb51018b795a46063d9"
+      },
+      {
+        "url": "/modes/echos-de-la-greve/original-kits.js",
+        "status": 200,
+        "bytes": 6390,
+        "sha256": "511625570ed50cea628bf4e865fa7f0471c7c270f307cbb51018b795a46063d9"
+      },
+      {
+        "url": "/original-bosses-assets.js",
+        "status": 200,
+        "bytes": 7209,
+        "sha256": "938aeac4aaae19db31458a7b8de26219ab4ba2c0865e7955973da1fc40aa54f5"
+      },
+      {
+        "url": "/modes/echos-de-la-greve/original-bosses-assets.js",
+        "status": 200,
+        "bytes": 7209,
+        "sha256": "938aeac4aaae19db31458a7b8de26219ab4ba2c0865e7955973da1fc40aa54f5"
+      },
+      {
+        "url": "/original-bosses.js",
+        "status": 200,
+        "bytes": 19039,
+        "sha256": "054d536557e62f496a04a12206be456ba1c43f030a2ad35a11387a48421e9a6d"
+      },
+      {
+        "url": "/modes/echos-de-la-greve/original-bosses.js",
+        "status": 200,
+        "bytes": 19039,
+        "sha256": "054d536557e62f496a04a12206be456ba1c43f030a2ad35a11387a48421e9a6d"
+      },
+      {
+        "url": "/assets/lignes-de-maree/playable/balise/stance-left.png",
+        "status": 200,
+        "bytes": 713992,
+        "sha256": "87fa0cef02cd419fc1c80aa99f7a50ce9daa5e7ca09a4ca2e093f96940053967"
+      },
+      {
+        "url": "/modes/echos-de-la-greve/assets/lignes-de-maree/playable/balise/stance-left.png",
+        "status": 200,
+        "bytes": 713992,
+        "sha256": "87fa0cef02cd419fc1c80aa99f7a50ce9daa5e7ca09a4ca2e093f96940053967"
+      },
+      {
+        "url": "/assets/lignes-de-maree/playable/balise/stance-right.png",
+        "status": 200,
+        "bytes": 829707,
+        "sha256": "9dc6dc32769cd41c94e9015960261b2c27f0a9b8bf1dc75792df05f9fd2af9ff"
+      },
+      {
+        "url": "/modes/echos-de-la-greve/assets/lignes-de-maree/playable/balise/stance-right.png",
+        "status": 200,
+        "bytes": 829707,
+        "sha256": "9dc6dc32769cd41c94e9015960261b2c27f0a9b8bf1dc75792df05f9fd2af9ff"
+      },
+      {
+        "url": "/assets/lignes-de-maree/playable/balise/guard-left.png",
+        "status": 200,
+        "bytes": 2045209,
+        "sha256": "bd329b970b8abe98522e639eca52228e1b6d9439a97f68fa6bc11a26a44afe72"
+      },
+      {
+        "url": "/modes/echos-de-la-greve/assets/lignes-de-maree/playable/balise/guard-left.png",
+        "status": 200,
+        "bytes": 2045209,
+        "sha256": "bd329b970b8abe98522e639eca52228e1b6d9439a97f68fa6bc11a26a44afe72"
+      },
+      {
+        "url": "/assets/lignes-de-maree/playable/balise/guard-right.png",
+        "status": 200,
+        "bytes": 2011696,
+        "sha256": "9d1aa654ebd2076e9227db493c465d01248ac248ec0519f5872deecdd7fa2ac6"
+      },
+      {
+        "url": "/modes/echos-de-la-greve/assets/lignes-de-maree/playable/balise/guard-right.png",
+        "status": 200,
+        "bytes": 2011696,
+        "sha256": "9d1aa654ebd2076e9227db493c465d01248ac248ec0519f5872deecdd7fa2ac6"
+      },
+      {
+        "url": "/assets/lignes-de-maree/playable/balise/crouch-left.png",
+        "status": 200,
+        "bytes": 2158671,
+        "sha256": "b2d160274a6d5dcc6642afa67584819a563d606e11099f85ac0fb094775ffed4"
+      },
+      {
+        "url": "/modes/echos-de-la-greve/assets/lignes-de-maree/playable/balise/crouch-left.png",
+        "status": 200,
+        "bytes": 2158671,
+        "sha256": "b2d160274a6d5dcc6642afa67584819a563d606e11099f85ac0fb094775ffed4"
+      },
+      {
+        "url": "/assets/lignes-de-maree/playable/balise/crouch-right.png",
+        "status": 200,
+        "bytes": 2220186,
+        "sha256": "b0d5d5858f31c9bdd729da935848b0d25e46a8c629c577f26aceec730024f167"
+      },
+      {
+        "url": "/modes/echos-de-la-greve/assets/lignes-de-maree/playable/balise/crouch-right.png",
+        "status": 200,
+        "bytes": 2220186,
+        "sha256": "b0d5d5858f31c9bdd729da935848b0d25e46a8c629c577f26aceec730024f167"
+      },
+      {
+        "url": "/assets/lignes-de-maree/playable/balise/jump-left.png",
+        "status": 200,
+        "bytes": 812277,
+        "sha256": "1e6349b59f608b991464b05b86884cc69631879d9f2fd9bb7df35a854f8ee971"
+      },
+      {
+        "url": "/modes/echos-de-la-greve/assets/lignes-de-maree/playable/balise/jump-left.png",
+        "status": 200,
+        "bytes": 812277,
+        "sha256": "1e6349b59f608b991464b05b86884cc69631879d9f2fd9bb7df35a854f8ee971"
+      },
+      {
+        "url": "/assets/lignes-de-maree/playable/balise/jump-right.png",
+        "status": 200,
+        "bytes": 1019747,
+        "sha256": "ab4d5f384b1ea614fa846cbc4a75c3645299bec2e495e699de8efff47006583b"
+      },
+      {
+        "url": "/modes/echos-de-la-greve/assets/lignes-de-maree/playable/balise/jump-right.png",
+        "status": 200,
+        "bytes": 1019747,
+        "sha256": "ab4d5f384b1ea614fa846cbc4a75c3645299bec2e495e699de8efff47006583b"
+      },
+      {
+        "url": "/assets/lignes-de-maree/playable/balise/light-left.png",
+        "status": 200,
+        "bytes": 1929854,
+        "sha256": "5a979bb5010efe56da5c300e893ba76fbe96d4ca7aedb30065323c3cc19328db"
+      },
+      {
+        "url": "/modes/echos-de-la-greve/assets/lignes-de-maree/playable/balise/light-left.png",
+        "status": 200,
+        "bytes": 1929854,
+        "sha256": "5a979bb5010efe56da5c300e893ba76fbe96d4ca7aedb30065323c3cc19328db"
+      },
+      {
+        "url": "/assets/lignes-de-maree/playable/balise/light-right.png",
+        "status": 200,
+        "bytes": 2025681,
+        "sha256": "0f99e1a53ae87f68c937c11c77eb4561c55e7f3653156161b868be335e16010e"
+      },
+      {
+        "url": "/modes/echos-de-la-greve/assets/lignes-de-maree/playable/balise/light-right.png",
+        "status": 200,
+        "bytes": 2025681,
+        "sha256": "0f99e1a53ae87f68c937c11c77eb4561c55e7f3653156161b868be335e16010e"
+      },
+      {
+        "url": "/assets/lignes-de-maree/playable/balise/heavy-left.png",
+        "status": 200,
+        "bytes": 1052664,
+        "sha256": "f67bb8474a7e666c66ab6435042a46f9c34c43e374d91353c60c267e03abeb5b"
+      },
+      {
+        "url": "/modes/echos-de-la-greve/assets/lignes-de-maree/playable/balise/heavy-left.png",
+        "status": 200,
+        "bytes": 1052664,
+        "sha256": "f67bb8474a7e666c66ab6435042a46f9c34c43e374d91353c60c267e03abeb5b"
+      },
+      {
+        "url": "/assets/lignes-de-maree/playable/balise/heavy-right.png",
+        "status": 200,
+        "bytes": 1906435,
+        "sha256": "d71369e396d3c5cd09758f206b1749a3cdf47eecf3ffd4010a91494bc3cdf2a3"
+      },
+      {
+        "url": "/modes/echos-de-la-greve/assets/lignes-de-maree/playable/balise/heavy-right.png",
+        "status": 200,
+        "bytes": 1906435,
+        "sha256": "d71369e396d3c5cd09758f206b1749a3cdf47eecf3ffd4010a91494bc3cdf2a3"
+      },
+      {
+        "url": "/assets/lignes-de-maree/playable/balise/hurt-left.png",
+        "status": 200,
+        "bytes": 790773,
+        "sha256": "1bc0c12365a014cb677e08b4ef43747495371eb7bd3117c35e4e38786b85a018"
+      },
+      {
+        "url": "/modes/echos-de-la-greve/assets/lignes-de-maree/playable/balise/hurt-left.png",
+        "status": 200,
+        "bytes": 790773,
+        "sha256": "1bc0c12365a014cb677e08b4ef43747495371eb7bd3117c35e4e38786b85a018"
+      },
+      {
+        "url": "/assets/lignes-de-maree/playable/balise/hurt-right.png",
+        "status": 200,
+        "bytes": 957095,
+        "sha256": "2498e6b911ff5f35e88089c634defbd5f336506c2826316aaa8ae4122fb32f1b"
+      },
+      {
+        "url": "/modes/echos-de-la-greve/assets/lignes-de-maree/playable/balise/hurt-right.png",
+        "status": 200,
+        "bytes": 957095,
+        "sha256": "2498e6b911ff5f35e88089c634defbd5f336506c2826316aaa8ae4122fb32f1b"
+      },
+      {
+        "url": "/assets/lignes-de-maree/playable/balise/tether-left.png",
+        "status": 200,
+        "bytes": 874354,
+        "sha256": "dba35a330afc9793f29fd26da9962a197b41d65bb39a470160239c680f949165"
+      },
+      {
+        "url": "/modes/echos-de-la-greve/assets/lignes-de-maree/playable/balise/tether-left.png",
+        "status": 200,
+        "bytes": 874354,
+        "sha256": "dba35a330afc9793f29fd26da9962a197b41d65bb39a470160239c680f949165"
+      },
+      {
+        "url": "/assets/lignes-de-maree/playable/balise/tether-right.png",
+        "status": 200,
+        "bytes": 916248,
+        "sha256": "2fb79a9c3ab1bf2bd1c8000fe0381cc173810149511e03e59bd9ebd92679a1bd"
+      },
+      {
+        "url": "/modes/echos-de-la-greve/assets/lignes-de-maree/playable/balise/tether-right.png",
+        "status": 200,
+        "bytes": 916248,
+        "sha256": "2fb79a9c3ab1bf2bd1c8000fe0381cc173810149511e03e59bd9ebd92679a1bd"
+      },
+      {
+        "url": "/assets/lignes-de-maree/playable/balise/anchor-left.png",
+        "status": 200,
+        "bytes": 1227645,
+        "sha256": "978a346f19511ad514777dfa392d7be6e070302465b3e3934a98a0fe4b0f3a80"
+      },
+      {
+        "url": "/modes/echos-de-la-greve/assets/lignes-de-maree/playable/balise/anchor-left.png",
+        "status": 200,
+        "bytes": 1227645,
+        "sha256": "978a346f19511ad514777dfa392d7be6e070302465b3e3934a98a0fe4b0f3a80"
+      },
+      {
+        "url": "/assets/lignes-de-maree/playable/balise/anchor-right.png",
+        "status": 200,
+        "bytes": 1721898,
+        "sha256": "d13e4d9d22139a50a30575f44e01e7115474be467b82172ecdfe32d5380e32b9"
+      },
+      {
+        "url": "/modes/echos-de-la-greve/assets/lignes-de-maree/playable/balise/anchor-right.png",
+        "status": 200,
+        "bytes": 1721898,
+        "sha256": "d13e4d9d22139a50a30575f44e01e7115474be467b82172ecdfe32d5380e32b9"
+      },
+      {
+        "url": "/assets/lignes-de-maree/playable/balise/reel-left.png",
+        "status": 200,
+        "bytes": 919901,
+        "sha256": "19d599305bc6c377e537193b20186350ff37959bebc8b7cc34304f87c38c99e7"
+      },
+      {
+        "url": "/modes/echos-de-la-greve/assets/lignes-de-maree/playable/balise/reel-left.png",
+        "status": 200,
+        "bytes": 919901,
+        "sha256": "19d599305bc6c377e537193b20186350ff37959bebc8b7cc34304f87c38c99e7"
+      },
+      {
+        "url": "/assets/lignes-de-maree/playable/balise/reel-right.png",
+        "status": 200,
+        "bytes": 1150189,
+        "sha256": "e4bba10f0584a98b8c5630db8712dce77cd3bdfc6f6bfdf91310abf9492b0146"
+      },
+      {
+        "url": "/modes/echos-de-la-greve/assets/lignes-de-maree/playable/balise/reel-right.png",
+        "status": 200,
+        "bytes": 1150189,
+        "sha256": "e4bba10f0584a98b8c5630db8712dce77cd3bdfc6f6bfdf91310abf9492b0146"
+      },
+      {
+        "url": "/assets/lignes-de-maree/playable/balise/fall-left.png",
+        "status": 200,
+        "bytes": 1587529,
+        "sha256": "d2fe0f47a65d0095a913021f5b89088437a8641655bf4032d6049a7e9d1ba89a"
+      },
+      {
+        "url": "/modes/echos-de-la-greve/assets/lignes-de-maree/playable/balise/fall-left.png",
+        "status": 200,
+        "bytes": 1587529,
+        "sha256": "d2fe0f47a65d0095a913021f5b89088437a8641655bf4032d6049a7e9d1ba89a"
+      },
+      {
+        "url": "/assets/lignes-de-maree/playable/balise/fall-right.png",
+        "status": 200,
+        "bytes": 1715356,
+        "sha256": "afc041ce15b8b1741e1d12502bdd774dbd47c7e98c4764a96b25d86b5899e2f6"
+      },
+      {
+        "url": "/modes/echos-de-la-greve/assets/lignes-de-maree/playable/balise/fall-right.png",
+        "status": 200,
+        "bytes": 1715356,
+        "sha256": "afc041ce15b8b1741e1d12502bdd774dbd47c7e98c4764a96b25d86b5899e2f6"
+      },
+      {
+        "url": "/assets/lignes-de-maree/playable/balise/taunt-left.png",
+        "status": 200,
+        "bytes": 658359,
+        "sha256": "57543981a04e4dc5d54f285a88112c580b15d16edb2ff4ddfefa260a900a907a"
+      },
+      {
+        "url": "/modes/echos-de-la-greve/assets/lignes-de-maree/playable/balise/taunt-left.png",
+        "status": 200,
+        "bytes": 658359,
+        "sha256": "57543981a04e4dc5d54f285a88112c580b15d16edb2ff4ddfefa260a900a907a"
+      },
+      {
+        "url": "/assets/lignes-de-maree/playable/balise/taunt-right.png",
+        "status": 200,
+        "bytes": 774416,
+        "sha256": "b84f95efbf681d54b42d7123012268bf83a6ffd326b17e0cd26c00d1d593a856"
+      },
+      {
+        "url": "/modes/echos-de-la-greve/assets/lignes-de-maree/playable/balise/taunt-right.png",
+        "status": 200,
+        "bytes": 774416,
+        "sha256": "b84f95efbf681d54b42d7123012268bf83a6ffd326b17e0cd26c00d1d593a856"
+      },
+      {
+        "url": "/assets/lignes-de-maree/playable/balise/victory-left.png",
+        "status": 200,
+        "bytes": 708780,
+        "sha256": "b46782ad2a8edc3defc683af6b9eba3a2a6fd2368ca00f72e08107214b1ef0cb"
+      },
+      {
+        "url": "/modes/echos-de-la-greve/assets/lignes-de-maree/playable/balise/victory-left.png",
+        "status": 200,
+        "bytes": 708780,
+        "sha256": "b46782ad2a8edc3defc683af6b9eba3a2a6fd2368ca00f72e08107214b1ef0cb"
+      },
+      {
+        "url": "/assets/lignes-de-maree/playable/balise/victory-right.png",
+        "status": 200,
+        "bytes": 776286,
+        "sha256": "7006660ac622d149e1eb5b72c69c488d7dc7704fb00328061aa0ca0ef9cc3f78"
+      },
+      {
+        "url": "/modes/echos-de-la-greve/assets/lignes-de-maree/playable/balise/victory-right.png",
+        "status": 200,
+        "bytes": 776286,
+        "sha256": "7006660ac622d149e1eb5b72c69c488d7dc7704fb00328061aa0ca0ef9cc3f78"
+      },
+      {
+        "url": "/assets/lignes-de-maree/playable/balise/walk1-left.png",
+        "status": 200,
+        "bytes": 638007,
+        "sha256": "d16d73add0b47a94b2fdf8bc4d158b7760654905ba31ab363a4ec7a0f6d14f2c"
+      },
+      {
+        "url": "/modes/echos-de-la-greve/assets/lignes-de-maree/playable/balise/walk1-left.png",
+        "status": 200,
+        "bytes": 638007,
+        "sha256": "d16d73add0b47a94b2fdf8bc4d158b7760654905ba31ab363a4ec7a0f6d14f2c"
+      },
+      {
+        "url": "/assets/lignes-de-maree/playable/balise/walk1-right.png",
+        "status": 200,
+        "bytes": 689913,
+        "sha256": "06a7c787780b7c101c19af18e91c1b63eadcd2c00ff25a78af136af1d84dfbc2"
+      },
+      {
+        "url": "/modes/echos-de-la-greve/assets/lignes-de-maree/playable/balise/walk1-right.png",
+        "status": 200,
+        "bytes": 689913,
+        "sha256": "06a7c787780b7c101c19af18e91c1b63eadcd2c00ff25a78af136af1d84dfbc2"
+      },
+      {
+        "url": "/assets/lignes-de-maree/playable/balise/walk2-left.png",
+        "status": 200,
+        "bytes": 707779,
+        "sha256": "debc9cab13b50f53f0246a53bb115799a175e6f6e650c47cc77d390b480a6613"
+      },
+      {
+        "url": "/modes/echos-de-la-greve/assets/lignes-de-maree/playable/balise/walk2-left.png",
+        "status": 200,
+        "bytes": 707779,
+        "sha256": "debc9cab13b50f53f0246a53bb115799a175e6f6e650c47cc77d390b480a6613"
+      },
+      {
+        "url": "/assets/lignes-de-maree/playable/balise/walk2-right.png",
+        "status": 200,
+        "bytes": 837651,
+        "sha256": "c8dfa070e6d71bd18383714d26ce63b33548bc181c39bb2f8da241bd62b6ac3f"
+      },
+      {
+        "url": "/modes/echos-de-la-greve/assets/lignes-de-maree/playable/balise/walk2-right.png",
+        "status": 200,
+        "bytes": 837651,
+        "sha256": "c8dfa070e6d71bd18383714d26ce63b33548bc181c39bb2f8da241bd62b6ac3f"
+      },
+      {
+        "url": "/assets/lignes-de-maree/playable/props/balise-anchor.png",
+        "status": 200,
+        "bytes": 1049772,
+        "sha256": "db9f6c557b06c0e361b5e8d96d04f3e2d2f37647d5a7c5490ebd9b3d87859f1b"
+      },
+      {
+        "url": "/modes/echos-de-la-greve/assets/lignes-de-maree/playable/props/balise-anchor.png",
+        "status": 200,
+        "bytes": 1049772,
+        "sha256": "db9f6c557b06c0e361b5e8d96d04f3e2d2f37647d5a7c5490ebd9b3d87859f1b"
+      },
+      {
+        "url": "/assets/lignes-de-maree/playable/props/balise-rope-loop-grey-red.png",
+        "status": 200,
+        "bytes": 838832,
+        "sha256": "6e7f1f064442534c0174da75477f308609d7f2ba699e424803088eb85334de1b"
+      },
+      {
+        "url": "/modes/echos-de-la-greve/assets/lignes-de-maree/playable/props/balise-rope-loop-grey-red.png",
+        "status": 200,
+        "bytes": 838832,
+        "sha256": "6e7f1f064442534c0174da75477f308609d7f2ba699e424803088eb85334de1b"
+      },
+      {
+        "url": "/assets/lignes-de-maree/playable/consignateur/guard-left.png",
+        "status": 200,
+        "bytes": 857080,
+        "sha256": "2e5cc8e5a62c7ce390eea12eb4658545aa393a16e452150e66d13d6255207903"
+      },
+      {
+        "url": "/modes/echos-de-la-greve/assets/lignes-de-maree/playable/consignateur/guard-left.png",
+        "status": 200,
+        "bytes": 857080,
+        "sha256": "2e5cc8e5a62c7ce390eea12eb4658545aa393a16e452150e66d13d6255207903"
+      },
+      {
+        "url": "/assets/lignes-de-maree/playable/consignateur/guard-right.png",
+        "status": 200,
+        "bytes": 1279767,
+        "sha256": "92d971bdeef9c8376da1282ccc98d2133d50ed12ba75d453be401ea3b722af01"
+      },
+      {
+        "url": "/modes/echos-de-la-greve/assets/lignes-de-maree/playable/consignateur/guard-right.png",
+        "status": 200,
+        "bytes": 1279767,
+        "sha256": "92d971bdeef9c8376da1282ccc98d2133d50ed12ba75d453be401ea3b722af01"
+      },
+      {
+        "url": "/assets/lignes-de-maree/playable/consignateur/shield-push-left.png",
+        "status": 200,
+        "bytes": 1204108,
+        "sha256": "d2fdfb04faaf126494b86d6d579e94b9375744a7352961025c215cca73b7eece"
+      },
+      {
+        "url": "/modes/echos-de-la-greve/assets/lignes-de-maree/playable/consignateur/shield-push-left.png",
+        "status": 200,
+        "bytes": 1204108,
+        "sha256": "d2fdfb04faaf126494b86d6d579e94b9375744a7352961025c215cca73b7eece"
+      },
+      {
+        "url": "/assets/lignes-de-maree/playable/consignateur/shield-push-right.png",
+        "status": 200,
+        "bytes": 1226788,
+        "sha256": "94bc858d3cd7359b8b840efa0d971ab8e5ef359ec4807b99c570f800829e26d5"
+      },
+      {
+        "url": "/modes/echos-de-la-greve/assets/lignes-de-maree/playable/consignateur/shield-push-right.png",
+        "status": 200,
+        "bytes": 1226788,
+        "sha256": "94bc858d3cd7359b8b840efa0d971ab8e5ef359ec4807b99c570f800829e26d5"
+      },
+      {
+        "url": "/assets/lignes-de-maree/playable/consignateur/pole-strike-left.png",
+        "status": 200,
+        "bytes": 1027347,
+        "sha256": "f80de810aa71a1143605544e4724f52669c81e7e306f4178ead780df112472c7"
+      },
+      {
+        "url": "/modes/echos-de-la-greve/assets/lignes-de-maree/playable/consignateur/pole-strike-left.png",
+        "status": 200,
+        "bytes": 1027347,
+        "sha256": "f80de810aa71a1143605544e4724f52669c81e7e306f4178ead780df112472c7"
+      },
+      {
+        "url": "/assets/lignes-de-maree/playable/consignateur/pole-strike-right.png",
+        "status": 200,
+        "bytes": 1277144,
+        "sha256": "1613a1521d001458f34216d886542be8557d1ed76cfbe0c438f6acc2d5697a4b"
+      },
+      {
+        "url": "/modes/echos-de-la-greve/assets/lignes-de-maree/playable/consignateur/pole-strike-right.png",
+        "status": 200,
+        "bytes": 1277144,
+        "sha256": "1613a1521d001458f34216d886542be8557d1ed76cfbe0c438f6acc2d5697a4b"
+      },
+      {
+        "url": "/assets/lignes-de-maree/playable/consignateur/stagger-left.png",
+        "status": 200,
+        "bytes": 1215180,
+        "sha256": "08e06e0f9f6ab633f8c8792fd0f5507ffd09174998d175ab661aee843b809db1"
+      },
+      {
+        "url": "/modes/echos-de-la-greve/assets/lignes-de-maree/playable/consignateur/stagger-left.png",
+        "status": 200,
+        "bytes": 1215180,
+        "sha256": "08e06e0f9f6ab633f8c8792fd0f5507ffd09174998d175ab661aee843b809db1"
+      },
+      {
+        "url": "/assets/lignes-de-maree/playable/consignateur/stagger-right.png",
+        "status": 200,
+        "bytes": 1258464,
+        "sha256": "f7711b7a3f94d9b9821e8a72b1dc6977eb2e440fc675fc1557e1891491ca7368"
+      },
+      {
+        "url": "/modes/echos-de-la-greve/assets/lignes-de-maree/playable/consignateur/stagger-right.png",
+        "status": 200,
+        "bytes": 1258464,
+        "sha256": "f7711b7a3f94d9b9821e8a72b1dc6977eb2e440fc675fc1557e1891491ca7368"
+      },
+      {
+        "url": "/assets/lignes-de-maree/playable/consignateur/kneel-left.png",
+        "status": 200,
+        "bytes": 1321973,
+        "sha256": "398af7c5d832ad19a16404b63f9f98ccf78789534a8b813077e123e4159aed7e"
+      },
+      {
+        "url": "/modes/echos-de-la-greve/assets/lignes-de-maree/playable/consignateur/kneel-left.png",
+        "status": 200,
+        "bytes": 1321973,
+        "sha256": "398af7c5d832ad19a16404b63f9f98ccf78789534a8b813077e123e4159aed7e"
+      },
+      {
+        "url": "/assets/lignes-de-maree/playable/consignateur/kneel-right.png",
+        "status": 200,
+        "bytes": 1504584,
+        "sha256": "c7c7c0ac78acafd4ab9d8da9570d589a95dff843efc9c7866cf5650d806d009c"
+      },
+      {
+        "url": "/modes/echos-de-la-greve/assets/lignes-de-maree/playable/consignateur/kneel-right.png",
+        "status": 200,
+        "bytes": 1504584,
+        "sha256": "c7c7c0ac78acafd4ab9d8da9570d589a95dff843efc9c7866cf5650d806d009c"
+      },
+      {
+        "url": "/assets/lignes-de-maree/playable/consignateur/surrender-left.png",
+        "status": 200,
+        "bytes": 1494405,
+        "sha256": "aafe1414acdd24240a7854dd91af9000ee639650778dd5f8f6b18d256409780b"
+      },
+      {
+        "url": "/modes/echos-de-la-greve/assets/lignes-de-maree/playable/consignateur/surrender-left.png",
+        "status": 200,
+        "bytes": 1494405,
+        "sha256": "aafe1414acdd24240a7854dd91af9000ee639650778dd5f8f6b18d256409780b"
+      },
+      {
+        "url": "/assets/lignes-de-maree/playable/consignateur/surrender-right.png",
+        "status": 200,
+        "bytes": 1215481,
+        "sha256": "4598aca3b40de18da7e5d2bab42c3354ddf75143fe645c9373c3d92b09ac637a"
+      },
+      {
+        "url": "/modes/echos-de-la-greve/assets/lignes-de-maree/playable/consignateur/surrender-right.png",
+        "status": 200,
+        "bytes": 1215481,
+        "sha256": "4598aca3b40de18da7e5d2bab42c3354ddf75143fe645c9373c3d92b09ac637a"
+      },
+      {
+        "url": "/assets/lignes-de-maree/playable/props/toll-console-active.png",
+        "status": 200,
+        "bytes": 1343460,
+        "sha256": "503ea019c2a5d633e0694b9265a3c7b23c355f143ad6ee497ca2a196c5ab2bd6"
+      },
+      {
+        "url": "/modes/echos-de-la-greve/assets/lignes-de-maree/playable/props/toll-console-active.png",
+        "status": 200,
+        "bytes": 1343460,
+        "sha256": "503ea019c2a5d633e0694b9265a3c7b23c355f143ad6ee497ca2a196c5ab2bd6"
+      },
+      {
+        "url": "/assets/lignes-de-maree/playable/props/toll-console-inactive.png",
+        "status": 200,
+        "bytes": 1261962,
+        "sha256": "b6aed458bb01a059e64b0cb01ddc9629cd3b0d2e72b49f185d7df0978846935e"
+      },
+      {
+        "url": "/modes/echos-de-la-greve/assets/lignes-de-maree/playable/props/toll-console-inactive.png",
+        "status": 200,
+        "bytes": 1261962,
+        "sha256": "b6aed458bb01a059e64b0cb01ddc9629cd3b0d2e72b49f185d7df0978846935e"
+      },
+      {
+        "url": "/assets/lignes-de-maree/playable/props/returned-register.png",
+        "status": 200,
+        "bytes": 1578158,
+        "sha256": "445b690df49eba33882329a52bf0636859651d6b43e68cd7e4763991eca64d55"
+      },
+      {
+        "url": "/modes/echos-de-la-greve/assets/lignes-de-maree/playable/props/returned-register.png",
+        "status": 200,
+        "bytes": 1578158,
+        "sha256": "445b690df49eba33882329a52bf0636859651d6b43e68cd7e4763991eca64d55"
+      },
+      {
+        "url": "/assets/lignes-de-maree/playable/props/balise-rope-loop.png",
+        "status": 200,
+        "bytes": 798158,
+        "sha256": "248eba9f1b39ce2527ba4f01379d1c5888439fe34a8ee70399d6896c6d322202"
+      },
+      {
+        "url": "/modes/echos-de-la-greve/assets/lignes-de-maree/playable/props/balise-rope-loop.png",
+        "status": 200,
+        "bytes": 798158,
+        "sha256": "248eba9f1b39ce2527ba4f01379d1c5888439fe34a8ee70399d6896c6d322202"
+      }
+    ],
+    "catalogueServed": true,
+    "originalNetworkSelectionsRejected": [
+      "balise",
+      "ldm-char-balise",
+      "ldm-char-lest",
+      "ldm-char-suture",
+      "ldm-char-relais",
+      "ldm-char-isobare",
+      "ldm-char-contrevoie",
+      "ldm-char-vigie",
+      "ldm-char-ecluse",
+      "ldm-char-sillage",
+      "ldm-char-archive",
+      "ldm-boss-consignateur"
+    ],
+    "canonicalNetworkSelectionsAccepted": [
+      "sam",
+      "fragile",
+      "higgs",
+      "cliff",
+      "mule",
+      "diehardman",
+      "mama",
+      "heartman"
+    ],
+    "privatePathsRejected": 3
+  },
+  "assets": [
+    {
+      "label": "Balise stance left",
+      "src": "assets/lignes-de-maree/playable/balise/stance-left.png",
+      "repoPath": "modes/echos-de-la-greve/assets/lignes-de-maree/playable/balise/stance-left.png",
+      "sha256": "87fa0cef02cd419fc1c80aa99f7a50ce9daa5e7ca09a4ca2e093f96940053967",
+      "gitBlob": "eae2c5d8d03b5368eb60a208d11ac12af374ff8f",
+      "width": 1254,
+      "height": 1254,
+      "bytes": 713992,
+      "crop": [
+        398,
+        46,
+        457,
+        1159
+      ],
+      "nativeFacing": -1,
+      "pngColorType": 6
+    },
+    {
+      "label": "Balise stance right",
+      "src": "assets/lignes-de-maree/playable/balise/stance-right.png",
+      "repoPath": "modes/echos-de-la-greve/assets/lignes-de-maree/playable/balise/stance-right.png",
+      "sha256": "9dc6dc32769cd41c94e9015960261b2c27f0a9b8bf1dc75792df05f9fd2af9ff",
+      "gitBlob": "d0eb4b0c7d856659f60f8ea910303f168c99bd4a",
+      "width": 1254,
+      "height": 1254,
+      "bytes": 829707,
+      "crop": [
+        369,
+        42,
+        519,
+        1176
+      ],
+      "nativeFacing": 1,
+      "pngColorType": 6
+    },
+    {
+      "label": "Balise guard left",
+      "src": "assets/lignes-de-maree/playable/balise/guard-left.png",
+      "repoPath": "modes/echos-de-la-greve/assets/lignes-de-maree/playable/balise/guard-left.png",
+      "sha256": "bd329b970b8abe98522e639eca52228e1b6d9439a97f68fa6bc11a26a44afe72",
+      "gitBlob": "62eb9d263d886c1e99d348add43d70dfec32cbe4",
+      "width": 1024,
+      "height": 1536,
+      "bytes": 2045209,
+      "crop": [
+        84,
+        17,
+        833,
+        1501
+      ],
+      "nativeFacing": -1,
+      "pngColorType": 6
+    },
+    {
+      "label": "Balise guard right",
+      "src": "assets/lignes-de-maree/playable/balise/guard-right.png",
+      "repoPath": "modes/echos-de-la-greve/assets/lignes-de-maree/playable/balise/guard-right.png",
+      "sha256": "9d1aa654ebd2076e9227db493c465d01248ac248ec0519f5872deecdd7fa2ac6",
+      "gitBlob": "4f2db4a92edc86ad360e28f7e679069872d3be4c",
+      "width": 1024,
+      "height": 1536,
+      "bytes": 2011696,
+      "crop": [
+        126,
+        21,
+        769,
+        1480
+      ],
+      "nativeFacing": 1,
+      "pngColorType": 6
+    },
+    {
+      "label": "Balise crouch left",
+      "src": "assets/lignes-de-maree/playable/balise/crouch-left.png",
+      "repoPath": "modes/echos-de-la-greve/assets/lignes-de-maree/playable/balise/crouch-left.png",
+      "sha256": "b2d160274a6d5dcc6642afa67584819a563d606e11099f85ac0fb094775ffed4",
+      "gitBlob": "2fc154c530f464cafde01da7ae6c69574dc9e588",
+      "width": 1024,
+      "height": 1536,
+      "bytes": 2158671,
+      "crop": [
+        25,
+        157,
+        971,
+        1248
+      ],
+      "nativeFacing": -1,
+      "pngColorType": 6
+    },
+    {
+      "label": "Balise crouch right",
+      "src": "assets/lignes-de-maree/playable/balise/crouch-right.png",
+      "repoPath": "modes/echos-de-la-greve/assets/lignes-de-maree/playable/balise/crouch-right.png",
+      "sha256": "b0d5d5858f31c9bdd729da935848b0d25e46a8c629c577f26aceec730024f167",
+      "gitBlob": "d1f968cac1cc6d8a3fedff93ea05ca74eae746ed",
+      "width": 1024,
+      "height": 1536,
+      "bytes": 2220186,
+      "crop": [
+        46,
+        181,
+        931,
+        1251
+      ],
+      "nativeFacing": 1,
+      "pngColorType": 6
+    },
+    {
+      "label": "Balise jump left",
+      "src": "assets/lignes-de-maree/playable/balise/jump-left.png",
+      "repoPath": "modes/echos-de-la-greve/assets/lignes-de-maree/playable/balise/jump-left.png",
+      "sha256": "1e6349b59f608b991464b05b86884cc69631879d9f2fd9bb7df35a854f8ee971",
+      "gitBlob": "87cce3c9c2733330b66e9245bd37b7bee5b55a41",
+      "width": 1254,
+      "height": 1254,
+      "bytes": 812277,
+      "crop": [
+        354,
+        87,
+        565,
+        1053
+      ],
+      "nativeFacing": -1,
+      "pngColorType": 6
+    },
+    {
+      "label": "Balise jump right",
+      "src": "assets/lignes-de-maree/playable/balise/jump-right.png",
+      "repoPath": "modes/echos-de-la-greve/assets/lignes-de-maree/playable/balise/jump-right.png",
+      "sha256": "ab4d5f384b1ea614fa846cbc4a75c3645299bec2e495e699de8efff47006583b",
+      "gitBlob": "c076ceb887543bdbc19fd16a90158dfe66982204",
+      "width": 1254,
+      "height": 1254,
+      "bytes": 1019747,
+      "crop": [
+        299,
+        67,
+        613,
+        1109
+      ],
+      "nativeFacing": 1,
+      "pngColorType": 6
+    },
+    {
+      "label": "Balise light left",
+      "src": "assets/lignes-de-maree/playable/balise/light-left.png",
+      "repoPath": "modes/echos-de-la-greve/assets/lignes-de-maree/playable/balise/light-left.png",
+      "sha256": "5a979bb5010efe56da5c300e893ba76fbe96d4ca7aedb30065323c3cc19328db",
+      "gitBlob": "5884a101d96d847e81bb0bd5293f9e8d26a091a3",
+      "width": 1024,
+      "height": 1536,
+      "bytes": 1929854,
+      "crop": [
+        40,
+        64,
+        939,
+        1429
+      ],
+      "nativeFacing": -1,
+      "pngColorType": 6
+    },
+    {
+      "label": "Balise light right",
+      "src": "assets/lignes-de-maree/playable/balise/light-right.png",
+      "repoPath": "modes/echos-de-la-greve/assets/lignes-de-maree/playable/balise/light-right.png",
+      "sha256": "0f99e1a53ae87f68c937c11c77eb4561c55e7f3653156161b868be335e16010e",
+      "gitBlob": "7d74a9bf46880678a1c084f7ed3a7d4c13c945e6",
+      "width": 1024,
+      "height": 1536,
+      "bytes": 2025681,
+      "crop": [
+        28,
+        67,
+        969,
+        1420
+      ],
+      "nativeFacing": 1,
+      "pngColorType": 6
+    },
+    {
+      "label": "Balise heavy left",
+      "src": "assets/lignes-de-maree/playable/balise/heavy-left.png",
+      "repoPath": "modes/echos-de-la-greve/assets/lignes-de-maree/playable/balise/heavy-left.png",
+      "sha256": "f67bb8474a7e666c66ab6435042a46f9c34c43e374d91353c60c267e03abeb5b",
+      "gitBlob": "b2a954930ba558987b609ba0b862aeb9a4853580",
+      "width": 1254,
+      "height": 1254,
+      "bytes": 1052664,
+      "crop": [
+        194,
+        91,
+        931,
+        1100
+      ],
+      "nativeFacing": -1,
+      "pngColorType": 6
+    },
+    {
+      "label": "Balise heavy right",
+      "src": "assets/lignes-de-maree/playable/balise/heavy-right.png",
+      "repoPath": "modes/echos-de-la-greve/assets/lignes-de-maree/playable/balise/heavy-right.png",
+      "sha256": "d71369e396d3c5cd09758f206b1749a3cdf47eecf3ffd4010a91494bc3cdf2a3",
+      "gitBlob": "ef9a2d790f33c0bd0257fc75f1fbadc9240e194c",
+      "width": 1024,
+      "height": 1536,
+      "bytes": 1906435,
+      "crop": [
+        22,
+        217,
+        969,
+        1177
+      ],
+      "nativeFacing": 1,
+      "pngColorType": 6
+    },
+    {
+      "label": "Balise hurt left",
+      "src": "assets/lignes-de-maree/playable/balise/hurt-left.png",
+      "repoPath": "modes/echos-de-la-greve/assets/lignes-de-maree/playable/balise/hurt-left.png",
+      "sha256": "1bc0c12365a014cb677e08b4ef43747495371eb7bd3117c35e4e38786b85a018",
+      "gitBlob": "f5c2fd924b21e3945732394b9809c7f114ba9e79",
+      "width": 1254,
+      "height": 1254,
+      "bytes": 790773,
+      "crop": [
+        374,
+        66,
+        564,
+        1131
+      ],
+      "nativeFacing": -1,
+      "pngColorType": 6
+    },
+    {
+      "label": "Balise hurt right",
+      "src": "assets/lignes-de-maree/playable/balise/hurt-right.png",
+      "repoPath": "modes/echos-de-la-greve/assets/lignes-de-maree/playable/balise/hurt-right.png",
+      "sha256": "2498e6b911ff5f35e88089c634defbd5f336506c2826316aaa8ae4122fb32f1b",
+      "gitBlob": "ce329e4ebc2fb84efb65d92caed8d346d91e66c3",
+      "width": 1254,
+      "height": 1254,
+      "bytes": 957095,
+      "crop": [
+        277,
+        33,
+        715,
+        1195
+      ],
+      "nativeFacing": 1,
+      "pngColorType": 6
+    },
+    {
+      "label": "Balise tether left",
+      "src": "assets/lignes-de-maree/playable/balise/tether-left.png",
+      "repoPath": "modes/echos-de-la-greve/assets/lignes-de-maree/playable/balise/tether-left.png",
+      "sha256": "dba35a330afc9793f29fd26da9962a197b41d65bb39a470160239c680f949165",
+      "gitBlob": "573054a3531bff2e6d25674f962e76b33990d97c",
+      "width": 1254,
+      "height": 1254,
+      "bytes": 874354,
+      "crop": [
+        51,
+        132,
+        1131,
+        1022
+      ],
+      "nativeFacing": -1,
+      "pngColorType": 6
+    },
+    {
+      "label": "Balise tether right",
+      "src": "assets/lignes-de-maree/playable/balise/tether-right.png",
+      "repoPath": "modes/echos-de-la-greve/assets/lignes-de-maree/playable/balise/tether-right.png",
+      "sha256": "2fb79a9c3ab1bf2bd1c8000fe0381cc173810149511e03e59bd9ebd92679a1bd",
+      "gitBlob": "02b1da3ebb0f1b01515781193bd8899b77de3c60",
+      "width": 1254,
+      "height": 1254,
+      "bytes": 916248,
+      "crop": [
+        96,
+        132,
+        1096,
+        1036
+      ],
+      "nativeFacing": 1,
+      "pngColorType": 6
+    },
+    {
+      "label": "Balise anchor left",
+      "src": "assets/lignes-de-maree/playable/balise/anchor-left.png",
+      "repoPath": "modes/echos-de-la-greve/assets/lignes-de-maree/playable/balise/anchor-left.png",
+      "sha256": "978a346f19511ad514777dfa392d7be6e070302465b3e3934a98a0fe4b0f3a80",
+      "gitBlob": "1e6fa051748585962b4f15411e16fed472f86204",
+      "width": 1254,
+      "height": 1254,
+      "bytes": 1227645,
+      "crop": [
+        87,
+        190,
+        1073,
+        929
+      ],
+      "nativeFacing": -1,
+      "pngColorType": 6
+    },
+    {
+      "label": "Balise anchor right",
+      "src": "assets/lignes-de-maree/playable/balise/anchor-right.png",
+      "repoPath": "modes/echos-de-la-greve/assets/lignes-de-maree/playable/balise/anchor-right.png",
+      "sha256": "d13e4d9d22139a50a30575f44e01e7115474be467b82172ecdfe32d5380e32b9",
+      "gitBlob": "36c6e25985a10cf14ac65067cae8c9318c358df6",
+      "width": 1254,
+      "height": 1254,
+      "bytes": 1721898,
+      "crop": [
+        47,
+        90,
+        1175,
+        1094
+      ],
+      "nativeFacing": 1,
+      "pngColorType": 6
+    },
+    {
+      "label": "Balise reel left",
+      "src": "assets/lignes-de-maree/playable/balise/reel-left.png",
+      "repoPath": "modes/echos-de-la-greve/assets/lignes-de-maree/playable/balise/reel-left.png",
+      "sha256": "19d599305bc6c377e537193b20186350ff37959bebc8b7cc34304f87c38c99e7",
+      "gitBlob": "b09abecbe3dcdf99b1b19a63cd5b21065817eea7",
+      "width": 1254,
+      "height": 1254,
+      "bytes": 919901,
+      "crop": [
+        166,
+        123,
+        931,
+        1056
+      ],
+      "nativeFacing": -1,
+      "pngColorType": 6
+    },
+    {
+      "label": "Balise reel right",
+      "src": "assets/lignes-de-maree/playable/balise/reel-right.png",
+      "repoPath": "modes/echos-de-la-greve/assets/lignes-de-maree/playable/balise/reel-right.png",
+      "sha256": "e4bba10f0584a98b8c5630db8712dce77cd3bdfc6f6bfdf91310abf9492b0146",
+      "gitBlob": "875a65a9c2d89f57c77423ae1ba28d199d0ad0fd",
+      "width": 1254,
+      "height": 1254,
+      "bytes": 1150189,
+      "crop": [
+        130,
+        88,
+        994,
+        1119
+      ],
+      "nativeFacing": 1,
+      "pngColorType": 6
+    },
+    {
+      "label": "Balise fall left",
+      "src": "assets/lignes-de-maree/playable/balise/fall-left.png",
+      "repoPath": "modes/echos-de-la-greve/assets/lignes-de-maree/playable/balise/fall-left.png",
+      "sha256": "d2fe0f47a65d0095a913021f5b89088437a8641655bf4032d6049a7e9d1ba89a",
+      "gitBlob": "8e6375bff3dcf2a5d5dcff5bdc65782996b48ebc",
+      "width": 1536,
+      "height": 1024,
+      "bytes": 1587529,
+      "crop": [
+        76,
+        203,
+        1362,
+        622
+      ],
+      "nativeFacing": -1,
+      "pngColorType": 6
+    },
+    {
+      "label": "Balise fall right",
+      "src": "assets/lignes-de-maree/playable/balise/fall-right.png",
+      "repoPath": "modes/echos-de-la-greve/assets/lignes-de-maree/playable/balise/fall-right.png",
+      "sha256": "afc041ce15b8b1741e1d12502bdd774dbd47c7e98c4764a96b25d86b5899e2f6",
+      "gitBlob": "395320f9d697b2793133f2de432b5c0b89e54eb0",
+      "width": 1536,
+      "height": 1024,
+      "bytes": 1715356,
+      "crop": [
+        65,
+        227,
+        1425,
+        638
+      ],
+      "nativeFacing": 1,
+      "pngColorType": 6
+    },
+    {
+      "label": "Balise taunt left",
+      "src": "assets/lignes-de-maree/playable/balise/taunt-left.png",
+      "repoPath": "modes/echos-de-la-greve/assets/lignes-de-maree/playable/balise/taunt-left.png",
+      "sha256": "57543981a04e4dc5d54f285a88112c580b15d16edb2ff4ddfefa260a900a907a",
+      "gitBlob": "f2e03089a76e2435a2dc26b9aa24e94a706eba4d",
+      "width": 1254,
+      "height": 1254,
+      "bytes": 658359,
+      "crop": [
+        404,
+        59,
+        446,
+        1142
+      ],
+      "nativeFacing": -1,
+      "pngColorType": 6
+    },
+    {
+      "label": "Balise taunt right",
+      "src": "assets/lignes-de-maree/playable/balise/taunt-right.png",
+      "repoPath": "modes/echos-de-la-greve/assets/lignes-de-maree/playable/balise/taunt-right.png",
+      "sha256": "b84f95efbf681d54b42d7123012268bf83a6ffd326b17e0cd26c00d1d593a856",
+      "gitBlob": "77607d7125efdc5195b496985153586c586cdc7a",
+      "width": 1254,
+      "height": 1254,
+      "bytes": 774416,
+      "crop": [
+        372,
+        42,
+        468,
+        1172
+      ],
+      "nativeFacing": 1,
+      "pngColorType": 6
+    },
+    {
+      "label": "Balise victory left",
+      "src": "assets/lignes-de-maree/playable/balise/victory-left.png",
+      "repoPath": "modes/echos-de-la-greve/assets/lignes-de-maree/playable/balise/victory-left.png",
+      "sha256": "b46782ad2a8edc3defc683af6b9eba3a2a6fd2368ca00f72e08107214b1ef0cb",
+      "gitBlob": "971b5db23f42a1928294a448f93253a3d42d080e",
+      "width": 1254,
+      "height": 1254,
+      "bytes": 708780,
+      "crop": [
+        315,
+        51,
+        536,
+        1154
+      ],
+      "nativeFacing": -1,
+      "pngColorType": 6
+    },
+    {
+      "label": "Balise victory right",
+      "src": "assets/lignes-de-maree/playable/balise/victory-right.png",
+      "repoPath": "modes/echos-de-la-greve/assets/lignes-de-maree/playable/balise/victory-right.png",
+      "sha256": "7006660ac622d149e1eb5b72c69c488d7dc7704fb00328061aa0ca0ef9cc3f78",
+      "gitBlob": "1ecdbd02121bcfce747c96af8de1c8785e5136b7",
+      "width": 1254,
+      "height": 1254,
+      "bytes": 776286,
+      "crop": [
+        369,
+        65,
+        594,
+        1125
+      ],
+      "nativeFacing": 1,
+      "pngColorType": 6
+    },
+    {
+      "label": "Balise walk1 left",
+      "src": "assets/lignes-de-maree/playable/balise/walk1-left.png",
+      "repoPath": "modes/echos-de-la-greve/assets/lignes-de-maree/playable/balise/walk1-left.png",
+      "sha256": "d16d73add0b47a94b2fdf8bc4d158b7760654905ba31ab363a4ec7a0f6d14f2c",
+      "gitBlob": "895c2a94b18df88a01be4d119b4b5e592ad89b62",
+      "width": 1254,
+      "height": 1254,
+      "bytes": 638007,
+      "crop": [
+        428,
+        58,
+        427,
+        1126
+      ],
+      "nativeFacing": -1,
+      "pngColorType": 6
+    },
+    {
+      "label": "Balise walk1 right",
+      "src": "assets/lignes-de-maree/playable/balise/walk1-right.png",
+      "repoPath": "modes/echos-de-la-greve/assets/lignes-de-maree/playable/balise/walk1-right.png",
+      "sha256": "06a7c787780b7c101c19af18e91c1b63eadcd2c00ff25a78af136af1d84dfbc2",
+      "gitBlob": "c07a9fb1b7ef594bc66cc55933daeb360448a327",
+      "width": 1254,
+      "height": 1254,
+      "bytes": 689913,
+      "crop": [
+        379,
+        52,
+        408,
+        1141
+      ],
+      "nativeFacing": 1,
+      "pngColorType": 6
+    },
+    {
+      "label": "Balise walk2 left",
+      "src": "assets/lignes-de-maree/playable/balise/walk2-left.png",
+      "repoPath": "modes/echos-de-la-greve/assets/lignes-de-maree/playable/balise/walk2-left.png",
+      "sha256": "debc9cab13b50f53f0246a53bb115799a175e6f6e650c47cc77d390b480a6613",
+      "gitBlob": "0c82b06cd70f5b06b5532bf007db9b9735e8f642",
+      "width": 1254,
+      "height": 1254,
+      "bytes": 707779,
+      "crop": [
+        275,
+        70,
+        732,
+        1110
+      ],
+      "nativeFacing": -1,
+      "pngColorType": 6
+    },
+    {
+      "label": "Balise walk2 right",
+      "src": "assets/lignes-de-maree/playable/balise/walk2-right.png",
+      "repoPath": "modes/echos-de-la-greve/assets/lignes-de-maree/playable/balise/walk2-right.png",
+      "sha256": "c8dfa070e6d71bd18383714d26ce63b33548bc181c39bb2f8da241bd62b6ac3f",
+      "gitBlob": "bbcdd7f2922b714f83d8901315f6d446e31ffd1c",
+      "width": 1254,
+      "height": 1254,
+      "bytes": 837651,
+      "crop": [
+        175,
+        64,
+        869,
+        1120
+      ],
+      "nativeFacing": 1,
+      "pngColorType": 6
+    },
+    {
+      "label": "Balise anchor",
+      "src": "assets/lignes-de-maree/playable/props/balise-anchor.png",
+      "repoPath": "modes/echos-de-la-greve/assets/lignes-de-maree/playable/props/balise-anchor.png",
+      "sha256": "db9f6c557b06c0e361b5e8d96d04f3e2d2f37647d5a7c5490ebd9b3d87859f1b",
+      "gitBlob": "c42e7f7200e434e75d4adcc124aba9a252dfc342",
+      "width": 1774,
+      "height": 887,
+      "bytes": 1049772,
+      "crop": [
+        110,
+        68,
+        1546,
+        752
+      ],
+      "nativeFacing": 1,
+      "pngColorType": 6
+    },
+    {
+      "label": "Balise ropeHook",
+      "src": "assets/lignes-de-maree/playable/props/balise-rope-loop-grey-red.png",
+      "repoPath": "modes/echos-de-la-greve/assets/lignes-de-maree/playable/props/balise-rope-loop-grey-red.png",
+      "sha256": "6e7f1f064442534c0174da75477f308609d7f2ba699e424803088eb85334de1b",
+      "gitBlob": "f88ebbcb63972df306264d38f7ddbef6a509c027",
+      "width": 1774,
+      "height": 887,
+      "bytes": 838832,
+      "crop": [
+        57,
+        127,
+        1651,
+        643
+      ],
+      "nativeFacing": 1,
+      "pngColorType": 6
+    },
+    {
+      "label": "Consignateur guard left",
+      "src": "assets/lignes-de-maree/playable/consignateur/guard-left.png",
+      "repoPath": "modes/echos-de-la-greve/assets/lignes-de-maree/playable/consignateur/guard-left.png",
+      "sha256": "2e5cc8e5a62c7ce390eea12eb4658545aa393a16e452150e66d13d6255207903",
+      "gitBlob": "866ce3dabb0a9a8f309256231401789904f35d5b",
+      "width": 1254,
+      "height": 1254,
+      "bytes": 857080,
+      "crop": [
+        309,
+        181,
+        605,
+        915
+      ],
+      "nativeFacing": -1,
+      "pngColorType": 6
+    },
+    {
+      "label": "Consignateur guard right",
+      "src": "assets/lignes-de-maree/playable/consignateur/guard-right.png",
+      "repoPath": "modes/echos-de-la-greve/assets/lignes-de-maree/playable/consignateur/guard-right.png",
+      "sha256": "92d971bdeef9c8376da1282ccc98d2133d50ed12ba75d453be401ea3b722af01",
+      "gitBlob": "17ee3297afab178942b50882e6a3dbb9baec979a",
+      "width": 1254,
+      "height": 1254,
+      "bytes": 1279767,
+      "crop": [
+        197,
+        71,
+        846,
+        1123
+      ],
+      "nativeFacing": 1,
+      "pngColorType": 6
+    },
+    {
+      "label": "Consignateur shield-push left",
+      "src": "assets/lignes-de-maree/playable/consignateur/shield-push-left.png",
+      "repoPath": "modes/echos-de-la-greve/assets/lignes-de-maree/playable/consignateur/shield-push-left.png",
+      "sha256": "d2fdfb04faaf126494b86d6d579e94b9375744a7352961025c215cca73b7eece",
+      "gitBlob": "79f1414db1c12d2cbdc00f1451d42ddc0c2a67ac",
+      "width": 1254,
+      "height": 1254,
+      "bytes": 1204108,
+      "crop": [
+        70,
+        164,
+        1114,
+        969
+      ],
+      "nativeFacing": -1,
+      "pngColorType": 6
+    },
+    {
+      "label": "Consignateur shield-push right",
+      "src": "assets/lignes-de-maree/playable/consignateur/shield-push-right.png",
+      "repoPath": "modes/echos-de-la-greve/assets/lignes-de-maree/playable/consignateur/shield-push-right.png",
+      "sha256": "94bc858d3cd7359b8b840efa0d971ab8e5ef359ec4807b99c570f800829e26d5",
+      "gitBlob": "c88ee40080a5c12855e013726eb7b48f75f5adc0",
+      "width": 1254,
+      "height": 1254,
+      "bytes": 1226788,
+      "crop": [
+        80,
+        106,
+        1086,
+        1048
+      ],
+      "nativeFacing": 1,
+      "pngColorType": 6
+    },
+    {
+      "label": "Consignateur pole-strike left",
+      "src": "assets/lignes-de-maree/playable/consignateur/pole-strike-left.png",
+      "repoPath": "modes/echos-de-la-greve/assets/lignes-de-maree/playable/consignateur/pole-strike-left.png",
+      "sha256": "f80de810aa71a1143605544e4724f52669c81e7e306f4178ead780df112472c7",
+      "gitBlob": "e061c27849fb7a0b169d0ec8c53d427d0933db49",
+      "width": 1254,
+      "height": 1254,
+      "bytes": 1027347,
+      "crop": [
+        45,
+        138,
+        1154,
+        985
+      ],
+      "nativeFacing": -1,
+      "pngColorType": 6
+    },
+    {
+      "label": "Consignateur pole-strike right",
+      "src": "assets/lignes-de-maree/playable/consignateur/pole-strike-right.png",
+      "repoPath": "modes/echos-de-la-greve/assets/lignes-de-maree/playable/consignateur/pole-strike-right.png",
+      "sha256": "1613a1521d001458f34216d886542be8557d1ed76cfbe0c438f6acc2d5697a4b",
+      "gitBlob": "45ab8040d33d71d678b4864706b3e866f8755aec",
+      "width": 1254,
+      "height": 1254,
+      "bytes": 1277144,
+      "crop": [
+        70,
+        63,
+        1122,
+        1127
+      ],
+      "nativeFacing": 1,
+      "pngColorType": 6
+    },
+    {
+      "label": "Consignateur stagger left",
+      "src": "assets/lignes-de-maree/playable/consignateur/stagger-left.png",
+      "repoPath": "modes/echos-de-la-greve/assets/lignes-de-maree/playable/consignateur/stagger-left.png",
+      "sha256": "08e06e0f9f6ab633f8c8792fd0f5507ffd09174998d175ab661aee843b809db1",
+      "gitBlob": "28960bfcc5f938f782114bdb706240add43ff87a",
+      "width": 1254,
+      "height": 1254,
+      "bytes": 1215180,
+      "crop": [
+        186,
+        87,
+        890,
+        1080
+      ],
+      "nativeFacing": -1,
+      "pngColorType": 6
+    },
+    {
+      "label": "Consignateur stagger right",
+      "src": "assets/lignes-de-maree/playable/consignateur/stagger-right.png",
+      "repoPath": "modes/echos-de-la-greve/assets/lignes-de-maree/playable/consignateur/stagger-right.png",
+      "sha256": "f7711b7a3f94d9b9821e8a72b1dc6977eb2e440fc675fc1557e1891491ca7368",
+      "gitBlob": "8d8eeb50778eb6f413d67e1ce5c91caa7480918b",
+      "width": 1254,
+      "height": 1254,
+      "bytes": 1258464,
+      "crop": [
+        150,
+        38,
+        905,
+        1182
+      ],
+      "nativeFacing": 1,
+      "pngColorType": 6
+    },
+    {
+      "label": "Consignateur kneel left",
+      "src": "assets/lignes-de-maree/playable/consignateur/kneel-left.png",
+      "repoPath": "modes/echos-de-la-greve/assets/lignes-de-maree/playable/consignateur/kneel-left.png",
+      "sha256": "398af7c5d832ad19a16404b63f9f98ccf78789534a8b813077e123e4159aed7e",
+      "gitBlob": "36e373ee9be9798e76e1723d89c3435e4186d3a9",
+      "width": 1254,
+      "height": 1254,
+      "bytes": 1321973,
+      "crop": [
+        186,
+        104,
+        797,
+        1031
+      ],
+      "nativeFacing": -1,
+      "pngColorType": 6
+    },
+    {
+      "label": "Consignateur kneel right",
+      "src": "assets/lignes-de-maree/playable/consignateur/kneel-right.png",
+      "repoPath": "modes/echos-de-la-greve/assets/lignes-de-maree/playable/consignateur/kneel-right.png",
+      "sha256": "c7c7c0ac78acafd4ab9d8da9570d589a95dff843efc9c7866cf5650d806d009c",
+      "gitBlob": "b68c51184a489b1a5a7f13e07e8470a4f1147f12",
+      "width": 1254,
+      "height": 1254,
+      "bytes": 1504584,
+      "crop": [
+        164,
+        89,
+        814,
+        1090
+      ],
+      "nativeFacing": 1,
+      "pngColorType": 6
+    },
+    {
+      "label": "Consignateur surrender left",
+      "src": "assets/lignes-de-maree/playable/consignateur/surrender-left.png",
+      "repoPath": "modes/echos-de-la-greve/assets/lignes-de-maree/playable/consignateur/surrender-left.png",
+      "sha256": "aafe1414acdd24240a7854dd91af9000ee639650778dd5f8f6b18d256409780b",
+      "gitBlob": "3952330b6fd086f8af4a289c395ce5277aa37f57",
+      "width": 1254,
+      "height": 1254,
+      "bytes": 1494405,
+      "crop": [
+        124,
+        87,
+        1000,
+        1083
+      ],
+      "nativeFacing": -1,
+      "pngColorType": 6
+    },
+    {
+      "label": "Consignateur surrender right",
+      "src": "assets/lignes-de-maree/playable/consignateur/surrender-right.png",
+      "repoPath": "modes/echos-de-la-greve/assets/lignes-de-maree/playable/consignateur/surrender-right.png",
+      "sha256": "4598aca3b40de18da7e5d2bab42c3354ddf75143fe645c9373c3d92b09ac637a",
+      "gitBlob": "b4387be240c803e7cd146bc5a8b4ab34349a6ae6",
+      "width": 1254,
+      "height": 1254,
+      "bytes": 1215481,
+      "crop": [
+        184,
+        119,
+        877,
+        1023
+      ],
+      "nativeFacing": 1,
+      "pngColorType": 6
+    },
+    {
+      "label": "Consignateur console-active",
+      "src": "assets/lignes-de-maree/playable/props/toll-console-active.png",
+      "repoPath": "modes/echos-de-la-greve/assets/lignes-de-maree/playable/props/toll-console-active.png",
+      "sha256": "503ea019c2a5d633e0694b9265a3c7b23c355f143ad6ee497ca2a196c5ab2bd6",
+      "gitBlob": "68a445e4c8b5ed7c8bbd4b873eaeddeca25a4aab",
+      "width": 1199,
+      "height": 1312,
+      "bytes": 1343460,
+      "crop": [
+        201,
+        76,
+        793,
+        1179
+      ],
+      "nativeFacing": 1,
+      "pngColorType": 6
+    },
+    {
+      "label": "Consignateur console-inactive",
+      "src": "assets/lignes-de-maree/playable/props/toll-console-inactive.png",
+      "repoPath": "modes/echos-de-la-greve/assets/lignes-de-maree/playable/props/toll-console-inactive.png",
+      "sha256": "b6aed458bb01a059e64b0cb01ddc9629cd3b0d2e72b49f185d7df0978846935e",
+      "gitBlob": "4557acdfa57f06720474f08d36351c4825490a49",
+      "width": 1199,
+      "height": 1312,
+      "bytes": 1261962,
+      "crop": [
+        201,
+        71,
+        794,
+        1185
+      ],
+      "nativeFacing": 1,
+      "pngColorType": 6
+    },
+    {
+      "label": "Consignateur register",
+      "src": "assets/lignes-de-maree/playable/props/returned-register.png",
+      "repoPath": "modes/echos-de-la-greve/assets/lignes-de-maree/playable/props/returned-register.png",
+      "sha256": "445b690df49eba33882329a52bf0636859651d6b43e68cd7e4763991eca64d55",
+      "gitBlob": "e6e90e98e8dd22fb12d57a9cf115544c74b5a621",
+      "width": 1086,
+      "height": 1448,
+      "bytes": 1578158,
+      "crop": [
+        173,
+        53,
+        732,
+        1320
+      ],
+      "nativeFacing": 1,
+      "pngColorType": 6
+    }
+  ],
+  "sourceSha256": {
+    "content.js": "fe6e129844908ad3a0fa97d9e59cace35b1fb4c4cc54ba095de401bcac189578",
+    "asset-geometry-20261124.js": "61f830dc5036774529b7ecaf51f4c80386ef7f94447c55e044584e850e081934",
+    "assets.js": "4f0ae5349872b9391d7586bc98baf0baa211e83e59c7b1e4234aaf22525ecb01",
+    "extension-data.js": "5776d8c46a4aae9985f754230628b7d7797387983794d905f08ae1a8c637f35b",
+    "extension-assets.js": "929fa7ce4b4589989e4b9d9c46c47db906d6d943c1397bdf35e5082ea0bec95e",
+    "extension-runtime.js": "696e8b3a1a8ca2a5b2a11eac7c52fcd9d98f18f15a3247584f150de2e1b2d90e",
+    "presentation-assets.js": "598f1508810280178133f94c9192d66bc2d04459592d9779a5af2e0bb7f68cc3",
+    "presentation.js": "89719616a053b7be2af84b5c5771a1e4f63429748711ec3dfb9eca0dfb5a3e9a",
+    "boss-geometry-20261124.js": "55655afb8a1b05027b521bda46a49c9ad1f1b202ae307fdca67aa3690657a928",
+    "boss-assets.js": "2b3c644b456cb2de1180ef618b16b43eb26b761d4dc7e1187298420b8176bbe7",
+    "tournament.js": "c3085ed52988efff57946d4fadaae51614de77bfbb2de947a1216e159bdc2bd0",
+    "original-kits-assets.js": "cb4ec2d4051fe44a961b849df83ce7dbd01765ac0a4c15f0851307ebd31b1527",
+    "original-kits.js": "511625570ed50cea628bf4e865fa7f0471c7c270f307cbb51018b795a46063d9",
+    "fight.js": "6be07ea82a834d18cc0f72381fb1c5be44643ae104cc47556bc22cd04570cbc6",
+    "original-bosses-assets.js": "938aeac4aaae19db31458a7b8de26219ab4ba2c0865e7955973da1fc40aa54f5",
+    "original-bosses.js": "054d536557e62f496a04a12206be456ba1c43f030a2ad35a11387a48421e9a6d",
+    "boss.js": "9151eaffd51ea3117f806655bf6dbd7677aff612b837505cdfd53a1410eef550",
+    "campaign.js": "bf84ff01a0afc253c84f5087f040632895fe971f7f934abadd114c3f4311c08a",
+    "moves-data.js": "c413bbdc2ce5de4911faab8b028e4825f96fde3e7192863f89fd4a35e9100320",
+    "lessons.js": "173883d53312043d57f6d28f2bd38795c831b95d9dcb784ca7894f115f9af159",
+    "docs/combat/production/20261127-first-playable/art-generation.json": "6561897d19b2b21c95e0672291c1e457224931a0fee0ba1b6b85c46c1092feb1"
+  },
+  "limits": [
+    "PNG validation reads native file headers and measured descriptor bounds; decoding, alpha pixels, anatomical side, floor contact and framing are covered by first-playable-canvas.cjs.",
+    "Mode selection expressions and published rosters are checked from actual source. Full DOM interactions and catalogue launch links are covered by first-playable-entrypoints.cjs.",
+    "HTTP uses the shipped server on a real local socket. This does not validate a public deployment, browser cache, Internet connectivity or cross-machine latency.",
+    "Preservation compares the 539 baseline mode-assets rasters and all 33 repository SVG Git blobs to checkout bytes. Other historical documentary/source rasters are outside that requested inventory. New documentary captures are listed separately from the 48 runtime PNGs."
+  ]
+}
