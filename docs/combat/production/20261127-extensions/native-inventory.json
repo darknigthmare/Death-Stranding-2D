@@ -1,0 +1,274 @@
+[
+  {
+    "id": "sam-taunt",
+    "fighter": "sam",
+    "kind": "single_native_hold_pose",
+    "version": "DS1 / Director’s Cut · simulator gesture",
+    "path": "modes/echos-de-la-greve/assets/presentation-20261127/sam-taunt.png",
+    "width": 854,
+    "height": 1840,
+    "bytes": 1854687,
+    "sha256": "e27d85d0508104f14000b63b82d7001baecd9ddc0e72fb53056cfe23bcb6ffaf",
+    "git_blob_sha": "8b2a39fe7f4f79e5d8a2d88bf8421210b84df59a",
+    "alpha_0_fraction": 0.46578632522146424,
+    "alpha_ge_128_fraction": 0.5104686386315039,
+    "alpha_bbox_gt_8": [
+      5,
+      4,
+      846,
+      1830
+    ],
+    "geometry": {
+      "src": "assets/presentation-20261127/sam-taunt.png",
+      "crop": [
+        3,
+        2,
+        845,
+        1830
+      ],
+      "anchorX": 0.51716,
+      "baselineY": 0.998907,
+      "heightRatio": 1
+    },
+    "generation_file": "exec-55a8bc05-e067-4e4e-8ed4-28b7740a66f4.png",
+    "native_unchanged": true
+  },
+  {
+    "id": "fragile-taunt",
+    "fighter": "fragile",
+    "kind": "single_native_hold_pose",
+    "version": "DS1 / Director’s Cut · simulator gesture",
+    "path": "modes/echos-de-la-greve/assets/presentation-20261127/fragile-taunt.png",
+    "width": 971,
+    "height": 1619,
+    "bytes": 1230300,
+    "sha256": "45f1d309f5d626bd2813f60c7fe2eb252fb477cacad6d666e9cb22ef3fcfd148",
+    "git_blob_sha": "32ccd3bfc6d74b7a9d98d60daee2454f2b9cdfa2",
+    "alpha_0_fraction": 0.6545807414399932,
+    "alpha_ge_128_fraction": 0.3121283115220963,
+    "alpha_bbox_gt_8": [
+      149,
+      6,
+      937,
+      1579
+    ],
+    "geometry": {
+      "src": "assets/presentation-20261127/fragile-taunt.png",
+      "crop": [
+        147,
+        4,
+        792,
+        1577
+      ],
+      "anchorX": 0.489899,
+      "baselineY": 0.998732,
+      "heightRatio": 1
+    },
+    "generation_file": "exec-f199e4e8-4c3e-42ad-9faf-f6947041e22e.png",
+    "native_unchanged": true
+  },
+  {
+    "id": "higgs-taunt",
+    "fighter": "higgs",
+    "kind": "single_native_hold_pose",
+    "version": "DS1 / Director’s Cut · simulator gesture",
+    "path": "modes/echos-de-la-greve/assets/presentation-20261127/higgs-taunt.png",
+    "width": 900,
+    "height": 1747,
+    "bytes": 1824960,
+    "sha256": "7d53b3c5dc1b60660acc52f1491b18a0908265c9e0003be54fd43f562f7b3e55",
+    "git_blob_sha": "94c5757972db35178123a231ad755b4168b5295b",
+    "alpha_0_fraction": 0.46560580041976724,
+    "alpha_ge_128_fraction": 0.5214666412262291,
+    "alpha_bbox_gt_8": [
+      6,
+      14,
+      899,
+      1680
+    ],
+    "geometry": {
+      "src": "assets/presentation-20261127/higgs-taunt.png",
+      "crop": [
+        4,
+        12,
+        896,
+        1670
+      ],
+      "anchorX": 0.564732,
+      "baselineY": 0.998802,
+      "heightRatio": 1
+    },
+    "generation_file": "exec-978d17c7-1759-48cf-bc4a-f85cebfd5aa1.png",
+    "native_unchanged": true
+  },
+  {
+    "id": "cliff-taunt",
+    "fighter": "cliff",
+    "kind": "single_native_hold_pose",
+    "version": "DS1 / Director’s Cut · simulator gesture",
+    "path": "modes/echos-de-la-greve/assets/presentation-20261127/cliff-taunt.png",
+    "width": 848,
+    "height": 1855,
+    "bytes": 1813780,
+    "sha256": "cdb3942ff5ad0d39c611baff5ff1a4d54aa4b067c6eb8860768cc655decca615",
+    "git_blob_sha": "74282328d5ac27cfc3dbf4ac96df22974b70e1c7",
+    "alpha_0_fraction": 0.5058962264150944,
+    "alpha_ge_128_fraction": 0.47166505619691806,
+    "alpha_bbox_gt_8": [
+      40,
+      6,
+      801,
+      1848
+    ],
+    "geometry": {
+      "src": "assets/presentation-20261127/cliff-taunt.png",
+      "crop": [
+        38,
+        4,
+        765,
+        1846
+      ],
+      "anchorX": 0.473203,
+      "baselineY": 0.998917,
+      "heightRatio": 1
+    },
+    "generation_file": "exec-d4d60cbc-e37d-4102-8011-3ed12368e57f.png",
+    "native_unchanged": true
+  },
+  {
+    "id": "mule-taunt",
+    "fighter": "mule",
+    "kind": "single_native_hold_pose",
+    "version": "DS1 / Director’s Cut · simulator gesture",
+    "path": "modes/echos-de-la-greve/assets/presentation-20261127/mule-taunt.png",
+    "width": 776,
+    "height": 2025,
+    "bytes": 2054759,
+    "sha256": "eec719e453b6f4dd1419bc88c483d49cc11de203fa7246bb9338e4d305268dc6",
+    "git_blob_sha": "106422fbfeda87745b741c5a5a447738c479d45f",
+    "alpha_0_fraction": 0.46114483899707265,
+    "alpha_ge_128_fraction": 0.5197308132875144,
+    "alpha_bbox_gt_8": [
+      7,
+      15,
+      764,
+      1968
+    ],
+    "geometry": {
+      "src": "assets/presentation-20261127/mule-taunt.png",
+      "crop": [
+        5,
+        13,
+        761,
+        1957
+      ],
+      "anchorX": 0.571616,
+      "baselineY": 0.998978,
+      "heightRatio": 1
+    },
+    "generation_file": "exec-17b911bb-0a0f-4aa3-bec7-5e5038cc1b34.png",
+    "native_unchanged": true
+  },
+  {
+    "id": "mama-taunt",
+    "fighter": "mama",
+    "kind": "single_native_hold_pose",
+    "version": "DS1 / Director’s Cut · simulator gesture",
+    "path": "modes/echos-de-la-greve/assets/presentation-20261127/mama-taunt.png",
+    "width": 1024,
+    "height": 1536,
+    "bytes": 1708774,
+    "sha256": "1ba61c1a54c848b1f442a691cc45f00f85f6a2464b5290480a84bfa1572dc03c",
+    "git_blob_sha": "bd702eead2cbb3a28ac3b6a14f353ac92266fd07",
+    "alpha_0_fraction": 0.7249571482340494,
+    "alpha_ge_128_fraction": 0.25745709737141925,
+    "alpha_bbox_gt_8": [
+      228,
+      20,
+      733,
+      1521
+    ],
+    "geometry": {
+      "src": "assets/presentation-20261127/mama-taunt.png",
+      "crop": [
+        226,
+        18,
+        509,
+        1505
+      ],
+      "anchorX": 0.499018,
+      "baselineY": 0.998671,
+      "heightRatio": 1
+    },
+    "generation_file": "exec-e66008b1-d215-442d-a0f4-7361d656b7bd.png",
+    "native_unchanged": true
+  },
+  {
+    "id": "heartman-taunt",
+    "fighter": "heartman",
+    "kind": "single_native_hold_pose",
+    "version": "DS1 / Director’s Cut · simulator gesture",
+    "path": "modes/echos-de-la-greve/assets/presentation-20261127/heartman-taunt.png",
+    "width": 724,
+    "height": 2172,
+    "bytes": 1663538,
+    "sha256": "5c948a734c7a1a94d55bde1d027a8be45f7c67ff79610c6731ba323d767a4503",
+    "git_blob_sha": "9a354977fca37d59c821f12013c2205c121c5b21",
+    "alpha_0_fraction": 0.5095235188181069,
+    "alpha_ge_128_fraction": 0.4733257531821373,
+    "alpha_bbox_gt_8": [
+      48,
+      23,
+      694,
+      2130
+    ],
+    "geometry": {
+      "src": "assets/presentation-20261127/heartman-taunt.png",
+      "crop": [
+        46,
+        21,
+        650,
+        2111
+      ],
+      "anchorX": 0.452308,
+      "baselineY": 0.999053,
+      "heightRatio": 1
+    },
+    "generation_file": "exec-aaa1cc4a-2f56-4534-a82e-ce55c717660c.png",
+    "native_unchanged": true
+  },
+  {
+    "id": "diehardman-taunt",
+    "fighter": "diehardman",
+    "kind": "single_native_hold_pose",
+    "version": "DS1 / Director’s Cut · simulator gesture",
+    "path": "modes/echos-de-la-greve/assets/presentation-20261127/diehardman-taunt.png",
+    "width": 824,
+    "height": 1909,
+    "bytes": 1157045,
+    "sha256": "9ea21779b4f269b26c7b89884e3e7e9b0b3d52f3a8916fcc0a1c99121bf2d5fe",
+    "git_blob_sha": "70d138ffd3db2cdc33a3ea507261753671d5d3d4",
+    "alpha_0_fraction": 0.6015234428638997,
+    "alpha_ge_128_fraction": 0.38535971662081,
+    "alpha_bbox_gt_8": [
+      103,
+      46,
+      724,
+      1862
+    ],
+    "geometry": {
+      "src": "assets/presentation-20261127/diehardman-taunt.png",
+      "crop": [
+        101,
+        44,
+        625,
+        1820
+      ],
+      "anchorX": 0.4784,
+      "baselineY": 0.998901,
+      "heightRatio": 1
+    },
+    "generation_file": "exec-c630c2d1-6ae6-430f-ab21-ef02b576aff6.png",
+    "native_unchanged": true
+  }
+]

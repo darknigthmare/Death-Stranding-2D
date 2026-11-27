@@ -5,7 +5,8 @@ const os = require('node:os');
 const vm = require('node:vm');
 const {roomService,openRelay,gameVersion} = require('../netplay-server.cjs');
 const {createHash} = require('node:crypto');
-const extensionModules=['lessons.js','lessons.css','boss-data.js','boss-guide.js','boss-guide.css'];
+const extensionModules=['lessons.js','lessons.css','boss-data.js','boss-guide.js','boss-guide.css',
+  'presentation.js','presentation.css','presentation-assets.js','progression.html','progression.js','progression.css','progression-data.js'];
 const extensionStages=['firing-range-dc','night-viaduct-ds2','red-ravine-ds2'];
 const proof={startedAt:new Date().toISOString(),node:process.version,passed:false,browser:false,nativeCanvas:false,
   method:'Real HTTP GET on localhost and byte comparison with local files; actual relay protocol functions and deterministic engine checkpoint restoration. No browser, image decoding or public-network session.',
@@ -34,6 +35,9 @@ function verifyProtocol() {
   assert.equal(a.tick,60);
   assert.deepEqual(a.events,retry.events);
   assert.equal(call(2,'sync',{cursor:1}).events.length,1);
+  assert.throws(() => call(1,'sync',{inputs:[[3,57,'taunt',true]]}), /Commande incorrecte/,
+    'La nouvelle commande locale reste exclue du protocole réseau à dix actions');
+  assert.equal(call(1,'sync').ack,2,'Une commande taunt rejetée ne consomme aucun numéro de série');
   for (let t=1500;t<=5000;t+=500) {now=t;call(1,'sync');}
   const pause=call(1,'sync');
   assert.equal(pause.live,false);
@@ -108,7 +112,7 @@ async function verifyNestedAssets() {
     fs.mkdirSync(bossDirectory,{recursive:true});
     const bossPose=path.join(bossDirectory,'attack.png');
     fs.writeFileSync(bossPose,'first boss pose');
-    const staticPoses=['static-20261125','static-universe-20261125','static-completion-20261125','story-completion-20261125','static-domains-20261125','static-extension-20261125'].map(folder=>{
+    const staticPoses=['static-20261125','static-universe-20261125','static-completion-20261125','story-completion-20261125','static-domains-20261125','static-extension-20261125','presentation-20261127'].map(folder=>{
       const directory=path.join(fixture,'assets',folder);
       fs.mkdirSync(directory,{recursive:true});
       const file=path.join(directory,'portrait.png');fs.writeFileSync(file,'first static pose');return file;
@@ -139,7 +143,7 @@ async function verifyNestedAssets() {
     fs.symlinkSync(external,path.join(directory,'linked-folder'));
     fs.writeFileSync(path.join(directory,'source.svg'),'<svg/>');
     assert.equal(gameVersion(fixture),initial,'Les liens symboliques et les sources sont exclus');
-    proof.checks.push('Recursive fingerprint: all five new modules and extension images participate; symlinks and source formats excluded');
+    proof.checks.push('Recursive fingerprint: presentation/progression modules and native presentation images participate; symlinks and source formats excluded');
   } finally {fs.rmSync(fixture,{recursive:true,force:true});}
 
   const servedRoot=path.resolve(__dirname,'..');
@@ -184,6 +188,10 @@ async function verifyNestedAssets() {
     vm.runInNewContext(fs.readFileSync(path.join(root,'content.js'),'utf8'),catalogue);
     vm.runInNewContext(fs.readFileSync(path.join(root,'assets.js'),'utf8'),catalogue);
     vm.runInNewContext(fs.readFileSync(path.join(root,'static-assets-data.js'),'utf8'),catalogue);
+    vm.runInNewContext(fs.readFileSync(path.join(root,'presentation-assets.js'),'utf8'),catalogue);
+    const presentationPaths=Object.values(catalogue.window.StrandPresentationAssets).map(entry=>entry.taunt.src);
+    assert.equal(presentationPaths.length,8,'Une pose native pour chacun des huit combattants');
+    assert.equal(new Set(presentationPaths).size,8,'Les huit poses sont des fichiers indépendants');
     const galleryItems=catalogue.window.StrandStaticCatalogue.items;
     assert.equal(new Set(galleryItems.map(item=>item.id)).size,galleryItems.length,'Catalogue IDs remain unique');
     const galleryPaths=[...new Set(galleryItems.map(item=>item.src))];
@@ -197,7 +205,7 @@ async function verifyNestedAssets() {
     const storyPaths=[...new Set(Object.values(catalogue.window.StrandAssets.storyFrames).flatMap(parts=>Object.values(parts).flatMap(frames=>frames.map(frame=>frame.src))))];
     assert.equal(storyPaths.length,48,'Eight complete story frame sets preserve originals and add 24 frames');
     for(const prefix of ['/','/modes/echos-de-la-greve/']){
-      for(const file of new Set(['static-assets.html','static-assets.css','static-assets.js','static-assets-data.js','campaign.js','campaign.css','input.js','input.css','moves-data.js','relationships.js',...extensionModules,...galleryPaths,...stagePaths,...storyPaths])){
+      for(const file of new Set(['static-assets.html','static-assets.css','static-assets.js','static-assets-data.js','campaign.js','campaign.css','input.js','input.css','moves-data.js','relationships.js',...extensionModules,...galleryPaths,...stagePaths,...storyPaths,...presentationPaths])){
         const response=await fetch(origin+prefix+file);
         assert.equal(response.status,200,prefix+file+' accessible');
         if(file.endsWith('.png'))assert.equal(response.headers.get('content-type'),'image/png');
@@ -207,15 +215,30 @@ async function verifyNestedAssets() {
     }
     const documents=new Set([...catalogue.window.StrandStaticCatalogue.items.flatMap(item=>[item.bible,item.reference]).filter(Boolean),
       '../../docs/combat/ACTIONS_ET_IA.md','../../docs/combat/RELATIONS_SIMULATEUR.md','../../docs/combat/BOSS_ET_RENCONTRES.md',
-      '../../docs/combat/production/20261125-extension/DOJO.md']);
+      '../../docs/combat/production/20261125-extension/DOJO.md','../../docs/combat/EXTENSIONS_COMBAT.md',
+      '../../docs/combat/references/Combat_Games_Guide_General_v1.0.txt',
+      '../../docs/combat/references/Combat_Games_Extension_01_Tag_Taunts_Bonus_v1.0.txt',
+      '../../docs/combat/references/Combat_Games_Extension_02_Slots_Verrouilles_Deblocages_Abonnes_v1.0.txt',
+      '../../docs/combat/references/combat-guides-provenance.json',
+      '../../docs/combat/production/20261127-extensions/BILAN.md',
+      '../../docs/combat/production/20261127-extensions/PRESENTATION.md',
+      '../../docs/combat/production/20261127-extensions/PROGRESSION.md',
+      '../../docs/combat/production/20261127-extensions/ASSETS.md']);
+    const proofRoot='../../docs/combat/production/20261127-extensions/';
+    for(const file of ['native-inventory.json','generation-provenance.json','inventory-verification.json',
+      'preexisting-image-inventory.json','presentation-native.json','presentation-verification.json',
+      'commandes-verification.json','progression-verification.json','moves-domain-verification.json',
+      'lessons-verification.json','regression-verification.json','relay-verification.json'])documents.add(proofRoot+file);
+    for(const id of Object.keys(catalogue.window.StrandContent.fighters))for(const facing of ['left','right'])documents.add(proofRoot+'presentation-renders/'+id+'-'+facing+'.webp');
+    documents.add(proofRoot+'presentation-renders/mama-viaduc-preserved.webp');
     for (const entry of documents) {
       for (const base of ['/', '/modes/echos-de-la-greve/']) {
         const target=new URL(entry,origin+base+'static-assets.html');
         const response=await fetch(target);
         assert.equal(response.status,200,'Documentation liée : '+target.pathname);
-        assert.equal(response.headers.get('content-type'),'text/plain; charset=utf-8');
+        assert.equal(response.headers.get('content-type'),target.pathname.endsWith('.webp')?'image/webp':target.pathname.endsWith('.json')?'application/json; charset=utf-8':'text/plain; charset=utf-8');
         const location=path.join(root,'../..',target.pathname);
-        assert.equal(await response.text(),fs.readFileSync(location,'utf8'),'Documentation exacte');
+        assert.deepEqual(Buffer.from(await response.arrayBuffer()),fs.readFileSync(location),'Documentation et preuves exactes');
       }
     }
     const prefixed = await fetch(origin + '/modes/echos-de-la-greve/assets/fighters/mama/atelier/guard.webp');
@@ -224,6 +247,8 @@ async function verifyNestedAssets() {
     for (const file of ['assets/fighters/mama/reconstruction.json','assets/fighters/source/mama.svg',
       'assets/fighters/mama/__proto__/guard.webp','assets/fighters/mama/%2e%2e%2f%2e%2e%2f%2e%2e%2fAGENTS.md',
       'docs/combat/production/20261125-completion/reference-research.json','docs/AGENTS.md',
+      'docs/combat/production/20261127-extensions/private.json',
+      'docs/combat/production/20261127-extensions/presentation-renders/private.webp',
       'assets/static-extension-20261125/private.json','assets/static-extension-20261125/.hidden.png',
       'assets/static-extension-20261125/%2e%2e%2f%2e%2e%2fnetplay-server.cjs',
       linkedRelative+'/linked.png',linkedRelative+'/linked-folder/secret.png',
@@ -234,10 +259,11 @@ async function verifyNestedAssets() {
     }
     proof.gameVersion=currentVersion;
     proof.catalogue={items:galleryItems.length,uniqueImages:galleryPaths.length,extensionImages:extensionPaths.length,
+      presentationImages:presentationPaths.length,
       extendedStageZones:newStages.length,extendedStageImages:stagePaths.length,storyFrames:storyPaths.length,prefixes:['/','/modes/echos-de-la-greve/']};
     proof.documents=[...new Set([...documents].map(entry=>new URL(entry,origin+'/static-assets.html').pathname))];
     proof.checks.push('Real HTTP serves exact bytes and MIME for runtime modules, catalogue, extended stages and story frames under both prefixes',
-      'Explicit public Markdown routes serve exact documents',
+      'Explicit public Markdown, original TXT guides, proof JSON and seventeen native-render WebP routes serve exact bytes',
       'Actual HTTP rejects encoded traversal, private formats, hidden files, symbolic files and symbolic directories');
     proof.sourceSha256=Object.fromEntries(['content.js','assets.js','fight.js','netplay-server.cjs','netplay.js','static-assets-data.js',...extensionModules,'qa/reseau-logique.cjs'].map(file=>[file,createHash('sha256').update(fs.readFileSync(path.join(root,file))).digest('hex')]));
     proof.passed=true;proof.completedAt=new Date().toISOString();

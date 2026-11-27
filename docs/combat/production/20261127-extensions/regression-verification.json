@@ -1,0 +1,272 @@
+{
+  "date": "2026-11-27T05:40:04.901350+00:00",
+  "baseSnapshot": "1f7a9cd615b6c60301c29cd59c93515988591e2d",
+  "scope": "Read-only regression suites for lesson/campaign/story/gallery and scenery behavior. No global source hash while combat implementation is still being completed.",
+  "historicalEvidencePolicy": "All original scripts invoked without --output. No historical report or image was overwritten. Static-scenery invoked with --logic-only, so no native render files were created.",
+  "nativeBrowser": false,
+  "suites": [
+    {
+      "suite": "lessons",
+      "command": "node modes/echos-de-la-greve/qa/lessons.cjs",
+      "initialAttempt": {
+        "exitCode": 1,
+        "status": "fixture-collision-pending-explicit-correction",
+        "checksPassedBeforeFailure": 6,
+        "checksPassedBeforeFailureNames": [
+          "OK — All eight exercises complete through real engine inputs with measured objectives",
+          "OK — Three active directional signatures are required for each of the eight fighters",
+          "OK — Punishment and confirmed cancel remain achievable with all eight movement/power profiles",
+          "OK — No-input and wrong-guard attempts cannot validate; failure can be retried",
+          "OK — Objective boundaries reject a late punish and a fresh attack during recovery of resources",
+          "OK — Progress is isolated, validates stored values and survives an unavailable store"
+        ],
+        "reason": "The existing remapping fixture assigns light to B; the new taunt default now occupies B. No collision check was disabled. Owning agent is selecting a free test key before rerun.",
+        "originalLog": "OK — All eight exercises complete through real engine inputs with measured objectives\nOK — Three active directional signatures are required for each of the eight fighters\nOK — Punishment and confirmed cancel remain achievable with all eight movement/power profiles\nOK — No-input and wrong-guard attempts cannot validate; failure can be retried\nOK — Objective boundaries reject a late punish and a fresh attack during recovery of resources\nOK — Progress is isolated, validates stored values and survives an unavailable store\nnode:assert:152\n  throw new AssertionError(obj);\n  ^\n\nAssertionError [ERR_ASSERTION]: Expected values to be strictly equal:\n\nfalse !== true\n\n    at appWorld (/workspace/scratch/7afabe13c643/Death-Stranding-2D/modes/echos-de-la-greve/qa/lessons.cjs:57:82)\n    at /workspace/scratch/7afabe13c643/Death-Stranding-2D/modes/echos-de-la-greve/qa/lessons.cjs:125:11\n    at check (/workspace/scratch/7afabe13c643/Death-Stranding-2D/modes/echos-de-la-greve/qa/lessons.cjs:9:25)\n    at Object.<anonymous> (/workspace/scratch/7afabe13c643/Death-Stranding-2D/modes/echos-de-la-greve/qa/lessons.cjs:122:1)\n    at Module._compile (node:internal/modules/cjs/loader:1929:14)\n    at Object..js (node:internal/modules/cjs/loader:2060:10)\n    at Module.load (node:internal/modules/cjs/loader:1651:32)\n    at Module._load (node:internal/modules/cjs/loader:1443:12)\n    at wrapModuleLoad (node:internal/modules/cjs/loader:261:19)\n    at Module.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:154:5) {\n  generatedMessage: true,\n  code: 'ERR_ASSERTION',\n  actual: false,\n  expected: true,\n  operator: 'strictEqual',\n  diff: 'simple'\n}\n\nNode.js v24.22.3\n"
+      },
+      "status": "passed",
+      "exitCode": 0,
+      "checksPassed": 10,
+      "checks": [
+        {
+          "name": "All eight exercises complete through real engine inputs with measured objectives",
+          "passed": true
+        },
+        {
+          "name": "Three active directional signatures are required for each of the eight fighters",
+          "passed": true
+        },
+        {
+          "name": "Punishment and confirmed cancel remain achievable with all eight movement/power profiles",
+          "passed": true
+        },
+        {
+          "name": "No-input and wrong-guard attempts cannot validate; failure can be retried",
+          "passed": true
+        },
+        {
+          "name": "Objective boundaries reject a late punish and a fresh attack during recovery of resources",
+          "passed": true
+        },
+        {
+          "name": "Progress is isolated, validates stored values and survives an unavailable store",
+          "passed": true
+        },
+        {
+          "name": "Actual application completes the full course with remapped keys, visible feedback and isolated progress",
+          "passed": true
+        },
+        {
+          "name": "Actual application pauses, retries, resumes at the beginning, and preserves free dojo controls",
+          "passed": true
+        },
+        {
+          "name": "Touch and a synthetic standard gamepad drive the same measured lesson",
+          "passed": true
+        },
+        {
+          "name": "Boss compendium surfaces: real app selection, saved Rush and campaign briefing fixtures",
+          "passed": true
+        }
+      ],
+      "nativeBrowser": false,
+      "runs": 40,
+      "evidence": "lessons-verification.json",
+      "fixtureCorrection": "The remap fixture now assigns light to semicolon instead of B, occupied by the added taunt default. Collision validation remains enabled. The owning agent reran the complete unchanged lesson scenarios successfully.",
+      "scope": "Modules réels et entrées normales ; DOM/Canvas simulés, aucune victoire ni modification de combattant injectée."
+    },
+    {
+      "suite": "campaign",
+      "command": "node modes/echos-de-la-greve/qa/campaign.cjs --require-assets",
+      "initialAttempt": {
+        "exitCode": 1,
+        "status": "blocked-missing-historical-git-objects",
+        "reason": "The unchanged suite requires an exact historical Git baseline absent from this local snapshot. No reference substitution or assertion bypass was made.",
+        "historicalReference": "c3fa7ead88f1667b80202a44dca6549784021866",
+        "originalLog": "fatal: invalid object name 'c3fa7ea'.\nnode:child_process:982\n    throw err;\n    ^\n\nError: Command failed: git show c3fa7ea:modes/echos-de-la-greve/content.js\nfatal: invalid object name 'c3fa7ea'.\n\n    at genericNodeError (node:internal/errors:986:15)\n    at wrappedFn (node:internal/errors:540:14)\n    at checkExecSyncError (node:child_process:943:11)\n    at execFileSync (node:child_process:979:15)\n    at Object.<anonymous> (/workspace/scratch/7afabe13c643/Death-Stranding-2D/modes/echos-de-la-greve/qa/campaign.cjs:190:40)\n    at Module._compile (node:internal/modules/cjs/loader:1929:14)\n    at Object..js (node:internal/modules/cjs/loader:2060:10)\n    at Module.load (node:internal/modules/cjs/loader:1651:32)\n    at Module._load (node:internal/modules/cjs/loader:1443:12)\n    at wrapModuleLoad (node:internal/modules/cjs/loader:261:19) {\n  status: 128,\n  signal: null,\n  output: [ null, '', \"fatal: invalid object name 'c3fa7ea'.\\n\" ],\n  pid: 13,\n  stdout: '',\n  stderr: \"fatal: invalid object name 'c3fa7ea'.\\n\"\n}\n\nNode.js v24.22.3\n",
+        "scope": "Campaign reached its historical route comparison; transitions and static-scenery cannot initialize their reference engines."
+      },
+      "status": "passed",
+      "exitCode": 0,
+      "checksPassed": 6,
+      "checks": [
+        "State-unit fixtures: fixed roster and DS1/DC versions, six ordered chapters, fourteen scenes, save schema, stale/duplicate/wrong result rejection, isolated key, restart retention and unavailable storage",
+        "Actual six-chapter UI traversal: four CPU duels and both isolated bosses, real victory/defeat/retry, two convoy deliveries, interludes, conclusion and retained gallery",
+        "Real keyboard and pointer controls, pause/controls/blur, chapter-start resume after return and pagehide/reload, fixed running difficulty, aftermath reload, exact independent save preservation",
+        "Static scenery preference reaches both real engines, survives reload and stays independent of reduced effects",
+        "Eight route definitions and original texts identical to c3fa7ea; 24 accessible manual sequences / 48 frames, ordered mappings, captions, clamp, enabled focus, stable live region/scrolling, arrow/modal/editable behavior and no gallery side effects",
+        "Original story route launches its real duel after the third intro illustration; primary narrative actions remain available on all three frames"
+      ],
+      "nativeBrowser": false,
+      "carousel": {
+        "sequences": 24,
+        "frames": 48
+      },
+      "imageFiles": {
+        "expected": 55,
+        "missing": []
+      },
+      "save": {
+        "key": "echos.campaign.v1",
+        "rules": "les-noeuds-rompus-20261125-v1",
+        "sceneCount": 14,
+        "chapterCount": 6,
+        "foreignKeysPreserved": [
+          "echos.v1.sound",
+          "echos.v1.chapters",
+          "echos.v1.scenes",
+          "echos.v1.cup",
+          "echos.boss.v1",
+          "echos.boss-rush.v1",
+          "ds-silent-line-v3"
+        ]
+      },
+      "assetsRequired": true,
+      "logicPassed": true,
+      "assetsComplete": true,
+      "scope": "Actual modules and game input traversal, with explicit DOM/Canvas models. No native browser or physical device."
+    },
+    {
+      "suite": "transitions",
+      "command": "node modes/echos-de-la-greve/qa/transitions.cjs",
+      "initialAttempt": {
+        "exitCode": 1,
+        "status": "blocked-missing-historical-git-objects",
+        "reason": "The unchanged suite requires an exact historical Git baseline absent from this local snapshot. No reference substitution or assertion bypass was made.",
+        "historicalReference": "2250b7c1b54b445637e0c9354133e6fecbc325de",
+        "originalLog": "fatal: path 'modes/echos-de-la-greve/fight.js' exists on disk, but not in '2250b7c1b54b445637e0c9354133e6fecbc325de'\nnode:child_process:982\n    throw err;\n    ^\n\nError: Command failed: git show 2250b7c1b54b445637e0c9354133e6fecbc325de:modes/echos-de-la-greve/fight.js\nfatal: path 'modes/echos-de-la-greve/fight.js' exists on disk, but not in '2250b7c1b54b445637e0c9354133e6fecbc325de'\n\n    at genericNodeError (node:internal/errors:986:15)\n    at wrappedFn (node:internal/errors:540:14)\n    at checkExecSyncError (node:child_process:943:11)\n    at execFileSync (node:child_process:979:15)\n    at Object.<anonymous> (/workspace/scratch/7afabe13c643/Death-Stranding-2D/modes/echos-de-la-greve/qa/transitions.cjs:10:16)\n    at Module._compile (node:internal/modules/cjs/loader:1929:14)\n    at Object..js (node:internal/modules/cjs/loader:2060:10)\n    at Module.load (node:internal/modules/cjs/loader:1651:32)\n    at Module._load (node:internal/modules/cjs/loader:1443:12)\n    at wrapModuleLoad (node:internal/modules/cjs/loader:261:19) {\n  status: 128,\n  signal: null,\n  output: [\n    null,\n    '',\n    \"fatal: path 'modes/echos-de-la-greve/fight.js' exists on disk, but not in '2250b7c1b54b445637e0c9354133e6fecbc325de'\\n\"\n  ],\n  pid: 13,\n  stdout: '',\n  stderr: \"fatal: path 'modes/echos-de-la-greve/fight.js' exists on disk, but not in '2250b7c1b54b445637e0c9354133e6fecbc325de'\\n\"\n}\n\nNode.js v24.22.3\n",
+        "scope": "Reference engine loading blocked before validation."
+      },
+      "status": "passed",
+      "exitCode": 0,
+      "checksPassed": 10,
+      "checks": [
+        "Dedicated linked configuration; ordinary terminal and standalone hangar have no link; all six quay files reused by path",
+        "200 automatic tournament draws exclude links; 200 pre-feature saved brackets resume with stages and completed results intact; stage-less legacy metadata remains untouched",
+        "8 successful edge contacts: both players × both edges × heavy/grab; 4 input-only approaches, guarded grabs, 36 exact ticks, resources and arrival control",
+        "Held movement/guard survive passage; an attack pressed during passage is not buffered and requires a new edge after arrival",
+        "6 exclusions; projectiles/markers/scans/combos cancelled; intact and broken parcel preserved; no second passage in the same round",
+        "K.O./double K.O./time/tied-time priorities, equal-frame trade, reset between rounds, actual dojo approach/reset and lethal-heavy vitality reset before passage",
+        "5 JSON restore positions, 650 static/animated checkpoint comparisons, 7 incompatible restores rejected atomically",
+        "384 unchanged ordinary checkpoints, including the standalone hangar; four representative kits on every unlinked configuration",
+        "Full input-only linked match, complete replay state parity, two clients with delayed commands and rollback to the exact same final checkpoint",
+        "Local pause freezes passage, resumption arrives once, stop during passage cancels frames and an obsolete callback cannot mutate a new ordinary match"
+      ],
+      "nativeBrowser": false,
+      "historicalReference": "2250b7c1b54b445637e0c9354133e6fecbc325de",
+      "cases": 8,
+      "baselineComparisons": 384,
+      "staticComparisons": 650,
+      "recording": {
+        "ticks": 802,
+        "events": 25,
+        "stageRules": "terminal-quay-hangar@1",
+        "winner": 1,
+        "replaySnapshotsCompared": 802,
+        "networkRewinds": 13,
+        "networkZoneChangesAfterRewind": 1
+      },
+      "scope": "Actual deterministic duel engine; boundary checkpoint fixtures and input-only complete linked duel/replay/late-input reconciliation. No native browser."
+    },
+    {
+      "suite": "static-scenery",
+      "command": "node modes/echos-de-la-greve/qa/static-scenery.cjs --baseline=1f7a9cd615b6c60301c29cd59c93515988591e2d --logic-only",
+      "status": "passed",
+      "exitCode": 0,
+      "nativeBrowser": false,
+      "nativeCanvas": false,
+      "baselineCommit": "1f7a9cd615b6c60301c29cd59c93515988591e2d",
+      "historicalDefault": "c3fa7ead88f1667b80202a44dca6549784021866",
+      "baselineExplicit": true,
+      "baselineMethod": "Previous engines and current engines receive the same current content/assets; only runtime changes are compared.",
+      "baselineOptionChange": "An explicit --baseline option was added while preserving the original historical default. No checkpoint equality assertion or test criterion changed.",
+      "counts": {
+        "staticAnimatedCheckpoints": 1800,
+        "baselineCheckpoints": 1800,
+        "bossStaticAnimatedCheckpoints": 432,
+        "bossBaselineCheckpoints": 432,
+        "preferenceChanges": 400
+      },
+      "checks": [
+        "Eight fighters on every current arena: static/animated and previous/current duel checkpoints, toggles, reduced-effects independence and rollback",
+        "Six bosses with all eight fighters: static/animated and previous/current checkpoints remain identical"
+      ],
+      "catalogue": {
+        "fighters": 8,
+        "places": 23,
+        "configurations": 25
+      },
+      "historicalDefaultAttempt": {
+        "suite": "static-scenery",
+        "command": "node modes/echos-de-la-greve/qa/static-scenery.cjs --logic-only",
+        "initialAttempt": {
+          "exitCode": 1,
+          "status": "blocked-missing-historical-git-objects",
+          "reason": "The unchanged suite requires an exact historical Git baseline absent from this local snapshot. No reference substitution or assertion bypass was made.",
+          "historicalReference": "c3fa7ead88f1667b80202a44dca6549784021866",
+          "originalLog": "fatal: path 'modes/echos-de-la-greve/fight.js' exists on disk, but not in 'c3fa7ead88f1667b80202a44dca6549784021866'\nnode:child_process:982\n    throw err;\n    ^\n\nError: Command failed: git show c3fa7ead88f1667b80202a44dca6549784021866:modes/echos-de-la-greve/fight.js\nfatal: path 'modes/echos-de-la-greve/fight.js' exists on disk, but not in 'c3fa7ead88f1667b80202a44dca6549784021866'\n\n    at genericNodeError (node:internal/errors:986:15)\n    at wrappedFn (node:internal/errors:540:14)\n    at checkExecSyncError (node:child_process:943:11)\n    at execFileSync (node:child_process:979:15)\n    at previous (/workspace/scratch/7afabe13c643/Death-Stranding-2D/modes/echos-de-la-greve/qa/static-scenery.cjs:12:22)\n    at Object.<anonymous> (/workspace/scratch/7afabe13c643/Death-Stranding-2D/modes/echos-de-la-greve/qa/static-scenery.cjs:13:16)\n    at Module._compile (node:internal/modules/cjs/loader:1929:14)\n    at Object..js (node:internal/modules/cjs/loader:2060:10)\n    at Module.load (node:internal/modules/cjs/loader:1651:32)\n    at Module._load (node:internal/modules/cjs/loader:1443:12) {\n  status: 128,\n  signal: null,\n  output: [\n    null,\n    '',\n    \"fatal: path 'modes/echos-de-la-greve/fight.js' exists on disk, but not in 'c3fa7ead88f1667b80202a44dca6549784021866'\\n\"\n  ],\n  pid: 13,\n  stdout: '',\n  stderr: \"fatal: path 'modes/echos-de-la-greve/fight.js' exists on disk, but not in 'c3fa7ead88f1667b80202a44dca6549784021866'\\n\"\n}\n\nNode.js v24.22.3\n",
+          "scope": "Reference engine loading blocked before validation."
+        },
+        "status": "failed-historical-baseline-scope",
+        "exitCode": 1,
+        "reason": "The historical reference c3fa7ea predates the terminal-linked stage feature. At terminal-linked / sam the exact checkpoint comparison finds the current state.link field, absent in the reference. The same stageLinks implementation already exists in the untouched main snapshot 1f7a9cd; no suite assertion or reference was replaced.",
+        "historicalReference": "c3fa7ead88f1667b80202a44dca6549784021866",
+        "failureLog": "node:assert:152\n  throw new AssertionError(obj);\n  ^\n\nAssertionError [ERR_ASSERTION]: Prior/current duel parity: terminal-linked / sam\n+ actual - expected\n... Skipped lines\n\n  {\n    particles: 782,\n    simulation: 2456,\n    state: {\n      beat: 7,\n...\n      hstop: 0,\n+     link: {\n+       attacker: 0,\n+       id: 'terminal-quay-hangar',\n+       side: 0,\n+       used: 0,\n+       version: 1,\n+       zone: 'terminal'\n+     },\n      parcel: null,\n      phase: 'fight',\n      phaseTicks: 0,\n      reason: '',\n      remaining: 4493,\n\n    at Object.<anonymous> (/workspace/scratch/7afabe13c643/Death-Stranding-2D/modes/echos-de-la-greve/qa/static-scenery.cjs:51:12)\n    at Module._compile (node:internal/modules/cjs/loader:1929:14)\n    at Object..js (node:internal/modules/cjs/loader:2060:10)\n    at Module.load (node:internal/modules/cjs/loader:1651:32)\n    at Module._load (node:internal/modules/cjs/loader:1443:12)\n    at wrapModuleLoad (node:internal/modules/cjs/loader:261:19)\n    at Module.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:154:5)\n    at node:internal/main/run_main_module:33:47 {\n  generatedMessage: false,\n  code: 'ERR_ASSERTION',\n  actual: {\n    state: {\n      wins: [ 0, 0 ],\n      round: 1,\n      tick: 79,\n      beat: 7,\n      phase: 'fight',\n      phaseTicks: 0,\n      remaining: 4493,\n      f: [\n        {\n          id: 'sam',\n          spec: {\n            name: 'Sam Porter Bridges',\n            short: 'SAM',\n            suit: '#365570',\n            cloth: '#506e85',\n            trim: '#ffad57',\n            metal: '#a8c5cd',\n            skin: '#c0947e',\n            h: 176,\n            speed: 4.4,\n            power: 1,\n            move: 'Bola de liaison',\n            end: 'Cargaison sécurisée'\n          },\n          x: 462,\n          y: 0,\n          vx: 0,\n          vy: 0,\n          face: 1,\n          hp: 100,\n          balance: 100,\n          chiral: 42.17499999999999,\n          keys: { guard: true },\n          taps: {},\n          queue: [],\n          act: null,\n          marker: null,\n          stun: 0,\n          blockStun: 0,\n          dash: 0,\n          drift: 0,\n          crouch: false,\n          guard: true,\n          flash: 0,\n          postHit: 0,\n          walk: 0,\n          combo: 0,\n          comboTTL: 0,\n          aiWait: 0,\n          grounded: true,\n          lastMove: '',\n          notice: '',\n          noticeTTL: 0\n        },\n        {\n          id: 'higgs',\n          spec: {\n            name: 'Higgs Monaghan',\n            short: 'HIGGS',\n            suit: '#292936',\n            cloth: '#46414b',\n            trim: '#d8a34a',\n            metal: '#ecd08b',\n            skin: '#bd9a56',\n            h: 184,\n            speed: 4.05,\n            power: 1.06,\n            move: 'Marée noire',\n            end: 'Rideau de goudron'\n          },\n          x: 818,\n          y: 0,\n          vx: 0,\n          vy: 0,\n          face: -1,\n          hp: 100,\n          balance: 100,\n          chiral: 42.17499999999999,\n          keys: {},\n          taps: {},\n          queue: [],\n          act: null,\n          marker: null,\n          stun: 0,\n          blockStun: 0,\n          dash: 0,\n          drift: 0,\n          crouch: false,\n          guard: false,\n          flash: 0,\n          postHit: 0,\n          walk: 0,\n          combo: 0,\n          comboTTL: 0,\n          aiWait: 0,\n          grounded: true,\n          lastMove: '',\n          notice: '',\n          noticeTTL: 0\n        }\n      ],\n      shots: [],\n      sparks: [],\n      hstop: 0,\n      shake: 0,\n      winner: 0,\n      finisher: false,\n      reason: '',\n      camera: 0,\n      sudden: false,\n      parcel: null,\n      link: {\n        id: 'terminal-quay-hangar',\n        version: 1,\n        zone: 'terminal',\n        used: 0,\n        side: 0,\n        attacker: 0\n      }\n    },\n    particles: 782,\n    simulation: 2456\n  },\n  expected: {\n    state: {\n      wins: [ 0, 0 ],\n      round: 1,\n      tick: 79,\n      beat: 7,\n      phase: 'fight',\n      phaseTicks: 0,\n      remaining: 4493,\n      f: [\n        {\n          id: 'sam',\n          spec: {\n            name: 'Sam Porter Bridges',\n            short: 'SAM',\n            suit: '#365570',\n            cloth: '#506e85',\n            trim: '#ffad57',\n            metal: '#a8c5cd',\n            skin: '#c0947e',\n            h: 176,\n            speed: 4.4,\n            power: 1,\n            move: 'Bola de liaison',\n            end: 'Cargaison sécurisée'\n          },\n          x: 462,\n          y: 0,\n          vx: 0,\n          vy: 0,\n          face: 1,\n          hp: 100,\n          balance: 100,\n          chiral: 42.17499999999999,\n          keys: { guard: true },\n          taps: {},\n          queue: [],\n          act: null,\n          marker: null,\n          stun: 0,\n          blockStun: 0,\n          dash: 0,\n          drift: 0,\n          crouch: false,\n          guard: true,\n          flash: 0,\n          postHit: 0,\n          walk: 0,\n          combo: 0,\n          comboTTL: 0,\n          aiWait: 0,\n          grounded: true,\n          lastMove: '',\n          notice: '',\n          noticeTTL: 0\n        },\n        {\n          id: 'higgs',\n          spec: {\n            name: 'Higgs Monaghan',\n            short: 'HIGGS',\n            suit: '#292936',\n            cloth: '#46414b',\n            trim: '#d8a34a',\n            metal: '#ecd08b',\n            skin: '#bd9a56',\n            h: 184,\n            speed: 4.05,\n            power: 1.06,\n            move: 'Marée noire',\n            end: 'Rideau de goudron'\n          },\n          x: 818,\n          y: 0,\n          vx: 0,\n          vy: 0,\n          face: -1,\n          hp: 100,\n          balance: 100,\n          chiral: 42.17499999999999,\n          keys: {},\n          taps: {},\n          queue: [],\n          act: null,\n          marker: null,\n          stun: 0,\n          blockStun: 0,\n          dash: 0,\n          drift: 0,\n          crouch: false,\n          guard: false,\n          flash: 0,\n          postHit: 0,\n          walk: 0,\n          combo: 0,\n          comboTTL: 0,\n          aiWait: 0,\n          grounded: true,\n          lastMove: '',\n          notice: '',\n          noticeTTL: 0\n        }\n      ],\n      shots: [],\n      sparks: [],\n      hstop: 0,\n      shake: 0,\n      winner: 0,\n      finisher: false,\n      reason: '',\n      camera: 0,\n      sudden: false,\n      parcel: null\n    },\n    particles: 782,\n    simulation: 2456\n  },\n  operator: 'deepStrictEqual',\n  diff: 'simple'\n}\n\nNode.js v24.22.3\n",
+        "preExistingFeatureEvidence": {
+          "beforeCurrentLotCommit": "1f7a9cd615b6c60301c29cd59c93515988591e2d",
+          "file": "modes/echos-de-la-greve/fight.js",
+          "presentInMainSnapshot": [
+            "const stageLinks = host.StrandContent?.stageLinks || {};",
+            "if (Object.hasOwn(stageLinks,stage)) m.link=freshLink(stageLinks[stage]);",
+            "if (match.link) state.link=match.link;"
+          ],
+          "stageLinksOccurrencesInHistoricalReference": 0
+        },
+        "scope": "Static/animated parity checks begin, but the suite stops at an older/current checkpoint comparison; a full suite pass is not claimed."
+      },
+      "scope": "Actual duel and Boss engines compared against the exact main snapshot that begins this lot, using current content and assets. Logic-only; no rendered pixel or browser validation."
+    },
+    {
+      "suite": "static-gallery",
+      "command": "node modes/echos-de-la-greve/qa/static-gallery.cjs",
+      "exitCode": 0,
+      "status": "passed",
+      "checksPassed": 17,
+      "checks": [
+        "The HTML exposes all categories, labeled work/background selectors and native button/dialog controls.",
+        "Work and category filters intersect in either order and preserve accessible pressed states.",
+        "Empty intersections offer a reset that restores both filters, the total and a visible focus target.",
+        "Works and versions are presented as text in both cards and viewer; image proportions use native dimensions.",
+        "Viewer and card downloads point to the same original PNG and retain a descriptive accessible name.",
+        "Zoom toggles fitted/original state, scroll accessibility, helper text and scroll origin.",
+        "Closing clears the displayed source, resets zoom and returns focus to the opener or a visible fallback.",
+        "Backdrop hit testing closes outside the dialog while an inside click preserves it.",
+        "Missing images leave both filtered and total counts; absent catalogues have a safe empty state.",
+        "The background selector and non-dialog fallback preserve their supported behavior.",
+        "Costume and vehicle filters keep separate fixed-art entries and expose their qualified documentation.",
+        "Every real catalogue entry has a unique ID, a supported category and an original PNG header at its declared size.",
+        "New version links resolve to their exact documentation file and heading or explicit ID.",
+        "New domain catalogue cards retain the simulator distinction and resolve both documentation anchors.",
+        "Extension cards preserve source boundaries and resolve both documentation anchors.",
+        "The four added Archives portraits retain the same work/version, image and measured dimensions as the catalogue.",
+        "All work/category combinations match the real catalogue without a hard-coded item total."
+      ],
+      "catalogueTotal": 65,
+      "archiveImages": 16,
+      "nativeBrowser": false,
+      "scope": "Shipped gallery controller in a simulated DOM; actual catalogue PNG headers/dimensions and Archives markup"
+    }
+  ],
+  "complete": true,
+  "allSuitesPassed": true,
+  "summary": {
+    "passed": 5,
+    "blocked": 0,
+    "historicalDefaultMismatchRetained": 1,
+    "note": "The five requested suites pass in their recorded scopes. Static-scenery uses the exact starting main commit through an explicit option; its earlier default c3fa7ea mismatch remains documented. No equality assertion was bypassed. No historical output was overwritten."
+  },
+  "historicalObjectsRecovered": [
+    "2250b7c1b54b445637e0c9354133e6fecbc325de",
+    "c3fa7ead88f1667b80202a44dca6549784021866"
+  ],
+  "historicalDefaultAllPassed": false
+}

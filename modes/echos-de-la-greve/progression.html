@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <title>Dossiers de liaison · Échos de la Grève</title>
+  <link rel="stylesheet" href="progression.css">
+  <script defer src="content.js"></script>
+  <script defer src="assets.js"></script>
+  <script defer src="static-assets-data.js"></script>
+  <script defer src="progression-data.js"></script>
+  <script defer src="progression.js"></script>
+</head>
+<body>
+  <a class="skip" href="#dossiers">Aller aux dossiers</a>
+  <header class="masthead"><a href="index.html" class="return">← Échos de la Grève</a><span>BRIDGES / ARCHIVES DU SIMULATEUR</span><span class="network">● Liaison locale</span></header>
+  <main id="liaison">
+    <section class="hero" aria-labelledby="page-title">
+      <div class="eyebrow">Registre de transmission / 02</div>
+      <h1 id="page-title">Dossiers de liaison</h1>
+      <p>Chaque parcours laisse une trace. Termine une histoire ou exerce-toi avec son combattant pour ouvrir un nouveau souvenir.</p>
+      <div class="summary" id="summary" aria-label="Avancement des souvenirs"></div>
+    </section>
+    <section class="toolbar" aria-label="Filtres des dossiers">
+      <label>Catégorie<select id="category"><option value="memories">Souvenirs</option><option value="fighters">Combattants</option><option value="costumes">Tenues</option><option value="stages">Arènes</option><option value="modes">Modes</option><option value="future">Bases DS2</option><option value="all">Tous les dossiers</option></select></label>
+      <label>Rechercher<input id="search" type="search" placeholder="Nom ou lieu" autocomplete="off"></label>
+      <label class="check"><input id="hide-future" type="checkbox" checked>Masquer les identités des bases DS2</label>
+      <button id="refresh" type="button">Actualiser les acquis</button>
+    </section>
+    <p id="save-notice" class="notice" role="status" aria-live="polite"></p>
+    <section id="dossiers" tabindex="-1" aria-label="Dossiers disponibles"><p class="result-count" id="result-count" aria-live="polite"></p><div id="cards" class="cards"></div></section>
+    <section class="ledger-note" aria-labelledby="access-title"><h2 id="access-title">Des acquis qui restent</h2><p>Les huit combattants, leurs tenues disponibles, les arènes et les modes déjà jouables conservent leur accès. Les nouveaux souvenirs sont attribués automatiquement et restent dans ce navigateur, même si tu recommences une histoire.</p><p>Les bases DS2 sans kit portent la mention « En préparation ». Elles ne sont pas verrouillées par une épreuve. Le masquage des identités s’applique à cette page uniquement ; les galeries et les combats peuvent montrer ces apparences.</p><details><summary>Soutiens et accès externes</summary><p>Aucune offre d’abonnement n’est active dans le jeu. La liaison à un service de soutien reste à développer ; aucun paiement, compte lié ou droit d’accès abonné n’est vérifié ici. Les récompenses de cette page s’obtiennent en jouant.</p></details></section>
+  </main>
+  <dialog id="dossier-dialog" aria-labelledby="dossier-title"><div class="dialog-top"><span class="eyebrow">Dossier de liaison</span><button id="close-dossier" type="button" aria-label="Fermer le dossier">Fermer ×</button></div><div id="dossier-content"></div></dialog>
+  <footer>Échos de la Grève · Interface originale du simulateur. Les souvenirs sont des créations du projet, distinctes des événements officiels de Death Stranding.<a href="../../docs/combat/EXTENSIONS_COMBAT.md">Lire les règles et la bible ↗</a></footer>
+  <noscript><p class="notice">Active JavaScript pour consulter les dossiers et les conditions. Les <a href="index.html">modes de combat</a> restent accessibles depuis leur accueil.</p></noscript>
+</body>
+</html>

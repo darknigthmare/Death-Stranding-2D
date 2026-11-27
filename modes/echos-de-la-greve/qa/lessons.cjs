@@ -120,7 +120,7 @@ check('Progress is isolated, validates stored values and survives an unavailable
   const unavailable=make({writeError:true}).host.StrandLessons.createStore();assert(unavailable.complete('distance','sam'));assert.equal(unavailable.progress().saved,false);assert.equal(unavailable.progress().completed.distance.runs,1);
 });
 check('Actual application completes the full course with remapped keys, visible feedback and isolated progress',()=>{
-  const remap={right:'e',light:'b',heavy:'c',special:'v',guard:'x',down:'n'},keys={left:'q',right:'e',up:'z',down:'n',guard:'x',light:'b',heavy:'c',special:'v',throw:'t'};
+  const remap={right:'e',light:';',heavy:'c',special:'v',guard:'x',down:'n'},keys={left:'q',right:'e',up:'z',down:'n',guard:'x',light:';',heavy:'c',special:'v',throw:'t'};
   const storage=new Map([['echos.v1.chapters','{"sam":2}'],['echos.v1.scenes','{"sam:intro":true}']]),before=new Map(storage);
   const a=appWorld({storage,remap});a.click('[data-act="mode"][data-mode="training"]');a.click('[data-act="lessons"]');
   assert.equal(a.document.querySelectorAll('.lessonCard').length,8);

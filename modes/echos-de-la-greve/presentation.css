@@ -1,0 +1,25 @@
+.presentationPanel{margin:1.3rem 0 1.6rem;border:1px solid #41616a;background:#102126;border-radius:12px;overflow:hidden;color:#d4e7e9}
+.presentationHeading{padding:1rem 1.2rem;border-bottom:1px solid #304950;display:flex;align-items:baseline;justify-content:space-between;gap:1.4rem}
+.presentationHeading h2{font-size:1.05rem;margin:0;color:#edf5f1;white-space:nowrap}
+.presentationHeading p{font-size:.82rem;margin:0;color:#b5cdd2;max-width:32rem}
+.presentationCast{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1px;background:#304950}
+.presentationSlot{display:grid;grid-template-columns:minmax(100px,40%) 1fr;align-items:center;min-height:220px;background:radial-gradient(ellipse at 25% 85%,#25424a 0,#102126 68%);overflow:hidden}
+.presentationViewport{height:220px;position:relative;overflow:hidden;isolation:isolate}
+.presentationViewport:after{content:"";position:absolute;bottom:14px;left:14%;right:14%;height:3px;background:#78b6bf;opacity:.4}
+.presentationActor{position:absolute!important;inset:8px 3% 15px!important;width:94%!important;height:calc(100% - 23px)!important;object-fit:contain!important;object-position:center bottom!important;filter:drop-shadow(0 8px 7px #081316);pointer-events:none;z-index:1}
+.presentationActor.presentationCurrent{opacity:1}
+.presentationEntering{animation:presentation-arrive .26s ease-out both}
+.presentationLeaving{animation:presentation-depart .42s ease-in both;z-index:2}
+.presentationCopy{padding:1rem 1rem 1rem .5rem;min-width:0}
+.presentationCopy h3{font-size:1.18rem;margin:.3rem 0;color:#eff6f1}
+.presentationCopy p{color:#b8cfd3;font-size:.78rem;margin:.35rem 0 .75rem}
+.presentationCopy strong{font-size:.86rem;color:#ebcc8c;font-weight:500}
+.presentationCopy .kicker{font-size:.66rem;letter-spacing:.06em}
+.presentationStatus{margin:.75rem 1.2rem 0;color:#d7e9e9;font-size:.8rem;min-height:1.3em}
+.presentationHint{margin:.35rem 1.2rem .9rem;color:#a6bfc5;font-size:.75rem}
+.presentationReduced .presentationActor{animation:none!important;transform:none!important}
+.presentationReduced .presentationLeaving{display:none}
+@keyframes presentation-arrive{from{opacity:.15;transform:translateX(22px)}to{opacity:1;transform:translateX(0)}}
+@keyframes presentation-depart{from{opacity:.85;transform:translateY(0) scale(1)}to{opacity:0;transform:translateY(14px) scale(.92)}}
+@media(max-width:650px){.presentationHeading{display:block}.presentationHeading p{margin-top:.4rem}.presentationCast{grid-template-columns:1fr}.presentationViewport{height:190px}.presentationSlot{min-height:190px}.presentationCopy h3{font-size:1.05rem}}
+@media(prefers-reduced-motion:reduce){.presentationActor{animation:none!important;transform:none!important}.presentationLeaving{display:none}}

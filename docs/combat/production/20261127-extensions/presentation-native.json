@@ -1,0 +1,2119 @@
+{
+  "date": "2026-11-27T05:43:51.273Z",
+  "passed": true,
+  "browser": false,
+  "nativeCanvas": true,
+  "htmlLayoutRendered": false,
+  "hardwareGamepadTested": false,
+  "nativeTextRenderingAvailable": true,
+  "fontFamilies": 250,
+  "method": "Native PNG decode, unchanged source hashes, real StrandFight rendering at 1280 × 720. Gestures triggered by ordinary logical input, no fighter-state mutation. Both actual draw-transform signs checked for eight fighters; Mama viaduc checked separately.",
+  "limits": [
+    "Native Canvas captures do not validate HTML menu layout or hardware controls."
+  ],
+  "geometry": [
+    {
+      "id": "sam",
+      "path": "assets/presentation-20261127/sam-taunt.png",
+      "width": 854,
+      "height": 1840,
+      "sha256": "e27d85d0508104f14000b63b82d7001baecd9ddc0e72fb53056cfe23bcb6ffaf",
+      "transparentPixels": 731918,
+      "visiblePixels": 839442,
+      "crop": [
+        3,
+        2,
+        845,
+        1830
+      ],
+      "anchorX": 0.51716,
+      "baselineY": 0.998907,
+      "heightRatio": 1
+    },
+    {
+      "id": "fragile",
+      "path": "assets/presentation-20261127/fragile-taunt.png",
+      "width": 971,
+      "height": 1619,
+      "sha256": "45f1d309f5d626bd2813f60c7fe2eb252fb477cacad6d666e9cb22ef3fcfd148",
+      "transparentPixels": 1029033,
+      "visiblePixels": 543016,
+      "crop": [
+        147,
+        4,
+        792,
+        1577
+      ],
+      "anchorX": 0.489899,
+      "baselineY": 0.998732,
+      "heightRatio": 1
+    },
+    {
+      "id": "higgs",
+      "path": "assets/presentation-20261127/higgs-taunt.png",
+      "width": 900,
+      "height": 1747,
+      "sha256": "7d53b3c5dc1b60660acc52f1491b18a0908265c9e0003be54fd43f562f7b3e55",
+      "transparentPixels": 732072,
+      "visiblePixels": 840228,
+      "crop": [
+        4,
+        12,
+        896,
+        1670
+      ],
+      "anchorX": 0.564732,
+      "baselineY": 0.998802,
+      "heightRatio": 1
+    },
+    {
+      "id": "cliff",
+      "path": "assets/presentation-20261127/cliff-taunt.png",
+      "width": 848,
+      "height": 1855,
+      "sha256": "cdb3942ff5ad0d39c611baff5ff1a4d54aa4b067c6eb8860768cc655decca615",
+      "transparentPixels": 795795,
+      "visiblePixels": 777245,
+      "crop": [
+        38,
+        4,
+        765,
+        1846
+      ],
+      "anchorX": 0.473203,
+      "baselineY": 0.998917,
+      "heightRatio": 1
+    },
+    {
+      "id": "mule",
+      "path": "assets/presentation-20261127/mule-taunt.png",
+      "width": 776,
+      "height": 2025,
+      "sha256": "eec719e453b6f4dd1419bc88c483d49cc11de203fa7246bb9338e4d305268dc6",
+      "transparentPixels": 724643,
+      "visiblePixels": 846757,
+      "crop": [
+        5,
+        13,
+        761,
+        1957
+      ],
+      "anchorX": 0.571616,
+      "baselineY": 0.998978,
+      "heightRatio": 1
+    },
+    {
+      "id": "diehardman",
+      "path": "assets/presentation-20261127/diehardman-taunt.png",
+      "width": 824,
+      "height": 1909,
+      "sha256": "9ea21779b4f269b26c7b89884e3e7e9b0b3d52f3a8916fcc0a1c99121bf2d5fe",
+      "transparentPixels": 946206,
+      "visiblePixels": 626810,
+      "crop": [
+        101,
+        44,
+        625,
+        1820
+      ],
+      "anchorX": 0.4784,
+      "baselineY": 0.998901,
+      "heightRatio": 1
+    },
+    {
+      "id": "mama",
+      "path": "assets/presentation-20261127/mama-taunt.png",
+      "width": 1024,
+      "height": 1536,
+      "sha256": "1ba61c1a54c848b1f442a691cc45f00f85f6a2464b5290480a84bfa1572dc03c",
+      "transparentPixels": 1140259,
+      "visiblePixels": 432605,
+      "crop": [
+        226,
+        18,
+        509,
+        1505
+      ],
+      "anchorX": 0.499018,
+      "baselineY": 0.998671,
+      "heightRatio": 1
+    },
+    {
+      "id": "heartman",
+      "path": "assets/presentation-20261127/heartman-taunt.png",
+      "width": 724,
+      "height": 2172,
+      "sha256": "5c948a734c7a1a94d55bde1d027a8be45f7c67ff79610c6731ba323d767a4503",
+      "transparentPixels": 801240,
+      "visiblePixels": 771288,
+      "crop": [
+        46,
+        21,
+        650,
+        2111
+      ],
+      "anchorX": 0.452308,
+      "baselineY": 0.999053,
+      "heightRatio": 1
+    }
+  ],
+  "cases": [
+    {
+      "id": "sam",
+      "player": 1,
+      "facing": "right",
+      "capture": "presentation-renders/sam-right.webp",
+      "captureSha256": "ab6ebc6cc3011c08c4047e7992c09244488a7a27fc37b1d1601ea1612bfad091",
+      "compositeAlphaMin": 255,
+      "draws": [
+        {
+          "image": "assets/presentation-20261127/sam-taunt.png",
+          "crop": [
+            3,
+            2,
+            845,
+            1830
+          ],
+          "transform": {
+            "a": 1.5380799770355225,
+            "b": 0,
+            "c": 0,
+            "d": 1.5380799770355225,
+            "e": 366.22174072265625,
+            "f": 598
+          }
+        }
+      ],
+      "snapshot": {
+        "phase": "fight",
+        "tick": 90,
+        "paused": false,
+        "round": 1,
+        "wins": [
+          0,
+          0
+        ],
+        "maxRounds": 2,
+        "time": 75,
+        "stage": "shore",
+        "mode": "local",
+        "reducedEffects": false,
+        "staticScenery": true,
+        "parcel": null,
+        "beat": 18,
+        "winner": 0,
+        "finisher": false,
+        "fighters": [
+          {
+            "id": "sam",
+            "hp": 100,
+            "balance": 100,
+            "chiral": 42,
+            "combo": 0,
+            "x": 462,
+            "y": 0,
+            "guard": false,
+            "action": "",
+            "stun": 0,
+            "move": "",
+            "marker": null,
+            "scan": null,
+            "taunt": {
+              "frame": 18,
+              "phase": "hold"
+            }
+          },
+          {
+            "id": "sam",
+            "hp": 100,
+            "balance": 100,
+            "chiral": 42,
+            "combo": 0,
+            "x": 818,
+            "y": 0,
+            "guard": false,
+            "action": "",
+            "stun": 0,
+            "move": "",
+            "marker": null,
+            "scan": null
+          }
+        ],
+        "training": {
+          "dummy": "idle",
+          "hitboxes": false
+        }
+      }
+    },
+    {
+      "id": "sam",
+      "player": 2,
+      "facing": "left",
+      "capture": "presentation-renders/sam-left.webp",
+      "captureSha256": "c4c728541a73f2efe2bc09ba2b8ac3dfb0950d28121531f72d5417655046588e",
+      "compositeAlphaMin": 255,
+      "draws": [
+        {
+          "image": "assets/presentation-20261127/sam-taunt.png",
+          "crop": [
+            3,
+            2,
+            845,
+            1830
+          ],
+          "transform": {
+            "a": -1.5380799770355225,
+            "b": 0,
+            "c": 0,
+            "d": 1.5380799770355225,
+            "e": 913.7781982421875,
+            "f": 598
+          }
+        }
+      ],
+      "snapshot": {
+        "phase": "fight",
+        "tick": 90,
+        "paused": false,
+        "round": 1,
+        "wins": [
+          0,
+          0
+        ],
+        "maxRounds": 2,
+        "time": 75,
+        "stage": "shore",
+        "mode": "local",
+        "reducedEffects": false,
+        "staticScenery": true,
+        "parcel": null,
+        "beat": 18,
+        "winner": 0,
+        "finisher": false,
+        "fighters": [
+          {
+            "id": "sam",
+            "hp": 100,
+            "balance": 100,
+            "chiral": 42,
+            "combo": 0,
+            "x": 462,
+            "y": 0,
+            "guard": false,
+            "action": "",
+            "stun": 0,
+            "move": "",
+            "marker": null,
+            "scan": null
+          },
+          {
+            "id": "sam",
+            "hp": 100,
+            "balance": 100,
+            "chiral": 42,
+            "combo": 0,
+            "x": 818,
+            "y": 0,
+            "guard": false,
+            "action": "",
+            "stun": 0,
+            "move": "",
+            "marker": null,
+            "scan": null,
+            "taunt": {
+              "frame": 18,
+              "phase": "hold"
+            }
+          }
+        ],
+        "training": {
+          "dummy": "idle",
+          "hitboxes": false
+        }
+      }
+    },
+    {
+      "id": "fragile",
+      "player": 1,
+      "facing": "right",
+      "capture": "presentation-renders/fragile-right.webp",
+      "captureSha256": "c0073e6c7822ad2dbcc510c1f340efecb16230ab135aaf4e8f4bbae4ce1f99af",
+      "compositeAlphaMin": 255,
+      "draws": [
+        {
+          "image": "assets/presentation-20261127/fragile-taunt.png",
+          "crop": [
+            147,
+            4,
+            792,
+            1577
+          ],
+          "transform": {
+            "a": 1.5380799770355225,
+            "b": 0,
+            "c": 0,
+            "d": 1.5380799770355225,
+            "e": 366.22174072265625,
+            "f": 598
+          }
+        }
+      ],
+      "snapshot": {
+        "phase": "fight",
+        "tick": 90,
+        "paused": false,
+        "round": 1,
+        "wins": [
+          0,
+          0
+        ],
+        "maxRounds": 2,
+        "time": 75,
+        "stage": "shore",
+        "mode": "local",
+        "reducedEffects": false,
+        "staticScenery": true,
+        "parcel": null,
+        "beat": 18,
+        "winner": 0,
+        "finisher": false,
+        "fighters": [
+          {
+            "id": "fragile",
+            "hp": 100,
+            "balance": 100,
+            "chiral": 42,
+            "combo": 0,
+            "x": 462,
+            "y": 0,
+            "guard": false,
+            "action": "",
+            "stun": 0,
+            "move": "",
+            "marker": null,
+            "scan": null,
+            "taunt": {
+              "frame": 18,
+              "phase": "hold"
+            }
+          },
+          {
+            "id": "fragile",
+            "hp": 100,
+            "balance": 100,
+            "chiral": 42,
+            "combo": 0,
+            "x": 818,
+            "y": 0,
+            "guard": false,
+            "action": "",
+            "stun": 0,
+            "move": "",
+            "marker": null,
+            "scan": null
+          }
+        ],
+        "training": {
+          "dummy": "idle",
+          "hitboxes": false
+        }
+      }
+    },
+    {
+      "id": "fragile",
+      "player": 2,
+      "facing": "left",
+      "capture": "presentation-renders/fragile-left.webp",
+      "captureSha256": "be4f03824cdab055f990209a548e98a6f70ded310314c00b8178a9eb7313fefc",
+      "compositeAlphaMin": 255,
+      "draws": [
+        {
+          "image": "assets/presentation-20261127/fragile-taunt.png",
+          "crop": [
+            147,
+            4,
+            792,
+            1577
+          ],
+          "transform": {
+            "a": -1.5380799770355225,
+            "b": 0,
+            "c": 0,
+            "d": 1.5380799770355225,
+            "e": 913.7781982421875,
+            "f": 598
+          }
+        }
+      ],
+      "snapshot": {
+        "phase": "fight",
+        "tick": 90,
+        "paused": false,
+        "round": 1,
+        "wins": [
+          0,
+          0
+        ],
+        "maxRounds": 2,
+        "time": 75,
+        "stage": "shore",
+        "mode": "local",
+        "reducedEffects": false,
+        "staticScenery": true,
+        "parcel": null,
+        "beat": 18,
+        "winner": 0,
+        "finisher": false,
+        "fighters": [
+          {
+            "id": "fragile",
+            "hp": 100,
+            "balance": 100,
+            "chiral": 42,
+            "combo": 0,
+            "x": 462,
+            "y": 0,
+            "guard": false,
+            "action": "",
+            "stun": 0,
+            "move": "",
+            "marker": null,
+            "scan": null
+          },
+          {
+            "id": "fragile",
+            "hp": 100,
+            "balance": 100,
+            "chiral": 42,
+            "combo": 0,
+            "x": 818,
+            "y": 0,
+            "guard": false,
+            "action": "",
+            "stun": 0,
+            "move": "",
+            "marker": null,
+            "scan": null,
+            "taunt": {
+              "frame": 18,
+              "phase": "hold"
+            }
+          }
+        ],
+        "training": {
+          "dummy": "idle",
+          "hitboxes": false
+        }
+      }
+    },
+    {
+      "id": "higgs",
+      "player": 1,
+      "facing": "right",
+      "capture": "presentation-renders/higgs-right.webp",
+      "captureSha256": "35eeb29aea347e88888d88114106b9fa2f1790c5097f15488e2b300a7f8d1f76",
+      "compositeAlphaMin": 255,
+      "draws": [
+        {
+          "image": "assets/presentation-20261127/higgs-taunt.png",
+          "crop": [
+            4,
+            12,
+            896,
+            1670
+          ],
+          "transform": {
+            "a": 1.5380799770355225,
+            "b": 0,
+            "c": 0,
+            "d": 1.5380799770355225,
+            "e": 366.22174072265625,
+            "f": 598
+          }
+        }
+      ],
+      "snapshot": {
+        "phase": "fight",
+        "tick": 90,
+        "paused": false,
+        "round": 1,
+        "wins": [
+          0,
+          0
+        ],
+        "maxRounds": 2,
+        "time": 75,
+        "stage": "shore",
+        "mode": "local",
+        "reducedEffects": false,
+        "staticScenery": true,
+        "parcel": null,
+        "beat": 18,
+        "winner": 0,
+        "finisher": false,
+        "fighters": [
+          {
+            "id": "higgs",
+            "hp": 100,
+            "balance": 100,
+            "chiral": 42,
+            "combo": 0,
+            "x": 462,
+            "y": 0,
+            "guard": false,
+            "action": "",
+            "stun": 0,
+            "move": "",
+            "marker": null,
+            "scan": null,
+            "taunt": {
+              "frame": 18,
+              "phase": "hold"
+            }
+          },
+          {
+            "id": "higgs",
+            "hp": 100,
+            "balance": 100,
+            "chiral": 42,
+            "combo": 0,
+            "x": 818,
+            "y": 0,
+            "guard": false,
+            "action": "",
+            "stun": 0,
+            "move": "",
+            "marker": null,
+            "scan": null
+          }
+        ],
+        "training": {
+          "dummy": "idle",
+          "hitboxes": false
+        }
+      }
+    },
+    {
+      "id": "higgs",
+      "player": 2,
+      "facing": "left",
+      "capture": "presentation-renders/higgs-left.webp",
+      "captureSha256": "0a77ef0320e3e19814e900200465e39876704b2e8e697381c3350b01f798ab24",
+      "compositeAlphaMin": 255,
+      "draws": [
+        {
+          "image": "assets/presentation-20261127/higgs-taunt.png",
+          "crop": [
+            4,
+            12,
+            896,
+            1670
+          ],
+          "transform": {
+            "a": -1.5380799770355225,
+            "b": 0,
+            "c": 0,
+            "d": 1.5380799770355225,
+            "e": 913.7781982421875,
+            "f": 598
+          }
+        }
+      ],
+      "snapshot": {
+        "phase": "fight",
+        "tick": 90,
+        "paused": false,
+        "round": 1,
+        "wins": [
+          0,
+          0
+        ],
+        "maxRounds": 2,
+        "time": 75,
+        "stage": "shore",
+        "mode": "local",
+        "reducedEffects": false,
+        "staticScenery": true,
+        "parcel": null,
+        "beat": 18,
+        "winner": 0,
+        "finisher": false,
+        "fighters": [
+          {
+            "id": "higgs",
+            "hp": 100,
+            "balance": 100,
+            "chiral": 42,
+            "combo": 0,
+            "x": 462,
+            "y": 0,
+            "guard": false,
+            "action": "",
+            "stun": 0,
+            "move": "",
+            "marker": null,
+            "scan": null
+          },
+          {
+            "id": "higgs",
+            "hp": 100,
+            "balance": 100,
+            "chiral": 42,
+            "combo": 0,
+            "x": 818,
+            "y": 0,
+            "guard": false,
+            "action": "",
+            "stun": 0,
+            "move": "",
+            "marker": null,
+            "scan": null,
+            "taunt": {
+              "frame": 18,
+              "phase": "hold"
+            }
+          }
+        ],
+        "training": {
+          "dummy": "idle",
+          "hitboxes": false
+        }
+      }
+    },
+    {
+      "id": "cliff",
+      "player": 1,
+      "facing": "right",
+      "capture": "presentation-renders/cliff-right.webp",
+      "captureSha256": "e8e056851c38bf88d8de7ec26416068e92bd6bcacb9c267e999303ed420ea0ff",
+      "compositeAlphaMin": 255,
+      "draws": [
+        {
+          "image": "assets/presentation-20261127/cliff-taunt.png",
+          "crop": [
+            38,
+            4,
+            765,
+            1846
+          ],
+          "transform": {
+            "a": 1.5380799770355225,
+            "b": 0,
+            "c": 0,
+            "d": 1.5380799770355225,
+            "e": 366.22174072265625,
+            "f": 598
+          }
+        }
+      ],
+      "snapshot": {
+        "phase": "fight",
+        "tick": 90,
+        "paused": false,
+        "round": 1,
+        "wins": [
+          0,
+          0
+        ],
+        "maxRounds": 2,
+        "time": 75,
+        "stage": "shore",
+        "mode": "local",
+        "reducedEffects": false,
+        "staticScenery": true,
+        "parcel": null,
+        "beat": 18,
+        "winner": 0,
+        "finisher": false,
+        "fighters": [
+          {
+            "id": "cliff",
+            "hp": 100,
+            "balance": 100,
+            "chiral": 42,
+            "combo": 0,
+            "x": 462,
+            "y": 0,
+            "guard": false,
+            "action": "",
+            "stun": 0,
+            "move": "",
+            "marker": null,
+            "scan": null,
+            "taunt": {
+              "frame": 18,
+              "phase": "hold"
+            }
+          },
+          {
+            "id": "cliff",
+            "hp": 100,
+            "balance": 100,
+            "chiral": 42,
+            "combo": 0,
+            "x": 818,
+            "y": 0,
+            "guard": false,
+            "action": "",
+            "stun": 0,
+            "move": "",
+            "marker": null,
+            "scan": null
+          }
+        ],
+        "training": {
+          "dummy": "idle",
+          "hitboxes": false
+        }
+      }
+    },
+    {
+      "id": "cliff",
+      "player": 2,
+      "facing": "left",
+      "capture": "presentation-renders/cliff-left.webp",
+      "captureSha256": "fa84abd630ccc7c9653d3126defa4bc71985ed973c54ff2c9ca78f9b473caf90",
+      "compositeAlphaMin": 255,
+      "draws": [
+        {
+          "image": "assets/presentation-20261127/cliff-taunt.png",
+          "crop": [
+            38,
+            4,
+            765,
+            1846
+          ],
+          "transform": {
+            "a": -1.5380799770355225,
+            "b": 0,
+            "c": 0,
+            "d": 1.5380799770355225,
+            "e": 913.7781982421875,
+            "f": 598
+          }
+        }
+      ],
+      "snapshot": {
+        "phase": "fight",
+        "tick": 90,
+        "paused": false,
+        "round": 1,
+        "wins": [
+          0,
+          0
+        ],
+        "maxRounds": 2,
+        "time": 75,
+        "stage": "shore",
+        "mode": "local",
+        "reducedEffects": false,
+        "staticScenery": true,
+        "parcel": null,
+        "beat": 18,
+        "winner": 0,
+        "finisher": false,
+        "fighters": [
+          {
+            "id": "cliff",
+            "hp": 100,
+            "balance": 100,
+            "chiral": 42,
+            "combo": 0,
+            "x": 462,
+            "y": 0,
+            "guard": false,
+            "action": "",
+            "stun": 0,
+            "move": "",
+            "marker": null,
+            "scan": null
+          },
+          {
+            "id": "cliff",
+            "hp": 100,
+            "balance": 100,
+            "chiral": 42,
+            "combo": 0,
+            "x": 818,
+            "y": 0,
+            "guard": false,
+            "action": "",
+            "stun": 0,
+            "move": "",
+            "marker": null,
+            "scan": null,
+            "taunt": {
+              "frame": 18,
+              "phase": "hold"
+            }
+          }
+        ],
+        "training": {
+          "dummy": "idle",
+          "hitboxes": false
+        }
+      }
+    },
+    {
+      "id": "mule",
+      "player": 1,
+      "facing": "right",
+      "capture": "presentation-renders/mule-right.webp",
+      "captureSha256": "c2d6ef57a8742522f699386251a45279e016d8056e643b07ffcb410449457dfd",
+      "compositeAlphaMin": 255,
+      "draws": [
+        {
+          "image": "assets/presentation-20261127/mule-taunt.png",
+          "crop": [
+            5,
+            13,
+            761,
+            1957
+          ],
+          "transform": {
+            "a": 1.5380799770355225,
+            "b": 0,
+            "c": 0,
+            "d": 1.5380799770355225,
+            "e": 366.22174072265625,
+            "f": 598
+          }
+        }
+      ],
+      "snapshot": {
+        "phase": "fight",
+        "tick": 90,
+        "paused": false,
+        "round": 1,
+        "wins": [
+          0,
+          0
+        ],
+        "maxRounds": 2,
+        "time": 75,
+        "stage": "shore",
+        "mode": "local",
+        "reducedEffects": false,
+        "staticScenery": true,
+        "parcel": null,
+        "beat": 18,
+        "winner": 0,
+        "finisher": false,
+        "fighters": [
+          {
+            "id": "mule",
+            "hp": 100,
+            "balance": 100,
+            "chiral": 42,
+            "combo": 0,
+            "x": 462,
+            "y": 0,
+            "guard": false,
+            "action": "",
+            "stun": 0,
+            "move": "",
+            "marker": null,
+            "scan": null,
+            "taunt": {
+              "frame": 18,
+              "phase": "hold"
+            }
+          },
+          {
+            "id": "mule",
+            "hp": 100,
+            "balance": 100,
+            "chiral": 42,
+            "combo": 0,
+            "x": 818,
+            "y": 0,
+            "guard": false,
+            "action": "",
+            "stun": 0,
+            "move": "",
+            "marker": null,
+            "scan": null
+          }
+        ],
+        "training": {
+          "dummy": "idle",
+          "hitboxes": false
+        }
+      }
+    },
+    {
+      "id": "mule",
+      "player": 2,
+      "facing": "left",
+      "capture": "presentation-renders/mule-left.webp",
+      "captureSha256": "d713e4dec3752a273a64cd54bcf6670d68cbae5ee75573ec58436259ef21b42a",
+      "compositeAlphaMin": 255,
+      "draws": [
+        {
+          "image": "assets/presentation-20261127/mule-taunt.png",
+          "crop": [
+            5,
+            13,
+            761,
+            1957
+          ],
+          "transform": {
+            "a": -1.5380799770355225,
+            "b": 0,
+            "c": 0,
+            "d": 1.5380799770355225,
+            "e": 913.7781982421875,
+            "f": 598
+          }
+        }
+      ],
+      "snapshot": {
+        "phase": "fight",
+        "tick": 90,
+        "paused": false,
+        "round": 1,
+        "wins": [
+          0,
+          0
+        ],
+        "maxRounds": 2,
+        "time": 75,
+        "stage": "shore",
+        "mode": "local",
+        "reducedEffects": false,
+        "staticScenery": true,
+        "parcel": null,
+        "beat": 18,
+        "winner": 0,
+        "finisher": false,
+        "fighters": [
+          {
+            "id": "mule",
+            "hp": 100,
+            "balance": 100,
+            "chiral": 42,
+            "combo": 0,
+            "x": 462,
+            "y": 0,
+            "guard": false,
+            "action": "",
+            "stun": 0,
+            "move": "",
+            "marker": null,
+            "scan": null
+          },
+          {
+            "id": "mule",
+            "hp": 100,
+            "balance": 100,
+            "chiral": 42,
+            "combo": 0,
+            "x": 818,
+            "y": 0,
+            "guard": false,
+            "action": "",
+            "stun": 0,
+            "move": "",
+            "marker": null,
+            "scan": null,
+            "taunt": {
+              "frame": 18,
+              "phase": "hold"
+            }
+          }
+        ],
+        "training": {
+          "dummy": "idle",
+          "hitboxes": false
+        }
+      }
+    },
+    {
+      "id": "diehardman",
+      "player": 1,
+      "facing": "right",
+      "capture": "presentation-renders/diehardman-right.webp",
+      "captureSha256": "dea0a3aac03f67cc9295659a9411afa9cd627fa08cc06f6c111ae877553b7f8e",
+      "compositeAlphaMin": 255,
+      "draws": [
+        {
+          "image": "assets/presentation-20261127/diehardman-taunt.png",
+          "crop": [
+            101,
+            44,
+            625,
+            1820
+          ],
+          "transform": {
+            "a": 1.5380799770355225,
+            "b": 0,
+            "c": 0,
+            "d": 1.5380799770355225,
+            "e": 366.22174072265625,
+            "f": 598
+          }
+        }
+      ],
+      "snapshot": {
+        "phase": "fight",
+        "tick": 90,
+        "paused": false,
+        "round": 1,
+        "wins": [
+          0,
+          0
+        ],
+        "maxRounds": 2,
+        "time": 75,
+        "stage": "shore",
+        "mode": "local",
+        "reducedEffects": false,
+        "staticScenery": true,
+        "parcel": null,
+        "beat": 18,
+        "winner": 0,
+        "finisher": false,
+        "fighters": [
+          {
+            "id": "diehardman",
+            "hp": 100,
+            "balance": 100,
+            "chiral": 42,
+            "combo": 0,
+            "x": 462,
+            "y": 0,
+            "guard": false,
+            "action": "",
+            "stun": 0,
+            "move": "",
+            "marker": null,
+            "scan": null,
+            "taunt": {
+              "frame": 18,
+              "phase": "hold"
+            }
+          },
+          {
+            "id": "diehardman",
+            "hp": 100,
+            "balance": 100,
+            "chiral": 42,
+            "combo": 0,
+            "x": 818,
+            "y": 0,
+            "guard": false,
+            "action": "",
+            "stun": 0,
+            "move": "",
+            "marker": null,
+            "scan": null
+          }
+        ],
+        "training": {
+          "dummy": "idle",
+          "hitboxes": false
+        }
+      }
+    },
+    {
+      "id": "diehardman",
+      "player": 2,
+      "facing": "left",
+      "capture": "presentation-renders/diehardman-left.webp",
+      "captureSha256": "ebb4e48246b30cef24fc7bf4088a4361d4541220165107156c5d84dfa0fc0b75",
+      "compositeAlphaMin": 255,
+      "draws": [
+        {
+          "image": "assets/presentation-20261127/diehardman-taunt.png",
+          "crop": [
+            101,
+            44,
+            625,
+            1820
+          ],
+          "transform": {
+            "a": -1.5380799770355225,
+            "b": 0,
+            "c": 0,
+            "d": 1.5380799770355225,
+            "e": 913.7781982421875,
+            "f": 598
+          }
+        }
+      ],
+      "snapshot": {
+        "phase": "fight",
+        "tick": 90,
+        "paused": false,
+        "round": 1,
+        "wins": [
+          0,
+          0
+        ],
+        "maxRounds": 2,
+        "time": 75,
+        "stage": "shore",
+        "mode": "local",
+        "reducedEffects": false,
+        "staticScenery": true,
+        "parcel": null,
+        "beat": 18,
+        "winner": 0,
+        "finisher": false,
+        "fighters": [
+          {
+            "id": "diehardman",
+            "hp": 100,
+            "balance": 100,
+            "chiral": 42,
+            "combo": 0,
+            "x": 462,
+            "y": 0,
+            "guard": false,
+            "action": "",
+            "stun": 0,
+            "move": "",
+            "marker": null,
+            "scan": null
+          },
+          {
+            "id": "diehardman",
+            "hp": 100,
+            "balance": 100,
+            "chiral": 42,
+            "combo": 0,
+            "x": 818,
+            "y": 0,
+            "guard": false,
+            "action": "",
+            "stun": 0,
+            "move": "",
+            "marker": null,
+            "scan": null,
+            "taunt": {
+              "frame": 18,
+              "phase": "hold"
+            }
+          }
+        ],
+        "training": {
+          "dummy": "idle",
+          "hitboxes": false
+        }
+      }
+    },
+    {
+      "id": "mama",
+      "player": 1,
+      "facing": "right",
+      "capture": "presentation-renders/mama-right.webp",
+      "captureSha256": "349283095d7da4b27a83231dd8db95f28d205dfb811433d50ea15c7d04c5adc1",
+      "compositeAlphaMin": 255,
+      "draws": [
+        {
+          "image": "assets/presentation-20261127/mama-taunt.png",
+          "crop": [
+            226,
+            18,
+            509,
+            1505
+          ],
+          "transform": {
+            "a": 1.5380799770355225,
+            "b": 0,
+            "c": 0,
+            "d": 1.5380799770355225,
+            "e": 366.22174072265625,
+            "f": 598
+          }
+        }
+      ],
+      "snapshot": {
+        "phase": "fight",
+        "tick": 90,
+        "paused": false,
+        "round": 1,
+        "wins": [
+          0,
+          0
+        ],
+        "maxRounds": 2,
+        "time": 75,
+        "stage": "shore",
+        "mode": "local",
+        "reducedEffects": false,
+        "staticScenery": true,
+        "parcel": null,
+        "beat": 18,
+        "winner": 0,
+        "finisher": false,
+        "fighters": [
+          {
+            "id": "mama",
+            "hp": 100,
+            "balance": 100,
+            "chiral": 42,
+            "combo": 0,
+            "x": 462,
+            "y": 0,
+            "guard": false,
+            "action": "",
+            "stun": 0,
+            "move": "",
+            "marker": null,
+            "scan": null,
+            "taunt": {
+              "frame": 18,
+              "phase": "hold"
+            }
+          },
+          {
+            "id": "mama",
+            "hp": 100,
+            "balance": 100,
+            "chiral": 42,
+            "combo": 0,
+            "x": 818,
+            "y": 0,
+            "guard": false,
+            "action": "",
+            "stun": 0,
+            "move": "",
+            "marker": null,
+            "scan": null
+          }
+        ],
+        "training": {
+          "dummy": "idle",
+          "hitboxes": false
+        }
+      }
+    },
+    {
+      "id": "mama",
+      "player": 2,
+      "facing": "left",
+      "capture": "presentation-renders/mama-left.webp",
+      "captureSha256": "df89c74f0d87062f86b6c0c8e1a7ffdf64a69130758a043e065a38f673b42982",
+      "compositeAlphaMin": 255,
+      "draws": [
+        {
+          "image": "assets/presentation-20261127/mama-taunt.png",
+          "crop": [
+            226,
+            18,
+            509,
+            1505
+          ],
+          "transform": {
+            "a": -1.5380799770355225,
+            "b": 0,
+            "c": 0,
+            "d": 1.5380799770355225,
+            "e": 913.7781982421875,
+            "f": 598
+          }
+        }
+      ],
+      "snapshot": {
+        "phase": "fight",
+        "tick": 90,
+        "paused": false,
+        "round": 1,
+        "wins": [
+          0,
+          0
+        ],
+        "maxRounds": 2,
+        "time": 75,
+        "stage": "shore",
+        "mode": "local",
+        "reducedEffects": false,
+        "staticScenery": true,
+        "parcel": null,
+        "beat": 18,
+        "winner": 0,
+        "finisher": false,
+        "fighters": [
+          {
+            "id": "mama",
+            "hp": 100,
+            "balance": 100,
+            "chiral": 42,
+            "combo": 0,
+            "x": 462,
+            "y": 0,
+            "guard": false,
+            "action": "",
+            "stun": 0,
+            "move": "",
+            "marker": null,
+            "scan": null
+          },
+          {
+            "id": "mama",
+            "hp": 100,
+            "balance": 100,
+            "chiral": 42,
+            "combo": 0,
+            "x": 818,
+            "y": 0,
+            "guard": false,
+            "action": "",
+            "stun": 0,
+            "move": "",
+            "marker": null,
+            "scan": null,
+            "taunt": {
+              "frame": 18,
+              "phase": "hold"
+            }
+          }
+        ],
+        "training": {
+          "dummy": "idle",
+          "hitboxes": false
+        }
+      }
+    },
+    {
+      "id": "heartman",
+      "player": 1,
+      "facing": "right",
+      "capture": "presentation-renders/heartman-right.webp",
+      "captureSha256": "a6df730b30acf596046961d80e1ecc0e440a356bdfa51df3d6be65b2f8563542",
+      "compositeAlphaMin": 255,
+      "draws": [
+        {
+          "image": "assets/presentation-20261127/heartman-taunt.png",
+          "crop": [
+            46,
+            21,
+            650,
+            2111
+          ],
+          "transform": {
+            "a": 1.5380799770355225,
+            "b": 0,
+            "c": 0,
+            "d": 1.5380799770355225,
+            "e": 366.22174072265625,
+            "f": 598
+          }
+        }
+      ],
+      "snapshot": {
+        "phase": "fight",
+        "tick": 90,
+        "paused": false,
+        "round": 1,
+        "wins": [
+          0,
+          0
+        ],
+        "maxRounds": 2,
+        "time": 75,
+        "stage": "shore",
+        "mode": "local",
+        "reducedEffects": false,
+        "staticScenery": true,
+        "parcel": null,
+        "beat": 18,
+        "winner": 0,
+        "finisher": false,
+        "fighters": [
+          {
+            "id": "heartman",
+            "hp": 100,
+            "balance": 100,
+            "chiral": 42,
+            "combo": 0,
+            "x": 462,
+            "y": 0,
+            "guard": false,
+            "action": "",
+            "stun": 0,
+            "move": "",
+            "marker": null,
+            "scan": null,
+            "taunt": {
+              "frame": 18,
+              "phase": "hold"
+            }
+          },
+          {
+            "id": "heartman",
+            "hp": 100,
+            "balance": 100,
+            "chiral": 42,
+            "combo": 0,
+            "x": 818,
+            "y": 0,
+            "guard": false,
+            "action": "",
+            "stun": 0,
+            "move": "",
+            "marker": null,
+            "scan": null
+          }
+        ],
+        "training": {
+          "dummy": "idle",
+          "hitboxes": false
+        }
+      }
+    },
+    {
+      "id": "heartman",
+      "player": 2,
+      "facing": "left",
+      "capture": "presentation-renders/heartman-left.webp",
+      "captureSha256": "2a0fb37c72d74bcc7238802d1b54b73fbe09f2c106c4c7251934f087aea38f82",
+      "compositeAlphaMin": 255,
+      "draws": [
+        {
+          "image": "assets/presentation-20261127/heartman-taunt.png",
+          "crop": [
+            46,
+            21,
+            650,
+            2111
+          ],
+          "transform": {
+            "a": -1.5380799770355225,
+            "b": 0,
+            "c": 0,
+            "d": 1.5380799770355225,
+            "e": 913.7781982421875,
+            "f": 598
+          }
+        }
+      ],
+      "snapshot": {
+        "phase": "fight",
+        "tick": 90,
+        "paused": false,
+        "round": 1,
+        "wins": [
+          0,
+          0
+        ],
+        "maxRounds": 2,
+        "time": 75,
+        "stage": "shore",
+        "mode": "local",
+        "reducedEffects": false,
+        "staticScenery": true,
+        "parcel": null,
+        "beat": 18,
+        "winner": 0,
+        "finisher": false,
+        "fighters": [
+          {
+            "id": "heartman",
+            "hp": 100,
+            "balance": 100,
+            "chiral": 42,
+            "combo": 0,
+            "x": 462,
+            "y": 0,
+            "guard": false,
+            "action": "",
+            "stun": 0,
+            "move": "",
+            "marker": null,
+            "scan": null
+          },
+          {
+            "id": "heartman",
+            "hp": 100,
+            "balance": 100,
+            "chiral": 42,
+            "combo": 0,
+            "x": 818,
+            "y": 0,
+            "guard": false,
+            "action": "",
+            "stun": 0,
+            "move": "",
+            "marker": null,
+            "scan": null,
+            "taunt": {
+              "frame": 18,
+              "phase": "hold"
+            }
+          }
+        ],
+        "training": {
+          "dummy": "idle",
+          "hitboxes": false
+        }
+      }
+    },
+    {
+      "id": "mama",
+      "outfit": "viaduc",
+      "player": 1,
+      "capture": "presentation-renders/mama-viaduc-preserved.webp",
+      "captureSha256": "9683626d06580cbddd570f51154630c4ff87482d96537147896c34b8d7f20479",
+      "compositeAlphaMin": 255,
+      "draws": [],
+      "snapshot": {
+        "phase": "fight",
+        "tick": 90,
+        "paused": false,
+        "round": 1,
+        "wins": [
+          0,
+          0
+        ],
+        "maxRounds": 2,
+        "time": 75,
+        "stage": "shore",
+        "mode": "local",
+        "reducedEffects": false,
+        "staticScenery": true,
+        "parcel": null,
+        "beat": 18,
+        "winner": 0,
+        "finisher": false,
+        "fighters": [
+          {
+            "id": "mama",
+            "hp": 100,
+            "balance": 100,
+            "chiral": 42,
+            "combo": 0,
+            "x": 462,
+            "y": 0,
+            "guard": false,
+            "action": "",
+            "stun": 0,
+            "move": "",
+            "marker": null,
+            "scan": null,
+            "taunt": {
+              "frame": 18,
+              "phase": "hold"
+            }
+          },
+          {
+            "id": "mama",
+            "hp": 100,
+            "balance": 100,
+            "chiral": 42,
+            "combo": 0,
+            "x": 818,
+            "y": 0,
+            "guard": false,
+            "action": "",
+            "stun": 0,
+            "move": "",
+            "marker": null,
+            "scan": null
+          }
+        ],
+        "training": {
+          "dummy": "idle",
+          "hitboxes": false
+        }
+      }
+    }
+  ],
+  "decodedImagePaths": 121,
+  "sourceSHA256": {
+    "content.js": "fe6e129844908ad3a0fa97d9e59cace35b1fb4c4cc54ba095de401bcac189578",
+    "asset-geometry-20261124.js": "61f830dc5036774529b7ecaf51f4c80386ef7f94447c55e044584e850e081934",
+    "assets.js": "4f0ae5349872b9391d7586bc98baf0baa211e83e59c7b1e4234aaf22525ecb01",
+    "presentation-assets.js": "7170f5d5a8ca770c1132cd19c2e3f80b436a322d85dec60b594ba02ec38cc949",
+    "presentation.js": "f630bed6b95bb5288f6f9a3a93afe77c6fea5e17c4e71c0f61804b9e0d1619ec",
+    "fight.js": "544e1f64c671af20c8fff4b9e1474ac0b723f44ef6c6d30e90d67ffef4233781",
+    "qa/presentation-assets.cjs": "cff2d67d957165256a9890f62d30388131576b292d60b0493c784193c42fde1b"
+  },
+  "imageSources": [
+    {
+      "path": "assets/fighters/sam-stance.webp",
+      "sha256": "9cc5ddecb03ec1ddf84b678211f4fa4a35c282d999cd3e776102cd2407a91c60"
+    },
+    {
+      "path": "assets/fighters/sam-action.webp",
+      "sha256": "d959b3e4ae4d97a5f146ae0252c4bffcbfdf85537a5b79b31c1c8a2b398e74cb"
+    },
+    {
+      "path": "assets/fighters/sam-step.webp",
+      "sha256": "42dddf61765bfdc0ddaaa09c7d816aabf99c35cfa74411151a303b2bc806c147"
+    },
+    {
+      "path": "assets/fighters/sam-hit.webp",
+      "sha256": "7fa86e3ca0ac0a0ec014cd99851e0ff7923d9742c16d65eac77996419c1f0989"
+    },
+    {
+      "path": "assets/fighters/sam/guard.png",
+      "sha256": "9ab6da9fcaab1d5cde6e39f475da7b233bf5829dd9a01f24814f2215e4eb2012"
+    },
+    {
+      "path": "assets/fighters/sam/crouch.png",
+      "sha256": "f787d9b3ba24609e7b48ee904c673115824ccc3aa85873e75761f18c2c2813c3"
+    },
+    {
+      "path": "assets/fighters/sam/rise.png",
+      "sha256": "1869e33970c12677fe53b5444a3dff6c5aa99a0dd9e0e8bcb5897b7acd29a4a3"
+    },
+    {
+      "path": "assets/fighters/sam/apex.png",
+      "sha256": "6ef109a246650a795a91c845b9ab2b8ea64e250bebd2f5017cbf51b94291a3ac"
+    },
+    {
+      "path": "assets/fighters/sam/fall.png",
+      "sha256": "8b3762a91937bbe24f9d1261b0b961f87d8ed8562e069e95d03cbb76fb92867f"
+    },
+    {
+      "path": "assets/fighters/sam-jump.png",
+      "sha256": "b403e7aaa243239137f991b9e952ba98a7a7b8ea7e518e0c537c7afe683631c8"
+    },
+    {
+      "path": "assets/presentation-20261127/sam-taunt.png",
+      "sha256": "e27d85d0508104f14000b63b82d7001baecd9ddc0e72fb53056cfe23bcb6ffaf"
+    },
+    {
+      "path": "assets/finishers/sam.webp",
+      "sha256": "e64faec19512002bae21fe079a097baff1426f1fc9a2808743f9bb9f817634e8"
+    },
+    {
+      "path": "assets/projectiles/sam.png",
+      "sha256": "43827e84f9d3a142b1f1becb2c19ca4a795b438f0c5c975f1740ae547ad30edf"
+    },
+    {
+      "path": "assets/stages/shore.webp",
+      "sha256": "df35c38ebe2fc30e6d938515bf3f04234bf43e23489acb788e5b9d240b4d69b8"
+    },
+    {
+      "path": "assets/stages/shore-sky.png",
+      "sha256": "9e4f6d40f8fd3552fab8908ec010443b2e1244e40400b44c7398d92d92a7e61d"
+    },
+    {
+      "path": "assets/stages/shore-distant.png",
+      "sha256": "5d9ec451b8f353130582c342f45d00a05b012fc3bb7873876e803efc9320cf87"
+    },
+    {
+      "path": "assets/stages/shore-midground.png",
+      "sha256": "83a7a4bac8eda094586f76e56ec27d35be51e37b6bfdef4e76eda6bfc4ecafb7"
+    },
+    {
+      "path": "assets/stages/shore-floor.png",
+      "sha256": "ab99f670b5ee4f867b44169ca2c4189a0f0cea193e865a740cf3c61e749f5202"
+    },
+    {
+      "path": "assets/stages/shore-foreground.webp",
+      "sha256": "49dea5694e0eddb313af78695f58e62fc427d45e8e7170a272739c6713c8dcc3"
+    },
+    {
+      "path": "assets/fighters/fragile-stance.webp",
+      "sha256": "ee92f760ca2c7e68623b47261db0fed472346d7ef79353f5daeb8bf9e35bf917"
+    },
+    {
+      "path": "assets/fighters/fragile-action.webp",
+      "sha256": "87536c921762e3c7e2abfbb1540dca4946effdf427340ce934a133366f7cf92d"
+    },
+    {
+      "path": "assets/fighters/fragile-step.webp",
+      "sha256": "e9e1a14d33731b81df597acd5c72ebd3638f7781bc7fd1e9afc9ea0158153289"
+    },
+    {
+      "path": "assets/fighters/fragile-hit.webp",
+      "sha256": "3fb2823cdafe76d237a065e456f6479c9116e5f4ccb9220096faee87f977551f"
+    },
+    {
+      "path": "assets/fighters/fragile/guard.png",
+      "sha256": "4e74b9bc66e42b75d16f29973126963a540e9a53424cba900b2669d2b664bf25"
+    },
+    {
+      "path": "assets/fighters/fragile/crouch.png",
+      "sha256": "6b347f10bb87ea36f328af36b4617ee7c71cdc5cc0b5863a9c263ac8c5cebe9b"
+    },
+    {
+      "path": "assets/fighters/fragile/rise.png",
+      "sha256": "337a3f215a3b6142ae733b03ac49dc035286d4bde100be94fd18c2712fadad6a"
+    },
+    {
+      "path": "assets/fighters/fragile/apex.png",
+      "sha256": "16db4ada4269572de58ff6af582bce5e940b8fd6a1bd24f1fd8495b23e7890ec"
+    },
+    {
+      "path": "assets/fighters/fragile/fall.png",
+      "sha256": "399c93011ea1fb44ceab4962787db17e0181d30fac66f18fcf9bfea6f1a54ffb"
+    },
+    {
+      "path": "assets/fighters/fragile-jump.png",
+      "sha256": "eaa3f2f511729a55ce50f3bb2e07b9ada3cf51895e74b578947ee739d69d5819"
+    },
+    {
+      "path": "assets/presentation-20261127/fragile-taunt.png",
+      "sha256": "45f1d309f5d626bd2813f60c7fe2eb252fb477cacad6d666e9cb22ef3fcfd148"
+    },
+    {
+      "path": "assets/finishers/fragile.webp",
+      "sha256": "c3d87c2b15b6fbd0a543ddab58bc9bce2f434a349070e8c1a622fb357309e40d"
+    },
+    {
+      "path": "assets/fighters/higgs/stance.png",
+      "sha256": "bef8d4aa14f693abf574639aadf5e986ab41acf2347c9c1a6277c986f73e4c6b"
+    },
+    {
+      "path": "assets/fighters/higgs/action.png",
+      "sha256": "430a1a4933b85f1d2455b1a2659aeb4add108d00204b43a783c1dbd4148f771f"
+    },
+    {
+      "path": "assets/fighters/higgs/step.png",
+      "sha256": "562ba84fdc1901b58b24d5f5c9ca55cf176896ddbf65b1b4f6d79bc153e6fd72"
+    },
+    {
+      "path": "assets/fighters/higgs/hit.png",
+      "sha256": "066a55e99d37e4c0fd54d734a856fb2a98394a83e68935db4e2d082433a7090b"
+    },
+    {
+      "path": "assets/fighters/higgs/guard.png",
+      "sha256": "0d86739bd460302353d1ec6e2f614068f8cb1f84d9c83260962b343411c70b36"
+    },
+    {
+      "path": "assets/fighters/higgs/crouch.png",
+      "sha256": "fa1d8237b01f02f4081f7ab7a1c4908f898aa855e2fee6142a6d9ba43f7d2124"
+    },
+    {
+      "path": "assets/fighters/higgs/rise.png",
+      "sha256": "a12c14b8fc16f97c012e13a4a2d6ee251fe143c99ba4122477fb0e0c2752a876"
+    },
+    {
+      "path": "assets/fighters/higgs/apex.png",
+      "sha256": "a82ad43f4e1bff933f45449532f5e62ddf2a057418b5d51248925bd71f29e1b1"
+    },
+    {
+      "path": "assets/fighters/higgs/fall.png",
+      "sha256": "9b29d90e591099f7e4d956b49aab4aa6d28b199df0200b62be58b51b926fac8a"
+    },
+    {
+      "path": "assets/fighters/higgs/jump.png",
+      "sha256": "7c7c17863537877928b9622d68930b06a6f5ac3cea5f53c76236c4eb6ed373b5"
+    },
+    {
+      "path": "assets/presentation-20261127/higgs-taunt.png",
+      "sha256": "7d53b3c5dc1b60660acc52f1491b18a0908265c9e0003be54fd43f562f7b3e55"
+    },
+    {
+      "path": "assets/finishers/higgs.webp",
+      "sha256": "7d630dcf5f53fe82c0a8797198f1f5f607c2171f7f8f39e06582635e33cf0c29"
+    },
+    {
+      "path": "assets/projectiles/higgs.png",
+      "sha256": "5daad21f052df501efb2e4d5845a26990319241d9230346bd912a052298662df"
+    },
+    {
+      "path": "assets/props/gold-imprint.png",
+      "sha256": "4972f5c23568ef4c408e6fb2015734e13089807af5fce6983641532c1fd73259"
+    },
+    {
+      "path": "assets/fighters/cliff-stance.webp",
+      "sha256": "c8161a48d1706dc688bfd33e04f05ccceea8f09dffcfe26ffae4f63ebf7f159b"
+    },
+    {
+      "path": "assets/fighters/cliff-action.webp",
+      "sha256": "d28cf0ba99e8f5f9ca7547ccdaf32faa7d0920f1f226057c8ffbba4103b8c73b"
+    },
+    {
+      "path": "assets/fighters/cliff-step.webp",
+      "sha256": "e40772de985730d29a4064069a885f1f5b07bf40429e8ba94db474c8740c5c06"
+    },
+    {
+      "path": "assets/fighters/cliff-hit.webp",
+      "sha256": "68b2f458ba55c40bb53f547fefb9c158fe8067d57e9b85adf3a13e03db228e8e"
+    },
+    {
+      "path": "assets/fighters/cliff/guard.png",
+      "sha256": "281c41ea7ce4003c6db95903620024eea9347487c918138d59c7a52e85fe9f7b"
+    },
+    {
+      "path": "assets/fighters/cliff/crouch.png",
+      "sha256": "a89624158fd4a80b26023404da1e0308fcefaa2ea81c84750a4ce1e4e7f327cc"
+    },
+    {
+      "path": "assets/fighters/cliff/rise.png",
+      "sha256": "66f83f926bf47f847cc01a03cd9ac22ce36bc014aa642432cd0b662b80326b26"
+    },
+    {
+      "path": "assets/fighters/cliff/apex.png",
+      "sha256": "a9a53ef0cb5ec64c3349f6191f67fd1e6019277ba36b931041ac01b15e0f88bf"
+    },
+    {
+      "path": "assets/fighters/cliff/fall.png",
+      "sha256": "a1ec46e55c691eed4dc5f338888cad40b8e33749ffe50e3a1113a3ed662b44d3"
+    },
+    {
+      "path": "assets/fighters/cliff-jump.png",
+      "sha256": "4fbde764023a97f6328769dfa2e95b049aabd587953e3623e7af67a4539ed464"
+    },
+    {
+      "path": "assets/presentation-20261127/cliff-taunt.png",
+      "sha256": "cdb3942ff5ad0d39c611baff5ff1a4d54aa4b067c6eb8860768cc655decca615"
+    },
+    {
+      "path": "assets/finishers/cliff.webp",
+      "sha256": "26b69adc221be8c1a1d096aad947dbb86b43772ffb7019164e3d3e37c92c2af1"
+    },
+    {
+      "path": "assets/projectiles/cliff.png",
+      "sha256": "d9deca283e4bae414929d8f1da0978e4849a70e81f99437ab2f0f61950b9c4ce"
+    },
+    {
+      "path": "assets/projectiles/recall.png",
+      "sha256": "4d38d4d172ae74fec7b3ed04a7bed87c48e2dbf47d6b07d18e1dd6728d85e849"
+    },
+    {
+      "path": "assets/fighters/mule-stance.webp",
+      "sha256": "2c1b3833af62ab412c1b3a4df749cc69ecf72d9d982063b8fd127f987fa92d80"
+    },
+    {
+      "path": "assets/fighters/mule-action.webp",
+      "sha256": "72a438ac9331000b7316abbd9b31ee922243efe4cf6e72bda5a6477962622274"
+    },
+    {
+      "path": "assets/fighters/mule-step.webp",
+      "sha256": "02513c70010c1e942e08e9eb139caaa2f113e489cecc0a1337442616e80c2f1b"
+    },
+    {
+      "path": "assets/fighters/mule-hit.webp",
+      "sha256": "2377fc97fa3f729d0a5121bc9ee63e2e70aaee63ac47d6564f983f9931077c99"
+    },
+    {
+      "path": "assets/fighters/mule/guard.png",
+      "sha256": "56b9cdee2203aed673a2d9a4699459fae993814771891e66d835e2d5217e3794"
+    },
+    {
+      "path": "assets/fighters/mule/crouch.png",
+      "sha256": "b50694e4197d668190ad74c668269af27acc6696b5a8edcf9cba93d1930035d6"
+    },
+    {
+      "path": "assets/fighters/mule/rise.png",
+      "sha256": "b0e6efe295e82f6570ee554e886eea8347abe95fda1145f6de18eed152c66ca7"
+    },
+    {
+      "path": "assets/fighters/mule/apex.png",
+      "sha256": "1008f3447a6cda6bf69eb185af9281fdc7a40e4905356cbd7aee6c3da12f6804"
+    },
+    {
+      "path": "assets/fighters/mule/fall.png",
+      "sha256": "ab51fd2b501109aa7d756f519893b536223883aeb5448282c8335f265df74b70"
+    },
+    {
+      "path": "assets/fighters/mule-jump.png",
+      "sha256": "b70f5847066cb9de3615e7bd138e1f4ef02da31f28a381ade3602e6a6f2ea7aa"
+    },
+    {
+      "path": "assets/presentation-20261127/mule-taunt.png",
+      "sha256": "eec719e453b6f4dd1419bc88c483d49cc11de203fa7246bb9338e4d305268dc6"
+    },
+    {
+      "path": "assets/finishers/mule.webp",
+      "sha256": "d5b326ebe5a2022c5b6d98878ecb9cbb3f8805c3a289361950245c012096f2e8"
+    },
+    {
+      "path": "assets/props/mule-cargo.webp",
+      "sha256": "a3713b2dd596e4262ad4ff7ba88ae5d4aff9669f948d45caaafdd3fd86fd6561"
+    },
+    {
+      "path": "assets/fighters/diehardman/stance.png",
+      "sha256": "2877d7af9058771972f7aa7690ff9678022493f49bafd36dc404c0caa5e04d77"
+    },
+    {
+      "path": "assets/fighters/diehardman/action.png",
+      "sha256": "9cae0941e5cfa6ce22130ce659443e7c73c3a63b83b33edb20634bc169d8709e"
+    },
+    {
+      "path": "assets/fighters/diehardman/step.png",
+      "sha256": "27561492b8dbd0141c55da34ebbb5cf2cb7b246e74e2c86054fa1e51c35d29f9"
+    },
+    {
+      "path": "assets/fighters/diehardman/hit.png",
+      "sha256": "f211cdcd8a56ac290c6fefae261b0a2529a5f7c0a8a0550634515d93fc220fd3"
+    },
+    {
+      "path": "assets/fighters/diehardman/guard.png",
+      "sha256": "89d29ca6c554f592dfbf6f697ff64b5dd508f160e0100c9740fa4fd41efd6538"
+    },
+    {
+      "path": "assets/fighters/diehardman/crouch.png",
+      "sha256": "db7b301896ab507603f5b2b031f40cbd99125aa82d75b12486f667f01c96cc13"
+    },
+    {
+      "path": "assets/fighters/diehardman/rise.png",
+      "sha256": "85e857d13f809634f432f6207fe17f4f44416586b622aac569e3922ed2be7273"
+    },
+    {
+      "path": "assets/fighters/diehardman/apex.png",
+      "sha256": "fcad41a26691abcb4fb0b8d348e3eeac4016627d5481c28946097d648e9e2071"
+    },
+    {
+      "path": "assets/fighters/diehardman/fall.png",
+      "sha256": "e82304da9ac8bae30002743cdb8d704dd8225d17803d1dacd0fae83c2de232e5"
+    },
+    {
+      "path": "assets/fighters/diehardman/jump.png",
+      "sha256": "a8a57c24b949d477f70848d5c526b69ef4c5c7b52f41695b1b66738277cb6da7"
+    },
+    {
+      "path": "assets/presentation-20261127/diehardman-taunt.png",
+      "sha256": "9ea21779b4f269b26c7b89884e3e7e9b0b3d52f3a8916fcc0a1c99121bf2d5fe"
+    },
+    {
+      "path": "assets/finishers/diehardman.webp",
+      "sha256": "31b850275eb50c325a3766ea4faca8cf54c30824749921e680416c9d37206c24"
+    },
+    {
+      "path": "assets/projectiles/gate.png",
+      "sha256": "5884198a2c9dd0cedfcec64030d24a229a13426f8e99c4ed8563628b8e7a88fe"
+    },
+    {
+      "path": "assets/fighters/mama/atelier/stance.png",
+      "sha256": "28307fe4c1462bbb8839f63d029b9e7e6e4051c0fb7a5a4dfc7ff35d13dc36e6"
+    },
+    {
+      "path": "assets/fighters/mama/atelier/action.png",
+      "sha256": "4b1d7123737ae4768079c3f09b7379fa4a0c8d61646be120f9d4c0b171eb19aa"
+    },
+    {
+      "path": "assets/fighters/mama/atelier/step.png",
+      "sha256": "c61b23bd2d502216453d9ae87e45e418ccd656600af8df9660c78239c4e96b15"
+    },
+    {
+      "path": "assets/fighters/mama/atelier/hit.png",
+      "sha256": "adb012044b8c325110e3eee527fa90b2f3891cba0bb04a15ed979cc813f4a7e2"
+    },
+    {
+      "path": "assets/fighters/mama/atelier/guard.png",
+      "sha256": "99c3724fdbd5e47349f63d021c1c0bad459adbff08a1f5f34dd61960318b0417"
+    },
+    {
+      "path": "assets/fighters/mama/atelier/crouch.png",
+      "sha256": "0f6981404bbb950a29009f098d869c89952e8ba5f6037128a4eeb3aa178ea5f4"
+    },
+    {
+      "path": "assets/fighters/mama/atelier/rise.png",
+      "sha256": "92e73749da44af6510db329a76da1ca6ff9df38c3d71bcda9fd0d1866e49f316"
+    },
+    {
+      "path": "assets/fighters/mama/atelier/apex.png",
+      "sha256": "8745b93dfc7928551e1f03314e643dad9f249652ce841c46b2cd54391935bf01"
+    },
+    {
+      "path": "assets/fighters/mama/atelier/fall.png",
+      "sha256": "8aece1b82055903f4ce41fa7345293582f813803741a8d30cf405eaadb97f390"
+    },
+    {
+      "path": "assets/presentation-20261127/mama-taunt.png",
+      "sha256": "1ba61c1a54c848b1f442a691cc45f00f85f6a2464b5290480a84bfa1572dc03c"
+    },
+    {
+      "path": "assets/finishers/mama.webp",
+      "sha256": "9e404e931e113d89c5726909fb7d8bf3da9a30f4d61280d7ee443885b3509b4b"
+    },
+    {
+      "path": "assets/props/bridge-deck.png",
+      "sha256": "4b512c5cb087f246f6d4c4004570a06ce1683b769baff9098c455d1dc3fe65a5"
+    },
+    {
+      "path": "assets/fighters/heartman/stance.png",
+      "sha256": "3fc213af154b9db73d69285f75ad7a6e50e24b83c822017b513cf49c26fb30b6"
+    },
+    {
+      "path": "assets/fighters/heartman/action.png",
+      "sha256": "da6b95f96914ee7f22df4b65b93780521c2c3188952b6b0afef616bdb8ef9049"
+    },
+    {
+      "path": "assets/fighters/heartman/step.png",
+      "sha256": "5abacd15c820c17454b209b76c7f5009945846d890d6c18cbe29f0b81b426cf8"
+    },
+    {
+      "path": "assets/fighters/heartman/hit.png",
+      "sha256": "58a0d4f7ed05d2ebad93c8fab42f6894c66c076f579442aa7262cc0917a175f4"
+    },
+    {
+      "path": "assets/fighters/heartman/guard.png",
+      "sha256": "1cf591e0c7aab5fe217441b2b92b679e7f735cdbd2934125ed18d26e44058e36"
+    },
+    {
+      "path": "assets/fighters/heartman/crouch.png",
+      "sha256": "1ef56c86631c5be4dc5fb90f73f4469152aa9d39869c341a6c8c886e43dc644a"
+    },
+    {
+      "path": "assets/fighters/heartman/rise.png",
+      "sha256": "61043655a1d77d88732356f4687d187d1e3b3fad108854afa60b4f1a7936af63"
+    },
+    {
+      "path": "assets/fighters/heartman/apex.png",
+      "sha256": "e5176935cd45411bf0767df07a46bbd0ac467bed688a0dec120a5a6868a2d7ff"
+    },
+    {
+      "path": "assets/fighters/heartman/fall.png",
+      "sha256": "8487e53cd1e649e4de5456c47f99ca03aa17557a6a78a84ba8d8a0c51564d701"
+    },
+    {
+      "path": "assets/fighters/heartman-jump.png",
+      "sha256": "07c073a4ecf11451bb4f6c4b1ff6a11ee0575a77b8d070bfc0d9b415bbaa5336"
+    },
+    {
+      "path": "assets/presentation-20261127/heartman-taunt.png",
+      "sha256": "5c948a734c7a1a94d55bde1d027a8be45f7c67ff79610c6731ba323d767a4503"
+    },
+    {
+      "path": "assets/finishers/heartman.webp",
+      "sha256": "8f2e6dc232c95e11258d7b5c1df21b293b5c24dafc56ff3a045dc6e9860b121b"
+    },
+    {
+      "path": "assets/projectiles/heartman.png",
+      "sha256": "706563a35afc105dc8263199e5c3e44dffa3e707a6a3ed0d7c490577745d7730"
+    },
+    {
+      "path": "assets/projectiles/memory.png",
+      "sha256": "5585d9e30f507473b8850e9d45c9c44cd937e74481390649a5d07f16eff81f05"
+    },
+    {
+      "path": "assets/props/heartman-monitor.png",
+      "sha256": "4df7ede5282b73c5a83d9fc93bdfb51762a9881564aebe34f22a6c0d52cc696d"
+    },
+    {
+      "path": "assets/fighters/mama/viaduc/stance.png",
+      "sha256": "64be5a628f7d94daf0a04d793ce1e2ec19b61d2bb02c7bab169aeeff168be664"
+    },
+    {
+      "path": "assets/fighters/mama/viaduc/action.png",
+      "sha256": "5a30a1290c1298a2f1ce00f8f984e15c7f3b8fd0216d2a16ed749986374db200"
+    },
+    {
+      "path": "assets/fighters/mama/viaduc/step.png",
+      "sha256": "6a387d3a3a3f59eb44f880b6db6e31f0adce9891e58804165e62a2fc2ff02c8d"
+    },
+    {
+      "path": "assets/fighters/mama/viaduc/hit.png",
+      "sha256": "50da01524cb037918060ff980450fc71aca5e44c7440f7df09a2e7b82625cd99"
+    },
+    {
+      "path": "assets/fighters/mama/viaduc/guard.png",
+      "sha256": "d65b21abea6d14c15828fdebd974a9403a727c5ced8383631f4b47c1c483412d"
+    },
+    {
+      "path": "assets/fighters/mama/viaduc/crouch.png",
+      "sha256": "4f7155e4a28780fad7ff96d0b4ce0ca02da3c504049acae1dac5d4b3a7fabe58"
+    },
+    {
+      "path": "assets/fighters/mama/viaduc/rise.png",
+      "sha256": "7df2108faaf5249c67ec6846eed8d307f985fe381e742d7fb58e1898416ca163"
+    },
+    {
+      "path": "assets/fighters/mama/viaduc/apex.png",
+      "sha256": "747939fe0ceecc41483df618710729fdeaf99d08e606cca070bbdb123fb7f013"
+    },
+    {
+      "path": "assets/fighters/mama/viaduc/fall.png",
+      "sha256": "f79113135e0181f4b09d2697b10356a7dc108b9d4ca888d4ae577d5b4f299c57"
+    }
+  ]
+}

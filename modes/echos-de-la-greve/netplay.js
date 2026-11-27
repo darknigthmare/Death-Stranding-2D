@@ -261,9 +261,10 @@
   };
   function updateInputLabels(){
     const player=inputSettings.state().networkPlayer;
-    const text='Mes touches · '+inputSettings.profile().name+' · J'+player+' : '+input.actions.map(action=>action.title+' '+inputSettings.label(player,action.id)).join(' · ')+'.';
+    const supportedActions=input.actions.filter(action=>commands.includes(action.id));
+    const text='Mes touches · '+inputSettings.profile().name+' · J'+player+' : '+supportedActions.map(action=>action.title+' '+inputSettings.label(player,action.id)).join(' · ')+'.';
     if($('roomKeySummary'))$('roomKeySummary').textContent=text;
-    if($('roomKeys'))$('roomKeys').innerHTML='<div class="commandSheet"><table><thead><tr><th>Action</th><th>Mon clavier · J'+player+'</th></tr></thead><tbody>'+input.actions.map(action=>'<tr><td>'+action.title+'</td><td>'+inputSettings.label(player,action.id).replace(/[&<>"']/g,ch=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[ch]))+'</td></tr>').join('')+'</tbody></table></div>';
+    if($('roomKeys'))$('roomKeys').innerHTML='<div class="commandSheet"><table><thead><tr><th>Action</th><th>Mon clavier · J'+player+'</th></tr></thead><tbody>'+supportedActions.map(action=>'<tr><td>'+action.title+'</td><td>'+inputSettings.label(player,action.id).replace(/[&<>"']/g,ch=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[ch]))+'</td></tr>').join('')+'</tbody></table></div>';
     for(const button of $('controls').querySelectorAll?.('[data-action]')||[]){const name=input.actions.find(action=>action.id===button.dataset.action)?.title||button.dataset.action;button.title=name+' · '+inputSettings.label(player,button.dataset.action);button.setAttribute('aria-label',button.title);}
   }
   $('roomCommands').onclick=()=>{
@@ -279,6 +280,7 @@
     $('controls').append(button);
   }
   inputController=input.createController({settings:inputSettings,
+    acceptsAction:action=>commands.includes(action),
     accepts:player=>!!run&&!run.done&&!!identity&&!!state?.live&&!state.result&&!audioDisconnected&&!$('roomManual').open&&player===inputSettings.state().networkPlayer,
     gamepadPlayers:()=>[inputSettings.state().networkPlayer],onInput:(_player,action,down)=>submit(action,down),onSettingsChange:updateInputLabels,
     onDeviceLost:()=>{release();if(run&&!run.done)status('Manette déconnectée · les touches du profil restent disponibles.');}});

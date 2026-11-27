@@ -2,7 +2,7 @@
 
 **Projet : Death Stranding 2D · périmètre : tout l’univers Death Stranding.**
 
-**Mise à jour : 25 novembre 2026 · lot extension livré : huit exercices guidés, compendium des six Boss, vingt-huit PNG fixes pour onze bases et trois arènes. Inventaire vérifié : 65 cartes, 257 PNG récents, 387 chemins d’images ; 22 lieux, 23 zones, 25 configurations, 120 calques distincts et 125 liaisons. Huit combattants, neuf modes et six Boss conservés. Strider non livré après refus de génération, sans relance. Les lots précédents restent des instantanés datés.**
+**Mise à jour : 27 novembre 2026 · les deux extensions originales du guide sont intégrées avec 38 rubriques complémentaires, huit fiches de personnalité et les Dossiers de liaison. Réalisation et limites dans le [nouveau suivi](#extensions-guides-20261127). Instantané conservé du lot du 25 novembre : huit exercices guidés, compendium des six Boss, vingt-huit PNG fixes, 65 cartes, 257 PNG récents, 387 chemins d’images ; 22 lieux, 23 zones, 25 configurations, 120 calques distincts et 125 liaisons. Huit combattants, neuf modes et six Boss conservés. Les totaux d’images du nouveau lot sont suivis séparément.**
 
 [Bible de combat](BIBLE_COMBAT.md) · [Œuvres, versions et sources](UNIVERS_DS.md) · [Guide intégral](references/Combat_Games_Guide_General_v1.0.txt) · [Références du complément](production/20261125-completion/reference-research.json) · [24 briefs de plans](production/20261125-completion/story-completion-briefs.json) · [Actions et IA](ACTIONS_ET_IA.md) · [Relations](RELATIONS_SIMULATEUR.md) · [Lot domaines](BIBLE_COMBAT.md#lot-domaines-20261125) · [Bilan et preuves](production/20261125-domains/LOT_DOMAINES_20261125.md) · [Lot extension](BIBLE_COMBAT.md#lot-extension-20261125) · [Références de l’extension](production/20261125-extension/reference-research.json).
 
@@ -10,7 +10,7 @@
 
 Ce registre rassemble les **éléments présents et les manques identifiés dans chaque domaine**. Il couvre le périmètre de l’univers sans prétendre avoir déjà recensé chaque détail de toutes les œuvres. Un catalogue de personnages ne remplace pas un registre d’actions, de scènes, de véhicules, de lieux ou de systèmes. Les œuvres annoncées ont des éléments encore non dévoilés ; leurs fiches restent ouvertes.
 
-Chaque ligne porte un ID documentaire stable, une œuvre/version, un rôle, une source, un état réel, une priorité et ses dépendances. Les IDs documentaires ne renomment pas les clés de sauvegarde. Les numéros de guide renvoient aux trente lignes de la [matrice d’association](BIBLE_COMBAT.md#122-association-des-30-rubriques).
+Chaque ligne porte un ID documentaire stable, une œuvre/version, un rôle, une source, un état réel, une priorité et ses dépendances. Les IDs documentaires ne renomment pas les clés de sauvegarde. Les numéros de guide renvoient aux trente lignes de la [matrice d’association](BIBLE_COMBAT.md#122-association-des-30-rubriques) et aux trente-huit lignes de la [matrice complémentaire EDG-G30–G67](EXTENSIONS_COMBAT.md#matrice-extensions).
 
 Les six axes restent distincts : **lore**, **conception**, **assets**, **intégration**, **validation**, **publication**. « Référence inspectée » ne signifie pas « image produite » ; « fichier présent » ne signifie pas « intégré » ; « intégré » ne signifie pas « testé dans un navigateur ». Une image fixe ne vaut ni animation ni combattant jouable. Une nouvelle source n’achève pas un kit. Les rapports datés fixent la portée de chaque validation.
 
@@ -316,3 +316,36 @@ Le [guide original](references/Combat_Games_Guide_General_v1.0.txt) conserve ses
 | 25–29 | §§1–2 et 10, suivi/QA/fiches/application/inspirations | Identifiants, dépendances, six axes, preuves et historique conservés. |
 
 Une ligne ne passe à **livrée** qu’avec un fichier ou une fonction réellement intégrée et une preuve adaptée à sa portée. Les sujets sans référence suffisante restent visibles dans le registre ; ils ne sont ni supprimés du périmètre ni présentés comme terminés.
+
+<a id="extensions-guides-20261127"></a>
+## 11. Intégration des deux extensions — 27 novembre 2026
+
+[Application complète](EXTENSIONS_COMBAT.md) · [Bible §20](BIBLE_COMBAT.md#extensions-guides-20261127) · [Provenance exacte](references/combat-guides-provenance.json) · [Bilan du lot](production/20261127-extensions/BILAN.md).
+
+Le guide général retrouvé sur Drive concorde avec l’empreinte déjà conservée au §10. Deux sources sont ajoutées sans réécriture : Extension 01, **60 589 octets**, SHA-256 `330fb7485a7a52b2a20f855646c940aaac0fcd9510032bc84b2e17c518edd25f` ; Extension 02, **47 334 octets**, SHA-256 `08b57ea542e83c487fef3276997a612d4657f2ee9ed4f8e46b0bf65a2778038b`. Le fichier de provenance porte les IDs, URLs, tailles et dates. **68 rubriques sont associées à la bible**, dont 38 nouvelles ; ce nombre mesure une couverture documentaire.
+
+| ID / domaine | Œuvre/version et sources | État du lot | Dépendances et suite |
+| --- | --- | --- | --- |
+| `DOC:extensions-01-02` | Sources utilisateur, sections 30–67 | Copies exactes et matrice complète ajoutées ; huit fiches de personnalité, huit paires, dix bonus et règles d’accès documentés. | Réalisation suivie par module ; aucune valeur canonique attribuée aux créations du simulateur. |
+| `UI:taunts-eight` | Huit kits DS1/DC ; gestes originaux documentés | Contrat vulnérable et cycle entrée/tenue/sortie ; comportement et recette réels dans [Présentation](production/20261127-extensions/PRESENTATION.md). | Exclusions Boss/salon privé/Duel originel ; dessins intermédiaires, voix et variantes de costume séparés. |
+| `UI:selection-cycle` | Roster courant, versions et portraits existants | Aperçu, confirmation, attente, désélection et mouvement réduit ; preuve dans Présentation. | Navigation rapide, deux choix et nettoyage des effets ; pas d’animation dessinée complète déduite d’un PNG. |
+| `ASSET:presentation-poses` | Sources autonomes par personnage, versions DS1 | Sorties effectivement reçues et contrôles dans [Assets](production/20261127-extensions/ASSETS.md). | Compter seulement les fichiers reçus ; comparer asymétries, visage, équipement et pose à la référence ; réserves historiques maintenues. |
+| `SYSTEM:liaison-dossiers` | Interface originale du simulateur, DS1/DC et bases DS2 | Quatre dimensions d’accès, 59 fiches ; 37 groupes de données/logique et contrôleur DOM réussis dans [Progression](production/20261127-extensions/PROGRESSION.md). | Aucune suppression d’accès au contenu déjà jouable ; « Kit en préparation » distinct du déblocage ; pas de recette navigateur annoncée. |
+| `REWARD:memories-eight` | Huit textes originaux, IDs `memory-*` | Règles de route OU quatre exercices du même kit, attribution permanente sous `echos.liaison.v1`. | Idempotence, reprise, erreurs de stockage et provenance locale ; aucun bonus de statistiques ni compte distant. |
+| `TEAM:liaison-two` | Huit kits DS1/DC ; futurs kits DS2 séparés | Profil hybride retenu et conçu : actif/réserve, assistance/relais distincts, Cohésion, KO et entités. **Non implémenté par ce lot.** | Moteur local, HUD, commandes, propriété et historique de combo ; réseau/Boss non inclus automatiquement. |
+| `TEAM:duos-eight` | Huit paires de simulation, versions et relations précisées | Supers et Ruptures collectives conçues, trois premières fins conditionnelles cadrées. **Aucune scène collective animée livrée.** | Références et mise en scène, participants disponibles, compatibilité cible, résultat inchangé après passage abrégé. |
+| `SYSTEM:clashes` | Contacts des kits et manifestations explicitement adaptées | Groupes et profils sans QTE / spectacle conçus. **Non raccordés.** | Simultanéité, tiers, pauses, égalités et options accessibles ; aucun pouvoir nouveau générique. |
+| `SYSTEM:entity-team-policy` | Objets du duel identifiés au §5 et dans Actions/IA | Propriété, réserve, KO, transition et budget de présence documentés. | Les règles d’équipe futures ne sont pas une nouvelle certification des objets actuels. |
+| `BONUS:ten-families` | DS1/DC ; cible logistique DS2 distincte | Dix fiches d’épreuves originales, non implémentées. | Objectifs, moteur de bonus, ennemis/objets, sortie vers route, sauvegarde et récompense unique. |
+| `COLLECTION:archive-path` | Métaphore d’interface du simulateur | Index et cinq zones conceptuelles ; Dossiers consultables séparés de l’exploration spatiale future. | Connexions logiques, absence de cycle, conservation des ouvertures ; pas de nouveau hub canonique déclaré. |
+| `ACCESS:cosmetics-stages-modes` | Versions exactes des contenus concernés | Politique de dépendances et futurs slots conçue ; accès actuels conservés. | Costume acquis avant personnage, profils statique/vivant, arènes liées, aucune boucle de prérequis. |
+| `SERVICE:supporter` | Futur fournisseur et contenus cosmétiques originaux | Modèles permanent/temporaire/périodique et cas d’expiration documentés. **Service non raccordé, aucune offre opérationnelle.** | Backend de confiance, preuve réelle, consentement, événements idempotents, multi-sources, hors ligne et versions. |
+| `QA:extensions-40-cases` | 18 cas extension 01 + 22 cas extension 02 | Matrice complète avec périmètre courant/futur ; résultats réels dans les bilans. | Un test de données ou un DOM simulé ne vaut pas essai navigateur ou périphérique matériel. |
+
+Les nouveaux comptes sont maintenus par unité : **38 rubriques**, **8 fiches de personnalité**, **8 dossiers de paires**, **10 bonus conçus**, **8 souvenirs textuels**, puis fichiers PNG et vérifications réellement reçus dans leurs bilans. Aucun de ces dénominateurs ne mesure l’exhaustivité de Death Stranding. Les éditions DS2, romans, adaptations et projets annoncés restent ouverts avec leurs sources et inconnues.
+
+Une réserve visuelle précise demeure sur l’ancienne posture de Die-Hardman : son masque paraît trop robotique par rapport à la référence. La nouvelle pose de présentation et sa correction sont suivies séparément dans Assets ; leur contrôle ne vaut pas validation de toutes les images historiques du kit. La fidélité 1:1 reste un objectif de comparaison image par image, pas une certification attribuée à partir du nombre de fichiers produits.
+
+### Priorités après ce lot
+
+Consolider les gestes et états d’accès effectivement branchés ; corriger les apparences historiquement non conformes identifiées ; produire les dessins intermédiaires et sons ; implémenter le profil équipe puis une paire et un bonus ; ouvrir les kits DS2 avec des fiches et références propres. La connexion d’un fournisseur de soutien est un chantier séparé dont les prérequis ne conditionnent aucun accès actuel.

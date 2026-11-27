@@ -7,14 +7,14 @@ function pad(index=0){return {index,mapping:'standard',connected:true,axes:[0,0,
 function moduleWorld(options={}){const w=world(options);w.load(['input.js']);return w;}
 const w=moduleWorld(),I=w.host.StrandInput,S=I.createSettings();
 check('Default bindings, independent profiles and persistence',()=>{
-  assert.equal(I.actions.length,10);assert.equal(S.label(1,'left'),'Q / A');assert.equal(S.label(2,'left'),'←');
-  assert(S.bind(1,'light',0,'b').ok);assert.equal(S.label(1,'light'),'B');assert.equal(S.find('f'),null);
-  assert(S.rename('Clavier du salon').ok);S.activate('2');assert.equal(S.label(1,'light'),'F');S.activate('1');assert.equal(S.label(1,'light'),'B');
-  const reloaded=I.createSettings();assert.equal(reloaded.profile().name,'Clavier du salon');assert.equal(reloaded.label(1,'light'),'B');
+  assert.equal(I.actions.length,11);assert.equal(S.label(1,'left'),'Q / A');assert.equal(S.label(2,'left'),'←');assert.equal(S.label(1,'taunt'),'B');assert.equal(S.label(2,'taunt'),'P');
+  assert(S.bind(1,'light',0,';').ok);assert.equal(S.label(1,'light'),';');assert.equal(S.find('f'),null);
+  assert(S.rename('Clavier du salon').ok);S.activate('2');assert.equal(S.label(1,'light'),'F');S.activate('1');assert.equal(S.label(1,'light'),';');
+  const reloaded=I.createSettings();assert.equal(reloaded.profile().name,'Clavier du salon');assert.equal(reloaded.label(1,'light'),';');
   assert(w.operations.every(([,key])=>key===I.storeKey),'No game save touched');
 });
-check('All twenty player/action pairs are remappable; collisions are rejected without mutation',()=>{
-  S.restore();const values=['0','1','2','3','4','5','6','7','8','9','b','c','e','m','n','p','v','x',';','.'];let i=0;
+check('All twenty-two player/action pairs are remappable; collisions are rejected without mutation',()=>{
+  S.restore();const values=['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', ';', '.', ',', '/', '\\', '-', '=', '[', ']', "'", '`', '?'];let i=0;
   for(const player of [1,2])for(const action of I.actions){assert(S.bind(player,action.id,0,values[i++]).ok);assert.equal(S.find(values[i-1]).player,player);}
   const before=JSON.stringify(S.state());assert.equal(S.bind(2,'finish',1,'0').ok,false);assert.equal(JSON.stringify(S.state()),before);
   assert.equal(S.bind(1,'left',1,'0').ok,false);assert.equal(S.bind(1,'light',0,'Escape').ok,false);assert.equal(S.bind(1,'light',0,'Tab').ok,false);
@@ -24,7 +24,7 @@ check('Defaults restore per player; conflicting restoration preserves the curren
   S.restore();S.bind(1,'left',0,'1');S.removeSecondary(1,'left');S.bind(2,'heavy',0,'q');
   const before=JSON.stringify(S.state());assert.equal(S.restore(1).ok,false);assert.equal(JSON.stringify(S.state()),before);
   assert(S.restore().ok);assert.equal(S.label(1,'left'),'Q / A');assert.equal(S.label(2,'heavy'),'K');
-  S.bind(1,'light',0,'b');S.bind(2,'light',0,'c');S.restore(1);assert.equal(S.label(1,'light'),'F');assert.equal(S.label(2,'light'),'C');S.restore();
+  S.bind(1,'light',0,';');S.bind(2,'light',0,'c');S.restore(1);assert.equal(S.label(1,'light'),'F');assert.equal(S.label(2,'light'),'C');S.restore();
 });
 check('Invalid storage and denied storage fail safely',()=>{
   const valid=S.state();
@@ -33,7 +33,7 @@ check('Invalid storage and denied storage fail safely',()=>{
     const stored=new Map([[I.storeKey,value]]),u=I.createSettings({getItem:key=>stored.get(key),setItem:(key,text)=>stored.set(key,text)});
     assert.equal(u.label(1,'light'),'F');assert(I.valid(u.state()));assert(u.status().message);assert.equal(stored.get(I.storeKey),value,'Unreadable data is not overwritten merely by loading');
   }
-  const u=I.createSettings({getItem(){throw Error('Denied');},setItem(){throw Error('Quota');}});assert.equal(u.bind(1,'light',0,'b').saved,false);assert.equal(u.label(1,'light'),'B');
+  const u=I.createSettings({getItem(){throw Error('Denied');},setItem(){throw Error('Quota');}});assert.equal(u.bind(1,'light',0,';').saved,false);assert.equal(u.label(1,'light'),';');
   const outer=S.state();outer.profiles[0].bindings[1].light=['Escape'];assert.equal(S.label(1,'light'),'F','Public snapshots cannot mutate settings');
 });
 
@@ -68,7 +68,7 @@ check('Standard gamepad deadzone, neutral rearm, keyboard aggregation and stable
 });
 check('Standard button mapping, pause, disconnection, unsupported pads and disable',()=>{
   const p=pad(0);r.samples[0]=p;C.poll();
-  for(const [button,action]of [[0,'up'],[1,'special'],[2,'light'],[3,'heavy'],[4,'guard'],[5,'throw'],[6,'guard'],[7,'finish'],[12,'up'],[13,'down'],[14,'left'],[15,'right']]){
+  for(const [button,action]of [[0,'up'],[1,'special'],[2,'light'],[3,'heavy'],[4,'guard'],[5,'throw'],[6,'guard'],[7,'finish'],[10,'taunt'],[12,'up'],[13,'down'],[14,'left'],[15,'right']]){
     p.buttons[button].pressed=true;C.poll();assert(C.isHeld(1,action),'Standard button '+button);p.buttons[button].pressed=false;C.poll();assert(!C.isHeld(1,action));
   }
   p.buttons[9].pressed=true;C.poll();const count=pauses;C.poll();assert.equal(pauses,count,'Menu is edge-triggered');p.buttons[9].pressed=false;C.poll();
@@ -83,7 +83,7 @@ check('Editor capture, collisions, Escape, Tab, cancellation, focus and profile 
   const button=(action,slot=0)=>'[data-input-edit="bind"][data-input-action="'+action+'"][data-input-slot="'+slot+'"]';
   r.click(button('light'));assert(editor.isCapturing());r.key('g');assert(editor.isCapturing());assert.match(container.querySelector('[data-input-notice]').textContent,/déjà attribuée/);assert.equal(settings.label(1,'light'),'F');
   const count=pauses;r.key('Escape');assert(!editor.isCapturing());assert.equal(pauses,count,'Capture Escape does not pause/close the parent');assert.equal(r.document.activeElement.dataset.inputAction,'light');
-  r.click(button('light'));r.key('b');assert.equal(settings.label(1,'light'),'B');assert.equal(r.document.activeElement.dataset.inputAction,'light');
+  r.click(button('light'));r.key(';');assert.equal(settings.label(1,'light'),';');assert.equal(r.document.activeElement.dataset.inputAction,'light');
   r.click(button('heavy'));const tab=r.key('Tab');assert(!editor.isCapturing());assert.equal(tab.defaultPrevented,false,'Tab remains available for native navigation');
   r.click(button('heavy'));r.click('[data-input-edit="cancel"]');assert.equal(settings.label(1,'heavy'),'G');
   r.click(button('heavy'));r.send(r.host,'blur');assert(!editor.isCapturing(),'Leaving the window cancels capture');r.send(r.host,'focus');
@@ -91,19 +91,19 @@ check('Editor capture, collisions, Escape, Tab, cancellation, focus and profile 
   r.change('[data-input-profile]','2');assert.equal(settings.label(2,'light'),'J');assert.equal(r.document.activeElement.dataset.inputProfile,'');
   const name=container.querySelector('[data-input-name]');name.value='Deux joueurs';r.send(container.querySelector('[data-input-name-form]'),'submit');assert.equal(settings.profile().name,'Deux joueurs');
   r.change('[data-input-profile]','1');assert.equal(settings.label(2,'light'),'C');r.click('[data-input-edit="restore-all"]');assert.equal(settings.label(2,'light'),'J');
-  editor.destroy();r.key('b');assert.equal(settings.label(1,'light'),'F','Destroyed editor cannot capture another key');C.releaseAll();
+  editor.destroy();r.key(';');assert.equal(settings.label(1,'light'),'F','Destroyed editor cannot capture another key');C.releaseAll();
 });
 
 const appFiles=['content.js','asset-geometry-20261124.js','assets.js','boss-geometry-20261124.js','boss-assets.js','tournament.js','fight.js','boss.js','campaign.js','moves-data.js','relationships.js','input.js','app.js'];
 check('Actual app: saved remap drives duel/Boss and updates touch, commands and dojo',()=>{
-  const a=world({gamepads:false});a.html('index.html');a.load(['input.js']);const prefs=a.host.StrandInput.createSettings();prefs.bind(1,'right',0,'e');prefs.bind(1,'special',0,'b');prefs.bind(1,'throw',0,'v');prefs.bind(2,'light',0,'c');
+  const a=world({gamepads:false});a.html('index.html');a.load(['input.js']);const prefs=a.host.StrandInput.createSettings();prefs.bind(1,'right',0,'e');prefs.bind(1,'special',0,';');prefs.bind(1,'throw',0,'v');prefs.bind(2,'light',0,'c');
   a.load(appFiles.filter(file=>file!=='input.js'));a.click('[data-act="mode"][data-mode="training"]');a.click('[data-act="start"]');a.frames(100);
   let state=a.host.StrandFight.snapshot(),x=state.fighters[0].x;a.key('d');a.frames(8);a.key('d',false);assert.equal(a.host.StrandFight.snapshot().fighters[0].x,x,'Previous key no longer moves');
   a.key('e');a.frames(8);a.key('e',false);assert(a.host.StrandFight.snapshot().fighters[0].x>x,'Remapped key drives actual duel');
   const light=a.document.querySelector('[data-p="1"][data-input="light"]');a.key('f');a.send(light,'pointerdown',{pointerId:9});assert(light.classList.contains('held'));a.send(light,'pointerup',{pointerId:9});assert(light.classList.contains('held'),'Keyboard still holds the shared action');a.key('f',false);assert(!light.classList.contains('held'),'The final keyboard release clears tactile highlighting');
-  assert.match(a.document.querySelector('[data-input="special"]').getAttribute('aria-label'),/clavier B/);assert.match(a.document.querySelector('[data-input-summary="2"]').textContent,/Léger C/);
+  assert.match(a.document.querySelector('[data-input="special"]').getAttribute('aria-label'),/clavier ;/);assert.match(a.document.querySelector('[data-input-summary="2"]').textContent,/Léger C/);
   a.change('#dummy','record');a.key('c');a.frames(8);a.key('c',false);assert(a.host.StrandFight.snapshot().training.frames>0,'J2 remap is recorded by actual dojo');
-  a.click('[data-act="controls"]');assert(a.document.getElementById('manual').open);assert(a.host.StrandFight.snapshot().paused);assert.equal(a.document.querySelector('[data-key-player="1"][data-key-action="special"]').textContent,'B');
+  a.click('[data-act="controls"]');assert(a.document.getElementById('manual').open);assert(a.host.StrandFight.snapshot().paused);assert.equal(a.document.querySelector('[data-key-player="1"][data-key-action="special"]').textContent,';');
   a.document.getElementById('manual').close();assert(!a.host.StrandFight.snapshot().paused);
   a.click('[data-act="pause"]');a.click('[data-act="leave"]');a.click('[data-act="home"]');a.click('[data-act="mode"][data-mode="boss"]');a.click('[data-act="pickBoss"][data-boss="truck"]');assert.match(a.document.getElementById('view').textContent,/La commande Colis prend/);assert(!a.document.getElementById('view').textContent.includes('T prend'));
   a.click('[data-act="startBoss"]');a.frames(150);assert(a.texts.some(text=>text==='Léger · Lourd · Signature · Garde · Saut · Colis · Charge chirale'));assert(!a.texts.some(text=>/F léger|T cargaison|Z\/W saut/.test(text)));assert.match(a.document.querySelector('[data-input="throw"]').getAttribute('aria-label'),/clavier V/);
@@ -148,10 +148,10 @@ check('All nine local modes accept remapped keyboard and standard-gamepad sample
 
 check('J2 remap and second gamepad reach local Versus and dojo recording',()=>{
   for(const mode of ['versus','training']){
-    const a=world();a.html('index.html');a.load(['input.js']);a.host.StrandInput.createSettings().bind(2,'right',0,'b');a.load(appFiles.filter(file=>file!=='input.js'));
+    const a=world();a.html('index.html');a.load(['input.js']);a.host.StrandInput.createSettings().bind(2,'right',0,';');a.load(appFiles.filter(file=>file!=='input.js'));
     a.click('[data-act="mode"][data-mode="'+mode+'"]');if(mode==='versus')a.change('[data-option="opponent"]','local');a.click('[data-act="start"]');if(a.document.querySelector('[data-act="enterDuel"]'))a.click('[data-act="enterDuel"]');
     a.frames(90);if(mode==='training')a.change('#dummy','record');const x=()=>a.host.StrandFight.snapshot().fighters[1].x;
-    let before=x();a.key('b');a.frames(5);a.key('b',false);assert(x()>before,mode+' J2 remap');
+    let before=x();a.key(';');a.frames(5);a.key(';',false);assert(x()>before,mode+' J2 remap');
     a.samples[0]=pad(0);a.samples[1]=pad(1);a.frames(2);before=x();a.samples[1].axes[0]=-.9;a.frames(5);assert(x()<before,mode+' second pad');a.samples[1].axes[0]=0;a.frames(1);a.send(a.host,'pagehide');
   }
 });
@@ -168,10 +168,10 @@ async function networkCheck(){
   n.load(['netplay.js']);n.click('#create');await n.settle();
   const sync=async()=>{const entry=[...n.timers].find(([,fn])=>fn.name==='sync');assert(entry);n.timers.delete(entry[0]);await entry[1]();await n.settle();};
   n.document.getElementById('canvas').focus();n.key('d');n.key('d',false);await sync();assert.deepEqual(requests.at(-1).inputs.slice(-2).map(event=>event.slice(2)),[['right',true],['right',false]],'Default local J1 controls work from network seat 2');
-  n.click('#roomCommands');assert(n.document.getElementById('roomManual').open);n.change('[data-input-network]','2');n.click('[data-input-edit="bind"][data-input-action="light"][data-input-slot="0"]');n.key('b');
-  assert.match(n.document.getElementById('roomKeySummary').textContent,/J2.*Coup léger B/);n.document.getElementById('roomManual').close();n.document.getElementById('canvas').focus();
+  n.click('#roomCommands');assert(n.document.getElementById('roomManual').open);n.change('[data-input-network]','2');n.click('[data-input-edit="bind"][data-input-action="light"][data-input-slot="0"]');n.key(';');
+  assert.match(n.document.getElementById('roomKeySummary').textContent,/J2.*Coup léger ;/);n.document.getElementById('roomManual').close();n.document.getElementById('canvas').focus();
   const before=requests.at(-1).inputs.length;n.key('f');n.key('f',false);await sync();assert.equal(requests.at(-1).inputs.length,before,'Other local player profile is inactive in the room');
-  n.key('b');const touch=n.document.querySelector('[data-action="light"]');n.send(touch,'pointerdown',{pointerId:7});n.key('b',false);await sync();assert.equal(requests.at(-1).inputs.at(-1)[3],true,'Touch keeps action active after keyboard releases');
+  n.key(';');const touch=n.document.querySelector('[data-action="light"]');n.send(touch,'pointerdown',{pointerId:7});n.key(';',false);await sync();assert.equal(requests.at(-1).inputs.at(-1)[3],true,'Touch keeps action active after keyboard releases');
   n.send(touch,'pointercancel',{pointerId:7});await sync();assert.equal(requests.at(-1).inputs.at(-1)[3],false);
   n.key('ArrowRight');n.document.getElementById('roomScenery').focus();await sync();assert.deepEqual(requests.at(-1).inputs.slice(-2).map(event=>event.slice(2)),[['right',true],['right',false]],'Focus releases before keyup');
   n.document.getElementById('canvas').focus();n.key('ArrowRight');fail=true;await sync();fail=false;await sync();assert.equal(requests.at(-1).inputs.at(-1)[3],false,'Connection loss releases predicted control');

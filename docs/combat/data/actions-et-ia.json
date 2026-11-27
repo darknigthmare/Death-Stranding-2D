@@ -1,11 +1,11 @@
 {
   "schema": 1,
-  "date": "2026-11-25",
+  "date": "2026-11-27",
   "engine": "StrandFight",
   "source": {
     "file": "modes/echos-de-la-greve/fight.js",
-    "sha256": "17c3cfcdee2291dad721b312ee060ca3d341cb0734c30d57128152fa6d3e3f23",
-    "content_sha256": "91923e26f31344ca9b0789720a3ea1040e20b810742b782f55638e32f789d683",
+    "sha256": "544e1f64c671af20c8fff4b9e1474ac0b723f44ef6c6d30e90d67ffef4233781",
+    "content_sha256": "fe6e129844908ad3a0fa97d9e59cace35b1fb4c4cc54ba095de401bcac189578",
     "base": "2250b7c1b54b445637e0c9354133e6fecbc325de",
     "method": "Constantes réelles extraites via VM ; hook de lecture en mémoire, aucun fichier moteur modifié."
   },
@@ -513,7 +513,13 @@
       "guard",
       "throw",
       "finish"
-    ]
+    ],
+    "tauntRules": {
+      "entry": 10,
+      "hold": 28,
+      "exit": 16,
+      "total": 54
+    }
   },
   "actions": [
     {
@@ -2623,7 +2629,7 @@
     "Dégâts = arrondi(base × puissance du combattant). Aucune réduction progressive de combo ni bonus de contre-touche dédié dans ce moteur.",
     "Garde : aucun grattage de PV ; perte d’équilibre = base ×1,25, contre ×0,76 en touche. Blockstun au moins 9. Le côté de l’attaquant n’est pas un critère de blocage.",
     "Gain chiral en touche : attaquant +4 / défenseur +3 ; en garde +2 / +2. Recharge passive +0,025 par pas, ou +0,34 au dojo ; plafond 100.",
-    "Rupture à équilibre ≤0 : au moins 38 pas de stun, garde et action interrompues, équilibre remis à 36. Recharge d’équilibre +0,28 au repos hors garde/action/stun, après le délai post-hit de 58 pas.",
+    "Rupture à équilibre ≤0 : au moins 38 pas de stun, garde et action interrompues, équilibre remis à 36. Recharge d’équilibre +0,28 au repos hors garde/action/stun/geste de défi, après le délai post-hit de 58 pas.",
     "Saisie mémorisée 9 ticks inclusifs à partir du tick suivant, une entrée par bouton. Direction du spécial et battement capturés à la pression ; Bas des normales lu à l’exécution. Le hitstop consomme la file d’entrée.",
     "Spéciales et projections refusées en l’air ; Léger/Lourd deviennent la frappe aérienne. Une annulation exige une touche confirmée, jamais une simple garde.",
     "Hurtbox : largeur 44, hauteur propre au kit ×0,62 accroupi ; rectangle au-dessus des pieds. Les contacts sont collectés avant le hitstun : des frappes simultanées peuvent échanger.",
@@ -2707,7 +2713,7 @@
       "command": "Gauche / Droite",
       "cost": 0,
       "notes": [
-        "Vitesse propre au kit, identique avant/arrière ; facteur 0,78 en l’air. Bloquée par action, garde, accroupissement, stun ou blockstun."
+        "Vitesse propre au kit, identique avant/arrière ; facteur 0,78 en l’air. Bloquée par action, garde, accroupissement, stun, blockstun ou geste de défi."
       ]
     },
     {
@@ -2716,7 +2722,7 @@
       "command": "Bas",
       "cost": 0,
       "notes": [
-        "Au sol, hors dash/stun ; hurtbox à 62 % de la hauteur."
+        "Au sol, hors dash/stun/geste de défi ; hurtbox à 62 % de la hauteur."
       ]
     },
     {
@@ -2725,7 +2731,7 @@
       "command": "Haut",
       "cost": 0,
       "notes": [
-        "Au sol, sans action : vitesse verticale 14,5 et gravité 0,77 par pas ; aucun double saut dédié."
+        "Au sol, sans action ni geste de défi : vitesse verticale 14,5 et gravité 0,77 par pas ; aucun double saut dédié."
       ]
     },
     {
@@ -2734,7 +2740,7 @@
       "command": "Deux pressions du même côté en 13 ticks au plus",
       "cost": 0,
       "notes": [
-        "Au sol, hors action/stun/blockstun/dash. Compteur 12 ; déplacement drift×(2+compteur×0,74) avant décrément. Invulnérable quand le compteur restant vaut 4 à 8."
+        "Au sol, hors action/stun/blockstun/dash/geste de défi. Compteur 12 ; déplacement drift×(2+compteur×0,74) avant décrément. Invulnérable quand le compteur restant vaut 4 à 8."
       ]
     },
     {
@@ -2743,7 +2749,23 @@
       "command": "Garde ; Bas + Garde pour le bas",
       "cost": 0,
       "notes": [
-        "Au sol, sans action/stun/dash ; aucune garde aérienne. Le côté ne conditionne pas le blocage dans le duel."
+        "Au sol, sans action/stun/dash/geste de défi ; aucune garde aérienne. Le côté ne conditionne pas le blocage dans le duel."
+      ]
+    },
+    {
+      "id": "taunt",
+      "name": "Geste de défi",
+      "command": "Geste de défi — B / P par défaut, L3 ou tactile ; commande remappable",
+      "cost": 0,
+      "timing": {
+        "entry": 10,
+        "hold": 28,
+        "exit": 16,
+        "total": 54,
+        "unit": "pas à 60 Hz"
+      },
+      "notes": [
+        "Duels hors ligne uniquement, au sol et hors action/garde/accroupissement/stun/blockstun/ruée. Exposition totale de 54 pas : entrée 10, tenue 28, sortie 16. Aucun bonus ni invulnérabilité. Un impact interrompt le geste ; pas d’annulation volontaire ni d’attaque mémorisée pendant le geste. La direction maintenue reprend son effet à la fin. Les commandes ne sont pas transmises au salon privé ni au moteur Boss."
       ]
     },
     {

@@ -26,6 +26,16 @@ Le réglage **Décor statique** immobilise le fond, sa météo et ses mouvements
 
 En **Tournoi**, **Revoir le duel** relance un match joué depuis le tableau sauvegardé. Au dojo, sélectionnez **Enregistrer J2**, puis **Lire en boucle** pour travailler une réponse. Dans **Défis**, enchaînez les sept autres combattants en **Survie**, avec 100 PV initiaux et +15 PV après chaque victoire jusqu’à 100, ou gagnez **Livraison sous pression** en gardant le scellé intact.
 
+### Extensions du guide et dossiers de liaison — 27 novembre 2026
+
+Le guide général de la bible a été vérifié octet pour octet. Les **deux extensions originales** sont ajoutées avec leur provenance : [Tag, Taunts, Bonus](docs/combat/references/Combat_Games_Extension_01_Tag_Taunts_Bonus_v1.0.txt) et [Slots verrouillés, Déblocages, Abonnés](docs/combat/references/Combat_Games_Extension_02_Slots_Verrouilles_Deblocages_Abonnes_v1.0.txt). Leur [application au projet](docs/combat/EXTENSIONS_COMBAT.md) couvre les 38 rubriques supplémentaires, soit 68 rubriques associées à la bible.
+
+Les huit combattants disposent d’un **geste de défi vulnérable de 0,9 seconde** dans les duels locaux et le dojo : B pour J1, P pour J2, L3 ou le bouton tactile, selon le profil de commandes. Huit PNG autonomes fournissent les poses de tenue du geste. La sélection distingue aperçu, confirmation et désélection, avec mouvement réduit. Les anciens raccourcis et replays restent compatibles ; le salon privé et les rencontres Boss conservent leurs commandes existantes. [Présentation et tests](docs/combat/production/20261127-extensions/PRESENTATION.md).
+
+Les **[Dossiers de liaison](modes/echos-de-la-greve/progression.html)**, accessibles depuis l’accueil, réunissent 59 fiches. Huit souvenirs écrits se débloquent par une histoire terminée **OU** quatre exercices avec le même combattant. Les acquis restent enregistrés séparément ; les combattants, tenues, arènes et modes déjà disponibles gardent leur accès. Les sept bases DS2 sans kit portent « Kit en préparation », avec les identités masquées par défaut. Aucun abonnement réel n’est raccordé. [Progression et conditions](docs/combat/production/20261127-extensions/PROGRESSION.md).
+
+Ce lot porte les sorties natives récentes à **265** et les chemins d’images exposés à **395**. Les poses intermédiaires complètes, les équipes/tag, les duos et les bonus avancés restent des réalisations à venir ; leurs fiches sont désormais définies. La fidélité 1:1 reste un critère cible, avec les écarts documentés, notamment les anciens masques de Die-Hardman. [Bilan, 17 rendus natifs et limites](docs/combat/production/20261127-extensions/BILAN.md).
+
 ### Affronter les boss
 
 **Boss Battle** ouvre six rencontres : Catcher léonin, Catcher aquatique, baleine, géant, camion MULE et convoi MULE. Choisissez l’un des huit combattants, la difficulté et l’arène. Les attaques sont annoncées avant l’impact. Après avoir immobilisé un camion, récupérez sa cargaison avec **Colis / Appui** (**T** par défaut) et livrez-la au dépôt gauche ; le convoi comporte deux vagues. Le menu **Commandes** donne les techniques du combattant. Les résultats et la reprise sont sauvegardés séparément des campagnes.

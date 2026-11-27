@@ -1,0 +1,312 @@
+{
+  "date": "2026-11-27T05:38:49.627Z",
+  "method": "Actual fight functions inspected by an in-memory closure hook. Explicit unit fixtures, no browser, no pixel rendering, no full-match or balance certification. Relation orientation and unchanged original route data checked.",
+  "browser": false,
+  "nativeCanvas": false,
+  "syntheticUnitStates": true,
+  "checks_passed": 10,
+  "checks": [
+    "Source digest and complete action/identity tables match the loaded engine",
+    "All 30 nominal actions clear at their documented actual update and allow the next input one update later",
+    "Melee volumes use the declared first/last active frames, facing and feet-relative height",
+    "Damage, zero chip, guard levels, resources and balance use the real hit handler for all kits",
+    "Cancellation accepts only the documented button, confirmed hit and recovery threshold",
+    "Closed-model hit/block advantage matches actual ability to start an uncancelled action",
+    "Missing/active marker failures and consumed resources match the documented differences",
+    "Rhythm, invulnerability, counters, trap arm and scan limit are exercised as conditional mechanics",
+    "Three AI cadence ranges and conditional guard/counter/ranged thresholds match real decisions",
+    "28 pairs, 56 orientations and eight mirrors are explicit simulator fiction; original routes remain unchanged"
+  ],
+  "counts": {
+    "timings": 30,
+    "volumes": 18,
+    "impacts": 640,
+    "guards": 320,
+    "cancelCases": 300,
+    "conditionalCases": 207,
+    "aiThresholds": 24,
+    "relationOrientations": 56,
+    "mirrors": 8
+  },
+  "advantage": [
+    {
+      "action": "light",
+      "contact": "first",
+      "outcome": "hit",
+      "attackerNextStart": 15,
+      "defenderNextStart": 12,
+      "advantage": -3
+    },
+    {
+      "action": "light",
+      "contact": "first",
+      "outcome": "block",
+      "attackerNextStart": 15,
+      "defenderNextStart": 9,
+      "advantage": -6
+    },
+    {
+      "action": "light",
+      "contact": "last",
+      "outcome": "hit",
+      "attackerNextStart": 13,
+      "defenderNextStart": 12,
+      "advantage": -1
+    },
+    {
+      "action": "light",
+      "contact": "last",
+      "outcome": "block",
+      "attackerNextStart": 13,
+      "defenderNextStart": 9,
+      "advantage": -4
+    },
+    {
+      "action": "heavy",
+      "contact": "first",
+      "outcome": "hit",
+      "attackerNextStart": 25,
+      "defenderNextStart": 21,
+      "advantage": -4
+    },
+    {
+      "action": "heavy",
+      "contact": "first",
+      "outcome": "block",
+      "attackerNextStart": 25,
+      "defenderNextStart": 9,
+      "advantage": -16
+    },
+    {
+      "action": "heavy",
+      "contact": "last",
+      "outcome": "hit",
+      "attackerNextStart": 22,
+      "defenderNextStart": 21,
+      "advantage": -1
+    },
+    {
+      "action": "heavy",
+      "contact": "last",
+      "outcome": "block",
+      "attackerNextStart": 22,
+      "defenderNextStart": 9,
+      "advantage": -13
+    },
+    {
+      "action": "sweep",
+      "contact": "first",
+      "outcome": "hit",
+      "attackerNextStart": 22,
+      "defenderNextStart": 16,
+      "advantage": -6
+    },
+    {
+      "action": "sweep",
+      "contact": "first",
+      "outcome": "block",
+      "attackerNextStart": 22,
+      "defenderNextStart": 9,
+      "advantage": -13
+    },
+    {
+      "action": "sweep",
+      "contact": "last",
+      "outcome": "hit",
+      "attackerNextStart": 19,
+      "defenderNextStart": 16,
+      "advantage": -3
+    },
+    {
+      "action": "sweep",
+      "contact": "last",
+      "outcome": "block",
+      "attackerNextStart": 19,
+      "defenderNextStart": 9,
+      "advantage": -10
+    },
+    {
+      "action": "lift",
+      "contact": "first",
+      "outcome": "hit",
+      "attackerNextStart": 28,
+      "defenderNextStart": 22,
+      "advantage": -6
+    },
+    {
+      "action": "lift",
+      "contact": "first",
+      "outcome": "block",
+      "attackerNextStart": 28,
+      "defenderNextStart": 9,
+      "advantage": -19
+    },
+    {
+      "action": "lift",
+      "contact": "last",
+      "outcome": "hit",
+      "attackerNextStart": 25,
+      "defenderNextStart": 22,
+      "advantage": -3
+    },
+    {
+      "action": "lift",
+      "contact": "last",
+      "outcome": "block",
+      "attackerNextStart": 25,
+      "defenderNextStart": 9,
+      "advantage": -16
+    },
+    {
+      "action": "air",
+      "contact": "first",
+      "outcome": "hit",
+      "attackerNextStart": 23,
+      "defenderNextStart": 15,
+      "advantage": -8
+    },
+    {
+      "action": "air",
+      "contact": "first",
+      "outcome": "block",
+      "attackerNextStart": 23,
+      "defenderNextStart": 9,
+      "advantage": -14
+    },
+    {
+      "action": "air",
+      "contact": "last",
+      "outcome": "hit",
+      "attackerNextStart": 18,
+      "defenderNextStart": 15,
+      "advantage": -3
+    },
+    {
+      "action": "air",
+      "contact": "last",
+      "outcome": "block",
+      "attackerNextStart": 18,
+      "defenderNextStart": 9,
+      "advantage": -9
+    },
+    {
+      "action": "grab",
+      "contact": "first",
+      "outcome": "hit",
+      "attackerNextStart": 28,
+      "defenderNextStart": 21,
+      "advantage": -7
+    },
+    {
+      "action": "grab",
+      "contact": "last",
+      "outcome": "hit",
+      "attackerNextStart": 27,
+      "defenderNextStart": 21,
+      "advantage": -6
+    },
+    {
+      "action": "fragile",
+      "contact": "first",
+      "outcome": "hit",
+      "attackerNextStart": 24,
+      "defenderNextStart": 20,
+      "advantage": -4
+    },
+    {
+      "action": "fragile",
+      "contact": "first",
+      "outcome": "block",
+      "attackerNextStart": 24,
+      "defenderNextStart": 9,
+      "advantage": -15
+    },
+    {
+      "action": "fragile",
+      "contact": "last",
+      "outcome": "hit",
+      "attackerNextStart": 21,
+      "defenderNextStart": 20,
+      "advantage": -1
+    },
+    {
+      "action": "fragile",
+      "contact": "last",
+      "outcome": "block",
+      "attackerNextStart": 21,
+      "defenderNextStart": 9,
+      "advantage": -12
+    },
+    {
+      "action": "fan",
+      "contact": "first",
+      "outcome": "hit",
+      "attackerNextStart": 26,
+      "defenderNextStart": 18,
+      "advantage": -8
+    },
+    {
+      "action": "fan",
+      "contact": "first",
+      "outcome": "block",
+      "attackerNextStart": 26,
+      "defenderNextStart": 9,
+      "advantage": -17
+    },
+    {
+      "action": "fan",
+      "contact": "last",
+      "outcome": "hit",
+      "attackerNextStart": 23,
+      "defenderNextStart": 18,
+      "advantage": -5
+    },
+    {
+      "action": "fan",
+      "contact": "last",
+      "outcome": "block",
+      "attackerNextStart": 23,
+      "defenderNextStart": 9,
+      "advantage": -14
+    },
+    {
+      "action": "relief",
+      "contact": "first",
+      "outcome": "hit",
+      "attackerNextStart": 22,
+      "defenderNextStart": 14,
+      "advantage": -8
+    },
+    {
+      "action": "relief",
+      "contact": "first",
+      "outcome": "block",
+      "attackerNextStart": 22,
+      "defenderNextStart": 9,
+      "advantage": -13
+    },
+    {
+      "action": "relief",
+      "contact": "last",
+      "outcome": "hit",
+      "attackerNextStart": 19,
+      "defenderNextStart": 14,
+      "advantage": -5
+    },
+    {
+      "action": "relief",
+      "contact": "last",
+      "outcome": "block",
+      "attackerNextStart": 19,
+      "defenderNextStart": 9,
+      "advantage": -10
+    }
+  ],
+  "source_sha256": {
+    "fight.js": "544e1f64c671af20c8fff4b9e1474ac0b723f44ef6c6d30e90d67ffef4233781",
+    "content.js": "fe6e129844908ad3a0fa97d9e59cace35b1fb4c4cc54ba095de401bcac189578",
+    "moves-data.js": "d1839b330ac39301b6946b5a910673b55b0770fd6c101f75ddce571d318eea21",
+    "relationships.js": "ad55b68c477b42d8e833dbe242dab055cfac19e596c7a143d3c781a23907f775"
+  },
+  "passed": true
+}
