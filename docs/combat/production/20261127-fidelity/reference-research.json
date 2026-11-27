@@ -1,0 +1,143 @@
+{
+  "date": "2026-11-27",
+  "scope": "Exact consulted visual references, production gaps and declared limits",
+  "references": [
+    {
+      "id": "DHM-MASK",
+      "filename": "diehardman-official.jpg",
+      "sourceKind": "official-game-still",
+      "page": "https://blog.de.playstation.com/2021/10/19/death-stranding-das-sind-die-charaktere/",
+      "url": "https://blog.de.playstation.com/uploads/sites/13/2021/10/e33dc8f7a181bc63118e9be298f8b3c358b0f672.jpg",
+      "observations": "Dark woven-carbon human skull mask; rounded brow, visible eyes in oval sockets, sculpted nasal opening and teeth, round brass cheek fitting, white LUDENS marking. Gray high collar and dark broad neckwear visible.",
+      "limits": "Close-up only. Does not establish entire costume, boots or back.",
+      "result": "Fidelity gap identified in active older sprites. New full-body generation refused; no correction delivered.",
+      "bytes": 222202,
+      "sha256": "237b59992e282fad8e70bfcea996f3f03d5d61cb853351e77f5798decedc6b1b",
+      "visuallyInspected": true
+    },
+    {
+      "id": "DHM-BODY",
+      "filename": "diehardman-kojima-202205.jpg",
+      "sourceKind": "official-editorial-game-close-up-and-concept",
+      "page": "https://www.kojimaproductions.jp/en/interview-with-TommieEarlJenkins",
+      "url": "https://www.kojimaproductions.jp/sites/default/files/2022-05/coveringimage.jpg",
+      "observations": "Official page by Kojima: unmasked game close-up alongside drawn full-body concept. Close-up shows standing gray collar, broad ascot and colored chest cords. Concept shows long dark open coat, gray waistcoat, dark trousers with side stripe and boots.",
+      "limits": "Concept is not a final-game orthographic model. Back, detailed boot construction and some costume differences remain unverified.",
+      "result": "Audited. No new Die-Hardman image received.",
+      "bytes": 110801,
+      "sha256": "2c4864cbea1ee3886814f830babbc14f24f1b2c34958d229051e6d0deb920635",
+      "visuallyInspected": true
+    },
+    {
+      "id": "HIGGS-DS2-FACE",
+      "filename": "higgs.jpg",
+      "sourceKind": "official-promotional-poster",
+      "page": "https://www.playstation.com/en-us/games/death-stranding-2-on-the-beach/",
+      "url": "https://gmedia.playstation.com/is/image/SIEPDC/death-stranding-2-vertical-poster-higgs-monaghan-en-10dec24?wid=900",
+      "observations": "DS2 unmasked Higgs: long dark hair, pale face, dark eye makeup and thin gold streaks; worn orange-red armor, amber central chest panels, dark mechanical collar.",
+      "limits": "Portrait; legs and boots are outside the frame.",
+      "result": "Consulted for attempted full-body asset, refused without output.",
+      "bytes": 205813,
+      "sha256": "f88068a23c78f6cdbfed8155b7754069beca128d0e6a2cb03db107aedc497b6c",
+      "visuallyInspected": true
+    },
+    {
+      "id": "HIGGS-DS2-LICENSED-BODY",
+      "filename": "higgs-ds2-prime1-body.jpg",
+      "sourceKind": "licensed-statue-manufacturer-photo",
+      "page": "https://statue.prime1studio.co.jp/ds2-higgs-remds2-02dxs.html",
+      "url": "https://statue.prime1studio.co.jp/media/catalog/product/cache/5/p1s_cropped_image/1400x2625/9df78eab33525d08d6e5fb8d27136e95/r/e/remds2-02dxs_cropped.jpg",
+      "observations": "Full costume with asymmetric orange-red thigh/shin panels, ribbed dark trousers, boots, guitar and sensor visible; red mask is a statue variant.",
+      "limits": "Derived licensed product, not the game model. One pose obscures parts and stands on a display plinth. Photo alone cannot certify the game's full costume.",
+      "result": "Consulted; no new full-body Higgs asset received.",
+      "bytes": 587647,
+      "sha256": "1a8a0cda0776c188700982d7828fc211038fe35286d832659794818f2c15f4a2",
+      "visuallyInspected": true
+    },
+    {
+      "id": "HIGGS-DS2-SHOULDER",
+      "filename": "higgs_guitar_shoulder_detail.jpg",
+      "sourceKind": "official-game-still",
+      "page": "https://www.kojimaproductions.jp/en/death-stranding-2",
+      "url": "https://www.kojimaproductions.jp/sites/default/files/2025-03/ds2_sxsw2025_screenshots008.jpg",
+      "observations": "Higgs wearing the red-orange DS2 armor, guitar resting over shoulder. Face and surface wear documented in-game.",
+      "limits": "Upper body only. Lower costume and much of the guitar are outside the frame.",
+      "result": "Consulted; no new full-body Higgs asset received.",
+      "bytes": 233730,
+      "sha256": "f7df9df22cdf7d302b8701a1e33e853ef1a28790ba6d5a47d0bf7560d89d4921",
+      "visuallyInspected": true
+    },
+    {
+      "id": "HIGGS-DS2-LICENSED-MAIN",
+      "filename": "higgs-ds2-prime1-main.jpg",
+      "sourceKind": "licensed-statue-manufacturer-photo",
+      "page": "https://statue.prime1studio.co.jp/ds2-higgs-remds2-02dxs.html",
+      "url": "https://statue.prime1studio.co.jp/media/catalog/product/cache/5/image/17f82f742ffe127f42dca9de82fb58b1/1/1/11_remds2-02dx_1209x807_pdp_main_pc.jpg",
+      "observations": "Unmasked statue variant and comparison of face/chest materials; large central figure rests guitar on shoulder.",
+      "limits": "Product advertisement with typography; not a final game capture or complete orthographic costume reference.",
+      "result": "Consulted; no new full-body Higgs asset received.",
+      "bytes": 309004,
+      "sha256": "857dc08a474e8549a4b79016fd1ab479520d02578fcdd419849651e702f95bc7",
+      "visuallyInspected": true
+    },
+    {
+      "id": "MASER-DS2-VIDEO",
+      "filename": "ds2-stealth.mp4",
+      "sourceKind": "official-gameplay-video",
+      "page": "https://www.playstation.com/en-us/games/death-stranding-2-on-the-beach/death-stranding-2-on-the-beach-guide/",
+      "url": "https://gmedia.playstation.com/is/content/SIEPDC/global_pdc/en/games/pdps/d/de/death-stranding-2/_guide/videos/death-stranding2-stealth-video-01-20jun25.mp4",
+      "observations": "The HUD identifies the Maser Handgun. At 8.2 seconds the aiming/charge state is visible; at 10.0 seconds white and pale-blue filaments connect muzzle to target and the ammunition readout changes; at 10.6 seconds a bright impact and radiating particles are visible.",
+      "limits": "A short 1920×1080 compressed video. No complete animation timing or weapon balance inferred. The visible effect is not the Director's Cut Maser Gun and not the MP weapon previously refused.",
+      "result": "One fixed electrical-discharge gallery image generated from the exact 10.0-second extracted frame.",
+      "bytes": 2749998,
+      "sha256": "dbb555d3632d6062467596546970dcc1f4eb04a40f44daeb817363738fd4096c",
+      "visuallyInspected": true
+    }
+  ],
+  "frames": [
+    {
+      "id": "MASER-DS2-8.2",
+      "filename": "ds2-maser-08_2.png",
+      "source": "MASER-DS2-VIDEO",
+      "timestampSeconds": 8.2,
+      "use": "Visual inspection of pre-discharge charge; not a generated asset.",
+      "bytes": 1472149,
+      "sha256": "6e81b7d9413c4789f2243befbd6095e0f5990fb4b59457a5e95831b07702e8b8",
+      "extraction": "ffmpeg -ss <timestamp> -i original.mp4 -frames:v 1; full frame, no resize or drawing.",
+      "visuallyInspected": true
+    },
+    {
+      "id": "MASER-DS2-10.0",
+      "filename": "ds2-maser-10_0.png",
+      "source": "MASER-DS2-VIDEO",
+      "timestampSeconds": 10,
+      "use": "Exact imagegen reference for retained fixed discharge.",
+      "bytes": 1487980,
+      "sha256": "1a904904d3d72f3ff896d2ba6b936dd4fb74640eeac549f42b8b799cd4c6b79e",
+      "extraction": "ffmpeg -ss <timestamp> -i original.mp4 -frames:v 1; full frame, no resize or drawing.",
+      "visuallyInspected": true
+    },
+    {
+      "id": "MASER-DS2-10.6",
+      "filename": "ds2-maser-10_6.png",
+      "source": "MASER-DS2-VIDEO",
+      "timestampSeconds": 10.6,
+      "use": "Visual inspection of impact; no separate generated impact asset.",
+      "bytes": 1409652,
+      "sha256": "a27c9e97a8014fe01358fc940f55c5fea92e65b202672652e82148ba940ca989",
+      "extraction": "ffmpeg -ss <timestamp> -i original.mp4 -frames:v 1; full frame, no resize or drawing.",
+      "visuallyInspected": true
+    }
+  ],
+  "uninspectedLead": {
+    "page": "https://ddilauro87.artstation.com/projects/5WqqYJ",
+    "note": "Artist's authorship text consulted; images inaccessible in this environment, therefore not used as a visual reference."
+  },
+  "policies": {
+    "officialGameImagesSeparateFromConcepts": true,
+    "licensedProductsIdentifiedAsDerived": true,
+    "noNewCanonEvents": true,
+    "noManualRasterEdits": true,
+    "noRefusalRetries": true
+  }
+}

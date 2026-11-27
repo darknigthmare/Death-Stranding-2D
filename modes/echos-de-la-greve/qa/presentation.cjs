@@ -1,16 +1,19 @@
 /* Extension 01: real engine and UI logic, explicit DOM/Canvas simulator.
  * PNG content and browser layout are separate checks; no hardware claim. */
 'use strict';
-const assert=require('node:assert/strict'),fs=require('node:fs'),path=require('node:path'),crypto=require('node:crypto');
+const assert=require('node:assert/strict'),fs=require('node:fs'),path=require('node:path'),crypto=require('node:crypto'),vm=require('node:vm'),{execFileSync}=require('node:child_process');
 const {world}=require('./input-host.cjs');
-const root=path.resolve(__dirname,'..'),checks=[],counts={fighterCycles:0,replaySamples:0,selectionChanges:0};
+const root=path.resolve(__dirname,'..'),checks=[],counts={fighterCycles:0,replaySamples:0,baselineSamples:0,selectionChanges:0,phaseBoundarySamples:0,phaseInterruptions:0,outfitFallbackCases:0};
+const simulationBaseline='7e000d3';
 const copy=value=>JSON.parse(JSON.stringify(value));
 const files=['content.js','asset-geometry-20261124.js','assets.js','presentation.js','boss-geometry-20261124.js','boss-assets.js','tournament.js','fight.js','boss.js','boss-data.js','boss-guide.js','campaign.js','moves-data.js','relationships.js','input.js','lessons.js'];
 function check(name,fn){fn();checks.push({name,passed:true});console.log('OK — '+name);}
 function make(options={}){
   const w=world({gamepads:false,...options});w.host.setTimeout=w.context.setTimeout;w.host.clearTimeout=w.context.clearTimeout;
   w.Node.prototype.remove=function(){if(this.parentNode){this.parentNode.children=this.parentNode.children.filter(node=>node!==this);this.parentNode=null;}};
-  w.html('index.html');w.load(files);w.engine=w.host.StrandFight;w.state=()=>copy(w.engine.snapshot());
+  w.html('index.html');w.load(files);
+  if(options.fightSource)vm.runInContext(options.fightSource,w.context,{filename:'fight-baseline.js'});
+  w.engine=w.host.StrandFight;w.state=()=>copy(w.engine.snapshot());
   w.start=(opts={})=>{w.result=null;w.engine.start({canvas:new w.Node('canvas'),p1:'sam',p2:'higgs',stage:'shore',mode:'local',sound:false,seed:4511,roundsToWin:1,onEnd:r=>{w.result=copy(r);},...opts});};
   w.step=(n=1)=>{for(let i=0;i<n;i++){const tick=w.engine.snapshot().tick;let attempts=0;while(w.engine.snapshot().tick===tick&&w.engine.snapshot().phase!=='ended'&&attempts++<3)w.frames();}};
   w.ready=()=>{while(w.state().phase==='intro')w.step();};
@@ -18,6 +21,108 @@ function make(options={}){
   w.settle=()=>{const timers=[...w.timers.values()];w.timers.clear();for(const fn of timers)fn();};
   return w;
 }
+const phaseKeys={entry:'tauntEntry',hold:'taunt',exit:'tauntExit'};
+const ids=['sam','fragile','higgs','cliff','mule','diehardman','mama','heartman'];
+function fixtureSet(id,outfit='atelier',holdOnly=false){
+  return Object.fromEntries(Object.entries(phaseKeys).filter(([phase])=>!holdOnly||phase==='hold').map(([phase,key],i)=>[key,
+    {src:'fixture/'+id+'/'+outfit+'/'+phase+'.png',crop:[i+1,i+2,64+i,128+i],anchorX:.43+i*.02,baselineY:.98,heightRatio:.97+i*.01}]));
+}
+function fixtureAssets(){
+  const art=Object.fromEntries(ids.map(id=>[id,fixtureSet(id,'atelier',id==='diehardman')]));
+  art.mama.outfits={viaduc:fixtureSet('mama','viaduc')};return art;
+}
+function withDraws(w,art=fixtureAssets(),missing=new Set()){
+  w.host.StrandPresentationAssets=copy(art);w.drawn=[];w.images=[];
+  w.context.Image=class{set src(value){this._src=value;this.complete=!missing.has(value);this.naturalWidth=96;this.naturalHeight=192;w.images.push(this);}get src(){return this._src;}};
+  w.ctx.drawImage=(image,...args)=>{w.drawn.push({src:image?.src,args});};
+  return w;
+}
+function identityStance(w,id,outfit){return w.host.StrandAssets.wardrobe?.[id]?.[outfit]?.poses?.stance || w.host.StrandAssets.fighters[id];}
+check('Every combat snapshot matches main 7e000d3 while new phase images are ready',()=>{
+  const fightSource=execFileSync('git',['show',simulationBaseline+':modes/echos-de-la-greve/fight.js'],{cwd:path.resolve(root,'../..'),encoding:'utf8'});
+  const commands=new Map([[90,[[1,'taunt',true],[1,'taunt',false]]],[100,[[2,'taunt',true],[2,'taunt',false]]],
+    [150,[[2,'left',true]]],[230,[[2,'left',false]]],[232,[[1,'taunt',true],[1,'taunt',false],[2,'light',true],[2,'light',false]]],
+    [235,[[1,'guard',true]]],[240,[[1,'guard',false]]],[280,[[1,'taunt',true],[1,'taunt',false]]]]);
+  for(const slot of [...ids.map(id=>({id,outfit:'atelier'})),{id:'mama',outfit:'viaduc'}]){
+    const w=withDraws(make()),baseline=make({fightSource}),config={p1:slot.id,p2:'sam',outfits:[slot.outfit,'atelier']};w.start(config);baseline.start(config);
+    while(w.state().tick<360){
+      for(const command of commands.get(w.state().tick)||[]){w.engine.input(...command);baseline.engine.input(...command);}
+      w.step();baseline.step();assert.deepEqual(w.state(),baseline.state(),slot.id+'/'+slot.outfit+' at tick '+w.state().tick);counts.baselineSamples++;
+    }
+    w.engine.stop();baseline.engine.stop();
+  }
+});
+check('Three native phase slots follow the unchanged 10/38/54 boundaries for both players and nine costume choices',()=>{
+  for(const slot of [...ids.map(id=>({id,outfit:'atelier'})),{id:'mama',outfit:'viaduc'}])for(const player of [1,2]){
+    const w=withDraws(make()),control=make();
+    const outfit=slot.outfit,id=slot.id,other=id==='sam'?'higgs':'sam';
+    const config={p1:player===1?id:other,p2:player===2?id:other,outfits:player===1?[outfit,'atelier']:['atelier',outfit]};
+    w.start(config);control.start(config);w.ready();control.ready();w.tap(player,'taunt');control.tap(player,'taunt');
+    const chosen=w.host.StrandPresentation.gestureAssets(id,outfit);let previous=0;
+    for(const frame of [1,9,10,37,38,53,54]){
+      w.drawn.length=0;w.step(frame-previous);control.step(frame-previous);previous=frame;
+      assert.deepEqual(w.state(),control.state(),'Images cannot change simulation at '+id+'/'+outfit+'/'+frame);
+      const phase=frame<10?'entry':frame<38?'hold':frame<54?'exit':null,descriptor=phase?chosen[phaseKeys[phase]]:null;
+      const expected=descriptor?.src||identityStance(w,id,outfit);
+      const ownImages=new Set([identityStance(w,id,outfit),...Object.values(phaseKeys).map(key=>chosen[key]?.src).filter(Boolean)]);
+      const last=w.drawn.filter(draw=>ownImages.has(draw.src)).at(-1);
+      assert.equal(last?.src,expected,id+'/'+outfit+' frame '+frame+' uses its actual phase or its own stance');
+      if(descriptor)assert.deepEqual(last.args.slice(0,4),descriptor.crop,'Each phase keeps its own crop');
+      counts.phaseBoundarySamples++;
+    }
+    w.engine.stop();control.engine.stop();
+  }
+});
+check('Absent or undecoded costume phases fall back to that costume, including an unavailable own stance',()=>{
+  for(const [phase,key]of Object.entries(phaseKeys))for(const missingDescriptor of [true,false]){
+    const art=fixtureAssets(),descriptor=art.mama.outfits.viaduc[key];
+    if(missingDescriptor)delete art.mama.outfits.viaduc[key];
+    const w=withDraws(make(),art,missingDescriptor?new Set():new Set([descriptor.src]));
+    w.start({p1:'mama',outfits:['viaduc','atelier']});w.ready();w.tap(1,'taunt');w.drawn.length=0;w.step({entry:5,hold:20,exit:45}[phase]);
+    const ownStance=identityStance(w,'mama','viaduc');assert(w.drawn.some(draw=>draw.src===ownStance));
+    assert(!w.drawn.some(draw=>draw.src===descriptor.src));
+    for(const base of Object.values(phaseKeys).map(k=>art.mama[k].src))assert(!w.images.some(image=>image.src===base),'No base costume phase is requested');
+    assert.equal(w.state().fighters[0].taunt.phase,phase);w.engine.stop();counts.outfitFallbackCases++;
+  }
+  const art=fixtureAssets(),w=make(),stance=identityStance(w,'mama','viaduc');
+  withDraws(w,art,new Set([stance,...Object.values(phaseKeys).map(k=>art.mama.outfits.viaduc[k].src)]));
+  w.start({p1:'mama',outfits:['viaduc','atelier']});w.ready();w.tap(1,'taunt');w.drawn.length=0;w.step(20);
+  assert(!w.drawn.some(draw=>draw.src===w.host.StrandAssets.fighters.mama),'Unavailable costume never borrows the atelier stance during a gesture');
+  assert(!w.drawn.some(draw=>draw.src===stance));assert.equal(w.state().fighters[0].taunt.phase,'hold');w.engine.stop();counts.outfitFallbackCases++;
+});
+check('Late phase decoding changes only the drawing and cannot restart or extend the gesture',()=>{
+  const art=fixtureAssets(),source=art.mama.outfits.viaduc.tauntEntry.src;
+  const w=withDraws(make(),art,new Set([source])),control=make(),config={p1:'mama',outfits:['viaduc','atelier']};
+  w.start(config);control.start(config);w.ready();control.ready();w.tap(1,'taunt');control.tap(1,'taunt');w.step(5);control.step(5);
+  for(const image of w.images)if(image.src===source)image.complete=true;
+  w.drawn.length=0;w.step();control.step();assert(w.drawn.some(draw=>draw.src===source));assert.deepEqual(w.state(),control.state());
+  w.step(48);control.step(48);assert.equal(w.state().fighters[0].taunt,undefined);assert.deepEqual(w.state(),control.state());w.engine.stop();control.engine.stop();
+});
+check('Reduced effects retain stance/hold/stance without changing any combat state or phase duration',()=>{
+  const w=withDraws(make()),normal=withDraws(make()),config={p1:'mama',outfits:['viaduc','atelier']};
+  w.start({...config,reducedEffects:true});normal.start(config);w.ready();normal.ready();w.tap(1,'taunt');normal.tap(1,'taunt');
+  let previous=0;
+  for(const frame of [5,20,45,54]){
+    w.drawn.length=0;w.step(frame-previous);normal.step(frame-previous);previous=frame;
+    const a=w.state(),b=normal.state();delete a.reducedEffects;delete b.reducedEffects;assert.deepEqual(a,b);
+    const hold=w.host.StrandPresentationAssets.mama.outfits.viaduc.taunt.src,stance=identityStance(w,'mama','viaduc');
+    assert.equal(w.drawn.filter(draw=>draw.src===hold||draw.src===stance).at(-1)?.src,frame>=10&&frame<38?hold:stance);
+    assert(!w.drawn.some(draw=>draw.src==='fixture/mama/viaduc/entry.png'||draw.src==='fixture/mama/viaduc/exit.png'));
+  }
+  w.engine.stop();normal.engine.stop();
+});
+check('Each phase remains interruptible for either player and the hit pose immediately replaces it',()=>{
+  for(const player of [1,2])for(const [phase,offset]of Object.entries({entry:0,hold:16,exit:40})){
+    const w=withDraws(make()),opponent=3-player;
+    w.start({p1:player===1?'mama':'sam',p2:player===2?'mama':'sam',outfits:player===1?['viaduc','atelier']:['atelier','viaduc']});w.ready();
+    w.engine.input(opponent,opponent===1?'right':'left',true);w.step(80);w.engine.input(opponent,opponent===1?'right':'left',false);
+    w.tap(player,'taunt');w.step(offset);w.engine.input(player,'guard',true);w.tap(opponent,'light');
+    let n=0,before;w.drawn.length=0;
+    while(w.state().fighters[player-1].hp===100&&n++<10){before=w.state().fighters[player-1].taunt?.phase;w.step();}
+    const victim=w.state().fighters[player-1];assert.equal(before,phase);assert(victim.hp<100);assert.equal(victim.taunt,undefined);assert(victim.stun>0);
+    assert(w.drawn.some(draw=>draw.src===w.host.StrandAssets.wardrobe.mama.viaduc.poses.hit));w.engine.stop();counts.phaseInterruptions++;
+  }
+});
 check('Eight exposed cycles have 10/28/16 ticks, no damage or resource bonus, and resume held movement',()=>{
   for(const id of ['sam','fragile','higgs','cliff','mule','diehardman','mama','heartman']){
     const w=make(),control=make();w.start({p1:id});control.start({p1:id});w.ready();control.ready();
@@ -122,6 +227,18 @@ check('Rapid selection cleans previous timers; reduced motion retains the same c
   w.click('[data-act="home"]');assert.equal(w.document.querySelector('[data-presentation]'),null);assert.equal(w.timers.size,0);
   assert(w.document.querySelectorAll('a').some(node=>node.getAttribute('href')==='progression.html'));
 });
+check('DOM previews use the selected costume hold, preserve separate mirror costumes, and recover a failed image safely',()=>{
+  const w=withDraws(make());w.load(['app.js']);w.click('[data-mode="versus"]');w.click('[data-id="mama"]');
+  w.change('[data-option="p2"]','mama');w.change('[data-option="outfit1"]','viaduc');
+  let images=w.document.querySelectorAll('img.presentationCurrent');
+  assert.equal(images[0].src,'fixture/mama/viaduc/hold.png');assert.equal(images[1].src,'fixture/mama/atelier/hold.png');
+  w.send(images[0],'error');assert.equal(images[0].src,identityStance(w,'mama','viaduc'));assert.equal(images[1].src,'fixture/mama/atelier/hold.png');
+  const sam=w.document.querySelector('[data-id="sam"]');w.send(sam,'pointerover');assert.equal(w.document.querySelector('[data-id="mama"]').getAttribute('aria-pressed'),'true');
+  w.send(sam,'pointerout',{relatedTarget:w.document.body});w.click('#effects');images=w.document.querySelectorAll('img.presentationCurrent');
+  assert.equal(images[0].src,'fixture/mama/viaduc/hold.png');assert.equal(images[1].src,'fixture/mama/atelier/hold.png');
+  assert.equal(w.document.querySelectorAll('.presentationLeaving').length,0);assert.equal(w.timers.size,0);
+  w.click('[data-act="home"]');assert.equal(w.timers.size,0);w.engine.stop();
+});
 check('Duel touch controls expose taunt while Boss controls exclude it',()=>{
   const w=make();w.load(['app.js']);w.click('[data-mode="training"]');w.click('[data-act="start"]');
   assert(w.document.querySelector('[data-input="taunt"]'));w.click('[data-act="pause"]');w.click('[data-act="leave"]');w.click('[data-act="home"]');
@@ -136,6 +253,6 @@ check('Base taunt art is never loaded for Mama viaduc; a stale outfit from a dif
   loaded.length=0;w.start({p1:'mama',outfits:['atelier','atelier']});assert(loaded.includes('assets/fixture-mama-taunt.png'));
   loaded.length=0;w.start({p1:'sam',outfits:['viaduc','atelier']});assert(loaded.includes('assets/fixture-sam-taunt.png'));w.engine.stop();
 });
-const report={date:new Date().toISOString(),passed:true,method:'Real JavaScript engine + app driven by normal logical or DOM events; Canvas/DOM are explicit test adapters. No browser pixels or physical controller claim.',browser:false,nativeCanvas:false,checks,counts,sourceSHA256:Object.fromEntries(['fight.js','app.js','input.js','netplay.js','presentation.js','presentation.css','index.html'].map(file=>[file,crypto.createHash('sha256').update(fs.readFileSync(path.join(root,file))).digest('hex')]))};
+const report={date:new Date().toISOString(),passed:true,method:'Real JavaScript engine + app driven by normal logical or DOM events; Canvas/DOM and phase image readiness are explicit test adapters. No browser pixels or physical controller claim.',browser:false,nativeCanvas:false,visualAssetFixtures:true,simulationBaseline,checks,counts,sourceSHA256:Object.fromEntries(['fight.js','app.js','input.js','netplay.js','presentation.js','presentation.css','index.html','qa/presentation.cjs'].map(file=>[file,crypto.createHash('sha256').update(fs.readFileSync(path.join(root,file))).digest('hex')]))};
 const output=process.argv.find(value=>value.startsWith('--output='))?.slice(9);if(output){fs.mkdirSync(path.dirname(path.resolve(output)),{recursive:true});fs.writeFileSync(path.resolve(output),JSON.stringify(report,null,2)+'\n');}
 console.log(JSON.stringify({passed:report.passed,checks:checks.length,counts},null,2));

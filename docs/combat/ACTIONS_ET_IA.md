@@ -4,12 +4,13 @@
 
 [Catalogue JSON](data/actions-et-ia.json) · [Module consultable](../../modes/echos-de-la-greve/moves-data.js) · [Moteur](../../modes/echos-de-la-greve/fight.js) · [Guide, fiche C](references/Combat_Games_Guide_General_v1.0.txt).
 
-Le catalogue couvre **30 attaques : six communes et 24 techniques**, plus sept actions de mouvement, défense, présentation ou conclusion. Il décrit les duels et le dojo. Les grandes rencontres utilisent `boss.js` ; les mêmes noms n’y garantissent ni les mêmes timings ni les mêmes dégâts. Les paramètres chiffrés sont ceux du projet.
+Le catalogue couvre **30 attaques : six communes et 24 techniques**, plus sept actions de mouvement, défense, présentation ou conclusion. Il décrit les duels 1 contre 1 et le dojo. Le [Relais de liaison](production/20261127-team-gameplay/RELAIS_DE_LIAISON.md) conserve les techniques individuelles et applique ses propres règles d’équipe ; les coûts de Cohésion, assistances, relais et réductions de combo ne sont pas décrits par les valeurs de duel ci-dessous. Les grandes rencontres utilisent `boss.js` ; les mêmes noms n’y garantissent ni les mêmes timings ni les mêmes dégâts. Les paramètres chiffrés sont ceux du projet.
 
 ## Règles et convention de temps
 
+- Périmètre : duel 1 contre 1 et dojo. Le Relais de liaison applique des règles distinctes de ressources d’équipe, d’assistance, de relais et de réduction de combo.
 - Duel actuel : 100 PV, équilibre 100, jauge chirale 42 au départ, 75 secondes. Les valeurs cibles de la bible restent séparées.
-- Dégâts = arrondi(base × puissance du combattant). Aucune réduction progressive de combo ni bonus de contre-touche dédié dans ce moteur.
+- En duel 1 contre 1 : dégâts = arrondi(base × puissance du combattant). Aucune réduction progressive de combo ni bonus de contre-touche dédié dans ce mode.
 - Garde : aucun grattage de PV ; perte d’équilibre = base ×1,25, contre ×0,76 en touche. Blockstun au moins 9. Le côté de l’attaquant n’est pas un critère de blocage.
 - Gain chiral en touche : attaquant +4 / défenseur +3 ; en garde +2 / +2. Recharge passive +0,025 par pas, ou +0,34 au dojo ; plafond 100.
 - Rupture à équilibre ≤0 : au moins 38 pas de stun, garde et action interrompues, équilibre remis à 36. Recharge d’équilibre +0,28 au repos hors garde/action/stun/geste de défi, après le délai post-hit de 58 pas.

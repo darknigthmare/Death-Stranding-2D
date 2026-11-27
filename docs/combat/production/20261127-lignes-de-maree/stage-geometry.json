@@ -1,0 +1,22 @@
+{
+  "ldm-stage-digue-aval": {"floorY": 0.688, "method": "Inspection visuelle du panorama natif : surface praticable de la dalle, devant le garde-corps et au-dessus du parement vertical. Aucun pixel modifié."},
+  "ldm-stage-quai-refuges": {"floorY": 0.82, "method": "Inspection visuelle du panorama natif : bande de quai plane, devant les refuges et derrière la grille de drainage. Aucun pixel modifié."},
+  "ldm-stage-depot-amarres": {"floorY": 0.82, "method": "Inspection visuelle du panorama natif : dalle libre au centre du dépôt, devant les caissons et le pied de l'escalier. Aucun pixel modifié."},
+  "ldm-stage-bassin-muet": {"floorY": 0.85, "method": "Inspection visuelle du panorama natif : dalle du premier plan devant le muret de quai ; eau exclue de la piste. Aucun pixel modifié."},
+  "ldm-stage-phare-couche": {"floorY": 0.84, "method": "Inspection visuelle du panorama natif : quai libre devant la rampe et les garde-corps, en retrait de la bordure jaune. Aucun pixel modifié."},
+  "ldm-stage-serre-veille": {"floorY": 0.81, "method": "Inspection visuelle du panorama natif : piste plane de béton entre la grille de drainage et le premier plan. Aucun pixel modifié."},
+  "ldm-stage-station-captage": {"floorY": 0.84, "method": "Inspection visuelle du panorama natif : dalle libre devant les conduites et le pied de l'escalier ; appui sous les équipements. Aucun pixel modifié."},
+  "ldm-stage-viaduc-ourlet": {"floorY": 0.81, "method": "Inspection visuelle du panorama natif : tablier horizontal devant le garde-corps, avant le bord de dalle. Aucun pixel modifié."},
+  "ldm-stage-relais-anemometre": {"floorY": 0.79, "method": "Inspection visuelle du panorama natif : plateforme horizontale devant le relais, au-dessus du rebord en béton. Aucun pixel modifié."},
+  "ldm-stage-pente-cairns": {"floorY": 0.78, "method": "Inspection visuelle du panorama natif : bande praticable du plateau en béton, devant l'escalier et au-dessus du parement vertical. Aucun pixel modifié."},
+  "ldm-stage-triage-noye": {"floorY": 0.67, "method": "Inspection visuelle du panorama natif : étroite dalle supérieure du quai devant les garde-corps ; le parement et l'eau ne sont pas le sol. Aucun pixel modifié."},
+  "ldm-stage-gare-suspendue": {"floorY": 0.83, "method": "Inspection visuelle du panorama natif : dalle dégagée sous les portiques, devant les piliers et derrière le drainage. Aucun pixel modifié."},
+  "ldm-stage-atelier-reservoir": {"floorY": 0.84, "method": "Inspection visuelle du panorama natif : dalle libre devant l'établi et l'escalier, en amont du drainage. Aucun pixel modifié."},
+  "ldm-stage-ecluse-noire": {"floorY": 0.83, "method": "Inspection visuelle du panorama natif puis du rendu moteur : dalle juste devant le garde-corps de l'écluse, avant le drainage ; ancrage affiné pour conserver davantage de la passerelle supérieure. Aucun pixel modifié."},
+  "ldm-stage-archive-beton": {"floorY": 0.83, "method": "Inspection visuelle du panorama natif : dalle plane devant les armoires d'archives, derrière la bande d'avertissement. Aucun pixel modifié."},
+  "ldm-stage-col-contrevent": {"floorY": 0.84, "method": "Inspection visuelle du panorama natif : piste plane devant la corde de sécurité, au centre de la dalle dégagée de neige. Aucun pixel modifié."},
+  "ldm-stage-plateau-aiguilles": {"floorY": 0.81, "method": "Inspection visuelle du panorama natif : bande de sol horizontal au centre du plateau, devant les équipements et avant les pierres du premier plan. Aucun pixel modifié."},
+  "ldm-stage-radome-ebreche": {"floorY": 0.82, "method": "Inspection visuelle du panorama natif puis du rendu moteur : dalle immédiatement devant les portes et le pied de l'escalier ; ancrage affiné pour conserver davantage de la coque du radôme. Aucun pixel modifié."},
+  "ldm-stage-terrasse-veilleurs": {"floorY": 0.82, "method": "Inspection visuelle du panorama natif : plateforme devant le poste d'observation, au-dessus du rebord rocheux. Aucun pixel modifié."},
+  "ldm-stage-seuil-maree": {"floorY": 0.80, "method": "Inspection visuelle du panorama natif : dalle du quai devant les amarres et les garde-corps, avant la face verticale du bord. Aucun pixel modifié."}
+}

@@ -1,0 +1,171 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-11-27T08:34:53.394672+00:00",
+  "passed": true,
+  "baseCommit": "7e000d36f2eb0fa4578b545bfb3d8b334acd516a",
+  "scope": "Local modules, simulated DOM, native Canvas, source hashes, native asset inventory and preserved guide documents. HTTP delivery is recorded separately in fidelity-http-verification.json.",
+  "browser": false,
+  "hardwareGamepadTested": false,
+  "internetMultiplayerTested": false,
+  "verification": [
+    {
+      "proof": "presentation-verification.json",
+      "sha256": "4532baadc5b997dbf335282d32f5fc4d1a0ee5d8625109bfdcb96232c08002b6",
+      "sourceHashCount": 8,
+      "passed": true
+    },
+    {
+      "proof": "presentation-native.json",
+      "sha256": "29d448932301ec3db4c61174e940e3419bf2358241b6fe7e6e8b29540b853c6b",
+      "sourceHashCount": 7,
+      "passed": true
+    },
+    {
+      "proof": "lessons-verification.json",
+      "sha256": "f1710392d1f4b7d2f63d3ee007c2cbc49bca3cb4b59eb550907329fcdc672b66",
+      "sourceHashCount": 21,
+      "passed": true
+    },
+    {
+      "proof": "lessons-native-verification.json",
+      "sha256": "abfac238871677601ec212b3ced94ed543d3e7fec8a324f40bcc36c7c139d9c0",
+      "sourceHashCount": 9,
+      "passed": true
+    },
+    {
+      "proof": "progression-verification.json",
+      "sha256": "6a03bc7710d5406691109710c9fead8b838f84ec7a8f66d7c84466a14ad108e3",
+      "sourceHashCount": 10,
+      "passed": true
+    },
+    {
+      "proof": "commandes-verification.json",
+      "sha256": "a0249ba2ec5ad35b32af3d935d2f63137b793206deb49ea863d37b169e04f68a",
+      "sourceHashCount": 19,
+      "passed": true
+    },
+    {
+      "proof": "static-gallery-verification.json",
+      "sha256": "8d133ec26943f7d579b95aeea62cc48c8ebe15af6ec23060bc2796440d40bd69",
+      "sourceHashCount": 4,
+      "passed": true
+    },
+    {
+      "proof": "inventory-verification.json",
+      "sha256": "eef537ee66b42139c27e884523bb9a4f0923b4e266ad95f61b1fe01f6f150b48",
+      "sourceHashCount": 12,
+      "passed": true
+    }
+  ],
+  "verifiedSourceHashes": 90,
+  "summary": {
+    "presentationGroups": 20,
+    "fighterCycles": 8,
+    "replaySamples": 548,
+    "baselineSamples": 3240,
+    "selectionChanges": 40,
+    "phaseBoundarySamples": 126,
+    "phaseInterruptions": 6,
+    "outfitFallbackCases": 7,
+    "lessonGroups": 14,
+    "recordedLessonRuns": 53,
+    "lessonCount": 9,
+    "progressionGroups": 38,
+    "galleryGroups": 18,
+    "inputGroups": 16,
+    "presentationNativeCaptures": 58,
+    "dojoNativeExercises": 3,
+    "dojoNativeCaptures": 5,
+    "captureHashesVerified": 63
+  },
+  "assets": {
+    "previousRastersUnchanged": 450,
+    "previousPNG": 323,
+    "previousWebP": 127,
+    "previousSVGUnchanged": 33,
+    "plannedPresentationImages": 18,
+    "receivedPresentationImages": 18,
+    "receivedStaticImages": 1,
+    "newNativePNG": 19,
+    "totalRasterAssets": 469,
+    "previousExposedImages": 395,
+    "exposedUniqueImages": 413,
+    "newExposedImages": 19,
+    "retiredExposedImages": 1,
+    "netAdditionalExposedImages": 18,
+    "fighterCount": 8,
+    "progressionEntries": 59,
+    "futureDS2Dossiers": 7,
+    "staticCards": 66,
+    "staticDS2Cards": 33,
+    "unchangedHolds": 7,
+    "replacedHolds": 1,
+    "diehardman": "Historical sources preserved; no new image received"
+  },
+  "recentNativePNG": {
+    "previousConservedAndActive": 265,
+    "newNativeFiles": 19,
+    "conserved": 284,
+    "active": 283,
+    "retiredButConserved": "assets/presentation-20261127/heartman-taunt.png"
+  },
+  "documentaryVerification": {
+    "passed": true,
+    "baseCommit": "7e000d36f2eb0fa4578b545bfb3d8b334acd516a",
+    "guides": [
+      {
+        "path": "docs/combat/references/Combat_Games_Guide_General_v1.0.txt",
+        "bytes": 55172,
+        "sha256": "4844584616072ac0d52d37c2fab4365e1ec489240f17a721ee216e223b0355b7",
+        "unchangedFromBase": true
+      },
+      {
+        "path": "docs/combat/references/Combat_Games_Extension_01_Tag_Taunts_Bonus_v1.0.txt",
+        "bytes": 60589,
+        "sha256": "330fb7485a7a52b2a20f855646c940aaac0fcd9510032bc84b2e17c518edd25f",
+        "unchangedFromBase": true
+      },
+      {
+        "path": "docs/combat/references/Combat_Games_Extension_02_Slots_Verrouilles_Deblocages_Abonnes_v1.0.txt",
+        "bytes": 47334,
+        "sha256": "08b57ea542e83c487fef3276997a612d4657f2ee9ed4f8e46b0bf65a2778038b",
+        "unchangedFromBase": true
+      }
+    ],
+    "actionCatalogue": {
+      "unchangedExceptEngineDigest": true,
+      "previousEngineSha256": "544e1f64c671af20c8fff4b9e1474ac0b723f44ef6c6d30e90d67ffef4233781",
+      "currentEngineSha256": "da592922d43247dab4bb0c2c2993842f7f13522226b60487af9ffe3cb5cd1680"
+    }
+  },
+  "actionCatalogue": {
+    "path": "docs/combat/data/actions-et-ia.json",
+    "sha256": "40f37ab5b61cef19c424e57fae79e5ae8eee7db2f882ba6a94cb74b8718c45bb",
+    "unchangedExceptEngineDigest": true,
+    "currentEngineSHA256": "da592922d43247dab4bb0c2c2993842f7f13522226b60487af9ffe3cb5cd1680"
+  },
+  "correctedFailures": [
+    {
+      "id": "taunt-natural-end",
+      "method": "Real light contacts on adjacent ticks: input at foe frame48 validates, input at49 damages after natural completion and is rejected."
+    },
+    {
+      "id": "mine-during-light-startup",
+      "method": "Higgs plants a mine, then starts a light; the mine damages during light startup and cannot validate the light objective. Validation requires active light and no residual marker/projectile."
+    },
+    {
+      "id": "native-canvas-glyphs",
+      "method": "Presentation QA creates a fresh native canvas context per capture to avoid resizing artefacts. No game or image pixel change."
+    }
+  ],
+  "http": {
+    "proof": "fidelity-http-verification.json",
+    "scope": "Real local server, both URL prefixes, byte hashes, MIME, client version and denied private paths; independently gated by the HTTP script."
+  },
+  "limits": [
+    "Three key poses are not a fully drawn animation.",
+    "Canonical fidelity is qualified per source and visible detail; existing source-art deviations remain.",
+    "Die-Hardman and Higgs DS2 image attempts were refused; no replacement assets were received.",
+    "Canvas pixels and simulated DOM do not certify browser layout or physical controller behaviour."
+  ]
+}

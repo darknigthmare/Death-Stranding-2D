@@ -15,9 +15,16 @@
   });
   const esc=value=>String(value??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
   const clone=value=>JSON.parse(JSON.stringify(value));
+  // Costume identity is resolved before a phase. A partially delivered alternate
+  // outfit never borrows an entry, hold or exit drawing from the base costume.
+  function gestureAssets(id,outfit){
+    const source=host.StrandPresentationAssets?.[id];
+    const alternate=host.StrandAssets?.wardrobe?.[id]?.[outfit] && outfit!=='atelier';
+    return alternate ? source?.outfits?.[outfit] || null : source || null;
+  }
   function art(slot,gesture=false){
     const assets=host.StrandAssets||{},kit=assets.wardrobe?.[slot.id]?.[slot.outfit];
-    return gesture && (!kit || slot.outfit==='atelier') ? host.StrandPresentationAssets?.[slot.id]?.taunt?.src || kit?.poses?.stance || assets.fighters?.[slot.id] : kit?.poses?.stance || assets.fighters?.[slot.id];
+    return (gesture && gestureAssets(slot.id,slot.outfit)?.taunt?.src) || kit?.poses?.stance || assets.fighters?.[slot.id];
   }
   function actor(slot,kind,gesture){
     const src=art(slot,gesture);
@@ -76,5 +83,5 @@
       destroy(){disposed=true;cancel();}
     };
   }
-  host.StrandPresentation={profiles,markup,mount};
+  host.StrandPresentation={profiles,markup,mount,gestureAssets};
 })();

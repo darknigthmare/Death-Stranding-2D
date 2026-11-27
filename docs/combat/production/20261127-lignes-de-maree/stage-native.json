@@ -1,0 +1,3307 @@
+{
+  "date": "2026-11-27T11:25:39.433Z",
+  "passed": true,
+  "renderer": "@napi-rs/canvas; actual StrandFight / fight.js",
+  "nativeCanvas": true,
+  "browser": false,
+  "htmlLayoutRendered": false,
+  "hardwareGamepadTested": false,
+  "viewport": {
+    "width": 1280,
+    "height": 720
+  },
+  "fighters": [
+    "sam",
+    "higgs"
+  ],
+  "stageCount": 20,
+  "caseCount": 100,
+  "capturedStages": 20,
+  "stageType": "One opaque static panorama per arena; legacy camera projection and measured floor anchor.",
+  "fiveLayerParallax": false,
+  "stageTransitions": false,
+  "sourcePixelsModified": false,
+  "canonicalFidelityClaim": false,
+  "method": "Actual runtime scripts, native decoded assets, ordinary public input API and requestAnimationFrame; no fabricated fighter state. Geometry derives from visual inspection of each received source.",
+  "fontFamilies": 250,
+  "sourceSha256": {
+    "content.js": "fe6e129844908ad3a0fa97d9e59cace35b1fb4c4cc54ba095de401bcac189578",
+    "asset-geometry-20261124.js": "61f830dc5036774529b7ecaf51f4c80386ef7f94447c55e044584e850e081934",
+    "assets.js": "4f0ae5349872b9391d7586bc98baf0baa211e83e59c7b1e4234aaf22525ecb01",
+    "extension-data.js": "a6290d4002a70bbaa7b2f9efdcff2ef4c87152e42251b4f68728197c523991cc",
+    "extension-assets.js": "929fa7ce4b4589989e4b9d9c46c47db906d6d943c1397bdf35e5082ea0bec95e",
+    "extension-runtime.js": "3047d945342341b4abe9ec0ec51fcfe7ce540344ad2d06819181efe6e0d79a7f",
+    "fight.js": "d616992432537129302a13c32d02dacc0dc87d5df681bf0fec877a4f9b65bc19"
+  },
+  "imageSources": {
+    "assets/fighters/sam-stance.webp": "9cc5ddecb03ec1ddf84b678211f4fa4a35c282d999cd3e776102cd2407a91c60",
+    "assets/fighters/sam-action.webp": "d959b3e4ae4d97a5f146ae0252c4bffcbfdf85537a5b79b31c1c8a2b398e74cb",
+    "assets/fighters/sam-step.webp": "42dddf61765bfdc0ddaaa09c7d816aabf99c35cfa74411151a303b2bc806c147",
+    "assets/fighters/sam-hit.webp": "7fa86e3ca0ac0a0ec014cd99851e0ff7923d9742c16d65eac77996419c1f0989",
+    "assets/fighters/sam/guard.png": "9ab6da9fcaab1d5cde6e39f475da7b233bf5829dd9a01f24814f2215e4eb2012",
+    "assets/fighters/sam/crouch.png": "f787d9b3ba24609e7b48ee904c673115824ccc3aa85873e75761f18c2c2813c3",
+    "assets/fighters/sam/rise.png": "1869e33970c12677fe53b5444a3dff6c5aa99a0dd9e0e8bcb5897b7acd29a4a3",
+    "assets/fighters/sam/apex.png": "6ef109a246650a795a91c845b9ab2b8ea64e250bebd2f5017cbf51b94291a3ac",
+    "assets/fighters/sam/fall.png": "8b3762a91937bbe24f9d1261b0b961f87d8ed8562e069e95d03cbb76fb92867f",
+    "assets/fighters/sam-jump.png": "b403e7aaa243239137f991b9e952ba98a7a7b8ea7e518e0c537c7afe683631c8",
+    "assets/finishers/sam.webp": "e64faec19512002bae21fe079a097baff1426f1fc9a2808743f9bb9f817634e8",
+    "assets/fighters/higgs/stance.png": "bef8d4aa14f693abf574639aadf5e986ab41acf2347c9c1a6277c986f73e4c6b",
+    "assets/fighters/higgs/action.png": "430a1a4933b85f1d2455b1a2659aeb4add108d00204b43a783c1dbd4148f771f",
+    "assets/fighters/higgs/step.png": "562ba84fdc1901b58b24d5f5c9ca55cf176896ddbf65b1b4f6d79bc153e6fd72",
+    "assets/fighters/higgs/hit.png": "066a55e99d37e4c0fd54d734a856fb2a98394a83e68935db4e2d082433a7090b",
+    "assets/fighters/higgs/guard.png": "0d86739bd460302353d1ec6e2f614068f8cb1f84d9c83260962b343411c70b36",
+    "assets/fighters/higgs/crouch.png": "fa1d8237b01f02f4081f7ab7a1c4908f898aa855e2fee6142a6d9ba43f7d2124",
+    "assets/fighters/higgs/rise.png": "a12c14b8fc16f97c012e13a4a2d6ee251fe143c99ba4122477fb0e0c2752a876",
+    "assets/fighters/higgs/apex.png": "a82ad43f4e1bff933f45449532f5e62ddf2a057418b5d51248925bd71f29e1b1",
+    "assets/fighters/higgs/fall.png": "9b29d90e591099f7e4d956b49aab4aa6d28b199df0200b62be58b51b926fac8a",
+    "assets/fighters/higgs/jump.png": "7c7c17863537877928b9622d68930b06a6f5ac3cea5f53c76236c4eb6ed373b5",
+    "assets/finishers/higgs.webp": "7d630dcf5f53fe82c0a8797198f1f5f607c2171f7f8f39e06582635e33cf0c29",
+    "assets/projectiles/sam.png": "43827e84f9d3a142b1f1becb2c19ca4a795b438f0c5c975f1740ae547ad30edf",
+    "assets/projectiles/higgs.png": "5daad21f052df501efb2e4d5845a26990319241d9230346bd912a052298662df",
+    "assets/lignes-de-maree/stages/digue-aval-panorama.png": "356abcbdae8d5b7b5771036a84550d0ceff8367f5e8968d1cfdfdece49d3eccb",
+    "assets/props/gold-imprint.png": "4972f5c23568ef4c408e6fb2015734e13089807af5fce6983641532c1fd73259",
+    "assets/lignes-de-maree/stages/quai-refuges-panorama.png": "40b7d9897e0dbdc360c15f291c7c5ba94328ce6e9d9dbdf606f68c92607d0043",
+    "assets/lignes-de-maree/stages/depot-amarres-panorama.png": "0877557ea4444a59be5100f142d0ecf23d6e7268380d61bb35ff440b014020ce",
+    "assets/lignes-de-maree/stages/bassin-muet-panorama.png": "a93b20fe1840c1079ebc0e223b3d77114617d7dba2fb6ad7e30c6a006af95c15",
+    "assets/lignes-de-maree/stages/phare-couche-panorama.png": "03f15a97dca2735f5f13ac744fd3207db89e7191346829406e205e92b172511a",
+    "assets/lignes-de-maree/stages/serre-veille-panorama.png": "325c1172390bab1a19a85ae2255acc26cde1787bb72b3039505e86fd561b8d9a",
+    "assets/lignes-de-maree/stages/station-captage-panorama.png": "dbe8de99db301ffc624c216960f4181a9d9f884f9f3b4af5e1a09398ed3ecd5d",
+    "assets/lignes-de-maree/stages/viaduc-ourlet-panorama.png": "8e8e8075a9ed77d772cd9f6a94574e1ea200fb4662a8ff66979a43a6084bbdf1",
+    "assets/lignes-de-maree/stages/relais-anemometre-panorama.png": "0ba5323028b84f89db07bf1ec1dca3df38ae9057c4bdc27cc9312f0095ba2623",
+    "assets/lignes-de-maree/stages/pente-cairns-panorama.png": "43f479606550b1a5ca9896970a9e3333899a230c17d0ca60d7e8539b5573b11f",
+    "assets/lignes-de-maree/stages/triage-noye-panorama.png": "02fd63732a03e8a78ccd37a2204d19cc9cd41c9c91ba2c6949e52a1fb140dcfe",
+    "assets/lignes-de-maree/stages/gare-suspendue-panorama.png": "f8c1e9dce75c04d36e7ed3109e90d520ecb85c96da269b98829fb0cbddb7bc1f",
+    "assets/lignes-de-maree/stages/atelier-reservoir-panorama.png": "e74ad8d43152b43c262aa858c938333f577990714ecb3c60bda8c1b6d82f122f",
+    "assets/lignes-de-maree/stages/ecluse-noire-panorama.png": "2379cc5bbbf942c32f9c92027c2f2af7b0af2794da1768785b3f0b97e79aacc2",
+    "assets/lignes-de-maree/stages/archive-beton-panorama.png": "135eb882ff0a3ef75542166f68766b261ef3eb4ced67ce8ed846cf38614f2049",
+    "assets/lignes-de-maree/stages/col-contrevent-panorama.png": "8c73703100a7aa8a7f821bc8770e54ab07cf0c1979e9757cafd8c06df3f805a1",
+    "assets/lignes-de-maree/stages/plateau-aiguilles-panorama.png": "08e7a0221f3d42cdb3a48b698f8e5dc779511583c52e486fd773a7177f21a061",
+    "assets/lignes-de-maree/stages/radome-ebreche-panorama.png": "db381d24caac30cfc4f416945929155ee27d8bc19f50064e968f64b61c6ad685",
+    "assets/lignes-de-maree/stages/terrasse-veilleurs-panorama.png": "71ef75077ac04dbd34f3a8cc311a2aeef4b4e41d99dd500d142f3da9993f53e0",
+    "assets/lignes-de-maree/stages/seuil-maree-panorama.png": "a4d70bb8157c916d3f954f7c3b3161e916d8296d68e556a5b68aa2046aed46fd"
+  },
+  "contactSheets": [
+    {
+      "file": "stage-renders/engine-contact-1.webp",
+      "sha256": "7527f9ca5fb60f3aee4345643a83c0c0415259a95ec3dbf4f4a7cb358dbc8e35"
+    },
+    {
+      "file": "stage-renders/engine-contact-2.webp",
+      "sha256": "e1687927310bf0778c3420e42ab5d310e091af0e0130d06dc4384c9322b2c22e"
+    },
+    {
+      "file": "stage-renders/engine-contact-3.webp",
+      "sha256": "834cb82a58f91f793adfb1704fe476475400bbd7999bdf99502b8cd8ac0dd92e"
+    },
+    {
+      "file": "stage-renders/engine-contact-4.webp",
+      "sha256": "ac27f0f20fe25cabcd1d73bfae98a6cf81c9741f9f517eb16deb812a6d0b410e"
+    },
+    {
+      "file": "stage-renders/engine-contact-5.webp",
+      "sha256": "228f5433e04d483e30532d64bd06482b8d2055f5cec33a01906b2e197edf3884"
+    }
+  ],
+  "results": [
+    {
+      "id": "ldm-stage-digue-aval",
+      "name": "La Digue aval",
+      "source": "assets/lignes-de-maree/stages/digue-aval-panorama.png",
+      "width": 1672,
+      "height": 941,
+      "sha256": "356abcbdae8d5b7b5771036a84550d0ceff8367f5e8968d1cfdfdece49d3eccb",
+      "floorY": 0.688,
+      "sourceFloorPixel": 647.4079999999999,
+      "capture": "stage-renders/digue-aval.webp",
+      "captureSha256": "33c4553dc1d4302461d97b4f6e8d9806c90fa58ed36f024d9b4e9e9849ceed27",
+      "cases": [
+        {
+          "label": "static-ready",
+          "panoramaRect": {
+            "x": -134.7818995131356,
+            "y": -12,
+            "width": 1549.5637990262712,
+            "height": 872.093023255814
+          },
+          "floorY": 0.688,
+          "screenFloorY": 588,
+          "ratioError": 0,
+          "floorError": 0,
+          "compositeMinAlpha": 255,
+          "staticScenery": true,
+          "reducedEffects": false,
+          "tick": 73,
+          "fighters": [
+            {
+              "id": "sam",
+              "x": 462,
+              "y": 0
+            },
+            {
+              "id": "higgs",
+              "x": 818,
+              "y": 0
+            }
+          ]
+        },
+        {
+          "label": "static-moved-right",
+          "panoramaRect": {
+            "x": -134.7818995131356,
+            "y": -12,
+            "width": 1549.5637990262712,
+            "height": 872.093023255814
+          },
+          "floorY": 0.688,
+          "screenFloorY": 588,
+          "ratioError": 0,
+          "floorError": 0,
+          "compositeMinAlpha": 255,
+          "staticScenery": true,
+          "reducedEffects": false,
+          "tick": 107,
+          "fighters": [
+            {
+              "id": "sam",
+              "x": 602.7999999999993,
+              "y": 0
+            },
+            {
+              "id": "higgs",
+              "x": 947.5999999999985,
+              "y": 0
+            }
+          ]
+        },
+        {
+          "label": "static-reduced-effects",
+          "panoramaRect": {
+            "x": -134.7818995131356,
+            "y": -12,
+            "width": 1549.5637990262712,
+            "height": 872.093023255814
+          },
+          "floorY": 0.688,
+          "screenFloorY": 588,
+          "ratioError": 0,
+          "floorError": 0,
+          "compositeMinAlpha": 255,
+          "staticScenery": true,
+          "reducedEffects": true,
+          "tick": 108,
+          "fighters": [
+            {
+              "id": "sam",
+              "x": 602.7999999999993,
+              "y": 0
+            },
+            {
+              "id": "higgs",
+              "x": 947.5999999999985,
+              "y": 0
+            }
+          ]
+        },
+        {
+          "label": "camera-moved-right",
+          "panoramaRect": {
+            "x": -143.0022518110147,
+            "y": -12,
+            "width": 1549.5637990262712,
+            "height": 872.093023255814
+          },
+          "floorY": 0.688,
+          "screenFloorY": 588,
+          "ratioError": 0,
+          "floorError": 0,
+          "compositeMinAlpha": 255,
+          "staticScenery": false,
+          "reducedEffects": false,
+          "tick": 143,
+          "fighters": [
+            {
+              "id": "sam",
+              "x": 743.5999999999985,
+              "y": 0
+            },
+            {
+              "id": "higgs",
+              "x": 1077.199999999997,
+              "y": 0
+            }
+          ]
+        },
+        {
+          "label": "camera-moved-left",
+          "panoramaRect": {
+            "x": -138.90759387244776,
+            "y": -12,
+            "width": 1549.5637990262712,
+            "height": 872.093023255814
+          },
+          "floorY": 0.688,
+          "screenFloorY": 588,
+          "ratioError": 0,
+          "floorError": 0,
+          "compositeMinAlpha": 255,
+          "staticScenery": false,
+          "reducedEffects": false,
+          "tick": 209,
+          "fighters": [
+            {
+              "id": "sam",
+              "x": 462,
+              "y": 0
+            },
+            {
+              "id": "higgs",
+              "x": 818,
+              "y": 0
+            }
+          ]
+        }
+      ],
+      "passed": true
+    },
+    {
+      "id": "ldm-stage-quai-refuges",
+      "name": "Le Quai des refuges",
+      "source": "assets/lignes-de-maree/stages/quai-refuges-panorama.png",
+      "width": 1672,
+      "height": 941,
+      "sha256": "40b7d9897e0dbdc360c15f291c7c5ba94328ce6e9d9dbdf606f68c92607d0043",
+      "floorY": 0.82,
+      "sourceFloorPixel": 771.62,
+      "capture": "stage-renders/quai-refuges.webp",
+      "captureSha256": "cffe060a870335d08ec7511a1f2de6f540ba3968437ae1ad275ab4439e25df66",
+      "cases": [
+        {
+          "label": "static-ready",
+          "panoramaRect": {
+            "x": -70.73326248671606,
+            "y": -67.99999999999977,
+            "width": 1421.4665249734321,
+            "height": 799.9999999999998
+          },
+          "floorY": 0.82,
+          "screenFloorY": 588,
+          "ratioError": 0,
+          "floorError": 0,
+          "compositeMinAlpha": 255,
+          "staticScenery": true,
+          "reducedEffects": false,
+          "tick": 73,
+          "fighters": [
+            {
+              "id": "sam",
+              "x": 462,
+              "y": 0
+            },
+            {
+              "id": "higgs",
+              "x": 818,
+              "y": 0
+            }
+          ]
+        },
+        {
+          "label": "static-moved-right",
+          "panoramaRect": {
+            "x": -70.73326248671606,
+            "y": -67.99999999999977,
+            "width": 1421.4665249734321,
+            "height": 799.9999999999998
+          },
+          "floorY": 0.82,
+          "screenFloorY": 588,
+          "ratioError": 0,
+          "floorError": 0,
+          "compositeMinAlpha": 255,
+          "staticScenery": true,
+          "reducedEffects": false,
+          "tick": 107,
+          "fighters": [
+            {
+              "id": "sam",
+              "x": 602.7999999999993,
+              "y": 0
+            },
+            {
+              "id": "higgs",
+              "x": 947.5999999999985,
+              "y": 0
+            }
+          ]
+        },
+        {
+          "label": "static-reduced-effects",
+          "panoramaRect": {
+            "x": -70.73326248671606,
+            "y": -67.99999999999977,
+            "width": 1421.4665249734321,
+            "height": 799.9999999999998
+          },
+          "floorY": 0.82,
+          "screenFloorY": 588,
+          "ratioError": 0,
+          "floorError": 0,
+          "compositeMinAlpha": 255,
+          "staticScenery": true,
+          "reducedEffects": true,
+          "tick": 108,
+          "fighters": [
+            {
+              "id": "sam",
+              "x": 602.7999999999993,
+              "y": 0
+            },
+            {
+              "id": "higgs",
+              "x": 947.5999999999985,
+              "y": 0
+            }
+          ]
+        },
+        {
+          "label": "camera-moved-right",
+          "panoramaRect": {
+            "x": -78.95361478459515,
+            "y": -67.99999999999977,
+            "width": 1421.4665249734321,
+            "height": 799.9999999999998
+          },
+          "floorY": 0.82,
+          "screenFloorY": 588,
+          "ratioError": 0,
+          "floorError": 0,
+          "compositeMinAlpha": 255,
+          "staticScenery": false,
+          "reducedEffects": false,
+          "tick": 143,
+          "fighters": [
+            {
+              "id": "sam",
+              "x": 743.5999999999985,
+              "y": 0
+            },
+            {
+              "id": "higgs",
+              "x": 1077.199999999997,
+              "y": 0
+            }
+          ]
+        },
+        {
+          "label": "camera-moved-left",
+          "panoramaRect": {
+            "x": -74.85895684602822,
+            "y": -67.99999999999977,
+            "width": 1421.4665249734321,
+            "height": 799.9999999999998
+          },
+          "floorY": 0.82,
+          "screenFloorY": 588,
+          "ratioError": 0,
+          "floorError": 0,
+          "compositeMinAlpha": 255,
+          "staticScenery": false,
+          "reducedEffects": false,
+          "tick": 209,
+          "fighters": [
+            {
+              "id": "sam",
+              "x": 462,
+              "y": 0
+            },
+            {
+              "id": "higgs",
+              "x": 818,
+              "y": 0
+            }
+          ]
+        }
+      ],
+      "passed": true
+    },
+    {
+      "id": "ldm-stage-depot-amarres",
+      "name": "Le Dépôt des amarres",
+      "source": "assets/lignes-de-maree/stages/depot-amarres-panorama.png",
+      "width": 1672,
+      "height": 941,
+      "sha256": "0877557ea4444a59be5100f142d0ecf23d6e7268380d61bb35ff440b014020ce",
+      "floorY": 0.82,
+      "sourceFloorPixel": 771.62,
+      "capture": "stage-renders/depot-amarres.webp",
+      "captureSha256": "1062ed0d7b552817a9a59875e2aeba313784ce4c4c30175b908eba71b6d1c71c",
+      "cases": [
+        {
+          "label": "static-ready",
+          "panoramaRect": {
+            "x": -70.73326248671606,
+            "y": -67.99999999999977,
+            "width": 1421.4665249734321,
+            "height": 799.9999999999998
+          },
+          "floorY": 0.82,
+          "screenFloorY": 588,
+          "ratioError": 0,
+          "floorError": 0,
+          "compositeMinAlpha": 255,
+          "staticScenery": true,
+          "reducedEffects": false,
+          "tick": 73,
+          "fighters": [
+            {
+              "id": "sam",
+              "x": 462,
+              "y": 0
+            },
+            {
+              "id": "higgs",
+              "x": 818,
+              "y": 0
+            }
+          ]
+        },
+        {
+          "label": "static-moved-right",
+          "panoramaRect": {
+            "x": -70.73326248671606,
+            "y": -67.99999999999977,
+            "width": 1421.4665249734321,
+            "height": 799.9999999999998
+          },
+          "floorY": 0.82,
+          "screenFloorY": 588,
+          "ratioError": 0,
+          "floorError": 0,
+          "compositeMinAlpha": 255,
+          "staticScenery": true,
+          "reducedEffects": false,
+          "tick": 107,
+          "fighters": [
+            {
+              "id": "sam",
+              "x": 602.7999999999993,
+              "y": 0
+            },
+            {
+              "id": "higgs",
+              "x": 947.5999999999985,
+              "y": 0
+            }
+          ]
+        },
+        {
+          "label": "static-reduced-effects",
+          "panoramaRect": {
+            "x": -70.73326248671606,
+            "y": -67.99999999999977,
+            "width": 1421.4665249734321,
+            "height": 799.9999999999998
+          },
+          "floorY": 0.82,
+          "screenFloorY": 588,
+          "ratioError": 0,
+          "floorError": 0,
+          "compositeMinAlpha": 255,
+          "staticScenery": true,
+          "reducedEffects": true,
+          "tick": 108,
+          "fighters": [
+            {
+              "id": "sam",
+              "x": 602.7999999999993,
+              "y": 0
+            },
+            {
+              "id": "higgs",
+              "x": 947.5999999999985,
+              "y": 0
+            }
+          ]
+        },
+        {
+          "label": "camera-moved-right",
+          "panoramaRect": {
+            "x": -78.95361478459515,
+            "y": -67.99999999999977,
+            "width": 1421.4665249734321,
+            "height": 799.9999999999998
+          },
+          "floorY": 0.82,
+          "screenFloorY": 588,
+          "ratioError": 0,
+          "floorError": 0,
+          "compositeMinAlpha": 255,
+          "staticScenery": false,
+          "reducedEffects": false,
+          "tick": 143,
+          "fighters": [
+            {
+              "id": "sam",
+              "x": 743.5999999999985,
+              "y": 0
+            },
+            {
+              "id": "higgs",
+              "x": 1077.199999999997,
+              "y": 0
+            }
+          ]
+        },
+        {
+          "label": "camera-moved-left",
+          "panoramaRect": {
+            "x": -74.85895684602822,
+            "y": -67.99999999999977,
+            "width": 1421.4665249734321,
+            "height": 799.9999999999998
+          },
+          "floorY": 0.82,
+          "screenFloorY": 588,
+          "ratioError": 0,
+          "floorError": 0,
+          "compositeMinAlpha": 255,
+          "staticScenery": false,
+          "reducedEffects": false,
+          "tick": 209,
+          "fighters": [
+            {
+              "id": "sam",
+              "x": 462,
+              "y": 0
+            },
+            {
+              "id": "higgs",
+              "x": 818,
+              "y": 0
+            }
+          ]
+        }
+      ],
+      "passed": true
+    },
+    {
+      "id": "ldm-stage-bassin-muet",
+      "name": "Le Bassin muet",
+      "source": "assets/lignes-de-maree/stages/bassin-muet-panorama.png",
+      "width": 1672,
+      "height": 941,
+      "sha256": "a93b20fe1840c1079ebc0e223b3d77114617d7dba2fb6ad7e30c6a006af95c15",
+      "floorY": 0.85,
+      "sourceFloorPixel": 799.85,
+      "capture": "stage-renders/bassin-muet.webp",
+      "captureSha256": "bd463f657466ef680c631b7d1a7740bf090cfdd18d6abe7b771cee51b7bc2681",
+      "cases": [
+        {
+          "label": "static-ready",
+          "panoramaRect": {
+            "x": -212.8799149840595,
+            "y": -227.9999999999999,
+            "width": 1705.759829968119,
+            "height": 959.9999999999999
+          },
+          "floorY": 0.85,
+          "screenFloorY": 588,
+          "ratioError": 0,
+          "floorError": 0,
+          "compositeMinAlpha": 255,
+          "staticScenery": true,
+          "reducedEffects": false,
+          "tick": 73,
+          "fighters": [
+            {
+              "id": "sam",
+              "x": 462,
+              "y": 0
+            },
+            {
+              "id": "higgs",
+              "x": 818,
+              "y": 0
+            }
+          ]
+        },
+        {
+          "label": "static-moved-right",
+          "panoramaRect": {
+            "x": -212.8799149840595,
+            "y": -227.9999999999999,
+            "width": 1705.759829968119,
+            "height": 959.9999999999999
+          },
+          "floorY": 0.85,
+          "screenFloorY": 588,
+          "ratioError": 0,
+          "floorError": 0,
+          "compositeMinAlpha": 255,
+          "staticScenery": true,
+          "reducedEffects": false,
+          "tick": 107,
+          "fighters": [
+            {
+              "id": "sam",
+              "x": 602.7999999999993,
+              "y": 0
+            },
+            {
+              "id": "higgs",
+              "x": 947.5999999999985,
+              "y": 0
+            }
+          ]
+        },
+        {
+          "label": "static-reduced-effects",
+          "panoramaRect": {
+            "x": -212.8799149840595,
+            "y": -227.9999999999999,
+            "width": 1705.759829968119,
+            "height": 959.9999999999999
+          },
+          "floorY": 0.85,
+          "screenFloorY": 588,
+          "ratioError": 0,
+          "floorError": 0,
+          "compositeMinAlpha": 255,
+          "staticScenery": true,
+          "reducedEffects": true,
+          "tick": 108,
+          "fighters": [
+            {
+              "id": "sam",
+              "x": 602.7999999999993,
+              "y": 0
+            },
+            {
+              "id": "higgs",
+              "x": 947.5999999999985,
+              "y": 0
+            }
+          ]
+        },
+        {
+          "label": "camera-moved-right",
+          "panoramaRect": {
+            "x": -221.10026728193859,
+            "y": -227.9999999999999,
+            "width": 1705.759829968119,
+            "height": 959.9999999999999
+          },
+          "floorY": 0.85,
+          "screenFloorY": 588,
+          "ratioError": 0,
+          "floorError": 0,
+          "compositeMinAlpha": 255,
+          "staticScenery": false,
+          "reducedEffects": false,
+          "tick": 143,
+          "fighters": [
+            {
+              "id": "sam",
+              "x": 743.5999999999985,
+              "y": 0
+            },
+            {
+              "id": "higgs",
+              "x": 1077.199999999997,
+              "y": 0
+            }
+          ]
+        },
+        {
+          "label": "camera-moved-left",
+          "panoramaRect": {
+            "x": -217.00560934337165,
+            "y": -227.9999999999999,
+            "width": 1705.759829968119,
+            "height": 959.9999999999999
+          },
+          "floorY": 0.85,
+          "screenFloorY": 588,
+          "ratioError": 0,
+          "floorError": 0,
+          "compositeMinAlpha": 255,
+          "staticScenery": false,
+          "reducedEffects": false,
+          "tick": 209,
+          "fighters": [
+            {
+              "id": "sam",
+              "x": 462,
+              "y": 0
+            },
+            {
+              "id": "higgs",
+              "x": 818,
+              "y": 0
+            }
+          ]
+        }
+      ],
+      "passed": true
+    },
+    {
+      "id": "ldm-stage-phare-couche",
+      "name": "Le Phare couché",
+      "source": "assets/lignes-de-maree/stages/phare-couche-panorama.png",
+      "width": 1672,
+      "height": 941,
+      "sha256": "03f15a97dca2735f5f13ac744fd3207db89e7191346829406e205e92b172511a",
+      "floorY": 0.84,
+      "sourceFloorPixel": 790.4399999999999,
+      "capture": "stage-renders/phare-couche.webp",
+      "captureSha256": "d912e8e59f66e6f842ca2f2ab7c10c6c705266bc2803f8b982099f1d1e704a9a",
+      "cases": [
+        {
+          "label": "static-ready",
+          "panoramaRect": {
+            "x": -159.57492029755565,
+            "y": -167.99999999999977,
+            "width": 1599.1498405951113,
+            "height": 899.9999999999998
+          },
+          "floorY": 0.84,
+          "screenFloorY": 588,
+          "ratioError": 0,
+          "floorError": 0,
+          "compositeMinAlpha": 255,
+          "staticScenery": true,
+          "reducedEffects": false,
+          "tick": 73,
+          "fighters": [
+            {
+              "id": "sam",
+              "x": 462,
+              "y": 0
+            },
+            {
+              "id": "higgs",
+              "x": 818,
+              "y": 0
+            }
+          ]
+        },
+        {
+          "label": "static-moved-right",
+          "panoramaRect": {
+            "x": -159.57492029755565,
+            "y": -167.99999999999977,
+            "width": 1599.1498405951113,
+            "height": 899.9999999999998
+          },
+          "floorY": 0.84,
+          "screenFloorY": 588,
+          "ratioError": 0,
+          "floorError": 0,
+          "compositeMinAlpha": 255,
+          "staticScenery": true,
+          "reducedEffects": false,
+          "tick": 107,
+          "fighters": [
+            {
+              "id": "sam",
+              "x": 602.7999999999993,
+              "y": 0
+            },
+            {
+              "id": "higgs",
+              "x": 947.5999999999985,
+              "y": 0
+            }
+          ]
+        },
+        {
+          "label": "static-reduced-effects",
+          "panoramaRect": {
+            "x": -159.57492029755565,
+            "y": -167.99999999999977,
+            "width": 1599.1498405951113,
+            "height": 899.9999999999998
+          },
+          "floorY": 0.84,
+          "screenFloorY": 588,
+          "ratioError": 0,
+          "floorError": 0,
+          "compositeMinAlpha": 255,
+          "staticScenery": true,
+          "reducedEffects": true,
+          "tick": 108,
+          "fighters": [
+            {
+              "id": "sam",
+              "x": 602.7999999999993,
+              "y": 0
+            },
+            {
+              "id": "higgs",
+              "x": 947.5999999999985,
+              "y": 0
+            }
+          ]
+        },
+        {
+          "label": "camera-moved-right",
+          "panoramaRect": {
+            "x": -167.79527259543474,
+            "y": -167.99999999999977,
+            "width": 1599.1498405951113,
+            "height": 899.9999999999998
+          },
+          "floorY": 0.84,
+          "screenFloorY": 588,
+          "ratioError": 0,
+          "floorError": 0,
+          "compositeMinAlpha": 255,
+          "staticScenery": false,
+          "reducedEffects": false,
+          "tick": 143,
+          "fighters": [
+            {
+              "id": "sam",
+              "x": 743.5999999999985,
+              "y": 0
+            },
+            {
+              "id": "higgs",
+              "x": 1077.199999999997,
+              "y": 0
+            }
+          ]
+        },
+        {
+          "label": "camera-moved-left",
+          "panoramaRect": {
+            "x": -163.7006146568678,
+            "y": -167.99999999999977,
+            "width": 1599.1498405951113,
+            "height": 899.9999999999998
+          },
+          "floorY": 0.84,
+          "screenFloorY": 588,
+          "ratioError": 0,
+          "floorError": 0,
+          "compositeMinAlpha": 255,
+          "staticScenery": false,
+          "reducedEffects": false,
+          "tick": 209,
+          "fighters": [
+            {
+              "id": "sam",
+              "x": 462,
+              "y": 0
+            },
+            {
+              "id": "higgs",
+              "x": 818,
+              "y": 0
+            }
+          ]
+        }
+      ],
+      "passed": true
+    },
+    {
+      "id": "ldm-stage-serre-veille",
+      "name": "La Serre de veille",
+      "source": "assets/lignes-de-maree/stages/serre-veille-panorama.png",
+      "width": 1672,
+      "height": 941,
+      "sha256": "325c1172390bab1a19a85ae2255acc26cde1787bb72b3039505e86fd561b8d9a",
+      "floorY": 0.81,
+      "sourceFloorPixel": 762.21,
+      "capture": "stage-renders/serre-veille.webp",
+      "captureSha256": "16265e2d32ab504e6944b9a6d090ddf209631a32c7605d8a9d83dd019ba93ab2",
+      "cases": [
+        {
+          "label": "static-ready",
+          "panoramaRect": {
+            "x": -33.326248671626104,
+            "y": -25.89473684210543,
+            "width": 1346.6524973432522,
+            "height": 757.8947368421054
+          },
+          "floorY": 0.81,
+          "screenFloorY": 588,
+          "ratioError": 0,
+          "floorError": 0,
+          "compositeMinAlpha": 255,
+          "staticScenery": true,
+          "reducedEffects": false,
+          "tick": 73,
+          "fighters": [
+            {
+              "id": "sam",
+              "x": 462,
+              "y": 0
+            },
+            {
+              "id": "higgs",
+              "x": 818,
+              "y": 0
+            }
+          ]
+        },
+        {
+          "label": "static-moved-right",
+          "panoramaRect": {
+            "x": -33.326248671626104,
+            "y": -25.89473684210543,
+            "width": 1346.6524973432522,
+            "height": 757.8947368421054
+          },
+          "floorY": 0.81,
+          "screenFloorY": 588,
+          "ratioError": 0,
+          "floorError": 0,
+          "compositeMinAlpha": 255,
+          "staticScenery": true,
+          "reducedEffects": false,
+          "tick": 107,
+          "fighters": [
+            {
+              "id": "sam",
+              "x": 602.7999999999993,
+              "y": 0
+            },
+            {
+              "id": "higgs",
+              "x": 947.5999999999985,
+              "y": 0
+            }
+          ]
+        },
+        {
+          "label": "static-reduced-effects",
+          "panoramaRect": {
+            "x": -33.326248671626104,
+            "y": -25.89473684210543,
+            "width": 1346.6524973432522,
+            "height": 757.8947368421054
+          },
+          "floorY": 0.81,
+          "screenFloorY": 588,
+          "ratioError": 0,
+          "floorError": 0,
+          "compositeMinAlpha": 255,
+          "staticScenery": true,
+          "reducedEffects": true,
+          "tick": 108,
+          "fighters": [
+            {
+              "id": "sam",
+              "x": 602.7999999999993,
+              "y": 0
+            },
+            {
+              "id": "higgs",
+              "x": 947.5999999999985,
+              "y": 0
+            }
+          ]
+        },
+        {
+          "label": "camera-moved-right",
+          "panoramaRect": {
+            "x": -41.54660096950519,
+            "y": -25.89473684210543,
+            "width": 1346.6524973432522,
+            "height": 757.8947368421054
+          },
+          "floorY": 0.81,
+          "screenFloorY": 588,
+          "ratioError": 0,
+          "floorError": 0,
+          "compositeMinAlpha": 255,
+          "staticScenery": false,
+          "reducedEffects": false,
+          "tick": 143,
+          "fighters": [
+            {
+              "id": "sam",
+              "x": 743.5999999999985,
+              "y": 0
+            },
+            {
+              "id": "higgs",
+              "x": 1077.199999999997,
+              "y": 0
+            }
+          ]
+        },
+        {
+          "label": "camera-moved-left",
+          "panoramaRect": {
+            "x": -37.45194303093826,
+            "y": -25.89473684210543,
+            "width": 1346.6524973432522,
+            "height": 757.8947368421054
+          },
+          "floorY": 0.81,
+          "screenFloorY": 588,
+          "ratioError": 0,
+          "floorError": 0,
+          "compositeMinAlpha": 255,
+          "staticScenery": false,
+          "reducedEffects": false,
+          "tick": 209,
+          "fighters": [
+            {
+              "id": "sam",
+              "x": 462,
+              "y": 0
+            },
+            {
+              "id": "higgs",
+              "x": 818,
+              "y": 0
+            }
+          ]
+        }
+      ],
+      "passed": true
+    },
+    {
+      "id": "ldm-stage-station-captage",
+      "name": "La Station de captage",
+      "source": "assets/lignes-de-maree/stages/station-captage-panorama.png",
+      "width": 1672,
+      "height": 941,
+      "sha256": "dbe8de99db301ffc624c216960f4181a9d9f884f9f3b4af5e1a09398ed3ecd5d",
+      "floorY": 0.84,
+      "sourceFloorPixel": 790.4399999999999,
+      "capture": "stage-renders/station-captage.webp",
+      "captureSha256": "ba4a6fc5ae7eee729ea8a1794638df30e34cc73f02ba4aef390ef577fece4de9",
+      "cases": [
+        {
+          "label": "static-ready",
+          "panoramaRect": {
+            "x": -159.57492029755565,
+            "y": -167.99999999999977,
+            "width": 1599.1498405951113,
+            "height": 899.9999999999998
+          },
+          "floorY": 0.84,
+          "screenFloorY": 588,
+          "ratioError": 0,
+          "floorError": 0,
+          "compositeMinAlpha": 255,
+          "staticScenery": true,
+          "reducedEffects": false,
+          "tick": 73,
+          "fighters": [
+            {
+              "id": "sam",
+              "x": 462,
+              "y": 0
+            },
+            {
+              "id": "higgs",
+              "x": 818,
+              "y": 0
+            }
+          ]
+        },
+        {
+          "label": "static-moved-right",
+          "panoramaRect": {
+            "x": -159.57492029755565,
+            "y": -167.99999999999977,
+            "width": 1599.1498405951113,
+            "height": 899.9999999999998
+          },
+          "floorY": 0.84,
+          "screenFloorY": 588,
+          "ratioError": 0,
+          "floorError": 0,
+          "compositeMinAlpha": 255,
+          "staticScenery": true,
+          "reducedEffects": false,
+          "tick": 107,
+          "fighters": [
+            {
+              "id": "sam",
+              "x": 602.7999999999993,
+              "y": 0
+            },
+            {
+              "id": "higgs",
+              "x": 947.5999999999985,
+              "y": 0
+            }
+          ]
+        },
+        {
+          "label": "static-reduced-effects",
+          "panoramaRect": {
+            "x": -159.57492029755565,
+            "y": -167.99999999999977,
+            "width": 1599.1498405951113,
+            "height": 899.9999999999998
+          },
+          "floorY": 0.84,
+          "screenFloorY": 588,
+          "ratioError": 0,
+          "floorError": 0,
+          "compositeMinAlpha": 255,
+          "staticScenery": true,
+          "reducedEffects": true,
+          "tick": 108,
+          "fighters": [
+            {
+              "id": "sam",
+              "x": 602.7999999999993,
+              "y": 0
+            },
+            {
+              "id": "higgs",
+              "x": 947.5999999999985,
+              "y": 0
+            }
+          ]
+        },
+        {
+          "label": "camera-moved-right",
+          "panoramaRect": {
+            "x": -167.79527259543474,
+            "y": -167.99999999999977,
+            "width": 1599.1498405951113,
+            "height": 899.9999999999998
+          },
+          "floorY": 0.84,
+          "screenFloorY": 588,
+          "ratioError": 0,
+          "floorError": 0,
+          "compositeMinAlpha": 255,
+          "staticScenery": false,
+          "reducedEffects": false,
+          "tick": 143,
+          "fighters": [
+            {
+              "id": "sam",
+              "x": 743.5999999999985,
+              "y": 0
+            },
+            {
+              "id": "higgs",
+              "x": 1077.199999999997,
+              "y": 0
+            }
+          ]
+        },
+        {
+          "label": "camera-moved-left",
+          "panoramaRect": {
+            "x": -163.7006146568678,
+            "y": -167.99999999999977,
+            "width": 1599.1498405951113,
+            "height": 899.9999999999998
+          },
+          "floorY": 0.84,
+          "screenFloorY": 588,
+          "ratioError": 0,
+          "floorError": 0,
+          "compositeMinAlpha": 255,
+          "staticScenery": false,
+          "reducedEffects": false,
+          "tick": 209,
+          "fighters": [
+            {
+              "id": "sam",
+              "x": 462,
+              "y": 0
+            },
+            {
+              "id": "higgs",
+              "x": 818,
+              "y": 0
+            }
+          ]
+        }
+      ],
+      "passed": true
+    },
+    {
+      "id": "ldm-stage-viaduc-ourlet",
+      "name": "Le Viaduc de l’Ourlet",
+      "source": "assets/lignes-de-maree/stages/viaduc-ourlet-panorama.png",
+      "width": 1672,
+      "height": 941,
+      "sha256": "8e8e8075a9ed77d772cd9f6a94574e1ea200fb4662a8ff66979a43a6084bbdf1",
+      "floorY": 0.81,
+      "sourceFloorPixel": 762.21,
+      "capture": "stage-renders/viaduc-ourlet.webp",
+      "captureSha256": "d1a0a4e1109d597f53ff97c02f38a94653c88007488b49a5e64dbf2691e62ab2",
+      "cases": [
+        {
+          "label": "static-ready",
+          "panoramaRect": {
+            "x": -33.326248671626104,
+            "y": -25.89473684210543,
+            "width": 1346.6524973432522,
+            "height": 757.8947368421054
+          },
+          "floorY": 0.81,
+          "screenFloorY": 588,
+          "ratioError": 0,
+          "floorError": 0,
+          "compositeMinAlpha": 255,
+          "staticScenery": true,
+          "reducedEffects": false,
+          "tick": 73,
+          "fighters": [
+            {
+              "id": "sam",
+              "x": 462,
+              "y": 0
+            },
+            {
+              "id": "higgs",
+              "x": 818,
+              "y": 0
+            }
+          ]
+        },
+        {
+          "label": "static-moved-right",
+          "panoramaRect": {
+            "x": -33.326248671626104,
+            "y": -25.89473684210543,
+            "width": 1346.6524973432522,
+            "height": 757.8947368421054
+          },
+          "floorY": 0.81,
+          "screenFloorY": 588,
+          "ratioError": 0,
+          "floorError": 0,
+          "compositeMinAlpha": 255,
+          "staticScenery": true,
+          "reducedEffects": false,
+          "tick": 107,
+          "fighters": [
+            {
+              "id": "sam",
+              "x": 602.7999999999993,
+              "y": 0
+            },
+            {
+              "id": "higgs",
+              "x": 947.5999999999985,
+              "y": 0
+            }
+          ]
+        },
+        {
+          "label": "static-reduced-effects",
+          "panoramaRect": {
+            "x": -33.326248671626104,
+            "y": -25.89473684210543,
+            "width": 1346.6524973432522,
+            "height": 757.8947368421054
+          },
+          "floorY": 0.81,
+          "screenFloorY": 588,
+          "ratioError": 0,
+          "floorError": 0,
+          "compositeMinAlpha": 255,
+          "staticScenery": true,
+          "reducedEffects": true,
+          "tick": 108,
+          "fighters": [
+            {
+              "id": "sam",
+              "x": 602.7999999999993,
+              "y": 0
+            },
+            {
+              "id": "higgs",
+              "x": 947.5999999999985,
+              "y": 0
+            }
+          ]
+        },
+        {
+          "label": "camera-moved-right",
+          "panoramaRect": {
+            "x": -41.54660096950519,
+            "y": -25.89473684210543,
+            "width": 1346.6524973432522,
+            "height": 757.8947368421054
+          },
+          "floorY": 0.81,
+          "screenFloorY": 588,
+          "ratioError": 0,
+          "floorError": 0,
+          "compositeMinAlpha": 255,
+          "staticScenery": false,
+          "reducedEffects": false,
+          "tick": 143,
+          "fighters": [
+            {
+              "id": "sam",
+              "x": 743.5999999999985,
+              "y": 0
+            },
+            {
+              "id": "higgs",
+              "x": 1077.199999999997,
+              "y": 0
+            }
+          ]
+        },
+        {
+          "label": "camera-moved-left",
+          "panoramaRect": {
+            "x": -37.45194303093826,
+            "y": -25.89473684210543,
+            "width": 1346.6524973432522,
+            "height": 757.8947368421054
+          },
+          "floorY": 0.81,
+          "screenFloorY": 588,
+          "ratioError": 0,
+          "floorError": 0,
+          "compositeMinAlpha": 255,
+          "staticScenery": false,
+          "reducedEffects": false,
+          "tick": 209,
+          "fighters": [
+            {
+              "id": "sam",
+              "x": 462,
+              "y": 0
+            },
+            {
+              "id": "higgs",
+              "x": 818,
+              "y": 0
+            }
+          ]
+        }
+      ],
+      "passed": true
+    },
+    {
+      "id": "ldm-stage-relais-anemometre",
+      "name": "Le Relais des vents",
+      "source": "assets/lignes-de-maree/stages/relais-anemometre-panorama.png",
+      "width": 1672,
+      "height": 941,
+      "sha256": "0ba5323028b84f89db07bf1ec1dca3df38ae9057c4bdc27cc9312f0095ba2623",
+      "floorY": 0.79,
+      "sourceFloorPixel": 743.39,
+      "capture": "stage-renders/relais-anemometre.webp",
+      "captureSha256": "818056bbeecf3a5b7727208ddd0c41c96fabc63abe75833ebcf3ff00b1ecfab2",
+      "cases": [
+        {
+          "label": "static-ready",
+          "panoramaRect": {
+            "x": -34.74676818359137,
+            "y": -12,
+            "width": 1349.4935363671827,
+            "height": 759.493670886076
+          },
+          "floorY": 0.79,
+          "screenFloorY": 588,
+          "ratioError": 2.220446049250313e-16,
+          "floorError": 0,
+          "compositeMinAlpha": 255,
+          "staticScenery": true,
+          "reducedEffects": false,
+          "tick": 73,
+          "fighters": [
+            {
+              "id": "sam",
+              "x": 462,
+              "y": 0
+            },
+            {
+              "id": "higgs",
+              "x": 818,
+              "y": 0
+            }
+          ]
+        },
+        {
+          "label": "static-moved-right",
+          "panoramaRect": {
+            "x": -34.74676818359137,
+            "y": -12,
+            "width": 1349.4935363671827,
+            "height": 759.493670886076
+          },
+          "floorY": 0.79,
+          "screenFloorY": 588,
+          "ratioError": 2.220446049250313e-16,
+          "floorError": 0,
+          "compositeMinAlpha": 255,
+          "staticScenery": true,
+          "reducedEffects": false,
+          "tick": 107,
+          "fighters": [
+            {
+              "id": "sam",
+              "x": 602.7999999999993,
+              "y": 0
+            },
+            {
+              "id": "higgs",
+              "x": 947.5999999999985,
+              "y": 0
+            }
+          ]
+        },
+        {
+          "label": "static-reduced-effects",
+          "panoramaRect": {
+            "x": -34.74676818359137,
+            "y": -12,
+            "width": 1349.4935363671827,
+            "height": 759.493670886076
+          },
+          "floorY": 0.79,
+          "screenFloorY": 588,
+          "ratioError": 2.220446049250313e-16,
+          "floorError": 0,
+          "compositeMinAlpha": 255,
+          "staticScenery": true,
+          "reducedEffects": true,
+          "tick": 108,
+          "fighters": [
+            {
+              "id": "sam",
+              "x": 602.7999999999993,
+              "y": 0
+            },
+            {
+              "id": "higgs",
+              "x": 947.5999999999985,
+              "y": 0
+            }
+          ]
+        },
+        {
+          "label": "camera-moved-right",
+          "panoramaRect": {
+            "x": -42.96712048147046,
+            "y": -12,
+            "width": 1349.4935363671827,
+            "height": 759.493670886076
+          },
+          "floorY": 0.79,
+          "screenFloorY": 588,
+          "ratioError": 2.220446049250313e-16,
+          "floorError": 0,
+          "compositeMinAlpha": 255,
+          "staticScenery": false,
+          "reducedEffects": false,
+          "tick": 143,
+          "fighters": [
+            {
+              "id": "sam",
+              "x": 743.5999999999985,
+              "y": 0
+            },
+            {
+              "id": "higgs",
+              "x": 1077.199999999997,
+              "y": 0
+            }
+          ]
+        },
+        {
+          "label": "camera-moved-left",
+          "panoramaRect": {
+            "x": -38.87246254290353,
+            "y": -12,
+            "width": 1349.4935363671827,
+            "height": 759.493670886076
+          },
+          "floorY": 0.79,
+          "screenFloorY": 588,
+          "ratioError": 2.220446049250313e-16,
+          "floorError": 0,
+          "compositeMinAlpha": 255,
+          "staticScenery": false,
+          "reducedEffects": false,
+          "tick": 209,
+          "fighters": [
+            {
+              "id": "sam",
+              "x": 462,
+              "y": 0
+            },
+            {
+              "id": "higgs",
+              "x": 818,
+              "y": 0
+            }
+          ]
+        }
+      ],
+      "passed": true
+    },
+    {
+      "id": "ldm-stage-pente-cairns",
+      "name": "La Pente des cairns",
+      "source": "assets/lignes-de-maree/stages/pente-cairns-panorama.png",
+      "width": 1672,
+      "height": 941,
+      "sha256": "43f479606550b1a5ca9896970a9e3333899a230c17d0ca60d7e8539b5573b11f",
+      "floorY": 0.78,
+      "sourceFloorPixel": 733.98,
+      "capture": "stage-renders/pente-cairns.webp",
+      "captureSha256": "28d0d1b71a002784defec7ae950a0ac41a03f2179005fd81edc59da457b8facd",
+      "cases": [
+        {
+          "label": "static-ready",
+          "panoramaRect": {
+            "x": -43.397367775688735,
+            "y": -12,
+            "width": 1366.7947355513775,
+            "height": 769.2307692307692
+          },
+          "floorY": 0.78,
+          "screenFloorY": 588,
+          "ratioError": 2.220446049250313e-16,
+          "floorError": 0,
+          "compositeMinAlpha": 255,
+          "staticScenery": true,
+          "reducedEffects": false,
+          "tick": 73,
+          "fighters": [
+            {
+              "id": "sam",
+              "x": 462,
+              "y": 0
+            },
+            {
+              "id": "higgs",
+              "x": 818,
+              "y": 0
+            }
+          ]
+        },
+        {
+          "label": "static-moved-right",
+          "panoramaRect": {
+            "x": -43.397367775688735,
+            "y": -12,
+            "width": 1366.7947355513775,
+            "height": 769.2307692307692
+          },
+          "floorY": 0.78,
+          "screenFloorY": 588,
+          "ratioError": 2.220446049250313e-16,
+          "floorError": 0,
+          "compositeMinAlpha": 255,
+          "staticScenery": true,
+          "reducedEffects": false,
+          "tick": 107,
+          "fighters": [
+            {
+              "id": "sam",
+              "x": 602.7999999999993,
+              "y": 0
+            },
+            {
+              "id": "higgs",
+              "x": 947.5999999999985,
+              "y": 0
+            }
+          ]
+        },
+        {
+          "label": "static-reduced-effects",
+          "panoramaRect": {
+            "x": -43.397367775688735,
+            "y": -12,
+            "width": 1366.7947355513775,
+            "height": 769.2307692307692
+          },
+          "floorY": 0.78,
+          "screenFloorY": 588,
+          "ratioError": 2.220446049250313e-16,
+          "floorError": 0,
+          "compositeMinAlpha": 255,
+          "staticScenery": true,
+          "reducedEffects": true,
+          "tick": 108,
+          "fighters": [
+            {
+              "id": "sam",
+              "x": 602.7999999999993,
+              "y": 0
+            },
+            {
+              "id": "higgs",
+              "x": 947.5999999999985,
+              "y": 0
+            }
+          ]
+        },
+        {
+          "label": "camera-moved-right",
+          "panoramaRect": {
+            "x": -51.617720073567824,
+            "y": -12,
+            "width": 1366.7947355513775,
+            "height": 769.2307692307692
+          },
+          "floorY": 0.78,
+          "screenFloorY": 588,
+          "ratioError": 2.220446049250313e-16,
+          "floorError": 0,
+          "compositeMinAlpha": 255,
+          "staticScenery": false,
+          "reducedEffects": false,
+          "tick": 143,
+          "fighters": [
+            {
+              "id": "sam",
+              "x": 743.5999999999985,
+              "y": 0
+            },
+            {
+              "id": "higgs",
+              "x": 1077.199999999997,
+              "y": 0
+            }
+          ]
+        },
+        {
+          "label": "camera-moved-left",
+          "panoramaRect": {
+            "x": -47.52306213500089,
+            "y": -12,
+            "width": 1366.7947355513775,
+            "height": 769.2307692307692
+          },
+          "floorY": 0.78,
+          "screenFloorY": 588,
+          "ratioError": 2.220446049250313e-16,
+          "floorError": 0,
+          "compositeMinAlpha": 255,
+          "staticScenery": false,
+          "reducedEffects": false,
+          "tick": 209,
+          "fighters": [
+            {
+              "id": "sam",
+              "x": 462,
+              "y": 0
+            },
+            {
+              "id": "higgs",
+              "x": 818,
+              "y": 0
+            }
+          ]
+        }
+      ],
+      "passed": true
+    },
+    {
+      "id": "ldm-stage-triage-noye",
+      "name": "Le Triage noyé",
+      "source": "assets/lignes-de-maree/stages/triage-noye-panorama.png",
+      "width": 1672,
+      "height": 941,
+      "sha256": "02fd63732a03e8a78ccd37a2204d19cc9cd41c9c91ba2c6949e52a1fb140dcfe",
+      "floorY": 0.67,
+      "sourceFloorPixel": 630.47,
+      "capture": "stage-renders/triage-noye.webp",
+      "captureSha256": "f1085d7462f7057002df3885b5b0edbb542f523504c26307eb7993d43427c11d",
+      "cases": [
+        {
+          "label": "static-ready",
+          "panoramaRect": {
+            "x": -155.59693561945858,
+            "y": -12,
+            "width": 1591.1938712389172,
+            "height": 895.5223880597015
+          },
+          "floorY": 0.67,
+          "screenFloorY": 588,
+          "ratioError": 2.220446049250313e-16,
+          "floorError": 0,
+          "compositeMinAlpha": 255,
+          "staticScenery": true,
+          "reducedEffects": false,
+          "tick": 73,
+          "fighters": [
+            {
+              "id": "sam",
+              "x": 462,
+              "y": 0
+            },
+            {
+              "id": "higgs",
+              "x": 818,
+              "y": 0
+            }
+          ]
+        },
+        {
+          "label": "static-moved-right",
+          "panoramaRect": {
+            "x": -155.59693561945858,
+            "y": -12,
+            "width": 1591.1938712389172,
+            "height": 895.5223880597015
+          },
+          "floorY": 0.67,
+          "screenFloorY": 588,
+          "ratioError": 2.220446049250313e-16,
+          "floorError": 0,
+          "compositeMinAlpha": 255,
+          "staticScenery": true,
+          "reducedEffects": false,
+          "tick": 107,
+          "fighters": [
+            {
+              "id": "sam",
+              "x": 602.7999999999993,
+              "y": 0
+            },
+            {
+              "id": "higgs",
+              "x": 947.5999999999985,
+              "y": 0
+            }
+          ]
+        },
+        {
+          "label": "static-reduced-effects",
+          "panoramaRect": {
+            "x": -155.59693561945858,
+            "y": -12,
+            "width": 1591.1938712389172,
+            "height": 895.5223880597015
+          },
+          "floorY": 0.67,
+          "screenFloorY": 588,
+          "ratioError": 2.220446049250313e-16,
+          "floorError": 0,
+          "compositeMinAlpha": 255,
+          "staticScenery": true,
+          "reducedEffects": true,
+          "tick": 108,
+          "fighters": [
+            {
+              "id": "sam",
+              "x": 602.7999999999993,
+              "y": 0
+            },
+            {
+              "id": "higgs",
+              "x": 947.5999999999985,
+              "y": 0
+            }
+          ]
+        },
+        {
+          "label": "camera-moved-right",
+          "panoramaRect": {
+            "x": -163.81728791733767,
+            "y": -12,
+            "width": 1591.1938712389172,
+            "height": 895.5223880597015
+          },
+          "floorY": 0.67,
+          "screenFloorY": 588,
+          "ratioError": 2.220446049250313e-16,
+          "floorError": 0,
+          "compositeMinAlpha": 255,
+          "staticScenery": false,
+          "reducedEffects": false,
+          "tick": 143,
+          "fighters": [
+            {
+              "id": "sam",
+              "x": 743.5999999999985,
+              "y": 0
+            },
+            {
+              "id": "higgs",
+              "x": 1077.199999999997,
+              "y": 0
+            }
+          ]
+        },
+        {
+          "label": "camera-moved-left",
+          "panoramaRect": {
+            "x": -159.72262997877073,
+            "y": -12,
+            "width": 1591.1938712389172,
+            "height": 895.5223880597015
+          },
+          "floorY": 0.67,
+          "screenFloorY": 588,
+          "ratioError": 2.220446049250313e-16,
+          "floorError": 0,
+          "compositeMinAlpha": 255,
+          "staticScenery": false,
+          "reducedEffects": false,
+          "tick": 209,
+          "fighters": [
+            {
+              "id": "sam",
+              "x": 462,
+              "y": 0
+            },
+            {
+              "id": "higgs",
+              "x": 818,
+              "y": 0
+            }
+          ]
+        }
+      ],
+      "passed": true
+    },
+    {
+      "id": "ldm-stage-gare-suspendue",
+      "name": "La Gare suspendue",
+      "source": "assets/lignes-de-maree/stages/gare-suspendue-panorama.png",
+      "width": 1672,
+      "height": 941,
+      "sha256": "f8c1e9dce75c04d36e7ed3109e90d520ecb85c96da269b98829fb0cbddb7bc1f",
+      "floorY": 0.83,
+      "sourceFloorPixel": 781.03,
+      "capture": "stage-renders/gare-suspendue.webp",
+      "captureSha256": "5a5120a62d2bfbecef636d53da0e94db3b3f647f81e02686d58b31123f919bea",
+      "cases": [
+        {
+          "label": "static-ready",
+          "panoramaRect": {
+            "x": -112.54110145652294,
+            "y": -115.0588235294116,
+            "width": 1505.0822029130459,
+            "height": 847.0588235294116
+          },
+          "floorY": 0.83,
+          "screenFloorY": 588,
+          "ratioError": 0,
+          "floorError": 0,
+          "compositeMinAlpha": 255,
+          "staticScenery": true,
+          "reducedEffects": false,
+          "tick": 73,
+          "fighters": [
+            {
+              "id": "sam",
+              "x": 462,
+              "y": 0
+            },
+            {
+              "id": "higgs",
+              "x": 818,
+              "y": 0
+            }
+          ]
+        },
+        {
+          "label": "static-moved-right",
+          "panoramaRect": {
+            "x": -112.54110145652294,
+            "y": -115.0588235294116,
+            "width": 1505.0822029130459,
+            "height": 847.0588235294116
+          },
+          "floorY": 0.83,
+          "screenFloorY": 588,
+          "ratioError": 0,
+          "floorError": 0,
+          "compositeMinAlpha": 255,
+          "staticScenery": true,
+          "reducedEffects": false,
+          "tick": 107,
+          "fighters": [
+            {
+              "id": "sam",
+              "x": 602.7999999999993,
+              "y": 0
+            },
+            {
+              "id": "higgs",
+              "x": 947.5999999999985,
+              "y": 0
+            }
+          ]
+        },
+        {
+          "label": "static-reduced-effects",
+          "panoramaRect": {
+            "x": -112.54110145652294,
+            "y": -115.0588235294116,
+            "width": 1505.0822029130459,
+            "height": 847.0588235294116
+          },
+          "floorY": 0.83,
+          "screenFloorY": 588,
+          "ratioError": 0,
+          "floorError": 0,
+          "compositeMinAlpha": 255,
+          "staticScenery": true,
+          "reducedEffects": true,
+          "tick": 108,
+          "fighters": [
+            {
+              "id": "sam",
+              "x": 602.7999999999993,
+              "y": 0
+            },
+            {
+              "id": "higgs",
+              "x": 947.5999999999985,
+              "y": 0
+            }
+          ]
+        },
+        {
+          "label": "camera-moved-right",
+          "panoramaRect": {
+            "x": -120.76145375440203,
+            "y": -115.0588235294116,
+            "width": 1505.0822029130459,
+            "height": 847.0588235294116
+          },
+          "floorY": 0.83,
+          "screenFloorY": 588,
+          "ratioError": 0,
+          "floorError": 0,
+          "compositeMinAlpha": 255,
+          "staticScenery": false,
+          "reducedEffects": false,
+          "tick": 143,
+          "fighters": [
+            {
+              "id": "sam",
+              "x": 743.5999999999985,
+              "y": 0
+            },
+            {
+              "id": "higgs",
+              "x": 1077.199999999997,
+              "y": 0
+            }
+          ]
+        },
+        {
+          "label": "camera-moved-left",
+          "panoramaRect": {
+            "x": -116.6667958158351,
+            "y": -115.0588235294116,
+            "width": 1505.0822029130459,
+            "height": 847.0588235294116
+          },
+          "floorY": 0.83,
+          "screenFloorY": 588,
+          "ratioError": 0,
+          "floorError": 0,
+          "compositeMinAlpha": 255,
+          "staticScenery": false,
+          "reducedEffects": false,
+          "tick": 209,
+          "fighters": [
+            {
+              "id": "sam",
+              "x": 462,
+              "y": 0
+            },
+            {
+              "id": "higgs",
+              "x": 818,
+              "y": 0
+            }
+          ]
+        }
+      ],
+      "passed": true
+    },
+    {
+      "id": "ldm-stage-atelier-reservoir",
+      "name": "L’Atelier du réservoir",
+      "source": "assets/lignes-de-maree/stages/atelier-reservoir-panorama.png",
+      "width": 1672,
+      "height": 941,
+      "sha256": "e74ad8d43152b43c262aa858c938333f577990714ecb3c60bda8c1b6d82f122f",
+      "floorY": 0.84,
+      "sourceFloorPixel": 790.4399999999999,
+      "capture": "stage-renders/atelier-reservoir.webp",
+      "captureSha256": "7ee47831d5450ae83e6842326d1e778ed30aa8610a308e9707c2712cd5876fc0",
+      "cases": [
+        {
+          "label": "static-ready",
+          "panoramaRect": {
+            "x": -159.57492029755565,
+            "y": -167.99999999999977,
+            "width": 1599.1498405951113,
+            "height": 899.9999999999998
+          },
+          "floorY": 0.84,
+          "screenFloorY": 588,
+          "ratioError": 0,
+          "floorError": 0,
+          "compositeMinAlpha": 255,
+          "staticScenery": true,
+          "reducedEffects": false,
+          "tick": 73,
+          "fighters": [
+            {
+              "id": "sam",
+              "x": 462,
+              "y": 0
+            },
+            {
+              "id": "higgs",
+              "x": 818,
+              "y": 0
+            }
+          ]
+        },
+        {
+          "label": "static-moved-right",
+          "panoramaRect": {
+            "x": -159.57492029755565,
+            "y": -167.99999999999977,
+            "width": 1599.1498405951113,
+            "height": 899.9999999999998
+          },
+          "floorY": 0.84,
+          "screenFloorY": 588,
+          "ratioError": 0,
+          "floorError": 0,
+          "compositeMinAlpha": 255,
+          "staticScenery": true,
+          "reducedEffects": false,
+          "tick": 107,
+          "fighters": [
+            {
+              "id": "sam",
+              "x": 602.7999999999993,
+              "y": 0
+            },
+            {
+              "id": "higgs",
+              "x": 947.5999999999985,
+              "y": 0
+            }
+          ]
+        },
+        {
+          "label": "static-reduced-effects",
+          "panoramaRect": {
+            "x": -159.57492029755565,
+            "y": -167.99999999999977,
+            "width": 1599.1498405951113,
+            "height": 899.9999999999998
+          },
+          "floorY": 0.84,
+          "screenFloorY": 588,
+          "ratioError": 0,
+          "floorError": 0,
+          "compositeMinAlpha": 255,
+          "staticScenery": true,
+          "reducedEffects": true,
+          "tick": 108,
+          "fighters": [
+            {
+              "id": "sam",
+              "x": 602.7999999999993,
+              "y": 0
+            },
+            {
+              "id": "higgs",
+              "x": 947.5999999999985,
+              "y": 0
+            }
+          ]
+        },
+        {
+          "label": "camera-moved-right",
+          "panoramaRect": {
+            "x": -167.79527259543474,
+            "y": -167.99999999999977,
+            "width": 1599.1498405951113,
+            "height": 899.9999999999998
+          },
+          "floorY": 0.84,
+          "screenFloorY": 588,
+          "ratioError": 0,
+          "floorError": 0,
+          "compositeMinAlpha": 255,
+          "staticScenery": false,
+          "reducedEffects": false,
+          "tick": 143,
+          "fighters": [
+            {
+              "id": "sam",
+              "x": 743.5999999999985,
+              "y": 0
+            },
+            {
+              "id": "higgs",
+              "x": 1077.199999999997,
+              "y": 0
+            }
+          ]
+        },
+        {
+          "label": "camera-moved-left",
+          "panoramaRect": {
+            "x": -163.7006146568678,
+            "y": -167.99999999999977,
+            "width": 1599.1498405951113,
+            "height": 899.9999999999998
+          },
+          "floorY": 0.84,
+          "screenFloorY": 588,
+          "ratioError": 0,
+          "floorError": 0,
+          "compositeMinAlpha": 255,
+          "staticScenery": false,
+          "reducedEffects": false,
+          "tick": 209,
+          "fighters": [
+            {
+              "id": "sam",
+              "x": 462,
+              "y": 0
+            },
+            {
+              "id": "higgs",
+              "x": 818,
+              "y": 0
+            }
+          ]
+        }
+      ],
+      "passed": true
+    },
+    {
+      "id": "ldm-stage-ecluse-noire",
+      "name": "L’Écluse noire",
+      "source": "assets/lignes-de-maree/stages/ecluse-noire-panorama.png",
+      "width": 1672,
+      "height": 941,
+      "sha256": "2379cc5bbbf942c32f9c92027c2f2af7b0af2794da1768785b3f0b97e79aacc2",
+      "floorY": 0.83,
+      "sourceFloorPixel": 781.03,
+      "capture": "stage-renders/ecluse-noire.webp",
+      "captureSha256": "6d1d8fcd65146bd2765507341784b498e8d8bc87481aac3f7b59e6879679f84a",
+      "cases": [
+        {
+          "label": "static-ready",
+          "panoramaRect": {
+            "x": -112.54110145652294,
+            "y": -115.0588235294116,
+            "width": 1505.0822029130459,
+            "height": 847.0588235294116
+          },
+          "floorY": 0.83,
+          "screenFloorY": 588,
+          "ratioError": 0,
+          "floorError": 0,
+          "compositeMinAlpha": 255,
+          "staticScenery": true,
+          "reducedEffects": false,
+          "tick": 73,
+          "fighters": [
+            {
+              "id": "sam",
+              "x": 462,
+              "y": 0
+            },
+            {
+              "id": "higgs",
+              "x": 818,
+              "y": 0
+            }
+          ]
+        },
+        {
+          "label": "static-moved-right",
+          "panoramaRect": {
+            "x": -112.54110145652294,
+            "y": -115.0588235294116,
+            "width": 1505.0822029130459,
+            "height": 847.0588235294116
+          },
+          "floorY": 0.83,
+          "screenFloorY": 588,
+          "ratioError": 0,
+          "floorError": 0,
+          "compositeMinAlpha": 255,
+          "staticScenery": true,
+          "reducedEffects": false,
+          "tick": 107,
+          "fighters": [
+            {
+              "id": "sam",
+              "x": 602.7999999999993,
+              "y": 0
+            },
+            {
+              "id": "higgs",
+              "x": 947.5999999999985,
+              "y": 0
+            }
+          ]
+        },
+        {
+          "label": "static-reduced-effects",
+          "panoramaRect": {
+            "x": -112.54110145652294,
+            "y": -115.0588235294116,
+            "width": 1505.0822029130459,
+            "height": 847.0588235294116
+          },
+          "floorY": 0.83,
+          "screenFloorY": 588,
+          "ratioError": 0,
+          "floorError": 0,
+          "compositeMinAlpha": 255,
+          "staticScenery": true,
+          "reducedEffects": true,
+          "tick": 108,
+          "fighters": [
+            {
+              "id": "sam",
+              "x": 602.7999999999993,
+              "y": 0
+            },
+            {
+              "id": "higgs",
+              "x": 947.5999999999985,
+              "y": 0
+            }
+          ]
+        },
+        {
+          "label": "camera-moved-right",
+          "panoramaRect": {
+            "x": -120.76145375440203,
+            "y": -115.0588235294116,
+            "width": 1505.0822029130459,
+            "height": 847.0588235294116
+          },
+          "floorY": 0.83,
+          "screenFloorY": 588,
+          "ratioError": 0,
+          "floorError": 0,
+          "compositeMinAlpha": 255,
+          "staticScenery": false,
+          "reducedEffects": false,
+          "tick": 143,
+          "fighters": [
+            {
+              "id": "sam",
+              "x": 743.5999999999985,
+              "y": 0
+            },
+            {
+              "id": "higgs",
+              "x": 1077.199999999997,
+              "y": 0
+            }
+          ]
+        },
+        {
+          "label": "camera-moved-left",
+          "panoramaRect": {
+            "x": -116.6667958158351,
+            "y": -115.0588235294116,
+            "width": 1505.0822029130459,
+            "height": 847.0588235294116
+          },
+          "floorY": 0.83,
+          "screenFloorY": 588,
+          "ratioError": 0,
+          "floorError": 0,
+          "compositeMinAlpha": 255,
+          "staticScenery": false,
+          "reducedEffects": false,
+          "tick": 209,
+          "fighters": [
+            {
+              "id": "sam",
+              "x": 462,
+              "y": 0
+            },
+            {
+              "id": "higgs",
+              "x": 818,
+              "y": 0
+            }
+          ]
+        }
+      ],
+      "passed": true
+    },
+    {
+      "id": "ldm-stage-archive-beton",
+      "name": "Les Archives de béton",
+      "source": "assets/lignes-de-maree/stages/archive-beton-panorama.png",
+      "width": 1672,
+      "height": 941,
+      "sha256": "135eb882ff0a3ef75542166f68766b261ef3eb4ced67ce8ed846cf38614f2049",
+      "floorY": 0.83,
+      "sourceFloorPixel": 781.03,
+      "capture": "stage-renders/archive-beton.webp",
+      "captureSha256": "47b4dcce18ef13b22f886f7da339c4a055e35b72cca9366696339c9f0f483a28",
+      "cases": [
+        {
+          "label": "static-ready",
+          "panoramaRect": {
+            "x": -112.54110145652294,
+            "y": -115.0588235294116,
+            "width": 1505.0822029130459,
+            "height": 847.0588235294116
+          },
+          "floorY": 0.83,
+          "screenFloorY": 588,
+          "ratioError": 0,
+          "floorError": 0,
+          "compositeMinAlpha": 255,
+          "staticScenery": true,
+          "reducedEffects": false,
+          "tick": 73,
+          "fighters": [
+            {
+              "id": "sam",
+              "x": 462,
+              "y": 0
+            },
+            {
+              "id": "higgs",
+              "x": 818,
+              "y": 0
+            }
+          ]
+        },
+        {
+          "label": "static-moved-right",
+          "panoramaRect": {
+            "x": -112.54110145652294,
+            "y": -115.0588235294116,
+            "width": 1505.0822029130459,
+            "height": 847.0588235294116
+          },
+          "floorY": 0.83,
+          "screenFloorY": 588,
+          "ratioError": 0,
+          "floorError": 0,
+          "compositeMinAlpha": 255,
+          "staticScenery": true,
+          "reducedEffects": false,
+          "tick": 107,
+          "fighters": [
+            {
+              "id": "sam",
+              "x": 602.7999999999993,
+              "y": 0
+            },
+            {
+              "id": "higgs",
+              "x": 947.5999999999985,
+              "y": 0
+            }
+          ]
+        },
+        {
+          "label": "static-reduced-effects",
+          "panoramaRect": {
+            "x": -112.54110145652294,
+            "y": -115.0588235294116,
+            "width": 1505.0822029130459,
+            "height": 847.0588235294116
+          },
+          "floorY": 0.83,
+          "screenFloorY": 588,
+          "ratioError": 0,
+          "floorError": 0,
+          "compositeMinAlpha": 255,
+          "staticScenery": true,
+          "reducedEffects": true,
+          "tick": 108,
+          "fighters": [
+            {
+              "id": "sam",
+              "x": 602.7999999999993,
+              "y": 0
+            },
+            {
+              "id": "higgs",
+              "x": 947.5999999999985,
+              "y": 0
+            }
+          ]
+        },
+        {
+          "label": "camera-moved-right",
+          "panoramaRect": {
+            "x": -120.76145375440203,
+            "y": -115.0588235294116,
+            "width": 1505.0822029130459,
+            "height": 847.0588235294116
+          },
+          "floorY": 0.83,
+          "screenFloorY": 588,
+          "ratioError": 0,
+          "floorError": 0,
+          "compositeMinAlpha": 255,
+          "staticScenery": false,
+          "reducedEffects": false,
+          "tick": 143,
+          "fighters": [
+            {
+              "id": "sam",
+              "x": 743.5999999999985,
+              "y": 0
+            },
+            {
+              "id": "higgs",
+              "x": 1077.199999999997,
+              "y": 0
+            }
+          ]
+        },
+        {
+          "label": "camera-moved-left",
+          "panoramaRect": {
+            "x": -116.6667958158351,
+            "y": -115.0588235294116,
+            "width": 1505.0822029130459,
+            "height": 847.0588235294116
+          },
+          "floorY": 0.83,
+          "screenFloorY": 588,
+          "ratioError": 0,
+          "floorError": 0,
+          "compositeMinAlpha": 255,
+          "staticScenery": false,
+          "reducedEffects": false,
+          "tick": 209,
+          "fighters": [
+            {
+              "id": "sam",
+              "x": 462,
+              "y": 0
+            },
+            {
+              "id": "higgs",
+              "x": 818,
+              "y": 0
+            }
+          ]
+        }
+      ],
+      "passed": true
+    },
+    {
+      "id": "ldm-stage-col-contrevent",
+      "name": "Le Col de Contrevent",
+      "source": "assets/lignes-de-maree/stages/col-contrevent-panorama.png",
+      "width": 1672,
+      "height": 941,
+      "sha256": "8c73703100a7aa8a7f821bc8770e54ab07cf0c1979e9757cafd8c06df3f805a1",
+      "floorY": 0.84,
+      "sourceFloorPixel": 790.4399999999999,
+      "capture": "stage-renders/col-contrevent.webp",
+      "captureSha256": "86e173b5d1b519fbb74b92c2ec0cf594a894522edad938a4ba9165e3c569cb7d",
+      "cases": [
+        {
+          "label": "static-ready",
+          "panoramaRect": {
+            "x": -159.57492029755565,
+            "y": -167.99999999999977,
+            "width": 1599.1498405951113,
+            "height": 899.9999999999998
+          },
+          "floorY": 0.84,
+          "screenFloorY": 588,
+          "ratioError": 0,
+          "floorError": 0,
+          "compositeMinAlpha": 255,
+          "staticScenery": true,
+          "reducedEffects": false,
+          "tick": 73,
+          "fighters": [
+            {
+              "id": "sam",
+              "x": 462,
+              "y": 0
+            },
+            {
+              "id": "higgs",
+              "x": 818,
+              "y": 0
+            }
+          ]
+        },
+        {
+          "label": "static-moved-right",
+          "panoramaRect": {
+            "x": -159.57492029755565,
+            "y": -167.99999999999977,
+            "width": 1599.1498405951113,
+            "height": 899.9999999999998
+          },
+          "floorY": 0.84,
+          "screenFloorY": 588,
+          "ratioError": 0,
+          "floorError": 0,
+          "compositeMinAlpha": 255,
+          "staticScenery": true,
+          "reducedEffects": false,
+          "tick": 107,
+          "fighters": [
+            {
+              "id": "sam",
+              "x": 602.7999999999993,
+              "y": 0
+            },
+            {
+              "id": "higgs",
+              "x": 947.5999999999985,
+              "y": 0
+            }
+          ]
+        },
+        {
+          "label": "static-reduced-effects",
+          "panoramaRect": {
+            "x": -159.57492029755565,
+            "y": -167.99999999999977,
+            "width": 1599.1498405951113,
+            "height": 899.9999999999998
+          },
+          "floorY": 0.84,
+          "screenFloorY": 588,
+          "ratioError": 0,
+          "floorError": 0,
+          "compositeMinAlpha": 255,
+          "staticScenery": true,
+          "reducedEffects": true,
+          "tick": 108,
+          "fighters": [
+            {
+              "id": "sam",
+              "x": 602.7999999999993,
+              "y": 0
+            },
+            {
+              "id": "higgs",
+              "x": 947.5999999999985,
+              "y": 0
+            }
+          ]
+        },
+        {
+          "label": "camera-moved-right",
+          "panoramaRect": {
+            "x": -167.79527259543474,
+            "y": -167.99999999999977,
+            "width": 1599.1498405951113,
+            "height": 899.9999999999998
+          },
+          "floorY": 0.84,
+          "screenFloorY": 588,
+          "ratioError": 0,
+          "floorError": 0,
+          "compositeMinAlpha": 255,
+          "staticScenery": false,
+          "reducedEffects": false,
+          "tick": 143,
+          "fighters": [
+            {
+              "id": "sam",
+              "x": 743.5999999999985,
+              "y": 0
+            },
+            {
+              "id": "higgs",
+              "x": 1077.199999999997,
+              "y": 0
+            }
+          ]
+        },
+        {
+          "label": "camera-moved-left",
+          "panoramaRect": {
+            "x": -163.7006146568678,
+            "y": -167.99999999999977,
+            "width": 1599.1498405951113,
+            "height": 899.9999999999998
+          },
+          "floorY": 0.84,
+          "screenFloorY": 588,
+          "ratioError": 0,
+          "floorError": 0,
+          "compositeMinAlpha": 255,
+          "staticScenery": false,
+          "reducedEffects": false,
+          "tick": 209,
+          "fighters": [
+            {
+              "id": "sam",
+              "x": 462,
+              "y": 0
+            },
+            {
+              "id": "higgs",
+              "x": 818,
+              "y": 0
+            }
+          ]
+        }
+      ],
+      "passed": true
+    },
+    {
+      "id": "ldm-stage-plateau-aiguilles",
+      "name": "Le Plateau des aiguilles",
+      "source": "assets/lignes-de-maree/stages/plateau-aiguilles-panorama.png",
+      "width": 1672,
+      "height": 941,
+      "sha256": "08e7a0221f3d42cdb3a48b698f8e5dc779511583c52e486fd773a7177f21a061",
+      "floorY": 0.81,
+      "sourceFloorPixel": 762.21,
+      "capture": "stage-renders/plateau-aiguilles.webp",
+      "captureSha256": "eb85f52f3b77bb1de5691d851fd1e69d1f24ef31864de56e77c72eab8a827750",
+      "cases": [
+        {
+          "label": "static-ready",
+          "panoramaRect": {
+            "x": -33.326248671626104,
+            "y": -25.89473684210543,
+            "width": 1346.6524973432522,
+            "height": 757.8947368421054
+          },
+          "floorY": 0.81,
+          "screenFloorY": 588,
+          "ratioError": 0,
+          "floorError": 0,
+          "compositeMinAlpha": 255,
+          "staticScenery": true,
+          "reducedEffects": false,
+          "tick": 73,
+          "fighters": [
+            {
+              "id": "sam",
+              "x": 462,
+              "y": 0
+            },
+            {
+              "id": "higgs",
+              "x": 818,
+              "y": 0
+            }
+          ]
+        },
+        {
+          "label": "static-moved-right",
+          "panoramaRect": {
+            "x": -33.326248671626104,
+            "y": -25.89473684210543,
+            "width": 1346.6524973432522,
+            "height": 757.8947368421054
+          },
+          "floorY": 0.81,
+          "screenFloorY": 588,
+          "ratioError": 0,
+          "floorError": 0,
+          "compositeMinAlpha": 255,
+          "staticScenery": true,
+          "reducedEffects": false,
+          "tick": 107,
+          "fighters": [
+            {
+              "id": "sam",
+              "x": 602.7999999999993,
+              "y": 0
+            },
+            {
+              "id": "higgs",
+              "x": 947.5999999999985,
+              "y": 0
+            }
+          ]
+        },
+        {
+          "label": "static-reduced-effects",
+          "panoramaRect": {
+            "x": -33.326248671626104,
+            "y": -25.89473684210543,
+            "width": 1346.6524973432522,
+            "height": 757.8947368421054
+          },
+          "floorY": 0.81,
+          "screenFloorY": 588,
+          "ratioError": 0,
+          "floorError": 0,
+          "compositeMinAlpha": 255,
+          "staticScenery": true,
+          "reducedEffects": true,
+          "tick": 108,
+          "fighters": [
+            {
+              "id": "sam",
+              "x": 602.7999999999993,
+              "y": 0
+            },
+            {
+              "id": "higgs",
+              "x": 947.5999999999985,
+              "y": 0
+            }
+          ]
+        },
+        {
+          "label": "camera-moved-right",
+          "panoramaRect": {
+            "x": -41.54660096950519,
+            "y": -25.89473684210543,
+            "width": 1346.6524973432522,
+            "height": 757.8947368421054
+          },
+          "floorY": 0.81,
+          "screenFloorY": 588,
+          "ratioError": 0,
+          "floorError": 0,
+          "compositeMinAlpha": 255,
+          "staticScenery": false,
+          "reducedEffects": false,
+          "tick": 143,
+          "fighters": [
+            {
+              "id": "sam",
+              "x": 743.5999999999985,
+              "y": 0
+            },
+            {
+              "id": "higgs",
+              "x": 1077.199999999997,
+              "y": 0
+            }
+          ]
+        },
+        {
+          "label": "camera-moved-left",
+          "panoramaRect": {
+            "x": -37.45194303093826,
+            "y": -25.89473684210543,
+            "width": 1346.6524973432522,
+            "height": 757.8947368421054
+          },
+          "floorY": 0.81,
+          "screenFloorY": 588,
+          "ratioError": 0,
+          "floorError": 0,
+          "compositeMinAlpha": 255,
+          "staticScenery": false,
+          "reducedEffects": false,
+          "tick": 209,
+          "fighters": [
+            {
+              "id": "sam",
+              "x": 462,
+              "y": 0
+            },
+            {
+              "id": "higgs",
+              "x": 818,
+              "y": 0
+            }
+          ]
+        }
+      ],
+      "passed": true
+    },
+    {
+      "id": "ldm-stage-radome-ebreche",
+      "name": "Le Radôme ébréché",
+      "source": "assets/lignes-de-maree/stages/radome-ebreche-panorama.png",
+      "width": 1672,
+      "height": 941,
+      "sha256": "db381d24caac30cfc4f416945929155ee27d8bc19f50064e968f64b61c6ad685",
+      "floorY": 0.82,
+      "sourceFloorPixel": 771.62,
+      "capture": "stage-renders/radome-ebreche.webp",
+      "captureSha256": "b1060567093e8e5804ac653f2ce5d6d310686801df3abf64969490b1aa5f5777",
+      "cases": [
+        {
+          "label": "static-ready",
+          "panoramaRect": {
+            "x": -70.73326248671606,
+            "y": -67.99999999999977,
+            "width": 1421.4665249734321,
+            "height": 799.9999999999998
+          },
+          "floorY": 0.82,
+          "screenFloorY": 588,
+          "ratioError": 0,
+          "floorError": 0,
+          "compositeMinAlpha": 255,
+          "staticScenery": true,
+          "reducedEffects": false,
+          "tick": 73,
+          "fighters": [
+            {
+              "id": "sam",
+              "x": 462,
+              "y": 0
+            },
+            {
+              "id": "higgs",
+              "x": 818,
+              "y": 0
+            }
+          ]
+        },
+        {
+          "label": "static-moved-right",
+          "panoramaRect": {
+            "x": -70.73326248671606,
+            "y": -67.99999999999977,
+            "width": 1421.4665249734321,
+            "height": 799.9999999999998
+          },
+          "floorY": 0.82,
+          "screenFloorY": 588,
+          "ratioError": 0,
+          "floorError": 0,
+          "compositeMinAlpha": 255,
+          "staticScenery": true,
+          "reducedEffects": false,
+          "tick": 107,
+          "fighters": [
+            {
+              "id": "sam",
+              "x": 602.7999999999993,
+              "y": 0
+            },
+            {
+              "id": "higgs",
+              "x": 947.5999999999985,
+              "y": 0
+            }
+          ]
+        },
+        {
+          "label": "static-reduced-effects",
+          "panoramaRect": {
+            "x": -70.73326248671606,
+            "y": -67.99999999999977,
+            "width": 1421.4665249734321,
+            "height": 799.9999999999998
+          },
+          "floorY": 0.82,
+          "screenFloorY": 588,
+          "ratioError": 0,
+          "floorError": 0,
+          "compositeMinAlpha": 255,
+          "staticScenery": true,
+          "reducedEffects": true,
+          "tick": 108,
+          "fighters": [
+            {
+              "id": "sam",
+              "x": 602.7999999999993,
+              "y": 0
+            },
+            {
+              "id": "higgs",
+              "x": 947.5999999999985,
+              "y": 0
+            }
+          ]
+        },
+        {
+          "label": "camera-moved-right",
+          "panoramaRect": {
+            "x": -78.95361478459515,
+            "y": -67.99999999999977,
+            "width": 1421.4665249734321,
+            "height": 799.9999999999998
+          },
+          "floorY": 0.82,
+          "screenFloorY": 588,
+          "ratioError": 0,
+          "floorError": 0,
+          "compositeMinAlpha": 255,
+          "staticScenery": false,
+          "reducedEffects": false,
+          "tick": 143,
+          "fighters": [
+            {
+              "id": "sam",
+              "x": 743.5999999999985,
+              "y": 0
+            },
+            {
+              "id": "higgs",
+              "x": 1077.199999999997,
+              "y": 0
+            }
+          ]
+        },
+        {
+          "label": "camera-moved-left",
+          "panoramaRect": {
+            "x": -74.85895684602822,
+            "y": -67.99999999999977,
+            "width": 1421.4665249734321,
+            "height": 799.9999999999998
+          },
+          "floorY": 0.82,
+          "screenFloorY": 588,
+          "ratioError": 0,
+          "floorError": 0,
+          "compositeMinAlpha": 255,
+          "staticScenery": false,
+          "reducedEffects": false,
+          "tick": 209,
+          "fighters": [
+            {
+              "id": "sam",
+              "x": 462,
+              "y": 0
+            },
+            {
+              "id": "higgs",
+              "x": 818,
+              "y": 0
+            }
+          ]
+        }
+      ],
+      "passed": true
+    },
+    {
+      "id": "ldm-stage-terrasse-veilleurs",
+      "name": "La Terrasse des veilleurs",
+      "source": "assets/lignes-de-maree/stages/terrasse-veilleurs-panorama.png",
+      "width": 1672,
+      "height": 941,
+      "sha256": "71ef75077ac04dbd34f3a8cc311a2aeef4b4e41d99dd500d142f3da9993f53e0",
+      "floorY": 0.82,
+      "sourceFloorPixel": 771.62,
+      "capture": "stage-renders/terrasse-veilleurs.webp",
+      "captureSha256": "ec0089ea165fb19cbe5fe008536f11dd7572514a391b3855578810d23b23cedb",
+      "cases": [
+        {
+          "label": "static-ready",
+          "panoramaRect": {
+            "x": -70.73326248671606,
+            "y": -67.99999999999977,
+            "width": 1421.4665249734321,
+            "height": 799.9999999999998
+          },
+          "floorY": 0.82,
+          "screenFloorY": 588,
+          "ratioError": 0,
+          "floorError": 0,
+          "compositeMinAlpha": 255,
+          "staticScenery": true,
+          "reducedEffects": false,
+          "tick": 73,
+          "fighters": [
+            {
+              "id": "sam",
+              "x": 462,
+              "y": 0
+            },
+            {
+              "id": "higgs",
+              "x": 818,
+              "y": 0
+            }
+          ]
+        },
+        {
+          "label": "static-moved-right",
+          "panoramaRect": {
+            "x": -70.73326248671606,
+            "y": -67.99999999999977,
+            "width": 1421.4665249734321,
+            "height": 799.9999999999998
+          },
+          "floorY": 0.82,
+          "screenFloorY": 588,
+          "ratioError": 0,
+          "floorError": 0,
+          "compositeMinAlpha": 255,
+          "staticScenery": true,
+          "reducedEffects": false,
+          "tick": 107,
+          "fighters": [
+            {
+              "id": "sam",
+              "x": 602.7999999999993,
+              "y": 0
+            },
+            {
+              "id": "higgs",
+              "x": 947.5999999999985,
+              "y": 0
+            }
+          ]
+        },
+        {
+          "label": "static-reduced-effects",
+          "panoramaRect": {
+            "x": -70.73326248671606,
+            "y": -67.99999999999977,
+            "width": 1421.4665249734321,
+            "height": 799.9999999999998
+          },
+          "floorY": 0.82,
+          "screenFloorY": 588,
+          "ratioError": 0,
+          "floorError": 0,
+          "compositeMinAlpha": 255,
+          "staticScenery": true,
+          "reducedEffects": true,
+          "tick": 108,
+          "fighters": [
+            {
+              "id": "sam",
+              "x": 602.7999999999993,
+              "y": 0
+            },
+            {
+              "id": "higgs",
+              "x": 947.5999999999985,
+              "y": 0
+            }
+          ]
+        },
+        {
+          "label": "camera-moved-right",
+          "panoramaRect": {
+            "x": -78.95361478459515,
+            "y": -67.99999999999977,
+            "width": 1421.4665249734321,
+            "height": 799.9999999999998
+          },
+          "floorY": 0.82,
+          "screenFloorY": 588,
+          "ratioError": 0,
+          "floorError": 0,
+          "compositeMinAlpha": 255,
+          "staticScenery": false,
+          "reducedEffects": false,
+          "tick": 143,
+          "fighters": [
+            {
+              "id": "sam",
+              "x": 743.5999999999985,
+              "y": 0
+            },
+            {
+              "id": "higgs",
+              "x": 1077.199999999997,
+              "y": 0
+            }
+          ]
+        },
+        {
+          "label": "camera-moved-left",
+          "panoramaRect": {
+            "x": -74.85895684602822,
+            "y": -67.99999999999977,
+            "width": 1421.4665249734321,
+            "height": 799.9999999999998
+          },
+          "floorY": 0.82,
+          "screenFloorY": 588,
+          "ratioError": 0,
+          "floorError": 0,
+          "compositeMinAlpha": 255,
+          "staticScenery": false,
+          "reducedEffects": false,
+          "tick": 209,
+          "fighters": [
+            {
+              "id": "sam",
+              "x": 462,
+              "y": 0
+            },
+            {
+              "id": "higgs",
+              "x": 818,
+              "y": 0
+            }
+          ]
+        }
+      ],
+      "passed": true
+    },
+    {
+      "id": "ldm-stage-seuil-maree",
+      "name": "Le Seuil de la marée",
+      "source": "assets/lignes-de-maree/stages/seuil-maree-panorama.png",
+      "width": 1672,
+      "height": 941,
+      "sha256": "a4d70bb8157c916d3f954f7c3b3161e916d8296d68e556a5b68aa2046aed46fd",
+      "floorY": 0.8,
+      "sourceFloorPixel": 752.8000000000001,
+      "capture": "stage-renders/seuil-maree.webp",
+      "captureSha256": "7ff813860070898f382324ac3cb3a8dbbe86264c2f29f369dfff4f7d02dcc302",
+      "cases": [
+        {
+          "label": "static-ready",
+          "panoramaRect": {
+            "x": -28,
+            "y": -13.519617224880449,
+            "width": 1336,
+            "height": 751.8995215311005
+          },
+          "floorY": 0.8,
+          "screenFloorY": 588,
+          "ratioError": 2.220446049250313e-16,
+          "floorError": 0,
+          "compositeMinAlpha": 255,
+          "staticScenery": true,
+          "reducedEffects": false,
+          "tick": 73,
+          "fighters": [
+            {
+              "id": "sam",
+              "x": 462,
+              "y": 0
+            },
+            {
+              "id": "higgs",
+              "x": 818,
+              "y": 0
+            }
+          ]
+        },
+        {
+          "label": "static-moved-right",
+          "panoramaRect": {
+            "x": -28,
+            "y": -13.519617224880449,
+            "width": 1336,
+            "height": 751.8995215311005
+          },
+          "floorY": 0.8,
+          "screenFloorY": 588,
+          "ratioError": 2.220446049250313e-16,
+          "floorError": 0,
+          "compositeMinAlpha": 255,
+          "staticScenery": true,
+          "reducedEffects": false,
+          "tick": 107,
+          "fighters": [
+            {
+              "id": "sam",
+              "x": 602.7999999999993,
+              "y": 0
+            },
+            {
+              "id": "higgs",
+              "x": 947.5999999999985,
+              "y": 0
+            }
+          ]
+        },
+        {
+          "label": "static-reduced-effects",
+          "panoramaRect": {
+            "x": -28,
+            "y": -13.519617224880449,
+            "width": 1336,
+            "height": 751.8995215311005
+          },
+          "floorY": 0.8,
+          "screenFloorY": 588,
+          "ratioError": 2.220446049250313e-16,
+          "floorError": 0,
+          "compositeMinAlpha": 255,
+          "staticScenery": true,
+          "reducedEffects": true,
+          "tick": 108,
+          "fighters": [
+            {
+              "id": "sam",
+              "x": 602.7999999999993,
+              "y": 0
+            },
+            {
+              "id": "higgs",
+              "x": 947.5999999999985,
+              "y": 0
+            }
+          ]
+        },
+        {
+          "label": "camera-moved-right",
+          "panoramaRect": {
+            "x": -36.22035229787909,
+            "y": -13.519617224880449,
+            "width": 1336,
+            "height": 751.8995215311005
+          },
+          "floorY": 0.8,
+          "screenFloorY": 588,
+          "ratioError": 2.220446049250313e-16,
+          "floorError": 0,
+          "compositeMinAlpha": 255,
+          "staticScenery": false,
+          "reducedEffects": false,
+          "tick": 143,
+          "fighters": [
+            {
+              "id": "sam",
+              "x": 743.5999999999985,
+              "y": 0
+            },
+            {
+              "id": "higgs",
+              "x": 1077.199999999997,
+              "y": 0
+            }
+          ]
+        },
+        {
+          "label": "camera-moved-left",
+          "panoramaRect": {
+            "x": -32.125694359312156,
+            "y": -13.519617224880449,
+            "width": 1336,
+            "height": 751.8995215311005
+          },
+          "floorY": 0.8,
+          "screenFloorY": 588,
+          "ratioError": 2.220446049250313e-16,
+          "floorError": 0,
+          "compositeMinAlpha": 255,
+          "staticScenery": false,
+          "reducedEffects": false,
+          "tick": 209,
+          "fighters": [
+            {
+              "id": "sam",
+              "x": 462,
+              "y": 0
+            },
+            {
+              "id": "higgs",
+              "x": 818,
+              "y": 0
+            }
+          ]
+        }
+      ],
+      "passed": true
+    }
+  ]
+}

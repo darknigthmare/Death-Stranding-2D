@@ -1,0 +1,72 @@
+{
+  "date": "2026-11-27T11:31:47.097Z",
+  "status": "blocked",
+  "passed": false,
+  "browser": false,
+  "hardware": false,
+  "launch": {
+    "attempts": 1,
+    "executable": "/usr/bin/chromium",
+    "headless": true,
+    "timeoutMs": 60000,
+    "TMPDIR": "/home/agent/ds2d-browser-tmp",
+    "userDataDir": "/home/agent/ds2d-browser-tmp/original-browser-profile",
+    "args": [
+      "--no-sandbox",
+      "--disable-dev-shm-usage"
+    ],
+    "elapsedMs": 68,
+    "success": false,
+    "error": "browserType.launchPersistentContext: Target page, context or browser has been closed\nBrowser logs:\n\n<launching> /usr/bin/chromium --disable-field-trial-config --disable-background-networking --disable-background-timer-throttling --disable-backgrounding-occluded-windows --disable-back-forward-cache --disable-breakpad --disable-client-side-phishing-detection --disable-component-extensions-with-background-pages --disable-component-update --no-default-browser-check --disable-default-apps --disable-dev-shm-usage --disable-edgeupdater --disable-extensions --disable-features=AvoidUnnecessaryBeforeUnloadCheckSync,BoundaryEventDispatchTracksNodeRemoval,DestroyProfileOnBrowserClose,DialMediaRouteProvider,GlobalMediaControls,HttpsUpgrades,LensOverlay,MediaRouter,PaintHolding,ThirdPartyStoragePartitioning,BlockOriginHeaderModificationOnRedirect,Translate,AutoDeElevate,OptimizationHints,msForceBrowserSignIn,msEdgeUpdateLaunchServicesPreferredVersion --enable-features=CDPScreenshotNewSurface --allow-pre-commit-input --disable-hang-monitor --disable-ipc-flooding-protection --disable-popup-blocking --disable-prompt-on-repost --disable-renderer-backgrounding --disable-updater-scheduler --force-color-profile=srgb --metrics-recording-only --no-first-run --password-store=basic --use-mock-keychain --no-service-autorun --export-tagged-pdf --disable-search-engine-choice-screen --unsafely-disable-devtools-self-xss-warnings --edge-skip-compat-layer-relaunch --disable-infobars --disable-search-engine-choice-screen --disable-sync --enable-unsafe-swiftshader --headless --hide-scrollbars --mute-audio --blink-settings=primaryHoverType=2,availableHoverTypes=2,primaryPointerType=4,availablePointerTypes=4 --no-sandbox --no-sandbox --disable-dev-shm-usage --user-data-dir=/home/agent/ds2d-browser-tmp/original-browser-profile --remote-debugging-pipe about:blank\n<launched> pid=25\n[pid=25][err] /usr/bin/chromium: 9: [: 5022846976: unexpected operator\n[pid=25][err] /usr/bin/chromium: 153: exec: /usr/lib/chromium/chromium: not found\nCall log:\n\u001b[2m  - <launching> /usr/bin/chromium --disable-field-trial-config --disable-background-networking --disable-background-timer-throttling --disable-backgrounding-occluded-windows --disable-back-forward-cache --disable-breakpad --disable-client-side-phishing-detection --disable-component-extensions-with-background-pages --disable-component-update --no-default-browser-check --disable-default-apps --disable-dev-shm-usage --disable-edgeupdater --disable-extensions --disable-features=AvoidUnnecessaryBeforeUnloadCheckSync,BoundaryEventDispatchTracksNodeRemoval,DestroyProfileOnBrowserClose,DialMediaRouteProvider,GlobalMediaControls,HttpsUpgrades,LensOverlay,MediaRouter,PaintHolding,ThirdPartyStoragePartitioning,BlockOriginHeaderModificationOnRedirect,Translate,AutoDeElevate,OptimizationHints,msForceBrowserSignIn,msEdgeUpdateLaunchServicesPreferredVersion --enable-features=CDPScreenshotNewSurface --allow-pre-commit-input --disable-hang-monitor --disable-ipc-flooding-protection --disable-popup-blocking --disable-prompt-on-repost --disable-renderer-backgrounding --disable-updater-scheduler --force-color-profile=srgb --metrics-recording-only --no-first-run --password-store=basic --use-mock-keychain --no-service-autorun --export-tagged-pdf --disable-search-engine-choice-screen --unsafely-disable-devtools-self-xss-warnings --edge-skip-compat-layer-relaunch --disable-infobars --disable-search-engine-choice-screen --disable-sync --enable-unsafe-swiftshader --headless --hide-scrollbars --mute-audio --blink-settings=primaryHoverType=2,availableHoverTypes=2,primaryPointerType=4,availablePointerTypes=4 --no-sandbox --no-sandbox --disable-dev-shm-usage --user-data-dir=/home/agent/ds2d-browser-tmp/original-browser-profile --remote-debugging-pipe about:blank\u001b[22m\n\u001b[2m  - <launched> pid=25\u001b[22m\n\u001b[2m  - [pid=25][err] /usr/bin/chromium: 9: [: 5022846976: unexpected operator\u001b[22m\n\u001b[2m  - [pid=25][err] /usr/bin/chromium: 153: exec: /usr/lib/chromium/chromium: not found\u001b[22m\n\u001b[2m  - [pid=25] <gracefully close start>\u001b[22m\n\u001b[2m  - [pid=25] <kill>\u001b[22m\n\u001b[2m  - [pid=25] <will force kill>\u001b[22m\n\u001b[2m  - [pid=25] exception while trying to kill process: Error: kill ESRCH\u001b[22m\n\u001b[2m  - [pid=25] <process did exit: exitCode=127, signal=null>\u001b[22m\n\u001b[2m  - [pid=25] starting temporary directories cleanup\u001b[22m\n\u001b[2m  - [pid=25] finished temporary directories cleanup\u001b[22m\n\u001b[2m  - [pid=25] <gracefully close end>\u001b[22m\n\n    at async /home/agent/ds2d-20261127/modes/echos-de-la-greve/qa/original-browser.cjs:124:15",
+    "launcherExists": true,
+    "targetExecutable": "/usr/lib/chromium/chromium",
+    "targetExecutableExists": false,
+    "exitCode": 127,
+    "observedCause": "The /usr/bin/chromium wrapper cannot exec /usr/lib/chromium/chromium; the target executable is absent.",
+    "escalationAttempted": false,
+    "retried": false
+  },
+  "checks": [],
+  "captures": [],
+  "consoleErrors": [],
+  "pageErrors": [],
+  "failedRequests": [],
+  "sourceSha256": {
+    "extension.html": "6d4c1cb79d07bd6fc9ff513e735ba45b8d2cd2954e814efacabfeee6f13c63ef",
+    "extension.css": "3e655611a62d129d332cfd81b5738eb81c396cd779cf5938897a58278f06384d",
+    "extension.js": "85d06ef829a05513108a092069c985cb68013dc6e29db47f254a1deac24bc137",
+    "extension-data.js": "a6290d4002a70bbaa7b2f9efdcff2ef4c87152e42251b4f68728197c523991cc",
+    "extension-assets.js": "929fa7ce4b4589989e4b9d9c46c47db906d6d943c1397bdf35e5082ea0bec95e",
+    "extension-runtime.js": "3047d945342341b4abe9ec0ec51fcfe7ce540344ad2d06819181efe6e0d79a7f",
+    "teams.html": "180422f63d4fd33b3af552164ea56710224e2b3be0554b8c04c54beaadf54b7c",
+    "teams.css": "bdcf0d0238c4279c71bf7b9dc3679ea2764d79f532c2dc6aa184e1ceb60fd01a",
+    "teams.js": "175882d49baab3895a6c2c7b0e6ef149e45e5299529a2e3cbcecca2bddc97ef6",
+    "fight.js": "d616992432537129302a13c32d02dacc0dc87d5df681bf0fec877a4f9b65bc19"
+  },
+  "finishedAt": "2026-11-27T11:31:47.170Z",
+  "plannedScope": [
+    "extension.html desktop 1280x900 and mobile 390x844",
+    "10 initial cards, 147 dossiers, 70 visual bases",
+    "stage filter, serre search, dossier modal and focus return",
+    "teams.html four member selectors, two modes, 44 arenas",
+    "ordinary 2v2 start, assist/tag, pause/resume, save/restore",
+    "horizontal overflow and screenshots"
+  ],
+  "notExecuted": [
+    "extension.html desktop 1280x900 and mobile 390x844",
+    "10 initial cards, 147 dossiers, 70 visual bases",
+    "stage filter, serre search, dossier modal and focus return",
+    "teams.html four member selectors, two modes, 44 arenas",
+    "ordinary 2v2 start, assist/tag, pause/resume, save/restore",
+    "horizontal overflow and screenshots"
+  ],
+  "actualPagesOpened": 0,
+  "actualLayoutChecks": 0,
+  "actualInteractionChecks": 0,
+  "screenshotsProduced": 0,
+  "existingEvidence": {
+    "nativeCanvas": "stage-native.json",
+    "domAdapter": "catalogue-verification.json",
+    "httpAndIntegrity": "delivery-verification.json"
+  }
+}

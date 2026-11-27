@@ -48,7 +48,7 @@
   }
 
   function documentationHref(value) {
-    return typeof value === 'string' && /^\.\.\/\.\.\/docs\/combat\/(?:BIBLE_COMBAT|UNIVERS_DS|REGISTRE_PRODUCTION)\.md(?:#[^\s]*)?$/.test(value) ? value : '';
+    return typeof value === 'string' && /^\.\.\/\.\.\/docs\/combat\/(?:(?:BIBLE_COMBAT|UNIVERS_DS|REGISTRE_PRODUCTION)\.md|production\/20261127-fidelity\/ASSETS\.md)(?:#[^\s]*)?$/.test(value) ? value : '';
   }
 
   function setDocumentationLink(node, href) {

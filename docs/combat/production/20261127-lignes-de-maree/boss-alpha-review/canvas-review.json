@@ -1,0 +1,57 @@
+{
+  "nativeCanvas": true,
+  "purpose": "Read-only QA rendering of unchanged PNG assets over a checkerboard; these contact sheets are not sprite assets.",
+  "assetFilesUnmodified": true,
+  "cases": [
+    {
+      "file": "boss-alpha-review/boss-alpha-1.png",
+      "sha256": "25f597bc5c580bf073f8b39e0203d005856fb56c47bf4876dca9f5ccc272fd86",
+      "assetIds": [
+        "ldm-boss-consignateur",
+        "ldm-boss-remorque-ressac",
+        "ldm-boss-veilleur-balise",
+        "ldm-boss-treuil-amarre"
+      ]
+    },
+    {
+      "file": "boss-alpha-review/boss-alpha-2.png",
+      "sha256": "e4740d1aa0fce8f541ba3e08f278381baad16db6cba7e2a76c6c2b8c0b7c9598",
+      "assetIds": [
+        "ldm-boss-cetace-de-rive",
+        "ldm-boss-maitresse-serre",
+        "ldm-boss-collecteur-noir",
+        "ldm-boss-grue-verrou"
+      ]
+    },
+    {
+      "file": "boss-alpha-review/boss-alpha-3.png",
+      "sha256": "00cc91dd790c460cd0e92812171ee34a6a361f0f7241ef417dbd482f081cc449",
+      "assetIds": [
+        "ldm-boss-contremaitre-pont",
+        "ldm-boss-cerf-de-brume",
+        "ldm-boss-chef-triage",
+        "ldm-boss-rame-sans-conducteur"
+      ]
+    },
+    {
+      "file": "boss-alpha-review/boss-alpha-4.png",
+      "sha256": "98677c7a2f21f0c3f374740e2930a670e34c75a8afd38eed6bfe85fe1630c8e6",
+      "assetIds": [
+        "ldm-boss-porteur-sans-retour",
+        "ldm-boss-mecanisme-ecluse",
+        "ldm-boss-archiviste-fermee",
+        "ldm-boss-alpiniste-seuil"
+      ]
+    },
+    {
+      "file": "boss-alpha-review/boss-alpha-5.png",
+      "sha256": "4cb3388c807be8af4fd34bebe1fd084930f5826abd844725df73133da7338d0d",
+      "assetIds": [
+        "ldm-boss-araignee-hauban",
+        "ldm-boss-radome-errant",
+        "ldm-boss-leviathan-faille",
+        "ldm-boss-dernier-amarre"
+      ]
+    }
+  ]
+}

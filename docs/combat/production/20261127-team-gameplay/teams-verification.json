@@ -1,0 +1,107 @@
+{
+  "date": "2026-11-27",
+  "adapter": "Actual StrandFight simulation + explicit DOM/Canvas fixture; not native browser or physical controller",
+  "checks": [
+    {
+      "name": "Only two distinct supported kits per side; mirror teams allowed",
+      "passed": true
+    },
+    {
+      "name": "Atomic assistance/tag engagement and the last 25 Cohesion",
+      "passed": true
+    },
+    {
+      "name": "Insufficient Cohesion refuses without a charge or partner appearance",
+      "passed": true
+    },
+    {
+      "name": "Guard, hitstun, airborne and attack prevent voluntary tags",
+      "passed": true
+    },
+    {
+      "name": "Control changes at tick 15 once; life and Chiral survive transfer",
+      "passed": true
+    },
+    {
+      "name": "Reserve health never regenerates and tag cooldown prevents immediate reuse",
+      "passed": true
+    },
+    {
+      "name": "Pause and hitstop freeze Cohesion and partner clocks",
+      "passed": true
+    },
+    {
+      "name": "An arriving support can be hit and interrupted without refund",
+      "passed": true
+    },
+    {
+      "name": "Support KO forbids subsequent assistance/tag and does not hurt its active ally",
+      "passed": true
+    },
+    {
+      "name": "Assistance ends once and cooldown begins after its exit",
+      "passed": true
+    },
+    {
+      "name": "A hit during tag departure interrupts the transfer without refund",
+      "passed": true
+    },
+    {
+      "name": "Both camps can call independently while each camp keeps at most three projectiles",
+      "passed": true
+    },
+    {
+      "name": "KO automatically transfers to the survivor with zero Cohesion and preserves resources",
+      "passed": true
+    },
+    {
+      "name": "Projectile ownership and its Chiral reward remain with the emitter after tag",
+      "passed": true
+    },
+    {
+      "name": "Crates become inert in reserve and expire instead of being cloned",
+      "passed": true
+    },
+    {
+      "name": "Cliff post and Mama anchor are recalled on reserve entry",
+      "passed": true
+    },
+    {
+      "name": "Time limit compares both health pools, not only the active fighters",
+      "passed": true
+    },
+    {
+      "name": "Equal time preserves health; equal simultaneous hits do not favor a side",
+      "passed": true
+    },
+    {
+      "name": "Exact final double KO ends in a draw without resurrection",
+      "passed": true
+    },
+    {
+      "name": "Shared combo survives a tag and applies to subsequent partner damage",
+      "passed": true
+    },
+    {
+      "name": "All eight assistance profiles run and leave the partner exactly once",
+      "passed": true
+    },
+    {
+      "name": "Save/reload resumes the complete team state in pause with inputs released",
+      "passed": true
+    },
+    {
+      "name": "Corrupt or incompatible team saves are rejected without changing live state",
+      "passed": true
+    },
+    {
+      "name": "UI prevents duplicates, starts the engine, maps team keys, saves and resumes",
+      "passed": true
+    },
+    {
+      "name": "Denied storage retains the playable fight in pause with an honest message",
+      "passed": true
+    }
+  ],
+  "engineSha256": "d616992432537129302a13c32d02dacc0dc87d5df681bf0fec877a4f9b65bc19"
+}

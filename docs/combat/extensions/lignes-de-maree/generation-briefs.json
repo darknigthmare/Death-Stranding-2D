@@ -1,0 +1,310 @@
+{
+  "schemaVersion": 1,
+  "id": "lignes-de-maree",
+  "stages": [
+    {
+      "id": "ldm-stage-digue-aval",
+      "name": "La Digue aval",
+      "visuals": "Low weathered concrete sea dike, black basalt shore, cold foggy ocean, practical sealed rescue modules at both ends, steel anchoring cables and small amber safety beacon. Wet horizontal walkway."
+    },
+    {
+      "id": "ldm-stage-quai-refuges",
+      "name": "Le Quai des refuges",
+      "visuals": "Small working freight pier between three sealed pale-grey prefabricated refuge modules, compact bollards and cargo rails, dark wet concrete, steel-blue ocean and black cliffs. Central lane clear."
+    },
+    {
+      "id": "ldm-stage-depot-amarres",
+      "name": "Le Dépôt des amarres",
+      "visuals": "Interior stormproof rope and rescue-equipment depot, industrial coils on distant wall racks, worn off-white waterproof cases, amber work lamps, practical broad side doors, open horizontal rubberized floor."
+    },
+    {
+      "id": "ldm-stage-bassin-muet",
+      "name": "Le Bassin muet",
+      "visuals": "Abandoned tidal basin containing dark still tar behind an old concrete service quay, half submerged warehouse skeletons far away, fog and rare pale-gold suspended particles. Clear dry quay foreground, no creature."
+    },
+    {
+      "id": "ldm-stage-phare-couche",
+      "name": "Le Phare couché",
+      "visuals": "Fallen cylindrical coastal navigation tower resting horizontally against black rocks in background, intact maintenance bypass deck in foreground, rain and distant waves, subtle cold utility strips, no impossible floating doors."
+    },
+    {
+      "id": "ldm-stage-serre-veille",
+      "name": "La Serre de veille",
+      "visuals": "Sealed modular greenhouse under rain, reinforced wet glass and steel ribs, modest vegetable rows behind empty horizontal concrete service lane, irrigation pipes, cool white crop lights, rocky cliffs outside."
+    },
+    {
+      "id": "ldm-stage-station-captage",
+      "name": "La Station de captage",
+      "visuals": "Coastal rainwater collection and filtration station: closed cylindrical tanks and filtration skids behind a broad horizontal non-slip maintenance deck, sober grey engineering, distant dark greenery, capped pipes and clearly attached service doors."
+    },
+    {
+      "id": "ldm-stage-viaduc-ourlet",
+      "name": "Le Viaduc de l’Ourlet",
+      "visuals": "Narrow but structurally sound concrete viaduct across a black-rock gorge, horizontal bridge deck in foreground, discreet rear safety railing, abandoned upper roadway in distance, low cold clouds and thin distant waterfall."
+    },
+    {
+      "id": "ldm-stage-relais-anemometre",
+      "name": "Le Relais des vents",
+      "visuals": "Grounded weather relay station on a dark moor, compact mast with cups and vanes behind a sealed maintenance shelter, low cable trays and restrained cyan indicators, wind-bent grasses away from horizontal reinforced service path."
+    },
+    {
+      "id": "ldm-stage-pente-cairns",
+      "name": "La Pente des cairns",
+      "visuals": "Mountain-side rescue trail built as a broad stable horizontal ledge, simple stone cairns and anchored rescue rope only at far sides, dark green moss and black basalt, layered misty cliffs and grey overcast light."
+    },
+    {
+      "id": "ldm-stage-triage-noye",
+      "name": "Le Triage noyé",
+      "visuals": "Flooded freight sorting yard, half submerged ordinary cargo containers and rail points in background, intact elevated concrete loading platform forming clear horizontal lane, black water reflections, restrained amber maintenance lamps."
+    },
+    {
+      "id": "ldm-stage-gare-suspendue",
+      "name": "La Gare suspendue",
+      "visuals": "Abandoned elevated freight-monorail service station, utilitarian overhead load trolley parked on functional suspended rail behind fighting area, reinforced columns, broad clear horizontal maintenance floor, cold white lighting and mist outside."
+    },
+    {
+      "id": "ldm-stage-atelier-reservoir",
+      "name": "L’Atelier du réservoir",
+      "visuals": "Interior repair workshop beside enormous low water reservoir, real inspection gauges, closed metal cabinets, restrained suspended tool racks, worn grey and olive industrial materials, clean clear horizontal floor, grounded utilitarian science fiction."
+    },
+    {
+      "id": "ldm-stage-ecluse-noire",
+      "name": "L’Écluse noire",
+      "visuals": "Industrial flood lock separating ordinary coastal water from a dark contaminated basin, immense heavy closed gates behind a concrete service bridge, anchored winches at sides, rain, cold grey iron and rust, no fantasy machinery."
+    },
+    {
+      "id": "ldm-stage-archive-beton",
+      "name": "Les Archives de béton",
+      "visuals": "Underground emergency records archive inside weathered concrete bunker, hermetic file cassettes behind glass lockers, minimal pale-cyan terminal, practical doorway attached to far wall, amber battery lamps, open horizontal concrete floor."
+    },
+    {
+      "id": "ldm-stage-col-contrevent",
+      "name": "Le Col de Contrevent",
+      "visuals": "High exposed mountain pass, wind-polished dark rock and thin compacted snow, a level reinforced trail through the foreground, ropes anchored to stout posts at far edges, broad natural stone slopes and cold high clouds."
+    },
+    {
+      "id": "ldm-stage-plateau-aiguilles",
+      "name": "Le Plateau des aiguilles",
+      "visuals": "Vast dark basalt plateau with eroded vertical rock needles at far distance, modest low maintenance cable run across horizon, dry charcoal stone combat lane in foreground, sparse moss, restrained warm late-day edge light."
+    },
+    {
+      "id": "ldm-stage-radome-ebreche",
+      "name": "Le Radôme ébréché",
+      "visuals": "Damaged but grounded weather radar dome above a low reinforced technical building, access stairs visibly reach service doors, cable conduits and wind fencing behind the lane, broad wet concrete apron, muted grey-green moorland."
+    },
+    {
+      "id": "ldm-stage-terrasse-veilleurs",
+      "name": "La Terrasse des veilleurs",
+      "visuals": "Quiet rescue observation terrace cut into black coastal cliff, simple sealed observation shelter and folded tripod telescope behind clear horizontal stone deck, ocean horizon in low fog, small practical warm lamp, protective low rear rail."
+    },
+    {
+      "id": "ldm-stage-seuil-maree",
+      "name": "Le Seuil de la marée",
+      "visuals": "Broad black shoreline at the end of the rescue corridor, a concrete evacuation causeway from left to right, far distant silhouettes of grounded industrial flood barriers, low silver horizon, tiny gold chiral-like dust, no people or supernatural architecture."
+    }
+  ],
+  "enemies": [
+    {
+      "id": "ldm-enemy-guetteur-cargo",
+      "name": "Guetteur de cargaison",
+      "visuals": "Human hostile logistical scavenger in patched ochre waterproof porter suit, narrow compact pack, handheld cargo scanner and low rubber baton, dark open-face rain hood, practical work boots. Lean alert silhouette."
+    },
+    {
+      "id": "ldm-enemy-lieur-de-quai",
+      "name": "Lieur de quai",
+      "visuals": "Human hostile former dock porter in dark mustard and graphite waterproof overalls, compact secured rope coils at belt and a short two-pronged restraint tool, broad work gloves, slightly crouched balanced stance."
+    },
+    {
+      "id": "ldm-enemy-porteur-belier",
+      "name": "Porteur-bélier",
+      "visuals": "Heavy human hostile porter with wide rectangular sealed load frame on back, brown reinforced waterproof suit, low load-assist leg braces and blunt padded shoulder plate. No spikes or fantasy armor."
+    },
+    {
+      "id": "ldm-enemy-courrier-leurre",
+      "name": "Courrier leurre",
+      "visuals": "Slim human hostile courier in slate ochre patched rainwear with one conspicuously light sealed decoy parcel held close to torso, low-profile shoulder scanner, agile defensive stance and practical boots."
+    },
+    {
+      "id": "ldm-enemy-vigile-isolant",
+      "name": "Vigile isolant",
+      "visuals": "Human hostile depot guard wearing layered matte grey insulating waterproof workwear, compact rectangular polymer forearm shield and a low short electric baton, realistic thick gloves and rubber utility boots."
+    },
+    {
+      "id": "ldm-enemy-lanceur-filet",
+      "name": "Lanceur de filet",
+      "visuals": "Human hostile logistics guard with a compact compressed-air restraint-net launcher pointed safely down, mustard grey load vest, dark hood, secured cable drum at hip, realistic non-lethal industrial equipment."
+    },
+    {
+      "id": "ldm-enemy-poseur-capteur",
+      "name": "Poseur de capteurs",
+      "visuals": "Human hostile technician in grey ochre rain suit, asymmetrical folded scanner stakes secured on side of small pack, one compact sensor puck in gloved hand, cautious crouch, no glowing magical runes."
+    },
+    {
+      "id": "ldm-enemy-racleur-depot",
+      "name": "Racleur de dépôt",
+      "visuals": "Human hostile salvage worker in worn charcoal and rust coveralls with a low wide load sled frame folded vertically on back and a blunt lifting lever in hands, grease and rain staining, practical hard hat."
+    },
+    {
+      "id": "ldm-enemy-arbitre-convoi",
+      "name": "Arbitre de convoi",
+      "visuals": "Human hostile convoy marshal in dark olive waterproof uniform with faded amber logistics bands, practical helmet and simple compact non-lethal launcher lowered, broad utility belt, no skull mask or canonical logos."
+    },
+    {
+      "id": "ldm-enemy-mecanicien-fermeur",
+      "name": "Mécanicien fermeur",
+      "visuals": "Human hostile lock maintenance mechanic in heavy petrol blue waterproof suit, short padded industrial clamp tool, hinged protective face shield raised, broad gloves, orange cable spool at hip, industrial rather than military look."
+    },
+    {
+      "id": "ldm-enemy-patrouilleur-chenille",
+      "name": "Patrouilleur à chenilles",
+      "visuals": "One original small unmanned industrial security crawler, waist-high to a human, two compact rubber tracks and low rectangular sealed graphite chassis, modest front cargo sensor and amber status light, no arms, no humanoid head."
+    },
+    {
+      "id": "ldm-enemy-drone-cordier",
+      "name": "Drone cordier",
+      "visuals": "One original small utility quadrotor cargo drone, four practical ducted fans surrounding a compact weatherproof graphite chassis, a single closed winch drum and short secured hook beneath, amber indicator, no combat missiles."
+    },
+    {
+      "id": "ldm-enemy-chariot-verrou",
+      "name": "Chariot verrou",
+      "visuals": "One original unattended industrial cargo cart, four chunky low wheels, heavy rectangular steel chassis and a compact folding barrier plate on front, rainworn pale grey shell, practical warning light, no sci-fi turret."
+    },
+    {
+      "id": "ldm-enemy-borne-traqueuse",
+      "name": "Borne traqueuse",
+      "visuals": "One original mobile waist-high sensor maintenance unit, tripod-like three short wheeled supports under a narrow sealed yellow-grey post, folded scanning dish and simple amber light, robust grounded industrial robotics."
+    },
+    {
+      "id": "ldm-enemy-echoue-ancre",
+      "name": "Échoué à l’ancre",
+      "visuals": "One original human-shaped Beached Thing manifestation for Death Stranding fan game, tall slender adult tar-black semitranslucent silhouette hovering slightly, one thin umbilical strand rising from torso, faint strands and wet dark texture, no clothing insignia or gore."
+    },
+    {
+      "id": "ldm-enemy-echoue-rampe",
+      "name": "Échoué rampant",
+      "visuals": "One original low crawling Beached Thing manifestation, tar-black humanlike silhouette supported by elongated forearms and bent legs, subtle hanging umbilical strand, wet dark body with minimal pale gold flecks, non-graphic and unsettling."
+    },
+    {
+      "id": "ldm-enemy-echoue-derive",
+      "name": "Échoué de dérive",
+      "visuals": "One original floating human-shaped tar apparition, tilted slightly forward with arms hanging low and long loose umbilical strand drifting upward, dark glossy surface and sparse suspended droplets, no fantasy wings or armor."
+    },
+    {
+      "id": "ldm-enemy-empreinte-releve",
+      "name": "Empreinte de relève",
+      "visuals": "One original low tar manifestation formed as a single dark humanlike forearm and hand rising from one compact slick black mound, long thin strand curling upward, readable separate silhouette, no severed flesh or gore."
+    },
+    {
+      "id": "ldm-enemy-echoue-guetteur",
+      "name": "Échoué du promontoire",
+      "visuals": "One original lanky stationary tar-black humanlike apparition leaning forward, narrow shoulder silhouette and long arms, one clearly visible suspended umbilical strand, sparse dull gold particles, no eye beams or fantasy symbols."
+    },
+    {
+      "id": "ldm-enemy-echoue-enserreur",
+      "name": "Échoué enserreur",
+      "visuals": "One original medium hunched tar-black humanoid apparition with broad long forearms folded inward in a grasping posture, one thin cord rising from chest, glossy wet tar texture, proportionate humanlike head, no gore or fantasy tentacle crown."
+    }
+  ],
+  "bosses": [
+    {
+      "id": "ldm-boss-consignateur",
+      "name": "Le Consignateur",
+      "visuals": "Original human logistical strongman in broad industrial rainproof graphite and mustard porter gear, a heavy sealed rectangular cargo frame strapped close to back, blunt restraint baton and compact worn polymer shield, older rugged face, grounded human scale, no monster armor."
+    },
+    {
+      "id": "ldm-boss-remorque-ressac",
+      "name": "La Remorque du ressac",
+      "visuals": "One original massive unmanned six-wheeled freight tractor with an integrated low sealed salvage container, weathered ivory graphite steel and salt corrosion, robust independent wheel suspension, compact defensive scan mast. Entire vehicle side view, no driver or accompanying trailer."
+    },
+    {
+      "id": "ldm-boss-veilleur-balise",
+      "name": "Le Veilleur des balises",
+      "visuals": "One original giant human-shaped tar apparition, extremely tall lean silhouette with asymmetrical lowered arms, a thin umbilical cord rising from upper torso, sparse dim pale gold flecks at chest, glossy black surface. Ominous grounded Death Stranding Beached Thing style, no crown or magic armor."
+    },
+    {
+      "id": "ldm-boss-treuil-amarre",
+      "name": "Le Treuil d’amarre",
+      "visuals": "One original colossal industrial mobile winch unit, low heavy graphite crawler chassis, huge horizontal spool tightly wound with thick cable, folded fairlead and reinforced shrouds, sea-rust streaks and small amber status lamps. Single self-contained machine, no sentience face."
+    },
+    {
+      "id": "ldm-boss-cetace-de-rive",
+      "name": "Le Cétacé de rive",
+      "visuals": "One original enormous tar-black whale-like Beached Thing, broad rounded head, long low streamlined body and folded pectoral fins, umbilical strand trailing upward, wet glossy tar and sparse gold flecks. Entire creature in strict side profile facing right, floating clear of ground, no blood or exposed viscera."
+    },
+    {
+      "id": "ldm-boss-maitresse-serre",
+      "name": "La Gardienne de la serre",
+      "visuals": "Original human woman in her late fifties, stern horticultural facility custodian wearing reinforced ivory and dark green weatherproof work suit, compact closed coolant pack and short blunt irrigation control staff, protective gloves and boots, no superpowers or fantasy decoration."
+    },
+    {
+      "id": "ldm-boss-collecteur-noir",
+      "name": "Le Collecteur noir",
+      "visuals": "One original giant squat tar-black amphibian-like Beached Thing, broad salamander-like body with four stout legs, blunt head and low ridged back, wet tar texture and sparse golden inclusions, a thin umbilical strand ascending from spine. No dragon wings, no armor, no gore."
+    },
+    {
+      "id": "ldm-boss-grue-verrou",
+      "name": "La Grue verrou",
+      "visuals": "One original compact industrial walking maintenance crane, broad four-legged hydraulic support base with blunt feet, low sealed central cabin and one folded loading boom ending in closed heavy hook, weathered off-white and graphite, grounded load-bearing engineering. Entire machine, no operator."
+    },
+    {
+      "id": "ldm-boss-contremaitre-pont",
+      "name": "Le Contremaître du pont",
+      "visuals": "Original powerful human bridge-maintenance foreman, dark orange and graphite waterproof overalls, exposed practical lower-leg load-assist braces, reinforced knee pads, compact blunt two-hand lifting bar and white hardhat, broad stern middle-aged face. Human anatomy, no canonical badges."
+    },
+    {
+      "id": "ldm-boss-cerf-de-brume",
+      "name": "Le Cerf de brume",
+      "visuals": "One original giant long-legged tar-black cervid-like Beached Thing, narrow wet head, modest irregular branching antlers made of black tar rather than bone, long lean trunk, umbilical strand from withers and very subtle dull gold inclusions. Full lateral facing right, no glowing eyes or fantasy ornament."
+    },
+    {
+      "id": "ldm-boss-chef-triage",
+      "name": "Le Chef de triage",
+      "visuals": "Original human elderly freight-yard warden in heavy slate and rust waterproof logistics uniform, wide load vest with sealed tags, a blunt rectangular restraint shield on left arm and low non-lethal signal launcher, short grey hair, realistic grounded utilitarian silhouette."
+    },
+    {
+      "id": "ldm-boss-rame-sans-conducteur",
+      "name": "La Rame sans conducteur",
+      "visuals": "One original autonomous single-unit elevated freight-rail shuttle, low long sealed graphite and pale-grey cargo car with integrated robust rail suspension and visible top coupler, weathered equipment housings and amber lamp. Whole vehicle isolated side view, no rail scene, no canonical logo."
+    },
+    {
+      "id": "ldm-boss-porteur-sans-retour",
+      "name": "Le Porteur sans retour",
+      "visuals": "One original giant hunched human-shaped tar apparition, back swollen into one irregular stack-like mass of tar evocative of a cargo burden, very long low arms, humanoid legs and head, visible rising umbilical cord, subtle dull golden fissures, no actual human cargo or gore."
+    },
+    {
+      "id": "ldm-boss-mecanisme-ecluse",
+      "name": "Le Mécanisme de l’écluse",
+      "visuals": "One original massive self-contained industrial floodgate drive unit on a broad crawler service platform, two enormous enclosed toothed gear housings and a heavy horizontal hydraulic clamp, rainworn graphite metal and amber safety lamps. Single grounded machine, no buildings or fantasy lasers."
+    },
+    {
+      "id": "ldm-boss-archiviste-fermee",
+      "name": "L’Archiviste fermée",
+      "visuals": "Original human woman in her sixties, stern archive lockdown administrator with silver close-cropped hair, graphite and ivory waterproof long utility jacket, two hermetic archive cases on back frame, short blunt restraint baton and arm-mounted terminal, normal human scale, no skull mask."
+    },
+    {
+      "id": "ldm-boss-alpiniste-seuil",
+      "name": "L’Alpiniste du seuil",
+      "visuals": "Original tall human mountain-route monopolist, late forties, worn grey snow expedition suit with dark olive layers, compact load-assist leg braces, secured climbing coil and short blunt telescopic rescue pole, frost-stained heavy boots, face visible, no fantasy frost armor."
+    },
+    {
+      "id": "ldm-boss-araignee-hauban",
+      "name": "L’Araignée des haubans",
+      "visuals": "One original giant tar-black arthropod-like Beached Thing with six long grounded legs and compact low central body, thin umbilical strand from dorsal mass, wet glossy dark material with a few subdued gold seams. Realistic weight-bearing silhouette, no mechanical armor or fantasy stinger."
+    },
+    {
+      "id": "ldm-boss-radome-errant",
+      "name": "Le Radôme errant",
+      "visuals": "One original enormous mobile weather-communication crawler with four low track units, a squat weathered pale-grey geodesic radar dome and sealed graphite equipment base, practical cable conduits and small amber safety light. Grounded industrial scale, no giant robot arms or face."
+    },
+    {
+      "id": "ldm-boss-leviathan-faille",
+      "name": "Le Léviathan de faille",
+      "visuals": "One original gigantic elongated eel-like Beached Thing, continuous tar-black serpentine aquatic body, blunt smooth head and small low dorsal fin, visible thin umbilical strand trailing above spine, sparse dull gold inclusions. Entire creature curved gently in side view, no fantasy dragon horns, no gore."
+    },
+    {
+      "id": "ldm-boss-dernier-amarre",
+      "name": "Le Dernier Amarré",
+      "visuals": "One original immense seated-hunched humanoid tar apparition, broad shoulders but elongated thin lower limbs, hands held low and open, a single long umbilical strand ascending from chest, irregular glossy black tar and extremely restrained golden deposits. Lonely unsettling silhouette, no crown or supernatural weapon."
+    }
+  ]
+}

@@ -6,7 +6,8 @@ const vm = require('node:vm');
 const {roomService,openRelay,gameVersion} = require('../netplay-server.cjs');
 const {createHash} = require('node:crypto');
 const extensionModules=['lessons.js','lessons.css','boss-data.js','boss-guide.js','boss-guide.css',
-  'presentation.js','presentation.css','presentation-assets.js','progression.html','progression.js','progression.css','progression-data.js'];
+  'presentation.js','presentation.css','presentation-assets.js','progression.html','progression.js','progression.css','progression-data.js',
+  'teams.html','teams.js','teams.css','extension.html','extension.css','extension.js','extension-data.js','extension-assets.js','extension-runtime.js'];
 const extensionStages=['firing-range-dc','night-viaduct-ds2','red-ravine-ds2'];
 const proof={startedAt:new Date().toISOString(),node:process.version,passed:false,browser:false,nativeCanvas:false,
   method:'Real HTTP GET on localhost and byte comparison with local files; actual relay protocol functions and deterministic engine checkpoint restoration. No browser, image decoding or public-network session.',

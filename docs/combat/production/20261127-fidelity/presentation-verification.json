@@ -1,0 +1,110 @@
+{
+  "date": "2026-11-27T08:27:52.411Z",
+  "passed": true,
+  "method": "Real JavaScript engine + app driven by normal logical or DOM events; Canvas/DOM and phase image readiness are explicit test adapters. No browser pixels or physical controller claim.",
+  "browser": false,
+  "nativeCanvas": false,
+  "visualAssetFixtures": true,
+  "simulationBaseline": "7e000d3",
+  "checks": [
+    {
+      "name": "Every combat snapshot matches main 7e000d3 while new phase images are ready",
+      "passed": true
+    },
+    {
+      "name": "Three native phase slots follow the unchanged 10/38/54 boundaries for both players and nine costume choices",
+      "passed": true
+    },
+    {
+      "name": "Absent or undecoded costume phases fall back to that costume, including an unavailable own stance",
+      "passed": true
+    },
+    {
+      "name": "Late phase decoding changes only the drawing and cannot restart or extend the gesture",
+      "passed": true
+    },
+    {
+      "name": "Reduced effects retain stance/hold/stance without changing any combat state or phase duration",
+      "passed": true
+    },
+    {
+      "name": "Each phase remains interruptible for either player and the hit pose immediately replaces it",
+      "passed": true
+    },
+    {
+      "name": "Eight exposed cycles have 10/28/16 ticks, no damage or resource bonus, and resume held movement",
+      "passed": true
+    },
+    {
+      "name": "Airborne, crouching, guarding and attacking states reject a taunt without cancelling their action",
+      "passed": true
+    },
+    {
+      "name": "A melee impact interrupts the gesture; a held guard cannot remove its vulnerability",
+      "passed": true
+    },
+    {
+      "name": "A remote tar attack interrupts a taunt without suppressing the ordinary projectile mechanics",
+      "passed": true
+    },
+    {
+      "name": "Pause freezes the gesture; resume and stop do not leave an active gesture",
+      "passed": true
+    },
+    {
+      "name": "The private-room clock ignores the new action and keeps its existing checkpoint fields",
+      "passed": true
+    },
+    {
+      "name": "Legacy recordings stay version 1; taunt recordings use v2 with both old J2 and new gesture codes intact",
+      "passed": true
+    },
+    {
+      "name": "Legacy remapping migrates only missing taunt keys, preserves collisions and persists deterministically",
+      "passed": true
+    },
+    {
+      "name": "Keyboard, tactile and L3 share the new logical action; excluded contexts never emit it",
+      "passed": true
+    },
+    {
+      "name": "Selection previews do not confirm; replacements, mirror choices and independent outfits keep their own identity",
+      "passed": true
+    },
+    {
+      "name": "Rapid selection cleans previous timers; reduced motion retains the same choice and removes exiting ghosts",
+      "passed": true
+    },
+    {
+      "name": "DOM previews use the selected costume hold, preserve separate mirror costumes, and recover a failed image safely",
+      "passed": true
+    },
+    {
+      "name": "Duel touch controls expose taunt while Boss controls exclude it",
+      "passed": true
+    },
+    {
+      "name": "Base taunt art is never loaded for Mama viaduc; a stale outfit from a different fighter cannot hide a valid base gesture",
+      "passed": true
+    }
+  ],
+  "counts": {
+    "fighterCycles": 8,
+    "replaySamples": 548,
+    "baselineSamples": 3240,
+    "selectionChanges": 40,
+    "phaseBoundarySamples": 126,
+    "phaseInterruptions": 6,
+    "outfitFallbackCases": 7
+  },
+  "sourceSHA256": {
+    "fight.js": "da592922d43247dab4bb0c2c2993842f7f13522226b60487af9ffe3cb5cd1680",
+    "app.js": "68db637d7ae1661f7005ed5f1c5bcc9944b5781be527103c82fac64ea92afafa",
+    "input.js": "0f6d59d605c82f69b7193d171e0b222c41823e9d01ec3c2ed98453052c853c26",
+    "netplay.js": "5aa9050b2d85b248ab725c90e151e0f02f78e7578b441797d01ea382c88681bf",
+    "presentation.js": "c9b2d5df17e0e6ec7d51b3e7f38750ccbc4c94582cc767a06177a50f13e0e3ef",
+    "presentation.css": "d0ed4bcb6cea29695585975cb453c226b85036f208060bd1dac9491dd7eb9bf4",
+    "index.html": "c925ca635deee6e674230ac8829ebe9aa761afee53aa1954fd2ce149b072ea37",
+    "qa/presentation.cjs": "ac5a6165bb8ff843e7e31e8b4429f6a5f9d45c3df8b1b99c8a7f1c2f0907c4b8"
+  }
+}

@@ -1,0 +1,67 @@
+{
+  "date": "2026-11-27",
+  "base": "7e000d36f2eb0fa4578b545bfb3d8b334acd516a",
+  "status": "one-delivered-one-refused",
+  "assets": [
+    {
+      "id": "maser-handgun-ds2-discharge",
+      "path": "modes/echos-de-la-greve/assets/fidelity-20261127/static/maser-handgun-ds2-discharge.png",
+      "nativePath": "/workspace/scratch/7afabe13c643/generated_images/exec-c2d07701-2f80-461d-937f-67f21070bdb3.png",
+      "bytes": 399006,
+      "sha256": "88e1868944d82c8b482acac128e0cb8edc4b2b5fb9167b74adbb067c447a3e74",
+      "width": 2172,
+      "height": 724,
+      "mode": "RGBA",
+      "alphaZeroPixels": 1393150,
+      "alphaMax": 253,
+      "alphaZeroFraction": 0.8859301710367001,
+      "copiedByteIdentical": true,
+      "visualReview": "Retained: narrow white/ice-blue filaments, compact source flare, transparent isolation, no human, weapon or background. Fixed reference only; no timing or gameplay attack asserted.",
+      "generation": {
+        "prompt": "Create one isolated transparent visual-effect asset for the Death Stranding 2D reference gallery, faithfully based on the small pale electrical discharge visible in this official DEATH STRANDING 2 gameplay frame at 10.0 seconds.\nIsolate and clearly redraw ONLY the electricity connecting the left-hand muzzle location to the target: two or three very thin uneven white filaments with pale ice-blue fringes, a compact brighter white source flare at the left, a few short branching curling arcs near that source, and tapered fine lines travelling nearly horizontally toward the right. Keep the scale of the effect restrained and its branching pattern close to the reference. It is a narrow electrical discharge, not a solid laser beam, not a broad lightning storm, not a magic rune and not an orange explosion. Reconstruct the visible electricity cleanly for display as a standalone 2D VFX reference. The lit target body is not part of the asset.\nOne wide composition with full effect and a little transparent padding all around. Native transparent PNG. Every area outside the fine light filaments and their small restrained glow is genuinely transparent. No person, silhouette, face, weapon, hand, clothing, tent, terrain, vegetation, crosshair, interface, text, numbers, border, background, floor or separate effects. Do not add damage, blood, smoke or debris. One discharge only, no multiple frames or sprite sheet. The result documents this visible fixed effect; do not invent an animation or a projectile body.",
+        "referencePaths": [
+          "/workspace/scratch/7afabe13c643/official-references/ds2-maser-10_0.png"
+        ],
+        "transparentBackground": true,
+        "method": "image_gen__imagegen; native PNG copied unchanged"
+      },
+      "source": {
+        "page": "https://www.playstation.com/en-us/games/death-stranding-2-on-the-beach/death-stranding-2-on-the-beach-guide/",
+        "video": "https://gmedia.playstation.com/is/content/SIEPDC/global_pdc/en/games/pdps/d/de/death-stranding-2/_guide/videos/death-stranding2-stealth-video-01-20jun25.mp4",
+        "timestampSeconds": 10,
+        "frameSHA256": "1a904904d3d72f3ff896d2ba6b936dd4fb74640eeac549f42b8b799cd4c6b79e"
+      }
+    }
+  ],
+  "attempts": [
+    {
+      "id": "higgs-ds2-red-armour-body",
+      "prompt": "Create ONE isolated full-body character illustration for the Death Stranding 2D project's static reference gallery: Higgs Monaghan, the DEATH STRANDING 2: ON THE BEACH version with worn red-orange mechanical armor and his long angular orange battle guitar. This is a new full-body reference asset, not the DS1 hooded version, not an animation sheet.\nReference 1, the official PlayStation portrait, controls his identity: shoulder-length dark brown hair, pale face, dark black eye makeup, fine gold streaks below eyes and gold along smile, the exact damaged red-orange shoulder armor, translucent amber central chest plates, dark mechanical neck collar and black underlayer.\nReference 2, the licensed Prime 1 Studio full-body photograph, supplies the visible complete costume structure and boot silhouette: dark ribbed fitted trousers, asymmetrical long red-orange thigh panels, knee and shin fittings, straps, and sturdy black boots. Preserve those design shapes and wear. Do NOT copy that photograph's red face mask, its plinth, cargo cases, red robot head, rising tar, or display hardware. Use the UNMASKED face from reference 1.\nReference 3 is the official game close-up of Higgs resting the guitar over his shoulder: controls the clothing material, color and character demeanor.\nReference 4 is the licensed main product image: additional unmasked face/costume consistency, not typography.\nCOMPOSITION: one adult man standing calmly at three-quarter angle toward screen right, both boot soles on a common implied baseline, feet moderately apart, holding his complete orange guitar across the body in a relaxed musical resting pose with one hand at its body and the other supporting its narrow double-rail neck. Every part of the head, boots, hands, sensor and guitar must be fully inside the frame with clear padding. The long guitar must keep the distinctive asymmetric angular orange body and double-rail long neck visible in the licensed photograph. Show only one guitar, its narrow dark strap and its own loose cable. If the shoulder sensor is shown, use the small red articulated sensor from reference 2; no extravagant flare.\nDetailed semi-realistic hand-painted game art with realistic proportions and neutral lighting. Color fidelity matters: worn red-orange, charcoal, amber, restrained gold accents, not pristine red knight armor. No hood, no gold skull mask, no cape borrowed from DS1, no environment, no additional figure, no red samurai, no base, no stage, no shadow plane, no glow cloud, no lettering, no logo, no UI, no decorative border. Genuine transparent alpha background around and between all parts. Output one native transparent PNG only.",
+      "referencePaths": [
+        "/workspace/scratch/7afabe13c643/official-references/higgs.jpg",
+        "/workspace/scratch/7afabe13c643/official-references/higgs-ds2-prime1-body.jpg",
+        "/workspace/scratch/7afabe13c643/official-references/higgs_guitar_shoulder_detail.jpg",
+        "/workspace/scratch/7afabe13c643/official-references/higgs-ds2-prime1-main.jpg"
+      ],
+      "transparentBackground": true,
+      "result": "refused",
+      "error": {
+        "code": "moderation_blocked",
+        "stage": "output",
+        "categories": [
+          "other"
+        ],
+        "requestId": "730e9ec2-bac8-4521-a8d5-9ad6d1c68ecc"
+      },
+      "receivedFile": false,
+      "retry": false
+    },
+    {
+      "id": "maser-handgun-ds2-discharge",
+      "result": "received-and-retained",
+      "nativePath": "/workspace/scratch/7afabe13c643/generated_images/exec-c2d07701-2f80-461d-937f-67f21070bdb3.png",
+      "sha256": "88e1868944d82c8b482acac128e0cb8edc4b2b5fb9167b74adbb067c447a3e74"
+    }
+  ],
+  "decision": "One fixed Maser Handgun DS2 electrical-discharge reference retained for the gallery. No playable attack, projectile behavior or animation added. Full-body Higgs DS2 remains missing after one refusal without retry."
+}

@@ -8,7 +8,7 @@ const clone=value=>JSON.parse(JSON.stringify(value));
 const files=['content.js','asset-geometry-20261124.js','assets.js','boss-geometry-20261124.js','boss-assets.js','tournament.js','fight.js','boss.js','campaign.js','moves-data.js','relationships.js','input.js','lessons.js'];
 function check(name,fn){fn();checks.push({name,passed:true});console.log('OK — '+name);}
 function make(options={}){const a=world({gamepads:false,...options});a.html('index.html');a.load(files);return a;}
-function driver(send){const held={};return wanted=>{for(const action of ['left','right','down','guard','light','heavy','special','throw','up'])if(!!held[action]!==!!wanted[action]){held[action]=!!wanted[action];send(action,!!wanted[action]);}};}
+function driver(send){const held={};return wanted=>{for(const action of ['left','right','down','guard','light','heavy','special','throw','up','taunt'])if(!!held[action]!==!!wanted[action]){held[action]=!!wanted[action];send(action,!!wanted[action]);}};}
 function pilot(id,state,status,memory){
   const [self,foe]=status.fighters,gap=Math.abs(foe.x-self.x),forward=self.x<=foe.x?'right':'left',back=forward==='right'?'left':'right',wanted={};
   if(status.phase!=='fight'||status.paused||state.phase!=='active')return wanted;
@@ -31,6 +31,10 @@ function pilot(id,state,status,memory){
     if(state.step===0){if(gap>65)wanted[forward]=true;else if(!self.action)pulse('light');}
     if(state.step===1&&!memory.heavy){pulse('heavy');memory.heavy=true;}
     if(state.step===0)memory.heavy=false;
+  }
+  if(id==='taunt'){
+    if(state.step===0){if(gap<250)wanted[back]=true;else if(!self.taunt&&!memory.taunted){pulse('taunt');memory.taunted=true;}}
+    else if(foe.taunt?.phase==='hold'&&!self.action)pulse('light');
   }
   return wanted;
 }
@@ -67,7 +71,7 @@ function completeAppLesson(a,id,keys){
   return {id,frames,evidence:clone(a.currentLesson().status().evidence)};
 }
 
-check('All eight exercises complete through real engine inputs with measured objectives',()=>{
+check('All nine exercises complete through real engine inputs with measured objectives',()=>{
   const a=make();
   for(const lesson of a.host.StrandLessons.lessons){const result=runLesson(a,lesson.id);assert(result.evidence.length===lesson.steps.length);runs.push({id:result.id,fighter:result.fighter,frames:result.frames,evidence:result.evidence});}
 });
@@ -85,7 +89,7 @@ check('Punishment and confirmed cancel remain achievable with all eight movement
 });
 check('No-input and wrong-guard attempts cannot validate; failure can be retried',()=>{
   const a=make();
-  for(const id of ['distance','reach','punish','resource','signatures','combo'])assert.equal(runLesson(a,id,'sam',{idle:true,optional:true,limit:400}).phase,'active',id);
+  for(const id of ['distance','reach','punish','resource','signatures','combo','taunt'])assert.equal(runLesson(a,id,'sam',{idle:true,optional:true,limit:400}).phase,'active',id);
   for(const id of ['guard-high','guard-low']){const failed=runLesson(a,id,'sam',{idle:true,optional:true});assert.equal(failed.phase,'retry');assert.equal(failed.evidence.length,0);assert.equal(runLesson(a,id).phase,'success');}
   const highAgainstLow=runLesson(a,'guard-low','sam',{controls:()=>({guard:true}),optional:true});assert.equal(highAgainstLow.phase,'retry');assert.equal(highAgainstLow.evidence.length,0);
 });
@@ -108,6 +112,74 @@ check('Objective boundaries reject a late punish and a fresh attack during recov
   assert.equal(spending.phase,'retry');assert.equal(spending.evidence.length,1,'Only the initial spend was validated');
 });
 
+check('Taunt lesson requires a complete cycle and an actual interruption for all eight fighters',()=>{
+  const a=make();
+  for(const fighter of Object.keys(a.host.StrandContent.fighters)){
+    const result=runLesson(a,'taunt',fighter),[cycle,interrupt]=result.evidence;
+    assert.equal(cycle.kind,'taunt-complete');assert.equal(cycle.duration,54);assert(cycle.minGap>=250);
+    assert.deepEqual(cycle.phases,['entry','hold','exit']);assert.equal(interrupt.kind,'taunt-interrupted');
+    assert.equal(interrupt.opponentPhase,'hold');assert(interrupt.damage>0);
+    assert.equal(result.final.fighters[1].taunt,undefined);assert(result.final.fighters[1].stun>0);
+    runs.push({id:'taunt',fighter,frames:result.frames,evidence:result.evidence});
+  }
+});
+check('Taunt lesson rejects an unsafe distance, a late hit and the wrong attack',()=>{
+  const a=make();
+  const close=runLesson(a,'taunt','sam',{optional:true,limit:450,controls(state,status,memory){
+    if(status.phase!=='fight')return {};
+    const [self,foe]=status.fighters,gap=Math.abs(self.x-foe.x),forward=self.x<=foe.x?'right':'left';
+    if(gap>90&&!memory.attempt)return {[forward]:true};
+    if(!memory.attempt){memory.attempt=true;return {taunt:true};}return {};
+  }});
+  assert.equal(close.phase,'active');assert.equal(close.evidence.length,0,'A full taunt too near the mannequin cannot validate distance');
+  for(const wrong of ['late','heavy']){
+    const result=runLesson(a,'taunt','sam',{optional:true,limit:650,controls(state,status,memory){
+      if(state.step===0)return pilot('taunt',state,status,memory);
+      if(status.phase!=='fight'||memory.struck)return {};
+      const [self,foe]=status.fighters;
+      if(foe.taunt)memory.seen=true;
+      if(wrong==='heavy'&&foe.taunt?.phase==='hold'&&!self.action){memory.struck=true;return {heavy:true};}
+      if(wrong==='late'&&memory.seen&&!foe.taunt&&!self.action){memory.struck=true;return {light:true};}
+      return {};
+    }});
+    assert.equal(result.phase,'active',wrong);assert.equal(result.evidence.length,1,wrong+' cannot validate interruption');
+    assert(result.final.fighters[1].hp<100,wrong+' actually landed and was rejected on its timing or type');
+  }
+});
+check('Taunt interruption distinguishes the last vulnerable contact from natural completion on the next tick',()=>{
+  const a=make();
+  for(const frame of [48,49]){
+    const result=runLesson(a,'taunt','sam',{optional:true,limit:650,controls(state,status,memory){
+      if(state.step===0)return pilot('taunt',state,status,memory);
+      if(status.phase!=='fight'||memory.struck)return {};
+      const [self,foe]=status.fighters;
+      if(foe.taunt?.frame===frame&&!self.action){memory.struck=true;return {light:true};}
+      return {};
+    }});
+    assert(result.final.fighters[1].hp<100,'The boundary hit actually lands at input frame '+frame);
+    assert.equal(result.phase,frame===48?'success':'active','Natural completion must not count as an interruption');
+    assert.equal(result.evidence.length,frame===48?2:1);
+    if(frame===48){assert.equal(result.evidence[1].opponentPhase,'exit');assert.equal(result.evidence[1].opponentFrame,52);}
+    runs.push({id:'taunt',fighter:'sam',case:'interruption-boundary',inputFrame:frame,frames:result.frames,phase:result.phase,evidence:result.evidence});
+  }
+});
+check('A lingering mine hitting while a light starts cannot validate a light interruption',()=>{
+  const a=make();let previousHP=100,damageDuringLightStartup=false;
+  const result=runLesson(a,'taunt','higgs',{optional:true,limit:650,controls(state,status,memory){
+    if(state.step===0)return pilot('taunt',state,status,memory);
+    if(status.phase!=='fight')return {};
+    const [self,foe]=status.fighters,forward=self.x<=foe.x?'right':'left';
+    if(foe.hp<previousHP&&self.action==='light'&&status.training.moves[0].phase==='Démarrage')damageDuringLightStartup=true;
+    previousHP=foe.hp;
+    if(!memory.planted&&foe.taunt&&!self.action){memory.planted=true;return {[forward]:true,special:true};}
+    if(memory.planted&&!memory.struck&&!self.action&&foe.taunt){memory.struck=true;return {light:true};}
+    return {};
+  }});
+  assert(damageDuringLightStartup,'The mine must really hit while the light has not reached its active frame');
+  assert.equal(result.phase,'active');assert.equal(result.evidence.length,1,'The mine is not a light interruption');
+  runs.push({id:'taunt',fighter:'higgs',case:'lingering-mine-light-startup',frames:result.frames,phase:result.phase,evidence:result.evidence,damageDuringLightStartup});
+});
+
 check('Progress is isolated, validates stored values and survives an unavailable store',()=>{
   const storage=new Map([['echos.v1.chapters','{"sam":2}'],['echos.campaign.v1','untouched'],['echos.v1.cup','untouched'],['echos.boss.v1','untouched']]);
   const a=make({storage}),module=a.host.StrandLessons,store=module.createStore();const before=new Map(storage);
@@ -120,10 +192,12 @@ check('Progress is isolated, validates stored values and survives an unavailable
   const unavailable=make({writeError:true}).host.StrandLessons.createStore();assert(unavailable.complete('distance','sam'));assert.equal(unavailable.progress().saved,false);assert.equal(unavailable.progress().completed.distance.runs,1);
 });
 check('Actual application completes the full course with remapped keys, visible feedback and isolated progress',()=>{
-  const remap={right:'e',light:';',heavy:'c',special:'v',guard:'x',down:'n'},keys={left:'q',right:'e',up:'z',down:'n',guard:'x',light:';',heavy:'c',special:'v',throw:'t'};
+  const remap={right:'e',light:';',heavy:'c',special:'v',guard:'x',down:'n',taunt:'m'},keys={left:'q',right:'e',up:'z',down:'n',guard:'x',light:';',heavy:'c',special:'v',throw:'t',taunt:'m'};
   const storage=new Map([['echos.v1.chapters','{"sam":2}'],['echos.v1.scenes','{"sam:intro":true}']]),before=new Map(storage);
-  const a=appWorld({storage,remap});a.click('[data-act="mode"][data-mode="training"]');a.click('[data-act="lessons"]');
-  assert.equal(a.document.querySelectorAll('.lessonCard').length,8);
+  const a=appWorld({storage,remap});a.click('[data-act="mode"][data-mode="training"]');
+  assert(a.document.querySelector('[data-act="lessons"]').textContent.includes('9 exercices'));
+  a.click('[data-act="lessons"]');
+  assert.equal(a.document.querySelectorAll('.lessonCard').length,9);
   const ids=a.host.StrandLessons.lessons.map(l=>l.id);
   a.click('[data-act="startLesson"][data-lesson="'+ids[0]+'"]');
   for(const [index,id]of ids.entries()){
@@ -131,7 +205,7 @@ check('Actual application completes the full course with remapped keys, visible 
     const result=completeAppLesson(a,id,keys);runs.push({id,fighter:'sam',surface:'actual-app-remapped-keyboard',...result});
     if(index<ids.length-1)a.click('[data-act="startLesson"][data-lesson="'+ids[index+1]+'"]');
   }
-  assert.equal(Object.keys(JSON.parse(storage.get(a.host.StrandLessons.storeKey)).completed).length,8);
+  assert.equal(Object.keys(JSON.parse(storage.get(a.host.StrandLessons.storeKey)).completed).length,9);
   for(const [key,value]of before)assert.equal(storage.get(key),value,'Other progression unchanged');
   a.click('#homeLink');assert.equal(a.host.StrandFight.snapshot(),null,'Home works after a settled lesson');
   assert(a.document.querySelector('[data-act="mode"][data-mode="training"]'));

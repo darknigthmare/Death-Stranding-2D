@@ -1,0 +1,1466 @@
+{
+  "schemaVersion": 1,
+  "tool": "image_gen.imagegen",
+  "briefsSource": "docs/combat/extensions/lignes-de-maree/generation-briefs.json",
+  "status": "completed-static-bases",
+  "assets": [
+    {
+      "id": "ldm-boss-consignateur",
+      "name": "Le Consignateur",
+      "prompt": "Use case: stylized-concept. Asset type: one isolated static boss base sprite for the user's Death Stranding 2D fan-game, original expansion Les Lignes de Marée. Create EXACTLY ONE complete subject in a single image. Original non-canonical design, coherent with Death Stranding's grounded utilitarian science-fiction and restrained uncanny material language. Subject: Original human logistical strongman in broad industrial rainproof graphite and mustard porter gear, a heavy sealed rectangular cargo frame strapped close to back, blunt restraint baton and compact worn polymer shield, older rugged face, grounded human scale, no monster armor. Composition: portrait canvas, target 1024 by 1536 pixels, whole body / whole machine in strict readable side view oriented toward the RIGHT, including every foot, fin, cable, antenna, tool and attached accessory, with at least 8 percent transparent clearance on every edge. One subject only, with attached equipment, no additional people or creatures. Style: highly detailed realistic hand-painted 2D game sprite, natural proportions, sharp material edges, crisp full-resolution silhouette, restrained cold studio light, neutral soft fill, readable dark surfaces. Background: genuine transparent alpha, no backdrop, no floor plane, no scene, no checkerboard painted into image, no cast shadow detached from subject, no frame. Keep the given clothing, anatomy and equipment faithfully; any cord fits wholly inside frame. No text, logo, watermark, UI, sprite sheet or multiple poses. No gore or blood.",
+      "transparent_background": true,
+      "source": "/workspace/scratch/950574a3230d/generated_images/exec-91ecb80d-1792-4e4e-8e86-5dadffa9e822.png",
+      "output_hint": "Generated images are saved to /workspace/scratch/950574a3230d/generated_images as /workspace/scratch/950574a3230d/generated_images/exec-91ecb80d-1792-4e4e-8e86-5dadffa9e822.png by default.\nIf you need to use a generated image at another path, copy it and leave the original in place unless the user explicitly asks you to delete it.\nThe generated image is already displayed to the user. There is no need to render it in the final response as a Markdown image or file link.",
+      "generationKind": "new",
+      "visualReview": {
+        "status": "accepted-static-base-with-reservations",
+        "inspectedIndividually": true,
+        "review": "Porteur humain robuste, graphite et jaune, charge rectangulaire, matraque et bouclier complets. Profil droit lisible.",
+        "limits": [
+          "Le bouclier et la charge se chevauchent en projection ; détail à maintenir dans les futures poses."
+        ],
+        "nativeCanvasCompositeInspected": true
+      },
+      "assetPath": "modes/echos-de-la-greve/assets/lignes-de-maree/bosses/consignateur-base.png",
+      "playable": false,
+      "aiImplemented": false,
+      "animations": 0,
+      "sourceId": "exec-91ecb80d-1792-4e4e-8e86-5dadffa9e822",
+      "nativeDimensions": {
+        "width": 1024,
+        "height": 1536
+      },
+      "nativeFormat": "PNG",
+      "nativeMode": "RGBA",
+      "sha256": "8c9ff0c1b48582881120c641a84e500f2dd33e1237500712c656ca66f392c377",
+      "bytes": 2132997,
+      "nativeAlpha": true,
+      "alpha": {
+        "min": 0,
+        "max": 254,
+        "zeroPixelCount": 878497,
+        "nearTransparentPixelCountAlpha0to8": 945607,
+        "fullyOpaquePixelCount": 0,
+        "nearOpaquePixelCountAlpha250to255": 589755,
+        "pixelCount": 1572864,
+        "cornerSamples": [
+          0,
+          0,
+          1,
+          0
+        ],
+        "nonzeroAlphaBounds": [
+          0,
+          0,
+          1023,
+          1536
+        ],
+        "alphaAtLeast16Bounds": [
+          120,
+          34,
+          849,
+          1489
+        ]
+      },
+      "sourceSha256": "8c9ff0c1b48582881120c641a84e500f2dd33e1237500712c656ca66f392c377",
+      "destinationSha256": "8c9ff0c1b48582881120c641a84e500f2dd33e1237500712c656ca66f392c377",
+      "destinationAbsolute": "/home/agent/ds2d-20261127/modes/echos-de-la-greve/assets/lignes-de-maree/bosses/consignateur-base.png",
+      "byteIdenticalToSource": true,
+      "rasterProcessing": "None. Byte-for-byte file copy only; no crop, scaling, alpha cleanup, recoloring, re-encoding, or compositing."
+    },
+    {
+      "id": "ldm-boss-remorque-ressac",
+      "name": "La Remorque du ressac",
+      "prompt": "Use case: stylized-concept. Asset type: one isolated static boss base sprite for the user's Death Stranding 2D fan-game, original expansion Les Lignes de Marée. Create EXACTLY ONE complete subject in a single image. Original non-canonical design, coherent with Death Stranding's grounded utilitarian science-fiction and restrained uncanny material language. Subject: One original massive unmanned six-wheeled freight tractor with an integrated low sealed salvage container, weathered ivory graphite steel and salt corrosion, robust independent wheel suspension, compact defensive scan mast. Entire vehicle side view, no driver or accompanying trailer. Composition: landscape canvas, target 1536 by 1024 pixels, whole body / whole machine in strict readable side view oriented toward the RIGHT, including every foot, fin, cable, antenna, tool and attached accessory, with at least 8 percent transparent clearance on every edge. One subject only, with attached equipment, no additional people or creatures. Style: highly detailed realistic hand-painted 2D game sprite, natural proportions, sharp material edges, crisp full-resolution silhouette, restrained cold studio light, neutral soft fill, readable dark surfaces. Background: genuine transparent alpha, no backdrop, no floor plane, no scene, no checkerboard painted into image, no cast shadow detached from subject, no frame. Keep the given clothing, anatomy and equipment faithfully; any cord fits wholly inside frame. No text, logo, watermark, UI, sprite sheet or multiple poses. No gore or blood.",
+      "transparent_background": true,
+      "source": "/workspace/scratch/950574a3230d/generated_images/exec-5711e294-5d9e-4dc4-b894-478db4fa6c5f.png",
+      "output_hint": "Generated images are saved to /workspace/scratch/950574a3230d/generated_images as /workspace/scratch/950574a3230d/generated_images/exec-5711e294-5d9e-4dc4-b894-478db4fa6c5f.png by default.\nIf you need to use a generated image at another path, copy it and leave the original in place unless the user explicitly asks you to delete it.\nThe generated image is already displayed to the user. There is no need to render it in the final response as a Markdown image or file link.",
+      "generationKind": "new",
+      "visualReview": {
+        "status": "accepted-static-base-with-reservations",
+        "inspectedIndividually": true,
+        "review": "Tracteur cargo autonome, caisse intégrée, six roues suggérées par les trois roues du côté visible, suspensions et mât lisibles ; véhicule entier.",
+        "limits": [
+          "Le chargement de toit est une interprétation additionnelle du modèle.",
+          "Base en vue latérale légèrement perspective ; pas de vues techniques des roues cachées."
+        ],
+        "nativeCanvasCompositeInspected": true
+      },
+      "assetPath": "modes/echos-de-la-greve/assets/lignes-de-maree/bosses/remorque-ressac-base.png",
+      "playable": false,
+      "aiImplemented": false,
+      "animations": 0,
+      "sourceId": "exec-5711e294-5d9e-4dc4-b894-478db4fa6c5f",
+      "nativeDimensions": {
+        "width": 1536,
+        "height": 1024
+      },
+      "nativeFormat": "PNG",
+      "nativeMode": "RGBA",
+      "sha256": "3b286d24d94184edbd48ed877b455b3f11de82520bf588f4e71a289597d4c3e3",
+      "bytes": 2180195,
+      "nativeAlpha": true,
+      "alpha": {
+        "min": 0,
+        "max": 254,
+        "zeroPixelCount": 873186,
+        "nearTransparentPixelCountAlpha0to8": 902947,
+        "fullyOpaquePixelCount": 0,
+        "nearOpaquePixelCountAlpha250to255": 633570,
+        "pixelCount": 1572864,
+        "cornerSamples": [
+          1,
+          0,
+          0,
+          0
+        ],
+        "nonzeroAlphaBounds": [
+          0,
+          0,
+          1532,
+          1024
+        ],
+        "alphaAtLeast16Bounds": [
+          45,
+          108,
+          1490,
+          915
+        ]
+      },
+      "sourceSha256": "3b286d24d94184edbd48ed877b455b3f11de82520bf588f4e71a289597d4c3e3",
+      "destinationSha256": "3b286d24d94184edbd48ed877b455b3f11de82520bf588f4e71a289597d4c3e3",
+      "destinationAbsolute": "/home/agent/ds2d-20261127/modes/echos-de-la-greve/assets/lignes-de-maree/bosses/remorque-ressac-base.png",
+      "byteIdenticalToSource": true,
+      "rasterProcessing": "None. Byte-for-byte file copy only; no crop, scaling, alpha cleanup, recoloring, re-encoding, or compositing."
+    },
+    {
+      "id": "ldm-boss-veilleur-balise",
+      "name": "Le Veilleur des balises",
+      "prompt": "Use case: targeted image correction, character asset. Edit the provided image of the tall tar apparition. Remove ALL human-made equipment from it: absolutely no backpack, crates, pouches, straps, harness, buckles, antenna or devices anywhere. Replace those regions only with uninterrupted glossy black organic tar surface, sparse dim pale gold flecks in the chest. Preserve the very tall lean humanoid silhouette, asymmetrical long lowered arms, full legs, right-facing profile, realistic painted lighting and one single body. Shorten and curl the thin organic umbilical from the upper torso so its tip ends fully inside the canvas with clear empty margin above it. Fit the whole figure including every hand, foot and cord within an approximately 8 percent transparent margin. Portrait 1024 by 1536. This is an original non-canonical Death Stranding inspired tar manifestation. The body consists exclusively of featureless organic black tar with no clothing, no sexual anatomy and no gore. Genuine transparent alpha background outside the body and cord; eliminate the grey halo/backdrop and all cast shadows. No ground, scene, text, logo, UI, other figure or alternate pose. No other change.",
+      "transparent_background": true,
+      "source": "/workspace/scratch/950574a3230d/generated_images/exec-c11b28e9-a6a4-4d0a-b532-97ce51c3ae3b.png",
+      "output_hint": "Generated images are saved to /workspace/scratch/950574a3230d/generated_images as /workspace/scratch/950574a3230d/generated_images/exec-c11b28e9-a6a4-4d0a-b532-97ce51c3ae3b.png by default.\nIf you need to use a generated image at another path, copy it and leave the original in place unless the user explicitly asks you to delete it.\nThe generated image is already displayed to the user. There is no need to render it in the final response as a Markdown image or file link.",
+      "referenced_image_paths": [
+        "/workspace/scratch/950574a3230d/generated_images/exec-1b8deb0c-d9fa-4fd5-9a7f-afe4161a4846.png"
+      ],
+      "generationKind": "targeted-edit",
+      "supersededCandidates": [
+        {
+          "prompt": "Use case: stylized-concept. Asset type: one isolated static boss base sprite for the user's Death Stranding 2D fan-game, original expansion Les Lignes de Marée. Create EXACTLY ONE complete subject in a single image. Original non-canonical design, coherent with Death Stranding's grounded utilitarian science-fiction and restrained uncanny material language. Subject: One original giant human-shaped tar apparition, extremely tall lean silhouette with asymmetrical lowered arms, a thin umbilical cord rising from upper torso, sparse dim pale gold flecks at chest, glossy black surface. Ominous grounded Death Stranding Beached Thing style, no crown or magic armor. Composition: portrait canvas, target 1024 by 1536 pixels, whole body / whole machine in strict readable side view oriented toward the RIGHT, including every foot, fin, cable, antenna, tool and attached accessory, with at least 8 percent transparent clearance on every edge. One subject only, with attached equipment, no additional people or creatures. Style: highly detailed realistic hand-painted 2D game sprite, natural proportions, sharp material edges, crisp full-resolution silhouette, restrained cold studio light, neutral soft fill, readable dark surfaces. Background: genuine transparent alpha, no backdrop, no floor plane, no scene, no checkerboard painted into image, no cast shadow detached from subject, no frame. Keep the given clothing, anatomy and equipment faithfully; any cord fits wholly inside frame. No text, logo, watermark, UI, sprite sheet or multiple poses. No gore or blood.",
+          "source": "/workspace/scratch/950574a3230d/generated_images/exec-1b8deb0c-d9fa-4fd5-9a7f-afe4161a4846.png",
+          "output_hint": "Generated images are saved to /workspace/scratch/950574a3230d/generated_images as /workspace/scratch/950574a3230d/generated_images/exec-1b8deb0c-d9fa-4fd5-9a7f-afe4161a4846.png by default.\nIf you need to use a generated image at another path, copy it and leave the original in place unless the user explicitly asks you to delete it.\nThe generated image is already displayed to the user. There is no need to render it in the final response as a Markdown image or file link.",
+          "reason": "Équipement humain absent du brief ; supprimé par ImageGen. Cordon initial tronqué en haut ; replié dans le cadre.",
+          "sourceId": "exec-1b8deb0c-d9fa-4fd5-9a7f-afe4161a4846",
+          "nativeDimensions": {
+            "width": 1024,
+            "height": 1536
+          },
+          "nativeFormat": "PNG",
+          "nativeMode": "RGBA",
+          "sha256": "726f147c046e6dfd0e26772b531952d9b52420fbf6165b49335c6a516a8db705",
+          "bytes": 1457429,
+          "nativeAlpha": true,
+          "alpha": {
+            "min": 0,
+            "max": 254,
+            "zeroPixelCount": 1257321,
+            "nearTransparentPixelCountAlpha0to8": 1298365,
+            "fullyOpaquePixelCount": 0,
+            "nearOpaquePixelCountAlpha250to255": 231389,
+            "pixelCount": 1572864,
+            "cornerSamples": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "nonzeroAlphaBounds": [
+              0,
+              0,
+              1004,
+              1506
+            ],
+            "alphaAtLeast16Bounds": [
+              222,
+              0,
+              798,
+              1497
+            ]
+          },
+          "preservedAtSource": true
+        }
+      ],
+      "visualReview": {
+        "status": "accepted-static-base-with-reservations",
+        "inspectedIndividually": true,
+        "review": "Après édition : corps humanoïde de goudron sans équipement, longs bras abaissés, profil droit, cordon entier et replié dans le cadre.",
+        "limits": [
+          "Effet de matière humide très brillant."
+        ],
+        "nativeCanvasCompositeInspected": true
+      },
+      "assetPath": "modes/echos-de-la-greve/assets/lignes-de-maree/bosses/veilleur-balise-base.png",
+      "playable": false,
+      "aiImplemented": false,
+      "animations": 0,
+      "sourceId": "exec-c11b28e9-a6a4-4d0a-b532-97ce51c3ae3b",
+      "nativeDimensions": {
+        "width": 1024,
+        "height": 1536
+      },
+      "nativeFormat": "PNG",
+      "nativeMode": "RGBA",
+      "sha256": "98c6a9e71d61d8378a6abfcf90a6740f934b7633e91e69576fbe7c84ab95d47b",
+      "bytes": 1490482,
+      "nativeAlpha": true,
+      "alpha": {
+        "min": 0,
+        "max": 254,
+        "zeroPixelCount": 1273459,
+        "nearTransparentPixelCountAlpha0to8": 1311710,
+        "fullyOpaquePixelCount": 0,
+        "nearOpaquePixelCountAlpha250to255": 225146,
+        "pixelCount": 1572864,
+        "cornerSamples": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "nonzeroAlphaBounds": [
+          55,
+          31,
+          1002,
+          1502
+        ],
+        "alphaAtLeast16Bounds": [
+          217,
+          134,
+          802,
+          1489
+        ]
+      },
+      "sourceSha256": "98c6a9e71d61d8378a6abfcf90a6740f934b7633e91e69576fbe7c84ab95d47b",
+      "destinationSha256": "98c6a9e71d61d8378a6abfcf90a6740f934b7633e91e69576fbe7c84ab95d47b",
+      "destinationAbsolute": "/home/agent/ds2d-20261127/modes/echos-de-la-greve/assets/lignes-de-maree/bosses/veilleur-balise-base.png",
+      "byteIdenticalToSource": true,
+      "rasterProcessing": "None. Byte-for-byte file copy only; no crop, scaling, alpha cleanup, recoloring, re-encoding, or compositing."
+    },
+    {
+      "id": "ldm-boss-treuil-amarre",
+      "name": "Le Treuil d’amarre",
+      "prompt": "Use case: stylized-concept. Asset type: one isolated static boss base sprite for the user's Death Stranding 2D fan-game, original expansion Les Lignes de Marée. Create EXACTLY ONE complete subject in a single image. Original non-canonical design, coherent with Death Stranding's grounded utilitarian science-fiction and restrained uncanny material language. Subject: One original colossal industrial mobile winch unit, low heavy graphite crawler chassis, huge horizontal spool tightly wound with thick cable, folded fairlead and reinforced shrouds, sea-rust streaks and small amber status lamps. Single self-contained machine, no sentience face. Composition: landscape canvas, target 1536 by 1024 pixels, whole body / whole machine in strict readable side view oriented toward the RIGHT, including every foot, fin, cable, antenna, tool and attached accessory, with at least 8 percent transparent clearance on every edge. One subject only, with attached equipment, no additional people or creatures. Style: highly detailed realistic hand-painted 2D game sprite, natural proportions, sharp material edges, crisp full-resolution silhouette, restrained cold studio light, neutral soft fill, readable dark surfaces. Background: genuine transparent alpha, no backdrop, no floor plane, no scene, no checkerboard painted into image, no cast shadow detached from subject, no frame. Keep the given clothing, anatomy and equipment faithfully; any cord fits wholly inside frame. No text, logo, watermark, UI, sprite sheet or multiple poses. No gore or blood.",
+      "transparent_background": true,
+      "source": "/workspace/scratch/950574a3230d/generated_images/exec-0de489e9-9e75-4d92-bb04-595839756db8.png",
+      "output_hint": "Generated images are saved to /workspace/scratch/950574a3230d/generated_images as /workspace/scratch/950574a3230d/generated_images/exec-0de489e9-9e75-4d92-bb04-595839756db8.png by default.\nIf you need to use a generated image at another path, copy it and leave the original in place unless the user explicitly asks you to delete it.\nThe generated image is already displayed to the user. There is no need to render it in the final response as a Markdown image or file link.",
+      "generationKind": "new",
+      "visualReview": {
+        "status": "accepted-static-base-with-reservations",
+        "inspectedIndividually": true,
+        "review": "Treuil industriel autonome sur chenilles, grand tambour horizontal, carters, câble et bras intégrés, silhouette entière.",
+        "limits": [
+          "Les accessoires techniques du châssis sont interprétés par le modèle."
+        ],
+        "nativeCanvasCompositeInspected": true
+      },
+      "assetPath": "modes/echos-de-la-greve/assets/lignes-de-maree/bosses/treuil-amarre-base.png",
+      "playable": false,
+      "aiImplemented": false,
+      "animations": 0,
+      "sourceId": "exec-0de489e9-9e75-4d92-bb04-595839756db8",
+      "nativeDimensions": {
+        "width": 1536,
+        "height": 1024
+      },
+      "nativeFormat": "PNG",
+      "nativeMode": "RGBA",
+      "sha256": "115b31d5cdf790d3daef54bf036439901db827a87b77b59349342bafa15c85e2",
+      "bytes": 2129389,
+      "nativeAlpha": true,
+      "alpha": {
+        "min": 0,
+        "max": 254,
+        "zeroPixelCount": 827234,
+        "nearTransparentPixelCountAlpha0to8": 856987,
+        "fullyOpaquePixelCount": 0,
+        "nearOpaquePixelCountAlpha250to255": 687375,
+        "pixelCount": 1572864,
+        "cornerSamples": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "nonzeroAlphaBounds": [
+          0,
+          21,
+          1533,
+          1024
+        ],
+        "alphaAtLeast16Bounds": [
+          66,
+          105,
+          1477,
+          929
+        ]
+      },
+      "sourceSha256": "115b31d5cdf790d3daef54bf036439901db827a87b77b59349342bafa15c85e2",
+      "destinationSha256": "115b31d5cdf790d3daef54bf036439901db827a87b77b59349342bafa15c85e2",
+      "destinationAbsolute": "/home/agent/ds2d-20261127/modes/echos-de-la-greve/assets/lignes-de-maree/bosses/treuil-amarre-base.png",
+      "byteIdenticalToSource": true,
+      "rasterProcessing": "None. Byte-for-byte file copy only; no crop, scaling, alpha cleanup, recoloring, re-encoding, or compositing."
+    },
+    {
+      "id": "ldm-boss-cetace-de-rive",
+      "name": "Le Cétacé de rive",
+      "prompt": "Use case: targeted image correction, creature asset. Edit the provided tar whale illustration. Completely remove every item of human equipment: ALL crates, cargo boxes, straps, harnesses, cables from machines, antenna mast, white radar dome, technology and attached gadgets. Replace those small areas with the same uninterrupted organic glossy black tar whale skin. Retain exactly one tar whale, its broad blunt rounded right-facing head, long low streamlined body, folded pectoral fins, complete tail flukes, sparse subtle pale gold inclusions, and the ONE thin organic umbilical rising from its back. Cord tip, tail and all fins must fit entirely within the image with about 8 percent clear margin, zoom out slightly if necessary. Landscape 1536 by 1024. Preserve the realistic painted style, lighting, materials and right-facing side profile. Original non-canonical Death Stranding inspired organism, entirely organic tar with no manufacturing, no armor or ornaments. Genuine transparent alpha background outside the silhouette and umbilical; remove grey halo, backdrop and cast shadows. No sea, floor, scene, other character, text, logo, watermark or UI. No gore. No other design changes.",
+      "transparent_background": true,
+      "source": "/workspace/scratch/950574a3230d/generated_images/exec-3e6d1ef8-24ea-4637-9685-2184d722318a.png",
+      "output_hint": "Generated images are saved to /workspace/scratch/950574a3230d/generated_images as /workspace/scratch/950574a3230d/generated_images/exec-3e6d1ef8-24ea-4637-9685-2184d722318a.png by default.\nIf you need to use a generated image at another path, copy it and leave the original in place unless the user explicitly asks you to delete it.\nThe generated image is already displayed to the user. There is no need to render it in the final response as a Markdown image or file link.",
+      "referenced_image_paths": [
+        "/workspace/scratch/950574a3230d/generated_images/exec-fd01525e-92ab-4251-b674-f5329aa1460e.png"
+      ],
+      "generationKind": "targeted-edit",
+      "supersededCandidates": [
+        {
+          "prompt": "Use case: stylized-concept. Asset type: one isolated static boss base sprite for the user's Death Stranding 2D fan-game, original expansion Les Lignes de Marée. Create EXACTLY ONE complete subject in a single image. Original non-canonical design, coherent with Death Stranding's grounded utilitarian science-fiction and restrained uncanny material language. Subject: One original enormous tar-black whale-like Beached Thing, broad rounded head, long low streamlined body and folded pectoral fins, umbilical strand trailing upward, wet glossy tar and sparse gold flecks. Entire creature in strict side profile facing right, floating clear of ground, no blood or exposed viscera. Composition: landscape canvas, target 1536 by 1024 pixels, whole body / whole machine in strict readable side view oriented toward the RIGHT, including every foot, fin, cable, antenna, tool and attached accessory, with at least 8 percent transparent clearance on every edge. One subject only, with attached equipment, no additional people or creatures. Style: highly detailed realistic hand-painted 2D game sprite, natural proportions, sharp material edges, crisp full-resolution silhouette, restrained cold studio light, neutral soft fill, readable dark surfaces. Background: genuine transparent alpha, no backdrop, no floor plane, no scene, no checkerboard painted into image, no cast shadow detached from subject, no frame. Keep the given clothing, anatomy and equipment faithfully; any cord fits wholly inside frame. No text, logo, watermark, UI, sprite sheet or multiple poses. No gore or blood.",
+          "source": "/workspace/scratch/950574a3230d/generated_images/exec-fd01525e-92ab-4251-b674-f5329aa1460e.png",
+          "output_hint": "Generated images are saved to /workspace/scratch/950574a3230d/generated_images as /workspace/scratch/950574a3230d/generated_images/exec-fd01525e-92ab-4251-b674-f5329aa1460e.png by default.\nIf you need to use a generated image at another path, copy it and leave the original in place unless the user explicitly asks you to delete it.\nThe generated image is already displayed to the user. There is no need to render it in the final response as a Markdown image or file link.",
+          "reason": "Équipement humain absent du brief ; supprimé par ImageGen.",
+          "sourceId": "exec-fd01525e-92ab-4251-b674-f5329aa1460e",
+          "nativeDimensions": {
+            "width": 1536,
+            "height": 1024
+          },
+          "nativeFormat": "PNG",
+          "nativeMode": "RGBA",
+          "sha256": "ceaf2a68bb860e5583498cbbdd4f7ab80b0468331f652f62ab37fda9908888b1",
+          "bytes": 1469475,
+          "nativeAlpha": true,
+          "alpha": {
+            "min": 0,
+            "max": 254,
+            "zeroPixelCount": 1207742,
+            "nearTransparentPixelCountAlpha0to8": 1250415,
+            "fullyOpaquePixelCount": 0,
+            "nearOpaquePixelCountAlpha250to255": 292927,
+            "pixelCount": 1572864,
+            "cornerSamples": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "nonzeroAlphaBounds": [
+              0,
+              0,
+              1522,
+              1024
+            ],
+            "alphaAtLeast16Bounds": [
+              42,
+              90,
+              1493,
+              875
+            ]
+          },
+          "preservedAtSource": true
+        }
+      ],
+      "visualReview": {
+        "status": "accepted-static-base-with-reservations",
+        "inspectedIndividually": true,
+        "review": "Après édition : cétacé exclusivement organique de goudron, profil droit, nageoires, queue et cordon entiers ; caisses et harnais retirés.",
+        "limits": [
+          "Marges latérales inférieures aux 8 % demandés, mais les extrémités sont dans le cadre."
+        ],
+        "nativeCanvasCompositeInspected": true
+      },
+      "assetPath": "modes/echos-de-la-greve/assets/lignes-de-maree/bosses/cetace-de-rive-base.png",
+      "playable": false,
+      "aiImplemented": false,
+      "animations": 0,
+      "sourceId": "exec-3e6d1ef8-24ea-4637-9685-2184d722318a",
+      "nativeDimensions": {
+        "width": 1536,
+        "height": 1024
+      },
+      "nativeFormat": "PNG",
+      "nativeMode": "RGBA",
+      "sha256": "7c7a36c247174932c3cc969d0c2af74991068c02e1049a757a4c16e423ac7f28",
+      "bytes": 1383171,
+      "nativeAlpha": true,
+      "alpha": {
+        "min": 0,
+        "max": 254,
+        "zeroPixelCount": 1248897,
+        "nearTransparentPixelCountAlpha0to8": 1263884,
+        "fullyOpaquePixelCount": 0,
+        "nearOpaquePixelCountAlpha250to255": 290422,
+        "pixelCount": 1572864,
+        "cornerSamples": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "nonzeroAlphaBounds": [
+          39,
+          63,
+          1506,
+          1024
+        ],
+        "alphaAtLeast16Bounds": [
+          43,
+          85,
+          1496,
+          877
+        ]
+      },
+      "sourceSha256": "7c7a36c247174932c3cc969d0c2af74991068c02e1049a757a4c16e423ac7f28",
+      "destinationSha256": "7c7a36c247174932c3cc969d0c2af74991068c02e1049a757a4c16e423ac7f28",
+      "destinationAbsolute": "/home/agent/ds2d-20261127/modes/echos-de-la-greve/assets/lignes-de-maree/bosses/cetace-de-rive-base.png",
+      "byteIdenticalToSource": true,
+      "rasterProcessing": "None. Byte-for-byte file copy only; no crop, scaling, alpha cleanup, recoloring, re-encoding, or compositing."
+    },
+    {
+      "id": "ldm-boss-maitresse-serre",
+      "name": "La Gardienne de la serre",
+      "prompt": "Use case: stylized-concept. Asset type: single isolated static boss sprite for Death Stranding 2D, original fan expansion Les Lignes de Marée. Create one original non-canonical subject, faithful to this design: Original human woman in her late fifties, stern horticultural facility custodian wearing reinforced ivory and dark green weatherproof work suit, compact closed coolant pack and short blunt irrigation control staff, protective gloves and boots, no superpowers or fantasy decoration. Composition: portrait 1024 by 1536 canvas. Exact readable side profile toward the RIGHT, entire subject centered with ALL parts wholly in frame and 8 percent clear margin. Keep only the equipment and physical features described in the design; all attached tools and components fit fully inside the frame. Highly detailed realistic painted 2D game art, grounded natural proportions and plausible load-bearing shapes, restrained cold light and material highlights, clean crisp silhouette. Genuinely transparent alpha background: no scenery, floor, gradient, halo, studio backdrop, shadow outside the subject or painted checkerboard. ONE subject in ONE pose, no companion, no extra organism, no text, logos, watermark, border or UI. No gore or blood.",
+      "transparent_background": true,
+      "source": "/workspace/scratch/950574a3230d/generated_images/exec-6e1a72fb-15e0-4eaa-a935-c774cacac7de.png",
+      "output_hint": "Generated images are saved to /workspace/scratch/950574a3230d/generated_images as /workspace/scratch/950574a3230d/generated_images/exec-6e1a72fb-15e0-4eaa-a935-c774cacac7de.png by default.\nIf you need to use a generated image at another path, copy it and leave the original in place unless the user explicitly asks you to delete it.\nThe generated image is already displayed to the user. There is no need to render it in the final response as a Markdown image or file link.",
+      "generationKind": "new",
+      "visualReview": {
+        "status": "accepted-static-base-with-reservations",
+        "inspectedIndividually": true,
+        "review": "Femme mûre, tenue ivoire et verte, pack fermé, outil d’irrigation émoussé, mains et bottes entières ; visage de profil droit.",
+        "limits": [
+          "Marge haute étroite."
+        ],
+        "nativeCanvasCompositeInspected": true
+      },
+      "assetPath": "modes/echos-de-la-greve/assets/lignes-de-maree/bosses/maitresse-serre-base.png",
+      "playable": false,
+      "aiImplemented": false,
+      "animations": 0,
+      "sourceId": "exec-6e1a72fb-15e0-4eaa-a935-c774cacac7de",
+      "nativeDimensions": {
+        "width": 1024,
+        "height": 1536
+      },
+      "nativeFormat": "PNG",
+      "nativeMode": "RGBA",
+      "sha256": "57dc48d85ffbf05feba3d936df8ad589364f7d1ffe17b2afe289ea7261038784",
+      "bytes": 1592550,
+      "nativeAlpha": true,
+      "alpha": {
+        "min": 0,
+        "max": 254,
+        "zeroPixelCount": 1210011,
+        "nearTransparentPixelCountAlpha0to8": 1226083,
+        "fullyOpaquePixelCount": 0,
+        "nearOpaquePixelCountAlpha250to255": 328108,
+        "pixelCount": 1572864,
+        "cornerSamples": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "nonzeroAlphaBounds": [
+          25,
+          12,
+          980,
+          1510
+        ],
+        "alphaAtLeast16Bounds": [
+          273,
+          17,
+          693,
+          1506
+        ]
+      },
+      "sourceSha256": "57dc48d85ffbf05feba3d936df8ad589364f7d1ffe17b2afe289ea7261038784",
+      "destinationSha256": "57dc48d85ffbf05feba3d936df8ad589364f7d1ffe17b2afe289ea7261038784",
+      "destinationAbsolute": "/home/agent/ds2d-20261127/modes/echos-de-la-greve/assets/lignes-de-maree/bosses/maitresse-serre-base.png",
+      "byteIdenticalToSource": true,
+      "rasterProcessing": "None. Byte-for-byte file copy only; no crop, scaling, alpha cleanup, recoloring, re-encoding, or compositing."
+    },
+    {
+      "id": "ldm-boss-collecteur-noir",
+      "name": "Le Collecteur noir",
+      "prompt": "Use case: stylized-concept. Asset type: single isolated static boss sprite for Death Stranding 2D, original fan expansion Les Lignes de Marée. Create one original non-canonical subject, faithful to this design: One original giant squat tar-black amphibian-like Beached Thing, broad salamander-like body with four stout legs, blunt head and low ridged back, wet tar texture and sparse golden inclusions, a thin umbilical strand ascending from spine. No dragon wings, no armor, no gore. Composition: landscape 1536 by 1024 canvas. Exact readable side profile toward the RIGHT, entire subject centered with ALL parts wholly in frame and 8 percent clear margin. This is an ORGANIC TAR MANIFESTATION ONLY. Its body consists exclusively of black tar with subtle gold inclusions and its umbilical strand. Absolutely NO human clothing, packs, harness, bags, crates, antenna, tools, machinery, technological accessories or ornaments on its body. The cord curves and ends fully inside the image. Highly detailed realistic painted 2D game art, grounded natural proportions and plausible load-bearing shapes, restrained cold light and material highlights, clean crisp silhouette. Genuinely transparent alpha background: no scenery, floor, gradient, halo, studio backdrop, shadow outside the subject or painted checkerboard. ONE subject in ONE pose, no companion, no extra organism, no text, logos, watermark, border or UI. No gore or blood.",
+      "transparent_background": true,
+      "source": "/workspace/scratch/950574a3230d/generated_images/exec-4f44d768-b3f4-4697-b49d-5d65cdf71039.png",
+      "output_hint": "Generated images are saved to /workspace/scratch/950574a3230d/generated_images as /workspace/scratch/950574a3230d/generated_images/exec-4f44d768-b3f4-4697-b49d-5d65cdf71039.png by default.\nIf you need to use a generated image at another path, copy it and leave the original in place unless the user explicitly asks you to delete it.\nThe generated image is already displayed to the user. There is no need to render it in the final response as a Markdown image or file link.",
+      "generationKind": "new",
+      "visualReview": {
+        "status": "accepted-static-base-with-reservations",
+        "inspectedIndividually": true,
+        "review": "Amphibien bas de goudron, tête massive tournée à droite, quatre membres visibles, dos bosselé et cordon entier ; aucun équipement.",
+        "limits": [
+          "Marges latérales étroites.",
+          "Vue de côté avec légère perspective pour séparer les quatre membres."
+        ],
+        "nativeCanvasCompositeInspected": true
+      },
+      "assetPath": "modes/echos-de-la-greve/assets/lignes-de-maree/bosses/collecteur-noir-base.png",
+      "playable": false,
+      "aiImplemented": false,
+      "animations": 0,
+      "sourceId": "exec-4f44d768-b3f4-4697-b49d-5d65cdf71039",
+      "nativeDimensions": {
+        "width": 1536,
+        "height": 1024
+      },
+      "nativeFormat": "PNG",
+      "nativeMode": "RGBA",
+      "sha256": "77a386e39cdc7d3d93410dacc57f9f9aab89328dac09cf046890d92319c6f5a0",
+      "bytes": 1723767,
+      "nativeAlpha": true,
+      "alpha": {
+        "min": 0,
+        "max": 254,
+        "zeroPixelCount": 1046930,
+        "nearTransparentPixelCountAlpha0to8": 1070449,
+        "fullyOpaquePixelCount": 0,
+        "nearOpaquePixelCountAlpha250to255": 476317,
+        "pixelCount": 1572864,
+        "cornerSamples": [
+          0,
+          0,
+          1,
+          0
+        ],
+        "nonzeroAlphaBounds": [
+          0,
+          19,
+          1506,
+          1024
+        ],
+        "alphaAtLeast16Bounds": [
+          17,
+          104,
+          1504,
+          878
+        ]
+      },
+      "sourceSha256": "77a386e39cdc7d3d93410dacc57f9f9aab89328dac09cf046890d92319c6f5a0",
+      "destinationSha256": "77a386e39cdc7d3d93410dacc57f9f9aab89328dac09cf046890d92319c6f5a0",
+      "destinationAbsolute": "/home/agent/ds2d-20261127/modes/echos-de-la-greve/assets/lignes-de-maree/bosses/collecteur-noir-base.png",
+      "byteIdenticalToSource": true,
+      "rasterProcessing": "None. Byte-for-byte file copy only; no crop, scaling, alpha cleanup, recoloring, re-encoding, or compositing."
+    },
+    {
+      "id": "ldm-boss-grue-verrou",
+      "name": "La Grue verrou",
+      "prompt": "Use case: stylized-concept. Asset type: single isolated static boss sprite for Death Stranding 2D, original fan expansion Les Lignes de Marée. Create one original non-canonical subject, faithful to this design: One original compact industrial walking maintenance crane, broad four-legged hydraulic support base with blunt feet, low sealed central cabin and one folded loading boom ending in closed heavy hook, weathered off-white and graphite, grounded load-bearing engineering. Entire machine, no operator. Composition: landscape 1536 by 1024 canvas. Exact readable side profile toward the RIGHT, entire subject centered with ALL parts wholly in frame and 8 percent clear margin. Keep only the equipment and physical features described in the design; all attached tools and components fit fully inside the frame. Highly detailed realistic painted 2D game art, grounded natural proportions and plausible load-bearing shapes, restrained cold light and material highlights, clean crisp silhouette. Genuinely transparent alpha background: no scenery, floor, gradient, halo, studio backdrop, shadow outside the subject or painted checkerboard. ONE subject in ONE pose, no companion, no extra organism, no text, logos, watermark, border or UI. No gore or blood.",
+      "transparent_background": true,
+      "source": "/workspace/scratch/950574a3230d/generated_images/exec-fde40301-9e11-4ccb-9bba-6fae2407fb83.png",
+      "output_hint": "Generated images are saved to /workspace/scratch/950574a3230d/generated_images as /workspace/scratch/950574a3230d/generated_images/exec-fde40301-9e11-4ccb-9bba-6fae2407fb83.png by default.\nIf you need to use a generated image at another path, copy it and leave the original in place unless the user explicitly asks you to delete it.\nThe generated image is already displayed to the user. There is no need to render it in the final response as a Markdown image or file link.",
+      "generationKind": "new",
+      "visualReview": {
+        "status": "accepted-static-base-with-reservations",
+        "inspectedIndividually": true,
+        "review": "Grue utilitaire autonome, quatre appuis hydrauliques visibles, cabine fermée et flèche entière tournée à droite ; aucun opérateur.",
+        "limits": [
+          "Le linguet de sécurité du crochet est peu lisible ; détail à résoudre dans les poses rapprochées.",
+          "Flèche presque horizontale ; son repli devra être résolu avec les poses d’animation."
+        ],
+        "nativeCanvasCompositeInspected": true
+      },
+      "assetPath": "modes/echos-de-la-greve/assets/lignes-de-maree/bosses/grue-verrou-base.png",
+      "playable": false,
+      "aiImplemented": false,
+      "animations": 0,
+      "sourceId": "exec-fde40301-9e11-4ccb-9bba-6fae2407fb83",
+      "nativeDimensions": {
+        "width": 1536,
+        "height": 1024
+      },
+      "nativeFormat": "PNG",
+      "nativeMode": "RGBA",
+      "sha256": "c457356c5b47421061c26f4bb33fc5e27c3ad041ebea81661c1334bb1e8fbb53",
+      "bytes": 2112838,
+      "nativeAlpha": true,
+      "alpha": {
+        "min": 0,
+        "max": 254,
+        "zeroPixelCount": 951433,
+        "nearTransparentPixelCountAlpha0to8": 991267,
+        "fullyOpaquePixelCount": 0,
+        "nearOpaquePixelCountAlpha250to255": 532021,
+        "pixelCount": 1572864,
+        "cornerSamples": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "nonzeroAlphaBounds": [
+          0,
+          3,
+          1516,
+          1024
+        ],
+        "alphaAtLeast16Bounds": [
+          85,
+          105,
+          1446,
+          937
+        ]
+      },
+      "sourceSha256": "c457356c5b47421061c26f4bb33fc5e27c3ad041ebea81661c1334bb1e8fbb53",
+      "destinationSha256": "c457356c5b47421061c26f4bb33fc5e27c3ad041ebea81661c1334bb1e8fbb53",
+      "destinationAbsolute": "/home/agent/ds2d-20261127/modes/echos-de-la-greve/assets/lignes-de-maree/bosses/grue-verrou-base.png",
+      "byteIdenticalToSource": true,
+      "rasterProcessing": "None. Byte-for-byte file copy only; no crop, scaling, alpha cleanup, recoloring, re-encoding, or compositing."
+    },
+    {
+      "id": "ldm-boss-contremaitre-pont",
+      "name": "Le Contremaître du pont",
+      "prompt": "Use case: stylized-concept. Asset type: single isolated static boss sprite for Death Stranding 2D, original fan expansion Les Lignes de Marée. Create one original non-canonical subject, faithful to this design: Original powerful human bridge-maintenance foreman, dark orange and graphite waterproof overalls, exposed practical lower-leg load-assist braces, reinforced knee pads, compact blunt two-hand lifting bar and white hardhat, broad stern middle-aged face. Human anatomy, no canonical badges. Composition: portrait 1024 by 1536 canvas. Exact readable side profile toward the RIGHT, entire subject centered with ALL parts wholly in frame and 8 percent clear margin. Keep only the equipment and physical features described in the design; all attached tools and components fit fully inside the frame. Highly detailed realistic painted 2D game art, grounded natural proportions and plausible load-bearing shapes, restrained cold light and material highlights, clean crisp silhouette. Genuinely transparent alpha background: no scenery, floor, gradient, halo, studio backdrop, shadow outside the subject or painted checkerboard. ONE subject in ONE pose, no companion, no extra organism, no text, logos, watermark, border or UI. No gore or blood.",
+      "transparent_background": true,
+      "source": "/workspace/scratch/950574a3230d/generated_images/exec-328808a8-41a8-43bf-a944-1ffc37ed7052.png",
+      "output_hint": "Generated images are saved to /workspace/scratch/950574a3230d/generated_images as /workspace/scratch/950574a3230d/generated_images/exec-328808a8-41a8-43bf-a944-1ffc37ed7052.png by default.\nIf you need to use a generated image at another path, copy it and leave the original in place unless the user explicitly asks you to delete it.\nThe generated image is already displayed to the user. There is no need to render it in the final response as a Markdown image or file link.",
+      "generationKind": "new",
+      "visualReview": {
+        "status": "accepted-static-base-with-reservations",
+        "inspectedIndividually": true,
+        "review": "Contremaître humain robuste, orange et graphite, casque blanc, barre émoussée à deux mains et attelles de portage visibles ; corps complet.",
+        "limits": [
+          "Corps légèrement trois-quarts, visage de profil droit."
+        ],
+        "nativeCanvasCompositeInspected": true
+      },
+      "assetPath": "modes/echos-de-la-greve/assets/lignes-de-maree/bosses/contremaitre-pont-base.png",
+      "playable": false,
+      "aiImplemented": false,
+      "animations": 0,
+      "sourceId": "exec-328808a8-41a8-43bf-a944-1ffc37ed7052",
+      "nativeDimensions": {
+        "width": 1024,
+        "height": 1536
+      },
+      "nativeFormat": "PNG",
+      "nativeMode": "RGBA",
+      "sha256": "cfd24bb1b34e892c3a0d2da0d2938e245fc616aaf59ec588b4b5c5a83c523184",
+      "bytes": 1764940,
+      "nativeAlpha": true,
+      "alpha": {
+        "min": 0,
+        "max": 254,
+        "zeroPixelCount": 1130994,
+        "nearTransparentPixelCountAlpha0to8": 1153123,
+        "fullyOpaquePixelCount": 0,
+        "nearOpaquePixelCountAlpha250to255": 399562,
+        "pixelCount": 1572864,
+        "cornerSamples": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "nonzeroAlphaBounds": [
+          0,
+          15,
+          1010,
+          1509
+        ],
+        "alphaAtLeast16Bounds": [
+          259,
+          22,
+          764,
+          1501
+        ]
+      },
+      "sourceSha256": "cfd24bb1b34e892c3a0d2da0d2938e245fc616aaf59ec588b4b5c5a83c523184",
+      "destinationSha256": "cfd24bb1b34e892c3a0d2da0d2938e245fc616aaf59ec588b4b5c5a83c523184",
+      "destinationAbsolute": "/home/agent/ds2d-20261127/modes/echos-de-la-greve/assets/lignes-de-maree/bosses/contremaitre-pont-base.png",
+      "byteIdenticalToSource": true,
+      "rasterProcessing": "None. Byte-for-byte file copy only; no crop, scaling, alpha cleanup, recoloring, re-encoding, or compositing."
+    },
+    {
+      "id": "ldm-boss-cerf-de-brume",
+      "name": "Le Cerf de brume",
+      "prompt": "Use case: stylized-concept. Asset type: single isolated static boss sprite for Death Stranding 2D, original fan expansion Les Lignes de Marée. Create one original non-canonical subject, faithful to this design: One original giant long-legged tar-black cervid-like Beached Thing, narrow wet head, modest irregular branching antlers made of black tar rather than bone, long lean trunk, umbilical strand from withers and very subtle dull gold inclusions. Full lateral facing right, no glowing eyes or fantasy ornament. Composition: landscape 1536 by 1024 canvas. Exact readable side profile toward the RIGHT, entire subject centered with ALL parts wholly in frame and 8 percent clear margin. This is an ORGANIC TAR MANIFESTATION ONLY. Its body consists exclusively of black tar with subtle gold inclusions and its umbilical strand. Absolutely NO human clothing, packs, harness, bags, crates, antenna, tools, machinery, technological accessories or ornaments on its body. The cord curves and ends fully inside the image. Highly detailed realistic painted 2D game art, grounded natural proportions and plausible load-bearing shapes, restrained cold light and material highlights, clean crisp silhouette. Genuinely transparent alpha background: no scenery, floor, gradient, halo, studio backdrop, shadow outside the subject or painted checkerboard. ONE subject in ONE pose, no companion, no extra organism, no text, logos, watermark, border or UI. No gore or blood.",
+      "transparent_background": true,
+      "source": "/workspace/scratch/950574a3230d/generated_images/exec-c7228735-76ec-4176-87b9-291acf93d1ac.png",
+      "output_hint": "Generated images are saved to /workspace/scratch/950574a3230d/generated_images as /workspace/scratch/950574a3230d/generated_images/exec-c7228735-76ec-4176-87b9-291acf93d1ac.png by default.\nIf you need to use a generated image at another path, copy it and leave the original in place unless the user explicitly asks you to delete it.\nThe generated image is already displayed to the user. There is no need to render it in the final response as a Markdown image or file link.",
+      "generationKind": "new",
+      "visualReview": {
+        "status": "accepted-static-base-with-reservations",
+        "inspectedIndividually": true,
+        "review": "Cervidé de goudron aux longues pattes, bois irréguliers sombres et cordon dorsal ; silhouette complète tournée à droite, sans ornement manufacturé.",
+        "limits": [
+          "Sommet des bois proche du cadre.",
+          "Silhouette sombre à vérifier sur les stages sombres avant tout emploi en combat."
+        ],
+        "nativeCanvasCompositeInspected": true
+      },
+      "assetPath": "modes/echos-de-la-greve/assets/lignes-de-maree/bosses/cerf-de-brume-base.png",
+      "playable": false,
+      "aiImplemented": false,
+      "animations": 0,
+      "sourceId": "exec-c7228735-76ec-4176-87b9-291acf93d1ac",
+      "nativeDimensions": {
+        "width": 1536,
+        "height": 1024
+      },
+      "nativeFormat": "PNG",
+      "nativeMode": "RGBA",
+      "sha256": "626958a2088260c4e103cf5df283cfbd5c589d7ad78b2eec1851ca57471c26b1",
+      "bytes": 1613696,
+      "nativeAlpha": true,
+      "alpha": {
+        "min": 0,
+        "max": 254,
+        "zeroPixelCount": 1240607,
+        "nearTransparentPixelCountAlpha0to8": 1289009,
+        "fullyOpaquePixelCount": 0,
+        "nearOpaquePixelCountAlpha250to255": 231682,
+        "pixelCount": 1572864,
+        "cornerSamples": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "nonzeroAlphaBounds": [
+          0,
+          0,
+          1522,
+          1024
+        ],
+        "alphaAtLeast16Bounds": [
+          137,
+          11,
+          1450,
+          983
+        ]
+      },
+      "sourceSha256": "626958a2088260c4e103cf5df283cfbd5c589d7ad78b2eec1851ca57471c26b1",
+      "destinationSha256": "626958a2088260c4e103cf5df283cfbd5c589d7ad78b2eec1851ca57471c26b1",
+      "destinationAbsolute": "/home/agent/ds2d-20261127/modes/echos-de-la-greve/assets/lignes-de-maree/bosses/cerf-de-brume-base.png",
+      "byteIdenticalToSource": true,
+      "rasterProcessing": "None. Byte-for-byte file copy only; no crop, scaling, alpha cleanup, recoloring, re-encoding, or compositing."
+    },
+    {
+      "id": "ldm-boss-chef-triage",
+      "name": "Le Chef de triage",
+      "transparent_background": true,
+      "prompt": "Use case: stylized-concept. Asset type: single isolated static boss sprite for Death Stranding 2D, original fan expansion Les Lignes de Marée. Create one original non-canonical subject, faithful to this design: Original human elderly freight-yard warden in heavy slate and rust waterproof logistics uniform, wide load vest with sealed tags, a blunt rectangular restraint shield on left arm and low non-lethal signal launcher, short grey hair, realistic grounded utilitarian silhouette. Composition: portrait 1024 by 1536 canvas. Exact readable side profile facing RIGHT, entire subject centered with ALL extremities fully inside frame and 8 percent clear margin on all four sides. Keep only the equipment and physical features described in the design; all attached tools and components fully inside the frame. Realistic painted 2D game art, grounded functional shapes and convincing weight, restrained cold lighting, crisp readable silhouette. Generate a genuine transparent alpha background. No scene, floor, gradient, halo, backdrop, cast shadow outside the silhouette or checkerboard. One subject, one neutral pose only, no other character, no alternate view, no text, lettering, logo, watermark or interface. No gore.",
+      "source": "/workspace/scratch/950574a3230d/generated_images/exec-712489bf-c2c3-4aaa-bf46-dbd18661f116.png",
+      "output_hint": "Generated images are saved to /workspace/scratch/950574a3230d/generated_images as /workspace/scratch/950574a3230d/generated_images/exec-712489bf-c2c3-4aaa-bf46-dbd18661f116.png by default.\nIf you need to use a generated image at another path, copy it and leave the original in place unless the user explicitly asks you to delete it.\nThe generated image is already displayed to the user. There is no need to render it in the final response as a Markdown image or file link.",
+      "generationKind": "new",
+      "visualReview": {
+        "status": "accepted-static-base-with-reservations",
+        "inspectedIndividually": true,
+        "review": "Vieil homme en uniforme ardoise et rouille, plaques scellées sur gilet, bouclier rectangulaire et lance-signal abaissé ; profil droit entier.",
+        "limits": [
+          "Superposition du bouclier au torse à conserver dans les futures poses."
+        ],
+        "nativeCanvasCompositeInspected": true
+      },
+      "assetPath": "modes/echos-de-la-greve/assets/lignes-de-maree/bosses/chef-triage-base.png",
+      "playable": false,
+      "aiImplemented": false,
+      "animations": 0,
+      "sourceId": "exec-712489bf-c2c3-4aaa-bf46-dbd18661f116",
+      "nativeDimensions": {
+        "width": 1024,
+        "height": 1536
+      },
+      "nativeFormat": "PNG",
+      "nativeMode": "RGBA",
+      "sha256": "102df209c8c071575b2e7b937f90288b1cdc5c25ca6e48460f8079f6c77f4603",
+      "bytes": 1587157,
+      "nativeAlpha": true,
+      "alpha": {
+        "min": 0,
+        "max": 254,
+        "zeroPixelCount": 1143086,
+        "nearTransparentPixelCountAlpha0to8": 1157375,
+        "fullyOpaquePixelCount": 0,
+        "nearOpaquePixelCountAlpha250to255": 398480,
+        "pixelCount": 1572864,
+        "cornerSamples": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "nonzeroAlphaBounds": [
+          33,
+          38,
+          996,
+          1488
+        ],
+        "alphaAtLeast16Bounds": [
+          276,
+          71,
+          787,
+          1484
+        ]
+      },
+      "sourceSha256": "102df209c8c071575b2e7b937f90288b1cdc5c25ca6e48460f8079f6c77f4603",
+      "destinationSha256": "102df209c8c071575b2e7b937f90288b1cdc5c25ca6e48460f8079f6c77f4603",
+      "destinationAbsolute": "/home/agent/ds2d-20261127/modes/echos-de-la-greve/assets/lignes-de-maree/bosses/chef-triage-base.png",
+      "byteIdenticalToSource": true,
+      "rasterProcessing": "None. Byte-for-byte file copy only; no crop, scaling, alpha cleanup, recoloring, re-encoding, or compositing."
+    },
+    {
+      "id": "ldm-boss-rame-sans-conducteur",
+      "name": "La Rame sans conducteur",
+      "transparent_background": true,
+      "prompt": "Use case: stylized-concept. Asset type: single isolated static boss sprite for Death Stranding 2D, original fan expansion Les Lignes de Marée. Create one original non-canonical subject, faithful to this design: One original autonomous single-unit elevated freight-rail shuttle, low long sealed graphite and pale-grey cargo car with integrated robust rail suspension and visible top coupler, weathered equipment housings and amber lamp. Whole vehicle isolated side view, no rail scene, no canonical logo. Composition: landscape 1536 by 1024 canvas. Exact readable side profile facing RIGHT, entire subject centered with ALL extremities fully inside frame and 8 percent clear margin on all four sides. Keep only the equipment and physical features described in the design; all attached tools and components fully inside the frame. Realistic painted 2D game art, grounded functional shapes and convincing weight, restrained cold lighting, crisp readable silhouette. Generate a genuine transparent alpha background. No scene, floor, gradient, halo, backdrop, cast shadow outside the silhouette or checkerboard. One subject, one neutral pose only, no other character, no alternate view, no text, lettering, logo, watermark or interface. No gore.",
+      "source": "/workspace/scratch/950574a3230d/generated_images/exec-c9fd09fd-2e9d-4530-8219-3277a2a28103.png",
+      "output_hint": "Generated images are saved to /workspace/scratch/950574a3230d/generated_images as /workspace/scratch/950574a3230d/generated_images/exec-c9fd09fd-2e9d-4530-8219-3277a2a28103.png by default.\nIf you need to use a generated image at another path, copy it and leave the original in place unless the user explicitly asks you to delete it.\nThe generated image is already displayed to the user. There is no need to render it in the final response as a Markdown image or file link.",
+      "generationKind": "new",
+      "visualReview": {
+        "status": "accepted-static-base-with-reservations",
+        "inspectedIndividually": true,
+        "review": "Unité ferroviaire de fret autonome, longue caisse fermée, bogies et fixation haute intégrés, aucune voie ou scène ; unité entière orientée à droite.",
+        "limits": [
+          "Fixation haute évoquant le rail aérien, mais support technique de roulement à confirmer à l’animation."
+        ],
+        "nativeCanvasCompositeInspected": true
+      },
+      "assetPath": "modes/echos-de-la-greve/assets/lignes-de-maree/bosses/rame-sans-conducteur-base.png",
+      "playable": false,
+      "aiImplemented": false,
+      "animations": 0,
+      "sourceId": "exec-c9fd09fd-2e9d-4530-8219-3277a2a28103",
+      "nativeDimensions": {
+        "width": 1536,
+        "height": 1024
+      },
+      "nativeFormat": "PNG",
+      "nativeMode": "RGBA",
+      "sha256": "c46ff393277b595b14c69e61f08731262ea333e65c384f4f288b8e8cbe98c71d",
+      "bytes": 1430593,
+      "nativeAlpha": true,
+      "alpha": {
+        "min": 0,
+        "max": 254,
+        "zeroPixelCount": 1126637,
+        "nearTransparentPixelCountAlpha0to8": 1144703,
+        "fullyOpaquePixelCount": 0,
+        "nearOpaquePixelCountAlpha250to255": 405968,
+        "pixelCount": 1572864,
+        "cornerSamples": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "nonzeroAlphaBounds": [
+          0,
+          19,
+          1520,
+          1000
+        ],
+        "alphaAtLeast16Bounds": [
+          73,
+          320,
+          1464,
+          734
+        ]
+      },
+      "sourceSha256": "c46ff393277b595b14c69e61f08731262ea333e65c384f4f288b8e8cbe98c71d",
+      "destinationSha256": "c46ff393277b595b14c69e61f08731262ea333e65c384f4f288b8e8cbe98c71d",
+      "destinationAbsolute": "/home/agent/ds2d-20261127/modes/echos-de-la-greve/assets/lignes-de-maree/bosses/rame-sans-conducteur-base.png",
+      "byteIdenticalToSource": true,
+      "rasterProcessing": "None. Byte-for-byte file copy only; no crop, scaling, alpha cleanup, recoloring, re-encoding, or compositing."
+    },
+    {
+      "id": "ldm-boss-porteur-sans-retour",
+      "name": "Le Porteur sans retour",
+      "transparent_background": true,
+      "prompt": "Use case: stylized-concept. Asset type: single isolated static boss sprite for Death Stranding 2D, original fan expansion Les Lignes de Marée. Create one original non-canonical subject, faithful to this design: One original giant hunched human-shaped tar apparition, back swollen into one irregular stack-like mass of tar evocative of a cargo burden, very long low arms, humanoid legs and head, visible rising umbilical cord, subtle dull golden fissures, no actual human cargo or gore. Composition: portrait 1024 by 1536 canvas. Exact readable side profile facing RIGHT, entire subject centered with ALL extremities fully inside frame and 8 percent clear margin on all four sides. This is an ORGANIC TAR MANIFESTATION ONLY. Its body consists exclusively of black tar with very subtle gold inclusions and its umbilical strand. The large irregular mass on its back is a seamless part of the tar body, NOT a backpack or actual containers. Absolutely NO human clothing, packs, harnesses, bags, crates, antennae, tools, machinery, technological accessories or ornaments on its body. The cord curves and ends fully inside the image. Realistic painted 2D game art, grounded functional shapes and convincing weight, restrained cold lighting, crisp readable silhouette. Generate a genuine transparent alpha background. No scene, floor, gradient, halo, backdrop, cast shadow outside the silhouette or checkerboard. One subject, one neutral pose only, no other character, no alternate view, no text, lettering, logo, watermark or interface. No gore.",
+      "source": "/workspace/scratch/950574a3230d/generated_images/exec-b3c541b0-e2c3-43bb-b895-48767cee9361.png",
+      "output_hint": "Generated images are saved to /workspace/scratch/950574a3230d/generated_images as /workspace/scratch/950574a3230d/generated_images/exec-b3c541b0-e2c3-43bb-b895-48767cee9361.png by default.\nIf you need to use a generated image at another path, copy it and leave the original in place unless the user explicitly asks you to delete it.\nThe generated image is already displayed to the user. There is no need to render it in the final response as a Markdown image or file link.",
+      "generationKind": "new",
+      "visualReview": {
+        "status": "accepted-static-base-with-reservations",
+        "inspectedIndividually": true,
+        "review": "Humanoïde courbé de goudron, grande masse dorsale organique, bras très longs, tête et jambes entières ; cordon visible et aucune caisse fabriquée.",
+        "limits": [
+          "Masse dorsale plus fondue que des strates de chargement distinctes.",
+          "Vue latérale avec légère perspective."
+        ],
+        "nativeCanvasCompositeInspected": true
+      },
+      "assetPath": "modes/echos-de-la-greve/assets/lignes-de-maree/bosses/porteur-sans-retour-base.png",
+      "playable": false,
+      "aiImplemented": false,
+      "animations": 0,
+      "sourceId": "exec-b3c541b0-e2c3-43bb-b895-48767cee9361",
+      "nativeDimensions": {
+        "width": 1024,
+        "height": 1536
+      },
+      "nativeFormat": "PNG",
+      "nativeMode": "RGBA",
+      "sha256": "7d0702d8c30f3e415bee138cd5e8bc420cc67b49ea752d7e408d5f1bc925a758",
+      "bytes": 2051045,
+      "nativeAlpha": true,
+      "alpha": {
+        "min": 0,
+        "max": 254,
+        "zeroPixelCount": 828273,
+        "nearTransparentPixelCountAlpha0to8": 877684,
+        "fullyOpaquePixelCount": 0,
+        "nearOpaquePixelCountAlpha250to255": 648259,
+        "pixelCount": 1572864,
+        "cornerSamples": [
+          0,
+          1,
+          0,
+          0
+        ],
+        "nonzeroAlphaBounds": [
+          0,
+          0,
+          1024,
+          1536
+        ],
+        "alphaAtLeast16Bounds": [
+          41,
+          84,
+          987,
+          1470
+        ]
+      },
+      "sourceSha256": "7d0702d8c30f3e415bee138cd5e8bc420cc67b49ea752d7e408d5f1bc925a758",
+      "destinationSha256": "7d0702d8c30f3e415bee138cd5e8bc420cc67b49ea752d7e408d5f1bc925a758",
+      "destinationAbsolute": "/home/agent/ds2d-20261127/modes/echos-de-la-greve/assets/lignes-de-maree/bosses/porteur-sans-retour-base.png",
+      "byteIdenticalToSource": true,
+      "rasterProcessing": "None. Byte-for-byte file copy only; no crop, scaling, alpha cleanup, recoloring, re-encoding, or compositing."
+    },
+    {
+      "id": "ldm-boss-mecanisme-ecluse",
+      "name": "Le Mécanisme de l’écluse",
+      "transparent_background": true,
+      "prompt": "Use case: stylized-concept. Asset type: single isolated static boss sprite for Death Stranding 2D, original fan expansion Les Lignes de Marée. Create one original non-canonical subject, faithful to this design: One original massive self-contained industrial floodgate drive unit on a broad crawler service platform, two enormous enclosed toothed gear housings and a heavy horizontal hydraulic clamp, rainworn graphite metal and amber safety lamps. Single grounded machine, no buildings or fantasy lasers. Composition: landscape 1536 by 1024 canvas. Exact readable side profile facing RIGHT, entire subject centered with ALL extremities fully inside frame and 8 percent clear margin on all four sides. Keep only the equipment and physical features described in the design; all attached tools and components fully inside the frame. Realistic painted 2D game art, grounded functional shapes and convincing weight, restrained cold lighting, crisp readable silhouette. Generate a genuine transparent alpha background. No scene, floor, gradient, halo, backdrop, cast shadow outside the silhouette or checkerboard. One subject, one neutral pose only, no other character, no alternate view, no text, lettering, logo, watermark or interface. No gore.",
+      "source": "/workspace/scratch/950574a3230d/generated_images/exec-323ada1e-740c-4515-84a0-667306b8f315.png",
+      "output_hint": "Generated images are saved to /workspace/scratch/950574a3230d/generated_images as /workspace/scratch/950574a3230d/generated_images/exec-323ada1e-740c-4515-84a0-667306b8f315.png by default.\nIf you need to use a generated image at another path, copy it and leave the original in place unless the user explicitly asks you to delete it.\nThe generated image is already displayed to the user. There is no need to render it in the final response as a Markdown image or file link.",
+      "generationKind": "new",
+      "visualReview": {
+        "status": "accepted-static-base-with-reservations",
+        "inspectedIndividually": true,
+        "review": "Plateforme chenillée, deux grands carters de transmission et pince hydraulique horizontale orientée à droite ; ensemble autonome entier.",
+        "limits": [
+          "Échelle géante suggérée par rambardes, sans personnage étalon."
+        ],
+        "nativeCanvasCompositeInspected": true
+      },
+      "assetPath": "modes/echos-de-la-greve/assets/lignes-de-maree/bosses/mecanisme-ecluse-base.png",
+      "playable": false,
+      "aiImplemented": false,
+      "animations": 0,
+      "sourceId": "exec-323ada1e-740c-4515-84a0-667306b8f315",
+      "nativeDimensions": {
+        "width": 1536,
+        "height": 1024
+      },
+      "nativeFormat": "PNG",
+      "nativeMode": "RGBA",
+      "sha256": "c39944659a82d0e219d204017dc08da0919dc6c84182b95710e771ca07aa96e0",
+      "bytes": 2312325,
+      "nativeAlpha": true,
+      "alpha": {
+        "min": 0,
+        "max": 254,
+        "zeroPixelCount": 675832,
+        "nearTransparentPixelCountAlpha0to8": 706771,
+        "fullyOpaquePixelCount": 0,
+        "nearOpaquePixelCountAlpha250to255": 823648,
+        "pixelCount": 1572864,
+        "cornerSamples": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "nonzeroAlphaBounds": [
+          0,
+          21,
+          1533,
+          1024
+        ],
+        "alphaAtLeast16Bounds": [
+          34,
+          122,
+          1499,
+          918
+        ]
+      },
+      "sourceSha256": "c39944659a82d0e219d204017dc08da0919dc6c84182b95710e771ca07aa96e0",
+      "destinationSha256": "c39944659a82d0e219d204017dc08da0919dc6c84182b95710e771ca07aa96e0",
+      "destinationAbsolute": "/home/agent/ds2d-20261127/modes/echos-de-la-greve/assets/lignes-de-maree/bosses/mecanisme-ecluse-base.png",
+      "byteIdenticalToSource": true,
+      "rasterProcessing": "None. Byte-for-byte file copy only; no crop, scaling, alpha cleanup, recoloring, re-encoding, or compositing."
+    },
+    {
+      "id": "ldm-boss-archiviste-fermee",
+      "name": "L’Archiviste fermée",
+      "transparent_background": true,
+      "prompt": "Use case: stylized-concept. Asset type: single isolated static boss sprite for Death Stranding 2D, original fan expansion Les Lignes de Marée. Create one original non-canonical subject, faithful to this design: Original human woman in her sixties, stern archive lockdown administrator with silver close-cropped hair, graphite and ivory waterproof long utility jacket, two hermetic archive cases on back frame, short blunt restraint baton and arm-mounted terminal, normal human scale, no skull mask. Composition: portrait 1024 by 1536 canvas. Exact readable side profile facing RIGHT, entire subject centered with ALL extremities fully inside frame and 8 percent clear margin on all four sides. Keep only the equipment and physical features described in the design; all attached tools and components fully inside the frame. Realistic painted 2D game art, grounded functional shapes and convincing weight, restrained cold lighting, crisp readable silhouette. Generate a genuine transparent alpha background. No scene, floor, gradient, halo, backdrop, cast shadow outside the silhouette or checkerboard. One subject, one neutral pose only, no other character, no alternate view, no text, lettering, logo, watermark or interface. No gore.",
+      "source": "/workspace/scratch/950574a3230d/generated_images/exec-32b6e791-1986-469d-bfa7-22d64acf0db2.png",
+      "output_hint": "Generated images are saved to /workspace/scratch/950574a3230d/generated_images as /workspace/scratch/950574a3230d/generated_images/exec-32b6e791-1986-469d-bfa7-22d64acf0db2.png by default.\nIf you need to use a generated image at another path, copy it and leave the original in place unless the user explicitly asks you to delete it.\nThe generated image is already displayed to the user. There is no need to render it in the final response as a Markdown image or file link.",
+      "generationKind": "new",
+      "visualReview": {
+        "status": "accepted-static-base-with-reservations",
+        "inspectedIndividually": true,
+        "review": "Femme mûre aux cheveux argentés courts, deux caisses d’archives hermétiques, terminal d’avant-bras et matraque courte ; profil droit entier.",
+        "limits": [
+          "Veste du brief interprétée comme long manteau utilitaire."
+        ],
+        "nativeCanvasCompositeInspected": true
+      },
+      "assetPath": "modes/echos-de-la-greve/assets/lignes-de-maree/bosses/archiviste-fermee-base.png",
+      "playable": false,
+      "aiImplemented": false,
+      "animations": 0,
+      "sourceId": "exec-32b6e791-1986-469d-bfa7-22d64acf0db2",
+      "nativeDimensions": {
+        "width": 1024,
+        "height": 1536
+      },
+      "nativeFormat": "PNG",
+      "nativeMode": "RGBA",
+      "sha256": "fc54305e3dd8346f4a800a34e20530e4aab363842210d04ea0798100a2507b96",
+      "bytes": 1696771,
+      "nativeAlpha": true,
+      "alpha": {
+        "min": 0,
+        "max": 254,
+        "zeroPixelCount": 1117869,
+        "nearTransparentPixelCountAlpha0to8": 1134822,
+        "fullyOpaquePixelCount": 0,
+        "nearOpaquePixelCountAlpha250to255": 421812,
+        "pixelCount": 1572864,
+        "cornerSamples": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "nonzeroAlphaBounds": [
+          0,
+          19,
+          1010,
+          1520
+        ],
+        "alphaAtLeast16Bounds": [
+          218,
+          45,
+          699,
+          1486
+        ]
+      },
+      "sourceSha256": "fc54305e3dd8346f4a800a34e20530e4aab363842210d04ea0798100a2507b96",
+      "destinationSha256": "fc54305e3dd8346f4a800a34e20530e4aab363842210d04ea0798100a2507b96",
+      "destinationAbsolute": "/home/agent/ds2d-20261127/modes/echos-de-la-greve/assets/lignes-de-maree/bosses/archiviste-fermee-base.png",
+      "byteIdenticalToSource": true,
+      "rasterProcessing": "None. Byte-for-byte file copy only; no crop, scaling, alpha cleanup, recoloring, re-encoding, or compositing."
+    },
+    {
+      "id": "ldm-boss-alpiniste-seuil",
+      "name": "L’Alpiniste du seuil",
+      "transparent_background": true,
+      "prompt": "Use case: stylized-concept. Asset type: single isolated static boss sprite for Death Stranding 2D, original fan expansion Les Lignes de Marée. Create one original non-canonical subject, faithful to this design: Original tall human mountain-route monopolist, late forties, worn grey snow expedition suit with dark olive layers, compact load-assist leg braces, secured climbing coil and short blunt telescopic rescue pole, frost-stained heavy boots, face visible, no fantasy frost armor. Composition: portrait 1024 by 1536 canvas. Exact readable side profile facing RIGHT, entire subject centered with ALL extremities fully inside frame and 8 percent clear margin on all four sides. Keep only the equipment and physical features described in the design; all attached tools and components fully inside the frame.   Realistic painted 2D game art, grounded functional shapes and convincing weight, restrained cold lighting, crisp readable silhouette. Generate a genuine transparent alpha background. No scene, floor, gradient, halo, backdrop, cast shadow outside the silhouette or checkerboard. One subject, one neutral pose only, no other character, no alternate view, no text, lettering, logo, watermark or interface. No gore.",
+      "source": "/workspace/scratch/950574a3230d/generated_images/exec-5c8c4d19-a131-4647-b7ab-d39e5af3cfa0.png",
+      "output_hint": "Generated images are saved to /workspace/scratch/950574a3230d/generated_images as /workspace/scratch/950574a3230d/generated_images/exec-5c8c4d19-a131-4647-b7ab-d39e5af3cfa0.png by default.\nIf you need to use a generated image at another path, copy it and leave the original in place unless the user explicitly asks you to delete it.\nThe generated image is already displayed to the user. There is no need to render it in the final response as a Markdown image or file link.",
+      "generationKind": "new",
+      "visualReview": {
+        "status": "accepted-static-base-with-reservations",
+        "inspectedIndividually": true,
+        "review": "Humain en tenue grise et olive de montagne, corde assurée au sac, attelles de portage, bâton court et bottes givrées ; profil droit entier.",
+        "limits": [
+          "Il s’agit d’un visage original généré, pas d’un personnage canonique identifié."
+        ],
+        "nativeCanvasCompositeInspected": true
+      },
+      "assetPath": "modes/echos-de-la-greve/assets/lignes-de-maree/bosses/alpiniste-seuil-base.png",
+      "playable": false,
+      "aiImplemented": false,
+      "animations": 0,
+      "sourceId": "exec-5c8c4d19-a131-4647-b7ab-d39e5af3cfa0",
+      "nativeDimensions": {
+        "width": 1024,
+        "height": 1536
+      },
+      "nativeFormat": "PNG",
+      "nativeMode": "RGBA",
+      "sha256": "bde32e947a7bafd68c153e2f0134c6360345e004b8ce831cd9c0df5756013d09",
+      "bytes": 1627674,
+      "nativeAlpha": true,
+      "alpha": {
+        "min": 0,
+        "max": 254,
+        "zeroPixelCount": 1174628,
+        "nearTransparentPixelCountAlpha0to8": 1190559,
+        "fullyOpaquePixelCount": 0,
+        "nearOpaquePixelCountAlpha250to255": 361972,
+        "pixelCount": 1572864,
+        "cornerSamples": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "nonzeroAlphaBounds": [
+          0,
+          28,
+          1002,
+          1536
+        ],
+        "alphaAtLeast16Bounds": [
+          247,
+          63,
+          707,
+          1475
+        ]
+      },
+      "sourceSha256": "bde32e947a7bafd68c153e2f0134c6360345e004b8ce831cd9c0df5756013d09",
+      "destinationSha256": "bde32e947a7bafd68c153e2f0134c6360345e004b8ce831cd9c0df5756013d09",
+      "destinationAbsolute": "/home/agent/ds2d-20261127/modes/echos-de-la-greve/assets/lignes-de-maree/bosses/alpiniste-seuil-base.png",
+      "byteIdenticalToSource": true,
+      "rasterProcessing": "None. Byte-for-byte file copy only; no crop, scaling, alpha cleanup, recoloring, re-encoding, or compositing."
+    },
+    {
+      "id": "ldm-boss-araignee-hauban",
+      "name": "L’Araignée des haubans",
+      "transparent_background": true,
+      "prompt": "Use case: targeted orientation correction, creature asset. The referenced tar arthropod faces left; turn the WHOLE SINGLE creature horizontally so its small head and mouth face the RIGHT edge of the image and its rear abdomen is on the LEFT. Preserve its exact distinctive compact organic tar body, SIX long load-bearing legs total and every one of the six feet, one thin curved umbilical rising from the dorsal body, sparse muted gold inclusions, original silhouette proportions and painted realistic wet material. Render a clear readable right-facing side profile. All six legs and all feet and the entire cord must be fully in the landscape 1536 by 1024 canvas, approximately 8 percent empty margin. Entirely organic black tar: no equipment, clothing, machinery, stinger or extra appendages. Genuine transparent alpha background outside the silhouette; no grey halo, floor, scene, shadow, backdrop, text, logo, watermark, UI or additional creature. No gore. This is an original non-canonical Death Stranding inspired creature. Do not change anything else.",
+      "source": "/workspace/scratch/950574a3230d/generated_images/exec-c55aa48f-c254-4ce0-9a92-2904a34cf8e6.png",
+      "output_hint": "Generated images are saved to /workspace/scratch/950574a3230d/generated_images as /workspace/scratch/950574a3230d/generated_images/exec-c55aa48f-c254-4ce0-9a92-2904a34cf8e6.png by default.\nIf you need to use a generated image at another path, copy it and leave the original in place unless the user explicitly asks you to delete it.\nThe generated image is already displayed to the user. There is no need to render it in the final response as a Markdown image or file link.",
+      "referenced_image_paths": [
+        "/workspace/scratch/950574a3230d/generated_images/exec-a74f16f6-35d8-417a-aa6a-0cc4dc1c50c5.png"
+      ],
+      "generationKind": "targeted-edit",
+      "supersededCandidates": [
+        {
+          "prompt": "Use case: stylized-concept. Asset type: single isolated static boss sprite for Death Stranding 2D, original fan expansion Les Lignes de Marée. Create one original non-canonical subject, faithful to this design: One original giant tar-black arthropod-like Beached Thing with six long grounded legs and compact low central body, thin umbilical strand from dorsal mass, wet glossy dark material with a few subdued gold seams. Realistic weight-bearing silhouette, no mechanical armor or fantasy stinger. Composition: landscape 1536 by 1024 canvas. Exact readable side profile facing RIGHT, entire subject centered with ALL extremities fully inside frame and 8 percent clear margin on all four sides. This is an ORGANIC TAR MANIFESTATION ONLY. Its body consists exclusively of black tar with very subtle gold inclusions and its umbilical strand. Absolutely NO human clothing, packs, harnesses, bags, crates, antennae, tools, machinery, technological accessories or ornaments on its body. The cord curves and ends fully inside the image. Exactly SIX long legs total, three on each side, with all six distinct feet fully visible; no additional legs or hidden cropped feet.  Realistic painted 2D game art, grounded functional shapes and convincing weight, restrained cold lighting, crisp readable silhouette. Generate a genuine transparent alpha background. No scene, floor, gradient, halo, backdrop, cast shadow outside the silhouette or checkerboard. One subject, one neutral pose only, no other character, no alternate view, no text, lettering, logo, watermark or interface. No gore.",
+          "source": "/workspace/scratch/950574a3230d/generated_images/exec-a74f16f6-35d8-417a-aa6a-0cc4dc1c50c5.png",
+          "output_hint": "Generated images are saved to /workspace/scratch/950574a3230d/generated_images as /workspace/scratch/950574a3230d/generated_images/exec-a74f16f6-35d8-417a-aa6a-0cc4dc1c50c5.png by default.\nIf you need to use a generated image at another path, copy it and leave the original in place unless the user explicitly asks you to delete it.\nThe generated image is already displayed to the user. There is no need to render it in the final response as a Markdown image or file link.",
+          "reason": "Direction initiale gauche ; réorientée par ImageGen.",
+          "sourceId": "exec-a74f16f6-35d8-417a-aa6a-0cc4dc1c50c5",
+          "nativeDimensions": {
+            "width": 1536,
+            "height": 1024
+          },
+          "nativeFormat": "PNG",
+          "nativeMode": "RGBA",
+          "sha256": "d8571ffda16ed57f08550a7803ba9f1bba08698b4aaef0e70b45a4c5a39d3586",
+          "bytes": 1677574,
+          "nativeAlpha": true,
+          "alpha": {
+            "min": 0,
+            "max": 254,
+            "zeroPixelCount": 1177158,
+            "nearTransparentPixelCountAlpha0to8": 1222366,
+            "fullyOpaquePixelCount": 0,
+            "nearOpaquePixelCountAlpha250to255": 297679,
+            "pixelCount": 1572864,
+            "cornerSamples": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "nonzeroAlphaBounds": [
+              31,
+              19,
+              1522,
+              1024
+            ],
+            "alphaAtLeast16Bounds": [
+              33,
+              88,
+              1520,
+              927
+            ]
+          },
+          "preservedAtSource": true
+        }
+      ],
+      "visualReview": {
+        "status": "accepted-static-base-with-reservations",
+        "inspectedIndividually": true,
+        "review": "Après édition : arthropode de goudron orienté à droite, six appuis distincts visibles, corps bas et cordon entièrement dans le cadre ; aucun équipement.",
+        "limits": [
+          "Vue latérale légèrement trois-quarts pour rendre les six appuis lisibles."
+        ],
+        "nativeCanvasCompositeInspected": true
+      },
+      "assetPath": "modes/echos-de-la-greve/assets/lignes-de-maree/bosses/araignee-hauban-base.png",
+      "playable": false,
+      "aiImplemented": false,
+      "animations": 0,
+      "sourceId": "exec-c55aa48f-c254-4ce0-9a92-2904a34cf8e6",
+      "nativeDimensions": {
+        "width": 1536,
+        "height": 1024
+      },
+      "nativeFormat": "PNG",
+      "nativeMode": "RGBA",
+      "sha256": "8c5480b3c79c1156883e7336ee2381b1f2574fa0faa78de0f99f81be236cc7fe",
+      "bytes": 1825666,
+      "nativeAlpha": true,
+      "alpha": {
+        "min": 0,
+        "max": 254,
+        "zeroPixelCount": 1163963,
+        "nearTransparentPixelCountAlpha0to8": 1212577,
+        "fullyOpaquePixelCount": 0,
+        "nearOpaquePixelCountAlpha250to255": 319948,
+        "pixelCount": 1572864,
+        "cornerSamples": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "nonzeroAlphaBounds": [
+          0,
+          7,
+          1514,
+          1024
+        ],
+        "alphaAtLeast16Bounds": [
+          31,
+          82,
+          1506,
+          929
+        ]
+      },
+      "sourceSha256": "8c5480b3c79c1156883e7336ee2381b1f2574fa0faa78de0f99f81be236cc7fe",
+      "destinationSha256": "8c5480b3c79c1156883e7336ee2381b1f2574fa0faa78de0f99f81be236cc7fe",
+      "destinationAbsolute": "/home/agent/ds2d-20261127/modes/echos-de-la-greve/assets/lignes-de-maree/bosses/araignee-hauban-base.png",
+      "byteIdenticalToSource": true,
+      "rasterProcessing": "None. Byte-for-byte file copy only; no crop, scaling, alpha cleanup, recoloring, re-encoding, or compositing."
+    },
+    {
+      "id": "ldm-boss-radome-errant",
+      "name": "Le Radôme errant",
+      "transparent_background": true,
+      "prompt": "Use case: stylized-concept. Asset type: single isolated static boss sprite for Death Stranding 2D, original fan expansion Les Lignes de Marée. Create one original non-canonical subject, faithful to this design: One original enormous mobile weather-communication crawler with four low track units, a squat weathered pale-grey geodesic radar dome and sealed graphite equipment base, practical cable conduits and small amber safety light. Grounded industrial scale, no giant robot arms or face. Composition: landscape 1536 by 1024 canvas. Exact readable side profile facing RIGHT, entire subject centered with ALL extremities fully inside frame and 8 percent clear margin on all four sides. Keep only the equipment and physical features described in the design; all attached tools and components fully inside the frame.   Realistic painted 2D game art, grounded functional shapes and convincing weight, restrained cold lighting, crisp readable silhouette. Generate a genuine transparent alpha background. No scene, floor, gradient, halo, backdrop, cast shadow outside the silhouette or checkerboard. One subject, one neutral pose only, no other character, no alternate view, no text, lettering, logo, watermark or interface. No gore.",
+      "source": "/workspace/scratch/950574a3230d/generated_images/exec-08f84da6-7942-4ad6-b48b-cf4c8c424d8a.png",
+      "output_hint": "Generated images are saved to /workspace/scratch/950574a3230d/generated_images as /workspace/scratch/950574a3230d/generated_images/exec-08f84da6-7942-4ad6-b48b-cf4c8c424d8a.png by default.\nIf you need to use a generated image at another path, copy it and leave the original in place unless the user explicitly asks you to delete it.\nThe generated image is already displayed to the user. There is no need to render it in the final response as a Markdown image or file link.",
+      "generationKind": "new",
+      "visualReview": {
+        "status": "accepted-static-base-with-reservations",
+        "inspectedIndividually": true,
+        "review": "Grand dôme géodésique ivoire sur plateforme graphite, quatre modules chenillés latéraux visibles, conduites et feux ambrés ; machine entière.",
+        "limits": [
+          "Les quatre chenilles apparaissent alignées de profil ; distribution de l’autre côté non définie."
+        ],
+        "nativeCanvasCompositeInspected": true
+      },
+      "assetPath": "modes/echos-de-la-greve/assets/lignes-de-maree/bosses/radome-errant-base.png",
+      "playable": false,
+      "aiImplemented": false,
+      "animations": 0,
+      "sourceId": "exec-08f84da6-7942-4ad6-b48b-cf4c8c424d8a",
+      "nativeDimensions": {
+        "width": 1536,
+        "height": 1024
+      },
+      "nativeFormat": "PNG",
+      "nativeMode": "RGBA",
+      "sha256": "d4ba05e3fbf291f75f30b875dd41518785711fdd0461806a0cea438a7bbbc598",
+      "bytes": 1933719,
+      "nativeAlpha": true,
+      "alpha": {
+        "min": 0,
+        "max": 254,
+        "zeroPixelCount": 942440,
+        "nearTransparentPixelCountAlpha0to8": 980869,
+        "fullyOpaquePixelCount": 0,
+        "nearOpaquePixelCountAlpha250to255": 558333,
+        "pixelCount": 1572864,
+        "cornerSamples": [
+          0,
+          0,
+          1,
+          0
+        ],
+        "nonzeroAlphaBounds": [
+          0,
+          0,
+          1473,
+          1024
+        ],
+        "alphaAtLeast16Bounds": [
+          67,
+          94,
+          1467,
+          905
+        ]
+      },
+      "sourceSha256": "d4ba05e3fbf291f75f30b875dd41518785711fdd0461806a0cea438a7bbbc598",
+      "destinationSha256": "d4ba05e3fbf291f75f30b875dd41518785711fdd0461806a0cea438a7bbbc598",
+      "destinationAbsolute": "/home/agent/ds2d-20261127/modes/echos-de-la-greve/assets/lignes-de-maree/bosses/radome-errant-base.png",
+      "byteIdenticalToSource": true,
+      "rasterProcessing": "None. Byte-for-byte file copy only; no crop, scaling, alpha cleanup, recoloring, re-encoding, or compositing."
+    },
+    {
+      "id": "ldm-boss-leviathan-faille",
+      "name": "Le Léviathan de faille",
+      "transparent_background": true,
+      "prompt": "Use case: stylized-concept. Asset type: single isolated static boss sprite for Death Stranding 2D, original fan expansion Les Lignes de Marée. Create one original non-canonical subject, faithful to this design: One original gigantic elongated eel-like Beached Thing, continuous tar-black serpentine aquatic body, blunt smooth head and small low dorsal fin, visible thin umbilical strand trailing above spine, sparse dull gold inclusions. Entire creature curved gently in side view, no fantasy dragon horns, no gore. Composition: landscape 1536 by 1024 canvas. Exact readable side profile facing RIGHT, entire subject centered with ALL extremities fully inside frame and 8 percent clear margin on all four sides. This is an ORGANIC TAR MANIFESTATION ONLY. Its body consists exclusively of black tar with very subtle gold inclusions and its umbilical strand. Absolutely NO human clothing, packs, harnesses, bags, crates, antennae, tools, machinery, technological accessories or ornaments on its body. The cord curves and ends fully inside the image.  The full single continuous eel body, from blunt head to tail tip, must remain visible. It has no legs and no mechanical sections. Realistic painted 2D game art, grounded functional shapes and convincing weight, restrained cold lighting, crisp readable silhouette. Generate a genuine transparent alpha background. No scene, floor, gradient, halo, backdrop, cast shadow outside the silhouette or checkerboard. One subject, one neutral pose only, no other character, no alternate view, no text, lettering, logo, watermark or interface. No gore.",
+      "source": "/workspace/scratch/950574a3230d/generated_images/exec-8cc3148a-4b53-44f5-93c9-5cf508e2a8a3.png",
+      "output_hint": "Generated images are saved to /workspace/scratch/950574a3230d/generated_images as /workspace/scratch/950574a3230d/generated_images/exec-8cc3148a-4b53-44f5-93c9-5cf508e2a8a3.png by default.\nIf you need to use a generated image at another path, copy it and leave the original in place unless the user explicitly asks you to delete it.\nThe generated image is already displayed to the user. There is no need to render it in the final response as a Markdown image or file link.",
+      "generationKind": "new",
+      "visualReview": {
+        "status": "accepted-static-base-with-reservations",
+        "inspectedIndividually": true,
+        "review": "Créature continue de type anguille, tête émoussée à droite, queue entière en courbe, petite nageoire dorsale et cordon ; aucune patte ou machine.",
+        "limits": [
+          "Corps relativement épais à l’avant ; longueur réelle de boss à fixer au moteur."
+        ],
+        "nativeCanvasCompositeInspected": true
+      },
+      "assetPath": "modes/echos-de-la-greve/assets/lignes-de-maree/bosses/leviathan-faille-base.png",
+      "playable": false,
+      "aiImplemented": false,
+      "animations": 0,
+      "sourceId": "exec-8cc3148a-4b53-44f5-93c9-5cf508e2a8a3",
+      "nativeDimensions": {
+        "width": 1536,
+        "height": 1024
+      },
+      "nativeFormat": "PNG",
+      "nativeMode": "RGBA",
+      "sha256": "49c8d83a9515b2d7ed34388da2775a03c920e55ae549d1516b7baabb938685e9",
+      "bytes": 1063857,
+      "nativeAlpha": true,
+      "alpha": {
+        "min": 0,
+        "max": 254,
+        "zeroPixelCount": 1350644,
+        "nearTransparentPixelCountAlpha0to8": 1376711,
+        "fullyOpaquePixelCount": 0,
+        "nearOpaquePixelCountAlpha250to255": 173561,
+        "pixelCount": 1572864,
+        "cornerSamples": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "nonzeroAlphaBounds": [
+          19,
+          23,
+          1518,
+          984
+        ],
+        "alphaAtLeast16Bounds": [
+          44,
+          328,
+          1490,
+          701
+        ]
+      },
+      "sourceSha256": "49c8d83a9515b2d7ed34388da2775a03c920e55ae549d1516b7baabb938685e9",
+      "destinationSha256": "49c8d83a9515b2d7ed34388da2775a03c920e55ae549d1516b7baabb938685e9",
+      "destinationAbsolute": "/home/agent/ds2d-20261127/modes/echos-de-la-greve/assets/lignes-de-maree/bosses/leviathan-faille-base.png",
+      "byteIdenticalToSource": true,
+      "rasterProcessing": "None. Byte-for-byte file copy only; no crop, scaling, alpha cleanup, recoloring, re-encoding, or compositing."
+    },
+    {
+      "id": "ldm-boss-dernier-amarre",
+      "name": "Le Dernier Amarré",
+      "transparent_background": true,
+      "prompt": "Use case: stylized-concept. Asset type: single isolated static boss sprite for Death Stranding 2D, original fan expansion Les Lignes de Marée. Create one original non-canonical subject, faithful to this design: One original immense seated-hunched humanoid tar apparition, broad shoulders but elongated thin lower limbs, hands held low and open, a single long umbilical strand ascending from chest, irregular glossy black tar and extremely restrained golden deposits. Lonely unsettling silhouette, no crown or supernatural weapon. Composition: portrait 1024 by 1536 canvas. Exact readable side profile facing RIGHT, entire subject centered with ALL extremities fully inside frame and 8 percent clear margin on all four sides. This is an ORGANIC TAR MANIFESTATION ONLY. Its body consists exclusively of black tar with very subtle gold inclusions and its umbilical strand. Absolutely NO human clothing, packs, harnesses, bags, crates, antennae, tools, machinery, technological accessories or ornaments on its body. The cord curves and ends fully inside the image.   Realistic painted 2D game art, grounded functional shapes and convincing weight, restrained cold lighting, crisp readable silhouette. Generate a genuine transparent alpha background. No scene, floor, gradient, halo, backdrop, cast shadow outside the silhouette or checkerboard. One subject, one neutral pose only, no other character, no alternate view, no text, lettering, logo, watermark or interface. No gore.",
+      "source": "/workspace/scratch/950574a3230d/generated_images/exec-bacc086f-621b-48ac-a9b4-7089b8cd8d97.png",
+      "output_hint": "Generated images are saved to /workspace/scratch/950574a3230d/generated_images as /workspace/scratch/950574a3230d/generated_images/exec-bacc086f-621b-48ac-a9b4-7089b8cd8d97.png by default.\nIf you need to use a generated image at another path, copy it and leave the original in place unless the user explicitly asks you to delete it.\nThe generated image is already displayed to the user. There is no need to render it in the final response as a Markdown image or file link.",
+      "generationKind": "new",
+      "visualReview": {
+        "status": "accepted-static-base-with-reservations",
+        "inspectedIndividually": true,
+        "review": "Humanoïde massif de goudron recroquevillé, épaules larges, jambes fines, mains ouvertes et cordon thoracique unique ; silhouette entière à droite.",
+        "limits": [
+          "Posture suspendue et accroupie, sans assise physique ; contacts au sol à définir."
+        ],
+        "nativeCanvasCompositeInspected": true
+      },
+      "assetPath": "modes/echos-de-la-greve/assets/lignes-de-maree/bosses/dernier-amarre-base.png",
+      "playable": false,
+      "aiImplemented": false,
+      "animations": 0,
+      "sourceId": "exec-bacc086f-621b-48ac-a9b4-7089b8cd8d97",
+      "nativeDimensions": {
+        "width": 1024,
+        "height": 1536
+      },
+      "nativeFormat": "PNG",
+      "nativeMode": "RGBA",
+      "sha256": "ea78045b170acced5c8a392d04bb75c1c987ce4d0d2c8e95dd4307abdc67aae4",
+      "bytes": 1898277,
+      "nativeAlpha": true,
+      "alpha": {
+        "min": 0,
+        "max": 254,
+        "zeroPixelCount": 936975,
+        "nearTransparentPixelCountAlpha0to8": 1000452,
+        "fullyOpaquePixelCount": 0,
+        "nearOpaquePixelCountAlpha250to255": 512858,
+        "pixelCount": 1572864,
+        "cornerSamples": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "nonzeroAlphaBounds": [
+          0,
+          13,
+          1008,
+          1536
+        ],
+        "alphaAtLeast16Bounds": [
+          59,
+          75,
+          962,
+          1473
+        ]
+      },
+      "sourceSha256": "ea78045b170acced5c8a392d04bb75c1c987ce4d0d2c8e95dd4307abdc67aae4",
+      "destinationSha256": "ea78045b170acced5c8a392d04bb75c1c987ce4d0d2c8e95dd4307abdc67aae4",
+      "destinationAbsolute": "/home/agent/ds2d-20261127/modes/echos-de-la-greve/assets/lignes-de-maree/bosses/dernier-amarre-base.png",
+      "byteIdenticalToSource": true,
+      "rasterProcessing": "None. Byte-for-byte file copy only; no crop, scaling, alpha cleanup, recoloring, re-encoding, or compositing."
+    }
+  ],
+  "briefsSha256": "34ff7acda0c589bd0afde79f1e1bbf8527a93cc617a32713f746859887a91f58",
+  "generationCount": 23,
+  "acceptedBaseCount": 20,
+  "supersededCandidateCount": 3,
+  "gameplayStatus": {
+    "playableBossesAdded": 0,
+    "aiAdded": 0,
+    "animationCyclesAdded": 0,
+    "staticVisualBasesAdded": 20
+  },
+  "reviewScope": "Each full native image viewed individually; checks cover one subject, complete silhouette, overall right-facing direction, recognizable design and native alpha. All 20 unchanged PNG files were also drawn through native Canvas over a checkerboard and the five QA sheets inspected. No animated combat readiness is claimed.",
+  "knownLimitations": [
+    "The requested 8 percent clear margin is not met consistently, although accepted subjects remain in frame.",
+    "Several subjects use a slight three-quarter perspective; technical orthographic views are not supplied.",
+    "Minor design interpretations are listed in each visualReview entry.",
+    "Native alpha reaches 254 rather than 255; the source channel is preserved without normalization."
+  ],
+  "bytesTotal": 35551109,
+  "alphaReview": {
+    "nativeCanvas": true,
+    "checkerboardCompositingInspected": true,
+    "images": 20,
+    "sheets": 5,
+    "evidence": "boss-alpha-review/canvas-review.json",
+    "result": "No opaque black or grey backdrop in actual alpha compositing. The grey halo visible in raw previews lies in RGB under alpha zero in sampled exterior pixels; it is not a visible Canvas background. Native source alpha is preserved."
+  }
+}

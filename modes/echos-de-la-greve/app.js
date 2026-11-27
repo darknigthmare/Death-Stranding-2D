@@ -127,7 +127,7 @@
   }
   function home() {
     stopFight();
-    const copy = {arcade:'Trois adversaires jusqu’au rival.', versus:'Duel contre l’IA ou à deux en local.', tournament:'Tableau à élimination directe.', training:'Dojo libre et huit exercices dirigés.'};
+    const copy = {arcade:'Trois adversaires jusqu’au rival.', versus:'Duel contre l’IA ou à deux en local.', tournament:'Tableau à élimination directe.', training:'Dojo libre et parcours d’exercices dirigés.'};
     copy.challenges='Survie ou livraison sous pression.';
     copy.boss='Quatre Échoués géants, camion et convoi MULE.';
     copy.bossrush='Six rencontres, une réserve de vie et une série à terminer.';
@@ -138,7 +138,10 @@
     setScreen('home','<section class="hero"' + backdrop(asset.hero || asset.story?.['shore-prologue'] || asset.stages?.shore) + '><div><div class="eyebrow">Simulation chirale</div>' +
       '<h1>Échos de<br>la Grève</h1><p>Choisis un combattant et suis son histoire jusqu’au duel avec son rival.</p>' +
       '<div class="actions">' + button('mode','Jouer l’histoire ' + arrow,'darkbtn','data-mode="story"') + '</div></div></section>' +
-      '<section class="shelf"><div class="shelfhead"><h2>Modes de combat</h2></div><div class="tiles">' + tiles + '</div><div class="archives">' +
+      '<section class="shelf"><div class="shelfhead"><h2>Modes de combat</h2></div><div class="tiles">' + tiles +
+      '<a class="tile" href="teams.html"><span class="symbol" aria-hidden="true">⇄</span><strong>Relais de liaison</strong><small>Deux membres par camp, assistance et relais. Contre l’IA ou à deux en local.</small>'+arrow+'</a>'+
+      '<a class="tile" href="extension.html"><span class="symbol" aria-hidden="true">≈</span><strong>Les Lignes de Marée</strong><small>Extension originale : personnages, stages, ennemis et boss. Explore les dossiers d’expédition.</small>'+arrow+'</a>'+
+      '</div><div class="archives">' +
       button('stageGallery','Parcourir les arènes','mini') + button('gallery','Galerie des scènes','mini') + button('campaignGallery','Interludes des Nœuds rompus','mini') + '<a class="mini" href="duel-originel/index.html">Duel originel · Sam / Higgs</a><a class="mini" href="netplay.html">Salon privé en réseau</a>' +
       '<a class="mini" href="archives.html">Archives de Bridges</a><a class="mini" href="static-assets.html">Silhouettes et horizons</a><a class="mini" href="progression.html">Dossiers de liaison</a><a class="mini campaignLink" href="../../JOUER.html">Retour à la campagne ↗</a></div></section>');
   }
@@ -234,7 +237,7 @@
       '<div class="brief"><strong>' + character.special + '</strong> · ' + character.tip + '</div>' +
       (['story','arcade'].includes(mode) ? '<p class="montage">' + (mode === 'story' ? '<b>' + character.story + '</b><br>' : '') + route + '</p>' : '') +
       (mode === 'challenges' ? trialBrief() : '') +
-      (mode === 'training' && lessonContent ? '<section class="lessonIntro"><h2>Apprendre en pratiquant</h2><p>Huit exercices vérifient tes déplacements, tes gardes, tes punitions et tes signatures dans le vrai dojo. Choisis ton combattant, suis les étapes et reprends à ton rythme.</p>'+button('lessons','Parcours dirigé · 8 exercices','secondary')+'</section>' : '') +
+      (mode === 'training' && lessonContent ? '<section class="lessonIntro"><h2>Apprendre en pratiquant</h2><p>Les exercices vérifient tes déplacements, tes gardes, tes punitions, tes signatures et le risque d’un geste de défi. Choisis ton combattant, suis les étapes et reprends à ton rythme.</p>'+button('lessons','Parcours dirigé · '+lessonContent.lessons.length+' exercices','secondary')+'</section>' : '') +
       '<div class="actions">' + (mode === 'tournament' && cup ? button('bracket',cup.rounds.at(-1)[0].winner === null ? 'Reprendre le tableau' : 'Revoir le tableau') : '') +
       button('start',startLabel + ' ' + arrow,mode === 'tournament' && cup ? 'secondary' : 'primary') +
       (mode === 'story' && chapter() > 0 && chapter() < 3 ? button('restartStory','Recommencer l’histoire','secondary') : '') + '</div></section>');
@@ -253,7 +256,7 @@
     const fighterCards=ids.map(id=>'<button class="char portrait" data-act="pick" data-id="'+id+'" aria-pressed="'+(id===config.p1)+'">'+
       image(asset.wardrobe?.[id]?.[config.outfit1]?.portrait || asset.portraits?.[id])+'<span class="charlabel"><strong>'+esc(fighters[id].call)+
       '</strong><small>'+esc(fighters[id].role)+'</small></span></button>').join('');
-    const bossStages=Object.fromEntries(Object.entries(stages).filter(([id])=>!window.StrandContent.stageLinks?.[id]));
+    const bossStages=Object.fromEntries(Object.entries(stages).filter(([id])=>!window.StrandContent.stageLinks?.[id]&&!window.StrandExtensionRuntime?.stages.includes(id)));
     if(config.bossStage!=='recommended'&&!Object.hasOwn(bossStages,config.bossStage))config.bossStage='recommended';
     const field=outfitField(1,config.p1)+choose('difficulty','Difficulté',{easy:'Débutant',normal:'Porteur',hard:'Vétéran'})+
       choose('bossStage','Arène',{recommended:'Lieu conseillé · '+stages[selected.stage],...bossStages})+ambienceControl();
@@ -1046,4 +1049,8 @@
   engine?.setAmbienceVolume?.(ambienceVolume);
   bossEngine?.setAmbienceVolume?.(ambienceVolume);
   updateSound(); updateEffects(); updateScenery(); home();
+  const initialStage=typeof URLSearchParams==='function'?new URLSearchParams(window.location?.search||'').get('ldmStage'):null;
+  if(initialStage&&window.StrandExtensionRuntime?.stages.includes(initialStage)&&Object.hasOwn(stages,initialStage)){
+    config.stage=initialStage;config.mode='training';selection();
+  }
 })();

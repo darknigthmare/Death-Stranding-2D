@@ -1,0 +1,1244 @@
+{
+  "version": 1,
+  "date": "2026-11-27",
+  "baselineCommit": "7e000d3",
+  "scope": "18 nouvelles poses transparentes : 14 entrées/sorties pour 7 kits + 3 phases Mama Viaduc + remplacement du hold Heartman pour continuité de poignet avec le modèle actif.",
+  "plannedImageCount": 18,
+  "tool": "image_gen.imagegen",
+  "nativeOutputsCopiedWithoutTransformation": true,
+  "claim": "Images de gestes originaux du simulateur, continuité avec les références de projet ; aucune certification visuelle 1:1 ou animation officielle.",
+  "limitations": [
+    "Poses clés distinctes ; absence de dessins intermédiaires exhaustifs.",
+    "La tenue Mama Viaduc est une reconstruction du simulateur, pas un costume officiel certifié.",
+    "Les références locales héritées peuvent conserver leurs propres écarts au matériau officiel."
+  ],
+  "assets": [
+    {
+      "id": "sam-taunt-entry",
+      "character": "sam",
+      "phase": "entry",
+      "costume": "DS1/DC, base du projet",
+      "path": "modes/echos-de-la-greve/assets/fidelity-20261127/presentation/sam-taunt-entry.png",
+      "filename": "sam-taunt-entry.png",
+      "sha256": "410dbc7f6987d77abbf839a7f3c852eda4fd6481727fe5eb9bca743099284edb",
+      "status": "received-inspected-native-copy",
+      "receivedAt": "2026-11-27T07:59:48.214646+00:00",
+      "generation": {
+        "tool": "image_gen.imagegen",
+        "nativePath": "/workspace/scratch/7afabe13c643/generated_images/exec-63e00133-32cf-4fc0-b769-78b1ef7e6ff8.png",
+        "nativeFilename": "exec-63e00133-32cf-4fc0-b769-78b1ef7e6ff8.png",
+        "nativeSha256": "410dbc7f6987d77abbf839a7f3c852eda4fd6481727fe5eb9bca743099284edb",
+        "transparent_background": true,
+        "prompt": "Use case: identity-preserve. Edit the supplied transparent character artwork into ONE new full-body animation key pose for the same 2D game sprite. The FIRST reference is the approved held taunt; the second is his neutral stance for body continuity. Preserve the first reference's exact illustrated identity, face, hood, goggles, weathered navy suit, red-white piping, gloves, boots, straps, backpack load, front amber equipment case and Odradek. Same camera, right-facing three-quarter orientation, same planted feet and body proportions, same painterly realistic crisp edge rendering. Do not redesign equipment, add anything, remove anything, or change the costume. Only change the gesture: this is the ENTRY preparation immediately before the held thumbs-up. The near/left-on-image glove continues gripping the chest strap. The other glove has just left its chest strap and is partially lifted at lower chest height, elbow bent near his ribs, fingers still loosely curled and thumb starting to rotate upward, clearly lower than the fully raised held gesture. Keep his head calm and looking right. A distinct preparation pose, not a duplicate of the hold, without motion trails. Exactly one complete standing character, both boots fully visible, equipment uncut, slight clear padding around the entire silhouette. Transparent alpha background only, no scene, floor, drop shadow, vignette, text captions, UI, grid, contact sheet, second figure or secondary pose. Native transparent PNG sprite for an original simulator gesture, not a claim to reproduce an official game animation.",
+        "referenced_image_paths": [
+          "/workspace/scratch/7afabe13c643/Death-Stranding-2D/modes/echos-de-la-greve/assets/presentation-20261127/sam-taunt.png",
+          "/workspace/scratch/7afabe13c643/Death-Stranding-2D/modes/echos-de-la-greve/assets/fighters/sam-stance.webp"
+        ],
+        "references": [
+          {
+            "path": "modes/echos-de-la-greve/assets/presentation-20261127/sam-taunt.png",
+            "absolutePath": "/workspace/scratch/7afabe13c643/Death-Stranding-2D/modes/echos-de-la-greve/assets/presentation-20261127/sam-taunt.png",
+            "sha256": "e27d85d0508104f14000b63b82d7001baecd9ddc0e72fb53056cfe23bcb6ffaf",
+            "inspectedBeforeGeneration": true
+          },
+          {
+            "path": "modes/echos-de-la-greve/assets/fighters/sam-stance.webp",
+            "absolutePath": "/workspace/scratch/7afabe13c643/Death-Stranding-2D/modes/echos-de-la-greve/assets/fighters/sam-stance.webp",
+            "sha256": "9cc5ddecb03ec1ddf84b678211f4fa4a35c282d999cd3e776102cd2407a91c60",
+            "inspectedBeforeGeneration": true
+          }
+        ]
+      },
+      "output": {
+        "format": "PNG",
+        "width": 854,
+        "height": 1840,
+        "mode": "RGBA",
+        "bytes": 1821801,
+        "alphaExtrema": [
+          0,
+          255
+        ],
+        "bboxAlphaAbove8": [
+          5,
+          0,
+          849,
+          1829
+        ]
+      },
+      "review": {
+        "status": "accepted",
+        "observation": "Image inspectée : silhouette, tenue et équipement conservés ; main du salut abaissée à hauteur du thorax, autre main sur la sangle. Pose de préparation distincte. Une silhouette complète sur alpha, aucun décor ajouté.",
+        "limits": [
+          "Geste original du simulateur, pas une animation officielle reproduite.",
+          "La cohérence avec le sprite de référence ne certifie pas la fidélité exhaustive du costume au jeu original.",
+          "Marge transparente supérieure nulle au sommet de l’Odradek ; aucun recadrage ou ajout de pixels appliqué."
+        ]
+      }
+    },
+    {
+      "id": "sam-taunt-exit",
+      "character": "sam",
+      "phase": "exit",
+      "costume": "DS1/DC, base du projet",
+      "path": "modes/echos-de-la-greve/assets/fidelity-20261127/presentation/sam-taunt-exit.png",
+      "filename": "sam-taunt-exit.png",
+      "sha256": "939fc4a9d24d57b6c5444b3d1e8eed71404fcba2d70aaecc65d5a7e5c88c799e",
+      "status": "received-inspected-native-copy",
+      "receivedAt": "2026-11-27T08:01:02.608289+00:00",
+      "generation": {
+        "tool": "image_gen.imagegen",
+        "nativePath": "/workspace/scratch/7afabe13c643/generated_images/exec-0d9084a6-583b-4b84-996e-cbd4dce3123c.png",
+        "nativeFilename": "exec-0d9084a6-583b-4b84-996e-cbd4dce3123c.png",
+        "nativeSha256": "939fc4a9d24d57b6c5444b3d1e8eed71404fcba2d70aaecc65d5a7e5c88c799e",
+        "transparent_background": true,
+        "prompt": "Use case: identity-preserve. Edit the supplied transparent character artwork into ONE new full-body EXIT animation key pose for the same 2D game sprite. The first reference is the approved held thumbs-up. The second is the neutral stance for continuity. Preserve the first reference's exact illustrated identity, face, hood, goggles, navy suit, red-white piping, gloves, boots, all straps, backpack load, front amber case and Odradek. Keep identical camera, right-facing three-quarter orientation, planted feet, proportions and painterly realistic rendering. Only change the gesture: the thumbs-up has finished. The saluting glove has LOWERED and is returning inward toward the right-on-image chest strap at the lower ribs, with thumb relaxed and fingers naturally curling to regrip the strap. The other glove continues to hold the left-on-image chest strap. Make this visibly a recovery pose, with the saluting elbow relaxed down and the hand near his body rather than extended. Calm head looking right. No new equipment, costume redesign, effects or motion trails. Exactly one complete standing character, both boots and entire Odradek visible, transparent padding on every side including above the Odradek. True transparent alpha background, no floor, scenery, drop shadow, vignette, caption, UI, contact sheet or duplicate figure. A new original simulator gesture, not an official game animation reproduction.",
+        "referenced_image_paths": [
+          "/workspace/scratch/7afabe13c643/Death-Stranding-2D/modes/echos-de-la-greve/assets/presentation-20261127/sam-taunt.png",
+          "/workspace/scratch/7afabe13c643/Death-Stranding-2D/modes/echos-de-la-greve/assets/fighters/sam-stance.webp"
+        ],
+        "references": [
+          {
+            "path": "modes/echos-de-la-greve/assets/presentation-20261127/sam-taunt.png",
+            "absolutePath": "/workspace/scratch/7afabe13c643/Death-Stranding-2D/modes/echos-de-la-greve/assets/presentation-20261127/sam-taunt.png",
+            "sha256": "e27d85d0508104f14000b63b82d7001baecd9ddc0e72fb53056cfe23bcb6ffaf",
+            "inspectedBeforeGeneration": true
+          },
+          {
+            "path": "modes/echos-de-la-greve/assets/fighters/sam-stance.webp",
+            "absolutePath": "/workspace/scratch/7afabe13c643/Death-Stranding-2D/modes/echos-de-la-greve/assets/fighters/sam-stance.webp",
+            "sha256": "9cc5ddecb03ec1ddf84b678211f4fa4a35c282d999cd3e776102cd2407a91c60",
+            "inspectedBeforeGeneration": true
+          }
+        ]
+      },
+      "output": {
+        "format": "PNG",
+        "width": 854,
+        "height": 1840,
+        "mode": "RGBA",
+        "bytes": 1845772,
+        "alphaExtrema": [
+          0,
+          255
+        ],
+        "bboxAlphaAbove8": [
+          6,
+          5,
+          844,
+          1826
+        ]
+      },
+      "review": {
+        "status": "accepted",
+        "observation": "Image inspectée : les deux mains reviennent sur les sangles, main du salut rapprochée du corps, silhouette et équipement conservés. Pose de récupération distincte.",
+        "limits": [
+          "Geste original du simulateur, pas une animation officielle reproduite.",
+          "La cohérence avec le sprite de référence ne certifie pas la fidélité exhaustive du costume au jeu original."
+        ]
+      }
+    },
+    {
+      "id": "fragile-taunt-entry",
+      "character": "fragile",
+      "phase": "entry",
+      "costume": "DS1/DC, tenue Fragile du projet",
+      "path": "modes/echos-de-la-greve/assets/fidelity-20261127/presentation/fragile-taunt-entry.png",
+      "filename": "fragile-taunt-entry.png",
+      "sha256": "4f60c70ec027f4de7be6a0ddf260bcc4a0d8d18347b21e2fe6791ff956ce1a63",
+      "status": "received-inspected-native-copy",
+      "receivedAt": "2026-11-27T08:02:32.070952+00:00",
+      "generation": {
+        "tool": "image_gen.imagegen",
+        "nativePath": "/workspace/scratch/7afabe13c643/generated_images/exec-0993a01b-2009-4a62-8434-f8d1d682b0f4.png",
+        "nativeFilename": "exec-0993a01b-2009-4a62-8434-f8d1d682b0f4.png",
+        "nativeSha256": "4f60c70ec027f4de7be6a0ddf260bcc4a0d8d18347b21e2fe6791ff956ce1a63",
+        "transparent_background": true,
+        "prompt": "Use case: identity-preserve. Create ONE new full-body ENTRY animation key pose by editing the first supplied transparent approved character sprite. The second supplied neutral stance is only for continuity. Preserve her same illustrated face and short swept hair, black zip-up leather suit with spiked shoulders, white upper-arm bars, gloves, reinforced knees and boots, and the same closed umbrella held low in her left-on-image hand. Preserve the exact character proportions, right-facing three-quarter camera, planted feet, rendering and lighting. Do not add or remove equipment or redesign any costume detail. Only change the free right-on-image arm: this is the preparation for the open-palm inviting taunt. Its elbow is bent close to her waist, the hand is just starting to lift from her hip to the waist, palm rotating upward and fingers beginning to uncurl. It should be clearly lower and less extended than the held pose, a poised quiet preparation. Her gaze stays calmly to the right, umbrella stays CLOSED with its tip down in the same hand. Exactly one complete full-body character, all limbs and umbrella tip visible, slight clear alpha margin around the silhouette. True transparent background only; no scene, floor, shadow plate, effects, text, UI, contact sheet or duplicate figures. This is a new original simulator gesture and not an official animation recreation.",
+        "referenced_image_paths": [
+          "/workspace/scratch/7afabe13c643/Death-Stranding-2D/modes/echos-de-la-greve/assets/presentation-20261127/fragile-taunt.png",
+          "/workspace/scratch/7afabe13c643/Death-Stranding-2D/modes/echos-de-la-greve/assets/fighters/fragile-stance.webp"
+        ],
+        "references": [
+          {
+            "path": "modes/echos-de-la-greve/assets/presentation-20261127/fragile-taunt.png",
+            "absolutePath": "/workspace/scratch/7afabe13c643/Death-Stranding-2D/modes/echos-de-la-greve/assets/presentation-20261127/fragile-taunt.png",
+            "sha256": "45f1d309f5d626bd2813f60c7fe2eb252fb477cacad6d666e9cb22ef3fcfd148",
+            "inspectedBeforeGeneration": true
+          },
+          {
+            "path": "modes/echos-de-la-greve/assets/fighters/fragile-stance.webp",
+            "absolutePath": "/workspace/scratch/7afabe13c643/Death-Stranding-2D/modes/echos-de-la-greve/assets/fighters/fragile-stance.webp",
+            "sha256": "ee92f760ca2c7e68623b47261db0fed472346d7ef79353f5daeb8bf9e35bf917",
+            "inspectedBeforeGeneration": true
+          }
+        ]
+      },
+      "output": {
+        "format": "PNG",
+        "width": 971,
+        "height": 1620,
+        "mode": "RGBA",
+        "bytes": 1193689,
+        "alphaExtrema": [
+          0,
+          255
+        ],
+        "bboxAlphaAbove8": [
+          148,
+          0,
+          839,
+          1580
+        ]
+      },
+      "review": {
+        "status": "accepted",
+        "observation": "Image inspectée : même combinaison, visage, cheveux et parapluie fermé ; bras libre à hauteur de taille, paume en ouverture. Pose de préparation distincte, une silhouette complète sur alpha.",
+        "limits": [
+          "Geste original du simulateur, pas une animation officielle.",
+          "La référence héritée n’a pas fait l’objet d’une certification exhaustive 1:1."
+        ]
+      }
+    },
+    {
+      "id": "fragile-taunt-exit",
+      "character": "fragile",
+      "phase": "exit",
+      "costume": "DS1/DC, tenue Fragile du projet",
+      "path": "modes/echos-de-la-greve/assets/fidelity-20261127/presentation/fragile-taunt-exit.png",
+      "filename": "fragile-taunt-exit.png",
+      "sha256": "c3c4b428bfe7eb92fa0cd8f0bffbf4deaf52c70c082dee80cf1b306a8d84b38b",
+      "status": "received-inspected-native-copy",
+      "receivedAt": "2026-11-27T08:03:32.515326+00:00",
+      "generation": {
+        "tool": "image_gen.imagegen",
+        "nativePath": "/workspace/scratch/7afabe13c643/generated_images/exec-cbe5d4f6-446f-4706-86b0-c5946d1922e0.png",
+        "nativeFilename": "exec-cbe5d4f6-446f-4706-86b0-c5946d1922e0.png",
+        "nativeSha256": "c3c4b428bfe7eb92fa0cd8f0bffbf4deaf52c70c082dee80cf1b306a8d84b38b",
+        "transparent_background": true,
+        "prompt": "Use case: identity-preserve. Edit the supplied approved transparent character sprite into ONE new full-body EXIT animation key pose. The first reference defines exact identity, appearance, costume and body; the second neutral stance is for continuity only. Preserve her face, swept short hair, black leather zip-up suit with spiked shoulders, white sleeve bars, gloves, knees and boots, and the closed umbrella held low in the same left-on-image hand. Same right-facing three-quarter camera, proportions, planted feet and painterly realistic style. Only change the free right-on-image arm after its inviting open-palm taunt: elbow gently lowers, forearm drops diagonally downward, hand relaxed beside the outer hip with palm turning inward and fingers softly curled. This is a calm recovery pose, visibly lower than both the chest-high held gesture and a waist-high preparation. Her torso and gaze stay composed to the right. Do not add props, change costume, open the umbrella, add effects or motion trails. Exactly one full standing character with all boots, hair and umbrella tip inside the canvas, slight clear transparent padding around all edges. Transparent alpha background only, no scenery, ground, shadow plate, vignette, captions, UI, grid or second pose. Original simulator gesture, not an official game animation.",
+        "referenced_image_paths": [
+          "/workspace/scratch/7afabe13c643/Death-Stranding-2D/modes/echos-de-la-greve/assets/presentation-20261127/fragile-taunt.png",
+          "/workspace/scratch/7afabe13c643/Death-Stranding-2D/modes/echos-de-la-greve/assets/fighters/fragile-stance.webp"
+        ],
+        "references": [
+          {
+            "path": "modes/echos-de-la-greve/assets/presentation-20261127/fragile-taunt.png",
+            "absolutePath": "/workspace/scratch/7afabe13c643/Death-Stranding-2D/modes/echos-de-la-greve/assets/presentation-20261127/fragile-taunt.png",
+            "sha256": "45f1d309f5d626bd2813f60c7fe2eb252fb477cacad6d666e9cb22ef3fcfd148",
+            "inspectedBeforeGeneration": true
+          },
+          {
+            "path": "modes/echos-de-la-greve/assets/fighters/fragile-stance.webp",
+            "absolutePath": "/workspace/scratch/7afabe13c643/Death-Stranding-2D/modes/echos-de-la-greve/assets/fighters/fragile-stance.webp",
+            "sha256": "ee92f760ca2c7e68623b47261db0fed472346d7ef79353f5daeb8bf9e35bf917",
+            "inspectedBeforeGeneration": true
+          }
+        ]
+      },
+      "output": {
+        "format": "PNG",
+        "width": 971,
+        "height": 1619,
+        "mode": "RGBA",
+        "bytes": 1241960,
+        "alphaExtrema": [
+          0,
+          255
+        ],
+        "bboxAlphaAbove8": [
+          147,
+          2,
+          841,
+          1579
+        ]
+      },
+      "review": {
+        "status": "accepted",
+        "observation": "Image inspectée : visage, tenue et parapluie conservés ; bras libre abaissé le long du corps, doigts détendus. Sortie nettement distincte de l’entrée et de la tenue.",
+        "limits": [
+          "Geste original du simulateur, pas une animation officielle.",
+          "La référence héritée n’a pas fait l’objet d’une certification exhaustive 1:1."
+        ]
+      }
+    },
+    {
+      "id": "higgs-taunt-entry",
+      "character": "higgs",
+      "phase": "entry",
+      "costume": "DS1/DC, masque doré et cape du projet",
+      "path": "modes/echos-de-la-greve/assets/fidelity-20261127/presentation/higgs-taunt-entry.png",
+      "filename": "higgs-taunt-entry.png",
+      "sha256": "953f72376ebc89feaffa9024af2a61c82e249c58e0a5526cebb87a5ee419ed28",
+      "status": "received-inspected-native-copy",
+      "receivedAt": "2026-11-27T08:04:53.206078+00:00",
+      "generation": {
+        "tool": "image_gen.imagegen",
+        "nativePath": "/workspace/scratch/7afabe13c643/generated_images/exec-b5725408-b543-4441-ac6e-e3d2f0b04854.png",
+        "nativeFilename": "exec-b5725408-b543-4441-ac6e-e3d2f0b04854.png",
+        "nativeSha256": "953f72376ebc89feaffa9024af2a61c82e249c58e0a5526cebb87a5ee419ed28",
+        "transparent_background": true,
+        "prompt": "Use case: identity-preserve. Edit the first supplied transparent full-body character sprite into ONE ENTRY key pose for the same character's theatrical open-arm taunt in an original 2D simulator. The second reference is the neutral stance. Preserve exactly the approved first reference's DS1 appearance: golden skull mask under the same large black hood, gold hood edge and handprint, black cape with gold borders and blue hem stripe, mustard-yellow suit, gloves, black boots, chest capsule, straps, pouches, device and blue hoses. Same right-facing three-quarter view, planted feet, body proportions, silhouette scale, materials and detailed painterly realistic rendering. No costume changes, no props added or removed, no alternate version. Only change the gesture: both elbows are still close to the ribs and the forearms are beginning to open away from his waist, palms starting to turn upward. Hands are low and near the torso, clearly narrower than the widely open held taunt. Slightly elevated confident masked head but unchanged facing direction. Precisely one full-body character, both boots and full cape inside frame, slight transparent margin on all sides. True alpha transparency, no scene, floor, shadows, magic, particles, text captions, UI, second figure, grid or contact sheet. A new original stage gesture, no attack or harm, no claim that this is an official game animation.",
+        "referenced_image_paths": [
+          "/workspace/scratch/7afabe13c643/Death-Stranding-2D/modes/echos-de-la-greve/assets/presentation-20261127/higgs-taunt.png",
+          "/workspace/scratch/7afabe13c643/Death-Stranding-2D/modes/echos-de-la-greve/assets/fighters/higgs/stance.png"
+        ],
+        "references": [
+          {
+            "path": "modes/echos-de-la-greve/assets/presentation-20261127/higgs-taunt.png",
+            "absolutePath": "/workspace/scratch/7afabe13c643/Death-Stranding-2D/modes/echos-de-la-greve/assets/presentation-20261127/higgs-taunt.png",
+            "sha256": "7d53b3c5dc1b60660acc52f1491b18a0908265c9e0003be54fd43f562f7b3e55",
+            "inspectedBeforeGeneration": true
+          },
+          {
+            "path": "modes/echos-de-la-greve/assets/fighters/higgs/stance.png",
+            "absolutePath": "/workspace/scratch/7afabe13c643/Death-Stranding-2D/modes/echos-de-la-greve/assets/fighters/higgs/stance.png",
+            "sha256": "bef8d4aa14f693abf574639aadf5e986ab41acf2347c9c1a6277c986f73e4c6b",
+            "inspectedBeforeGeneration": true
+          }
+        ]
+      },
+      "output": {
+        "format": "PNG",
+        "width": 900,
+        "height": 1747,
+        "mode": "RGBA",
+        "bytes": 1726743,
+        "alphaExtrema": [
+          0,
+          255
+        ],
+        "bboxAlphaAbove8": [
+          34,
+          18,
+          837,
+          1679
+        ]
+      },
+      "review": {
+        "status": "accepted",
+        "observation": "Image inspectée : masque doré, capuche, cape, combinaison jaune, capsule et équipements conservés. Deux bras bas encore proches du torse, paumes en ouverture ; silhouette distincte de la tenue bras ouverts.",
+        "limits": [
+          "Version DS1/DC uniquement ; aucune référence DS2 ajoutée.",
+          "Geste original du simulateur, pas une animation officielle.",
+          "La référence héritée n’a pas fait l’objet d’une certification exhaustive 1:1."
+        ]
+      }
+    },
+    {
+      "id": "higgs-taunt-exit",
+      "character": "higgs",
+      "phase": "exit",
+      "costume": "DS1/DC, masque doré et cape du projet",
+      "path": "modes/echos-de-la-greve/assets/fidelity-20261127/presentation/higgs-taunt-exit.png",
+      "filename": "higgs-taunt-exit.png",
+      "sha256": "b7d49ba184751313d3ed6b2865d303334b6002f1ac36265d4733a5e542828cb9",
+      "status": "received-inspected-native-copy",
+      "receivedAt": "2026-11-27T08:05:48.094364+00:00",
+      "generation": {
+        "tool": "image_gen.imagegen",
+        "nativePath": "/workspace/scratch/7afabe13c643/generated_images/exec-339e4822-dab6-4dfb-b5d4-e3dee3681181.png",
+        "nativeFilename": "exec-339e4822-dab6-4dfb-b5d4-e3dee3681181.png",
+        "nativeSha256": "b7d49ba184751313d3ed6b2865d303334b6002f1ac36265d4733a5e542828cb9",
+        "transparent_background": true,
+        "prompt": "Use case: identity-preserve. Edit the FIRST transparent full-body character reference into ONE EXIT animation key pose after his theatrical open-arm greeting. The second is his neutral stance for continuity only. Preserve precisely the first reference's identity, golden skull mask, hood with gold handprint and edge, draped black cape with gold border and blue hem stripe, mustard-yellow suit, gloves, boots, chest capsule, straps, pouches, electronics and blue hoses. Same right-facing three-quarter camera, scale, feet and detailed painterly realistic rendering. Only change arm positioning for recovery: both arms have lowered, elbows relaxed near the body, left-on-image glove settling on the belt and right-on-image glove lightly returning toward the cloak clasp at his upper chest as seen in the neutral stance. Hands are no longer presenting palms to the audience. Head gently settles toward level gaze to the right. Keep complete cape and boots, exactly one full-body character, a little transparent margin all around. No added or removed equipment, no red armor, no guitar, no effects, motion trails, ground, scenery, shadow plate, UI, labels, other people or contact sheet. True transparent alpha PNG. An original noncombat simulator stage gesture, not an official animation.",
+        "referenced_image_paths": [
+          "/workspace/scratch/7afabe13c643/Death-Stranding-2D/modes/echos-de-la-greve/assets/presentation-20261127/higgs-taunt.png",
+          "/workspace/scratch/7afabe13c643/Death-Stranding-2D/modes/echos-de-la-greve/assets/fighters/higgs/stance.png"
+        ],
+        "references": [
+          {
+            "path": "modes/echos-de-la-greve/assets/presentation-20261127/higgs-taunt.png",
+            "absolutePath": "/workspace/scratch/7afabe13c643/Death-Stranding-2D/modes/echos-de-la-greve/assets/presentation-20261127/higgs-taunt.png",
+            "sha256": "7d53b3c5dc1b60660acc52f1491b18a0908265c9e0003be54fd43f562f7b3e55",
+            "inspectedBeforeGeneration": true
+          },
+          {
+            "path": "modes/echos-de-la-greve/assets/fighters/higgs/stance.png",
+            "absolutePath": "/workspace/scratch/7afabe13c643/Death-Stranding-2D/modes/echos-de-la-greve/assets/fighters/higgs/stance.png",
+            "sha256": "bef8d4aa14f693abf574639aadf5e986ab41acf2347c9c1a6277c986f73e4c6b",
+            "inspectedBeforeGeneration": true
+          }
+        ]
+      },
+      "output": {
+        "format": "PNG",
+        "width": 900,
+        "height": 1747,
+        "mode": "RGBA",
+        "bytes": 1755854,
+        "alphaExtrema": [
+          0,
+          255
+        ],
+        "bboxAlphaAbove8": [
+          5,
+          12,
+          732,
+          1679
+        ]
+      },
+      "review": {
+        "status": "accepted",
+        "observation": "Image inspectée : mains revenues au fermoir de cape et à la ceinture ; masque, costume et matériel cohérents avec la tenue du geste. Sortie distincte des deux autres phases.",
+        "limits": [
+          "Version DS1/DC uniquement.",
+          "Geste original du simulateur, pas une animation officielle.",
+          "La référence héritée n’a pas fait l’objet d’une certification exhaustive 1:1."
+        ]
+      }
+    },
+    {
+      "id": "cliff-taunt-entry",
+      "character": "cliff",
+      "phase": "entry",
+      "costume": "DS1/DC, tenue militaire du projet",
+      "path": "modes/echos-de-la-greve/assets/fidelity-20261127/presentation/cliff-taunt-entry.png",
+      "filename": "cliff-taunt-entry.png",
+      "sha256": "83d43e980d15335582600b2eabb315873697a1beaf1262df896ec7c502903e77",
+      "status": "received-inspected-native-copy",
+      "receivedAt": "2026-11-27T08:06:59.155752+00:00",
+      "generation": {
+        "tool": "image_gen.imagegen",
+        "nativePath": "/workspace/scratch/7afabe13c643/generated_images/exec-bf52ded9-d1d4-417b-bdd4-45b4093c37d2.png",
+        "nativeFilename": "exec-bf52ded9-d1d4-417b-bdd4-45b4093c37d2.png",
+        "nativeSha256": "83d43e980d15335582600b2eabb315873697a1beaf1262df896ec7c502903e77",
+        "transparent_background": true,
+        "prompt": "Use case: identity-preserve. Edit the first approved transparent full-body character sprite into ONE ENTRY key pose for his short two-finger salute. The second reference supplies the neutral stance for continuity. Keep exactly his illustrated face, wet swept dark hair, black tar streak, olive weathered camouflage clothing, rolled sleeves, gloves, chest rig, pouches, backpack, loose tube, boots and small flag patch. Same right-facing three-quarter view, planted foot placement, proportions, full-body scale, realistic painterly style and lighting. Do not add or remove props, weapons, equipment or effects. Only change the saluting near/left-on-image arm: it is just starting the gesture, elbow bent in front of the torso, gloved hand at upper chest height, index and middle fingers aligning together and angled upward on their way toward his temple, clearly not yet touching his head. The far/right-on-image arm remains relaxed by his side as in the held pose. Calm focused gaze right, no attack. Exactly one full-body character, both boots and hair fully in frame with slight transparent padding. True transparent alpha background; no scene, floor, cast shadow, smoke, captions, UI, grid or second pose. Original simulator gesture, not an official animation recreation.",
+        "referenced_image_paths": [
+          "/workspace/scratch/7afabe13c643/Death-Stranding-2D/modes/echos-de-la-greve/assets/presentation-20261127/cliff-taunt.png",
+          "/workspace/scratch/7afabe13c643/Death-Stranding-2D/modes/echos-de-la-greve/assets/fighters/cliff-stance.webp"
+        ],
+        "references": [
+          {
+            "path": "modes/echos-de-la-greve/assets/presentation-20261127/cliff-taunt.png",
+            "absolutePath": "/workspace/scratch/7afabe13c643/Death-Stranding-2D/modes/echos-de-la-greve/assets/presentation-20261127/cliff-taunt.png",
+            "sha256": "cdb3942ff5ad0d39c611baff5ff1a4d54aa4b067c6eb8860768cc655decca615",
+            "inspectedBeforeGeneration": true
+          },
+          {
+            "path": "modes/echos-de-la-greve/assets/fighters/cliff-stance.webp",
+            "absolutePath": "/workspace/scratch/7afabe13c643/Death-Stranding-2D/modes/echos-de-la-greve/assets/fighters/cliff-stance.webp",
+            "sha256": "c8161a48d1706dc688bfd33e04f05ccceea8f09dffcfe26ffae4f63ebf7f159b",
+            "inspectedBeforeGeneration": true
+          }
+        ]
+      },
+      "output": {
+        "format": "PNG",
+        "width": 848,
+        "height": 1855,
+        "mode": "RGBA",
+        "bytes": 1857238,
+        "alphaExtrema": [
+          0,
+          255
+        ],
+        "bboxAlphaAbove8": [
+          41,
+          2,
+          809,
+          1840
+        ]
+      },
+      "review": {
+        "status": "accepted",
+        "observation": "Image inspectée : deux doigts joints devant le haut du torse, pas encore à la tempe. Visage, traces noires, tenue, sac, poches et tube conservés. Pose de préparation distincte sur alpha.",
+        "limits": [
+          "Geste original du simulateur, pas une animation officielle.",
+          "La référence héritée n’a pas fait l’objet d’une certification exhaustive 1:1."
+        ]
+      }
+    },
+    {
+      "id": "cliff-taunt-exit",
+      "character": "cliff",
+      "phase": "exit",
+      "costume": "DS1/DC, tenue militaire du projet",
+      "path": "modes/echos-de-la-greve/assets/fidelity-20261127/presentation/cliff-taunt-exit.png",
+      "filename": "cliff-taunt-exit.png",
+      "sha256": "0a5df0442c98d082ce2756dd43ff2c46adc37e58bea49081f4851fd2656520cf",
+      "status": "received-inspected-native-copy",
+      "receivedAt": "2026-11-27T08:07:52.090471+00:00",
+      "generation": {
+        "tool": "image_gen.imagegen",
+        "nativePath": "/workspace/scratch/7afabe13c643/generated_images/exec-8cdac440-e1c5-42e1-b6d3-9b09eb28fbae.png",
+        "nativeFilename": "exec-8cdac440-e1c5-42e1-b6d3-9b09eb28fbae.png",
+        "nativeSha256": "0a5df0442c98d082ce2756dd43ff2c46adc37e58bea49081f4851fd2656520cf",
+        "transparent_background": true,
+        "prompt": "Use case: identity-preserve. Edit the first supplied transparent full-body character sprite into ONE EXIT key pose after the short two-finger salute. The second reference shows the neutral stance, for identity and equipment continuity. Preserve the first reference's exact illustrated face, wet swept hair and black tar streak, olive camouflage, rolled sleeves, gloves, vest, straps, pouches, backpack, loose tube, boots, flag patch, lighting and rendering. Same right-facing three-quarter view, planted feet, full-body proportions and scale. Only alter the gesture: the near/left-on-image saluting hand has left the temple and lowered toward the lower chest/upper belt, its two formerly straight fingers relax and curl, elbow dropping beside the torso. The far/right-on-image arm remains relaxed down. It must read as a return to rest, with no raised salute at the head and no attack. Maintain the composed focused gaze right. No new props, no weapons, no costume redesign, no removed equipment, smoke or motion trails. Exactly one complete character, both boots and all hair inside frame with a little transparent padding all around. True alpha background only, no floor, shadow, environment, text, UI, grid or second figure. Original simulator gesture, not a reproduction of an official game animation.",
+        "referenced_image_paths": [
+          "/workspace/scratch/7afabe13c643/Death-Stranding-2D/modes/echos-de-la-greve/assets/presentation-20261127/cliff-taunt.png",
+          "/workspace/scratch/7afabe13c643/Death-Stranding-2D/modes/echos-de-la-greve/assets/fighters/cliff-stance.webp"
+        ],
+        "references": [
+          {
+            "path": "modes/echos-de-la-greve/assets/presentation-20261127/cliff-taunt.png",
+            "absolutePath": "/workspace/scratch/7afabe13c643/Death-Stranding-2D/modes/echos-de-la-greve/assets/presentation-20261127/cliff-taunt.png",
+            "sha256": "cdb3942ff5ad0d39c611baff5ff1a4d54aa4b067c6eb8860768cc655decca615",
+            "inspectedBeforeGeneration": true
+          },
+          {
+            "path": "modes/echos-de-la-greve/assets/fighters/cliff-stance.webp",
+            "absolutePath": "/workspace/scratch/7afabe13c643/Death-Stranding-2D/modes/echos-de-la-greve/assets/fighters/cliff-stance.webp",
+            "sha256": "c8161a48d1706dc688bfd33e04f05ccceea8f09dffcfe26ffae4f63ebf7f159b",
+            "inspectedBeforeGeneration": true
+          }
+        ]
+      },
+      "output": {
+        "format": "PNG",
+        "width": 848,
+        "height": 1855,
+        "mode": "RGBA",
+        "bytes": 1885490,
+        "alphaExtrema": [
+          0,
+          255
+        ],
+        "bboxAlphaAbove8": [
+          40,
+          0,
+          805,
+          1847
+        ]
+      },
+      "review": {
+        "status": "accepted",
+        "observation": "Image inspectée : main du salut revenue sur l’équipement à hauteur du torse bas, doigts relâchés, bras opposé bas. Visage, tenue et équipement conservés, récupération distincte.",
+        "limits": [
+          "Geste original du simulateur, pas une animation officielle.",
+          "La référence héritée n’a pas fait l’objet d’une certification exhaustive 1:1."
+        ]
+      }
+    },
+    {
+      "id": "mule-taunt-entry",
+      "character": "mule",
+      "phase": "entry",
+      "costume": "DS1/DC, opérateur MULE jaune du projet",
+      "path": "modes/echos-de-la-greve/assets/fidelity-20261127/presentation/mule-taunt-entry.png",
+      "filename": "mule-taunt-entry.png",
+      "sha256": "b5c414e36129d889d427e1c4f90a6001f8a94ed8e9f36c6eeb09fe485ded9337",
+      "status": "received-inspected-native-copy",
+      "receivedAt": "2026-11-27T08:08:56.156105+00:00",
+      "generation": {
+        "tool": "image_gen.imagegen",
+        "nativePath": "/workspace/scratch/7afabe13c643/generated_images/exec-e4555061-3c13-4e74-9741-0874cfd80ef4.png",
+        "nativeFilename": "exec-e4555061-3c13-4e74-9741-0874cfd80ef4.png",
+        "nativeSha256": "b5c414e36129d889d427e1c4f90a6001f8a94ed8e9f36c6eeb09fe485ded9337",
+        "transparent_background": true,
+        "prompt": "Use case: identity-preserve. Edit the first approved transparent full-body character sprite into ONE ENTRY key pose before checking the handheld scanner. The second supplied neutral stance is for body and equipment continuity only. Preserve the first sprite's anonymous masked identity, yellow hooded rain suit with pale reflective strips, goggles and respirator, gloves, boots, backpack cargo case, straps, pouches and the SAME orange handheld scanner with cyan display and wrist loop. No new objects, no removed equipment, no costume redesign. Same right-facing three-quarter view, planted feet, proportions, realistic painterly materials and lighting. Only adjust the gesture: the right-on-image hand begins lifting the scanner from waist level toward the face, but the scanner is still at LOWER CHEST height, elbow bent close to the side. Scanner points gently up for reading, not at another person. The other hand continues gripping the left-on-image chest strap. Head begins a small downward glance toward the screen. This is a clear preparation pose lower than the eye-height held version. Exactly one full-body character, both boots, hood, backpack and scanner fully within frame with slight transparent margin. True transparent alpha background, no scene, floor, drop shadow, beams, effects, captions, UI, extra figures or contact sheet. Original noncombat simulator gesture, not an official animation reproduction.",
+        "referenced_image_paths": [
+          "/workspace/scratch/7afabe13c643/Death-Stranding-2D/modes/echos-de-la-greve/assets/presentation-20261127/mule-taunt.png",
+          "/workspace/scratch/7afabe13c643/Death-Stranding-2D/modes/echos-de-la-greve/assets/fighters/mule-stance.webp"
+        ],
+        "references": [
+          {
+            "path": "modes/echos-de-la-greve/assets/presentation-20261127/mule-taunt.png",
+            "absolutePath": "/workspace/scratch/7afabe13c643/Death-Stranding-2D/modes/echos-de-la-greve/assets/presentation-20261127/mule-taunt.png",
+            "sha256": "eec719e453b6f4dd1419bc88c483d49cc11de203fa7246bb9338e4d305268dc6",
+            "inspectedBeforeGeneration": true
+          },
+          {
+            "path": "modes/echos-de-la-greve/assets/fighters/mule-stance.webp",
+            "absolutePath": "/workspace/scratch/7afabe13c643/Death-Stranding-2D/modes/echos-de-la-greve/assets/fighters/mule-stance.webp",
+            "sha256": "2c1b3833af62ab412c1b3a4df749cc69ecf72d9d982063b8fd127f987fa92d80",
+            "inspectedBeforeGeneration": true
+          }
+        ]
+      },
+      "output": {
+        "format": "PNG",
+        "width": 776,
+        "height": 2025,
+        "mode": "RGBA",
+        "bytes": 1915537,
+        "alphaExtrema": [
+          0,
+          255
+        ],
+        "bboxAlphaAbove8": [
+          7,
+          23,
+          758,
+          1972
+        ]
+      },
+      "review": {
+        "status": "accepted",
+        "observation": "Image inspectée : scanner abaissé au thorax, regard vers l’écran ; main opposée sur la sangle, cargaison et tenue conservées. Préparation distincte et aucun faisceau ajouté.",
+        "limits": [
+          "Opérateur générique du simulateur, pas un personnage individuel canonique.",
+          "Geste original, pas une animation officielle ; fidélité exhaustive 1:1 non certifiée."
+        ]
+      }
+    },
+    {
+      "id": "mule-taunt-exit",
+      "character": "mule",
+      "phase": "exit",
+      "costume": "DS1/DC, opérateur MULE jaune du projet",
+      "path": "modes/echos-de-la-greve/assets/fidelity-20261127/presentation/mule-taunt-exit.png",
+      "filename": "mule-taunt-exit.png",
+      "sha256": "8ed70fc153be63f2208f4c3e7c09106d6088dc075b5397725b70df385c0db0bf",
+      "status": "received-inspected-native-copy",
+      "receivedAt": "2026-11-27T08:11:22.548925+00:00",
+      "generation": {
+        "tool": "image_gen.imagegen",
+        "nativePath": "/workspace/scratch/7afabe13c643/generated_images/exec-779fc4ef-2993-460e-b225-6ec5fe3442b3.png",
+        "nativeFilename": "exec-779fc4ef-2993-460e-b225-6ec5fe3442b3.png",
+        "nativeSha256": "8ed70fc153be63f2208f4c3e7c09106d6088dc075b5397725b70df385c0db0bf",
+        "transparent_background": true,
+        "prompt": "Use case: identity-preserve. Make ONE full-body recovery pose from these two consistent transparent reference sprites of the SAME yellow masked courier. Preserve the entire character, costume, equipment, perspective, foot positions, backpack, scanner design and style. CRITICAL ANATOMICAL CONTINUITY: in BOTH references the NEAR arm, attached to the shoulder at the LEFT SIDE OF THE PICTURE, is bent upward across the chest and its glove GRIPS THE CHEST STRAP. That near arm and strap-gripping glove must remain EXACTLY UNCHANGED. The handheld orange scanner belongs ONLY to the FAR arm on the RIGHT SIDE OF THE PICTURE. Only lower that FAR scanner-holding arm down toward the character's FAR right-on-image hip, outside the right body contour. The scanner and its wrist loop must remain in that same far hand, visible on the RIGHT EDGE OF THE SILHOUETTE around belt level. NEVER transfer scanner to the near arm or place it across the left thigh. The scanner tilts mildly downward after inspection. Keep the near strap-gripping hand in its original chest location and head facing right. Preserve yellow hood, goggles, respirator, reflective strips, gloves, boots, straps and pouches precisely; one scanner, two arms, no added objects or effects. Exactly one complete full-body character, both boots and all equipment inside frame, a little transparent padding. True alpha transparent background with no scene, floor, shadow, UI, text or second figure. This is the EXIT recovery from the existing original simulator gesture, not an official animation.",
+        "referenced_image_paths": [
+          "/workspace/scratch/7afabe13c643/Death-Stranding-2D/modes/echos-de-la-greve/assets/presentation-20261127/mule-taunt.png",
+          "/workspace/scratch/7afabe13c643/Death-Stranding-2D/modes/echos-de-la-greve/assets/fidelity-20261127/presentation/mule-taunt-entry.png"
+        ],
+        "references": [
+          {
+            "path": "modes/echos-de-la-greve/assets/presentation-20261127/mule-taunt.png",
+            "absolutePath": "/workspace/scratch/7afabe13c643/Death-Stranding-2D/modes/echos-de-la-greve/assets/presentation-20261127/mule-taunt.png",
+            "sha256": "eec719e453b6f4dd1419bc88c483d49cc11de203fa7246bb9338e4d305268dc6",
+            "inspectedBeforeGeneration": true
+          },
+          {
+            "path": "modes/echos-de-la-greve/assets/fidelity-20261127/presentation/mule-taunt-entry.png",
+            "absolutePath": "/workspace/scratch/7afabe13c643/Death-Stranding-2D/modes/echos-de-la-greve/assets/fidelity-20261127/presentation/mule-taunt-entry.png",
+            "sha256": "b5c414e36129d889d427e1c4f90a6001f8a94ed8e9f36c6eeb09fe485ded9337",
+            "inspectedBeforeGeneration": true
+          }
+        ]
+      },
+      "output": {
+        "format": "PNG",
+        "width": 776,
+        "height": 2025,
+        "mode": "RGBA",
+        "bytes": 1987912,
+        "alphaExtrema": [
+          0,
+          255
+        ],
+        "bboxAlphaAbove8": [
+          6,
+          19,
+          772,
+          1970
+        ]
+      },
+      "review": {
+        "status": "accepted",
+        "observation": "Image inspectée : continuité de main corrigée, bras proche toujours sur la sangle ; scanner descendu par le même bras éloigné, au bord droit à hauteur de hanche. Une silhouette complète, tenue et cargaison conservées. La première sortie incorrecte n’a pas été intégrée.",
+        "limits": [
+          "Opérateur générique du simulateur, pas un personnage individuel canonique.",
+          "Geste original, pas une animation officielle ; fidélité exhaustive 1:1 non certifiée."
+        ]
+      }
+    },
+    {
+      "id": "mama-taunt-entry",
+      "character": "mama",
+      "phase": "entry",
+      "costume": "Atelier, base du projet",
+      "path": "modes/echos-de-la-greve/assets/fidelity-20261127/presentation/mama-taunt-entry.png",
+      "filename": "mama-taunt-entry.png",
+      "sha256": "108291b1274e296e91836d6b444a5f031317bc9aa788469d77d81c0efc720de5",
+      "status": "received-inspected-native-copy",
+      "receivedAt": "2026-11-27T08:13:44.746443+00:00",
+      "generation": {
+        "tool": "image_gen.imagegen",
+        "nativePath": "/workspace/scratch/7afabe13c643/generated_images/exec-e0aa8696-89a0-49ed-bbf2-82552b036d6c.png",
+        "nativeFilename": "exec-e0aa8696-89a0-49ed-bbf2-82552b036d6c.png",
+        "nativeSha256": "108291b1274e296e91836d6b444a5f031317bc9aa788469d77d81c0efc720de5",
+        "transparent_background": true,
+        "prompt": "Use case: identity-preserve. Edit the FIRST supplied full-body character sprite into ONE ENTRY key pose before adjusting her glasses; the second supplied stance is only for body and costume continuity. Keep exactly her illustrated face, fine glasses, dark ponytail, orange ear stud, grey ribbed tank top, yellow equipment strap, grey jacket tied around waist, loose grey cargo trousers with one cuff higher, wrist device, lace-up boots and small blue physical scanner mounted behind her shoulder. Same right-facing three-quarter camera, planted feet, proportions, painterly realistic rendering and appearance. The NEAR arm on the LEFT SIDE OF THE PICTURE stays hanging at her side exactly as in the hold. Only change the FAR arm on the RIGHT SIDE OF THE PICTURE: its wrist device stays on that wrist, the hand is lifting toward the glasses but still below chin level near her collarbone, index finger and thumb beginning to form a light pinch. Fingers do NOT touch the glasses yet. Calm gaze right. This is a clearly lower preparation pose before the held glasses-adjustment. Do not add or remove equipment, change costume or hand assignments. One complete full-body character with boots, ponytail and scanner uncut, slight transparent padding. TRUE TRANSPARENT ALPHA CUTOUT: remove all diffuse grey/brown backdrop and all exterior light haze from the references; only the character and physical scanner have nonzero alpha. Blue light stays within scanner blades, no surrounding aura. No scene, ground, drop shadow, vignette, text, UI, other people or contact sheet. A new original simulator gesture, not an official game animation.",
+        "referenced_image_paths": [
+          "/workspace/scratch/7afabe13c643/Death-Stranding-2D/modes/echos-de-la-greve/assets/presentation-20261127/mama-taunt.png",
+          "/workspace/scratch/7afabe13c643/Death-Stranding-2D/modes/echos-de-la-greve/assets/fighters/mama/atelier/stance.png"
+        ],
+        "references": [
+          {
+            "path": "modes/echos-de-la-greve/assets/presentation-20261127/mama-taunt.png",
+            "absolutePath": "/workspace/scratch/7afabe13c643/Death-Stranding-2D/modes/echos-de-la-greve/assets/presentation-20261127/mama-taunt.png",
+            "sha256": "1ba61c1a54c848b1f442a691cc45f00f85f6a2464b5290480a84bfa1572dc03c",
+            "inspectedBeforeGeneration": true
+          },
+          {
+            "path": "modes/echos-de-la-greve/assets/fighters/mama/atelier/stance.png",
+            "absolutePath": "/workspace/scratch/7afabe13c643/Death-Stranding-2D/modes/echos-de-la-greve/assets/fighters/mama/atelier/stance.png",
+            "sha256": "28307fe4c1462bbb8839f63d029b9e7e6e4051c0fb7a5a4dfc7ff35d13dc36e6",
+            "inspectedBeforeGeneration": true
+          }
+        ]
+      },
+      "output": {
+        "format": "PNG",
+        "width": 1024,
+        "height": 1536,
+        "mode": "RGBA",
+        "bytes": 1756805,
+        "alphaExtrema": [
+          0,
+          254
+        ],
+        "bboxAlphaAbove8": [
+          224,
+          18,
+          696,
+          1522
+        ]
+      },
+      "review": {
+        "status": "accepted",
+        "observation": "Image inspectée : main avec bracelet à hauteur du menton, doigts avant contact des lunettes ; autre bras au repos. Visage, tenue Atelier et scanner conservés. Le RGB sous alpha zéro garde un fond diffus hérité, mais les points extérieurs vérifiés sont réellement transparents (alpha=0) et la boîte alpha>8 est serrée autour du sujet.",
+        "limits": [
+          "Geste original du simulateur, pas une animation officielle.",
+          "La référence héritée n’a pas fait l’objet d’une certification exhaustive 1:1.",
+          "Le fichier natif conserve des valeurs RGB invisibles sous alpha zéro ; aucune réécriture des pixels n’a été appliquée."
+        ]
+      }
+    },
+    {
+      "id": "mama-taunt-exit",
+      "character": "mama",
+      "phase": "exit",
+      "costume": "Atelier, base du projet",
+      "path": "modes/echos-de-la-greve/assets/fidelity-20261127/presentation/mama-taunt-exit.png",
+      "filename": "mama-taunt-exit.png",
+      "sha256": "aaafef65d81e4038fadd1630b5eb4c152769e41df009502be6a5b49ad8394fe1",
+      "status": "received-inspected-native-copy",
+      "receivedAt": "2026-11-27T08:14:43.766328+00:00",
+      "generation": {
+        "tool": "image_gen.imagegen",
+        "nativePath": "/workspace/scratch/7afabe13c643/generated_images/exec-5ace05b9-95ad-4753-bd5c-7a5190769109.png",
+        "nativeFilename": "exec-5ace05b9-95ad-4753-bd5c-7a5190769109.png",
+        "nativeSha256": "aaafef65d81e4038fadd1630b5eb4c152769e41df009502be6a5b49ad8394fe1",
+        "transparent_background": true,
+        "prompt": "Use case: identity-preserve. Edit the FIRST full-body character sprite into ONE EXIT key pose after adjusting her glasses. The second neutral stance is for continuity only. Preserve exactly her illustrated face, fine glasses on nose, ponytail, orange ear stud, grey tank top, yellow equipment strap, jacket tied at waist, grey cargo trousers with one cuff higher, boots, wrist device and physical blue scanner on the shoulder. Same right-facing three-quarter view, planted feet, proportions and painterly realistic style. Keep the NEAR arm on the LEFT SIDE OF THE PICTURE hanging unchanged by her thigh. Only lower the FAR arm on the RIGHT SIDE OF THE PICTURE from her glasses: that same hand with its wrist device is now at lower chest height near the yellow strap, fingers relaxed and lightly curled, elbow settling beside her side. The hand is clearly away from her glasses and lower than the chin-height entry pose, reading as recovery to rest. Do not switch hands or add/remove props. Exactly one complete character with boots, hair and scanner inside the frame and slight clear padding. True transparent alpha cutout, only body and physical equipment visible; no diffuse backdrop, exterior glow, floor, shadow, vignette, effects, text, UI, second figure or contact sheet. Original simulator gesture, not an official game animation.",
+        "referenced_image_paths": [
+          "/workspace/scratch/7afabe13c643/Death-Stranding-2D/modes/echos-de-la-greve/assets/presentation-20261127/mama-taunt.png",
+          "/workspace/scratch/7afabe13c643/Death-Stranding-2D/modes/echos-de-la-greve/assets/fighters/mama/atelier/stance.png"
+        ],
+        "references": [
+          {
+            "path": "modes/echos-de-la-greve/assets/presentation-20261127/mama-taunt.png",
+            "absolutePath": "/workspace/scratch/7afabe13c643/Death-Stranding-2D/modes/echos-de-la-greve/assets/presentation-20261127/mama-taunt.png",
+            "sha256": "1ba61c1a54c848b1f442a691cc45f00f85f6a2464b5290480a84bfa1572dc03c",
+            "inspectedBeforeGeneration": true
+          },
+          {
+            "path": "modes/echos-de-la-greve/assets/fighters/mama/atelier/stance.png",
+            "absolutePath": "/workspace/scratch/7afabe13c643/Death-Stranding-2D/modes/echos-de-la-greve/assets/fighters/mama/atelier/stance.png",
+            "sha256": "28307fe4c1462bbb8839f63d029b9e7e6e4051c0fb7a5a4dfc7ff35d13dc36e6",
+            "inspectedBeforeGeneration": true
+          }
+        ]
+      },
+      "output": {
+        "format": "PNG",
+        "width": 1024,
+        "height": 1536,
+        "mode": "RGBA",
+        "bytes": 1691308,
+        "alphaExtrema": [
+          0,
+          254
+        ],
+        "bboxAlphaAbove8": [
+          229,
+          18,
+          696,
+          1521
+        ]
+      },
+      "review": {
+        "status": "accepted",
+        "observation": "Image inspectée : main avec bracelet redescendue au thorax près de la sangle, autre bras au repos ; visage, lunettes, costume Atelier et scanner inchangés. Récupération distincte de l’entrée et de la tenue.",
+        "limits": [
+          "Geste original du simulateur, pas une animation officielle.",
+          "La référence héritée n’a pas fait l’objet d’une certification exhaustive 1:1.",
+          "Le fichier natif conserve des valeurs RGB invisibles sous alpha zéro ; aucune réécriture des pixels n’a été appliquée."
+        ]
+      }
+    },
+    {
+      "id": "mama-viaduc-taunt",
+      "character": "mama",
+      "phase": "hold",
+      "costume": "Viaduc — reconstruction originale du simulateur, tenue non officielle",
+      "path": "modes/echos-de-la-greve/assets/fidelity-20261127/presentation/mama-viaduc-taunt.png",
+      "filename": "mama-viaduc-taunt.png",
+      "sha256": "c9a761e9e3f6b492c8f71600114c3464ba300deae33f739bc5c3738cc04bdc48",
+      "status": "received-inspected-native-copy",
+      "receivedAt": "2026-11-27T08:16:57.697907+00:00",
+      "generation": {
+        "tool": "image_gen.imagegen",
+        "nativePath": "/workspace/scratch/7afabe13c643/generated_images/exec-d3bddf63-d418-4637-ab46-8c67a8d898fb.png",
+        "nativeFilename": "exec-d3bddf63-d418-4637-ab46-8c67a8d898fb.png",
+        "nativeSha256": "c9a761e9e3f6b492c8f71600114c3464ba300deae33f739bc5c3738cc04bdc48",
+        "transparent_background": true,
+        "prompt": "Use case: identity-preserve. Edit this exact full-body character sprite into ONE held glasses-adjustment gesture in the SAME original simulator \"Viaduc\" alternate construction outfit. This outfit is a fan-made simulator reconstruction, not an official game costume, and must be kept exactly as shown. Preserve her face, thin glasses, orange ear stud, tucked dark hair bun, yellow hard hat with cyan front lamp, grey tank top, yellow harness, near shoulder plate, two heavy wrist bracers with cyan displays, grey cargo trousers, yellow-rimmed kneepads, hip cable reel, lace-up boots and SAME black-yellow handheld tablet. Keep the same right-facing three-quarter view, feet planted apart, full-body proportions, scale and painterly realistic style. The NEAR arm attached to the LEFT shoulder in the image continues holding the tablet in front of her torso, unchanged. Only raise the FAR free hand on the RIGHT SIDE OF THE PICTURE so its thumb and index finger lightly adjust the right side of her glasses at the temple. The bracer stays on that same wrist. Keep glasses on her face; no salute and no new objects. Quiet focused gaze right, no attack. One complete full-body figure with hard hat, tablet, reel and both boots uncut, slight clear padding. TRUE transparent alpha cutout: remove diffuse backdrop and exterior haze; no scenery, floor, shadow, glow outside physical lamps, text, UI, grid or second figure. This is an original simulator gesture, not an official animation.",
+        "referenced_image_paths": [
+          "/workspace/scratch/7afabe13c643/Death-Stranding-2D/modes/echos-de-la-greve/assets/fighters/mama/viaduc/stance.png"
+        ],
+        "references": [
+          {
+            "path": "modes/echos-de-la-greve/assets/fighters/mama/viaduc/stance.png",
+            "absolutePath": "/workspace/scratch/7afabe13c643/Death-Stranding-2D/modes/echos-de-la-greve/assets/fighters/mama/viaduc/stance.png",
+            "sha256": "64be5a628f7d94daf0a04d793ce1e2ec19b61d2bb02c7bab169aeeff168be664",
+            "inspectedBeforeGeneration": true
+          }
+        ]
+      },
+      "output": {
+        "format": "PNG",
+        "width": 1024,
+        "height": 1536,
+        "mode": "RGBA",
+        "bytes": 1838744,
+        "alphaExtrema": [
+          0,
+          254
+        ],
+        "bboxAlphaAbove8": [
+          183,
+          25,
+          862,
+          1509
+        ]
+      },
+      "review": {
+        "status": "accepted",
+        "observation": "Image inspectée : main libre avec bracelet ajustant les lunettes, main proche maintenant la tablette ; casque, chignon, brassards, protections, bobine et bottes conservés. Première pose de tenue dédiée au costume Viaduc.",
+        "limits": [
+          "La tenue Viaduc est une reconstruction du simulateur ; elle n’est pas un costume officiel certifié 1:1.",
+          "Geste original du simulateur, pas une animation officielle.",
+          "Le fichier natif peut conserver des valeurs RGB invisibles sous alpha zéro ; aucune réécriture de pixels appliquée."
+        ]
+      }
+    },
+    {
+      "id": "mama-viaduc-taunt-entry",
+      "character": "mama",
+      "phase": "entry",
+      "costume": "Viaduc — reconstruction originale du simulateur, tenue non officielle",
+      "path": "modes/echos-de-la-greve/assets/fidelity-20261127/presentation/mama-viaduc-taunt-entry.png",
+      "filename": "mama-viaduc-taunt-entry.png",
+      "sha256": "90feabe3024e7e0fb84281dca95503c124b1c0d9be6f7a069ac73e568d8d7ff3",
+      "status": "received-inspected-native-copy",
+      "receivedAt": "2026-11-27T08:18:26.561820+00:00",
+      "generation": {
+        "tool": "image_gen.imagegen",
+        "nativePath": "/workspace/scratch/7afabe13c643/generated_images/exec-c1527aaf-980a-4919-9c65-ab6e35f2471c.png",
+        "nativeFilename": "exec-c1527aaf-980a-4919-9c65-ab6e35f2471c.png",
+        "nativeSha256": "90feabe3024e7e0fb84281dca95503c124b1c0d9be6f7a069ac73e568d8d7ff3",
+        "transparent_background": true,
+        "prompt": "Use case: identity-preserve. Edit the FIRST transparent held pose into ONE ENTRY preparation pose for the exact same Mama \"Viaduc\" original simulator outfit. The second reference is the neutral stance. Preserve the first reference's face, glasses, orange ear stud, tucked dark hair bun, yellow hard hat with cyan lamp, grey tank top, yellow harness, shoulder plate, heavy wrist bracers with cyan displays, cargo trousers, yellow-rimmed kneepads, hip cable reel, boots and SAME tablet. Same right-facing three-quarter camera, planted feet and full-body proportions, detailed painterly realistic rendering. Keep the NEAR arm from the LEFT shoulder holding the tablet completely unchanged. Only lower the FAR free hand on the RIGHT side from the glasses to a preparation position below her chin, thumb and index just beginning a small pinch, no contact with the glasses yet. That arm keeps its bracer, elbow closer to the torso. Calm gaze right, no added or removed objects. One full-body character, all hard hat and boots inside the canvas, a little clear transparent padding. True transparent alpha cutout, no diffuse backdrop, exterior haze, scenery, ground, shadow, effects, text, UI or other figures. Preserve this fan-made simulator reconstruction; do not label or redesign it as an official game costume. Original simulator gesture.",
+        "referenced_image_paths": [
+          "/workspace/scratch/7afabe13c643/Death-Stranding-2D/modes/echos-de-la-greve/assets/fidelity-20261127/presentation/mama-viaduc-taunt.png",
+          "/workspace/scratch/7afabe13c643/Death-Stranding-2D/modes/echos-de-la-greve/assets/fighters/mama/viaduc/stance.png"
+        ],
+        "references": [
+          {
+            "path": "modes/echos-de-la-greve/assets/fidelity-20261127/presentation/mama-viaduc-taunt.png",
+            "absolutePath": "/workspace/scratch/7afabe13c643/Death-Stranding-2D/modes/echos-de-la-greve/assets/fidelity-20261127/presentation/mama-viaduc-taunt.png",
+            "sha256": "c9a761e9e3f6b492c8f71600114c3464ba300deae33f739bc5c3738cc04bdc48",
+            "inspectedBeforeGeneration": true
+          },
+          {
+            "path": "modes/echos-de-la-greve/assets/fighters/mama/viaduc/stance.png",
+            "absolutePath": "/workspace/scratch/7afabe13c643/Death-Stranding-2D/modes/echos-de-la-greve/assets/fighters/mama/viaduc/stance.png",
+            "sha256": "64be5a628f7d94daf0a04d793ce1e2ec19b61d2bb02c7bab169aeeff168be664",
+            "inspectedBeforeGeneration": true
+          }
+        ]
+      },
+      "output": {
+        "format": "PNG",
+        "width": 1024,
+        "height": 1536,
+        "mode": "RGBA",
+        "bytes": 1905783,
+        "alphaExtrema": [
+          0,
+          254
+        ],
+        "bboxAlphaAbove8": [
+          184,
+          24,
+          863,
+          1511
+        ]
+      },
+      "review": {
+        "status": "accepted",
+        "observation": "Image inspectée : main libre préparant le contact sous le menton, tablette maintenue par le même bras proche. Costume Viaduc complet, casque et équipement conservés ; plis et nuances peuvent varier légèrement entre générations.",
+        "limits": [
+          "La tenue Viaduc est une reconstruction du simulateur ; elle n’est pas un costume officiel certifié 1:1.",
+          "Geste original du simulateur, pas une animation officielle.",
+          "Le fichier natif peut conserver des valeurs RGB invisibles sous alpha zéro ; aucune réécriture de pixels appliquée."
+        ]
+      }
+    },
+    {
+      "id": "mama-viaduc-taunt-exit",
+      "character": "mama",
+      "phase": "exit",
+      "costume": "Viaduc — reconstruction originale du simulateur, tenue non officielle",
+      "path": "modes/echos-de-la-greve/assets/fidelity-20261127/presentation/mama-viaduc-taunt-exit.png",
+      "filename": "mama-viaduc-taunt-exit.png",
+      "sha256": "092bbf75270ecb9bd2edd404ef85d9d475567d94406c0225fd52af23b067a3a5",
+      "status": "received-inspected-native-copy",
+      "receivedAt": "2026-11-27T08:19:59.317577+00:00",
+      "generation": {
+        "tool": "image_gen.imagegen",
+        "nativePath": "/workspace/scratch/7afabe13c643/generated_images/exec-1f12d091-52f4-40f5-a040-b20916aa4c40.png",
+        "nativeFilename": "exec-1f12d091-52f4-40f5-a040-b20916aa4c40.png",
+        "nativeSha256": "092bbf75270ecb9bd2edd404ef85d9d475567d94406c0225fd52af23b067a3a5",
+        "transparent_background": true,
+        "prompt": "Use case: identity-preserve. Edit the FIRST held transparent sprite into ONE EXIT recovery key pose for the SAME Mama \"Viaduc\" original simulator construction outfit. The second reference is the neutral stance. Preserve her exact identity and face, glasses, hair bun, orange ear stud, yellow hard hat with lamp, grey tank top, yellow straps, shoulder plate, both wrist bracers with cyan screens, cargo trousers, kneepads, hip cable reel, boots and same tablet. Same camera facing right in three-quarter view, planted feet and full-body scale. The NEAR arm from the LEFT shoulder in the image keeps holding the tablet in the same position. Only lower the FAR free hand on the RIGHT side away from her glasses, returning it toward the tablet: fingers relax just above the tablet near its far/top edge at middle-chest height, without changing which hand supports the device. Keep that far wrist bracer attached, elbow relaxed near her side. This must be clearly lower than the chin-height entry and the glasses-touching hold. Calm focused face right, no new equipment and none removed. One complete character, all hard hat, reel, tablet and boots visible with slight clear margins. True transparent alpha cutout, remove exterior diffuse backdrop and haze; no scene, ground, shadow, effects, text, UI, grid or other figure. This costume and gesture are original simulator reconstructions, not official game animation or costume reproductions.",
+        "referenced_image_paths": [
+          "/workspace/scratch/7afabe13c643/Death-Stranding-2D/modes/echos-de-la-greve/assets/fidelity-20261127/presentation/mama-viaduc-taunt.png",
+          "/workspace/scratch/7afabe13c643/Death-Stranding-2D/modes/echos-de-la-greve/assets/fighters/mama/viaduc/stance.png"
+        ],
+        "references": [
+          {
+            "path": "modes/echos-de-la-greve/assets/fidelity-20261127/presentation/mama-viaduc-taunt.png",
+            "absolutePath": "/workspace/scratch/7afabe13c643/Death-Stranding-2D/modes/echos-de-la-greve/assets/fidelity-20261127/presentation/mama-viaduc-taunt.png",
+            "sha256": "c9a761e9e3f6b492c8f71600114c3464ba300deae33f739bc5c3738cc04bdc48",
+            "inspectedBeforeGeneration": true
+          },
+          {
+            "path": "modes/echos-de-la-greve/assets/fighters/mama/viaduc/stance.png",
+            "absolutePath": "/workspace/scratch/7afabe13c643/Death-Stranding-2D/modes/echos-de-la-greve/assets/fighters/mama/viaduc/stance.png",
+            "sha256": "64be5a628f7d94daf0a04d793ce1e2ec19b61d2bb02c7bab169aeeff168be664",
+            "inspectedBeforeGeneration": true
+          }
+        ]
+      },
+      "output": {
+        "format": "PNG",
+        "width": 1024,
+        "height": 1536,
+        "mode": "RGBA",
+        "bytes": 1854147,
+        "alphaExtrema": [
+          0,
+          254
+        ],
+        "bboxAlphaAbove8": [
+          183,
+          25,
+          863,
+          1510
+        ]
+      },
+      "review": {
+        "status": "accepted",
+        "observation": "Image inspectée : main libre abaissée au-dessus de la tablette, qui reste soutenue par le même bras proche. Variante Viaduc complète et cohérente ; récupération distincte de la préparation et du contact des lunettes.",
+        "limits": [
+          "La tenue Viaduc est une reconstruction du simulateur ; elle n’est pas un costume officiel certifié 1:1.",
+          "Geste original du simulateur, pas une animation officielle.",
+          "Le fichier natif peut conserver des valeurs RGB invisibles sous alpha zéro ; aucune réécriture de pixels appliquée."
+        ]
+      }
+    },
+    {
+      "id": "heartman-taunt",
+      "character": "heartman",
+      "phase": "hold",
+      "costume": "DS1/DC, modèle Heartman actif du projet",
+      "path": "modes/echos-de-la-greve/assets/fidelity-20261127/presentation/heartman-taunt.png",
+      "filename": "heartman-taunt.png",
+      "sha256": "379d9b8b19a9f01db7c55dcd0d93a12252c0ee979a38d96daff662361c7b7e98",
+      "status": "received-inspected-native-copy",
+      "receivedAt": "2026-11-27T08:22:32.103794+00:00",
+      "generation": {
+        "tool": "image_gen.imagegen",
+        "nativePath": "/workspace/scratch/7afabe13c643/generated_images/exec-d464ed43-df55-48b1-aca5-635eca1c4ef8.png",
+        "nativeFilename": "exec-d464ed43-df55-48b1-aca5-635eca1c4ef8.png",
+        "nativeSha256": "379d9b8b19a9f01db7c55dcd0d93a12252c0ee979a38d96daff662361c7b7e98",
+        "transparent_background": true,
+        "prompt": "Use case: identity-preserve. Minimal pose edit of this exact supplied transparent full-body sprite. Preserve all identity, face, glasses, hair, clothes, materials, chest device, straps, gloves, shoes, proportions, camera and equipment exactly. CHANGE ONLY TWO THINGS: (1) bend the NEAR arm that already has the metallic upper-arm band AND electronic wrist screen, raising that same forearm in front of the lower chest with the screen facing upward for reading; (2) gently tilt his head down to look at that screen. KEEP THE OTHER FAR ARM HANGING STRAIGHT DOWN beside the body exactly as in the source. NO pointing hand, NO touching the screen, NO raised far elbow. The near shoulder is at the LEFT side of the picture; its upper arm band and wrist screen stay on this same continuous arm. Show its bent elbow clearly in the left body contour, wrist in front of his body, hand relaxed with fingers loosely curled. There is ONE wrist screen and it remains on the same arm as in the reference. The far hand stays lowered near the right thigh, it has NO watch. Maintain planted feet and exact right-facing three-quarter full-body orientation, blue blazer and shoes, light rolled-sleeve shirt, dark trousers, orange strap and orange chest medical device unchanged. One complete standing character with all hair and shoes visible, slight transparent margin. True transparent alpha background, no scene, ground, shadow, effects, text, UI, extra people or contact sheet. An original calm single-arm time-check gesture for the simulator, correcting continuity with its active model, not a certified official animation.",
+        "referenced_image_paths": [
+          "/workspace/scratch/7afabe13c643/Death-Stranding-2D/modes/echos-de-la-greve/assets/fighters/heartman/stance.png"
+        ],
+        "references": [
+          {
+            "path": "modes/echos-de-la-greve/assets/fighters/heartman/stance.png",
+            "absolutePath": "/workspace/scratch/7afabe13c643/Death-Stranding-2D/modes/echos-de-la-greve/assets/fighters/heartman/stance.png",
+            "sha256": "3fc213af154b9db73d69285f75ad7a6e50e24b83c822017b513cf49c26fb30b6",
+            "inspectedBeforeGeneration": true
+          }
+        ]
+      },
+      "output": {
+        "format": "PNG",
+        "width": 724,
+        "height": 2172,
+        "mode": "RGBA",
+        "bytes": 1475747,
+        "alphaExtrema": [
+          0,
+          255
+        ],
+        "bboxAlphaAbove8": [
+          107,
+          27,
+          656,
+          2130
+        ]
+      },
+      "review": {
+        "status": "accepted",
+        "observation": "Image inspectée : écran conservé sur le bras proche portant également le brassard métallique, coude plié lisible depuis l’épaule proche ; bras éloigné toujours abaissé sans écran. Regard vers le poignet. Geste simplifié à un seul bras pour corriger le changement de poignet du hold historique.",
+        "limits": [
+          "Correction de continuité avec le modèle actif du projet ; le côté anatomique canonique n’a pas été confirmé par une vue officielle des poignets.",
+          "Geste original du simulateur, pas une animation officielle.",
+          "Le hold historique presentation-20261127/heartman-taunt.png reste inchangé dans le dépôt ; seul le mapping du geste est destiné à être remplacé."
+        ]
+      }
+    },
+    {
+      "id": "heartman-taunt-entry",
+      "character": "heartman",
+      "phase": "entry",
+      "costume": "DS1/DC, modèle Heartman actif du projet",
+      "path": "modes/echos-de-la-greve/assets/fidelity-20261127/presentation/heartman-taunt-entry.png",
+      "filename": "heartman-taunt-entry.png",
+      "sha256": "a92d929fe4ef1c78cae5616aff90eeab11695b4176aed852f2b50ebcd6b23e99",
+      "status": "received-inspected-native-copy",
+      "receivedAt": "2026-11-27T08:23:41.321189+00:00",
+      "generation": {
+        "tool": "image_gen.imagegen",
+        "nativePath": "/workspace/scratch/7afabe13c643/generated_images/exec-eac86153-aaf1-4f73-83c4-3cbb295fd7da.png",
+        "nativeFilename": "exec-eac86153-aaf1-4f73-83c4-3cbb295fd7da.png",
+        "nativeSha256": "a92d929fe4ef1c78cae5616aff90eeab11695b4176aed852f2b50ebcd6b23e99",
+        "transparent_background": true,
+        "prompt": "Use case: identity-preserve. Edit the FIRST approved transparent held wrist-check sprite into ONE ENTRY preparation pose. The second neutral stance gives continuity. Preserve exactly the first reference's face, glasses, hair, blue blazer, pale rolled-sleeve shirt, orange shoulder strap and chest medical device, fingerless gloves, trousers, blue shoes, camera, feet and rendering. IMPORTANT: keep the electronic wrist screen on the SAME NEAR arm as the silver upper-arm band, attached to the shoulder on the LEFT of the picture. The OTHER FAR arm on the RIGHT remains hanging straight down without any screen. Change only the near arm's bend and head: the near forearm is just starting to rise from rest, still diagonal DOWN from elbow toward wrist at belt height, screen face up, hand loosely curled. This is lower than the fully raised horizontal forearm in the held pose, clearly preparing to check the time. Head is only beginning to glance downward. Do not point with the far hand, do not raise the far arm, do not transfer the watch or duplicate it. Keep all clothing and equipment unchanged; no new or removed props. Exactly one complete full-body figure, all hair and shoes visible with slight transparent padding. True alpha background with no scene, floor, shadows, effects, text, UI, grid or other figures. Original simulator gesture and continuity correction with the active model, not a claim of canonical wrist verification.",
+        "referenced_image_paths": [
+          "/workspace/scratch/7afabe13c643/Death-Stranding-2D/modes/echos-de-la-greve/assets/fidelity-20261127/presentation/heartman-taunt.png",
+          "/workspace/scratch/7afabe13c643/Death-Stranding-2D/modes/echos-de-la-greve/assets/fighters/heartman/stance.png"
+        ],
+        "references": [
+          {
+            "path": "modes/echos-de-la-greve/assets/fidelity-20261127/presentation/heartman-taunt.png",
+            "absolutePath": "/workspace/scratch/7afabe13c643/Death-Stranding-2D/modes/echos-de-la-greve/assets/fidelity-20261127/presentation/heartman-taunt.png",
+            "sha256": "379d9b8b19a9f01db7c55dcd0d93a12252c0ee979a38d96daff662361c7b7e98",
+            "inspectedBeforeGeneration": true
+          },
+          {
+            "path": "modes/echos-de-la-greve/assets/fighters/heartman/stance.png",
+            "absolutePath": "/workspace/scratch/7afabe13c643/Death-Stranding-2D/modes/echos-de-la-greve/assets/fighters/heartman/stance.png",
+            "sha256": "3fc213af154b9db73d69285f75ad7a6e50e24b83c822017b513cf49c26fb30b6",
+            "inspectedBeforeGeneration": true
+          }
+        ]
+      },
+      "output": {
+        "format": "PNG",
+        "width": 725,
+        "height": 2170,
+        "mode": "RGBA",
+        "bytes": 1434855,
+        "alphaExtrema": [
+          0,
+          255
+        ],
+        "bboxAlphaAbove8": [
+          102,
+          14,
+          589,
+          2130
+        ]
+      },
+      "review": {
+        "status": "accepted",
+        "observation": "Image inspectée : écran sur le bras proche avec brassard métallique, avant-bras diagonal bas en préparation ; autre bras au repos. Identité, costume et équipement conservés ; pose distincte du hold.",
+        "limits": [
+          "Correction de continuité avec le modèle actif ; côté anatomique canonique non confirmé par une vue officielle des poignets.",
+          "Geste original du simulateur, pas une animation officielle.",
+          "La fidélité exhaustive du modèle hérité n’est pas certifiée 1:1."
+        ]
+      }
+    },
+    {
+      "id": "heartman-taunt-exit",
+      "character": "heartman",
+      "phase": "exit",
+      "costume": "DS1/DC, modèle Heartman actif du projet",
+      "path": "modes/echos-de-la-greve/assets/fidelity-20261127/presentation/heartman-taunt-exit.png",
+      "filename": "heartman-taunt-exit.png",
+      "sha256": "05dca8478de957022efa7ccafa4f49dc903cc65265140245e60cfd1e35cde373",
+      "status": "received-inspected-native-copy",
+      "receivedAt": "2026-11-27T08:24:33.137647+00:00",
+      "generation": {
+        "tool": "image_gen.imagegen",
+        "nativePath": "/workspace/scratch/7afabe13c643/generated_images/exec-12cdca1f-3fe4-4efa-a7fe-ac8e68ed1ff0.png",
+        "nativeFilename": "exec-12cdca1f-3fe4-4efa-a7fe-ac8e68ed1ff0.png",
+        "nativeSha256": "05dca8478de957022efa7ccafa4f49dc903cc65265140245e60cfd1e35cde373",
+        "transparent_background": true,
+        "prompt": "Use case: identity-preserve. Edit the FIRST approved transparent held wrist-check sprite into ONE EXIT recovery key pose. The second neutral stance supplies continuity. Keep his exact face, glasses, hair, blue blazer with rolled sleeves, pale shirt, silver upper-arm band, fingerless gloves, trousers, blue shoes, orange strap and chest device, full-body proportions, planted feet, right-facing three-quarter camera and painterly realistic rendering. CRITICAL: ONE wrist screen stays on the SAME NEAR arm that carries the silver upper-arm band and attaches to the shoulder at the LEFT of the picture. The far arm on the RIGHT remains hanging down and has NO watch. For recovery, lower the near forearm back toward its neutral hanging position, elbow nearly straight, wrist screen near upper thigh/hip height, hand loose beside his trousers. It must be lower and less bent than the belt-height preparation, clearly returning to rest. Raise his head back to a calm level gaze to the right. Do not raise the far arm, do not point or transfer/duplicate the screen. Preserve every existing costume and equipment element, add nothing. One complete standing character, all hair and shoes visible, slight transparent margin all around. True transparent alpha background with no scene, floor, shadow, effects, text, UI, grid, contact sheet or extra people. Original simulator gesture; continuity with the active model, not certified official anatomy or animation.",
+        "referenced_image_paths": [
+          "/workspace/scratch/7afabe13c643/Death-Stranding-2D/modes/echos-de-la-greve/assets/fidelity-20261127/presentation/heartman-taunt.png",
+          "/workspace/scratch/7afabe13c643/Death-Stranding-2D/modes/echos-de-la-greve/assets/fighters/heartman/stance.png"
+        ],
+        "references": [
+          {
+            "path": "modes/echos-de-la-greve/assets/fidelity-20261127/presentation/heartman-taunt.png",
+            "absolutePath": "/workspace/scratch/7afabe13c643/Death-Stranding-2D/modes/echos-de-la-greve/assets/fidelity-20261127/presentation/heartman-taunt.png",
+            "sha256": "379d9b8b19a9f01db7c55dcd0d93a12252c0ee979a38d96daff662361c7b7e98",
+            "inspectedBeforeGeneration": true
+          },
+          {
+            "path": "modes/echos-de-la-greve/assets/fighters/heartman/stance.png",
+            "absolutePath": "/workspace/scratch/7afabe13c643/Death-Stranding-2D/modes/echos-de-la-greve/assets/fighters/heartman/stance.png",
+            "sha256": "3fc213af154b9db73d69285f75ad7a6e50e24b83c822017b513cf49c26fb30b6",
+            "inspectedBeforeGeneration": true
+          }
+        ]
+      },
+      "output": {
+        "format": "PNG",
+        "width": 724,
+        "height": 2172,
+        "mode": "RGBA",
+        "bytes": 1490448,
+        "alphaExtrema": [
+          0,
+          255
+        ],
+        "bboxAlphaAbove8": [
+          103,
+          16,
+          591,
+          2132
+        ]
+      },
+      "review": {
+        "status": "accepted",
+        "observation": "Image inspectée : bras proche portant l’écran redescendu près de la cuisse, tête redressée ; autre bras au repos sans écran. Continuité avec le poignet du modèle actif conservée ; récupération distincte de la préparation et de la tenue.",
+        "limits": [
+          "Correction de continuité avec le modèle actif ; côté anatomique canonique non confirmé par une vue officielle des poignets.",
+          "Geste original du simulateur, pas une animation officielle.",
+          "La fidélité exhaustive du modèle hérité n’est pas certifiée 1:1."
+        ]
+      }
+    }
+  ],
+  "attemptsWithoutImage": [],
+  "receivedImageCount": 18,
+  "imageFiles": [
+    "modes/echos-de-la-greve/assets/fidelity-20261127/presentation/sam-taunt-entry.png",
+    "modes/echos-de-la-greve/assets/fidelity-20261127/presentation/sam-taunt-exit.png",
+    "modes/echos-de-la-greve/assets/fidelity-20261127/presentation/fragile-taunt-entry.png",
+    "modes/echos-de-la-greve/assets/fidelity-20261127/presentation/fragile-taunt-exit.png",
+    "modes/echos-de-la-greve/assets/fidelity-20261127/presentation/higgs-taunt-entry.png",
+    "modes/echos-de-la-greve/assets/fidelity-20261127/presentation/higgs-taunt-exit.png",
+    "modes/echos-de-la-greve/assets/fidelity-20261127/presentation/cliff-taunt-entry.png",
+    "modes/echos-de-la-greve/assets/fidelity-20261127/presentation/cliff-taunt-exit.png",
+    "modes/echos-de-la-greve/assets/fidelity-20261127/presentation/mule-taunt-entry.png",
+    "modes/echos-de-la-greve/assets/fidelity-20261127/presentation/mule-taunt-exit.png",
+    "modes/echos-de-la-greve/assets/fidelity-20261127/presentation/mama-taunt-entry.png",
+    "modes/echos-de-la-greve/assets/fidelity-20261127/presentation/mama-taunt-exit.png",
+    "modes/echos-de-la-greve/assets/fidelity-20261127/presentation/mama-viaduc-taunt.png",
+    "modes/echos-de-la-greve/assets/fidelity-20261127/presentation/mama-viaduc-taunt-entry.png",
+    "modes/echos-de-la-greve/assets/fidelity-20261127/presentation/mama-viaduc-taunt-exit.png",
+    "modes/echos-de-la-greve/assets/fidelity-20261127/presentation/heartman-taunt.png",
+    "modes/echos-de-la-greve/assets/fidelity-20261127/presentation/heartman-taunt-entry.png",
+    "modes/echos-de-la-greve/assets/fidelity-20261127/presentation/heartman-taunt-exit.png"
+  ],
+  "outputsRejectedForContinuity": [
+    {
+      "id": "mule-taunt-exit-attempt-1",
+      "character": "mule",
+      "phase": "exit",
+      "status": "rejected-for-continuity-not-integrated",
+      "nativePath": "/workspace/scratch/7afabe13c643/generated_images/exec-92af798a-3674-4621-97cb-9b90da73153a.png",
+      "prompt": "Use case: identity-preserve. Edit the FIRST approved transparent full-body sprite into ONE EXIT key pose after the handheld-scanner checking gesture. The second neutral stance is only for continuity. Preserve exactly the anonymous masked operator, yellow hood and rain suit, reflective pale strips, goggles/respirator, gloves, boots, all straps, pouches, loaded backpack and SAME orange handheld scanner with cyan display and hanging wrist loop. Same right-facing three-quarter camera, planted feet, body proportions, silhouette scale and painterly realistic materials. Only change the gesture: scanner hand lowers close to the right-on-image hip at belt level, elbow relaxes beside the torso, device tilts slightly down as the check ends. The other glove still holds its chest strap. Head returns to a level gaze to the right. A recovery pose visibly lower than the held eye-height pose and the chest-height preparation. No new props, weapons, removed equipment or costume changes. One complete character, boots, hood, backpack and scanner fully visible with clear alpha margin all around. True transparent background, no floor, scenery, drop shadow, scanner beam, effects, text, UI, grid, extra person or second pose. Original noncombat simulator gesture, not an official game animation.",
+      "referenced_image_paths": [
+        "/workspace/scratch/7afabe13c643/Death-Stranding-2D/modes/echos-de-la-greve/assets/presentation-20261127/mule-taunt.png",
+        "/workspace/scratch/7afabe13c643/Death-Stranding-2D/modes/echos-de-la-greve/assets/fighters/mule-stance.webp"
+      ],
+      "reason": "Inspection visuelle : la sortie a changé le scanner de main. Le bras proche doit rester plié sur la sangle, le bras éloigné abaisse le scanner. Image non copiée dans les actifs du projet.",
+      "sha256": "f01c523c5f45aefed3ea2d11a5479a094c558aefd0a2e6e52b355a723d283963",
+      "references": [
+        {
+          "absolutePath": "/workspace/scratch/7afabe13c643/Death-Stranding-2D/modes/echos-de-la-greve/assets/presentation-20261127/mule-taunt.png",
+          "sha256": "eec719e453b6f4dd1419bc88c483d49cc11de203fa7246bb9338e4d305268dc6",
+          "inspectedBeforeGeneration": true
+        },
+        {
+          "absolutePath": "/workspace/scratch/7afabe13c643/Death-Stranding-2D/modes/echos-de-la-greve/assets/fighters/mule-stance.webp",
+          "sha256": "2c1b3833af62ab412c1b3a4df749cc69ecf72d9d982063b8fd127f987fa92d80",
+          "inspectedBeforeGeneration": true
+        }
+      ],
+      "transparent_background": true
+    },
+    {
+      "id": "heartman-taunt-attempt-1",
+      "character": "heartman",
+      "phase": "hold",
+      "status": "rejected-for-continuity-not-integrated",
+      "nativePath": "/workspace/scratch/7afabe13c643/generated_images/exec-2c275a15-0c47-4571-9070-675dd51b7376.png",
+      "prompt": "Use case: identity-preserve. Edit THIS supplied neutral full-body character artwork into ONE held wrist-check gesture for the same original 2D simulator. Preserve his exact illustrated face, curly brown-grey hair, rectangular glasses, pale shirt, blue blazer with rolled sleeves, metal band around the NEAR upper arm on the LEFT SIDE OF THE PICTURE, fingerless gloves, trousers, blue lace-up shoes, orange shoulder strap and orange chest device with cyan light. Same three-quarter right-facing camera, body proportions, planted feet, scale and painterly realistic rendering. CRITICAL EQUIPMENT CONTINUITY: the electronic wrist screen in THIS reference is on the NEAR ARM, the same arm that has the metal upper-arm band, attached to the shoulder on the LEFT OF THE PICTURE. It MUST REMAIN ON THAT EXACT ARM. For the gesture, bend this NEAR elbow, lifting this near forearm diagonally inward across the lower chest so the SAME wrist screen is visible facing his gaze. The FAR hand from the shoulder on the RIGHT side reaches inward and uses its index finger to lightly indicate the near-arm wrist screen. There is exactly ONE wrist screen and it must NOT move to the far wrist. His head tilts gently down toward it. This is a calm time-check gesture, not treatment or distress. No removed or added objects, no redesign. Exactly one full-body character, all hair and both shoes inside frame, clear transparent padding. True alpha-transparent background with no scene, floor, shadow, effects, text captions, UI, second pose or extra people. Original simulator gesture; continuity correction with the active sprite, no claim of official animation reproduction.",
+      "referenced_image_paths": [
+        "/workspace/scratch/7afabe13c643/Death-Stranding-2D/modes/echos-de-la-greve/assets/fighters/heartman/stance.png"
+      ],
+      "reason": "Inspection visuelle : l’écran reste sur le poignet éloigné malgré la consigne ; ce n’est pas une correction de continuité avec la stance. Non intégré. Le geste suivant est simplifié en lecture à un seul bras pour préserver le poignet.",
+      "sha256": "f053c6f6170b20f197be1358a589da4e1c9b8f071cbaa9729bb80ae4d488f623",
+      "references": [
+        {
+          "absolutePath": "/workspace/scratch/7afabe13c643/Death-Stranding-2D/modes/echos-de-la-greve/assets/fighters/heartman/stance.png",
+          "sha256": "3fc213af154b9db73d69285f75ad7a6e50e24b83c822017b513cf49c26fb30b6",
+          "inspectedBeforeGeneration": true
+        }
+      ],
+      "transparent_background": true
+    }
+  ],
+  "scopeAdjustment": "Ajout approuvé le 2026-11-27 après détection du changement de poignet entre le modèle Heartman actif et le hold historique. Les octets anciens sont conservés.",
+  "replacedRuntimeReferences": [
+    {
+      "id": "heartman-taunt",
+      "oldPath": "modes/echos-de-la-greve/assets/presentation-20261127/heartman-taunt.png",
+      "oldSha256": "5c948a734c7a1a94d55bde1d027a8be45f7c67ff79610c6731ba323d767a4503",
+      "newPath": "modes/echos-de-la-greve/assets/fidelity-20261127/presentation/heartman-taunt.png",
+      "oldBytesModified": false,
+      "reason": "Continuité du poignet avec fighters/heartman/stance.png ; lecture à un seul bras, côté canonique non certifié."
+    }
+  ],
+  "verification": {
+    "acceptedOutputs": 18,
+    "uniqueAcceptedHashes": 18,
+    "rejectedForContinuity": 2,
+    "generationCalls": 20,
+    "refusalsInThisPresentationBatch": 0,
+    "technicalRetries": 0,
+    "allNativeCopiesIdentical": true,
+    "allReferenceHashesMatch": true,
+    "allOutputsPNGWithAlpha": true,
+    "noPixelPostProcessing": true,
+    "visuallyInspectedEachOutput": true,
+    "renderingAndRuntimeTests": "Rapports des agents responsables ; non certifiés par ce manifeste de génération.",
+    "auditRelativeLinksChecked": 45,
+    "auditMissingRelativeLinks": 0
+  },
+  "status": "complete-generation-and-integrity-verified",
+  "supplementaryResearch": [
+    {
+      "id": "HEARTMAN-PS-202110",
+      "page": "https://blog.de.playstation.com/2021/10/19/death-stranding-das-sind-die-charaktere/",
+      "imageURL": "https://blog.de.playstation.com/uploads/sites/13/2021/10/5f5df86afac1999f1932ac0b44ae0fdcd91bb127.jpg",
+      "localInspectionPath": "/workspace/scratch/7afabe13c643/official-references/heartman-playstation-202110.jpg",
+      "sha256": "2f6314e6f7ae9fc7be42edaf5054d467c12c70711c317066bca14274e334847d",
+      "visuallyInspected": true,
+      "usedAsGenerationReference": false,
+      "observation": "Gros plan officiel visage/haut du buste, aucun poignet visible. Ne confirme aucun côté anatomique du dispositif.",
+      "videoLead": "https://www.youtube.com/watch?v=jKFJrET-3EI",
+      "videoFramesInspected": false
+    }
+  ]
+}

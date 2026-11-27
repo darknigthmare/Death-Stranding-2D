@@ -1,7 +1,7 @@
 /* Static source images: identities, works and versions stay distinct from playable kits. */
 window.StrandStaticCatalogue = {
-  "schemaVersion": 5,
-  "date": "2026-11-25",
+  "schemaVersion": 6,
+  "date": "2026-11-27",
   "items": [
     {
       "id": "lockne-portrait",
@@ -981,6 +981,23 @@ window.StrandStaticCatalogue = {
       "representation": "Image fixe",
       "bible": "../../docs/combat/BIBLE_COMBAT.md#lot-extension-20261125",
       "reference": "../../docs/combat/UNIVERS_DS.md#ref-red-ravine-ds2-panorama",
+      "layout": "wide"
+    },
+    {
+      "id": "maser-handgun-ds2-discharge",
+      "title": "Décharge du Maser Handgun",
+      "category": "projectiles",
+      "kind": "Effet fixe de référence",
+      "work": "ds2",
+      "version": "On the Beach · guide officiel, 10,0 s",
+      "description": "Un arc électrique blanc bleuté, isolé d’après l’image à 10,0 secondes de la vidéo officielle de discrétion. Cette référence fixe ne livre ni tir jouable ni séquence animée complète.",
+      "alt": "Décharge électrique fine du Maser Handgun DS2, filaments blancs à lueur bleu pâle et source lumineuse compacte à gauche",
+      "src": "assets/fidelity-20261127/static/maser-handgun-ds2-discharge.png",
+      "width": 2172,
+      "height": 724,
+      "representation": "Image fixe · adaptation 2D de référence",
+      "bible": "../../docs/combat/BIBLE_COMBAT.md",
+      "reference": "../../docs/combat/production/20261127-fidelity/ASSETS.md#maser",
       "layout": "wide"
     }
   ]

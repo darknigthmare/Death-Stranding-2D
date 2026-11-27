@@ -1,0 +1,326 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-11-27",
+  "entries": [
+    {
+      "id": "ldm-char-balise",
+      "slug": "balise",
+      "kind": "character",
+      "status": "received",
+      "prompt": "Use case: stylized-concept. Asset type: one isolated full-body 2D fighting-game character sprite, native transparent background, portrait canvas. Original character for a fan-made Death Stranding-inspired coastal logistics story, not an official character: Maëlle 'Balise' Rocher, an athletic 38-year-old woman with short black hair and a practical weathered face. She wears a grounded graphite waterproof courier suit, a small orange rescue half-plastron, asymmetrical harness, a neatly secured coil of rope on her left hip, metal carabiners and heavy expedition boots. High-end realistic painted videogame character rendering, sharp fabric, realistic weathered polymer and metal textures, muted cold palette, fine readable silhouette. Strict side-on 2D combat view facing RIGHT, torso turned only slightly toward camera, both boots planted in a neutral defensive balanced stance, hands loosely guarding without attacking. Entire head, hands, every accessory and both boots inside canvas, generous clear margin, human anatomy. Camera at hip height, no perspective foreshortening. Soft neutral studio illumination, no glow. Exactly ONE subject, no background, no ground plane, no cast ground shadow, no labels, no watermark, no logos, no BB pod, no skull mask, no magical effects, no fantasy armor, no panels or sprite sheet. Request a genuine transparent alpha background, not a checkerboard painted into the picture.",
+      "source": "/workspace/scratch/950574a3230d/generated_images/exec-2d558ef6-ce6e-461b-9ac7-361bc7e57ebf.png",
+      "assetPath": "modes/echos-de-la-greve/assets/lignes-de-maree/characters/balise-stance.png",
+      "tool": "image_gen built-in",
+      "transparentBackgroundRequested": true,
+      "width": 1024,
+      "height": 1536,
+      "mode": "RGBA",
+      "bytes": 1904636,
+      "sha256": "1ffb54bd3c3d2c56b06f7fac608d34aba149363eed435b6671fb12b66de86ba5",
+      "alphaMin": 0,
+      "alphaMax": 254,
+      "transparentPixels": 1057721,
+      "alphaBBox": [
+        0,
+        0,
+        988,
+        1523
+      ],
+      "subjectBBoxAlpha128": [
+        174,
+        9,
+        815,
+        1520
+      ],
+      "sourceBytesEqual": true
+    },
+    {
+      "id": "ldm-char-lest",
+      "slug": "lest",
+      "kind": "character",
+      "status": "received",
+      "prompt": "Use case: stylized-concept. Asset type: one isolated full-body 2D fighting-game character sprite, native transparent alpha background, portrait canvas 1024x1536. Original character for a fan-made Death Stranding-inspired coastal logistics story, not an official character. High-end realistic painted videogame character rendering, human anatomy, detailed plausible worn fabric/polymer/metal, fine sharp readable silhouette, muted cold colors, restrained industrial hard-science-fiction expedition gear. Strict side-on 2D fighting-game view facing RIGHT, torso turned slightly toward camera, both boots planted in a balanced neutral defensive stance, hands loosely raised to guard without attacking, head looking right. Entire head, hands, all gear and both boots fully visible with ample clear border. Soft neutral studio light. Exactly ONE subject, no scene, no ground plane, no ground shadow, no backdrop, no grey glow or haze around cutout, no labels, no watermark, no logos, no BB pod, no skull mask, no magical effects, no fantasy armor, no panels or sprite sheet. Genuine transparent alpha background, not a painted checkerboard.\nSubject: Jonas 'Lest' Vale, a broad, stocky 52-year-old Black man, bald with a short grey beard, physically strong expedition porter. Dark khaki industrial carrying suit and heavy boots, visible realistic load-assist external mechanical braces following lower back and legs (not a powered superhero armor), one short rectangular sealed crate tightly strapped to a compact back frame, asymmetrical industrial padding, realistic utility harness. Heavy grounded silhouette, calm protective expression.",
+      "source": "/workspace/scratch/950574a3230d/generated_images/exec-4dfa10de-83bf-4b07-95cf-8b23dc21d9d7.png",
+      "assetPath": "modes/echos-de-la-greve/assets/lignes-de-maree/characters/lest-stance.png",
+      "tool": "image_gen built-in",
+      "transparentBackgroundRequested": true,
+      "width": 1024,
+      "height": 1536,
+      "mode": "RGBA",
+      "bytes": 2132704,
+      "sha256": "b27bcd9f0f6e4f306b925171af3cc36a3497e078cc2405c1b5da512456be55b9",
+      "alphaMin": 0,
+      "alphaMax": 254,
+      "transparentPixels": 909296,
+      "alphaBBox": [
+        0,
+        0,
+        1010,
+        1536
+      ],
+      "subjectBBoxAlpha128": [
+        74,
+        8,
+        871,
+        1516
+      ],
+      "sourceBytesEqual": true
+    },
+    {
+      "id": "ldm-char-suture",
+      "slug": "suture",
+      "kind": "character",
+      "status": "received",
+      "prompt": "Use case: stylized-concept. Asset type: one isolated full-body 2D fighting-game character sprite, native transparent alpha background, portrait canvas 1024x1536. Original character for a fan-made Death Stranding-inspired coastal logistics story, not an official character. High-end realistic painted videogame character rendering, human anatomy, detailed plausible worn fabric/polymer/metal, fine sharp readable silhouette, muted cold colors, restrained industrial hard-science-fiction expedition gear. Strict side-on 2D fighting-game view facing RIGHT, torso turned slightly toward camera, both boots planted in a balanced neutral defensive stance, hands loosely raised to guard without attacking, head looking right. Entire head, hands, all gear and both boots fully visible with ample clear border. Soft neutral studio light. Exactly ONE subject, no scene, no ground plane, no ground shadow, no backdrop, no grey glow or haze around cutout, no labels, no watermark, no logos, no BB pod, no skull mask, no magical effects, no fantasy armor, no panels or sprite sheet. Genuine transparent alpha background, not a painted checkerboard.\nSubject: Inès 'Suture' Sorel, a 43-year-old mixed-race female rescue medic, naturally curly dark hair tied back, weathered ivory and graphite waterproof field coverall, rigid compact medical kit secured at her right flank, very short burgundy fabric scarf tucked safely into collar, rugged gloves and practical expedition boots. Clearly visible human face, practical nonsexualized proportions, composed focused expression, no weapon.",
+      "source": "/workspace/scratch/950574a3230d/generated_images/exec-902cfcfb-6ba1-4b2d-af51-9067151a9f24.png",
+      "assetPath": "modes/echos-de-la-greve/assets/lignes-de-maree/characters/suture-stance.png",
+      "tool": "image_gen built-in",
+      "transparentBackgroundRequested": true,
+      "width": 1024,
+      "height": 1536,
+      "mode": "RGBA",
+      "bytes": 2134597,
+      "sha256": "4f75448581e2f0cdb42cf39f24ba720a953209a9e71982f3f698c51432b44612",
+      "alphaMin": 0,
+      "alphaMax": 254,
+      "transparentPixels": 993974,
+      "alphaBBox": [
+        0,
+        0,
+        1010,
+        1523
+      ],
+      "subjectBBoxAlpha128": [
+        143,
+        14,
+        863,
+        1521
+      ],
+      "sourceBytesEqual": true
+    },
+    {
+      "id": "ldm-char-relais",
+      "slug": "relais",
+      "kind": "character",
+      "status": "received",
+      "prompt": "Use case: stylized-concept. Asset type: one isolated full-body 2D fighting-game character sprite, native transparent alpha background, portrait canvas 1024x1536. Original character for a fan-made Death Stranding-inspired coastal logistics story, not an official character. High-end realistic painted videogame character rendering, human anatomy, detailed plausible worn fabric/polymer/metal, fine sharp readable silhouette, muted cold colors, restrained industrial hard-science-fiction expedition gear. Strict side-on 2D fighting-game view facing RIGHT, torso turned slightly toward camera, both boots planted in a balanced neutral defensive stance, hands loosely raised to guard without attacking, head looking right. Entire head, hands, all gear and both boots fully visible with ample clear border. Soft neutral studio light. Exactly ONE subject, no scene, no ground plane, no ground shadow, no backdrop, no grey glow or haze around cutout, no labels, no watermark, no logos, no BB pod, no skull mask, no magical effects, no fantasy armor, no panels or sprite sheet. Genuine transparent alpha background, not a painted checkerboard.\nSubject: Elias 'Relais' Reed, a slender 29-year-old East Asian male communications porter with short straight black hair, slate-blue waterproof expedition suit, tall narrow rugged radio backpack, one folded antenna secured to its left edge, compact cable-launcher tool holstered pointing down (not a rifle), gloves, pragmatic harness and expedition boots. Alert thoughtful expression, understated small amber instrument lights only.",
+      "source": "/workspace/scratch/950574a3230d/generated_images/exec-b2d4bddc-d05c-43f2-b737-e32b2829539d.png",
+      "assetPath": "modes/echos-de-la-greve/assets/lignes-de-maree/characters/relais-stance.png",
+      "tool": "image_gen built-in",
+      "transparentBackgroundRequested": true,
+      "width": 1024,
+      "height": 1536,
+      "mode": "RGBA",
+      "bytes": 1952510,
+      "sha256": "899e4f66acc6bfed959bf84c3b745a8b3ea41265648b8e744207da81d79eee3b",
+      "alphaMin": 0,
+      "alphaMax": 254,
+      "transparentPixels": 1009855,
+      "alphaBBox": [
+        0,
+        11,
+        1010,
+        1536
+      ],
+      "subjectBBoxAlpha128": [
+        173,
+        18,
+        818,
+        1522
+      ],
+      "sourceBytesEqual": true
+    },
+    {
+      "id": "ldm-char-isobare",
+      "slug": "isobare",
+      "kind": "character",
+      "status": "received",
+      "prompt": "Use case: stylized-concept. Asset type: one isolated full-body 2D fighting-game character sprite, native transparent alpha background, portrait canvas 1024x1536. Original character for a fan-made Death Stranding-inspired coastal logistics story, not an official character. High-end realistic painted videogame character rendering, human anatomy, detailed plausible worn fabric/polymer/metal, fine sharp readable silhouette, muted cold colors, restrained industrial hard-science-fiction expedition gear. Strict side-on 2D fighting-game view facing RIGHT, torso turned slightly toward camera, both boots planted in a balanced neutral defensive stance, hands loosely raised to guard without attacking, head looking right. Entire head, hands, all gear and both boots fully visible with ample clear border. Soft neutral studio light. Exactly ONE subject, no scene, no ground plane, no ground shadow, no backdrop, no grey glow or haze around cutout, no labels, no watermark, no logos, no BB pod, no skull mask, no magical effects, no fantasy armor, no panels or sprite sheet. Genuine transparent alpha background, not a painted checkerboard.\nSubject: Naya 'Isobare' Quill, a tall athletic 34-year-old Indigenous American woman with a short practical braid, graphite and cold-green weatherproof expedition parka, hood folded down, compact weather anemometer clipped on her right shoulder, modest matte ceramic protection plates, expedition trousers, grounded harness and heavy weatherproof boots. Fully visible face, focused calm expression. Practical meteorology specialist, no ceremonial dress or ornament, no weapon.",
+      "source": "/home/agent/ds2d-generated-20261127/ldm-isobare-stance.png",
+      "assetPath": "modes/echos-de-la-greve/assets/lignes-de-maree/characters/isobare-stance.png",
+      "tool": "image_gen built-in",
+      "transparentBackgroundRequested": true,
+      "width": 1024,
+      "height": 1536,
+      "mode": "RGBA",
+      "bytes": 1832440,
+      "sha256": "75d856844acb16e6793cc293c134c72f0524e961ff7ee8c716684a7d3658f230",
+      "alphaMin": 0,
+      "alphaMax": 254,
+      "transparentPixels": 1070777,
+      "alphaBBox": [
+        0,
+        1,
+        984,
+        1522
+      ],
+      "subjectBBoxAlpha128": [
+        176,
+        12,
+        784,
+        1519
+      ],
+      "sourceBytesEqual": true
+    },
+    {
+      "id": "ldm-char-contrevoie",
+      "slug": "contrevoie",
+      "kind": "character",
+      "status": "received",
+      "prompt": "Use case: stylized-concept. Asset type: one isolated full-body 2D fighting-game character sprite, native transparent alpha background, portrait canvas 1024x1536. Original character for a fan-made Death Stranding-inspired coastal logistics story, not an official character. High-end realistic painted videogame character rendering, human anatomy, detailed plausible worn fabric/polymer/metal, fine sharp readable silhouette, muted cold colors, restrained industrial hard-science-fiction expedition gear. Strict side-on 2D fighting-game view facing RIGHT, torso turned slightly toward camera, both boots planted in a balanced neutral defensive stance, hands loosely raised to guard without attacking, head looking right. Entire head, hands, all gear and both boots fully visible with ample clear border. Soft neutral studio light. Exactly ONE subject, no scene, no ground plane, no ground shadow, no backdrop, no grey glow or haze around cutout, no labels, no watermark, no logos, no BB pod, no skull mask, no magical effects, no fantasy armor, no panels or sprite sheet. Genuine transparent alpha background, not a painted checkerboard.\nSubject: Oren 'Contrevoie' Pike, a massive 46-year-old white male former cargo porter with very short hair, weather-beaten face, repaired ochre-brown courier coverall with dark utility vest and grounded expedition boots. Large cargo vest with no official symbols, asymmetrical patched protection, one segmented industrial electric staff stowed vertically at his right side in a safe transport position (no discharge), broad shoulders, hands loosely guarding. Gritty industrial logistics silhouette, not a soldier in power armor.",
+      "source": "/home/agent/ds2d-generated-20261127/ldm-contrevoie-stance.png",
+      "assetPath": "modes/echos-de-la-greve/assets/lignes-de-maree/characters/contrevoie-stance.png",
+      "tool": "image_gen built-in",
+      "transparentBackgroundRequested": true,
+      "width": 1024,
+      "height": 1536,
+      "mode": "RGBA",
+      "bytes": 2236447,
+      "sha256": "5607ec8ac404b524717f3932c8c9f3d30c888b317224b347fe6bf179378cbbec",
+      "alphaMin": 0,
+      "alphaMax": 254,
+      "transparentPixels": 887196,
+      "alphaBBox": [
+        0,
+        0,
+        998,
+        1521
+      ],
+      "subjectBBoxAlpha128": [
+        89,
+        11,
+        845,
+        1516
+      ],
+      "sourceBytesEqual": true
+    },
+    {
+      "id": "ldm-char-vigie",
+      "slug": "vigie",
+      "kind": "character",
+      "status": "received",
+      "prompt": "Use case: stylized-concept. Asset type: one isolated full-body 2D fighting-game character sprite, native transparent alpha background, portrait canvas 1024x1536. Original character for a fan-made Death Stranding-inspired coastal logistics story, not an official character. High-end realistic painted videogame character rendering, human anatomy, detailed plausible worn fabric/polymer/metal, fine sharp readable silhouette, muted cold colors, restrained industrial hard-science-fiction expedition gear. Strict side-on 2D fighting-game view facing RIGHT, torso turned slightly toward camera, both boots planted in a balanced neutral defensive stance, hands loosely raised to guard without attacking, head looking right. Entire head, hands, all gear and both boots fully visible with ample clear border. Soft neutral studio light. Exactly ONE subject, no scene, no ground plane, no ground shadow, no backdrop, no grey glow or haze around cutout, no labels, no watermark, no logos, no BB pod, no skull mask, no magical effects, no fantasy armor, no panels or sprite sheet. Genuine transparent alpha background, not a painted checkerboard.\nSubject: Alma 'Vigie' Voss, a wiry muscular 61-year-old Black female lookout with very short grey hair and visible age lines, dark olive technical expedition clothes, short raincoat with asymmetrical practical panels stopping at upper thighs, binoculars folded flat against her chest, weatherproof utility belt and rugged mountaineering boots. Upright vigilant pose, lean older physique, calm determined expression, no gun.",
+      "source": "/home/agent/ds2d-generated-20261127/ldm-vigie-stance.png",
+      "assetPath": "modes/echos-de-la-greve/assets/lignes-de-maree/characters/vigie-stance.png",
+      "tool": "image_gen built-in",
+      "transparentBackgroundRequested": true,
+      "width": 1024,
+      "height": 1536,
+      "mode": "RGBA",
+      "bytes": 1848967,
+      "sha256": "fc5272a31c31265de5bb3cca7733a35aa4f0bb8a21d9b489b8c792f7246c7707",
+      "alphaMin": 0,
+      "alphaMax": 254,
+      "transparentPixels": 1064415,
+      "alphaBBox": [
+        0,
+        0,
+        994,
+        1536
+      ],
+      "subjectBBoxAlpha128": [
+        174,
+        10,
+        807,
+        1524
+      ],
+      "sourceBytesEqual": true
+    },
+    {
+      "id": "ldm-char-ecluse",
+      "slug": "ecluse",
+      "kind": "character",
+      "status": "received",
+      "prompt": "Use case: stylized-concept. Asset type: one isolated full-body 2D fighting-game character sprite, native transparent alpha background, portrait canvas 1024x1536. Original character for a fan-made Death Stranding-inspired coastal logistics story, not an official character. High-end realistic painted videogame character rendering, human anatomy, detailed plausible worn fabric/polymer/metal, fine sharp readable silhouette, muted cold colors, restrained industrial hard-science-fiction expedition gear. Strict side-on 2D fighting-game view facing RIGHT, torso turned slightly toward camera, both boots planted in a balanced neutral defensive stance, hands loosely raised to guard without attacking, head looking right. Entire head, hands, all gear and both boots fully visible with ample clear border. Soft neutral studio light. Exactly ONE subject, no scene, no ground plane, no ground shadow, no backdrop, no grey glow or haze around cutout, no labels, no watermark, no logos, no BB pod, no skull mask, no magical effects, no fantasy armor, no panels or sprite sheet. Genuine transparent alpha background, not a painted checkerboard.\nSubject: Tariq 'Écluse' Moss, a medium-height 40-year-old Middle Eastern male civil-engineering porter, short dark beard and short practical hair, muted petroleum-blue and grey waterproof work suit, industrial construction knee pads, rolled webbing sling on left shoulder, a blunt non-cutting industrial clamp secured to his belt, utility harness and rugged expedition boots. Solid, practical technical worker, composed focused human face, no weapon.",
+      "source": "/workspace/scratch/950574a3230d/generated_images/exec-99f8452d-e718-4494-aef0-17d2a49b5e03.png",
+      "assetPath": "modes/echos-de-la-greve/assets/lignes-de-maree/characters/ecluse-stance.png",
+      "tool": "image_gen built-in",
+      "transparentBackgroundRequested": true,
+      "width": 1024,
+      "height": 1536,
+      "mode": "RGBA",
+      "bytes": 2064742,
+      "sha256": "14e2ba3ede69da7ec7b54a675180aa064903a4363d431dc2605b22d053e4e178",
+      "alphaMin": 0,
+      "alphaMax": 254,
+      "transparentPixels": 986241,
+      "alphaBBox": [
+        0,
+        10,
+        1002,
+        1522
+      ],
+      "subjectBBoxAlpha128": [
+        123,
+        16,
+        835,
+        1517
+      ],
+      "sourceBytesEqual": true
+    },
+    {
+      "id": "ldm-char-sillage",
+      "slug": "sillage",
+      "kind": "character",
+      "status": "received",
+      "prompt": "Use case: stylized-concept. Asset type: one isolated full-body 2D fighting-game character sprite, native transparent alpha background, portrait canvas 1024x1536. Original character for a fan-made Death Stranding-inspired coastal logistics story, not an official character. High-end realistic painted videogame character rendering, human anatomy, detailed plausible worn fabric/polymer/metal, fine sharp readable silhouette, muted cold colors, restrained industrial hard-science-fiction expedition gear. Strict side-on 2D fighting-game view facing RIGHT, torso turned slightly toward camera, both boots planted in a balanced neutral defensive stance, hands loosely raised to guard without attacking, head looking right. Entire head, hands, all gear and both boots fully visible with ample clear border. Soft neutral studio light. Exactly ONE subject, no scene, no ground plane, no ground shadow, no backdrop, no grey glow or haze around cutout, no labels, no watermark, no logos, no BB pod, no skull mask, no magical effects, no fantasy armor, no panels or sprite sheet. Genuine transparent alpha background, not a painted checkerboard.\nSubject: Jun 'Sillage' Akiyama, a compact androgynous 25-year-old Japanese adult mechanic with medium-short black hair under a graphite knit beanie. Grey and cool-blue weatherproof technical expedition suit, mechanic's gloves, low compact repair chassis on the back (not a towering cargo load), one torque wrench safely secured to utility belt, grounded boots. Slender agile silhouette, practical neutral expression, no oversized armor or weapon.",
+      "source": "/workspace/scratch/950574a3230d/generated_images/exec-622ece56-b6f5-4c3d-ab05-b08fc31c6da9.png",
+      "assetPath": "modes/echos-de-la-greve/assets/lignes-de-maree/characters/sillage-stance.png",
+      "tool": "image_gen built-in",
+      "transparentBackgroundRequested": true,
+      "width": 1024,
+      "height": 1536,
+      "mode": "RGBA",
+      "bytes": 1889050,
+      "sha256": "e2c05bea739ac866aad8cd6dcbe7c9f2881f08bfe1f19de6dff0fd928bb8c82a",
+      "alphaMin": 0,
+      "alphaMax": 254,
+      "transparentPixels": 1052041,
+      "alphaBBox": [
+        2,
+        0,
+        988,
+        1523
+      ],
+      "subjectBBoxAlpha128": [
+        143,
+        8,
+        842,
+        1520
+      ],
+      "sourceBytesEqual": true
+    },
+    {
+      "id": "ldm-char-archive",
+      "slug": "archive",
+      "kind": "character",
+      "status": "received",
+      "prompt": "Use case: stylized-concept. Asset type: one isolated full-body 2D fighting-game character sprite, native transparent alpha background, portrait canvas 1024x1536. Original character for a fan-made Death Stranding-inspired coastal logistics story, not an official character. High-end realistic painted videogame character rendering, human anatomy, detailed plausible worn fabric/polymer/metal, fine sharp readable silhouette, muted cold colors, restrained industrial hard-science-fiction expedition gear. Strict side-on 2D fighting-game view facing RIGHT, torso turned slightly toward camera, both boots planted in a balanced neutral defensive stance, hands loosely raised to guard without attacking, head looking right. Entire head, hands, all gear and both boots fully visible with ample clear border. Soft neutral studio light. Exactly ONE subject, no scene, no ground plane, no ground shadow, no backdrop, no grey glow or haze around cutout, no labels, no watermark, no logos, no BB pod, no skull mask, no magical effects, no fantasy armor, no panels or sprite sheet. Genuine transparent alpha background, not a painted checkerboard.\nSubject: Célia 'Archive' Ward, a tall 57-year-old white female courier archivist with silver hair tied back, visible age lines and thoughtful determined expression. Graphite and putty-beige expedition clothes, short structured raincoat stopping at upper thighs, two rigid waterproof document cases at her left flank, a small rectangular terminal attached to her right forearm, practical harness, high weatherproof boots. Human field-document archivist, no robe, no magic, no weapon.",
+      "source": "/workspace/scratch/950574a3230d/generated_images/exec-327cef62-764f-4c70-98af-447e902b7dd0.png",
+      "assetPath": "modes/echos-de-la-greve/assets/lignes-de-maree/characters/archive-stance.png",
+      "tool": "image_gen built-in",
+      "transparentBackgroundRequested": true,
+      "width": 1024,
+      "height": 1536,
+      "mode": "RGBA",
+      "bytes": 1938608,
+      "sha256": "760363b6b60d7f0e068f93a8ff3bc53bdcb8ed91c77a302bd579b41458e99d22",
+      "alphaMin": 0,
+      "alphaMax": 254,
+      "transparentPixels": 1018700,
+      "alphaBBox": [
+        0,
+        1,
+        1010,
+        1522
+      ],
+      "subjectBBoxAlpha128": [
+        187,
+        13,
+        825,
+        1519
+      ],
+      "sourceBytesEqual": true
+    }
+  ]
+}
