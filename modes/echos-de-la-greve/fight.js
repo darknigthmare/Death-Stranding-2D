@@ -87,6 +87,10 @@
     heartman:{damage:7,balance:12,stun:12,push:5}, memory:{damage:8,balance:15,stun:14,push:6}
   };
   const keyActions = ['left','right','up','down','light','heavy','special','guard','throw','finish'];
+  // The original ten-action encoding is immutable: old J2 recordings use it.
+  // Version 2 adds codes 40–43 for taunt without shifting any existing code.
+  const tauntRules = Object.freeze({entry:10,hold:28,exit:16,total:54});
+  const tauntPhase = frame => frame < tauntRules.entry ? 'entry' : frame < tauntRules.entry + tauntRules.hold ? 'hold' : 'exit';
   let match, raf = 0, serial = 0, audio, noiseBuffer, sound = true;
   let ambienceVolume=.35, ambience=null, ambienceBuffer, audioSuspended=false, resumePending=false;
   const voices=new Set();
@@ -350,10 +354,10 @@
     return {phase:m.phase, tick:m.tick, paused:m.paused, round:m.round, wins:m.wins.slice(), maxRounds:m.toWin, time:Math.ceil(m.remaining/60),
       stage:m.stage, ...(m.link ? {link:{...m.link,from:stageLinks[m.stage].source,to:stageLinks[m.stage].destination,limit:stageLinks[m.stage].limit,
         ticksRemaining:m.phase==='transition'?m.phaseTicks:0}} : {}),
-      mode:m.mode, reducedEffects:m.reducedEffects, staticScenery:m.staticScenery, parcel:m.parcel, beat:m.beat, winner:m.winner, finisher:m.finisher, fighters:m.f.map(f=>({id:f.id,hp:Math.ceil(f.hp),balance:Math.ceil(f.balance),chiral:Math.floor(f.chiral),combo:f.combo,x:f.x,y:f.y,guard:f.guard,action:f.act?.key || '',stun:f.stun,move:f.lastMove,marker:f.marker ? {...f.marker} : null,scan:f.scan ? {...f.scan} : null})), training:{...m.training,...(m.dummyTape && m.training.timing ? {moves:m.f.map(trainingTiming)} : {})}};
+      mode:m.mode, reducedEffects:m.reducedEffects, staticScenery:m.staticScenery, parcel:m.parcel, beat:m.beat, winner:m.winner, finisher:m.finisher, fighters:m.f.map(f=>({id:f.id,hp:Math.ceil(f.hp),balance:Math.ceil(f.balance),chiral:Math.floor(f.chiral),combo:f.combo,x:f.x,y:f.y,guard:f.guard,action:f.act?.key || '',stun:f.stun,move:f.lastMove,marker:f.marker ? {...f.marker} : null,scan:f.scan ? {...f.scan} : null,...(f.taunt?{taunt:{...f.taunt,phase:tauntPhase(f.taunt.frame)}}:{})})), training:{...m.training,...(m.dummyTape && m.training.timing ? {moves:m.f.map(trainingTiming)} : {})}};
   }
   function validReplay(tape) {
-    if (!tape || tape.version !== 1 || !Object.hasOwn(roster,tape.p1) || !Object.hasOwn(roster,tape.p2) ||
+    if (!tape || ![1,2].includes(tape.version) || !Object.hasOwn(roster,tape.p1) || !Object.hasOwn(roster,tape.p2) ||
         !Object.hasOwn(stages,tape.stage) || !['cpu','local'].includes(tape.mode) ||
         !Number.isInteger(tape.seed) || tape.seed<0 || tape.seed>0xffffffff ||
         !Number.isInteger(tape.difficulty) || tape.difficulty<0 || tape.difficulty>2 ||
@@ -365,7 +369,8 @@
       if (!Array.isArray(event) || event.length!==2) return false;
       const [tick,code]=event;
       if (!Number.isSafeInteger(tick) || tick<previous || tick>=tape.ticks || !Number.isInteger(code) ||
-          code < -1 || code >= keyActions.length*(tape.mode==='local' ? 4 : 2)) return false;
+          code < -1 || !(code < keyActions.length*(tape.mode==='local' ? 4 : 2) ||
+            tape.version===2 && code>=40 && code<(tape.mode==='local'?44:42))) return false;
       previous=tick; return true;
     });
   }
@@ -426,10 +431,15 @@
       else for (const phase of ['rise','apex','fall']) base[phase] ||= load(jump?.[phase]);
       const options = art.wardrobe?.[id];
       const kit = options?.[o.outfits?.[side]] || options?.atelier;
+      // Gesture PNGs depict the base costume. A known alternate costume keeps
+      // its own stance until a matching gesture is produced for that costume.
+      const alternate=options?.[o.outfits?.[side]] && o.outfits[side]!=='atelier';
+      const tauntArt = alternate ? null : host.StrandPresentationAssets?.[id]?.taunt;
+      base.taunt = load(tauntArt?.src);
       const tailored = {};
       for (const [pose, file] of Object.entries(kit?.poses || {})) tailored[pose] = load(file);
       if (m.mode !== 'training') m.images[id + 'Finale'] = load(art.finishers?.[id]);
-      return {base, tailored, geometry:{...spriteGeometry[id], ...art.geometry?.[id], ...kit?.geometry},
+      return {base, tailored, tauntGeometry:tauntArt || null, geometry:{...spriteGeometry[id], ...art.geometry?.[id], ...kit?.geometry},
         generatedPoses:art.poses?.[id] || {}, poseGeometry:art.generatedGeometry?.fighters?.[id] || {},
         tailoredPoseGeometry:kit?.nativePoses ? kit.poseGeometry || {} : null};
     });
@@ -552,7 +562,8 @@
   }
   function input(player,action,down=true) {
     const m=match;
-    if (!m || m.phase==='ended' || m.paused || m.playback || ![1,2].includes(player) || !keyActions.includes(action)) return;
+    if (!m || m.phase==='ended' || m.paused || m.playback || ![1,2].includes(player) ||
+        !(keyActions.includes(action) || action==='taunt') || action==='taunt' && m.networkClock) return;
     if (player===2 && m.dummyTape) {
       if (m.training.dummy!=='record' || m.phase!=='fight' || !!m.f[1].keys[action]===!!down) return;
       m.dummyTape.events.push([m.training.frames,action,!!down]);
@@ -561,7 +572,8 @@
     }
     if (player===2 && m.mode!=='local') return;
     if (m.recording && !!m.f[player-1].keys[action]!==!!down) {
-      const code=((player-1)*keyActions.length+keyActions.indexOf(action))*2+Number(!!down);
+      const code=action==='taunt' ? 40+(player-1)*2+Number(!!down) : ((player-1)*keyActions.length+keyActions.indexOf(action))*2+Number(!!down);
+      if(action==='taunt')m.recording.version=2;
       m.recording.events.push([m.tick,code]);
     }
     applyControl(m,player,action,down);
@@ -575,6 +587,15 @@
     f.keys[action]=!!down;
   }
   function pushInput(m,f,action) {
+    // A presentation gesture is an exposed commitment, never an attack cancel.
+    // Held directions may resume afterwards; attacks pressed during it are not buffered.
+    if(f.taunt)return;
+    if(action==='taunt') {
+      if(m.networkClock || !f.grounded || f.stun || f.blockStun || f.act || f.dash || f.guard || f.keys.guard || f.keys.down)return;
+      f.queue=[];f.taps={};f.taunt={frame:0};f.guard=false;f.crouch=false;
+      f.notice=host.StrandPresentation?.profiles?.[f.id]?.title?.toUpperCase() || 'GESTE DE DÉFI';f.noticeTTL=tauntRules.total;
+      return;
+    }
     if (action==='left'||action==='right') {
       if (m.tick-(f.taps[action]??-999)<=13 && f.grounded && !f.stun && !f.act && !f.blockStun && !f.dash) {
         f.dash=12; f.drift=action==='right'?1:-1; f.taps={}; burst(m,f.x,FLOOR-3,ICE,4);
@@ -613,7 +634,7 @@
   }
   function actOnQueue(m,f,foe) {
     f.queue=f.queue.filter(q=>q.until>=m.tick);
-    if (!f.queue.length || f.stun || f.blockStun || f.dash) return;
+    if (!f.queue.length || f.stun || f.blockStun || f.dash || f.taunt) return;
     const q=f.queue[0]; const a=f.act;
     if (a) {
       const canLink=a.hitConfirmed && a.t>=moves[a.key].start+moves[a.key].active && (
@@ -705,13 +726,14 @@
     if (f.marker && f.marker.travel !== 'retrieve' && --f.marker.ttl <= 0) f.marker=null;
     if (f.scan && --f.scan.ttl <= 0) f.scan = null;
     if (f.stun>0) f.stun--; if(f.blockStun>0) f.blockStun--;
-    if (!f.act && !f.stun && !f.dash) f.face=o.x>=f.x?1:-1;
+    if(f.taunt && ++f.taunt.frame>=tauntRules.total)delete f.taunt;
+    if (!f.act && !f.stun && !f.dash && !f.taunt) f.face=o.x>=f.x?1:-1;
     actOnQueue(m,f,o);
-    f.guard=!!f.keys.guard && f.grounded && !f.act && !f.stun && !f.dash;
-    f.crouch=!!f.keys.down && f.grounded && !f.dash && !f.stun;
+    f.guard=!!f.keys.guard && f.grounded && !f.act && !f.stun && !f.dash && !f.taunt;
+    f.crouch=!!f.keys.down && f.grounded && !f.dash && !f.stun && !f.taunt;
     const walk=Number(!!f.keys.right)-Number(!!f.keys.left);
     if (f.dash>0) {f.x+=f.drift*(2+f.dash*.74);f.dash--;}
-    else if (!f.stun && !f.blockStun && !f.act && !f.guard && !f.crouch) {
+    else if (!f.stun && !f.blockStun && !f.act && !f.guard && !f.crouch && !f.taunt) {
       const delta=walk*f.spec.speed*(f.grounded?1:.78);f.x+=delta;f.walk+=Math.abs(delta)*.065;
     }
     if (f.act) {
@@ -753,7 +775,7 @@
       if (f.y<=0) {if(f.vy<-6) burst(m,f.x,FLOOR-4,stages[stageId(m)].light,5);f.y=0;f.vy=0;f.grounded=true;}
     }
     f.chiral=clamp(f.chiral+(m.mode==='training'?.34:.025),0,100);
-    if (!f.postHit && !f.guard && !f.stun && !f.act) f.balance=clamp(f.balance+.28,0,100);
+    if (!f.postHit && !f.guard && !f.stun && !f.act && !f.taunt) f.balance=clamp(f.balance+.28,0,100);
   }
   function stepDirectional(m, f, owner, action, move) {
     if (action.t === move.start) {
@@ -876,6 +898,8 @@
     victim.vx+=face*d.push*(blocked?.44:1);let shattered=false;
     if (blocked) {victim.blockStun=Math.max(victim.blockStun,9);tone(330,.075,'square',.019,110);}
     else {
+      if(victim.taunt){victim.notice='';victim.noticeTTL=0;}
+      delete victim.taunt;
       victim.stun=Math.max(victim.stun,d.stun);victim.act=null;victim.dash=0;victim.flash=7;victim.guard=false;attacker.combo++;attacker.comboTTL=d.stun+18;
       if (d.launch) {victim.vy=d.launch;victim.grounded=false;}
       tone(d.damage>8?103:160,.11,'triangle',.065,38);
@@ -1007,7 +1031,7 @@
   function winRound(m,index,reason) {
     m.winner=index+1;m.wins[index]++;m.reason=reason;
     m.phase=m.wins[index]>=m.toWin && reason==='ko'?'finish':'roundover';m.phaseTicks=m.phase==='finish'?135:96;
-    m.shots=[];clearControls(m);m.f.forEach(f=>{f.marker=null;f.scan=null;f.act=null;f.stun=0;f.crouch=false;});tone(145,.35,'sine',.045,71);notify(m,true);
+    m.shots=[];clearControls(m);m.f.forEach(f=>{delete f.taunt;f.marker=null;f.scan=null;f.act=null;f.stun=0;f.crouch=false;});tone(145,.35,'sine',.045,71);notify(m,true);
   }
   function activateFinish(m) {
     if(m.phase!=='finish')return;
@@ -1032,7 +1056,9 @@
       while (m.eventIndex<events.length && events[m.eventIndex][0]===m.tick) {
         const code=events[m.eventIndex++][1];
         if (code===-1) clearControls(m);
-        else {
+        else if(code>=40) {
+          applyControl(m,1+Math.floor((code-40)/2),'taunt',!!(code%2));
+        } else {
           const index=Math.floor(code/2);
           applyControl(m,1+Math.floor(index/keyActions.length),keyActions[index%keyActions.length],!!(code%2));
         }
@@ -1076,7 +1102,7 @@
       expired=!m.remaining;
       if ((a.hp<=0 && b.hp<=0) || (!m.remaining && a.hp===b.hp)) {
         m.sudden=true;a.hp=1;b.hp=1;m.remaining=15*60;m.shots=[];a.x=462;b.x=818;
-        for(const f of m.f) {f.marker=null;f.act=null;f.stun=0;f.queue=[];f.vx=0;f.vy=0;f.y=0;f.grounded=true;f.notice='PROCHAIN IMPACT DÉCISIF';f.noticeTTL=85;}
+        for(const f of m.f) {delete f.taunt;f.marker=null;f.act=null;f.stun=0;f.queue=[];f.vx=0;f.vy=0;f.y=0;f.grounded=true;f.notice='PROCHAIN IMPACT DÉCISIF';f.noticeTTL=85;}
       } else if (a.hp<=0 || b.hp<=0) winRound(m,a.hp>0?0:1,'ko');
       else if (!m.remaining) winRound(m,a.hp>b.hp?0:1,'time');
     }
@@ -1363,15 +1389,16 @@
   function drawFighter(m, f, index) {
     const c = m.ctx, feet = FLOOR - f.y;
     const act = f.act;
-    const {base, tailored, geometry, generatedPoses, poseGeometry, tailoredPoseGeometry} = m.fighterFrames[index];
+    const {base, tailored, geometry, generatedPoses, poseGeometry, tailoredPoseGeometry, tauntGeometry} = m.fighterFrames[index];
     const frameFor = pose => ready(tailored[pose]) ? tailored[pose] : base[pose];
-    const movement = m.phase === 'fight' && f.grounded && !f.act && !f.guard && !f.stun &&
+    const movement = m.phase === 'fight' && f.grounded && !f.act && !f.taunt && !f.guard && !f.stun &&
       !f.blockStun && !f.crouch && (f.dash || !!f.keys.left !== !!f.keys.right);
     const phase = act ? act.t / (moves[act.key].start + moves[act.key].active + moves[act.key].recover) : 0;
     const reach = act ? Math.sin(Math.PI * Math.min(1, Math.max(0, phase))) : 0;
     const performing = act && act.t >= moves[act.key].start * .61 && phase < .85;
     let pose = 'stance';
     if (f.stun > 0) pose = 'hit';
+    else if (f.taunt && tauntPhase(f.taunt.frame)==='hold' && ready(base.taunt)) pose = 'taunt';
     else if (performing) pose = 'action';
     else if (!f.grounded) {
       const phase = f.vy > 4 ? 'rise' : f.vy < -4 ? 'fall' : 'apex';
@@ -1383,7 +1410,7 @@
     const image = frameFor(pose);
     // Select geometry from the actual ready source: an unavailable outfit pose
     // falls back to the base image with that base image's own measured crop.
-    const nativeGeometry = image === tailored[pose]
+    const nativeGeometry = pose==='taunt' ? tauntGeometry : image === tailored[pose]
       ? (tailoredPoseGeometry ? tailoredPoseGeometry[pose] || {} : null)
       : (generatedPoses[pose] && image === base[pose] ? poseGeometry[pose] || {} : null);
     const lost = m.winner && m.winner !== index + 1 && ['finish','cinema','roundover','ended'].includes(m.phase);
@@ -1810,5 +1837,5 @@
     }
   };
 
-  host.StrandFight = {start, stop, pause, input, setTraining, setSound, setAmbienceVolume, setAudioSuspended, setReducedEffects, setStaticScenery, snapshot, validReplay, network};
+  host.StrandFight = {start, stop, pause, input, setTraining, setSound, setAmbienceVolume, setAudioSuspended, setReducedEffects, setStaticScenery, snapshot, validReplay, network, tauntRules};
 })(window);

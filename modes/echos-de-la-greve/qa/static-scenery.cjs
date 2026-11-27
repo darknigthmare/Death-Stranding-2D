@@ -8,10 +8,16 @@ const {execFileSync}=require('node:child_process'),{createHash}=require('node:cr
 const root=path.resolve(__dirname,'..'),repo=path.resolve(root,'../..');
 const source=file=>fs.readFileSync(path.join(root,file),'utf8'),clone=value=>JSON.parse(JSON.stringify(value));
 const sha=value=>createHash('sha256').update(value).digest('hex');
-const baseline='c3fa7ead88f1667b80202a44dca6549784021866';
+// Keep the original historical comparison by default. A later feature lot may
+// name its exact starting commit explicitly; every checkpoint equality remains
+// unchanged, and the selected reference is retained in the output evidence.
+const historicalBaseline='c3fa7ead88f1667b80202a44dca6549784021866';
+const requestedBaseline=process.argv.find(arg=>arg.startsWith('--baseline='))?.slice('--baseline='.length);
+const baseline=requestedBaseline||historicalBaseline;
+if(!/^[A-Za-z0-9][A-Za-z0-9._/-]{0,199}$/.test(baseline))throw new Error('Invalid --baseline reference. Use a commit SHA, branch or tag.');
 const previous=file=>execFileSync('git',['show',baseline+':modes/echos-de-la-greve/'+file],{cwd:repo,encoding:'utf8'});
 const oldFight=previous('fight.js'),oldBoss=previous('boss.js');
-const report={date:new Date().toISOString(),browser:false,nativeCanvas:false,baselineCommit:baseline,
+const report={date:new Date().toISOString(),browser:false,nativeCanvas:false,baselineCommit:baseline,historicalBaseline,baselineExplicit:requestedBaseline!==undefined,
   baselineMethod:'Previous engines and current engines receive the same current content/assets; only runtime changes are compared.',
   staticAnimatedCheckpoints:0,baselineCheckpoints:0,bossStaticAnimatedCheckpoints:0,bossBaselineCheckpoints:0,
   preferenceChanges:0,checks:[],nativeStages:[],nativeBossStages:[]};

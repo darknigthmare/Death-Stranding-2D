@@ -33,14 +33,17 @@ function assetFiles(baseRoot = root) {
     }
   }
   for (const folder of ['fighters','finishers','props','projectiles','stages','story','bosses','static-20261125','static-universe-20261125',
-    'static-completion-20261125','story-completion-20261125','static-domains-20261125','static-extension-20261125']) visit('assets/' + folder);
+    'static-completion-20261125','story-completion-20261125','static-domains-20261125','static-extension-20261125',
+    'presentation-20261127']) visit('assets/' + folder);
   return files.sort();
 }
 function gameVersion(baseRoot = root, assets = assetFiles(baseRoot)) {
   const hash = createHash('sha256');
   for (const file of ['fight.js','content.js','asset-geometry-20261124.js','assets.js','boss-geometry-20261124.js','boss-assets.js','boss.js',
     'app.js','campaign.js','campaign.css','static-assets.html','static-assets.css','static-assets.js','static-assets-data.js','archives.html',
-    'input.js','input.css','moves-data.js','relationships.js','lessons.js','lessons.css','boss-data.js','boss-guide.js','boss-guide.css','netplay.js','netplay-server.cjs']) {
+    'input.js','input.css','moves-data.js','relationships.js','lessons.js','lessons.css','boss-data.js','boss-guide.js','boss-guide.css',
+    'presentation.js','presentation.css','presentation-assets.js','progression.html','progression.js','progression.css','progression-data.js',
+    'netplay.js','netplay-server.cjs']) {
     hash.update(file);
     hash.update(fs.readFileSync(path.join(baseRoot,file)));
   }
@@ -137,11 +140,28 @@ function roomService(version, clock = () => performance.now()) {
 const statics = new Set(['index.html','style.css','app.js','fight.js','content.js','asset-geometry-20261124.js','assets.js','tournament.js','netplay.html','netplay.js','netplay.css',
   'boss.js','boss-assets.js','boss-geometry-20261124.js','campaign.js','campaign.css','archives.html','input.js','input.css','moves-data.js','relationships.js',
   'static-assets.html','static-assets.css','static-assets.js','static-assets-data.js','lessons.js','lessons.css','boss-data.js','boss-guide.js','boss-guide.css',
+  'presentation.js','presentation.css','presentation-assets.js','progression.html','progression.js','progression.css','progression-data.js',
   'duel-originel/index.html','duel-originel/style.css','duel-originel/interface.js','duel-originel/moteur.js','duel-originel/scene.js']);
 const documents = new Set(['docs/combat/BIBLE_COMBAT.md','docs/combat/UNIVERS_DS.md','docs/combat/REGISTRE_PRODUCTION.md',
   'docs/combat/ACTIONS_ET_IA.md','docs/combat/RELATIONS_SIMULATEUR.md','docs/combat/BOSS_ET_RENCONTRES.md',
-  'docs/combat/production/20261125-extension/DOJO.md']);
-const types = {'.html':'text/html; charset=utf-8','.css':'text/css','.js':'text/javascript','.webp':'image/webp','.png':'image/png','.md':'text/plain; charset=utf-8'};
+  'docs/combat/production/20261125-extension/DOJO.md','docs/combat/EXTENSIONS_COMBAT.md',
+  'docs/combat/references/Combat_Games_Guide_General_v1.0.txt',
+  'docs/combat/references/Combat_Games_Extension_01_Tag_Taunts_Bonus_v1.0.txt',
+  'docs/combat/references/Combat_Games_Extension_02_Slots_Verrouilles_Deblocages_Abonnes_v1.0.txt',
+  'docs/combat/references/combat-guides-provenance.json',
+  'docs/combat/production/20261127-extensions/BILAN.md',
+  'docs/combat/production/20261127-extensions/PRESENTATION.md',
+  'docs/combat/production/20261127-extensions/PROGRESSION.md',
+  'docs/combat/production/20261127-extensions/ASSETS.md']);
+const proofRoot='docs/combat/production/20261127-extensions/';
+for(const file of ['native-inventory.json','generation-provenance.json','inventory-verification.json',
+  'preexisting-image-inventory.json','presentation-native.json','presentation-verification.json',
+  'commandes-verification.json','progression-verification.json','moves-domain-verification.json',
+  'lessons-verification.json','regression-verification.json','relay-verification.json'])documents.add(proofRoot+file);
+for(const id of Object.keys(fighters))for(const facing of ['left','right'])documents.add(proofRoot+'presentation-renders/'+id+'-'+facing+'.webp');
+documents.add(proofRoot+'presentation-renders/mama-viaduc-preserved.webp');
+const types = {'.html':'text/html; charset=utf-8','.css':'text/css','.js':'text/javascript','.webp':'image/webp','.png':'image/png',
+  '.md':'text/plain; charset=utf-8','.txt':'text/plain; charset=utf-8','.json':'application/json; charset=utf-8'};
 function openRelay(clock) {
   const assets = new Set(assetFiles());
   const version = gameVersion(root,assets);

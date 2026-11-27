@@ -13,12 +13,13 @@
     {id:'special',title:'Signature',short:'Spécial',pad:'Bouton de droite (B / ○)'},
     {id:'guard',title:'Garde',short:'Garde',pad:'Épaule ou gâchette gauche (LB / L1 · LT / L2)'},
     {id:'throw',title:'Projection · Colis / Appui en Boss',short:'Prise',pad:'Épaule droite (RB / R1)'},
-    {id:'finish',title:'Finalité',short:'Fin',pad:'Gâchette droite (RT / R2)'}
+    {id:'finish',title:'Finalité',short:'Fin',pad:'Gâchette droite (RT / R2)'},
+    {id:'taunt',title:'Geste de défi · duels locaux',short:'Défi',pad:'Clic du stick gauche (L3) · duels locaux'}
   ];
   const actionIds=actions.map(a=>a.id), ids=['1','2','3'],deadzones=[.15,.2,.25,.3,.4,.5,.6];
   const defaults={
-    1:{left:['q','a'],right:['d'],up:['z','w'],down:['s'],light:['f'],heavy:['g'],special:['h'],guard:['r'],throw:['t'],finish:['y']},
-    2:{left:['ArrowLeft'],right:['ArrowRight'],up:['ArrowUp'],down:['ArrowDown'],light:['j'],heavy:['k'],special:['l'],guard:['u'],throw:['i'],finish:['o']}
+    1:{left:['q','a'],right:['d'],up:['z','w'],down:['s'],light:['f'],heavy:['g'],special:['h'],guard:['r'],throw:['t'],finish:['y'],taunt:['b']},
+    2:{left:['ArrowLeft'],right:['ArrowRight'],up:['ArrowUp'],down:['ArrowDown'],light:['j'],heavy:['k'],special:['l'],guard:['u'],throw:['i'],finish:['o'],taunt:['p']}
   };
   const names={ArrowLeft:'←',ArrowRight:'→',ArrowUp:'↑',ArrowDown:'↓',' ':'Espace',Enter:'Entrée',Backspace:'Retour arrière',Delete:'Suppr.',Insert:'Inser.',Home:'Début',End:'Fin',PageUp:'Page ↑',PageDown:'Page ↓'};
   const clone=value=>JSON.parse(JSON.stringify(value));
@@ -49,12 +50,31 @@
         return Array.isArray(keys)&&keys.length>=1&&keys.length<=2&&keys.every(key=>normaliseKey(key)===key);
       }))&&!collision(profile.bindings));
   }
+  function upgrade(value) {
+    // Preserve every existing binding, profile name and active profile. Select a
+    // free key for the added command instead of replacing a user's remapping.
+    const next=clone(value);let changed=false;
+    if(next?.version!==1 || !Array.isArray(next.profiles))return {value:next,changed};
+    for(const profile of next.profiles){
+      if(!profile?.bindings?.[1] || !profile?.bindings?.[2])continue;
+      const used=new Set([1,2].flatMap(player=>Object.values(profile.bindings[player]).flat()));
+      for(const player of [1,2])if(profile.bindings[player].taunt===undefined){
+        const candidates=[...defaults[player].taunt,...'bpcvnm1234567890abcdefghijklmnopqrstuvwxyz,.;/!@#$%^&*()-_=+[]{}?'];
+        const key=candidates.find(key=>!used.has(key)&&normaliseKey(key)===key);
+        if(key){profile.bindings[player].taunt=[key];used.add(key);changed=true;}
+      }
+    }
+    return {value:next,changed};
+  }
   function createSettings(storage) {
     let data=fresh(),message='',saved=true;const listeners=new Set();
     try {
       storage=storage===undefined?host.localStorage:storage;
       const raw=storage?.getItem(storeKey);
-      if(raw!=null){const parsed=JSON.parse(raw);if(valid(parsed))data=clone(parsed);else message='Le profil enregistré était invalide. Les commandes par défaut sont chargées.';}
+      if(raw!=null){const migrated=upgrade(JSON.parse(raw));if(valid(migrated.value)){
+        data=migrated.value;
+        if(migrated.changed){message='Geste de défi ajouté sur des touches libres. Tes commandes existantes sont conservées.';storage.setItem(storeKey,JSON.stringify(data));}
+      }else message='Le profil enregistré était invalide. Les commandes par défaut sont chargées.';}
       if(!storage)saved=false;
     }catch{message='Les commandes sont disponibles pour cette session ; la sauvegarde locale est inaccessible.';saved=false;}
     const current=()=>data.profiles.find(profile=>profile.id===data.active);
@@ -100,7 +120,7 @@
       setGamepad(enabled,deadzone=data.gamepad.deadzone){const next=clone(data);next.gamepad={enabled:!!enabled,deadzone:Number(deadzone)};return persist(next);},
       setNetworkPlayer(player){const next=clone(data);next.networkPlayer=Number(player);return persist(next);},
       reload(){
-        try{const raw=storage?.getItem(storeKey),next=raw==null?fresh():JSON.parse(raw);if(!valid(next))return false;data=clone(next);saved=true;message='Profil actualisé depuis un autre onglet.';for(const listener of listeners)listener();return true;}catch{return false;}
+        try{const raw=storage?.getItem(storeKey),migrated=raw==null?{value:fresh(),changed:false}:upgrade(JSON.parse(raw)),next=migrated.value;if(!valid(next))return false;data=clone(next);saved=true;if(migrated.changed)storage.setItem(storeKey,JSON.stringify(data));message='Profil actualisé depuis un autre onglet.';for(const listener of listeners)listener();return true;}catch{return false;}
       }
     };
   }
@@ -116,7 +136,7 @@
       return true;
     }
     function press(token,player,action) {
-      if(held.has(token)||!accepts(player)||!actionIds.includes(action))return false;
+      if(held.has(token)||!accepts(player)||!actionIds.includes(action)||options.acceptsAction?.(action)===false)return false;
       const exists=[...held.values()].some(item=>item.player===player&&item.action===action);
       held.set(token,{player,action});if(!exists)emit(player,action,true);return true;
     }
@@ -131,7 +151,7 @@
       if(['Enter',' '].includes(event.key)&&event.target?.closest?.('button,a,summary'))return;
       if(event.key==='Escape'&&canPause(1)){event.preventDefault();if(!event.repeat){releaseAll();options.onPause?.(1);}return;}
       const key=normaliseKey(event.key),binding=key&&settings.find(key);
-      if(!binding||!accepts(binding.player))return;
+      if(!binding||!accepts(binding.player)||options.acceptsAction?.(binding.action)===false)return;
       event.preventDefault();if(!event.repeat)press(token(event),binding.player,binding.action);
     }
     function keyup(event){release(token(event));}
@@ -140,7 +160,7 @@
       const down=index=>!!pad.buttons?.[index]?.pressed||Number(pad.buttons?.[index]?.value)>.5;
       const x=Number.isFinite(pad.axes?.[0])?pad.axes[0]:0,y=Number.isFinite(pad.axes?.[1])?pad.axes[1]:0;
       return {left:down(14)||x < -deadzone,right:down(15)||x > deadzone,up:down(12)||y < -deadzone||down(0),down:down(13)||y > deadzone,
-        light:down(2),heavy:down(3),special:down(1),guard:down(4)||down(6),throw:down(5),finish:down(7),pause:down(9)};
+        light:down(2),heavy:down(3),special:down(1),guard:down(4)||down(6),throw:down(5),finish:down(7),taunt:down(10),pause:down(9)};
     }
     function poll() {
       if(destroyed)return;
@@ -188,6 +208,7 @@
   }
   function mountEditor(container,{settings,controller,network=false}={}) {
     if(!container||!settings)return {destroy(){},isCapturing:()=>false,cancel(){}};
+    const visibleActions=actions.filter(action=>!network || action.id!=='taunt');
     let player=network?settings.state().networkPlayer:1,capture=null,removed=false;
     container.innerHTML='<section class="inputEditor" aria-label="Configurer les commandes"><div data-input-body></div><p class="inputNotice" data-input-notice role="status" aria-live="polite"></p><p class="inputDevice" data-input-device aria-live="polite"></p></section>';
     const body=container.querySelector('[data-input-body]'),notice=container.querySelector('[data-input-notice]'),device=container.querySelector('[data-input-device]');
@@ -205,14 +226,14 @@
         '<div class="inputPlayers" aria-label="Joueur à configurer">'+[1,2].map(p=>'<button type="button" data-input-player="'+p+'" aria-pressed="'+(p===player)+'">Joueur '+p+'</button>').join('')+'</div>'+
         (capture?'<div class="inputCapture"><strong>J'+player+' · '+esc(actions.find(a=>a.id===capture.action).title)+'</strong><p>Appuie sur la nouvelle touche. Échap annule ; Tab quitte la capture.</p><button type="button" data-input-edit="cancel">Annuler la saisie</button></div>':'')+
         '<div class="inputTable"><table><caption>Clavier J'+player+' · '+esc(profile.name)+'</caption><thead><tr><th scope="col">Action</th><th scope="col">Touche principale</th><th scope="col">Seconde touche</th></tr></thead><tbody>'+
-        actions.map(action=>'<tr><th scope="row">'+action.title+'</th>'+[0,1].map(slot=>'<td><button type="button" data-input-edit="bind" data-input-action="'+action.id+'" data-input-slot="'+slot+'" aria-label="J'+player+' · '+action.title+' · '+(slot?'seconde touche':'touche principale')+' · '+esc(profile.bindings[player][action.id][slot]?keyLabel(profile.bindings[player][action.id][slot]):'aucune')+'">'+esc(profile.bindings[player][action.id][slot]?keyLabel(profile.bindings[player][action.id][slot]):'Ajouter')+'</button>'+
+        visibleActions.map(action=>'<tr><th scope="row">'+action.title+'</th>'+[0,1].map(slot=>'<td><button type="button" data-input-edit="bind" data-input-action="'+action.id+'" data-input-slot="'+slot+'" aria-label="J'+player+' · '+action.title+' · '+(slot?'seconde touche':'touche principale')+' · '+esc(profile.bindings[player][action.id][slot]?keyLabel(profile.bindings[player][action.id][slot]):'aucune')+'">'+esc(profile.bindings[player][action.id][slot]?keyLabel(profile.bindings[player][action.id][slot]):'Ajouter')+'</button>'+
           (slot&&profile.bindings[player][action.id][slot]?'<button type="button" class="inputRemove" data-input-edit="remove" data-input-action="'+action.id+'" aria-label="Retirer la seconde touche de '+action.title+'">Retirer</button>':'')+'</td>').join('')+'</tr>').join('')+'</tbody></table></div>'+
         '<div class="inputRestore"><button type="button" data-input-edit="restore-player">Restaurer J'+player+'</button><button type="button" data-input-edit="restore-all">Restaurer J1 et J2</button></div>'+
         '<p>Échap reste réservé à la pause et à l’annulation. Tab garde la navigation. Les raccourcis Ctrl, Alt et ⌘ ne déclenchent aucun coup. Le Duel originel conserve ses propres commandes.</p>'+
         '<fieldset class="inputGamepad"><legend>Manette standard</legend><label><input type="checkbox" data-input-gamepad'+(state.gamepad.enabled?' checked':'')+'> Activer la manette</label>'+
         '<label>Zone neutre du stick <select data-input-deadzone>'+deadzones.map(value=>'<option value="'+value+'"'+(value===state.gamepad.deadzone?' selected':'')+'>'+Math.round(value*100)+' %</option>').join('')+'</select></label>'+
         '<p>Les deux premières manettes reconnues prennent J1 puis J2 en local. Une déconnexion ne réattribue pas la manette restante. Relâche les sticks et boutons après une pause ou un changement de profil.</p>'+
-        '<details><summary>Disposition de la manette</summary><ul>'+actions.map(action=>'<li><strong>'+action.title+' :</strong> '+action.pad+'</li>').join('')+'</ul><p>Menu / Options : pause dans les modes hors ligne. Les lettres et symboles sont des repères ; la position du bouton fait foi. Les menus se parcourent au clavier ou au toucher.</p></details></fieldset>';
+        '<details><summary>Disposition de la manette</summary><ul>'+visibleActions.map(action=>'<li><strong>'+action.title+' :</strong> '+action.pad+'</li>').join('')+'</ul><p>Menu / Options : pause dans les modes hors ligne. Les lettres et symboles sont des repères ; la position du bouton fait foi. Les menus se parcourent au clavier ou au toucher.</p></details></fieldset>';
       if(focusSelector)body.querySelector(focusSelector)?.focus({preventScroll:true});
       deviceText();
     }

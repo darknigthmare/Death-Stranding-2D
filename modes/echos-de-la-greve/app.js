@@ -9,6 +9,7 @@
   const input = window.StrandInput;
   const inputSettings = input.createSettings();
   let inputController=null,inputEditor=null,manualReturnFocus=null,pendingDuel=null;
+  let presentationController=null,previousPresentation=[];
   const campaignContent = window.StrandCampaign;
   const campaign = campaignContent?.createStore();
   const lessonContent = window.StrandLessons;
@@ -78,10 +79,23 @@
   }
   const arrow = '<span aria-hidden="true" class="arrow">↗</span>';
   const back = () => button('home','← Accueil','back');
+  const presentationPanel=()=>window.StrandPresentation?.markup()||'';
+  function presentationSlots(){
+    const slots=[{id:config.p1,outfit:config.outfit1,label:'J1'}];
+    if(['versus','training'].includes(config.mode)||config.mode==='tournament'&&config.humans==='2')
+      slots.push({id:config.p2,outfit:config.outfit2,label:config.mode==='training'?'Mannequin':config.opponent==='cpu'&&config.mode==='versus'?'Adversaire IA':'J2'});
+    return slots;
+  }
   function setScreen(name, markup) {
+    presentationController?.destroy();presentationController=null;
     screen = name;
     document.body.classList.toggle('playing', name === 'fight');
     view.innerHTML = markup;
+    if(name==='select'){
+      const panel=view.querySelector('[data-presentation]'),slots=presentationSlots();
+      if(panel)presentationController=window.StrandPresentation?.mount(panel,{slots,previous:previousPresentation,reduced:reducedEffects});
+      previousPresentation=slots;
+    }else previousPresentation=[];
     view.querySelectorAll('[data-layered-stage]').forEach(preview => {
       const required = [...preview.querySelectorAll('.stageSky,.stageDistant,.stageFloor')];
       const update = () => preview.classList.toggle('stageReady',
@@ -126,7 +140,7 @@
       '<div class="actions">' + button('mode','Jouer l’histoire ' + arrow,'darkbtn','data-mode="story"') + '</div></div></section>' +
       '<section class="shelf"><div class="shelfhead"><h2>Modes de combat</h2></div><div class="tiles">' + tiles + '</div><div class="archives">' +
       button('stageGallery','Parcourir les arènes','mini') + button('gallery','Galerie des scènes','mini') + button('campaignGallery','Interludes des Nœuds rompus','mini') + '<a class="mini" href="duel-originel/index.html">Duel originel · Sam / Higgs</a><a class="mini" href="netplay.html">Salon privé en réseau</a>' +
-      '<a class="mini" href="archives.html">Archives de Bridges</a><a class="mini" href="static-assets.html">Silhouettes et horizons</a><a class="mini campaignLink" href="../../JOUER.html">Retour à la campagne ↗</a></div></section>');
+      '<a class="mini" href="archives.html">Archives de Bridges</a><a class="mini" href="static-assets.html">Silhouettes et horizons</a><a class="mini" href="progression.html">Dossiers de liaison</a><a class="mini campaignLink" href="../../JOUER.html">Retour à la campagne ↗</a></div></section>');
   }
   function stageFor(id) { return fighters[id].route[0][1]; }
   function stagePreview(id) {
@@ -215,7 +229,7 @@
     const startLabel = mode === 'story' && chapter() > 0 && chapter() < 3 ? 'Reprendre le duel ' + (chapter() + 1) :
       ({challenges:'Lancer l’épreuve',story:'Ouvrir l’histoire',arcade:'Lancer le parcours',tournament:cup ? 'Créer un nouveau tableau' : 'Tirer le tableau',versus:'Lancer le duel',training:'Entrer dans l’arène'})[mode];
     setScreen('select','<section class="shell">' + back() + '<div class="pagehead"><div><div class="eyebrow">' + modes[mode] +
-      '</div><h1>Choix du combattant</h1></div></div><div class="chars">' + cards + '</div><div class="options">' + fields +
+      '</div><h1>Choix du combattant</h1></div></div><div class="chars">' + cards + '</div>'+presentationPanel()+'<div class="options">' + fields +
       '</div>' + (['versus','training'].includes(mode) ? stagePreview(config.stage)+stageRule(config.stage) : '') +
       '<div class="brief"><strong>' + character.special + '</strong> · ' + character.tip + '</div>' +
       (['story','arcade'].includes(mode) ? '<p class="montage">' + (mode === 'story' ? '<b>' + character.story + '</b><br>' : '') + route + '</p>' : '') +
@@ -251,7 +265,7 @@
     setScreen('select','<section class="shell">'+back()+'<div class="pagehead"><div><div class="eyebrow">Boss Battle</div><h1>Les grandes rencontres</h1></div>'+
       '<p>Choisis ta cible et ton porteur. Observe l’annonce, ouvre une brèche, puis remplis l’objectif.</p></div>'+resume+
       '<div class="bossCards">'+cards+'</div><div class="fieldhead"><h2>Votre combattant</h2></div><div class="chars">'+fighterCards+'</div>'+
-      '<div class="options">'+field+'</div><div class="bossBrief">'+stagePreview(config.bossStage==='recommended'?selected.stage:config.bossStage)+
+      presentationPanel()+'<div class="options">'+field+'</div><div class="bossBrief">'+stagePreview(config.bossStage==='recommended'?selected.stage:config.bossStage)+
       '<div><h2>'+esc(selected.name)+'</h2><p>'+esc(selected.goal)+'</p><p class="hint">'+esc(fighters[config.p1].special)+' · '+esc(fighters[config.p1].tip)+
       '</p>'+recordLine+'<p class="hint">La rencontre en cours et les records de Boss Battle sont sauvegardés séparément.</p>'+
       '<div class="actions">'+button('startBoss','Nouvelle tentative '+arrow)+button('controls','Commandes','secondary')+'</div></div></div>'+bossGuide({boss:config.boss,context:'boss',p1:config.p1,difficulty:config.difficulty})+'</section>');
@@ -309,7 +323,7 @@
       '<div class="brief"><strong>120 PV au départ.</strong> La vie restante est conservée ; chaque victoire rend 20 PV, sans dépasser 120. '+
       'L’énergie chirale et la garde reviennent à 100 à chaque rencontre. Les effets, projectiles et colis sont réinitialisés. Une défaite termine la série.</div>'+
       '<ol class="montage">'+order.map(id=>'<li>'+esc(bossEngine.encounters[id].name)+' · '+esc(stages[bossEngine.encounters[id].stage])+'</li>').join('')+'</ol>'+
-      '<div class="fieldhead"><h2>Votre combattant pour une nouvelle série</h2></div><div class="chars">'+fighterCards+'</div><div class="options">'+
+      '<div class="fieldhead"><h2>Votre combattant pour une nouvelle série</h2></div><div class="chars">'+fighterCards+'</div>'+presentationPanel()+'<div class="options">'+
       outfitField(1,config.p1)+choose('difficulty','Difficulté de la série',{easy:'Débutant',normal:'Porteur',hard:'Vétéran'})+ambienceControl()+'</div>'+recordLine+
       '<p class="hint">La reprise conserve le combattant, la tenue et la difficulté de la série sauvegardée. Les rencontres suivent leurs arènes conseillées. '+
       'Les bilans et la reprise de Boss Rush sont séparés de Boss Battle ; un entraînement libre reste accessible depuis l’accueil.</p><div class="actions">'+
@@ -671,7 +685,7 @@
       return '<button type="button" aria-label="'+esc(hint)+'" title="'+esc(hint)+'" data-input-title="'+esc(bossLabel||title)+'" data-p="' + player + '" data-input="' + action + '">' + (bossLabel || label) + '</button>';
     }
     return '<div class="touchRow"><small>J' + player + '</small><div class="touch"><div>' + keys.slice(0,4).map(control).join('') +
-      '</div><div>' + keys.slice(4).map(control).join('') + '</div></div></div>';
+      '</div><div>' + keys.slice(4).filter(item=>activeFight?.kind!=='boss'||item.id!=='taunt').map(control).join('') + '</div></div></div>';
   }
   const dojoSeconds=new Intl.NumberFormat('fr-FR',{minimumFractionDigits:1,maximumFractionDigits:1});
   function lessonSelection() {
@@ -879,7 +893,7 @@
     const campaignChapter=campaignContent?.chapters[campaign?.progress().run?.chapter||0];
     const bossMode=activeFight?.kind==='boss' || (!activeFight && (['boss','bossrush'].includes(config.mode)||config.mode==='campaign'&&campaignChapter?.kind==='boss'));
     const table = '<table><thead><tr><th>Action</th><th>Joueur 1</th>'+(bossMode?'':'<th>Joueur 2</th>')+'</tr></thead><tbody>' +
-      keys.map(({id:action,title}) => '<tr><td>' + (bossMode?({throw:'Prendre / poser / livrer · frappe d’appui',finish:'Charge chirale'})[action]||title:title) + '</td><td>' + keyText(1,action) + '</td>'+(bossMode?'':'<td>' + keyText(2,action) + '</td>')+'</tr>').join('') +
+      keys.filter(item=>!bossMode||item.id!=='taunt').map(({id:action,title}) => '<tr><td>' + (bossMode?({throw:'Prendre / poser / livrer · frappe d’appui',finish:'Charge chirale'})[action]||title:title) + '</td><td>' + keyText(1,action) + '</td>'+(bossMode?'':'<td>' + keyText(2,action) + '</td>')+'</tr>').join('') +
       '</tbody></table>';
     const fighterIds = [activeFight?.p1 || (config.mode==='campaign'?campaignChapter?.p1:null) || config.p1];
     if (acceptsSecondPlayer() && !fighterIds.includes(activeFight.p2)) fighterIds.push(activeFight.p2);
@@ -899,7 +913,7 @@
     }).join('');
     document.getElementById('keys').innerHTML = '<div class="options">'+ambienceControl()+'</div><div class="commandSheet">'+table+'</div>' +
       (bossMode ? '<p class="hint">Les grandes rencontres se jouent avec J1. Les directions déplacent, font sauter et accroupir le porteur. Combine bas et garde contre les tirs bas. Les zones pointillées annoncent les attaques à esquiver : sors de la zone ou saute selon le signal. Léger et lourd frappent ; Signature utilise la technique directionnelle. Charge chirale ('+keyText(1,'finish')+') libère 70 points de jauge. La commande colis / appui ('+keyText(1,'throw')+') prend, pose ou livre un colis ; le dépôt est à gauche. Les grandes cibles résistent à la projection et au soulèvement. Échap met en pause. Les dégâts, durées et effets de projection des techniques ci-dessous sont adaptés aux grandes rencontres.</p>' :
-      '<p class="hint">Appuie deux fois dans une direction pour une ruée. Combine bas et léger pour balayer, bas et lourd pour soulever. Sur impact, enchaîne léger, lourd et signature. La finalité s’ouvre au dernier K.-O. Échap met le duel en pause.</p>') +
+      '<p class="hint">Appuie deux fois dans une direction pour une ruée. Combine bas et léger pour balayer, bas et lourd pour soulever. Sur impact, enchaîne léger, lourd et signature. La finalité s’ouvre au dernier K.-O. Échap met le duel en pause.</p><p class="hint">Geste de défi : '+keyText(1,'taunt')+' pour J1, '+keyText(2,'taunt')+' pour J2, ou L3. Depuis la position neutre au sol, tu t’exposes pendant 0,9 s : entrée, tenue, sortie. Aucun dégât, bonus ou protection. Un impact interrompt le geste ; les attaques ne peuvent pas l’annuler.</p>') +
       '<p class="hint">Maintiens la direction au moment de la signature ('+keyText(1,'special')+' pour J1'+(bossMode?'':', '+keyText(2,'special')+' pour J2')+'). « Avant » pointe toujours vers l’adversaire.</p>' + moveLists+'<div id="inputEditor"></div>';
     inputEditor=input.mountEditor(document.getElementById('inputEditor'),{settings:inputSettings,controller:inputController});
     manual.showModal();
@@ -922,6 +936,7 @@
     control.title = reducedEffects ? 'Animations de décor et secousses réduites' : 'Activer la réduction des animations de décor et des secousses';
     engine?.setReducedEffects?.(reducedEffects);
     bossEngine?.setReducedEffects?.(reducedEffects);
+    presentationController?.setReduced(reducedEffects);
   }
   function updateScenery() {
     const control=document.getElementById('scenery');
@@ -966,6 +981,19 @@
   view.addEventListener('click',event => {
     const target = event.target.closest('[data-act]'); if (target) actions[target.dataset.act]?.(target);
   });
+  function previewCharacter(event){
+    if(screen!=='select')return;
+    const card=event.target.closest?.('[data-act="pick"]');
+    if(card)presentationController?.preview(card.dataset.id);
+  }
+  view.addEventListener('pointerover',previewCharacter);
+  view.addEventListener('focusin',previewCharacter);
+  view.addEventListener('pointerout',event=>{
+    if(event.target.closest?.('[data-act="pick"]')&&!event.relatedTarget?.closest?.('[data-act="pick"]'))presentationController?.restore();
+  });
+  view.addEventListener('focusout',event=>{
+    if(event.target.closest?.('[data-act="pick"]')&&!event.relatedTarget?.closest?.('[data-act="pick"]'))presentationController?.restore();
+  });
   view.addEventListener('change',event => {
     const target = event.target, key = target.dataset.option;
     if(target.matches?.('[data-lesson-fighter]')&&fighters[target.value]){
@@ -1009,6 +1037,7 @@
   window.addEventListener('pagehide',stopFight);
   window.addEventListener('pageshow',event => { if (event.persisted && screen === 'fight') home(); });
   inputController=input.createController({settings:inputSettings,
+    acceptsAction:action=>action!=='taunt'||activeFight?.kind!=='boss',
     accepts:player=>screen==='fight'&&!!activeFight&&!paused&&!manual.open&&!activeFight.replay&&!lessonRun?.settled&&(player===1||player===2&&acceptsSecondPlayer()),
     canPause:player=>screen==='fight'&&!!activeFight&&!manual.open&&!lessonRun?.settled&&(player===1||player===2&&acceptsSecondPlayer()),
     onInput:(player,action,down)=>{activeEngine()?.input(player,action,down);if(!down)view.querySelectorAll('[data-p="'+player+'"][data-input="'+action+'"]').forEach(button=>button.classList.remove('held'));},onPause:()=>setPause(!paused),

@@ -1,0 +1,75 @@
+{
+  "date": "2026-11-27T05:43:43.663Z",
+  "passed": true,
+  "method": "Real JavaScript engine + app driven by normal logical or DOM events; Canvas/DOM are explicit test adapters. No browser pixels or physical controller claim.",
+  "browser": false,
+  "nativeCanvas": false,
+  "checks": [
+    {
+      "name": "Eight exposed cycles have 10/28/16 ticks, no damage or resource bonus, and resume held movement",
+      "passed": true
+    },
+    {
+      "name": "Airborne, crouching, guarding and attacking states reject a taunt without cancelling their action",
+      "passed": true
+    },
+    {
+      "name": "A melee impact interrupts the gesture; a held guard cannot remove its vulnerability",
+      "passed": true
+    },
+    {
+      "name": "A remote tar attack interrupts a taunt without suppressing the ordinary projectile mechanics",
+      "passed": true
+    },
+    {
+      "name": "Pause freezes the gesture; resume and stop do not leave an active gesture",
+      "passed": true
+    },
+    {
+      "name": "The private-room clock ignores the new action and keeps its existing checkpoint fields",
+      "passed": true
+    },
+    {
+      "name": "Legacy recordings stay version 1; taunt recordings use v2 with both old J2 and new gesture codes intact",
+      "passed": true
+    },
+    {
+      "name": "Legacy remapping migrates only missing taunt keys, preserves collisions and persists deterministically",
+      "passed": true
+    },
+    {
+      "name": "Keyboard, tactile and L3 share the new logical action; excluded contexts never emit it",
+      "passed": true
+    },
+    {
+      "name": "Selection previews do not confirm; replacements, mirror choices and independent outfits keep their own identity",
+      "passed": true
+    },
+    {
+      "name": "Rapid selection cleans previous timers; reduced motion retains the same choice and removes exiting ghosts",
+      "passed": true
+    },
+    {
+      "name": "Duel touch controls expose taunt while Boss controls exclude it",
+      "passed": true
+    },
+    {
+      "name": "Base taunt art is never loaded for Mama viaduc; a stale outfit from a different fighter cannot hide a valid base gesture",
+      "passed": true
+    }
+  ],
+  "counts": {
+    "fighterCycles": 8,
+    "replaySamples": 548,
+    "selectionChanges": 40
+  },
+  "sourceSHA256": {
+    "fight.js": "544e1f64c671af20c8fff4b9e1474ac0b723f44ef6c6d30e90d67ffef4233781",
+    "app.js": "428224866fdc5905021cc94cc42f4ca4e7981a8a398046bf14450df222b9a5ed",
+    "input.js": "0f6d59d605c82f69b7193d171e0b222c41823e9d01ec3c2ed98453052c853c26",
+    "netplay.js": "5aa9050b2d85b248ab725c90e151e0f02f78e7578b441797d01ea382c88681bf",
+    "presentation.js": "f630bed6b95bb5288f6f9a3a93afe77c6fea5e17c4e71c0f61804b9e0d1619ec",
+    "presentation.css": "d0ed4bcb6cea29695585975cb453c226b85036f208060bd1dac9491dd7eb9bf4",
+    "index.html": "c925ca635deee6e674230ac8829ebe9aa761afee53aa1954fd2ce149b072ea37"
+  }
+}

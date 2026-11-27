@@ -2,7 +2,9 @@
 
 ## Bible du mode de combat de Death Stranding 2D
 
-**Édition de conception du 18 novembre 2026, mise à jour du 25 novembre 2026 · Périmètre : l’ensemble de l’univers Death Stranding.**
+**Édition de conception du 18 novembre 2026, mise à jour du 27 novembre 2026 · Périmètre : l’ensemble de l’univers Death Stranding.**
+
+**Mise à jour du 27 novembre : les deux extensions originales du Guide Combat Games sont intégrées et adaptées dans [EXTENSIONS_COMBAT.md](EXTENSIONS_COMBAT.md). Les 38 rubriques EDG-G30–G67 complètent les 30 rubriques déjà associées. Huit fiches de personnalité, les règles d’équipes, les bonus, les Dossiers de liaison et les accès futurs sont distingués de leur réalisation effective. Le [§20](#extensions-guides-20261127) relie les sources, les nouveaux gestes de présentation et les huit souvenirs aux bilans du lot ; tag, duos et service de soutien restent des conceptions non raccordées.**
 
 **Mise à jour du 25 novembre 2026 : Guide Combat Games v1.0 associé ; lots univers, complément, domaines et extension livrés sur leurs périmètres documentés. Le lot extension ajoute huit exercices guidés, le compendium des six Boss et vingt-huit PNG fixes pour onze bases et trois arènes. Les recettes et l’inventaire sont confirmés au [§19](#lot-extension-20261125) ; le Strider reste non livré après refus de génération. Les §13–18 conservent les instantanés de leurs lots. La livraison ne prétend pas couvrir exhaustivement l’univers.**
 
@@ -10,7 +12,7 @@ Deux silhouettes se font face sur la laisse de mer. Sam se baisse pour poser une
 
 ### Référentiel commun associé
 
-Le [Guide général Combat Games v1.0](references/Combat_Games_Guide_General_v1.0.txt) complète cette bible selon le contexte d’Échos de la Grève. Le [chapitre 12](#12-intégration-du-guide-combat-games-v10) associe ses 30 rubriques aux chapitres existants, précise leur statut et fixe les contrôles attendus. Les règles actuellement chargées, la conception cible et les références officielles restent identifiées séparément. Le [registre de l’univers](UNIVERS_DS.md) précise les œuvres, éditions, continuités, sources et projets annoncés ; le [chapitre 16](#16-univers-complet-boss-rush-et-nouvelles-arènes--25-novembre-2026) donne le bilan du lot univers livré. Le [registre de production](REGISTRE_PRODUCTION.md) suit les éléments présents et manquants par domaine, avec ID, œuvre/version, rôle, source, priorité, dépendances et preuve. Le [chapitre 17](#17-complément-de-production-campagne-et-plans-narratifs--25-novembre-2026) documente le complément livré et ses preuves locales. Le [chapitre 18](#lot-domaines-20261125) suit les actions, relations, contrôles, transition et références du lot domaines. Le [chapitre 19](#lot-extension-20261125) réunit les exercices, le compendium Boss, les nouvelles références et les preuves de livraison.
+Le [Guide général Combat Games v1.0](references/Combat_Games_Guide_General_v1.0.txt) complète cette bible selon le contexte d’Échos de la Grève. Le [chapitre 12](#12-intégration-du-guide-combat-games-v10) associe ses 30 rubriques aux chapitres existants, précise leur statut et fixe les contrôles attendus. L’[Extension 01](references/Combat_Games_Extension_01_Tag_Taunts_Bonus_v1.0.txt) et l’[Extension 02](references/Combat_Games_Extension_02_Slots_Verrouilles_Deblocages_Abonnes_v1.0.txt) ajoutent les 38 rubriques de la [matrice complémentaire](EXTENSIONS_COMBAT.md#matrice-extensions), avec leurs [provenances et empreintes](references/combat-guides-provenance.json). Les règles actuellement chargées, la conception cible et les références officielles restent identifiées séparément. Le [registre de l’univers](UNIVERS_DS.md) précise les œuvres, éditions, continuités, sources et projets annoncés ; le [chapitre 16](#16-univers-complet-boss-rush-et-nouvelles-arènes--25-novembre-2026) donne le bilan du lot univers livré. Le [registre de production](REGISTRE_PRODUCTION.md) suit les éléments présents et manquants par domaine, avec ID, œuvre/version, rôle, source, priorité, dépendances et preuve. Le [chapitre 17](#17-complément-de-production-campagne-et-plans-narratifs--25-novembre-2026) documente le complément livré et ses preuves locales. Le [chapitre 18](#lot-domaines-20261125) suit les actions, relations, contrôles, transition et références du lot domaines. Le [chapitre 19](#lot-extension-20261125) réunit les exercices, le compendium Boss, les nouvelles références et les preuves de livraison. Le [chapitre 20](#extensions-guides-20261127) rapproche les deux nouvelles extensions et leurs premiers modules concrets.
 
 ### Périmètre de cette édition
 
@@ -24,6 +26,7 @@ Le [Guide général Combat Games v1.0](references/Combat_Games_Guide_General_v1.
 | Complément du 25 novembre | 13 bases fixes, 24 plans narratifs, 1 panorama et 15 couches pour 3 arènes ; campagne Les Nœuds rompus et profil statique. | 53 PNG livrés ; neuf modes, dix-neuf lieux, vingt configurations et cent couches vérifiés localement au §17. Aucun nouveau combattant ou animation déduit des images. |
 | Lot domaines du 25 novembre | Catalogue des actions/IA, matrice des relations, commandes reconfigurables, hangar et liaison explicite ; 14 nouvelles images fixes. | 19 lieux, 20 zones graphiques, 22 configurations, 105 couches distinctes ; preuves et limites au §18. |
 | Lot extension du 25 novembre | Huit exercices dirigés, compendium des six Boss et vingt-huit PNG fixes livrés : onze bases et trois arènes. | Recettes et inventaire confirmés au §19 ; Strider non livré. Huit kits, neuf modes et six Boss conservés. |
+| Extensions des guides du 27 novembre | Sources intégrales, 38 décisions complémentaires, personnalité des huit kits et Dossiers de liaison ; conceptions d’assistances, relais, duos et bonus. | Le §20 sépare les fonctions du lot, les poses fixes et les modules encore documentaires. Les accès existants et les versions DS1/DC/DS2 restent conservés. |
 | Fidélité | Le chapitre 11 associe les décisions visuelles à des images publiées par les créateurs et l’éditeur. | Chaque costume, accessoire et côté du corps demande une comparaison visuelle avant validation 1:1. |
 
 Les mentions **source** renvoient à l’œuvre officielle et à sa version identifiées. Les rencontres, dialogues, noms de techniques, effets de jauge et plans de mise en scène ci-dessous sont **des créations du mode annexe**. L’entrée dans la simulation isole ses résultats du récit de la campagne principale. Les boutons, règles et minutages qui suivent décrivent la cible de conception. Le menu Commandes de la version jouée fait foi pour les fonctions disponibles.
@@ -91,6 +94,7 @@ Les directions suivent la position adverse. La touche de signature est **H pour 
 17. [Complément de production, campagne et plans narratifs](#17-complément-de-production-campagne-et-plans-narratifs--25-novembre-2026)
 18. [Actions, relations, commandes et première liaison](#lot-domaines-20261125)
 19. [Exercices, compendium Boss et extension visuelle](#lot-extension-20261125)
+20. [Extensions du guide, personnalité et Dossiers de liaison](#extensions-guides-20261127)
 
 Registres associés : [œuvres, versions et sources de l’univers Death Stranding](UNIVERS_DS.md) · [production par domaine et dépendances](REGISTRE_PRODUCTION.md).
 
@@ -594,7 +598,7 @@ Les priorités sont celles du guide : **P0** fondations et dépendances techniqu
 | EDG-G21 · IA | §8, §10, §12.10, §18 | Retenue ; profils du duel documentés · P0 | Trois cadences et probabilités conditionnelles, huit notes de comportement, 24 cas de seuils vérifiés. Les réponses non spécialisées et l’absence de planificateur universel restent visibles ; le score IA–IA du tournoi est un autre calcul. |
 | EDG-G22 · équilibre et confort | §2–3, §7–10 | Retenue · P0/P1 | Matrice des confrontations, coins et sorties de pression ; options de confort sans perte d’information. Les règles cibles de réduction de dégâts restent distinctes du code chargé. |
 | EDG-G23 · réseau et replays | §8–10, §12.10 | Retenue · P0 | Salon privé, prédiction, checkpoints, resimulation et replays déjà présents. Qualifier la portée du relais et tester latence, reconnexion et versions ; classement/crossplay restent à décider hors du périmètre courant. |
-| EDG-G24 · progression | §1, §5, §8, §12.6–12.7 | Retenue · P0 | Préserver routes, galerie, tournoi, défis, préférences et sauvegardes distinctes de Boss Battle / Boss Rush ; Les Nœuds rompus ajoute `echos.campaign.v1`. Vérifier reprise et migration. Aucun bonus de la campagne principale n’est transféré au duel sans règle dédiée. |
+| EDG-G24 · progression | §1, §5, §8, §12.6–12.7, §20 | Retenue · P0 | Préserver routes, galerie, tournoi, défis, préférences et sauvegardes distinctes de Boss Battle / Boss Rush ; Les Nœuds rompus utilise `echos.campaign.v1`. Les Dossiers ajoutent huit souvenirs sous `echos.liaison.v1`, par route OU quatre exercices du même combattant. Aucun accès existant retiré ; aucun bonus de statistiques transféré. |
 | EDG-G25 · suivi | §10, §12.9–12.11 | Retenue · P0 | Identifiants stables, dépendances et six axes de statut. Compter séparément personnages, scènes, configurations, couches et validations. |
 | EDG-G26 · recette | §10, §12.11 | Retenue · P0 | Relier chaque lot à des essais reproductibles ; une référence à un test existant n’est pas une nouvelle exécution de ce test. |
 | EDG-G27 · fiches | §4–7, §12.9 | Retenue · P0/P1 | Employer les dix modèles A–J du guide comme compléments aux fiches existantes, avec liens vers les IDs du dépôt et inconnues visibles. |
@@ -725,9 +729,12 @@ Le chrono, les attaques et les objectifs de chaque rencontre restent ceux de Bos
 | Romans, films et série | Inclus avec leurs statuts : œuvres publiées ou projets annoncés ; les contenus inconnus restent à documenter. Voir [UNIVERS_DS.md](UNIVERS_DS.md). |
 | Crossover | Les éléments officiellement présents dans Death Stranding sont référencés dans leur édition ; d’autres croisements restent un choix explicite de conception. |
 | Campagne globale propre au mode combat | Les Nœuds rompus : six chapitres et quatorze interludes intégrés, parcours complet gagné dans la recette à DOM simulé (§17). Association à La Ligne silencieuse conservée au §12.6. |
-| Tag, équipes successives, coop contre boss, affrontements à plusieurs | À décider ; chaque module nécessite ses propres règles et une recette. |
+| Assistance et véritable tag/relais | Conception retenue le 27 novembre : profil local hybride à deux membres, vies propres et jauge de Cohésion ; disponibilité, propriété des entités et coûts séparés. [Fiches d’équipe](EXTENSIONS_COMBAT.md#equipes). Non implémentés par le lot de présentation. |
+| Supers et Ruptures de lien collectives | Huit paires prioritaires documentées, scènes originales du simulateur avec versions, contexte et remplacement. Conçues ; aucune chorégraphie collective livrée par les images fixes. |
+| Équipes successives, coop contre boss, affrontements à plusieurs | Différés hors du premier profil local à deux ; règles Boss, nombre d’acteurs et sérialisation propres requis avant activation. |
 | Matchmaking, classement et crossplay | À décider ; le salon privé existant ne démontre pas ces services. |
-| Hub exploratoire, avatar et arbres RPG dans le mode | Non applicables au périmètre courant du duel annexe ; un besoin d’exploration relève d’abord de la campagne principale ou d’un cadrage séparé. |
+| Collection et parcours d’archives | Dossiers de liaison retenus pour souvenirs et état des contenus ; parcours connecté d’archives conçu au [§6 des extensions](EXTENSIONS_COMBAT.md#bonus-archives). Interface originale du simulateur, sans nouveau lieu canonique. |
+| Hub 3D, avatar et arbres RPG dans le mode | Non retenus pour ce lot du duel annexe ; le parcours documentaire ne déclare pas un hub physique ou une progression RPG livré. |
 
 ### 12.8. Arènes : quatre axes, interactions et connexions
 
@@ -1172,3 +1179,36 @@ L’[inventaire natif](production/20261125-extension/native-inventory.json) et l
 La [recette galerie](production/20261125-extension/static-gallery-verification.json) réussit dix-sept groupes sur les 65 cartes. La [recette HTTP et réseau](production/20261125-extension/network-verification.json) couvre les cartes, treize entrées d’extension, trois arènes, le refus des traversées de chemin et liens symboliques, ainsi que la synchronisation au tick 200. Le bilan consigne aussi vingt-quatre cas d’arènes, cinquante-cinq empreintes source concordantes et dix-huit contrôles de syntaxe. La logique, le DOM simulé, le Canvas natif et le serveur HTTP réel restent identifiés séparément ; aucune assertion de navigateur non exécutée n’est revendiquée.
 
 Les variantes restent distinctes de leurs identités et versions ; aucune base fixe n’augmente automatiquement le roster. Les autres œuvres et projets Death Stranding restent dans le périmètre du [registre de l’univers](UNIVERS_DS.md), avec leurs statuts. Le [registre de production](REGISTRE_PRODUCTION.md) conserve les besoins de réseau, audio, accessibilité, progression, localisation, contrôles et contenu encore ouverts. Les futures identités jouables demandent des kits et des recettes propres ; les ennemis mal documentés demandent une référence identifiable ; les œuvres annoncées conservent leurs inconnues. Ce lot ne clôt pas l’univers entier.
+
+---
+
+<a id="extensions-guides-20261127"></a>
+## 20. Extensions du guide, personnalité et Dossiers de liaison — 27 novembre 2026
+
+### 20.1. Vérification du guide et intégration des deux sources
+
+Le guide général était déjà intégré : sa copie de **55 172 octets**, SHA-256 `4844584616072ac0d52d37c2fab4365e1ec489240f17a721ee216e223b0355b7`, concorde avec la source Drive retrouvée. Les deux fichiers demandés sont maintenant conservés intégralement dans `references/` : **Extension 01, Tag/Taunts/Bonus, 60 589 octets**, et **Extension 02, Slots verrouillés/Déblocages/Abonnés, 47 334 octets**. Le [manifeste](references/combat-guides-provenance.json) conserve leurs liens de provenance et empreintes.
+
+La [matrice des extensions](EXTENSIONS_COMBAT.md#matrice-extensions) documente **EDG-G30 à EDG-G67**, soit 38 rubriques supplémentaires et **68 rubriques associées au total**. Elle couvre également les clashes/QTE, les entités et projectiles persistants, les bonus, le parcours d’archives, les droits temporaires et les cas d’expiration : ces sujets ne disparaissent pas derrière les seuls taunts ou cadenas.
+
+### 20.2. Huit kits, gestes et premières fonctions
+
+Les [huit fiches de personnalité](EXTENSIONS_COMBAT.md#personnalite) conservent la version DS1/DC de Sam, Fragile, Higgs, Cliff, du MULE, de Die-Hardman, Mama et Heartman. Le taunt de présentation est conçu pour être vulnérable, sans frappe ni gain spécial de ressource ; les phases de sélection, confirmation, attente et désélection sont distinctes. Le [bilan Présentation](production/20261127-extensions/PRESENTATION.md) décrit le comportement effectivement raccordé, ses commandes, ses tests et ses exclusions Boss/salon privé.
+
+Une pose neuve ou réemployée peut accompagner ces cycles ; elle ne vaut pas une animation dessinée complète. Le [bilan des assets](production/20261127-extensions/ASSETS.md) fixe le nombre réel de PNG, leur provenance et leurs limites. Chaque source autonome contient un seul sujet. Une fiche de taunt, une pose statique, un déplacement de présentation et une animation image par image restent quatre unités différentes. L’inspection a notamment signalé un masque trop robotique sur l’ancienne posture de Die-Hardman ; la correction de la nouvelle pose de geste ne certifie pas les anciennes images du kit. Les réserves historiques restent identifiées dans le bilan ; aucune certification 1:1 générale ni audit exhaustif des illustrations n’est déduit de ce lot.
+
+La conception d’équipe est désormais retenue : [Relais de liaison](EXTENSIONS_COMBAT.md#equipes), actif et réserve, assistance distincte du transfert de contrôle, Cohésion séparée du Chiral, coût/délai/KO/propriété définis. Huit paires prioritaires ont des supers et Ruptures collectives décrites. **Le tag, les assistances de roster, les supers duo et les fins collectives ne sont pas implémentés par le lot courant.** Les manifestations de Cliff et les objets de kit existants ne sont pas comptés comme partenaires nouvellement jouables.
+
+### 20.3. Dossiers, souvenirs et accès conservés
+
+Le module **Dossiers de liaison** distingue découverte, droit d’accès, disponibilité technique et compatibilité. Les [règles exactes](EXTENSIONS_COMBAT.md#deblocages) attribuent huit souvenirs textuels permanents : une route terminée **OU** les quatre exercices `distance`, `guard-high`, `signatures`, `combo` réussis avec le même combattant. La sauvegarde est séparée, sous `echos.liaison.v1`, et les données historiques restent en place. Ces textes sont une fiction du simulateur, sans bonus de statistiques.
+
+Les combattants, costumes, configurations et modes déjà disponibles conservent leurs accès. Les Dossiers réunissent **59 fiches** : huit souvenirs, huit combattants, deux tenues, vingt-cinq configurations d’arène, neuf modes et sept bases DS2. Ces bases portent un état **Kit en préparation**, avec identité masquable ; elles n’emploient pas un verrou pour promettre un combattant absent. Les slots d’un futur kit, ses costumes et ses accès de mode recevront leurs règles quand le contenu sera livré. Le [bilan Progression](production/20261127-extensions/PROGRESSION.md) consigne le périmètre réellement implémenté, les données, les tests et les limites du stockage local.
+
+Les [dix bonus conçus et le parcours d’archives](EXTENSIONS_COMBAT.md#bonus-archives) recontextualisent les extensions dans les tâches de portage, l’entraînement, les outils et les versions de DS. Ils restent des cibles de production, pas dix modes ajoutés. Les [avantages de soutien](EXTENSIONS_COMBAT.md#soutien) sont documentés comme futurs contenus cosmétiques ; **aucun fournisseur, abonnement, paiement ou compte synchronisé n’est connecté**. Une acquisition permanente n’est pas annulée par l’expiration d’une autre source.
+
+### 20.4. Preuves et reste à produire
+
+Le [bilan du lot](production/20261127-extensions/BILAN.md), les bilans Présentation/Progression/Assets et la [matrice de 40 cas](EXTENSIONS_COMBAT.md#production-qa) séparent contrôle documentaire, tests de données, simulation et inspection visuelle. Les nouveaux gestes n’activent pas automatiquement le salon privé, le moteur Boss ou le Duel originel. Les chiffres d’arènes et de galerie des §16–19 restent les instantanés de leurs lots, pas un pourcentage de réalisation de l’univers.
+
+Les suites concrètes sont : vérifier les poses de chaque version, compléter les dessins intermédiaires et sons, réaliser le mode équipe et ses règles d’entités, puis une paire, un bonus et une scène collective avant leur extension. Les futurs kits DS2 et les autres œuvres restent dans le périmètre du registre ; leurs références précises et leurs comportements doivent être produits et testés individuellement.

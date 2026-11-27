@@ -1,0 +1,152 @@
+{
+  "schema_version": 1,
+  "produced_on": "2026-11-27",
+  "generator": "image_gen.imagegen",
+  "format": "Native PNG copies, one full-body pose per file, transparent_background=true",
+  "official_animation_claim": false,
+  "pixel_fidelity_certified": false,
+  "selection": {
+    "sam": "sam-taunt",
+    "fragile": "fragile-taunt",
+    "higgs": "higgs-taunt",
+    "cliff": "cliff-taunt",
+    "mule": "mule-taunt",
+    "mama": "mama-taunt-cutout",
+    "heartman": "heartman-taunt",
+    "diehardman": "diehardman-taunt-corrected"
+  },
+  "initial_runs": [
+    {
+      "id": "sam-taunt",
+      "prompt": "Use case: identity-preserve. Asset type: single transparent 2D fighting-game character key pose for Death Stranding 2D. Edit the referenced existing Sam Porter Bridges DS1/DC game sprite into a calm, restrained acknowledgement taunt: one gloved hand gives a clear thumbs-up at chest/shoulder height toward his opponent to screen right; the other hand keeps the shoulder cargo strap. Full body, feet planted, three-quarter side view facing right. Match this exact existing character model, hood, goggles, weathered navy Bridges porter suit, backpack cargo, odradek, boots, chest pod shape, proportions, painterly realistic texture and crisp edges. Do not redesign, do not use DS2 clothing, do not add weapons or extra gear. Keep all of the body and cargo inside frame with transparent margins. ONE character and ONE pose only. Actual transparent alpha background, no ground plane, no shadow plate, no vignette, no text, no labels, no UI, no grid, no frame. Pose is a new gesture designed for the fan simulator, not a claimed canon animation. High resolution portrait canvas.",
+      "reference_project_paths": [
+        "modes/echos-de-la-greve/assets/fighters/sam-stance.webp"
+      ],
+      "output_file": "exec-55a8bc05-e067-4e4e-8ed4-28b7740a66f4.png"
+    },
+    {
+      "id": "fragile-taunt",
+      "prompt": "Use case: identity-preserve. Asset type: one transparent 2D fighting-game character key pose for Death Stranding 2D. EDIT only the character pose in the provided reference; preserve the exact existing identity, clothes, equipment, materials, proportions, realistic painterly detail and visual style. Full body three-quarter side view facing screen right, feet fully visible and planted, all props within frame and with clean transparent margins. ONE character in ONE pose only, no duplication, no grid, no sprite sheet. Actual transparent alpha background, no ground plane, no vignette, no background glow or shadow plate, no new text or UI. No redesigns or clothes from other installments. These are new gestures for a fan combat simulator, not claimed to be official animations. High resolution portrait canvas. Fragile DS1: quiet confident taunt, weight on rear leg, one gloved hand makes a subtle beckoning invitation with palm up and fingers relaxed at chest height, the other holds her CLOSED black umbrella pointed down. Preserve blonde short hair, exact face, dark high-neck suit with small spikes at shoulders, gloves and boots. No beret, no Drawbridge DS2 clothing.",
+      "reference_project_paths": [
+        "modes/echos-de-la-greve/assets/fighters/fragile-stance.webp"
+      ],
+      "output_file": "exec-f199e4e8-4c3e-42ad-9faf-f6947041e22e.png"
+    },
+    {
+      "id": "higgs-taunt",
+      "prompt": "Use case: identity-preserve. Asset type: one transparent 2D fighting-game character key pose for Death Stranding 2D. EDIT only the character pose in the provided reference; preserve the exact existing identity, clothes, equipment, materials, proportions, realistic painterly detail and visual style. Full body three-quarter side view facing screen right, feet fully visible and planted, all props within frame and with clean transparent margins. ONE character in ONE pose only, no duplication, no grid, no sprite sheet. Actual transparent alpha background, no ground plane, no vignette, no background glow or shadow plate, no new text or UI. No redesigns or clothes from other installments. These are new gestures for a fan combat simulator, not claimed to be official animations. High resolution portrait canvas. Higgs DS1: restrained theatrical salute to an unseen opponent at screen right, both forearms open outward from the elbows with palms up, chin slightly tilted; cape stays over shoulders and torso. Preserve EXACTLY the hood with the gold handprint, full gold SKULL mask with teeth (never a human or robotic face), weathered black gold and blue-edged cape, ochre suit, chest pod, blue umbilical cable, pouches and boots. No DS2 armor, no guitar. Keep hands anatomically correct and entire cape inside image.",
+      "reference_project_paths": [
+        "modes/echos-de-la-greve/assets/fighters/higgs/stance.png"
+      ],
+      "output_file": "exec-978d17c7-1759-48cf-bc4a-f85cebfd5aa1.png"
+    },
+    {
+      "id": "cliff-taunt",
+      "prompt": "Use case: identity-preserve. Asset type: one transparent 2D fighting-game character key pose for Death Stranding 2D. EDIT only the character pose in the provided reference; preserve the exact existing identity, clothes, equipment, materials, proportions, realistic painterly detail and visual style. Full body three-quarter side view facing screen right, feet fully visible and planted, all props within frame and with clean transparent margins. ONE character in ONE pose only, no duplication, no grid, no sprite sheet. Actual transparent alpha background, no ground plane, no vignette, no background glow or shadow plate, no new text or UI. No redesigns or clothes from other installments. These are new gestures for a fan combat simulator, not claimed to be official animations. High resolution portrait canvas. Clifford Unger DS1: disciplined two-finger command signal; right gloved hand held near the temple with two fingers extended and elbow bent; left arm lowers to relaxed waist height. Calm intense expression. Preserve face and hairstyle, existing black tar streaks, green camouflage with rolled sleeves, tactical webbing and pouches, small arm patch, combat trousers and worn boots. No gun, no added helmet, no skeletons or other people.",
+      "reference_project_paths": [
+        "modes/echos-de-la-greve/assets/fighters/cliff-stance.webp"
+      ],
+      "output_file": "exec-d4d60cbc-e37d-4102-8011-3ed12368e57f.png"
+    },
+    {
+      "id": "mama-taunt",
+      "prompt": "Use case: identity-preserve. Asset type: one transparent 2D fighting-game character key pose for Death Stranding 2D. EDIT only the character pose in the provided reference; preserve the exact existing identity, clothes, equipment, materials, proportions, realistic painterly detail and visual style. Full body three-quarter side view facing screen right, feet fully visible and planted, all props within frame and with clean transparent margins. ONE character in ONE pose only, no duplication, no grid, no sprite sheet. Actual transparent alpha background, no ground plane, no vignette, no background glow or shadow plate, no new text or UI. No redesigns or clothes from other installments. These are new gestures for a fan combat simulator, not claimed to be official animations. High resolution portrait canvas. Mama DS1 in the established workshop version: a focused engineering gesture, one hand adjusts her glasses delicately by the upper corner with thumb and index finger while the other rests at her side. Preserve exact face, high dark ponytail, glasses, small earrings, gray tank top, yellow harness, gray jacket tied around waist, rolled gray cargo trousers, work boots and small back scanner. Remove the background halo from the reference entirely to clean transparent alpha; preserve the scanner itself. No baby, no added tools, no armour, no new gloves.",
+      "reference_project_paths": [
+        "modes/echos-de-la-greve/assets/fighters/mama/atelier/stance.png"
+      ],
+      "output_file": "exec-6c9663c1-490b-4d86-a77d-6e2964298364.png"
+    },
+    {
+      "id": "heartman-taunt",
+      "prompt": "Use case: identity-preserve. Asset type: one transparent 2D fighting-game character key pose for Death Stranding 2D. EDIT only the character pose in the provided reference; preserve the exact existing identity, clothes, equipment, materials, proportions, realistic painterly detail and visual style. Full body three-quarter side view facing screen right, feet fully visible and planted, all props within frame and with clean transparent margins. ONE character in ONE pose only, no duplication, no grid, no sprite sheet. Actual transparent alpha background, no ground plane, no vignette, no background glow or shadow plate, no new text or UI. No redesigns or clothes from other installments. These are new gestures for a fan combat simulator, not claimed to be official animations. High resolution portrait canvas. Heartman in the established DS1 playable version: composed researcher gesture, looking briefly at his existing wrist device while the other hand points gently at its face; no new screen hologram. Preserve exact face, short brown hair, rectangular glasses, blue jacket with sleeves rolled, gray shirt, orange chest medical device and harness, black fingerless gloves, dark trousers and blue shoes. No collapsing, no heart attack, no combat power, no DS2 substitute.",
+      "reference_project_paths": [
+        "modes/echos-de-la-greve/assets/fighters/heartman/stance.png"
+      ],
+      "output_file": "exec-aaa1cc4a-2f56-4534-a82e-ce55c717660c.png"
+    },
+    {
+      "id": "diehardman-taunt",
+      "prompt": "Use case: identity-preserve. Asset type: one transparent 2D fighting-game character key pose for Death Stranding 2D. EDIT only the character pose in the provided reference; preserve the exact existing identity, clothes, equipment, materials, proportions, realistic painterly detail and visual style. Full body three-quarter side view facing screen right, feet fully visible and planted, all props within frame and with clean transparent margins. ONE character in ONE pose only, no duplication, no grid, no sprite sheet. Actual transparent alpha background, no ground plane, no vignette, no background glow or shadow plate, no new text or UI. No redesigns or clothes from other installments. These are new gestures for a fan combat simulator, not claimed to be official animations. High resolution portrait canvas. Die-Hardman DS1: composed command gesture, stand upright and straighten the existing cuff of one black glove using the other hand, elbows close to torso. Preserve the exact face-covering angular dark mask including eye openings and small gold forehead mark, short tight curls, black suit, white collar, black tie, small gold lapel pin, white pocket square, leather gloves, dark suit trousers and shoes. No mask removal, no weapons, no invented armour.",
+      "reference_project_paths": [
+        "modes/echos-de-la-greve/assets/fighters/diehardman/stance.png"
+      ],
+      "output_file": "exec-98fbed01-9d18-4e4d-872e-7868b62f93e4.png"
+    },
+    {
+      "id": "mule-taunt",
+      "prompt": "Use case: identity-preserve. Asset type: one transparent 2D fighting-game character key pose for Death Stranding 2D. EDIT only the character pose in the provided reference; preserve the exact existing identity, clothes, equipment, materials, proportions, realistic painterly detail and visual style. Full body three-quarter side view facing screen right, feet fully visible and planted, all props within frame and with clean transparent margins. ONE character in ONE pose only, no duplication, no grid, no sprite sheet. Actual transparent alpha background, no ground plane, no vignette, no background glow or shadow plate, no new text or UI. No redesigns or clothes from other installments. These are new gestures for a fan combat simulator, not claimed to be official animations. High resolution portrait canvas. Anonymous MULE porter DS1 in this existing yellow outfit: brief cargo-check taunt, tilt the existing handheld scanner upward toward the eyes and glance at it; the other hand rests on the pack shoulder strap. Preserve the yellow hooded worn suit, breathing mask and goggles, gray arm and knee patches, hard-shell silver backpack with orange straps, existing handheld yellow scanner and boots. Scanner is held by one hand only with proper fingers. No new weapon or holographic projection. No tribal costume.",
+      "reference_project_paths": [
+        "modes/echos-de-la-greve/assets/fighters/mule-stance.webp"
+      ],
+      "output_file": "exec-17b911bb-0a0f-4aa3-bec7-5e5038cc1b34.png"
+    }
+  ],
+  "correction_runs": [
+    {
+      "id": "diehardman-taunt-corrected",
+      "prompt": "Edit the first image: one standalone full-body Die-Hardman pose for a Death Stranding 2D fan-game simulator, adjusting the cuff of his black glove. Preserve the complete body, full shoes, pose, skin, hair, black formal suit, white collar and tie, proportions, lighting, and right-facing three-quarter side orientation from image 1. Correct ONLY the visibly inaccurate armored robot mask in image 1 to match the canonical Death Stranding DS1 mask shown in image 2. It must be a dark charcoal carbon-fiber human SKULL mask: smooth rounded skull brow, large natural oval eye sockets exposing real eyes, recognizable skull nasal opening, anatomically skull-shaped cheekbones, sculpted teeth across the upper and lower jaw, a compact round brass fastener near the lower cheek and authentic small white LUDENS forehead marking. Use image 2 as exact mask reference; do not copy its composition or background. No angular sci-fi armor plates, no slit visor, no gold forehead emblem, no gas-mask grille. One person, one full-body pose, portrait sprite. This gesture is an original fan-game animation, not a claim of an official animation. Keep actual fully transparent alpha outside the silhouette, clean edges, no backdrop, no halo, no floor, no vignette, no title or watermark.",
+      "reference_files": [
+        "exec-98fbed01-9d18-4e4d-872e-7868b62f93e4.png",
+        "diehardman-official.jpg"
+      ],
+      "output_file": "exec-c630c2d1-6ae6-430f-ab21-ef02b576aff6.png"
+    },
+    {
+      "id": "mama-taunt-cutout",
+      "prompt": "Clean the background of this exact game sprite. Preserve Mama exactly: face, full body, hands with one hand adjusting glasses, ponytail, thin glasses, grey tank top, yellow equipment strap, jacket tied at waist, grey cargo trousers, both boots, and the small blue odradek scanner mounted behind her shoulder. Preserve pose, framing, proportions and facial identity. REMOVE ALL the diffuse grey/brown/blue backdrop and soft glow/halo surrounding the body and beneath her feet. Export a truly transparent PNG cutout with clean fully transparent alpha outside the person and the physical scanner. Blue light may remain INSIDE the physical scanner blades only, with no exterior aura. No flat color or checkerboard in the pixels, no vignette, no shadows behind the character. One person, one standalone full-body pose. Do not crop boots or scanner; no composition grid or labels.",
+      "reference_files": [
+        "exec-6c9663c1-490b-4d86-a77d-6e2964298364.png"
+      ],
+      "output_file": "exec-e66008b1-d215-442d-a0f4-7361d656b7bd.png"
+    }
+  ],
+  "not_integrated": [
+    {
+      "id": "diehardman-taunt",
+      "reason": "Armored robot mask inherited from the existing stance; superseded by a canonical skull-mask correction."
+    },
+    {
+      "id": "mama-taunt",
+      "reason": "Superseded by a dedicated background-cleanup edit. Final alpha is evaluated in native composition, independently of RGB preview."
+    }
+  ],
+  "transient_failures": [
+    {
+      "id": "fragile-taunt-first-attempt",
+      "reason": "Reference read failed with exec-server transport closed; returned no image. Repeated once successfully in sequential generation."
+    }
+  ],
+  "references": [
+    {
+      "url": "https://blog.de.playstation.com/2021/10/19/death-stranding-das-sind-die-charaktere/",
+      "publisher": "PlayStation Blog",
+      "checked_on": "2026-11-27",
+      "scope": "Official DS1 character context and linked closeups, not a full-body visual certification."
+    },
+    {
+      "url": "https://blog.de.playstation.com/uploads/sites/13/2021/10/e33dc8f7a181bc63118e9be298f8b3c358b0f672.jpg",
+      "publisher": "PlayStation Blog",
+      "checked_on": "2026-11-27",
+      "scope": "Die-Hardman canonical carbon-fiber skull mask used as the correction reference."
+    },
+    {
+      "url": "https://www.playstation.com/en-us/games/death-stranding/",
+      "publisher": "PlayStation",
+      "checked_on": "2026-11-27",
+      "scope": "DS1/DC product and story frame."
+    },
+    {
+      "url": "https://www.kojimaproductions.jp/sites/default/files/2022-03/DSDC_PC_Cliff.jpg",
+      "publisher": "KOJIMA PRODUCTIONS",
+      "checked_on": "2026-11-27",
+      "scope": "Cliff identity closeup."
+    }
+  ],
+  "limits": [
+    "The eight gestures are original simulator adaptations, not official cutscene reproductions.",
+    "Each fighter has one new hold pose. Entry and exit reuse existing stance images; no complete drawn animation strip is claimed.",
+    "Existing DS1/DC kit designs were used as continuity references. Previous assets are not retroactively certified 1:1.",
+    "Die-Hardman older stances still require a separate fidelity correction; only this new pose has the corrected skull mask.",
+    "Runtime horizontal mirroring preserves gameplay but can invert costume details and inscriptions. No independent left-facing native variant was generated."
+  ]
+}

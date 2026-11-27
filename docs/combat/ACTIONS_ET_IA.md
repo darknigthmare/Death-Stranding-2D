@@ -1,10 +1,10 @@
 # Actions des huit kits et profils IA — moteur de duel
 
-**25 novembre 2026 · règles actuelles de StrandFight, distinctes de la cible.**
+**27 novembre 2026 · règles actuelles de StrandFight, distinctes de la cible.**
 
 [Catalogue JSON](data/actions-et-ia.json) · [Module consultable](../../modes/echos-de-la-greve/moves-data.js) · [Moteur](../../modes/echos-de-la-greve/fight.js) · [Guide, fiche C](references/Combat_Games_Guide_General_v1.0.txt).
 
-Le catalogue couvre **30 attaques : six communes et 24 techniques**, plus six actions de mouvement, défense ou conclusion. Il décrit les duels et le dojo. Les grandes rencontres utilisent `boss.js` ; les mêmes noms n’y garantissent ni les mêmes timings ni les mêmes dégâts. Les paramètres chiffrés sont ceux du projet.
+Le catalogue couvre **30 attaques : six communes et 24 techniques**, plus sept actions de mouvement, défense, présentation ou conclusion. Il décrit les duels et le dojo. Les grandes rencontres utilisent `boss.js` ; les mêmes noms n’y garantissent ni les mêmes timings ni les mêmes dégâts. Les paramètres chiffrés sont ceux du projet.
 
 ## Règles et convention de temps
 
@@ -12,7 +12,7 @@ Le catalogue couvre **30 attaques : six communes et 24 techniques**, plus six ac
 - Dégâts = arrondi(base × puissance du combattant). Aucune réduction progressive de combo ni bonus de contre-touche dédié dans ce moteur.
 - Garde : aucun grattage de PV ; perte d’équilibre = base ×1,25, contre ×0,76 en touche. Blockstun au moins 9. Le côté de l’attaquant n’est pas un critère de blocage.
 - Gain chiral en touche : attaquant +4 / défenseur +3 ; en garde +2 / +2. Recharge passive +0,025 par pas, ou +0,34 au dojo ; plafond 100.
-- Rupture à équilibre ≤0 : au moins 38 pas de stun, garde et action interrompues, équilibre remis à 36. Recharge d’équilibre +0,28 au repos hors garde/action/stun, après le délai post-hit de 58 pas.
+- Rupture à équilibre ≤0 : au moins 38 pas de stun, garde et action interrompues, équilibre remis à 36. Recharge d’équilibre +0,28 au repos hors garde/action/stun/geste de défi, après le délai post-hit de 58 pas.
 - Saisie mémorisée 9 ticks inclusifs à partir du tick suivant, une entrée par bouton. Direction du spécial et battement capturés à la pression ; Bas des normales lu à l’exécution. Le hitstop consomme la file d’entrée.
 - Spéciales et projections refusées en l’air ; Léger/Lourd deviennent la frappe aérienne. Une annulation exige une touche confirmée, jamais une simple garde.
 - Hurtbox : largeur 44, hauteur propre au kit ×0,62 accroupi ; rectangle au-dessus des pieds. Les contacts sont collectés avant le hitstun : des frappes simultanées peuvent échanger.
@@ -194,11 +194,12 @@ DS1 / Director’s Cut ; hauteur 176, vitesse 4.15 par pas au sol, puissance 0.9
 
 ## Actions communes hors attaque
 
-- **Marche — Gauche / Droite.** Vitesse propre au kit, identique avant/arrière ; facteur 0,78 en l’air. Bloquée par action, garde, accroupissement, stun ou blockstun.
-- **Accroupissement — Bas.** Au sol, hors dash/stun ; hurtbox à 62 % de la hauteur.
-- **Saut — Haut.** Au sol, sans action : vitesse verticale 14,5 et gravité 0,77 par pas ; aucun double saut dédié.
-- **Pas rapide — Deux pressions du même côté en 13 ticks au plus.** Au sol, hors action/stun/blockstun/dash. Compteur 12 ; déplacement drift×(2+compteur×0,74) avant décrément. Invulnérable quand le compteur restant vaut 4 à 8.
-- **Garde — Garde ; Bas + Garde pour le bas.** Au sol, sans action/stun/dash ; aucune garde aérienne. Le côté ne conditionne pas le blocage dans le duel.
+- **Marche — Gauche / Droite.** Vitesse propre au kit, identique avant/arrière ; facteur 0,78 en l’air. Bloquée par action, garde, accroupissement, stun, blockstun ou geste de défi.
+- **Accroupissement — Bas.** Au sol, hors dash/stun/geste de défi ; hurtbox à 62 % de la hauteur.
+- **Saut — Haut.** Au sol, sans action ni geste de défi : vitesse verticale 14,5 et gravité 0,77 par pas ; aucun double saut dédié.
+- **Pas rapide — Deux pressions du même côté en 13 ticks au plus.** Au sol, hors action/stun/blockstun/dash/geste de défi. Compteur 12 ; déplacement drift×(2+compteur×0,74) avant décrément. Invulnérable quand le compteur restant vaut 4 à 8.
+- **Garde — Garde ; Bas + Garde pour le bas.** Au sol, sans action/stun/dash/geste de défi ; aucune garde aérienne. Le côté ne conditionne pas le blocage dans le duel.
+- **Geste de défi — Geste de défi — B / P par défaut, L3 ou tactile ; commande remappable.** Duels hors ligne uniquement, au sol et hors action/garde/accroupissement/stun/blockstun/ruée. Exposition totale de 54 pas : entrée 10, tenue 28, sortie 16. Aucun bonus ni invulnérabilité. Un impact interrompt le geste ; pas d’annulation volontaire ni d’attaque mémorisée pendant le geste. La direction maintenue reprend son effet à la fin. Les commandes ne sont pas transmises au salon privé ni au moteur Boss.
 - **Finalité — Finalité après victoire finale par K.-O..** Issue déjà décidée ; fenêtre finish de 135 pas, puis cinéma de 108 pas si activée. Aucun dégât supplémentaire ; distincte de l’ultime cible.
 
 ## Difficultés et décisions IA
@@ -223,6 +224,6 @@ Ces probabilités sont conditionnelles ; les branches précédentes, la position
 
 ## Présentation, statut et validation
 
-Les poses existantes sont pilotées par `act.t`. Les notices, `signatureSound` lors de la dépense, les effets et sons de contact restent ceux du moteur. Une fiche ne produit pas une nouvelle animation. Aucun paramètre de simulation n’est changé par ce catalogue. Les conditions d’échec, coûts, marqueurs, projectiles et défenses sont décrits séparément.
+Les poses des attaques existantes sont pilotées par `act.t`. Le geste de défi possède son propre compteur `taunt.frame`, séparé des trente attaques. Les notices, `signatureSound` lors de la dépense, les effets et sons de contact restent ceux du moteur. Une fiche ne produit pas une nouvelle animation. Aucun paramètre de simulation n’est changé par ce catalogue. Les conditions d’échec, coûts, marqueurs, projectiles et défenses sont décrits séparément.
 
 La [recette ciblée](production/20261125-domains/moves-verification.json) et le [rapport des fiches et relations](production/20261125-domains/ACTIONS_RELATIONS_IA.md) conservent les mesures et leur portée. Dix contrôles couvrent les tables, les timings, 640 impacts, 300 cas d’annulation, 34 mesures d’avantage, 207 cas conditionnels, 24 seuils IA et la matrice des relations. Ils exécutent les fonctions réelles avec des états unitaires préparés, sans navigateur ni rendu de pixels. Ils ne certifient pas l’équilibre de toutes les confrontations, toutes les réponses IA aux outils ni la compatibilité de chaque action avec chaque boss.
