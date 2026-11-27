@@ -48,6 +48,18 @@
     return {category,input,key,name:move.name,cost:move.cost || 0,start:move.start,active:move.active,recover:move.recover,damage:move.damage || 0};
   });
   fighters.balise.frameData=frameData;
+  // Visual-only joins measured against the received native crop in each direction.
+  // Tether/reel extend the cord already painted into the PNG; anchor joins its ring.
+  // These points never participate in range, collision, timing or resource calculations.
+  const ropeVisuals = {
+    attachments:{
+      tether:{left:{x:.008,y:.296},right:{x:.993,y:.299}},
+      reel:{left:{x:.024,y:.427},right:{x:.972,y:.416}},
+      anchor:{left:{x:.113,y:.868},right:{x:.917,y:.889}}
+    },
+    material:{edge:'#64645f',body:'#aaa9a2',fiber:'#d1cfc4',fleck:'#a75e55',
+      width:1.4,fiberWidth:.45,fleckLength:1.2,fleckGap:5.8}
+  };
   const api = {
     version:1,rules,enabled:!!artReady,artReady:!!artReady,compatibleLocalOnly:true,
     localModes:['versus','training','teams'],canonicalCharacterIds,
@@ -57,6 +69,7 @@
     normalKeys:artReady?{balise:{light:'baliseLight',heavy:'baliseHeavy',lift:'baliseLift'}}:{},
     fighters:artReady?fighters:{},moveSheets:artReady?{balise:frameData}:{},art:artReady?{balise:source}:{},poseNames,
     assists:artReady?{balise:{name:'Ligne de vie',cost:25,entry:24,active:5,exit:26,duration:55,key:'baliseAssist'}}:{},
+    visuals:artReady?{balise:{rope:ropeVisuals}}:{},
     geometry:{bodyWidth,anchorDistance:bodyWidth*1.5,anchorTTL:240,reelSpeed:11,anchorRadius:12},
     production:{character:'ldm-char-balise',scope:'Local kit, 30 directional key poses and 2 detached props',
       fullAnimation:false,storyReady:false,superReady:false,finisherReady:false,costumesReady:false}

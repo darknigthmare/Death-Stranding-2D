@@ -262,6 +262,38 @@ function runOriginalTests(buildHarness,fightSource,kitSource,contentSource,baseS
       check(h.draws.some(args=>args[0].src==='assets/test/balise-fall-'+(face>0?'right':'left')+'.png'),'grounded defeat drawing missing');
     }
   });
+  test('Rope joins follow each native pose crop, use grey/red material and leave simulation untouched',()=>{
+    const capture=h=>{
+      const strokes=[];let path=[];
+      h.context.beginPath=()=>{path=[];};h.context.moveTo=(...values)=>path.push(['M',...values]);
+      h.context.quadraticCurveTo=(...values)=>path.push(['Q',...values]);
+      h.context.stroke=()=>strokes.push({color:h.context.strokeStyle,path:h.clone(path)});
+      return strokes;
+    };
+    for(const [key,pose,t]of [['balise','tether',19],['baliseAssist','tether',25],['baliseAnchor','anchor',16],['baliseReel','reel',12]])for(const face of [1,-1]){
+      const h=build(),m=h.start(),f=m.f[0],side=face>0?'right':'left';
+      f.x=400;f.face=face;f.y=0;f.act={key,t,anchorX:400+face*66,destination:400+face*66};
+      const strokes=capture(h),before=JSON.stringify(h.api.snapshot());h.draws.length=0;h.hooks.drawOriginalFighter(m,f,0);
+      check(JSON.stringify(h.api.snapshot())===before,'render changed simulation '+key+' '+side);
+      const rope=h.window.StrandOriginalKits.visuals.balise.rope,point=rope.attachments[pose][side];
+      const image=h.draws.find(args=>args[0].src==='assets/test/balise-'+pose+'-'+side+'.png');
+      check(image,'requested pose absent');const gray=strokes.filter(stroke=>stroke.color===rope.material.body);
+      check(gray.length===1,'missing or doubled grey rope '+key+' '+side);
+      close(gray[0].path[0][1],image[5]+image[7]*point.x,'rope X differs from image crop');
+      close(gray[0].path[0][2],image[6]+image[8]*point.y,'rope Y differs from image crop');
+      check(strokes.some(stroke=>stroke.color===rope.material.fleck),'red flecks absent');
+      check(!strokes.some(stroke=>['#f4bd7e','#9e866c','#f1a05c'].includes(stroke.color)),'old orange rope remains');
+      const endpoint=gray[0].path[1].slice(-2),tether=pose==='tether';
+      close(endpoint[0],f.x+face*(tether?h.hooks.moves[key].reach:66),'rendered target changed');
+      close(endpoint[1],588-(tether?31:8),'rendered target height changed');
+    }
+    for(const face of [1,-1]){
+      const h=build(),m=h.start(),f=m.f[0];f.x=face>0?1270:10;f.face=face;f.act={key:'balise',t:19};
+      const strokes=capture(h);h.draws.length=0;h.hooks.drawOriginalFighter(m,f,0);
+      check(!strokes.some(stroke=>stroke.color===h.window.StrandOriginalKits.visuals.balise.rope.material.body),'border cord doubles back across painted segment');
+      check(!h.draws.some(args=>args[0].src==='assets/test/ropeHook.png'),'border loop detached from source cord');
+    }
+  });
   if(baseSource)test('Eight canonical kits retain identical deterministic state with module absent or loaded',()=>{
     const oldBuild=()=>buildHarness(baseSource,kitSource,contentSource,{kit:false}),newBuild=()=>build({kit:false});
     for(const kit of [false,true])for(const id of ['sam','fragile','higgs','cliff','mule','diehardman','mama','heartman']){

@@ -155,7 +155,7 @@
     if(m.phase===3&&b.hp===0){
       if(Math.abs(p.x-b.x)>100){api.message(s,'Approchez-vous du Consignateur agenouillé, puis Prise / interaction pour la reddition.',120);return true;}
       if(m.register!=='retrieved'||!both(m))return true;
-      m.surrendered=true;b.phase='defeated';api.tone(740,.2);api.finish(s,true,'surrender');return true;
+      m.surrendered=true;b.phase='defeated';api.tone(740,.2);api.message(s,'Le Consignateur accepte le lien. Registre restitué, passage rouvert : aucune mort.',240);api.finish(s,true,'surrender');return true;
     }
     return false;
   }

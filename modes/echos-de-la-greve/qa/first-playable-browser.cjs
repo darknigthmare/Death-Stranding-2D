@@ -1,4 +1,4 @@
-/* Real Chromium UI, native images, physical-key events and local persistence.
+/* Real Chromium UI, native images, browser keyboard events and local persistence.
  * Full combat phases are covered separately by the public-control/native recipe. */
 'use strict';
 const fs=require('node:fs'),path=require('node:path'),assert=require('node:assert/strict'),crypto=require('node:crypto');
@@ -7,11 +7,11 @@ const {createCanvas,loadImage}=require('@napi-rs/canvas');
 const {openRelay}=require('../netplay-server.cjs');
 const mode=path.resolve(__dirname,'..'),repo=path.resolve(mode,'../..');
 const out=path.resolve(process.env.LDM_QA_OUTPUT||path.join(repo,'docs/combat/production/20261127-first-playable'));
-const captures=path.join(out,'browser-renders'),checks=[],errors=[],httpErrors=[],failedRequests=[],pictures=[];
+const captures=path.join(out,'browser-renders'),checks=[],errors=[],httpErrors=[],failedRequests=[],flowErrors=[],pictures=[];
 fs.mkdirSync(captures,{recursive:true});
 const hash=bytes=>crypto.createHash('sha256').update(bytes).digest('hex');
 const files=['index.html','app.js','presentation.js','teams.html','teams.js','extension.html','extension.js','fight.js','boss.js','lessons.js','original-kits.js','original-kits-assets.js','original-bosses.js','original-bosses-assets.js','qa/first-playable-browser.cjs'];
-const report={date:new Date().toISOString(),browser:true,hardware:false,passed:false,checks,errors,httpErrors,failedRequests,captures:pictures,sourceSha256:Object.fromEntries(files.map(file=>[file,hash(fs.readFileSync(path.join(mode,file)))]))};
+const report={date:new Date().toISOString(),browser:true,hardware:false,passed:false,checks,errors,httpErrors,failedRequests,flowErrors,captures:pictures,sourceSha256:Object.fromEntries(files.map(file=>[file,hash(fs.readFileSync(path.join(mode,file)))]))};
 async function check(name,fn){try{const result=await fn();checks.push({name,passed:true,result});console.log('PASS '+name);return result;}catch(error){checks.push({name,passed:false,error:String(error.stack||error)});console.error('FAIL '+name+': '+error.message);throw error;}}
 async function capture(page,name,selector='#arena'){
  const raw=await page.locator(selector).screenshot({type:'png'}),im=await loadImage(raw),c=createCanvas(im.width,im.height);
@@ -45,7 +45,12 @@ async function balise(page,base,label,full){
    await page.locator('#dossier-actions a.button').click();await page.waitForSelector('[data-act="start"]');
    assert.equal(await page.locator('[data-act="pick"]').count(),9);
    assert.equal(await page.locator('[data-act="pick"][aria-pressed="true"]').getAttribute('data-id'),'balise');
+   // Navigation keeps the real pointer coordinates; it may land on another card.
+   // Restore the committed selection before inspecting its large preview.
+   await page.mouse.move(8,8);
+   await page.locator('[data-act="pick"][data-id="balise"]').focus();
    const preview=page.locator('[data-presentation-slot="0"] img.presentationCurrent');
+   await page.waitForFunction(()=>document.querySelector('[data-presentation-slot="0"] img.presentationCurrent')?.getAttribute('src')?.endsWith('/balise/stance-right.png'));
    await preview.waitFor();assert.match(await preview.getAttribute('src'),/balise\/stance-right\.png$/);
    await page.waitForFunction(()=>Array.from(document.querySelectorAll('[data-presentation-slot="0"] img')).every(im=>im.complete&&im.naturalWidth>0));
    return {kits:9,preview:true,layout:await layout(page,label+' selection')};
@@ -64,7 +69,7 @@ async function balise(page,base,label,full){
    return {fighter:state.fighters[0].id,stage:state.stage,layout:await layout(page,label+' arena')};
  });
  if(full){
-   await check(label+' physical keyboard places and recalls a real anchor',async()=>{
+   await check(label+' browser keyboard places and recalls a real anchor',async()=>{
      await heldSpecial(page,'d','baliseAnchor');
      await page.waitForFunction(()=>window.StrandFight.snapshot()?.fighters?.[0]?.marker?.kind==='baliseAnchor');
      await page.locator('#pauseBtn').click();
@@ -151,11 +156,14 @@ async function boss(page,base,label){
      page.on('pageerror',error=>errors.push({page:label,message:String(error)}));
      page.on('response',response=>{if(response.status()>=400&&!new URL(response.url()).pathname.endsWith('/favicon.ico'))httpErrors.push({page:label,url:response.url(),status:response.status()});});
      page.on('requestfailed',request=>failedRequests.push({page:label,url:request.url(),error:request.failure()?.errorText}));
-     await balise(page,base,label,full);await relay(page,base,label);await boss(page,base,label);await context.close();
+     for(const [name,flow] of [['balise',()=>balise(page,base,label,full)],['relay',()=>relay(page,base,label)],['boss',()=>boss(page,base,label)]]){
+       try{await flow();}catch(error){flowErrors.push({page:label,flow:name,error:String(error.stack||error)});console.error('FLOW FAIL '+label+'/'+name+': '+error.message);}
+     }
+     await context.close();
    }
    await check('No uncaught error in the actual original-content pages',async()=>{assert.equal(errors.length,0);return errors;});
    await check('All requested game resources return successfully',async()=>{assert.equal(httpErrors.length,0,JSON.stringify(httpErrors));return httpErrors;});
-   report.passed=true;
+   report.passed=flowErrors.length===0&&checks.every(check=>check.passed);if(!report.passed)process.exitCode=1;
  }catch(error){report.fatalError=String(error.stack||error);process.exitCode=1;}
  finally{if(browser)await browser.close();if(server)await new Promise(resolve=>server.close(resolve));report.finishedAt=new Date().toISOString();fs.writeFileSync(path.join(out,'first-playable-browser-verification.json'),JSON.stringify(report,null,2)+'\n');}
 })();

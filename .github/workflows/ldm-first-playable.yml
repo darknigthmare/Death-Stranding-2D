@@ -98,6 +98,7 @@ jobs:
           node modes/echos-de-la-greve/qa/presentation.cjs --output="$LDM_QA_OUTPUT/presentation-verification.json"
           node modes/echos-de-la-greve/qa/lessons.cjs --output="$LDM_QA_OUTPUT/lessons-verification.json"
           node modes/echos-de-la-greve/qa/original-entrypoints.cjs
+          node modes/echos-de-la-greve/qa/original-extension.cjs
       - name: Actual Chromium catalogue and relay
         if: always()
         run: node modes/echos-de-la-greve/qa/original-browser.cjs

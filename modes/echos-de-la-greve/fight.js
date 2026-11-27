@@ -1049,6 +1049,28 @@
     m.ctx.drawImage(descriptor.image,...crop,x-width*descriptor.anchorX,y-height*descriptor.baselineY,width,height);
     return true;
   }
+  function originalSpritePlacement(f,descriptor) {
+    if(!ready(descriptor?.image))return null;
+    const crop=nativeCrop(descriptor.image,descriptor),height=f.spec.h*descriptor.heightRatio,width=height*crop[2]/crop[3];
+    return {crop,width,height,x:f.x-width*descriptor.anchorX,y:FLOOR-f.y-height*descriptor.baselineY};
+  }
+  function originalRopePoint(placement,point) {
+    if(!placement||!point)return null;
+    return {x:placement.x+placement.width*point.x,y:placement.y+placement.height*point.y};
+  }
+  function drawOriginalRope(c,from,to,material,slack=0) {
+    if(!from||!material||![from.x,from.y,to.x,to.y].every(Number.isFinite))return false;
+    const distance=Math.hypot(to.x-from.x,to.y-from.y);if(distance<.5)return false;
+    c.save();c.lineCap='round';c.lineJoin='round';c.setLineDash([]);
+    c.beginPath();c.moveTo(from.x,from.y);
+    c.quadraticCurveTo((from.x+to.x)/2,(from.y+to.y)/2+Math.min(slack,distance*.12),to.x,to.y);
+    c.strokeStyle=material.edge;c.lineWidth=material.width+.45;c.stroke();
+    c.strokeStyle=material.body;c.lineWidth=material.width;c.stroke();
+    c.strokeStyle=material.fiber;c.lineWidth=material.fiberWidth;c.stroke();
+    c.setLineDash([material.fleckLength,material.fleckGap]);c.lineDashOffset=0;
+    c.strokeStyle=material.fleck;c.lineWidth=material.width*.85;c.stroke();c.restore();
+    return true;
+  }
   function drawOriginalFighter(m,f,index) {
     const c=m.ctx,frames=m.teams?m.teamFrames[f.teamSide][f.teamSlot]:m.fighterFrames[index];
     const feet=FLOOR-f.y,face=f.face>0?'right':'left',a=f.act;
@@ -1061,7 +1083,10 @@
     // The received fall drawings show a grounded, living defeat. The compact
     // jump pose is used for both ascent and descent; velocity does not topple the body.
     const requested=frames.original?.[pose]?.[face],fallback=frames.original?.stance?.[face];
-    const descriptor=ready(requested?.image)?requested:fallback;
+    const descriptor=ready(requested?.image)?requested:fallback,placement=originalSpritePlacement(f,descriptor);
+    const rope=originalKits.visuals?.[f.id]?.rope;
+    // A fallback/hurt pose has no cord join; do not draw a detached line from the torso.
+    const ropePoint=descriptor===requested?originalRopePoint(placement,rope?.attachments?.[pose]?.[face]):null;
     oval(c,f.x,FLOOR+1,Math.max(11,29-f.y*.08),4.3,'rgba(4,11,14,.54)');
     if(m.mode==='training'&&m.training.hitboxes){
       const edge=clamp(f.x+f.face*moves.balise.reach,0,WIDTH);
@@ -1070,25 +1095,29 @@
     }
     if(a?.key==='baliseAnchor'&&a.t<moves.baliseAnchor.start){
       const x=a.anchorX;c.save();c.globalAlpha=.35+a.t/48;
-      oval(c,x,FLOOR-2,12,3,'#f1a05c');line(c,f.x+f.face*18,feet-73,x,FLOOR-8,'#f1a05c',1);c.restore();
+      oval(c,x,FLOOR-2,12,3,'#f1a05c');drawOriginalRope(c,ropePoint,{x,y:FLOOR-8},rope?.material,2);c.restore();
     }
     if(a&&['balise','baliseAssist'].includes(a.key)){
       const data=moves[a.key],out=a.t>=data.start&&a.t<data.start+data.active;
       const reach=out?data.reach:Math.max(18,data.reach*(1-Math.max(0,a.t-data.start-data.active)/data.recover))*(a.t<data.start?.18:1);
       const x=clamp(f.x+f.face*reach,0,WIDTH);
-      line(c,f.x+f.face*15,feet-72,x,feet-31,out?'#f4bd7e':'#9e866c',out?2:1);
-      drawOriginalProp(m,f.id,'ropeHook',x,feet-27,14);
+      // The source PNG already contains the hand-to-loop segment. Extend only
+      // beyond that visible end, including at a stage edge or during retraction.
+      if(ropePoint&&(x-ropePoint.x)*f.face>0){
+        drawOriginalRope(c,ropePoint,{x,y:feet-31},rope?.material,out?1.5:4);
+        drawOriginalProp(m,f.id,'ropeHook',x,feet-27,14);
+      }
     }
     if(a?.key==='baliseReel'){
       const destination=a.destination ?? f.marker?.x;
-      if(Number.isFinite(destination))line(c,f.x,feet-68,destination,FLOOR-8,'#f4bd7e',2);
+      if(Number.isFinite(destination))drawOriginalRope(c,ropePoint,{x:destination,y:FLOOR-8},rope?.material);
     }
-    if(ready(descriptor?.image)){
-      const crop=nativeCrop(descriptor.image,descriptor),height=f.spec.h*descriptor.heightRatio,width=height*crop[2]/crop[3];
+    if(placement){
+      const {crop,x,y,width,height}=placement;
       c.save();
       if(f.flash>1&&f.flash%4<2)c.filter='brightness(1.5)';
       // True left/right source drawings preserve the anatomical equipment side.
-      c.drawImage(descriptor.image,...crop,f.x-width*descriptor.anchorX,feet-height*descriptor.baselineY,width,height);
+      c.drawImage(descriptor.image,...crop,x,y,width,height);
       c.restore();
     }else{
       c.fillStyle=f.spec.suit;c.fillRect(f.x-14,feet-f.spec.h+26,28,f.spec.h*.58);

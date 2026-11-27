@@ -81,13 +81,15 @@ Les gains d’un contact sont attribués à Balise, même lorsqu’elle intervie
 
 ## Art et rendu
 
-Le lot raccorde **30 poses clés orientées** : quinze états, chacun dessiné pour la gauche et pour la droite. La stance vers la droite préexistante fait partie de ces trente sources ; il reste donc vingt-neuf poses nouvelles à produire, avec deux objets détachés.
+Le lot raccorde **30 poses clés orientées** : quinze états, chacun dessiné pour la gauche et pour la droite. Les trente poses sont reçues dans un répertoire autonome, y compris une stance droite nettoyée ; la base préexistante reste préservée. Deux objets sont raccordés au kit. La première boucle orange reste conservée comme variante, tandis que la boucle active reprend la corde grise mouchetée rouge.
 
 États attendus : stance, garde, accroupissement, saut, frappe légère, frappe lourde, impact reçu, traction, pose d’ancre, rappel, chute, provocation, victoire et deux appuis de marche.
 
 Le moteur choisit réellement le fichier de la direction requise. Il ne retourne pas horizontalement la stance pour simuler l’autre côté. Le dévidoir et les autres asymétries doivent rester du même côté anatomique dans les dessins. Le crochet et l’anneau utilisent leurs propres fichiers.
 
 Chaque image possède un cadrage alpha mesuré, une ancre horizontale des appuis, une ligne de sol et une échelle verticale. Le rendu conserve ses proportions. Une image en cours de décodage revient à la stance du même personnage et de la même direction, puis à une silhouette de chargement si nécessaire.
+
+La pose de saut sert à la montée et à la descente. Les dessins `fall` représentent une défaite au sol, vivante ; le changement de signe de la vitesse verticale ne les déclenche pas.
 
 **Ces dessins sont des poses clés.** Ils ne constituent pas une animation complète image par image, ni un jeu de transitions de sélection, d’entrées, de sorties et de conclusions finalisé. La provocation conserve les phases 10 / 28 / 16 du moteur et son exposition aux coups, avec une pose spécifique et sans bonus.
 
@@ -141,8 +143,12 @@ Le script exécute le code livré et injecte ses points d’observation uniqueme
 
 La régression des huit kits compare chaque état public au fight.js du commit 07c818cd3942c0e1925bb0cc32dfe73da19ff297, avec le nouveau module absent puis chargé : **6 400 ticks comparés**. Le checkout CI doit inclure cet historique, ou définir ORIGINAL_KITS_BASE_SOURCE vers son fight.js extrait. L’absence de référence fait échouer le test.
 
-Les premières recettes ont été exécutées dans un hôte V8 simulé : **24 groupes réussis**. Cette preuve couvre le comportement déterministe et les sélections de sources. Elle ne remplace pas l’exécution Node en CI, la mesure des images réelles, un rendu Canvas natif ni le contrôle visuel des poses livrées.
+Les premières recettes ont été exécutées dans un hôte V8 simulé : **26 groupes réussis**. Cette preuve couvre le comportement déterministe et les sélections de sources. Elle ne remplace pas l’exécution Node en CI, la mesure des images réelles, un rendu Canvas natif ni le contrôle visuel des poses livrées.
 
 ## Restant de cette fiche
 
 Le kit local ne clôt pas toute la fiche de production. Restent notamment : les animations intermédiaires, les trois costumes, la super à 100 chiral avec confirmation, la conclusion dédiée, les transitions complètes de sélection/désélection, la route « Une lumière pour personne » et ses adversaires, ainsi que leur intégration aux autres modes.
+
+## Raccord visuel de la corde
+
+Les prolongements du lien utilisent les extrémités de corde déjà peintes dans chaque PNG. Les coordonnées sont normalisées au crop mesuré, puis projetées avec le placement exact du sprite, séparément pour les deux directions. La matière grise à marques rouges prolonge les images reçues. Lorsqu’un prolongement reviendrait derrière la boucle native, notamment à un bord ou pendant la rétraction, il n’est pas dessiné. Les fichiers PNG, les collisions et les timings restent intacts.
