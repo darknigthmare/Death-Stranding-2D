@@ -1,15 +1,16 @@
 /* One bounded Chromium launch, then real DOM/layout and ordinary UI checks.
- * Browser profiles and temporary files stay on the available /home/agent volume. */
+ * Uses the installed Playwright browser (or an explicit executable override). */
 'use strict';
 const fs=require('node:fs'),path=require('node:path'),crypto=require('node:crypto'),assert=require('node:assert/strict');
 const {chromium}=require('playwright');
 const {createCanvas,loadImage}=require('@napi-rs/canvas');
 const {openRelay}=require('../netplay-server.cjs');
 const mode=path.resolve(__dirname,'..'),repo=path.resolve(mode,'../..');
-const out=path.join(repo,'docs/combat/production/20261127-lignes-de-maree');
-const tmp='/home/agent/ds2d-browser-tmp',profile=path.join(tmp,'original-browser-profile');
+const out=path.resolve(process.env.LDM_QA_OUTPUT||path.join(repo,'docs/combat/production/20261127-lignes-de-maree'));
+const tmp=fs.mkdtempSync(path.join(require('node:os').tmpdir(),'ds2d-browser-')),profile=path.join(tmp,'original-browser-profile');
+const executable=process.env.LDM_CHROMIUM_EXECUTABLE||chromium.executablePath();
 const captures=path.join(out,'browser-renders');
-const report={date:new Date().toISOString(),status:'pending',passed:false,browser:false,hardware:false,launch:{attempts:1,executable:'/usr/bin/chromium',headless:true,timeoutMs:60000,TMPDIR:tmp,userDataDir:profile,args:['--no-sandbox','--disable-dev-shm-usage']},checks:[],captures:[],consoleErrors:[],pageErrors:[],failedRequests:[]};
+const report={date:new Date().toISOString(),status:'pending',passed:false,browser:false,hardware:false,launch:{attempts:1,executable,headless:true,timeoutMs:60000,TMPDIR:tmp,userDataDir:profile,args:['--no-sandbox','--disable-dev-shm-usage']},checks:[],captures:[],consoleErrors:[],pageErrors:[],failedRequests:[]};
 const sha=bytes=>crypto.createHash('sha256').update(bytes).digest('hex');
 const sourceFiles=['extension.html','extension.css','extension.js','extension-data.js','extension-assets.js','extension-runtime.js','teams.html','teams.css','teams.js','fight.js'];
 report.sourceSha256=Object.fromEntries(sourceFiles.map(file=>[file,sha(fs.readFileSync(path.join(mode,file)))]));
@@ -70,7 +71,8 @@ async function teams(page,base,label,fullInteractions){
   observe(page,label);await page.goto(base+'/teams.html',{waitUntil:'networkidle',timeout:30000});
   await check(label+' four selectors and 44 arenas',async()=>{
     const members=page.locator('#teamSelection select');assert.equal(await members.count(),4);
-    for(let i=0;i<4;i++)assert.equal(await members.nth(i).locator('option').count(),8);
+    const kits=await page.evaluate(()=>8+(window.StrandOriginalKits?.enabled?1:0));
+    for(let i=0;i<4;i++)assert.equal(await members.nth(i).locator('option').count(),kits);
     const arenas=await page.locator('#teamStage option').count();assert.equal(arenas,44);
     assert.equal(await page.locator('#teamOpponent option').count(),2);
     return {selectors:4,kitsPerSelector:8,modes:2,arenas};
@@ -121,7 +123,7 @@ async function teams(page,base,label,fullInteractions){
   try{
     const started=Date.now();
     try{
-      context=await chromium.launchPersistentContext(profile,{executablePath:'/usr/bin/chromium',headless:true,args:report.launch.args,timeout:60000,env:{...process.env,TMPDIR:tmp},viewport:{width:1280,height:900},deviceScaleFactor:1});
+      context=await chromium.launchPersistentContext(profile,{executablePath:executable,headless:true,args:report.launch.args,timeout:60000,env:{...process.env,TMPDIR:tmp},viewport:{width:1280,height:900},deviceScaleFactor:1});
       report.launch.elapsedMs=Date.now()-started;report.launch.success=true;report.browser=true;report.browserVersion=context.browser().version();console.log('CHROMIUM LAUNCHED '+report.browserVersion);
     }catch(error){report.launch.elapsedMs=Date.now()-started;report.launch.success=false;report.launch.error=String(error.stack||error);report.status='blocked';saveReport();console.log('CHROMIUM BLOCKED '+error.message);return;}
     server=openRelay();await new Promise((resolve,reject)=>{server.once('error',reject);server.listen(0,'127.0.0.1',resolve);});
@@ -140,6 +142,7 @@ async function teams(page,base,label,fullInteractions){
   finally{
     if(mobile)await mobile.close().catch(()=>{});if(context)await context.close().catch(()=>{});
     if(server)await new Promise(resolve=>server.close(resolve));
-    report.finishedAt=new Date().toISOString();saveReport();
+    report.finishedAt=new Date().toISOString();saveReport();if(!report.passed)process.exitCode=1;
+    fs.rmSync(tmp,{recursive:true,force:true});
   }
 })().catch(error=>{report.fatalError=String(error);report.status='blocked';saveReport();process.exitCode=1;});

@@ -11,41 +11,65 @@ permissions:
 jobs:
   verification:
     runs-on: ubuntu-24.04
-    timeout-minutes: 25
+    timeout-minutes: 30
+    env:
+      NODE_PATH: ${{ runner.temp }}/ldm-deps/node_modules
+      PLAYWRIGHT_BROWSERS_PATH: ${{ runner.temp }}/ldm-browsers
+      LDM_QA_OUTPUT: ${{ github.workspace }}/docs/combat/production/20261127-first-playable
     steps:
       - uses: actions/checkout@v4
         with:
           ref: ${{ github.event.pull_request.head.sha }}
           persist-credentials: false
-          fetch-depth: 1
-      - name: Runtime versions
+          fetch-depth: 0
+      - name: Install bounded verification dependencies
         run: |
           node --version
           python --version
-      - name: Native PNG measurement dependency
-        run: python -m pip install --disable-pip-version-check Pillow==11.3.0
+          python -m pip install --disable-pip-version-check Pillow==11.3.0
+          npm install --prefix "$RUNNER_TEMP/ldm-deps" --no-audit --no-fund @napi-rs/canvas@0.1.80 playwright@1.58.0
+          "$RUNNER_TEMP/ldm-deps/node_modules/.bin/playwright" install --with-deps chromium
       - name: Native art reception
         run: python outils/recevoir_premier_jouable.py
-      - name: Existing local game contracts
+      - name: Regenerate canonical reference catalogues
+        if: always()
         run: |
-          node modes/echos-de-la-greve/qa/teams.cjs
-          node modes/echos-de-la-greve/qa/teams-independent.cjs
+          node outils/generer_catalogue_combat.cjs
+          node outils/generer_catalogue_boss.cjs
+      - name: Canonical and original gameplay contracts
+        if: always()
+        run: |
+          node modes/echos-de-la-greve/qa/teams.cjs --output="$LDM_QA_OUTPUT/teams-verification.json"
+          node modes/echos-de-la-greve/qa/teams-independent.cjs --output="$LDM_QA_OUTPUT/teams-independent-verification.json"
           node modes/echos-de-la-greve/qa/boss-compendium.cjs
           node modes/echos-de-la-greve/qa/original-entrypoints.cjs
-      - name: Export measured metadata
+          node qa/original-kits.cjs > "$LDM_QA_OUTPUT/balise-verification.json"
+      - name: Actual Chromium catalogue and relay
+        if: always()
+        run: node modes/echos-de-la-greve/qa/original-browser.cjs
+      - name: Export reviewable metadata and captures
         if: always()
         shell: python
         run: |
           from pathlib import Path
           import base64, hashlib, json
-          files = ["modes/echos-de-la-greve/original-kits-assets.js", "modes/echos-de-la-greve/original-bosses-assets.js", "docs/combat/production/20261127-first-playable/assets-reception.json"]
-          for name in files:
-              path = Path(name)
+          root = Path("docs/combat/production/20261127-first-playable")
+          files = [Path(name) for name in [
+              "modes/echos-de-la-greve/original-kits-assets.js",
+              "modes/echos-de-la-greve/original-bosses-assets.js",
+              "modes/echos-de-la-greve/moves-data.js",
+              "modes/echos-de-la-greve/boss-data.js",
+              "docs/combat/data/actions-et-ia.json",
+              "docs/combat/ACTIONS_ET_IA.md",
+              "docs/combat/data/boss-et-rencontres.json",
+              "docs/combat/BOSS_ET_RENCONTRES.md"]]
+          files.extend(path for path in root.rglob("*") if path.is_file() and path.suffix in (".json", ".webp", ".png") and path.name != "art-generation.json")
+          for path in files:
               if not path.is_file():
                   continue
               data = path.read_bytes()
               encoded = base64.b64encode(data).decode("ascii")
-              print("FILEMETA|" + json.dumps({"path": name, "bytes": len(data), "sha256": hashlib.sha256(data).hexdigest(), "base64Length": len(encoded)}))
+              print("FILEMETA|" + json.dumps({"path": str(path), "bytes": len(data), "sha256": hashlib.sha256(data).hexdigest(), "base64Length": len(encoded)}))
               for start in range(0, len(encoded), 4096):
                   print("FILEDATA|" + encoded[start:start+4096])
-              print("FILEEND|" + name)
+              print("FILEEND|" + str(path))

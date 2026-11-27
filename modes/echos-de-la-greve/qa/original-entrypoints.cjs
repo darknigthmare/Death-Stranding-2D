@@ -15,7 +15,7 @@ function page(file,search=''){
 check('All twenty real catalogue entry URLs open the right training selection and start that arena.',()=>{
   for(const stage of ids){const a=page('index.html','?ldmStage='+encodeURIComponent(stage));
     assert.equal(a.document.querySelector('[data-option="stage"]')?.value,stage);
-    assert.equal(a.document.querySelectorAll('[data-act="pick"]').length,8,'No invented playable kit');
+    assert.equal(a.document.querySelectorAll('[data-act="pick"]').length,8+(a.host.StrandOriginalKits?.enabled?1:0),'Only fully received original kits enter local selection');
     a.click('[data-act="start"]');a.frames(2);
     assert.equal(a.host.StrandFight.snapshot().stage,stage);assert.equal(a.host.StrandFight.snapshot().mode,'training');
     started.push(stage);a.host.StrandFight.stop();
@@ -32,9 +32,9 @@ check('Versus admits 45 arenas; Boss Battle retains its 24 existing compatible a
 });
 check('The actual team controller admits 44 compatible arenas and starts an original panorama with four existing members.',()=>{
   const a=page('teams.html');const choices=a.document.querySelector('#teamStage').querySelectorAll('option').map(n=>n.value);assert.equal(choices.length,44);for(const id of ids)assert(choices.includes(id));assert(!choices.includes('terminal-linked'));
-  for(const select of ['teamMember00','teamMember01','teamMember10','teamMember11'])assert.equal(a.document.querySelector('#'+select).querySelectorAll('option').length,8);
+  for(const select of ['teamMember00','teamMember01','teamMember10','teamMember11'])assert.equal(a.document.querySelector('#'+select).querySelectorAll('option').length,8+(a.host.StrandOriginalKits?.enabled?1:0));
   a.change('#teamStage',ids[0]);a.click('#teamStart');a.frames(2);const state=a.host.StrandFight.snapshot();assert.equal(state.stage,ids[0]);assert.equal(state.teams.length,2);a.host.StrandFight.stop();
 });
 const files=['app.js','teams.js','index.html','teams.html','extension-data.js','extension-assets.js','extension-runtime.js','qa/original-entrypoints.cjs'];
 const report={date:new Date().toISOString(),passed:true,groups:checks.length,checks,trainingArenasStarted:started,browser:false,method:'Shipped HTML script order and real app/team controllers, event-capable DOM fixture and actual fight engine; images and browser layout are covered separately.',sourceSha256:Object.fromEntries(files.map(file=>[file,crypto.createHash('sha256').update(fs.readFileSync(path.join(root,file))).digest('hex')]))};
-fs.writeFileSync(path.join(repo,'docs/combat/production/20261127-lignes-de-maree/entrypoints-verification.json'),JSON.stringify(report,null,2)+'\n');console.log(JSON.stringify(report));
+fs.writeFileSync(path.join(process.env.LDM_QA_OUTPUT||path.join(repo,'docs/combat/production/20261127-lignes-de-maree'),'entrypoints-verification.json'),JSON.stringify(report,null,2)+'\n');console.log(JSON.stringify(report));

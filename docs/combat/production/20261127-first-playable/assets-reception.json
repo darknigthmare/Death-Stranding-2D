@@ -1,0 +1,149 @@
+{
+  "schemaVersion": 1,
+  "baseCommit": "07c818cd3942c0e1925bb0cc32dfe73da19ff297",
+  "nativeImagesModified": false,
+  "thresholdAlpha": 8,
+  "assets": [
+    {
+      "path": "modes/echos-de-la-greve/assets/lignes-de-maree/playable/props/balise-rope-loop.png",
+      "sha256": "248eba9f1b39ce2527ba4f01379d1c5888439fe34a8ee70399d6896c6d322202",
+      "bytes": 798158,
+      "width": 1774,
+      "height": 887,
+      "mode": "RGBA",
+      "alphaMin": 0,
+      "alphaMax": 255,
+      "transparentFraction": 0.805139,
+      "opaqueFraction": 0.161986,
+      "borderAlphaMax": 1,
+      "crop": [
+        55,
+        124,
+        1649,
+        643
+      ],
+      "opaqueBBox": [
+        60,
+        132,
+        1703,
+        765
+      ],
+      "id": "ropeHook",
+      "runtimeKey": "ropeHook"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/lignes-de-maree/playable/props/balise-anchor.png",
+      "sha256": "db9f6c557b06c0e361b5e8d96d04f3e2d2f37647d5a7c5490ebd9b3d87859f1b",
+      "bytes": 1049772,
+      "width": 1774,
+      "height": 887,
+      "mode": "RGBA",
+      "alphaMin": 0,
+      "alphaMax": 255,
+      "transparentFraction": 0.722133,
+      "opaqueFraction": 0.259488,
+      "borderAlphaMax": 1,
+      "crop": [
+        110,
+        68,
+        1546,
+        752
+      ],
+      "opaqueBBox": [
+        112,
+        70,
+        1654,
+        819
+      ],
+      "id": "anchor",
+      "runtimeKey": "anchor"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/lignes-de-maree/playable/props/toll-console-active.png",
+      "sha256": "503ea019c2a5d633e0694b9265a3c7b23c355f143ad6ee497ca2a196c5ab2bd6",
+      "bytes": 1343460,
+      "width": 1199,
+      "height": 1312,
+      "mode": "RGBA",
+      "alphaMin": 0,
+      "alphaMax": 255,
+      "transparentFraction": 0.584496,
+      "opaqueFraction": 0.400386,
+      "borderAlphaMax": 1,
+      "crop": [
+        201,
+        76,
+        793,
+        1179
+      ],
+      "opaqueBBox": [
+        203,
+        78,
+        992,
+        1254
+      ],
+      "id": "console-active",
+      "runtimeKey": "console-active"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/lignes-de-maree/playable/props/toll-console-inactive.png",
+      "sha256": "b6aed458bb01a059e64b0cb01ddc9629cd3b0d2e72b49f185d7df0978846935e",
+      "bytes": 1261962,
+      "width": 1199,
+      "height": 1312,
+      "mode": "RGBA",
+      "alphaMin": 0,
+      "alphaMax": 255,
+      "transparentFraction": 0.582894,
+      "opaqueFraction": 0.404697,
+      "borderAlphaMax": 1,
+      "crop": [
+        201,
+        71,
+        794,
+        1185
+      ],
+      "opaqueBBox": [
+        203,
+        73,
+        993,
+        1254
+      ],
+      "id": "console-inactive",
+      "runtimeKey": "console-inactive"
+    },
+    {
+      "path": "modes/echos-de-la-greve/assets/lignes-de-maree/playable/props/returned-register.png",
+      "sha256": "445b690df49eba33882329a52bf0636859651d6b43e68cd7e4763991eca64d55",
+      "bytes": 1578158,
+      "width": 1086,
+      "height": 1448,
+      "mode": "RGBA",
+      "alphaMin": 0,
+      "alphaMax": 255,
+      "transparentFraction": 0.481299,
+      "opaqueFraction": 0.502434,
+      "borderAlphaMax": 1,
+      "crop": [
+        173,
+        53,
+        732,
+        1320
+      ],
+      "opaqueBBox": [
+        174,
+        56,
+        904,
+        1371
+      ],
+      "id": "register",
+      "runtimeKey": "register"
+    }
+  ],
+  "errors": [],
+  "ready": {
+    "balise": false,
+    "consignateur": false
+  },
+  "scope": "Native file, alpha and crop reception. Pose identity and alignment also require visual review."
+}

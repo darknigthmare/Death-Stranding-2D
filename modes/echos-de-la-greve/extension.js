@@ -15,8 +15,8 @@
   let opener=null;
   const dialog=doc.getElementById('dossier');
   function received(item){return assets.items?.[item.id];}
-  function playable(item){const image=received(item);return item.category==='stages'&&image&&Number.isFinite(image.floorY);}
-  function badgeText(item){return playable(item)?'Arène statique jouable':'Gameplay prévu dans la bible';}
+  function playable(item){const image=received(item);return item.category==='stages'&&image&&Number.isFinite(image.floorY)||item.id==='ldm-char-balise'&&host.StrandOriginalKitsAssets?.kits?.balise?.ready===true||item.id==='ldm-boss-consignateur'&&host.StrandOriginalBossArt?.ready===true;}
+  function badgeText(item){return playable(item)?(item.category==='characters'?'Duel, entraînement et relais':item.category==='bosses'?'Rencontre jouable · 3 phases':'Arène statique jouable'):'Gameplay prévu dans la bible';}
   function badges(item){const n=el('div','badges');n.append(el('span','badge',received(item)?(item.category==='stages'?'Panorama reçu':'Base visuelle reçue'):'Visuel à produire'),el('span','badge'+(playable(item)?' playable':''),badgeText(item)));return n;}
   function art(item){const image=received(item);if(!image)return el('span','pending','Visuel à produire');const n=el('img');n.src=image.src;n.alt=item.name+' · création originale';n.loading='lazy';n.width=image.width;n.height=image.height;return n;}
   function textValue(value){if(typeof value==='string'&&byId.has(value)){const button=el('button','relation',byId.get(value).name);button.type='button';button.addEventListener('click',()=>open(byId.get(value)));return button;}if(typeof value==='string'&&loreById.has(value)){const rule=loreById.get(value);return el('span','',rule.rule||rule.text||rule.description||rule.summary||value);}return el('span','',String(value));}
@@ -39,10 +39,10 @@
     doc.getElementById('dossier-status').replaceChildren(...badges(item).childNodes);
     const actions=doc.getElementById('dossier-actions');actions.replaceChildren();
     const image=received(item);if(image){const a=el('a','','Image originale ↓');a.href=image.src;a.download=image.src.split('/').pop();actions.append(a);}
-    if(playable(item)){const a=el('a','button','Essayer cette arène ↗');a.href='index.html?ldmStage='+encodeURIComponent(item.id);actions.prepend(a);}
+    if(playable(item)){const character=item.category==='characters',boss=item.category==='bosses';const a=el('a','button',character?'Jouer Balise au dojo ↗':boss?'Affronter le Consignateur ↗':'Essayer cette arène ↗');a.href='index.html?'+(character?'ldmFighter=balise':boss?'ldmBoss='+encodeURIComponent(item.id):'ldmStage='+encodeURIComponent(item.id));actions.prepend(a);}
     const details=doc.getElementById('dossier-detail');details.replaceChildren();
     for(const[key,value]of Object.entries(item)){if(['id','name','summary','category',...hiddenKeys].includes(key)||value==null)continue;const section=el('details');if(['gameplay','visuals'].includes(key))section.open=true;section.append(el('summary','',pretty(key)),rich(value));details.append(section);}
-    const note=el('p','','Création originale du projet. Une base visuelle ne constitue pas une animation complète ni un nouveau combattant jouable.');details.append(note);
+    const note=el('p','',playable(item)&&item.category==='characters'?'Balise est disponible en duel, entraînement et relais avec ses poses de combat. Sa campagne personnelle, ses costumes et sa conclusion restent prévus dans la bible.':playable(item)&&item.category==='bosses'?'Trois phases jouables : ouvrir la garde, désactiver les deux consoles, restituer le registre puis obtenir la reddition au lien.':'Création originale du projet. Une base visuelle ne constitue pas une animation complète ni un nouveau combattant jouable.');details.append(note);
     if(!dialog.open)dialog.showModal();
     dialog.scrollTop=0;
     const hash='#'+encodeURIComponent(item.id);if(host.location.hash!==hash)host.history.replaceState(null,'',hash);

@@ -35,6 +35,7 @@ def measure(relative, strict=True):
         item = {"path": relative, "sha256": hashlib.sha256(data).hexdigest(), "bytes": len(data), "width": width, "height": height, "mode": source.mode,
                 "alphaMin": alpha.getextrema()[0], "alphaMax": alpha.getextrema()[1], "transparentFraction": round(histogram[0] / total, 6),
                 "opaqueFraction": round(sum(histogram[224:]) / total, 6), "borderAlphaMax": border_max,
+                "sampledAlpha": {str(x) + "," + str(y): alpha.getpixel((min(x, width-1), min(y, height-1))) for x, y in [(50,750),(100,750),(50,400),(width//2,30),(width-50,750)]},
                 "crop": [left, top, right-left, bottom-top], "opaqueBBox": list(opaque)}
         if strict and (histogram[0] / total < .03 or border_max > 64):
             errors.append({"path": relative, "reason": "Insufficient transparent margin or visible subject touches native canvas", "transparentFraction": item["transparentFraction"], "borderAlphaMax": border_max})

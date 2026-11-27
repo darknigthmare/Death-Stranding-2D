@@ -6,7 +6,10 @@
   const RUSH_ORDER=Object.freeze(['lion','squid','whale','giant','truck','convoy']);
   const clamp=(n,a,b)=>Math.max(a,Math.min(b,n)),clone=value=>JSON.parse(JSON.stringify(value));
   const own=(object,key)=>typeof key==='string'&&Object.hasOwn(object,key);
-  const content=host.StrandContent,art=host.StrandAssets||{},bossArt=host.StrandBossAssets||{};
+  const content=host.StrandContent,art=host.StrandAssets||{},baseBossArt=host.StrandBossAssets||{};
+  const originals=host.StrandOriginalBosses||{},originalBossArt=host.StrandOriginalBossArt||{};
+  const bossArt={...baseBossArt,sprites:{...baseBossArt.sprites,...originalBossArt.sprites},
+    geometry:{...baseBossArt.geometry,bosses:{...baseBossArt.geometry?.bosses,...originalBossArt.geometry?.bosses}}};
   const encounters={
     lion:{name:'Catcher léonin',type:'lion',stage:'tar-basin',hp:280,height:270,radius:162,bodyHeight:230,seconds:150,
       goal:'Abattez le Catcher. Sautez au-dessus de sa charge et frappez pendant sa récupération.',
@@ -27,6 +30,11 @@
       goal:'Interceptez deux camions en deux vagues. Rapportez un colis par camion et protégez le dépôt des tirs bas.',
       patterns:['bolts','charge','bolts'],tell:72,recover:80}
   };
+  // Loading no original module preserves the six legacy encounters and the six-entry Rush.
+  for(const [id,definition] of Object.entries(originals.encounters||{})){
+    if(own(originals.controllers||{},id)&&!own(encounters,id))encounters[id]=definition;
+  }
+  const originalFor=s=>own(originals.controllers||{},s?.bossId)?originals.controllers[s.bossId]:null;
   const players={sam:{h:176,speed:4.4,power:1},fragile:{h:166,speed:4.95,power:.94},higgs:{h:184,speed:4.05,power:1.06},
     cliff:{h:179,speed:4.2,power:1.03},mule:{h:177,speed:4.25,power:1},diehardman:{h:181,speed:4.1,power:1.02},
     mama:{h:170,speed:4.4,power:.96},heartman:{h:176,speed:4.15,power:.96}};
@@ -49,6 +57,8 @@
   const validKinds=new Set(['light','heavy','lift','sweep','grab','finish',...Object.keys(costs)]);
   let current=null,raf=0,audio=null,soundOn=true,ambience=.35,reduced=false,sessionProgress=null,sessionRush=null;
 
+  const originalAPI={floor:FLOOR,width:W,height:H,clamp,message,effect,tone,damagePlayer,finish,
+    savePhase(s){if(current?.s===s)current.saved=persist();}};
   function storage(){try{return host.localStorage;}catch{return null;}}
   function validOutfit(p1,outfit){return outfit==='atelier'||own(art.wardrobe?.[p1]||{},outfit);}
   function emptyProgress(){return {version:1,rules:RULES,records:{},recent:[],checkpoint:null};}
@@ -90,11 +100,16 @@
       ['stun','invuln','shield','flash'].every(key=>scalar(p[key],0,100))&&scalar(p.walk,0,10000)&&actionOK&&markerOK&&
       b&&b.type===d.type&&b.hp>=0&&b.hp<=b.maxHp&&b.maxHp>0&&b.maxHp<1000&&scalar(b.x,0,W)&&b.face*b.face===1&&scalar(b.timer,0,300)&&
       ['approach','tell','attack','recover','dive','defeated'].includes(b.phase)&&
-      attackOK&&(!['tell','attack'].includes(b.phase)||attack)&&[1,2].includes(b.tier)&&Number.isInteger(b.cycle)&&scalar(b.cycle,0,1000)&&
+      attackOK&&(!['tell','attack'].includes(b.phase)||attack)&&(originalFor(s)?[1,2,3]:[1,2]).includes(b.tier)&&Number.isInteger(b.cycle)&&scalar(b.cycle,0,1000)&&
       scalar(b.stagger,0,200)&&scalar(b.flash,0,20)&&scalar(b.exposed,0,150)&&
       s.wave>=1&&s.wave<=(d.waves||1)&&s.cargo&&s.cargo.goal===(d.cargo||0)&&s.cargo.integrity>0&&s.cargo.integrity<=100&&
       boxesOK&&s.cargo.delivered>=0&&s.cargo.delivered<=s.cargo.goal&&arraysOK&&
-      s.stats&&['damageDealt','damageTaken','guarded','avoided','attacks','signatures','cargoHits'].every(key=>scalar(s.stats[key],0,100000))&&Number.isInteger(s.nextId)&&s.nextId>0);
+      s.stats&&['damageDealt','damageTaken','guarded','avoided','attacks','signatures','cargoHits'].every(key=>scalar(s.stats[key],0,100000))&&Number.isInteger(s.nextId)&&s.nextId>0&&
+      (originalFor(s)?originalFor(s).valid(s):s.original===undefined));
+  }
+  function validRecordKey(key){
+    const parts=key.split(':');
+    return parts.length===3&&own(players,parts[0])&&own(encounters,parts[1])&&['easy','normal','hard'].includes(parts[2]);
   }
   function progress(){
     if(sessionProgress)return clone(sessionProgress);
@@ -103,7 +118,7 @@
       const raw=storage()?.getItem(STORE);if(!raw||raw.length>180000)return remember(emptyProgress());
       const p=JSON.parse(raw);if(p.version!==1||p.rules!==RULES||!p.records||typeof p.records!=='object'||!Array.isArray(p.recent))return remember(emptyProgress());
       const clean=emptyProgress();
-      for(const [key,r] of Object.entries(p.records).slice(0,200))if(/^(sam|fragile|higgs|cliff|mule|diehardman|mama|heartman):(lion|squid|whale|giant|truck|convoy):(easy|normal|hard)$/.test(key)&&finiteTree(r)&&Number.isInteger(r.attempts)&&r.attempts>=0&&Number.isInteger(r.wins)&&r.wins>=0&&r.wins<=r.attempts&&Number.isFinite(r.best)&&r.best>=0&&(r.fastest===null||Number.isFinite(r.fastest)))clean.records[key]=r;
+      for(const [key,r] of Object.entries(p.records).slice(0,200))if(validRecordKey(key)&&finiteTree(r)&&Number.isInteger(r.attempts)&&r.attempts>=0&&Number.isInteger(r.wins)&&r.wins>=0&&r.wins<=r.attempts&&Number.isFinite(r.best)&&r.best>=0&&(r.fastest===null||Number.isFinite(r.fastest)))clean.records[key]=r;
       clean.recent=p.recent.filter(r=>r&&own(encounters,r.bossId)&&own(players,r.p1)&&Number.isFinite(r.score)&&typeof r.won==='boolean').slice(0,12);
       clean.checkpoint=validCheckpoint(p.checkpoint)?p.checkpoint:null;return remember(clean);
     }catch{return remember(emptyProgress());}
@@ -190,18 +205,19 @@
     const p=progress();p.checkpoint=checkpoint();return writeProgress(p);
   }
   function newBoss(d,difficulty,wave){
-    const maxHp=Math.round(d.hp*({easy:.82,normal:1,hard:1.2}[difficulty])*(wave>1?1.12:1));
+    const maxHp=d.fixedGuard?d.hp:Math.round(d.hp*({easy:.82,normal:1,hard:1.2}[difficulty])*(wave>1?1.12:1));
     return {type:d.type,x:940,face:-1,hp:maxHp,maxHp,phase:'approach',timer:55,tier:1,cycle:0,attack:null,
       stagger:0,flash:0,exposed:0,damageToDepot:false};
   }
   function makeState(o){
     const bossId=own(encounters,o.boss)?o.boss:'lion',d=encounters[bossId];
     const p1=own(players,o.p1)?o.p1:'sam',difficulty=['easy','normal','hard'].includes(o.difficulty)?o.difficulty:'normal';
-    return {bossId,p1,difficulty,stage:own(content.stages,o.stage)?o.stage:d.stage,outfit:validOutfit(p1,o.outfit)?o.outfit:'atelier',tick:0,phase:'intro',phaseTicks:75,
+    const state={bossId,p1,difficulty,stage:own(content.stages,o.stage)?o.stage:d.stage,outfit:validOutfit(p1,o.outfit)?o.outfit:'atelier',tick:0,phase:'intro',phaseTicks:75,
       remaining:d.seconds*60,p:{x:250,y:0,vy:0,face:1,hp:120,energy:100,guardMeter:100,guard:false,crouch:false,keys:{},taps:{},
         act:null,stun:0,invuln:0,shield:0,walk:0,marker:null,flash:0},boss:newBoss(d,difficulty,1),wave:1,waveDelay:0,
       cargo:{goal:d.cargo||0,delivered:0,integrity:100,carrying:null,boxes:[]},shots:[],hazards:[],effects:[],nextId:1,
       message:d.goal,messageTicks:200,stats:{damageDealt:0,damageTaken:0,guarded:0,avoided:0,attacks:0,signatures:0,cargoHits:0},result:null};
+    originalFor(state)?.create(state,o);return state;
   }
   function image(path){if(!path)return null;const im=new Image();im.src=path;return im;}
   function loadArt(s){
@@ -214,6 +230,7 @@
       boss:Object.fromEntries(Object.entries(bossArt.sprites?.[encounters[s.bossId].type]||{}).map(([key,path])=>[key,image(path)])),
       effects:Object.fromEntries(Object.entries(bossArt.effects||{}).map(([key,path])=>[key,image(path)])),
       shots:Object.fromEntries(Object.entries(art.projectiles||{}).map(([key,path])=>[key,image(path)])),
+      originalProps:Object.fromEntries(Object.entries(originalBossArt.props||{}).map(([key,path])=>[key,image(path)])),
       cargo:image(art.props?.cargo),deck:image(art.props?.bridgeDeck),parcel:image(art.props?.closedParcel),
       stage:Object.fromEntries(['stages','skyplates','distants','midgrounds','floors','foregrounds'].map(key=>[key,image(art[key]?.[s.stage])]))};
   }
@@ -235,6 +252,17 @@
     o.canvas.width=W;o.canvas.height=H;
     soundOn=o.sound!==false;ambience=clamp(Number.isFinite(o.ambienceVolume)?o.ambienceVolume:.35,0,1);reduced=!!o.reducedEffects;
     current.saved=persist();notify(true);draw();if(!current.manual)raf=host.requestAnimationFrame(frame);return snapshot();
+  }
+  function retryCheckpoint(s){
+    const controller=originalFor(s);if(!controller||s.original.surrendered)return null;
+    const state=clone(s);if(!controller.restore(state))return null;
+    const cp={version:1,rules:RULES,state};return validCheckpoint(cp)?cp:null;
+  }
+  function retry(){
+    const m=current;if(!m||m.s.phase!=='ended'||m.s.result?.won)return null;
+    const resume=retryCheckpoint(m.s);if(!resume)return null;
+    return start({canvas:m.canvas,resume,p1:m.s.p1,boss:m.s.bossId,manualClock:m.manual,isolated:m.isolated,
+      onEnd:m.onEnd,onStatus:m.onStatus,sound:soundOn,ambienceVolume:ambience,reducedEffects:reduced,staticScenery:m.staticScenery});
   }
   function clearSession(save){
     if(save&&current&&current.s.phase!=='ended')persist();
@@ -264,12 +292,13 @@
     const score=won?Math.max(100,Math.round(12000+s.stats.damageDealt*9+s.p.hp*25+(d.cargo?s.cargo.integrity*12:0)-elapsed*1.5)):0;
     const result={won,reason,score,bossId:s.bossId,p1:s.p1,difficulty:s.difficulty,stage:s.stage,elapsed,
       vitality:Math.ceil(s.p.hp),cargo:s.cargo.delivered,cargoGoal:s.cargo.goal,integrity:s.cargo.integrity,waves:s.wave,stats:clone(s.stats)};
+    if(originalFor(s)){result.original=originalFor(s).result(s);result.retryAvailable=!won;}
     if(current.isolated){result.saved=null;result.isolated=true;}
     else if(current.rush)result.saved=finishRush(result,s.p.hp);
     else{
       const p=progress(),key=[s.p1,s.bossId,s.difficulty].join(':'),r=p.records[key]||{attempts:0,wins:0,best:0,fastest:null};
       r.attempts++;if(won){r.wins++;r.best=Math.max(r.best||0,score);r.fastest=r.fastest===null?elapsed:Math.min(r.fastest,elapsed);}
-      p.records[key]=r;p.recent.unshift(result);p.recent=p.recent.slice(0,12);p.checkpoint=null;result.saved=writeProgress(p);
+      p.records[key]=r;p.recent.unshift(result);p.recent=p.recent.slice(0,12);p.checkpoint=!won&&originalFor(s)?retryCheckpoint(s):null;result.saved=writeProgress(p);
     }
     s.result=result;current.saved=result.saved;stopAudio();notify(true);current?.onEnd?.(clone(result));
   }
@@ -304,7 +333,8 @@
     else message(s,'Camion immobilisé · prends un colis, puis livre-le au dépôt à gauche.',240);
     tone(380,.2);
   }
-  function damageBoss(s,amount,stagger=12){
+  function damageBoss(s,amount,stagger=12,impactX=s.p.x){
+    const controller=originalFor(s);if(controller)return controller.damage(s,amount,players[s.p1].power,impactX,originalAPI);
     const b=s.boss;if(b.hp<=0||b.phase==='dive'||s.phase==='ended')return false;
     const exposed=b.phase==='recover'||b.exposed>0,armour=b.type==='mule-truck'?.72:b.type==='whale'?.65:1;
     const n=Math.max(1,Math.round(amount*(exposed?1.35:armour)*players[s.p1].power));
@@ -318,8 +348,8 @@
     return true;
   }
   // Pose-dependent collision remains deterministic even while images are loading or unavailable.
-  function bossPose(b){return b.type==='mule-truck'?(b.hp<b.maxHp*.5?'damaged':'idle'):b.hp===0||b.phase==='recover'?'stagger':['tell','attack'].includes(b.phase)?'attack':'idle';}
-  function bossBodyHeight(s){const d=encounters[s.bossId];return d.bodyHeights?.[bossPose(s.boss)]??d.bodyHeight;}
+  function bossPose(b,s){if(s&&originalFor(s))return originalFor(s).pose(s);return b.type==='mule-truck'?(b.hp<b.maxHp*.5?'damaged':'idle'):b.hp===0||b.phase==='recover'?'stagger':['tell','attack'].includes(b.phase)?'attack':'idle';}
+  function bossBodyHeight(s){const d=encounters[s.bossId];return d.bodyHeights?.[bossPose(s.boss,s)]??d.bodyHeight;}
   function melee(s,damage,reach,stagger=18){
     const p=s.p,b=s.boss,d=encounters[s.bossId];
     if(b.hp>0&&Math.abs(b.x-p.x)<=d.radius+reach&&(b.x-p.x)*p.face>=-25&&p.y<bossBodyHeight(s)+40)damageBoss(s,damage,stagger);
@@ -329,6 +359,7 @@
     if(s.phase!=='ended')s.shots.push({id:s.nextId++,kind,x,y,vx,damage,w:42,h:32,ttl:160,delay:0,...extra});
   }
   function interact(s){
+    if(originalFor(s)?.interact(s,originalAPI))return true;
     if(!s.cargo.goal)return false;
     const p=s.p,c=s.cargo;
     if(c.carrying!==null){
@@ -366,7 +397,7 @@
       case'heavy':case'lift':
         melee(s,23,135,24);
         if(p.marker?.kind==='crate'&&Math.abs(p.marker.x-x)<180){friendly(s,'cargo',p.marker.x,FLOOR-22,face*7,32,{w:56,h:42});p.marker=null;}break;
-      case'grab':melee(s,14,65,28);message(s,'Les grandes cibles résistent à la projection · frappe d’appui.');break;
+      case'grab':melee(s,14,65,28);message(s,originalFor(s)?'Lien d’appui · la reddition exige le registre et une garde à zéro.':'Les grandes cibles résistent à la projection · frappe d’appui.');break;
       case'finish':melee(s,65,230,48);friendly(s,'memory',x+face*90,y-90,face*8,22,{w:110,h:110,ttl:90});message(s,'Charge chirale !',70);break;
       case'bola':friendly(s,'sam',x+face*45,y-92,face*9,34);break;
       case'brace':case'parry':case'order':p.shield=a.kind==='order'?80:55;message(s,'Contre prêt · faites face au prochain impact.',90);break;
@@ -447,6 +478,7 @@
   }
   function bossTick(s){
     const b=s.boss,d=encounters[s.bossId];if(b.flash>0)b.flash--;if(b.exposed>0)b.exposed--;
+    if(originalFor(s)){originalFor(s).tick(s,originalAPI);return;}
     if(b.hp<=0){
       if(s.waveDelay>0&&--s.waveDelay===0){s.wave++;s.boss=newBoss(d,s.difficulty,s.wave);s.phase='active';message(s,'Deuxième vague · protégez le dépôt et rapportez le dernier colis.',200);}
       return;
@@ -483,7 +515,7 @@
     for(const q of s.shots){
       if(q.delay>0){q.delay--;continue;}q.x+=q.vx;q.ttl--;
       if(b.hp>0&&Math.abs(q.x-b.x)<d.radius+q.w/2&&q.y+q.h/2>FLOOR-bossBodyHeight(s)&&q.y-q.h/2<FLOOR&&b.phase!=='dive'){
-        damageBoss(s,q.damage,16);q.ttl=0;if(s.phase==='ended')return;
+        damageBoss(s,q.damage,16,q.x-q.vx);q.ttl=0;if(s.phase==='ended')return;
       }
     }
     s.shots=s.shots.filter(q=>q.ttl>0&&q.x>-90&&q.x<W+90);
@@ -544,13 +576,19 @@
   function scenery(m){
     const c=m.ctx,s=m.s,ims=m.images.stage,geo=art.stageGeometry?.[s.stage]||{},cam=(m.staticScenery?m.staticSceneCamera:clamp((s.p.x-W/2)*.13,-65,65))*(reduced?.2:1);
     c.fillStyle=content.arenas[s.stage]?.sky||'#425358';c.fillRect(0,0,W,H);
-    const sky=ready(ims.skyplates)&&ready(ims.distants)&&ready(ims.floors)?ims.skyplates:ims.stages;
-    if(ready(sky)){const scale=Math.max((W+56)/sky.naturalWidth,(H+24)/sky.naturalHeight);c.drawImage(sky,-28-cam*.14,-12,sky.naturalWidth*scale,sky.naturalHeight*scale);}
+    const layered=ready(ims.skyplates)&&ready(ims.distants)&&ready(ims.floors),sky=layered?ims.skyplates:ims.stages;
+    if(ready(sky)){
+      // Anchor a single native panorama at its measured support row, as in the duel renderer.
+      const ratio=sky.naturalWidth/sky.naturalHeight,anchor=!layered&&Number.isFinite(geo.legacy?.floorY)&&geo.legacy.floorY>.05&&geo.legacy.floorY<.98?geo.legacy.floorY:null;
+      if(anchor===null){const scale=Math.max((W+56)/sky.naturalWidth,(H+24)/sky.naturalHeight);c.drawImage(sky,-28-cam*.14,-12,sky.naturalWidth*scale,sky.naturalHeight*scale);}
+      else{const height=Math.max((W+56)/ratio,(FLOOR+12)/anchor,(H-FLOOR+12)/(1-anchor)),width=height*ratio;
+        c.drawImage(sky,(W-width)/2-cam*.14,FLOOR-height*anchor,width,height);}
+    }
     for(const [key,gkey,margin,base,anchor,alpha,speed] of [['distants','distant',48,552,.96,1,.27],['midgrounds','middle',48,576,.97,.92,.43],['floors','floor',80,FLOOR,.3,1,.62]]){
       const im=ims[key];if(!ready(im))continue;const q=geo[gkey]||{},width=W+margin*2,height=width*im.naturalHeight/im.naturalWidth;
       c.save();c.globalAlpha=q.alpha??alpha;c.drawImage(im,-margin-cam*speed,(q.base??base)-height*(q.anchorY??anchor),width,height);c.restore();
     }
-    if(!ready(ims.floors)){c.fillStyle='#18272a';c.fillRect(0,FLOOR,W,H-FLOOR);line(c,0,FLOOR,W,FLOOR,'#7c9290');}
+    if(!ready(ims.floors)&&!ready(sky)){c.fillStyle='#18272a';c.fillRect(0,FLOOR,W,H-FLOOR);line(c,0,FLOOR,W,FLOOR,'#7c9290');}
     c.fillStyle='rgba(3,10,15,.16)';c.fillRect(0,0,W,H);
   }
   function drawPlayer(m){
@@ -587,19 +625,24 @@
     const s=m.s,b=s.boss,d=encounters[s.bossId],c=m.ctx;if(b.phase==='dive'){
       oval(c,b.x,FLOOR,180,11,'#070c14bb');return;
     }
-    const pose=bossPose(b);
+    const pose=bossPose(b,s);
     const im=m.images.boss[pose]||m.images.boss.idle,g=bossArt.geometry?.bosses?.[b.type]?.[pose]||{};
-    oval(c,b.x,FLOOR+4,d.radius*.8,10,'#030810b3');c.save();if(b.hp===0)c.globalAlpha=.5;
+    oval(c,b.x,FLOOR+4,d.radius*.8,10,'#030810b3');c.save();if(b.hp===0&&!d.nonLethal)c.globalAlpha=.5;
     if(b.flash>0&&b.flash%4<2)c.globalAlpha*=.7;
-    if(!sprite(c,im,b.x,FLOOR,d.height*(g.heightRatio||1),g,'height',b.face,-1)){
+    if(!sprite(c,im,b.x,FLOOR,d.height*(g.heightRatio||(['kneel','surrender'].includes(pose)?.7:1)),g,'height',b.face,-1)){
       const x=b.x,h=bossBodyHeight(s);c.fillStyle=b.phase==='recover'?'#29434a':'#111c24';
-      if(b.type==='mule-truck'){c.fillRect(x-190,FLOOR-155,380,120);c.fillStyle='#ba954c';c.fillRect(x-175,FLOOR-145,110,65);for(const dx of [-125,125])oval(c,x+dx,FLOOR-18,29,29,'#071017');}
+      if(d.nonLethal){
+        const knee=b.hp===0,humanHeight=knee?125:178;c.fillStyle='#424d4a';c.fillRect(x-20,FLOOR-humanHeight+28,40,humanHeight-40);
+        c.fillStyle='#b4a774';c.fillRect(x-31,FLOOR-humanHeight+40,22,65);oval(c,x,FLOOR-humanHeight+15,14,16,'#b2a28b');
+        line(c,x+20*b.face,FLOOR-humanHeight+65,x+54*b.face,FLOOR-35,'#ad9e68',11);
+        c.fillStyle='#78877c';c.fillRect(x+22*b.face-12,FLOOR-humanHeight+58,24,48);
+      }else if(b.type==='mule-truck'){c.fillRect(x-190,FLOOR-155,380,120);c.fillStyle='#ba954c';c.fillRect(x-175,FLOOR-145,110,65);for(const dx of [-125,125])oval(c,x+dx,FLOOR-18,29,29,'#071017');}
       else if(b.type==='giant'){c.fillRect(x-55,FLOOR-h+50,110,h-50);oval(c,x,FLOOR-h+25,39,44,'#23313b');line(c,x-50,FLOOR-h+90,x-115,FLOOR-90,'#16232c',34);line(c,x+50,FLOOR-h+90,x+115,FLOOR-80,'#16232c',34);}
       else{oval(c,x,FLOOR-h*.52,d.radius,h*.48,'#14212a');for(let i=0;i<4;i++)line(c,x-d.radius*.65+i*d.radius*.43,FLOOR-65,x-d.radius*.85+i*d.radius*.52,FLOOR-4,'#172833',15);}
-      oval(c,x-45,FLOOR-h*.62,13,12,b.phase==='recover'?'#dbeea6':'#e5c071');
+      if(!d.nonLethal)oval(c,x-45,FLOOR-h*.62,13,12,b.phase==='recover'?'#dbeea6':'#e5c071');
     }
     c.restore();
-    if(b.phase==='recover'&&b.hp>0){text(c,'NOYAU EXPOSÉ',b.x,FLOOR-d.height-16,16,'#ebf8ad','center');}
+    if(b.phase==='recover'&&b.hp>0){text(c,d.nonLethal?'CÔTÉ DÉCOUVERT':'NOYAU EXPOSÉ',b.x,FLOOR-d.height-16,16,'#ebf8ad','center');}
   }
   function drawHazards(m){
     const c=m.ctx,s=m.s;
@@ -625,8 +668,10 @@
       c.strokeStyle='#f6c475';c.lineWidth=3;c.setLineDash([12,7]);c.strokeRect(q.x-q.w/2,FLOOR-q.h,q.w,q.h);c.setLineDash([]);
       line(c,q.x-q.w/2,FLOOR+6,q.x+q.w/2,FLOOR+6,'#ffcf83',6);
     }
-    const remaining=b.timer/a.warning;c.fillStyle='#111b20ed';c.fillRect(300,125,680,61);
-    text(c,a.name+' · '+a.advice,640,150,17,'#ffe0a1','center');c.fillStyle='#f1c577';c.fillRect(316,165,648*remaining,6);c.restore();
+    const remaining=b.timer/a.warning,original=!!originalFor(s);c.fillStyle='#111b20ed';c.fillRect(original?160:300,125,original?960:680,original?82:61);
+    if(original)wrappedText(c,a.name+' · '+a.advice,640,150,928,17,'#ffe0a1');
+    else text(c,a.name+' · '+a.advice,640,150,17,'#ffe0a1','center');
+    c.fillStyle='#f1c577';c.fillRect(original?176:316,original?190:165, (original?928:648)*remaining,6);c.restore();
   }
   function drawCargo(m){
     const c=m.ctx,s=m.s;if(!s.cargo.goal)return;
@@ -644,18 +689,20 @@
     const bar=(x,y,w,h,value,max,color)=>{c.fillStyle='#354347';c.fillRect(x,y,w,h);c.fillStyle=color;c.fillRect(x,y,w*clamp(value/max,0,1),h);};
     bar(30,44,340,18,p.hp,120,'#b8e8c2');bar(30,72,230,7,p.energy,100,'#79c9dc');bar(278,72,92,7,p.guardMeter,100,'#d9d89b');
     bar(570,44,680,18,b.hp,b.maxHp,'#e0ba75');text(c,Math.ceil(p.hp)+' / 120 · énergie '+Math.floor(p.energy),30,100,12,'#bdcfcb');
-    text(c,'PHASE '+b.tier+(d.waves?' · VAGUE '+s.wave+' / '+d.waves:''),1250,94,13,'#dfd5bd','right');
+    text(c,(d.nonLethal?'GARDE '+Math.ceil(b.hp)+' / '+b.maxHp+' · ':'')+'PHASE '+b.tier+(d.waves?' · VAGUE '+s.wave+' / '+d.waves:''),1250,94,13,'#dfd5bd','right');
     text(c,String(Math.max(0,Math.ceil(s.remaining/60))).padStart(3,'0'),464,60,33,'#f1f0dc','center');
-    const objective=s.cargo.goal?'COLIS '+s.cargo.delivered+' / '+s.cargo.goal+' · INTÉGRITÉ '+s.cargo.integrity+' %'+(s.cargo.carrying!==null?' · COLIS PORTÉ':''):
+    const objective=originalFor(s)?originalFor(s).objective(s):s.cargo.goal?'COLIS '+s.cargo.delivered+' / '+s.cargo.goal+' · INTÉGRITÉ '+s.cargo.integrity+' %'+(s.cargo.carrying!==null?' · COLIS PORTÉ':''):
       'ATTAQUES ANNONCÉES → ESQUIVE → NOYAU EXPOSÉ';
-    text(c,objective,30,657,16,'#daedb8');text(c,'Léger · Lourd · Signature · Garde · Saut'+(s.cargo.goal?' · Colis':' · Appui')+' · Charge chirale',30,687,13,'#bcd1d2');
+    text(c,objective,30,657,16,'#daedb8');text(c,'Léger · Lourd · Signature · Garde · Saut'+(s.cargo.goal?' · Colis':' · Appui')+' · Charge chirale'+(d.nonLethal?' · T : console / registre / lien':''),30,687,13,'#bcd1d2');
     if(s.messageTicks>0&&!['tell'].includes(b.phase)){
       c.fillStyle='#07141bcf';c.fillRect(120,125,1040,55);wrappedText(c,s.message,640,147,1005,15,'#e5eed4');
     }
-    if(s.phase==='intro'){c.fillStyle='#07151bc7';c.fillRect(250,255,780,150);text(c,'BOSS BATTLE',640,300,22,'#c6d696','center');text(c,d.name,640,349,42,'#f4e9c8','center');text(c,'Préparez votre première esquive',640,384,17,'#d4e1d9','center');}
+    if(s.phase==='intro'){c.fillStyle='#07151bc7';c.fillRect(250,255,780,150);text(c,d.original?'RENCONTRE ORIGINALE · PHASE '+b.tier:'BOSS BATTLE',640,300,22,'#c6d696','center');text(c,d.name,640,349,42,'#f4e9c8','center');text(c,'Préparez votre première esquive',640,384,17,'#d4e1d9','center');}
   }
   function draw(){
-    const m=current;if(!m)return;const c=m.ctx;c.save();scenery(m);drawBoss(m);drawCargo(m);drawPlayer(m);drawHazards(m);
+    const m=current;if(!m)return;const c=m.ctx;c.save();scenery(m);drawBoss(m);drawCargo(m);
+    originalFor(m.s)?.drawObjects(m.s,c,m.images.originalProps,originalBossArt.propGeometry||{},{floor:FLOOR,sprite,text});
+    drawPlayer(m);drawHazards(m);
     const fg=m.images.stage.foregrounds;if(ready(fg)){const width=W+160,h=width*fg.naturalHeight/fg.naturalWidth;c.save();c.globalAlpha=.38;c.drawImage(fg,-80,H-h,width,h);c.restore();}
     warnings(m);hud(m);c.restore();
   }
@@ -681,7 +728,7 @@
     if(next)m.staticSceneCamera=clamp((m.s.p.x-W/2)*.13,-65,65);
     m.staticScenery=next;draw();notify(true);
   }
-  host.StrandBoss={encounters,players,start,stop,pause,input,snapshot,checkpoint,validCheckpoint,progress,advance,draw,
+  host.StrandBoss={encounters,players,start,stop,pause,retry,input,snapshot,checkpoint,validCheckpoint,progress,advance,draw,
     setSound,setAmbienceVolume,setReducedEffects,setStaticScenery,rules:RULES,storageKey:STORE,
     rush:{order:RUSH_ORDER,rules:RUSH_RULES,storageKey:RUSH_STORE,progress:rushProgress,create:createRush,
       start:o=>start({...o,rush:true}),validRun:validRushRun,totals:rushTotals}};
