@@ -1,0 +1,41 @@
+name: LDM native reference probe
+
+on:
+  pull_request:
+    branches: [main]
+    types: [opened, synchronize, reopened]
+
+permissions:
+  contents: read
+
+jobs:
+  native-reference:
+    name: Reference ${{ matrix.asset }}
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    strategy:
+      fail-fast: false
+      matrix:
+        asset: [balise, consignateur]
+    env:
+      REFERENCE_ASSET: ${{ matrix.asset }}
+    steps:
+      - name: Export immutable public native reference
+        shell: python
+        run: |
+          import os, urllib.request, base64, hashlib, json, struct
+          asset = os.environ["REFERENCE_ASSET"]
+          paths = {
+              "balise": "characters/balise-stance.png",
+              "consignateur": "bosses/consignateur-base.png",
+          }
+          base = "https://raw.githubusercontent.com/darknigthmare/Death-Stranding-2D/07c818cd3942c0e1925bb0cc32dfe73da19ff297/modes/echos-de-la-greve/assets/lignes-de-maree/"
+          with urllib.request.urlopen(base + paths[asset], timeout=40) as response:
+              data = response.read()
+          assert data[:8] == b"\x89PNG\r\n\x1a\n", "Native PNG required"
+          width, height = struct.unpack(">II", data[16:24])
+          encoded = base64.b64encode(data).decode("ascii")
+          print("IMGMETA|" + json.dumps({"id": asset, "bytes": len(data), "width": width, "height": height, "sha256": hashlib.sha256(data).hexdigest(), "base64Length": len(encoded)}))
+          for start in range(0, len(encoded), 4096):
+              print("IMGDATA|" + encoded[start:start + 4096])
+          print("IMGEND|" + asset)
