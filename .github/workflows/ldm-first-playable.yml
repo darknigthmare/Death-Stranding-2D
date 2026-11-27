@@ -1,41 +1,51 @@
-name: LDM native reference probe
+name: LDM first playable verification
 
 on:
   pull_request:
     branches: [main]
-    types: [opened, synchronize, reopened]
+    types: [opened, synchronize, reopened, ready_for_review]
 
 permissions:
   contents: read
 
 jobs:
-  native-reference:
-    name: Reference ${{ matrix.asset }}
+  verification:
     runs-on: ubuntu-24.04
-    timeout-minutes: 5
-    strategy:
-      fail-fast: false
-      matrix:
-        asset: [balise, consignateur]
-    env:
-      REFERENCE_ASSET: ${{ matrix.asset }}
+    timeout-minutes: 25
     steps:
-      - name: Export immutable public native reference
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
+          persist-credentials: false
+          fetch-depth: 1
+      - name: Runtime versions
+        run: |
+          node --version
+          python --version
+      - name: Native PNG measurement dependency
+        run: python -m pip install --disable-pip-version-check Pillow==11.3.0
+      - name: Native art reception
+        run: python outils/recevoir_premier_jouable.py
+      - name: Existing local game contracts
+        run: |
+          node modes/echos-de-la-greve/qa/teams.cjs
+          node modes/echos-de-la-greve/qa/teams-independent.cjs
+          node modes/echos-de-la-greve/qa/boss-compendium.cjs
+          node modes/echos-de-la-greve/qa/original-entrypoints.cjs
+      - name: Export measured metadata
+        if: always()
         shell: python
         run: |
-          import os, urllib.request, base64, hashlib, json, struct
-          asset = os.environ["REFERENCE_ASSET"]
-          paths = {
-              "balise": "characters/balise-stance.png",
-              "consignateur": "bosses/consignateur-base.png",
-          }
-          base = "https://raw.githubusercontent.com/darknigthmare/Death-Stranding-2D/07c818cd3942c0e1925bb0cc32dfe73da19ff297/modes/echos-de-la-greve/assets/lignes-de-maree/"
-          with urllib.request.urlopen(base + paths[asset], timeout=40) as response:
-              data = response.read()
-          assert data[:8] == b"\x89PNG\r\n\x1a\n", "Native PNG required"
-          width, height = struct.unpack(">II", data[16:24])
-          encoded = base64.b64encode(data).decode("ascii")
-          print("IMGMETA|" + json.dumps({"id": asset, "bytes": len(data), "width": width, "height": height, "sha256": hashlib.sha256(data).hexdigest(), "base64Length": len(encoded)}))
-          for start in range(0, len(encoded), 4096):
-              print("IMGDATA|" + encoded[start:start + 4096])
-          print("IMGEND|" + asset)
+          from pathlib import Path
+          import base64, hashlib, json
+          files = ["modes/echos-de-la-greve/original-kits-assets.js", "modes/echos-de-la-greve/original-bosses-assets.js", "docs/combat/production/20261127-first-playable/assets-reception.json"]
+          for name in files:
+              path = Path(name)
+              if not path.is_file():
+                  continue
+              data = path.read_bytes()
+              encoded = base64.b64encode(data).decode("ascii")
+              print("FILEMETA|" + json.dumps({"path": name, "bytes": len(data), "sha256": hashlib.sha256(data).hexdigest(), "base64Length": len(encoded)}))
+              for start in range(0, len(encoded), 4096):
+                  print("FILEDATA|" + encoded[start:start+4096])
+              print("FILEEND|" + name)

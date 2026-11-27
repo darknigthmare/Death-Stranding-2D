@@ -1,0 +1,98 @@
+{
+  "schemaVersion": 1,
+  "id": "ldm-first-playable-art-20261127",
+  "baseCommit": "07c818cd3942c0e1925bb0cc32dfe73da19ff297",
+  "status": "in_progress",
+  "assets": [
+    {
+      "id": "ropeHook",
+      "runtimeKey": "ropeHook",
+      "path": "modes/echos-de-la-greve/assets/lignes-de-maree/playable/props/balise-rope-loop.png",
+      "blobSha": "0e8af285c1ac3e5a8c15b671767720cdc1d29b89",
+      "prompt": "Use case: stylized-concept. Asset type: a single isolated functional prop sprite for a grounded Death Stranding-inspired coastal logistics 2D game, fan-made original content. One open throwing loop of worn orange braided rescue rope, oval loop viewed in clear side view, a short taut rope tail extending horizontally to the left, a small practical dark graphite rope clamp where the loop joins the tail. The loop's open center is genuinely transparent. The object is a physical non-lethal rescue tether, not a grappling blade, not a magical ring. Realistic painted videogame rendering, sober industrial design, weathered nylon and dull metal, clear readable silhouette suitable at 54 px height. Exactly ONE rope-loop object in one image; centered with generous clear margin; full loop and short tail within canvas. Native transparent alpha background, no background, no ground plane, no shadow, no characters, no labels, no logos, no panels, no sprite sheet, no decorative glow. Retain orange worn rope and dark graphite fittings as a visual match for a coastal courier wearing graphite waterproofs and an orange rescue half-plastron.",
+      "width": 1774,
+      "height": 887,
+      "byteLength": 798158,
+      "pngColorType": 6,
+      "transparentBackgroundRequested": true,
+      "visualReview": "accepted: one orange rescue-rope loop; open center and margins; physical fitting; no scene; no character reference required",
+      "geometryStatus": "pending_ci_alpha_measurement",
+      "generationType": "new_original"
+    },
+    {
+      "id": "anchor",
+      "runtimeKey": "anchor",
+      "path": "modes/echos-de-la-greve/assets/lignes-de-maree/playable/props/balise-anchor.png",
+      "blobSha": "c42e7f7200e434e75d4adcc124aba9a252dfc342",
+      "prompt": "Use case: stylized-concept. Asset type: one isolated functional prop sprite for a grounded Death Stranding-inspired coastal logistics 2D game, original fan-made content. A compact deployable industrial rescue anchor: a low weathered graphite metal base plate with two visibly folded mechanical gripping feet, and one thick upright oval anchoring ring attached on a hinge, dull brushed steel with a chipped small orange safety band at its base. This is an actual mechanical anchor, no magic. Strict side-on 2D gameplay view, camera level with the object, slight visible side face only to read thickness. Bottom of base plate rests on a clearly horizontal baseline, entire object and all metal feet within the frame. Photorealistic painted videogame asset, muted cold palette, same sober industrial materials as an orange and graphite rescue courier. Exactly ONE self-contained anchor object, no rope attached, no rocks, no environment, no ground plane, no cast ground shadow, no labels, no logo, no decorative glow, no panels, no sprite sheet. Generous transparent margin on every side. Actual native transparent alpha background.",
+      "width": 1774,
+      "height": 887,
+      "byteLength": 1049772,
+      "pngColorType": 6,
+      "transparentBackgroundRequested": true,
+      "visualReview": "accepted: single complete grounded industrial prop; clear margin, flat support, no scene",
+      "geometryStatus": "pending_ci_alpha_measurement",
+      "generationType": "new_original"
+    },
+    {
+      "id": "console-active",
+      "runtimeKey": "console-active",
+      "path": "modes/echos-de-la-greve/assets/lignes-de-maree/playable/props/toll-console-active.png",
+      "blobSha": "68a445e4c8b5ed7c8bbd4b873eaeddeca25a4aab",
+      "prompt": "Use case: stylized-concept. Asset type: one isolated gameplay prop sprite for a grounded Death Stranding-inspired coastal logistics 2D game, original fan-made content. A low human-operated cargo toll control console, about waist height, sturdy practical sealed graphite pedestal with worn mustard-yellow industrial panels, broad flat rectangular foot, a sloped pale amber monochrome screen, three simple physical pushbuttons and a guarded red stop switch. Salt wear and water streaks, small orange cable conduit enclosed along one side, no readable writing. The screen and small upper amber status light are ACTIVE but only gently lit, no bloom cloud. Compact tangible logistics technology, not military or magical. Strict 2D side-on gameplay view with console front turned slightly toward the camera for screen readability, neutral level camera, clear entire silhouette. Ground contact across a flat horizontal foot, generous transparent margins. Realistic painted videogame rendering, grey graphite and mustard with a pale amber screen. Exactly ONE console object; no characters, no scene, no ground plane, no cast ground shadow, no labels, no logos, no panels, no sprite sheet. Actual native transparent alpha background.",
+      "width": 1199,
+      "height": 1312,
+      "byteLength": 1343460,
+      "pngColorType": 6,
+      "transparentBackgroundRequested": true,
+      "visualReview": "accepted: single complete grounded industrial prop; clear margin, flat support, no scene",
+      "geometryStatus": "pending_ci_alpha_measurement",
+      "generationType": "new_original"
+    },
+    {
+      "id": "console-inactive",
+      "runtimeKey": "console-inactive",
+      "path": "modes/echos-de-la-greve/assets/lignes-de-maree/playable/props/toll-console-inactive.png",
+      "blobSha": "4557acdfa57f06720474f08d36351c4825490a49",
+      "prompt": "Edit the exact toll console shown in the immediately preceding image. Produce the INACTIVE version of this same one console prop. Preserve precisely the silhouette, dimensions, perspective, all bolts, mustard panels, grey pedestal, salt wear, orange cable, three buttons, red stop switch, and broad base foot. ONLY change the screen to dark non-emissive grey glass with no visible map, graph or illuminated marks, and turn the small upper status lamp fully off to dark amber glass. No other design or viewpoint changes. One complete isolated object, native transparent alpha background exactly as the reference, no backdrop, no halos, no ground shadow, no labels, no text, no people, no sheets. All parts in frame.",
+      "width": 1199,
+      "height": 1312,
+      "byteLength": 1261962,
+      "pngColorType": 6,
+      "transparentBackgroundRequested": true,
+      "visualReview": "accepted: original console silhouette maintained, lamp and screen off, native transparent margin",
+      "geometryStatus": "pending_ci_alpha_measurement",
+      "generationType": "reference_edit",
+      "referenceAsset": "console-active"
+    },
+    {
+      "id": "register",
+      "runtimeKey": "register",
+      "path": "modes/echos-de-la-greve/assets/lignes-de-maree/playable/props/returned-register.png",
+      "blobSha": "e6e90e98e8dd22fb12d57a9cf115544c74b5a621",
+      "prompt": "Use case: stylized-concept. Asset type: one single inventory prop with true transparent alpha, realistic 2D videogame rendering. A compact sealed coastal cargo manifest register, a practical rugged flat physical document holder, graphite dark grey polymer casing with four small scuffed mustard corner guards, an orange fabric carrying tab and a simple spring latch. On its face is a recessed physical sheet behind MATTE protective glass, unlit pale grey paper with a few printed dark grey ledger rows, all text too small to read. The item has absolutely NO lights, NO luminous screen and NO emission. Side face slightly visible to show realistic thickness, neutral diffuse studio lighting ONLY on the object, no rim light. Clean precise silhouette, portrait rectangle centered and fully inside canvas with generous completely empty transparent margin. Grounded original content for a Death Stranding-inspired coastal logistics game. One object only. No background or blur or gradient, no ambient shadow, no halo, no reflection on an environment, no floor, no people, no logos, no words, no panels or sprite sheet. Require genuinely transparent pixels around object and inside any carrying tab opening.",
+      "width": 1086,
+      "height": 1448,
+      "byteLength": 1578158,
+      "pngColorType": 6,
+      "transparentBackgroundRequested": true,
+      "visualReview": "accepted: clean physical unlit register, matte document face, no halo, full strap",
+      "geometryStatus": "pending_ci_alpha_measurement",
+      "generationType": "new_original",
+      "referenceAsset": null
+    }
+  ],
+  "blocked": [],
+  "generationTool": "image_gen.imagegen",
+  "geometryPolicy": "Native PNG alpha geometry measured by integration CI; no local image manipulation.",
+  "rejectedAttempts": [
+    {
+      "id": "register-initial",
+      "reason": "Visible ambient halo around physical silhouette; not exported or integrated."
+    },
+    {
+      "id": "register-alpha-correction",
+      "reason": "Halo persisted; not exported or integrated."
+    }
+  ]
+}
