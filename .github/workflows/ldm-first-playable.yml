@@ -101,7 +101,14 @@ jobs:
       - name: Actual Chromium catalogue and relay
         if: always()
         run: node modes/echos-de-la-greve/qa/original-browser.cjs
-      - name: Export reviewable metadata and captures
+      - name: Preserve reviewable reports and captures
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: ldm-first-playable-proof
+          retention-days: 14
+          path: docs/combat/production/20261127-first-playable
+      - name: Export reviewable metadata
         if: always()
         shell: python
         run: |
@@ -117,7 +124,7 @@ jobs:
               "docs/combat/ACTIONS_ET_IA.md",
               "docs/combat/data/boss-et-rencontres.json",
               "docs/combat/BOSS_ET_RENCONTRES.md"]]
-          files.extend(path for path in root.rglob("*") if path.is_file() and path.suffix in (".json", ".webp", ".png") and not path.name.endswith("art-generation.json"))
+          files.extend(path for path in root.rglob("*") if path.is_file() and path.suffix == ".json" and not path.name.endswith("art-generation.json"))
           for path in files:
               if not path.is_file():
                   continue
@@ -127,3 +134,42 @@ jobs:
               for start in range(0, len(encoded), 4096):
                   print("FILEDATA|" + encoded[start:start+4096])
               print("FILEEND|" + str(path))
+
+  visual-proof:
+    name: Visual proof (${{ matrix.group }})
+    needs: verification
+    if: always()
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    strategy:
+      fail-fast: false
+      matrix:
+        group: [balise, consignateur, browser]
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          name: ldm-first-playable-proof
+          path: proof
+      - name: Export bounded native screenshots
+        env:
+          PROOF_GROUP: ${{ matrix.group }}
+        shell: python
+        run: |
+          from pathlib import Path
+          import os, base64, hashlib, json
+          group = os.environ["PROOF_GROUP"]
+          root = Path("proof")
+          relative = "browser-renders" if group == "browser" else "native-renders"
+          files = sorted((root / relative).glob("*.webp"))
+          if group != "browser":
+              files = [path for path in files if path.name.startswith(group)]
+          if not files:
+              raise SystemExit("No capture for " + group)
+          for path in files:
+              data = path.read_bytes()
+              encoded = base64.b64encode(data).decode("ascii")
+              target = "docs/combat/production/20261127-first-playable/" + relative + "/" + path.name
+              print("FILEMETA|" + json.dumps({"path": target, "bytes": len(data), "sha256": hashlib.sha256(data).hexdigest(), "base64Length": len(encoded)}))
+              for start in range(0, len(encoded), 4096):
+                  print("FILEDATA|" + encoded[start:start+4096])
+              print("FILEEND|" + target)

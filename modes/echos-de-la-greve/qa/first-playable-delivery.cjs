@@ -20,7 +20,7 @@ const sorted=values=>[...values].sort(),same=(actual,expected,label)=>assert.dee
 const checks=[],assets=[],sourceHashes={};
 function check(name,fn){const detail=fn();checks.push({name,passed:true,...detail});console.log('OK — '+name);return detail;}
 function git(...args){try{return execFileSync('git',args,{cwd:repo,encoding:'utf8',maxBuffer:32*1024*1024});}catch(error){throw new Error('Git reference '+BASE+' must be available in this checkout (actions/checkout fetch-depth: 0). '+error.message);}}
-function gitFiles(ref){return git('ls-tree','-r','-z','--full-tree',ref).split('\0').filter(Boolean).map(row=>{
+function gitFiles(ref){return git('ls-tree','-r','-z','--full-tree',ref).split('\0').filter(row=>/^\d+ blob /.test(row)).map(row=>{
   const match=row.match(/^(\d+) blob ([0-9a-f]{40})\t([\s\S]+)$/);assert(match,'Unexpected Git tree entry');return {mode:match[1],sha:match[2],path:match[3]};});}
 function scripts(page){return [...read(page).matchAll(/<script\b[^>]*\bsrc=["']([^"']+)["'][^>]*>/gi)].map(match=>match[1]);}
 const engineFiles=new Set(['content.js','asset-geometry-20261124.js','assets.js','extension-data.js','extension-assets.js','extension-runtime.js',
@@ -167,14 +167,14 @@ async function verifyHTTP(paths,catalogue){
   assert.equal(git('rev-parse','--verify',BASE+'^{commit}').trim(),BASE);
   const baseEntries=gitFiles(BASE),baseByPath=new Map(baseEntries.map(entry=>[entry.path,entry]));
   const baseline=check('Preserve the 539 reference rasters and 33 reference SVG byte for byte',()=>{
-    const rasters=baseEntries.filter(entry=>/\.(?:png|webp|jpe?g|gif|avif|bmp|tiff?)$/i.test(entry.path));
+    const rasters=baseEntries.filter(entry=>entry.path.startsWith(MODE+'assets/')&&/\.(?:png|webp|jpe?g|gif|avif|bmp|tiff?)$/i.test(entry.path));
     const vectors=baseEntries.filter(entry=>/\.svg$/i.test(entry.path));
     assert.equal(rasters.length,539,'Reference raster count');assert.equal(vectors.length,33,'Reference SVG count');
     for(const entry of [...rasters,...vectors]){
       const file=path.join(repo,entry.path),stat=fs.lstatSync(file);assert(stat.isFile()&&!stat.isSymbolicLink(),'Reference media changed type '+entry.path);
       assert.equal(blobHash(fs.readFileSync(file)),entry.sha,'Reference media modified or replaced: '+entry.path);
     }
-    return {reference:BASE,rasters:rasters.length,svg:vectors.length,compared:rasters.length+vectors.length};
+    return {reference:BASE,rasterScope:MODE+'assets/',svgScope:'Entire repository',rasters:rasters.length,svg:vectors.length,compared:rasters.length+vectors.length};
   });
   const w=registry(),h=w.window,kitArt=h.StrandOriginalKitsAssets?.kits?.balise,bossArt=h.StrandOriginalBossArt;
   const manifest=check('Complete measured manifests: 30 Balise, 12 Consignateur and five active props',()=>{
@@ -266,7 +266,7 @@ async function verifyHTTP(paths,catalogue){
       'PNG validation reads native file headers and measured descriptor bounds; decoding, alpha pixels, anatomical side, floor contact and framing are covered by first-playable-canvas.cjs.',
       'Mode selection expressions and published rosters are checked from actual source. Full DOM interactions and catalogue launch links are covered by first-playable-entrypoints.cjs.',
       'HTTP uses the shipped server on a real local socket. This does not validate a public deployment, browser cache, Internet connectivity or cross-machine latency.',
-      'Preservation compares every baseline raster and SVG Git blob to checkout bytes. New documentary captures are listed separately from the 48 runtime PNGs.'
+      'Preservation compares the 539 baseline mode-assets rasters and all 33 repository SVG Git blobs to checkout bytes. Other historical documentary/source rasters are outside that requested inventory. New documentary captures are listed separately from the 48 runtime PNGs.'
     ]};
   fs.mkdirSync(path.dirname(out),{recursive:true});fs.writeFileSync(out,JSON.stringify(report,null,2)+'\n');
   console.log(JSON.stringify({passed:true,preserved:baseline.compared,addedPng:48,activePng:47,httpGetRequests:httpReport.requests.length,output:out},null,2));

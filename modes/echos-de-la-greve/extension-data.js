@@ -4,7 +4,7 @@ window.StrandOriginalExtension = {
   "id": "lignes-de-maree",
   "title": "Les Lignes de Marée",
   "subtitle": "Méga-extension originale de Death Stranding 2D — Échos de la Grève",
-  "version": "1.0",
+  "version": "1.1",
   "date": "2026-11-27",
   "canonStatus": "original-fan-extension",
   "summary": "Dix spécialistes doivent remettre en circulation un corridor côtier de vingt lieux, où conserver les cargaisons est devenu un moyen de retenir leurs destinataires.",
@@ -9382,13 +9382,17 @@ window.StrandOriginalExtension = {
   ],
   "production": {
     "design": "complete",
-    "art": "base_set_received",
-    "runtime": "static_arenas_only",
-    "receivedImages": 70,
+    "art": "base_set_and_first_directional_poses_received",
+    "runtime": "static_arenas_and_first_playable",
+    "receivedImages": 118,
     "staticArenas": 20,
-    "playableOriginalCharacters": 0,
+    "playableOriginalCharacters": 1,
     "playableOriginalEnemies": 0,
-    "playableOriginalBosses": 0
+    "playableOriginalBosses": 1,
+    "receivedBaseImages": 70,
+    "receivedPlayableImages": 48,
+    "activePlayableImages": 47,
+    "archivedPlayableVariants": 1
   },
   "counts": {
     "characters": 10,
@@ -9535,5 +9539,5 @@ window.StrandOriginalExtension = {
     ],
     "animationPolicy": "Chaque animation est une séquence d’images originale avec entrée, tenue et sortie ; une déformation du PNG de base reste un procédé de présentation."
   },
-  "gameplayTuningStatus": "Tous les minutages et chiffres de nouvelles fiches sont des valeurs de conception non équilibrées en match ; les données du moteur livré font foi."
+  "gameplayTuningStatus": "Premier kit Balise et rencontre du Consignateur implémentés et soumis aux recettes de simulation et d’intégration ; équilibrage humain restant. Les valeurs des autres fiches restent des cibles de conception."
 };

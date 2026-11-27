@@ -136,7 +136,7 @@ function panorama(w){
   return {src,sha256:imageSources[src],rect:{x,y,width,height},sourceFloorY:floorY,screenFloorY:y+height*floorY};
 }
 function record(w,name,details={}){
-  const file=name+'.png',bytes=w.canvas.toBuffer('image/png');fs.writeFileSync(path.join(out,file),bytes);
+  const file=name+'.webp',bytes=w.canvas.toBuffer('image/webp',94);fs.writeFileSync(path.join(out,file),bytes);
   const entry={file,width:W,height:H,sha256:shaBuffer(bytes),...details};snapshots.push(entry);return entry;
 }
 function nativeFrame(w,draw){w.draws.length=0;draw();const pixel=w.native.getImageData(0,0,W,H).data;for(let at=3;at<pixel.length;at+=4)assert.equal(pixel[at],255,'Native composition must be opaque');return panorama(w);}
@@ -291,7 +291,7 @@ function publicSamRun(w){
       proof.preparation=preparation;proof.panorama=floor;proof.frameSha256=shaBuffer(w.canvas.toBuffer('image/png'));
       boardTile(sheet,w,index,pose,proof);poseChecks.push(proof);
     }
-    const file='balise-poses-'+side+'.png',bytes=sheet.canvas.toBuffer('image/png');fs.writeFileSync(path.join(out,file),bytes);
+    const file='balise-poses-'+side+'.webp',bytes=sheet.canvas.toBuffer('image/webp',94);fs.writeFileSync(path.join(out,file),bytes);
     snapshots.push({file,width:sheet.width,height:sheet.height,sha256:shaBuffer(bytes),method:'Contact sheet cropped exclusively from actual native Digue frames; prepared in-memory poses',direction:side,poses:15});
   }
   // The received fall drawings are grounded defeats, not normal descending jumps.
@@ -322,13 +322,13 @@ function publicSamRun(w){
     proof.preparation='State observed in the public Sam run; only boss facing is changed in memory for directional inspection';
     proof.observedTick=current.s.tick;proof.panorama=floor;bossTile(bossSheet,w,bossPoseChecks.length,pose,side,proof);bossPoseChecks.push(proof);
   }
-  const bossBoardFile='consignateur-poses-directions.png',bossBoardBytes=bossSheet.canvas.toBuffer('image/png');
+  const bossBoardFile='consignateur-poses-directions.webp',bossBoardBytes=bossSheet.canvas.toBuffer('image/webp',94);
   fs.writeFileSync(path.join(out,bossBoardFile),bossBoardBytes);
   snapshots.push({file:bossBoardFile,width:bossSheet.width,height:bossSheet.height,sha256:shaBuffer(bossBoardBytes),method:'Twelve actual native renders; public observed states with only facing prepared in memory',poses:12});
   current.s=finalState;w.host.StrandBoss.stop();
   for(const [src,digest]of Object.entries(imageSources))assert.equal(sha(pathFor(src)),digest,'Source image modified: '+src);
   for(const [file,digest]of Object.entries(sourceSha256))assert.equal(sha(path.join(root,file)),digest,'Engine/source file modified: '+file);
-  const report={date:'2026-11-27',passed:true,nativeCanvas:true,nativeCanvasVersion:canvasPackage.version,browser:false,htmlLayoutRendered:false,
+  const report={date:'2026-11-27',passed:true,nativeCanvas:true,nativeCanvasVersion:canvasPackage.version,browser:false,htmlLayoutRendered:false,captureEncoding:'WebP quality 94 at full canvas size; native source PNGs unchanged',
     method:'Actual game rendering with decoded received PNG/WebP sources and system fonts. All Balise pose states are explicit in-memory preparations. Sam normal boss progression uses only public input/advance APIs.',
     floors:{worldY:FLOOR,duelCameraOffsetY:10,note:'The inherited duel camera maps the world floor to screen Y 598; the Boss renderer uses screen Y 588.'},
     fonts,scriptOrder:files,balisePoseCount:poseChecks.length,consignateurDirectionalCount:bossPoseChecks.length,poseChecks,bossPoseChecks,airborneChecks,

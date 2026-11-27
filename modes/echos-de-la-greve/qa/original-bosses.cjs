@@ -194,9 +194,12 @@ test('Native Digue support row aligns to collision floor without distorting its 
   const call=e.drawCalls.find(args=>args[0]===image);assert(call);
   near(call[2]+call[4]*e.host.StrandAssets.stageGeometry[s.stage].legacy.floorY,588);near(call[3]/call[4],1536/1024);
 });
-test('Six registered poses are selected by actual combat states; no human is faded as a dead monster',()=>{
-  const {e,m,s}=phaseFixture();
-  for(const image of Object.values(m.images.boss)){image.complete=true;image.naturalWidth=8192;image.naturalHeight=8192;}
+test('Twelve directional poses select their native images without a reflection',()=>{
+  const {e,m,s}=phaseFixture(),faces=m.images.originalBossFaces,scales=[];
+  for(const poseFaces of Object.values(faces))for(const image of Object.values(poseFaces)){
+    image.complete=true;image.naturalWidth=8192;image.naturalHeight=8192;
+  }
+  m.ctx.scale=(x,y)=>scales.push([x,y]);
   const cases=[
     ['guard',()=>{s.boss.phase='approach';}],
     ['shield-push',()=>{s.boss.phase='tell';}],
@@ -205,8 +208,17 @@ test('Six registered poses are selected by actual combat states; no human is fad
     ['kneel',()=>{s.original.phase=3;s.boss.hp=0;s.boss.phase='defeated';}],
     ['surrender',()=>{s.original.surrendered=true;}]
   ];
-  for(const [pose,prepare] of cases){prepare();e.drawCalls.length=0;e.a.drawBoss(m);assert(e.drawCalls.some(args=>args[0]===m.images.boss[pose]),pose);}
+  for(const [pose,prepare] of cases){
+    prepare();
+    for(const [face,direction] of [['left',-1],['right',1]]){
+      s.boss.face=direction;e.drawCalls.length=0;scales.length=0;e.a.drawBoss(m);
+      assert(e.drawCalls.some(args=>args[0]===faces[pose][face]),pose+'/'+face);
+      assert(scales.length>0,pose+'/'+face+' was not drawn as a sprite');
+      assert(scales.every(([x,y])=>x===1&&y===1),pose+'/'+face+' applied a reflection');
+    }
+  }
 });
+
 test('Standalone original records survive reload while isolated runs perform no save writes',()=>{
   const {e,s}=phaseFixture(3,{isolated:false});retrieveRegister(e,s);e.a.damageBoss(s,10000);s.p.x=s.boss.x-60;tap(e,'throw');
   const reboot=environment(sources,true,true,e.storage),record=reboot.api.progress().records['sam:'+ID+':normal'];
