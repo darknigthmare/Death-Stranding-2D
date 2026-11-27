@@ -66,14 +66,23 @@ jobs:
         run: |
           node outils/generer_catalogue_combat.cjs
           node outils/generer_catalogue_boss.cjs
-      - name: Canonical and original gameplay contracts
+      - name: Existing relay contracts
         if: always()
         run: |
           node modes/echos-de-la-greve/qa/teams.cjs --output="$LDM_QA_OUTPUT/teams-verification.json"
           node modes/echos-de-la-greve/qa/teams-independent.cjs --output="$LDM_QA_OUTPUT/teams-independent-verification.json"
-          node modes/echos-de-la-greve/qa/boss-compendium.cjs
+      - name: Existing Boss behavior and compendium
+        if: always()
+        run: node modes/echos-de-la-greve/qa/boss-compendium.cjs "$LDM_QA_OUTPUT/boss-compendium-verification.json"
+      - name: Balise mechanics and canonical regression
+        if: always()
+        run: node qa/original-kits.cjs > "$LDM_QA_OUTPUT/balise-verification.json"
+      - name: Presentation and exercises
+        if: always()
+        run: |
+          node modes/echos-de-la-greve/qa/presentation.cjs
+          node modes/echos-de-la-greve/qa/lessons.cjs
           node modes/echos-de-la-greve/qa/original-entrypoints.cjs
-          node qa/original-kits.cjs > "$LDM_QA_OUTPUT/balise-verification.json"
       - name: Actual Chromium catalogue and relay
         if: always()
         run: node modes/echos-de-la-greve/qa/original-browser.cjs

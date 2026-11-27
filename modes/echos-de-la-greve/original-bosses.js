@@ -249,7 +249,8 @@
   const source=host.StrandOriginalBossArt||{};
   const validGeometry=g=>g&&Array.isArray(g.crop)&&g.crop.length===4&&g.crop.every(Number.isFinite)&&g.crop[0]>=0&&g.crop[1]>=0&&g.crop[2]>0&&g.crop[3]>0&&scalar(g.anchorX,0,1)&&scalar(g.baselineY,0,1);
   const ready=source.ready===true&&requiredPoses.every(key=>typeof source.sprites?.consignateur?.[key]==='string'&&source.sprites.consignateur[key].length>0&&validGeometry(source.geometry?.bosses?.consignateur?.[key]))&&
-    requiredProps.every(key=>typeof source.props?.[key]==='string'&&source.props[key].length>0&&validGeometry(source.propGeometry?.[key]));
+    requiredProps.every(key=>typeof source.props?.[key]==='string'&&source.props[key].length>0&&validGeometry(source.propGeometry?.[key]))&&
+    requiredPoses.every(pose=>['left','right'].every(face=>{const g=source.directionalPoses?.consignateur?.[pose]?.[face];return g&&typeof g.src==='string'&&g.src.startsWith('assets/')&&validGeometry(g)&&scalar(g.heightRatio,.1,2)&&g.nativeFacing===(face==='left'?-1:1);}));
   const controller=Object.freeze({create,valid,damage,tick,interact,pose,restore,result,objective,drawObjects});
   host.StrandOriginalBosses=Object.freeze({version:VERSION,id:ID,ready,phases:PHASES,guide,
     encounters:Object.freeze(ready?{[ID]:encounter}:{}),controllers:Object.freeze(ready?{[ID]:controller}:{})});

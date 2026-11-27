@@ -13,6 +13,7 @@
     mama:{title:'Mise au point',gesture:'Mama ajuste ses lunettes.',version:'DS1 · avatar du simulateur'},
     heartman:{title:'Un instant',gesture:'Heartman consulte brièvement son appareil au poignet.',version:'DS1 · avatar du simulateur'}
   });
+  const profileFor=id=>profiles[id]||(host.StrandOriginalKits?.originalCharacterIds?.includes(id)?{title:'Ancrage et interception',gesture:'Pose de combat de Balise.',version:'Les Lignes de Marée · personnage original'}:null);
   const esc=value=>String(value??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
   const clone=value=>JSON.parse(JSON.stringify(value));
   // Costume identity is resolved before a phase. A partially delivered alternate
@@ -47,7 +48,7 @@
       cancel();shown=clone(next);isPreview=preview;container.classList.toggle('presentationReduced',!!reduced);
       const changed=next.some((slot,i)=>slot.id!==old[i]?.id || slot.outfit!==old[i]?.outfit);
       cast.innerHTML=next.map((slot,i)=>{
-        const id=slot.id,profile=profiles[id],fighter=host.StrandContent?.fighters?.[id];
+        const id=slot.id,profile=profileFor(id),fighter=host.StrandContent?.fighters?.[id];
         if(!profile||!fighter)return '';
         const before=old[i],different=before && (id!==before.id || slot.outfit!==before.outfit);
         const phase=preview?'preview':different?'confirm':'waiting';
@@ -74,7 +75,7 @@
     }
     render(committed,previous,false);
     return {
-      preview(id){if(disposed||!profiles[id]||!committed.length||isPreview&&shown[0]?.id===id)return;
+      preview(id){if(disposed||!profileFor(id)||!committed.length||isPreview&&shown[0]?.id===id)return;
         if(id===committed[0].id){if(isPreview)render(committed,shown,false);return;}
         const next=clone(committed);next[0]={...next[0],id,outfit:id===committed[0].id?committed[0].outfit:'atelier'};render(next,shown,true);},
       restore(){if(isPreview)render(committed,shown,false);},

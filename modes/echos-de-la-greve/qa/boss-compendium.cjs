@@ -146,10 +146,28 @@ test('Guide renders native accessible sections for all encounter/context selecti
   }
   const bad=guide.render({boss:'<script>bad</script>',p1:'toString',context:'__proto__',difficulty:'<x>'});assert(!bad.includes('<script>'));assert(bad.includes('Catcher léonin'));assert.equal(JSON.stringify(api.snapshot()),before);assert.equal(env.storageCalls.length,calls);assert.equal(env.audit.getCurrent(),m);
 });
-test('The Boss engine differs from main only in two remappable cargo instruction strings',()=>{
-  const old=cp.execFileSync('git',['show','8d274a015e0edf314a853630031d5eb507354811:modes/echos-de-la-greve/boss.js'],{cwd:repo,encoding:'utf8'});
-  const expected=old.replace('Colis saisi · rejoignez le dépôt à gauche puis appuyez sur T','Colis saisi · rejoignez le dépôt à gauche puis utilisez la commande Colis').replace('Approchez-vous d’un colis et appuyez sur T.','Approchez-vous d’un colis et utilisez la commande Colis.');assert.equal(env.sources['boss.js'],expected);
+test('The six existing Boss simulations retain their exact states across the optional encounter integration',()=>{
+  const old=cp.execFileSync('git',['show','07c818cd3942c0e1925bb0cc32dfe73da19ff297:modes/echos-de-la-greve/boss.js'],{cwd:repo,encoding:'utf8'});
+  counts.canonicalRegressionTicks=0;
+  for(const boss of ['lion','squid','whale','giant','truck','convoy'])for(const p1 of Object.keys(a.players)){
+    const before=inspectEngine({bossSource:old}),after=inspectEngine();
+    before.start({boss,p1});after.start({boss,p1});
+    for(let tick=0;tick<360;tick++){
+      for(const side of [before,after]){
+        if(tick===80)side.api.input(1,'right',true);
+        if(tick===145)side.api.input(1,'right',false);
+        for(const [action,period,offset] of [['light',39,8],['heavy',71,12],['special',97,18],['up',103,23],['throw',131,31]]){
+          if(tick%period===offset)side.api.input(1,action,true);
+          if(tick%period===offset+1)side.api.input(1,action,false);
+        }
+        side.api.advance(1,false);
+      }
+      assert.deepEqual(clone(after.api.snapshot()),clone(before.api.snapshot()),boss+'/'+p1+' tick '+tick);
+      counts.canonicalRegressionTicks++;
+    }
+  }
 });
+
 const files=['modes/echos-de-la-greve/boss.js','modes/echos-de-la-greve/content.js','modes/echos-de-la-greve/campaign.js','modes/echos-de-la-greve/boss-data.js','modes/echos-de-la-greve/boss-guide.js','modes/echos-de-la-greve/boss-guide.css','outils/generer_catalogue_boss.cjs','outils/lib/boss-engine.cjs','modes/echos-de-la-greve/qa/boss-compendium.cjs','docs/combat/data/boss-et-rencontres.json','docs/combat/BOSS_ET_RENCONTRES.md'];
 const result={executedAt:new Date().toISOString(),node:process.version,passed:true,checksPassed:checks.length,checks,counts,method:'Actual Boss closure functions through read-only in-memory hooks, prepared unit states, simulated Canvas/Image and storage. The 48 starts use the public engine. Rush result transitions use explicit prepared result fixtures, not six played victories. Pure guide HTML is inspected without a browser.',browser:false,nativeCanvas:false,hardware:false,syntheticUnitStates:true,limits:['No human balance or full-match strategy certification.','No pixel layout or physical controls validation.','App hooks are checked separately by the UI owner.'],sourceSha256:Object.fromEntries(files.map(file=>[file,sha(read(file))]))};
 const output=process.argv[2];if(output){const target=path.resolve(output);fs.mkdirSync(path.dirname(target),{recursive:true});fs.writeFileSync(target,JSON.stringify(result,null,2)+'\n');}

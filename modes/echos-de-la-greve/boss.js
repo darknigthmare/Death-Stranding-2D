@@ -231,6 +231,7 @@
       effects:Object.fromEntries(Object.entries(bossArt.effects||{}).map(([key,path])=>[key,image(path)])),
       shots:Object.fromEntries(Object.entries(art.projectiles||{}).map(([key,path])=>[key,image(path)])),
       originalProps:Object.fromEntries(Object.entries(originalBossArt.props||{}).map(([key,path])=>[key,image(path)])),
+      originalBossFaces:Object.fromEntries(Object.entries(originalBossArt.directionalPoses?.[encounters[s.bossId].type]||{}).map(([pose,faces])=>[pose,Object.fromEntries(Object.entries(faces).map(([face,descriptor])=>[face,image(descriptor.src)]))])),
       cargo:image(art.props?.cargo),deck:image(art.props?.bridgeDeck),parcel:image(art.props?.closedParcel),
       stage:Object.fromEntries(['stages','skyplates','distants','midgrounds','floors','foregrounds'].map(key=>[key,image(art[key]?.[s.stage])]))};
   }
@@ -627,7 +628,9 @@
       oval(c,b.x,FLOOR,180,11,'#070c14bb');return;
     }
     const pose=bossPose(b,s);
-    const im=m.images.boss[pose]||m.images.boss.idle,g=bossArt.geometry?.bosses?.[b.type]?.[pose]||{};
+    const face=b.face<0?'left':'right',directional=d.original?originalBossArt.directionalPoses?.[b.type]?.[pose]?.[face]:null;
+    const im=d.original?m.images.originalBossFaces?.[pose]?.[face]:m.images.boss[pose]||m.images.boss.idle;
+    const g=directional||bossArt.geometry?.bosses?.[b.type]?.[pose]||{};
     oval(c,b.x,FLOOR+4,d.radius*.8,10,'#030810b3');c.save();if(b.hp===0&&!d.nonLethal)c.globalAlpha=.5;
     if(b.flash>0&&b.flash%4<2)c.globalAlpha*=.7;
     if(!sprite(c,im,b.x,FLOOR,d.height*(g.heightRatio||(['kneel','surrender'].includes(pose)?.7:1)),g,'height',b.face,-1)){

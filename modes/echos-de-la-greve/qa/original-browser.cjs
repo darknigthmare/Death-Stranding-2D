@@ -55,7 +55,7 @@ async function extension(page,base,label,allCounts){
   await check(label+' stages search and modal',async()=>{
     await page.locator('#with-image').uncheck();await page.locator('[data-category="stages"]').click();
     assert.equal(await page.locator('#cards .card').count(),20);
-    await page.locator('#search').fill('serre');assert.equal(await page.locator('#cards .card').count(),1);
+    await page.locator('#search').fill('SERRE DE VEILLE');assert.equal(await page.locator('#cards .card').count(),1);
     await page.locator('[data-entity-id="ldm-stage-serre-veille"]').click();
     assert(await page.locator('#dossier').evaluate(d=>d.open));assert.equal(await page.locator('#dossier-title').innerText(),'La Serre de veille');
     const action=page.locator('#dossier-actions a.button');assert.match(await action.getAttribute('href'),/ldmStage=ldm-stage-serre-veille/);
@@ -113,7 +113,7 @@ async function teams(page,base,label,fullInteractions){
     });
     await check(label+' controls dialog opens and closes',async()=>{
       await page.locator('#teamControls').click();assert(await page.locator('#teamManual').evaluate(d=>d.open));
-      await page.locator('#teamManual form button').click();assert(!(await page.locator('#teamManual').evaluate(d=>d.open)));return true;
+      await page.locator('#teamManual form[method="dialog"] button').click();assert(!(await page.locator('#teamManual').evaluate(d=>d.open)));return true;
     });
   }
 }

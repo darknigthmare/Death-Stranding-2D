@@ -95,11 +95,30 @@
       "byteLength": 2011696,
       "pngColorType": 6,
       "transparentBackgroundRequested": true,
-      "visualReview": "pose accepted; source face/costume maintained; left-facing independently generated with coil partially occluded on far anatomical left; visible halo requires alpha validation",
+      "visualReview": "accepted: correct independent pose and facing, source identity maintained; integration alpha samples confirm outside transparency despite viewer halo",
       "geometryStatus": "pending_ci_alpha_measurement",
       "generationType": "reference_edit",
       "referenceAsset": "modes/echos-de-la-greve/assets/lignes-de-maree/characters/balise-stance.png",
-      "referenceSha256": "1ffb54bd3c3d2c56b06f7fac608d34aba149363eed435b6671fb12b66de86ba5"
+      "referenceSha256": "1ffb54bd3c3d2c56b06f7fac608d34aba149363eed435b6671fb12b66de86ba5",
+      "alphaCheckReportedByIntegration": {
+        "sampledOutsideAlpha": 0,
+        "samples": [
+          [
+            50,
+            750
+          ],
+          [
+            100,
+            750
+          ],
+          [
+            50,
+            400
+          ]
+        ],
+        "borderMaxAlpha": 1,
+        "canvasTouchesAtAlpha8": false
+      }
     },
     {
       "id": "balise-guard-left",
@@ -115,11 +134,30 @@
       "byteLength": 2045209,
       "pngColorType": 6,
       "transparentBackgroundRequested": true,
-      "visualReview": "pose accepted; source face/costume maintained; left-facing independently generated with coil partially occluded on far anatomical left; visible halo requires alpha validation",
+      "visualReview": "accepted: correct independent pose and facing, source identity maintained; integration alpha samples confirm outside transparency despite viewer halo",
       "geometryStatus": "pending_ci_alpha_measurement",
       "generationType": "reference_edit",
       "referenceAsset": "modes/echos-de-la-greve/assets/lignes-de-maree/characters/balise-stance.png",
-      "referenceSha256": "1ffb54bd3c3d2c56b06f7fac608d34aba149363eed435b6671fb12b66de86ba5"
+      "referenceSha256": "1ffb54bd3c3d2c56b06f7fac608d34aba149363eed435b6671fb12b66de86ba5",
+      "alphaCheckReportedByIntegration": {
+        "sampledOutsideAlpha": 0,
+        "samples": [
+          [
+            50,
+            750
+          ],
+          [
+            100,
+            750
+          ],
+          [
+            50,
+            400
+          ]
+        ],
+        "borderMaxAlpha": 1,
+        "canvasTouchesAtAlpha8": false
+      }
     },
     {
       "id": "balise-crouch-right",
@@ -135,11 +173,30 @@
       "byteLength": 2220186,
       "pngColorType": 6,
       "transparentBackgroundRequested": true,
-      "visualReview": "pose accepted; source face/costume maintained; left-facing independently generated with coil partially occluded on far anatomical left; visible halo requires alpha validation",
+      "visualReview": "accepted: correct independent pose and facing, source identity maintained; integration alpha samples confirm outside transparency despite viewer halo",
       "geometryStatus": "pending_ci_alpha_measurement",
       "generationType": "reference_edit",
       "referenceAsset": "modes/echos-de-la-greve/assets/lignes-de-maree/characters/balise-stance.png",
-      "referenceSha256": "1ffb54bd3c3d2c56b06f7fac608d34aba149363eed435b6671fb12b66de86ba5"
+      "referenceSha256": "1ffb54bd3c3d2c56b06f7fac608d34aba149363eed435b6671fb12b66de86ba5",
+      "alphaCheckReportedByIntegration": {
+        "sampledOutsideAlpha": 0,
+        "samples": [
+          [
+            50,
+            750
+          ],
+          [
+            100,
+            750
+          ],
+          [
+            50,
+            400
+          ]
+        ],
+        "borderMaxAlpha": 1,
+        "canvasTouchesAtAlpha8": false
+      }
     },
     {
       "id": "balise-crouch-left",
@@ -155,11 +212,30 @@
       "byteLength": 2158671,
       "pngColorType": 6,
       "transparentBackgroundRequested": true,
-      "visualReview": "pose accepted; source face/costume maintained; left-facing independently generated with coil partially occluded on far anatomical left; visible halo requires alpha validation",
+      "visualReview": "accepted: correct independent pose and facing, source identity maintained; integration alpha samples confirm outside transparency despite viewer halo",
       "geometryStatus": "pending_ci_alpha_measurement",
       "generationType": "reference_edit",
       "referenceAsset": "modes/echos-de-la-greve/assets/lignes-de-maree/characters/balise-stance.png",
-      "referenceSha256": "1ffb54bd3c3d2c56b06f7fac608d34aba149363eed435b6671fb12b66de86ba5"
+      "referenceSha256": "1ffb54bd3c3d2c56b06f7fac608d34aba149363eed435b6671fb12b66de86ba5",
+      "alphaCheckReportedByIntegration": {
+        "sampledOutsideAlpha": 0,
+        "samples": [
+          [
+            50,
+            750
+          ],
+          [
+            100,
+            750
+          ],
+          [
+            50,
+            400
+          ]
+        ],
+        "borderMaxAlpha": 1,
+        "canvasTouchesAtAlpha8": false
+      }
     },
     {
       "id": "balise-light-right",
@@ -175,11 +251,30 @@
       "byteLength": 2025681,
       "pngColorType": 6,
       "transparentBackgroundRequested": true,
-      "visualReview": "pose and identity reviewed; native alpha geometry pending CI",
+      "visualReview": "accepted: correct independent pose and facing, source identity maintained; integration alpha samples confirm outside transparency despite viewer halo",
       "geometryStatus": "pending_ci_alpha_measurement",
       "generationType": "reference_edit",
       "referenceAsset": "modes/echos-de-la-greve/assets/lignes-de-maree/characters/balise-stance.png",
-      "referenceSha256": "1ffb54bd3c3d2c56b06f7fac608d34aba149363eed435b6671fb12b66de86ba5"
+      "referenceSha256": "1ffb54bd3c3d2c56b06f7fac608d34aba149363eed435b6671fb12b66de86ba5",
+      "alphaCheckReportedByIntegration": {
+        "sampledOutsideAlpha": 0,
+        "samples": [
+          [
+            50,
+            750
+          ],
+          [
+            100,
+            750
+          ],
+          [
+            50,
+            400
+          ]
+        ],
+        "borderMaxAlpha": 1,
+        "canvasTouchesAtAlpha8": false
+      }
     },
     {
       "id": "balise-light-left",
@@ -195,11 +290,30 @@
       "byteLength": 1929854,
       "pngColorType": 6,
       "transparentBackgroundRequested": true,
-      "visualReview": "pose and identity reviewed; native alpha geometry pending CI",
+      "visualReview": "accepted: correct independent pose and facing, source identity maintained; integration alpha samples confirm outside transparency despite viewer halo",
       "geometryStatus": "pending_ci_alpha_measurement",
       "generationType": "reference_edit",
       "referenceAsset": "modes/echos-de-la-greve/assets/lignes-de-maree/characters/balise-stance.png",
-      "referenceSha256": "1ffb54bd3c3d2c56b06f7fac608d34aba149363eed435b6671fb12b66de86ba5"
+      "referenceSha256": "1ffb54bd3c3d2c56b06f7fac608d34aba149363eed435b6671fb12b66de86ba5",
+      "alphaCheckReportedByIntegration": {
+        "sampledOutsideAlpha": 0,
+        "samples": [
+          [
+            50,
+            750
+          ],
+          [
+            100,
+            750
+          ],
+          [
+            50,
+            400
+          ]
+        ],
+        "borderMaxAlpha": 1,
+        "canvasTouchesAtAlpha8": false
+      }
     },
     {
       "id": "balise-heavy-right",
@@ -215,11 +329,30 @@
       "byteLength": 1906435,
       "pngColorType": 6,
       "transparentBackgroundRequested": true,
-      "visualReview": "pose and identity reviewed; native alpha geometry pending CI",
+      "visualReview": "accepted: correct independent pose and facing, source identity maintained; integration alpha samples confirm outside transparency despite viewer halo",
       "geometryStatus": "pending_ci_alpha_measurement",
       "generationType": "reference_edit",
       "referenceAsset": "modes/echos-de-la-greve/assets/lignes-de-maree/characters/balise-stance.png",
-      "referenceSha256": "1ffb54bd3c3d2c56b06f7fac608d34aba149363eed435b6671fb12b66de86ba5"
+      "referenceSha256": "1ffb54bd3c3d2c56b06f7fac608d34aba149363eed435b6671fb12b66de86ba5",
+      "alphaCheckReportedByIntegration": {
+        "sampledOutsideAlpha": 0,
+        "samples": [
+          [
+            50,
+            750
+          ],
+          [
+            100,
+            750
+          ],
+          [
+            50,
+            400
+          ]
+        ],
+        "borderMaxAlpha": 1,
+        "canvasTouchesAtAlpha8": false
+      }
     },
     {
       "id": "balise-heavy-left",
@@ -236,11 +369,247 @@
       "byteLength": 1052664,
       "pngColorType": 6,
       "transparentBackgroundRequested": true,
-      "visualReview": "Reframed after the first attempt left insufficient elbow margin.",
+      "visualReview": "accepted: correct independent pose and facing, source identity maintained; integration alpha samples confirm outside transparency despite viewer halo",
+      "geometryStatus": "pending_ci_alpha_measurement",
+      "generationType": "reference_edit",
+      "referenceAsset": "modes/echos-de-la-greve/assets/lignes-de-maree/characters/balise-stance.png",
+      "referenceSha256": "1ffb54bd3c3d2c56b06f7fac608d34aba149363eed435b6671fb12b66de86ba5",
+      "alphaCheckReportedByIntegration": {
+        "sampledOutsideAlpha": 0,
+        "samples": [
+          [
+            50,
+            750
+          ],
+          [
+            100,
+            750
+          ],
+          [
+            50,
+            400
+          ]
+        ],
+        "borderMaxAlpha": 0,
+        "canvasTouchesAtAlpha8": false
+      }
+    },
+    {
+      "id": "balise-stance-right",
+      "subject": "balise",
+      "pose": "stance",
+      "facing": "right",
+      "heightRatio": 1,
+      "path": "modes/echos-de-la-greve/assets/lignes-de-maree/playable/balise/stance-right.png",
+      "blobSha": "d0eb4b0c7d856659f60f8ea910303f168c99bd4a",
+      "prompt": "First isolate the character from her old halo: every pixel outside physical costume, skin and accessories must become fully transparent alpha. Edit the supplied exact character reference into ONE independent action pose for the SAME Maëlle 'Balise' Rocher. Preserve her identity 1:1: athletic mature woman, identical weathered face and short black hair, graphite waterproof hood-down suit with slim reflective strips, asymmetrical worn orange rescue half-plastron, fingerless dark gloves, tan/graphite compact backpack, harness and large steel carabiners with orange locks, grey rescue rope with fine red flecks coiled at her ANATOMICAL LEFT HIP, dirty heavy black expedition boots with mustard lace accents. No redesign and no extra equipment. Strict side-on 2D fighting-game silhouette, hip-level camera, entire head, hands, gear and both complete boots inside frame. Keep natural human proportions and grounded realistic game-painting style. Square 1536×1536 canvas. Fit the entire character within the central80 percent of the canvas, with large empty transparent margin on all four sides; no body part, elbow or boot may touch the image edge. Native transparent alpha outside physical silhouette; REMOVE the reference's ambient halo and all background glow, no scenery, no ground, no floor shadow, no text, no panels, no sprite sheet. Exactly one woman in exactly one pose, no repeated figures. She faces screen RIGHT; her anatomical LEFT side is closest to camera, so the grey/red rope coil remains on the visible near left hip. Calm neutral combat stance matching the supplied base pose: both feet planted wide enough for balance on the same horizontal line, knees slightly flexed, hands loosely guarding mid chest without attacking, head upright. This is the clean gameplay standby pose. Preserve the source face and gear with exceptional fidelity. This is a cutout sprite, absolutely no grey mist, brown glow, vignette, drop shadow or ambient background around the body. Recompose with ample transparent padding.",
+      "width": 1254,
+      "height": 1254,
+      "byteLength": 829707,
+      "pngColorType": 6,
+      "transparentBackgroundRequested": true,
+      "visualReview": "accepted: full figure, correct facing, source identity and costume preserved, generous transparent margin",
       "geometryStatus": "pending_ci_alpha_measurement",
       "generationType": "reference_edit",
       "referenceAsset": "modes/echos-de-la-greve/assets/lignes-de-maree/characters/balise-stance.png",
       "referenceSha256": "1ffb54bd3c3d2c56b06f7fac608d34aba149363eed435b6671fb12b66de86ba5"
+    },
+    {
+      "id": "balise-stance-left",
+      "subject": "balise",
+      "pose": "stance",
+      "facing": "left",
+      "heightRatio": 1,
+      "path": "modes/echos-de-la-greve/assets/lignes-de-maree/playable/balise/stance-left.png",
+      "blobSha": "eae2c5d8d03b5368eb60a208d11ac12af374ff8f",
+      "prompt": "First isolate the character from her old halo: every pixel outside physical costume, skin and accessories must become fully transparent alpha. Edit the supplied exact character reference into ONE independent action pose for the SAME Maëlle 'Balise' Rocher. Preserve her identity 1:1: athletic mature woman, identical weathered face and short black hair, graphite waterproof hood-down suit with slim reflective strips, asymmetrical worn orange rescue half-plastron, fingerless dark gloves, tan/graphite compact backpack, harness and large steel carabiners with orange locks, grey rescue rope with fine red flecks coiled at her ANATOMICAL LEFT HIP, dirty heavy black expedition boots with mustard lace accents. No redesign and no extra equipment. Strict side-on 2D fighting-game silhouette, hip-level camera, entire head, hands, gear and both complete boots inside frame. Keep natural human proportions and grounded realistic game-painting style. Square 1536×1536 canvas. Fit the entire character within the central80 percent of the canvas, with large empty transparent margin on all four sides; no body part, elbow or boot may touch the image edge. Native transparent alpha outside physical silhouette; REMOVE the reference's ambient halo and all background glow, no scenery, no ground, no floor shadow, no text, no panels, no sprite sheet. Exactly one woman in exactly one pose, no repeated figures. She faces screen LEFT; the camera sees her anatomical RIGHT side. Draw a true opposite-side view, NOT a mirror: the rope coil remains attached to her anatomical LEFT hip on the far side, partly occluded behind her pelvis, not transferred onto the visible right thigh; keep asymmetrical harness anatomically correct. Calm neutral combat stance: both feet planted on the same horizontal line, knees slightly flexed, hands loosely guarding mid chest without attacking, head upright. This is the clean gameplay standby pose seen from the opposite anatomical side. Keep asymmetry and face precise; the far left-hip coil may be visible only behind the far edge of the pelvis. This is a cutout sprite, absolutely no grey mist, brown glow, vignette, drop shadow or ambient background around the body. Recompose with ample transparent padding.",
+      "width": 1254,
+      "height": 1254,
+      "byteLength": 713992,
+      "pngColorType": 6,
+      "transparentBackgroundRequested": true,
+      "visualReview": "accepted: full figure, correct facing, source identity and costume preserved, generous transparent margin",
+      "geometryStatus": "pending_ci_alpha_measurement",
+      "generationType": "reference_edit",
+      "referenceAsset": "modes/echos-de-la-greve/assets/lignes-de-maree/characters/balise-stance.png",
+      "referenceSha256": "1ffb54bd3c3d2c56b06f7fac608d34aba149363eed435b6671fb12b66de86ba5"
+    },
+    {
+      "id": "balise-hurt-right",
+      "subject": "balise",
+      "pose": "hurt",
+      "facing": "right",
+      "heightRatio": 0.96,
+      "path": "modes/echos-de-la-greve/assets/lignes-de-maree/playable/balise/hurt-right.png",
+      "blobSha": "ce329e4ebc2fb84efb65d92caed8d346d91e66c3",
+      "prompt": "First isolate the character from her old halo: every pixel outside physical costume, skin and accessories must become fully transparent alpha. Edit the supplied exact character reference into ONE independent action pose for the SAME Maëlle 'Balise' Rocher. Preserve her identity 1:1: athletic mature woman, identical weathered face and short black hair, graphite waterproof hood-down suit with slim reflective strips, asymmetrical worn orange rescue half-plastron, fingerless dark gloves, tan/graphite compact backpack, harness and large steel carabiners with orange locks, grey rescue rope with fine red flecks coiled at her ANATOMICAL LEFT HIP, dirty heavy black expedition boots with mustard lace accents. No redesign and no extra equipment. Strict side-on 2D fighting-game silhouette, hip-level camera, entire head, hands, gear and both complete boots inside frame. Keep natural human proportions and grounded realistic game-painting style. Square 1536×1536 canvas. Fit the entire character within the central80 percent of the canvas, with large empty transparent margin on all four sides; no body part, elbow or boot may touch the image edge. Native transparent alpha outside physical silhouette; REMOVE the reference's ambient halo and all background glow, no scenery, no ground, no floor shadow, no text, no panels, no sprite sheet. Exactly one woman in exactly one pose, no repeated figures. She faces screen RIGHT; her anatomical LEFT side is closest to camera, so the grey/red rope coil remains on the visible near left hip. A brief non-graphic hit-reaction frame: her shoulders and head recoil backward a little from a body impact, knees flex and weight shifts onto the rear boot. One hand near her ribs, other forearm still guarding; both boots retain ground contact. Expression of pain and effort but she is conscious and alive. No wounds, blood, opponent or impact effect. A short controlled stagger, not an airborne fall. This is a cutout sprite, absolutely no grey mist, brown glow, vignette, drop shadow or ambient background around the body. Recompose with ample transparent padding.",
+      "width": 1254,
+      "height": 1254,
+      "byteLength": 957095,
+      "pngColorType": 6,
+      "transparentBackgroundRequested": true,
+      "visualReview": "accepted: full figure, correct facing, source identity and costume preserved, generous transparent margin",
+      "geometryStatus": "pending_ci_alpha_measurement",
+      "generationType": "reference_edit",
+      "referenceAsset": "modes/echos-de-la-greve/assets/lignes-de-maree/characters/balise-stance.png",
+      "referenceSha256": "1ffb54bd3c3d2c56b06f7fac608d34aba149363eed435b6671fb12b66de86ba5"
+    },
+    {
+      "id": "balise-hurt-left",
+      "subject": "balise",
+      "pose": "hurt",
+      "facing": "left",
+      "heightRatio": 0.96,
+      "path": "modes/echos-de-la-greve/assets/lignes-de-maree/playable/balise/hurt-left.png",
+      "blobSha": "f5c2fd924b21e3945732394b9809c7f114ba9e79",
+      "prompt": "Edit ONLY the LEFT-FACING Balise standby sprite immediately supplied. Keep the exact character identity and unchanged screen-LEFT orientation: her nose points to the LEFT, her toes point LEFT, her backpack is behind her toward screen RIGHT. Preserve the true anatomical right-side view and the rope coil fixed to her anatomical LEFT hip on the FAR side, partially occluded. Change her pose to a short controlled hurt recoil: shoulders tilt backward toward screen RIGHT, head remains facing LEFT but grimaces, one hand holds lower ribs, other hand guards, knees flex and both boots stay on one horizontal support baseline. She remains alive, conscious, standing. No blood, injuries, foe or impact effects. Same graphite waterproofs, orange half-plastron, tan pack, grey/red rope, carabiners and dirty boots. One whole character on square1536×1536, with large transparent margin on all sides, native alpha background with no glow, shadow, scene or halo. The outcome MUST face LEFT.",
+      "correctionPrompt": "Edit ONLY the LEFT-FACING Balise standby sprite immediately supplied. Keep the exact character identity and unchanged screen-LEFT orientation: her nose points to the LEFT, her toes point LEFT, her backpack is behind her toward screen RIGHT. Preserve the true anatomical right-side view and the rope coil fixed to her anatomical LEFT hip on the FAR side, partially occluded. Change her pose to a short controlled hurt recoil: shoulders tilt backward toward screen RIGHT, head remains facing LEFT but grimaces, one hand holds lower ribs, other hand guards, knees flex and both boots stay on one horizontal support baseline. She remains alive, conscious, standing. No blood, injuries, foe or impact effects. Same graphite waterproofs, orange half-plastron, tan pack, grey/red rope, carabiners and dirty boots. One whole character on square1536×1536, with large transparent margin on all sides, native alpha background with no glow, shadow, scene or halo. The outcome MUST face LEFT.",
+      "width": 1254,
+      "height": 1254,
+      "byteLength": 790773,
+      "pngColorType": 6,
+      "transparentBackgroundRequested": true,
+      "visualReview": "accepted: correct left-facing view, independent full-body pose, physical gear unchanged, rope above support baseline, clear margins",
+      "geometryStatus": "pending_ci_alpha_measurement",
+      "generationType": "reference_edit",
+      "referenceAsset": "modes/echos-de-la-greve/assets/lignes-de-maree/playable/balise/stance-left.png",
+      "referenceSha256": "1ffb54bd3c3d2c56b06f7fac608d34aba149363eed435b6671fb12b66de86ba5"
+    },
+    {
+      "id": "balise-tether-left",
+      "subject": "balise",
+      "pose": "tether",
+      "facing": "left",
+      "heightRatio": 0.97,
+      "path": "modes/echos-de-la-greve/assets/lignes-de-maree/playable/balise/tether-left.png",
+      "blobSha": "573054a3531bff2e6d25674f962e76b33990d97c",
+      "prompt": "Use the supplied LEFT-FACING Balise image as the exact identity and orientation reference. Her nose and boots point to screen LEFT and backpack stays on screen RIGHT. Edit the supplied exact character reference into ONE independent action pose for the SAME Maëlle 'Balise' Rocher. Preserve her identity 1:1: athletic mature woman, identical weathered face and short black hair, graphite waterproof hood-down suit with slim reflective strips, asymmetrical worn orange rescue half-plastron, fingerless dark gloves, tan/graphite compact backpack, harness and large steel carabiners with orange locks, grey rescue rope with fine red flecks coiled at her ANATOMICAL LEFT HIP, dirty heavy black expedition boots with mustard lace accents. No redesign and no extra equipment. Strict side-on 2D fighting-game silhouette, hip-level camera, entire head, hands, gear and both complete boots inside frame. Keep natural human proportions and grounded realistic game-painting style. Square 1536×1536 canvas. Fit the entire character within the central80 percent of the canvas, with large empty transparent margin on all four sides; no body part, elbow or boot may touch the image edge. Native transparent alpha outside physical silhouette; REMOVE the reference's ambient halo and all background glow, no scenery, no ground, no floor shadow, no text, no panels, no sprite sheet. Exactly one woman in exactly one pose, no repeated figures. She faces screen LEFT; the camera sees her anatomical RIGHT side. Draw a true opposite-side view, NOT a mirror: the rope coil remains attached to her anatomical LEFT hip on the far side, partly occluded behind her pelvis, not transferred onto the visible right thigh; keep asymmetrical harness anatomically correct. Active frame of throwing a rescue-rope loop to screen LEFT: front boot planted, forward arm extended toward LEFT at lower chest height, hand releasing one small loose loop of grey rope with red flecks; the other hand controls a short rope segment at the belt. The main coil remains secured to her anatomical left hip. Physical non-lethal rope technique, human effort. Keep the entire short visible rope segment above her knee line; do not draw a long trailing cable, no rope below boots, no foe or projectile effects.",
+      "width": 1254,
+      "height": 1254,
+      "byteLength": 874354,
+      "pngColorType": 6,
+      "transparentBackgroundRequested": true,
+      "visualReview": "accepted: correct left-facing view, independent full-body pose, physical gear unchanged, rope above support baseline, clear margins",
+      "geometryStatus": "pending_ci_alpha_measurement",
+      "generationType": "reference_edit",
+      "referenceAsset": "modes/echos-de-la-greve/assets/lignes-de-maree/playable/balise/stance-left.png",
+      "referenceSha256": "1ffb54bd3c3d2c56b06f7fac608d34aba149363eed435b6671fb12b66de86ba5"
+    },
+    {
+      "id": "balise-anchor-left",
+      "subject": "balise",
+      "pose": "anchor",
+      "facing": "left",
+      "heightRatio": 0.63,
+      "path": "modes/echos-de-la-greve/assets/lignes-de-maree/playable/balise/anchor-left.png",
+      "blobSha": "1e6fa051748585962b4f15411e16fed472f86204",
+      "prompt": "Use the supplied LEFT-FACING Balise image as the exact identity and orientation reference. Her nose and boots point to screen LEFT and backpack stays on screen RIGHT. Edit the supplied exact character reference into ONE independent action pose for the SAME Maëlle 'Balise' Rocher. Preserve her identity 1:1: athletic mature woman, identical weathered face and short black hair, graphite waterproof hood-down suit with slim reflective strips, asymmetrical worn orange rescue half-plastron, fingerless dark gloves, tan/graphite compact backpack, harness and large steel carabiners with orange locks, grey rescue rope with fine red flecks coiled at her ANATOMICAL LEFT HIP, dirty heavy black expedition boots with mustard lace accents. No redesign and no extra equipment. Strict side-on 2D fighting-game silhouette, hip-level camera, entire head, hands, gear and both complete boots inside frame. Keep natural human proportions and grounded realistic game-painting style. Square 1536×1536 canvas. Fit the entire character within the central80 percent of the canvas, with large empty transparent margin on all four sides; no body part, elbow or boot may touch the image edge. Native transparent alpha outside physical silhouette; REMOVE the reference's ambient halo and all background glow, no scenery, no ground, no floor shadow, no text, no panels, no sprite sheet. Exactly one woman in exactly one pose, no repeated figures. She faces screen LEFT; the camera sees her anatomical RIGHT side. Draw a true opposite-side view, NOT a mirror: the rope coil remains attached to her anatomical LEFT hip on the far side, partly occluded behind her pelvis, not transferred onto the visible right thigh; keep asymmetrical harness anatomically correct. She lowers into a compact kneeling placement pose: front boot planted, back knee low near ground, torso leaning forward, front hand reaching toward screen LEFT down to ankle height to place a compact folded graphite anchor with a small steel ring and orange safety mark. Back hand balances on the upper thigh. The anchor is tiny, held in that one hand; no separate pedestal or scenery. Full head, fingers and boots visible, ground support level. Her body and tool must remain above the common boot baseline; no rope hangs below feet.",
+      "width": 1254,
+      "height": 1254,
+      "byteLength": 1227645,
+      "pngColorType": 6,
+      "transparentBackgroundRequested": true,
+      "visualReview": "accepted: correct left-facing view, independent full-body pose, physical gear unchanged, rope above support baseline, clear margins",
+      "geometryStatus": "pending_ci_alpha_measurement",
+      "generationType": "reference_edit",
+      "referenceAsset": "modes/echos-de-la-greve/assets/lignes-de-maree/playable/balise/stance-left.png",
+      "referenceSha256": "1ffb54bd3c3d2c56b06f7fac608d34aba149363eed435b6671fb12b66de86ba5"
+    },
+    {
+      "id": "balise-reel-left",
+      "subject": "balise",
+      "pose": "reel",
+      "facing": "left",
+      "heightRatio": 0.91,
+      "path": "modes/echos-de-la-greve/assets/lignes-de-maree/playable/balise/reel-left.png",
+      "blobSha": "b09abecbe3dcdf99b1b19a63cd5b21065817eea7",
+      "prompt": "Use the supplied LEFT-FACING Balise image as the exact identity and orientation reference. Her nose and boots point to screen LEFT and backpack stays on screen RIGHT. Edit the supplied exact character reference into ONE independent action pose for the SAME Maëlle 'Balise' Rocher. Preserve her identity 1:1: athletic mature woman, identical weathered face and short black hair, graphite waterproof hood-down suit with slim reflective strips, asymmetrical worn orange rescue half-plastron, fingerless dark gloves, tan/graphite compact backpack, harness and large steel carabiners with orange locks, grey rescue rope with fine red flecks coiled at her ANATOMICAL LEFT HIP, dirty heavy black expedition boots with mustard lace accents. No redesign and no extra equipment. Strict side-on 2D fighting-game silhouette, hip-level camera, entire head, hands, gear and both complete boots inside frame. Keep natural human proportions and grounded realistic game-painting style. Square 1536×1536 canvas. Fit the entire character within the central80 percent of the canvas, with large empty transparent margin on all four sides; no body part, elbow or boot may touch the image edge. Native transparent alpha outside physical silhouette; REMOVE the reference's ambient halo and all background glow, no scenery, no ground, no floor shadow, no text, no panels, no sprite sheet. Exactly one woman in exactly one pose, no repeated figures. She faces screen LEFT; the camera sees her anatomical RIGHT side. Draw a true opposite-side view, NOT a mirror: the rope coil remains attached to her anatomical LEFT hip on the far side, partly occluded behind her pelvis, not transferred onto the visible right thigh; keep asymmetrical harness anatomically correct. Active frame of a physical rope pull toward screen LEFT: both hands firmly grip one short straight grey/red rescue rope at waist height in a hand-over-hand stance, elbows bent, hips low, torso leaning back toward screen RIGHT and front boot braced. The rope extends a short distance from her hands toward screen LEFT but stays wholly inside the frame at waist height; ends cleanly with no anchor or opponent. A clear effort-driven pulling gesture, no teleportation, no glowing powers, rope never below boots. Main rope coil remains attached at anatomical LEFT hip.",
+      "width": 1254,
+      "height": 1254,
+      "byteLength": 919901,
+      "pngColorType": 6,
+      "transparentBackgroundRequested": true,
+      "visualReview": "accepted: correct left-facing view, independent full-body pose, physical gear unchanged, rope above support baseline, clear margins",
+      "geometryStatus": "pending_ci_alpha_measurement",
+      "generationType": "reference_edit",
+      "referenceAsset": "modes/echos-de-la-greve/assets/lignes-de-maree/playable/balise/stance-left.png",
+      "referenceSha256": "1ffb54bd3c3d2c56b06f7fac608d34aba149363eed435b6671fb12b66de86ba5"
+    },
+    {
+      "subject": "consignateur",
+      "pose": "guard",
+      "facing": "left",
+      "heightRatio": 1,
+      "path": "modes/echos-de-la-greve/assets/lignes-de-maree/playable/consignateur/guard-left.png",
+      "blobSha": "866ce3dabb0a9a8f309256231401789904f35d5b",
+      "width": 1254,
+      "height": 1254,
+      "bytes": 857080,
+      "colorType": 6,
+      "prompt": "Edit the attached canonical design reference into ONE production full-body combat sprite of Le Consignateur. Preserve exactly this older rugged man's identity, gray stubble, lined exposed face, dark graphite rainproof hood and porter suit, ochre/mustard armbands and thigh stripes, worn yellow harness straps, heavy sealed rectangular cargo frame tightly strapped to his back, antenna, rugged boots, compact scratched polygonal polymer shield and blunt industrial restraint baton. He is a grounded human logistical strongman, not supernatural armor. Native orientation LEFT: nose, chest and toes directed toward the LEFT image edge; cargo frame behind him toward the RIGHT. Redraw this orientation with coherent anatomy and the same equipment, rather than placing a second view. Pose GUARD: stable slightly bent knees, one boot a little forward, polymer shield raised defensively in front of his chest, baton held low and ready in his other hand, head looking left at an opponent. Clean game sprite with the same realistic weathered material rendering and restrained gray/mustard palette as the reference. Entire person, both boots, all antenna tips, shield, cargo frame and baton must fit inside a square 1536 by 1536 transparent canvas with at least 10 percent fully transparent margin on every side. Remove the reference's black and gray photographic background and every surrounding gray halo completely. The entire area outside the person and equipment is fully transparent RGBA, including gaps between limbs and equipment. Clean antialiased silhouette, no glow, no ground plane, no cast floor shadow, no background vignette, no fog, no colored edge fringe. Exactly one character in one pose. No text, logo, UI, duplicate panels or scenery.\n\nCleanup pass: Production cleanup of the attached game sprite. Preserve the exact same single older male porter character, left-facing defensive guard pose, face, hood, graphite/mustard outfit, all straps, cargo case, antenna, shield, baton, boots and realistic texture. Do not redesign anything. Place the entire unchanged figure smaller at the center of a square canvas: its highest antenna tip and its lowest boot must BOTH have at least 130 pixels of completely transparent clearance in a 1280 by 1280 canvas. Fit the complete silhouette inside the central 80 percent of the image. Clean every silhouette edge, especially the left thigh, boots and antenna: remove every red/orange stray fringe pixel, all colored edge contamination, gray halo and any outside haze. Keep only the physical character and equipment. Fully transparent RGBA background and transparent gaps, no ground, no floor shadow, no glow. One clean isolated character sprite, no lettering. All original physical accessories must remain fully visible.",
+      "visualVerdict": "Identity, full figure, left orientation and distinct pose verified. Fine red edge chroma visible near some mustard fabric; requires pixel/alpha and game capture review.",
+      "geometryStatus": "pending_ci_alpha_measurement",
+      "dimensions": {
+        "width": 1254,
+        "height": 1254
+      }
+    },
+    {
+      "subject": "consignateur",
+      "pose": "shield-push",
+      "facing": "left",
+      "heightRatio": 1,
+      "path": "modes/echos-de-la-greve/assets/lignes-de-maree/playable/consignateur/shield-push-left.png",
+      "blobSha": "79f1414db1c12d2cbdc00f1451d42ddc0c2a67ac",
+      "width": 1254,
+      "height": 1254,
+      "bytes": 1204108,
+      "colorType": 6,
+      "prompt": "Edit the attached single transparent character reference into ONE new action sprite of the EXACT SAME Le Consignateur. Keep the older rugged man's recognizable exposed lined face and gray stubble, graphite hooded rainproof porter suit, mustard armbands and thigh panels, same yellow harness straps, identical heavy sealed rectangular cargo frame with pipe frame and antenna, weathered boots, compact polygonal dark polymer shield and industrial blunt restraint baton. The figure must face LEFT natively, with his nose and toes towards the left image edge and the cargo case behind him to the right. Keep human proportions, realistic restrained graphite/mustard materials and coherent functional straps. One complete human in one pose only. Compose on a SQUARE transparent 1280 by 1280 canvas. The entire figure and every antenna, baton and boot must remain inside the central 80 percent of the canvas, with comfortable clear margins. Fully transparent RGBA background and transparent gaps around equipment. Clean naturally antialiased outline with no colored contamination or halo; no glow, no cast floor shadow, no ground, no haze, no text, no motion trail, no scenery. Pose SHIELD PUSH: a forceful forward leftward lunge in grounded side view, left/front knee bent and back right boot bracing, torso angled forward, shield arm driving the shield horizontally towards the LEFT ahead of his body as a nonlethal shove. His other hand keeps the blunt baton tucked low behind the shield action. The whole cargo frame travels naturally with his torso. Readable extended shield silhouette and clear planted feet. This is the attack pose, distinct from the upright guard.",
+      "visualVerdict": "Identity, full figure, left orientation and distinct pose verified. Fine red edge chroma visible near some mustard fabric; requires pixel/alpha and game capture review.",
+      "geometryStatus": "pending_ci_alpha_measurement",
+      "dimensions": {
+        "width": 1254,
+        "height": 1254
+      }
+    },
+    {
+      "subject": "consignateur",
+      "pose": "pole-strike",
+      "facing": "left",
+      "heightRatio": 1,
+      "path": "modes/echos-de-la-greve/assets/lignes-de-maree/playable/consignateur/pole-strike-left.png",
+      "blobSha": "e061c27849fb7a0b169d0ec8c53d427d0933db49",
+      "width": 1254,
+      "height": 1254,
+      "bytes": 1027347,
+      "colorType": 6,
+      "prompt": "Edit the attached single transparent character reference into ONE new action sprite of the EXACT SAME Le Consignateur. Keep the older rugged man's recognizable exposed lined face and gray stubble, graphite hooded rainproof porter suit, mustard armbands and thigh panels, same yellow harness straps, identical heavy sealed rectangular cargo frame with pipe frame and antenna, weathered boots, compact polygonal dark polymer shield and industrial blunt restraint baton. The figure must face LEFT natively, with his nose and toes towards the left image edge and the cargo case behind him to the right. Keep human proportions, realistic restrained graphite/mustard materials and coherent functional straps. One complete human in one pose only. Compose on a SQUARE transparent 1280 by 1280 canvas. The entire figure and every antenna, baton and boot must remain inside the central 80 percent of the canvas, with comfortable clear margins. Fully transparent RGBA background and transparent gaps around equipment. Clean naturally antialiased outline with no colored contamination or halo; no glow, no cast floor shadow, no ground, no haze, no text, no motion trail, no scenery. Pose RESTRAINT POLE STRIKE: controlled nonlethal interception to the LEFT. He extends his baton-holding arm and the blunt restraint baton horizontally leftward at waist/chest height, reaching well forward with the entire baton visible. His other forearm keeps the compact shield close to his chest. Front left leg bent, rear right boot firmly braced, torso twisting forward while the same cargo frame remains strapped to his back. Clear horizontal striking silhouette distinct from a shield shove. Do not add a spear blade or firearm.",
+      "visualVerdict": "Identity, full figure, left orientation and distinct pose verified. Fine red edge chroma visible near some mustard fabric; requires pixel/alpha and game capture review.",
+      "geometryStatus": "pending_ci_alpha_measurement",
+      "dimensions": {
+        "width": 1254,
+        "height": 1254
+      }
+    },
+    {
+      "subject": "consignateur",
+      "pose": "stagger",
+      "facing": "left",
+      "heightRatio": 1,
+      "path": "modes/echos-de-la-greve/assets/lignes-de-maree/playable/consignateur/stagger-left.png",
+      "blobSha": "28960bfcc5f938f782114bdb706240add43ff87a",
+      "width": 1254,
+      "height": 1254,
+      "bytes": 1215180,
+      "colorType": 6,
+      "prompt": "Edit the attached single transparent character reference into ONE new action sprite of the EXACT SAME Le Consignateur. Keep the older rugged man's recognizable exposed lined face and gray stubble, graphite hooded rainproof porter suit, mustard armbands and thigh panels, same yellow harness straps, identical heavy sealed rectangular cargo frame with pipe frame and antenna, weathered boots, compact polygonal dark polymer shield and industrial blunt restraint baton. The figure must face LEFT natively, with his nose and toes towards the left image edge and the cargo case behind him to the right. Keep human proportions, realistic restrained graphite/mustard materials and coherent functional straps. One complete human in one pose only. Compose on a SQUARE transparent 1280 by 1280 canvas. The entire figure and every antenna, baton and boot must remain inside the central 80 percent of the canvas, with comfortable clear margins. Fully transparent RGBA background and transparent gaps around equipment. Clean naturally antialiased outline with no colored contamination or halo; no glow, no cast floor shadow, no ground, no haze, no text, no motion trail, no scenery. Pose STAGGER / RECOVERY: he has just missed a heavy shield shove and is catching his balance. Still facing LEFT, bent at the waist and knees, shoulders slightly slumped and head lowered but alert, compact shield lowered away from his chest exposing his flank, baton hanging low in his other hand, both boots visibly supporting his weight. Same massive cargo frame on his back. A readable vulnerable recovery stance, alive and conscious, no wounds, no gore, no dramatic effects.",
+      "visualVerdict": "Identity, full figure, left orientation and distinct pose verified. Fine red edge chroma visible near some mustard fabric; requires pixel/alpha and game capture review.",
+      "geometryStatus": "pending_ci_alpha_measurement",
+      "dimensions": {
+        "width": 1254,
+        "height": 1254
+      }
     }
   ],
   "blocked": [],
@@ -254,6 +623,14 @@
     {
       "id": "register-alpha-correction",
       "reason": "Halo persisted; not exported or integrated."
+    },
+    {
+      "id": "balise-hurt-left-first",
+      "reason": "Generated orientation was right-facing; discarded in favor of correction from clean left-facing stance."
     }
-  ]
+  ],
+  "parallelSourceManifests": {
+    "balise": "2bbdf2642c7742c3a978f532a9ab8fd72caf694a",
+    "consignateur": "b8f4ecad43e2d5b59028840b45c8eed7beab6dcd"
+  }
 }

@@ -313,7 +313,7 @@
   function bossResult(match,result) {
     stopFight();
     const boss=bossEngine.encounters[match.boss],title=result.won?(isOriginalBoss(match.boss)?'Passage rouvert · reddition acceptée':result.cargoGoal?'Cargaison sécurisée':'Grande présence vaincue'):
-      ({cargo:'Cargaison perdue',freight:'Registre endommagé',time:'Temps écoulé',health:'Porteur à terre'})[result.reason] || 'Rencontre interrompue';
+      ({cargo:'Cargaison perdue',freight:'Registre endommagé',objective:'Registre endommagé',time:'Temps écoulé',health:'Porteur à terre'})[result.reason] || 'Rencontre interrompue';
     const seconds=(result.elapsed/60).toFixed(1).replace('.',',');
     const rows=[['Résultat',result.won?'Victoire':'Défaite'],['Temps joué',seconds+' s'],['Vitalité',result.vitality+' / 120'],['Score',result.score.toLocaleString('fr-FR')],
       ['Dégâts infligés',result.stats.damageDealt],['Impacts gardés / contrés',result.stats.guarded],['Attaques évitées',result.stats.avoided]];
@@ -729,7 +729,7 @@
       '<p class="hint" role="status">'+esc(state.notice||(state.saved?'Progression des exercices enregistrée dans ce navigateur.':'Progression disponible pendant cette session.'))+'</p><ol class="lessonList">'+cards+'</ol></section>');
   }
   function startLesson(id,selectedFighter=lessonFighter) {
-    if(!lessonContent?.get(id)||!fighters[selectedFighter])return lessonSelection();
+    if(!lessonContent?.get(id)||!ids.includes(selectedFighter))return lessonSelection();
     stopFight();lessonFighter=selectedFighter;config.mode='training';config.p1=selectedFighter;
     lessonStore.begin(id,selectedFighter);
     fight({mode:'training',kind:'training',lesson:id,p1:selectedFighter,p2:selectedFighter==='higgs'?'sam':'higgs',

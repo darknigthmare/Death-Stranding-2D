@@ -52,15 +52,17 @@ def geometry(item):
             "heightRatio": item.get("heightRatio", 1), "nativeFacing": -1 if item.get("facing") == "left" else 1}
 
 kit = {"ready": False, "poses": {}, "props": {}}
-boss = {"ready": False, "sprites": {"consignateur": {}}, "geometry": {"bosses": {"consignateur": {}}}, "props": {}, "propGeometry": {}}
+boss = {"ready": False, "sprites": {"consignateur": {}}, "geometry": {"bosses": {"consignateur": {}}}, "directionalPoses": {"consignateur": {}}, "props": {}, "propGeometry": {}}
 for item in inventory:
     subject, pose, facing = item.get("subject"), item.get("pose"), item.get("facing")
     if subject == "balise" and pose in REQUIRED_POSES and facing in ("left", "right"):
         kit["poses"].setdefault(pose, {})[facing] = geometry(item)
-    elif subject == "consignateur" and pose in BOSS_POSES and facing == "left":
+    elif subject == "consignateur" and pose in BOSS_POSES and facing in ("left", "right"):
         meta = geometry(item)
-        boss["sprites"]["consignateur"][pose] = meta.pop("src")
-        boss["geometry"]["bosses"]["consignateur"][pose] = meta
+        boss["directionalPoses"]["consignateur"].setdefault(pose, {})[facing] = dict(meta)
+        if facing == "left":
+            boss["sprites"]["consignateur"][pose] = meta.pop("src")
+            boss["geometry"]["bosses"]["consignateur"][pose] = meta
     elif item.get("runtimeKey") in ("anchor", "ropeHook") and not subject:
         kit["props"][item["runtimeKey"]] = geometry(item)
     elif item.get("runtimeKey") in ("console-active", "console-inactive", "register"):
@@ -69,7 +71,7 @@ for item in inventory:
         boss["propGeometry"][item["runtimeKey"]] = meta
 
 kit["ready"] = not errors and all(all(direction in kit["poses"].get(pose, {}) for direction in ("left", "right")) for pose in REQUIRED_POSES) and all(key in kit["props"] for key in ("anchor", "ropeHook"))
-boss["ready"] = not errors and all(pose in boss["sprites"]["consignateur"] for pose in BOSS_POSES) and all(key in boss["props"] for key in ("console-active", "console-inactive", "register"))
+boss["ready"] = not errors and all(all(face in boss["directionalPoses"]["consignateur"].get(pose, {}) for face in ("left", "right")) for pose in BOSS_POSES) and all(key in boss["props"] for key in ("console-active", "console-inactive", "register"))
 
 def write_json(path, value):
     path.parent.mkdir(parents=True, exist_ok=True)
