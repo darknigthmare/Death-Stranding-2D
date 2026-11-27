@@ -1,5 +1,5 @@
 {
-  "date": "2026-11-27T13:43:43.945Z",
+  "date": "2026-11-27T13:59:53.785Z",
   "passed": true,
   "method": "Modules réels et entrées normales ; DOM/Canvas simulés, aucune victoire ni modification de combattant injectée.",
   "browser": false,
@@ -1320,7 +1320,7 @@
     "relationships.js": "ad55b68c477b42d8e833dbe242dab055cfac19e596c7a143d3c781a23907f775",
     "input.js": "0f6d59d605c82f69b7193d171e0b222c41823e9d01ec3c2ed98453052c853c26",
     "lessons.js": "173883d53312043d57f6d28f2bd38795c831b95d9dcb784ca7894f115f9af159",
-    "app.js": "1bba691320fdd8a1fe185412c15c833baccae9e692fa9a5613424c3227d9b994",
+    "app.js": "5d5d84c37cbf5d7a4b2f1075904429340075467a4aab522d027e0e3c18dee411",
     "index.html": "a5c1c0c614bcc569e8904620a65bdeac2f895b6bc8729f5c45ceff5b5aee615f",
     "lessons.css": "dea91c67a2cd13cb1c8e1ee6171a61c70a16fa29c2eb79db128d0af0edea2b03",
     "qa/lessons.cjs": "e57aae2680887c79d8ee86b9d96be42ad8120ed4e9da5ec1ce8834d6dabd0171",

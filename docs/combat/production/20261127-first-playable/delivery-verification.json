@@ -41,7 +41,20 @@
           "pngColorType": 6
         }
       ],
-      "newDocumentaryMedia": []
+      "newDocumentaryMedia": [
+        "docs/combat/production/20261127-first-playable/native-renders/balise-anchor.webp",
+        "docs/combat/production/20261127-first-playable/native-renders/balise-poses-left.webp",
+        "docs/combat/production/20261127-first-playable/native-renders/balise-poses-right.webp",
+        "docs/combat/production/20261127-first-playable/native-renders/balise-tether.webp",
+        "docs/combat/production/20261127-first-playable/native-renders/consignateur-console-disabled.webp",
+        "docs/combat/production/20261127-first-playable/native-renders/consignateur-kneel.webp",
+        "docs/combat/production/20261127-first-playable/native-renders/consignateur-phase-1.webp",
+        "docs/combat/production/20261127-first-playable/native-renders/consignateur-phase-2.webp",
+        "docs/combat/production/20261127-first-playable/native-renders/consignateur-phase-3.webp",
+        "docs/combat/production/20261127-first-playable/native-renders/consignateur-poses-directions.webp",
+        "docs/combat/production/20261127-first-playable/native-renders/consignateur-register.webp",
+        "docs/combat/production/20261127-first-playable/native-renders/consignateur-surrender.webp"
+      ]
     },
     {
       "name": "The 48 generation records identify the exact delivered image bytes",
@@ -220,7 +233,20 @@
         "pngColorType": 6
       }
     ],
-    "newDocumentaryMedia": []
+    "newDocumentaryMedia": [
+      "docs/combat/production/20261127-first-playable/native-renders/balise-anchor.webp",
+      "docs/combat/production/20261127-first-playable/native-renders/balise-poses-left.webp",
+      "docs/combat/production/20261127-first-playable/native-renders/balise-poses-right.webp",
+      "docs/combat/production/20261127-first-playable/native-renders/balise-tether.webp",
+      "docs/combat/production/20261127-first-playable/native-renders/consignateur-console-disabled.webp",
+      "docs/combat/production/20261127-first-playable/native-renders/consignateur-kneel.webp",
+      "docs/combat/production/20261127-first-playable/native-renders/consignateur-phase-1.webp",
+      "docs/combat/production/20261127-first-playable/native-renders/consignateur-phase-2.webp",
+      "docs/combat/production/20261127-first-playable/native-renders/consignateur-phase-3.webp",
+      "docs/combat/production/20261127-first-playable/native-renders/consignateur-poses-directions.webp",
+      "docs/combat/production/20261127-first-playable/native-renders/consignateur-register.webp",
+      "docs/combat/production/20261127-first-playable/native-renders/consignateur-surrender.webp"
+    ]
   },
   "provenance": {
     "file": "docs/combat/production/20261127-first-playable/art-generation.json",
@@ -357,7 +383,7 @@
   },
   "http": {
     "server": "Shipped netplay-server.cjs openRelay(), real 127.0.0.1 socket",
-    "version": "d7288242ecfff148a854",
+    "version": "ee31cded9509c9ada3c2",
     "requests": [
       {
         "url": "/original-kits-assets.js",
@@ -1880,7 +1906,7 @@
     "campaign.js": "bf84ff01a0afc253c84f5087f040632895fe971f7f934abadd114c3f4311c08a",
     "moves-data.js": "c413bbdc2ce5de4911faab8b028e4825f96fde3e7192863f89fd4a35e9100320",
     "lessons.js": "173883d53312043d57f6d28f2bd38795c831b95d9dcb784ca7894f115f9af159",
-    "docs/combat/production/20261127-first-playable/art-generation.json": "98f766b63c74ea0a48bd62978c3ff52ce28e06a8e132e934c68e5dc35aa4e434"
+    "docs/combat/production/20261127-first-playable/art-generation.json": "6561897d19b2b21c95e0672291c1e457224931a0fee0ba1b6b85c46c1092feb1"
   },
   "limits": [
     "PNG validation reads native file headers and measured descriptor bounds; decoding, alpha pixels, anatomical side, floor contact and framing are covered by first-playable-canvas.cjs.",

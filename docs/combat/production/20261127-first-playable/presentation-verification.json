@@ -1,5 +1,5 @@
 {
-  "date": "2026-11-27T13:43:41.675Z",
+  "date": "2026-11-27T13:59:51.429Z",
   "passed": true,
   "method": "Real JavaScript engine + app driven by normal logical or DOM events; Canvas/DOM and phase image readiness are explicit test adapters. No browser pixels or physical controller claim.",
   "browser": false,
@@ -99,7 +99,7 @@
   },
   "sourceSHA256": {
     "fight.js": "6be07ea82a834d18cc0f72381fb1c5be44643ae104cc47556bc22cd04570cbc6",
-    "app.js": "1bba691320fdd8a1fe185412c15c833baccae9e692fa9a5613424c3227d9b994",
+    "app.js": "5d5d84c37cbf5d7a4b2f1075904429340075467a4aab522d027e0e3c18dee411",
     "input.js": "0f6d59d605c82f69b7193d171e0b222c41823e9d01ec3c2ed98453052c853c26",
     "netplay.js": "5aa9050b2d85b248ab725c90e151e0f02f78e7578b441797d01ea382c88681bf",
     "presentation.js": "89719616a053b7be2af84b5c5771a1e4f63429748711ec3dfb9eca0dfb5a3e9a",

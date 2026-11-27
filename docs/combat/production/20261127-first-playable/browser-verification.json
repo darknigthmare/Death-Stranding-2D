@@ -1,0 +1,436 @@
+{
+  "date": "2026-11-27T13:59:54.859Z",
+  "status": "passed",
+  "passed": true,
+  "browser": true,
+  "hardware": false,
+  "launch": {
+    "attempts": 1,
+    "executable": "/home/runner/work/_temp/ldm-browsers/chromium-1208/chrome-linux64/chrome",
+    "headless": true,
+    "timeoutMs": 60000,
+    "TMPDIR": "/tmp/ds2d-browser-tFduMo",
+    "userDataDir": "/tmp/ds2d-browser-tFduMo/original-browser-profile",
+    "args": [
+      "--no-sandbox",
+      "--disable-dev-shm-usage"
+    ],
+    "elapsedMs": 270,
+    "success": true
+  },
+  "checks": [
+    {
+      "name": "extension-desktop initial ten cards",
+      "passed": true,
+      "details": {
+        "cards": 10,
+        "metrics": "10\nPersonnages conçus\n20\nStages conçus\n20\nEnnemis conçus\n20\nBoss conçus\n70\nBases visuelles reçues"
+      }
+    },
+    {
+      "name": "extension-desktop initial has no horizontal overflow",
+      "passed": true,
+      "details": {
+        "viewport": 1280,
+        "documentWidth": 1280,
+        "bodyWidth": 1280,
+        "clientWidth": 1280,
+        "height": 3894
+      }
+    },
+    {
+      "name": "extension-desktop 147 dossiers and 70 visual bases",
+      "passed": true,
+      "details": {
+        "allDossiers": 147,
+        "visualCards": 70,
+        "displayedStatus": "70 fiches · 70 avec un visuel"
+      }
+    },
+    {
+      "name": "extension-desktop visual catalogue has no horizontal overflow",
+      "passed": true,
+      "details": {
+        "viewport": 1280,
+        "documentWidth": 1280,
+        "bodyWidth": 1280,
+        "clientWidth": 1280,
+        "height": 11588
+      }
+    },
+    {
+      "name": "extension-desktop stages search and modal",
+      "passed": true,
+      "details": {
+        "stages": 20,
+        "searchResults": 1,
+        "modal": {
+          "width": 1100,
+          "scrollWidth": 1098,
+          "clientWidth": 1098,
+          "scrollHeight": 2431,
+          "clientHeight": 826
+        },
+        "focusReturned": true
+      }
+    },
+    {
+      "name": "extension-desktop filtered has no horizontal overflow",
+      "passed": true,
+      "details": {
+        "viewport": 1280,
+        "documentWidth": 1280,
+        "bodyWidth": 1280,
+        "clientWidth": 1280,
+        "height": 2682
+      }
+    },
+    {
+      "name": "teams-desktop four selectors and 44 arenas",
+      "passed": true,
+      "details": {
+        "selectors": 4,
+        "kitsPerSelector": 9,
+        "modes": 2,
+        "arenas": 44
+      }
+    },
+    {
+      "name": "teams-desktop setup has no horizontal overflow",
+      "passed": true,
+      "details": {
+        "viewport": 1280,
+        "documentWidth": 1280,
+        "bodyWidth": 1280,
+        "clientWidth": 1280,
+        "height": 1071
+      }
+    },
+    {
+      "name": "teams-desktop ordinary selection and 2v2 launch",
+      "passed": true,
+      "details": {
+        "stage": "ldm-stage-serre-veille",
+        "mode": "local",
+        "teams": [
+          {
+            "active": 0,
+            "members": [
+              "sam",
+              "mama"
+            ]
+          },
+          {
+            "active": 0,
+            "members": [
+              "higgs",
+              "mule"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "name": "teams-desktop live has no horizontal overflow",
+      "passed": true,
+      "details": {
+        "viewport": 1280,
+        "documentWidth": 1280,
+        "bodyWidth": 1280,
+        "clientWidth": 1280,
+        "height": 1158
+      }
+    },
+    {
+      "name": "teams-desktop assistance button",
+      "passed": true,
+      "details": {
+        "beforeCohesion": 50,
+        "afterCohesion": 25.3,
+        "busy": {
+          "kind": "assist",
+          "frame": 0,
+          "member": 1
+        }
+      }
+    },
+    {
+      "name": "teams-desktop relay button transfers control",
+      "passed": true,
+      "details": {
+        "activeFighter": "mama",
+        "activeSlot": 1,
+        "cohesion": 18.2
+      }
+    },
+    {
+      "name": "teams-desktop pause and resume buttons",
+      "passed": true,
+      "details": {
+        "pausedThenResumed": true
+      }
+    },
+    {
+      "name": "teams-desktop save, restore and return buttons",
+      "passed": true,
+      "details": {
+        "stored": true,
+        "restoredPaused": true,
+        "activeFighter": "mama",
+        "returnedToSetup": true
+      }
+    },
+    {
+      "name": "teams-desktop controls dialog opens and closes",
+      "passed": true,
+      "details": true
+    },
+    {
+      "name": "extension-mobile initial ten cards",
+      "passed": true,
+      "details": {
+        "cards": 10,
+        "metrics": "10\nPersonnages conçus\n20\nStages conçus\n20\nEnnemis conçus\n20\nBoss conçus\n70\nBases visuelles reçues"
+      }
+    },
+    {
+      "name": "extension-mobile initial has no horizontal overflow",
+      "passed": true,
+      "details": {
+        "viewport": 390,
+        "documentWidth": 390,
+        "bodyWidth": 390,
+        "clientWidth": 390,
+        "height": 6104
+      }
+    },
+    {
+      "name": "extension-mobile stages search and modal",
+      "passed": true,
+      "details": {
+        "stages": 20,
+        "searchResults": 1,
+        "modal": {
+          "width": 352,
+          "scrollWidth": 350,
+          "clientWidth": 350,
+          "scrollHeight": 3083,
+          "clientHeight": 774
+        },
+        "focusReturned": true
+      }
+    },
+    {
+      "name": "extension-mobile filtered has no horizontal overflow",
+      "passed": true,
+      "details": {
+        "viewport": 390,
+        "documentWidth": 390,
+        "bodyWidth": 390,
+        "clientWidth": 390,
+        "height": 3933
+      }
+    },
+    {
+      "name": "teams-mobile four selectors and 44 arenas",
+      "passed": true,
+      "details": {
+        "selectors": 4,
+        "kitsPerSelector": 9,
+        "modes": 2,
+        "arenas": 44
+      }
+    },
+    {
+      "name": "teams-mobile setup has no horizontal overflow",
+      "passed": true,
+      "details": {
+        "viewport": 390,
+        "documentWidth": 390,
+        "bodyWidth": 390,
+        "clientWidth": 390,
+        "height": 1646
+      }
+    },
+    {
+      "name": "teams-mobile ordinary selection and 2v2 launch",
+      "passed": true,
+      "details": {
+        "stage": "ldm-stage-serre-veille",
+        "mode": "local",
+        "teams": [
+          {
+            "active": 0,
+            "members": [
+              "sam",
+              "mama"
+            ]
+          },
+          {
+            "active": 0,
+            "members": [
+              "higgs",
+              "mule"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "name": "teams-mobile live has no horizontal overflow",
+      "passed": true,
+      "details": {
+        "viewport": 390,
+        "documentWidth": 390,
+        "bodyWidth": 390,
+        "clientWidth": 390,
+        "height": 1029
+      }
+    },
+    {
+      "name": "teams-mobile assistance button",
+      "passed": true,
+      "details": {
+        "beforeCohesion": 50,
+        "afterCohesion": 25.2,
+        "busy": {
+          "kind": "assist",
+          "frame": 0,
+          "member": 1
+        }
+      }
+    },
+    {
+      "name": "teams-mobile relay button transfers control",
+      "passed": true,
+      "details": {
+        "activeFighter": "mama",
+        "activeSlot": 1,
+        "cohesion": 17.9
+      }
+    },
+    {
+      "name": "teams-mobile pause and resume buttons",
+      "passed": true,
+      "details": {
+        "pausedThenResumed": true
+      }
+    },
+    {
+      "name": "No uncaught page errors",
+      "passed": true,
+      "details": []
+    },
+    {
+      "name": "Tested source files preserved",
+      "passed": true,
+      "details": [
+        "extension.html",
+        "extension.css",
+        "extension.js",
+        "extension-data.js",
+        "extension-assets.js",
+        "extension-runtime.js",
+        "teams.html",
+        "teams.css",
+        "teams.js",
+        "fight.js"
+      ]
+    }
+  ],
+  "captures": [
+    {
+      "file": "browser-renders/extension-desktop-hero.webp",
+      "width": 1280,
+      "height": 900,
+      "bytes": 144800,
+      "sha256": "fbf042ec8c8f5d63adefbea71bb2c1131fbe2a17772a4a2cdd66b13eda0ae26d"
+    },
+    {
+      "file": "browser-renders/extension-desktop-catalogue.webp",
+      "width": 1280,
+      "height": 900,
+      "bytes": 147858,
+      "sha256": "152883dca61c741e453b4d3c2776cd869b5660f9dca8fade68fce52ac1fccec2"
+    },
+    {
+      "file": "browser-renders/extension-desktop-serre-dialog.webp",
+      "width": 1280,
+      "height": 900,
+      "bytes": 76266,
+      "sha256": "1a235cc24913b16e521532fcd060cb15009d50f193c5f38493f851956cfe5dff"
+    },
+    {
+      "file": "browser-renders/teams-desktop-setup.webp",
+      "width": 1224,
+      "height": 883,
+      "bytes": 85482,
+      "sha256": "7472967295538ee8cf40000e549b9f398b64819d2dc9d002eb397eb06a78ca4c"
+    },
+    {
+      "file": "browser-renders/teams-desktop-live.webp",
+      "width": 1224,
+      "height": 971,
+      "bytes": 230208,
+      "sha256": "6c3488d194a5c8f6a01d6862acd2050ad9ede2b699f9636510ea9f820d4d5021"
+    },
+    {
+      "file": "browser-renders/extension-mobile-hero.webp",
+      "width": 390,
+      "height": 844,
+      "bytes": 56398,
+      "sha256": "69d3f67e64069391b9f26b4dffd37708c846ae127a96af826fdf6f5782265ad8"
+    },
+    {
+      "file": "browser-renders/extension-mobile-catalogue.webp",
+      "width": 390,
+      "height": 844,
+      "bytes": 53334,
+      "sha256": "e0cabdfc7dad1bc8dc304799099f0b33886fcb2b50558e419b040ab1968973ed"
+    },
+    {
+      "file": "browser-renders/extension-mobile-serre-dialog.webp",
+      "width": 390,
+      "height": 844,
+      "bytes": 38358,
+      "sha256": "ee134e4295ee315086a0ffa563fe637c4493a7c5cd4a3bf74c26651221dfe9c0"
+    },
+    {
+      "file": "browser-renders/teams-mobile-setup.webp",
+      "width": 362,
+      "height": 1457,
+      "bytes": 72812,
+      "sha256": "1641d405ff0925c347ba14563c70336616dda2fc49a0afe598aa8fd77b639673"
+    },
+    {
+      "file": "browser-renders/teams-mobile-live.webp",
+      "width": 362,
+      "height": 840,
+      "bytes": 68286,
+      "sha256": "7092535cce93136a11845279f67b4ce26e14c276549c90966a5e21b4d9d3cc53"
+    }
+  ],
+  "consoleErrors": [
+    {
+      "page": "extension-desktop",
+      "text": "Failed to load resource: the server responded with a status of 404 (Not Found)"
+    }
+  ],
+  "pageErrors": [],
+  "failedRequests": [],
+  "sourceSha256": {
+    "extension.html": "41139eccb20cd9e4a1be314730ba2d1282bcf33d2b5751394080b99ed08b592a",
+    "extension.css": "3e655611a62d129d332cfd81b5738eb81c396cd779cf5938897a58278f06384d",
+    "extension.js": "e365b146da1428b41b2f83c994ada99b5763f7e66055f323c24c7d0b09d0e479",
+    "extension-data.js": "5776d8c46a4aae9985f754230628b7d7797387983794d905f08ae1a8c637f35b",
+    "extension-assets.js": "929fa7ce4b4589989e4b9d9c46c47db906d6d943c1397bdf35e5082ea0bec95e",
+    "extension-runtime.js": "696e8b3a1a8ca2a5b2a11eac7c52fcd9d98f18f15a3247584f150de2e1b2d90e",
+    "teams.html": "84512d2d42931c3c18d7b55f54fb56d0a163c6b7285e7fd56d631b2f166d72a0",
+    "teams.css": "bdcf0d0238c4279c71bf7b9dc3679ea2764d79f532c2dc6aa184e1ceb60fd01a",
+    "teams.js": "c7abbeec9ca28b93c36e49fba61eac974fb46f98685fe7bccb308bc80354522f",
+    "fight.js": "6be07ea82a834d18cc0f72381fb1c5be44643ae104cc47556bc22cd04570cbc6"
+  },
+  "browserVersion": "145.0.7632.6",
+  "baseUrl": "http://127.0.0.1:37589",
+  "finishedAt": "2026-11-27T14:00:07.907Z"
+}
